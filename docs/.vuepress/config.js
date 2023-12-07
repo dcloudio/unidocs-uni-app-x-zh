@@ -4,8 +4,14 @@ const highlight = require('@vuepress/markdown/lib/highlight')
 const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')
 const createSidebar = require('./markdown/createSidebar')
-const { simplifySlugText, tabs } = require('./utils')
+const { simplifySlugText, tabs, getFormattedDate } = require('./utils')
 const copyOptions = require('./config/copy');
+
+const nowString = getFormattedDate();
+const changeLoaderOptions = (options, key = 'name') => {
+	if (options && options[key]) options[key] = `${nowString}/${options[key]}`;
+	return options;
+};
 
 const config = {
   theme: 'vuepress-theme-uni-app-test',
@@ -115,6 +121,23 @@ const config = {
       '@theme-config',
       path.resolve(process.cwd(), 'docs/.vuepress/config')
     )
+    if (!isServer) {
+      config.output.filename(`${nowString}/${config.output.get('filename')}`); //输出文件名
+      config.module.rule('images').use('url-loader').tap(changeLoaderOptions);
+      config.module.rule('fonts').use('url-loader').tap(changeLoaderOptions);
+      config.module.rule('media').use('url-loader').tap(changeLoaderOptions);
+      config.module.rule('svg').use('file-loader').tap(changeLoaderOptions);
+      const extract_css_plugin = config.plugin('extract-css');
+      const extract_css_plugin_args = extract_css_plugin.get('args');
+      if (extract_css_plugin_args) {
+        extract_css_plugin.set(
+          'args',
+          extract_css_plugin_args.map(item =>
+            changeLoaderOptions(item, 'filename')
+          )
+        );
+      }
+    }
   },
   patterns: ['**/!(_sidebar).md', '**/*.vue'],
   plugins: [
