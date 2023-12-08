@@ -1,7 +1,10 @@
 # vue
 
-uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合式写法，仅支持option选项式写法。\
+uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合式写法，仅支持option选项式写法。
+
 本文暂时只包括兼容性表格，vue功能详情另见 [vue3概述](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#)、[Vue3 API](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html)。
+
+uni-app x中vue的用法，有单独的示例应用：[hello uvue](https://gitcode.net/dcloud/hello-uvue)。这里都是可以跑通的使用样例代码。
 
 ## 全局 API兼容性
 
@@ -25,7 +28,7 @@ uni-app x的vue规范，按照vue3规范实现，但目前不支持setup组合�
 
 ### [函数 event 参数的类型](uni-app-x/tutorial/codegap.md#function-event-argument-type)
 
-### 指令
+### 指令 @directives
 
 <!-- VUEJSON.directives.compatibility -->
 
@@ -54,31 +57,31 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 
 ## 组件
 
-- [props](uni-app-x/component/README.md#props)
-- [自定义事件](uni-app-x/component/README.md#自定义事件)
-- [计算属性和侦听器](uni-app-x/component/README.md#计算属性和侦听器)
-- [作用域插槽的类型](uni-app-x/component/README.md#作用域插槽的类型)
-- [监听页面生命周期](uni-app-x/component/README.md#监听页面生命周期)
-- [vue 与 uvue 不同文件后缀的优先级](uni-app-x/component/README.md#priority)
+- [props](../component/README.md#props)
+- [自定义事件](../component/README.md#自定义事件)
+- [计算属性和侦听器](../component/README.md#计算属性和侦听器)
+- [作用域插槽的类型](../component/README.md#作用域插槽的类型)
+- [监听页面生命周期](../component/README.md#监听页面生命周期)
+- [vue 与 uvue 不同文件后缀的优先级](../component/README.md#priority)
 
 <!-- VUEJSON.components.compatibility -->
-### 特殊元素
+### 特殊元素 @special-elements
 
 <!-- VUEJSON.special_elements.compatibility -->
 
 - App 端，如需页面级滚动，根节点必须是 `scroll-view` 标签。
 
-### 特殊 Attributes
+### 特殊 Attributes @special-attributes
 
 <!-- VUEJSON.special_attributes.compatibility -->
 
-### 生命周期选项
+### 生命周期选项 @lifecycle-options
 
 <!-- VUEJSON.options_lifecycle.compatibility -->
 
 ## 插件
 
-暂不支持vue插件，比如pinia、vuex、i18n、router。简单的状态管理可以参考文档[全局变量和状态管理](uni-app-x/tutorial/store.md)。
+暂不支持vue插件，比如pinia、vuex、i18n、router。简单的状态管理可以参考文档[全局变量和状态管理](../tutorial/store.md)。
 
 ## 选项式 API兼容性
 
@@ -86,7 +89,7 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 
 
 <!-- VUEJSON.options_state.compatibility -->
-### 渲染选项
+### 渲染选项 @rendering-options
 
 
 <!-- VUEJSON.options_rendering.compatibility -->
@@ -99,7 +102,7 @@ uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [
 
 
 <!-- VUEJSON.options_misc.compatibility -->
-### 组件实例
+### 组件实例 @component-instance
 
 
 <!-- VUEJSON.component_instance.compatibility -->

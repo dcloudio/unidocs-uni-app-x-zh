@@ -677,6 +677,7 @@ array1.forEach((element:string, index:number) => {
 	* kotlin.collections.List
 	* kotlin.Array
 	* kotlin.IntArray
+	* kotlin.FloatArray
 	* kotlin.ByteArray
 	* kotlin.LongArray
 	* ...
@@ -762,6 +763,18 @@ console.log("b",b[2])
 // int[][] 二维数组，可以采用下面的写法
 let a = [[2].toKotlinList().toIntArray(),[23].toKotlinList().toIntArray(),[22].toKotlinList().toIntArray()]
 let b = a.toKotlinList().toTypedArray()
+
+// Array<Number> 转 java float[]的示例
+let a = new Array<Number>(10)
+// b是 List<Float>
+let b = a.toKotlinList().map(function(it):Float{
+	return it.toFloat()
+})
+// c是 float[]
+let c = b.toTypedArray()
+// d 是 FloatArray
+let d = b.toFloatArray()
+
 
 ```
 
