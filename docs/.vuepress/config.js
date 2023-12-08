@@ -14,6 +14,7 @@ const changeLoaderOptions = (options, key = 'name') => {
 };
 
 const config = {
+  base: '/uni-app-x/',
   theme: 'vuepress-theme-uni-app-test',
   title: 'uni-app-x',
   description: 'uni-app-x Document',
