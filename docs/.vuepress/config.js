@@ -121,7 +121,7 @@ const config = {
       '@theme-config',
       path.resolve(process.cwd(), 'docs/.vuepress/config')
     )
-    if (!isServer) {
+    if (!isServer && process.env.NODE_ENV === 'production') {
       config.output.filename(`${nowString}/${config.output.get('filename')}`); //输出文件名
       config.module.rule('images').use('url-loader').tap(changeLoaderOptions);
       config.module.rule('fonts').use('url-loader').tap(changeLoaderOptions);
