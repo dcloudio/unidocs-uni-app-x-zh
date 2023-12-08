@@ -1,6 +1,4 @@
-const routerMap = {
-  '/uni-app-x/': '/'
-}
+const routerMap = {}
 
 export default ({ fullPath, path, hash }) => {
   fullPath = decodeURIComponent(fullPath)

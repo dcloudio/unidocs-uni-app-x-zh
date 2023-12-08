@@ -9,7 +9,7 @@ uni-app x项目的uts代码中可以使用很多API。包括：
 - dom的api [详见](dom/README.md)
 - vue的api [详见](../../tutorial/vue3-api.md)
 - 原生api
-	
+
 	由于uts可以直接调用Android和iOS的api，所以os和三方sdk的能力都可以在uts中调用。如下：
 
 ```vue
@@ -39,7 +39,7 @@ uni-app x项目的uts代码中可以使用很多API。包括：
 
 插件市场也有很多做好的uts插件，方便开发者拿来即用。[uts插件](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 
-虽然上述页面可以直接调用原生能力，但一般原生能力建议封装为[uni_modules](../../plugin/uni_modules.md)形式的[uts插件](../../plugin/uts-plugin.md)。这样方便共享、方便跨平台。
+虽然上述页面可以直接调用原生能力，但一般原生能力建议封装为[uni_modules](https://uniapp.dcloud.net.cn/uni_modules.html)形式的[uts插件](https://uniapp.dcloud.net.cn/uts-plugin.html)。这样方便共享、方便跨平台。
 
 uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api，在uni-app x中进行了替换增补。
 - plus.runtime.quit => [uni.exit](./exit.md)
@@ -72,4 +72,3 @@ uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api
 	}
 </script>
 ```
-  
