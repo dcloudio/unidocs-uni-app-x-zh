@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const domain = 'https://doc.dcloud.net.cn'
+const domain = 'https://doc.dcloud.net.cn/uni-app-x'
 const xmlBefore = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 `
