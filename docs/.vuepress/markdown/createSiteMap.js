@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const domain = 'https://zh.uniapp.dcloud.io'
+const domain = 'https://doc.dcloud.net.cn'
 const xmlBefore = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 `
@@ -9,6 +9,7 @@ const xmlAfter = `\n</urlset>`
 
 module.exports = (links, callback = () => { }) => {
   const xmlItems = links.map(url => {
+    if (!url.endsWith('/') && !url.endsWith('html')) url += '.html'
     return `  <url>
     <loc>${domain + url}</loc>
   </url>`
