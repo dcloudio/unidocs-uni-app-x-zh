@@ -14,8 +14,8 @@
 
 |函数名|说明|平台兼容|
 |:-|:-|:-|
-|onLaunch|当`uni-app-x` 初始化完成时触发（全局只触发一次），参数为应用启动参数，同 [uni.getLaunchOptionsSync](https://uniapp.dcloud.net.cn/api/getLaunchOptionsSync.html#getlaunchoptionssync) 的返回值||
-|onShow|当 `uni-app-x` 启动，或从后台进入前台显示，参数为应用启动参数，同 [uni.getLaunchOptionsSync](https://uniapp.dcloud.net.cn/api/getLaunchOptionsSync.html#getlaunchoptionssync) 的返回值||
+|onLaunch|当`uni-app-x` 初始化完成时触发（全局只触发一次），参数为应用启动参数，同 [uni.getLaunchOptionsSync](../api/get-launch-options-sync.md#getlaunchoptionssync) 的返回值||
+|onShow|当 `uni-app-x` 启动，或从后台进入前台显示，参数为应用启动参数，同 [uni.getLaunchOptionsSync](../api/get-launch-options-sync.md#getlaunchoptionssync) 的返回值||
 |onHide|当 `uni-app-x` 从前台进入后台||
 |onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出|app-uvue-android 3.9+|
 |onExit|监听应用退出|app-uvue-android 3.9+|
@@ -45,14 +45,14 @@
 
 **注意**
 - **应用生命周期仅可在`App.uvue`中监听，在其它页面监听无效**。
-- 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](https://uniapp.dcloud.net.cn/api/getLaunchOptionsSync.html#getlaunchoptionssync)
+- 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](../api/get-launch-options-sync.md#getlaunchoptionssync)
 <!-- - onPageNotFound 页面实际上已经打开了（比如通过分享卡片、小程序码）且发现页面不存在，才会触发，api 跳转不存在的页面不会触发（如 uni.navigateTo） -->
 
 ## globalData
 
-小程序有 globalData，这是一种简单的全局变量机制。这套机制在 uni-app-x 里也可以使用，并且全端通用。
+> HBuilderX 3.99+
 
-当然 vue 框架的全局变量，另有其他方式定义。
+小程序有 globalData，这是一种简单的全局变量机制。这套机制在 uni-app-x 里也可以使用，并且全端通用。
 
 **以下是 App.uvue 中定义globalData的相关配置：**
 
@@ -88,9 +88,9 @@
 **注意：** `uni-app x` 中 `globalData` 的数据结构与类型通过 `App.uvue` 中的 `globalData` 初始值定义，后续只能读取或修改，不能新增或删除。
 
 
-globalData是简单的全局变量，其他状态管理方式，可参考文档[全局变量和状态管理](/uni-app-x/tutorial/store.md)。
+globalData是简单的全局变量，其他状态管理方式，可参考文档[全局变量和状态管理](../tutorial/store.md)。
 
 ## 全局样式
 
-在`App.uvue`中，可以定义一些全局通用样式，例如需要加一个通用的背景色，首屏页面渲染的动画等都可以写在App.uvue中。
+在`App.uvue`中，可以定义一些全局通用样式，这里定义的class，每个页面都可以直接使用。
 

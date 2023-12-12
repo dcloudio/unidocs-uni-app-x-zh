@@ -9,7 +9,7 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 它是一个云端一体的业务，涉及多份文档：
 1. 业务介绍：对于未使用过uni-push的新用户，本文必读：[uni-push业务介绍](https://uniapp.dcloud.net.cn/unipush-v2.html)
 2. 客户端API，即本文
-3. 服务器API，[另见](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-push/api)
+3. 服务器API，[另见](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api)
 
 
 ## uni.getPushClientId(options) @getpushclientid
@@ -73,7 +73,7 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
   - [vivo](https://dev.vivo.com.cn/documentCenter/doc/359)
 
   开通自分类权益后，需要客户端创建channel，因此客户端提供了`setPushChannel`来进行channel的创建，通过此Api来创建渠道进行推送。
-  客户端创建渠道成功后，即可通过云函数进行推送，[uni-push2服务端文档](https://uniapp.dcloud.net.cn/uniCloud/uni-cloud-push/api.html)。
+  客户端创建渠道成功后，即可通过云函数进行推送，[uni-push2服务端文档](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html)。
 
 
 * 由于Android通知渠道的机制问题，一旦通知渠道建立，便不能修改此渠道的配置，即使删除渠道后再次创建同channelId名称的渠道，也不会改变原先渠道的配置（除非删除应用），最明显的现象就是铃声动态修改失败，比如调用`setPushChannel`时，第一次的设置参数是`{"channelId":"test","soundName":"pushsound"}` , 这时你想切换铃音，你的channelId就不能再叫test了，而应该为`{"channelId":"test2","soundName":"ring"}` ，此时会新建一个渠道。

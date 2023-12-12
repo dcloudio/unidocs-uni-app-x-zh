@@ -1,8 +1,10 @@
+## splash
+
+> HBuilderX 3.99+
+
 App启动时，系统加载应用渲染首页需要一定的时间，为了避免用户等待，手机操作系统提供了特殊的启动界面设计，让用户先看到一个简单的界面，等应用加载完成后正式进入应用首页。
 
 这个界面，即被称为启动界面，也成称为 splash 或 lauch screen。
-
->HBuilderX3.99+版本支持App启动界面配置  
 
 ### Android平台启动界面配置
 
@@ -25,7 +27,7 @@ splash关闭时机可控制，打开项目的manifest.json文件，选择源码�
 
 配置示例：
 
-```
+```json
 "app" : {
     "splashScreen" : {
         "autoClose" : "onReady"
@@ -42,6 +44,7 @@ splash关闭时机可控制，打开项目的manifest.json文件，选择源码�
 
 #### Android平台使用.9.png启动图@9png  
 目前HBuilderX中仅定义几种标准分辨率的启动图配置，而实际上存在很多不同分辨率的手机，导致启动图在一些不常见的设备会进行拉伸或压缩引起变形，Android平台为了解决此问题就出现了可以适配各种尺寸的一种图片格式“.9.png”。这是一种特殊的图片格式，它可以指定特定的区域进行拉伸而不失真。
+
 **使用.9.png的优点**  
 1. 避免在非标准分辨率手机上缩放变形  
 2. 可以只配置1张或多张图片适配更多分辨率，减少apk的体积（推荐至少配置1080P高分屏启动图片）  
@@ -51,7 +54,7 @@ splash关闭时机可控制，打开项目的manifest.json文件，选择源码�
 2. 使用.9.png图片后，整个图片应该是包裹着你想要显示的内容的，而没有使用的话整个图片将会被拉伸  
 
 **制作.9.png图片**  
-1. 在Android sdk目录下的tools目录下，有一个叫做draw9patch.bat的文件，双击打开就可以使用（最新android SDK该文件已经不存在，若电脑不没有安装android studio，可下载附件工具编辑.9.png图片）  
+1. 在Android sdk目录下的tools目录下，有一个叫做draw9patch.bat的文件，双击打开就可以使用（最新android SDK该文件已经不存在，若电脑没有安装android studio，可下载附件工具编辑.9.png图片）  
 2. 使用android studio，因为android studio已经集成.9.png制作工具，只需选中需要生成的png文件，然后右键，点击create 9-patch file 选项  
 
 详细制作步骤可参考链接：[Android中.9图片的含义及制作教程](https://www.jianshu.com/p/3fd048644e3f?tdsourcetag=s_pctim_aiomsg)  

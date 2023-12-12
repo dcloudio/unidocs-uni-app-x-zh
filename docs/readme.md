@@ -42,7 +42,7 @@ uts 全称 uni type script，是一门跨平台的、高性能的、强类型的
 > * Android平台，编译为Kotlin
 > * iOS平台，编译Swift
 
-uts和ts很相似，但为了跨端，uts进行了一些约束和特定平台的增补。详见 [uts语言介绍](../uts/README.md)
+uts和ts很相似，但为了跨端，uts进行了一些约束和特定平台的增补。详见 [uts语言介绍](./uts/README.md)
 
 该语言在2022年9月推出，起初用于原生插件扩展开发。
 
@@ -136,7 +136,7 @@ uni-app js引擎版，支持 plus API 和 weex API。但 uni-app x 中，不再�
 
 uni-app x支持的API包括：
 
-1. uts的api [详见](/uts/buildin-object-api/global.md)
+1. uts的api [详见](./uts/buildin-object-api/global.md)
 2. 全局api，前面不需要加`uni.`。如[getApp](./api/get-app.md)、[getCurrentPages](./api/get-current-pages.md)
 3. uni.xxx的内置api。数量较多，[详见](./api/README.md)
 4. uniCloud.xxx的内置api。[详见](./api/unicloud/README.md)
@@ -177,7 +177,7 @@ uni.的api，大多是uts开发的，它们会陆续开源在[uni-api](https://g
 - AndroidManifest.xml 与原生开发相同。注意Android权限配置在这里配置，而不是在manifest.json中 [详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
 - app.uvue [详见](https://uniapp.dcloud.net.cn/collocation/App.html)
 - pages.json 不支持app-plus的内容。[详见](./collocation/pagesjson.md)
-- uni.scss 正常支持。但注意uvue仅能使用[css子集](css/README.md)
+- uni.scss 正常支持。但注意uvue仅能使用[css子集](./css/README.md)
 
 ## 6. 插件生态
 
@@ -297,7 +297,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 - uni-app x开源吗？
   uni-app x的组件和API实现都会开源，会陆续发布在项目[uni-component](https://gitcode.net/dcloud/uni-component)和[uni-api](https://gitcode.net/dcloud/uni-api)下。\
-  开发者可以了解组件和API的实现，直接修改或优化源码，修改后的代码以[ext api](../api/extapi.md)或组件的方式下载到项目中，即可实现在本项目中替换掉官方组件和API。
+  开发者可以了解组件和API的实现，直接修改或优化源码，修改后的代码以[ext api](https://uniapp.dcloud.net.cn/api/extapi.html)或组件的方式下载到项目中，即可实现在本项目中替换掉官方组件和API。
 
 - 未来 uni-app js引擎版还维护吗？
   维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。不再维护不是下线，而是没有重大问题的话（如新手机不兼容）不会再更新了。

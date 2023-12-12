@@ -9,7 +9,7 @@ App一键登陆是替代短信验证码登录的更优选择：对开发者而�
 一键登陆涉及业务开通和付费，涉及客户端和服务器交互，有较多文档：
 1. 业务介绍：介绍业务流程、开通和付费。[详见](https://uniapp.dcloud.net.cn/univerify.html)
 2. 客户端API，即本文
-3. 服务器API，[详见](https://uniapp.dcloud.net.cn/uniCloud/uni-login/dev.html)
+3. 服务器API，[详见](https://doc.dcloud.net.cn/uniCloud/uni-login/dev.html)
 
 <!-- UTSAPIJSON.getUniverifyManager.param -->
 
