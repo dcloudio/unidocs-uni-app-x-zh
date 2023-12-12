@@ -97,7 +97,7 @@ uvue的策略是：在新建页面时，提供一个选项，让开发者选择�
 </template>
 ```
 
-考虑到未来web平台和基于webview的小程序的兼容，自动套在页面顶层的scroll-view写在了[条件编译](../../tutorial/platform.md)里。
+考虑到未来web平台和基于webview的小程序的兼容，自动套在页面顶层的scroll-view写在了[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html)里。
 
 这样在web浏览器里就无需多套一层scroll-view，自然的使用浏览器的页面滚动就好了。
 

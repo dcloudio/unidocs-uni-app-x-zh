@@ -22,7 +22,7 @@ system的定位仅支持wgs84坐标系、不支持逆地址解析、且某些老
 
 可下载[腾讯定位插件](https://ext.dcloud.net.cn/plugin?id=14569)，在插件中配置key打包后生效。
 
-上述腾讯定位插件属于[ext api插件](../../api/extapi.md)，引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。
+上述腾讯定位插件属于[ext api插件](https://uniapp.dcloud.net.cn/api/extapi.html)，引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。
 
 如需其他定位，请在插件市场搜索定位相关的uts插件。
 
