@@ -274,17 +274,6 @@
 
 <!-- UTSJSON.UTSAndroid.rpx2px.compatibility -->
 
-
-### rpx2px(rpx:number) : number;
-
-<!-- UTSJSON.UTSAndroid.rpx2px.description -->
-
-<!-- UTSJSON.UTSAndroid.rpx2px.param -->
-
-<!-- UTSJSON.UTSAndroid.rpx2px.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.rpx2px.compatibility -->
-
 ### devicePX2px(devicePX:number) : number;
 
 <!-- UTSJSON.UTSAndroid.devicePX2px.description -->
@@ -393,4 +382,17 @@
 <!-- UTSJSON.UTSAndroid.getFileProviderUri.compatibility -->
 
 <!-- UTSJSON.UTSAndroid.tutorial -->
+
+
+```ts
+// 使用外部应用打开项目内置图片资源
+let file = new File(UTSAndroid.getResourcePath("static/logo.png"))
+const uri = UTSAndroid.getFileProviderUri(file)
+const intent = new Intent(Intent.ACTION_VIEW, uri)
+intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+const context = UTSAndroid.getUniActivity()!;
+context.startActivity(intent);
+
+```
+
 
