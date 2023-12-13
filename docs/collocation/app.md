@@ -16,7 +16,7 @@
 |:-|:-|:-|
 |onLaunch|当`uni-app-x` 初始化完成时触发（全局只触发一次），参数为应用启动参数，同 [uni.getLaunchOptionsSync](../api/get-launch-options-sync.md#getlaunchoptionssync) 的返回值||
 |onShow|当 `uni-app-x` 启动，或从后台进入前台显示，参数为应用启动参数，同 [uni.getLaunchOptionsSync](../api/get-launch-options-sync.md#getlaunchoptionssync) 的返回值||
-|onHide|当 `uni-app-x` 从前台进入后台||
+|onHide|当 `uni-app-x` 从前台进入后台，包括手机息屏||
 |onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出|app-uvue-android 3.9+|
 |onExit|监听应用退出|app-uvue-android 3.9+|
 
@@ -38,6 +38,21 @@
 		},
     onLastPageBackPress: function () {
       console.log('App LastPageBackPress')
+			// 2秒内连按2次back，退出app
+			if (firstBackTime == 0) {
+				uni.showToast({
+					title: '再按一次退出应用',
+					position: 'bottom',
+				})
+				firstBackTime = Date.now()
+				setTimeout(() => {
+					firstBackTime = 0
+				}, 2000)
+			} else if (Date.now() - firstBackTime < 2000) {
+				firstBackTime = Date.now()
+				uni.exit()
+			}
+			// 还有一些应用按1次back直接将应用切到后台，详见https://doc.dcloud.net.cn/uni-app-x/api/exit.html#back
     }
 	}
 </script>
@@ -46,7 +61,6 @@
 **注意**
 - **应用生命周期仅可在`App.uvue`中监听，在其它页面监听无效**。
 - 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](../api/get-launch-options-sync.md#getlaunchoptionssync)
-<!-- - onPageNotFound 页面实际上已经打开了（比如通过分享卡片、小程序码）且发现页面不存在，才会触发，api 跳转不存在的页面不会触发（如 uni.navigateTo） -->
 
 ## globalData
 
@@ -87,10 +101,8 @@
 
 **注意：** `uni-app x` 中 `globalData` 的数据结构与类型通过 `App.uvue` 中的 `globalData` 初始值定义，后续只能读取或修改，不能新增或删除。
 
-
 globalData是简单的全局变量，其他状态管理方式，可参考文档[全局变量和状态管理](../tutorial/store.md)。
 
 ## 全局样式
 
 在`App.uvue`中，可以定义一些全局通用样式，这里定义的class，每个页面都可以直接使用。
-

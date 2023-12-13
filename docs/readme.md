@@ -136,12 +136,12 @@ uni-app js引擎版，支持 plus API 和 weex API。但 uni-app x 中，不再�
 
 uni-app x支持的API包括：
 
-1. uts的api [详见](./uts/buildin-object-api/global.md)
-2. 全局api，前面不需要加`uni.`。如[getApp](./api/get-app.md)、[getCurrentPages](./api/get-current-pages.md)
-3. uni.xxx的内置api。数量较多，[详见](./api/README.md)
-4. uniCloud.xxx的内置api。[详见](./api/unicloud/README.md)
-5. dom的api [详见](./dom/README.md)
-6. 原生api
+1. uts的API [详见](./uts/buildin-object-api/global.md)
+2. 全局API，前面不需要加`uni.`。如[getApp](./api/get-app.md)、[getCurrentPages](./api/get-current-pages.md)
+3. uni.xxx的内置API。数量较多，[详见](./api/README.md)
+4. uniCloud.xxx的内置API。[详见](./api/unicloud/README.md)
+5. dom的API [详见](./dom/README.md)
+6. 原生API
 	
 	由于uts可以直接调用Android和iOS的api，所以os和三方sdk的能力都可以在uts中调用。如下：
 

@@ -2,9 +2,10 @@
 
 uni实人认证是DCloud与合作伙伴共同推出的金融级实人认证服务，通过对比人脸、活体检测、姓名和身份证号码，来确认用户身份的有效性。
 
-该业务的完整业务介绍另见：[实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
-
-本文是 uni-app x 中涉及该业务的API的介绍。
+实人认证涉及业务开通和付费，涉及客户端和服务器交互，有较多文档：
+1. 业务介绍：介绍业务流程、开通和付费。[详见](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
+2. 客户端API，即本文
+3. 服务器API，[详见](https://doc.dcloud.net.cn/uniCloud/frv/dev.html)
 
 ## uni.getFacialRecognitionMetaInfo() @getfacialrecognitionmetainfo
 
