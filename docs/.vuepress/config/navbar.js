@@ -108,6 +108,8 @@ export const navbar = [
   } */
 ]
 
+export const userNavIndex = 1
+
 export const navbarLanguage = {
   default: 0,
   items: [
