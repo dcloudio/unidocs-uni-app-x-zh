@@ -17,7 +17,7 @@ uni-app x支持的组件包括：
 
 	组件界面通过uvue构造，script使用uts编写。
 
-	返回的类型是组件实例[ComponentPublicInstance](../vue/api.md#ComponentPublicInstance)。
+	返回的类型是组件实例[ComponentPublicInstance](../vue/)。
 
 - uts组件插件
 	`uts组件插件`的名称可能有点拗口，这是因为是相对于另一个分类`uts api插件`。
