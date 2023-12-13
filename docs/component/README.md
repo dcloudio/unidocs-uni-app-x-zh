@@ -349,7 +349,7 @@ callMethod可用于所有自定义组件，包括easycom组件也可以使用，
 
 **语法**
 
-```this.$refs['组件ref属性值'].$callMethod('方法名', ...args)```
+```(this.$refs['组件ref属性值'] as ComponentPublicInstance).$callMethod('方法名', ...args)```
 
 **组件类型**
 
@@ -366,9 +366,6 @@ ComponentPublicInstance
 </template>
 
 <script>
-  // 导入 vue 组件实例类型
-  import { ComponentPublicInstance } from 'vue'
-
   // 非easycom组件需import引用组件 component1.uvue
   import component1 from './component1.uvue'
 
