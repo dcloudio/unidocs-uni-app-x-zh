@@ -175,7 +175,7 @@ uni.的api，大多是uts开发的，它们会陆续开源在[uni-api](https://g
 ## 5. 全局文件
 - manifest.json 仅支持基本的名称图标配置，暂未支持splash，但uni-app x项目打包后启动速度飞快，可以自己做splash。[详见](./collocation/manifest.md)
 - AndroidManifest.xml 与原生开发相同。注意Android权限配置在这里配置，而不是在manifest.json中 [详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
-- app.uvue [详见](https://uniapp.dcloud.net.cn/collocation/App.html)
+- app.uvue [详见](./collocation/app.md)
 - pages.json 不支持app-plus的内容。[详见](./collocation/pagesjson.md)
 - uni.scss 正常支持。但注意uvue仅能使用[css子集](./css/README.md)
 
@@ -310,6 +310,6 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 所以不必担心官方精力不足，顾此失彼。
 
 欢迎加入 uni-app x 专用群交流
-- QQ群485089465（已满）
+- QQ群485089465
 - 钉钉群二维码
 ![](static/uaxding.png)
