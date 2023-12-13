@@ -16,7 +16,16 @@ Android平台的应用退出分热退出和冷退出。
 
 基本上主流Android App都是热退出。本API也是热退出。
 
-热退出，即通知了os：这个app用户不用了，在os需要时可以回收。如果在os回收之前，用户又启动这个app，会感觉启动速度更快一些。
+热退出，即通知了os：这个app用户不用了，在os需要时可以回收。如果在os回收之前，用户又启动这个app，会感觉启动速度更快一些。  
+
+### 切换应用到后台@back  
+如不希望应用退出，可使用以下方法将应用切换到后台：  
+```ts
+// #ifdef APP-ANDROID
+	UTSAndroid.getUniActivity()?.moveTaskToBack(true)
+// #endif
+```
+
 
 <!-- UTSAPIJSON.exit.tutorial -->
 
