@@ -8,35 +8,35 @@ uni-app x支持的组件包括：
 不支持的组件包括：
 - 小程序wxml组件
 
-支持[easycom](/component/README.md#easycom)。
+支持[easycom](https://uniapp.dcloud.net.cn/component/index.html#easycom)。
 
 内置组件比较简单，扩展组件的2种方式详细介绍下
 
 - 自定义vue组件
 	在components目录新建一个uvue/vue文件，按vue组件规范编写代码。
-	
+
 	组件界面通过uvue构造，script使用uts编写。
-	
+
 	返回的类型是组件实例[ComponentPublicInstance](../vue/api.md#ComponentPublicInstance)。
-	
+
 - uts组件插件
 	`uts组件插件`的名称可能有点拗口，这是因为是相对于另一个分类`uts api插件`。
-	
+
 	它们同属于`uts插件`，是[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)。api插件指能力扩展，比如蓝牙api。而组件插件指界面元素扩展，比如video、map、lottie动画等。
-	
+
 	uts组件插件，指把原生的、需要在界面上显示的、内嵌于页面中整体排版的组件，编写uts代码调用原生sdk，通过uni_modules插件的方式集成到uni-app项目中。比如
 	* lottie组件，使用uts调用原生的lottie sdk来开发组件，再引入页面中。[详见](https://ext.dcloud.net.cn/plugin?name=uni-animation-view)
 	* video组件，其实官方的video，也是用uts组件插件实现的。[详见](https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-video)
-	
+
 	uts组件插件，主要用于原生sdk涉及界面时，将其封装为界面组件。当然uts组件也是全端支持的。上述lottie组件也支持web端。
-	
+
 	在app端，它的内部界面是由原生sdk绘制的，而不是uvue代码绘制的。通过封装嵌入到uvue/nvue页面中。
-	
+
 	一个uts插件都是可以同时兼容uni-app x和uni-app js引擎版的。目前js引擎版仅支持内嵌于nvue页面中。所以上述lottie组件也是可以在app-nvue页面中使用的。
-	
+
 	uts组件的返回类型是dom元素[Element](../dom/element.md)
-	
-	uts组件插件的开发教程，[详见](/plugin/uts-component.md)
+
+	uts组件插件的开发教程，[详见](https://uniapp.dcloud.net.cn/plugin/uts-component.md)
 
 **vue组件兼容性及注意事项：**
 
@@ -332,8 +332,8 @@ component1组件符合[easycom规范](https://uniapp.dcloud.net.cn/component/#ea
     },
     onReady() {
       let c1 = (this.$refs["component1"] as Component1ComponentPublicInstance) //注意组件必须存在，注意类型首字母大写
-      c1.foo1(); 
-      c1.foo2(1); 
+      c1.foo1();
+      c1.foo2(1);
     }
   }
 </script>
