@@ -49,23 +49,31 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 再次强调，以上模块不属于ext组件或api，是内置模块。但如果你的代码中没有使用这些组件和api，打正式包或自定义基座时会被摇掉。
 
-## uni-AD广告模块
+## uni-AD@uni-ad
 
-  HBuilderX3.99版本起，uni-app x 支持 uni-AD 开屏广告。
+> HBuilderX 3.99+ 新增支持 uni-AD 开屏广告
 
-  uni-AD 开屏广告作为一个独立的模块，不需要额外的API，应用启动时会自动拉取并展示开屏广告。由于开屏广告的特殊性，也导致uni-AD广告模块无法参与摇树。需要开发者打包时手动在 manifest.json 中添加广告配置。
+uni-AD 是一个独立模块，使用开屏广告不需要调用任何API，应用启动时会自动拉取并展示开屏广告。由于开屏广告的特殊性，也导致 uni-AD 模块无法参与摇树。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
 
-  uni-AD 开屏广告打包时需要在 manifest.json 中的 app->distribute->modules 节点下添加 uni-ad 节点。目前支持的广告平台有：腾讯优量汇广告联盟(gdt)、穿山甲GroMore(gm)、百度百青藤广告联盟(bd)、Sigmob广告联盟(sgm)、快手广告联盟(ks)。具体配置可参考下面配置：
-  ```
-modules:{
-  "uni-ad":{
-    "ks":{},
-    "gdt":{},
-    "bd":{},
-    "sgm":{},
-    "gm":{}
-  }
-}
-  ```
+使用 uni-AD 模块需在 manifest.json 文件的 app -> distribute -> modules 下添加 uni-ad 节点：  
+```json
+	modules:{
+		"uni-ad":{
+			"gdt":{},
+			"gm":{},
+			"ks":{},
+			"sgm":{},
+			"bd":{}
+		}
+	}
+```
 
-如果没有相应的节点，则该sdk不会被打包到最终应用中。
+其中 uni-ad 下的节点表示要聚合广告平台：  
+- gdt： 腾讯优量汇广告联盟  
+- gm： 穿山甲GroMore  
+- ks： 快手广告联盟  
+- sgm：Sigmob广告联盟  
+- bd：百度百青藤广告联盟
+
+添加相应的节点，云端打包就会将对应的广告平台 SDK 打包到最终安装包中。  
+注意：使用前需在 [uni-AD广告联盟](https://uniad.dcloud.net.cn/) 开通。  
