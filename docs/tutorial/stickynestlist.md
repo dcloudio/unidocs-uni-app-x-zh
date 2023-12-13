@@ -48,7 +48,7 @@ Android App常见的一种列表效果，是顶部有一个tab，可以左右滑
 
 上面那种始终固定top的做法，在scroll-view里可以实现，但在list-view里有问题。因为list-view底层是Android的recycle-view，有一些特殊限制。
 
-在list-view中，吸顶需要使用[sticky-header组件](../component/sticky-header.md)。
+在list-view中，吸顶需要使用[sticky-header组件](../component/sticky.md)。
 
 sticky-header组件是list-view的一级子组件，在这个吸顶组件中放入内容，该组件滚动到列表顶部时将不再继续向上滚动、固定在列表顶端；但向下滚动时可以自由滚动，甚至滚动出屏幕之外。
 

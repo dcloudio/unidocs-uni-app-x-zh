@@ -311,7 +311,7 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 
 目前仅支持url()、rgb()、rgba()。
 
-暂不支持css变量val()。--status-bar-height、--window-top、--window-bottom，也暂时无法使用，有相关需求可使用[uni.getWindowInfo()](../api/getwindowinfo.md)方式获取。
+暂不支持css变量val()。--status-bar-height、--window-top、--window-bottom，也暂时无法使用，有相关需求可使用[uni.getWindowInfo()](../api/get-window-info.md)方式获取。
 
 ## At-rules
 |类别							|支持情况	|备注	|

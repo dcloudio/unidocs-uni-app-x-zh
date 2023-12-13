@@ -71,14 +71,14 @@ export function createApp() {
 
 <!-- VUEJSON.reactivity_advanced.compatibility -->
 
-### [函数 event 参数的类型](uni-app-x/tutorial/codegap.md#function-event-argument-type)
+### [函数 event 参数的类型](../tutorial/codegap.md#function-event-argument-type)
 
 ### 指令 @directives
 
 <!-- VUEJSON.directives.compatibility -->
 
 **注意：**
-- **v-html:** 在 `App-android` 平台，`v-html` 指令通过编译为 [rich-text](uni-app-x/component/rich-text.md) 组件实现。因此，`v-html` 指令的内容必须是 `rich-text` 支持的格式, 并且要遵循标签嵌套规则，例如， `swiper` 标签内只允许嵌套 `swiper-item` 标签。\
+- **v-html:** 在 `App-android` 平台，`v-html` 指令通过编译为 [rich-text](../component/rich-text.md) 组件实现。因此，`v-html` 指令的内容必须是 `rich-text` 支持的格式, 并且要遵循标签嵌套规则，例如， `swiper` 标签内只允许嵌套 `swiper-item` 标签。\
 同时，受限于 `rich-text` 组件不支持 `class` 样式，`v-html` 指令中同样不支持 `class` 样式。\
 绑定 `v-html` 的标签内的内容会被忽略，`v-html` 指令的内容会编译为 `rich-text` 组件渲染为该标签的子节点。
 
@@ -103,7 +103,7 @@ export function createApp() {
 ```
 
 ## 应用生命周期
-uni-app x 新增了 [onLastPageBackPress](collocation/App.md#applifecycle) 和 [onExit](collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
+uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) 和 [onExit](../collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
 
 ## 组件
 

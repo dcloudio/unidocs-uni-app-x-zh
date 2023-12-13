@@ -81,8 +81,8 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 
 ## 全局属性
 
-`uni-app x` 中，`uni` 对象不支持动态绑定自定义属性，[app.config.globalProperties](uni-app-x/vue/README.md#app-instance) 暂时不支持。\
-如有`全局属性`的需求，可通过[全局变量与状态管理](uni-app-x/tutorial/store.md)实现。
+`uni-app x` 中，`uni` 对象不支持动态绑定自定义属性，[app.config.globalProperties](../vue/README.md#app-instance) 暂时不支持。\
+如有`全局属性`的需求，可通过[全局变量与状态管理](../tutorial/store.md)实现。
 
 ## 函数 event 参数的类型 @function-event-argument-type
 
@@ -104,7 +104,7 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 ```
 
 那event参数的类型从哪里获取呢？
-1. 组件的文档中有介绍，比如[switch的组件](component/switch.md)
+1. 组件的文档中有介绍，比如[switch的组件](../component/switch.md)
 2. ide中有提示，比如鼠标移到switch组件的`@change`上，悬浮出现hover，会显示：`(property) 'change': (event: SwitchChangeEvent) => void`
 
 ```html
@@ -272,12 +272,12 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 
 ## 调用组件方法@methods
 
-js中refs拿到一个组件后，可以直接`.`出它的方法。但uts中只有easycom组件可以使用`.`操作符，非easycom组件需要使用callMethod()。[详见](uni-app-x/component/README.md#methods)
+js中refs拿到一个组件后，可以直接`.`出它的方法。但uts中只有easycom组件可以使用`.`操作符，非easycom组件需要使用callMethod()。[详见](../component/README.md#methods)
 
 ## vue使用注意
 
-[详见](uni-app-x/vue/README.md)
+[详见](../vue/README.md)
 
 ## css使用注意
 
-[详见](uni-app-x/css/README.md)
+[详见](../css/README.md)

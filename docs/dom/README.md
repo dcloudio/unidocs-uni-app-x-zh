@@ -1,4 +1,4 @@
-# UVUE DOM  
+# UVUE DOM
 
 App-uvue的每个页面，在内存中都有一个 DOM（文档对象模型）。它和浏览器的 [DOM规范](https://www.w3.org/DOM/?spm=a2c7j.-zh-docs-api-weex-variable.0.0.2a5537c6FrgbYp) 类似。
 
@@ -19,9 +19,9 @@ DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示
 1. 跟手动效
 
 	响应触屏事件更新组件的位置，要想不掉帧，需要保证16毫秒绘制一帧。
-	
+
 	uvue的data更新，有一套diff机制，每次触发data更新，会多几毫秒的耗时。
-	
+
 	此时推荐通过 DOM API 跳过 vue 框架直接操作组件的样式。
 
 2. Draw API
@@ -31,13 +31,13 @@ DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示
 在[性能](../performance.md)章节，对这2个场景有详细的阐述。
 
 
-## DOM元素对象@getDomNode  
+## DOM元素对象@getDomNode
 
 在操作DOM元素对象前，需要先获取 `Element` 对象，可通过 `uni.getElementById` 或 `this.$refs` 获取。
 
-### 通过uni.getElementById获取DOM元素  
+### 通过uni.getElementById获取DOM元素
 
-app-uvue 页面中可以为页面元素节点设置 id 属性，然后通过 [uni.getElementById](../api/get-element-by-id.md#getelementbyid) 获取 DOM 元素对象。
+app-uvue 页面中可以为页面元素节点设置 id 属性，然后通过 [uni.getElementById](../api/get-element.md#getelementbyid) 获取 DOM 元素对象。
 
 首先需要为组件设置 id 属性值：
 ```vue
@@ -57,14 +57,14 @@ app-uvue 页面中可以为页面元素节点设置 id 属性，然后通过 [un
       }
     },
     onReady() {
-        // 获取组件对象并保存在 this.myView 中  
+        // 获取组件对象并保存在 this.myView 中
         this.myView = uni.getElementById('myView');
     },
 }
 ```
 
 ### 通过this.$refs获取DOM元素
-app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。  
+app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。
 
 首先需要为组件设置 ref 属性值，它类似于id：
 ```vue
@@ -84,7 +84,7 @@ app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](ht
       }
     },
     onReady() {
-        // 获取组件对象并保存在 this.myView 中  
+        // 获取组件对象并保存在 this.myView 中
         this.myView = this.$refs['myView'] as Element;  //需要使用 as 转换
     },
 }
@@ -98,9 +98,9 @@ app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](ht
 this.myView?.style?.setProperty('background-color', 'red');
 ```
 
-### 示例  
-以下是完整的操作示例：  
-```vue  
+### 示例
+以下是完整的操作示例：
+```vue
 <template>
   <!-- #ifdef APP -->
   <scroll-view style="flex:1;align-items: center;">
@@ -152,7 +152,7 @@ this.myView?.style?.setProperty('background-color', 'red');
 >以上例子仅为演示DOM API的使用，实际上点击按钮修改背景色这种简单场景，使用数据绑定更简单，class绑定到一个data上，动态修改data即可。
 
 
-## 通过DrawableContext绘制View  
+## 通过DrawableContext绘制View
 
 uni-app x 在 app 端提供 DrawableContext 绘制内容到 uvue 页面的`view`标签上。可用于绘制文本、形状等内容。
 

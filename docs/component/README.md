@@ -100,7 +100,7 @@ export default {
 
 ## 自定义事件
 
-- [v-model](tutorial/vue3-components.html#v-model-modifiers) 暂不支持 `capitalize` 修饰符。
+- [v-model](https://uniapp.dcloud.io/tutorial/vue3-components.html#v-model-modifiers) 暂不支持 `capitalize` 修饰符。
 
 ## 计算属性和侦听器
 
