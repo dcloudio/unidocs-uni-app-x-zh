@@ -9,6 +9,13 @@
  */
 export const navbar = [
   {
+    text: 'uni-app',
+    link: 'https://uniapp.dcloud.io/',
+    type: "link",
+    target: '_blank',
+    needOutbound: false
+  },
+  {
     text: 'uni-app x',
     link: '/',
     items: [
@@ -63,13 +70,6 @@ export const navbar = [
         link: '/worktile/'
       }
     ]
-  },
-  {
-    text: 'uni-app',
-    link: 'https://uniapp.dcloud.io/',
-    type: "link",
-    target: '_blank',
-    needOutbound: false
   },
   {
     text: 'uniCloud',
