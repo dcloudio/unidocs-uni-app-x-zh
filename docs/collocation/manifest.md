@@ -84,6 +84,25 @@ HBuilderX3.97+版本标准基座已经包含了所有Android权限，在 uvue �
 <!-- MANIFESTJSON.ios_ipad.table -->
 
 
+##### App端启动界面配置 @distribute-splash
+
+<!-- MANIFESTJSON.distribute_splashScreens.description -->
+
+
+###### Android平台启动界面配置  
+
+<!-- MANIFESTJSON.splashScreens_android.description -->
+
+<!-- MANIFESTJSON.splashScreens_android.table -->
+
+
+###### Android12启动界面配置  
+
+<!-- MANIFESTJSON.splashScreens_android12.description -->
+
+<!-- MANIFESTJSON.splashScreens_android12.table -->
+
+
 ##### ANDROID配置 @distribute-android
 
 <!-- MANIFESTJSON.distribute_android.description -->
