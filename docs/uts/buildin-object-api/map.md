@@ -80,6 +80,18 @@ console.log(map1.has('bar'));
 
 <!-- UTSJSON.Map.forEach.compatibility -->
 
+```ts
+
+let mapObj = new Map<string,any>()
+mapObj.put("name","zhangsan")
+mapObj.put("age",12)
+// 需要特别注意迭代方法的第一个参数是value.第二个是key. 
+mapObj.forEach(function(value:any,key:string){
+    console.log(key)
+    console.log(value)
+})
+```
+
 ### get(key)
 
 <!-- UTSJSON.Map.get.description -->
