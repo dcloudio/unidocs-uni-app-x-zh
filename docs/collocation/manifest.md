@@ -110,12 +110,6 @@ uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud
 - `targetSdkVersion` 一个用于指定应用的目标 API 级别的整数。如果未设置，其默认值与为 minSdkVersion 指定的值相等。该值用于通知系统，您已针对目标版本进行了测试，并且系统不应通过启用任何兼容性行为，以保持您的应用与目标版本的向前兼容性。
 - `minSdkVersion` 和 `targetSdkVersion` 设置的值是 API 级别（API Level），完整API级别信息请参考[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)
 
-##### IOS配置 @distribute-ios
-
-<!-- MANIFESTJSON.distribute_ios.description -->
-
-<!-- MANIFESTJSON.distribute_ios.table -->
-
 
 ## 示例
 ```json
@@ -139,9 +133,6 @@ uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud
 				],
 				"minSdkVersion": "21",
 				"targetSdkVersion": "32"
-			},
-			"ios": {
-				"appid": "iOS Bundle ID"
 			}
 		}
 	}
