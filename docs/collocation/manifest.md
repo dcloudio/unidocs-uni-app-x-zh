@@ -2,7 +2,7 @@
 
 `manifest.json` 是 uni-app x 项目的配置文件，用于设置应用的名称、版本、图标等信息。在 HBuilderX 中创建项目时此文件保存在根目录。
 
-uni-app x 目前不支持配置splash图，因uni-app x打包后启动速度非常快，可以自己做一个简单的uvue页面来当做splash。
+uni-app x 默认没有splash启动界面，因uni-app x打包后启动速度非常快，可以自己做一个简单的uvue页面来当做splash。HBuilderX3.99+版本新增支持配置splash启动界面，详情参考[启动界面配置](manifest-splashscreen.md)。
 
 uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选择内置模块，详情参考[模块配置](manifest-modules.md#treeShaking)。
 
