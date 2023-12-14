@@ -1,10 +1,16 @@
-## splash
+## splash启动封面图
 
 > HBuilderX 3.99+
 
 App启动时，系统加载应用渲染首页需要一定的时间，为了避免用户等待，手机操作系统提供了特殊的启动界面设计，让用户先看到一个简单的界面，等应用加载完成后正式进入应用首页。
 
 这个界面，即被称为启动界面，也成称为 splash 或 lauch screen。
+
+当然并非所有App都需要splash，很多系统应用比如计算器、日历都没有splash。
+
+uni-app x中，如不配置splash，则与计算器等应用一致，启动时有轻微闪白，但可以让用户更快的使用首页。
+
+如需配置splash，注意避免splash图与首页风格差异太大。因为uni-app x启动速度非常快，splash只是一闪而过，如果颜色差异太大，会让用户视觉不舒服。
 
 ### Android平台启动界面配置
 
@@ -24,6 +30,8 @@ splash关闭时机可控制，打开项目的manifest.json文件，选择源码�
 |--|--|
 |onShow|首页页面生命周期触发onShow时关闭splash|
 |onReady|首页页面生命周期触发onReady时关闭splash|
+
+暂不支持其他方式关闭splash。
 
 配置示例：
 

@@ -7,6 +7,8 @@ uni实人认证是DCloud与合作伙伴共同推出的金融级实人认证服�
 2. 客户端API，即本文
 3. 服务器API，[详见](https://doc.dcloud.net.cn/uniCloud/frv/dev.html)
 
+uni-id-pages，已经内置实人认证，从云端到客户端均已开发好并开源，推荐使用。[详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
+
 ## uni.getFacialRecognitionMetaInfo() @getfacialrecognitionmetainfo
 
 <!-- UTSAPIJSON.getFacialRecognitionMetaInfo.description -->

@@ -1,0 +1,168 @@
+# 文件系统
+文件系统提供一套跨平台操作文件的管理接口，包括文件和目录的增删改名、获取信息、读写文件等常用功能。
+
+通过[uni.getFileSystemManager](get-file-system-manager.md)可以获取到文件系统管理器，所有文件系统的管理操作通过 [FileSystemManager](get-file-system-manager.md#FileSystemManager) 来调用。  
+```uts
+const fs = uni.getFileSystemManager()
+```
+
+文件主要分两大类：  
+- 代码包文件：指 uni-app x 项目目录中添加的文件，比如static目录下的文件。Android发行后存放在assets目录下。只读。
+	+ assets
+	+ hybrid
+	+ static
+	+ uni_modules
+- 本地磁盘文件：指应用在手机端运行时可访问的磁盘文件。又分以下目录：
+	+ 应用外置沙盒目录（`uni.env.SANDBOX_PATH`）：手机应用的沙盒目录，其中包括缓存文件目录和用户文件目录。在文件管理器中可看到。
+		* 缓存文件目录（`uni.env.CACHE_PATH`）：手机运行过程中框架保存缓存文件的目录（cache），系统空间不足时会被自动清理掉
+			- uni-download ：下载
+			- uni-media ：拍照、相册选择
+			- uni-snapshot ：App dom截图
+			- uni-crash ：App崩溃日志
+		* 用户文件目录（`uni.env.USER_DATA_PATH`）：提供给开发者操作的本地文件目录（files）  
+	+ 应用内置沙盒目录（`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`）：存放框架的网络缓存（如网络图片、视频、web-view的缓存）、storage。
+	+ 沙盒外目录
+
+## 代码包文件  
+
+代码包文件，是源码工程中的静态资源文件，由编译器打包到发行包（如apk）中。全平台都如此。
+
+uni-app x的应用在安装后，代码包文件有4个目录：
+- assets
+- hybrid
+- static
+- uni_modules
+
+这些目录的来源和作用，[详见](../compiler/README.md#static)
+
+assets目录下文件有随机数的存在，很难使用FileSystemManager访问；hybrid下的文件用于web-view组件。\
+所以通过FileSystemManager访问较多的是static目录。
+
+FileSystemManager访问代码包文件时，直接写文件路径，如：/static/uni.png、/uni_modules/xxx/static/clear.png。
+
+**示例**
+
+假设static目录下有如下文件："/static/list-mock/mock.json"，要copy到沙盒的files目录（该目录的介绍详见下一章节），可使用如下代码：
+```ts
+let fileManager = uni.getFileSystemManager()
+
+fileManager.copyFile({
+  srcPath: "/static/list-mock/mock.json",
+  destPath: `${uni.env.USER_DATA_PATH}/mock.json`,
+  success: function (res : FileManagerSuccessResult) {
+    console.log('success', res)
+  },
+  fail: function (res : UniError) {
+    console.log('fail', res)
+  },
+  complete: function (res : any) {
+    console.log("complete", res)
+  }
+} as CopyFileOptions)
+```
+
+> 注意：代码包文件仅可读取和复制，无法动态修改或删除。修改代码包文件一般会copy到沙盒目录后再修改。
+
+**真机运行注意**
+
+App端真机运行期间会做特殊处理，将代码包文件同步到`应用沙盒目录`下的特定目录：  
+- Android平台  
+	保存在应用专属存储空间的外置存储空间根目录下的apps目录，通常为“/sdcard/Android/data/%应用包名%/apps/%应用AppID%/www/”
+- iOS平台  
+	保存在应用沙盒目录下的Documents/uni-app-x目录，通常为“/%应用沙盒目录%/Documents/uni-app-x/apps/%应用AppID%/www/”
+
+
+## 本地磁盘文件  
+本地磁盘文件分沙盒内和沙盒外。
+
+沙盒内是指应用安装到设备（通常指手机）后，系统会提供一块独立的文件存储区域。以应用维度隔离，即在同一台设备，不同应用间的本地磁盘文件不能直接相互访问。  
+
+而沙盒目录，又分内置和外置。外置可以在Android手机自带的系统文件管理器里看到，并且用户可以改动。内置的保护级别更高，无法在系统文件管理器中看到。
+
+本地磁盘文件路径格式为：  
+```
+{{协议名}}://文件路径  
+```
+> App端，协议名为"unifile"，不应该直接拼写协议名路径访问本地磁盘文件，推荐使用uni.env中的目录常量获取本地磁盘文件目录的路径。  
+
+**通过uni.env的目录常量访问本地磁盘文件**  
+
+uni-app x提供了一批uni.env常量，来指定不同的可访问目录。
+
+以下示例为在`用户文件目录`下写入hello.txt文件：  
+```ts
+const fs = uni.getFileSystemManager();
+fs.writeFile({
+	filePath: `${uni.env.USER_DATA_PATH}/hello.txt`,
+	data: 'hello uni-app x!',
+	encoding: 'utf-8'
+} as WriteFileOptions);
+```
+
+
+### 外置应用沙盒目录  
+目录常量名称：`uni.env.SANDBOX_PATH`
+
+App端专有目录，为应用沙盒根目录，其下包含了`缓存文件目录`和`用户文件目录`。此目录在不同平台差异较大，不建议直接使用此目录，需开发者根据平台特性谨慎操作。
+
+实际保存的目录在不同平台存在差异：
+- Android平台
+	应用专属存储空间的外置存储空间根目录，通常为“/Android/data/%应用包名%/”，其下的cache目录为`缓存文件目录`，其下的files目录为`用户文件目录`
+- iOS平台
+	应用沙盒虚拟目录，其下包括Document、Library、tmp目录，此目录只可读，不可创建其它目录
+
+本目录可以在Android系统的文件管理器中看到。用户在文件管理器中可以查阅删改。手机被root后的沙盒机制也会失效，可以被其他app操作。
+
+#### 缓存文件目录cache@cache
+目录常量名称：`uni.env.CACHE_PATH`
+
+缓存文件目录，保存应用运行过程中产生的缓存文件。操作系统或小程序宿主会在存储空间不足时清除缓存文件，因此不要在此目录中保存应用的关键业务数据文件。  
+
+实际保存的目录在不同平台存在差异：
+- Android平台  
+	应用专属存储空间的外置存储空间根目录下的cache目录，通常为“/Android/data/%应用包名%/cache/”  
+- iOS平台  
+	应用沙盒目录下的Library/Caches目录  
+
+uni-app x的部分内置API会产生临时文件会放置在本cache目录，如：
+- uni.downloadFile下载的文件
+- uni.chooseImage的拍照或选择的相册文件
+<!-- - 录音的文件 -->
+- dom element的截图API
+
+推荐：在调用上述API使用完毕临时文件后，就调用 `uni.getFileSystemManager` 的API把临时文件删掉。
+
+从HBuilderX 3.99起，重新约定了缓存目录的使用规范。
+
+在`uni.env.CACHE_PATH`目录下，uni官方使用了如下目录，请开发者避免使用uni-开头的目录：
+- uni-download // uni.downloadFile的默认下载地址 （在HBuilderX 3.98时曾使用目录uniDownloads，从3.99起调整为uni-download）
+- uni-media // uni.chooseImage的拍照或选择相册的文件
+- uni-snapshot // element takeSnapShot截图APi存储的路径
+- uni-crash //存放崩溃日志
+	* java //java、kotlin层崩溃日志
+	* c //c、so库崩溃日志
+
+#### 用户文件目录files@files  
+目录常量名称：`uni.env.USER_DATA_PATH`
+
+App端和小程序提供了用户文件目录，用于开发者在应用运行期读写文件，此目录不会被操作系统自动清除，由开发者自由管理。  
+
+实际保存的目录在不同平台存在差异：  
+- Android平台  
+	应用专属存储空间的外置存储空间根目录下的files目录，通常为“/sdcard/Android/data/%应用包名%/files/”  
+- iOS平台  
+	应用沙盒目录下的Document目录  
+
+### 内置应用沙盒目录  
+
+目录常量名称：`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`
+
+该目录无法在手机自带的文件管理器中查看，用户无法修改。除非手机被root。
+
+uni-app x框架的一些内置组件和API会涉及缓存文件，存放到本目录，如：
+- image/video组件的网络图片缓存
+- web-view组件的缓存
+<!-- - 网络字体缓存? --> 
+
+### 沙盒外目录
+FileSystemManager暂不支持访问沙盒外目录。如有相关需求目前需开发uts插件。

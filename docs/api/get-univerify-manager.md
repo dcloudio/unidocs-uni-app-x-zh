@@ -11,6 +11,8 @@ App一键登陆是替代短信验证码登录的更优选择：对开发者而�
 2. 客户端API，即本文
 3. 服务器API，[详见](https://doc.dcloud.net.cn/uniCloud/uni-login/dev.html)
 
+uni-id-pages，已经内置一键登陆，从云端到客户端均已开发好并开源，推荐使用。[详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
+
 <!-- UTSAPIJSON.getUniverifyManager.param -->
 
 <!-- UTSAPIJSON.getUniverifyManager.returnValue -->
@@ -194,6 +196,7 @@ App一键登陆是替代短信验证码登录的更优选择：对开发者而�
 ## Tips
 - 运营商对一键登陆给用户呈现的ui有强制要求：必须有运营商的隐私协议和服务条款、不得默认勾选同意、手机号掩码显示、需要用户手动再点按钮获取而不能自动获取。
 - 目前一键登陆的UI可自定义性有限。仅支持配置登录页全屏/半屏、登录页背景色、登录按钮文案以及登录页logo。后续会继续扩展自定义性。
+- 一键登陆并非100%成功，手机没有sim卡和蜂窝网络未开启是最常见的原因，更多错误见上方的错误码列表。在一键登陆无法使用时，可转为短信验证码登录。在uni-id-pages里已经集成了相关逻辑，无需自己开发。[详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
 
 <!-- UTSAPIJSON.getUniverifyManager.example -->
 
