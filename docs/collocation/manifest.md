@@ -4,7 +4,7 @@
 
 uni-app x 目前不支持配置splash图，因uni-app x打包后启动速度非常快，可以自己做一个简单的uvue页面来当做splash。
 
-uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选择内置模块，具体[见下](#treeShaking)。
+uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选择内置模块，详情参考[模块配置](manifest-modules.md#treeShaking)。
 
 ## 配置项列表
 
