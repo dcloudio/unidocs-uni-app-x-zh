@@ -64,44 +64,38 @@ uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud
 
 <!-- MANIFESTJSON.icons_android.table -->
 
-###### iOS图标配置 @icons-ios
 
-<!-- MANIFESTJSON.icons_ios.description -->
-
-<!-- MANIFESTJSON.icons_ios.table -->
-
-
-###### iPhone图标配置 @ios-iphone
-
-<!-- MANIFESTJSON.ios_iphone.description -->
-
-<!-- MANIFESTJSON.ios_iphone.table -->
-
-
-###### iPad图标配置 @ios-ipad
-
-<!-- MANIFESTJSON.ios_ipad.description -->
-
-<!-- MANIFESTJSON.ios_ipad.table -->
-
-
-##### App端启动界面配置 @distribute-splash
+##### App端启动界面配置 @distribute_splashScreens
 
 <!-- MANIFESTJSON.distribute_splashScreens.description -->
 
 
-###### Android平台启动界面配置  
+###### Android平台启动界面配置 @splashScreens_android
 
 <!-- MANIFESTJSON.splashScreens_android.description -->
 
 <!-- MANIFESTJSON.splashScreens_android.table -->
 
 
-###### Android12启动界面配置  
+###### Android12启动界面配置 @splashScreens_android12
 
 <!-- MANIFESTJSON.splashScreens_android12.description -->
 
 <!-- MANIFESTJSON.splashScreens_android12.table -->
+
+
+###### Android12启动界面Logo图标配置 @android12_icon
+
+<!-- MANIFESTJSON.android12_icon.description -->
+
+<!-- MANIFESTJSON.android12_icon.table -->
+
+
+###### Android12启动界面品牌图标配置 @androd12_brand
+
+<!-- MANIFESTJSON.android12_brand.description -->
+
+<!-- MANIFESTJSON.android12_brand.table -->
 
 
 ##### ANDROID配置 @distribute-android
