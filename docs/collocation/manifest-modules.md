@@ -49,13 +49,16 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 再次强调，以上模块不属于ext组件或api，是内置模块。但如果你的代码中没有使用这些组件和api，打正式包或自定义基座时会被摇掉。
 
-## uni-AD@uni-ad
+## uni-ad@uni-ad
 
-> HBuilderX 3.99+ 新增支持 uni-AD 开屏广告
+> HBuilderX 3.99+ 新增支持 uni-ad 开屏广告
 
-uni-AD 是一个独立模块，使用开屏广告不需要调用任何API，应用启动时会自动拉取并展示开屏广告。由于开屏广告的特殊性，导致 uni-AD 模块无法参与摇树。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
+[uni-ad](https://uniad.dcloud.net.cn/) 是DCloud提供的聚合广告服务。
 
-使用 uni-AD 模块需在 manifest.json 文件中添加如下配置：  
+在uni-app x客户端，uni-ad是一个独立模块。使用开屏广告不需要调用任何API，应用启动时会自动拉取并展示开屏广告。这也导致 uni-ad 模块无法参与摇树。
+需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
+
+使用 uni-ad 模块需在 manifest.json 文件中添加如下配置：  
 
 1. 在 app -> distribute -> modules 下添加 uni-ad 节点：  
 ```json
@@ -81,11 +84,11 @@ uni-AD 是一个独立模块，使用开屏广告不需要调用任何API，应�
 
 添加相应的节点，云端打包就会将对应的广告平台 SDK 打包到最终安装包中。  
 
-2. 在 app 节点下添加 adid 字段配置 uni-AD 联盟ID：  
+2. 在 app 节点下添加 adid 字段配置 uni-ad 联盟ID：  
 ```json
 	"app":{
 		"adid":"1111111111"
 	}
 ```
 
-注意：请前往 [uni-AD广告联盟](https://uniad.dcloud.net.cn/) 开通 uni-AD，开通后登录首页可查看到联盟ID。  
+注意：请前往 [uni-ad广告联盟](https://uniad.dcloud.net.cn/) 开通 uni-ad，开通后登录首页可查看到联盟ID。  

@@ -6,7 +6,7 @@
 const fs = uni.getFileSystemManager()
 ```
 
-文件主要分两大类：  
+文件主要分两大类，代码包和本地磁盘文件：
 - 代码包文件：指 uni-app x 项目目录中添加的文件，比如static目录下的文件。Android发行后存放在assets目录下。只读。
 	+ assets
 	+ hybrid
@@ -160,9 +160,10 @@ App端和小程序提供了用户文件目录，用于开发者在应用运行�
 该目录无法在手机自带的文件管理器中查看，用户无法修改。除非手机被root。
 
 uni-app x框架的一些内置组件和API会涉及缓存文件，存放到本目录，如：
-- image/video组件的网络图片缓存
+- image/video组件的网络图片视频缓存
 - web-view组件的缓存
-<!-- - 网络字体缓存? --> 
+
+FileSystemManager目前对内置应用沙盒目录为只读。如需写入，需开发uts插件。
 
 ### 沙盒外目录
 FileSystemManager暂不支持访问沙盒外目录。如有相关需求目前需开发uts插件。

@@ -266,3 +266,6 @@ view.takeSnapshot({
 ```
 
 完整示例代码参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/element-takesnapshot/element-takesnapshot.uvue)
+
+* 截图会在应用沙盒目录的cache目录产生临时文件，位置[详见](file-system-spec.md#cache)。
+* app端如需主动删除临时文件，使用[uni.getFileSystemManager](get-file-system-manager.md)。

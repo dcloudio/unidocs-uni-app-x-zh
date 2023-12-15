@@ -41,3 +41,4 @@ uni-id-pages，已经内置实人认证，从云端到客户端均已开发好�
 
 ## Tips
 * 获取手机端app是否拥有摄像头权限，请使用API [uni.getAppAuthorizeSetting](get-app-authorize-setting.md)
+* 从HBuilderX 3.99起，标准基座真机运行可直接体验实人认证，涉及费用扣除开发者的费用。无需自定义基座。
