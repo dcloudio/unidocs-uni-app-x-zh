@@ -16,9 +16,40 @@ uni-app x中，如不配置splash，则与计算器等应用一致，启动时�
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下配置各设备分辨率启动图：
 
-![](http://dcloud-chjh-native.oss-cn-hangzhou.aliyuncs.com/uni-app-x/doc/splash/splash_screen_android_1.png)
+![](../static/splash_screen_android_1.png)
 
-> 提示：启动界面设置需提交云端打包后才能生效
+#### Android 12 应用启动界面适配
+
+Android 12（API 31）开始强制开启 [SplashScreen](https://developer.android.google.cn/guide/topics/ui/splash-screen?hl=zh-cn) 启动界面，启动界面默认应用图标居中，白色背景。启动界面支持自定义。
+
+![](../static/splash_screen_android_example.png)
+
+打开项目的manifest.json文件，在“App启动界面配置”中的“Android12启动界面设置”项下配置背景颜色及各设备分辨率的居中logo图标、底部品牌图标。
+
+##### 配置启动界面背景颜色：
+
+可选配置，默认白色
+
+![](../static/splash_screen_android_2.png)
+
+##### 配置启动界面中部logo图标：
+
+可选配置，默认应用启动图标
+
+![](../static/splash_screen_android_3.png)
+
+##### 配置启动界面底部品牌图标：
+
+可选配置，默认底部不显示品牌图标
+
+![](../static/splash_screen_android_4.png)
+
+**Tips**
+
++ Android启动图设置需提交云端打包后才能生效
++ 配置Android 12应用启动界面后仅影响Android 12及以上版本应用启动界面，Android 12以下版本依然使用启动图展示splash
++ Android 12启动界面中部logo图标在部分系统设备会被裁剪成圆形，部分设备不会裁剪，需要注意圆形logo适配
++ 部分国内 Android 12及以上版本设备不会强制开启 SplashScreen 启动界面，仅配置splash启动图也可展示，但考虑兼容性建议配置Android 12启动界面设置
 
 #### Android平台splash关闭时机
 
