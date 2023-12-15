@@ -6,9 +6,39 @@ App启动时，系统加载应用渲染首页需要一定的时间，为了避�
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下配置各设备分辨率启动图：
 
-![](http://dcloud-chjh-native.oss-cn-hangzhou.aliyuncs.com/uni-app-x/doc/splash/splash_screen_android_1.png)
+![](../static/splash_screen_android_1.png)
 
-> 提示：启动界面设置需提交云端打包后才能生效
+#### Android 12 系统应用启动界面适配
+
+Android 12（API 31）开始强制开启 [SplashScreen](https://developer.android.google.cn/guide/topics/ui/splash-screen?hl=zh-cn) 启动界面，启动界面默认应用图标居中，白色背景。启动界面支持自定义。
+
+![](../static/splash_screen_android_example.png)
+
+打开项目的manifest.json文件，在“App启动界面配置”中的“Android12启动界面设置”项下配置背景颜色及各设备分辨率的居中logo图标、底部品牌图标。
+
+##### 配置启动界面背景颜色：
+
+可选配置，默认白色
+
+![](../static/splash_screen_android_2.png)
+
+##### 配置启动界面中部logo图标：
+
+可选配置，默认应用启动图标
+
+![](../static/splash_screen_android_3.png)
+
+##### 配置启动界面底部品牌图标：
+
+可选配置，默认底部不显示品牌图标
+
+![](../static/splash_screen_android_4.png)
+
+**Tips**
+
++ Android启动图设置需提交云端打包后才能生效
++ Android 12 启动界面中部logo图标在部分系统设备会被裁剪成圆形，部分设备不会裁剪，需要注意圆形logo适配
++ 部分国内 Android 12 设备不会强制开启 SplashScreen 启动界面
 
 #### Android平台splash关闭时机
 
@@ -36,7 +66,7 @@ splash关闭时机可控制，打开项目的manifest.json文件，选择源码�
 1. splash关闭时机中描述的`首页`，指的是第一个真正显示的页面，如项目中pages.json第一个页面A在onLoad生命周期被关闭重新跳转了一个新页面B并显示，则B页面就是`首页`，原因是显示的是页面B，A页面并未显示，
 如果是在页面A的onShow或更晚的生命周期关闭在跳转或直接跳转，则页面A是`首页`，因为页面A已经显示符合第一个真正显示的页面。
 
-2. 应用冷启动与热启动的splash展示时间是有区别的。应用冷启动指首次启动或被kill掉进程后的启动，冷启动时初始化环境，数据加载等会占用一些启动时间，所以splash展示时间长一些。热启动指应用已启动后未kill进程再次的启动，由于不会再初始化环境，加载数据等操作，所以相对启动时间较少，splash展示时间也会缩短。
+2. 应用冷启动与温启动的splash展示时间是有区别的。应用冷启动指首次启动或被kill掉进程后的启动，冷启动时初始化环境，数据加载等会占用一些启动时间，所以splash展示时间长一些。温启动指应用已启动后未kill进程再次的启动，由于不会再初始化环境，加载数据等操作，所以相对启动时间较少，splash展示时间也会缩短。
 
 #### Android平台使用.9.png启动图@9png  
 目前HBuilderX中仅定义几种标准分辨率的启动图配置，而实际上存在很多不同分辨率的手机，导致启动图在一些不常见的设备会进行拉伸或压缩引起变形，Android平台为了解决此问题就出现了可以适配各种尺寸的一种图片格式“.9.png”。这是一种特殊的图片格式，它可以指定特定的区域进行拉伸而不失真。
