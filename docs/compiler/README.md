@@ -109,9 +109,12 @@ App原生语言的编译过程耗时较长，因此编译器引入了缓存机�
 ├─static                本地静态资源（如图片、字体、音视频等文件）的目录
 |  └─3.png
 └─uni_modules           
-   └─static             uni_modules下的本地静态资源（如图片、字体、音视频等文件）的目录
+   ├─hybrid							uni_modules下的web-view加载的本地html文件的目录
+	 └─static             uni_modules下的本地静态资源（如图片、字体、音视频等文件）的目录
 	</code>
 </pre>
 
-uts、css等代码文件不是静态资源，它们会被编译为新的代码格式（如Android上会被编译为kt）。
+**注意**
+- `uni_modules`下的非static资源引用，也是编译到根目录的assets下，不会编译到`uni_modules`中
+- uts、css等代码文件不是静态资源，它们会被编译为新的代码格式（如Android上会被编译为kt）。
 请不要把这些文件放到static目录中，因为会导致代码里已经编进去了，又copy了一份相同文件到发行包中，重复增加了包体积。
