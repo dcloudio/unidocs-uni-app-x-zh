@@ -53,9 +53,11 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 > HBuilderX 3.99+ 新增支持 uni-AD 开屏广告
 
-uni-AD 是一个独立模块，使用开屏广告不需要调用任何API，应用启动时会自动拉取并展示开屏广告。由于开屏广告的特殊性，也导致 uni-AD 模块无法参与摇树。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
+uni-AD 是一个独立模块，使用开屏广告不需要调用任何API，应用启动时会自动拉取并展示开屏广告。由于开屏广告的特殊性，导致 uni-AD 模块无法参与摇树。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
 
-使用 uni-AD 模块需在 manifest.json 文件的 app -> distribute -> modules 下添加 uni-ad 节点：  
+使用 uni-AD 模块需在 manifest.json 文件中添加如下配置：  
+
+1. 在 app -> distribute -> modules 下添加 uni-ad 节点：  
 ```json
 	modules:{
 		"uni-ad":{
@@ -68,12 +70,22 @@ uni-AD 是一个独立模块，使用开屏广告不需要调用任何API，应�
 	}
 ```
 
-其中 uni-ad 下的节点表示要聚合广告平台：  
-- gdt： 腾讯优量汇广告联盟  
-- gm： 穿山甲GroMore  
-- ks： 快手广告联盟  
-- sgm：Sigmob广告联盟  
-- bd：百度百青藤广告联盟
+其中 uni-ad 下的节点表示要聚合的广告平台：  
+| 标识 | 广告平台名称 |
+| :-  | :- |
+| gdt | 腾讯优量汇广告联盟 |
+| gm | 穿山甲GroMore |
+| ks | 快手广告联盟 |
+| sgm | Sigmob广告联盟 |
+| bd | 百度百青藤广告联盟 |
 
 添加相应的节点，云端打包就会将对应的广告平台 SDK 打包到最终安装包中。  
-注意：使用前需在 [uni-AD广告联盟](https://uniad.dcloud.net.cn/) 开通。  
+
+2. 在 app 节点下添加 adid 字段配置 uni-AD 联盟ID：  
+```json
+	"app":{
+		"adid":"1111111111"
+	}
+```
+
+注意：请前往 [uni-AD广告联盟](https://uniad.dcloud.net.cn/) 开通 uni-AD，开通后登录首页可查看到联盟ID。  
