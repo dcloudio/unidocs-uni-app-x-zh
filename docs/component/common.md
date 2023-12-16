@@ -126,6 +126,10 @@ handleClick (event : MouseEvent) {
 </script>
 ```
 
+### Bug & Tips
+
+连续触发`click`或`tap`事件，可能会出现事件丢失的情况。
+
 ## Event
 
 <!-- CUSTOMTYPEJSON.Event.description -->
