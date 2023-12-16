@@ -76,19 +76,19 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 可选配置，默认白色
 
-![](../static/splash_screen_android_2.png)
+![](../static/splash_screen_android_picture2.png)
 
 #### 配置启动界面中部logo图标：
 
 可选配置，默认应用启动图标
 
-![](../static/splash_screen_android_3.png)
+![](../static/splash_screen_android_picture3.png)
 
 #### 配置启动界面底部品牌图标：
 
 可选配置，默认底部不显示品牌图标
 
-![](../static/splash_screen_android_4.png)
+![](../static/splash_screen_android_picture4.png)
 
 **Tips**
 
