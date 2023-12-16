@@ -6,6 +6,8 @@
 
 可实现目录和文件的创建、删除、改名或改路径、遍历目录、获取文件信息、读写文件。
 
+注意：`DCloud-`、`DCloud_`、`uni-`、`uni_`开头的目录和文件是保留目录。开发者自用的文件目录需避免使用这些前缀。
+
 <!-- UTSAPIJSON.getFileSystemManager.param -->
 
 <!-- UTSAPIJSON.getFileSystemManager.returnValue -->

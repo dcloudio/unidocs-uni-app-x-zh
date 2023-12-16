@@ -1,7 +1,10 @@
 # 文件系统
-文件系统提供一套跨平台操作文件的管理接口，包括文件和目录的增删改名、获取信息、读写文件等常用功能。
 
-通过[uni.getFileSystemManager](get-file-system-manager.md)可以获取到文件系统管理器，所有文件系统的管理操作通过 [FileSystemManager](get-file-system-manager.md#FileSystemManager) 来调用。  
+本文介绍uni-app x的文件系统，列出文件系统包括的内容以及框架已经使用了哪些目录和文件。
+
+注意：`DCloud-`、`DCloud_`、`uni-`、`uni_`开头的目录和文件是保留目录。开发者自用的文件目录需避免使用这些前缀。
+
+开发者可以通过API [uni.getFileSystemManager](get-file-system-manager.md)获取到文件系统管理器，进一步对文件目录进行增删改查。  
 ```uts
 const fs = uni.getFileSystemManager()
 ```
@@ -23,7 +26,7 @@ const fs = uni.getFileSystemManager()
 	+ 应用内置沙盒目录（`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`）：存放框架的网络缓存（如网络图片、视频、web-view的缓存）、storage。
 	+ 沙盒外目录
 
-## 代码包文件  
+## 代码包文件@package
 
 代码包文件，是源码工程中的静态资源文件，由编译器打包到发行包（如apk）中。全平台都如此。
 
@@ -61,7 +64,7 @@ fileManager.copyFile({
 } as CopyFileOptions)
 ```
 
-> 注意：代码包文件仅可读取和复制，无法动态修改或删除。修改代码包文件一般会copy到沙盒目录后再修改。
+> 注意：代码包文件只读，无法动态修改或删除。修改代码包文件一般会copy到沙盒目录后再修改。
 
 **真机运行注意**
 
@@ -72,7 +75,7 @@ App端真机运行期间会做特殊处理，将代码包文件同步到`应用�
 	保存在应用沙盒目录下的Documents/uni-app-x目录，通常为“/%应用沙盒目录%/Documents/uni-app-x/apps/%应用AppID%/www/”
 
 
-## 本地磁盘文件  
+## 本地磁盘文件@disk
 本地磁盘文件分沙盒内和沙盒外。
 
 沙盒内是指应用安装到设备（通常指手机）后，系统会提供一块独立的文件存储区域。以应用维度隔离，即在同一台设备，不同应用间的本地磁盘文件不能直接相互访问。  
@@ -100,7 +103,7 @@ fs.writeFile({
 ```
 
 
-### 外置应用沙盒目录  
+### 外置应用沙盒目录@sandbox
 目录常量名称：`uni.env.SANDBOX_PATH`
 
 App端专有目录，为应用沙盒根目录，其下包含了`缓存文件目录`和`用户文件目录`。此目录在不同平台差异较大，不建议直接使用此目录，需开发者根据平台特性谨慎操作。
@@ -153,7 +156,7 @@ App端和小程序提供了用户文件目录，用于开发者在应用运行�
 - iOS平台  
 	应用沙盒目录下的Document目录  
 
-### 内置应用沙盒目录  
+### 内置应用沙盒目录@internalsandbox
 
 目录常量名称：`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`
 
