@@ -72,6 +72,8 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
   - [oppo](https://open.oppomobile.com/new/developmentDoc/info?id=11227)
   - [vivo](https://dev.vivo.com.cn/documentCenter/doc/359)
 
+	uni-push从HBuilderX 3.99起支持荣耀推送
+
   开通自分类权益后，需要客户端创建channel，因此客户端提供了`setPushChannel`来进行channel的创建，通过此Api来创建渠道进行推送。
   客户端创建渠道成功后，即可通过云函数进行推送，[uni-push2服务端文档](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api.html)。
 

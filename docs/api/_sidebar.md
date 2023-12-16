@@ -49,8 +49,12 @@
   * [推送](push.md)
 * 数据存储
   * [storage（key-value存储）](storage.md)
+* 文件系统
+  * [文件系统规范](file-system-spec.md)
+  * [getFileSystemManager](get-file-system-manager.md)
 * 登录和验证
-  * [实人认证](facial-recognition-verify.md)
+	* [App一键登陆](get-univerify-manager.md)
+  * [金融级实人认证](facial-recognition-verify.md)
 * 组件上下文对象
   * [web-view组件上下文对象](create-webview-context.md)
   * [video组件上下文对象](create-video-context.md)
