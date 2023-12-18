@@ -6,6 +6,10 @@
 
 <!-- UTSAPIJSON.uploadFile.param -->
 
+### 注意事项
+
+* filePath暂未支持uni.env
+
 <!-- UTSAPIJSON.uploadFile.returnValue -->
 
 <!-- UTSAPIJSON.uploadFile.example -->
