@@ -71,6 +71,7 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
   - [小米](https://dev.mi.com/console/doc/detail?pId=2422)
   - [oppo](https://open.oppomobile.com/new/developmentDoc/info?id=11227)
   - [vivo](https://dev.vivo.com.cn/documentCenter/doc/359)
+  - [honor](https://developer.hihonor.com/cn/kitdoc?category=%E5%9F%BA%E7%A1%80%E6%9C%8D%E5%8A%A1&kitId=11002&navigation=guides&docId=notification-class.md)
 
 	uni-push从HBuilderX 3.99起支持荣耀推送
 
