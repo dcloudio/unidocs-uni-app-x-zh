@@ -44,15 +44,15 @@ export default {
 					url: 'https://ext.dcloud.net.cn/plugin?id=3851',
 				},
 				{
-					subTitle: 'uniPay',
+					subTitle: 'uni-pay',
 					url: 'https://uniapp.dcloud.net.cn/uniCloud/unipay',
 				},
 				{
-					subTitle: 'uniPush',
+					subTitle: 'uni-push',
 					url: 'https://uniapp.dcloud.net.cn/unipush',
 				},
 				{
-					subTitle: 'uni-verify',
+					subTitle: 'uni一键登陆',
 					url: 'https://uniapp.dcloud.io/univerify',
 				},
 				{
@@ -87,6 +87,10 @@ export default {
 					subTitle: 'uni-cms',
 					url: 'https://uniapp.dcloud.net.cn/uniCloud/uni-cms',
 				},
+				{
+					subTitle: 'uniCloud-map',
+					url: 'https://doc.dcloud.net.cn/uniCloud/unicloud-map.html'
+				}
 			],
 		},
 	],
