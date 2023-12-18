@@ -36,7 +36,7 @@ uni-app x支持的组件包括：
 
 	uts组件的返回类型是dom元素[Element](../dom/element.md)
 
-	uts组件插件的开发教程，[详见](https://uniapp.dcloud.net.cn/plugin/uts-component.md)
+	uts组件插件的开发教程，[详见](https://uniapp.dcloud.net.cn/plugin/uts-component.html)
 
 **vue组件兼容性及注意事项：**
 
