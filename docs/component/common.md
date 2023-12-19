@@ -30,11 +30,11 @@
 - @transitionend
 
 	transition 效果结束时触发
-	
+
 	#### 兼容性
-	
+
 	安卓 3.93+ 版本开始支持
-	
+
 ```vue
 <template>
   <image class="transition-transform" id="transition-transform" @transitionend="onEnd" src="/static/uni.png"></image>
@@ -284,3 +284,8 @@ handleClick (event : MouseEvent) {
 <!-- CUSTOMTYPEJSON.Touch.param -->
 
 <!-- CUSTOMTYPEJSON.general-event.example -->
+
+## 参见
+
+- [相关 Bug](https://issues.dcloud.net.cn/?mid=component.common)
+
