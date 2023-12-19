@@ -3,6 +3,7 @@
   * [getApp](get-app.md)
   * [getCurrentPages](get-current-pages.md)
 * 基础
+  * [uni.env](env.md)
   * [事件总线event-bus](event-bus.md)
   * [拦截器](interceptor.md)
   * [获取启动参数](get-launch-options-sync.md)

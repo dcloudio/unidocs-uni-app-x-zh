@@ -1,10 +1,12 @@
 # 文件系统
 
+>  [uni.env 参见](./env.md)
+
 本文介绍uni-app x的文件系统，列出文件系统包括的内容以及框架已经使用了哪些目录和文件。
 
 注意：`DCloud-`、`DCloud_`、`uni-`、`uni_`开头的目录和文件是保留目录。开发者自用的文件目录需避免使用这些前缀。
 
-开发者可以通过API [uni.getFileSystemManager](get-file-system-manager.md)获取到文件系统管理器，进一步对文件目录进行增删改查。  
+开发者可以通过API [uni.getFileSystemManager](get-file-system-manager.md)获取到文件系统管理器，进一步对文件目录进行增删改查。
 ```uts
 const fs = uni.getFileSystemManager()
 ```
@@ -22,7 +24,7 @@ const fs = uni.getFileSystemManager()
 			- uni-media ：拍照、相册选择
 			- uni-snapshot ：App dom截图
 			- uni-crash ：App崩溃日志
-		* 用户文件目录（`uni.env.USER_DATA_PATH`）：提供给开发者操作的本地文件目录（files）  
+		* 用户文件目录（`uni.env.USER_DATA_PATH`）：提供给开发者操作的本地文件目录（files）
 	+ 应用内置沙盒目录（`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`）：存放框架的网络缓存（如网络图片、视频、web-view的缓存）、storage。
 	+ 沙盒外目录
 
@@ -68,31 +70,31 @@ fileManager.copyFile({
 
 **真机运行注意**
 
-App端真机运行期间会做特殊处理，将代码包文件同步到`应用沙盒目录`下的特定目录：  
-- Android平台  
+App端真机运行期间会做特殊处理，将代码包文件同步到`应用沙盒目录`下的特定目录：
+- Android平台
 	保存在应用专属存储空间的外置存储空间根目录下的apps目录，通常为“/sdcard/Android/data/%应用包名%/apps/%应用AppID%/www/”
-- iOS平台  
+- iOS平台
 	保存在应用沙盒目录下的Documents/uni-app-x目录，通常为“/%应用沙盒目录%/Documents/uni-app-x/apps/%应用AppID%/www/”
 
 
 ## 本地磁盘文件@disk
 本地磁盘文件分沙盒内和沙盒外。
 
-沙盒内是指应用安装到设备（通常指手机）后，系统会提供一块独立的文件存储区域。以应用维度隔离，即在同一台设备，不同应用间的本地磁盘文件不能直接相互访问。  
+沙盒内是指应用安装到设备（通常指手机）后，系统会提供一块独立的文件存储区域。以应用维度隔离，即在同一台设备，不同应用间的本地磁盘文件不能直接相互访问。
 
 而沙盒目录，又分内置和外置。外置可以在Android手机自带的系统文件管理器里看到，并且用户可以改动。内置的保护级别更高，无法在系统文件管理器中看到。
 
-本地磁盘文件路径格式为：  
+本地磁盘文件路径格式为：
 ```
-{{协议名}}://文件路径  
+{{协议名}}://文件路径
 ```
-> App端，协议名为"unifile"，不应该直接拼写协议名路径访问本地磁盘文件，推荐使用uni.env中的目录常量获取本地磁盘文件目录的路径。  
+> App端，协议名为"unifile"，不应该直接拼写协议名路径访问本地磁盘文件，推荐使用uni.env中的目录常量获取本地磁盘文件目录的路径。
 
-**通过uni.env的目录常量访问本地磁盘文件**  
+**通过uni.env的目录常量访问本地磁盘文件**
 
 uni-app x提供了一批uni.env常量，来指定不同的可访问目录。
 
-以下示例为在`用户文件目录`下写入hello.txt文件：  
+以下示例为在`用户文件目录`下写入hello.txt文件：
 ```ts
 const fs = uni.getFileSystemManager();
 fs.writeFile({
@@ -119,13 +121,13 @@ App端专有目录，为应用沙盒根目录，其下包含了`缓存文件目�
 #### 缓存文件目录cache@cache
 目录常量名称：`uni.env.CACHE_PATH`
 
-缓存文件目录，保存应用运行过程中产生的缓存文件。操作系统或小程序宿主会在存储空间不足时清除缓存文件，因此不要在此目录中保存应用的关键业务数据文件。  
+缓存文件目录，保存应用运行过程中产生的缓存文件。操作系统或小程序宿主会在存储空间不足时清除缓存文件，因此不要在此目录中保存应用的关键业务数据文件。
 
 实际保存的目录在不同平台存在差异：
-- Android平台  
-	应用专属存储空间的外置存储空间根目录下的cache目录，通常为“/Android/data/%应用包名%/cache/”  
-- iOS平台  
-	应用沙盒目录下的Library/Caches目录  
+- Android平台
+	应用专属存储空间的外置存储空间根目录下的cache目录，通常为“/Android/data/%应用包名%/cache/”
+- iOS平台
+	应用沙盒目录下的Library/Caches目录
 
 uni-app x的部分内置API会产生临时文件会放置在本cache目录，如：
 - uni.downloadFile下载的文件
@@ -145,16 +147,16 @@ uni-app x的部分内置API会产生临时文件会放置在本cache目录，如
 	* java //java、kotlin层崩溃日志
 	* c //c、so库崩溃日志
 
-#### 用户文件目录files@files  
+#### 用户文件目录files@files
 目录常量名称：`uni.env.USER_DATA_PATH`
 
-App端和小程序提供了用户文件目录，用于开发者在应用运行期读写文件，此目录不会被操作系统自动清除，由开发者自由管理。  
+App端和小程序提供了用户文件目录，用于开发者在应用运行期读写文件，此目录不会被操作系统自动清除，由开发者自由管理。
 
-实际保存的目录在不同平台存在差异：  
-- Android平台  
-	应用专属存储空间的外置存储空间根目录下的files目录，通常为“/sdcard/Android/data/%应用包名%/files/”  
-- iOS平台  
-	应用沙盒目录下的Document目录  
+实际保存的目录在不同平台存在差异：
+- Android平台
+	应用专属存储空间的外置存储空间根目录下的files目录，通常为“/sdcard/Android/data/%应用包名%/files/”
+- iOS平台
+	应用沙盒目录下的Document目录
 
 ### 内置应用沙盒目录@internalsandbox
 
