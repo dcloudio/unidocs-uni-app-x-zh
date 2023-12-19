@@ -13,6 +13,8 @@
 	+ 如需主动删除下载文件，使用[uni.getFileSystemManager](get-file-system-manager.md)。
 	+ 默认下载路径为外置应用沙盒目录`uni.env.CACHE_PATH/cache/uni-download`。但在HBuilderX 3.99前有过几次变更，3.98的目录是`uni.env.CACHE_PATH/cache/uniDownloads`，而3.98之前则不在cache目录下。
 
+* filePath暂未支持uni.env
+
 <!-- UTSAPIJSON.downloadFile.returnValue -->
 
 <!-- UTSAPIJSON.downloadFile.example -->
