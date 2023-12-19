@@ -194,6 +194,24 @@
 
 <!-- UTSJSON.UTSAndroid.getDispatcher.compatibility -->
 
+
+```uts
+// 不传任何参数，得到是当前代码运行线程
+let currentDispatcher = UTSAndroid.getDispatcher()
+console.log("currentDispatcher",currentDispatcher)
+// 期望在 io 任务队列执行
+UTSAndroid.getDispatcher("io").async(function(_){
+    console.log("当前任务执行在",Thread.currentThread().getName())
+    // 期望在 主线程 任务队列执行
+    UTSAndroid.getDispatcher("main").async(function(_){
+        console.log("当前任务执行在",Thread.currentThread().getName())
+        currentDispatcher.async(function(_){
+            console.log("起始任务执行在",Thread.currentThread().getName())
+        },null)
+    },null)
+},null)
+```
+
 ### getAppId()
 
 <!-- UTSJSON.UTSAndroid.getAppId.description -->
