@@ -202,4 +202,12 @@ easycom是uni-app提供的一种简化组件使用的方式。一般情况下组
 
 <!-- PAGESJSON.pages_easycom.compatibility -->
 
+### uniIdRouter 配置项列表 @pages-uniidrouter
+
+<!-- PAGESJSON.pages_uniIdRouter.description -->
+
+<!-- PAGESJSON.pages_uniIdRouter.table -->
+
+<!-- PAGESJSON.pages_uniIdRouter.compatibility -->
+
 <!-- PAGESJSON.tutorial -->
