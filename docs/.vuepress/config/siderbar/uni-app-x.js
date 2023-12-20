@@ -36,6 +36,8 @@ export default {
 		},
 		{
 			type: 'links',
+			name: '代码仓库',
+			imageUrl: 'https://web-assets.dcloud.net.cn/unidoc/zh/git-1.png',
 			items: [
 				{
 					name: 'hello uni-app x',
@@ -52,15 +54,16 @@ export default {
 			],
 		},
 		{
-			type: 'link',
+			type: 'links',
+			name: 'uni-app x的uni-im交流群',
+			imageUrl:
+				'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/chat-icon-r.png',
 			items: [
 				{
-					name: 'uni-im交流群',
-					imageUrl:
-						'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/chat-icon-r.png',
-					url: 'https://im.dcloud.net.cn/#/?joinGroup=658160eb3e585b555acebfd7',
-				},
+					name: '点击加入',
+					url: 'https://im.dcloud.net.cn/#/?joinGroup=6582a367058a46652e0deda9',
+				}
 			],
-		},
+		}
 	]
 };
