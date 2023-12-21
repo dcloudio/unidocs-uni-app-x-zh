@@ -1128,6 +1128,13 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 
 更多UTSJSONObject的用法，[详见](../uts/data-type.md#UTSJSONObject)
 
+## Bug & Tips@tips
+
+- 4.0 版本以下真机运行，当 uts 插件导出一个 class，在 js 或 vue 等文件中通过 new 多次实例化该 class 时，后边的实例会覆盖掉之前的实例，导致不能同时存在多个不同实例。
+  解决方案
+  方案1：将 uts 插件导出 class 调整为导出 function，避免在 js 端实例化 uts 中的 class。
+  方案2：云端打包机已修复此问题，您可以通过云打包自定义基座来规避该问题。
+
 ## 示例项目
 
 DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。
