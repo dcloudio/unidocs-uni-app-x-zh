@@ -1250,6 +1250,10 @@ console.log(utsObj.getAny("address") as UTSJSONObject)
 1. UTSJSONObject.toMap() 转为Map对象 [见上](#Map)
 2. 把json字符串或对象字面量通过type转为自定义类型，这是ts里经常使用的方式 [见下](#type)
 
+> 特别注意:
+> UTSJSONObject 暂不支持通过 delete 删除属性
+> 目前仅在 iOS 平台上，通过将属性值设为 null（例如：student["age"] = null ）可以将该属性删除。
+
 ### 更多API
 
 UTSJSONObject对象还有很多API，[详见](buildin-object-api/utsjsonobject.md)
