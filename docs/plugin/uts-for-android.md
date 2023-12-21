@@ -157,19 +157,6 @@ UTSAndroid.getDispatcher("main").async(function(_){
 },null)
 ```
 
-如果是android原生api 需要部分代码必须执行在UI线程，则需要通过原生api进行操作：
-
-```ts
-class AddUIRunnable extends Runnable {
-	override run():void {
-		// do something
-		console.log("这里是android平台主线程 :"  + Thread.currentThread().getName())
-    }
-};
-let uiRunable = new AddUIRunnable();
-getUniActivity()!.runOnUiThread(uiRunable)
-```
-
 
 ## 3 Android原生环境配置
 
