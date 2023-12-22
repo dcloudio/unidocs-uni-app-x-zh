@@ -120,28 +120,41 @@ class XXX{
 
 ### 2.4 线程环境差异
 
-UTS环境中，默认是没有线程概念的。 代码默认执行在uts 单独的线程池中。
+UTS环境中，默认是没有线程概念的。 
 
-如果需要执行异步任务，建议通过内置函数`setTimeOut`执行
+如果需要执行异步任务，建议通过内置函数`UTSAndroid.getDispatcher("io")`执行 
 
-```ts
-console.log("这里是UTS默认线程 :"  + Thread.currentThread().getName())
-setTimeOut(function(){
-	console.log("这里是异步任务线程 :"  + Thread.currentThread().getName())
-},1000)
-```
+[文档地址](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getdispatcher)
 
-如果是android原生api 需要部分代码必须执行在UI线程，则需要通过原生api进行操作：
+
 
 ```ts
-class AddUIRunnable extends Runnable {
-	override run():void {
-		// do something
-		console.log("这里是android平台主线程 :"  + Thread.currentThread().getName())
-    }
-};
-let uiRunable = new AddUIRunnable();
-getUniActivity()!.runOnUiThread(uiRunable)
+UTSAndroid.getDispatcher("main").async(function(_){
+	if(Thread.currentThread().name != 'main'){
+		callback(false,"main thread error")
+		return
+	}
+	UTSAndroid.getDispatcher("dom").async(function(_){
+		/**
+		 * dom 参数，只在2.0生效，1.0会自动切换到main线程
+		 */
+		if(Thread.currentThread().name != 'main' && Thread.currentThread().name != 'io_dcloud_uniapp_dom'){
+			callback(false,"dom thread error")
+			return
+		}
+		UTSAndroid.getDispatcher("io").async(function(_){
+			/**
+			 * dom 参数，只在2.0生效，1.0会自动切换到main线程
+			 */
+			if(!Thread.currentThread().name.contains("DefaultDispatcher")){
+				callback(false,"io thread error")
+				return
+			}
+			callback(true,"pass")
+		},null)
+		
+	},null)
+},null)
 ```
 
 
