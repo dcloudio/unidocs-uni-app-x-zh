@@ -23,7 +23,7 @@ import 语句可以将另一个文件中的函数，类等导入到当前文件�
 
 ```ts
 import { name as name1, draw } from "./canvas.uts" // 支持 as 语法做别名导入
-import * as Utils from "./utils.uts" // Test 包含所有 export 的导出
+import * as Utils from "./utils.uts" // Utils 包含所有 export 的导出
 import Canvas from "./canvas.uts" // 对应 export default 的导出
 ```
 
