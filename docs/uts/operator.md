@@ -195,34 +195,41 @@ uts 中算数运算符在大部分场景下和 ts 中的行为一致，但是在
 
 | 场景                                 | 示例                                           | Kottlin 结果                   |  Swift 结果 							  |
 | ----------------------------------- | -------------------------------------------   | ------------------------------ |------------------------------------------|
-| number + number                      | number + number            				  | 结果为 number                   |结果为 number				              |
-| number + 字面量 #{rowspan=2}| number + 1                                   | 结果为 number                   |结果为 number 						 	  |
+| number + - * / % number                      | number + number            				  | 结果为 number                   |结果为 number				              |
+| number + - * / % 字面量 #{rowspan=2}| number + 1                                   | 结果为 number                   |结果为 number 						 	  |
 | number + 3.14      						  | 结果为 number                   |结果为 number 							  |
-| number + 变量 #{rowspan=4}| let a: Int = 1; number + a     			  | 结果为 number      			   |结果为 number 						   	  |
+| number + - * / % 变量 #{rowspan=4}| let a: Int = 1; number + a     			  | 结果为 number      			   |结果为 number 						   	  |
 | let b: Double = 1;  number + b       		  | 结果为 number        		   |结果为 number 						      |
 | let c: Long = 1; number + c 				  | 结果为 number       			   |Swift 中无 Long 							  |
 | let d: Int64 = 1; number+ d      			  | kottlin 中无 Int64      		   |结果为 number							  |
-| 字面量 + number #{rowspan=2}| 1 + number 								  | 结果为 number                   |结果为 number 							  |
+| 字面量 + - * / % number #{rowspan=2}| 1 + number 								  | 结果为 number                   |结果为 number 							  |
 | 3.14 + number 								  | 结果为 number                   |结果为 number 							  |
-| 变量 + number #{rowspan=4}| let a: Int = 1; a + number 				  | 结果为 number                   |编译失败，需要用 (a as number) + number 	  |
+| 变量 + - * / % number #{rowspan=4}| let a: Int = 1; a + number 				  | 结果为 number                   |编译失败，需要用 (a as number) + number 	  |
 | let b: Double = 1; b + number 				  | 结果为 number                   |编译失败，需要用 (b as number) + number	  |
 | let c: Long = 1;  c + number  				  | 结果为 number                   |Swift 中无 Long 	  						  |
 | let d: Int64 = 1; d + number 				  | kottlin 中无 Int64              |编译失败，需要用 (d as number) + number	  |
-| 字面量 + 字面量 #{rowspan=3}| 1 + 1 				  						  | 结果为 2 Int                    |结果为2 Int                          	  |
+| 字面量 + - * % 字面量 #{rowspan=3}| 1 + 1 				  						  | 结果为 2 Int                    |结果为2 Int                          	  |
 | 1 + 3.14 				  					  | 结果为4.14 Double               |结果为4.14 Double	  					  |
 | 1.0 + 3.14  				                  | 结果为4.14 Double               |结果为4.14 Double 	 					  |
 | 字面量 / 字面量   			           | 1 / 10 				  					  | 无明确类型时为 0.1 number，有类型时遵守类型约定|无明确类型时为 0.1 number，有类型时遵守类型约定|
 | 专有类型变量 / 字面量 #{rowspan=2}| let a: Int = 2; a / 10				  		  | 结果为 0 Int                    |结果为0 Int                          	  |
 | let a: Int = 2; a / 10.0 				  	  | 结果为 0.2 Double               |编译失败，Int / Double 不合法 需使用 a / Int(10.0)	|
-| 专有类型变量 + 字面量 #{rowspan=2}| let a: Int = 2; a + 10				  		  | 结果为 12 Int                   |结果为12 Int                          	  |
+| 专有类型变量 + - * % 字面量 #{rowspan=2}| let a: Int = 2; a + 10				  		  | 结果为 12 Int                   |结果为12 Int                          	  |
 | let a: Int = 2; a + 3.14 				  	  | 结果为 5.14 Double              |编译失败, 需要 a + Int(3.14) = 5	          |
-| 相同的专有类型变量相加 #{rowspan=2}| let a: Int = 1; let b: Int = 2; a + b		  | 结果为 3 Int                    |结果为3 Int                          	  |
+| 相同的专有类型变量 + - * / % 操作 #{rowspan=2}| let a: Int = 1; let b: Int = 2; a + b		  | 结果为 3 Int                    |结果为3 Int                          	  |
 | let a: Double = 1.0; let b: Double = 2.0; a + b | 结果为 3.0 Double            |结果为 3.0 Double	          			  |
-| 不同的专有类型变量相加 #{rowspan=2}| let a: Int = 1; let b: Float = 3.14.toFloat(); a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
+| 不同的专有类型变量 + - * / % 操作 #{rowspan=2}| let a: Int = 1; let b: Float = 3.14.toFloat(); a + b	  | 结果为4.14, Float   |编译失败，不同类型变量不能操作                 |
 | let a: Float = 1.0.toFloat(); let b: Double = 3.14; a + b| 结果为4.14，Double |编译失败，不同类型变量不能操作          		  |
+
+number 和平台专有类型的 + - * / % 规则：
+- number 在左侧，平台专有类型在右侧，可以进行 + - * / % 操作，其结果是 number. (安卓平台支持所有的专有类型，iOS平台目前支持 Int Double Float Float64 Float32 类型)
+- 平台专有类型在左侧，number在右侧，可以进行  + - * / % 操作，其结果是 number. (安卓平台支持所有的专有类型，iOS平台需要将左侧的专有类型变量 as 成 number)
 
 **已知Bug**
 - Android平台 uni-app项目的uts插件中，字面量整数相除时真机运行返回类型为number，云端打包返回类型为Int。如let a = 1/10，真机运行时为值为0.1，云端打包后值为0。此问题在uni-app x项目中不存在。
+- iOS平台 number 和专有类型的 + - * / 操作目前只支持 Int Double Float Float64 Float32 类型，其余专有类型将在后续版本补齐。
+- iOS平台 number 和专有类型的 % 操作目前只支持 Int 类型，其余专有类型的支持将在后续版本补齐。
+
 
 ## 比较运算符的跨数字类型注意@comparisondifftype
 
