@@ -9,7 +9,38 @@
 - [扫码](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&cat1=8&type=UpdatedDate)：`uni.scanCode`
 - [文件选择](https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9&cat1=8&cat2=81)：`uni.chooseFile`
 - [蓝牙](https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&orderBy=Relevance&cat1=8&cat2=81)
-- [nfc](https://ext.dcloud.net.cn/search?q=nfc&orderBy=Relevance&cat1=8&cat2=81)
+- [NFC](https://ext.dcloud.net.cn/search?q=nfc&orderBy=Relevance&cat1=8&cat2=81)
+- 播放音频：`uni.getBackgroundAudioManager`、`uni.createInnerAudioContext`，参考如下代码：
+```vue
+<template>
+	<button @click="playAudio">播放音频</button>
+</template>
+<script>
+	import MediaPlayer from "android.media.MediaPlayer"; //hx中对这里alt+左键转到定义，查看该库的方法清单
+	export default {
+		data() {
+			return {}
+		},
+		methods: {
+			playAudio() {
+				let mediaPlayer = new MediaPlayer()
+				try {
+					mediaPlayer.setDataSource("https://www.w3cschool.cn/statics/demosource/horse.mp3") // 网络音频文件URL  //大体积的网络音频应在协程里加载，否则容易卡ui
+					// mediaPlayer.setDataSource(UTSAndroid.convert2AbsFullPath("/static/horse.mp3")) // 本地音频文件
+					mediaPlayer.prepare()
+					mediaPlayer.start() // 开始播放
+					// mediaPlayer.pause()
+					// mediaPlayer.stop()
+					// mediaPlayer.release() // 释放MediaPlayer对象
+					// 倍速播放参考：https://developer.android.google.cn/reference/android/media/MediaPlayer#setPlaybackParams(android.media.PlaybackParams)
+				} catch (e) {
+					console.log(e);
+				}
+			}
+		}
+	}
+</script>
+```
 
 uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api，在uni-app x中进行了替换增补。
 - plus.runtime.quit => [uni.exit](./exit.md)
@@ -22,6 +53,7 @@ uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api
 	<view>
 		<button @click="openSchema('https://uniapp.dcloud.io/uni-app-x')">使用浏览器打开指定URL</button>
 		<button @click="openSchema('market://details?id=com.tencent.mm')">使用应用商店打开指定App</button>
+		<button @click="openSchema('androidamap://viewMap?sourceApplication=Hello%20uni-app&poiname=DCloud&lat=39.9631018208&lon=116.3406135236&dev=0')">打开地图坐标</button>
 	</view>
 </template>
 <script>

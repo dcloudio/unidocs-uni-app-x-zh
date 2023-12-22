@@ -181,21 +181,23 @@ uni.的api，大多是uts开发的，它们会陆续开源在[uni-api](https://g
 
 ## 6. 插件生态
 
-uni-app x编译到web和小程序时，所有js库仍然可用。但在App平台，由于没有js引擎，所以无法使用js生态（除非使用web-view组件）。
+uni-app x编译到web和小程序时，所有js库仍然可用。但在App平台，由于没有js引擎，所以无法使用js生态（除非使用web-view组件或自己集成一个js引擎）。
 
 uni-app x App平台的插件生态来源于：
 1. 原生生态。比如上述示例代码中获取手机型号。以及各种原生sdk的直接调用。
 2. ts生态的迁移。很多js库是ts编写的，如果没有使用uts不支持的语法，ts代码就可以使用。如果略有不同，也可以稍加改造ts以适配uts。
 
-[uni插件市场](https://ext.dcloud.net.cn/)是插件的聚集地，这里有2种插件适用于uni-app x。
-1. uts插件
+uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些库只能在uni-app x编译为web时使用。当然如果有兼容uni-app x的全端库，可以使用，比如这个库[lwu-css](https://www.npmjs.com/package/lwu-css)。
+
+[uni插件市场](https://ext.dcloud.net.cn/)是跨端插件的聚集地，这里有2种插件适用于uni-app x。
+1. uts插件（原生插件）
 uts插件封装原生能力，包括os能力或三方sdk。可以做API插件，也可以做组件插件。
 
 uts插件可同时在 uni-app js引擎版 和 uni-app x 的app平台上运行。
 
 uts插件分类直达：[https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 
-uni-app js版的“App原生语言插件”无法在 uni-app x 中运行。
+之前uni-app js版的“App原生语言插件”，因依赖js引擎，所以无法在 uni-app x 中运行。
 
 2. 前端插件
 
@@ -207,15 +209,16 @@ uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码�
 
 一般情况下，原生库的能力是大于js库的。不太可能有一个功能必须使用js库才能使用。比如md5，js有库，原生也有库，调用一个jar也很方便。
 
-实际上，常见的[加密、md5]([详见](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&orderBy=Relevance&cat1=8&cat2=81))、[dayjs](https://ext.dcloud.net.cn/search?q=dayjs&orderBy=Relevance&cat1=8&cat2=81)等库，插件市场已经有uts版本。
+常见的[加密、md5](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&orderBy=Relevance&cat1=8&cat2=81)、[dayjs](https://ext.dcloud.net.cn/search?q=dayjs&orderBy=Relevance&cat1=8&cat2=81)等库，插件市场已经有uts版本。
 
 **如果你一定要使用某个js库，还有一个办法是在uni-app x里的web-view组件，让其运行js并返回值给uts代码。**
 
 目前插件市场适配uni-app x的插件已有数百款，包括ui组件库：
 - [t-uvue-ui](https://ext.dcloud.net.cn/plugin?id=15571)：丰富的组件库
-- [uxui](https://ext.dcloud.net.cn/plugin?id=15726)：graceui作者的免费开源组件库
+- [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceui作者的免费开源组件库
 - [ux-front-ui](https://ext.dcloud.net.cn/plugin?id=15774)：持续更新的组件库
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
+
 
 ## 一期范围及路线图
 
@@ -311,5 +314,4 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 欢迎加入 uni-app x 专用群交流
 - QQ群485089465
-- 钉钉群二维码
-![](static/uaxding.png)
+- [uni-im群](https://im.dcloud.net.cn/#/?joinGroup=6582a367058a46652e0deda9)
