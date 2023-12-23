@@ -187,9 +187,9 @@ uni-app x App平台的插件生态来源于：
 1. 原生生态。比如上述示例代码中获取手机型号。以及各种原生sdk的直接调用。
 2. ts生态的迁移。很多js库是ts编写的，如果没有使用uts不支持的语法，ts代码就可以使用。如果略有不同，也可以稍加改造ts以适配uts。
 
-uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些库只能在uni-app x编译为web时使用。当然如果有兼容uni-app x的全端库，可以使用，比如这个库[lwu-css](https://www.npmjs.com/package/lwu-css)。
+uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些库只能在uni-app x编译为web时使用。当然如果有兼容uni-app x的全端库，可以使用，比如这些库[z-paging-x](https://www.npmjs.com/package/z-paging-x)、[lwu-css](https://www.npmjs.com/package/lwu-css)。
 
-[uni插件市场](https://ext.dcloud.net.cn/)是跨端插件的聚集地，这里有2种插件适用于uni-app x。
+[uni插件市场](https://ext.dcloud.net.cn/)是跨端插件的聚集地，更推荐在这里找插件而不是去npm。插件市场有2种插件适用于uni-app x。
 1. uts插件（原生插件）
 uts插件封装原生能力，包括os能力或三方sdk。可以做API插件，也可以做组件插件。
 
@@ -211,7 +211,7 @@ uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码�
 
 常见的[加密、md5](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&orderBy=Relevance&cat1=8&cat2=81)、[dayjs](https://ext.dcloud.net.cn/search?q=dayjs&orderBy=Relevance&cat1=8&cat2=81)等库，插件市场已经有uts版本。
 
-**如果你一定要使用某个js库，还有一个办法是在uni-app x里的web-view组件，让其运行js并返回值给uts代码。**
+**如果你一定要使用某个js库，还有一个办法是在uni-app x里的[web-view](./api/create-webview-context.md)组件，让其运行js并返回值给uts代码。**
 
 目前插件市场适配uni-app x的插件已有数百款，包括ui组件库：
 - [t-uvue-ui](https://ext.dcloud.net.cn/plugin?id=15571)：丰富的组件库
@@ -267,7 +267,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 插件市场已经有内嵌flutter的uts版本。[详见](https://ext.dcloud.net.cn/search?q=flutter&orderBy=Relevance&cat1=8)
 
-至于把 uni-app x 作为一个sdk内嵌到其他原生应用中，还在评估中。
+至于把 uni-app x 作为一个sdk内嵌到其他原生应用中，后续提供离线打包方案时会提供。
 
 
 ## FAQ
