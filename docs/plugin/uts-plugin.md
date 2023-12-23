@@ -1008,15 +1008,12 @@ uts插件编译需要XCode环境，因此在mac电脑安装了XCode工具时支�
 ### debug断点调试
 uts插件支持debug断点调试。
 
-- [Android debug教程](/tutorial/debug/uni-uts-debug.md)
-- [iOS debug教程](/tutorial/debug/uni-uts-debug-ios.md)
+- [Android debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
+- [iOS debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
 
-### 遗留问题
-
-截止到HBuilderX 3.6.9 时遗留事项：
+#### Bug&Tips
+- 目前仅支持uni-app js项目使用uts插件时的调试；uni-app x预计在HBuilderX4.0起支持debug uts插件。
 - Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台
-
-遗留事项后续升级完善。
 
 
 ## 云端打包
