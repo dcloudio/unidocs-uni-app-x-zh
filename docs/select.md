@@ -1,4 +1,4 @@
-选型对比
+# 选型对比
 
 uni-app x开发的是一个真正的原生应用，这和其他跨平台开发框架的区别是什么？
 
@@ -20,7 +20,7 @@ uni-app x开发的是一个真正的原生应用，这和其他跨平台开发�
 
 但那些非web-view的框架到底哪里不如原生？
 
-# js+原生渲染
+## js+原生渲染
 react native等抛弃webview，改由原生渲染的跨平台方案，2014年就推出了。如今手机硬件也越来越好了，为什么性能还达不到原生？
 
 js+原生渲染的方案问题如下：
@@ -57,7 +57,7 @@ js+原生渲染的方案问题如下：
 	当然在js API的封装上可以做些优化，比如微信的storage提供了wx.batchGetStorageSync这种批量读取的API，既然遍历性能差，那干脆一次性从原生读出来再传给js。
 	这也只能是无奈的方案，如果在遍历时想用js做什么判断就实现不了了，而且一次性读出很大的数据后传给js这一下，也需要通信时间。
 
-# flutter
+## flutter
 flutter2018年发布，第一次统一了逻辑层和渲染层，而且使用了强类型。
 
 它没有使用原生渲染，而是使用由dart驱动的渲染引擎，这样逻辑层的dart代码操作UI时，再也没有延时了！bindingx、wxs这种补丁方案再也不需要了。
@@ -71,7 +71,7 @@ flutter2018年发布，第一次统一了逻辑层和渲染层，而且使用了
 
 下载apk后可以看到dart操作flutter的UI真的没有通信折损，100个slider的拖动非常流畅。
 
-[](./static/test-cross/flutter-slider.mp4)
+<video id="video" preload="none" controls="controls" width="100%" src="./static/test-cross/flutter-slider.mp4"></video>
 
 flutter看起来很完美。但为什么也没有成为主流呢。在很多大厂兴奋的引入后又默默放弃呢？
 
@@ -90,13 +90,13 @@ flutter看起来很完美。但为什么也没有成为主流呢。在很多大�
 
 以下截图的测试环境是华为mate 30 5G，麒麟990。手机上所有进程杀掉。如下图：
 - 1k数据从原生读到dart并渲染
-![](./static/test-cross/flutter_1k_read.jpeg)
+![](./static/test-cross/flutter_1k_read.jpeg)#{.zooming height="400px"}
 - 1k数据从原生读到dart并渲染再写回
-![](./static/test-cross/flutter_1k_readwrite.jpeg)
+![](./static/test-cross/flutter_1k_readwrite.jpeg)#{.zooming height="400px"}
 - 0.1k数据从原生读到dart并渲染
-![](./static/test-cross/flutter_0.1k_read.jpeg)
+![](./static/test-cross/flutter_0.1k_read.jpeg)#{.zooming height="400px"}
 - 0.1k数据从原生读到dart并渲染再写回
-![](./static/test-cross/flutter_0.1k_readwrite.jpeg)
+![](./static/test-cross/flutter_0.1k_readwrite.jpeg)#{.zooming height="400px"}
 
 通信损耗非常明显。数据量从1k降低到0.1k时，通信时间并没有减少10倍，这是因为通信耗时有一个基础线，数据再小也降不下去。
 
@@ -154,7 +154,7 @@ flutter的混合渲染的问题，在所有使用原生渲染的跨平台开发�
 
 总结下flutter：逻辑层和UI层交互没有通信折损，但逻辑层dart和原生api有通信成本，自绘UI和原生ui的混合渲染问题很多。
 
-# js+flutter渲染
+## js+flutter渲染
 
 flutter除了上述提到的原生通信和混合渲染，还有2个问题：dart生态、热更新、以及比较难用的嵌套写法。
 
@@ -183,7 +183,7 @@ flutter最大的优势是dart操作UI不需要通信，以及强类型，而改�
 
 但其实完全可以双端一致，如果你使用某个原生渲染框架遇到不一致问题，那只是这个框架厂商做的不好而已。
 
-# uni-app x
+## uni-app x
 
 2022年，uts语言发布。2023年，uni-app x发布。
 
@@ -266,6 +266,7 @@ uni-app x的推出，目标不是改进跨平台框架的性能，而是给原�
 其实google自己也知道原生开发写法太复杂，关于换种更高效的写法来写原生应用，他们的做法是推出了compose UI。
 
 不过遗憾的是这个方案引入了性能问题。我们专门测试使用compose UI做100个slider滑动的例子，流畅度明显不行。
+
 源码见：[https://gitcode.net/dcloud/test-cross/-/tree/master/test_compose_ui_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_compose_ui_slider_100)，
 项目下有打包后的apk可以直接安装体验。
 
