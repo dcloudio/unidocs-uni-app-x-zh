@@ -1,4 +1,4 @@
-# 选型对比
+# 跨平台开发框架比较
 
 uni-app x开发的是一个真正的原生应用，这和其他跨平台开发框架的区别是什么？
 
@@ -14,7 +14,9 @@ uni-app x开发的是一个真正的原生应用，这和其他跨平台开发�
 |kotlin		|原生渲染			|强类型	|uni-app x								|
 |kotlin		|原生渲染			|强类型	|原生应用									|
 
-上面的表格，按出现时间排序，可以看到跨平台框架是如何演进的。
+上面的表格，除了行尾的原生应用外，各个跨平台框架按出现时间排序，可以看到跨平台框架是如何演进的。
+
+也可以看到uni-app x和原生应用是一样的，而其他跨平台框架都不一样。
 
 大部分开发者都知道，webview不行，启动慢、渲染慢、内存占用高。这块不详述了。
 
@@ -24,38 +26,41 @@ uni-app x开发的是一个真正的原生应用，这和其他跨平台开发�
 react native等抛弃webview，改由原生渲染的跨平台方案，2014年就推出了。如今手机硬件也越来越好了，为什么性能还达不到原生？
 
 js+原生渲染的方案问题如下：
-1. js引擎慢，启动速度和运行速度都弱于原生
+### 1. js引擎慢，启动速度和运行速度都弱于原生
+
+所以很多开发者即便使用这类方案，首页也还是原生来写。
+
+React Native的Hermes引擎和华为，提供了js编译为字节码的方案，这是一种空间换时间的方案，启动速度有了一定优化，但仍然比不过原生。
+
+弱类型在编译期能优化的有限，还是需要一个运行时来跑，而不能像强类型那样直接深入底层。
+
+以数字运算为例，js的number运算就是比强类型的int慢。
+
+### 2. js语言与原生之间通信卡顿
+
+每个语言有自己的内存空间，跨语言通信都有折损，每次通信几十到几百毫秒不等，视手机当时的状态。一旦频繁通信，就会明显卡顿。
+
+逻辑层的js，即要和原生渲染层通信，还要和原生API通信：
+
+- 2.1 js与原生ui通信
+
+举个简单的场景例子，在js里监听滚动，根据滚动变化实时调整界面上某些元素的高度变化。
+这个问题能难倒一大批跨平台开发框架。
 	
-	所以很多开发者即便使用这类方案，首页也还是原生来写。
+如果全部在webview里，js操作ui还好一些，所以uni-app的app-vue里的renderjs操作UI性能高，就是这个道理。同理还有微信小程序的wsx。
+
+虽然小程序和uni-app都是js，但实际上逻辑层在独立js引擎里，通过原生桥来控制web-view，通信成本很高。
 	
-	React Native的Hermes引擎和华为，提供了js编译为字节码的方案，这是一种空间换时间的方案，启动速度有了一定优化，但仍然比不过原生。
+weex提供了bindingx技术，这是一种弱编程，渲染层预先定义了一些操作UI的方式，调用时全部在渲染层运行，不会来回与逻辑层通信。
+但这种预定义方式的适应面有限，无法做到在js里高性能、自由的操作所有UI。
 	
-	弱类型在编译期能优化的有限，还是需要一个运行时来跑，而不能像强类型那样直接深入底层。
+- 2.2 js操作原生api
+
+操作系统和三方SDK的API都是原生的，js调用这些能力也需要跨语言通信。比如js调用原生的Storage或IO，数据较多时遍历的性能非常差。
 	
-	以数字运算为例，js的number运算就是比强类型的int慢。
-	
-2. js语言与原生之间通信卡顿
-	
-	每个语言有自己的内存空间，跨语言通信都有折损，每次通信几十到几百毫秒不等，视手机当时的状态。一旦频繁通信，就会明显卡顿。
-	
-	逻辑层的js，即要和原生渲染层通信，还要和原生API通信：
-	
-	2.1 js与原生ui通信
-	
-	举个简单的场景例子，在js里监听滚动，根据滚动变化实时调整界面上某些元素的高度变化。
-	这个问题能难倒一大批跨平台开发框架。
-		
-	如果全部在webview里，js操作ui还好一些，所以uni-app的app-vue里的renderjs操作UI性能高，就是这个道理。同理还有微信小程序的wsx。
-	虽然小程序和uni-app都是js，但实际上逻辑层在独立js引擎里，通过原生桥来控制web-view，通信成本很高。
-		
-	weex提供了bindingx技术，这是一种弱编程，渲染层预先定义了一些操作UI的方式，调用时全部在渲染层运行，不会来回与逻辑层通信。但这种预定义方式的适应面有限，无法做到在js里高性能、自由的操作所有UI。
-		
-	2.2 js操作原生api
-	
-	操作系统和三方SDK的API都是原生的，js调用这些能力也需要跨语言通信。比如js调用原生的Storage或IO，数据较多时遍历的性能非常差。
-		
-	当然在js API的封装上可以做些优化，比如微信的storage提供了wx.batchGetStorageSync这种批量读取的API，既然遍历性能差，那干脆一次性从原生读出来再传给js。
-	这也只能是无奈的方案，如果在遍历时想用js做什么判断就实现不了了，而且一次性读出很大的数据后传给js这一下，也需要通信时间。
+当然在js API的封装上可以做些优化，比如微信的storage提供了wx.batchGetStorageSync这种批量读取的API，既然遍历性能差，那干脆一次性从原生读出来再传给js。
+
+这也只能是无奈的方案，如果在遍历时想用js做什么判断就实现不了了，而且一次性读出很大的数据后传给js这一下，也需要通信时间。
 
 ## flutter
 flutter2018年发布，第一次统一了逻辑层和渲染层，而且使用了强类型。
@@ -71,11 +76,11 @@ flutter2018年发布，第一次统一了逻辑层和渲染层，而且使用了
 
 下载apk后可以看到dart操作flutter的UI真的没有通信折损，100个slider的拖动非常流畅。
 
-<video id="video" preload="none" controls="controls" width="100%" src="./static/test-cross/flutter-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" height="400px" src="./static/test-cross/flutter-slider.mp4"></video>
 
-flutter看起来很完美。但为什么也没有成为主流呢。在很多大厂兴奋的引入后又默默放弃呢？
+flutter看起来很完美。但为什么也没有成为主流呢？很多大厂兴奋的引入后为何又不再扩大使用范围呢？
 
-1. dart与原生API的通信
+### 1. dart与原生API的通信
 别忘了上面2.2提到的原生API通信。flutter虽然在逻辑层和渲染层都是dart，但要调用原生API时，还是要通信。
 
 操作系统和三方SDK的API是原生的，让dart调用需要做一层封装，又落到了跨语言通信的坑里。
@@ -90,12 +95,16 @@ flutter看起来很完美。但为什么也没有成为主流呢。在很多大�
 
 以下截图的测试环境是华为mate 30 5G，麒麟990。手机上所有进程杀掉。如下图：
 - 1k数据从原生读到dart并渲染
+
 ![](./static/test-cross/flutter_1k_read.jpeg)#{.zooming height="400px"}
 - 1k数据从原生读到dart并渲染再写回
+
 ![](./static/test-cross/flutter_1k_readwrite.jpeg)#{.zooming height="400px"}
 - 0.1k数据从原生读到dart并渲染
+
 ![](./static/test-cross/flutter_0.1k_read.jpeg)#{.zooming height="400px"}
 - 0.1k数据从原生读到dart并渲染再写回
+
 ![](./static/test-cross/flutter_0.1k_readwrite.jpeg)#{.zooming height="400px"}
 
 通信损耗非常明显。数据量从1k降低到0.1k时，通信时间并没有减少10倍，这是因为通信耗时有一个基础线，数据再小也降不下去。
@@ -127,7 +136,7 @@ export default {
 
 而android，不管java还是kotlin，他们和v8、dart通信仍然需要跨语言通信。
 
-2. flutter渲染和原生渲染的并存问题
+### 2. flutter渲染和原生渲染的并存问题
 
 flutter的自渲染引擎，在技术上是不错的。但在生态兼容上有问题。
 
@@ -137,14 +146,15 @@ flutter开发者都知道的一个常见坑是输入法，因为输入法是典�
 
 混合渲染，还有信息流广告、map、图表、动画等很多三方sdk涉及。这个时候内存占用高、渲染帧率下降、不同渲染方式字体不一致、暗黑主题不一致、国际化、无障碍、UI自动化测试，各种不一致。。。
 
-这里没有提供开源示例，因为flutter官方是承认这个问题的，它提供了2种方式：
-混合集成模式和虚拟显示模式模式，但在内存占用、版本兼容、帧率、键盘交互上都各自有各自的问题。
-[https://flutter.cn/docs/platform-integration/android/platform-views#performance](https://flutter.cn/docs/platform-integration/android/platform-views#performance)
+这里没有提供开源示例，因为flutter官方是承认这个问题的，它提供了2种方式：混合集成模式和虚拟显示模式模式。
+
+但在内存占用、版本兼容、帧率、键盘交互上都各自有各自的问题。详见：[https://flutter.cn/docs/platform-integration/android/platform-views#performance](https://flutter.cn/docs/platform-integration/android/platform-views#performance)
 
 在各大App中，微信的小程序首页是为数不多的使用flutter UI的界面。
 
 下面是微信8.0.44（此刻最新版），这个界面很简单，规避了输入框等混合渲染，点击搜索图标后又跳转到了原生渲染的界面里，这里也没有原生API的频繁调用。但是在手机切换暗黑主题后，这个UI却还是白的，而且flutter的父容器原生view已经变黑了，它又在黑底上绘制了一个白色界面，体验非常差。假使这个界面再内嵌一个原生的信息流SDK，那你会看到信息流广告是黑底的，更无法接受。
-[](./static/test-cross/weixin_dark.mp4)
+
+<video id="video" preload="none" controls="controls" height="400px" src="./static/test-cross/weixin_dark.mp4"></video>
 
 当然这不是说flutter没法做暗黑主题，重启微信后这个界面会变黑。这里只是说明渲染引擎不一致带来的各种问题。
 
@@ -169,7 +179,7 @@ flutter最大的优势是dart操作UI不需要通信，以及强类型，而改�
 这个项目[https://gitcode.net/dcloud/test-cross/-/tree/master/test_arkuix_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_arkuix_slider_100)，
 使用ArkUI-x做了100个slider，大家可以看源码，下载apk体验，明显能看到由于逻辑层和UI层通信导致的卡顿。
 
-[](./static/test-cross/arkui-x-slider.mp4)
+<video id="video" preload="none" controls="controls" height="400px" src="./static/test-cross/arkui-x-slider.mp4"></video>
 
 上述视频中，手指按下的那个slider，和其他通过数据通讯指挥跟随一起行动的99个slider，无法同步，并且界面掉帧。
 
@@ -243,7 +253,7 @@ uts语言是基于typescript修改而来强类型语言，编译到不同平台�
 
 打开GPU呈现模式，可以看到没有一条竖线突破那条红色的掉帧安全横线，也就是没有一帧掉帧。
 
-[](./static/test-cross/uni-app-x-slider.mp4)
+<video id="video" preload="none" controls="controls" height="400px" src="./static/test-cross/uni-app-x-slider.mp4"></video>
 
 uni-app x是一次大胆的技术突破，分享下DCloud选择这条技术路线的思路：
 
@@ -265,14 +275,14 @@ uni-app x的推出，目标不是改进跨平台框架的性能，而是给原�
 
 其实google自己也知道原生开发写法太复杂，关于换种更高效的写法来写原生应用，他们的做法是推出了compose UI。
 
-不过遗憾的是这个方案引入了性能问题。我们专门测试使用compose UI做100个slider滑动的例子，流畅度明显不行。
+不过遗憾的是这个方案引入了性能问题。我们专门测试使用compose UI做100个slider滑动的例子，流畅度也掉帧。
 
 源码见：[https://gitcode.net/dcloud/test-cross/-/tree/master/test_compose_ui_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_compose_ui_slider_100)，
 项目下有打包后的apk可以直接安装体验。
 
 打开GPU呈现模式，可以看到大多数竖线都突破那条红色的掉帧安全横线，也就是掉帧严重。
 
-[](./static/test-cross/compose-ui-slider.mp4)
+<video id="video" preload="none" controls="controls" height="400px" src="./static/test-cross/compose-ui-slider.mp4"></video>
 
 uni-app x在app端，不管逻辑层、渲染层，都是kotlin，没有通信问题、没有混合渲染问题。不是达到了原生的性能，而是它本身就是原生应用，它和原生应用的性能没差别。
 
@@ -285,8 +295,6 @@ uni-app x在app端，不管逻辑层、渲染层，都是kotlin，没有通信�
 这里面有几个例子非常考验通信性能：
 - 一个是组件-表单组件-slider100，100个滑块跟随手指移动。
 - 另一个是模版-scroll-view自定义滚动吸顶，在滚动时实时修改元素top值始终为一个固定值，一点都不抖动。
-
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-apkqrcode.png)
 
 我们不说服您使用任何开发技术，但您应该知道它们之间真实的差别。
 
