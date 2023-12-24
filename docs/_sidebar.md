@@ -15,3 +15,4 @@
 * [性能优化](performance.md)
 * [源码和示例](sample.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
+* [跨平台框架及原生对比](select.md)
