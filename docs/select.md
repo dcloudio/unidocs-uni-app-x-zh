@@ -76,7 +76,7 @@ flutter2018年发布，第一次统一了逻辑层和渲染层，而且使用了
 
 下载apk后可以看到dart操作flutter的UI真的没有通信折损，100个slider的拖动非常流畅。
 
-<video id="video" preload="none" controls="controls" height="400px" src="./static/test-cross/flutter-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" src="./static/test-cross/flutter-slider.mp4"></video>
 
 flutter看起来很完美。但为什么也没有成为主流呢？很多大厂兴奋的引入后为何又不再扩大使用范围呢？
 
@@ -152,13 +152,19 @@ flutter开发者都知道的一个常见坑是输入法，因为输入法是典�
 
 在各大App中，微信的小程序首页是为数不多的使用flutter UI的界面。
 
-下面是微信8.0.44（此刻最新版），这个界面很简单，规避了输入框等混合渲染，点击搜索图标后又跳转到了原生渲染的界面里，这里也没有原生API的频繁调用。但是在手机切换暗黑主题后，这个UI却还是白的，而且flutter的父容器原生view已经变黑了，它又在黑底上绘制了一个白色界面，体验非常差。假使这个界面再内嵌一个原生的信息流SDK，那你会看到信息流广告是黑底的，更无法接受。
+下面是微信8.0.44（此刻最新版），从微信的发现页面进去小程序首页。
 
-<video id="video" preload="none" controls="controls" height="400px" src="./static/test-cross/weixin_dark.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" src="./static/test-cross/weixin_dark.mp4"></video>
+
+视频中手机切换暗黑主题后，这个UI却还是白的，而且flutter的父容器原生view已经变黑了，它又在黑底上绘制了一个白色界面，体验非常差。
+
+这个小程序首页界面很简单，没有输入框，规避了混合渲染，点击搜索图标后又跳转到了黑色的原生渲染的界面里。
+
+假使这个界面再内嵌一个原生的信息流SDK，那会看到白色UI中的信息流广告是黑底的，更无法接受。
 
 当然这不是说flutter没法做暗黑主题，重启微信后这个界面会变黑。这里只是说明渲染引擎不一致带来的各种问题。
 
-> 注：如何识别一个界面是不是用flutter开发的？在手机设置的开发者选项里，有一个GPU呈现模式分析，flutter的UI不触发这个分析。
+> 注：如何识别一个界面是不是用flutter开发的？在手机设置的开发者选项里，有一个GPU呈现模式分析，flutter的UI不触发这个分析。且无法审查布局边界。
 
 flutter的混合渲染的问题，在所有使用原生渲染的跨平台开发框架中都不存在，比如react native、weex、uni-app x。
 
@@ -179,7 +185,7 @@ flutter最大的优势是dart操作UI不需要通信，以及强类型，而改�
 这个项目[https://gitcode.net/dcloud/test-cross/-/tree/master/test_arkuix_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_arkuix_slider_100)，
 使用ArkUI-x做了100个slider，大家可以看源码，下载apk体验，明显能看到由于逻辑层和UI层通信导致的卡顿。
 
-<video id="video" preload="none" controls="controls" height="400px" src="./static/test-cross/arkui-x-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" src="./static/test-cross/arkui-x-slider.mp4"></video>
 
 上述视频中，手指按下的那个slider，和其他通过数据通讯指挥跟随一起行动的99个slider，无法同步，并且界面掉帧。
 
@@ -242,18 +248,22 @@ uts语言是基于typescript修改而来强类型语言，编译到不同平台�
 ```
 
 这听起来有点天方夜谭，很多人不信。DCloud不得不反复告诉大家，可以使用如下方式验证：
-- 在编译uni-app x项目时，在项目的unpackage目录下看到编译后生成的kt文件
+- 在编译uni-app x项目时，在项目的unpackage目录下看看编译后生成的kt文件
 - 解压打包后的apk，看看里面有没有js引擎或flutter引擎
 - 手机端审查布局边界，看看渲染是不是原生的（flutter和webview都无法审查布局边界）
 
-大家也可以下载hello uni-app x这个示例应用，源码在：[https://gitcode.net/dcloud/hello-uni-app-x/](https://gitcode.net/dcloud/hello-uni-app-x/)；打包后的apk扫描下面的二维码。
+但是开发者也不要误解之前的uni-app代码可以无缝迁移。
+- 之前的js要改成uts。uts是强类型语言，上面的示例恰好类型都可以自动推导，不能推导的时候，需要用`:`和`as`声明和转换类型。
+- uni-app x支持css，但是css的子集，不影响开发者布出所需的界面，但并非web的css全都兼容。
+
+hello uni-app x是示例应用，源码在：[https://gitcode.net/dcloud/hello-uni-app-x/](https://gitcode.net/dcloud/hello-uni-app-x/)；打包后的apk扫描下面的二维码。
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-apkqrcode.png)
 
 在这个示例中，组件-表单组件下有slider100，100个滑块跟随手指移动，大家可以体验看看流畅度。
 
 打开GPU呈现模式，可以看到没有一条竖线突破那条红色的掉帧安全横线，也就是没有一帧掉帧。
 
-<video id="video" preload="none" controls="controls" height="400px" src="./static/test-cross/uni-app-x-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" src="./static/test-cross/uni-app-x-slider.mp4"></video>
 
 uni-app x是一次大胆的技术突破，分享下DCloud选择这条技术路线的思路：
 
@@ -266,12 +276,14 @@ DCloud做了很多年跨平台开发，uni-app在web和小程序平台取得了�
 
 那么App平台，为什么不能像web和小程序那样，直接编译为App平台的原生语言呢？
 
-uni-app x的推出，目标不是改进跨平台框架的性能，而是给原生应用提供一个更高效的写法。
+**uni-app x，目标不是改进跨平台框架的性能，而是给原生应用提供一个跨平台的写法。**
+
+这个思路的转换使得uni-app x超越了其他跨平台开发框架。
 
 在web端编译为js，在小程序端编译为wxml等，在app端编译为kotlin。
 每个平台都只是帮开发者换种一致的写法而已，运行的代码都是该平台原生的代码。
 
-同样业务功能的app，使用vue的写法，可比手写纯原生快多了。也就是uni-app x对开发效率的提升不只是因为跨平台，单平台它的开发效率也更高。
+另外，同样业务功能的app，使用vue的写法，可比手写纯原生快多了。也就是uni-app x对开发效率的提升不只是因为跨平台，单平台它的开发效率也更高。
 
 其实google自己也知道原生开发写法太复杂，关于换种更高效的写法来写原生应用，他们的做法是推出了compose UI。
 
@@ -280,15 +292,17 @@ uni-app x的推出，目标不是改进跨平台框架的性能，而是给原�
 源码见：[https://gitcode.net/dcloud/test-cross/-/tree/master/test_compose_ui_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_compose_ui_slider_100)，
 项目下有打包后的apk可以直接安装体验。
 
-打开GPU呈现模式，可以看到大多数竖线都突破那条红色的掉帧安全横线，也就是掉帧严重。
+打开GPU呈现模式，可以看到compose ui的100个slider拖动时，大多数竖线都突破那条红色的掉帧安全横线，也就是掉帧严重。
 
-<video id="video" preload="none" controls="controls" height="400px" src="./static/test-cross/compose-ui-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" src="./static/test-cross/compose-ui-slider.mp4"></video>
 
 uni-app x在app端，不管逻辑层、渲染层，都是kotlin，没有通信问题、没有混合渲染问题。不是达到了原生的性能，而是它本身就是原生应用，它和原生应用的性能没差别。
 
+这也是其他跨平台开发框架做不到的。
+
 当然uni-app x刚刚推出，还有很多不成熟的地方，比如前文diss微信的暗黑模式，其实截止到目前uni-app x还不支持暗黑模式。甚至iOS版现在只能开发uts插件，还不能做完整应用。
 
-但这个技术路线是最佳路径，随着产品的迭代完善，它能真正解决开发者开发效率和性能兼得的问题，让跨平台开发不如原生，成为历史。
+但这个技术路线是产业真正需要的东西，随着产品的迭代完善，它能真正解决开发者开发效率和性能兼得的问题，**让跨平台开发不如原生，成为历史**。
 
 再次欢迎体验uni-app x的示例应用，感受它的启动速度，渲染流畅度。
 
@@ -296,6 +310,8 @@ uni-app x在app端，不管逻辑层、渲染层，都是kotlin，没有通信�
 - 一个是组件-表单组件-slider100，100个滑块跟随手指移动。
 - 另一个是模版-scroll-view自定义滚动吸顶，在滚动时实时修改元素top值始终为一个固定值，一点都不抖动。
 
-我们不说服您使用任何开发技术，但您应该知道它们之间真实的差别。
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-apkqrcode.png)
+
+我们不说服您使用任何开发技术，但您应该知道它们的原理和差别。
 
 欢迎指正和讨论。
