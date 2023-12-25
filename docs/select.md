@@ -191,6 +191,8 @@ flutter最大的优势是dart操作UI不需要通信，以及强类型，而改�
 
 不过自渲染由于无法通过Android的开发者工具查看GPU呈现模式，所以无法从条状图直观反应出掉帧。
 
+> 注意ArkUI-x不支持`Android8.0`以下的手机，不要找太老的手机测试。
+
 很多人以为自渲染是王道，但其实自渲染是坑。因为flutter的UI还会带来混合渲染问题。
 
 也就是说，js+flutter渲染，和js+原生渲染，这2个方案相比，都是js弱类型、都有逻辑层和渲染层的通信问题、都有原生API通信问题，而js+flutter还多了一个混合渲染问题。
@@ -256,14 +258,17 @@ uts语言是基于typescript修改而来强类型语言，编译到不同平台�
 - 之前的js要改成uts。uts是强类型语言，上面的示例恰好类型都可以自动推导，不能推导的时候，需要用`:`和`as`声明和转换类型。
 - uni-app x支持css，但是css的子集，不影响开发者布出所需的界面，但并非web的css全都兼容。
 
-hello uni-app x是示例应用，源码在：[https://gitcode.net/dcloud/hello-uni-app-x/](https://gitcode.net/dcloud/hello-uni-app-x/)；打包后的apk扫描下面的二维码。
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-apkqrcode.png)
+了解了uni-app x的基本原理，我们来看下uni-app x下的100个slider效果怎么样。
 
-在这个示例中，组件-表单组件下有slider100，100个滑块跟随手指移动，大家可以体验看看流畅度。
+项目[https://gitcode.net/dcloud/test-cross/-/tree/master/test_uniappx_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_uniappx_slider_100)下有源码工程和编译好的apk。
 
-打开GPU呈现模式，可以看到没有一条竖线突破那条红色的掉帧安全横线，也就是没有一帧掉帧。
+如下视频，打开了GPU呈现模式，可以看到没有一条竖线突破那条红色的掉帧安全横线，也就是没有一帧掉帧。
 
 <video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/uni-app-x-slider.mp4"></video>
+
+uni-app x在app端，不管逻辑层、渲染层，都是kotlin，没有通信问题、没有混合渲染问题。不是达到了原生的性能，而是它本身就是原生应用，它和原生应用的性能没差别。
+
+这也是其他跨平台开发框架做不到的。
 
 uni-app x是一次大胆的技术突破，分享下DCloud选择这条技术路线的思路：
 
@@ -283,7 +288,7 @@ DCloud做了很多年跨平台开发，uni-app在web和小程序平台取得了�
 在web端编译为js，在小程序端编译为wxml等，在app端编译为kotlin。
 每个平台都只是帮开发者换种一致的写法而已，运行的代码都是该平台原生的代码。
 
-另外，同样业务功能的app，使用vue的写法，可比手写纯原生快多了。也就是uni-app x对开发效率的提升不只是因为跨平台，单平台它的开发效率也更高。
+而且，同样业务功能的app，使用vue的写法，可比手写纯原生快多了。也就是uni-app x对开发效率的提升不只是因为跨平台，单平台它的开发效率也更高。
 
 其实google自己也知道原生开发写法太复杂，关于换种更高效的写法来写原生应用，他们的做法是推出了compose UI。
 
@@ -296,21 +301,45 @@ DCloud做了很多年跨平台开发，uni-app在web和小程序平台取得了�
 
 <video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/compose-ui-slider.mp4"></video>
 
-uni-app x在app端，不管逻辑层、渲染层，都是kotlin，没有通信问题、没有混合渲染问题。不是达到了原生的性能，而是它本身就是原生应用，它和原生应用的性能没差别。
+既然已经把不同开发框架的slider-100应用打包出来了，我们顺便也比较了不同框架下的包体积大小、内存占用：
 
-这也是其他跨平台开发框架做不到的。
+|						|包体积（单位:M）	|内存占用（单位:Kb）|
+|--					|--								|--									|
+|flutter		|18								|141324.8						|
+|ArtUI-x		|45.7							|133091.2						|
+|uni-app x	|8.5							|105451.2						|
+|compose ui	|4.4							|98575.2						|
+
+包体积数据说明：
+- 包含3个CPU架构：arm64、arm32、x86_64。
+- flutter的代码都是编译为so文件，支持的cpu类型和包体积是等比关系，1个cpu最小需要6M体积，业务代码越多，cpu翻倍起来越多。
+- ArtUI-x的业务代码虽然写在js里，但除了引用了flutter外还引用了js引擎，这些so库体积都不小且按cpu分类型翻倍。
+- uni-app x里主业务都在kotlin里，kotlin和Android x的兼容库占据了不少体积。局部如图片引用了so库，1个cpu最小需要7M体积，但由于so库小，增加了2个cpu类型只增加了不到1M。
+- compose ui没有使用so库，体积裁剪也更彻底。
+- uni-app x的常用模块并没有裁剪出去，比如slider100的例子其实没有用到图片，但图片使用的fesco的so库还是被打进去了。实际业务中不可能不用图片，所以实际业务中uni-app x并不会比compose ui体积大多少。
+
+内存占用数据说明：
+- 在页面中操作slider数次后停止，获取应用内存使用信息VmRSS: 进程当前占用物理内存的大小
+- 表格中的内存数据是运行5次获取的值取平均值
+- 自渲染会占据更多内存，如果还涉及混合渲染那内存占用更高
+
+## 后记
+
+跨语言通信、弱类型、混合渲染、包体积、内存占用，这些都是过去跨平台框架不如原生的地方。
+
+这些问题在uni-app x都不存在，它只是换了一种写法的原生应用。
 
 当然uni-app x刚刚推出，还有很多不成熟的地方，比如前文diss微信的暗黑模式，其实截止到目前uni-app x还不支持暗黑模式。甚至iOS版现在只能开发uts插件，还不能做完整应用。
 
 但这个技术路线是产业真正需要的东西，随着产品的迭代完善，它能真正解决开发者开发效率和性能兼得的问题，**让跨平台开发不如原生，成为历史**。
 
-再次欢迎体验uni-app x的示例应用，感受它的启动速度，渲染流畅度。
+欢迎体验uni-app x的示例应用，感受它的启动速度，渲染流畅度。
 
-这里面有几个例子非常考验通信性能：
-- 一个是组件-表单组件-slider100，100个滑块跟随手指移动。
-- 另一个是模版-scroll-view自定义滚动吸顶，在滚动时实时修改元素top值始终为一个固定值，一点都不抖动。
+源码在：[https://gitcode.net/dcloud/hello-uni-app-x/](https://gitcode.net/dcloud/hello-uni-app-x/)；打包后的apk扫描下面的二维码。
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-apkqrcode.png)
+
+这个示例里有几个例子非常考验通信性能，除了也内置了slider-100外，另一个是“模版-scroll-view自定义滚动吸顶”，在滚动时实时修改元素top值始终为一个固定值，一点都不抖动。
 
 我们不说服您使用任何开发技术，但您应该知道它们的原理和差别。
 
