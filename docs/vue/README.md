@@ -11,6 +11,7 @@ uni-app x中vue的用法，有单独的示例应用：[hello uvue](https://gitco
 ### 应用实例 @app-instance
 
 <!-- VUEJSON.application.compatibility -->
+<!-- VUEJSON.application.example -->
 
 **注意：**
 - **app.use:** `app.use` 支持通过对象字面量、函数及 `definePlugin` 方式定义插件。\
@@ -60,23 +61,28 @@ export function createApp() {
 ### 通用
 
 <!-- VUEJSON.general.compatibility -->
+<!-- VUEJSON.general.example -->
 ## 响应式兼容性
 
 ### 响应式: 核心
 
 <!-- VUEJSON.reactivity_core.compatibility -->
+<!-- VUEJSON.reactivity_core.example -->
 ### 响应式: 工具
 
 <!-- VUEJSON.reactivity_utilities.compatibility -->
+<!-- VUEJSON.reactivity_utilities.example -->
 ### 响应式: 进阶
 
 <!-- VUEJSON.reactivity_advanced.compatibility -->
+<!-- VUEJSON.reactivity_advanced.example -->
 
 ### [函数 event 参数的类型](../tutorial/codegap.md#function-event-argument-type)
 
 ### 指令 @directives
 
 <!-- VUEJSON.directives.compatibility -->
+<!-- VUEJSON.directives.example -->
 
 **注意：**
 - **v-html:** 在 `App-android` 平台，`v-html` 指令通过编译为 [rich-text](../component/rich-text.md) 组件实现。因此，`v-html` 指令的内容必须是 `rich-text` 支持的格式, 并且要遵循标签嵌套规则，例如， `swiper` 标签内只允许嵌套 `swiper-item` 标签。\
@@ -116,19 +122,23 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 - [vue 与 uvue 不同文件后缀的优先级](../component/README.md#priority)
 
 <!-- VUEJSON.components.compatibility -->
+<!-- VUEJSON.components.example -->
 ### 特殊元素 @special-elements
 
 <!-- VUEJSON.special_elements.compatibility -->
+<!-- VUEJSON.special_elements.example -->
 
 - App 端，如需页面级滚动，根节点必须是 `scroll-view` 标签。
 
 ### 特殊 Attributes @special-attributes
 
 <!-- VUEJSON.special_attributes.compatibility -->
+<!-- VUEJSON.special_attributes.example -->
 
 ### 生命周期选项 @lifecycle-options
 
 <!-- VUEJSON.options_lifecycle.compatibility -->
+<!-- VUEJSON.options_lifecycle.example -->
 
 ## 插件
 
@@ -143,15 +153,18 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 - **emits:** 暂不支持[验证抛出的事件](https://uniapp.dcloud.net.cn/tutorial/vue3-components.html#%E5%AE%9A%E4%B9%89%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6)。
 
 <!-- VUEJSON.options_state.compatibility -->
+<!-- VUEJSON.options_state.example -->
 ### 渲染选项 @rendering-options
 
 
 <!-- VUEJSON.options_rendering.compatibility -->
+<!-- VUEJSON.options_rendering.example -->
 
 ### 组合选项 @composition-options
 
 
 <!-- VUEJSON.options_composition.compatibility -->
+<!-- VUEJSON.options_composition.example -->
 
 **注意：**
 - **inject:** 当使用 `inject` 声明从上层提供方注入的属性时，支持两种写法：字符串数组和对象。推荐使用对象写法，因为当使用数组方法时，类型会被推导为 `any | null` 类型。\
@@ -212,10 +225,12 @@ export default {
 
 
 <!-- VUEJSON.options_misc.compatibility -->
+<!-- VUEJSON.options_misc.example -->
 ### 组件实例 @component-instance
 
 
 <!-- VUEJSON.component_instance.compatibility -->
+<!-- VUEJSON.component_instance.example -->
 
 ## 进阶 API兼容性
 
@@ -223,5 +238,11 @@ export default {
 
 
 <!-- VUEJSON.render_function.compatibility -->
+<!-- VUEJSON.render_function.example -->
+
+## 其他示例
+
+- [嵌套组件通讯](https://gitcode.net/dcloud/hello-uvue/-/tree/master/pages/examples/nested-component-communication)
+- [自定义组件中使用 class 定制另一个自定义组件根节点样式](https://gitcode.net/dcloud/hello-uvue/-/tree/master/pages/examples/set-custom-child-component-root-node-class)
 
 <!-- ## Bug & Tips@tips -->
