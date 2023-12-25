@@ -179,6 +179,24 @@ console.log(`The character code ${sentence.charCodeAt(index)} is equal to ${sent
 
 <!-- UTSJSON.String.charCodeAt.compatibility -->
 
+### fromCharCode(...codes : number[]):string
+
+<!-- UTSJSON.String.fromCharCode.description -->
+
+<!-- UTSJSON.String.fromCharCode.param -->
+
+<!-- UTSJSON.String.fromCharCode.returnValue -->
+
+```ts
+console.log(String.fromCharCode(189, 43, 190, 61));
+// expected output: "½+¾="
+console.log(String.fromCharCode(189, 165999, 190, 61));
+// expected output: "½衯¾="
+```
+
+<!-- UTSJSON.String.fromCharCode.compatibility -->
+
+
 ### concat(strings)
 
 <!-- UTSJSON.String.concat.description -->
