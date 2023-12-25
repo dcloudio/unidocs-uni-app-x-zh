@@ -4,15 +4,15 @@ uni-app x开发的是一个真正的原生应用，这和其他跨平台开发�
 
 我们先捋一捋各种技术路线，看看这些跨平台开发框架为什么不如原生应用。
 
-|逻辑层		|渲染层			|类型	|代表作									|
-|--			|--				|--		|--										|
-|webview	|webview		|弱类型	|5+App、cordova							|
-|js引擎		|webview		|弱类型	|uni-app app-vue、小程序（dount）			|
-|js引擎		|原生渲染			|弱类型	|react native、uni-app app-nvue、weex	|
-|dart引擎	|flutter渲染引擎	|强类型	|flutter								|
-|js引擎		|flutter渲染引擎	|弱类型	|微信skyline、webF、ArkUI-x				|
-|kotlin		|原生渲染			|强类型	|uni-app x								|
-|kotlin		|原生渲染			|强类型	|原生应用									|
+|逻辑层		|渲染层					|类型		|代表作																|
+|--				|--							|--			|--																		|
+|webview	|webview				|弱类型	|5+App、cordova												|
+|js引擎		|webview				|弱类型	|uni-app app-vue、小程序（dount）			|
+|js引擎		|原生渲染				|弱类型	|react native、uni-app app-nvue、weex	|
+|dart引擎	|flutter渲染引擎|强类型	|flutter															|
+|js引擎		|flutter渲染引擎|弱类型	|微信skyline、webF、ArkUI-x						|
+|kotlin		|原生渲染				|强类型	|uni-app x														|
+|kotlin		|原生渲染				|强类型	|原生应用															|
 
 上面的表格，除了行尾的原生应用外，各个跨平台框架按出现时间排序，可以看到跨平台框架是如何演进的。
 
@@ -148,9 +148,11 @@ flutter开发者都知道的一个常见坑是输入法，因为输入法是典�
 
 这里没有提供开源示例，因为flutter官方是承认这个问题的，它提供了2种方式：混合集成模式和虚拟显示模式模式。
 
-但在内存占用、版本兼容、帧率、键盘交互上都各自有各自的问题。详见：[https://flutter.cn/docs/platform-integration/android/platform-views#performance](https://flutter.cn/docs/platform-integration/android/platform-views#performance)
+但在渲染速度、内存占用、版本兼容、键盘交互上都各自有各自的问题。
+详见flutter官网：[https://docs.flutter.dev/platform-integration/android/platform-views#performance](https://docs.flutter.dev/platform-integration/android/platform-views#performance)。
+这个是中文翻译：[https://flutter.cn/docs/platform-integration/android/platform-views#performance](https://flutter.cn/docs/platform-integration/android/platform-views#performance)
 
-在各大App中，微信的小程序首页是为数不多的使用flutter UI的界面。
+在各大App中，微信的小程序首页是为数不多的使用flutter UI的界面，已经上线1年以上。
 
 下面是微信8.0.44（此刻最新版），从微信的发现页面进去小程序首页。
 
@@ -172,13 +174,13 @@ flutter的混合渲染的问题，在所有使用原生渲染的跨平台开发�
 
 ## js+flutter渲染
 
-flutter除了上述提到的原生通信和混合渲染，还有2个问题：dart生态、热更新、以及比较难用的嵌套写法。
+flutter除了上述提到的原生通信和混合渲染，还有3个问题：dart生态、热更新、以及比较难用的嵌套写法。
 
 所以一些厂商把flutter的dart引擎换成了js引擎，来解决上述3个问题。比如微信skyline、webF、ArkUI-x。
 
-其实这是让人困惑的行为。因为这又回到了react native和weex的老路了，只是把原生渲染换成了flutter渲染。
+其实这令人困惑。因为这又回到了react native和weex的老路了，只是把原生渲染换成了flutter渲染。
 
-flutter最大的优势是dart操作UI不需要通信，以及强类型，而改成js，操作UI再次需要通信，又需要js运行时引擎。
+flutter最大的优势是dart操作UI不需要通信，以及强类型。而改成js，操作UI再次需要通信，又需要js引擎。
 
 为了解决js和flutter渲染层的通信问题，微信的skyline又推出了补丁技术worklet动画，让这部分代码运行在UI层。（当然微信的通信，除了跨语言，还有跨进程通信，会更明显）
 
@@ -205,7 +207,7 @@ flutter最大的优势是dart操作UI不需要通信，以及强类型，而改�
 
 2022年，uts语言发布。2023年，uni-app x发布。
 
-uts语言是基于typescript修改而来强类型语言，编译到不同平台时有不同的输出：
+uts语言是基于typescript修改而来的强类型语言，编译到不同平台时有不同的输出：
 - 编译到web，输出js
 - 编译到Android，输出kotlin
 - 编译到iOS，输出swift
