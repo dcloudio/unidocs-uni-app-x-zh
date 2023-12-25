@@ -46,18 +46,18 @@ React Native的Hermes引擎和华为，提供了js编译为字节码的方案，
 
 举个简单的场景例子，在js里监听滚动，根据滚动变化实时调整界面上某些元素的高度变化。
 这个问题能难倒一大批跨平台开发框架。
-	
+
 如果全部在webview里，js操作ui还好一些，所以uni-app的app-vue里的renderjs操作UI性能高，就是这个道理。同理还有微信小程序的wsx。
 
 虽然小程序和uni-app都是js，但实际上逻辑层在独立js引擎里，通过原生桥来控制web-view，通信成本很高。
-	
+
 weex提供了bindingx技术，这是一种弱编程，渲染层预先定义了一些操作UI的方式，调用时全部在渲染层运行，不会来回与逻辑层通信。
 但这种预定义方式的适应面有限，无法做到在js里高性能、自由的操作所有UI。
-	
+
 - 2.2 js操作原生api
 
 操作系统和三方SDK的API都是原生的，js调用这些能力也需要跨语言通信。比如js调用原生的Storage或IO，数据较多时遍历的性能非常差。
-	
+
 当然在js API的封装上可以做些优化，比如微信的storage提供了wx.batchGetStorageSync这种批量读取的API，既然遍历性能差，那干脆一次性从原生读出来再传给js。
 
 这也只能是无奈的方案，如果在遍历时想用js做什么判断就实现不了了，而且一次性读出很大的数据后传给js这一下，也需要通信时间。
@@ -76,7 +76,7 @@ flutter2018年发布，第一次统一了逻辑层和渲染层，而且使用了
 
 下载apk后可以看到dart操作flutter的UI真的没有通信折损，100个slider的拖动非常流畅。
 
-<video id="video" preload="none" controls="controls" width="185px" height="400px" src="./static/test-cross/flutter-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/flutter-slider.mp4"></video>
 
 flutter看起来很完美。但为什么也没有成为主流呢？很多大厂兴奋的引入后为何又不再扩大使用范围呢？
 
@@ -96,16 +96,16 @@ flutter看起来很完美。但为什么也没有成为主流呢？很多大厂�
 以下截图的测试环境是华为mate 30 5G，麒麟990。手机上所有进程杀掉。如下图：
 - 1k数据从原生读到dart并渲染
 
-![](./static/test-cross/flutter_1k_read.jpeg)#{.zooming height="400px"}
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/flutter_1k_read.jpeg)#{.zooming height="400px"}
 - 1k数据从原生读到dart并渲染再写回
 
-![](./static/test-cross/flutter_1k_readwrite.jpeg)#{.zooming height="400px"}
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/flutter_1k_readwrite.jpeg)#{.zooming height="400px"}
 - 0.1k数据从原生读到dart并渲染
 
-![](./static/test-cross/flutter_0.1k_read.jpeg)#{.zooming height="400px"}
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/flutter_0.1k_read.jpeg)#{.zooming height="400px"}
 - 0.1k数据从原生读到dart并渲染再写回
 
-![](./static/test-cross/flutter_0.1k_readwrite.jpeg)#{.zooming height="400px"}
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/flutter_0.1k_readwrite.jpeg)#{.zooming height="400px"}
 
 通信损耗非常明显。数据量从1k降低到0.1k时，通信时间并没有减少10倍，这是因为通信耗时有一个基础线，数据再小也降不下去。
 
@@ -154,7 +154,7 @@ flutter开发者都知道的一个常见坑是输入法，因为输入法是典�
 
 下面是微信8.0.44（此刻最新版），从微信的发现页面进去小程序首页。
 
-<video id="video" preload="none" controls="controls" width="185px" height="400px" src="./static/test-cross/weixin_dark.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/weixin_dark.mp4"></video>
 
 视频中手机切换暗黑主题后，这个UI却还是白的，而且flutter的父容器原生view已经变黑了，它又在黑底上绘制了一个白色界面，体验非常差。
 
@@ -185,7 +185,7 @@ flutter最大的优势是dart操作UI不需要通信，以及强类型，而改�
 这个项目[https://gitcode.net/dcloud/test-cross/-/tree/master/test_arkuix_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_arkuix_slider_100)，
 使用ArkUI-x做了100个slider，大家可以看源码，下载apk体验，明显能看到由于逻辑层和UI层通信导致的卡顿。
 
-<video id="video" preload="none" controls="controls" width="185px" height="400px" src="./static/test-cross/arkui-x-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/arkui-x-slider.mp4"></video>
 
 上述视频中，手指按下的那个slider，和其他通过数据通讯指挥跟随一起行动的99个slider，无法同步，并且界面掉帧。
 
@@ -263,7 +263,7 @@ hello uni-app x是示例应用，源码在：[https://gitcode.net/dcloud/hello-u
 
 打开GPU呈现模式，可以看到没有一条竖线突破那条红色的掉帧安全横线，也就是没有一帧掉帧。
 
-<video id="video" preload="none" controls="controls" width="185px" height="400px" src="./static/test-cross/uni-app-x-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/uni-app-x-slider.mp4"></video>
 
 uni-app x是一次大胆的技术突破，分享下DCloud选择这条技术路线的思路：
 
@@ -294,7 +294,7 @@ DCloud做了很多年跨平台开发，uni-app在web和小程序平台取得了�
 
 打开GPU呈现模式，可以看到compose ui的100个slider拖动时，大多数竖线都突破那条红色的掉帧安全横线，也就是掉帧严重。
 
-<video id="video" preload="none" controls="controls" width="185px" height="400px" src="./static/test-cross/compose-ui-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/compose-ui-slider.mp4"></video>
 
 uni-app x在app端，不管逻辑层、渲染层，都是kotlin，没有通信问题、没有混合渲染问题。不是达到了原生的性能，而是它本身就是原生应用，它和原生应用的性能没差别。
 
