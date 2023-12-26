@@ -4,14 +4,8 @@ const highlight = require('@vuepress/markdown/lib/highlight')
 const translatePlugin = require('./markdown/translate')
 const headerPlugin = require('./markdown/header')
 const createSidebar = require('./markdown/createSidebar')
-const { simplifySlugText, tabs, getFormattedDate } = require('./utils')
+const { simplifySlugText, tabs } = require('./utils')
 const copyOptions = require('./config/copy');
-
-const nowString = getFormattedDate();
-const changeLoaderOptions = (options, key = 'name') => {
-	if (options && options[key]) options[key] = `${nowString}/${options[key]}`;
-	return options;
-};
 
 const base = '/uni-app-x/'
 
@@ -127,47 +121,10 @@ const config = {
       '@theme-config',
       path.resolve(process.cwd(), 'docs/.vuepress/config')
     )
-    config.output.filename(`${nowString}/${config.output.get('filename')}`); //输出文件名
-    config.module.rule('images').use('url-loader').tap(changeLoaderOptions);
-    config.module.rule('fonts').use('url-loader').tap(changeLoaderOptions);
-    config.module.rule('media').use('url-loader').tap(changeLoaderOptions);
-    config.module.rule('svg').use('file-loader').tap(changeLoaderOptions);
-    if (!isServer && process.env.NODE_ENV === 'production') {
-      const extract_css_plugin = config.plugin('extract-css');
-      const extract_css_plugin_args = extract_css_plugin.get('args');
-      if (extract_css_plugin_args) {
-        extract_css_plugin.set(
-          'args',
-          extract_css_plugin_args.map(item =>
-            changeLoaderOptions(item, 'filename')
-          )
-        );
-      }
-    }
   },
   patterns: ['**/!(_sidebar).md', '**/*.vue'],
   plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions],
-    [
-      'named-chunks',
-      {
-        layoutChunkName: (layout) => 'layout-' + layout.componentName,
-        pageChunkName: page => {
-          const _context = page._context
-          const pageHeaders = (page.headers || []).map(item => item.title).join(',')
-          if (pageHeaders) {
-            const originDescription = page.frontmatter.description || ''
-            page.frontmatter = {
-              ...page.frontmatter,
-              description: `${_context.siteConfig.description ? `${_context.siteConfig.description},` : ''}${pageHeaders}${originDescription ? `,${originDescription}` : ''}`.slice(0, 150),
-            }
-          }
-          const pagePath = page.path.indexOf('.html') === -1 ? page.path + 'index' : page.path
-          const curPath = 'docs/' + pagePath.replace('docs/', '').substring(1).replace(/\.html/g, "")
-          return curPath
-        }
-      }
-    ]
+    ["vuepress-plugin-juejin-style-copy", copyOptions]
   ],
   /**
    *
