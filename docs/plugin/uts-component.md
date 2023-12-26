@@ -23,7 +23,7 @@ UTS组件，是UTS插件的一个分支。UTS插件提供了原生API的扩展�
 继续阅读文档前，开发者需要了解以下前置条件：
 
 - 了解 [uts语法](/uts/) 和 [uts原生插件](uts-plugin.md)
-- 了解 [Vue组件](../tutorial/vue3-components.md)
+- 了解 [Vue组件](https://uniapp.dcloud.net.cn/tutorial/vue3-components.html)
 
 
 ## UTS组件简介
@@ -620,7 +620,7 @@ NVUpdateStyles(styles: Map<String, any>){
 		}
 	}
 
-	//原生提供以下属性或方法的实现  
+	//原生提供以下属性或方法的实现
 	export default {
 		/**
 		 * 组件名称，也就是开发者使用的标签
@@ -664,7 +664,7 @@ NVUpdateStyles(styles: Map<String, any>){
 						}
 					}
 				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false  
+				immediate: false //创建时是否通过此方法更新属性，默认值为false
 			},
 		},
 		/**
@@ -697,7 +697,7 @@ NVUpdateStyles(styles: Map<String, any>){
 
 		},
 		/**
-		 * 对应平台的view载体即将被创建，对应前端beforeMount  
+		 * 对应平台的view载体即将被创建，对应前端beforeMount
 		 * [可选实现]
 		 */
 		NVBeforeLoad() {
@@ -706,12 +706,12 @@ NVUpdateStyles(styles: Map<String, any>){
 		/**
 		 * 创建原生View，必须定义返回值类型
 		 * 开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型
-		 * （Android需要明确知道View类型，需特殊校验） 
+		 * （Android需要明确知道View类型，需特殊校验）
 		 * todo 补充IOS平台限制
 	  * [必须实现]
 		 */
 		NVLoad(): LinearLayout {
-			//必须实现  
+			//必须实现
 			let contentLayout = new LinearLayout(this.$androidContext)
 			let button = new Button(this.$androidContext)
 			button.setText("点击触发");
@@ -721,11 +721,11 @@ NVUpdateStyles(styles: Map<String, any>){
 			return contentLayout
 		}
 
-		
+
 	}
 </script>
 <style>
-	
+
 </style>
 
 ```
@@ -829,14 +829,14 @@ NVUpdateStyles(styles: Map<String, any>){
 		<uts-hello-view ref="helloView" buttonText="点击按钮内容" style="width:375px;height: 375px;background-color: aqua;"></uts-hello-view>
     	<button @tap="callComponentMethod">调用组件的方法</button>
 	</div>
-	
+
 </template>
 
 <script>
   	export default {
       	data() {
 			return {
-				
+
 			}
 		},
 		methods: {
@@ -848,7 +848,7 @@ NVUpdateStyles(styles: Map<String, any>){
 				// (this.$refs["helloView"] as UtsHelloViewElement).doSth('param doSth');
 			},
 		}
-      
+
   }
 </script>
 

@@ -12,8 +12,8 @@
 	"deploymentTarget": "9.0",   // 可选，插件支持的最低 iOS 版本  默认：9.0"
 	"dependencies-pods": [ // 可选, 需要依赖的 CocoaPods 库, HBuilderX 3.8.5+ 版本支持
 	{
-		"name": "WechatOpenSDK",  
-		"version": "2.0.2"     
+		"name": "WechatOpenSDK",
+		"version": "2.0.2"
 	}, {
 		"name": "Alamofire",
 		"version": "5.7.3", //配置 repo 时可不指定 version
@@ -208,9 +208,9 @@ sudo gem install cocoapods
 
 ## 常见问题@questions
 
-### MAC 环境真机运行 uts 插件时未安装 CocoaPods@notInstall
+### MAC 环境真机运行 uts 插件时未安装 CocoaPods@notinstall
 
-错误信息：uni_module [xxxx](iOS)存在pod三方依赖库，请先安装 CocoaPods！
+错误信息：`uni_module xxxx (iOS)` 存在pod三方依赖库，请先安装 CocoaPods！
 说明：出现此错误是因为当前环境没有安装 CocoaPods
 处理方法： 请参照上述章节描述的方式安装 CocoaPods 工具。
 

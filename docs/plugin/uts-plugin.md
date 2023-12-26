@@ -83,7 +83,7 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 
 ### uts插件和Native.js的区别
 
-- [Native.js](../tutorial/native-js.md) 运行在js上，通过反射调用os api。功能和性能都不及原生
+- [Native.js](https://uniapp.dcloud.net.cn/tutorial/native-js.html) 运行在js上，通过反射调用os api。功能和性能都不及原生
 - uts 在 app 上不运行在 js 引擎里，是真正的原生。
 
 
@@ -93,7 +93,7 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 
 在 uni-app 的项目工程下，提供了独立的目录 `utssdk`，来存放 uts 插件。
 
-当然官方更推荐使用 [uni_modules](uni_modules.md) 方式，这是更好的包管理方案。
+当然官方更推荐使用 [uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html) 方式，这是更好的包管理方案。
 
 首先确保项目根目录存在 uni_modules 文件夹，如果不存在，需要手动创建一个。
 
@@ -128,12 +128,12 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
   "version": "0.1",
   "description": "uts插件示例",
   "uni_modules": {
-    
+
   }
 }
 ```
 
-上面是一个默认的清单文件示例,关于 package.json 更多描述[详见](uni_modules.md#package.json)
+上面是一个默认的清单文件示例,关于 package.json 更多描述[详见](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)
 
 ### 插件的目录结构
 
@@ -210,34 +210,34 @@ app-android 文件夹下存在Android平台原生配置，包括以下目录或�
 |index.uts				|主入口，interface.uts/index.d.ts声明的能力在Android平台下的实现	|
 
 
-##### assets  
+##### assets
 Android平台原生assets资源目录，建议只保存UTS插件内置的资源文件。
 
 除了插件下有assets目录，项目下也有。注意2者的区别。
 如果需要插件使用者配置（如三方SDK的授权文件），则插件作者应该在插件文档中告诉插件使用者，配置到项目的Android原生应用资源目录，而不是配置在插件目录下。[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
-##### libs  
+##### libs
 Android平台原生三方库目录，支持以下类型文件：
-- jar 
+- jar
 - aar
 - so库
 
 如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但因为多个uts插件引用相同三方原生sdk时可能会产生冲突，所以如果sdk支持仓储，建议优先使用仓储配置，而不是直接把jar等文件放在libs目录。
 
-仓储配置参考config.json的[dependencies](#dependencies)。  
+仓储配置参考config.json的[dependencies](#dependencies)。
 
 如果使用的三方sdk包含了so库，保存到此目录时，需按Android的abi类型分目录保存。
 
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 
 
-##### res  
+##### res
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
 
 除了插件下有res目录，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
 
-##### AndroidManifest.xml  
+##### AndroidManifest.xml
 Android原生应用清单文件，建议只保存UTS插件内置的清单文件配置。
 
 除了插件下有AndroidManifest.xml，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
@@ -272,37 +272,37 @@ uts插件在Android平台的原生层配置文件，可以在其中配置依赖�
 }
 ```
 
-- abis  
-当插件使用了NDK开发的so库时配置，描述插件支持CPU类型。  
+- abis
+当插件使用了NDK开发的so库时配置，描述插件支持CPU类型。
 可取值：armeabi-v7a、arm64-v8a、x86、x86_64
 
 <a id="dependencies"/>
 
-- dependencies  
-配置插件依赖的仓储，云端打包时会合并到Android原生工程的build.gradle的  
-数组类型，数组中的项可以是字符串类型或JSON对象  
-对于字符串类型项，将会作为`implementation`方式依赖添加到build.gradle中，上面示例中"androidx.core:core-ktx:1.6.0"将会添加以下配置  
+- dependencies
+配置插件依赖的仓储，云端打包时会合并到Android原生工程的build.gradle的
+数组类型，数组中的项可以是字符串类型或JSON对象
+对于字符串类型项，将会作为`implementation`方式依赖添加到build.gradle中，上面示例中"androidx.core:core-ktx:1.6.0"将会添加以下配置
 ```
 dependencies {
   implementation 'androidx.core:core-ktx:1.6.0'
 }
 ```
-对于JSON类型项，将会把source字段值作为gradle源码添加到build.gradle中，上面示例中"id": "com.xxx.richtext:richtext"项将会添加以下配置  
+对于JSON类型项，将会把source字段值作为gradle源码添加到build.gradle中，上面示例中"id": "com.xxx.richtext:richtext"项将会添加以下配置
 ```
 dependencies {
   implementation 'com.xxx.richtext:richtext:3.0.7'
 }
 ```
 
-- minSdkVersion  
+- minSdkVersion
 插件支持的Android最低版本，整数类型，取值范围为Android API Level
 
 默认uni-app最低支持版本为19，即Android4.4.2
 
-- project  
-	云端打包项目相关配置，当使用的三方SDK需要配置gradle插件时可配置此项：  
-	+ plugins  
-		此配置将会添加到云端打包工程app及build.gradle文件的“plugins”中：  
+- project
+	云端打包项目相关配置，当使用的三方SDK需要配置gradle插件时可配置此项：
+	+ plugins
+		此配置将会添加到云端打包工程app及build.gradle文件的“plugins”中：
 ```
 plugins {
     id 'com.android.application'
@@ -310,8 +310,8 @@ plugins {
     id 'com.huawei.agconnect'
 }
 ```
-	+ dependencies  
-		此配置将会添加到云端打包工程项目级build.gradle文件的“buildscript > dependencies”中  
+	+ dependencies
+		此配置将会添加到云端打包工程项目级build.gradle文件的“buildscript > dependencies”中
 ```
 buildscript {
     dependencies {
@@ -347,28 +347,28 @@ app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
 |config.json		|iOS平台原生工程的配置文件									|
 |index.uts			|主入口，interface.uts/index.d.ts声明的能力在iOS平台下的实现				|
 
-##### Frameworks 
+##### Frameworks
 iOS平台插件依赖的三方framework存放目录，支持以下类型文件：
 
-- framework  
+- framework
 - xcframework
 
 注意：目前支持静态库和动态库
 
-##### Libs@ios-libs 
+##### Libs@ios-libs
 > HBuilder X 3.7.2+ 版本支持
 
 iOS平台插件依赖的三方.a库存放目录，支持以下类型的.a库：
 
-- 使用OC语言创建的.a库  
+- 使用OC语言创建的.a库
 - 使用Swift语言创建的.a库
 
 备注：有关OC及Swift创建的.a库的区别、.a库的使用方法和注意事项[详见](https://uniapp.dcloud.net.cn/plugin/uts-for-ios)
 
 ##### Resources
-iOS平台原生资源目录，建议只保存uts插件内置的资源文件。云端打包时会将此目录下的所有文件添加到应用 main bundle 中。  
+iOS平台原生资源目录，建议只保存uts插件内置的资源文件。云端打包时会将此目录下的所有文件添加到应用 main bundle 中。
 
-除了插件下有Resources目录，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6-bundle-resources)  
+除了插件下有Resources目录，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6-bundle-resources)
 
 ##### Info.plist
 iOS平台原生 Info.plist 文件配置，云端打包时会将配置信息合并到原生工程的 Info.plist 中。
@@ -411,21 +411,21 @@ iOS平台原生 entitlements 文件配置，云端打包时会将配置信息合
 ```
 
 ##### config.json
-uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖的系统库等信息  
+uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖的系统库等信息
 
 ```json
 {
 	"frameworks": [
-		"可选，依赖的系统库(系统库有.framework和.tbd和.dylib类型)" 
+		"可选，依赖的系统库(系统库有.framework和.tbd和.dylib类型)"
 	],
 	"deploymentTarget": "9.0",   // 可选，插件支持的最低 iOS 版本  默认：9.0"
 	"validArchitectures": [    // 可选，支持的 CPU 架构类型 默认：arm64
-		"arm64"   
-	],	
+		"arm64"
+	],
 	"dependencies-pods": [ // 可选, 需要依赖的pod库, HBuilderX 3.8.5+ 版本支持
 	{
-		"name": "WechatOpenSDK",  
-		"version": "2.0.2"     
+		"name": "WechatOpenSDK",
+		"version": "2.0.2"
 	}]
 }
 ```
@@ -589,13 +589,13 @@ type GetBatteryInfoOptions = {
 };
 
 /**
- * 导出 获取电量方法 
+ * 导出 获取电量方法
  */
 export default function getBatteryInfo(options: GetBatteryInfoOptions) {
-	
+
 	// 开启电量检测
 	UIDevice.current.isBatteryMonitoringEnabled = true
-	
+
 	// 返回数据
     const res = {
         errMsg: "getBatteryInfo:ok",
@@ -616,12 +616,12 @@ export default function getBatteryInfo(options: GetBatteryInfoOptions) {
 import { UIDevice } from "UIKit";
 
 /**
- * 导出 获取电量方法 
+ * 导出 获取电量方法
  */
 export default function getBatteryLevel():number {
 	// 开启电量检测
 	UIDevice.current.isBatteryMonitoringEnabled = true
-	
+
 	let level = Number(UIDevice.current.batteryLevel * 100)
 	return level
 }
@@ -631,8 +631,8 @@ export default function getBatteryLevel():number {
 
 
 ### 应用程序生命周期函数监听@hooksClass
-	
-	
+
+
 > 特别注意：
 > 此功能在 HBuilderX 3.97+ 版本支持，HBuilderX 3.97 之前的版本不支持。
 
@@ -641,7 +641,7 @@ export default function getBatteryLevel():number {
 在插件开发过程中，有时我们需要监听 APP 的生命周期函数来完成一些业务逻辑，比如在应用启动时初始化三方 SDK, 在收到推送消息时做消息的处理，在被 url scheme 唤醒时调用指定功能等等。
 
 在 iOS 平台可以通过自定义 class 遵循 `UTSiOSHookProxy` 协议的方式来实现对应用程序生命周期函数的监听。
-	
+
 
 > 注意：
 > 该自定义 class 需要 export, 否则不会参与编译。
@@ -668,19 +668,19 @@ export class MyPluginClass implements UTSiOSHookProxy {
 	}
 	// 远程通知注册成功时的回调函数。（打自定义基座时需要勾选 push 模块）
 	didRegisterForRemoteNotifications(deviceToken: Data | null) {
-	        
+
 	}
 	// 远程通知注册失败时的回调函数。（打自定义基座时需要勾选 push 模块）
-	didFailToRegisterForRemoteNotifications(error: NSError | null) {       
-	        
+	didFailToRegisterForRemoteNotifications(error: NSError | null) {
+
 	}
 	// 应用收到远程通知时的回调函数。（打自定义基座时需要勾选 push 模块）
 	didReceiveRemoteNotification(userInfo: Map<AnyHashable, any> | null) {
-	        
+
 	}
 	// 应用收到本地通知时的回调函数。（打自定义基座时需要勾选 push 模块）
 	didReceiveLocalNotification(notification: UILocalNotification | null) {
-	        
+
 	}
 	// 通过 url scheme 方式唤起 app 时的回调函数。(iOS9 之前的系统回调此方法，iOS9 之后的系统请使用 applicationOpenURLOptions)
 	applicationHandleOpenURL(application: UIApplication | null, url: URL | null) : boolean {
@@ -697,7 +697,7 @@ export class MyPluginClass implements UTSiOSHookProxy {
 	// 应用完全激活时的回调函数。
 	applicationDidBecomeActive(application: UIApplication | null) {
 
-	}   
+	}
 	// 应用程序进入后台时的回调函数。
 	applicationDidEnterBackground(application: UIApplication | null) {
 		console.log("did enter background")
@@ -714,12 +714,12 @@ export class MyPluginClass implements UTSiOSHookProxy {
 	}
 	// 当应用程序接收到与用户活动相关的数据时调用此方法，例如，当用户使用 Universal Link 唤起应用时。
 	applicationContinueUserActivityRestorationHandler(application: UIApplication | null, userActivity: NSUserActivity | null, restorationHandler: ((res: [any] | null) => void) | null = null) : boolean {
-	       
+
 	    return true
 	}
 }
 ```
-	
+
 
 #### Android 平台
 
@@ -790,12 +790,12 @@ export function getPluginVersion(): string{
 }
 ```
 
-2. UTSJSONObjct 
+2. UTSJSONObjct
 
 ```ts
 // UTSJSONObjct 示例
 export function getPluginVersion(): UTSJSONObject{
-	
+
 	var ret = {
 		version: "1.2.0",
 		versionNum: 120,
@@ -851,7 +851,7 @@ export function postUserInfo(user:UTSJSONObject){
 }
 ```
 
-需要注意的是，在声明为`any`类型的前提下, `uni-app` 环境中的 `Object` 在UTS环境中也会被转换为 `UTSJSONObjct`. 
+需要注意的是，在声明为`any`类型的前提下, `uni-app` 环境中的 `Object` 在UTS环境中也会被转换为 `UTSJSONObjct`.
 
 也就是说上面的代码同样可以写作
 
@@ -992,7 +992,7 @@ getBatteryCapacity()
 
 自定义基座支持uts插件。
 
-#### Android平台  
+#### Android平台
 普通uts代码可以直接使用标准基座真机运行。但与原生插件一样，涉及以下场景，需要自定义基座后方能生效:
 
 - 1 集成三方sdk
@@ -1000,7 +1000,7 @@ getBatteryCapacity()
 
 总结来说，就是所有 涉及新增依赖/gralde配置/androidManifest.xml/资源 等标准基座不具备的能力时，需要自定义基座
 
-#### iOS平台  
+#### iOS平台
 uts插件编译需要XCode环境，因此在mac电脑安装了XCode工具时支持直接使用标准基座真机运行。
 
 在windows电脑或者mac电脑没有安装XCode工具时，需要提交云端打包生成自定义基座后才能调用uts插件。
@@ -1018,7 +1018,7 @@ uts插件支持debug断点调试。
 
 ## 云端打包
 
-正常支持云端打包。但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。  
+正常支持云端打包。但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
 
 
 ## 常见问题
@@ -1033,7 +1033,7 @@ uts插件支持debug断点调试。
 
     vue2项目使用 uts 插件的最低版本要求是HBuilderX 3.6.8，低于此版本，编译时将报错。
 
-- UTSCallback 
+- UTSCallback
 
 	HBuilderX 3.7.7开始，不推荐使用 UTSCallback 定义函数类型，当需要定义函数类型时，应定义为更具体的类型，如：`const callback:UTSCallback` 应调整为`const callback:()=>void`
 	如果您使用的是插件市场三方uts插件，可以检查更新插件最新版本
@@ -1093,7 +1093,7 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 函数参数支持设置默认值，比如下面testName
 
 ```ts
-function connectWifi(option: WifiConnectOption,testName :string = "zhangsan") 
+function connectWifi(option: WifiConnectOption,testName :string = "zhangsan")
 ```
 
 ### 在uni-app 1.0 上的导出限制
@@ -1132,7 +1132,7 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
   解决方案：
 
   方案1：将 uts 插件导出 class 调整为导出 function，避免在 js 端实例化 uts 中的 class。
-  
+
   方案2：云端打包机已修复此问题，您可以通过云打包自定义基座来规避该问题。
 
 ## 示例项目

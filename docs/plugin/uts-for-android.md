@@ -36,7 +36,7 @@
 
 虽然 UTS 和 koltin 在数据类型上基本保持了一致，但是在部分场景下，还是会有差异，在此特别说明
 
-原则上：  
+原则上：
 
 **数据类型以UTS 内置的类型为准， 各原生平台都会对其自动适配。**
 
@@ -51,7 +51,7 @@
 
 但是当开发者重写  `Service` 组件`onStartCommand` 方法时，`Android` API要求 明确要求后两个参数 必须为Int
 
- 
+
 原生开发环境中，应该这样写：
 
  ```kotlin
@@ -75,7 +75,7 @@
 
 
 #### 举例二：`MutableList`
- 
+
 `MutableList`是`android`平台 特有的数据类型，一般场景下，可以使用UTS中内置类型 `Array` 替代
 
 但是在 调用`onAppActivityRequestPermissionsResult` 函数监听权限申请结果时，明确要求使用此类型的参数
@@ -85,7 +85,7 @@
 ```kotlin
 
 onAppActivityRequestPermissionsResult(fun(requestCode: Number, permissions: MutableList<String>, grantResults: MutableList<Number>){
-      
+
 });
 ```
 
@@ -96,7 +96,7 @@ onAppActivityRequestPermissionsResult(fun(requestCode: Number, permissions: Muta
 
 ```ts
 onAppActivityRequestPermissionsResult((requestCode: number,permissions: MutableList<string>,grantResults: MutableList<number>) => {
-	
+
 });
 
 ```
@@ -120,9 +120,9 @@ class XXX{
 
 ### 2.4 线程环境差异
 
-UTS环境中，默认是没有线程概念的。 
+UTS环境中，默认是没有线程概念的。
 
-如果需要执行异步任务，建议通过内置函数`UTSAndroid.getDispatcher("io")`执行 
+如果需要执行异步任务，建议通过内置函数`UTSAndroid.getDispatcher("io")`执行
 
 [文档地址](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getdispatcher)
 
@@ -152,7 +152,7 @@ UTSAndroid.getDispatcher("main").async(function(_){
 			}
 			callback(true,"pass")
 		},null)
-		
+
 	},null)
 },null)
 ```
@@ -182,7 +182,7 @@ AndroidManifest.xml示例：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" 
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
   // 注意：这里是插件的包名而不是应用的包名
   package="io.dcloud.uni_modules.utsNativepage">
    // 配置权限
@@ -228,7 +228,7 @@ uts-nativepage  ->  uts.sdk.modules.utsNativepage
 
 示例文件在hello uts中的位置：
 
-~\uni_modules\uts-nativepage\utssdk\app-android\res 
+~\uni_modules\uts-nativepage\utssdk\app-android\res
 
 除了这里列出的layout、values目录外，还支持anim等所有android标准资源目录
 
@@ -430,7 +430,7 @@ import { UTSAndroid } from "io.dcloud.uts";
 ```
 
 获取指定插件资源的运行期绝对路径
- 
+
 ```ts
 // [示例]获取指定资源路径
 // 得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
@@ -468,7 +468,7 @@ onAppTrimMemory 对应的反注册函数
 UTSAndroid.offAppTrimMemory()
 // 移除指定监听
 UTSAndroid.offAppTrimMemory((level:Number) => {
-	
+
 });
 ```
 
@@ -685,7 +685,7 @@ UTSAndroid.offAppActivityBack(() => {
 
 > HBuilderX 3.6.8+
 
-App 的 activity 启动其他activity的回调结果监听 对应原生的  [onActivityResult](!https://developer.android.com/training/basics/intents/result)
+App 的 activity 启动其他activity的回调结果监听 对应原生的  [onActivityResult](https://developer.android.com/training/basics/intents/result)
 
 需要特别注意的是 `requestCode` 参数，这个参数用于区别 不同的请求来源,开发者应该只处理自己发起请求
 
@@ -700,7 +700,7 @@ UTSAndroid.onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent
 	}else{
 		// 别的代码发起的请求，不要处理
 	}
-	
+
 });
 ```
 
@@ -737,9 +737,9 @@ App 的 activity 获得权限请求结果的回调
 UTSAndroid.onAppActivityRequestPermissionsResult((requestCode: number,
                                                      permissions: Array<string>,
                                                      grantResults: Array<number>) => {
-		
+
 		console.log(grantResults);
-		console.log(permissions);   
+		console.log(permissions);
 		console.log(requestCode);
 	});
 
@@ -783,14 +783,14 @@ UTSAndroid.getUniActivity()!.getWindow().getDecorView();
 
 UTS环境中对原生的生命周期进行了封装和简化，用户不需要关心 除了activity 以外的更多原生细节。
 
-只需要了解本章节中列出的 activity相关生命周期即可。即 在UTS环境中 开发者可以认为 activity 的生命周期 就是应用的生命周期。 
+只需要了解本章节中列出的 activity相关生命周期即可。即 在UTS环境中 开发者可以认为 activity 的生命周期 就是应用的生命周期。
 
 其中最为常见的场景，要数`onAppActivityDestroy`中释放系统资源了：
 
 
 举个例子，以Hello UTS  [用户截屏插件](https://ext.dcloud.net.cn/plugin?id=9897)为例。
 
-在注册监听回调时，添加了下列代码。 
+在注册监听回调时，添加了下列代码。
 ```
 UTSAndroid.onAppActivityDestroy(function(){
 	screenOB?.stopWatching()
@@ -919,7 +919,7 @@ let user?:string
 
 ```kotlin
  fun startListener():void{
-	 
+
  }
 ```
 uts中，需要区分全局方法、成员方法
@@ -927,14 +927,14 @@ uts中，需要区分全局方法、成员方法
 ```ts
  // 成员方法
  startListener():void{
-	 
+
  }
 ```
- 
+
 ```ts
  // 全局方法
  function startListener():void{
-	 
+
  }
 ```
 
@@ -952,7 +952,7 @@ uts中，需要区分全局方法、成员方法
 ```ts
 // 使用UTS 实现 OnClickListener接口
 class StartServiceListener extends OnClickListener{
-	
+
     override onClick(v?: View):void{
 		// 执行点击逻辑
     }
@@ -984,7 +984,7 @@ user!!.sayHello();
 //kotlin 中快速实现super
 constructor() : super() {
 }
-	
+
 ```
 
 ```uts
@@ -1112,7 +1112,7 @@ System.currentTimeMillis()
 ```kotlin
 // 获取当前时间戳
 class ScreenReceiver extends BroadcastReceiver(){
-  
+
 }
 ```
 
@@ -1121,7 +1121,7 @@ UTS环境中，不建议这样做（虽然目前这样做不会影响编译）�
 
 ```ts
 class ScreenReceiver extends BroadcastReceiver{
-	
+
 	constructor (){
 		super();
 	}
@@ -1134,12 +1134,12 @@ class ScreenReceiver extends BroadcastReceiver{
 ```ts
 // IDE会提示 name,status,desc 变量未使用
 onStatusUpdate(name:string, status:Int, desc:string){
-	
+
 }
 
 // 不会警告变量未使用
 onStatusUpdate(_name:string, _status:Int, _desc:string){
-	
+
 }
 ```
 
@@ -1166,11 +1166,11 @@ onStatusUpdate(_name:string, _status:Int, _desc:string){
 简单示例
 ```ts
 class CustomThread extends Thread{
-	
+
 	constructor(){
 		super();
 	}
-	
+
 	override run(){
 		Thread.sleep(1000)
 		console.log("CustomThread = " + Thread.currentThread().getName())
@@ -1258,7 +1258,7 @@ val d = c.toIntArray()
 
 ### 6.7 如何生成byte[]对象
 
-在java平台中，二进制操作一般采用字节数组实现。 
+在java平台中，二进制操作一般采用字节数组实现。
 
 UTS在android平台编译后的语言为Kotlin,对应的语法对象是ByteArray.
 
@@ -1275,7 +1275,7 @@ console.log(byteTest)
 
 在 uni-app 1.0 平台，js环境与原生环境的交互都是经过js引擎桥接
 
-js引擎除了 string,number,boolean 等基本数据结构外，仅支持JSONObject,JSONArray两种。 
+js引擎除了 string,number,boolean 等基本数据结构外，仅支持JSONObject,JSONArray两种。
 
 + JSONObject 比较常见，基本所有的接口参数都会 对应一个uts中定义的 type 类
 + JSONArray 一般在uts中采用Array数组来承接
@@ -1322,7 +1322,7 @@ UTS插件支持使用android的原生资源，比如动画，布局，字符串�
 import R from 'io.dcloud.uni_modules.uts_nativepage.R';
 ```
 
-### 6.10 UTSJSONObject 转 Map 
+### 6.10 UTSJSONObject 转 Map
 
 ```
 val extraParam = UTSJSONObject()
@@ -1358,7 +1358,7 @@ console.log(aa.javaClass.toString()) // int
 
 ### 6.13  UTS 如何进行遍历操作
 
-相比于for in / 下标计数等写法， UTS 推荐更现代化的foreach语法 实现集合的遍历。 
+相比于for in / 下标计数等写法， UTS 推荐更现代化的foreach语法 实现集合的遍历。
 
 数组：
 ```
@@ -1408,18 +1408,18 @@ class User {
 }
 
  class StartBroadcastListener extends User implements OnClickListener{
-	
+
     override onClick(v?: View):void{
-		
+
 		let myReceiver = new ScreenReceiver();
 		let filter = new IntentFilter();
 		filter.addAction(Intent.ACTION_SCREEN_OFF);
 		filter.addAction(Intent.ACTION_SCREEN_ON);
 		UTSAndroid.getUniActivity()!.registerReceiver(myReceiver, filter);
-		
+
 		// 提示屏幕状态监听已经注册
 		Toast.makeText(UTSAndroid.getAppContext(),"屏幕状态监听已注册，注意观察控制台日志",Toast.LENGTH_LONG).show();
-		
+
     }
 }
 
@@ -1437,13 +1437,13 @@ class Person{
 }
 class User extends Person implements android.view.View.OnClickListener,Cloneable{
 	constructor(){
-		
+
 	}
-	
+
 	override onClick(v?: android.view.View):void{
 		console.log(v)
 	}
-	
+
 	override equals(other?: any):boolean{
 		return true
 	}
