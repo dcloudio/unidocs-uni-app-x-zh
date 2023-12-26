@@ -33,7 +33,7 @@ web-view的操作api为[uni.createWebviewContext()](../api/create-webview-contex
 
 |方法名|说明|平台差异说明|
 |:-|:-|:-|
-|uni.webView.navigateTo|[navigateTo](../api/navigator.md#uni.navigateto)||
+|uni.webView.navigateTo|[navigateTo](../api/navigator.md#uni-navigateto)||
 |uni.webView.redirectTo|[redirectTo](../api/navigator#redirectto)||
 |uni.webView.reLaunch|[reLaunch](../api/navigator#relaunch)||
 |uni.webView.switchTab|[switchTab](../api/navigator#switchtab)||

@@ -18,7 +18,7 @@ uni.request({
 但在uts等强类型语言中无法这样，会报resData[0]无法安全访问、没有plugin_name属性，因为resData是个可为空的any类型，你确实没有为它定义过任何属性。
 
 在uts中，提供了2种方案：
-1. 使用[UTSJSONObject](../uts/data-type.md#UTSJSONObject)，不需要提前为json数据定义类型，在使用中通过下标访问并动态转换类型
+1. 使用[UTSJSONObject](../uts/data-type.md#utsjsonobject)，不需要提前为json数据定义类型，在使用中通过下标访问并动态转换类型
 2. 使用[type](../uts/data-type.md#type)，提前定义json数据类型，在request时通过泛型传入类型，拿到的就是一个有类型的对象，之后的用法和js一样
 
 ## 方式1：UTSJSONObject
@@ -62,7 +62,7 @@ uni.request({
 
 除了getString，还有getNumber、getBoolean、getJSON、getArray、getAny。只要keypath的路径输入正确、类型正确，就可以取得值。当然path没有代码提示。
 
-更多详见[UTSJSONObject](../uts/data-type.md#UTSJSONObject)
+更多详见[UTSJSONObject](../uts/data-type.md#utsjsonobject)
 
 ## 方式2：type和泛型
 
@@ -195,7 +195,7 @@ type DataType = {
 
 比如`{"a:b":"123","a-b":"456"}`，这些键名对于type来讲都是非法的。转换type就会失败。
 
-hx的json转type工具，会对一些敏感符合和关键字自动转义。但也有无法转移的符号和词，详见：[type](../uts/data-type.md#JSON_FIELD)
+hx的json转type工具，会对一些敏感符合和关键字自动转义。但也有无法转移的符号和词，详见：[type](../uts/data-type.md#json-field)
 
 如果你的服务器数据涉及这类问题且数据格式不可改，那只能改用UTSJSONObject方式。
 
@@ -203,7 +203,7 @@ hx的json转type工具，会对一些敏感符合和关键字自动转义。但�
 
 再举一个实际中更常见的例子。联网获取插件市场的插件列表数据，并绑定在模板上，还可以翻页。
 
-翻页需要用到[...展开操作符](../uts/operator.md#展开语法...)
+翻页需要用到[...展开操作符](../uts/operator.md#展开语法)
 
 ```vue
 <template>

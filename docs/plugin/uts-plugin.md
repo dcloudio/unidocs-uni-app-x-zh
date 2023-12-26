@@ -877,7 +877,7 @@ postUserInfo({
 ```
 
 
-更多UTSJSONObject的用法，[详见](../uts/data-type.md#UTSJSONObject)
+更多UTSJSONObject的用法，[详见](../uts/data-type.md#utsjsonobject)
 
 遗留问题：
 
@@ -1123,7 +1123,7 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 
 如果想使用`.操作符`，需要参考uts的[type](../uts/data-type.md#type)
 
-更多UTSJSONObject的用法，[详见](../uts/data-type.md#UTSJSONObject)
+更多UTSJSONObject的用法，[详见](../uts/data-type.md#utsjsonobject)
 
 ## Bug & Tips@tips
 

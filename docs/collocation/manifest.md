@@ -4,7 +4,7 @@
 
 uni-app x 默认没有splash启动界面，因uni-app x打包后启动速度非常快，可以自己做一个简单的uvue页面来当做splash。HBuilderX3.99+版本新增支持配置splash启动界面，详情参考[启动界面配置](manifest-splashscreen.md)。
 
-uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选择内置模块，详情参考[模块配置](manifest-modules.md#treeShaking)。
+uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选择内置模块，详情参考[模块配置](manifest-modules.md#treeshaking)。
 
 ## 配置项列表
 
@@ -37,7 +37,7 @@ uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud
 
 使用[uni内置模块](#utsmodules)时，云端打包会自动添加模块需要的Android权限，不需要在[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中配置。
 
-- HBuilderX3.97+版本标准基座已经包含了所有Android权限，在 uvue 页面中直接通过 uts 调用需要权限的 Android 系统 API 时，使用标准基座真机运行可直接通过[UTSAndroid.requestSystemPermission](../uts/utsandroid.md#requestSystemPermission)申请；
+- HBuilderX3.97+版本标准基座已经包含了所有Android权限，在 uvue 页面中直接通过 uts 调用需要权限的 Android 系统 API 时，使用标准基座真机运行可直接通过[UTSAndroid.requestSystemPermission](../uts/utsandroid.md#requestsystempermission)申请；
 - 使用自定义基座则需要在项目的[AndroidManifest.xml](https://uniapp.dcloud.io/tutorial/app-nativeresource-android.html#permissions)中配置要使用的权限，重新提交云端打包。
 
 

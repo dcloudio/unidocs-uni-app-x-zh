@@ -1,6 +1,6 @@
 # 全局变量与状态管理
 
-`uni-app x` 目前不支持 `pinia` 和 `vuex`。可通过 [globalData(3.99+)](../collocation/app.md#globalData) 或一个专用模块组织和管理全局变量与状态。
+`uni-app x` 目前不支持 `pinia` 和 `vuex`。可通过 [globalData(3.99+)](../collocation/app.md#globaldata) 或一个专用模块组织和管理全局变量与状态。
 
 ## 专用模块
 定义一个模块，编写一个单独的uts文件，比如 /store/index.uts，在里面设一个全局变量，比如globalNum。

@@ -90,7 +90,7 @@ Boolean字面量的自动类型推导简单而统一，全平台必然被自动�
 .1e-23    // 0.1*10^(-23)=10^(-24)=1e-24
 ```
 
-数字字面量的类型推导，[详见](data-type.md#@autotypefornumber)
+数字字面量的类型推导，[详见](data-type.md#autotypefornumber)
 
 ### 字符串字面量@string
 
@@ -160,7 +160,7 @@ const coffees = ["French Roast", "Colombian", "Kona"]
 
 在JS中，对象字面值是封闭在花括号对`{}`中的一个对象的零个或多个“属性名—值”对的（元素）列表。
 
-在uts中，对象字面量赋值给变量，默认会被推导为[UTSJSONObject](data-type.md#UTSJSONObject)类型。
+在uts中，对象字面量赋值给变量，默认会被推导为[UTSJSONObject](data-type.md#utsjsonobject)类型。
 
 ```ts
 // 创建对象

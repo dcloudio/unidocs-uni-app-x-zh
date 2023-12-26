@@ -328,8 +328,8 @@ let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 
 - 在不同平台上，数值的范围限制不同，超出限制会导致相应的错误或异常
   * 编译至 JavaScript 平台时，数值范围为 ±1.7976931348623157e+308，超出范围会返回 `Infinity` 或 `-Infinity`。
-  * 编译至 Kotlin 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，超出范围会报错：`The value is out of range‌`。浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会返回 `Infinity` 或 `-Infinity`。平台专有数字类型范围 [详见](#Kotlin)。
-  * 编译至 Swift 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会报错：`integer literal overflows when stored into 'NSNumber'`。平台专有数字类型范围 [详见](#Swift)
+  * 编译至 Kotlin 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，超出范围会报错：`The value is out of range‌`。浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会返回 `Infinity` 或 `-Infinity`。平台专有数字类型范围 [详见](#kotlin)。
+  * 编译至 Swift 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会报错：`integer literal overflows when stored into 'NSNumber'`。平台专有数字类型范围 [详见](#swift)
 
 ### 运算和比较
 
@@ -1247,7 +1247,7 @@ console.log(utsObj.getAny("address") as UTSJSONObject)
 ```
 
 除了直接使用UTSJSONObject外，在 uts 中使用json数据还有2种方式：
-1. UTSJSONObject.toMap() 转为Map对象 [见上](#Map)
+1. UTSJSONObject.toMap() 转为Map对象 [见上](#map)
 2. 把json字符串或对象字面量通过type转为自定义类型，这是ts里经常使用的方式 [见下](#type)
 
 > 特别注意:
