@@ -79,6 +79,8 @@ uni-app x提供了[uni.getElementById](../api/get-element.md)方法，返回的�
 
 通用的元素操作方法，比如getAttribute、setStyle，在Element上就可以操作。
 
+但是由于本方法不与页面绑定，获取的是栈顶页面的element，所以可能发生预期外的情况，[详见](../api/get-element.md)
+
 UniVideoElement 继承自 Element，拥有video专用的一批方法。
 
 template区：
@@ -101,7 +103,11 @@ uni.createVideoContext("vid")!.play()
 uni-app x 虽然支持 `uni.createSelectorQuery()` API，传入选择器，可以拿到返回的NodesRef。但无法继续获取.context子对象。无法通过这种方式拿到context。
 
 #### ref方式
-其实this.$refs获取到的内置组件，通过as也可以转换为Element。但一般ref用于vue自定义组件。
+
+其实`this.$refs`获取到的内置组件，通过as也可以转换为Element。
+
+与`uni.getElementById`相比，`this.$refs`方式与调用页面绑定，日常更推荐使用。
+
 script区：
 ```js
 (this.$refs['vid'] as UniVideoElement).play(); //但一般ref用于vue自定义组件
