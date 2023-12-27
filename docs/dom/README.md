@@ -39,6 +39,8 @@ DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示
 
 app-uvue 页面中可以为页面元素节点设置 id 属性，然后通过 [uni.getElementById](../api/get-element.md#getelementbyid) 获取 DOM 元素对象。
 
+但注意这个方法只能获取栈顶页面的element。如需绑定调用的页面，需使用下方的[this.$refs](#refs)
+
 首先需要为组件设置 id 属性值：
 ```vue
 <!-- id 属性值为 myView，后续可以通过此值查找 -->
@@ -63,7 +65,7 @@ app-uvue 页面中可以为页面元素节点设置 id 属性，然后通过 [un
 }
 ```
 
-### 通过this.$refs获取DOM元素
+### 通过this.$refs获取DOM元素@refs
 app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。
 
 首先需要为组件设置 ref 属性值，它类似于id：
