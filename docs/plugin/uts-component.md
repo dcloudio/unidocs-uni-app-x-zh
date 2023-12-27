@@ -553,6 +553,9 @@ NVUpdateStyles(styles: Map<String, any>){
 |$androidContext|对象		|当前组件上下文(可为空)		|仅android	|android平台对应Context对象|
 |$emit("event",Any)|函数		|发送已注册的事件	|全部平台	|$emit(事件名称-必选,事件参数可选)|
 
+**注意**
+
+`UTSAndroid.getUniActivity()` 在组件内不建议使用，请使用`$androidContext`来替代
 
 #### 通用事件
 
