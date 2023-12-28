@@ -293,6 +293,8 @@ UTSAndroid.getDispatcher("io").async(function(_){
 
 <!-- UTSJSON.UTSAndroid.getAppCachePath.compatibility -->
 
+** 如果编译报错找不到该方法，手动删除“uniapp-runextension”插件重新安装 或者 重新下载安装最新版本 HBuilder X 即可修复**
+
 
 ### rpx2px(rpx:number) : number;
 
