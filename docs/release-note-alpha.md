@@ -1,6 +1,6 @@
 
 
-#### 3.99.2023122704
+#### 3.99.2023121601-alpha
 ##### uni-app x插件
 * 修复 编译器 部分情况下报错信息未回溯到源码的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=246) [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=253) [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=264)
 * 修复 编译器 组件递归使用时编译报错的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=225)
@@ -23,7 +23,7 @@
 * 新增 API uni.getFileSystemManager，本地文件管理 [详情](https://doc.dcloud.net.cn/uni-app-x/api/get-file-system-manager.html)
 * 优化 规范了文件系统使用，对cache文件进行了详细约定 [详情](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html)
 * 新增 API uni-push 支持荣耀厂商推送
-* 修复 API uni.toast、uni.showModal等交互反馈弹窗在 onReady 生命周期前调用可能无法正常显示的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=312))
+* 修复 API uni.toast、uni.showModal等交互反馈弹窗在 onReady 生命周期前调用可能无法正常显示的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=312)
 * 补齐 CSS background-image 的 linear-gradient 渐变方向支持 to bottom left 、to top right [详情](https://doc.dcloud.net.cn/uni-app-x/css/background-image.html)
 * 修复 CSS 先后设置 box-shadow 与 border 属性导致后设置的样式不生效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=280)
 * 修复 CSS z-index 属性可能引发下标越界异常的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=215)
@@ -45,7 +45,6 @@
 * 修复 App真机运行调用 uni.exit 后可能导致应用异常崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=169)
 * 新增 ui库 uni-icons 支持uni-app x [详情](https://uniapp.dcloud.net.cn/component/uniui/uni-icons.html)
 * 新增 ui库 uni-data-picker 支持uni-app x [详情](https://uniapp.dcloud.net.cn/component/uniui/uni-data-picker.html)
-* 新增 ui库 uni-loading 支持uni-app x [详情](https://ext.dcloud.net.cn/plugin?id=15980)
 * 新增 uni-cms 客户端插件 uni-cms-article [详情](https://ext.dcloud.net.cn/plugin?id=11701)
 * 更新 模板 App升级中心 支持在通知栏显示下载进度
 * 更新 模板 uni-id-pages-x v1.0.4+ 不再支持配置项：`config.needLogin`，改用uni-id-router替代 [详情](https://ext.dcloud.net.cn/plugin?name=uni-id-pages-x)
@@ -58,73 +57,118 @@
 * 修复 App-Android平台 UTSJSONObject对象定义方法后，不能通过索引调用的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=234)
 * 修复 App-Android平台 顶层变量、type 属性、类实例属性、类静态属性仅首字母大小写区分时编译报错的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=286)
 
-#### 3.98.2023112510
+#### 3.98.2023112011-alpha
 ##### uni-app x插件
-* 新增 组件 form 表单 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/form.html)
+* 优化 编译器 项目存在大量css代码时的编译速度
 * 新增 组件 sticky-section 分段吸顶 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/sticky.html#sticky-section)
-* 新增 uni-push [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/push.html)
-* 新增 uni.addInterceptor 拦截器，可拦截部分API [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/interceptor.html)
-* 新增 uni.setNavigationBarTitle [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/set-navigation-bar-title.html)
-* 调整 uni.downloadFile 下载默认目录调整为app的cache目录下的uniDownloads目录，方便被rom的清理工具清理 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=201)
-* 补充 uni.getAppBaseInfo 获取获取包名、签名信息 [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/get-app-base-info.html)
-* 补充 组件 scroll-view 支持 nested-scroll-child，可将嵌套滚动的父滚动视图滚动余量传递给子视图 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/scroll-view.html)
-* 补充 组件 web-view 支持 download 事件，以及 loading、loaded 事件回调参数支持 url 属性 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/web-view.html)
-* 补充 组件 image、video 的 src 属性及 css 中，支持非 static 目录的静态资源
-* 修复 组件 text 固定宽高时，设置 padding-left 和 padding-right 可能导致文本不居中的Bug
-* 修复 组件 text 设置 space 属性时，换行符 \n 有时无法正常显示的Bug
-* 修复 组件 text 设置 line-height 属性可能不生效的Bug
-* 修复 组件 scroll-view、list-view 同时设置 scroll-y、scroll-x属性为 false 时，组件的 touch 相关事件不触发的Bug
+* 新增 API uni-push [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/push.html)
+* 新增 css position 属性设置为 absolute 时，margin 支持取值 auto
+* 调整 API uni.downloadFile 下载默认目录调整为app的cache目录下的uniDownloads目录，方便被rom的清理工具清理 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=201)
+* 修复 组件 video 部分 event 回调没有属性值的Bug [详情](https://ask.dcloud.net.cn/question/180748)
 * 修复 组件 swiper current 属性可能不生效的Bug [详情](https://ask.dcloud.net.cn/question/181396)
-* 修复 组件 swiper-item 的 overflow 属性值为 hidden 时子元素未被裁剪的Bug
 * 修复 组件 list-item 执行复用时遇到 text 组件嵌套可能会闪退的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=216)
 * 修复 组件 checkbox-group 动态修改 checkbox 组件的 check 属性时，form 组件提交的 value 不正确的Bug
 * 修复 组件 radio-group 动态修改 radio 组件的 check 属性时，form 组件提交的 value 不正确的Bug
 * 修复 组件 slider 当父容器可滚动且显示 value 且当前滑块值为最大值时，无法直接在滑块的右半径上按下拖动的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=218)
-* 修复 组件 video 部分 event 回调没有属性值的Bug [详情](https://ask.dcloud.net.cn/question/180748)
-* 新增 uvue 文件支持引入 ts 后缀的文件，等同于 uts 后缀。方便插件同时兼容uni-app和uni-app x
-* 优化 编译器 项目存在大量css代码时的编译速度
+* 修复 组件 scroll-view、list-view 同时设置 scroll-y、scroll-x属性为 false 时，组件的 touch 相关事件不触发的Bug
 * 修复 easycom组件类型在非uvue页面中使用报错的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=177)
-* 修复 uvue 页面文件名与 easycom 组件同名时渲染不正确Bug
+* 修复 3.97引出的 首页面 onLoad 生命周期调用 uni.showLoading 可能会崩溃的Bug [详情](https://ask.dcloud.net.cn/question/181567)
+* 修复 css 代码中引用非 static 目录的静态资源失败的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=231)
+* 修复 部分情况下真机运行 appid 为空导致应用异常崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=162)
+* 修复 使用 v-if 显示组件的 background 样式设置为线性渐变可能引起崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=164)
+* 调整 各项目模板的 index.html （web平台专有文件）中引入入口文件从 main.js 改为 main（即main.uts，后缀可省略）
+* 新增 模板 App升级中心兼容uni-app x [详见](https://ext.dcloud.net.cn/plugin?id=4542)
+* 新增 模板 uni-id-pages-x [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/app-x.html)
+##### uts插件
+* 优化 异步函数在 uni-app x 中使用时默认与框架运行在同一线程
+* 修复 部分位运算组合使用时优先级不正确的Bug
+* 修复 App-Android平台 Array join 返回值与 web 不一致的Bug
+* 修复 自定义基座真机运行时hooksClass 相关回调重复调用的Bug
+* 修复 App-iOS平台 使用 uts 插件（含ext api）后因底层依赖 uni-getDeviceInfo 有读取 IDFA 的代码导致可能影响应用上架审核的Bug
+* 修复 Number 参与的运算结果可能整型溢出的Bug
+* 修复 Number 参与的除法运算除数不能为0的Bug
+
+#### 3.97.2023110504-alpha
+##### uni-app x插件
+* 新增 form 组件 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/form.html)
+* 新增 uni.addInterceptor 拦截器，可拦截部分API [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/interceptor.html)
+* 新增 uni.setNavigationBarTitle [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/set-navigation-bar-title.html)
+* 新增 uni.getAppBaseInfo 获取获取包名、签名信息 [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/get-app-base-info.html)
+* 新增 scroll-view 组件支持 nested-scroll-child，可将嵌套滚动的父滚动视图滚动余量传递给子视图 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/scroll-view.html)
+* 新增 web-view 组件支持 download 事件，以及 loading、loaded 事件回调参数支持 url 属性 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/web-view.html)
+* 新增 image、video 组件 src 支持非 static 目录的静态资源
+* 新增 uvue 文件支持引入 ts 后缀的文件，等同于 uts 后缀
+* 新增 App-Android平台 真机运行标准基座内置所有常用权限
 * 修复 动态创建的根节点 class 样式丢失的Bug
 * 修复 v-model 绑定的表达式包裹 () 运行失败的Bug
 * 修复 在自定义组件中使用 class 定制另一个自定义组件根节点样式不生效的Bug
 * 修复 data 中定义的 UTSJSONObject 修改后，不触发渲染的Bug
-* 调整 各项目模板的 index.html （web平台专有文件）中引入入口文件从 main.js 改为 main（即main.uts，后缀可省略）
-* 修复 Element 的 style 调用 setProperty 更新 transition-duration 属性值不支持单位为s(秒)的Bug
+* 修复 uvue 页面文件名与 easycom 组件同名时渲染不正确Bug
+* 修复 text 组件固定宽高时，设置 padding-left 和 padding-right 可能导致文本不居中的Bug
+* 修复 text 组件设置 space 属性时，换行符 \n 有时无法正常显示的Bug
+* 修复 text 组件设置 line-height 属性可能不生效的Bug
+* 修复 swiper-item 组件 overflow 属性值为 hidden 时子元素未被裁剪的Bug
 * 修复 uni.loadFontFace 多次请求同一网络字体时可能触发错误回调的Bug
+* 修复 Element 的 style 调用 setProperty 更新 transition-duration 属性值不支持单位为s(秒)的Bug
 * 修复 uni.toast、uni.showModal等交互反馈弹窗在onLoad等特定场景可能引起应用崩溃的Bug
-* 修复 uni.getLocation 系统定位获取位置慢的Bug
-* 补充 css position 属性设置为 absolute 时，margin 支持取值 auto
-* 补充 真机运行标准基座内置所有常用权限。减少因权限造成的打包自定义基座的频率
-* 新增 模板 App升级中心兼容uni-app x [详见](https://ext.dcloud.net.cn/plugin?id=4542)
-* 新增 模板 uni-id-pages-x 方便开发账户系统 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/app-x.html)
-* 修复 部分情况下真机运行 appid 为空导致应用异常崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=162)
-* 修复 使用 v-if 显示组件的 background 样式设置为线性渐变可能引起崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=164)
+* 修复 App-Android平台 uni.getLocation 使用系统定位获取位置信息慢的Bug
 ##### uts插件
+* 修复 位移赋值类操作符，当右侧为复杂表达式，计算结果不正确的Bug
+* 修复 相同interface、class定义了不同属性，方法调用失败的Bug
+* 修复 App-Android平台 string 的 indexOf 方法参数类型不正确的Bug
 * 新增 App-Android平台 uni-app x项目开发的uts原生组件定义的对外方法支持返回值
 * 新增 App-iOS平台 真机运行适配支持 XCode15
 * 新增 uts插件支持监听应用的原生生命周期回调函数 [详情](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#hooksclass)
 * 新增 uts组件插件支持 NVUpdateStyles 生命周期监听组件的样式更新 [详情](https://uniapp.dcloud.net.cn/plugin/uts-component.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
-* 优化 异步函数在 uni-app x 中使用时默认与框架运行在同一线程
-* 修复 位移赋值类操作符，当右侧为复杂表达式，计算结果不正确的Bug
-* 修复 部分位运算组合使用时优先级不正确的Bug
-* 修复 Number 参与的运算结果可能整型溢出的Bug
-* 修复 Number 参与的除法运算除数不能为0的Bug
-* 修复 App-Android平台 Array join 返回值与 web 不一致的Bug
-* 修复 相同interface、class定义了不同属性，方法调用失败的Bug
-* 修复 App-Android平台 string 的 indexOf 方法参数类型不正确的Bug
 * 调整 App-Android平台 uts组件插件内置对象 $androidContext 可为空 [详情](https://uniapp.dcloud.net.cn/plugin/uts-component.html#%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%87%BD%E6%95%B0)
 * 修复 uni-app 项目 vue2 下开发uts插件报错可能未指向源码的Bug
-* 修复 自定义基座真机运行时hooksClass 相关回调重复调用的Bug
-* 修复 App-iOS平台 使用 uts 插件（含ext api）后因底层依赖 uni-getDeviceInfo 有读取 IDFA 的代码导致可能影响应用上架审核的Bug
 
-#### 3.95.2023102806
+#### 3.94.2023102311-alpha
 ##### uni-app x插件
-* 新增 ext api `uni.installApk` 安装apk [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/install-apk.html)
-* App-Android平台 新增 真机运行标准基座支持安装apk权限
-* App-Android平台 修复 使用云对象提交云端打包后可能运行报错的Bug [详情](https://ask.dcloud.net.cn/question/180404)
+* 修复 多根节点时，uni.getElementById 获取失败的Bug
+* 修复 web-view 组件点击网页中的输入框无法弹出软键盘的Bug
+* 修复 scroll-view 组件的子组件滑动松手后惯性滚动时没有触发 nestedprescroll 事件的Bug
+##### uts插件
+* App-Android平台 更新 编译使用的 Android SDK 为 33
+* App-Android平台 修复 number 的 toFixed 方法返回结果可能异常的Bug
+* App-Android平台 修复 number 数据类型的位运算操作可能引起崩溃的Bug
 
-#### 3.94.2023102613
+#### 3.93.2023101913-alpha
+##### uni-app x插件
+* 新增 sticky-header 吸顶组件 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/sticky-header.html)
+* 新增 unicloud-db 组件 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/unicloud-db.html)
+* 新增 takeSnapshot 截图api [详情](https://uniapp.dcloud.net.cn/uni-app-x/dom/element.html#takeSnapshot)
+* 新增 transitionend 动画结束事件 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/common.html#transitionend)
+* 新增 css border-*-width 属性值支持 thin | medium | thick
+* 新增 摇树优化 代码中未使用的内置模块（如video）会自动摇掉，减少安装包体积 [详情](https://uniapp.dcloud.net.cn/uni-app-x/manifest.html#treeShaking)
+* 优化 组件类型，内置组件和自定义组件可更方便的获取类型并调用组件方法 [详情](https://uniapp.dcloud.net.cn/uni-app-x/component/#methods)
+* 优化 uni.getElementById 支持泛型 [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/get-element.html)
+* 新增 list-view 组件的下拉刷新支持自定义样式
+* 修复 list-view 组件嵌套 swiper 时 swiper-item 可能重复显示的Bug
+* 修复 list-view 组件某些情况子节点位置错乱的Bug
+* 修复 video 组件在 Android8.0 以下设备使用硬解码可能引起崩溃的Bug
+* 修复 web-view 组件在 Android11 及以上设备可能无法加载本地网页的Bug
+* 修复 text 组件动态修改 display 属性可能出现渲染异常的Bug
+* 修复 css position 属性设置为 fixed 时，z-index 属性可能不生效的Bug
+* 修复 uvue 文件 methods 中定义的方法不能递归访问的Bug [详情](https://ask.dcloud.net.cn/question/179395)
+* 修复 目录包含特殊字符编译报错的Bug
+* 修复 ref 绑定节点移除时，$refs 数据未更新的Bug
+##### uts插件
+* 新增 await 支持与 Promise 一同使用 [详情](https://uniapp.dcloud.net.cn/uts/operator.html#await)
+* 新增 UTSJSONObject 支持 hasOwnProperty [详情](https://uniapp.dcloud.net.cn/uts/buildin-object-api/utsjsonobject.html#hasOwnProperty)
+* 修复 parseInt 解析超过整型数据范围返回值为 NaN 的Bug
+* App-Android平台 修复 console 输出对象信息中包含 private 属性和方法的Bug
+* App-Android平台 修复 number 数据类型在某些情况除法运行结果不正确的Bug
+* App-iOS平台 修复 vue 页面中调用 API 参数不支持 null 的Bug
+
+#### 3.92.2023101106-alpha
+##### uni-app x插件
+* App-Android平台 修复 uni-app-x 项目 onLoad 生命周期调用 route API 交互异常的Bug
+* App-Android平台 修复 uni-app-x 项目非 tabBar 首页调用 uni.switchTab 应用崩溃的Bug
+##### uts插件
+* 修复 App-Android平台 vue 页面调用 API 传参对象中包含`Any`类型字段时可能出现异常的Bug
+
+#### 3.91.2023092719-alpha
 ##### uts插件
 * 调整 通过数字字面量定义变量未申明类型时默认推导为 number 类型 [详情](https://uniapp.dcloud.net.cn/uts/data-type.html#autotypefornumber)
 * 调整 typeof 获取实例对象类型支持平台专有数字类型 Int、Float、Double等 [详情](https://uniapp.dcloud.net.cn/uts/operator.html#typeof)
@@ -132,30 +176,20 @@
 * 调整 JSON.parse 解析json字符串支持返回 Array、number、boolean、string 等数据类型 [详情](https://uniapp.dcloud.net.cn/uts/buildin-object-api/json.html#parse)
 * 新增 JSON.parse 支持传入泛型解析为指定 type 类型 [详情](https://uniapp.dcloud.net.cn/uts/data-type.html#%E6%8A%8Ajson%E5%AF%B9%E8%B1%A1%E8%BD%AC%E4%B8%BAtype)
 * 新增 UTSJSONObject 通过 getBoolean、getString、getNumber、getJSON 等方法访问属性，并支持传入 keyPath 格式参数 [详情](https://uniapp.dcloud.net.cn/uts/data-type.html#%E8%AE%BF%E9%97%AE-utsjsonobject-%E4%B8%AD%E7%9A%84%E5%B1%9E%E6%80%A7%E6%95%B0%E6%8D%AE)
-* 新增 UTSJSONObject 支持 hasOwnProperty [详情](https://uniapp.dcloud.net.cn/uts/buildin-object-api/utsjsonobject.html#hasOwnProperty)
 * 新增 number 类型支持与平台专有数字类型相互转换方法 toInt、toFloat、toDouble、from 等 [详情](https://uniapp.dcloud.net.cn/uts/buildin-object-api/number.html)
 * 新增 type 自定义类型支持 for...in 遍历 [详情](https://uniapp.dcloud.net.cn/uts/data-type.html#type)
 * 新增 Regexp 正则表达式支持 flags 属性 [详情](https://uniapp.dcloud.net.cn/uts/buildin-object-api/regexp.html#flags)
 * 新增 支持 encodeURI、decodeURI、encodeURIComponent、decodeURIComponent 等全局方法 [详情](https://uniapp.dcloud.net.cn/uts/buildin-object-api/global.html#encodeuri)
 * 新增 支持使用数值字面量和字符串字面量用作类型注解 [详情](https://uniapp.dcloud.net.cn/uts/literal.html)
 * 新增 uni.request 请求的 method 支持 OPTIONS [详情](https://uniapp.dcloud.net.cn/uni-app-x/api/request.html)
-* 新增 await 支持与 Promise 一同使用 [详情](https://uniapp.dcloud.net.cn/uts/operator.html#await)
-* 修复 parseInt 解析超过整型数据范围返回值为 NaN 的Bug
-* 修复 for 循环中包含复杂continue、break时，执行不正确的Bug
-* 修复 class 中无法访问外部定义的与类内部属性、方法同名的变量的Bug
 * 新增 App-Android平台 Promise [详情](https://uniapp.dcloud.net.cn/uts/buildin-object-api/promise.html)
 * 新增 App-Android平台 支持 Array.fromNative 方法将原生 ByteArray/LongArray/ShortArray 类型转换为 Array
-* 更新 App-Android平台 编译使用的 Android SDK 为 33
 * 修复 App-Android平台 部分场景下位运算符异常的Bug
-* 修复 App-Android平台 number 的 toFixed 方法返回结果可能异常的Bug
-* 修复 App-Android平台 number 数据类型的位运算操作可能引起崩溃的Bug
-* 修复 App-Android平台 console 输出对象信息中包含 private 属性和方法的Bug
-* 修复 App-Android平台 number 数据类型在某些情况除法运行结果不正确的Bug
-* 修复 App-Android平台 vue 页面调用 API 传参对象中包含`Any`类型字段时可能出现异常的Bug
 * 修复 App-iOS平台 class 实例对象调用带参数标签的方法编译报错的Bug
 * 补齐 App-iOS平台 支持 parseInt、parseFloat、isNan、isFinite 等全局方法
 * 补齐 App-iOS平台 string 类型支持 toString、valueOf 等方法
 * 补齐 App-iOS平台 Array 类型支持 toString、sort 等方法
 * 补齐 App-iOS平台 Date 类型支持 toString、 valueOf、toUTCString、toTimeString、toDateString、parse 等方法
 * 修复 App-iOS平台 函数参数不支持 class 数组类型的Bug
-* 修复 App-iOS平台 vue 页面中调用 API 参数不支持 null 的Bug
+* 修复 for 循环中包含复杂continue、break时，执行不正确的Bug
+* 修复 class 中无法访问外部定义的与类内部属性、方法同名的变量的Bug

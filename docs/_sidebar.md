@@ -16,4 +16,6 @@
 * [源码和示例](sample.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
 * [跨平台框架及原生对比](select.md)
-* [更新日志](release.md)
+* 更新日志
+  * [正式版](release.md)
+  * [Alpha 版](release-note-alpha.md)
