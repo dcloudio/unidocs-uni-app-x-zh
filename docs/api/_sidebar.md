@@ -21,7 +21,6 @@
 * 界面
   * [交互反馈](prompt.md)
   * [动态加载字体](load-font-face.md)
-  * [截屏事件](capturescreen.md)
 * 网络
   * [发起请求request](request.md)
   * [上传文件](upload-file.md)

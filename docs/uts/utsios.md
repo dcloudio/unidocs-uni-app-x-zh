@@ -1,5 +1,6 @@
 # UTSiOS
 
+app-iOS平台专有内置对象。在uni-app和uni-app x的uts环境中均可使用。
 
 ## 静态方法
 

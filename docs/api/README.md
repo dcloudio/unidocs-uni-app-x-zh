@@ -42,3 +42,31 @@ uni-app x项目的uts代码中可以使用很多API。包括：
 虽然上述页面可以直接调用原生能力，但一般原生能力建议封装为[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)形式的[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。这样方便共享、方便跨平台。
 
 uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api，一部分在uni-app x中进行了替换增补、一部分提供了uts操作原生的示例代码。[详见](ext.md)
+
+网上可以找到很多kotlin调用系统api的代码，但如何使用uts来调用这些系统api？
+
+以上面的获取手机型号的代码为例：
+
+1. 打开一个靠谱的ai，询问："kotlin中获取手机型号的代码，需包含导入的类"，得到如下代码：
+```kotlin
+import android.os.Build  
+  
+fun getDeviceModel(): String {  
+    return Build.MODEL  
+}
+```
+
+2. 再问ai："把上述代码转为ts代码"
+```ts
+function getDeviceModel(): string {  
+  return Build.MODEL;  
+}
+```
+
+这里注意几个差别：
+- kotlin中import包，是`import android.os.Build`，而uts是`	import Build from 'android.os.Build'`。import后面需要跟名字，from后面需要引号括起来。
+- import包，需要在uvue页面的`export default`外。复杂的原生插件应该直接创建uts插件，放在单独的uni_modules中。
+- kotlin定义一个函数是`fun`，而uts是`function`
+- kotlin中定义一个常量是val，而uts是const；kotlin的变量定义是var，而uts推荐使用let。
+
+更复杂的例子可以[参考](ext.md#kt2uts)

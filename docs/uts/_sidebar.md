@@ -26,10 +26,11 @@
   * [Error](buildin-object-api/error.md)
   * [Console](buildin-object-api/console.md)
   * [全局](buildin-object-api/global.md)
-* 平台对象和 API
+* 平台专用对象和 API
   * [UTSAndroid](utsandroid.md)
   * [UTSAndroidHookProxy](utsandroidhookproxy.md)
   * [UTSiOS](utsios.md)
   * [UTSiOSHookProxy](utsioshookproxy.md)
 * [关键词](keywords.md)
+* [UTS App插件开发](../plugin/uts-plugin.md)
 <!-- * [学习资料](learning.md) -->

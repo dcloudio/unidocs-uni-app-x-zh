@@ -1,5 +1,6 @@
 # 其它api
 
+## uni api替代@uni
 插件市场和hello示例中还有一批可替代uni内置api的插件或示例代码，比如：
 - [剪切板](https://ext.dcloud.net.cn/search?q=%E5%89%AA%E5%88%87%E6%9D%BF&orderBy=Relevance&cat1=8&cat2=81)：`uni.setClipboardData`、`uni.getClipboardData`
 - [拨打电话](https://ext.dcloud.net.cn/plugin?id=15235)：`uni.makePhoneCall`
@@ -42,6 +43,7 @@
 </script>
 ```
 
+## plus api替代@plus
 uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api，在uni-app x中进行了替换增补。
 - plus.runtime.quit => [uni.exit](./exit.md)
 - plus.runtime.install => [uni.installApk](./install-apk.md)
@@ -75,4 +77,40 @@ uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api
 	}
 </script>
 ```
+
+## kotlin代码转uts简易指南@kt2uts
+
+以上面的打开schema代码为例。
+
+1. 打开一个靠谱的ai，询问："kotlin中打开系统浏览器的代码"，得到如下代码：
+```kotlin
+import android.content.Intent  
+import android.net.Uri  
   
+fun openSystemBrowser(url: String) {  
+    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))  
+    startActivity(intent)  
+}
+```
+
+2. 再问ai："把上述代码转为ts代码""
+```ts
+import Intent from 'android.content.Intent';
+import Uri from 'android.net.Uri';
+
+function openSystemBrowser(url: string): void {  
+  const intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));  
+  startActivity(intent);  
+}
+```
+
+这里注意几个差别：
+- kotlin中import包，是`import android.content.Intent`，而uts是`import Intent from 'android.content.Intent'`。import后面需要跟名字，from后面需要引号括起来。
+- kotlin定义一个函数是`fun`，而uts是`function`
+- kotlin中定义一个常量是val，而uts是const；kotlin的变量定义是var，而uts推荐使用let。
+- uts中实例化对象需要使用new关键字。
+- kotlin中是自己创建activity、自己管理。而uts中activity已经被uni-app x框架创建好了，要获取当前activity，有专门的api，`const context = UTSAndroid.getUniActivity()!`
+
+有时你得到的kotlin代码可能是简写，或者ai转ts时搞错了，需要自己推理一下缺什么，简单补补改改。
+
+官方的uni api，都是uts代码调用系统api，这里面很多例子可以参考：[https://gitcode.net/dcloud/uni-api](https://gitcode.net/dcloud/uni-api)
