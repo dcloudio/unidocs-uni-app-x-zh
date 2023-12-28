@@ -282,6 +282,18 @@ UTSAndroid.getDispatcher("io").async(function(_){
 
 <!-- UTSJSON.UTSAndroid.isUniAppX.compatibility -->
 
+
+### getAppCachePath
+
+<!-- UTSJSON.UTSAndroid.getAppCachePath.description -->
+
+<!-- UTSJSON.UTSAndroid.getAppCachePath.param -->
+
+<!-- UTSJSON.UTSAndroid.getAppCachePath.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getAppCachePath.compatibility -->
+
+
 ### rpx2px(rpx:number) : number;
 
 <!-- UTSJSON.UTSAndroid.rpx2px.description -->
