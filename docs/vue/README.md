@@ -62,6 +62,11 @@ export function createApp() {
 
 <!-- VUEJSON.general.compatibility -->
 <!-- VUEJSON.general.example -->
+
+#### nextTick 使用注意事项
+
+目前 nextTick 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 nextTick 不能保证 DOM 排版以及渲染完毕。如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/element.md) 对象。在修改 DOM 后，立刻使用 [Element](../dom/element.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
+
 ## 响应式兼容性
 
 ### 响应式: 核心
@@ -231,6 +236,10 @@ export default {
 
 <!-- VUEJSON.component_instance.compatibility -->
 <!-- VUEJSON.component_instance.example -->
+
+#### $nextTick 使用注意事项
+
+目前 $nextTick 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 $nextTick 不能保证 DOM 排版以及渲染完毕。如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/element.md) 对象。在修改 DOM 后，立刻使用 [Element](../dom/element.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
 
 ## 进阶 API兼容性
 
