@@ -46,5 +46,10 @@ video的操作api为[uni.createVideoContext()](../api/create-video-context.md)�
 ### Bug & Tips@tips
 - 暂不支持横屏全屏后放置子组件
 - 标准运行基座默认不包含intel x86 cpu的兼容so库，所以video组件在标准基座运行时无法在x86 cpu的设备上运行（常见于模拟器）。如需支持x86 cpu，请在manifest里配置`abiFilters`，打包或自定义基座后生效 [详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest.html#android)
-- 本地视频文件，或者静态引用（HBuilderX 3.97+）、或者import导入文件、或者在static目录下（项目下或uni_modules下都支持static目录），否则文件不会被copy到最终的包中，导致无法访问。
 - 默认拦截触摸事件，目前会导致父组件无法响应触摸事件
+
+#### 本地文件播放
+本地视频文件，有2种方式：
+- static目录下（项目下或uni_modules下都支持static目录）
+- 使用绝对路径。相对路径转绝对路径[详见](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#convert2absfullpath)
+- 暂不支持uni.env协议
