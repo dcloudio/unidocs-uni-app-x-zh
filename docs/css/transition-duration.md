@@ -7,7 +7,7 @@
 
 <!-- CSSJSON.transition-duration.values -->
 
-**注意**@length  
+**注意**  
 > App平台不支持指定多个时长  
 > App平台属性值可以不设置单位，不设置单位时当做 ms（毫秒） 处理  
 > Web平台属性值必须设置单位，无单位时当做非法值处理  
