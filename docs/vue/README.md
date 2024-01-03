@@ -145,6 +145,10 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 <!-- VUEJSON.options_lifecycle.compatibility -->
 <!-- VUEJSON.options_lifecycle.example -->
 
+#### mounted、unmounted 使用注意事项
+
+目前 mounted、unmounted 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 mounted、unmounted 不能保证 DOM 排版以及渲染完毕。如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/element.md) 对象。在修改 DOM 后，立刻使用 [Element](../dom/element.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
+
 ## 插件
 
 暂不支持vue插件，比如pinia、vuex、i18n、router。简单的状态管理可以参考文档[全局变量和状态管理](../tutorial/store.md)。
