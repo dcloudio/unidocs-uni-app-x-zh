@@ -296,6 +296,8 @@ mediaPlayer.start();
 +  请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
 
 ```gradle
++--- org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4
++--- org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4
 +--- my-imageloader.jar
 +--- my-nineoldandroids-2.4.0.jar
 +--- zip4j-2.8.0.jar
