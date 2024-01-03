@@ -213,10 +213,11 @@ uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码�
 
 **如果你一定要使用某个js库，还有一个办法是在uni-app x里的[web-view](./api/create-webview-context.md)组件，让其运行js并返回值给uts代码。**
 
-目前插件市场适配uni-app x的插件已有数百款，包括ui组件库：
+目前插件市场适配uni-app x的插件已有数百款，包括丰富的ui组件库生态：
 - [t-uvue-ui](https://ext.dcloud.net.cn/plugin?id=15571)：丰富的组件库
 - [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceui作者的免费开源组件库
-- [ux-front-ui](https://ext.dcloud.net.cn/plugin?id=15774)：持续更新的组件库
+- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：低代码高性能UI框架
+- [wx-ui](https://ext.dcloud.net.cn/plugin?id=15579)：丰富的组件库
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
 
 
