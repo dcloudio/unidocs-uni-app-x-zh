@@ -10,7 +10,8 @@ module.exports = function (md, { base = '/' }) {
                   if (attr[0] === 'href') {
                     // /abc/def.md => ${base}/abc/def.md
                     if (attr[1].indexOf('/') === 0 && attr[1].indexOf(base) !== 0) attr[1] = base + attr[1].slice(1)
-                    if (/^\w/.test(attr[1])) attr[1] = './' + attr[1]
+                    // abc/def.md => ./abc/def.md
+                    if (/^\w/.test(attr[1]) && !/^\w+:/.test(attr[1])) attr[1] = './' + attr[1]
                   }
                 });
               }
