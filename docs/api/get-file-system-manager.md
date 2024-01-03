@@ -12,6 +12,8 @@
 
 注意：读取文件API受具体设备内存大小限制，为了在老旧设备具备更好的兼容性，请避免一次性读取大文件的情况（建议文件大小不要超过16M）。
 
+注意：目前仅支持 uni-app x 环境下使用
+
 <!-- UTSAPIJSON.getFileSystemManager.param -->
 
 <!-- UTSAPIJSON.getFileSystemManager.returnValue -->
