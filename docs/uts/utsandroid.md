@@ -385,6 +385,15 @@ UTSAndroid.getDispatcher("io").async(function(_){
 
 <!-- UTSJSON.UTSAndroid.checkSystemPermissionGranted.compatibility -->
 
+```uts
+let permissionCheck = ["android.permission.CAMERA"]
+// 请求拍照权限
+if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permissionCheck)) {
+	console.log("当前已具备指定权限")
+}else{
+	console.log("当前不具备指定权限")
+}
+```
 
 
 ### gotoSystemPermissionActivity
