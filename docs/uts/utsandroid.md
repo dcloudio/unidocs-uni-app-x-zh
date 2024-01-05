@@ -418,6 +418,13 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 <!-- UTSJSON.UTSAndroid.getSystemPermissionDenied.compatibility -->
 
 
+```uts
+	let permissionNeed = ["android.permission.READ_PHONE_STATE"]
+	if (UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!, permissionNeed).isEmpty()) {
+    	console.log("当前已具备指定权限")
+	}
+```
+
 ### convert2AbsFullPath
 
 <!-- UTSJSON.UTSAndroid.convert2AbsFullPath.description -->
