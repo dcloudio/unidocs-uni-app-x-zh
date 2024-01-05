@@ -223,6 +223,11 @@ UTSAndroid.getDispatcher("io").async(function(_){
 
 <!-- UTSJSON.UTSAndroid.getAppId.compatibility -->
 
+```uts
+let appid = UTSAndroid.getAppId()
+console.log("appid",appid)
+```
+
 ### getOsTheme()
 
 <!-- UTSJSON.UTSAndroid.getOsTheme.description -->
@@ -232,6 +237,11 @@ UTSAndroid.getDispatcher("io").async(function(_){
 <!-- UTSJSON.UTSAndroid.getOsTheme.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getOsTheme.compatibility -->
+
+```uts
+let theme = UTSAndroid.getOsTheme()
+console.log("OsTheme",theme)
+```
 
 ### isUniMp()
 
@@ -243,6 +253,11 @@ UTSAndroid.getDispatcher("io").async(function(_){
 
 <!-- UTSJSON.UTSAndroid.isUniMp.compatibility -->
 
+```uts
+let isUniMp = UTSAndroid.isUniMp()
+console.log("isUniMp",isUniMp)
+```
+
 ### getAppName()
 
 <!-- UTSJSON.UTSAndroid.getAppName.description -->
@@ -252,6 +267,11 @@ UTSAndroid.getDispatcher("io").async(function(_){
 <!-- UTSJSON.UTSAndroid.getAppName.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getAppName.compatibility -->
+
+```uts
+let appName = UTSAndroid.getAppName()
+console.log("AppName",appName)
+```
 
 ### getAppVersion()
 
@@ -263,6 +283,11 @@ UTSAndroid.getDispatcher("io").async(function(_){
 
 <!-- UTSJSON.UTSAndroid.getAppVersion.compatibility -->
 
+```uts
+let appVersion = UTSAndroid.getAppVersion()
+console.log("AppVersion",appVersion)
+```
+
 ### getInnerVersion()
 
 <!-- UTSJSON.UTSAndroid.getInnerVersion.description -->
@@ -272,6 +297,11 @@ UTSAndroid.getDispatcher("io").async(function(_){
 <!-- UTSJSON.UTSAndroid.getInnerVersion.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getInnerVersion.compatibility -->
+
+```uts
+let innerVersion = UTSAndroid.getInnerVersion()
+console.log("InnerVersion",innerVersion)
+```
 
 ### isUniAppX()
 
@@ -283,6 +313,10 @@ UTSAndroid.getDispatcher("io").async(function(_){
 
 <!-- UTSJSON.UTSAndroid.isUniAppX.compatibility -->
 
+```uts
+let isUniAppX = UTSAndroid.isUniAppX()
+console.log("isUniAppX",isUniAppX)
+```
 
 ### getAppCachePath
 
@@ -295,6 +329,12 @@ UTSAndroid.getDispatcher("io").async(function(_){
 <!-- UTSJSON.UTSAndroid.getAppCachePath.compatibility -->
 
 * 如果编译报错找不到该方法，手动删除“uniapp-runextension”插件重新安装 或者 重新下载安装最新版本 HBuilder X 即可修复*
+
+
+```uts
+let appCachePath = UTSAndroid.getAppCachePath()
+console.log("AppCachePath",appCachePath)
+```
 
 
 ### rpx2px(rpx:number) : number;
