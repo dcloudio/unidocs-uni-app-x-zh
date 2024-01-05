@@ -359,6 +359,43 @@ UTSAndroid.getDispatcher("io").async(function(_){
 
 <!-- UTSJSON.UTSAndroid.requestSystemPermission.compatibility -->
 
+```uts
+
+	let permissionNeed = ["android.permission.CAMERA"]
+    // 请求权限，并跳转拍照界面
+	UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!, permissionNeed, function (allRight : boolean, _ : string[]) {
+		if (allRight) {
+      
+			UTSAndroid.onAppActivityResult((requestCode : Int, resultCode : Int, data ?: Intent) => {
+        
+				if ((requestCode == 1001) && (resultCode == Activity.RESULT_OK)) {
+					if (data != null) {
+						let bundle = data.getExtras();
+						let mImageBitmap = bundle!.get("data") as Bitmap;
+						let bitmapPath = UTSAndroid.getUniActivity()!.getExternalCacheDir()!.getPath() + "/photo.png"
+						console.log(bitmapPath);
+						try {
+							mImageBitmap.compress(Bitmap.CompressFormat.PNG, 100, new FileOutputStream(bitmapPath))
+						} catch (e) {
+						}
+						imageDone(bitmapPath);
+					}
+				}
+			});
+
+			let takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+			//resolveActivity 返回可处理 Intent 的第一个 Activity 组件
+			if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageManager()) != null) {
+				UTSAndroid.getUniActivity()!.startActivityForResult(takePictureIntent, 1001);
+			}
+		} else {
+			//callback(false,"用户拒绝了部分权限")
+		}
+	}, function (_ : boolean, _ : string[]) {
+		//callback(false,"用户拒绝了部分权限")
+	})
+
+```
 
 ### checkSystemPermissionGranted
 
