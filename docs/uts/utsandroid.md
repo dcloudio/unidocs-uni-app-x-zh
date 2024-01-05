@@ -155,6 +155,11 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.getAppContext.compatibility -->
 
+```uts
+let packageName = UTSAndroid.getAppContext()?.packageName
+console.log("packageName",packageName)
+```
+
 ### getUniActivity()
 
 <!-- UTSJSON.UTSAndroid.getUniActivity.description -->
@@ -164,6 +169,14 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.getUniActivity.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getUniActivity.compatibility -->
+
+```uts
+// 获取第一个可以响应图像采集行为组件
+let takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageManager()) != null) {
+	UTSAndroid.getUniActivity()!.startActivityForResult(takePictureIntent, 1001);
+}
+```
 
 ### getResourcePath(resourceName)
 
