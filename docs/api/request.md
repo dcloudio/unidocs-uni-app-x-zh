@@ -20,6 +20,7 @@
     const options: RequestOptions<Person> = ...
     uni.request<Person>(options)
     ```
+* uni.request()暂未支持Promise，返回值是RequestTask。
 
 <!-- UTSAPIJSON.general_type.name -->
 
