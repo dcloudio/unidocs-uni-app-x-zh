@@ -101,6 +101,10 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 
 <!-- UTSCOMJSON.list-item.reference -->
 
+#### App平台
+
++ App平台scroll-x、scroll-y属性不支持同时设置为true, 同时设置true时仅scroll-y生效
+
 ## 示例代码
 
 - 联网联表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue)
