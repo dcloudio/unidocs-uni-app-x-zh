@@ -86,6 +86,7 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 |:--        |:--                            |:--|
 |基本类型    |number/string/boolean          |对应json格式中的 原型数据类型|
 |容器数据类型|UTSArray/UTSJSONObject         |对应json格式中的 jsonarray/jsonobject|
+|map和set   |map和set                       |与web保持一致，序列化为 空jsonobject对象： `{}`|
 |自定义type  |开发者使用type 声明的类型对象    |被序列化为 jsonobject|
 |自定义class |开发者使用class 声明的类型对象   |被序列化为 空jsonobject对象： `{}` |
 |function   |对象内部声明的函数               |被序列化为 `null` |
