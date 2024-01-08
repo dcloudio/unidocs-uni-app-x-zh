@@ -10,6 +10,8 @@
 #### App平台  
 App平台不支持`none`和`all`属性
 
+transition暂不支持结束属性值为百分比。
+
 <!-- CSSJSON.transition.defaultValue -->
 
 <!-- CSSJSON.transition.unixTags -->
