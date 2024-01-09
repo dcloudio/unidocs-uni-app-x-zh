@@ -90,14 +90,14 @@ onNestedPreScroll(event: NestedPreScrollEvent) {
 
 <!-- UTSCOMJSON.scroll-view.compatibility -->
 
-<!-- UTSCOMJSON.scroll-view.children -->
-
-<!-- UTSCOMJSON.scroll-view.reference -->
-
 #### App平台
 
 + App平台scroll-x、scroll-y属性不支持同时设置为true, 同时设置true时仅scroll-y生效
 + App平台scroll-view组件不支持动态切换横竖滚动方向
+
+<!-- UTSCOMJSON.scroll-view.children -->
+
+<!-- UTSCOMJSON.scroll-view.reference -->
 
 ### Bug & Tips@tips
 
