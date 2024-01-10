@@ -215,9 +215,10 @@ uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码�
 
 目前插件市场适配uni-app x的插件已有数百款，包括丰富的ui组件库生态：
 - [t-uvue-ui](https://ext.dcloud.net.cn/plugin?id=15571)：丰富的组件库
-- [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceui作者的免费开源组件库
+- [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceUI作者的免费开源组件库
 - [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：低代码高性能UI框架
-- [wx-ui](https://ext.dcloud.net.cn/plugin?id=15579)：丰富的组件库
+- [wx-ui](https://ext.dcloud.net.cn/plugin?id=15579)：基于uni-app x开发的高性能混合UI库
+- [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：一款适配 uni-app x 的轻量、简洁、高效、全面的移动端组件库
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
 
 
