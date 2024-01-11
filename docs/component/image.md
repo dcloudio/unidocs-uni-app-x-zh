@@ -47,6 +47,9 @@
 
 <!-- UTSCOMJSON.image.compatibility -->
 
+#### App平台
+- App-Android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸。
+
 <!-- UTSCOMJSON.image.children -->
 
 <!-- UTSCOMJSON.image.reference -->
