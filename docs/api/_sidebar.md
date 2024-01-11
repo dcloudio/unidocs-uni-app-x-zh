@@ -53,7 +53,7 @@
   * [文件系统规范](file-system-spec.md)
   * [getFileSystemManager](get-file-system-manager.md)
 * 登录和验证
-	* [App一键登陆](get-univerify-manager.md)
+	* [App一键登录](get-univerify-manager.md)
   * [金融级实人认证](facial-recognition-verify.md)
 * 组件上下文对象
   * [web-view组件上下文对象](create-webview-context.md)
