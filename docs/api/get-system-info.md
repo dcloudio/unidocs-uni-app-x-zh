@@ -12,7 +12,7 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 - `uni`：uni-app框架相关的信息，如uni-app框架的编译器版本、运行时版本
 - `app`：开发者的应用相关的信息，如应用名称、版本
 
-[详见](https://uniapp.dcloud.net.cn/api/system/info.html#getsysteminfo)
+因本API涉及的信息越来越多，查询速度会逐渐变慢。由此拆解分出2个新API，[uni.getDeviceInfo](get-device-info.md)和[uni.getAppBaseInfo](get-app-base-info.md)。新API包含的信息更多。
 
 <!-- UTSAPIJSON.getSystemInfo.param -->
 
