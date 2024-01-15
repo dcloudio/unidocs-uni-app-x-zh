@@ -250,6 +250,8 @@ handleClick (event : MouseEvent) {
 
 <!-- CUSTOMTYPEJSON.TouchEvent.param -->
 
+TouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchcancel、longpress。
+
 ### TouchEvent 方法 @touchevent-methods
 <!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.name -->
 
