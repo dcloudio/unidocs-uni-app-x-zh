@@ -447,6 +447,10 @@ Tips：
 * 页面的样式作用于当前页面及其子组件。
 * 组件的样式仅作用于当前组件。
 
+## 页面滚动引起的差异
+
+`uni-app-x` App端无页面滚动，且其根节点高度为从导航栏底部到tabBar顶部。如果在页面根节点的子元素使用`position: absolute;`，页面内部scroll-view滚动时不会改变此元素位置。其他端有页面滚动，如果在页面根节点的子元素使用`position: absolute;`页面滚动会改变此元素的位置。如果有不随页面滚动变化位置的需求建议使用`position: fixed`。注意web端需要使用[css变量](https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-%E5%8F%98%E9%87%8F)使元素不覆盖在navigationBar和tabBar上。
+
 ## Bug
 
 css相关bug[详见](https://issues.dcloud.net.cn/?mid=css)
