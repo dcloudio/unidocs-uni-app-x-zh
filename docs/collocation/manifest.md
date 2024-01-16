@@ -8,8 +8,6 @@ uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选�
 
 ## 配置项列表
 
-<!-- MANIFESTJSON.manifest.description -->
-
 <!-- MANIFESTJSON.manifest.table -->
 
 **注意**
