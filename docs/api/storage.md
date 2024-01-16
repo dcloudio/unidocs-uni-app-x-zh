@@ -57,6 +57,8 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.getStorage.tutorial -->
 
+> 注意：获取一个不存在的 key 会触发 fail 回调，返回错误信息为 "getStorage:fail data not found" 的错误。
+
 ## uni.getStorageSync(key) @getstoragesync
 
 <!-- UTSAPIJSON.getStorageSync.description -->
@@ -70,6 +72,8 @@ uni-app的Storage在不同端的实现不同：
 <!-- UTSAPIJSON.getStorageSync.compatibility -->
 
 <!-- UTSAPIJSON.getStorageSync.tutorial -->
+
+> 注意：同步方法获取一个不存在的 key 会返回空字符串，而不是 null
 
 ## uni.getStorageInfo(options) @getstorageinfo
 
