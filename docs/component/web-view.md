@@ -38,7 +38,7 @@ web-view的操作api为[uni.createWebviewContext()](../api/create-webview-contex
 |uni.webView.reLaunch|[reLaunch](../api/navigator#relaunch)||
 |uni.webView.switchTab|[switchTab](../api/navigator#switchtab)||
 |uni.webView.navigateBack|[navigateBack](../api/navigator#navigateback)||
-|uni.webView.postMessage|向应用发送消息||
+|uni.webView.postMessage|向应用发送消息|Web平台暂不支持|
 
 在网页中使用`uni.postMessage()`即可向uts发送消息。
 
