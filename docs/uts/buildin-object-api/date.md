@@ -223,3 +223,13 @@ setTimeout(() => {
 <!-- UTSJSON.Date.setFullYear.compatibility -->
 
 <!-- UTSJSON.Date.tutorial -->
+
+### parse(s)
+
+<!-- UTSJSON.Date.parse.description -->
+
+<!-- UTSJSON.Date.parse.param -->
+
+<!-- UTSJSON.Date.parse.returnValue -->
+
+<!-- UTSJSON.Date.parse.compatibility -->
