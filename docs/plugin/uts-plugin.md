@@ -565,7 +565,7 @@ getBatteryInfo({
 
 特别提示：
 
-**有android开发经验的开发者可以参考：[Android平台uts开发指南](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html)**
+**有android开发经验的开发者可以参考：[Android平台uts开发指南](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html)**
 
 
 #### iOS 平台
