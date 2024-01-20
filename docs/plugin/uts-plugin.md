@@ -561,7 +561,7 @@ getBatteryInfo({
 
 注1：HBuilderX的代码提示系统，支持在uts文件中对Android的原生API进行提示
 
-注2：`io.dcloud.uts.android`库介绍文档[见下](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#iodcloudutsandroid)
+注2：`io.dcloud.uts.android`库介绍[文档](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#iodcloudutsandroid)
 
 特别提示：
 
