@@ -153,7 +153,7 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 暂不支持vue插件，比如pinia、vuex、i18n、router。简单的状态管理可以参考文档[全局变量和状态管理](../tutorial/store.md)。
 
-## 选项式 API兼容性
+## 选项式 API兼容性 @options-api-compatibility
 
 ### 状态选项
 
