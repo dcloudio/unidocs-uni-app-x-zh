@@ -157,11 +157,10 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 ### 状态选项
 
-**注意：**
-- **watch:** 暂不支持 `deep` 及监听对象中单个属性(`obj.a`)。
-- **emits:** 暂不支持[验证抛出的事件](https://uniapp.dcloud.net.cn/tutorial/vue3-components.html#%E5%AE%9A%E4%B9%89%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6)。
-
 <!-- VUEJSON.options_state.compatibility -->
+**注意：**
+- `watch immediate` 第一次调用时，App-Android 平台旧值为初始值，web 平台为 null。
+
 <!-- VUEJSON.options_state.example -->
 ### 渲染选项 @rendering-options
 
