@@ -117,7 +117,7 @@ export function createApp() {
 ## 应用生命周期
 uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) 和 [onExit](../collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
 
-## 组件
+## 组件 @component
 
 - [props](../component/README.md#props)
 - [自定义事件](../component/README.md#自定义事件)
