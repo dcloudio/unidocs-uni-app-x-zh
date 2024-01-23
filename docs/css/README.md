@@ -318,7 +318,7 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 
 暂不支持css变量val()。--status-bar-height、--window-top、--window-bottom，也暂时无法使用，有相关需求可使用[uni.getWindowInfo()](../api/get-window-info.md)方式获取。
 
-## CSS 变量（4.0+）
+## CSS 变量（4.0+）@variable
 
 uni-app 提供内置 CSS 变量
 
@@ -337,7 +337,7 @@ uni-app 提供内置 CSS 变量
 
 快速书写 css 变量的方法是：在 css 中敲 hei，在候选助手中即可看到 3 个 css 变量。
 
-示例 1 - 普通页面使用 css 变量：
+示例：
 
 ```html
 <template>
