@@ -129,6 +129,10 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 }
 ```
 
+#### 页面背景色@background  
+- 页面容器背景色：可在页面 json 文件中通过 backgroundColorContent 属性配置，支持 #RRGGBB 写法，默认为白色  
+- 窗口背景色：可在页面 json 文件中通过 backgroundColor 属性配置，支持 #RRGGBB 写法，默认为白色。被页面容器背景色覆盖，仅在页面设置下拉刷新时才可能看到此颜色  
+
 
 ### tabBar 配置项列表 @pages-tabbar
 
