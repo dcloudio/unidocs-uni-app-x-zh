@@ -67,7 +67,7 @@ export function createApp() {
 
 目前 nextTick 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 nextTick 不能保证 DOM 排版以及渲染完毕。如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/element.md) 对象。在修改 DOM 后，立刻使用 [Element](../dom/element.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
 
-## 响应式兼容性
+## 组合式 API
 
 ### 响应式: 核心
 
@@ -126,14 +126,114 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 - [监听页面生命周期](../component/README.md#监听页面生命周期)
 - [vue 与 uvue 不同文件后缀的优先级](../component/README.md#priority)
 
+::: warning 注意
+1. App 端，如需页面级滚动，根节点必须是 `scroll-view` 标签。
+:::
+
 <!-- VUEJSON.components.compatibility -->
 <!-- VUEJSON.components.example -->
 ### 特殊元素 @special-elements
 
-<!-- VUEJSON.special_elements.compatibility -->
-<!-- VUEJSON.special_elements.example -->
+#### script
 
-- App 端，如需页面级滚动，根节点必须是 `scroll-view` 标签。
+<!-- VUEJSON.script.description -->
+
+<!-- VUEJSON.script.attrubute -->
+
+<!-- VUEJSON.script.event -->
+
+<!-- VUEJSON.script.example -->
+
+<!-- VUEJSON.script.compatibility -->
+
+<!-- VUEJSON.script.children -->
+
+<!-- VUEJSON.script.reference -->
+
+#### template
+
+<!-- VUEJSON.template.description -->
+
+<!-- VUEJSON.template.attrubute -->
+
+<!-- VUEJSON.template.event -->
+
+<!-- VUEJSON.template.example -->
+
+<!-- VUEJSON.template.compatibility -->
+
+<!-- VUEJSON.template.children -->
+
+<!-- VUEJSON.template.reference -->
+
+
+#### slot
+
+<!-- VUEJSON.slot.description -->
+
+<!-- VUEJSON.slot.attrubute -->
+
+<!-- VUEJSON.slot.event -->
+
+<!-- VUEJSON.slot.example -->
+
+<!-- VUEJSON.slot.compatibility -->
+
+<!-- VUEJSON.slot.children -->
+
+<!-- VUEJSON.slot.reference -->
+
+
+
+#### style
+
+<!-- VUEJSON.style.description -->
+
+<!-- VUEJSON.style.attrubute -->
+
+<!-- VUEJSON.style.event -->
+
+<!-- VUEJSON.style.example -->
+
+<!-- VUEJSON.style.compatibility -->
+
+<!-- VUEJSON.style.children -->
+
+<!-- VUEJSON.style.reference -->
+
+
+#### keep-alive
+
+<!-- VUEJSON.keep-alive.description -->
+
+<!-- VUEJSON.keep-alive.attrubute -->
+
+<!-- VUEJSON.keep-alive.event -->
+
+<!-- VUEJSON.keep-alive.example -->
+
+<!-- VUEJSON.keep-alive.compatibility -->
+
+<!-- VUEJSON.keep-alive.children -->
+
+<!-- VUEJSON.keep-alive.reference -->
+
+
+#### component
+
+<!-- VUEJSON.component.description -->
+
+<!-- VUEJSON.component.attrubute -->
+
+<!-- VUEJSON.component.event -->
+
+<!-- VUEJSON.component.example -->
+
+<!-- VUEJSON.component.compatibility -->
+
+<!-- VUEJSON.component.children -->
+
+<!-- VUEJSON.component.reference -->
 
 ### 特殊 Attributes @special-attributes
 

@@ -2,7 +2,8 @@
 
 每个组件都有属性和事件。有些属性和事件，是所有组件都支持的。
 
-**调整**
+::: info 调整
+
 1. 4.0+ 组件事件类型名称增加 Uni 前缀，避免与浏览器全局事件冲突
 2. 非 Uni 开头的事件类型名称被标记为废弃，功能不受影响
 
@@ -29,6 +30,7 @@
   }
 </script>
 ```
+:::
 
 
 ## 组件公共属性
@@ -39,7 +41,7 @@
 - class
 - data-
 
-<!-- CUSTOMTYPEJSON.general-attribute.example -->
+<!-- CUSTOMTYPEJSON.Unigeneral-attribute.example -->
 
 ## 组件公共事件
 
@@ -159,162 +161,154 @@ handleClick (event : MouseEvent) {
 
 连续触发`click`或`tap`事件，可能会出现事件丢失的情况。
 
-## Event
+## UniEvent
 
-<!-- CUSTOMTYPEJSON.Event.description -->
+<!-- CUSTOMTYPEJSON.UniEvent.description -->
 
-<!-- CUSTOMTYPEJSON.Event.extends -->
+<!-- CUSTOMTYPEJSON.UniEvent.extends -->
 
-<!-- CUSTOMTYPEJSON.Event.param -->
+<!-- CUSTOMTYPEJSON.UniEvent.param -->
 
 
 
-### Event 方法 @event-methods
-<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.name -->
+### UniEvent 方法 @event-methods
+<!-- CUSTOMTYPEJSON.UniEvent.methods.stopPropagation.name -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.description -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.stopPropagation.description -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.param -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.stopPropagation.param -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.returnValue -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.stopPropagation.returnValue -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.compatibility -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.stopPropagation.compatibility -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.stopPropagation.tutorial -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.stopPropagation.tutorial -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.name -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.preventDefault.name -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.description -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.preventDefault.description -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.param -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.preventDefault.param -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.returnValue -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.preventDefault.returnValue -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.compatibility -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.preventDefault.compatibility -->
 
-<!-- CUSTOMTYPEJSON.Event.methods.preventDefault.tutorial -->
+<!-- CUSTOMTYPEJSON.UniEvent.methods.preventDefault.tutorial -->
 
-## CustomEvent
+## UniCustomEvent
 
-<!-- CUSTOMTYPEJSON.CustomEvent.description -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.description -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.extends -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.extends -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.param -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.param -->
 
 
 
-### CustomEvent 方法 @customevent-methods
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.name -->
+### UniCustomEvent 方法 @customevent-methods
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.name -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.description -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.description -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.param -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.param -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.returnValue -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.returnValue -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.compatibility -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.compatibility -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.stopPropagation.tutorial -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.tutorial -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.name -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.name -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.description -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.description -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.param -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.param -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.returnValue -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.returnValue -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.compatibility -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.compatibility -->
 
-<!-- CUSTOMTYPEJSON.CustomEvent.methods.preventDefault.tutorial -->
+<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.tutorial -->
 
-## CustomEventOptions
+## UniMouseEvent
 
-<!-- CUSTOMTYPEJSON.CustomEventOptions.description -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.description -->
 
-<!-- CUSTOMTYPEJSON.CustomEventOptions.extends -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.extends -->
 
-<!-- CUSTOMTYPEJSON.CustomEventOptions.param -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.param -->
 
-## MouseEvent
 
-<!-- CUSTOMTYPEJSON.MouseEvent.description -->
+### UniMouseEvent 方法 @mouseevent-methods
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.name -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.extends -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.description -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.param -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.param -->
 
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.returnValue -->
 
-### MouseEvent 方法 @mouseevent-methods
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.name -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.compatibility -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.description -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.tutorial -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.param -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.name -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.returnValue -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.description -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.compatibility -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.param -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.stopPropagation.tutorial -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.returnValue -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.name -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.compatibility -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.description -->
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.tutorial -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.param -->
+## UniTouchEvent
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.returnValue -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.description -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.compatibility -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.extends -->
 
-<!-- CUSTOMTYPEJSON.MouseEvent.methods.preventDefault.tutorial -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.param -->
 
-## TouchEvent
+UniTouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchcancel、longpress。
 
-<!-- CUSTOMTYPEJSON.TouchEvent.description -->
+### UniTouchEvent 方法 @touchevent-methods
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.name -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.extends -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.description -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.param -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.param -->
 
-TouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchcancel、longpress。
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.returnValue -->
 
-### TouchEvent 方法 @touchevent-methods
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.name -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.compatibility -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.description -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.tutorial -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.param -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.name -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.returnValue -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.description -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.compatibility -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.param -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.stopPropagation.tutorial -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.returnValue -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.name -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.compatibility -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.description -->
+<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.tutorial -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.param -->
+## UniTouch
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.returnValue -->
+<!-- CUSTOMTYPEJSON.UniTouch.description -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.compatibility -->
+<!-- CUSTOMTYPEJSON.UniTouch.extends -->
 
-<!-- CUSTOMTYPEJSON.TouchEvent.methods.preventDefault.tutorial -->
+<!-- CUSTOMTYPEJSON.UniTouch.param -->
 
-## Touch
-
-<!-- CUSTOMTYPEJSON.Touch.description -->
-
-<!-- CUSTOMTYPEJSON.Touch.extends -->
-
-<!-- CUSTOMTYPEJSON.Touch.param -->
-
-<!-- CUSTOMTYPEJSON.general-event.example -->
+<!-- CUSTOMTYPEJSON.Unigeneral-event.example -->
 
 ## 参见
 
