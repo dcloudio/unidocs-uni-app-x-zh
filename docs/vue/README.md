@@ -82,7 +82,11 @@ export function createApp() {
 <!-- VUEJSON.reactivity_advanced.compatibility -->
 <!-- VUEJSON.reactivity_advanced.example -->
 
-### [函数 event 参数的类型](../tutorial/codegap.md#function-event-argument-type)
+### 生命周期钩子
+
+<!-- VUEJSON.composition_lifecycle.compatibility -->
+
+#### [函数 event 参数的类型](../tutorial/codegap.md#function-event-argument-type)
 
 ### 指令 @directives
 
