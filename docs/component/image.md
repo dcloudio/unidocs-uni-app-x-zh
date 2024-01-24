@@ -7,6 +7,9 @@
 <!-- UTSCOMJSON.image.event -->
 
 ### 图片格式
+web端支持的图片格式，不同浏览器有差异，可查询caniuse。
+
+app端支持的图片格式如下：
 - [x] bmp
 - [x] gif
 - [x] ico

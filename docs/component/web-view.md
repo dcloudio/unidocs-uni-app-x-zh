@@ -12,6 +12,9 @@
 
 <!-- UTSCOMJSON.web-view.compatibility -->
 
+- web和小程序上，web-view是全屏的，即页面只能显示一个铺满的web-view。
+- app端的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。
+
 <!-- UTSCOMJSON.web-view.children -->
 
 <!-- UTSCOMJSON.web-view.reference -->
@@ -53,5 +56,4 @@ uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中�
 
 ## 注意
 - web-view组件为系统web-view，内核版本号不由uni-app x框架控制。如需x5等webview，需使用uts插件，[详见](https://ext.dcloud.net.cn/search?q=x5)。  
-- web-view组件默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。
 - 一个页面的web-view组件数量不宜太多，每个web-view都会占用不少内存

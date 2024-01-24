@@ -5,8 +5,7 @@ uni-app x支持的组件包括：
 - 自定义vue组件
 - uts组件插件
 
-不支持的组件包括：
-- 小程序wxml组件
+除了微信小程序，其他平台不支持的小程序wxml组件。
 
 支持[easycom](https://uniapp.dcloud.net.cn/component/index.html#easycom)。
 
@@ -42,7 +41,7 @@ uni-app x支持的组件包括：
 
 ## props
 
-- 仅支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明，不支持字符串数组方式声明。
+- 支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。从4.0版本qi支持字符串数组方式声明。
 - 仅支持直接在 `export default` 内部声明，不支持其他位置定义后，在 `export default` 中引用。
 - 复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。
 - `type` 不支持使用自定义的构造函数。
@@ -135,7 +134,7 @@ export default {
 
 ## ref
 
-在 `uni-app js 引擎版`中，非 `H5端` 只能用于获取自定义组件，不能用于获取内置组件实例（如：`view`、`text`）。\
+在 `uni-app js 引擎版`中，非 `Web端` 只能用于获取自定义组件，不能用于获取内置组件实例（如：`view`、`text`）。\
 在 `uni-app x` 中，内置组件会返回组件根节点的引用，自定义组件会返回组件实例。
 
 **注意事项：**

@@ -1,4 +1,6 @@
-# 不支持的组件及替代方案
+# 其他组件
+
+## App平台
 
 uni-app x在App端还有一批组件未与uni-app js引擎版拉齐。有的在排期中，有的提供了替代方案，有的需开发者自行开发插件。
 
@@ -18,3 +20,7 @@ uni-app x在App端还有一批组件未与uni-app js引擎版拉齐。有的在�
 	* 或使用web-view中的地图
 - live-pusher：需开发uts组件
 - label：用view加事件来替代
+
+## Web平台
+
+uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app js引擎版的组件在uni-app x的web版中都可以使用。但4.0版本的uni-app x的web版暂未对其他组件进行测试。

@@ -75,14 +75,8 @@ uni-app x的真机运行基座（playground），和uni-app js引擎版不同，
 
 uni-app x运行时，控制台右上角可以选择开启原生日志。
 
-目前仅支持真机运行，不支持断点debug。
+目前支持真机运行、从HBuilderX 4.0起支持uts插件的debug断点。但目前还不支持uvue的断点debug。
 
 ## 发行
 
-uni-app x目前只能打包apk。
-
-暂不支持渠道包。
-
-不支持wgt热更新、不支持安心打包。
-
-下载到项目下的uts插件可打包含入。
+uni-app x App平台，目前只能打包apk。暂不支持渠道包。不支持wgt热更新、不支持安心打包。下载到项目下的uts插件可打包含入。

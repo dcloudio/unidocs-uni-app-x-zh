@@ -1,6 +1,10 @@
 # 其它api
 
-## uni api替代@uni
+## Web平台
+
+uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app js引擎版的uni api在uni-app x的web版中都可以使用。但4.0版本的uni-app x的web版暂未对其他api进行测试。
+
+## App平台uni api替代@uni
 插件市场和hello示例中还有一批可替代uni内置api的插件或示例代码，比如：
 - [剪切板](https://ext.dcloud.net.cn/search?q=%E5%89%AA%E5%88%87%E6%9D%BF&orderBy=Relevance&cat1=8&cat2=81)：`uni.setClipboardData`、`uni.getClipboardData`
 - [拨打电话](https://ext.dcloud.net.cn/plugin?id=15235)：`uni.makePhoneCall`
