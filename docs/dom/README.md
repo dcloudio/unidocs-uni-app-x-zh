@@ -2,15 +2,16 @@
 
 App-uvue的每个页面，在内存中都有一个 DOM（文档对象模型）。它和浏览器的 [DOM规范](https://www.w3.org/DOM/?spm=a2c7j.-zh-docs-api-weex-variable.0.0.2a5537c6FrgbYp) 类似。
 
-DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示一个页面文档，树的每个分支的终点都是一个节点，每个节点都对应一个节点对象（Element）。
+DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示一个页面文档，树的每个分支的终点都是一个节点，每个节点都对应一个节点对象（UniElement）。
 
 实际上 app-uvue 的template、数据绑定，在底层调用的也是 DOM API。
 
 在浏览器中，开发者一旦跳过vue框架直接操作dom，vue框架将无法管理相应dom，开发者需要注意两端的冲突。
 
-在 App 端，为了减少冲突，目前不支持通过 DOM API 创建和删除 DOM 树中的元素。只支持获取元素Element。
+在 App 端，为了减少冲突，目前不支持通过 DOM API 创建和删除 DOM 树中的元素。只支持获取元素UniElement。
 
-> 低版本使用过 INode 对象，从HBuilderX 3.91开始统一为 Element 对象，不再推荐使用 INode。
+> 低版本使用过 INode 对象，从HBuilderX 3.91开始统一为 Element 对象，不再推荐使用 INode  
+> HBuilderX4.0开始统一调整为 UniElement 对象，不再推荐使用 Element 和 INode  
 
 
 ## 使用场景
