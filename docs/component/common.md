@@ -3,8 +3,33 @@
 每个组件都有属性和事件。有些属性和事件，是所有组件都支持的。
 
 **调整**
-1. 4.0+ 组件事件名称增加 Uni 前缀，避免与浏览器全局事件冲突
-2. 非 Uni 开头的事件名称被标记为废弃，功能不受影响
+1. 4.0+ 组件事件类型名称增加 Uni 前缀，避免与浏览器全局事件冲突
+2. 非 Uni 开头的事件类型名称被标记为废弃，功能不受影响
+
+变更示例
+```html
+<template>
+  <slider @change="sliderChange" />
+</template>
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods: {
+      // 变更之前类型为 SliderChangeEvent
+      // sliderChange(e : SliderChangeEvent) {
+      // }
+
+      // 变更之后类型为 UniSliderChangeEvent
+      sliderChange(e : UniSliderChangeEvent) {
+      }
+    }
+  }
+</script>
+```
+
 
 ## 组件公共属性
 
