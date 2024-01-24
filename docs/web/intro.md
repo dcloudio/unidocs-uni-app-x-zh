@@ -1,0 +1,116 @@
+# 编译到web端
+
+> 新增于4.0版本
+
+## vue
+
+### 特性支持情况
+
+uni-app x编译到web端时遵循vue规范，目前有部分vue特性暂不支持。
+
+不支持的特性如下
+
+- 组合式API：`defineOptions`、`defineModel`、`toValue`、`toRef`、`toRefs`、`hasInjectionContext`
+- 指令：`v-once`、`v-memo`
+- render函数
+
+部分支持的特性
+
+- mixin：需要使用`defineMixin`函数定义mixin，不可直接使用对象字面量定义mixin
+
+### refs@refs
+
+使用refs获取内置组件实例时会获取到对应的Element，而不是vue组件实例。
+
+```vue
+<template>
+  <view ref="view"></view>
+</template>
+<script>
+export default {
+  onReady() {
+    console.log(this.$refs['view']) // 此时获取到的是UniViewElement
+  }
+}
+</script>
+```
+
+### vue相关属性类型问题
+
+为保证运行性能，app安卓端部分属性（如：$data、$refs）被转为了Map类型（安卓端map支持使用下标访问），而web端仍是普通对象或proxy。为保证多段代码一致，在使用这些属性时可以统一为下标访问。
+
+```vue
+<template>
+  <view></view>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      a: 1
+    }
+  },
+  onReady() {
+    console.log(this.$data['a']) // 1
+  }
+}
+</script>
+```
+
+### 其他注意事项
+
+- data内$开头的属性不可直接使用`this.$xxx`访问，需要使用`this.$data['$xxx']`，这是vue的规范。目前安卓端可以使用this.xxx访问是Bug而非特性，请勿使用此特性。
+- 安卓端由于kotlin特性组件内部使用组件data内定义的属性时this可以省略，请勿在web端使用此特性。
+- web端使用`$root`会获取应用根组件，而不是页面根组件，这点与安卓端不同。
+- web端使用`$parent`会获取父组件（含内置组件），安卓端只会获取父级非内置组件，web端后续会调整，请勿利用此特性。
+
+## uts
+
+### 类型
+
+不同于ts编译后完全抹除类型，uts在运行时保留了部分类型信息。通常是定义type后，创建此type对应的实例时，会保留此实例的类型信息。
+
+例如：
+
+```ts
+type Obj = {
+  a: number
+}
+const obj = {
+  a: 1
+} as Obj 
+// 此时obj的类型为Obj，运行时可以使用 obj instanceof Obj
+console.log(obj instanceof Obj) // true
+
+const result = JSON.parse<Obj>(`{"a": 1}`) // 此时返回的对象类型为Obj
+console.log(result instanceof Obj) // true
+```
+
+**注意**
+
+- 目前`uni.request`传入泛型时不会创建对应类型的实例，会直接抹除类型信息，后续可能会调整为创建泛型类型对应的实例，请勿利用此特性。
+- 仅项目内定义的类型可以被实例化，uni-app-x内部定义的类型无法被实例化，例如`const options = { url: 'xxx' } as RequestOptions`，并不会将此对象转化为RequestOptions的实例，运行时也没有`RequestOptions`对应的类型信息。
+
+
+## css
+
+为保证多端统一，uni-app-x编译到web端时，内置组件根元素带有一些默认样式，详情参考：[uvue css使用](../css/README.md)。如果是使用`document.createElement`等方式自行创建的html元素不会有这些默认样式。
+
+通过element.style.xxx设置样式时，web端会自动将样式进行转化，具体取决于浏览器。
+
+例如：
+
+```ts
+element.style.color = '##FF0000'
+element.style.color === 'rgb(255, 0, 0)' // true
+```
+
+## 运行与发行
+
+运行到web端时，uni-app-x编译器不会对语法进行转化来兼容低版本浏览器。发行时会对代码进行转化，以保证低版本浏览器能正常运行。
+
+发行时支持的最低浏览器版本为：`chrome 64`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`。
+
+## 其他注意事项
+
+- 内置组件的tagName、nodeName与安卓端不同，目前web端和安卓端相比多了`UNI-`前缀，例如web端为`UNI-VIEW`、`UNI-IMAGE`，安卓端为`VIEW`、`IMAGE`。

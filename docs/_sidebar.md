@@ -9,6 +9,7 @@
   * [几种组件标记的概念澄清](tutorial/idref.md)
 * vue 框架
   * [概述](vue/README.md)
+* [web端开发指南](web/intro.md)
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
   * [Android审查元素](debug/android-inspector.md)
