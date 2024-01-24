@@ -15,12 +15,12 @@
 
 <!-- UTSCOMJSON.view.compatibility -->
 
+#### App平台@app
+- HBuilder4.0以下版本`hover-class`属性App端与微信小程序效果一样，手指按下进入`hover-class`状态后，手指移动就会取消`hover-class`状态  
+- HBuilder4.0及以上版本App端调整为手指在view范围内移动不会取消`hover-class`状态，手指移动到view范围之外才会取消`hover-class`状态  
+
+
 <!-- UTSCOMJSON.view.children -->
-
-#### App平台
-- `hover-class`属性Android端与微信小程序的差别：在长按进入hover-class样式，微信小程序只要手指移动就会退出hover-class的样式，而Android端效果是手指移动到view范围之外才会取消hover-class样式。
-
-
 
 <!-- UTSCOMJSON.view.reference -->
 
