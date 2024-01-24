@@ -97,7 +97,7 @@ uvue的策略是：在新建页面时，提供一个选项，让开发者选择�
 </template>
 ```
 
-考虑到未来web平台和基于webview的小程序的兼容，自动套在页面顶层的scroll-view写在了[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html)里。
+因为web平台和基于webview的小程序使用页面滚动更方便，所以自动套在页面顶层的scroll-view写在了[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html)里。
 
 这样在web浏览器里就无需多套一层scroll-view，自然的使用浏览器的页面滚动就好了。
 
@@ -152,7 +152,7 @@ web的样式继承，主要是文字样式继承。web的css属性众多，规�
 
 如下代码，在web浏览器渲染时，父view的style会影响子text，所以123是红色。
 
-但是在uvue中，样式不继承，123的颜色仍然是默认颜色黑色。
+但是在app-uvue中，样式不继承，123的颜色仍然是默认颜色黑色。
 ```html
 <template>
 	<view style="color:red">
@@ -161,7 +161,7 @@ web的样式继承，主要是文字样式继承。web的css属性众多，规�
 </template>
 ```
 
-在uvue中，如需修改123的样式，需写在text组件中
+在app-uvue中，如需修改123的样式，需写在text组件中
 ```html
 <template>
 	<view>
@@ -197,17 +197,17 @@ uvue中文字都是要使用text组件的。
 </template>
 ```
 
-uni-app x的css的样式不继承规则，虽然与web有差异，其实只是更严谨。
+app-uvue的css的样式不继承规则，虽然与web有差异，其实只是更严谨。
 
 一般情况下，开发者遵循仅在text组件下写文字有关的样式，就可以编译到全端而保持界面正常。
 
 ## 层级
 
-仅对同层的兄弟节点之间支持z-index来调节层级。不支持脱离dom树任意调节层级。
+App仅对同层的兄弟节点之间支持z-index来调节层级。不支持脱离dom树任意调节层级。
 
 ## css模块
 
-|模块				|支持情况	|备注									|
+|模块				|App支持情况	|备注									|
 |:-:				|:-:		|:-:									|
 |背景与边框			|√			|不支持背景图							|
 |盒子模型			|√			|										|
@@ -225,7 +225,7 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 字体图标[详见](font-family.md)
 
 ## 选择器
-|类别			|示例		|支持情况	|备注												|
+|类别			|示例		|App支持情况	|备注												|
 |:-:			|:-:		|:-:	|:-:												|
 |通配选择器		|* {}		|×		|													|
 |类选择器		|.class {}	|√		|													|
@@ -281,7 +281,7 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 - 长度 `<length>` 用于表示距离尺寸的 CSS 数据类型。许多 CSS 属性会用到长度，比如 width、margin、padding。
 - 长度 `<percentage>` 表述一个百分比值。许多 CSS 属性 可以取百分比值，用以根据父对象来确定大小。百分比值由一个`<number>`具体数值后跟着%符号构成。就像其他在 css 里的单位一样，在%和数值之间是不允许有空格的。
 
-|类别				|支持情况			|备注							|
+|类别				|App支持情况			|备注							|
 |:-:				|:-:				|:-:							|
 |px					|√					|								|
 |rpx				|√					|								|
@@ -298,11 +298,11 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 
 **注意**  
 > App平台长度 `<length>` 可以不设置单位，不设置单位时当做 px 处理  
-> Web平台长度 `<length>` 必须设置单位，不设置单位时当做非法值处理  
+> Web平台长度 `<length>` 必须设置单位，不设置单位时当做无效值处理  
 > 实际项目中为了更好的在各端兼容，推荐使用长度 `<length>` 时指定明确单位  
 
 ## 颜色
-|类别				|支持情况			|备注							|
+|类别				|App支持情况			|备注							|
 |:-:				|:-:				|:-:							|
 |color keywords		|√					|red等							|
 |#RRGGBB / #RGB		|√					|								|
@@ -314,13 +314,11 @@ uni-app x的css的样式不继承规则，虽然与web有差异，其实只是�
 
 ## css方法
 
-目前仅支持url()、rgb()、rgba()。
+目前仅支持url()、rgb()、rgba()、var()。
 
-暂不支持css变量val()。--status-bar-height、--window-top、--window-bottom，也暂时无法使用，有相关需求可使用[uni.getWindowInfo()](../api/get-window-info.md)方式获取。
+### CSS 变量（4.0+）@variable
 
-## CSS 变量（4.0+）@variable
-
-uni-app 提供内置 CSS 变量
+uni-app x 4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../api/get-window-info.md)方式获取。
 
 | CSS 变量| 描述| App| H5|
 | :- | :- | :- | :- | :- |
@@ -331,7 +329,7 @@ uni-app 提供内置 CSS 变量
 **注意：**
 
 - 当设置 `"navigationStyle":"custom"` 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 `var(--status-bar-height)` 的 view 放在页面顶部，避免页面内容出现在状态栏。
-- 在 H5 端，由于不存在原生导航栏和 tabBar（是前端 div 模拟的），如果设置了一个固定位置的居底 view，在小程序和 App 端是在 tabBar 上方，但在 H5 端会与 tabBar 重叠。此时可使用`--window-bottom`，不管在哪个端，都是固定在 tabBar 上方。
+- 在 Web 端，由于不存在原生导航栏和 tabBar（是前端 div 模拟的），如果设置了一个固定位置的居底 view，在小程序和 App 端是在 tabBar 上方，但在 H5 端会与 tabBar 重叠。此时可使用`--window-bottom`，不管在哪个端，都是固定在 tabBar 上方。
 
 **代码块**
 
@@ -372,7 +370,7 @@ uni-app 提供内置 CSS 变量
 ```
 
 ## At-rules
-|类别							|支持情况	|备注	|
+|类别							|App支持情况	|备注	|
 |:-:							|:-:		|:-:	|
 |@import						|√			|		|
 |@font-face						|√			|		|
@@ -502,7 +500,7 @@ Tips：
 
 ## 页面滚动引起的差异
 
-`uni-app-x` App端无页面滚动，且其根节点高度为从导航栏底部到tabBar顶部。如果在页面根节点的子元素使用`position: absolute;`，页面内部scroll-view滚动时不会改变此元素位置。其他端有页面滚动，如果在页面根节点的子元素使用`position: absolute;`页面滚动会改变此元素的位置。如果有不随页面滚动变化位置的需求建议使用`position: fixed`。注意web端需要使用[css变量](https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-%E5%8F%98%E9%87%8F)使元素不覆盖在navigationBar和tabBar上。
+`uni-app-x` App端无页面滚动，且其根节点高度为从导航栏底部到tabBar顶部。如果在页面根节点的子元素使用`position: absolute;`，页面内部scroll-view滚动时不会改变此元素位置。其他端有页面滚动，如果在页面根节点的子元素使用`position: absolute;`页面滚动会改变此元素的位置。如果有不随页面滚动变化位置的需求建议使用`position: fixed`。注意web端需要使用[css变量](#variable)使元素不覆盖在navigationBar和tabBar上。
 
 ## Bug
 
