@@ -66,7 +66,9 @@ export default {
 
 ## uts
 
-### 类型
+uts内编译到web端时可以使用任何ts特性。
+
+### 运行时类型保留
 
 不同于ts编译后完全抹除类型，uts在运行时保留了部分类型信息。通常是定义type后，创建此type对应的实例时，会保留此实例的类型信息。
 
@@ -91,6 +93,13 @@ console.log(result instanceof Obj) // true
 - 目前`uni.request`传入泛型时不会创建对应类型的实例，会直接抹除类型信息，后续可能会调整为创建泛型类型对应的实例，请勿利用此特性。
 - 仅项目内定义的类型可以被实例化，uni-app-x内部定义的类型无法被实例化，例如`const options = { url: 'xxx' } as RequestOptions`，并不会将此对象转化为RequestOptions的实例，运行时也没有`RequestOptions`对应的类型信息。
 
+### any类型
+
+不同于ts，uts中any类型不包含null类型
+
+### void/undefined类型
+
+为保证多端统一应尽量避免使用undefined、void类型，可以使用null代替。如果需要判断是否为null建议使用两个等号，不要使用三个等号（此处使用了js的特性`undefined == null`结果为true）。
 
 ## css
 
