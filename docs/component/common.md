@@ -55,7 +55,17 @@
 - @longpress
 - @transitionend
 
-在多点触摸的屏幕上，touch事件返回数组，包含了每个touch点对应的x、y坐标。
+在多点触摸的屏幕上，touch事件返回数组，包含了每个touch点对应的x、y坐标。  
+
+### tap/click 事件@tap  
+
+#### App端  
+- HBuilderX4.0及以下版本手指按下后移动会取消tap/click事件的触发，即手指移动后抬起不会响应tap/click事件  
+- HBuilder4.0及以上版本App端调整手指按下后在组件区域内移动不会取消tap/click事件的触发，移动到组件区域外才会取消tap/click事件的触发  
+
+#### Web端  
+手指按下后移动会取消tap/click事件的触发，即手指移动后抬起不会响应tap/click事件
+
 
 ### transition 事件
 
