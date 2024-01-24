@@ -39,6 +39,7 @@
   * [wifi](wifi.md)
   * [内存](memory.md)
   * [截屏事件](capturescreen.md)
+  * [监听权限申请](create-request-permission-listener.md)
 * 媒体
   * [拍照和相册选择](choose-image.md)
   * [图片预览](preview-image.md)
@@ -57,8 +58,6 @@
   * [金融级实人认证](facial-recognition-verify.md)
 * 广告
   * [激励视频广告](create-rewarded-video-ad.md)
-* 权限
-  * [权限申请监听](create-request-permission-listener.md)
 * 组件上下文对象
   * [web-view组件上下文对象](create-webview-context.md)
   * [video组件上下文对象](create-video-context.md)
