@@ -83,7 +83,7 @@ export default {
 
 ## 自定义组件 v-model 绑定复杂表达式 @v-model-complex-expression
 
-自定义组件 `v-model` 绑定复杂表达式时，需要通过 `as` 指定类型。
+自定义组件 `v-model` 绑定复杂表达式时，需要通过 `as` 指定类型(仅App-Android 平台)。
 
 ```ts
 <template>
@@ -105,15 +105,10 @@ export default {
 	}
 </script>
 ```
-
-## 自定义事件
-
-- [v-model](https://uniapp.dcloud.io/tutorial/vue3-components.html#v-model-modifiers) 暂不支持 `capitalize` 修饰符。
-
 ## 计算属性和侦听器
 
-- [watch deep](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E9%80%89%E9%A1%B9-deep) 不支持
-- [监听对象中单个属性](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E7%9B%91%E5%90%AC%E5%AF%B9%E8%B1%A1%E4%B8%AD%E5%8D%95%E4%B8%AA%E5%B1%9E%E6%80%A7) 不支持
+- [watch deep](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E9%80%89%E9%A1%B9-deep) 不支持(仅App-Android 平台, 4.0 将支持)
+- [监听对象中单个属性](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E7%9B%91%E5%90%AC%E5%AF%B9%E8%B1%A1%E4%B8%AD%E5%8D%95%E4%B8%AA%E5%B1%9E%E6%80%A7) 不支持(仅App-Android 平台, 4.0 将支持)
 
 ## 作用域插槽的类型
 
