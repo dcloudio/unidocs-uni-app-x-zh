@@ -298,11 +298,11 @@ App仅对同层的兄弟节点之间支持z-index来调节层级。不支持脱�
 
 rpx是一个以设备750px为基准的单位，750rpx即为屏幕宽度，375rpx即为屏幕一半宽度。它比较适合适配不同宽度的手机。但rpx的性能和精度不如px，如果px可满足需求，尽量使用px。
 
-**注意**  
+**注意**
 - 长度默认值差异
-	* App平台长度 `<length>` 可以不设置单位，不设置单位时当做 px 处理  
-	* Web平台长度 `<length>` 必须设置单位，不设置单位时当做无效值处理  
-	实际项目中为了更好的在各端兼容，推荐使用长度 `<length>` 时指定明确单位  
+	* App平台长度 `<length>` 可以不设置单位，不设置单位时当做 px 处理
+	* Web平台长度 `<length>` 必须设置单位，不设置单位时当做无效值处理
+	实际项目中为了更好的在各端兼容，推荐使用长度 `<length>` 时指定明确单位
 
 - 单位精度问题
 px、rpx属于逻辑像素，在不同dpi的设备上，需要转换为物理像素。当产生浮点数时，由于精度保留策略的不同，在web和app可能造成细微的误差。
@@ -414,93 +414,9 @@ uni-app x 4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高�
 Tips：
 - 字体路径支持网络和本地，本地字体请注意放在项目或uni_modules的static目录下。
 
+<!-- CSSJSON.readmeTable.name -->
 
-## 样式清单
-| uni-app-x App平台 CSS 属性列表 |
-| :-|
-| [width](width.md) |
-| [min-width](min-width.md) |
-| [max-width](max-width.md) |
-| [height](height.md) |
-| [min-height](min-height.md) |
-| [max-height](max-height.md) |
-| [position](position.md) |
-| [z-index](z-index.md) |
-| [top](top.md) |
-| [bottom](bottom.md) |
-| [left](left.md) |
-| [right](right.md) |
-| [flex-direction](flex-direction.md) |
-| [justify-content](justify-content.md) |
-| [flex-wrap](flex-wrap.md) |
-| [align-items](align-items.md) |
-| [align-content](align-content.md) |
-| [flex](flex.md) |
-| [flex-grow](flex-grow.md) |
-| [flex-shrink](flex-shrink.md) |
-| [flex-basis](flex-basis.md) |
-| [flex-flow](flex-flow.md) |
-| [display](display.md) |
-| [overflow](overflow.md) |
-| [visibility](visibility.md) |
-| [opacity](opacity.md) |
-| [box-sizing](box-sizing.md) |
-| [background](background.md) |
-| [background-color](background-color.md) |
-| [background-image](background-image.md) |
-| [background-clip](background-clip.md) |
-| [padding](padding.md) |
-| [padding-left](padding-left.md) |
-| [padding-top](padding-top.md) |
-| [padding-right](padding-right.md) |
-| [padding-bottom](padding-bottom.md) |
-| [margin](margin.md) |
-| [margin-left](margin-left.md) |
-| [margin-top](margin-top.md) |
-| [margin-right](margin-right.md) |
-| [margin-bottom](margin-bottom.md) |
-| [border](border.md) |
-| [border-style](border-style.md) |
-| [border-left-style](border-left-style.md) |
-| [border-top-style](border-top-style.md) |
-| [border-right-style](border-right-style.md) |
-| [border-bottom-style](border-bottom-style.md) |
-| [border-width](border-width.md) |
-| [border-left-width](border-left-width.md) |
-| [border-top-width](border-top-width.md) |
-| [border-right-width](border-right-width.md) |
-| [border-bottom-width](border-bottom-width.md) |
-| [border-color](border-color.md) |
-| [border-left-color](border-left-color.md) |
-| [border-top-color](border-top-color.md) |
-| [border-right-color](border-right-color.md) |
-| [border-bottom-color](border-bottom-color.md) |
-| [border-radius](border-radius.md) |
-| [border-top-left-radius](border-top-left-radius.md) |
-| [border-top-right-radius](border-top-right-radius.md) |
-| [border-bottom-left-radius](border-bottom-left-radius.md) |
-| [border-bottom-right-radius](border-bottom-right-radius.md) |
-| [color](color.md) |
-| [font-size](font-size.md) |
-| [font-style](font-style.md) |
-| [font-weight](font-weight.md) |
-| [text-decoration](text-decoration.md) |
-| [text-decoration-line](text-decoration-line.md) |
-| [text-decoration-color](text-decoration-color.md) |
-| [text-decoration-style](text-decoration-style.md) |
-| [text-decoration-thickness](text-decoration-thickness.md) |
-| [text-align](text-align.md) |
-| [font-family](font-family.md) |
-| [text-overflow](text-overflow.md) |
-| [line-height](line-height.md) |
-| [lines](lines.md) |
-| [box-shadow](box-shadow.md) |
-| [transition](transition.md) |
-| [transition-property](transition-property.md) |
-| [transition-duration](transition-duration.md) |
-| [transition-timing-function](transition-timing-function.md) |
-| [transition-delay](transition-delay.md) |
-| [transform](transform.md) |
+<!-- CSSJSON.readmeTable.compatibility -->
 
 ## 样式作用范围
 
