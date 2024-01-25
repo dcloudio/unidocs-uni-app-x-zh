@@ -41,10 +41,18 @@ uni-app x支持的组件包括：
 
 ## props
 
-- 支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。从4.0版本qi支持字符串数组方式声明。
+- 支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。从4.0+ 支持字符串数组方式声明。使用字符串数组方式声明时，所有 prop 类型均为 any | null。
 - 仅支持直接在 `export default` 内部声明，不支持其他位置定义后，在 `export default` 中引用。
 - 复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。
 - `type` 不支持使用自定义的构造函数。
+
+```ts
+export default {
+  // 字符串数组方式声明，所有 prop 类型均为 any | null
+	props: ['num', 'str', 'obj', 'arr']
+}
+```
+
 ```ts
 type Obj = { a: number }
 
@@ -75,7 +83,7 @@ export default {
 
 ## 自定义组件 v-model 绑定复杂表达式 @v-model-complex-expression
 
-自定义组件 `v-model` 绑定复杂表达式时，需要通过 `as` 指定类型。
+自定义组件 `v-model` 绑定复杂表达式时，需要通过 `as` 指定类型(仅App-Android 平台)。
 
 ```ts
 <template>
@@ -97,15 +105,10 @@ export default {
 	}
 </script>
 ```
-
-## 自定义事件
-
-- [v-model](https://uniapp.dcloud.io/tutorial/vue3-components.html#v-model-modifiers) 暂不支持 `capitalize` 修饰符。
-
 ## 计算属性和侦听器
 
-- [watch deep](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E9%80%89%E9%A1%B9-deep) 不支持
-- [监听对象中单个属性](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E7%9B%91%E5%90%AC%E5%AF%B9%E8%B1%A1%E4%B8%AD%E5%8D%95%E4%B8%AA%E5%B1%9E%E6%80%A7) 不支持
+- [watch deep](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E9%80%89%E9%A1%B9-deep) 不支持(仅App-Android 平台, 4.0 将支持)
+- [监听对象中单个属性](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E7%9B%91%E5%90%AC%E5%AF%B9%E8%B1%A1%E4%B8%AD%E5%8D%95%E4%B8%AA%E5%B1%9E%E6%80%A7) 不支持(仅App-Android 平台, 4.0 将支持)
 
 ## 作用域插槽的类型
 
@@ -192,7 +195,7 @@ export default {
 
 ## 监听页面生命周期
 
-目前暂不支持在组件内监听页面生命周期，待后续支持组合式 API 后，可通过组合式 API 实现。
+`4.0` 起可通过组合式 API 实现组件中监听页面生命周期。
 
 ## vue 与 uvue 不同文件后缀的优先级 @priority
 

@@ -69,14 +69,34 @@ export function createApp() {
 
 ## 组合式 API @composition-api
 
+**注意：**
+- 暂不支持 `<script setup>` 和 `<script>` 同时使用，如果需要配置 `options` 内容，比如 `name`，可以使用 `defineOptions`。
+- 暂不支持顶层 `await`。
+- 暂不支持 `<script setup>` 配置 `generic` 泛型类型参数。
+- `App.uvue` 暂不支持组合式 API。
+
 ### 响应式: 核心
 
 <!-- VUEJSON.reactivity_core.compatibility -->
 <!-- VUEJSON.reactivity_core.example -->
+
+**注意：**
+- `computed` 需通过泛型指定返回值类型。
+```ts
+const count = ref(0)
+const doubleCount = computed<number>(() : number => {
+  return count.value * 2
+})
+```
+
 ### 响应式: 工具
 
 <!-- VUEJSON.reactivity_utilities.compatibility -->
 <!-- VUEJSON.reactivity_utilities.example -->
+
+**注意：**
+- `toRefs` 仅支持 `Array` 和 `UTSJSONObject`, 不支持自定义类型。
+
 ### 响应式: 进阶
 
 <!-- VUEJSON.reactivity_advanced.compatibility -->
@@ -362,6 +382,102 @@ export default {
 
 <!-- VUEJSON.single_file_component_script.compatibility -->
 
+**注意：**
+- `defineProps` 仅支持数组字面量、对象字面量定义（等同于 `options` 中的 `props`规则）及使用纯类型参数的方式来声明。
+```ts
+// 数组字面量
+defineProps(['str', 'num', 'bool', 'arr', 'obj', 'fn'])
+
+// 对象字面量
+defineProps({
+  str: String,
+  num: Number,
+  bool: {
+    type: Boolean,
+    default: true
+  },
+  arr: {
+    type: Array as PropType<string[]>,
+    default: () : string[] => [] as string[]
+  },
+  obj: {
+    type: Object as PropType<UTSJSONObject>,
+    default: () : UTSJSONObject => ({ a: 1 })
+  },
+  fn: {
+    type: Function as PropType<() => string>,
+    default: () : string => ''
+  }
+})
+
+// 纯类型参数
+defineProps<{
+  str : String,
+  num : Number,
+  bool : Boolean,
+  arr : PropType<string[]>,
+  obj : PropType<UTSJSONObject>,
+  fn : PropType<() => string>
+}>()
+```
+- `defineEmits` 仅支持数组字面量和纯类型参数的方式来声明。
+```ts
+// 数组字面量
+const emit = defineEmits(['change'])
+
+// 纯类型参数
+const emit = defineEmits<{
+  (e : 'change', id : number) : void
+}>()
+const emit = defineEmits<{
+  // 具名元组语法
+  change : [id: number]
+}>()
+
+```
+- `defineOptions` 仅支持对象字面量方式定义。
+```ts
+defineOptions({
+  data() {
+    return {
+      count: 0,
+      price: 10,
+      total: 0
+    }
+  },
+  computed: {
+    doubleCount() : number {
+      return this.count * 2
+    },
+  },
+  watch: {
+    count() {
+      this.total = this.price * this.count
+    },
+  },
+  methods: {
+    increment() {
+      this.count++
+    }
+  }
+})
+```
+- `defineExpose` 仅支持对象字面量方式定义，导出的变量或方法，必须是 `setup` 中定义的，暂不支持外部定义。
+```ts
+<script setup>
+  const str = 'str'
+  const num = ref(0)
+  const increment = () => {
+    num.value++
+  }
+  
+  defineExpose({
+    str,
+    num,
+    increment
+  })
+</script>
+```
 
 ## 其他示例
 
