@@ -46,23 +46,23 @@ app-uvue 页面中可以为页面元素节点设置 id 属性，然后通过 [un
 ```vue
 <!-- id 属性值为 myView，后续可以通过此值查找 -->
 <view id="myView" class="container">
-    <text>Hello World</text>
+	<text>Hello World</text>
 </view>
 ```
 
 在页面`onReady` 后（太早组件可能没有创建），通过 `uni.getElementById` 获取。如果长期使用，可以保存在vue的 data 中。
 ```ts
-  export default {
-    data() {
-      return {
-        color: 'red',
-        myView: null as UniElement | null
-      }
-    },
-    onReady() {
-        // 获取组件对象并保存在 this.myView 中
-        this.myView = uni.getElementById('myView');
-    },
+export default {
+	data() {
+		return {
+			color: 'red',
+			myView: null as UniElement | null
+		}
+	},
+	onReady() {
+			// 获取组件对象并保存在 this.myView 中
+			this.myView = uni.getElementById('myView');
+	},
 }
 ```
 
@@ -73,23 +73,23 @@ app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](ht
 ```vue
 <!-- ref 属性值为 myView，后续可以通过此值查找 -->
 <view ref="myView" class="container">
-    <text>Hello World</text>
+	<text>Hello World</text>
 </view>
 ```
 
 在页面`onReady` 后（太早组件可能没有创建），通过 `this.$refs` 获取。如果长期使用，可以保存在vue的 data 中。
 ```ts
-  export default {
-    data() {
-      return {
-        color: 'red',
-        myView: null as UniElement | null
-      }
-    },
-    onReady() {
-        // 获取组件对象并保存在 this.myView 中
-        this.myView = this.$refs['myView'] as UniElement;  //需要使用 as 转换
-    },
+export default {
+	data() {
+		return {
+			color: 'red',
+			myView: null as UniElement | null
+		}
+	},
+	onReady() {
+			// 获取组件对象并保存在 this.myView 中
+			this.myView = this.$refs['myView'] as UniElement;  //需要使用 as 转换
+	},
 }
 ```
 
@@ -105,73 +105,77 @@ this.myView?.style?.setProperty('background-color', 'red');
 以下是完整的操作示例：
 ```vue
 <template>
-  <!-- #ifdef APP -->
-  <scroll-view style="flex:1;align-items: center;">
-  <!-- #endif -->
-    <view id="myView" ref="myView" class="container">
-      <text>Hello World</text>
-    </view>
-    <button @tap="updateElement">操作UniElement</button>
-  <!-- #ifdef APP -->
-  </scroll-view>
-  <!-- #endif -->
+	<!-- #ifdef APP -->
+	<scroll-view style="flex:1;">
+	<!-- #endif -->
+		<view id="myView" ref="myView" class="container">
+			<text>Hello World</text>
+		</view>
+		<button class="button" @tap="updateElement">操作UniElement</button>
+	<!-- #ifdef APP -->
+	</scroll-view>
+	<!-- #endif -->
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        color: 'red',
-        myView: null as UniElement | null
-      }
-    },
-    onLoad() {
-    },
-    onReady() {
-      this.myView = uni.getElementById('myView');       //通过uni.getElementById获取
-      //this.myView = this.$refs['myView'] as UniElement;  //通过this.$refs获取，需要使用 as 转换
-    },
-    methods: {
-      updateElement() {
-        this.color = 'red' == this.color ? 'blue' : 'red';
-        this.myView?.style?.setProperty('background-color', this.color);
-      }
-    },
-  }
+	export default {
+		data() {
+			return {
+				color: 'red',
+				myView: null as UniElement | null
+			}
+		},
+		onLoad() {
+		},
+		onReady() {
+			this.myView = uni.getElementById('myView');       //通过uni.getElementById获取
+			//this.myView = this.$refs['myView'] as UniElement;  //通过this.$refs获取，需要使用 as 转换
+		},
+		methods: {
+			updateElement() {
+				this.color = 'red' == this.color ? 'blue' : 'red';
+				this.myView?.style?.setProperty('background-color', this.color);
+			}
+		},
+	}
 </script>
 
 <style>
-  .container {
-    align-items: center;
-    justify-content: center;
-    background-color: aquamarine;
-    width: 100%;
-    height: 200px;
-  }
+	.container {
+		align-self: center;
+		align-items: center;
+		justify-content: center;
+		background-color: lightgray;
+		width: 100%;
+		height: 200px;
+	}
+	.button {
+		margin: 10px auto;
+	}
 </style>
-
 ```
 
 >以上例子仅为演示DOM API的使用，实际上点击按钮修改背景色这种简单场景，使用数据绑定更简单，class绑定到一个data上，动态修改data即可。
 
 
-## 通过DrawableContext绘制View
+## 通过 DrawableContext 绘制View
 
 uni-app x 在 app 端提供 DrawableContext 绘制内容到 uvue 页面的`view`标签上。可用于绘制文本、形状等内容。
 
 ### 获取 DrawableContext 对象
 
-DrawableContext 可通过节点对象（UniElement）的`getDrawableContext()`方法获取
+DrawableContext 可通过`view`组件节点对象（UniElement）的`getDrawableContext()`方法获取
 
 ```vue
 <template>
-	<view ref="drawable" style="width: 750rpx;height: 750rpx;">
-	</view>
+	<view ref="drawable" class="drawableView"></view>
 </template>
+
 <script>
 	export default {
 		onReady() {
-			var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()
+			//获取 DrawableContext 对象
+			var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()!;
 		}
 	}
 </script>
@@ -179,13 +183,15 @@ DrawableContext 可通过节点对象（UniElement）的`getDrawableContext()`�
 
 ### 绘制内容
 
-通过 DrawableContext 提供的 API 绘制文本、形状等内容
+通过 DrawableContext 提供的 Draw API 绘制文本、形状等内容
 
 ```ts
 <script>
 	export default {
 		onReady() {
-			var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()
+			//获取 DrawableContext 对象
+			var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()!;
+			//绘制内容
 			ctx.moveTo(50, 40);
 			ctx.lineTo(200, 40);
 			ctx.stroke();
@@ -202,11 +208,14 @@ DrawableContext 在调用 API 之后不会主动更新到画布上，需要主�
 <script>
 	export default {
 		onReady() {
-			var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()
+			//获取 DrawableContext 对象
+			var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()!;
+			//绘制内容
 			ctx.moveTo(50, 40);
 			ctx.lineTo(200, 40);
 			ctx.stroke();
-			ctx.update()
+			//更新到画布
+			ctx.update();
 		}
 	}
 </script>
@@ -217,37 +226,81 @@ DrawableContext 在调用 API 之后不会主动更新到画布上，需要主�
 如果清除已经绘制的内容重新绘制，需要调用`reset()`方法清除内容再进行绘制。
 
 ```vue
-<template>
-	<view ref="drawable" style="width: 750rpx;height: 750rpx;" @click="drawable">
-	</view>
-</template>
 <script>
 	export default {
-		data(){
-			return {
-				change:false
-			}
-		},
-		onReady() {
-			this.drawable()
-		},
-		methods:{
-			drawable(){
-				var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()
+		methods: {
+			refreshDrawable() {
+				//获取 DrawableContext 对象
+				var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()!;
+				//清除绘制内容
 				ctx.reset();
-				if(this.change) {
-					ctx.strokeStyle = "#33ff0000"
-					ctx.lineWidth = 10
-				}
-				this.change = !this.change
-				ctx.moveTo(50, 40);
-				ctx.lineTo(200, 40);
-				ctx.stroke();
-				ctx.update()
+				//再重新绘制
 			}
 		}
 	}
 </script>
+```
+
+### 示例
+以下是完整的操作示例：
+
+```vue
+<template>
+	<view ref="drawable" class="drawableView"></view>
+	<button class="button" @tap="refreshDrawable">重新绘制</button>
+</template>
+
+<script>
+	export default {
+		data(){
+			return {
+				change: false
+			}
+		},
+		onReady() {
+			//获取 DrawableContext 对象
+			var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()!;
+			//绘制内容
+			ctx.moveTo(50, 40);
+			ctx.lineTo(200, 40);
+			ctx.stroke();
+			//更新到画布
+			ctx.update();
+		},
+		methods: {
+			refreshDrawable() {
+				//获取 DrawableContext 对象
+				var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()!;
+				//清除绘制内容
+				ctx.reset();
+				//根据状态设置画笔样式
+				this.change = !this.change;
+				if(this.change) {
+					ctx.strokeStyle = "#FF0000";
+					ctx.lineWidth = 10
+				}
+				//绘制内容
+				ctx.moveTo(50, 40);
+				ctx.lineTo(200, 40);
+				ctx.stroke();
+				//更新到画布
+				ctx.update();
+			}
+		}
+	}
+</script>
+
+<style>
+	.drawableView {
+		width: 750rpx;
+		height: 750rpx;
+		background-color: #FFFFFF;
+	}
+	.button {
+		margin: 10px auto;
+		width: 50%;
+	}
+</style>
 ```
 
 ## 注意事项
