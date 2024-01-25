@@ -356,6 +356,13 @@ export default {
 <!-- VUEJSON.render_function.compatibility -->
 <!-- VUEJSON.render_function.example -->
 
+## 单文件组件兼容性
+
+### \<script setup>
+
+<!-- VUEJSON.single_file_component_script.compatibility -->
+
+
 ## 其他示例
 
 - [嵌套组件通讯](https://gitcode.net/dcloud/hello-uvue/-/tree/master/pages/examples/nested-component-communication)
