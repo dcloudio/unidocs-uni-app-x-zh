@@ -223,7 +223,7 @@ uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码�
 
 除上述文档中声明已经完成的，还有如下需要注意：
 
-- 平台支持：目前只有Android和Web。虽然uts语言支持swift，可以写原生插件，但iOS版的uvue还未开发完毕。目前替代方案有：
+- 平台支持：目前只有Android和Web（Web需4.0+）。虽然uts语言支持swift，可以写原生插件，但iOS版的uvue还未开发完毕。目前替代方案有：
 	1. 将uni-app x编译为Web，在iOS上使用uni-app js引擎版的Web-view加载。
 	2. 对于iOS或其他小程序、web平台，开发者可将uvue文件后缀改为vue或nvue，调整后适配到到uni-app js引擎版编译到其他平台，包括iOS App、web及各家小程序。
 	3. 等待iOS发版，目前iOS已经在测试阶段，春节后将发版。
