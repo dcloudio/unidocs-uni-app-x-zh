@@ -103,7 +103,13 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 
 #### App平台
 
-+ App平台scroll-x、scroll-y属性不支持同时设置为true, 同时设置true时仅scroll-y生效
++ App平台scroll-x、scroll-y属性不支持同时设置为true，同时设置true时仅scroll-y生效。4.0版本开始scroll-x、scroll-y已废弃，请使用direction属性。
++ App平台list-view组件默认高度取值：
+	- list-view组件的子元素高度之和未超过list-view组件的父元素高度：
+		+ list-view组件的默认高度取值为子元素高度之和
+	- list-view组件的子元素高度之和超过list-view组件的父元素高度：
+		+ 3.9版本list-view组件默认高度取值为list-view组件父元素的高度。子元素高度之和超过list-view组件的高度，list-view组件可滚动。
+		+ 4.0版本开始list-view组件的默认高度取值为子元素高度之和。高度相同list-view组件无法滚动。开发者需要设置css属性定义list-view组件高度，让list-view组件高度小于子元素高度之和，实现滚动能力。
 
 ## 示例代码
 
