@@ -27,14 +27,14 @@ DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示
 
 2. Draw API
 
-	Android和iOS的原生view，有一些底层的高性能绘制能力，这些API的调用，需要先获取到 Element 对象，然后再调用其方法。
+	Android和iOS的原生view，有一些底层的高性能绘制能力，这些API的调用，需要先获取到 UniElement 对象，然后再调用其方法。
 
 在[性能](../performance.md)章节，对这2个场景有详细的阐述。
 
 
 ## DOM元素对象@getDomNode
 
-在操作DOM元素对象前，需要先获取 `Element` 对象，可通过 `uni.getElementById` 或 `this.$refs` 获取。
+在操作DOM元素对象前，需要先获取 `UniElement` 对象，可通过 `uni.getElementById` 或 `this.$refs` 获取。
 
 ### 通过uni.getElementById获取DOM元素
 
@@ -56,7 +56,7 @@ app-uvue 页面中可以为页面元素节点设置 id 属性，然后通过 [un
     data() {
       return {
         color: 'red',
-        myView: null as Element | null
+        myView: null as UniElement | null
       }
     },
     onReady() {
@@ -83,20 +83,20 @@ app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](ht
     data() {
       return {
         color: 'red',
-        myView: null as Element | null
+        myView: null as UniElement | null
       }
     },
     onReady() {
         // 获取组件对象并保存在 this.myView 中
-        this.myView = this.$refs['myView'] as Element;  //需要使用 as 转换
+        this.myView = this.$refs['myView'] as UniElement;  //需要使用 as 转换
     },
 }
 ```
 
 ### 操作DOM元素对象
-获取DOM元素对象Elment后，可通过其属性或方法操作组件，完整API参考[Element对象文档](element.md)
+获取DOM元素对象Elment后，可通过其属性或方法操作组件，完整API参考[UniElement对象文档](unielement.md)
 
-如通过Element对象的 style 属性更新组件的样式：
+如通过UniElement对象的 style 属性更新组件的样式：
 ```ts
 this.myView?.style?.setProperty('background-color', 'red');
 ```
@@ -111,7 +111,7 @@ this.myView?.style?.setProperty('background-color', 'red');
     <view id="myView" ref="myView" class="container">
       <text>Hello World</text>
     </view>
-    <button @tap="updateElement">操作Element</button>
+    <button @tap="updateElement">操作UniElement</button>
   <!-- #ifdef APP -->
   </scroll-view>
   <!-- #endif -->
@@ -122,14 +122,14 @@ this.myView?.style?.setProperty('background-color', 'red');
     data() {
       return {
         color: 'red',
-        myView: null as Element | null
+        myView: null as UniElement | null
       }
     },
     onLoad() {
     },
     onReady() {
       this.myView = uni.getElementById('myView');       //通过uni.getElementById获取
-      //this.myView = this.$refs['myView'] as Element;  //通过this.$refs获取，需要使用 as 转换
+      //this.myView = this.$refs['myView'] as UniElement;  //通过this.$refs获取，需要使用 as 转换
     },
     methods: {
       updateElement() {
@@ -161,7 +161,7 @@ uni-app x 在 app 端提供 DrawableContext 绘制内容到 uvue 页面的`view`
 
 ### 获取 DrawableContext 对象
 
-DrawableContext 可通过节点对象（Element）的`getDrawableContext()`方法获取
+DrawableContext 可通过节点对象（UniElement）的`getDrawableContext()`方法获取
 
 ```vue
 <template>
@@ -171,7 +171,7 @@ DrawableContext 可通过节点对象（Element）的`getDrawableContext()`方�
 <script>
 	export default {
 		onReady() {
-			var ctx = (this.$refs['drawable'] as Element).getDrawableContext()
+			var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()
 		}
 	}
 </script>
@@ -185,7 +185,7 @@ DrawableContext 可通过节点对象（Element）的`getDrawableContext()`方�
 <script>
 	export default {
 		onReady() {
-			var ctx = (this.$refs['drawable'] as Element).getDrawableContext()
+			var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()
 			ctx.moveTo(50, 40);
 			ctx.lineTo(200, 40);
 			ctx.stroke();
@@ -202,7 +202,7 @@ DrawableContext 在调用 API 之后不会主动更新到画布上，需要主�
 <script>
 	export default {
 		onReady() {
-			var ctx = (this.$refs['drawable'] as Element).getDrawableContext()
+			var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()
 			ctx.moveTo(50, 40);
 			ctx.lineTo(200, 40);
 			ctx.stroke();
@@ -233,7 +233,7 @@ DrawableContext 在调用 API 之后不会主动更新到画布上，需要主�
 		},
 		methods:{
 			drawable(){
-				var ctx = (this.$refs['drawable'] as Element).getDrawableContext()
+				var ctx = (this.$refs['drawable'] as UniElement).getDrawableContext()
 				ctx.reset();
 				if(this.change) {
 					ctx.strokeStyle = "#33ff0000"
