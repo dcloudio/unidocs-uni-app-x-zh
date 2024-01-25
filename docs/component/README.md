@@ -41,10 +41,18 @@ uni-app x支持的组件包括：
 
 ## props
 
-- 支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。从4.0版本qi支持字符串数组方式声明。
+- 支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。从4.0+ 支持字符串数组方式声明。使用字符串数组方式声明时，所有 prop 类型均为 any | null。
 - 仅支持直接在 `export default` 内部声明，不支持其他位置定义后，在 `export default` 中引用。
 - 复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。
 - `type` 不支持使用自定义的构造函数。
+
+```ts
+export default {
+  // 字符串数组方式声明，所有 prop 类型均为 any | null
+	props: ['num', 'str', 'obj', 'arr']
+}
+```
+
 ```ts
 type Obj = { a: number }
 
