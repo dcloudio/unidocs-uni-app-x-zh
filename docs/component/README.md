@@ -195,7 +195,7 @@ export default {
 
 ## 监听页面生命周期
 
-`4.0` 起可通过组合式 API 实现组件中监听页面生命周期。
+`4.0` 起可通过组合式 API 实现组件中监听页面生命周期，[示例代码](https://gitcode.net/dcloud/hello-uvue/-/blob/alpha/pages/composition-api/lifecycle/component-lifecycle/component-lifecycle.test.js)。
 
 ## vue 与 uvue 不同文件后缀的优先级 @priority
 
