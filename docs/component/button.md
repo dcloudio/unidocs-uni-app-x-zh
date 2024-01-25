@@ -11,6 +11,7 @@
 <!-- UTSCOMJSON.button.compatibility -->
 
 - 在web上，由于0.5px有兼容性问题，button的边框使用伪类实现。在App上，由于支持0.5px且不支持伪类，所以使用border实现。但由于伪类不占高度，border占高度，导致button的实际的渲染宽高在App上大于web端1px。
+- button的默认边框宽度为0.5px，当type属性为plain时，边框宽度是1px，button的实际的渲染宽高会大于其他类型1px。
 - button 的text区域文字，uvue下不支持 `\n` 方式换行，会直接显示 `\n` 字符。微信小程序下 `\n` 会变成一个空格。
 - button按下后触发hover-class效果，在app平台，手指不松开、一直在屏幕上移动、离开button组件范围后，hover-class效果消失，同时也不会触发点击事件；在web和小程序平台，手指移动一点后，即便未离开button范围，hover-class效果也会消失，同时也不会触发点击事件。
 - 无论在哪个平台，hover-class消失后松开手指，都不会触发点击事件。
@@ -71,4 +72,4 @@ button 组件没有 url 属性，如果要跳转页面，可以在@click中编�
 ```
 
 ## tips
-- button 的默认高度为46px，文字大小为18px，文字行高为46px。如果修改了默认高度，要注意手动调整文字行高
+- button 的默认文字大小为18px，文字行高为2.5。如果指定了按钮高度，要注意手动调整文字行高
