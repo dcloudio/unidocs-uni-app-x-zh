@@ -14,7 +14,6 @@
 
 <!-- UTSCOMJSON.text.compatibility -->
 
-#### App平台
 - App-Android平台文本换行规则（表现在文本断行位置等）可能和浏览器有差异。
 
 ## 子组件
@@ -31,5 +30,5 @@ app-nvue中，text组件不能嵌套。
 
 ## Bug & Tips@tips
 - app-uvue不支持[HTML字符实体](https://developer.mozilla.org/zh-CN/docs/Glossary/Entity)。
-- app-uvue的selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。
 - app-uvue text组件嵌套时，子组件设置的部分CSS样式可能不生效。
+- app-uvue的selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。web默认就是可复制文字的，selectable无效。

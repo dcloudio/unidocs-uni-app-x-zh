@@ -92,7 +92,7 @@ function add(x: string, y: string): void {
 
 使用 async 关键字来声明一个异步函数，异步函数返回一个 [Promise](./buildin-object-api/promise.md) 对象。
 
-注意：在 HBuilderX 3.93 以下的版本或者 iOS 平台，异步函数返回的不是 [Promise](./buildin-object-api/promise.md) 对象，请分别参考：[安卓 异步函数](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_6-11-synchronized-lock-等线程同步概念-在uts里怎么写)、[iOS 异步函数](https://uniapp.dcloud.net.cn/plugin/uts-for-ios.html#_5-1-13-异步方法)。
+注意：在 iOS 平台 和 HBuilderX 3.93 以下的Android 平台，异步函数返回的不是 [Promise](./buildin-object-api/promise.md) 对象，请分别参考：[安卓 异步函数](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_6-11-synchronized-lock-等线程同步概念-在uts里怎么写)、[iOS 异步函数](https://uniapp.dcloud.net.cn/plugin/uts-for-ios.html#_5-1-13-异步方法)。
 
 注意：异步函数在底层使用协程实现，异步函数内与异步函数外同时操作同一个对象时，由于其能并发执行，**其操作顺序可能与预期不一致**，会产生竞态条件与线程安全性问题。HBuilderX 3.98 版本的 uni-app x 中已进行优化，默认与框架运行在同一线程。
 
@@ -346,4 +346,4 @@ fn('a', 'b', 'c') // 'a' ['b', 'c']
 fn('a', ...['b', 'c']) // 'a' ['b', 'c']
 ```
 
-注意：当用在 uni-app x 中时，在 uvue 页面的 methods 中定义的方法不支持剩余参数。
+注意：在app平台，uvue 页面的 methods 中定义的方法不支持剩余参数。

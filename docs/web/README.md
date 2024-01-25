@@ -2,7 +2,14 @@
 
 > 新增于4.0版本
 
-编译到web端时多数用法仍和编译到安卓端一致，本文档用于描述差异及需要注意的点。
+uni-app x 编译到web平台时，并非是与uni-app js引擎版一致。而是基于uts的统一规范，和编译到安卓端的一致性较高。
+
+与App版相比，web版有几个较大的差别：
+1. web版是一个spa的单页应用，而app是多页的。
+2. pages.json配置的导航栏和tabbar，在web端并非原生的，而是网页的一部分。虽然uvue页面仍然是在导航栏和tabbar之间的，但在web平台，开发者可以直接操作导航栏和tabbar的dom。
+3. web版默认有页面滚动；app没有。
+
+本文档会介绍与web和Android的差异及注意事项。
 
 ## vue
 
@@ -60,16 +67,16 @@ export default {
 </script>
 ```
 
-### 其他注意事项
+### 注意事项
 
 - data内$开头的属性不可直接使用`this.$xxx`访问，需要使用`this.$data['$xxx']`，这是vue的规范。目前安卓端可以使用this.xxx访问是Bug而非特性，请勿使用此特性。
 - 安卓端由于kotlin特性组件内部使用组件data内定义的属性时this可以省略，请勿在web端使用此特性。
-- web端使用`$root`会获取应用根组件，而不是页面根组件，这点与安卓端不同。
+- web端由于是一个单页应用，使用`$root`会获取应用根组件，而不是页面根组件。而安卓端是多页应用，`$root`获取的是页面根组件。
 - web端使用`$parent`会获取父组件（含内置组件），安卓端只会获取父级非内置组件，web端后续会调整，请勿利用此特性。
 
 ## uts
 
-uts内编译到web端时可以使用任何ts特性。
+uts内编译到web端时可以使用任何ts特性。包括undefined、联合类型等。
 
 ### 运行时类型保留
 
@@ -131,7 +138,7 @@ element.style.color === 'rgb(255, 0, 0)' // true
 
 ### fixed定位
 
-position: fixed定位时，web端为相对于整个浏览器页面进行定位，app端为相对于页面（除导航栏、tabbar）定位。可以使用css变量使两端表现一致
+position: fixed定位时，web端为相对于整个浏览器页面进行定位，app端为相对于页面（除导航栏、tabbar）定位。可以使用[css变量](../css/README.md#variable)使两端表现一致
 
 ```css
 .fixed {
