@@ -15,13 +15,14 @@ UTS 的类型有：
 - 对象类型：Date、Array、Map、Set、UTSJSONObject，首字母大写。typeof返回"object"，判断准确类型需使用 instanceof
 - 使用 type 来自定义类型
 - 特殊类型：function、class、error。
-- 平台专有类型：Int、Float、Double、NSString、kotlin.Array...
+- 平台专有类型：BigInt、Int、Float、Double、NSString、kotlin.Array...
 
 除了特殊类型，其他类型都可以在变量后面通过`:`加类型名称来给这个变量声明类型。
 
 详细的类型判断详见操作符文档：[typeof](operator.md#typeof)和[instanceof](operator.md#instanceof)
 
-除了上述`运行时类型`，uts还有`开发时类型`的概念，指为了在开发期间ide可以更好的进行代码提示和校验，但在编译后这些类型会被擦除，变成`运行时类型`。[详见](#devtype)
+除了上述`运行时类型`，uts还有`开发时类型`的概念，指为了在开发期间ide可以更好的进行代码提示和校验，但在编译后这些类型会被擦除，变成`运行时类型`。详见[开发时类型](#devtype) 和 [类型擦除](#TypeErasure)
+
 
 ## 布尔值（boolean）
 
@@ -58,7 +59,7 @@ let d = 3.14159         //注意：目前版本推导d为float类型，新版本
 
 ### 平台专有数字类型
 
-除了 number 类型，UTS 在 Android 和 iOS 设备上，也可以使用 kotlin 和 swift 的专有数字类型。
+除了 number 类型，UTS 在 不同平台，也可以使用 kotlin 、 swift 、浏览器的专有数字类型。
 
 日常开发使用 number 类型就可以。但是也有需要平台专有数字类型的场景：
 
@@ -70,7 +71,7 @@ number本身的使用很简单，但混入了平台专有数字类型后，会�
 - 如果您不调用原生API，初学uts时建议跳过本节，直接往下看string类型。
 - 如果您是插件作者，那请务必仔细阅读本章节。
 
-#### Kotlin 专有数字类型 @Kotlin
+#### Kotlin 专有数字类型 @KotlinNumber
 
 |类型名称|长度  |最小值       |最大值          |描述|
 |:--     |:---  |:---         |:---           |:-- |
@@ -89,7 +90,7 @@ number本身的使用很简单，但混入了平台专有数字类型后，会�
 
 如果涉及大量运算，建议开发者不要使用 number、Int? ，要明确使用 Int等类型 [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
 
-#### Swift 专有的数字类型 @Swift
+#### Swift 专有的数字类型 @SwiftNumber
 
 |类型名称    |长度   |最小值        				|最大值          					|描述|
 |:--     	|:---  |:---         				|:---           					|:-- |
@@ -119,6 +120,10 @@ number本身的使用很简单，但混入了平台专有数字类型后，会�
 - Float32 是 Float 的类型别名, 两者等价。
 - Float64 是 Double 的类型别名, 两者等价。
 
+#### js专有的数字类型@jsNumber
+
+js的专用数字类型是BigInt。[详见](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures#bigint_%E7%B1%BB%E5%9E%8B)
+
 #### 专有数字类型的定义方式
 
 使用下面的方法，虽然可能会被编辑器报语法错误（后续HBuilderX会修复这类误报），但编译到 kotlin 和 swift 运行是正常的。
@@ -127,6 +132,7 @@ number本身的使用很简单，但混入了平台专有数字类型后，会�
  > 平台专有数字类型，均为首字母大写，注意与 number 首字母小写是不同的
 
 ```ts
+// #ifdef APP
  //注意 Int 是首字母大写
 let a:Int = 3
 let b:Int = 4
@@ -134,9 +140,10 @@ let b:Int = 4
 let c:Double  = a * 1.0 / b
 //Float
 let d2 = (100 as Number).toFloat()
+// #endif
 ```
 
-* 注意专有数字类型不能在web端和小程序端使用，如工程需兼容非App端，要把这些代码放入条件编译中；
+* 注意iOS和Android的专有数字类型不能在web端和小程序端使用，如工程需兼容非App端，要把这些代码放入条件编译中；
 * iOS和Android都有的类型，比如Int，编译后可跨2个平台；但如果使用了某平台专有的数字类型，比如swift的Int8，则此代码不能编译到Android，工程如需支持Android，则把这些代码写在条件编译中。
 
 ```ts
@@ -169,7 +176,7 @@ a 会被自动推导成什么类型？是Int、double、还是number？值是0�
 
 在web端，a 的类型是 number，值是0.1，但在 kotlin 中，类型是 Int，值是0。
 
-**HBuilderX 3.9起 uts 提供了2条新的字面量类型推导规则：**
+**HBuilderX 3.9起，uts 提供了2条新的字面量类型推导规则：**
 
 - 规则1. 在定义变量时，若没有显式声明变量类型，通过数字字面量以及数字字面量组成的运算表达式来给变量赋值，此时变量类型默认推导为 number类型
 
@@ -275,7 +282,7 @@ test((1.0 as Double)/10) //表达式中任意一个数字as一下，都不会走
 
 ```ts
 let a:number = 3
-a.toInt() // 转换为 Int 类型
+a.toInt() // 转换为 Int 类型。注意和parseInt、Math.floor的区别。
 a.toFloat() // 转换为 Float 类型，后续也将支持 new Float(a) 方式转换
 a.toDouble() // 转换为 Double 类型，后续也将支持 new Double(a) 方式转换
 
@@ -328,8 +335,8 @@ let b = new Double(a) // 将整型变量 a 转换为 Double 类型
 
 - 在不同平台上，数值的范围限制不同，超出限制会导致相应的错误或异常
   * 编译至 JavaScript 平台时，数值范围为 ±1.7976931348623157e+308，超出范围会返回 `Infinity` 或 `-Infinity`。
-  * 编译至 Kotlin 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，超出范围会报错：`The value is out of range‌`。浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会返回 `Infinity` 或 `-Infinity`。平台专有数字类型范围 [详见](#kotlin)。
-  * 编译至 Swift 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会报错：`integer literal overflows when stored into 'NSNumber'`。平台专有数字类型范围 [详见](#swift)
+  * 编译至 Kotlin 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，超出范围会报错：`The value is out of range‌`。浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会返回 `Infinity` 或 `-Infinity`。平台专有数字类型范围 [详见](#kotlinNumber)。
+  * 编译至 Swift 平台时，整型的数值范围为 -9223372036854775808 到 9223372036854775807，浮点型的数值范围为 ±1.7976931348623157e+308，超出范围会报错：`integer literal overflows when stored into 'NSNumber'`。平台专有数字类型范围 [详见](#swiftNumber)
 
 ### 运算和比较
 
@@ -1602,13 +1609,13 @@ console.log(obj.age) //25
 ```
 
 
-## 其他
-
-- 关于undefined
+## undefined
 
 js中的 undefined类型表示变量被定义，但是未赋值或初始化。
 
-uts 编译为kotlin和swift时不支持 undefined。即不允许变量未赋值。每个有类型的变量都需要初始化或赋值。
+uts 仅在编译为js时支持 undefined，在编译为kotlin和swift时不支持 undefined。即App平台不允许变量未赋值。每个有类型的变量都需要初始化或赋值。
+
+考虑多端，应避免使用undefined。
 
 ## 开发时类型@devtype
 
@@ -1661,10 +1668,20 @@ HBuilder支持给变量定义特殊值域string类型，这些类型在HBuilder�
 
 <!-- SPECIALSTRINGJSON.specialString.table -->
 
-## 联合类型
+## 联合类型@union-type
 
-目前uts支持的联合类型有限：
+由于kotlin和swift限制，uts在App平台支持的联合类型有限：
 - 支持 [|null](#null) （即可为空）
 - [字面量联合类型](#literal-union-type)
 
-不支持其他方式的联合类型。
+App平台不支持其他方式的联合类型。
+
+在编译为js时开发者可以使用其他联合类型。但考虑到多端兼容，应尽量避免。
+
+## 类型保留和擦除@type-erasure
+
+uts内置的类型，包括浏览器、Android、iOS内置的类型，在编译后不会擦除，在运行时仍可使用。
+
+开发者自定义的类型，如自定义type，在编译后会转为class。
+
+开发时类型会在编译后被擦除。运行时无法通过typeof或instanceof获取。
