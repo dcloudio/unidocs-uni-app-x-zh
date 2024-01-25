@@ -15,6 +15,7 @@ uni-app x编译到web端时遵循vue规范，目前有部分vue特性暂不支�
 - 组合式API：`defineOptions`、`defineModel`、`toValue`、`toRef`、`toRefs`、`hasInjectionContext`
 - 指令：`v-once`、`v-memo`
 - render函数
+- 不支持组件中监听页面 `onPageScroll`、`onReachBottom` 生命周期
 
 部分支持的特性
 
