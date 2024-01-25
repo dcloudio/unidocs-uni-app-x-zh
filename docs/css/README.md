@@ -224,21 +224,9 @@ App仅对同层的兄弟节点之间支持z-index来调节层级。不支持脱�
 
 字体图标[详见](font-family.md)
 
-## 选择器
-|类别			|示例		|App支持情况	|备注												|
-|:-:			|:-:		|:-:	|:-:												|
-|通配选择器		|* {}		|×		|													|
-|类选择器		|.class {}	|√		|													|
-|元素选择器		|tag {}		|×		|													|
-|ID 选择器		|#id {}		|×		|													|
-|属性选择器		|[attr] {}	|×		|													|
-|分组选择器		|.a, .b {}	|√		|													|
-|直接子代选择器	|.a > .b {}	|√		|													|
-|后代选择器		|.a .b {}	|√		|													|
-|一般兄弟选择器	|.a ~ .b {}	|√		|													|
-|紧邻兄弟选择器	|.a + .b {}	|√		|													|
-|伪类选择器		|:active {}	|×		|													|
-|伪元素选择器	|::before {}|×		|													|
+## 选择器 @selector
+
+<!-- CSSJSON.selector_values.compatibility -->
 
 注意，选择器声明的变化可能会导致元素重新绘制。为了减少选择器变化引起的 DOM 更新数量，**当前只支持：CSS 声明的多个选择器中最后一个规则的变更对 DOM 的更新**。
 
@@ -281,20 +269,7 @@ App仅对同层的兄弟节点之间支持z-index来调节层级。不支持脱�
 - 长度 `<length>` 用于表示距离尺寸的 CSS 数据类型。许多 CSS 属性会用到长度，比如 width、margin、padding。
 - 长度 `<percentage>` 表述一个百分比值。许多 CSS 属性 可以取百分比值，用以根据父对象来确定大小。百分比值由一个`<number>`具体数值后跟着%符号构成。就像其他在 css 里的单位一样，在%和数值之间是不允许有空格的。
 
-|类别				|App支持情况			|备注							|
-|:-:				|:-:				|:-:							|
-|px					|√					|								|
-|rpx				|√					|								|
-|百分比				|√					|仅支持width、height、padding、margin、top、left、right、bottom、flex-basis|
-|rem				|					|								|
-|em					|√					|仅支持line-height				|
-|vw					|					|								|
-|vh					|					|								|
-|vmin				|					|								|
-|vmax				|					|								|
-|ratio				|					|								|
-|env()				|					|								|
-|calc()				|					|								|
+<!-- CSSJSON.length_values.compatibility -->
 
 rpx是一个以设备750px为基准的单位，750rpx即为屏幕宽度，375rpx即为屏幕一半宽度。它比较适合适配不同宽度的手机。但rpx的性能和精度不如px，如果px可满足需求，尽量使用px。
 
@@ -312,17 +287,9 @@ px、rpx属于逻辑像素，在不同dpi的设备上，需要转换为物理像
 rpx和百分比，比px更容易产生浮点数，所以如果px能满足需求，尽量不用rpx和百分比。
 
 
+## 颜色 @color
 
-## 颜色
-|类别				|App支持情况			|备注							|
-|:-:				|:-:				|:-:							|
-|color keywords		|√					|red等							|
-|#RRGGBB / #RGB		|√					|								|
-|rgb[a]				|√					|								|
-|transparent		|√					|								|
-|currentColor		|					|								|
-|hsl				|					|								|
-|hsla				|					|								|
+<!-- CSSJSON.color_values.compatibility -->
 
 ## css方法
 
