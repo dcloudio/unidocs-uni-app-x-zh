@@ -2,6 +2,8 @@
 
 > 新增于4.0版本
 
+编译到web端时多数用法仍和编译到安卓端一致，本文档用于描述差异及需要注意的点。
+
 ## vue
 
 ### 特性支持情况
@@ -95,7 +97,15 @@ console.log(result instanceof Obj) // true
 
 ### any类型
 
-不同于ts，uts中any类型不包含null类型
+不同于ts，uts中any类型不包含null类型。
+
+例如定义可选参数时应使用下面的写法：
+
+```ts
+function test(anything?: any | null) {
+  console.log(anything)
+}
+```
 
 ### void/undefined类型
 
