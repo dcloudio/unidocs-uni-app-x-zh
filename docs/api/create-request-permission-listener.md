@@ -19,6 +19,7 @@ app-android平台，可使用本API监听应用权限申请确认框的弹出和
 
 + 如果权限已经申请并且允许之后，`onConfirm`不会触发。
 + 如果同时申请多个权限时，`onComplete`可能会触发多次。
++ uni-app x 中如果请求一个已经被永久拒绝的权限，可能会触发`onConfirm`，建议做延时处理。
 
 <!-- UTSAPIJSON.createRequestPermissionListener.example -->
 
