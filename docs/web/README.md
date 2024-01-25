@@ -103,7 +103,11 @@ console.log(result instanceof Obj) // true
 
 ## css
 
+### 默认样式
+
 为保证多端统一，uni-app-x编译到web端时，内置组件根元素带有一些默认样式，详情参考：[uvue css使用](../css/README.md)。如果是使用`document.createElement`等方式自行创建的html元素不会有这些默认样式。
+
+### 样式格式自动转化
 
 通过element.style.xxx设置样式时，web端会自动将样式进行转化，具体取决于浏览器。
 
@@ -112,6 +116,26 @@ console.log(result instanceof Obj) // true
 ```ts
 element.style.color = '##FF0000'
 element.style.color === 'rgb(255, 0, 0)' // true
+```
+
+### fixed定位
+
+position: fixed定位时，web端为相对于整个浏览器页面进行定位，app端为相对于页面（除导航栏、tabbar）定位。可以使用css变量使两端表现一致
+
+```css
+.fixed {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background-color: #FF0000;
+  left: 10px;
+  /* #ifdef WEB */
+  top: calc(--window-top + 10px);
+  /* #endif */
+  /* #ifdef APP */
+  top: 10px;  /* App端暂不支持calc */
+  /* #endif */
+}
 ```
 
 ## 运行与发行
