@@ -159,6 +159,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 		props: {
 			/**
 			 * 字符串类型 属性：buttonText  需要设置默认值
+			 * 目前仅支持，布尔，数字，字符串 
 			 */
 			"buttonText": {
 				type: String,
