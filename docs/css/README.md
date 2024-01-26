@@ -291,11 +291,11 @@ rpx和百分比，比px更容易产生浮点数，所以如果px能满足需求�
 
 <!-- CSSJSON.color_values.compatibility -->
 
-## css方法
+## css方法 @css-function
 
 目前仅支持url()、rgb()、rgba()、var()。
 
-### CSS 变量（4.0+）@variable
+## CSS 变量（4.0+）@variable
 
 uni-app x 4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../api/get-window-info.md)方式获取。
 
@@ -349,24 +349,8 @@ uni-app x 4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高�
 ```
 
 ## At-rules
-|类别							|App支持情况	|备注	|
-|:-:							|:-:		|:-:	|
-|@import						|√			|		|
-|@font-face						|√			|		|
-|@charset						|×			|		|
-|@color-profile					|×			|		|
-|@container						|×			|		|
-|@counter-style					|×			|		|
-|@documentNon-standardDeprecated|×			|		|
-|@font-feature-values			|×			|		|
-|@font-palette-values			|×			|		|
-|@keyframes						|×			|		|
-|@layer							|×			|		|
-|@media							|×			|		|
-|@namespace						|×			|		|
-|@page							|×			|		|
-|@property						|×			|		|
-|@supports						|×			|		|
+
+<!-- CSSJSON.at_rules_values.compatibility -->
 
 @font-face自定义字体示例：
 ```html

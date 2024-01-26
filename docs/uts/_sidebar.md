@@ -24,6 +24,7 @@
   * [Promise](buildin-object-api/promise.md)
   * [RegExp](buildin-object-api/regexp.md)
   * [Error](buildin-object-api/error.md)
+  * [Timers](buildin-object-api/timers.md)
   * [Console](buildin-object-api/console.md)
   * [全局](buildin-object-api/global.md)
 * 平台专用对象和 API
