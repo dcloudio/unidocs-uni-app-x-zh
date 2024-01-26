@@ -74,7 +74,8 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块需在 a
 
 使用 uni-ad 模块需在 manifest.json 文件中添加如下配置：  
 
-1. 在 app -> distribute -> modules 下添加 uni-ad 节点：  
+### 配置三方广告SDK  
+在 app -> distribute -> modules 下添加 uni-ad 节点：  
 ```json
 	modules:{
 		"uni-ad":{
@@ -102,11 +103,3 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块需在 a
 
 注意：目前仅支持上述国内广告平台，国际广告暂不支持。
 
-2. 在 app 节点下添加 adid 字段配置 uni-ad 联盟ID：  
-```json
-	"app":{
-		"adid":"1111111111"
-	}
-```
-
-注意：请前往 [uni-ad广告联盟](https://uniad.dcloud.net.cn/) 开通 uni-ad，开通后登录首页可查看到联盟ID。  
