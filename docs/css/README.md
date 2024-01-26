@@ -215,18 +215,18 @@ App仅对同层的兄弟节点之间支持z-index来调节层级。不支持脱�
 |Inline 布局			|×			|										|
 |Inline-Block 布局	|×			|										|
 |Block 布局			|×			|										|
-|字体				|√			|支持ttf、otf，不支持woff和woff2和可变字体	|
+|字体				|√			|[详见](font-family.md)	|
 |Positioned 布局		|√			|										|
 |CSS Animation		|x			|										|
 |CSS Transition		|√			|										|
 |CSS Variable		|×			|										|
 |媒体查询			|×			|										|
 
-字体图标[详见](font-family.md)
-
 ## 选择器 @selector
 
 <!-- CSSJSON.selector_values.compatibility -->
+
+web和小程序支持page元素选择器，以替代body元素选择器。
 
 注意，选择器声明的变化可能会导致元素重新绘制。为了减少选择器变化引起的 DOM 更新数量，**当前只支持：CSS 声明的多个选择器中最后一个规则的变更对 DOM 的更新**。
 
@@ -280,7 +280,7 @@ rpx是一个以设备750px为基准的单位，750rpx即为屏幕宽度，375rpx
 	实际项目中为了更好的在各端兼容，推荐使用长度 `<length>` 时指定明确单位
 
 - 单位精度问题
-px、rpx属于逻辑像素，在不同dpi的设备上，需要转换为物理像素。当产生浮点数时，由于精度保留策略的不同，在web和app可能造成细微的误差。
+px、rpx属于逻辑像素，在不同dpi的设备上，需要转换为物理像素。当产生浮点数时，由于精度保留策略的不同，在不同浏览器和手机OS，可能造成细微的误差。
 
 尤其是浏览器对于小数点的px兼容不够好，比如0.5px很难正常显示。
 
@@ -365,10 +365,6 @@ uni-app x 4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高�
 Tips：
 - 字体路径支持网络和本地，本地字体请注意放在项目或uni_modules的static目录下。
 
-<!-- CSSJSON.readmeTable.name -->
-
-<!-- CSSJSON.readmeTable.compatibility -->
-
 ## 样式作用范围
 
 在 `uni-app x` 中，不支持 `css scoped`，样式的作用范围遵循以下规则：
@@ -380,6 +376,10 @@ Tips：
 ## 页面滚动引起的差异
 
 `uni-app-x` App端无页面滚动，且其根节点高度为从导航栏底部到tabBar顶部。如果在页面根节点的子元素使用`position: absolute;`，页面内部scroll-view滚动时不会改变此元素位置。其他端有页面滚动，如果在页面根节点的子元素使用`position: absolute;`页面滚动会改变此元素的位置。如果有不随页面滚动变化位置的需求建议使用`position: fixed`。注意web端需要使用[css变量](#variable)使元素不覆盖在navigationBar和tabBar上。
+
+<!-- CSSJSON.readmeTable.name -->
+
+<!-- CSSJSON.readmeTable.compatibility -->
 
 ## Bug
 

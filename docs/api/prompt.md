@@ -60,6 +60,8 @@
 
 <!-- UTSAPIJSON.showActionSheet.param -->
 
+itemList，即actionsheet的列表项，在app和小程序上最多6项，超出会报错。在web上超出不报错，列表区变为可滚动。
+
 <!-- UTSAPIJSON.showActionSheet.returnValue -->
 
 <!-- UTSAPIJSON.showActionSheet.example -->
@@ -75,4 +77,4 @@
 <!-- UTSAPIJSON.general_type.param -->
 
 ## Bug & Tips@tips
-- 在页面生命周期 onLoad 中调用以上弹窗 API 可能无法正常显示，暂时建议在页面生命周期 onReady 及之后再调用。此bug已于HBuilderX 3.97+修复
+- 目前web和App的弹窗UI风格不统一，后续会修复
