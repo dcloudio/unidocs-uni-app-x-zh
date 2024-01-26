@@ -13,7 +13,7 @@
 <!-- UTSCOMJSON.web-view.compatibility -->
 
 - web和小程序上，web-view是全屏的，即页面只能显示一个铺满的web-view。
-- app端的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。
+- app/web端的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。
 
 <!-- UTSCOMJSON.web-view.children -->
 
@@ -36,11 +36,11 @@ web-view的操作api为[uni.createWebviewContext()](../api/create-webview-contex
 
 |方法名|说明|平台差异说明|
 |:-|:-|:-|
-|uni.webView.navigateTo|[navigateTo](../api/navigator.md#uni-navigateto)||
-|uni.webView.redirectTo|[redirectTo](../api/navigator#redirectto)||
-|uni.webView.reLaunch|[reLaunch](../api/navigator#relaunch)||
-|uni.webView.switchTab|[switchTab](../api/navigator#switchtab)||
-|uni.webView.navigateBack|[navigateBack](../api/navigator#navigateback)||
+|uni.webView.navigateTo|[navigateTo](../api/navigator.md#uni-navigateto)|web平台暂不支持|
+|uni.webView.redirectTo|[redirectTo](../api/navigator#redirectto)|web平台暂不支持|
+|uni.webView.reLaunch|[reLaunch](../api/navigator#relaunch)|web平台暂不支持|
+|uni.webView.switchTab|[switchTab](../api/navigator#switchtab)|web平台暂不支持|
+|uni.webView.navigateBack|[navigateBack](../api/navigator#navigateback)|web平台暂不支持|
 |uni.webView.postMessage|向应用发送消息|Web平台暂不支持|
 
 在网页中使用`uni.postMessage()`即可向uts发送消息。
