@@ -19,3 +19,7 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+**注意**
+
+- web端上传文件时仅能使用downloadFile、chooseImage等返回文件对象的接口的返回值作为要上传的文件
