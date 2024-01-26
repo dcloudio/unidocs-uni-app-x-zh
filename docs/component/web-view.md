@@ -36,11 +36,11 @@ web-view的操作api为[uni.createWebviewContext()](../api/create-webview-contex
 
 |方法名|说明|平台差异说明|
 |:-|:-|:-|
-|uni.webView.navigateTo|[navigateTo](../api/navigator.md#uni-navigateto)|web平台暂不支持|
-|uni.webView.redirectTo|[redirectTo](../api/navigator#redirectto)|web平台暂不支持|
-|uni.webView.reLaunch|[reLaunch](../api/navigator#relaunch)|web平台暂不支持|
-|uni.webView.switchTab|[switchTab](../api/navigator#switchtab)|web平台暂不支持|
-|uni.webView.navigateBack|[navigateBack](../api/navigator#navigateback)|web平台暂不支持|
+|uni.webView.navigateTo|[navigateTo](../api/navigator.md#uni-navigateto)|Web平台暂不支持|
+|uni.webView.redirectTo|[redirectTo](../api/navigator#redirectto)|Web平台暂不支持|
+|uni.webView.reLaunch|[reLaunch](../api/navigator#relaunch)|Web平台暂不支持|
+|uni.webView.switchTab|[switchTab](../api/navigator#switchtab)|Web平台暂不支持|
+|uni.webView.navigateBack|[navigateBack](../api/navigator#navigateback)|Web平台暂不支持|
 |uni.webView.postMessage|向应用发送消息|Web平台暂不支持|
 
 在网页中使用`uni.postMessage()`即可向uts发送消息。
