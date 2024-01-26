@@ -318,3 +318,5 @@ hx的json转type工具，会对一些敏感符合和关键字自动转义。但�
 ## 注意事项
 
 * request 接口内部通过[特殊方式读取了范型类型](../uts/generics.md#使用限制)，不支持传入动态的范型：比如将外层方法的普通范型参数传入 request。所以目前尽量直接使用uni.request而不是封装。如确需封装，可不使用type，改用UTSJSONObject。
+* web端request接口目前没有返回UTSJSONObject类型数据而是一个普通对象，后续可能会调整为UTSJSONObject类型，如需兼容多端可以使用下标获取request返回的数据内容。
+* web端request接口目前不支持创建传入的泛型的实例
