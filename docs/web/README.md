@@ -103,6 +103,64 @@ console.log(result instanceof Obj) // true
 - 目前`uni.request`传入泛型时不会创建对应类型的实例，会直接抹除类型信息，后续可能会调整为创建泛型类型对应的实例，请勿利用此特性。
 - 仅项目内定义的类型可以被实例化，uni-app-x内部定义的类型无法被实例化，例如`const options = { url: 'xxx' } as RequestOptions`，并不会将此对象转化为RequestOptions的实例，运行时也没有`RequestOptions`对应的类型信息。
 
+### this指向问题
+
+安卓端this只会指向其所在的类的实例，而编译到js后this的值取决于它出现的上下文：函数、类或全局。
+
+以下述代码为例
+
+```vue
+<template>
+  <view></view>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        title: '' 
+      }
+    },
+    methods: {
+      getTitle() {
+        uni.request({
+          url: 'xxx',
+          success() {
+            this.title = 'xxx'
+          }
+        })
+      }
+    }
+  }
+</script>
+```
+
+上述代码中的this在安卓端会指向页面/组件实例，在web端会指向uni.request的参数。为保证多端一致，建议在上面的场景使用this时搭配箭头函数。上述代码修改为下面的写法后即可兼容多端
+
+```vue
+<template>
+  <view></view>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        title: '' 
+      }
+    },
+    methods: {
+      getTitle() {
+        uni.request({
+          url: 'xxx',
+          success: () => {
+            this.title = 'xxx'
+          }
+        })
+      }
+    }
+  }
+</script>
+```
+
 ### any类型
 
 不同于ts，uts中any类型不包含null类型。
