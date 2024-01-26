@@ -21,6 +21,8 @@
     uni.request<Person>(options)
     ```
 * uni.request()暂未支持Promise，返回值是RequestTask。
+* web端request接口目前没有返回UTSJSONObject类型数据而是一个普通对象，后续可能会调整为UTSJSONObject类型，如需兼容多端可以使用下标获取request返回的数据内容。
+* web端request接口目前不支持创建传入的泛型的实例
 
 <!-- UTSAPIJSON.general_type.name -->
 
