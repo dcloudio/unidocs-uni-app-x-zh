@@ -15,11 +15,13 @@ app-android平台，可使用本API监听应用权限申请确认框的弹出和
 
 <!-- UTSAPIJSON.createRequestPermissionListener.returnValue -->
 
-**Tips**
+## Tips
 
-+ 如果权限已经申请并且允许之后，`onConfirm`不会触发。
-+ 如果同时申请多个权限时，`onComplete`可能会触发多次。
-+ uni-app x 中如果请求一个已经被永久拒绝的权限，可能会触发`onConfirm`，建议做延时处理。
+- 如果权限已经申请并且允许之后，`onConfirm`不会触发。
+- 如果同时申请多个权限时，`onComplete`可能会触发多次。
+- uni-app x 中如果请求一个已经被永久拒绝的权限，可能会触发`onConfirm`。目前的临时方案是做延时处理，如下面示例代码。后续会修复此问题。
+- 权限列表参考：[https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)
+- 本API仅提供了权限申请监听，未提供全局弹窗
 
 <!-- UTSAPIJSON.createRequestPermissionListener.example -->
 
