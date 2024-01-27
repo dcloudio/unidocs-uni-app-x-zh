@@ -11,6 +11,10 @@ uni-app x 编译到web平台时，并非是与uni-app js引擎版一致。而是
 
 本文档会介绍与web和Android的差异及注意事项。
 
+## web运行失败注意事项@faq
+
+- 在比较早的HBuilderX版本中创建的uni-app x项目，特征是项目根目录是app.vue而不是app.uvue。这样的项目运行web会失败。需替换index.html和app.uvue这2个文件，可以新建项目从中复制，也可以从hello uni-app x示例项目复制。
+
 ## vue
 
 ### 特性支持情况
