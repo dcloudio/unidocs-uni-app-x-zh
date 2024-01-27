@@ -214,6 +214,10 @@ position: fixed定位时，web端为相对于整个浏览器页面进行定位�
 }
 ```
 
+## api
+
+uni相关的异步api在web端不传回调时会返回promise（详情参考：[API Promise 化](https://uniapp.dcloud.net.cn/api/#api-promise-%E5%8C%96)）。但是由于目前缺少此用法的类型定义，使用返回的Promise无法通过编译，建议不要使用返回的Promise。
+
 ## 运行与发行
 
 运行到web端时，uni-app-x编译器不会对语法进行转化来兼容低版本浏览器。发行时会对代码进行转化，以保证低版本浏览器能正常运行。
