@@ -216,7 +216,7 @@ position: fixed定位时，web端为相对于整个浏览器页面进行定位�
 
 ## api
 
-uni相关的异步api在web端不传回调时会返回promise（详情参考：[API Promise 化](https://uniapp.dcloud.net.cn/api/#api-promise-%E5%8C%96)）。但是由于目前缺少此用法的类型定义，使用返回的Promise无法通过编译，建议不要使用返回的Promise。
+uni相关的异步api在web端不传回调时会返回promise（详情参考：[API Promise 化](https://uniapp.dcloud.net.cn/api/#api-promise-%E5%8C%96)）。但是由于目前缺少此用法的类型定义，使用返回的Promise无法通过编译。另外安卓端暂未实现此功能，建议不要使用此特性。
 
 ## 运行与发行
 
