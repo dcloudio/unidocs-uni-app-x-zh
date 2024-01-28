@@ -41,7 +41,7 @@ uni-app x支持的组件包括：
 
 ## props
 
-- 支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。从4.0+ 支持字符串数组方式声明。使用字符串数组方式声明时，所有 prop 类型均为 any | null。
+- 支持[对象方式](https://cn.vuejs.org/guide/components/props.html#props-declaration)声明。从 4.0+ 支持字符串数组方式声明。使用字符串数组方式声明时，所有 prop 类型均为 any | null。
 - 仅支持直接在 `export default` 内部声明，不支持其他位置定义后，在 `export default` 中引用。
 - 复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。
 - `type` 不支持使用自定义的构造函数。
@@ -105,10 +105,6 @@ export default {
 	}
 </script>
 ```
-## 计算属性和侦听器
-
-- [watch deep](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E9%80%89%E9%A1%B9-deep) 不支持(仅App-Android 平台, 4.0 将支持)
-- [监听对象中单个属性](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E7%9B%91%E5%90%AC%E5%AF%B9%E8%B1%A1%E4%B8%AD%E5%8D%95%E4%B8%AA%E5%B1%9E%E6%80%A7) 不支持(仅App-Android 平台, 4.0 将支持)
 
 ## 作用域插槽的类型
 
