@@ -7,7 +7,7 @@ uts 中使用关键字 `class` 声明类。
 ```ts
 // 定义Person Class
 class Person {
-	
+
 }
 ```
 
@@ -25,7 +25,7 @@ class Person {
 class Person {
 	name:string = ""; // 属性name
 	constructor(newname:string) { // 构造函数，参数newname
-		console.log("开始实例化"); 
+		console.log("开始实例化");
 		this.name = newname;
 	}
 	getNameLength():number{ // 方法getNameLength
@@ -96,7 +96,7 @@ class Square extends Polygon {
 }
 ```
 
-> 特别说明：  
+> 特别说明：
 > iOS 平台中在实现无参的 constructor() 或者重写父类的某个有参的构造函数时需要在构造函数前加上 `@UTSiOS.override`。 示例如下：
 
 ```ts
@@ -279,7 +279,7 @@ class Person {
 class Developer extends Person{
 	likeLanguage:string = "ts"
   constructor(newname:string) {
-    supper(newname)
+    super(newname)
 	}
 }
 
@@ -288,7 +288,7 @@ console.log(d.name); // tom
 console.log(d.likeLanguage); // ts
 ```
 
-- 子类必须包含构造函数的实现且必须使用 `supper` 调用父类的构造函数。
+- 子类必须包含构造函数的实现且必须使用 `super` 调用父类的构造函数。
 - 如果要控制父类中某些属性方法不被子类继承，可使用可见性修饰符（private、protected等），具体[见下](#modifier)
 - 多重继承：子类还可以被孙类继承
 
@@ -307,7 +307,7 @@ class Polygon {
 
 class Square extends Polygon {
     constructor() {
-      supper()
+      super()
     }
     override name(): string {
         return "Square";
@@ -328,13 +328,13 @@ class Shape {
 
 class Rectangle extends Shape {
     constructor() {
-        supper()
+        super()
     }
     override vertexCount = 4
 }
 ```
 
-> 特别说明：  
+> 特别说明：
 > iOS 平台中不允许覆盖和父类同名的存储属性，但是可以覆盖和父类同名的计算属性。
 
 #### 调用父类实现
@@ -347,7 +347,7 @@ class Rectangle {
 }
 class FilledRectangle extends Rectangle {
     constructor() {
-        supper()
+        super()
     }
     override draw() {
         super.draw();
