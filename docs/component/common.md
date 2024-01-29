@@ -242,39 +242,39 @@ handleClick (event : MouseEvent) {
 
 <!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.tutorial -->
 
-## UniMouseEvent
+## UniPointerEvent
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.description -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.description -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.extends -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.extends -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.param -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.param -->
 
 
-### UniMouseEvent 方法 @mouseevent-methods
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.name -->
+### UniPointerEvent 方法 @mouseevent-methods
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.name -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.description -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.description -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.param -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.param -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.returnValue -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.returnValue -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.compatibility -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.compatibility -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.tutorial -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.tutorial -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.name -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.name -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.description -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.description -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.param -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.param -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.returnValue -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.returnValue -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.compatibility -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.compatibility -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.tutorial -->
+<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.tutorial -->
 
 ## UniTouchEvent
 
