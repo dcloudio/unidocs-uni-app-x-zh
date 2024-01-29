@@ -683,4 +683,5 @@ console.log(arr.0) // a syntax error
 
 ## Bug & Tips@tips
 
-* 目前 Array 类型编译到 kotlin 为 io.dcloud.uts.UTSArray
+* 目前 Array 类型编译到 kotlin 为 io.dcloud.uts.UTSArray, 该类继承自 `java.util.ArrayList`,所有java /kotlin 为其提供的扩展函数(eg:toTypedArray 等)，均可以正常调用。
+
