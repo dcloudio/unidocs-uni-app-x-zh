@@ -418,7 +418,7 @@ console.log("AppCachePath",appCachePath)
     // 请求拍照权限
 	UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!, permissionNeed, function (allRight : boolean, _ : string[]) {
 		if (allRight) {
-			// 权限请求成功			
+			// 权限请求成功
 		} else {
 			//用户拒绝了部分权限
 		}
@@ -509,5 +509,14 @@ context.startActivity(intent);
 
 ```
 
-
 <!-- UTSJSON.UTSAndroid.tutorial -->
+
+### getJavaClass
+
+<!-- UTSJSON.UTSAndroid.getJavaClass.description -->
+
+<!-- UTSJSON.UTSAndroid.getJavaClass.param -->
+
+<!-- UTSJSON.UTSAndroid.getJavaClass.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getJavaClass.compatibility -->
