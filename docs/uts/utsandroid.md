@@ -520,3 +520,13 @@ context.startActivity(intent);
 <!-- UTSJSON.UTSAndroid.getJavaClass.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getJavaClass.compatibility -->
+
+### getTopPageActivity
+
+<!-- UTSJSON.UTSAndroid.getTopPageActivity.description -->
+
+<!-- UTSJSON.UTSAndroid.getTopPageActivity.param -->
+
+<!-- UTSJSON.UTSAndroid.getTopPageActivity.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getTopPageActivity.compatibility -->
