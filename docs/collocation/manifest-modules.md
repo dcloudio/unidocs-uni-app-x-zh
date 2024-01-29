@@ -20,20 +20,42 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 ### App端支持摇树的内置模块列表@utsmodules
 
-- uni-network  
-  网络请求（文件上传/下载）模块，包括API：[uni.downloadFile](../api/download-file.md)、[uni.request](../api/request.md)、[uni.uploadFile](../api/upload-file.md)  
+- uni-createRequestPermissionListener  
+  监听权限申请模块，包括API：[uni.createRequestPermissionListener](../api/create-request-permission-listener.md)  
+  依赖的模块：无  
+  注意：HBuilderX4.0版本新增，仅App-Android平台支持。  
+
+- uni-createWebviewContext  
+  创建 web-view 组件的上下文对象模块，包括API：[uni.createWebviewContext](../api/create-webview-context.md)  
   依赖的模块：无  
 
 - uni-getLocation-system  
   系统定位模块，包括API：[uni.getLocation](../api/get-location.md)  
   依赖的模块：无  
 
-- uni-video  
-  [video视频组件](../component/video.md)模块，包括内置组件：[video](../component/video.md)；包括API：[uni.createVideoContext](../api/create-video-context.md)  
+- uni-getNetworkType  
+  获取网络类型模块，包括API：[uni.getNetworkType](../api/get-network-type.md)  
   依赖的模块：无  
+
+- uni-installApk  
+  安装apk模块，包括API：[uni.installApk](../api/install-apk.md)  
+  依赖的模块：无  
+  注意：HBuilderX3.99版本新增，仅App-Android平台支持。 
 
 - uni-media  
   多媒体相关API模块，包括API：[uni.chooseImage](../api/choose-image.md)、[uni.previewImage](../api/preview-image.md)、[uni.saveImageToPhotosAlbum](../api/save-image-to-photos-album.md)  
+  依赖的模块：无  
+
+- uni-network  
+  网络请求（文件上传/下载）模块，包括API：[uni.downloadFile](../api/download-file.md)、[uni.request](../api/request.md)、[uni.uploadFile](../api/upload-file.md)  
+  依赖的模块：无  
+
+- uni-websocket  
+  WebSocket模块，包括API：[uni.connectSocket](../api/websocket-global.md)、[uni.onSocketOpen](../api/websocket-global.md#onsocketopen)、[uni.onSocketError](../api/websocket-global.md#onsocketerror)、[uni.sendSocketMessage](../api/websocket-global.md#sendsocketmessage)、[uni.onSocketMessage](../api/websocket-global.md#onsocketmessage)、[uni.closeSocket](../api/websocket-global.md#closesocket)、[uni.onSocketClose](../api/websocket-global.md#onsocketclose)  
+  依赖的模块：无  
+
+- uni-video  
+  [video视频组件](../component/video.md)模块，包括内置组件：[video](../component/video.md)；包括API：[uni.createVideoContext](../api/create-video-context.md)  
   依赖的模块：无  
 
 - uni-cloud-client  
@@ -44,12 +66,12 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
   [uni-push统一推送](https://uniapp.dcloud.net.cn/unipush-v2.html)模块（`HBuilderX3.97+`），包括API：[uni.createPushMessage](../api/push.md#createpushmessage)、[uni.getPushClientId](../api/push.md#getpushclientid)、[uni.offPushMessage](../api/push.md#offpushmessage)、[uni.onPushMessage](../api/push.md#onpushmessage)  
   依赖的模块：无  
 
-- uni-verify  
-  [App一键登陆](../api/get-univerify-manager.md)模块（`HBuilderX3.99+`），包括API：[uni.getUniverifyManager](../api/get-univerify-manager.md#getuniverifymanager)、[UniverifyManager.preLogin](../api/get-univerify-manager.md#prelogin)、[UniverifyManager.login](../api/get-univerify-manager.md#login)  
-  依赖的模块：无  
-
 - uni-facialRecognitionVerify  
   [uni实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)模块，包括API：[uni.getFacialRecognitionMetaInfo](../api/facial-recognition-verify.md#getfacialrecognitionmetainfo)、[uni.startFacialRecognitionVerify](../api/facial-recognition-verify.md#startfacialrecognitionverify)  
+  依赖的模块：无  
+
+- uni-verify  
+  [App一键登陆](../api/get-univerify-manager.md)模块（`HBuilderX3.99+`），包括API：[uni.getUniverifyManager](../api/get-univerify-manager.md#getuniverifymanager)、[UniverifyManager.preLogin](../api/get-univerify-manager.md#prelogin)、[UniverifyManager.login](../api/get-univerify-manager.md#login)  
   依赖的模块：无  
 
 再次强调，以上模块不属于ext组件或api，是内置模块。但如果你的代码中没有使用这些组件和api，打正式包或自定义基座时会被摇掉。  
