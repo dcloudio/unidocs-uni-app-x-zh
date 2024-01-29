@@ -270,3 +270,4 @@ view.takeSnapshot({
 * 截图会在应用沙盒目录的cache目录产生临时文件，位置[详见](../api/file-system-spec.md#cache)。
 * app端如需主动删除临时文件，使用[uni.getFileSystemManager](../api/get-file-system-manager.md)。
 * app端list-view、web-view组件性能优化仅渲染屏幕显示的内容，所以截图仅能截取到当前屏幕展示的内容。
+* app端scroll-view组件设置padding后，截图内容不会包含padding区域。
