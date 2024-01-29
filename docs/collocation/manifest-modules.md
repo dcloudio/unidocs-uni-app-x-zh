@@ -21,7 +21,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 ### App端支持摇树的内置模块列表@utsmodules
 
 - uni-createRequestPermissionListener  
-  监听权限申请模块，包括API：[uni.createRequestPermissionListener](../api/create-request-permission-listener.md)  
+  监听权限申请模块（`HBuilderX4.0+`），包括API：[uni.createRequestPermissionListener](../api/create-request-permission-listener.md)  
   依赖的模块：无  
   注意：HBuilderX4.0版本新增，仅App-Android平台支持。  
 
@@ -38,7 +38,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
   依赖的模块：无  
 
 - uni-installApk  
-  安装apk模块，包括API：[uni.installApk](../api/install-apk.md)  
+  安装apk模块（`HBuilderX3.99+`），包括API：[uni.installApk](../api/install-apk.md)  
   依赖的模块：无  
   注意：HBuilderX3.99版本新增，仅App-Android平台支持。 
 
@@ -61,6 +61,11 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 - uni-cloud-client  
   调用uniCloud[云函数/云对象](https://doc.dcloud.net.cn/uniCloud/cf-functions.html)模块，包括API：[uniCloud.importObject](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%B0%83%E7%94%A8)、[uniCloud.callFunction](https://doc.dcloud.net.cn/uniCloud/cf-callfunction.html#callfunction%E6%96%B9%E6%B3%95)  
   依赖的模块：uni-media、uni-network  
+
+- uni-ad  
+  uni-AD[广告联盟](https://uniad.dcloud.net.cn/)模块（`HBuilderX4.0+`），包括API：[uni.createRewardedVideoAd](../api/create-rewarded-video-ad.md)  
+  依赖的模块：无  
+  注意：此模块仅包含基础广告模块，配置聚合广告平台需手动配置，详情参考[uni-ad](#uni-ad)章节  
 
 - uni-push  
   [uni-push统一推送](https://uniapp.dcloud.net.cn/unipush-v2.html)模块（`HBuilderX3.97+`），包括API：[uni.createPushMessage](../api/push.md#createpushmessage)、[uni.getPushClientId](../api/push.md#getpushclientid)、[uni.offPushMessage](../api/push.md#offpushmessage)、[uni.onPushMessage](../api/push.md#onpushmessage)  
