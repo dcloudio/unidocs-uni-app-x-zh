@@ -86,7 +86,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 再次强调，以上模块不属于ext组件或api，是内置模块。但如果你的代码中没有使用这些组件和api，打正式包或自定义基座时会被摇掉。  
 
 **注意**  
-uts插件中暂不支持摇树，如果uts插件中使用了以上模块需在 app -> distribute -> modules 下手动添加对应节点：  
+uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需在使用此uts插件的 uni-app x 项目 manifest.json 文件的 app -> distribute -> modules 下手动添加对应节点：  
 ```json
 	//以下示例手动添加  uni-media  模块  
 	modules:{
