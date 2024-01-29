@@ -38,10 +38,6 @@
 
 组件内使用
 
-`this.createSelectorQuery()`, 等效于 `uni.createSelectorQuery().in(this)`
-
-注意：web 平台暂不支持 this.createSelectorQuery()
-
 ```html
 <template>
   <view>
@@ -64,7 +60,7 @@
     },
     methods: {
       getNodeInfo() {
-        this.createSelectorQuery().select('.rect1').boundingClientRect().exec((ret) => {
+        uni.createSelectorQuery().in(this).select('.rect1').boundingClientRect().exec((ret) => {
           this.nodeInfoList.length = 0
           this.nodeInfoList.push(ret[0] as NodeInfo)
         })
@@ -86,19 +82,19 @@
 示例：
 
 ```js
-this.createSelectorQuery().select('.rect1').boundingClientRect().exec()
+uni.createSelectorQuery().select('.rect1').boundingClientRect().exec()
 // 共返回 1 条结果，第一项数据类型为 NodeInfo
 result = [ {} ]
 ```
 
 ```js
-this.createSelectorQuery().selectAll('.rect1').boundingClientRect().exec()
+uni.createSelectorQuery().selectAll('.rect1').boundingClientRect().exec()
 // 共返回 1 条结果，第一项数据类型为 NodeInfo[]
 result = [ [{},{}] ]
 ```
 
 ```js
-this.createSelectorQuery().select('.rect1').selectAll('.rect2').boundingClientRect().exec()
+uni.createSelectorQuery().select('.rect1').selectAll('.rect2').boundingClientRect().exec()
 // 共返回 2 条结果，第一项数据类型为 NodeInfo，第二项数据类型类型为 NodeInfo[]
 result = [ {}, [{},{}] ]
 ```
