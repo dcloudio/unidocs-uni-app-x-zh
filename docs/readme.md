@@ -30,6 +30,8 @@ uni-app x 没有使用js和webview，它基于 uts 语言。在App端，uts在iO
 
 hello uni-app x的源码见：[https://gitcode.net/dcloud/hello-uni-app-x](https://gitcode.net/dcloud/hello-uni-app-x)
 
+另外hello uni-app x的web版地址如下：[https://hellouniappx.dcloud.net.cn/web](https://hellouniappx.dcloud.net.cn/web)
+
 uni-app x 是一个庞大的工程，它包括uts语言、uvue渲染引擎、uni的组件和API、以及扩展机制。
 
 ## 1. uts语言
