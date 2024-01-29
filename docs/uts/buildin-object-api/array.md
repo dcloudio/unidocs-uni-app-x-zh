@@ -593,6 +593,13 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 
 <!-- UTSJSON.Array.tutorial -->
 
+
+
+## android 平台特有方法
+
+* 目前 Array 类型编译到 kotlin 为 io.dcloud.uts.UTSArray, 该类继承自 `java.util.ArrayList`,所有java /kotlin 为其提供的扩展函数(如:toTypedArray 等)，均可以正常调用。
+
+
 ## 常见操作
 
 - 创建数组
@@ -681,7 +688,4 @@ const shallowCopy = fruits.slice() // this is how to make a copy
 console.log(arr.0) // a syntax error
 ```
 
-## Bug & Tips@tips
-
-* 目前 Array 类型编译到 kotlin 为 io.dcloud.uts.UTSArray, 该类继承自 `java.util.ArrayList`,所有java /kotlin 为其提供的扩展函数(eg:toTypedArray 等)，均可以正常调用。
 
