@@ -40,6 +40,8 @@
 
 `this.createSelectorQuery()`, 等效于 `uni.createSelectorQuery().in(this)`
 
+注意：web 平台暂不支持 this.createSelectorQuery()
+
 ```html
 <template>
   <view>
