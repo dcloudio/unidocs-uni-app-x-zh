@@ -29,6 +29,10 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
   创建 web-view 组件的上下文对象模块，包括API：[uni.createWebviewContext](../api/create-webview-context.md)  
   依赖的模块：无  
 
+- uni-fileSystemManager  
+  文件管理模块（`HBuilderX3.99+`），包括API：[uni.getFileSystemManager](../api/get-file-system-manager.md)  
+  依赖的模块：无  
+
 - uni-getLocation-system  
   系统定位模块，包括API：[uni.getLocation](../api/get-location.md)  
   依赖的模块：无  
