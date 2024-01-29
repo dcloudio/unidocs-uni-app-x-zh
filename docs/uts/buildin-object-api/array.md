@@ -595,9 +595,9 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 
 
 
-## android 平台特有方法
+## Android 平台方法
 
-* 目前 Array 类型编译到 kotlin 为 io.dcloud.uts.UTSArray, 该类继承自 `java.util.ArrayList`,所有java /kotlin 为其提供的扩展函数(如:toTypedArray 等)，均可以正常调用。
+* 目前 Array 类型编译到 `kotlin` 为 `io.dcloud.uts.UTSArray`, 该类继承自 `java.util.ArrayList`,所有`java` /`kotlin` 为其提供的扩展函数(如:`toTypedArray` 等)，均可以正常调用。
 
 
 ## 常见操作
