@@ -299,6 +299,9 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.teleport.attrubute -->
 
+**注意：**
+- App-Android 平台暂不支持动态修改 `to` 属性。
+
 <!-- VUEJSON.teleport.event -->
 
 <!-- VUEJSON.teleport.example -->
