@@ -259,6 +259,56 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.component.reference -->
 
+#### transition
+
+<!-- VUEJSON.transition.description -->
+
+<!-- VUEJSON.transition.attrubute -->
+
+<!-- VUEJSON.transition.event -->
+
+<!-- VUEJSON.transition.example -->
+
+<!-- VUEJSON.transition.compatibility -->
+
+<!-- VUEJSON.transition.children -->
+
+<!-- VUEJSON.transition.reference -->
+
+
+#### transition-group
+
+<!-- VUEJSON.transition-group.description -->
+
+<!-- VUEJSON.transition-group.attrubute -->
+
+<!-- VUEJSON.transition-group.event -->
+
+<!-- VUEJSON.transition-group.example -->
+
+<!-- VUEJSON.transition-group.compatibility -->
+
+<!-- VUEJSON.transition-group.children -->
+
+<!-- VUEJSON.transition-group.reference -->
+
+
+#### teleport
+
+<!-- VUEJSON.teleport.description -->
+
+<!-- VUEJSON.teleport.attrubute -->
+
+<!-- VUEJSON.teleport.event -->
+
+<!-- VUEJSON.teleport.example -->
+
+<!-- VUEJSON.teleport.compatibility -->
+
+<!-- VUEJSON.teleport.children -->
+
+<!-- VUEJSON.teleport.reference -->
+
 ### 特殊 Attributes @special-attributes
 
 <!-- VUEJSON.special_attributes.compatibility -->
@@ -470,7 +520,7 @@ defineOptions({
   const increment = () => {
     num.value++
   }
-  
+
   defineExpose({
     str,
     num,
