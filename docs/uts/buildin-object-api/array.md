@@ -302,6 +302,22 @@ array2.sort((a: number, b: number):number => a - b);
 
 <!-- UTSJSON.Array.sort.compatibility -->
 
+**平台差异性**
+
+在android平台，一定不能忽略两个对比元素相等的场景，否则可能会出现`java.lang.IllegalArgumentException: Comparison method violates its general contract!‌`
+```
+
+a.sort((a, b) : number => {
+  // 这里的判断不能省略
+  if(a.compareTo(b) == 0){
+    return 0
+  }
+  return a - b
+})
+```
+
+
+
 ### splice(start, deleteCount, ...items)
 
 <!-- UTSJSON.Array.splice.description -->
