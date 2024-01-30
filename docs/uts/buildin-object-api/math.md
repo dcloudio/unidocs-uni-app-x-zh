@@ -626,7 +626,7 @@ console.log(Math.log(10));
 ```
 <!-- UTSJSON.Math.log.compatibility -->
 
-### max(values)
+### max(...values)
 
 <!-- UTSJSON.Math.max.description -->
 
@@ -642,7 +642,7 @@ console.log(Math.max(-1, -3, -2));
 ```
 <!-- UTSJSON.Math.max.compatibility -->
 
-### min(values)
+### min(...values)
 
 <!-- UTSJSON.Math.min.description -->
 
@@ -777,3 +777,13 @@ console.log(Math.tan(1));
 <!-- UTSJSON.Math.tan.compatibility -->
 
 <!-- UTSJSON.Math.tutorial -->
+
+### hypot(...values)
+
+<!-- UTSJSON.Math.hypot.description -->
+
+<!-- UTSJSON.Math.hypot.param -->
+
+<!-- UTSJSON.Math.hypot.returnValue -->
+
+<!-- UTSJSON.Math.hypot.compatibility -->

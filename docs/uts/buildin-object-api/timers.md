@@ -2,7 +2,7 @@
 
 ## 实例方法
 
-### setInterval(handler, timeout?, arguments)
+### setInterval(handler, timeout?, ...arguments)
 
 <!-- UTSJSON.Timers.setInterval.description -->
 
@@ -14,7 +14,7 @@
 
 <!-- UTSJSON.Timers.setInterval.tutorial -->
 
-### setTimeout(handler, timeout?, arguments)
+### setTimeout(handler, timeout?, ...arguments)
 
 <!-- UTSJSON.Timers.setTimeout.description -->
 

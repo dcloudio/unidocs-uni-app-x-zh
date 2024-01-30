@@ -197,7 +197,7 @@ console.log(String.fromCharCode(189, 165999, 190, 61));
 <!-- UTSJSON.String.fromCharCode.compatibility -->
 
 
-### concat(strings)
+### concat(...strings)
 
 <!-- UTSJSON.String.concat.description -->
 

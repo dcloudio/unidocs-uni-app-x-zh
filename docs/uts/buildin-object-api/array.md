@@ -144,7 +144,7 @@ console.log(plants);
 
 <!-- UTSJSON.Array.pop.compatibility -->
 
-### push(items)
+### push(...items)
 
 <!-- UTSJSON.Array.push.description -->
 
@@ -169,7 +169,7 @@ console.log(animals);
 
 <!-- UTSJSON.Array.push.compatibility -->
 
-### concat(items)
+### concat(...items)
 
 <!-- UTSJSON.Array.concat.description -->
 
@@ -187,7 +187,7 @@ console.log(array3);
 
 <!-- UTSJSON.Array.concat.compatibility -->
 
-### concat(items)
+### concat(...items)
 
 <!-- UTSJSON.Array.concat_1.description -->
 
@@ -302,7 +302,7 @@ array2.sort((a: number, b: number):number => a - b);
 
 <!-- UTSJSON.Array.sort.compatibility -->
 
-### splice(start, deleteCount, items)
+### splice(start, deleteCount, ...items)
 
 <!-- UTSJSON.Array.splice.description -->
 
@@ -325,7 +325,7 @@ console.log(months);
 
 <!-- UTSJSON.Array.splice.compatibility -->
 
-### unshift(items)
+### unshift(...items)
 
 <!-- UTSJSON.Array.unshift.description -->
 
