@@ -138,6 +138,10 @@ const doubleCount = computed<number>(() : number => {
 </script>
 ```
 
+## [Class 与 Style 绑定](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#class-%E4%B8%8E-style-%E7%BB%91%E5%AE%9A)
+
+- `uni-app x` 新增支持绑定 `Map` 类型数据，性能高于 `Object` 数据类型。
+
 ## 应用生命周期
 uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) 和 [onExit](../collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
 
