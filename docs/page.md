@@ -5,3 +5,5 @@
 ## 页面生命周期
 
 <!-- PAGEINSTANCE.lifeCycle.compatibility -->
+
+示例代码, [详见](./vue/README.md#lifecycle-options)
