@@ -6,6 +6,13 @@
 
 <!-- CUSTOMTYPEJSON.UniElement.param -->
 
+#### style@style
+- App端  
+获取的是元素对象计算后的CSS样式集合对象，包括通过样式选择器设置的CSS样式。  
+
+- Web端  
+获取的是元素对象style属性设置的CSS样式集合对象，不包括通过样式选择器设置的CSS样式。  
+
 ### 方法
 <!-- CUSTOMTYPEJSON.UniElement.methods.getNodeId.name -->
 
