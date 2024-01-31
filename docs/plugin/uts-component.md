@@ -121,330 +121,421 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
 
 > Android
 
-```ts
+```html
 
 <template>
-	<view >
-
-	</view>
+  <view>
+  </view>
 </template>
+
 <script lang="uts">
-	import TextUtils from 'android.text.TextUtils'
-	import Button from 'android.widget.Button'
-	import LinearLayout from 'android.widget.LinearLayout'
-	import View from 'android.view.View'
+  /**
+   * 引用 Android 系统库
+   * [可选实现，按需引入]
+   */
+  import TextUtils from 'android.text.TextUtils';
+  import Button from 'android.widget.Button';
+  import View from 'android.view.View';
 
-	class ButtonClickListsner extends View.OnClickListener {
-		constructor() {
-			super()
-		}
-		override onClick(v ? : View) {
-			console.log(v)
-		}
-	}
+  /**
+   * 引入三方库
+   * [可选实现，按需引入]
+   *
+   * 在 Android 平台引入三方库有以下两种方式：
+   * 1、[推荐] 通过 仓储 方式引入，将 三方库的依赖信息 配置到 config.json 文件下的 dependencies 字段下。详细配置方式[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#dependencies)
+   * 2、直接引入，将 三方库的aar或jar文件 放到libs目录下。更多信息[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#android%E5%B9%B3%E5%8F%B0%E5%8E%9F%E7%94%9F%E9%85%8D%E7%BD%AE)
+   *
+   * 在通过上述任意方式依赖三方库后，使用时需要在文件中 import
+   * import { LottieAnimationView } from 'com.airbnb.lottie.LottieAnimationView'
+   */
 
-	//原生提供以下属性或方法的实现
-	export default {
-		/**
-		 * 组件名称，也就是开发者使用的标签
-		 */
-		name: "uts-hello-view",
-		/**
-		 * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
-		 */
-		emits: ['buttonClick'],
-		/**
-		 * 属性声明，组件的使用者会传递这些属性值到组件
-		 */
-		props: {
-			/**
-			 * 字符串类型 属性：buttonText  需要设置默认值
-			 * 目前仅支持，布尔，数字，字符串 
-			 */
-			"buttonText": {
-				type: String,
-				default: "点击触发"
-			}
-		},
-		/**
-		 * 组件内部变量声明
-		 */
-		data() {
-			return {}
-		},
-		/**
-		 * 属性变化监听器实现
-		 */
-		watch: {
-			"buttonText": {
-				/**
-				 * 这里监听属性变化，并进行组件内部更新
-				 */
-				handler(newButtonText: string) {
-					if (this.$el != null) {
-						let button = this.$el!.findViewWithTag("centerButton") as Button
-						if (!TextUtils.isEmpty(newButtonText)) {
-							button.setText(newButtonText)
-						}
-					}
-				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false
-			},
-		},
-		/**
-		 * 规则：如果没有配置expose，则methods中的方法均对外暴露，如果配置了expose，则以expose的配置为准向外暴露
-		 * ['publicMethod'] 含义为：只有 `publicMethod` 在实例上可用
-		 */
-		expose: ['doSth'],
-		methods: {
-			/**
-			 * 对外公开的组件方法
-			 */
-			doSth(paramA: string) {
-				// 这是组件的自定义方法
-				console.log("paramA",paramA)
-			},
-			/**
-			 * 内部使用的组件方法
-			 */
-			privateMethod() {
+  /**
+   * UTSAndroid 为平台内置对象，不需要 import 可直接调用其API，[详见](https://uniapp.dcloud.net.cn/uts/utsandroid.html#utsandroid)
+   */
 
-			}
-		},
+  //原生提供以下属性或方法的实现
+  export default {
+    /**
+     * 组件名称，也就是开发者使用的标签
+     */
+    name: "uts-hello-view",
+    /**
+     * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
+     */
+    emits: ['buttonclick'],
+    /**
+     * 属性声明，组件的使用者会传递这些属性值到组件
+     */
+    props: {
+      "buttontext": {
+        type: String,
+        default: "点击触发"
+      }
+    },
+    /**
+     * 组件内部变量声明
+     */
+    data() {
+      return {}
+    },
+    /**
+     * 属性变化监听器实现
+     */
+    watch: {
+      "buttontext": {
+        /**
+         * 这里监听属性变化，并进行组件内部更新
+         */
+        handler(newValue : string, oldValue : string) {
+          if (!TextUtils.isEmpty(newValue) && newValue != oldValue) {
+            this.$el?.setText(newValue);
+          }
+        },
+        immediate: false // 创建时是否通过此方法更新属性，默认值为false
+      },
+    },
+    /**
+     * 规则：如果没有配置expose，则methods中的方法均对外暴露，如果配置了expose，则以expose的配置为准向外暴露
+     * ['publicMethod'] 含义为：只有 `publicMethod` 在实例上可用
+     */
+    expose: ['doSomething'],
+    methods: {
+      /**
+       * 对外公开的组件方法
+       *
+       * uni-app中调用示例：
+       * this.$refs["组件ref"].doSomething("uts-button");
+       *
+       * uni-app x中调用示例：
+       * 1、引入对应Element
+       * import { UtsButtonElement(组件名称以upper camel case方式命名 + Element) } from 'uts.sdk.modules.utsComponent(组件目录名称以lower camel case方式命名)';
+       * 2、(this.$refs["组件ref"] as UtsButtonElement).doSomething("uts-button");
+       * 或 (uni.getElementById("组件id") as UtsButtonElement).doSomething("uts-button");
+       */
+      doSomething(param : string) {
+        console.log(param);
+      },
+      /**
+       * 内部使用的组件方法
+       */
+      privateMethod() {
 
-		/**
-		 * 组件被创建，组件第一个生命周期，
-		 * 在内存中被占用的时候被调用，开发者可以在这里执行一些需要提前执行的初始化逻辑
-		 * [可选实现]
-		 */
-		created() {
+      }
+    },
+    /**
+     * [可选实现] 组件被创建，组件第一个生命周期，
+     * 在内存中被占用的时候被调用，开发者可以在这里执行一些需要提前执行的初始化逻辑
+     */
+    created() {
 
-		},
-		/**
-		 * 对应平台的view载体即将被创建，对应前端beforeMount
-		 * [可选实现]
-		 */
-		NVBeforeLoad() {
+    },
+    /**
+     * [可选实现] 对应平台的view载体即将被创建，对应前端beforeMount
+     */
+    NVBeforeLoad() {
 
-		},
-		/**
-		 * 创建原生View，必须定义返回值类型
-		 * 开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型
-		 * （Android需要明确知道View类型，需特殊校验）
-		 * todo 补充IOS平台限制
-	  * [必须实现]
-		 */
-		NVLoad(): LinearLayout {
-			//必须实现
-			let contentLayout = new LinearLayout(this.$androidContext!)
-			let button = new Button(this.$androidContext!)
-			button.setText("点击触发");
-			button.setTag("centerButton");
-			contentLayout.addView(button, new LinearLayout.LayoutParams(500, 500));
-			button.setOnClickListener(new ButtonClickListsner())
-			return contentLayout
-		},
+    },
+    /**
+     * [必须实现] 创建原生View，必须定义返回值类型
+     * 开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型
+     * （Android需要明确知道View类型，需特殊校验）
+     */
+    NVLoad() : Button {
+      let button = new Button($androidContext!);
+      button.setText("点击触发");
+      button.setOnClickListener(new ButtonClickListener(this));
+      return button;
+    },
+    /**
+     * [可选实现] 原生View已创建
+     */
+    NVLoaded() {
 
-		/**
-		 * 原生View已创建
-		 * [可选实现]
-		 */
-		NVLoaded() {
+    },
+    /**
+     * [可选实现] 原生View布局完成
+     */
+    NVLayouted() {
 
-		},
-		/**
-		 * 原生View布局完成
-		 * [可选实现]
-		 */
-		NVLayouted() {
+    },
+    /**
+     * [可选实现] 原生View将释放
+     */
+    NVBeforeUnload() {
 
-		},
-		/**
-		 * 原生View将释放
-		 * [可选实现]
-		 */
-		NVBeforeUnload() {},
-		/**
-		 * 原生View已释放，这里可以做释放View之后的操作
-		 * [可选实现]
-		 */
-		NVUnloaded() {
+    },
+    /**
+     * [可选实现] 原生View已释放，这里可以做释放View之后的操作
+     */
+    NVUnloaded() {
 
-		},
-		/**
-		 * 组件销毁
-		 * [可选实现]
-		 */
-		unmounted() {},
-		/**
-		 * 自定组件布局尺寸
-		 * [可选实现]
-		 */
-		NVMeasure(size: UTSSize): UTSSize {
-			size.width = 120.0.toFloat()
-			size.height = 800.0.toFloat()
-			return size
-		}
-	}
+    },
+    /**
+     * [可选实现] 组件销毁
+     */
+    unmounted() {
+
+    },
+    /**
+     * [可选实现] 自定组件布局尺寸，用于告诉排版系统，组件自身需要的宽高
+     * 一般情况下，组件的宽高应该是由终端系统的排版引擎决定，组件开发者不需要实现此函数
+     * 但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
+     */
+    NVMeasure(size : UTSSize) : UTSSize {
+      // size.width = 300.0.toFloat();
+      // size.height = 200.0.toFloat();
+      return size;
+    }
+  }
+
+  /**
+   * 定义按钮点击后触发回调的类
+   * [可选实现]
+   */
+  class ButtonClickListener extends View.OnClickListener {
+    /**
+     * 如果需要在回调类或者代理类中对组件进行操作，比如调用组件方法，发送事件等，需要在该类中持有组件对应的原生类的对象
+     * 组件原生类的基类为 UTSComponent，该类是一个泛型类，需要接收一个类型变量，该类型变量就是原生组件的类型
+     */
+    private comp : UTSComponent<Button>;
+
+    constructor(comp : UTSComponent<Button>) {
+      super();
+      this.comp = comp;
+    }
+
+    /**
+     * 按钮点击回调方法
+     */
+    override onClick(v ?: View) {
+      console.log("按钮被点击");
+      // 发送事件
+      this.comp.$emit("buttonclick");
+    }
+  }
 </script>
+
 <style>
 
 </style>
-
 
 ```
 
 > iOS
 
-```ts
+```html
 <template>
-	<view class="defaultStyles">
-	</view>
+  <view class="defaultStyles">
+  </view>
 </template>
 <script lang="uts">
-	import {
-		UIButton
-	} from "UIKit"
+  /**
+   * 引用 iOS 系统库
+   * [可选实现，按需引入]
+   */
+  import {
+    UIButton,
+    UIControl
+  } from "UIKit"
 
-	// 定义按钮点击后触发回调的类
-	class ButtonClickListsner {
-		// 按钮点击回调方法
-		@objc buttonClick() {
-			console.log("按钮被点击")
-		}
-	}
+  /**
+   * 引入三方库
+   * [可选实现，按需引入]
+   *
+   * 在 iOS 平台引入三方库有以下两种方式：
+   * 1、通过引入三方库framework 或者.a 等方式，需要将 .framework 放到 ./Frameworks 目录下，将.a 放到 ./Libs 目录下。更多信息[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#ios-平台原生配置)
+   * 2、通过 cocoaPods 方式引入，将要引入的 pod 信息配置到 config.json 文件下的 dependencies-pods 字段下。详细配置方式[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html)
+   *
+   * 在通过上述任意方式依赖三方库后，使用时需要在文件中 import:
+   * 示例：import { LottieAnimationView, LottieAnimation, LottieLoopMode	} from 'Lottie'
+   */
 
-	//原生提供以下属性或方法的实现
-	export default {
-		/**
-		 * 组件名称，也就是开发者使用的标签
-		 */
-		name: "uts-hello-view",
-		/**
-		 * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
-		 */
-		emits: ['buttonClick'],
-		/**
-		 * 属性声明，组件的使用者会传递这些属性值到组件
-		 */
-		props: {
-			/**
-			 * 字符串类型 属性：buttonText  需要设置默认值
-			 */
-			"buttonText": {
-				type: String,
-				default: "点击触发"
-			}
-		},
-		/**
-		 * 组件内部变量声明
-		 */
-		data() {
-			return {}
-		},
-		/**
-		 * 属性变化监听器实现
-		 */
-		watch: {
-			"buttonText": {
-				/**
-				 * 这里监听属性变化，并进行组件内部更新
-				 */
-				handler(newButtonText: string, oldButtonText) {
-					this.$el.setTitle(newButtonText, for = UIControl.State.normal)
-				},
-				immediate: false //创建时是否通过此方法更新属性，默认值为false
-			},
-		},
-		/**
-		 * 规则：如果没有配置expose，则methods中的方法均对外暴露，如果配置了expose，则以expose的配置为准向外暴露
-		 * ['publicMethod'] 含义为：只有 `publicMethod` 在实例上可用
-		 */
-		expose: ['doSth'],
-		methods: {
-			/**
-			 * 对外公开的组件方法
-			 */
-			doSth(paramA: string) {
-				// 这是组件的自定义方法
-				console.log("paramA")
-			},
-			/**
-			 * 内部使用的组件方法
-			 */
-		},
+  /**
+   * UTSiOS、UTSComponent 为平台内置对象，不需要 import 可直接调用其API，[详见](https://uniapp.dcloud.net.cn/uts/utsios.html)
+   */
+  import { UTSComponent } from "DCloudUTSFoundation"
+
+  //原生提供以下属性或方法的实现
+  export default {
+    data() {
+      return {
+      };
+    },
+    /**
+     * 组件名称，也就是开发者使用的标签
+     */
+    name: "uts-hello-view",
+    /**
+     * 组件涉及的事件声明，只有声明过的事件，才能被正常发送
+     */
+    emits: ['buttonclick'],
+    /**
+     * 属性声明，组件的使用者会传递这些属性值到组件
+     */
+    props: {
+      /**
+       * 字符串类型 属性：buttontext  需要设置默认值
+       */
+      "buttontext": {
+        type: String,
+        default: "点击触发"
+      }
+    },
+    /**
+     * 组件内部变量声明
+     */
+
+    /**
+     * 属性变化监听器实现
+     */
+    watch: {
+      "buttontext": {
+        /**
+         * 这里监听属性变化，并进行组件内部更新
+         */
+        handler(newValue : String, oldValue : String) {
+          this.$el.setTitle(newValue, for = UIControl.State.normal)
+        },
+        /**
+         * 创建时是否通过此方法更新属性，默认值为false
+         */
+        immediate: false
+      },
+    },
+    /**
+     * 规则：如果没有配置expose，则methods中的方法均对外暴露，如果配置了expose，则以expose的配置为准向外暴露
+     * ['publicMethod'] 含义为：只有 `publicMethod` 在实例上可用
+     */
+    expose: ['doSomething'],
+    methods: {
+      /**
+       * 对外公开的组件方法
+       * 在uni-app中调用组件方法，可以通过指定ref的方式，例如指定uts-button 标签的ref 为 ’button‘， 调用时使用：this.$refs["button"].doSomething('message');
+       */
+      doSomething(paramA : string) {
+        // 这是组件的自定义方法
+        console.log(paramA, 'this is in uts-button component')
+      },
 
 
-		/**
-		 * 组件被创建，组件第一个生命周期，
-		 * 在内存中被占用的时候被调用，开发者可以在这里执行一些需要提前执行的初始化逻辑
-		 * [可选实现]
-		 */
-		created() {
+      /**
+       * 内部使用的组件方法
+       */
+    },
 
-		},
-		/**
-		 * 对应平台的view载体即将被创建，对应前端beforeMount
-		 * [可选实现]
-		 */
-		NVBeforeLoad() {
 
-		},
-		/**
-		 * 创建原生View，必须定义返回值类型
-		 * 开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型
-		 * [必须实现]
-		 */
-		NVLoad(): UIButton {
-			//必须实现
-			let button = new UIButton()
-			button.setTitle(this.buttonText, for = UIControl.State.normal)
-			const target = new ButtonClickListsner()
-			const method = Selector("buttonClick")
-			button.addTarget(target, action = method, for = UIControl.Event.touchUpInside)
-			return button
-		},
+    /**
+     * 组件被创建，组件第一个生命周期，
+     * 在内存中被占用的时候被调用，开发者可以在这里执行一些需要提前执行的初始化逻辑
+     * [可选实现]
+     */
+    created() {
 
-		/**
-		 * 原生View已创建
-		 * [可选实现]
-		 */
-		NVLoaded() {
+    },
+    /**
+     * 对应平台的view载体即将被创建，对应前端beforeMount
+     * [可选实现]
+     */
+    NVBeforeLoad() {
 
-		},
-		/**
-		 * 原生View布局完成
-		 * [可选实现]
-		 */
-		NVLayouted() {
+    },
+    /**
+     * 创建原生View，必须定义返回值类型
+     * 开发者需要重点实现这个函数，声明原生组件被创建出来的过程，以及最终生成的原生组件类型
+     * [必须实现]
+     */
+    NVLoad() : UIButton {
+      //必须实现
+      buttonClickListsner = new ButtonClickListsner(this)
 
-		},
-		/**
-		 * 原生View将释放
-		 * [可选实现]
-		 */
-		NVBeforeUnload() {},
-		/**
-		 * 原生View已释放，这里可以做释放View之后的操作
-		 * [可选实现]
-		 */
-		NVUnloaded() {
+      let button = new UIButton()
+      button.setTitle(this.buttontext, for = UIControl.State.normal)
+      // 在 swift target-action 对应的方法需要以OC的方式来调用，那么OC语言中用Selector来表示一个方法的名称（又称方法选择器），创建一个Selector可以使用 Selector("functionName") 的方式。
+      const method = Selector("buttonClickAction")
+      if (buttonClickListsner != null) {
+        button.addTarget(buttonClickListsner!, action = method, for = UIControl.Event.touchUpInside)
+      }
+      return button
+    },
 
-		},
-		/**
-		 * 组件销毁
-		 * [可选实现]
-		 */
-		unmounted() {}
-		/**
-		 * 自定组件布局尺寸
-		 * [可选实现]
-		 */
-		NVMeasure(size: UTSSize): UTSSize {
-			return new UTSSize(120, 45);
-		}
-	}
+    /**
+     * 原生View已创建
+     * [可选实现]
+     */
+    NVLoaded() {
+      /**
+       * 通过 this.$el 来获取原生控件。
+       */
+      this.$el.setTitle(this.buttontext, for = UIControl.State.normal)
+    },
+    /**
+     * 原生View布局完成
+     * [可选实现]
+     */
+    NVLayouted() {
+
+    },
+    /**
+     * 原生View将释放
+     * [可选实现]
+     */
+    NVBeforeUnload() { },
+    /**
+     * 原生View已释放，这里可以做释放View之后的操作
+     * [可选实现]
+     */
+    NVUnloaded() {
+
+    },
+    /**
+     * 组件销毁
+     * [可选实现]
+     */
+    unmounted() { }
+
+    /**
+     * 更多组件开发的信息详见：https://uniapp.dcloud.net.cn/plugin/uts-component.html
+     */
+  }
+
+  /**
+   * 定义按钮点击后触发回调的类
+   * [可选实现]
+   */
+  class ButtonClickListsner {
+    /**
+     * 如果需要在回调类或者代理类中对组件进行操作，比如调用组件方法，发送事件等，需要在该类中持有组件对应的原生类的对象。
+     * 组件原生类的基类为 UTSComponent，该类是一个泛型类，需要接收一个类型变量，该类型变量就是原生组件的类型。
+     */
+    private component : UTSComponent<UIButton>
+
+    constructor(component : UTSComponent<UIButton>) {
+      this.component = component
+      super.init()
+    }
+
+    /**
+     * 按钮点击回调方法
+     * 在 swift 中，所有target-action (例如按钮的点击事件，NotificationCenter 的通知事件等)对应的 action 函数前面都要使用 @objc 进行标记。
+     * [可选实现]
+     */
+    @objc buttonClickAction() {
+      console.log("按钮被点击")
+      // 发送事件
+      this.component.__$$emit("buttonclick");
+    }
+  }
+
+  /**
+   * 定义回调类或者代理类的实例
+   * [可选实现]
+   */
+  let buttonClickListsner : ButtonClickListsner | null = null
 </script>
+
+<style>
+
+</style>
 ```
 
 :::
@@ -521,6 +612,7 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
 
+**注意：只有非容器组件生效，容器组件不应该重写此函数**
 
 + NVUpdateStyles
 
@@ -536,10 +628,29 @@ NVUpdateStyles(styles: Map<String, any>){
 }
 ```
 
++ NVRecycler 
 
+HBuilderX 4.0版本起支持，仅uni-app x App-Android平台支持
 
+当UTS组件在`list-view`组件中使用时，由于[复用机制](../component/list-view.md)，UTS组件可能表现异常（UI、事件回调等），因此，组件开发者需要在此函数中进行相应的逻辑处理。
 
-**注意：只有非容器组件生效，容器组件不应该重写此函数**
+比如我们使用UTS组件封装了一个Android原生的`EditText`控件（输入框），代码如下
+
+```html
+NVLoad() : EditText {
+	let editText = new EditText($androidContext!);
+	return editText;
+}
+```
+
+然后我们在`list-view`组件中使用该UTS组件，当我们在第一个输入框中随机输入几个字符后，开始滚动列表，会发现之前输入的字符又出现在下面某个`list-item`中，这就是一个典型的由于复用机制导致的UI状态异常问题。此时我们就需要在NVRecycler()函数中处理该问题，代码如下
+
+```html
+NVRecycler() {
+	// 发生复用时置空输入框内容
+	this.$el?.setText("")
+}
+```
 
 [vue3 生命周期暂不支持](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E9%80%89%E9%A1%B9-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
 
