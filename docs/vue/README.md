@@ -105,6 +105,7 @@ const doubleCount = computed<number>(() : number => {
 ### 生命周期钩子
 
 <!-- VUEJSON.composition_lifecycle.compatibility -->
+<!-- VUEJSON.composition_lifecycle.example -->
 
 #### [函数 event 参数的类型](../tutorial/codegap.md#function-event-argument-type)
 
@@ -438,6 +439,8 @@ export default {
 ### \<script setup>
 
 <!-- VUEJSON.single_file_component_script.compatibility -->
+
+<!-- VUEJSON.single_file_component_script.example -->
 
 **注意：**
 - `defineProps` 仅支持数组字面量、对象字面量定义（等同于 `options` 中的 `props`规则）及使用纯类型参数的方式来声明。
