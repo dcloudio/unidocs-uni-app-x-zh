@@ -165,12 +165,9 @@ const doubleCount = computed<number>(() : number => {
   .w-100 {
     width: 100px;
   }
-
-
   .h-100 {
     height: 100px;
   }
-
   .rounded {
     border-radius: 8px;
   }
