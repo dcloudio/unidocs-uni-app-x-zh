@@ -141,7 +141,9 @@ const doubleCount = computed<number>(() : number => {
 
 ## [Class 与 Style 绑定](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#class-%E4%B8%8E-style-%E7%BB%91%E5%AE%9A)
 
-- `uni-app x` 新增支持绑定 `Map` 类型数据，`App-Android` 平台性能高于 `UTSJSONObject` 数据类型。
+- `uni-app x` 支持绑定  `UTSJSONObject` 和 `Map` 类型数据。
+
+在App-Android平台上 `Map` 的性能高于 `UTSJSONObject` 数据类型。从 `uni-app x 4.01` 起，Web平台也支持了 `Map` 类型绑定。
 
 ```html
 <template>
