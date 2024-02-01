@@ -36,12 +36,38 @@
 
 ## 组件公共属性
 
+|属性名|类型|描述|注解|
+|:-|:-|:-|:-|
+|id|String|组件的唯一标示|一般用于获取组件上下文对象|
+|ref|String|vue中组件的唯一标示|用来给子组件注册引用信息|
+|class|String|组件的样式类|在对应的 css 中定义的样式类|
+|style|String|组件的内联样式|可以动态设置的内联样式|
+|data-*|Any|自定义属性|组件上触发的事件时，会发送给事件处理函数|
+|android-*|Any|App-Android平台专有属性|详见[App-Android平台专有属性](#attribute-android)章节|
+
 - id
 - ref
 - style
 - class
 - data-
-- android-layer-type 设置Android平台组件加速模式，不支持动态修改。可取值为：hardware、none、software。默认值为none，不开启任何加速模式；hardware为硬件加速；software为软件加速。可参考[文档](https://developer.android.google.cn/topic/performance/hardware-accel?hl=zh-cn)。
+- android-
+
+### App-Android平台专有属性@attribute-android  
+
+android-开头的属性名称为App-Android平台专有属性  
+
+#### android-layer-type
+App-Android平台设置组件视图渲染模型，字符串类型，可取值：
+- "hardware": 视图在硬件中渲染为硬件纹理  
+- "software": 视图在软件中渲染为位图  
+- "none": 视图正常渲染，不使用缓冲区  
+默认值为"none"。
+
+注意：
+- HBuilderX4.01新增支持  
+- 不支持动态修改此属性  
+
+更多信息可参考Android官方文档[硬件加速](https://developer.android.google.cn/topic/performance/hardware-accel?hl=zh-cn)。
 
 <!-- CUSTOMTYPEJSON.Unigeneral-attribute.example -->
 
