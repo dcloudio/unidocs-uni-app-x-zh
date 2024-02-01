@@ -45,13 +45,6 @@
 |data-*|Any|自定义属性|组件上触发的事件时，会发送给事件处理函数|
 |android-*|Any|App-Android平台专有属性|详见[App-Android平台专有属性](#attribute-android)章节|
 
-- id
-- ref
-- style
-- class
-- data-
-- android-
-
 ### App-Android平台专有属性@attribute-android  
 
 android-开头的属性名称为App-Android平台专有属性  
