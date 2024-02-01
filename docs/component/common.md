@@ -41,6 +41,7 @@
 - style
 - class
 - data-
+- android-layer-type 设置Android平台组件加速模式，不支持动态修改。可取值为：hardware、none、software。默认值为none，不开启任何加速模式；hardware为硬件加速；software为软件加速。可参考[文档](https://developer.android.google.cn/topic/performance/hardware-accel?hl=zh-cn)。
 
 <!-- CUSTOMTYPEJSON.Unigeneral-attribute.example -->
 
