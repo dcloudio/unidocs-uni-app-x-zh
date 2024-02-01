@@ -110,7 +110,7 @@ type XxxComponentPublicInstance = {
 }
 ```
 
-在将XxxComponentPublicInstance类型的this值赋值给ComponentPublicInstance类型的参数时，由于$emit类型无法兼容导致无法会报出错误。
+在将XxxComponentPublicInstance类型的this值赋值给ComponentPublicInstance类型的参数时，由于$emit类型无法兼容导致编译报错。
 
 下面我们只看$emit的类型
 
@@ -123,7 +123,7 @@ type XxxComponentPublicInstanceEmit = (event: 'change' | 'input', ...args: any[]
 
 但是反过来则是可以的XxxComponentPublicInstanceEmit类型的函数A可以被重新赋值为ComponentPublicInstanceEmit类型的函数。
 
-简单来说ts在比较函数参数是否兼容时使用逆变（contravariance）而非协变（covariance），这两个名词定义比较复杂，结合上述示例理解即可。
+总结一下就是ts在比较函数参数是否兼容时使用逆变（contravariance）而非协变（covariance），这两个名词定义比较复杂，结合上述示例理解即可。
 
 ### 注意事项
 
