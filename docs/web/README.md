@@ -49,7 +49,7 @@ export default {
 </script>
 ```
 
-### vue相关属性类型问题
+### vue实例相关属性类型问题
 
 为保证运行性能，app安卓端部分属性（如：$data、$refs）被转为了Map类型（安卓端map支持使用下标访问），而web端仍是普通对象或proxy。为保证多端代码一致，在使用这些属性时可以统一为下标访问。
 
@@ -71,9 +71,63 @@ export default {
 </script>
 ```
 
+### ComponentPublicInstance类型
+
+目前已知组件使用emits会导致this不能直接传递给ComponentPublicInstance类型，需要as一下。
+
+```ts
+function log(ins: ComponentPublicInstance) {
+  console.log(ins);
+}
+
+export default {
+  emits: ['change', 'input'],
+  methods: {
+    buttonClick() {
+      log(this as ComponentPublicInstance)
+    }
+  }
+}
+```
+
+如下为进阶说明，可以不看
+
+我们在代码中用到的ComponentPublicInstance为省略泛型的写法，最终推导出的ComponentPublicInstance类型为：
+
+```ts
+// 此处为方便说明，省略了很多属性、简化了写法
+type ComponentPublicInstance = {
+  $emit: (event: string, ...args: any[]) => void
+}
+```
+
+对于使用了emits的组件，最终推导出来的this对应的类型为：
+
+```ts
+// 此处为方便说明，省略了很多属性、简化了写法
+type XxxComponentPublicInstance = {
+  $emit: (event: 'change' | 'input', ...args: any[]) => void
+}
+```
+
+在将XxxComponentPublicInstance类型的this值赋值给ComponentPublicInstance类型的参数时，由于$emit类型无法兼容导致无法会报出错误。
+
+下面我们只看$emit的类型
+
+```ts
+type ComponentPublicInstanceEmit = (event: string, ...args: any[]) => void
+type XxxComponentPublicInstanceEmit = (event: 'change' | 'input', ...args: any[]) => void
+```
+
+对于ComponentPublicInstanceEmit类型的函数A来说，event参数可以接收任意字符串，如果将其赋值为只能接收'change' | 'input'作为event参数的函数B，这时候用户如果将event参数设为'click'则函数B无法处理，而函数A的类型定义又可以接收'click'，所以ts并不允许这种行为。
+
+但是反过来则是可以的XxxComponentPublicInstanceEmit类型的函数A可以被重新赋值为ComponentPublicInstanceEmit类型的函数。
+
+简单来说ts在比较函数参数是否兼容时使用逆变（contravariance）而非协变（covariance），这两个名词定义比较复杂，结合上述示例理解即可。
+
 ### 注意事项
 
-- data内$开头的属性不可直接使用`this.$xxx`访问，需要使用`this.$data['$xxx']`，这是vue的规范。目前安卓端可以使用this.xxx访问是Bug而非特性，请勿使用此特性。
+- data内$开头的属性不可直接使用`this.$xxx`访问，需要使用`this.$data['$xxx']`，这是vue的规范。目前安卓端可以使用this.$xxx访问是Bug而非特性，请勿使用此特性。
 - 安卓端由于kotlin特性组件内部使用组件data内定义的属性时this可以省略，请勿在web端使用此特性。
 - web端由于是一个单页应用，使用`$root`会获取应用根组件，而不是页面根组件。而安卓端是多页应用，`$root`获取的是页面根组件。
 - web端使用`$parent`会获取父组件（含内置组件），安卓端只会获取父级非内置组件，web端后续会调整，请勿利用此特性。
@@ -172,14 +226,45 @@ console.log(result instanceof Obj) // true
 例如定义可选参数时应使用下面的写法：
 
 ```ts
-function test(anything?: any | null) {
+function test(anything?: any | null) { // 注意带上问号
   console.log(anything)
+}
+```
+
+同样如果属性在类型中是可选值也需要使用下面的写法
+
+```ts
+type Options = {
+  num?: number | null
 }
 ```
 
 ### void/undefined类型
 
 为保证多端统一应尽量避免使用undefined、void类型，可以使用null代替。如果需要判断是否为null建议使用两个等号，不要使用三个等号（此处使用了js的特性`undefined == null`结果为true）。
+
+### String、Number、Boolean类型
+
+ts内string、number、boolean类型与String、Number、Boolean类型并不相同。
+
+```ts
+let str1: String = '1'
+let str2: string = '2'
+
+str1 = str2 // 不报错
+str2 = str1 // 报错 Type 'String' is not assignable to type 'string'
+```
+
+尽量使用string、number、boolean类型替代String、Number、Boolean类型。
+
+### import type@import-type
+
+由于uts会为as为某些类型的对象字面量创建这个类型对应的实例，所以经常会存在一些类型引入后是作为值使用而不是作为类型使用。应尽量不要使用`import type`用法，避免编译结果出错。
+
+```ts
+import type { TypeA } from './type' // 避免使用
+import { TypeA } from './type' // 推荐用法
+```
 
 ## css
 
