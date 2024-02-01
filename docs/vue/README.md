@@ -141,7 +141,41 @@ const doubleCount = computed<number>(() : number => {
 
 ## [Class 与 Style 绑定](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#class-%E4%B8%8E-style-%E7%BB%91%E5%AE%9A)
 
-- `uni-app x` 新增支持绑定 `Map` 类型数据，性能高于 `Object` 数据类型。
+- `uni-app x` 新增支持绑定 `Map` 类型数据，`App-Android` 平台性能高于 `UTSJSONObject` 数据类型。
+
+```html
+<template>
+  <view>
+    <view :style="styleMap" :class="classMap"></view>
+  </view>
+</template>
+
+<script lang="uts">
+  export default {
+    data() {
+      return {
+        styleMap: new Map<string, string>([['border', '2px solid red'], ['background-color', 'green']]),
+        classMap: new Map<string, boolean>([['w-100', true], ['h-100', true], ['rounded', false]])
+      }
+    }
+  }
+</script>
+
+<style>
+  .w-100 {
+    width: 100px;
+  }
+
+
+  .h-100 {
+    height: 100px;
+  }
+
+  .rounded {
+    border-radius: 8px;
+  }
+</style>
+```
 
 ## 应用生命周期
 uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) 和 [onExit](../collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
