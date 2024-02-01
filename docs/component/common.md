@@ -56,9 +56,13 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 - "none": 视图正常渲染，不使用缓冲区  
 默认值为"none"。
 
-注意：
+**注意：**
 - HBuilderX4.01新增支持  
 - 不支持动态修改此属性  
+
+**Tips:**
+- 通过[DrawableContext](../dom/drawablecontext.md)或其他方式绘制复杂图形时，建议设置为`hardware`
+- 执行复杂动画或大量动画时，建议设置为`hardware`
 
 更多信息可参考Android官方文档[硬件加速](https://developer.android.google.cn/topic/performance/hardware-accel?hl=zh-cn)。
 
