@@ -1472,6 +1472,19 @@ open class User : Person, android.view.View.OnClickListener, Cloneable {
 
 + 目前暂不支持匿名声明，需要先定义一个 StartBroadcastListener 声明实现 OnClickListener 后再显性的创建
 
+### 6.15  UTS 如何访问静态实例方法
+
+kotlin编译后的AAR，会将访问方法修改为私有，不能以下面的方法访问
+
+```
+ScancodeConfig.setShowLine(false);
+```
+
+应该使用属性访问：
+
+```
+ScancodeConfig.showLine = false;
+```
 
 
 
