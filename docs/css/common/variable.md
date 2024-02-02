@@ -1,6 +1,6 @@
 # CSS 变量 <Badge text="4.0">
 
-> uni-app x 4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../api/get-window-info.md)方式获取。
+> uni-app x 4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。
 
 | CSS 变量| 描述| App| web|
 | :- | :- | :- | :- | :- |
