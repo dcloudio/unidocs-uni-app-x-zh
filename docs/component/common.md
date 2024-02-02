@@ -45,26 +45,26 @@
 |data-*|Any|自定义属性|组件上触发的事件时，会发送给事件处理函数|
 |android-*|Any|App-Android平台专有属性|详见[App-Android平台专有属性](#attribute-android)章节|
 
-### App-Android平台专有属性@attribute-android  
+### App-Android平台专有属性@attribute-android
 
-android-开头的属性名称为App-Android平台专有属性  
+> android-开头的属性名称为App-Android平台专有属性
 
-#### android-layer-type
+#### android-layer-type <Badge text="HBuilderX 4.01+">
+
+> 不支持动态修改此属性
+>
+> 更多信息可参考Android官方文档[硬件加速](https://developer.android.google.cn/topic/performance/hardware-accel?hl=zh-cn)。
+
 App-Android平台设置组件视图渲染模型，字符串类型，可取值：
-- "hardware": 视图在硬件中渲染为硬件纹理  
-- "software": 视图在软件中渲染为位图  
-- "none": 视图正常渲染，不使用缓冲区  
+- "hardware": 视图在硬件中渲染为硬件纹理
+- "software": 视图在软件中渲染为位图
+- "none": 视图正常渲染，不使用缓冲区
 默认值为"none"。
 
-**注意：**
-- HBuilderX4.01新增支持  
-- 不支持动态修改此属性  
-
-**Tips:**
+::: tip Tips
 - 通过[DrawableContext](../dom/drawablecontext.md)或其他方式绘制复杂图形时，建议设置为`hardware`
 - 执行复杂动画或大量动画时，建议设置为`hardware`
-
-更多信息可参考Android官方文档[硬件加速](https://developer.android.google.cn/topic/performance/hardware-accel?hl=zh-cn)。
+:::
 
 <!-- CUSTOMTYPEJSON.Unigeneral-attribute.example -->
 
@@ -101,50 +101,52 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 
 	安卓 3.93+ 版本开始支持
 
-```vue
-<template>
-  <image class="transition-transform" id="transition-transform" @transitionend="onEnd" src="/static/uni.png"></image>
-</template>
-<script>
-  export default {
-    data() {
-      return {}
-    },
-    onReady() {
-      var element = uni.getElementById('transition-transform')
-      element!.style.setProperty('transform', 'rotate(360deg)')
-    },
-    methods: {
-      onEnd() {
-        console.log("transition效果结束")
+  ```vue
+  <template>
+    <image class="transition-transform" id="transition-transform" @transitionend="onEnd" src="/static/uni.png"></image>
+  </template>
+  <script>
+    export default {
+      data() {
+        return {}
+      },
+      onReady() {
+        var element = uni.getElementById('transition-transform')
+        element!.style.setProperty('transform', 'rotate(360deg)')
+      },
+      methods: {
+        onEnd() {
+          console.log("transition效果结束")
+        }
       }
     }
-  }
-</script>
+  </script>
 
-<style>
-  .transition-transform {
-    transition-duration: 2000;
-    transition-property: transform;
-    transform: rotate(0deg);
-  }
-</style>
-```
+  <style>
+    .transition-transform {
+      transition-duration: 2000;
+      transition-property: transform;
+      transform: rotate(0deg);
+    }
+  </style>
+  ```
 
 ### 冒泡事件系统
 
-DOM事件主要有三个阶段：捕获阶段、目标阶段和冒泡阶段。
+> DOM事件主要有三个阶段：`捕获阶段`、`目标阶段`和`冒泡阶段`。
+>
+> `uvue` 目前暂不支持事件的捕获阶段。
 
 以点击事件为例，当触发点击时，
 1. 首先从根节点逐级向下分发，直到监听点击事件的节点为止（捕获阶段）；
 2. 然后事件到达当前节点并触发点击事件（目标阶段）；
 3. 接着继续向上逐级触发父节点的点击事件，直到根节点为止（冒泡阶段）。
 
-注意，虽然有3个阶段，但第2个阶段（“目标阶段”：事件到达了元素）并没有单独处理：捕获和冒泡阶段的处理程序都会在该阶段触发。
+::: warning 注意
+虽然有3个阶段，但第2个阶段（“目标阶段”：事件到达了元素）并没有单独处理：捕获和冒泡阶段的处理程序都会在该阶段触发。
 
 我们一般使用默认的事件注册机制，将事件注册到冒泡阶段，相对来说，大多数处理情况都在冒泡阶段。
-
-uvue 目前暂不支持事件的捕获阶段。
+:::
 
 #### 阻止冒泡
 
@@ -194,7 +196,9 @@ handleClick (event : MouseEvent) {
 
 ### Bug & Tips
 
-连续触发`click`或`tap`事件，可能会出现事件丢失的情况。
+::: warning 注意
+1. 连续触发`click`或`tap`事件，可能会出现事件丢失的情况。
+:::
 
 ## UniEvent
 
