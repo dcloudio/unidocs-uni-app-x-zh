@@ -1474,7 +1474,7 @@ open class User : Person, android.view.View.OnClickListener, Cloneable {
 
 ### 6.15  UTS 如何访问静态实例方法
 
-kotlin编译后的AAR，会将访问方法修改为私有，不能以下面的方法访问
+kotlin编译产出的AAR，会将访问方法修改为私有，不能以下面的方法访问
 
 ```
 ScancodeConfig.setShowLine(false);
