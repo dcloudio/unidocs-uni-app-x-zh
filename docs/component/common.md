@@ -197,7 +197,7 @@ handleClick (event : MouseEvent) {
 ### Bug & Tips
 
 ::: warning 注意
-1. 连续触发`click`或`tap`事件，可能会出现事件丢失的情况。
+1. 连续触发`click`或`tap`事件，可能会出现事件丢失的情况。**HBuilder X 4.0 已修复。**
 :::
 
 ## UniEvent
