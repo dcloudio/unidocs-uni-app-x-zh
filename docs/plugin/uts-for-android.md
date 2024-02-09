@@ -1226,7 +1226,7 @@ console.log(permissionArray.toMutableList())
 
 ```
 // 建议的写法
-let a:IntArray = xxx.getInfo()
+let a = xxx.getInfo()
 
 // 这样是没必要的，如果一定要这样写，必须要明确了解到kotlin依赖返回的数据结构，否能可能会因为类型错误，导致编译报错
 let a:IntArray = xxx.getInfo()
