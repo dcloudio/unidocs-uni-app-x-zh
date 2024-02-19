@@ -521,6 +521,20 @@ context.startActivity(intent);
 
 <!-- UTSJSON.UTSAndroid.getJavaClass.compatibility -->
 
+```uts
+export function getJavaClassTest() : boolean {
+	let dispatcherClass = UTSAndroid.getJavaClass(UTSAndroid.getDispatcher())
+	if("io.dcloud.uts.task.UTSTaskDispatcher" == dispatcherClass.name){
+    	return true
+	}
+  	let applicationClass = UTSAndroid.getJavaClass(UTSAndroid.getAppContext()!)
+  	if("io.dcloud.uniapp.UniApplication" == applicationClass.name){
+    	return true
+  	}
+	return false
+}
+```
+
 ### getTopPageActivity
 
 <!-- UTSJSON.UTSAndroid.getTopPageActivity.description -->
