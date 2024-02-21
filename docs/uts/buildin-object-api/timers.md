@@ -49,3 +49,44 @@
 <!-- UTSJSON.Timers.clearTimeout.compatibility -->
 
 <!-- UTSJSON.Timers.clearTimeout.tutorial -->
+
+示例代码
+
+```html
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods: {
+      timerSetTimeout() {
+        // 定义 setTimeout 返回值
+        let timerID = 0;
+
+        // 启动 setTimeout 并更新 timerID
+        timerID = setTimeout(() => {
+          // 执行一次
+          console.log('setTimeout', timerID);
+        }, 1000)
+
+        // 取消
+        // clearTimeout(timerID)
+      },
+      timerSetInterval() {
+        // 定义 setInterval 返回值
+        let timerID = 0;
+
+        // 启动 setInterval 并更新 timerID
+        timerID = setInterval(() => {
+          // 周期执行 (1000毫秒)
+          console.log('setInterval', timerID);
+
+          // 取消
+          clearInterval(timerID)
+        }, 1000)
+      }
+    }
+  }
+</script>
+```
