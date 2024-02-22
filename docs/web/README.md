@@ -163,7 +163,7 @@ console.log(result instanceof Obj) // true
 
 ### this指向问题
 
-安卓端this只会指向其所在的类的实例，而编译到js后this的值取决于它出现的上下文：函数、类或全局。
+安卓端this只会指向其所在的类的实例，而编译到js后this的值取决于它出现的上下文：函数、类或全局。参考： [MDN this](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this)
 
 以下述代码为例
 

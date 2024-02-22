@@ -32,6 +32,6 @@
   * [UTSAndroidHookProxy](utsandroidhookproxy.md)
   * [UTSiOS](utsios.md)
   * [UTSiOSHookProxy](utsioshookproxy.md)
-* [关键词](keywords.md)
+* [关键字](keywords.md)
 * [UTS App插件开发](../plugin/uts-plugin.md)
 <!-- * [学习资料](learning.md) -->

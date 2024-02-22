@@ -1,4 +1,65 @@
-## 关键词
+## 关键字
+
+### this
+
+安卓端this只会指向其所在的类的实例，而编译到js后this的值取决于它出现的上下文：函数、类或全局。参考： [MDN this](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this)
+
+以下述代码为例
+
+```vue
+<template>
+  <view></view>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        title: '' 
+      }
+    },
+    methods: {
+      getTitle() {
+        uni.request({
+          url: 'xxx',
+          success() {
+            this.title = 'xxx'
+          }
+        })
+      }
+    }
+  }
+</script>
+```
+
+上述代码中的this在安卓端会指向页面/组件实例，在web端会指向uni.request的参数。为保证多端一致，建议在上面的场景使用this时搭配箭头函数。上述代码修改为下面的写法后即可兼容多端
+
+```vue
+<template>
+  <view></view>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        title: '' 
+      }
+    },
+    methods: {
+      getTitle() {
+        uni.request({
+          url: 'xxx',
+          success: () => {
+            this.title = 'xxx'
+          }
+        })
+      }
+    }
+  }
+</script>
+```
+
+
+### 关键字列表
 
 - `as` 
     * 用于类型转换。
