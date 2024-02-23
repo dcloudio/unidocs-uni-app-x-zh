@@ -210,7 +210,7 @@ console.log(Array.isArray(a1)) // 返回true
 console.log(a1 instanceof Array) // 返回true
 ```
 
-instanceof，除了验证数组，还可以验证类型，但注意它返回的不是具体类型，还是根据入参的一个boolean值。
+instanceof，除了验证数组，还可以验证类型，但注意它返回的不是具体类型，而是根据入参的一个boolean值。
 
 ```ts
 let myDate = new Date();
