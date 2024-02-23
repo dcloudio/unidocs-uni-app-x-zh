@@ -401,6 +401,41 @@ let str5 = nstr3 as string  // 类型为string
   * 编译至 Kotlin 平台时，最大长度受系统内存的限制，超出限制会报错：`java.lang.OutOfMemoryError: char[] of length xxx would overflow`。
   * 编译至 Swift 平台时，最大长度也受系统内存的限制，超出限制目前没有返回信息。
 
+
+- Android 中的 Char 和 CharArray
+
+app-android平台存在一种 `kotlin.Char` 原生类型  [文档地址](!https://kotlinlang.org/docs/characters.html) ，与UTS中长度为1的字符串比较类似。
+
+为了更好的平台兼容性，开发者在UTS中应该尽量避免使用 `kotlin.Char` 类型，当原生API 要求Char 类型或者 CharArray类型时，可以通过下面的代码进行转换：
+
+#### string 转 kotlin.CharArray
+
+```uts
+	let kotlinCharArray = "hello".toCharArray()
+	console.log("CharArray",kotlinCharArray);
+```
+
+#### 截取 string 中的某個 kotlin.Char
+
+```uts
+	let singleChar = "hello".toCharArray()[0]
+	console.log("singleChar",singleChar);
+```
+
+当我们需要从CharArray中还原字符串时，可以使用下面的代码
+```uts
+let arrayMock = Array<kotlin.Char>()
+
+arrayMock.add("h".toCharArray()[0])
+arrayMock.add("e".toCharArray()[0])
+arrayMock.add("l".toCharArray()[0])
+arrayMock.add("l".toCharArray()[0])
+arrayMock.add("o".toCharArray()[0])
+
+console.log(arrayMock.joinToString(""));
+
+```
+
 ## any类型 @any
 
 有时会遇到在编程阶段还不清楚类型的变量。这些值可能来自于动态的内容，比如来自用户输入或第三方代码库。
