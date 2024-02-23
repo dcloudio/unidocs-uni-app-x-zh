@@ -722,6 +722,7 @@ array1.forEach((element:string, index:number) => {
 	* kotlin.FloatArray
 	* kotlin.ByteArray
 	* kotlin.LongArray
+	* kotlin.CharArray
 	* ...
 
 - 专有数组类型定义方式
@@ -762,6 +763,10 @@ let kotlinArray = arrayOf("hello","world")
 	//IntArray 即 java 中的 int[]
 	let b4 = intArrayOf(-1,2,0,3,4,5)
 	let c4 = Array.fromNative(b4)
+
+	// kotlin.CharArray 即 java 中的 char[]
+	let b5 = charArrayOf(Char(66),Char(66),Char(81))
+	let c5 = Array.fromNative(b5)
 
 
 ```
