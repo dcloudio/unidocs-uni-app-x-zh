@@ -149,7 +149,7 @@ const bytes: ByteArray = str.toByteArray(Charsets.UTF_8)
 
 js的专用数字类型是BigInt。[详见](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures#bigint_%E7%B1%BB%E5%9E%8B)
 
-#### 专有数字类型的定义方式
+### 专有数字类型的定义方式
 
 使用下面的方法，虽然可能会被编辑器报语法错误（后续HBuilderX会修复这类误报），但编译到 kotlin 和 swift 运行是正常的。
 
