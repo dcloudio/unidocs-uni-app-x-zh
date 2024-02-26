@@ -110,6 +110,8 @@ const bytes: ByteArray = str.toByteArray(Charsets.UTF_8)
 
 ```
 
+更多`kotlin.ByteArray`的用法参考[文档](!https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/)
+
 
 
 
