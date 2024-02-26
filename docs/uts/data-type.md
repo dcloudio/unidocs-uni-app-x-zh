@@ -99,7 +99,7 @@ number本身的使用很简单，但混入了平台专有数字类型后，会�
 下面列出了 `kotlin.ByteArray`的常用转换代码:
 
 
-```
+```uts
 import Charsets from 'kotlin.text.Charsets'
 // 将ByteArray 以 ascii 编码转换为字符串
 let str =  byteArrayOf(65,66,67).toString(Charsets.ISO_8859_1)
@@ -110,7 +110,7 @@ const bytes: ByteArray = str.toByteArray(Charsets.UTF_8)
 
 ```
 
-更多`kotlin.ByteArray`的用法参考[文档](!https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/)
+更多`kotlin.ByteArray`的用法参考[文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/)
 
 
 
@@ -429,7 +429,7 @@ let str5 = nstr3 as string  // 类型为string
 
 #### Android 中的 Char 和 CharArray
 
-app-android平台存在一种 `kotlin.Char` 类型  [文档地址](!https://kotlinlang.org/docs/characters.html) ，与UTS中长度为1的字符串比较类似。
+app-android平台存在一种 `kotlin.Char` 类型  [文档地址](https://kotlinlang.org/docs/characters.html) ，与UTS中长度为1的字符串比较类似。
 
 为了更好的平台兼容性，开发者在UTS中应该尽量避免使用 `kotlin.Char` 类型，当原生API 要求`kotlin.Char` 类型或 `kotlin.CharArray`类型时，可以通过下面的代码进行转换：
 
