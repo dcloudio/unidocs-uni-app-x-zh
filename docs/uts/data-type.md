@@ -365,7 +365,7 @@ s3 = "abc"
 
 ### 平台专有字符串类型
 
-- iOS 的 NSString
+#### iOS 的 NSString
 
 app-ios平台上原生有 NSString ，某些系统API或者三方库API可能使用NSString类型的字符串参数或者返回值。
 
@@ -402,20 +402,20 @@ let str5 = nstr3 as string  // 类型为string
   * 编译至 Swift 平台时，最大长度也受系统内存的限制，超出限制目前没有返回信息。
 
 
-- Android 中的 Char 和 CharArray
+#### Android 中的 Char 和 CharArray
 
 app-android平台存在一种 `kotlin.Char` 原生类型  [文档地址](!https://kotlinlang.org/docs/characters.html) ，与UTS中长度为1的字符串比较类似。
 
 为了更好的平台兼容性，开发者在UTS中应该尽量避免使用 `kotlin.Char` 类型，当原生API 要求Char 类型或者 CharArray类型时，可以通过下面的代码进行转换：
 
-#### string 转 kotlin.CharArray
++ string 转 kotlin.CharArray
 
 ```uts
 	let kotlinCharArray = "hello".toCharArray()
 	console.log("CharArray",kotlinCharArray);
 ```
 
-#### 截取 string 中的某個 kotlin.Char
++ 截取 string 中的某個 kotlin.Char
 
 ```uts
 	let singleChar = "hello".toCharArray()[0]
