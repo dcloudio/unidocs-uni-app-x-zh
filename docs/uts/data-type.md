@@ -86,9 +86,28 @@ number本身的使用很简单，但混入了平台专有数字类型后，会�
 |Float   |32bit |1.4E-45F     |3.4028235E38                    |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
 |Double  |64bit |4.9E-324     |1.7976931348623157E308         |[浮点型](https://kotlinlang.org/docs/numbers.html#floating-point-types)|
 
++ 特别说明1:
+
 基本数据类型会有jvm编译魔法加持，kotlin 会把 Int / Double 等非空类型编译为 基本数据类型，Int? / Double? 等可为空的类型编译为 Integer等包装类型，享受不到编译优化加持。
 
 如果涉及大量运算，建议开发者不要使用 number、Int? ，要明确使用 Int等类型 [详情](https://kotlinlang.org/docs/numbers.html#numbers-representation-on-the-jvm)
+
++ 特别说明2:
+
+`Byte` 类型在 kotlin 中使用场景较为广泛，除表示数字，还常用于以 `kotlin.ByteArray` 的形式用来承载 文件，网络信息 等字节流数据，下面列出了常用的转换代码:
+
+
++ 字符串 转换 ByteArray
+```
+import StandardCharsets from 'java.nio.charset.StandardCharsets';  
+
+const str: string = 'hello world!'  
+// 以UTF-8格式 转换为 ByteArray
+const bytes: ByteArray = str.toByteArray(StandardCharsets.UTF_8)
+```
+
+
+
 
 #### Swift 专有的数字类型 @SwiftNumber
 
