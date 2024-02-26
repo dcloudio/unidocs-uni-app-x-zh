@@ -94,7 +94,7 @@ number本身的使用很简单，但混入了平台专有数字类型后，会�
 
 + 特别说明2:
 
-`Byte` 类型在 kotlin 中使用场景较为广泛，除表示数字，还常见于以 `kotlin.ByteArray` 形式承载 文件，网络数据 等字节流。
+`Byte` 类型在 `kotlin` 中使用场景较为广泛，除表示数字，还常见于 `kotlin.ByteArray` 形式表示 文件，网络数据 等字节流。
 
 下面列出了 `kotlin.ByteArray`的常用转换代码:
 
@@ -431,7 +431,7 @@ let str5 = nstr3 as string  // 类型为string
 
 app-android平台存在一种 `kotlin.Char` 类型  [文档地址](!https://kotlinlang.org/docs/characters.html) ，与UTS中长度为1的字符串比较类似。
 
-为了更好的平台兼容性，开发者在UTS中应该尽量避免使用 `kotlin.Char` 类型，当原生API 要求`Char` 类型或者 `CharArray`类型时，可以通过下面的代码进行转换：
+为了更好的平台兼容性，开发者在UTS中应该尽量避免使用 `kotlin.Char` 类型，当原生API 要求`kotlin.Char` 类型或 `kotlin.CharArray`类型时，可以通过下面的代码进行转换：
 
 + `string` 转 `kotlin.CharArray`
 
@@ -447,7 +447,8 @@ let singleChar = "hello".toCharArray()[0]
 console.log("singleChar",singleChar);
 ```
 
-当我们需要从CharArray中还原字符串时，可以使用下面的代码
+当我们需要从`kotlin.CharArray`中还原字符串时，可以使用下面的代码
+
 ```uts
 let arrayMock = Array<kotlin.Char>()
 
