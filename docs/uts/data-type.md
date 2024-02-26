@@ -94,21 +94,20 @@ number本身的使用很简单，但混入了平台专有数字类型后，会�
 
 + 特别说明2:
 
-`Byte` 类型在 kotlin 中使用场景较为广泛，除表示数字，还常用于以 `kotlin.ByteArray` 形式承载 文件，网络数据 等字节流，下面列出了常用的转换代码:
+`Byte` 类型在 kotlin 中使用场景较为广泛，除表示数字，还常见于以 `kotlin.ByteArray` 形式承载 文件，网络数据 等字节流。
 
+下面列出了 `kotlin.ByteArray`的常用转换代码:
 
-```
-import StandardCharsets from 'java.nio.charset.StandardCharsets';  
-
-const str: string = 'hello world!'  
-// 字符串以UTF-8编码转换为 ByteArray
-const bytes: ByteArray = str.toByteArray(StandardCharsets.UTF_8)
-```
 
 ```
 import Charsets from 'kotlin.text.Charsets'
 // 将ByteArray 以 ascii 编码转换为字符串
 let str =  byteArrayOf(65,66,67).toString(Charsets.ISO_8859_1)
+
+const str: string = 'hello world!'  
+// 字符串以UTF-8编码转换为 ByteArray
+const bytes: ByteArray = str.toByteArray(Charsets.UTF_8)
+
 ```
 
 
