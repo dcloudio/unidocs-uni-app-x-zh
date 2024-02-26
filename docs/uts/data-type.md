@@ -429,22 +429,22 @@ let str5 = nstr3 as string  // 类型为string
 
 #### Android 中的 Char 和 CharArray
 
-app-android平台存在一种 `kotlin.Char` 原生类型  [文档地址](!https://kotlinlang.org/docs/characters.html) ，与UTS中长度为1的字符串比较类似。
+app-android平台存在一种 `kotlin.Char` 类型  [文档地址](!https://kotlinlang.org/docs/characters.html) ，与UTS中长度为1的字符串比较类似。
 
-为了更好的平台兼容性，开发者在UTS中应该尽量避免使用 `kotlin.Char` 类型，当原生API 要求Char 类型或者 CharArray类型时，可以通过下面的代码进行转换：
+为了更好的平台兼容性，开发者在UTS中应该尽量避免使用 `kotlin.Char` 类型，当原生API 要求`Char` 类型或者 `CharArray`类型时，可以通过下面的代码进行转换：
 
-+ string 转 kotlin.CharArray
++ `string` 转 `kotlin.CharArray`
 
 ```uts
-	let kotlinCharArray = "hello".toCharArray()
-	console.log("CharArray",kotlinCharArray);
+let kotlinCharArray = "hello".toCharArray()
+console.log("CharArray",kotlinCharArray);
 ```
 
-+ 截取 string 中的某個 kotlin.Char
++ 截取 `string` 中的`kotlin.Char`
 
 ```uts
-	let singleChar = "hello".toCharArray()[0]
-	console.log("singleChar",singleChar);
+let singleChar = "hello".toCharArray()[0]
+console.log("singleChar",singleChar);
 ```
 
 当我们需要从CharArray中还原字符串时，可以使用下面的代码
