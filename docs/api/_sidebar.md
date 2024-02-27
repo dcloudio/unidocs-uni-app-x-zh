@@ -48,6 +48,8 @@
   * [获取当前位置](get-location.md)
 * 推送
   * [推送](push.md)
+<!-- * 支付
+  * [发起支付](request-payment.md) -->
 * 数据存储
   * [storage（key-value存储）](storage.md)
 * 文件系统
