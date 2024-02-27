@@ -153,7 +153,7 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 在事件回调中，可以通过调用`event.stopPropagation`方法阻止事件冒泡。
 
 ```ts
-handleClick (event : MouseEvent) {
+handleClick (event : UniPointerEvent) {
     // 阻止继续冒泡.
     event.stopPropagation();
 }
