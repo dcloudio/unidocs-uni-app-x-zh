@@ -165,10 +165,8 @@ let b:Int = 4
 let c:Double  = a * 1.0 / b
 //Float
 let d2 = (100 as Number).toFloat()
-// 静态赋值给kotlin.Byte，变量范围为 -128至+127 如果超出此范围会报错
+// 变量范围为 -128至+127 如果超出此范围会报错
 let e:Byte = 127
-// 使用toByte 方法转换，超出-128至+127会自动溢出，不会报错
-let e2 = (225 as Number).toByte()
 // #endif
 ```
 
@@ -314,6 +312,9 @@ let a:number = 3
 a.toInt() // 转换为 Int 类型。注意和parseInt、Math.floor的区别。
 a.toFloat() // 转换为 Float 类型，后续也将支持 new Float(a) 方式转换
 a.toDouble() // 转换为 Double 类型，后续也将支持 new Double(a) 方式转换
+
+// 转换为 Byte 类型，超出-128至+127会溢出，结果为：-31
+let b = (225 as Number).toByte()
 
 //平台专有类型之间，也可以使用to方法转换
 let i:Int = 1
