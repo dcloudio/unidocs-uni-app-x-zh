@@ -165,6 +165,10 @@ let b:Int = 4
 let c:Double  = a * 1.0 / b
 //Float
 let d2 = (100 as Number).toFloat()
+// 静态赋值给kotlin.Byte，变量范围为 -128至+127 如果超出此范围会报错
+let e:Byte = 127
+// 使用toByte 方法转换，超出-128至+127会自动溢出，不会报错
+let e2 = (225 as Number).toByte()
 // #endif
 ```
 
