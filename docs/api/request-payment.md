@@ -10,7 +10,7 @@
 
 <!-- UTSAPIJSON.requestPayment.tutorial -->
 
-<!-- UTSAPIJSON.request-payment.example -->
+<!-- UTSAPIJSON.requestPayment.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 
