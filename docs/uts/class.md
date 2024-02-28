@@ -474,3 +474,6 @@ class Test {
   }
 }
 ```
+
+### 平台专有用法
+#### kotlin 平台获取 Java Class 对象 [UTSAndroid.getJavaClass](utsandroid.html#getjavaclass)
