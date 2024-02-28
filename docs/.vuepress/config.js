@@ -19,7 +19,7 @@ const config = {
     ['link', {
       rel: 'shortcut icon',
       type: 'image/x-icon',
-      href: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/icon.png?v=1556263038788'
+      href: 'https://web-ext-storage.dcloud.net.cn/uni-app-x/logo.ico'
     }],
     ['meta', {
       name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0'
@@ -37,7 +37,7 @@ const config = {
     }
   },
   themeConfig: {
-    titleLogo: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app.png',
+    titleLogo: 'https://web-ext-storage.dcloud.net.cn/uni-app-x/logo.ico',
     logo: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/logo.png',
     sidebar: createSidebar(tabs),
     sidebarDepth: 0,
