@@ -331,7 +331,7 @@ let isUniAppX = UTSAndroid.isUniAppX()
 console.log("isUniAppX",isUniAppX)
 ```
 
-### getAppCachePath
+### getAppCachePath()
 
 <!-- UTSJSON.UTSAndroid.getAppCachePath.description -->
 
@@ -402,7 +402,7 @@ console.log("AppCachePath",appCachePath)
 
 <!-- UTSJSON.UTSAndroid.resetPrivacyAgree.compatibility -->
 
-### requestSystemPermission
+### requestSystemPermission()
 
 <!-- UTSJSON.UTSAndroid.requestSystemPermission.description -->
 
@@ -428,7 +428,7 @@ console.log("AppCachePath",appCachePath)
 
 ```
 
-### checkSystemPermissionGranted
+### checkSystemPermissionGranted()
 
 <!-- UTSJSON.UTSAndroid.checkSystemPermissionGranted.description -->
 
@@ -449,7 +449,7 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 ```
 
 
-### gotoSystemPermissionActivity
+### gotoSystemPermissionActivity()
 
 <!-- UTSJSON.UTSAndroid.gotoSystemPermissionActivity.description -->
 
@@ -460,7 +460,7 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 <!-- UTSJSON.UTSAndroid.gotoSystemPermissionActivity.compatibility -->
 
 
-### getSystemPermissionDenied
+### getSystemPermissionDenied()
 
 <!-- UTSJSON.UTSAndroid.getSystemPermissionDenied.description -->
 
@@ -478,7 +478,7 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 	}
 ```
 
-### convert2AbsFullPath
+### convert2AbsFullPath(path:string)
 
 <!-- UTSJSON.UTSAndroid.convert2AbsFullPath.description -->
 
@@ -488,7 +488,7 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 
 <!-- UTSJSON.UTSAndroid.convert2AbsFullPath.compatibility -->
 
-### getFileProviderUri
+### getFileProviderUri(file:File)
 
 <!-- UTSJSON.UTSAndroid.getFileProviderUri.description -->
 
@@ -509,9 +509,9 @@ context.startActivity(intent);
 
 ```
 
-<!-- UTSJSON.UTSAndroid.tutorial -->
 
-### getJavaClass
+
+### getJavaClass(any:Any)
 
 <!-- UTSJSON.UTSAndroid.getJavaClass.description -->
 
@@ -535,7 +535,7 @@ export function getJavaClassTest() : boolean {
 }
 ```
 
-### getTopPageActivity
+### getTopPageActivity()
 
 <!-- UTSJSON.UTSAndroid.getTopPageActivity.description -->
 
@@ -544,3 +544,7 @@ export function getJavaClassTest() : boolean {
 <!-- UTSJSON.UTSAndroid.getTopPageActivity.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getTopPageActivity.compatibility -->
+
+
+<!-- UTSJSON.UTSAndroid.tutorial -->
+
