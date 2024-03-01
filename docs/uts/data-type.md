@@ -646,6 +646,28 @@ const year:number = myDate.getFullYear()
 
 Date对象还有很多方法属性，[详见](buildin-object-api/date.md)
 
+#### 与平台日期对象的转换
+
+如果需要将`Date` 与java平台自带的`java.util.Date`转换，建议使用时间戳作为关键参数进行转换处理：
+
++ Date 转 java.util.Date
+
+```uts
+import JavaDate from 'java.util.Date' ;
+
+let utsDate = Date("1998-02-02 01:03:01")
+let javaDate = JavaDate(utsDate.getTime().toLong())
+```
+
++ java.util.Date 转 Date
+```uts
+import JavaDate from 'java.util.Date' ;
+
+let javaDate =  JavaDate(1709208329000)
+let utsDate = Date(javaDate2.getTime())
+```
+
+
 
 ## 数组（Array）@array
 
