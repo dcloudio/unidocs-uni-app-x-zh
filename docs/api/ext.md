@@ -2,20 +2,22 @@
 
 ## Web平台
 
-uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app js引擎版的uni api在uni-app x的web版中都可以使用。但4.0版本的uni-app x的web版暂未对其他api进行测试。
+uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app js引擎版的uni api在uni-app x的web版中都可以使用。但4.0版本的uni-app x的web版暂未对hello uni-app x列出的以外的其他api进行测试。
 
 ## App平台uni api替代@uni
 插件市场和hello示例中还有一批可替代uni内置api的插件或示例代码，比如：
-- [剪切板](https://ext.dcloud.net.cn/search?q=%E5%89%AA%E5%88%87%E6%9D%BF&orderBy=Relevance&cat1=8&cat2=81)：`uni.setClipboardData`、`uni.getClipboardData`
-- [拨打电话](https://ext.dcloud.net.cn/plugin?id=15235)：`uni.makePhoneCall`
-- [打开三方应用](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/schema/schema.uvue)：打开浏览器、应用商店、地图并传参。`plus.openUrl`
-- [分享](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/share/share.uvue)：`uni.shareWithSystem`
-- 微信登录、分享、企业客服：[插件市场](https://ext.dcloud.net.cn/search?q=%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95&orderBy=Relevance&cat1=8&cat2=81&uni-appx=1)
-- 打开文件：`uni.openDocument`。[hello uts示例](https://gitcode.net/dcloud/hello-uts/-/blob/dev/uni_modules/uts-nativepage/utssdk/app-android/index.uts)、[插件市场](https://ext.dcloud.net.cn/plugin?id=12731)
-- [扫码](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&cat1=8&type=UpdatedDate)：`uni.scanCode`
-- [文件选择](https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9&cat1=8&cat2=81)：`uni.chooseFile`
-- [蓝牙](https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&orderBy=Relevance&cat1=8&cat2=81)
-- [NFC](https://ext.dcloud.net.cn/search?q=nfc&orderBy=Relevance&cat1=8&cat2=81)
+- 剪切板：`uni.setClipboardData`、`uni.getClipboardData` [见插件市场](https://ext.dcloud.net.cn/search?q=%E5%89%AA%E5%88%87%E6%9D%BF&orderBy=Relevance&cat1=8&cat2=81)
+- 拨打电话：`uni.makePhoneCall` [见插件市场](https://ext.dcloud.net.cn/plugin?id=15235)
+- 打开三方应用：打开浏览器、应用商店、地图并传参。`plus.openUrl`。[见hello uni-app x示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/schema/schema.uvue)
+- 分享：`uni.shareWithSystem` [见hello uni-app x示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/share/share.uvue)
+- 微信登录、分享、企业客服：[见插件市场](https://ext.dcloud.net.cn/search?q=%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95&orderBy=Relevance&cat1=8&cat2=81&uni-appx=1)
+- 打开文件：`uni.openDocument`。[见hello uts示例](https://gitcode.net/dcloud/hello-uts/-/blob/dev/uni_modules/uts-nativepage/utssdk/app-android/index.uts)、[插件市场](https://ext.dcloud.net.cn/plugin?id=12731)
+- 扫码：`uni.scanCode` [见插件市场](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&cat1=8&type=UpdatedDate)
+- 文件选择：`uni.chooseFile` [见插件市场](https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9&cat1=8&cat2=81)
+- 蓝牙：Bluetooth。[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&orderBy=Relevance&cat1=8&cat2=81)
+- NFC：[见插件市场](https://ext.dcloud.net.cn/search?q=nfc&orderBy=Relevance&cat1=8&cat2=81)
+- 地图：[见插件市场](https://ext.dcloud.net.cn/search?q=%E5%9C%B0%E5%9B%BE&orderBy=Relevance&uni-appx=1)
+- 录音：`uni.getRecorderManager` [见插件市场](https://ext.dcloud.net.cn/search?q=%E5%BD%95%E9%9F%B3&uni-appx=1)
 - 播放音频：`uni.getBackgroundAudioManager`、`uni.createInnerAudioContext`，参考如下代码：
 ```vue
 <template>
