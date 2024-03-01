@@ -70,14 +70,19 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 
 ## 组件公共事件
 
-- @touchstart
-- @touchmove
-- @touchend
-- @touchcancel
-- @tap
-- @click //与tap等价
-- @longpress
-- @transitionend
+|事件名称|类型|触发条件|注解|
+|:-|:-|:-|:-|
+|@touchstart|(event: [UniTouchEvent](#UniTouchEvent)) => void|手指触摸动作开始|冒泡事件，event.type值为touchstart|
+|@touchmove|(event: [UniTouchEvent](#UniTouchEvent)) => void|手指触摸后移动|冒泡事件，event.type值为touchmove|
+|@touchcancel|(event: [UniTouchEvent](#UniTouchEvent)) => void|手指触摸动作被打断，如来电提醒，弹窗|冒泡事件，event.type值为touchcancel|
+|@touchend|(event: [UniTouchEvent](#UniTouchEvent)) => void|手指触摸动作结束|冒泡事件，event.type值为touchend|
+|@tap|(event: [UniPointerEvent](#UniPointerEvent)) => void|手指触摸后马上离开|冒泡事件|
+|@click|(event: [UniPointerEvent](#UniPointerEvent)) => void|与tap相同，（推荐使用tap事件代替）|冒泡事件|
+|@longpress|(event: [UniPointerEvent](#UniEvent)) => void|手指触摸后，超过350ms再离开|冒泡事件|
+
+
+### touch 事件@touch
+触摸事件包括：touchstart、touchmove、touchcancel、touchend 等。
 
 在多点触摸的屏幕上，touch事件返回数组，包含了每个touch点对应的x、y坐标。
 
