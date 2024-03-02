@@ -2,6 +2,16 @@
 
 Map 对象保存键值对。任何值（对象或者基本类型）都可以作为一个键或一个值。
 
+**注意：请勿使用下标访问或设置map的键值对，此用法虽然在uts转为kotlin时可用，但是并不跨端**
+
+```ts
+const map = new Map<string, string>()
+map['key1'] = 'value1' // 不跨端的用法
+map.set('key1', 'value1') // 跨端用法
+console.log(map['key1']) // 不跨端的用法
+console.log(map.get('key1')) // 跨端用法
+```
+
 ## 实例属性
 
 
