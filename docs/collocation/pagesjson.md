@@ -19,8 +19,6 @@ hello uni-app x有相关示例，参考：
 - 自定义tabbar：[源码参考](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/custom-tab-bar)
 插件市场也有其他封装好的插件，请自行搜索。
 
-> 本文只包括 uni-app x 对 pages.json 支持情况。完整配置项详见 [pages.json 页面路由](https://uniapp.dcloud.net.cn/collocation/pages.html)
-
 ## 配置项列表
 
 <!-- PAGESJSON.pages.description -->
@@ -107,9 +105,10 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 **Tips**
 - 状态栏
 	* 手机顶部状态栏的背景色、前景色(white/black)与navigationBarBackgroundColor和navigationBarTextStyle相同
-	* 当navigationStyle设为custom时，原生导航栏不显示。此时需要注意系统状态栏背景色会受到[globalStyle](#pages-globalstyle)中navigationBarBackgroundColor配置的影响，可能会遮挡自定义导航栏，此情况下可以在页面配置中将navigationBarBackgroundColor设为transparent，即设置系统状态栏透明。
+	* 小程序平台，pages.json中各个颜色的设置仅支持普通的16进制数值。App和Web支持设为transparent，即透明。
 	* 如需动态设置状态栏颜色，使用api [uni.setNavigationBarColor](../api/set-navigation-bar-color.md)
-	* 注意不同手机的状态栏高度并不相同，如需获取本机的状态栏高度，使用api [uni.getWindowInfo](../api/get-window-info.md)
+	* 当navigationStyle设为custom时，原生导航栏不显示。此时需要注意系统状态栏背景色恒为透明。
+	* 注意不同手机的状态栏高度并不相同，如需获取本机的状态栏高度，使用api [uni.getWindowInfo](../api/get-window-info.md) 或 css变量 [--status-bar-height](../css/common/variable.md)
 - 下拉刷新
 	* pages.json中下拉刷新是页面级配置，方便使用但灵活度有限。
 	* 如需自定义下拉刷新，请使用[scroll-view](../component/scroll-view.md)或[list-view](../component/list-view.md)的下拉刷新。
