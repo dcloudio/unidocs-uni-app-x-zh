@@ -13,7 +13,7 @@ JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的对�
 
 ```ts
 const json = `{"result":true, "count":42}`;
-const obj = JSON.parse(json);
+const obj = JSON.parse(json) as UTSJSONObject;
 
 console.log(obj["count"]);
 // expected output: 42
