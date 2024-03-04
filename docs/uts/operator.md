@@ -462,6 +462,7 @@ type NewType = typeof my;   //报错
 
 **特殊情况**
 在Android平台，将 number 类型赋值给 any 类型变量时，会根据数值将类型转变为实际平台专有数字类型，使用 typeof 获取此 any 类型变量将会返回实际平台专有数字类型。
+同样，将 number 类型保存在 UTSJSONObject 中，通过下标 `[""]` 获取对应的属性值类型为 any，使用 typeof 获取此属性值类型也将返回实际平台专有数字类型。
 
 ```ts
 let a = 10.0    //自动推断为number类型
