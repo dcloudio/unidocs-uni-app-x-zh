@@ -54,7 +54,10 @@ uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app 
 uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api，在uni-app x中进行了替换增补。
 - plus.runtime.quit => [uni.exit](./exit.md)
 - plus.runtime.install => [uni.installApk](./install-apk.md)
-  
+
+一些plus api在插件市场有替代：
+- plus.sqlite [插件市场](https://ext.dcloud.net.cn/search?q=sqlite&uni-appx=1)
+
 还有一些plus API未封装为 uni 的API，但可以直接使用如下代码调用。
 - plus.runtime.openURL
 ```vue
