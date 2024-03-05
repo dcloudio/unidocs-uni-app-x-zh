@@ -324,4 +324,4 @@ uni相关的异步api在web端不传回调时会返回promise（详情参考：[
 
 ## 其他注意事项
 
-- 内置组件的tagName、nodeName与安卓端不同，目前web端和安卓端相比多了`UNI-`前缀，例如web端为`UNI-VIEW`、`UNI-IMAGE`，安卓端为`VIEW`、`IMAGE`。
+- 内置组件的tagName、nodeName与安卓端不同，目前web端和安卓端相比多了`UNI-`前缀，例如web端为`UNI-VIEW`、`UNI-IMAGE`，安卓端为`VIEW`、`IMAGE`。此问题已在HBuilderX 4.02版本修复，web端移除了UNI-前缀。
