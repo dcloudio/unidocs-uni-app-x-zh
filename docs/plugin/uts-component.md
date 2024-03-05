@@ -1227,7 +1227,7 @@ UTS组件建议使用远程依赖的方式集成，如果需要以AAR的形式�
 
 ~/uni_modules/uts-animation-view/utssdk/app-android/libs目录
 
-依赖的配置原则与UTS插件一致 [UTS插件依赖说明](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-4-%E5%A2%9E%E5%8A%A0libs%E4%BE%9D%E8%B5%96%E8%B5%84%E6%BA%90)
+依赖的配置原则与UTS插件一致 [UTS插件依赖说明](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#_3-4-%E5%A2%9E%E5%8A%A0libs%E4%BE%9D%E8%B5%96%E8%B5%84%E6%BA%90)
 
 #### iOS 平台引入依赖库
 
