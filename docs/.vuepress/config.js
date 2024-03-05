@@ -114,6 +114,9 @@ const config = {
         .end()
         .plugin('add-base-to-md')
         .use(require('./markdown/add-base-to-md'), [{ base }])
+        .end()
+        .plugin('subtable')
+        .use(require('./markdown/markdown-it-subtable').markdownIt, [{ flags: ['->'] }])
     }
   },
   chainWebpack (config, isServer) {

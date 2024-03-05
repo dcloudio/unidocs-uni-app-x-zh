@@ -1,3 +1,17 @@
+|				|原生语言插件				|uts插件|
+|:------		|:-------					|:--------|
+|开发语言		|java/oc					|uts|
+|开发环境		|Android Studio/XCode		|[HBuilderX](https://www.baidu.com)|
+->|第一列|第二列				|第三列				|
+->|:------		|:-------:	|-------:	|
+->|左对齐		|[居中](https://www.baidu.com)|右对齐|
+|打包方式		|外挂aar 等产出物			|编译时生成原生代码|
+|js层调用方式	|uni.requireNativePlugin()	|普通的js函数/对象，可以直接 import，支持摇树优化|
+->|第一列|第二列				|
+->|:------		|:-------	|
+->|第一列内容		|[HBuilderX](https://www.baidu.com)|
+|支持项目类型	|uni-app					|uni-app和uni-app x|
+
 # uni-app x 是什么？
 
 > HBuilderX3.9+
@@ -141,7 +155,7 @@ uni-app x支持的API包括：
 4. uniCloud.xxx的内置API。[详见](./api/unicloud/README.md)
 5. dom的API [详见](./dom/README.md)
 6. 原生API
-	
+
 	由于uts可以直接调用Android和iOS的api，所以os和三方sdk的能力都可以在uts中调用。如下：
 
 ```vue
@@ -307,9 +321,9 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 - 未来 uni-app js引擎版还维护吗？
   维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。不再维护不是下线，而是没有重大问题的话（如新手机不兼容）不会再更新了。
-  
+
   并非所有应用都需要达到微信、抖音的性能，js引擎版如能满足你的性能需求，那继续使用js引擎版。
-  
+
   未来vue页面也会支持uts组件。无论js引擎版还是x版，都支持uts插件生态，未来的原生扩展api和插件会是复用的。
 
   包括官方的组件和API也会复用，比如电量API [uni.getbatteryinfo](https://ext.dcloud.net.cn/plugin?id=9295)，和[lottie组件](https://ext.dcloud.net.cn/plugin?id=10674)，它们使用uts开发，在 uni-app js引擎版和x版上，调用的都是一套代码。
