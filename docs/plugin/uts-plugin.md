@@ -306,7 +306,7 @@ dependencies {
 	+ plugins
 		此配置将会添加到云端打包工程app及build.gradle文件的“plugins”中：
 
-		```
+		```gradle
 		plugins {
 			id 'com.android.application'
 			// 前面config.json示例配置将会添加如下配置
@@ -315,9 +315,10 @@ dependencies {
 		```
 
 	+ dependencies
+
 		此配置将会添加到云端打包工程项目级build.gradle文件的“buildscript > dependencies”中：
 
-		```
+		```gradle
 		buildscript {
 			dependencies {
 				classpath 'com.android.tools.build:gradle:7.2.0'
