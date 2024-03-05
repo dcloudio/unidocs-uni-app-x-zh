@@ -193,21 +193,6 @@ export default {
 
 `4.0` 起可通过组合式 API 实现组件中监听页面生命周期，[示例代码](https://gitcode.net/dcloud/hello-uvue/-/blob/alpha/pages/composition-api/lifecycle/component-lifecycle/component-lifecycle.uvue)。
 
-## vue 与 uvue 不同文件后缀的优先级 @priority
-
-新建组件时，默认组件的后缀名为.uvue，但也支持.vue。
-
-.vue里面写uvue的语法，可以正常被.uvue页面引用和编译。
-
-.vue里写条件编译，可以制作同时满足uni-app和uni-app x的组件。
-
-当你手动import或easycom手动配置规则，可以指定文件名后缀。比如`import PageHead from '@/components/page-head.uvue'`
-
-但如果未明确指定组件后缀名的情况，且同一个组件目录下即存在.vue文件、又存在.uvue文件，
-此时 `vue` 组件和 `uvue` 组件的优先级如下：
-- 在 `uni-app x` 中，优先使用 `uvue` 组件，如果不存在 `uvue` 组件，则使用 `vue` 组件。
-- 在 `uni-app` 中，只支持使用 `vue` 组件。
-
 
 ## 调用组件方法@methods
 
@@ -463,3 +448,21 @@ ComponentPublicInstance
 `#ifdef APP-UVUE || APP-NVUE` 可以表示原生渲染，使用 `ifndef` 则可以取反表示为webview渲染，如 `#ifndef APP-UVUE || APP-NVUE`
  -->
 比如通过 UNI-APP-X 来区分项目类型，更多条件编译见：[详情](https://uniapp.dcloud.net.cn/tutorial/platform.html)
+
+
+### vue 与 uvue 不同文件后缀的优先级 @priority
+
+新建组件时，默认组件的后缀名为.uvue，但也支持.vue。
+
+.vue里面写uvue的语法，可以正常被.uvue页面引用和编译。
+
+.vue里写条件编译，可以制作同时满足uni-app和uni-app x的组件。
+
+.vue中适用于uni-app x的条件编译区域内的代码，必须符合uni-app x的规范。如果使用uni-app x不支持的、uni-app js引擎版特有的功能，会报错。
+
+当你手动import或easycom手动配置规则，可以指定文件名后缀。比如`import PageHead from '@/components/page-head.uvue'`
+
+但如果未明确指定组件后缀名的情况，且同一个组件目录下即存在.vue文件、又存在.uvue文件，
+此时 `vue` 组件和 `uvue` 组件的优先级如下：
+- 在 `uni-app x` 中，优先使用 `uvue` 组件，如果不存在 `uvue` 组件，则使用 `vue` 组件。
+- 在 `uni-app` 中，只支持使用 `vue` 组件。
