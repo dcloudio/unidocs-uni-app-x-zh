@@ -59,6 +59,8 @@
 * 登录和验证
 	* [App一键登录](get-univerify-manager.md)
   * [金融级实人认证](facial-recognition-verify.md)
+* 支付
+	* [请求支付](request-payment.md)
 * 广告
   * [激励视频广告](create-rewarded-video-ad.md)
 * 组件上下文对象
