@@ -20,6 +20,7 @@
 <!-- UTSAPIJSON.general_type.param -->
 ## cause支付sdk错误码汇总
 
+### 支付宝支付  
 | 支付宝错误码 | 错误信息 |
 |---|---|
 | -9000 | 订单支付成功 |
