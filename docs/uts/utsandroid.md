@@ -428,6 +428,15 @@ console.log("AppCachePath",appCachePath)
 
 ```
 
+请求权限后有三种情况:
+
++ 用户允许了全部权限请求，会通过 `success`回调通知调用者，并且此时`allRight`参数为 `true`
+
++ 用户拒绝了全部权限请求，会通过 `fail` 回调通知调用者，`doNotAskAgain` 参数标识了用户拒绝时是否选择了`不再询问`
+
++ 用户允许了部分请求，拒绝了部分权限请求,此时既会调用`success`也会调用`fail`。由其中的 string数组参数 标识具体被拒绝/允许的权限
+
+
 ### checkSystemPermissionGranted()
 
 <!-- UTSJSON.UTSAndroid.checkSystemPermissionGranted.description -->
