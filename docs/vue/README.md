@@ -572,6 +572,44 @@ defineOptions({
 </script>
 ```
 
+## 其他vue特性
+
+### 递归组件
+
+实现递归组件时不要使用组件import自身的写法，直接在模板内使用组件名即可。
+
+```vue
+// component-a.uvue
+<template>
+  <view>
+    <text>component-a::{{text}}</text>
+    <component-a v-if="!end" :text="text" :limit="limit-1"></component-a>
+  </view>
+</template>
+
+<script> 
+  // import componentA from './component-a' // 错误用法
+  export default {
+    name: "component-a",
+    props: {
+      text: {
+        type: String,
+        default: ''
+      },
+      limit: {
+        type: Number,
+        default: 2
+      }
+    },
+    computed: {
+      end() : boolean {
+        return this.limit <= 0
+      }
+    }
+  }
+</script>
+```
+
 ## 其他示例
 
 - [嵌套组件通讯](https://gitcode.net/dcloud/hello-uvue/-/tree/master/pages/examples/nested-component-communication)
