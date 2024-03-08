@@ -1043,7 +1043,7 @@ Map对象还有很多API，delete、clear等，[详见](buildin-object-api/map.m
 
 json 在 js 中并非一个独立的类型，对一个 json 对象 typeof 返回的是 object。
 
-json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、swift、dart...，都没有这么灵活。
+json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、swift、dart...，都没有这么灵活，例如：
 
 1. json对象里的每个属性，都需要定义类型
 2. 每个可为空的属性，都需要加`?.`，才能安全读写
@@ -1174,8 +1174,78 @@ let jr = JSON.parseArray(s)
 
 全局对象JSON，除了parse()、parseObject()、parseArray()外，还有stringify()来把json转为字符串。[详见](buildin-object-api/json.md)
 
+### 对象字面量在js平台推导的特殊之处@jsutsjsonobjectautotype
+
+js平台同时存在object和UTSJSONObject，且UTSJSONObject继承自object。而kotlin和swift没有object。
+
+在编译为kotlin和swift时，未指定type的对象字面量必然会被推导为UTSJSONObject。
+
+而编译为js时，处理对象字面量时会根据上下文预期的对象字面量的类型来决定是转为UTSJSONObject还是object或其他。
+
+在无法推导对象字面量预期的类型、类型为any或者类型兼容UTSJSONObject时，对象字面量会转为UTSJSONObject。其他则会推导为object或其他需要的类型。
+
+例如：
+
+```ts
+
+type Person = {
+  age: number
+}
+function test(p: Person) {
+  console.log(p)
+}
+test({age: 1}) // 此处的对象字面量会被转成类型Person的实例，而不是UTSJSONObject
+
+let a = {
+  age: 1
+} // a为UTSJSONObject类型
+let b: Person = {
+  age: 1
+} // b为Person的实例
+let c = {
+  age: 1
+} as Person // c为Person的实例
+```
+
+在js平台，使用三方js包还需注意，如果没有三方包的类型信息，所有三方包的导出都会按照any处理。
+
+以lodash这个npm库为例，它并没有兼容UTSJSONObject这个类型，内部会根据入参的原型链判断是不是object。下述代码在存在`@types/lodash`时和不存在`@types/lodash`时表现有差异。
+
+```ts
+import { merge } from 'lodash'
+merge(
+  {a: 1},
+  {b: 2}
+)
+```
+
+存在`@types/lodash`时，因为可根据上下文准确推导，merge的参数类型并非any或者兼容UTSJSONObject的类型，所以两个对象字面量均不会被转为UTSJSONObject。
+
+当不存在`@types/lodash`时，merge方法为any类型，其参数也是any类型，两个对象字面量均会被转为UTSJSONObject。
+
+如果希望某个对象字面量不会被转为UTSJSONObject，那么不要使用自动推断，而是显式为其指定类型，写法如下：
+
+两个对象字面量均不会被转为UTSJSONObject，注意`Record<string, any>`写法仅web端支持
+
+```ts
+import { merge } from 'lodash'
+merge(
+  {a: 1} as Record<string, any>,
+  {b: 2} as Record<string, any>
+)
+```
+
+在js平台，UTSJSONObject和object在日常使用时差别不大，但有如下几点差别：
+1. UTSJSONObject多了一批通过keypath操作数据的方法 [见下](#keypath)
+2. UTSJSONObject继承自object，原型链位置不同
+3. instanceof返回值不同
+
 ### 验证类型
 ```ts
+let jo = {
+	x: 1,
+	y: 2
+}
 console.log(typeof jo); //返回 object
 console.log(jo instanceof UTSJSONObject); //返回 true
 ```
@@ -1195,14 +1265,14 @@ let rect = {
 
 以上述 rect 为例，访问 UTSJSONObject 中的数据，有如下3种方式：
 
-1. `.` 操作符
+#### 1. `.` 操作符
 	即 `rect.x`、`rect.size.width`。
 
 	这种写法比较简单，和js习惯一致，但在 UTS 中限制较多。它的使用有如下前提：
 	- 仅限于web和Android，在iOS上swift不支持`.`操作符。
 	- 在Android上也只支持字面量定义json（因为类型可推导）。如果是`JSON.parse()`转换 或者 动态赋值的，则不能使用。
 
-2. `[""]` 下标
+#### 2. `[""]` 下标
 	即 `rect["x"]`。
 
 	这是一种通用的方式，不管通过字面量定义的 UTSJSONObject，还是通过 `JSON.parse()`，不管是 web、Android、iOS 哪个平台，都可以使用下标方式访问 UTSJSONObject 属性。
@@ -1260,7 +1330,7 @@ var j = {
 console.log((j['subobj'] as UTSJSONObject)['abc']);
 ```
 
-3. 通过 keyPath 访问 UTSJSONObject 数据
+#### 3. 通过 keyPath 访问 UTSJSONObject 数据@keypath
 
 `HBuilderX` 3.9+，UTSJSONObject 提供了另外一种属性访问方式: keyPath。如果你了解 XPath、JSONPath 的话，这个概念类似。
 
@@ -1358,62 +1428,6 @@ console.log(utsObj.getAny("address") as UTSJSONObject)
 
 UTSJSONObject对象还有很多API，[详见](buildin-object-api/utsjsonobject.md)
 
-### web端注意事项
-
-web端在处理对象字面量时会根据预期的对象字面量的类型来决定要不要转为UTSJSONObject。
-
-在无法推导对象字面量预期的类型、类型为any或者类型兼容UTSJSONObject时，对象字面量才会转为UTSJSONObject
-
-例如：
-
-```ts
-
-type Person = {
-  age: number
-}
-function test(p: Person) {
-  console.log(p)
-}
-test({age: 1}) // 此处的对象字面量会被转成类型Person的实例，而不是UTSJSONObject
-
-let a = {
-  age: 1
-} // a为UTSJSONObject类型
-let b: Person = {
-  age: 1
-} // b为Person的实例
-let c = {
-  age: 1
-} as Person // c为Person的实例
-```
-
-使用三方js包还需注意，如果没有三方包的类型信息，所有三方包的导出都会按照any处理。
-
-以lodash为例，下述代码在存在`@types/lodash`时和不存在`@types/lodash`时表现有差异。
-
-```ts
-import { merge } from 'lodash'
-merge(
-  {a: 1},
-  {b: 2}
-)
-```
-
-存在`@types/lodash`时merge的参数类型并非any或者兼容UTSJSONObject的类型，所以两个对象字面量均不会被转为UTSJSONObject
-
-当不存在`@types/lodash`时，merge方法为any类型，其参数也是any类型，两个对象字面量均会被转为UTSJSONObject
-
-如果希望某个对象字面量不会被转为UTSJSONObject，可以为其指定类型，写法如下：
-
-两个对象字面量均不会被转为UTSJSONObject，注意`Record<string, any>`写法仅web端支持
-
-```ts
-import { merge } from 'lodash'
-merge(
-  {a: 1} as Record<string, any>,
-  {b: 2} as Record<string, any>
-)
-```
 
 ## type自定义类型@type
 
