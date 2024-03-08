@@ -22,3 +22,7 @@
    * 性能 px > rpx > 百分比。rpx需要根据屏幕宽度换算为px，而百分比需要根据父容器的高或宽换算为px。
 
 :::
+
+## 字体大小单位
+
+<!-- CSSJSON.font-length_values.compatibility -->
