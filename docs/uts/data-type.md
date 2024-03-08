@@ -1358,6 +1358,62 @@ console.log(utsObj.getAny("address") as UTSJSONObject)
 
 UTSJSONObject对象还有很多API，[详见](buildin-object-api/utsjsonobject.md)
 
+### web端注意事项
+
+web端在处理对象字面量时会根据预期的对象字面量的类型来决定要不要转为UTSJSONObject。
+
+在无法推导对象字面量预期的类型、类型为any或者类型兼容UTSJSONObject时，对象字面量才会转为UTSJSONObject
+
+例如：
+
+```ts
+
+type Person = {
+  age: number
+}
+function test(p: Person) {
+  console.log(p)
+}
+test({age: 1}) // 此处的对象字面量会被转成类型Person的实例，而不是UTSJSONObject
+
+let a = {
+  age: 1
+} // a为UTSJSONObject类型
+let b: Person = {
+  age: 1
+} // b为Person的实例
+let c = {
+  age: 1
+} as Person // c为Person的实例
+```
+
+使用三方js包还需注意，如果没有三方包的类型信息，所有三方包的导出都会按照any处理。
+
+以lodash为例，下述代码在存在`@types/lodash`时和不存在`@types/lodash`时表现有差异。
+
+```ts
+import { merge } from 'lodash'
+merge(
+  {a: 1},
+  {b: 2}
+)
+```
+
+存在`@types/lodash`时merge的参数类型并非any或者兼容UTSJSONObject的类型，所以两个对象字面量均不会被转为UTSJSONObject
+
+当不存在`@types/lodash`时，merge方法为any类型，其参数也是any类型，两个对象字面量均会被转为UTSJSONObject
+
+如果希望某个对象字面量不会被转为UTSJSONObject，可以为其指定类型，写法如下：
+
+两个对象字面量均不会被转为UTSJSONObject，注意`Record<string, any>`写法仅web端支持
+
+```ts
+import { merge } from 'lodash'
+merge(
+  {a: 1} as Record<string, any>,
+  {b: 2} as Record<string, any>
+)
+```
 
 ## type自定义类型@type
 
