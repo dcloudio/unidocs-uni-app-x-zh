@@ -11,8 +11,8 @@
 <!-- UTSCOMJSON.button.compatibility -->
 
 - 在web平台，由于0.5px有兼容性问题，button的边框使用伪类实现。
-- 在app平台，HBuilderX4.02及以上版本使用原生实现button，默认边框不占高度，解决button实际渲染宽高与Web端不一致的问题；HBuilderX4.01及以下版本由于不支持伪类，所以使用border实现。但由于伪类不占高度，border占高度，导致button的实际的渲染宽高在App端大于web端1px。
-- button的默认边框宽度为0.5px，当type属性为plain时，边框宽度是1px，button的实际的渲染宽高会大于其他类型1px。
+- 在app平台，HBuilderX4.02及以上版本调整为原生实现button组件，默认边框不占高度，解决button实际渲染宽高与Web端不一致的问题；HBuilderX4.01及以下版本封装text实现button组件，由于不支持伪类，默认边框使用 border 样式实现，会导致button的实际的渲染宽高在app端比web端多1px。
+- button的默认边框宽度为0.5px，当type属性为plain时，边框宽度是1px，此时在web平台button实际的渲染宽高会大于其他类型1px，在app平台button实际的渲染高度与其他类型一致。
 - button 的text区域文字，app平台HBuilderX4.02及以上版本支持 `\n` 方式换行，HBuilderX4.01及以下版本不支持 ，会直接显示 `\n` 字符；Web端 `\n` 会变成一个空格。
 - button按下后触发hover-class效果，在app平台，手指不松开、一直在屏幕上移动、离开button组件范围后，hover-class效果消失，同时也不会触发点击事件；在web平台，手指移动一点后，即便未离开button范围，hover-class效果也会消失，同时也不会触发点击事件。
 - 无论在哪个平台，hover-class消失后松开手指，都不会触发点击事件。
