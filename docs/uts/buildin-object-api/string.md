@@ -281,6 +281,16 @@ console.log(str1.padStart(2, '0'));
 
 <!-- UTSJSON.String.lastIndexOf.compatibility -->
 
+### match(regexp : string | RegExp) : RegExpMatchArray | null;
+
+<!-- UTSJSON.String.match.description -->
+
+<!-- UTSJSON.String.match.param -->
+
+<!-- UTSJSON.String.match.returnValue -->
+
+<!-- UTSJSON.String.match.compatibility -->
+
 ### replace(searchValue, replaceValue)
 
 <!-- UTSJSON.String.replace.description -->
