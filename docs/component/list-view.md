@@ -60,6 +60,8 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 
 ### list-item复用机制
 
+> 仅App平台支持复用。Web平台仅渲染当前屏幕及上下一定高度内的元素，没有对list-item进行复用。
+
 + type属性定义list-item组件类型。不赋值type属性默认值为0，每一个type类型都会有对应的list-item组件缓存池。
 + list-view组件加载list-item组件时，会优先查询对应type缓存池是否存在可复用的list-item组件。有则复用没有则创建新的list-item组件。
 + list-item组件被滑动出屏幕则会优先添加到对应类型的list-item缓存池，每个类型缓存最大5个（不同平台缓存最大值不固定），如果缓存池已满则进行组件销毁！
@@ -113,6 +115,7 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 
 #### Web平台
 
++ web平台仅渲染当前屏幕及上下一定距离的内容，滚动高度为空白容器占位，因此如果使用dom API获取list-item内的元素可能无法取到。
 + scroll-with-animation属性在safari 15.4以下版本不支持
 + 尽量避免在list-item上使用浏览器的[外边距折叠特性](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing)会导致list-view无法准确计算回收的元素的高度，进而导致滚动出现异常。即不要同时为list-item设置上边距（margin-top）和下边距（margin-bottom）。
 
