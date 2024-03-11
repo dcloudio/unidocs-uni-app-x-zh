@@ -12,6 +12,8 @@
 
 <!-- UTSJSON.Global.parseInt.returnValue -->
 
+> 注意：返回值类型一定是`number`，不是平台专有数字类型（如Int、Float、Double等）。
+
 <!-- UTSJSON.Global.parseInt.compatibility -->
 
 <!-- UTSJSON.Global.parseInt.tutorial -->
@@ -46,6 +48,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.parseFloat.param -->
 
 <!-- UTSJSON.Global.parseFloat.returnValue -->
+
+> 注意：返回值类型一定是`number`，不是平台专有数字类型（如Int、Float、Double等）。
 
 <!-- UTSJSON.Global.parseFloat.compatibility -->
 
