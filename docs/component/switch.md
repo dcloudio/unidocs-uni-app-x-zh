@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.switch.description -->
 
-<!-- UTSCOMJSON.switch.attrubute -->
+<!-- UTSCOMJSON.switch.attribute -->
 
 <!-- UTSCOMJSON.switch.event -->
 

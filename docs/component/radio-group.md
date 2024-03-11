@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.radio-group.description -->
 
-<!-- UTSCOMJSON.radio-group.attrubute -->
+<!-- UTSCOMJSON.radio-group.attribute -->
 
 <!-- UTSCOMJSON.radio-group.event -->
 
@@ -19,7 +19,7 @@
 
 <!-- UTSCOMJSON.radio.description -->
 
-<!-- UTSCOMJSON.radio.attrubute -->
+<!-- UTSCOMJSON.radio.attribute -->
 
 <!-- UTSCOMJSON.radio.event -->
 

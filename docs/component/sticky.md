@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.sticky-header.description -->
 
-<!-- UTSCOMJSON.sticky-header.attrubute -->
+<!-- UTSCOMJSON.sticky-header.attribute -->
 
 <!-- UTSCOMJSON.sticky-header.event -->
 
@@ -43,7 +43,7 @@
 
 <!-- UTSCOMJSON.sticky-section.description -->
 
-<!-- UTSCOMJSON.sticky-section.attrubute -->
+<!-- UTSCOMJSON.sticky-section.attribute -->
 
 <!-- UTSCOMJSON.sticky-section.event -->
 

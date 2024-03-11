@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.swiper.description -->
 
-<!-- UTSCOMJSON.swiper.attrubute -->
+<!-- UTSCOMJSON.swiper.attribute -->
 
 <!-- UTSCOMJSON.swiper.event -->
 
@@ -18,7 +18,7 @@
 
 <!-- UTSCOMJSON.swiper-item.description -->
 
-<!-- UTSCOMJSON.swiper-item.attrubute -->
+<!-- UTSCOMJSON.swiper-item.attribute -->
 
 <!-- UTSCOMJSON.swiper-item.event -->
 

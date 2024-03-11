@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.button.description -->
 
-<!-- UTSCOMJSON.button.attrubute -->
+<!-- UTSCOMJSON.button.attribute -->
 
 <!-- UTSCOMJSON.button.event -->
 
@@ -33,8 +33,8 @@ style和class的优先级，高于size和type属性。
 
 ```html
 <template>
-	<button size="default" type="default" 
-	style="color:#ffffff;backgroundColor:#1AAD19;borderColor:#1AAD19" 
+	<button size="default" type="default"
+	style="color:#ffffff;backgroundColor:#1AAD19;borderColor:#1AAD19"
 	hover-class="is-hover">按钮</button>
 </template>
 <style>

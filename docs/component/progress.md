@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.progress.description -->
 
-<!-- UTSCOMJSON.progress.attrubute -->
+<!-- UTSCOMJSON.progress.attribute -->
 
 <!-- UTSCOMJSON.progress.event -->
 

@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.navigator.description -->
 
-<!-- UTSCOMJSON.navigator.attrubute -->
+<!-- UTSCOMJSON.navigator.attribute -->
 
 <!-- UTSCOMJSON.navigator.event -->
 

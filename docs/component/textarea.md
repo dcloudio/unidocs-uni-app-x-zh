@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.textarea.description -->
 
-<!-- UTSCOMJSON.textarea.attrubute -->
+<!-- UTSCOMJSON.textarea.attribute -->
 
 <!-- UTSCOMJSON.textarea.event -->
 

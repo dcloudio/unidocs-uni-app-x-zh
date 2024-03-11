@@ -36,14 +36,9 @@
 
 ## 组件公共属性
 
-|属性名|类型|描述|注解|
-|:-|:-|:-|:-|
-|id|String|组件的唯一标识|一般用于获取组件上下文对象|
-|ref|String|vue中组件的唯一标识|用来给子组件注册引用信息|
-|class|String|组件的样式类|在对应的 css 中定义的样式类|
-|style|String|组件的内联样式|可以动态设置的内联样式|
-|data-*|Any|自定义属性|组件上触发的事件时，会发送给事件处理函数|
-|android-*|Any|App-Android平台专有属性|详见[App-Android平台专有属性](#attribute-android)章节|
+<!-- CUSTOMTYPEJSON.general-attribute.attribute -->
+
+<!-- CUSTOMTYPEJSON.general-attribute.compatibility -->
 
 ### App-Android平台专有属性@attribute-android
 
@@ -66,20 +61,13 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 - 执行复杂动画或大量动画时，建议设置为`hardware`
 :::
 
-<!-- CUSTOMTYPEJSON.Unigeneral-attribute.example -->
+<!-- CUSTOMTYPEJSON.general-attribute.example -->
 
 ## 组件公共事件
 
-|事件名称|类型|触发条件|注解|
-|:-|:-|:-|:-|
-|@touchstart|(event: [UniTouchEvent](#UniTouchEvent)) => void|手指触摸动作开始|冒泡事件，event.type值为touchstart|
-|@touchmove|(event: [UniTouchEvent](#UniTouchEvent)) => void|手指触摸后移动|冒泡事件，event.type值为touchmove|
-|@touchcancel|(event: [UniTouchEvent](#UniTouchEvent)) => void|手指触摸动作被打断，如来电提醒，弹窗|冒泡事件，event.type值为touchcancel|
-|@touchend|(event: [UniTouchEvent](#UniTouchEvent)) => void|手指触摸动作结束|冒泡事件，event.type值为touchend|
-|@tap|(event: [UniPointerEvent](#UniPointerEvent)) => void|手指触摸后马上离开|冒泡事件|
-|@click|(event: [UniPointerEvent](#UniPointerEvent)) => void|与tap相同，（推荐使用tap事件代替）|冒泡事件|
-|@longpress|(event: [UniPointerEvent](#UniEvent)) => void|手指触摸后，超过350ms再离开|冒泡事件|
+<!-- CUSTOMTYPEJSON.general-event.attribute -->
 
+<!-- CUSTOMTYPEJSON.general-event.compatibility -->
 
 ### touch 事件@touch
 触摸事件包括：touchstart、touchmove、touchcancel、touchend 等。
@@ -354,6 +342,42 @@ UniTouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchc
 <!-- CUSTOMTYPEJSON.UniTouch.param -->
 
 <!-- CUSTOMTYPEJSON.Unigeneral-event.example -->
+
+## UniMouseEvent
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.description -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.extends -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.param -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.example -->
+
+### UniMouseEvent 的方法 @unimouseevent-methods
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.name -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.description -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.param -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.name -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.description -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.param -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.tutorial -->
+
 
 ## 参见
 

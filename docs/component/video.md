@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.video.description -->
 
-<!-- UTSCOMJSON.video.attrubute -->
+<!-- UTSCOMJSON.video.attribute -->
 
 <!-- UTSCOMJSON.video.event -->
 

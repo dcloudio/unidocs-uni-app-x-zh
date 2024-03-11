@@ -10,7 +10,7 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 
 list-view支持通过子组件sticky-header处理吸顶的场景。
 
-<!-- UTSCOMJSON.list-view.attrubute -->
+<!-- UTSCOMJSON.list-view.attribute -->
 
 <!-- UTSCOMJSON.list-view.event -->
 
@@ -56,7 +56,7 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 
 <!-- UTSCOMJSON.list-item.description -->
 
-<!-- UTSCOMJSON.list-item.attrubute -->
+<!-- UTSCOMJSON.list-item.attribute -->
 
 ### list-item复用机制
 

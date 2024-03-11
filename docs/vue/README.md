@@ -200,7 +200,7 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.script.description -->
 
-<!-- VUEJSON.script.attrubute -->
+<!-- VUEJSON.script.attribute -->
 
 <!-- VUEJSON.script.event -->
 
@@ -216,7 +216,7 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.template.description -->
 
-<!-- VUEJSON.template.attrubute -->
+<!-- VUEJSON.template.attribute -->
 
 <!-- VUEJSON.template.event -->
 
@@ -233,7 +233,7 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.slot.description -->
 
-<!-- VUEJSON.slot.attrubute -->
+<!-- VUEJSON.slot.attribute -->
 
 <!-- VUEJSON.slot.event -->
 
@@ -251,7 +251,7 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.style.description -->
 
-<!-- VUEJSON.style.attrubute -->
+<!-- VUEJSON.style.attribute -->
 
 <!-- VUEJSON.style.event -->
 
@@ -268,7 +268,7 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.keep-alive.description -->
 
-<!-- VUEJSON.keep-alive.attrubute -->
+<!-- VUEJSON.keep-alive.attribute -->
 
 <!-- VUEJSON.keep-alive.event -->
 
@@ -285,7 +285,7 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.component.description -->
 
-<!-- VUEJSON.component.attrubute -->
+<!-- VUEJSON.component.attribute -->
 
 <!-- VUEJSON.component.event -->
 
@@ -301,7 +301,7 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.transition.description -->
 
-<!-- VUEJSON.transition.attrubute -->
+<!-- VUEJSON.transition.attribute -->
 
 <!-- VUEJSON.transition.event -->
 
@@ -318,7 +318,7 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.transition-group.description -->
 
-<!-- VUEJSON.transition-group.attrubute -->
+<!-- VUEJSON.transition-group.attribute -->
 
 <!-- VUEJSON.transition-group.event -->
 
@@ -335,7 +335,7 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 <!-- VUEJSON.teleport.description -->
 
-<!-- VUEJSON.teleport.attrubute -->
+<!-- VUEJSON.teleport.attribute -->
 
 **注意：**
 - App-Android 平台暂不支持动态修改 `to` 属性。
@@ -587,7 +587,7 @@ defineOptions({
   </view>
 </template>
 
-<script> 
+<script>
   // import componentA from './component-a' // 错误用法
   export default {
     name: "component-a",

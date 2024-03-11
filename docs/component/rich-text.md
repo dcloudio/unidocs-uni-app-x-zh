@@ -22,7 +22,7 @@
 
 > text-decoration仅支持line-through
 
-<!-- UTSCOMJSON.rich-text.attrubute -->
+<!-- UTSCOMJSON.rich-text.attribute -->
 
 <!-- UTSCOMJSON.rich-text.event -->
 

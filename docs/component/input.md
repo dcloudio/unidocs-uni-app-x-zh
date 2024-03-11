@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.input.description -->
 
-<!-- UTSCOMJSON.input.attrubute -->
+<!-- UTSCOMJSON.input.attribute -->
 
 <!-- UTSCOMJSON.input.event -->
 

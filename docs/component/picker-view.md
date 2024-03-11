@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.picker-view.description -->
 
-<!-- UTSCOMJSON.picker-view.attrubute -->
+<!-- UTSCOMJSON.picker-view.attribute -->
 
 <!-- UTSCOMJSON.picker-view.event -->
 
@@ -19,7 +19,7 @@
 
 <!-- UTSCOMJSON.picker-view-column.description -->
 
-<!-- UTSCOMJSON.picker-view-column.attrubute -->
+<!-- UTSCOMJSON.picker-view-column.attribute -->
 
 <!-- UTSCOMJSON.picker-view-column.event -->
 

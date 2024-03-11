@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.scroll-view.description -->
 
-<!-- UTSCOMJSON.scroll-view.attrubute -->
+<!-- UTSCOMJSON.scroll-view.attribute -->
 
 <!-- UTSCOMJSON.scroll-view.event -->
 
@@ -18,18 +18,18 @@
 
 ```vue
 <scroll-view refresher-default-style="none" :refresher-enabled="true" :refresher-triggered="refresherTriggered"
-			 @refresherpulling="onRefresherpulling" @refresherrefresh="onRefresherrefresh" 
+			 @refresherpulling="onRefresherpulling" @refresherrefresh="onRefresherrefresh"
 			 @refresherrestore="onRefresherrestore" style="flex:1" >
-			 
+
 		<view v-for="i in 20" class="content-item">
 			<text class="text">item-{{i}}</text>
 		</view>
-		
+
 		<!-- 自定义下拉刷新元素 -->
 		<view slot="refresher" class="refresh-box">
 			<text class="tip-text">{{text[state]}}</text>
 		</view>
-		
+
 </scroll-view>
 ```
 

@@ -25,8 +25,6 @@
 |width	|Number	|节点的宽度				|
 |height	|Number	|节点的高度				|
 
-<!-- UTSAPIJSON.createSelectorQuery.returnValue -->
-
 <!-- UTSAPIJSON.createSelectorQuery.example -->
 
 <!-- UTSAPIJSON.createSelectorQuery.compatibility -->

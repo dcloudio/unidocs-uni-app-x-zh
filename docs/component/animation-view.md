@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.animation-view.description -->
 
-<!-- UTSCOMJSON.animation-view.attrubute -->
+<!-- UTSCOMJSON.animation-view.attribute -->
 
 <!-- UTSCOMJSON.animation-view.event -->
 

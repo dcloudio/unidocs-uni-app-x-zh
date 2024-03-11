@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.slider.description -->
 
-<!-- UTSCOMJSON.slider.attrubute -->
+<!-- UTSCOMJSON.slider.attribute -->
 
 <!-- UTSCOMJSON.slider.event -->
 

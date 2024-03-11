@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.checkbox-group.description -->
 
-<!-- UTSCOMJSON.checkbox-group.attrubute -->
+<!-- UTSCOMJSON.checkbox-group.attribute -->
 
 <!-- UTSCOMJSON.checkbox-group.event -->
 
@@ -19,7 +19,7 @@
 
 <!-- UTSCOMJSON.checkbox.description -->
 
-<!-- UTSCOMJSON.checkbox.attrubute -->
+<!-- UTSCOMJSON.checkbox.attribute -->
 
 <!-- UTSCOMJSON.checkbox.event -->
 

@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.canvas.description -->
 
-<!-- UTSCOMJSON.canvas.attrubute -->
+<!-- UTSCOMJSON.canvas.attribute -->
 
 <!-- UTSCOMJSON.canvas.event -->
 

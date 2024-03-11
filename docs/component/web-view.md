@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.web-view.description -->
 
-<!-- UTSCOMJSON.web-view.attrubute -->
+<!-- UTSCOMJSON.web-view.attribute -->
 
 <!-- UTSCOMJSON.web-view.event -->
 
@@ -56,5 +56,5 @@ uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中�
 - `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）
 
 ## 注意
-- web-view组件为系统web-view，内核版本号不由uni-app x框架控制。如需x5等webview，需使用uts插件，[详见](https://ext.dcloud.net.cn/search?q=x5)。  
+- web-view组件为系统web-view，内核版本号不由uni-app x框架控制。如需x5等webview，需使用uts插件，[详见](https://ext.dcloud.net.cn/search?q=x5)。
 - 一个页面的web-view组件数量不宜太多，每个web-view都会占用不少内存

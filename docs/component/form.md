@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.form.description -->
 
-<!-- UTSCOMJSON.form.attrubute -->
+<!-- UTSCOMJSON.form.attribute -->
 
 <!-- UTSCOMJSON.form.event -->
 

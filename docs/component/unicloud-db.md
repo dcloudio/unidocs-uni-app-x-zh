@@ -2,7 +2,7 @@
 
 <!-- UTSCOMJSON.unicloud-db.description -->
 
-<!-- UTSCOMJSON.unicloud-db.attrubute -->
+<!-- UTSCOMJSON.unicloud-db.attribute -->
 
 <!-- UTSCOMJSON.unicloud-db.event -->
 
