@@ -69,6 +69,8 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 
 <!-- CUSTOMTYPEJSON.general-event.compatibility -->
 
+<!-- CUSTOMTYPEJSON.general-event.example -->
+
 ### touch 事件@touch
 触摸事件包括：touchstart、touchmove、touchcancel、touchend 等。
 
