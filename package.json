@@ -35,7 +35,7 @@
     "vuepress-theme-uni-app-test": "1.4.10"
   },
   "dependencies": {
-    "@docsearch/js": "^3.1.0",
+    "@docsearch/css": "^3.6.0",
     "node-html-parser": "^6.1.4",
     "vuepress": "1.9.9"
   },
