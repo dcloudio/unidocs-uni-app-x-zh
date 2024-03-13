@@ -1821,7 +1821,7 @@ b1=="get1" // 当为b1赋值不在值域范围的新值时，ide会报红
 
 但很多值域无法通过枚举表达。\
 比如string.ColorString，代表一个合法的颜色字符串，"red"、"#000"，这些是它的合法值域。\
-再比如IDString代表页面上合法的组件的id属性值清单，string.ImageURIString则代表工程下合法的图片路径清单。
+再比如string.IDString代表页面上合法的组件的id属性值清单，string.ImageURIString则代表工程下合法的图片路径清单。
 
 HBuilder支持给变量定义特殊值域string类型，这些类型在HBuilder里都可以得到更好的代码提示和语法校验。
 
