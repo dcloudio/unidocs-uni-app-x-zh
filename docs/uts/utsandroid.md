@@ -360,6 +360,8 @@ console.log("AppCachePath",appCachePath)
 
 <!-- UTSJSON.UTSAndroid.rpx2px.compatibility -->
 
+推荐使用uni.rpx2px来替代本API，[详见](https://doc.dcloud.net.cn/uni-app-x/api/rpx2px.html)
+
 ### devicePX2px(devicePX:number) : number;
 
 <!-- UTSJSON.UTSAndroid.devicePX2px.description -->
