@@ -111,9 +111,9 @@ const config = {
         .end()
         .plugin('markdown-it-raw-table')
         .use(require('markdown-it-raw-table'))
-        .end()
+        /* .end()
         .plugin('add-base-to-md')
-        .use(require('./markdown/add-base-to-md'), [{ base }])
+        .use(require('./markdown/add-base-to-md'), [{ base }]) */
     }
   },
   chainWebpack (config, isServer) {
