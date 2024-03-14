@@ -6,8 +6,6 @@
 
 <!-- UTSCOMJSON.scroll-view.event -->
 
-<!-- UTSCOMJSON.scroll-view.example -->
-
 ### 自定义下拉刷新样式
 
 1. 设置`refresher-default-style`属性为 none 不使用默认样式
@@ -103,5 +101,7 @@ onNestedPreScroll(event: NestedPreScrollEvent) {
 		+ 4.0版本开始scroll-view组件的默认高度取值为子元素高度之和。高度相同scroll-view组件无法滚动。开发者需要设置css属性定义scroll-view组件高度，让scroll-view组件高度小于子元素高度之和，实现滚动能力。
 
 <!-- UTSCOMJSON.scroll-view.children -->
+
+<!-- UTSCOMJSON.scroll-view.example -->
 
 <!-- UTSCOMJSON.scroll-view.reference -->

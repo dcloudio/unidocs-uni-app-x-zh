@@ -6,11 +6,11 @@
 
 <!-- UTSCOMJSON.canvas.event -->
 
-<!-- UTSCOMJSON.canvas.example -->
-
 <!-- UTSCOMJSON.canvas.compatibility -->
 
 <!-- UTSCOMJSON.canvas.children -->
+
+<!-- UTSCOMJSON.canvas.example -->
 
 <!-- UTSCOMJSON.canvas.reference -->
 

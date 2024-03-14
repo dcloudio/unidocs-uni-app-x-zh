@@ -6,11 +6,11 @@
 
 <!-- UTSCOMJSON.swiper.event -->
 
-<!-- UTSCOMJSON.swiper.example -->
-
 <!-- UTSCOMJSON.swiper.compatibility -->
 
 <!-- UTSCOMJSON.swiper.children -->
+
+<!-- UTSCOMJSON.swiper.example -->
 
 <!-- UTSCOMJSON.swiper.reference -->
 
@@ -22,9 +22,9 @@
 
 <!-- UTSCOMJSON.swiper-item.event -->
 
-<!-- UTSCOMJSON.swiper-item.example -->
-
 <!-- UTSCOMJSON.swiper-item.compatibility -->
+
+<!-- UTSCOMJSON.swiper-item.example -->
 
 <!-- UTSCOMJSON.swiper-item.reference -->
 

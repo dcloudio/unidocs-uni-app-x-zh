@@ -6,11 +6,11 @@
 
 <!-- UTSCOMJSON.radio-group.event -->
 
-<!-- UTSCOMJSON.radio-group.example -->
-
 <!-- UTSCOMJSON.radio-group.compatibility -->
 
 <!-- UTSCOMJSON.radio-group.children -->
+
+<!-- UTSCOMJSON.radio-group.example -->
 
 <!-- UTSCOMJSON.radio-group.reference -->
 
@@ -23,11 +23,11 @@
 
 <!-- UTSCOMJSON.radio.event -->
 
-<!-- UTSCOMJSON.radio.example -->
-
 <!-- UTSCOMJSON.radio.compatibility -->
 
 <!-- UTSCOMJSON.radio.children -->
+
+<!-- UTSCOMJSON.radio.example -->
 
 <!-- UTSCOMJSON.radio.reference -->
 

@@ -8,10 +8,10 @@
 
 <!-- UTSCOMJSON.unicloud-db.component_type -->
 
-<!-- UTSCOMJSON.unicloud-db.example -->
-
 <!-- UTSCOMJSON.unicloud-db.compatibility -->
 
 <!-- UTSCOMJSON.unicloud-db.children -->
+
+<!-- UTSCOMJSON.unicloud-db.example -->
 
 <!-- UTSCOMJSON.unicloud-db.reference -->

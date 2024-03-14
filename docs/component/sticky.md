@@ -31,11 +31,11 @@
 + sticky-header组件不支持css。仅支持padding属性控制子元素位置。其他排版需求要交给子元素实现
 + 同时存在多sticky-header组件请使用sticky-section组件充当父容器控制吸顶业务
 
-<!-- UTSCOMJSON.sticky-header.example -->
-
 <!-- UTSCOMJSON.sticky-header.compatibility -->
 
 <!-- UTSCOMJSON.sticky-header.children -->
+
+<!-- UTSCOMJSON.sticky-header.example -->
 
 <!-- UTSCOMJSON.sticky-header.reference -->
 
@@ -73,10 +73,10 @@
 + sticky-section组件支持存放多个sticky-header子组件，多个sticky-header滚动吸顶时，后一个sticky-header会停靠在前一个sticky-header的末尾处, 仅限于同一个sticky-section父容器。多个sticky-section吸顶停靠通过push-pinned-header控制。
 + sticky-section组件是虚拟组件不会真实渲染。仅支持padding属性控制子元素位置。其他排版需求要交给子元素实现
 
-<!-- UTSCOMJSON.sticky-section.example -->
-
 <!-- UTSCOMJSON.sticky-section.compatibility -->
 
 <!-- UTSCOMJSON.sticky-section.children -->
+
+<!-- UTSCOMJSON.sticky-section.example -->
 
 <!-- UTSCOMJSON.sticky-section.reference -->

@@ -11,8 +11,6 @@
 
 <!-- UTSCOMJSON.view.event -->
 
-<!-- UTSCOMJSON.view.example -->
-
 <!-- UTSCOMJSON.view.compatibility -->
 
 #### App平台@app
@@ -21,6 +19,8 @@
 
 
 <!-- UTSCOMJSON.view.children -->
+
+<!-- UTSCOMJSON.view.example -->
 
 <!-- UTSCOMJSON.view.reference -->
 

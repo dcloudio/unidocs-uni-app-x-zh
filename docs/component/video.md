@@ -20,8 +20,6 @@ app端支持的视频格式如下：
 - [x] flv
 - [x] m3u8 (本地m3u8文件需3.99+)
 
-<!-- UTSCOMJSON.video.example -->
-
 <!-- UTSCOMJSON.video.compatibility -->
 
 #### App平台
@@ -43,6 +41,8 @@ video组件的源码[详见](https://gitcode.net/dcloud/uni-component/-/tree/mas
 video的操作api为[uni.createVideoContext()](../api/create-video-context.md)。
 
 给video组件设一个id属性，将id的值传入uni.createVideoContext()，即可得到video组件的上下文对象，进一步可使用`.play()`、`.stop()`等方法。
+
+<!-- UTSCOMJSON.video.example -->
 
 <!-- UTSCOMJSON.video.reference -->
 

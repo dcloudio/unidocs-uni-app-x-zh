@@ -6,11 +6,11 @@
 
 <!-- UTSCOMJSON.checkbox-group.event -->
 
-<!-- UTSCOMJSON.checkbox-group.example -->
-
 <!-- UTSCOMJSON.checkbox-group.compatibility -->
 
 <!-- UTSCOMJSON.checkbox-group.children -->
+
+<!-- UTSCOMJSON.checkbox-group.example -->
 
 <!-- UTSCOMJSON.checkbox-group.reference -->
 
@@ -23,11 +23,11 @@
 
 <!-- UTSCOMJSON.checkbox.event -->
 
-<!-- UTSCOMJSON.checkbox.example -->
-
 <!-- UTSCOMJSON.checkbox.compatibility -->
 
 <!-- UTSCOMJSON.checkbox.children -->
+
+<!-- UTSCOMJSON.checkbox.example -->
 
 <!-- UTSCOMJSON.checkbox.reference -->
 

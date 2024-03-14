@@ -10,8 +10,6 @@
 
 <!-- UTSCOMJSON.text.event -->
 
-<!-- UTSCOMJSON.text.example -->
-
 <!-- UTSCOMJSON.text.compatibility -->
 
 - App-Android平台文本换行规则（表现在文本断行位置等）可能和浏览器有差异。
@@ -25,6 +23,8 @@ text组件在web浏览器渲染（含浏览器、小程序webview渲染模式、
 app-nvue中，text组件不能嵌套。
 
 <!-- UTSCOMJSON.text.children -->
+
+<!-- UTSCOMJSON.text.example -->
 
 <!-- UTSCOMJSON.text.reference -->
 

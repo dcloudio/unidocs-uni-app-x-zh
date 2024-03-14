@@ -6,8 +6,6 @@
 
 <!-- UTSCOMJSON.button.event -->
 
-<!-- UTSCOMJSON.button.example -->
-
 <!-- UTSCOMJSON.button.compatibility -->
 
 - 在web平台，由于0.5px有兼容性问题，button的边框使用伪类实现。
@@ -18,6 +16,8 @@
 - 无论在哪个平台，hover-class消失后松开手指，都不会触发点击事件。
 
 <!-- UTSCOMJSON.button.children -->
+
+<!-- UTSCOMJSON.button.example -->
 
 <!-- UTSCOMJSON.button.reference -->
 

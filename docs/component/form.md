@@ -6,8 +6,6 @@
 
 <!-- UTSCOMJSON.form.event -->
 
-<!-- UTSCOMJSON.form.example -->
-
 <!-- UTSCOMJSON.form.compatibility -->
 
 ### submit策略差异
@@ -81,6 +79,8 @@ reset在浏览器W3C的策略是还原、重置。
 
 
 <!-- UTSCOMJSON.form.children -->
+
+<!-- UTSCOMJSON.form.example -->
 
 <!-- UTSCOMJSON.form.reference -->
 

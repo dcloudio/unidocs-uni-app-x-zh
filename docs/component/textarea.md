@@ -6,11 +6,11 @@
 
 <!-- UTSCOMJSON.textarea.event -->
 
-<!-- UTSCOMJSON.textarea.example -->
-
 <!-- UTSCOMJSON.textarea.compatibility -->
 
 <!-- UTSCOMJSON.textarea.children -->
+
+<!-- UTSCOMJSON.textarea.example -->
 
 <!-- UTSCOMJSON.textarea.reference -->
 

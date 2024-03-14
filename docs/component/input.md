@@ -6,11 +6,11 @@
 
 <!-- UTSCOMJSON.input.event -->
 
-<!-- UTSCOMJSON.input.example -->
-
 <!-- UTSCOMJSON.input.compatibility -->
 
 <!-- UTSCOMJSON.input.children -->
+
+<!-- UTSCOMJSON.input.example -->
 
 <!-- UTSCOMJSON.input.reference -->
 

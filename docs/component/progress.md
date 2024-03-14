@@ -6,11 +6,11 @@
 
 <!-- UTSCOMJSON.progress.event -->
 
-<!-- UTSCOMJSON.progress.example -->
-
 <!-- UTSCOMJSON.progress.compatibility -->
 
 <!-- UTSCOMJSON.progress.children -->
+
+<!-- UTSCOMJSON.progress.example -->
 
 <!-- UTSCOMJSON.progress.reference -->
 

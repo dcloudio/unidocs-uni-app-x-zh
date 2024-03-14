@@ -6,8 +6,6 @@
 
 <!-- UTSCOMJSON.slider.event -->
 
-<!-- UTSCOMJSON.slider.example -->
-
 <!-- UTSCOMJSON.slider.compatibility -->
 
 ## tips
@@ -23,6 +21,8 @@ show-value属性设为true后，会在横条右侧显示一个数字。
 - 默认占用高度是一致的，调整样式后会出现差异
 
 <!-- UTSCOMJSON.slider.children -->
+
+<!-- UTSCOMJSON.slider.example -->
 
 <!-- UTSCOMJSON.slider.reference -->
 
