@@ -21,7 +21,7 @@ UTS 的类型有：
 
 详细的类型判断详见操作符文档：[typeof](operator.md#typeof)和[instanceof](operator.md#instanceof)
 
-除了上述`运行时类型`，uts还有`开发时类型`的概念，指为了在开发期间ide可以更好的进行代码提示和校验，但在编译后这些类型会被擦除，变成`运行时类型`。详见[开发时类型](#devtype) 和 [类型擦除](#TypeErasure)
+除了上述`运行时类型`，uts还有`开发时类型`的概念，指为了在开发期间ide可以更好的进行代码提示和校验，但在编译后这些类型会被擦除，变成`运行时类型`。详见[开发时类型](#devtype) 和 [类型擦除](#type-erasure)
 
 
 ## 布尔值（boolean）
@@ -1845,7 +1845,7 @@ uts内置的类型，包括浏览器、Android、iOS内置的类型，在编译�
 
 开发者自定义的类型，如通过类型字面量定义的type，在编译后会转为class。
 
-开发时类型会在编译后被擦除。运行时无法通过typeof或instanceof获取。
+开发时类型会在编译后被擦除。运行时无法通过 typeof 或 instanceof 获取。
 
 **注意**
 
