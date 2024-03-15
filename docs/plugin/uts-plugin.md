@@ -922,6 +922,9 @@ list1.forEach((item : any) => {
 
 这个问题，我们稍后会改进。
 
+> 特别注意：
+> 在uni-app 1.0环境下，在 index.uts 文件中 `export` 的 `class` 默认会对 `js`暴露，因此要建立起原生 `class` 和 `js`类型的映射关系，只有能正常建立起这种映射关系的类才能导出。除一些基本数据类型外的系统类例如 `Activity`、`UIViewController`等是无法 `export` 的。
+
 
 ## 前端使用插件
 
