@@ -7,3 +7,7 @@
 <!-- PAGEINSTANCE.lifeCycle.compatibility -->
 
 示例代码, [详见](./vue/README.md#lifecycle-options)
+
+## 页面及组件生命周期流程图
+
+![](./static/uni-app-lifecycle-vue3.png)
