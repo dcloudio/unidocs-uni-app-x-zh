@@ -1136,6 +1136,16 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 
 ## Bug & Tips@tips
 
+### uts插件支持热更新的问题
+> uts插件中的源码编译为原生二进制代码，uts插件自身不支持热更新。
+> 在 uni-app 项目中调用uts插件的源码（如vue页面），打包时编译为js代码，可支持wgt热更新。
+> 在 uni-app x 项目中调用uts插件的源码（如uvue页面），打包时编译为原生二进制代码，不支持热更新。
+
+目前已知问题：uni-app 项目中使用uts加密插件（从插件市场购买的uts插件），wgt热更新后无法正常调用uts插件，[ask相关帖子](https://ask.dcloud.net.cn/question/187762)
+
+此问题仅影响uts加密插件，普通uts插件不影响。
+
+HBuilderX4.04版本已解决此问题。
 
 
 ## 示例项目
