@@ -48,3 +48,48 @@ export default {
 ## 页面及组件生命周期流程图
 
 ![](./static/uni-app-lifecycle-vue3.png)
+
+```mermaid
+    st=>start: 页面初始化
+    onLoad=>operation: 页面加载
+    onShow=>operation: 页面显示
+    onReady=>operation: 页面初次渲染完成
+    onHide=>operation: 页面隐藏
+    onUnload=>operation: 页面关闭
+
+    onInitBtn=>operation: onInit
+    onLoadBtn=>operation: onLoad
+    onShowBtn=>operation: onShow
+
+    beforeCreateBtn=>operation: 组件 beforeCreate
+    createdBtn=>operation: 组件 created
+    beforeMountBtn=>operation: 组件 beforeMount
+    mountedBtn=>operation: 组件 mounted
+
+    onReadyBtn=>operation: onReady
+
+    beforeUpdateBtn=>operation: 组件 beforeUpdate
+    updatedBtn=>operation: 组件 updated
+
+    onHideBtn=>operation: onHide
+    onBackPressBtn=>operation: onBackPress
+    onUnloadBtn=>operation: onUnload
+
+    beforeUnmountBtn=>operation: 组件 beforeUnmount
+    unmountedBtn=>operation: 组件 unmounted
+
+    st->onLoad->onShow->onReady->onHide->onUnload
+    onLoad->onInitBtn
+    onShow->onLoadBtn
+    onReady->onShowBtn
+    onReady->beforeCreateBtn
+    onReady->createdBtn
+    onReady->beforeMountBtn
+    onReady->mountedBtn
+    onHide->onReadyBtn
+    onUnload->onHideBtn
+    onUnload->onBackPressBtn
+    onUnload->onUnloadBtn
+    onUnload->beforeUnmountBtn
+    onUnload->unmountedBtn
+```
