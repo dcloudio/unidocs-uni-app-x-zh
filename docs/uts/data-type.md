@@ -326,7 +326,7 @@ i.toDouble() // 转换为 Double 类型
 let a: Int = 1
 let a1 = Number.from(a) // Int转number
 
-let b: Float = 3.14
+let b: Float = 3.14.toFloat()
 let b1 = Number.from(b)
 
 let c: Double = 3.1414926
