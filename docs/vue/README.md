@@ -105,6 +105,9 @@ const doubleCount = computed<number>(() : number => {
 ### 生命周期钩子
 
 <!-- VUEJSON.composition_lifecycle.compatibility -->
+
+[页面及组件生命周期流程图](/page.md#lifeCycleFlow)
+
 <!-- VUEJSON.composition_lifecycle.example -->
 
 #### [函数 event 参数的类型](../tutorial/codegap.md#function-event-argument-type)

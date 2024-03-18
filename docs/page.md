@@ -45,6 +45,6 @@ export default {
  * 后续版本会统一类型为UTSJSONObject。
 
 
-## 页面及组件生命周期流程图
+## 页面及组件生命周期流程图@lifeCycleFlow
 
 ![](./static/uni-app-lifecycle-vue3.png)
