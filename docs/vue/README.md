@@ -459,6 +459,30 @@ export default {
 
 目前 $nextTick 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 $nextTick 不能保证 DOM 排版以及渲染完毕。如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/element.md) 对象。在修改 DOM 后，立刻使用 [Element](../dom/element.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
 
+#### $data 使用注意事项
+
+data内$开头的属性不可直接使用`this.$xxx`访问，需要使用`this.$data['$xxx']`，这是vue的规范。目前安卓端可以使用this.$xxx访问是Bug而非特性，请勿使用此特性。
+
+示例
+
+```vue
+<template>
+  <view></view>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      $a: 1
+    }
+  },
+  onReady() {
+    console.log(this.$data['$a'] as number) // 1
+  }
+}
+</script>
+```
+
 ## 进阶 API兼容性
 
 ### 渲染函数
