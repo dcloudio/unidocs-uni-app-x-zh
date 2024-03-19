@@ -733,7 +733,7 @@ Android平台部分三方SDK的初始化依赖Application的onCreate生命周期
 
 UTSAndroidHookProxy代码如下：
 
-```uts
+```ts
 /**
  * 安卓原应用初始化回调代理
  * 注意：不支持调用uni api
@@ -749,7 +749,7 @@ interface UTSAndroidHookProxy {
 
 开发者需要在插件代码中实现UTSAndroidHookProxy接口 示例如下：
 
-```uts
+```ts
 export class AppHookProxy implements UTSAndroidHookProxy {
   override onCreate(application: Application) {
 	//当前应用是否 取得用户同意隐私协议
@@ -1151,7 +1151,7 @@ UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数�
 
 类似场景下，我们就要使用 toTypedArray() 函数进行转换，以便将`MutableList` 转换为对应的`Array`
 
-```uts
+```ts
 
 // 得到一个UTSArray
 let permissionArray :String[] = []
@@ -1170,7 +1170,7 @@ console.log(permissionArray.toMutableList())
 
 1  UTS具备类型推导功能，调用第三方依赖是不需要声明类型
 
-```uts
+```ts
 // 建议的写法
 let a = xxx.getInfo()
 
@@ -1182,7 +1182,7 @@ let a:IntArray = xxx.getInfo()
 
 2  各种数组类型的转换说明
 
-```uts
+```ts
 // IntArray 转 MutableList
 val a = intArrayOf(1,2,3)
 val b = a.toMutableList()
@@ -1216,7 +1216,7 @@ js引擎除了 string,number,boolean 等基本数据结构外，仅支持JSONObj
 
 下面是一个Array的使用示例：
 
-```uts
+```ts
 // UTS插件，声明数组参数
 export function callWithoutParam(filterArray : Array<string>,success: () => void) {
 	console.log(filterArray)
@@ -1226,7 +1226,7 @@ export function callWithoutParam(filterArray : Array<string>,success: () => void
 
 ```
 
-```uts
+```ts
 // 前端传递数组参数
 UTSHello.callWithoutParam(
 	["system","optionB"]
@@ -1255,7 +1255,7 @@ UTSHello.callWithoutParam(
 
 
 遍历数组：
-```uts
+```ts
 let arrayObj = utsArrayOf("111","222","333")
 arrayObj.forEach(function(e:any){
 	console.log(e)
@@ -1268,7 +1268,7 @@ arrayObj2.forEach(function(e:any){
 
 遍历Map:
 
-```uts
+```ts
 let mapObj = new Map<string,any>()
 mapObj.put("name","zhangsan")
 mapObj.put("age",12)
@@ -1280,7 +1280,7 @@ mapObj.forEach(function(value:any,key:string){
 
 遍历UTSJSONObject:
 
-```uts
+```ts
 let utsJsonObj = {
 	name:"zhangsan",
 	age:"22",
