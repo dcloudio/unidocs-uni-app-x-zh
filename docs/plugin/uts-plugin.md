@@ -1197,6 +1197,61 @@ val d = c.toIntArray()
 ```
 
 
+### 如果我要实现一个官方已有的三方SDK功能，比如微信支付，如何处理？
+
+因为android中，每个UTS插件都对应一个gradle 子项目，所以类似的情况不能简单复用 自定义基座中的官方依赖。
+
+需要：  **不要勾选官方的依赖，然后在uts插件中，按照文档配置依赖**
+
+
+
+### uni-app 中如何向UTS环境中传递数组参数
+
+在 uni-app 平台，js环境与原生环境的交互都是经过js引擎桥接
+
+js引擎除了 string,number,boolean 等基本数据结构外，仅支持JSONObject,JSONArray两种。
+
++ JSONObject 比较常见，基本所有的接口参数都会 对应一个uts中定义的 type 类
++ JSONArray 一般在uts中采用Array数组来承接
+
+下面是一个Array的使用示例：
+
+```uts
+// UTS插件，声明数组参数
+export function callWithoutParam(filterArray : Array<string>,success: () => void) {
+	console.log(filterArray)
+	success();
+	return { name: "doSthWithCallback" };
+}
+
+```
+
+```uts
+// 前端传递数组参数
+UTSHello.callWithoutParam(
+	["system","optionB"]
+	,
+	()=>{
+		uni.showToast({
+			title:'成功调用',
+			icon:'none'
+		});
+	}
+);
+```
+
+
+
+### android中 synchronized / Lock 等线程同步概念，在UTS里怎么写?
+
+前端领域里线程安全的解决思路 与java的不同。 他们提供了 async/await 等关键字来实现异步任务处理
+
++ 如果业务代码中有需要多线程、异步任务，建议切换到 async/await 等 uts 语法
+
++ 如果是要翻译原有的java代码到 UTS，可以选择打成AAR来处理。
+
+
+
 ## Bug & Tips@tips
 
 ### uts插件支持热更新的问题
