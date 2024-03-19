@@ -1150,16 +1150,11 @@ onStatusUpdate(_name:string, _status:Int, _desc:string){
 
 参考Hello UTS项目中的uts-nativepage插件
 
-路径:
-> ~\uni_modules\uts-nativepage
-
 
 ### 6.2 如何在UTS环境中，新建一个`service`？
 
 参考Hello UTS项目中的uts-nativepage插件
 
-路径:
-> ~\uni_modules\uts-nativepage
 
 ### 6.3 如何在UTS环境中，新建一个`Thread`？
 
@@ -1180,21 +1175,12 @@ class CustomThread extends Thread{
 
 完整示例参考Hello UTS项目中的uts-nativepage插件
 
-路径:
-> ~\uni_modules\uts-nativepage
-
 
 ### 6.4 如果我要实现一个官方已有的三方SDK功能，比如微信支付，如何处理？
 
 因为android中，每个UTS插件都对应一个gradle 子项目，所以类似的情况不能简单复用 自定义基座中的官方依赖。
 
 需要：  **不要勾选官方的依赖，然后在uts插件中，按照文档配置依赖**
-
-### 6.5 UTSCallback 和 UTSJSONObject 是什么？
-
-UTSCallback 和 UTSJSONObject 是UTS内置专门用于UTS环境和前端交互的特定类型。
-
-uni环境与UTS环境交互时，除了基本数据类型之外，涉及function的需要使用UTSCallback替代，涉及复杂对象object需要用UTSJSONObject 替代
 
 
 ### 6.6 如何生成android平台Array对象
