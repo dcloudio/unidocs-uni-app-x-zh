@@ -760,7 +760,7 @@ UTSAndroid.offAppActivityRequestPermissionsResult();
 // 移除指定监听
 UTSAndroid.offAppActivityRequestPermissionsResult(() => {
 });
-
+```
 -----------------------------
 
 
