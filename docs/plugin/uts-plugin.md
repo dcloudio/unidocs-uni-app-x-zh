@@ -1134,6 +1134,16 @@ console.log("jsonObj['age']  == " + jsonObj['age'] );
 
 更多UTSJSONObject的用法，[详见](../uts/data-type.md#utsjsonobject)
 
+
+
+### UTSCallback 和 UTSJSONObject 是什么？
+
+UTSCallback 和 UTSJSONObject 是UTS内置专门用于UTS环境和前端交互的特定类型。
+
+为了同时兼容 uni-app 和 uni-app x 环境，在uni环境与UTS环境交互时 ： 除了基本数据类型之外，涉及function的需要使用UTSCallback替代，涉及复杂对象object需要用UTSJSONObject 替代
+
+
+
 ## Bug & Tips@tips
 
 ### uts插件支持热更新的问题
