@@ -196,10 +196,10 @@ AndroidManifest.xml示例：
 ```
 
 
-AndroidManifest.xml配置规则与android中的规则是一致的。
+UTS插件中的 `AndroidManifest.xml` 与 `android` 中的 `AndroidManifest.xml` 规则完全一致。
 
 
-特别提示：
+**特别提示**：
 
 每一个UTS插件对应android项目中的一个 lib module.
 
