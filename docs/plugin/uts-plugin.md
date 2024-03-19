@@ -1251,6 +1251,48 @@ UTSHello.callWithoutParam(
 + 如果是要翻译原有的java代码到 UTS，可以选择打成AAR来处理。
 
 
+### UTS 如何进行遍历操作
+
+
+遍历数组：
+```uts
+let arrayObj = utsArrayOf("111","222","333")
+arrayObj.forEach(function(e:any){
+	console.log(e)
+})
+let arrayObj2 = [10,20,30]
+arrayObj2.forEach(function(e:any){
+	console.log(e)
+})
+```
+
+遍历Map:
+
+```uts
+let mapObj = new Map<string,any>()
+mapObj.put("name","zhangsan")
+mapObj.put("age",12)
+mapObj.forEach(function(value:any,key:string){
+	console.log(key)
+	console.log(value)
+})
+```
+
+遍历UTSJSONObject:
+
+```uts
+let utsJsonObj = {
+	name:"zhangsan",
+	age:"22",
+}
+utsJsonObj['classInfo'] = "三年二班"
+utsJsonObj.forEach(function(perField:any){
+	console.log(perField)
+})
+```
+
+
+
 
 ## Bug & Tips@tips
 
