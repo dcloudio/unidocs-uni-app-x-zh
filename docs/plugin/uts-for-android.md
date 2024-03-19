@@ -372,9 +372,7 @@ maven { url 'https://jitpack.io' }
 
 在uts里，Android的所有api都可以访问。
 
-但Android开发中经常要复写application和activity，uni-app主引擎已经复写了相关类。所以想要操作application和activity，需要调用uni-app引擎封装的API。
-
-这些api在`io.dcloud.uts`库下 UTSAndroid对象，具体见下。
+但是对于Android开发中高频使用`application`和`activity`等，UTS通过内置对象`UTSAndroid` 进行了包裹和封装。具体见下：
 
 ### 4.1 application 上下文相关
 
