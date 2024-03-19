@@ -1129,19 +1129,6 @@ class ScreenReceiver extends BroadcastReceiver{
 }
 ```
 
-#### 5.2.3 `UTS` 中下划线前缀的变量，有屏蔽未使用警告的含义
-
-```ts
-// IDE会提示 name,status,desc 变量未使用
-onStatusUpdate(name:string, status:Int, desc:string){
-
-}
-
-// 不会警告变量未使用
-onStatusUpdate(_name:string, _status:Int, _desc:string){
-
-}
-```
 
 
 ## 6  常见问题(持续更新)
@@ -1159,7 +1146,7 @@ onStatusUpdate(_name:string, _status:Int, _desc:string){
 ### 6.3 如何在UTS环境中，新建一个`Thread`？
 
 简单示例
-```ts
+```uts
 class CustomThread extends Thread{
 
 	constructor(){
@@ -1175,74 +1162,19 @@ class CustomThread extends Thread{
 
 完整示例参考Hello UTS项目中的uts-nativepage插件
 
+如果只是想要简单的开启一个异步任务，建议使用：
 
-### 6.4 如果我要实现一个官方已有的三方SDK功能，比如微信支付，如何处理？
+```uts
+UTSAndroid.getDispatcher("io").async(function(_){
 
-因为android中，每个UTS插件都对应一个gradle 子项目，所以类似的情况不能简单复用 自定义基座中的官方依赖。
-
-需要：  **不要勾选官方的依赖，然后在uts插件中，按照文档配置依赖**
-
-
-### 6.6 如何生成android平台Array对象
-
-UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数据结构是 `UTSArray`
-
-理论上来说 `UTSArray`确实更加灵活强大，但是部分android 平台api 明确要求了 Array格式的数据(比如请求权限)
-
-类似场景下，我们就要使用 toTypedArray() 函数进行转换，以便将`MutableList` 转换为对应的`Array`
-
-```typescript
-
-// 得到一个UTSArray
-let permissionArray :String[] = []
-// 得到一个Array
-console.log(permissionArray.toArray())
-// 得到一个MutableList
-console.log(permissionArray.toMutableList())
+}）
 ```
 
-另外还存在一种特殊情况，即开发者 在UTS中使用了 `kotlin`编写的依赖，这个时候情况稍微复杂些
-
-与`UTS`中只有一种 数组结构相比，`kotlin`中的数组结构要多很多，比如 `IntArray`,`Array`,`MutableList`等,
-
-对于情况，开发者需要注意两点：
-
-
-1  UTS具备类型推导功能，调用第三方依赖是不需要声明类型
-
-```
-// 建议的写法
-let a = xxx.getInfo()
-
-// 这样是没必要的，如果一定要这样写，必须要明确了解到kotlin依赖返回的数据结构，否能可能会因为类型错误，导致编译报错
-let a:IntArray = xxx.getInfo()
-
-
-```
-
-2  各种数组类型的转换说明
-
-```
-// IntArray 转 MutableList
-val a = intArrayOf(1,2,3)
-val b = a.toMutableList()
-
-
-// MutableList 转 Array<Int>
-val c = b.toTypedArray()
-
-// Array<Int> 转 IntArray
-val d = c.toIntArray()
-
-
-```
+[详细用法](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getdispatcher)
 
 
 
-
-
-
-### 6.7 如何生成byte[]对象
+### 如何生成byte[]对象
 
 在java平台中，二进制操作一般采用字节数组实现。
 
@@ -1257,43 +1189,9 @@ let byteTest = new ByteArray(5)
 console.log(byteTest)
 ```
 
-### 6.8 如何向UTS环境中传递数组参数
-
-在 uni-app 1.0 平台，js环境与原生环境的交互都是经过js引擎桥接
-
-js引擎除了 string,number,boolean 等基本数据结构外，仅支持JSONObject,JSONArray两种。
-
-+ JSONObject 比较常见，基本所有的接口参数都会 对应一个uts中定义的 type 类
-+ JSONArray 一般在uts中采用Array数组来承接
-
-下面是一个Array的使用示例：
-
-```
-// UTS插件，声明数组参数
-export function callWithoutParam(filterArray : Array<string>,success: () => void) {
-	console.log(filterArray)
-	success();
-	return { name: "doSthWithCallback" };
-}
-
-```
-
-```js
-// 前端传递数组参数
-UTSHello.callWithoutParam(
-	["system","optionB"]
-	,
-	()=>{
-		uni.showToast({
-			title:'成功调用',
-			icon:'none'
-		});
-	}
-);
-```
 
 
-### 6.9 编译报错：unresolved reference R （R资源无法识别）
+### 编译报错：unresolved reference R （R资源无法识别）
 
 UTS插件支持使用android的原生资源，比如动画，布局，字符串等。 [详细说明](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_3-1-%E9%85%8D%E7%BD%AEandroidmanifest-xml)
 
@@ -1304,86 +1202,12 @@ UTS插件支持使用android的原生资源，比如动画，布局，字符串�
 
 2 检查R资源引入的包名是否正确，参考hello uts nativepage插件
 
-```
+```uts
 import R from 'io.dcloud.uni_modules.uts_nativepage.R';
 ```
 
-### 6.10 UTSJSONObject 转 Map
 
-```
-val extraParam = UTSJSONObject()
-val extraMap = extraParam.toMap()
-```
-
-
-### 6.11  synchronized / Lock 等线程同步概念，在UTS里怎么写?
-
-前端领域里线程安全的解决思路 与java的不同。 他们提供了 async/await 等关键字来实现异步任务处理
-
-+ 如果业务代码中有需要多线程、异步任务，建议切换到 async/await 等 uts 语法
-
-+ 如果是要翻译原有的java代码到 UTS，可以选择打成AAR来处理。
-
-### 6.12  UTS 如何判断对象数据类型
-
-简单类型判断，返回结果  string/number/object/function 等
-```
-
-let param = "123"
-UTSAndroid.typeOf(param) // string
-
-```
-
-复杂的对象类名判断
-```
-let aa = 12
-// 可以获取到具体的类名
-console.log(aa.javaClass.toString()) // int
-
-```
-
-### 6.13  UTS 如何进行遍历操作
-
-相比于for in / 下标计数等写法， UTS 推荐更现代化的foreach语法 实现集合的遍历。
-
-数组：
-```
-let arrayObj = utsArrayOf("111","222","333")
-arrayObj.forEach(function(e:any){
-	console.log(e)
-})
-let arrayObj2 = [10,20,30]
-arrayObj2.forEach(function(e:any){
-	console.log(e)
-})
-```
-
-遍历Map:
-
-```
-let mapObj = new Map<string,any>()
-mapObj.put("name","zhangsan")
-mapObj.put("age",12)
-mapObj.forEach(function(value:any,key:string){
-	console.log(key)
-	console.log(value)
-})
-```
-
-遍历UTSJSONObject:(暂未公开)
-
-```
-let utsJsonObj = {
-	name:"zhangsan",
-	age:"22",
-}
-utsJsonObj['classInfo'] = "三年二班"
-utsJsonObj.forEach(function(perField:any){
-	console.log(perField)
-})
-```
-
-### 6.14  UTS 如何实现一个接口
+### 6.14  如何实现一个接口
 
 以HelloUTS nativepage插件 部分代码为例：
  ```
@@ -1417,7 +1241,7 @@ btn_start_screen_listen.setOnClickListener(new StartBroadcastListener());
 
 如果要同时实现多个接口，采用的也是  implements 和 `,` 分隔来实现
 
-```ts
+```uts
 class Person{
 	name:string = ""
 }
@@ -1439,7 +1263,7 @@ class User extends Person implements android.view.View.OnClickListener,Cloneable
 
 编译后的kotlin代码
 
-```
+```uts
 open class Person {
     open var name: String = "";
 }
@@ -1458,17 +1282,17 @@ open class User : Person, android.view.View.OnClickListener, Cloneable {
 
 + 目前暂不支持匿名声明，需要先定义一个 StartBroadcastListener 声明实现 OnClickListener 后再显性的创建
 
-### 6.15  UTS 如何访问静态实例方法
+### UTS 如何访问静态实例方法
 
 kotlin编译产出的AAR，会将访问方法修改为私有，不能以下面的方法访问
 
-```
+```uts
 ScancodeConfig.setShowLine(false);
 ```
 
 应该使用属性访问：
 
-```
+```uts
 ScancodeConfig.showLine = false;
 ```
 
@@ -1477,19 +1301,15 @@ ScancodeConfig.showLine = false;
 
 ## 7  已知待解决问题(持续更新)
 
-### 7.1 结构入参 boolean 参数默认为true
+### 结构入参 boolean 参数默认为true
 
 当以type 结构体为参数时，其内部boolean字段 默认值为false，不支持指定。
 
-### 7.2 目前尚不支持 Math内置
-
-HBuilderX 3.7.1 版本已支持
-
-### 7.3 目前尚不支持 8.x 版本gradle
+### 目前尚不支持 8.x 版本gradle
 
 建议先使用7.X版本，这个问题后续会处理
 
-### 7.4 android原生资源文件，暂不支持三方库依赖
+### android原生资源文件，暂不支持三方库依赖
 
 比如xml布局文件中暂时只支持 linearlayout等官方标签，不支持 appcompat等三方库标签。这个问题后续会被处理
 
