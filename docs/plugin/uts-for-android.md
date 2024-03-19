@@ -1,6 +1,6 @@
 ## uts for Android
 
-本文旨在帮助Android开发者，快速上手UTS。
+本文旨在帮助Android开发者快速上手UTS。
 
 需要阅读者具备Android原生应用开发经验。
 
@@ -352,7 +352,7 @@ mediaPlayer.start();
 
 目前云打包机支持下面的仓库：
 
-```
+```gradle
 
 jcenter()
 google()
@@ -513,7 +513,7 @@ UTSAndroid.offAppConfigChange(function(ret){
 
 比如获取app缓存目录：
 
-```
+```ts
 UTSAndroid.getAppContext()!.getExternalCacheDir()!.getPath()
 ```
 
@@ -791,7 +791,7 @@ UTS环境中对原生的生命周期进行了封装和简化，用户不需要�
 举个例子，以Hello UTS  [用户截屏插件](https://ext.dcloud.net.cn/plugin?id=9897)为例。
 
 在注册监听回调时，添加了下列代码。
-```
+```ts
 UTSAndroid.onAppActivityDestroy(function(){
 	screenOB?.stopWatching()
 	screenOB = null
@@ -987,7 +987,7 @@ constructor() : super() {
 
 ```
 
-```uts
+```ts
 //uts 中快速实现super
 constructor (){
 	super();
@@ -1146,7 +1146,7 @@ class ScreenReceiver extends BroadcastReceiver{
 ### 6.3 如何在UTS环境中，新建一个`Thread`？
 
 简单示例
-```uts
+```ts
 class CustomThread extends Thread{
 
 	constructor(){
@@ -1164,7 +1164,7 @@ class CustomThread extends Thread{
 
 如果只是想要简单的开启一个异步任务，建议使用：
 
-```uts
+```ts
 UTSAndroid.getDispatcher("io").async(function(_){
 
 }）
@@ -1184,7 +1184,7 @@ UTS在android平台编译后的语言为Kotlin,对应的语法对象是ByteArray
 
 下面是一个简单的示例
 
-```
+```ts
 let byteTest = new ByteArray(5)
 console.log(byteTest)
 ```
@@ -1202,7 +1202,7 @@ UTS插件支持使用android的原生资源，比如动画，布局，字符串�
 
 2 检查R资源引入的包名是否正确，参考hello uts nativepage插件
 
-```uts
+```ts
 import R from 'io.dcloud.uni_modules.uts_nativepage.R';
 ```
 
@@ -1210,7 +1210,8 @@ import R from 'io.dcloud.uni_modules.uts_nativepage.R';
 ### 6.14  如何实现一个接口
 
 以HelloUTS nativepage插件 部分代码为例：
- ```
+
+ ```ts
 import OnClickListener from 'android.view.View.OnClickListener';
 // 实现 OnClickListener 接口
 class User {
@@ -1241,7 +1242,7 @@ btn_start_screen_listen.setOnClickListener(new StartBroadcastListener());
 
 如果要同时实现多个接口，采用的也是  implements 和 `,` 分隔来实现
 
-```uts
+```ts
 class Person{
 	name:string = ""
 }
@@ -1263,7 +1264,7 @@ class User extends Person implements android.view.View.OnClickListener,Cloneable
 
 编译后的kotlin代码
 
-```uts
+```kotlin
 open class Person {
     open var name: String = "";
 }
@@ -1286,13 +1287,13 @@ open class User : Person, android.view.View.OnClickListener, Cloneable {
 
 kotlin编译产出的AAR，会将访问方法修改为私有，不能以下面的方法访问
 
-```uts
+```ts
 ScancodeConfig.setShowLine(false);
 ```
 
 应该使用属性访问：
 
-```uts
+```ts
 ScancodeConfig.showLine = false;
 ```
 
