@@ -1143,6 +1143,59 @@ UTSCallback 和 UTSJSONObject 是UTS内置专门用于UTS环境和前端交互�
 为了同时兼容 uni-app 和 uni-app x 环境，在uni环境与UTS环境交互时 ： 除了基本数据类型之外，涉及function的需要使用UTSCallback替代，涉及复杂对象object需要用UTSJSONObject 替代
 
 
+### 如何生成android平台Array对象？
+
+UTS环境中，默认的数组写法[] / Array()  对应到 android平台的数据结构是 `UTSArray`
+
+理论上来说 `UTSArray`确实更加灵活强大，但是部分android 平台api 明确要求了 Array格式的数据(比如请求权限)
+
+类似场景下，我们就要使用 toTypedArray() 函数进行转换，以便将`MutableList` 转换为对应的`Array`
+
+```uts
+
+// 得到一个UTSArray
+let permissionArray :String[] = []
+// 得到一个Array
+console.log(permissionArray.toArray())
+// 得到一个MutableList
+console.log(permissionArray.toMutableList())
+```
+
+另外还存在一种特殊情况，即开发者 在UTS中使用了 `kotlin`编写的依赖，这个时候情况稍微复杂些
+
+与`UTS`中只有一种 数组结构相比，`kotlin`中的数组结构要多很多，比如 `IntArray`,`Array`,`MutableList`等,
+
+对于情况，开发者需要注意两点：
+
+
+1  UTS具备类型推导功能，调用第三方依赖是不需要声明类型
+
+```uts
+// 建议的写法
+let a = xxx.getInfo()
+
+// 这样是没必要的，如果一定要这样写，必须要明确了解到kotlin依赖返回的数据结构，否能可能会因为类型错误，导致编译报错
+let a:IntArray = xxx.getInfo()
+
+
+```
+
+2  各种数组类型的转换说明
+
+```uts
+// IntArray 转 MutableList
+val a = intArrayOf(1,2,3)
+val b = a.toMutableList()
+
+
+// MutableList 转 Array<Int>
+val c = b.toTypedArray()
+
+// Array<Int> 转 IntArray
+val d = c.toIntArray()
+
+```
+
 
 ## Bug & Tips@tips
 
