@@ -12,6 +12,7 @@
 <!-- CSSJSON.margin-bottom.unixTags -->
 
 **注意**  
+app端不支持外边距折叠
 3.98以下版本当position:fixed|absolute时,margin不支持auto
 
 <!-- CSSJSON.margin-bottom.compatibility -->
