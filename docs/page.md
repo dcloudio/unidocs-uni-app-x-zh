@@ -47,4 +47,4 @@ export default {
 
 ## 页面及组件生命周期流程图@lifeCycleFlow
 
-![](./static/uni-app-lifecycle-vue3.png)
+![](./static/uni-app-lifecycle-vue3.png)#{.zooming width=1000 margin=auto}
