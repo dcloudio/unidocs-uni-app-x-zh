@@ -14,7 +14,10 @@
 - button 的text区域文字，app平台HBuilderX4.02及以上版本支持 `\n` 方式换行，HBuilderX4.01及以下版本不支持 ，会直接显示 `\n` 字符；Web端 `\n` 会变成一个空格。
 - button按下后触发hover-class效果，在app平台，手指不松开、一直在屏幕上移动、离开button组件范围后，hover-class效果消失，同时也不会触发点击事件；在web平台，手指移动一点后，即便未离开button范围，hover-class效果也会消失，同时也不会触发点击事件。
 - 无论在哪个平台，hover-class消失后松开手指，都不会触发点击事件。
-- button 的hover-class属性，如果设置为none，并且style样式里面设置了同名的none样式，none样式将不起作用，按照点击无效果处理；设置为button-hover 数值，会使用默认效果；不设置hover-class属性，自定义button-hover样式，会使用自定义的button-hover样式。
+- button 的hover-class属性需注意以下事项：  
+    + 如果hover-class属性值设置为none，在style样式里面设置了同名的none样式，none样式将不起作用，没有点击态效果  
+	+ 如果hover-class属性值设置为button-hover或者不设置hover-class属性值，在style样式里面设置了同名的button-hover样式，点击效果将使用button-hover样式  
+	+ 如果hover-class属性值设置为无效值（或非法值），没有点击态效果  
 
 <!-- UTSCOMJSON.button.children -->
 
