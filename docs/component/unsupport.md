@@ -16,6 +16,7 @@ uni-app x在App端还有一批组件未与uni-app js引擎版拉齐。有的在�
 - waterfall/grid-view：会补充
 - editor：用web-view来加载
 - map：
+	* 插件市场已有完善的[地图插件](https://ext.dcloud.net.cn/search?q=%E5%9C%B0%E5%9B%BE&cat1=8&cat2=82)
 	* 开发uts组件
 	* 或使用web-view中的地图
 - live-pusher：需开发uts组件
