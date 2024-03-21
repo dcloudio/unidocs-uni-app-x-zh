@@ -839,6 +839,11 @@ HBuilderX 目前写iOS uts 插件时部分语法提示会有缺失、参数类�
 ## 8 有关Swift语言创建的Framework和.a的Swift版本兼容性问题
 
 - 由于高版本XCode编译的Swift语言Framework动态库、静态库、.a库在低版本XCode上无法编译通过，因此存在Swift版本兼容性问题;
-- 目前打包机使用的XCode版本号是14.2，对应的Swift版本是5.7.2;
-- 请在编译Swift相关Framework和.a库时选择和打包机相同或者更低版本的XCode;
-- 选择比打包机更低版本XCode编译Swift库时请在Target->buildSettings设置Buid Libraries for Distribution 为Yes。
+- 目前打包机使用的XCode版本号是15.2，对应的Swift版本是5.9.2;
+- uts 插件开发者在编译Swift相关Framework和.a库时请选择和打包机相同或者更低版本的XCode;
+- uts 插件开发者在选择比打包机更低版本XCode编译Swift库时请在Target->buildSettings设置Buid Libraries for Distribution 为Yes；
+- uts 插件使用者所依赖的 xcode 版本号应大于或者等于打包机的 XCode 版本号。
+
+> 特别注意
+> 如果在使用真机运行编译uts插件时报 swift 版本不兼容的错误，请先检查自己的 XCode 版本，确保安装XCode 版本应大于或者等于打包机的 XCode版本；
+> 如果在使用真机运行编译uts插件时报 XCode 版本应大于 13.2.1的错误，这是说明本地安装的 XCode版本过低，请忽略 13.2.1这个版本限制，直接将本地 XCode升级到大于或者等于打包机的版本，后续我们会优化提示。
