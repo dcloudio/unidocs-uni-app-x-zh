@@ -923,7 +923,7 @@ list1.forEach((item : any) => {
 这个问题，我们稍后会改进。
 
 > 特别注意：
-> 在uni-app 1.0环境下，在 index.uts 文件中 `export` 的 `class` 默认会对 `js`暴露，因此要建立起原生 `class` 和 `js`类型的映射关系，只有能正常建立起这种映射关系的类才能导出。除一些基本数据类型外的系统类例如 `Activity`、`UIViewController`等是无法 `export` 的。
+> 在uni-app 环境下，在 index.uts 文件中 `export` 的 `class` 默认会对 `js`暴露，因此要建立起原生 `class` 和 `js`类型的映射关系，只有能正常建立起这种映射关系的类才能导出。除一些基本数据类型外的系统类例如 `Activity`、`UIViewController`等是无法 `export` 的。
 
 
 ## 前端使用插件
@@ -1105,15 +1105,15 @@ let layoutParam = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARE
 function connectWifi(option: WifiConnectOption,testName :string = "zhangsan")
 ```
 
-### 在uni-app 1.0 上的导出限制
+### 在uni-app 上的导出限制
 
 UTS插件环境会被编译为原生语言环境，在android平台是kotlin.
 
 uni-app x 运行到Android平台时，本身也是原生语言环境，即kotlin。同语言直接的调用是没有限制的，可以任意导出和使用 自定义对象/原生对象/类/方法。
 
-但是在uni-app 1.0 环境，**只能导出UTS中声明的自定义对象/类/方法，不能包含原生对象、平台专有类型**
+但是在uni-app 环境，**只能导出UTS中声明的自定义对象/类/方法，不能包含原生对象、平台专有类型**
 
-这是因为 uni-app 1.0 本质上是类浏览器的js环境中，UTS中声明的对象是经过特殊处理的，每一个对象都有一个在Js中对应的实例，这样才能正常使用。
+这是因为 uni-app 本质上是类浏览器的js环境中，UTS中声明的对象是经过特殊处理的，每一个对象都有一个在Js中对应的实例，这样才能正常使用。
 
 其他的原生对象没有经过特殊处理，并不能在js环境中使用。
 
