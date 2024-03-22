@@ -3,7 +3,7 @@
 > uni-app x 4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。
 
 | CSS 变量| 描述| App| web|
-| :- | :- | :- | :- | :- |
+| :- | :- | :- | :- |
 | --status-bar-height | 系统状态栏高度| [系统状态栏高度](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getStatusbarHeight)| 0|
 | --window-top| 内容区域距离顶部的距离 | 0| NavigationBar 的高度 |
 | --window-bottom| 内容区域距离底部的距离 | 0| TabBar 的高度|
@@ -50,6 +50,3 @@
 	}
 </style>
 ```
-
-## Tips
-- `字体路径`支持**网络**和**本地**，本地字体请注意放在项目或uni_modules的static目录下。
