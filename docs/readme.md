@@ -198,7 +198,7 @@ uts插件可同时在 uni-app js引擎版 和 uni-app x 的app平台上运行。
 
 uts插件分类直达：[https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 
-之前uni-app js版的“App原生语言插件”，因依赖js引擎，所以无法在 uni-app x 中运行。
+之前uni-app js版的“App原生语言插件”，因依赖js引擎和weex，所以无法在 uni-app x 中运行。
 
 2. 前端插件
 
@@ -213,11 +213,13 @@ uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码�
 **如果你一定要使用某个js库，还有一个办法是在uni-app x里的[web-view](./api/create-webview-context.md)组件，让其运行js并返回值给uts代码。**
 
 目前插件市场适配uni-app x的插件已有数百款，包括丰富的ui组件库生态：
+- [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：包含了核心的uts插件基类.和uvue组件库
 - [t-uvue-ui](https://ext.dcloud.net.cn/plugin?id=15571)：丰富的组件库
 - [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceUI作者的免费开源组件库
 - [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：低代码高性能UI框架
 - [wx-ui](https://ext.dcloud.net.cn/plugin?id=15579)：基于uni-app x开发的高性能混合UI库
 - [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：一款适配 uni-app x 的轻量、简洁、高效、全面的移动端组件库
+- [OneUI](https://ext.dcloud.net.cn/plugin?id=17104)
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
 
 
@@ -228,7 +230,8 @@ uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码�
 - 平台支持：目前只有Android和Web（Web需4.0+）。虽然uts语言支持swift，可以写原生插件，但iOS版的uvue还未开发完毕。目前替代方案有：
 	1. 将uni-app x编译为Web，在iOS上使用uni-app js引擎版的Web-view加载。
 	2. 对于iOS或其他小程序、web平台，开发者可将uvue文件后缀改为vue或nvue，调整后适配到到uni-app js引擎版编译到其他平台，包括iOS App、web及各家小程序。
-	3. 等待iOS发版，目前iOS已经在测试阶段，春节后将发版。
+	3. 等待iOS发版，目前iOS已经在测试阶段，3月底将发版。
+- 小程序平台，目前也可以通过编译到H5，在小程序的web-view里临时替代使用
 - 目前不支持：横屏切换、暗黑模式、自定义路由、多语言、无障碍
 - 目前不支持国际区账户创建和打包uni-app x，仅大陆区开发者账户可用。
 
@@ -238,6 +241,7 @@ uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码�
 
 ## 案例
 - 快亿商城，[App端](https://ext.dcloud.net.cn/plugin?id=15458)、[管理端](https://ext.dcloud.net.cn/plugin?id=15568)
+- [ai(chatGPT)聊天对话，uni-app x(uvue+uts)和uniCloud云端一体完整](https://ext.dcloud.net.cn/plugin?id=17075)
 
 ## 自动化测试
 uni-app x 从源头重视产品质量，第一个版本就支持自动化测试。并为uni-app x产品编写了数十万行自动化测试例代码。
