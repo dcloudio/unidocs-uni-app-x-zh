@@ -78,7 +78,7 @@ flutter2018年发布，第一次统一了逻辑层和渲染层，而且使用了
 
 下载apk后可以看到dart操作flutter的UI真的没有通信折损，100个slider的拖动非常流畅。
 
-<video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/flutter-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" poster="https://web-ext-storage.dcloud.net.cn/doc/flutter-slider-poster.png" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/flutter-slider.mp4"></video>
 
 flutter看起来很完美。但为什么也没有成为主流呢？很多大厂兴奋的引入后为何又不再扩大使用范围呢？
 
@@ -158,7 +158,7 @@ flutter开发者都知道的一个常见坑是输入法，因为输入法是典�
 
 下面是微信8.0.44（此刻最新版），从微信的发现页面进入小程序首页。
 
-<video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/weixin_dark.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" poster="https://web-ext-storage.dcloud.net.cn/doc/weixin_dark-poster.png" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/weixin_dark.mp4"></video>
 
 视频中手机切换暗黑主题后，这个UI却还是白的，而且flutter的父容器原生view已经变黑了，它又在黑底上绘制了一个白色界面，体验非常差。
 
@@ -189,7 +189,7 @@ flutter最大的优势是dart操作UI不需要通信，以及强类型。而改�
 这个项目[https://gitcode.net/dcloud/test-cross/-/tree/master/test_arkuix_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_arkuix_slider_100)，
 使用ArkUI-x做了100个slider，大家可以看源码，下载apk体验，明显能看到由于逻辑层和UI层通信导致的卡顿。
 
-<video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/arkui-x-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" poster="https://web-ext-storage.dcloud.net.cn/doc/arkui-x-slider-poster.png" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/arkui-x-slider.mp4"></video>
 
 上述视频中，手指按下的那个slider，和其他通过数据通讯指挥跟随一起行动的99个slider，无法同步，并且界面掉帧。
 
@@ -270,7 +270,7 @@ uts语言是基于typescript修改而来的强类型语言，编译到不同平�
 
 如下视频，打开了GPU呈现模式，可以看到没有一条竖线突破那条红色的掉帧安全横线，也就是没有一帧掉帧。
 
-<video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/uni-app-x-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" poster="https://web-ext-storage.dcloud.net.cn/doc/uni-app-x-slider-poster.png" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/uni-app-x-slider.mp4"></video>
 
 uni-app x在app端，不管逻辑层、渲染层，都是kotlin，没有通信问题、没有混合渲染问题。不是达到了原生的性能，而是它本身就是原生应用，它和原生应用的性能没差别。
 
@@ -315,7 +315,7 @@ DCloud做了很多年跨平台开发，uni-app在web和小程序平台取得了�
 
 打开GPU呈现模式，可以看到compose ui的100个slider拖动时，大多数竖线都突破那条红色的掉帧安全横线，也就是掉帧严重。
 
-<video id="video" preload="none" controls="controls" width="185px" height="400px" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/compose-ui-slider.mp4"></video>
+<video id="video" preload="none" controls="controls" width="185px" height="400px" poster="https://web-ext-storage.dcloud.net.cn/doc/compose-ui-slider-poster.png" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/compose-ui-slider.mp4"></video>
 
 既然已经把不同开发框架的slider-100应用打包出来了，我们顺便也比较了不同框架下的包体积大小、内存占用：
 
