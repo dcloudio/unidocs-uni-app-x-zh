@@ -791,7 +791,7 @@ UTSiOS.try(JSONSerialization.jsonObject(with = data, options = []), "!" )
 > HBuilder X 4.06+ 版本支持
 
 `swift` 中有一些特有的属性、方法、类的修饰符如 `open`, `fileprivate`, `internal`, `weak`, `optional` 等，这些修饰符在 `ts` 中没有对应的替代者，但是在原生语法场景下又是必须的。
-为了支持这些修饰符，我们提供了 `UTSiOS.keyword("xxx")` 的语法糖。你可以在符合 `swift` 语法要求的场景下，使用诸如 `UTSiOS.keyword("weak")` 这样的语法来修饰对应的属性、方法、类等。
+为了支持这些修饰符，我们提供了 `UTSiOS.keyword("xxx")` 的语法糖。你可以在符合 `swift` 语法要求的场景下，使用诸如 `UTSiOS.keyword("private")` 这样的语法来修饰对应的属性、方法、类等。
 我们对具体的修饰符没有做特别的限制，`swfit` 中的合法修饰符都能通过这个语法糖来使用，但是请记住一个重要的前提：你所使用的修饰符，需要满足 `swift` 语法所要求的场景。
 
 下面是一些示例：
