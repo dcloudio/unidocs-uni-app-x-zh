@@ -160,7 +160,7 @@
 * App-Android平台 修复 局部定义 class 时，构造函数使用 super 报错的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=802)
 * App-Android平台 新增 interface.uts 文件支持 export declare 语法 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=744)
 * App-Android平台 修复 import * as Types from 'xxx' 导入 type 类型编译报错的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=696)
-* App-iOS平台 新增 @UTSiOS.keyword('fileprivate') 注解，用于解决自定义swift类，属性的访问控制
+* App-iOS平台 新增 @UTSiOS.keyword('xxx') 注解，用于解决swift类，属性, 方法的修饰 [详情](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-ios.html#keyword)
 
 #### 3.99.2023122704
 ##### uni-app x插件
