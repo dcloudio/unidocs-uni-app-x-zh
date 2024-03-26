@@ -786,6 +786,37 @@ UTSiOS.try(JSONSerialization.jsonObject(with = data, options = []), "!" )
 
 ```
 
+#### 5.1.15 swift 特有修饰符 @keyword
+
+`swift` 中有一些特有的属性、方法、类的修饰符如 `open`, `fileprivate`, `internal`, `weak`, `optional` 等，这些修饰符在 `ts` 中没有对应的替代者，但是在原生语法场景下又是必须的。
+为了支持这些修饰符，我们提供了 `UTSiOS.keyword("xxx")` 的语法糖。你可以在符合 `swift` 语法要求的场景下，使用诸如 `UTSiOS.keyword("weak")` 这样的语法来修饰对应的属性、方法、类等。
+我们对具体的修饰符没有做特别的限制，`swfit` 中的合法修饰符都能通过这个语法糖来使用，但是请记住一个重要的前提：你所使用的修饰符，需要满足 `swift` 语法所要求的场景。
+
+下面是一些示例：
+
+```ts
+// ts 中 private 修饰符不可出现在模块或命名空间元素上, 如果想将一个类 private，需要使用 @UTSiOS.keyword("private")
+@UTSiOS.keyword("private")
+class TestA  {
+	// 如果需要使用 weak 修饰属性，来避免循环引用，需要使用 @UTSiOS.keyword("weak")
+	@UTSiOS.keyword("weak") 
+	private delegate: TestProtocol | null = null
+}
+
+```
+
+```ts
+
+@UTSiOS.keyword("fileprivate")
+class TestB  {
+	// 一个属性可以同时有多个修饰符，前提是所写的修饰符符合Swift语法
+	@UTSiOS.keyword("weak") 
+	@UTSiOS.keyword("fileprivate") 
+	delegate: TestProtocol | null = null
+}
+
+```
+
 ## 6  常见问题(持续更新)
 
 ### 6.1 如何在UTS环境中，获取当前 UIViewController 实例
