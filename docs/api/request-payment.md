@@ -17,6 +17,11 @@
   hIukuKygrXucvejOUgTCfoUdwTi7z%2BZzQ%3D`<br>
   [更多详情参考[支付宝官方文档](https://opendocs.alipay.com/open/204/105296?pathHash=22ed0058&ref=api)]
 
+-  微信<br>
+  App 支付请求参数字符串。示例
+{"appid":"wxd569c7238830733b","noncestr":"6N47VnR42bqIm4xq","package":"Sign=WXPay","partnerid":"1230636401","prepayid":"wx26174750316675ac54b89c224eb3250000","timestamp":1711446470,"sign":"EE987459B9CFF6462462147130110D31"}
+  [更多详情参考[微信官方文档]( https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1)]
+
 
 <!-- UTSAPIJSON.requestPayment.returnValue -->
 
