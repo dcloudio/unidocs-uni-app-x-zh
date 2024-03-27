@@ -1,5 +1,9 @@
 
 
+#### 4.07.2024032720
+##### uni-app x 插件
+* Web平台 修复 4.06版引出的 button 更改 border-radius 后边框样式不对的Bug
+
 #### 4.06.2024032513
 ##### uni-app x 插件
 * Web平台 修复 部分情况下picker-view、picker-view-column值显示错误并额外触发了change事件的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1009)
