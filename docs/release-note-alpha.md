@@ -1,3 +1,7 @@
+#### 4.07.2024032807-alpha
+##### uni-app x 插件
+* Web平台 修复 4.06版引出的 button 更改 border-radius 后边框样式不对的Bug
+
 #### 4.04.2024031519-alpha
 ##### uni-app x 插件
 * Web平台 优化 减少编译耗时
