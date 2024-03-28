@@ -31,7 +31,7 @@ try {
 	vueJson = require('../utils/vueJson.json');
 } catch (error) {}
 try {
-	manifestJson = require('../utils/manifestJson.json');
+	manifestJson = require('../utils/maniFestJson.json');
 } catch (error) {}
 try {
 	pagesJson = require('../utils/pagesJson.json');
