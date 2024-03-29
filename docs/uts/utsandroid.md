@@ -115,6 +115,14 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.onAppActivityResult.compatibility -->
 
+
+```ts
+UTSAndroid.onAppActivityResult((requestCode : Int, resultCode : Int, data ?: Intent) => {
+		let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:" + resultCode + " -data:" + JSON.stringify(data);
+		console.log(eventName);		
+});
+```
+
 ### offAppActivityResult(callback?)
 
 <!-- UTSJSON.UTSAndroid.offAppActivityResult.description -->
