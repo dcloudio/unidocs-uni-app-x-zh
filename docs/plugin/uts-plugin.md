@@ -345,7 +345,7 @@ app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
 
 |目录名/文件名		|用途													|
 |:---				|:---													|
-|Frameworks			|iOS平台插件需要引用的三方 framework 依赖库存放目录			|
+|Frameworks			|iOS平台插件需要引用的三方 framework/xcframework 依赖库存放目录			|
 |Libs				|iOS平台插件需要引用的三方 .a 依赖库存放目录			    |
 |Resources			|iOS平台插件需要引用的资源文件存放目录						|
 |Info.plist			|iOS平台插件需要添加到原生工程Info.plist中的配置文件			|
