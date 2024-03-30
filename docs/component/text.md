@@ -18,9 +18,9 @@
 
 text组件在web浏览器渲染（含浏览器、小程序webview渲染模式、app-vue）和uvue中，可以并只能嵌套text组件。
 
-但注意，app-uvue的text组件嵌套后子组件也不继承父组件样式，这样使用会在编译到浏览器平台时产生差异。所以尽量避免使用text嵌套。
+app-uvue中的 text 组件虽然支持嵌套，但子组件不继承父组件样式。app-android平台子组件设置的排版相关样式（如width、height、margin、padding等）不生效，app-ios平台子组件设置的所有样式都不生效。这样使用会在编译到各平台时可能产生差异，所以尽量避免使用text嵌套。
 
-app-nvue中，text组件不能嵌套。
+app-nvue中的 text 组件不支持嵌套。
 
 <!-- UTSCOMJSON.text.children -->
 
@@ -29,6 +29,5 @@ app-nvue中，text组件不能嵌套。
 <!-- UTSCOMJSON.text.reference -->
 
 ## Bug & Tips@tips
-- app-uvue不支持[HTML字符实体](https://developer.mozilla.org/zh-CN/docs/Glossary/Entity)。
-- app-uvue text组件嵌套时，子组件设置的部分CSS样式可能不生效。
-- app-uvue的selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。web默认就是可复制文字的，selectable无效。
+- app平台不支持[HTML字符实体](https://developer.mozilla.org/zh-CN/docs/Glossary/Entity)。
+- app平台 selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。web平台默认就是可复制文字的，selectable无效。
