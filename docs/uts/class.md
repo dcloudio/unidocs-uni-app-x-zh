@@ -486,7 +486,7 @@ class Test {
 |方法名|简介|详细说明|
 |:-----|:--|:---|
 |equals|定义当前对象实例是否与另外一个对象实例相同|[文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/equals.html)|
-|hashcode|定义当前实例对象的散列计算过程，常用于在容器中标记当前对象实例的唯一性|[文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/hash-code.html)|
+|hashcode|定义当前对象实例的散列计算过程，常用于在容器中标记当前对象实例的唯一性|[文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/hash-code.html)|
 |toString|以字符串的方式序列化描述当前对象实例|[文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/to-string.html)|
 
 
