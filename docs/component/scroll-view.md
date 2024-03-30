@@ -33,6 +33,47 @@
 
 **具体代码请参考：**[自定义下拉刷新样式示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/scroll-view/scroll-view-custom-refresher-props.uvue)
 
+### 嵌套模式
+
+当存在两个 scroll-view 相互嵌套的场景时，两者滚动存在冲突不能很丝滑的进行衔接，可将外层 scroll-view 改成嵌套模式，这样可以让两个 scroll-view 的滚动衔接起来。
+
+```vue
+<scroll-view style="flex:1" type="nested">
+	<nested-scroll-header>
+		<view style="height: 200px;background-color: #66ccff;align-items: center;justify-content: center;">
+			<text>nested-scroll-header</text>
+		</view>
+	</nested-scroll-header>
+	<nested-scroll-body>
+		<view style="flex:1">
+			<scroll-view style="flex:1" associative-container="nested-scroll-view">
+				<view v-for="index in 20" style="background-color: aliceblue; height: 80px;justify-content: center;">
+					<text style="color: black;">{{index}}</text>
+				</view>
+			</scroll-view>
+		</view>
+	</nested-scroll-body>
+</scroll-view>
+```
+
+**开启嵌套模式设置如下：**
+
+1. 设置外层 scroll-view 的 type 属性为 "nested" ，将外层 scroll-view 改成嵌套模式
+2. 设置内层 scroll-view 的 `associative-container` 属性为 "nested-scroll-view"，开启内层 scroll-view 支持与外层 scroll-view 嵌套滚动
+
+**嵌套滚动策略：**
+
+当向下滚动时，先滚动外层 scroll-view 再滚动里层 scroll-view；当向上滚动时，先滚动里层 scroll-view 再滚动外层 scroll-view
+
+**注意事项：**
++ 4.11版本开始支持嵌套模式
++ 外层 scroll-view 的子节点只支持`nested-scroll-header`和`nested-scroll-body`和自定义 refresher
++ 外层 scroll-view 的子节点中只能有一个 `nested-scroll-body`
++ `nested-scroll-header` 和 `nested-scroll-body` 只能有一个子节点
++ `nested-scroll-header` 只能渲染在 `nested-scroll-body` 上面
++ 与nested-scroll嵌套滚动协商互补不兼容，`nested-scroll-header` 和 `nested-scroll-body`优先级高于nested-scroll嵌套滚动协商
++ 内层滚动视图支持 scroll-view 和 list-view
+
 ### nested-scroll嵌套滚动协商@nested
 
 嵌套滚动是原生才有的概念，web没有。
@@ -82,7 +123,8 @@ onNestedPreScroll(event: NestedPreScrollEvent) {
 **注意：**
 + 仅Android平台支持嵌套滚动协商
 + 嵌套滚动协商仅支持竖向滚动，横向滚动不支持
-+ nested-scroll-child设置的元素必须配置custom-nested-scroll = true，否则配置无效。
++ nested-scroll-child设置的元素必须配置custom-nested-scroll = true，否则配置无效
++ 与`nested-scroll-header` 和 `nested-scroll-body`不兼容，scroll-view 设置嵌套模式后，嵌套滚动手势协商相关事件将不会触发
 
 **具体代码请参考：**[nested-scroll嵌套滚动示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list/long-list.uvue)
 

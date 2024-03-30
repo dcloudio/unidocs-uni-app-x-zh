@@ -43,6 +43,11 @@ list-view组件有默认的下拉刷新样式，如果想自定义，则需使�
 + 3.93版本开始支持
 + 目前自定义下拉刷新元素不支持放在list-view的首个子元素位置上。可能无法正常显示
 
+### 嵌套模式
+
+scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外层 scroll-view 实现嵌套滚动
+
+设置内层 list-view 的 `associative-container` 属性为 "nested-scroll-view"，开启内层 list-view 支持与外层 scroll-view 嵌套滚动
 
 <!-- UTSCOMJSON.list-view.compatibility -->
 
