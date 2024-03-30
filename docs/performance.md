@@ -1,6 +1,6 @@
 # uni-app x 的App性能优化
 
-uni-app x 开发的App，本质是换了一种写法的原生应用，性能达到了原生水平。
+uni-app x 开发的Android App，本质是换了一种写法的原生应用，性能达到了原生水平。
 
 但即便是原生开发者，使用传统的Android开发，如果代码写不好，也一样性能很差。
 
@@ -78,14 +78,35 @@ uni-app x 中，没有通信阻塞，可以直接监听touch和滚动事件。�
 
 ## 长列表
 
-uvue页面模板里，list-view组件使用v-for来循环添加list-item，自动就是recycle-view的。无论多长的列表，系统也会自动回收和节约资源，和原生应用一样的体验，但开发更简单。
+关于长列表，uni-app x提供了2种方案
+1. 内置的[list-view组件](./component/list-view.md)
+2. 自定义的虚拟列表组件uni-recycle-view。
 
-请避免使用其他方式构建长列表，比如scroll-view。
+uni-app x 的 list-view组件，是基于原生的recycle-view的。无论多长的列表，系统也会自动回收和复用渲染资源，和原生应用一样的体验，但开发更简单。
 
-另外注意list-item里的组件数量，它是dom元素的放大器。每个list-item里的dom数量多一点，页面性能就很容易被拖垮。
+一般联网加载的分页式列表，使用list-view组件即可。
+
+但在vue环境下，装载长列表会对列表所有数据都创建VNode，不管渲染层这些列表是否显示。创建大量VNode会影响初始化速度和内存占用。
+
+虚拟列表组件uni-recycle-view，只创建了有限的VNode，循环复用这些VNode。uni-recycle-view组件内部通过计算决定哪些数据需要在界面展示，默认展示当前滚动位置的所在屏及上下各5屏的数据。
+
+同时它也有一些限制和注意事项：
+1. uni-recycle-view 组件适用于仅使用一个for循环创建所有列表项的场景。
+2. 由于滚动过程中会计算哪些数据需要渲染，因此滚动流畅度略低于list-view组件。
+
+所以uni-recycle-view 组件是对list-view组件的一个补充方案。如果list-view的初始化速度和内存占用满足你的需求，那么继续使用list-view即可。
+
+一般联网的分页加载列表，仍然可以使用list-view。uni-recycle-view 组件常见的场景是本地一次性遍历了大量数据并需要立即渲染在界面上。
+
+在[Hello uni-app x的模板->自定义虚拟长列表示例](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/dev/pages/template/custom-long-list)中可以看到演示。
+
+
+另外**注意列表项目里的组件数量**，它是dom元素的放大器。每个list-item里的dom数量多一点，乘以item数量，就会产生非常多dom，页面性能就很容易被拖垮。
 
 比如很多列表有评星，如果使用一个5个view的评星组件，那每个list-item都会多5个view，列表一长dom数量会惊人。
+
 在hello uni-app x的复杂长列表示例中，评星没有使用任何自定义组件，只是一个text组件里面使用字体图标放了5个字符，极大减少组件数量。[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/long-list/long-list-page.uvue)
+
 
 ## 优化排版效率
 
@@ -102,7 +123,7 @@ dom数量优化前文已经讲了，那么如何优化排版效率？
 3. 指定主轴方向的尺寸可以减少递归的深度
 4. 文字测量属于耗时操作，给text组件指定宽高可以提升排版效率
 5. 指定图片的尺寸信息可以减少排版次数
-6. css单位尺寸中，百分比的性能不如固定的px，使用百分比时父节点有明确宽高或者不依赖子节点确定宽高可以提升排版效率
+6. css单位尺寸性能比较，px > rpx > 百分比，使用百分比时父节点有明确宽高或者不依赖子节点确定宽高可以提升排版效率
 
 ## 控制vue的更新范围
 vue的data更新时，会自动触发页面渲染更新。

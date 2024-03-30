@@ -20,7 +20,7 @@ App跨平台框架历史悠久，从cordova、react native、flutter，直到最
 
 上表中，uni-app x和原生应用是一样的，逻辑层和渲染层都是原生，都是强类型；而其他跨平台框架或者在逻辑层、或者在渲染层与原生不一致。
 
-webview不行已经是业内常识了，启动慢、渲染慢、内存占用高。这块本文不再详述。
+webview与原生的差距已经是业内常识了，启动慢、渲染慢、内存占用高。这块本文不再详述。
 
 但那些非web-view的框架到底哪里不如原生？
 
@@ -272,7 +272,7 @@ uts语言是基于typescript修改而来的强类型语言，编译到不同平�
 
 <video id="video" preload="none" controls="controls" width="185px" height="400px" poster="https://web-ext-storage.dcloud.net.cn/doc/uni-app-x-slider-poster.png" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/uni-app-x-slider.mp4"></video>
 
-uni-app x在app端，不管逻辑层、渲染层，都是kotlin，没有通信问题、没有混合渲染问题。不是达到了原生的性能，而是它本身就是原生应用，它和原生应用的性能没差别。
+uni-app x在Android端，不管逻辑层、渲染层，都是kotlin，没有通信问题、没有混合渲染问题。不是达到了原生的性能，而是它本身就是原生应用，它和原生应用的性能没差别。
 
 这也是其他跨平台开发框架做不到的。
 
