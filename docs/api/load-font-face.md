@@ -4,6 +4,9 @@
 
 <!-- UTSAPIJSON.loadFontFace.param -->
 
+#### 注意事项  
+app-ios平台加载字体一定是全局生效，不支持通过global属性设置为非全局生效  
+
 <!-- UTSAPIJSON.loadFontFace.returnValue -->
 
 <!-- UTSAPIJSON.loadFontFace.example -->
