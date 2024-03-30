@@ -16,7 +16,8 @@ app端支持的图片格式如下：
 - [x] jpg
 - [x] png
 - [x] webp
-- [x] heic（Android10+支持）
+- [x] heic（iOS支持，Android10+支持）
+- [x] tif (iOS端支持，Android端不支持)
 
 如需其他图片格式，可自行开发uts组件插件或搜索插件市场，如
 - [svg插件](https://ext.dcloud.net.cn/search?q=svg&orderBy=Relevance&cat1=8&cat2=82)
@@ -30,7 +31,8 @@ app端支持的图片格式如下：
 
 	其他目录的图片由于不会被打包进去，所以无法访问。
 
-	本地路径的大小写，在真机运行时由于运行在sd卡上所以不敏感，但在打包后整合到apk中由于Android系统的要求是大小写敏感的。
+	本地路径的大小写，安卓端在真机运行时由于运行在sd卡上所以不敏感，但在打包后整合到apk中由于Android系统的要求是大小写敏感的。iOS端始终是大小写敏感的。
+	
 
 - 本地绝对路径file:///方式
 
@@ -44,7 +46,8 @@ app端支持的图片格式如下：
 
 	支持http、https。
 
-	image组件内部使用facebook的[fresco](https://github.com/facebook/fresco)库(2.5.0)，自带缓存策略，也会自动清理缓存。
+	安卓端image组件内部使用facebook的[fresco](https://github.com/facebook/fresco)库(2.5.0)，自带缓存策略，也会自动清理缓存。
+	iOS端image组件内部使用[SDWebImage](https://github.com/SDWebImage/SDWebImage)库(5.10.0)，自带缓存策略，默认7天缓存，缓存过期后会自动清理。
 
 <!-- UTSCOMJSON.image.compatibility -->
 
