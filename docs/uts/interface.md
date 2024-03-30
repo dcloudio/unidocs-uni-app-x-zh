@@ -20,7 +20,7 @@ interface IPerson {
 接口可以继承一个或多个接口：
 
 ```ts
-class IPerson1 extends IPerson {}
+interface IPerson1 extends IPerson {}
 ```
 
 ## 实现接口
