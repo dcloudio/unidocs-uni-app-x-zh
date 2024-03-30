@@ -15,10 +15,10 @@ app端支持的视频格式如下：
 - [x] mp4
 - [x] m4v
 - [x] mov
-- [x] webm
+- [x] webm (安卓端支持，iOS端不支持)
 - [x] 3gp
 - [x] flv
-- [x] m3u8 (本地m3u8文件需3.99+)
+- [x] m3u8 (本地m3u8文件安卓端需3.99+，iOS端需4.11+)
 
 <!-- UTSCOMJSON.video.compatibility -->
 
