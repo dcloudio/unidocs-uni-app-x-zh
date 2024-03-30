@@ -33,7 +33,7 @@
 
 **具体代码请参考：**[自定义下拉刷新样式示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/scroll-view/scroll-view-custom-refresher-props.uvue)
 
-### 嵌套模式
+### 嵌套模式@nested-scroll-view
 
 当存在两个 scroll-view 相互嵌套的场景时，两者滚动存在冲突不能很丝滑的进行衔接，可将外层 scroll-view 改成嵌套模式，这样可以让两个 scroll-view 的滚动衔接起来。
 
