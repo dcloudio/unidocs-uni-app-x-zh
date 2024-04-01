@@ -45,3 +45,77 @@ const person3: IPerson = {
     }
 } as PersonObject // 错误，PersonObject 类型与 IPerson 无关只是结构相同
 ```
+
+### 运行时类型保留
+
+不同于ts编译后完全抹除类型，uts在运行时保留了部分类型信息。通常是定义type后，创建此type对应的实例时，会保留此实例的类型信息。
+
+例如：
+
+```ts
+type Obj = {
+  a: number
+}
+const obj = {
+  a: 1
+} as Obj 
+// 此时obj的类型为Obj，运行时可以使用 obj instanceof Obj
+console.log(obj instanceof Obj) // true
+
+const result = JSON.parse<Obj>(`{"a": 1}`) // 此时返回的对象类型为Obj
+console.log(result instanceof Obj) // true
+```
+
+**注意**
+
+- 目前 web端`uni.request`传入泛型时不会创建对应类型的实例，会直接抹除类型信息，后续可能会调整为创建泛型类型对应的实例，请勿利用此特性。
+- web端仅项目内定义的类型可以被实例化，uni-app-x内部定义的类型无法被实例化，例如`const options = { url: 'xxx' } as RequestOptions`，并不会将此对象转化为RequestOptions的实例，运行时也没有`RequestOptions`对应的类型信息。
+
+### any类型
+
+不同于ts，uts中any类型不包含null类型。
+
+例如定义可选参数时应使用下面的写法：
+
+```ts
+function test(anything?: any | null) { // 注意带上问号
+  console.log(anything)
+}
+```
+
+### 可选属性
+
+如果属性在类型中是可选值需要使用下面的写法，不要省略问号和`| null`
+
+```ts
+type Options = {
+  num?: number | null
+}
+```
+
+### void/undefined类型
+
+为保证多端统一应尽量避免使用undefined、void类型，可以使用null代替。如果需要判断是否为null建议使用两个等号，不要使用三个等号（此处使用了js的特性`undefined == null`结果为true）。
+
+### String、Number、Boolean类型
+
+ts内string、number、boolean类型与String、Number、Boolean类型并不相同。
+
+```ts
+let str1: String = '1'
+let str2: string = '2'
+
+str1 = str2 // 不报错
+str2 = str1 // 报错 Type 'String' is not assignable to type 'string'
+```
+
+尽量使用string、number、boolean类型替代String、Number、Boolean类型。
+
+### import type@import-type
+
+由于uts会为as为某些类型的对象字面量创建这个类型对应的实例，所以经常会存在一些类型引入后是作为值使用而不是作为类型使用。应尽量不要使用`import type`用法，避免编译结果出错。
+
+```ts
+import type { TypeA } from './type' // 避免使用
+import { TypeA } from './type' // 推荐用法
+```
