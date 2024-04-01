@@ -74,6 +74,8 @@
 + 与nested-scroll嵌套滚动协商互补不兼容，`nested-scroll-header` 和 `nested-scroll-body`优先级高于nested-scroll嵌套滚动协商
 + 内层滚动视图支持 scroll-view 和 list-view
 
+**具体代码请参考：**[嵌套模式示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-nested/long-list-nested.uvue)
+
 ### nested-scroll嵌套滚动协商@nested
 
 嵌套滚动是原生才有的概念，web没有。
