@@ -2,22 +2,11 @@
 
 常见app有很多复杂列表交互效果。本文由浅入深的进行讲解。
 
-## 长列表需要使用list-view的recycle机制
+## 长列表需要使用recycle机制
 
-uni-app x的滚动视图组件有scroll-view和list-view。scroll-view比较灵活，但没有recycle复用机制。
+uni-app x的滚动视图组件有scroll-view和list-view。scroll-view比较灵活，但没有自带recycle复用机制。同时uni-app x也提供自定义的uni-recyle-view前端组件来实现复用。
 
-当列表较长时，需要recycle机制。比如列表有1000个item，它们结构相同仅数据不同，但屏幕上其实只能显示20个item。
-
-此时如使用scroll-view，1000个item加载后，所有列表项目占用的内存、渲染资源加起来会很高。
-
-实际上手机OS提供了的回收机制，使用list-view来加载这10000个item，仅屏幕可视范围及附近的item占用渲染资源，在滚动在其他item位置时，仅仅是更新这些item的数据。
-
-在列表项目中包含大图时，recycle的效果更加明显。当然，我们在开发中要极力避免在列表中使用大图，每个item里的图片推荐不超过100k。
-
-另外注意list-item里的组件数量，它是dom元素的放大器。每个list-item里的dom数量多一点，页面性能就很容易被拖垮。
-
-比如很多列表有评星，如果使用一个5个view的评星组件，那每个list-item都会多5个view，列表一长dom数量会惊人。\
-在hello uni-app x的复杂长列表示例中，评星没有使用任何自定义组件，只是一个text组件里面使用字体图标放了5个字符，极大减少组件数量。[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/long-list/long-list-page.uvue)
+它们的区别详见[长列表性能](../performance.md#长列表)
 
 ## 列表的左右滑动swiper@swiper
 Android App常见的一种列表效果，是顶部有一个tab，可以左右滑动切换不同的列表。也就是swiper-list。

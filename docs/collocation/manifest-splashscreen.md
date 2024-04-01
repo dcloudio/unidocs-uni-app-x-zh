@@ -17,6 +17,8 @@ uni-app x的Android版，启动封面有3种策略：
 - 启动图片
 - Google SplashScreen
 
+iOS平台目前还不支持splash。
+
 ### 启动图配置
 
 项目的manifest.json文件中，在“App启动界面配置”中的“Android启动界面设置”项下配置各设备分辨率启动图：
