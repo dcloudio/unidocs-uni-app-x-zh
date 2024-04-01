@@ -40,6 +40,7 @@
 
 注意：
 - App平台开发支付宝支付，无需自定义基座，真机运行可直接开发
+- 可通过Wxpay.isInstalled()方法判断微信是否安装
 
 <!-- UTSAPIJSON.requestPayment.example -->
 
