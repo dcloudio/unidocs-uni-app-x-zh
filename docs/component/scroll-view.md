@@ -63,7 +63,7 @@
 
 **嵌套滚动策略：**
 
-当向下滚动时，先滚动外层 scroll-view 再滚动里层 scroll-view；当向上滚动时，先滚动里层 scroll-view 再滚动外层 scroll-view
+当向下滚动时，先滚动外层 scroll-view 再滚动内层 scroll-view；当向上滚动时，先滚动内层 scroll-view 再滚动外层 scroll-view
 
 **注意事项：**
 + 4.11版本开始支持嵌套模式
