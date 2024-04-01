@@ -8,7 +8,7 @@
 
 ### 使用场景
 
-scroll-view 嵌套场景中。外层滚动 scroll-view 无法与内层 scroll-view 滚动衔接连贯滚动，因此提供`nested-scroll-header`节点，存放除内层 scroll-view 以外的内容节点。`nested-scroll-body`内部 scroll-view 滚动时会检测`nested-scroll-header`节点滚动位置，约束内层 scroll-view 滚动逻辑，实现嵌套模式下衔接连贯滚动。开发者只需将外层要显示内容节点放置`nested-scroll-header`节点内即可。具体用法请参考[scroll-view嵌套模式](https://doc.dcloud.net.cn/uni-app-x/component/scroll-view.html#nested-scroll-view)
+scroll-view 嵌套场景中。外层 scroll-view 滚动时无法与内层 scroll-view 滚动衔接连贯滚动，因此提供`nested-scroll-header`节点，存放除内层 scroll-view 以外的内容节点。`nested-scroll-body`内部 scroll-view 滚动时会检测`nested-scroll-header`节点滚动位置，约束内层 scroll-view 滚动逻辑，实现嵌套模式下衔接连贯滚动。开发者只需将外层要显示内容节点放置`nested-scroll-header`节点内即可。具体用法请参考[scroll-view嵌套模式](https://doc.dcloud.net.cn/uni-app-x/component/scroll-view.html#nested-scroll-view)
 
 **注意**
 
