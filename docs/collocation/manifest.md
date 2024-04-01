@@ -38,6 +38,12 @@ uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud
 - HBuilderX3.97+版本标准基座已经包含了所有Android权限，在 uvue 页面中直接通过 uts 调用需要权限的 Android 系统 API 时，使用标准基座真机运行可直接通过[UTSAndroid.requestSystemPermission](../uts/utsandroid.md#requestsystempermission)申请；
 - 使用自定义基座则需要在项目的[AndroidManifest.xml](https://uniapp.dcloud.io/tutorial/app-nativeresource-android.html#permissions)中配置要使用的权限，重新提交云端打包。
 
+#### iOS隐私信息访问的许可描述@usageDescription
+
+uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoPlist)中。
+
+使用[uni内置模块](./manifest-modules.md#utsmodules)时，云端打包回自动添加模块需要的隐私信息访问的许可描述，但许可描述信息是通用描述，不一定适合应用的实际使用场景描述，需根据应用的实际情况在[Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoPlist)中配置准确的许可描述。
+
 
 #### DISTRIBUTE配置 @app-distribute
 
