@@ -23,14 +23,17 @@ uni-app x编译到web端时遵循vue规范，目前有部分vue特性暂不支�
 
 不支持的特性如下
 
-- 组合式API：`defineOptions`、`defineModel`、`toValue`、`toRef`、`toRefs`、`hasInjectionContext`
-- 指令：`v-once`、`v-memo`
 - render函数
 - 不支持组件中监听页面 `onPageScroll`、`onReachBottom` 生命周期
 
 部分支持的特性
 
 - mixin：需要使用`defineMixin`函数定义mixin，不可直接使用对象字面量定义mixin
+
+自4.11版本起支持如下特性
+
+- 组合式API：`defineOptions`、`defineModel`、`toValue`、`toRef`、`toRefs`、`hasInjectionContext`
+- 指令：`v-once`、`v-memo`
 
 ### refs@refs
 
