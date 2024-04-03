@@ -57,6 +57,7 @@ app: {
 			}
 		}
 }
+- app-android平台微信支付需要4.11及以上版本
 
 
 <!-- UTSAPIJSON.requestPayment.example -->
