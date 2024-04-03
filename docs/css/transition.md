@@ -8,7 +8,7 @@
 <!-- CSSJSON.transition.values -->
 
 #### App平台  
-App平台不支持`none`和`all`属性
+从 HBuilderX4.11 版起，android平台支持`all`属性，默认值调整为`all`。HBuilderX4.11 以下版本，默认值为`none`。
 
 transition暂不支持结束属性值为百分比。
 
