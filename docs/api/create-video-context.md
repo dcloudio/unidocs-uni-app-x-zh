@@ -15,3 +15,5 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+示例代码另见[video组件](../component/video.md)
