@@ -11,8 +11,8 @@
 <!-- UTSCOMJSON.web-view.compatibility -->
 
 - web和小程序上，web-view是全屏的，即页面只能显示一个铺满的web-view。
-- web端web-view组件底层使用ifram实现。
 - app/web端的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。
+- web端web-view组件底层使用iframe实现，会有浏览器安全策略限制。
 
 <!-- UTSCOMJSON.web-view.children -->
 
