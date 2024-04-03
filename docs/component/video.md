@@ -56,4 +56,3 @@ video的操作api为[uni.createVideoContext()](../api/create-video-context.md)�
 本地视频文件，有2种方式：
 - static目录下（项目下或uni_modules下都支持static目录）
 - 使用绝对路径。相对路径转绝对路径[详见](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#convert2absfullpath)
-- 暂不支持uni.env协议
