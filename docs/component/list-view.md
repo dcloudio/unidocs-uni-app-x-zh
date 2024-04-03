@@ -74,7 +74,7 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 	* 很常见的一个错误是在长列表上方的list-item里放置banner图，却没有为这个不可复用的list-item设置单独的type，这会导致图片在复用失败后无法渲染。
 	* 由于子元素差异导致list-item无法正常复用问题。具体可参考示例：
 
-	```html
+```html
 	<template>
 	  <view class="content">
 		<list-view ref="listView" class="list" :scroll-y="true">
@@ -91,7 +91,7 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 		</list-view>
 	  </view>
 	</template>
-	```
+```
 	示例中有三种类型的list-item组件。如果都不赋值type，list-item组件滑动出屏幕后都归类到type=0的缓存池。当触发list-item组件重新加载时，获取type=0的缓存池的组件，获取到的list-item组件可能是两个text子组件也可能是一个image子组件或一个text子组件，底层复用判断时则认为该情况异常不复用，重新创建新的list-item组件！复用失败未能优化性能。正确的方式则是不同的类型设置不同的type。加载时则会获取对应type类型缓存池中的list-item组件实现复用。
 
 **注意：**

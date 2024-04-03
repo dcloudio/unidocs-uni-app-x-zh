@@ -6,7 +6,7 @@
 
 #### 说明
 
-- 为什么使用`hover-class`？使用 css :active伪类来实现点击态，很容易触发，并且滚动或滑动时点击态不会消失，体验较差。建议使用 `hover-class` 属性来实现
+- 为什么使用`hover-class`？使用 css :active伪类来实现点击态，很容易触发，并且滚动或滑动时点击态不会消失，体验较差。建议使用 `hover-class` 属性来实现。并且App平台目前不支持css伪类。
 
 
 <!-- UTSCOMJSON.view.event -->
