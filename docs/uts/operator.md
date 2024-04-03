@@ -23,8 +23,8 @@
 | ----------------------------------- | ------------------------------------------- | ---------------- |
 | 等于 Equal (==)                     | 如果两边操作数相等时返回 true。             | var1==var2       |
 | 不等于 Not equal (!=)               | 如果两边操作数不相等时返回 true             | var1!=var2       |
-| 引用相等 Reference equal (===)             | 两边操作数指向同一个对象返回 true。       | var1===var2      |
-| 引用不等 Reference not equal (!==)       | 两边操作数不指向同一个对象时返回 true。     | var1!==var2      |
+| 引用相等 Reference equal (===)      | 比较对象类型时，两边操作数指向同一个对象返回 true。比较基础类型时各平台有差异，[详情](#completeComparison)。 | var1===var2      |
+| 引用不等 Reference not equal (!==)  | 比较对象类型时，两边操作数不指向同一个对象时返回 true。比较基础类型时各平台有差异，[详情](#completeComparison)。 | var1!==var2      |
 | 大于 Greater than (>)               | 左边的操作数大于右边的操作数返回 true       | var1>var2        |
 | 大于等于 Greater than or equal (>=) | 左边的操作数大于或等于右边的操作数返回 true | var1>=var2       |
 | 小于 Less than (<)                  | 左边的操作数小于右边的操作数返回 true       | var1<var2        |
@@ -254,7 +254,7 @@ uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在
 | 不同的专有类型变量比较                   | let a: Int = 1; let b: Float = 3.14.toFloat(); a > b	  | 结果为false         |编译失败，不同类型变量不能比较                 |
 
 
-### 比较运算符 == != === !==
+### 比较运算符 == != === !==@completeComparison
 
 
 | 场景                                  | 示例                                           | Kottlin 结果                   |  Swift 结果 							  |
