@@ -37,6 +37,103 @@ globalStyle节点里是所有页面都生效的全局样式配置。它的配置
 
 <!-- PAGESJSON.pages_globalStyle.compatibility -->
 
+#### h5 配置项列表 @globalstyle-h5
+
+<!-- PAGESJSON.globalStyle_h5.description -->
+
+<!-- PAGESJSON.globalStyle_h5.table -->
+
+<!-- PAGESJSON.globalStyle_h5.compatibility -->
+
+##### titleNView 配置项列表 @h5-titlenview
+
+<!-- PAGESJSON.h5_titleNView.description -->
+
+<!-- PAGESJSON.h5_titleNView.table -->
+
+<!-- PAGESJSON.h5_titleNView.compatibility -->
+
+##### pullToRefresh 配置项列表 @h5-pulltorefresh
+
+<!-- PAGESJSON.h5_pullToRefresh.description -->
+
+<!-- PAGESJSON.h5_pullToRefresh.table -->
+
+<!-- PAGESJSON.h5_pullToRefresh.compatibility -->
+
+
+###### contentdown 配置项列表 @pulltorefresh-contentdown
+
+<!-- PAGESJSON.pullToRefresh_contentdown.description -->
+
+<!-- PAGESJSON.pullToRefresh_contentdown.table -->
+
+<!-- PAGESJSON.pullToRefresh_contentdown.compatibility -->
+
+
+###### contentover 配置项列表 @pulltorefresh-contentover
+
+<!-- PAGESJSON.pullToRefresh_contentover.description -->
+
+<!-- PAGESJSON.pullToRefresh_contentover.table -->
+
+<!-- PAGESJSON.pullToRefresh_contentover.compatibility -->
+
+###### contentrefresh 配置项列表 @pulltorefresh-contentrefresh
+
+<!-- PAGESJSON.pullToRefresh_contentrefresh.description -->
+
+<!-- PAGESJSON.pullToRefresh_contentrefresh.table -->
+
+<!-- PAGESJSON.pullToRefresh_contentrefresh.compatibility -->
+
+### topWindow 配置项列表 @pages-topwindow
+
+<!-- PAGESJSON.pages_topWindow.description -->
+
+<!-- PAGESJSON.pages_topWindow.table -->
+
+<!-- PAGESJSON.pages_topWindow.compatibility -->
+
+#### matchMedia 配置项列表 @topwindow-matchmedia
+
+<!-- PAGESJSON.topWindow_matchMedia.description -->
+
+<!-- PAGESJSON.topWindow_matchMedia.table -->
+
+<!-- PAGESJSON.topWindow_matchMedia.compatibility -->
+
+### leftWindow 配置项列表 @pages-leftwindow
+
+<!-- PAGESJSON.pages_leftWindow.description -->
+
+<!-- PAGESJSON.pages_leftWindow.table -->
+
+<!-- PAGESJSON.pages_leftWindow.compatibility -->
+
+#### matchMedia 配置项列表 @leftwindow-matchmedia
+
+<!-- PAGESJSON.leftWindow_matchMedia.description -->
+
+<!-- PAGESJSON.leftWindow_matchMedia.table -->
+
+<!-- PAGESJSON.leftWindow_matchMedia.compatibility -->
+
+### rightWindow 配置项列表 @pages-rightwindow
+
+<!-- PAGESJSON.pages_rightWindow.description -->
+
+<!-- PAGESJSON.pages_rightWindow.table -->
+
+<!-- PAGESJSON.pages_rightWindow.compatibility -->
+
+#### matchMedia 配置项列表 @rightwindow-matchmedia
+
+<!-- PAGESJSON.rightWindow_matchMedia.description -->
+
+<!-- PAGESJSON.rightWindow_matchMedia.table -->
+
+<!-- PAGESJSON.rightWindow_matchMedia.compatibility -->
 
 ### pages 配置项列表 @pagesoptionspage
 
@@ -129,10 +226,25 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 }
 ```
 
-#### 页面背景色@background  
-- 页面容器背景色：可在页面 json 文件中通过 backgroundColorContent 属性配置，支持 #RRGGBB 写法，默认为白色  
-- 窗口背景色：可在页面 json 文件中通过 backgroundColor 属性配置，支持 #RRGGBB 写法，默认为白色。被页面容器背景色覆盖，仅在页面设置下拉刷新时才可能看到此颜色  
+##### navigationBarShadow 配置项列表 @style-navigationbarshadow
 
+<!-- PAGESJSON.style_navigationBarShadow.description -->
+
+<!-- PAGESJSON.style_navigationBarShadow.table -->
+
+<!-- PAGESJSON.style_navigationBarShadow.compatibility -->
+
+#### 页面背景色@background
+- 页面容器背景色：可在页面 json 文件中通过 backgroundColorContent 属性配置，支持 #RRGGBB 写法，默认为白色
+- 窗口背景色：可在页面 json 文件中通过 backgroundColor 属性配置，支持 #RRGGBB 写法，默认为白色。被页面容器背景色覆盖，仅在页面设置下拉刷新时才可能看到此颜色
+
+##### h5 配置项列表 @style-h5
+
+<!-- PAGESJSON.style_h5.description -->
+
+<!-- PAGESJSON.style_h5.table -->
+
+<!-- PAGESJSON.style_h5.compatibility -->
 
 ### tabBar 配置项列表 @pages-tabbar
 
@@ -172,6 +284,22 @@ tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更�
 	}]
 }
 ```
+
+##### iconfont 配置项列表 @pagesoptionstabbarlist-iconfont
+
+<!-- PAGESJSON.PagesOptionsTabbarList_iconfont.description -->
+
+<!-- PAGESJSON.PagesOptionsTabbarList_iconfont.table -->
+
+<!-- PAGESJSON.PagesOptionsTabbarList_iconfont.compatibility -->
+
+#### midButton 配置项列表 @tabbar-midbutton
+
+<!-- PAGESJSON.tabBar_midButton.description -->
+
+<!-- PAGESJSON.tabBar_midButton.table -->
+
+<!-- PAGESJSON.tabBar_midButton.compatibility -->
 
 ### condition 配置项列表 @pages-condition
 

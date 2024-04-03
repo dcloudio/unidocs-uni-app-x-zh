@@ -68,39 +68,46 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 
 <!-- MANIFESTJSON.icons_android.table -->
 
+###### iOS图标配置 @icons-ios
 
-##### App端启动界面配置 @distribute_splashScreens
+<!-- MANIFESTJSON.icons_ios.description -->
+
+<!-- MANIFESTJSON.icons_ios.table -->
+
+<!-- MANIFESTJSON.icons_ios.compatibility -->
+
+##### App端启动界面配置 @distribute-splashScreens
 
 <!-- MANIFESTJSON.distribute_splashScreens.description -->
 
 
-###### Android平台启动界面配置 @splashScreens_android
+###### Android平台启动界面配置 @splashScreens-android
 
 <!-- MANIFESTJSON.splashScreens_android.description -->
 
 <!-- MANIFESTJSON.splashScreens_android.table -->
 
 
-###### Android12启动界面配置 @splashScreens_android12
+###### Android12启动界面配置 @splashScreen-_android12
 
 <!-- MANIFESTJSON.splashScreens_android12.description -->
 
 <!-- MANIFESTJSON.splashScreens_android12.table -->
 
 
-###### Android12启动界面Logo图标配置 @android12_icon
+###### Android12启动界面Logo图标配置 @android12-icon
 
 <!-- MANIFESTJSON.android12_icon.description -->
 
 <!-- MANIFESTJSON.android12_icon.table -->
 
-
-###### Android12启动界面品牌图标配置 @androd12_brand
+###### Android12启动界面底部品牌图标 @android12-brand
 
 <!-- MANIFESTJSON.android12_brand.description -->
 
 <!-- MANIFESTJSON.android12_brand.table -->
 
+<!-- MANIFESTJSON.android12_brand.compatibility -->
 
 ##### ANDROID配置 @distribute-android
 
@@ -114,6 +121,13 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 - `targetSdkVersion` 一个用于指定应用的目标 API 级别的整数。如果未设置，其默认值与为 minSdkVersion 指定的值相等。该值用于通知系统，您已针对目标版本进行了测试，并且系统不应通过启用任何兼容性行为，以保持您的应用与目标版本的向前兼容性。
 - `minSdkVersion` 和 `targetSdkVersion` 设置的值是 API 级别（API Level），完整API级别信息请参考[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)
 
+##### IOS配置 @distribute-ios
+
+<!-- MANIFESTJSON.distribute_ios.description -->
+
+<!-- MANIFESTJSON.distribute_ios.table -->
+
+<!-- MANIFESTJSON.distribute_ios.compatibility -->
 
 ## 示例
 ```json
@@ -142,6 +156,5 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 	}
 }
 ```
-
 
 <!-- MANIFESTJSON.tutorial -->
