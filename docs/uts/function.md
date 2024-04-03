@@ -346,4 +346,4 @@ fn('a', 'b', 'c') // 'a' ['b', 'c']
 fn('a', ...['b', 'c']) // 'a' ['b', 'c']
 ```
 
-注意：在app平台，uvue 页面的 methods 中定义的方法不支持剩余参数。
+注意：在app-android平台，uvue 页面的 methods 中定义的方法不支持剩余参数。

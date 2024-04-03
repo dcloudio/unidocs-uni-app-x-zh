@@ -28,14 +28,12 @@ uts这门语言，有2个用途：
 1. 开发uni-app 和 uni-app x 的原生扩展插件：因为uts可以调用所有原生能力。
 2. uts和uvue一起组合，开发原生级的项目，也就是 uni-app x 项目
 
-从HBuilderX 3.9起，支持uni-app x项目。
-
-uni-app x 开发App时，输出的是纯原生的App（Android上就是kotlin的app），里面没有js引擎和webview。详见[uni-app x](../readme.md)
+从HBuilderX 3.9起，支持uni-app x项目。详见[uni-app x](../readme.md)
 
 也就是说，uts可以在uni-app中使用，也可以在uni-app x中使用。
 
 - 在uni-app中，主编程语言是js。uts可以开发原生插件，包括API插件和组件插件。
-- 在uni-app x中，主编程语言是uts。不管是应用逻辑还是扩展插件，均使用uts编程，没有js。
+- 在uni-app x中，主编程语言是uts。不管是应用逻辑还是扩展插件，均使用uts编程。仅在Web平台和iOS的js驱动模式下可以使用js。
 
 如果插件作者，开发了uts插件，也可以同时在uni-app和uni-app x中使用。比如这2个uts插件：
 - 电量：[https://ext.dcloud.net.cn/plugin?id=9295](https://ext.dcloud.net.cn/plugin?id=9295)
@@ -145,7 +143,7 @@ vue 选项式开发时，冒号被用于赋值，无法通过let、const和冒�
 </script>
 ```
 
-上述示例仅在 uni-app x 的uvue页面生效。uni-app js引擎版，不支持在页面里写uts代码，只支持在uts插件里写uts代码。
+上述示例仅在 uni-app x 的uvue页面生效。老版uni-app，即js引擎版，不支持在页面里写uts代码，只支持在uts插件里写uts代码。
 
 ### 类型自动推导
 

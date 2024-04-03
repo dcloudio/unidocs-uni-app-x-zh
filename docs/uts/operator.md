@@ -175,7 +175,7 @@ const status = age >= 18 ? "adult" : "minor";
 - `>>=`
     * 右移赋值运算符 (>>=) 将变量向右移动指定数量的位，并将结果赋值给变量。
 - `===`
-    * 当两边操作数指向同一个对象时，引用相等 (===) 运算符返回true。对于运行时表示为原生类型的值（例如 Int），引用相等 (===)等价于相等（==）。
+    * 当两边操作数指向同一个对象时，引用相等 (===) 运算符返回true。不同平台有差距，[见下](#completeComparison) 
 - `!==`
     * 当两边操作数不指向同一个对象时，引用不等 (!==) 运算符返回true。
 - `-`
@@ -276,6 +276,15 @@ uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在
 | String  === String (!=== 行为相同)  	| "a" === "a" 									| 结果为 true                  |编译失败，不能比较	          			  |
 | Array  == Array (!= 行为相同)        | [1] == [1]	 							   | 结果为 false                   |结果为 true,数组类型相同，元素相同就为true     |
 | Array  === Array (!=== 行为相同)  	| [1] === [1] 									| 结果为 false                  |编译失败，不能比较	          			  |
+
+`===` 和 `!==`，本意是内存地址相同，即不仅值相同，并且是同一份对象。
+
+但不同平台的逻辑略有差异：
+- js中可以比较基础类型。swift中不可以比较基础类型，只能比较对象类型
+- js中比较相同字面量会返回true，比如1===1。但kotlin由于编译优化，可能会把两个字面量映射为同一内存地址，但也可能没有触发编译优化。如果没有优化为同一内存地址，那么kotlin上1===1就会返回false。而swift不允许比较字面量。
+
+对于运行时表示为原生类型的值（例如 Int），引用相等 (===)等价于相等（==）。
+<!-- TODO @yanyilin -->
 
 ## 展开语法...
 
@@ -549,7 +558,7 @@ b instanceof Int //true
 > 3.93+ (Android)
 await 操作符用于等待一个 [Promise](./buildin-object-api/promise.md) 兑现并获取它兑现之后的值。它只能在[异步函数](./function.md#async)中使用。
 
-在 HBuilderX 3.93 以下的版本或者 iOS 平台，await 不能与 [Promise](./buildin-object-api/promise.md) 一同使用，此时请分别参考：[安卓 异步函数](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_6-11-synchronized-lock-等线程同步概念-在uts里怎么写)、[iOS 异步函数](https://uniapp.dcloud.net.cn/plugin/uts-for-ios.html#_5-1-13-异步方法)。
+在 HBuilderX 3.93 以下的版本或者编译为swift时，await 不能与 [Promise](./buildin-object-api/promise.md) 一同使用，此时请分别参考：[安卓 异步函数](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_6-11-synchronized-lock-等线程同步概念-在uts里怎么写)、[iOS 异步函数](https://uniapp.dcloud.net.cn/plugin/uts-for-ios.html#_5-1-13-异步方法)。
 
 ```ts
 async function test(): Promise<string> {
