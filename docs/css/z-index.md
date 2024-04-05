@@ -9,6 +9,8 @@
 
 <!-- CSSJSON.z-index.defaultValue -->
 
+在uni-app x 4.11以前，web平台的默认值为auto。从4.11+，web平台与app拉齐，默认值统一为0。
+
 <!-- CSSJSON.z-index.unixTags -->
 
 <!-- CSSJSON.z-index.compatibility -->
