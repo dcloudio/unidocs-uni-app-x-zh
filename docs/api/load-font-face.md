@@ -5,7 +5,23 @@
 <!-- UTSAPIJSON.loadFontFace.param -->
 
 #### 注意事项  
-app-ios平台加载字体一定是全局生效，不支持通过global属性设置为非全局生效  
+- app-ios平台加载字体一定是全局生效，不支持通过global属性设置为非全局生效
+- family属性指定自定义字体路径时，必须使用`url()`包裹。可能某些平台不包裹也可以生效，但标准规范是包裹，按标准写法才能全端生效。如下：
+```uts
+uni.loadFontFace({
+  global: true,
+  family: 'UniFontFamily',
+  source: "url('/static/font/uni.ttf')", //需使用url方法包裹。本地字体请放在/static目录下，否则打包时不会把字体文件打进去。也支持网络字体
+  success() {
+    console.log('global loadFontFace uni.ttf success')
+  },
+  fail(error) {
+    console.warn('global loadFontFace uni.ttf fail', error.errMsg)
+  },
+})
+```
+
+不同平台支持的字体格式不同，另见[css字体](../css/font-family.md)
 
 <!-- UTSAPIJSON.loadFontFace.returnValue -->
 

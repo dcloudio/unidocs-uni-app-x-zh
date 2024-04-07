@@ -6,7 +6,7 @@ uni-app x 在 app平台实现了 web css 的子集。
 
 子集并不影响开发者开发出所需的界面，仅是写法上没有那么丰富。
 
-当 uni-app x 编译到 web、小程序等平台时，可以支持 web 的全部 css。同时，编译器会进行 css 重置，保证 ucss 这个子集在各端效果的一致性。
+当 uni-app x 编译到 web、小程序等平台时，可以支持 web 的全部 css。同时，**编译器会进行 css 重置**，保证 ucss 这个子集在各端效果的一致性。这也意味着使用uni-app x的web端，和直接在浏览器里写html在默认值处理上有一定的差异。
 
 App端与web常见的区别是：
 1. 仅支持**flex 布局**
@@ -23,7 +23,11 @@ App端与web常见的区别是：
 
 ### flex方向 @flex-direction
 
-在web中，flex 默认是`横向`的，但app默认是`纵向`的。为了多端兼容，建议开发者**显式声明flex方向**，不使用默认值。
+在W3C规范中，flex 默认是`横向`的，但uni-app x里全平台的flex方向默认值都是`纵向`的。
+
+因为W3C规范中，默认布局是block，当使用flex时更高频率是用它的横排能力。而在flex是第一布局模型的手机端，大量布局都是竖排的，此时要求开发者大量编写`style="flex-direction:column"`很不友好。
+
+所以在uni-app x中默认是竖排（之前nvue也默认是竖排）。同时在[manifest.json](../collocation/manifest.md)中提供了配置项，可以修改flex方向为横排。
 
 ```html
 <view style="flex-direction:row">
@@ -31,6 +35,9 @@ App端与web常见的区别是：
 </view>
 <view style="flex-direction:column">
 	<!-- 这里的组件们都是竖排 -->
+</view>
+<view>
+	<!-- 这里的组件们在uni-app x里全平台都是竖排。而W3C的规范中这里是横排 -->
 </view>
 ```
 
@@ -81,7 +88,7 @@ App端与web常见的区别是：
 但在uvue中，废弃了这个策略。因为开发者的页面情况较复杂，而且vue3支持多个一级组件，之前的策略可能会多给页面套一层不必要的scroll-view。\
 在追求高性能时，多一层scroll-view是不能忍受的。
 
-`uvue的策略`：在新建页面时，提供一个选项，让开发者选择是否需要页面级滚动。如需要则自动在页面代码里template的根节点加一个全屏的scroll-view。
+`uvue的策略`：在新建页面时，提供一个选项，让开发者选择是否需要页面级滚动。如需要则自动在页面代码里template的根节点加一个全屏的scroll-view。如下
 
 > 如果开发者不需要，随时可以自己修改代码。
 
@@ -107,11 +114,11 @@ App端与web常见的区别是：
 
 上述代码中给scroll-view的style设为`flex:1`，意思是铺满剩余空间。设在顶层节点上，意味着铺满屏幕。
 
-当然，如果页面的pages.json里配置使用了原生导航栏，那么页面区整体是在导航栏下面。
+当然，如果页面的pages.json里配置使用了原生导航栏，那么页面区整体是在原生导航栏下面。
 
 #### 自定义导航栏
 
-如果开发者想要自定义导航栏，首先在pages.json里对应页面的style里设置`"navigationStyle": "custom"`，关闭原生导航栏。
+如果开发者想要自定义导航栏，首先在pages.json里对应页面的style里设置`"navigationStyle": "custom"`，关闭原生导航栏。\
 然后编写自定义的导航栏组件[\<uni-navbar-lite>](https://ext.dcloud.net.cn/plugin?id=14618)，那么推荐的页面代码结构为：
 
 ```html
@@ -128,7 +135,7 @@ App端与web常见的区别是：
 </template>
 ```
 
-> 注：这里的“原生导航栏”是一个历史沿袭叫法，指配置在pages.json里的导航栏，不属于页面代码区。事实上在uni-app x里所有界面都是原生的。
+> 注：这里的“原生导航栏”是一个历史沿袭叫法，指配置在pages.json里的导航栏，不属于页面代码区。事实上在uni-app x的app平台里所有界面都是原生的。
 
 #### 页面滚动相关的生命周期、api
 
@@ -202,7 +209,7 @@ uvue中文字都是要使用text组件的。
 </template>
 ```
 
-app-uvue的css的样式不继承规则，虽然与web有差异，其实只是更严谨。
+app-uvue的css的“样式不继承”规则，虽然与web有差异，其实只是更严谨。
 
 一般情况下，开发者遵循仅在text组件下写文字有关的样式，就可以编译到全端而保持界面正常。
 
