@@ -206,11 +206,11 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 	
 	- [沙盒文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#internalsandbox)
 	
-			不支持
+		不支持
 		
 	- [沙盒外文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
 		
-			不支持
+		不支持
 		
 
 ```ts
@@ -547,13 +547,13 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 	
 	- [沙盒文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#internalsandbox)
 	
-			`uni-app x`支持读写 
+		`uni-app x`支持读写 
 		
-			`uni-app`不支持
+		`uni-app`不支持
 		
 	- [沙盒外文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
 		
-			沙盒管理范围外的其他文件。 调用系统API返回的绝对地址属于此类。`uni-app`/`uni-app x`平台 均支持读写
+		沙盒管理范围外的其他文件。 调用系统API返回的绝对地址属于此类。`uni-app`/`uni-app x`平台 均支持读写
 
 
 
