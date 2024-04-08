@@ -196,7 +196,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 <!-- UTSJSON.UTSAndroid.getResourcePath.compatibility -->
 
-|-------|uni-app|uni-app x|
+|-|uni-app|uni-app x|
 |:------|:------|:--------|
 |相对路径|只读    |只读     |
 |绝对路径|不支持  |不支持   |
@@ -534,7 +534,7 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 <!-- UTSJSON.UTSAndroid.convert2AbsFullPath.compatibility -->
 
 
-|-------|uni-app|uni-app x|
+|-|uni-app|uni-app x|
 |:------|:------|:--------|
 |相对路径|只读    |只读     |
 |绝对路径|可读可写 |可读可写  |
