@@ -135,3 +135,4 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 - 暂不支持reverse，目前还不能开发im那样的倒序列表
 - 多列瀑布流是另外的组件，后续会提供
 - list-view组件的overflow属性不支持配置visible
+- 一次性初始化太多列表项，因为创建大量vnode耗时，会导致列表初始化变慢。此时推荐使用扩展组件[uni-recycle-view](https://ext.dcloud.net.cn/plugin?id=17385)来解决初始化慢的问题，该组件内部会分批创建节点，自动实现节点复用。
