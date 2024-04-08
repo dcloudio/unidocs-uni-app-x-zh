@@ -196,6 +196,32 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 <!-- UTSJSON.UTSAndroid.getResourcePath.compatibility -->
 
+|-------|uni-app|uni-app x|
+|:------|:------|:--------|
+|相对路径|只读    |只读     |
+|绝对路径|不支持  |不支持   |
+|沙盒路径|不支持  |不支持   |
+
+```ts
+// 相对地址
+console.log(UTSAndroid.getResourcePath('static/logo.png'))
+// 绝对地址
+console.log(UTSAndroid.getResourcePath('/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
+// 沙盒路径
+console.log(UTSAndroid.getResourcePath('unifile://sandbox/static/logo.png'))
+```
+
+备注1：因为本地调试和云打包对于项目资源的操作方式不同：
+
++ 本地调试时，项目资源为被释放到内置储存空间
+
++ 云打包后，项目资源只会保存在asset中
+
+所以在使用相对路径时只能进行读取操作。
+
+
+
+
 ### exit()
 
 <!-- UTSJSON.UTSAndroid.exit.description -->
@@ -506,6 +532,32 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 <!-- UTSJSON.UTSAndroid.convert2AbsFullPath.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.convert2AbsFullPath.compatibility -->
+
+
+|-------|uni-app|uni-app x|
+|:------|:------|:--------|
+|相对路径|只读    |只读     |
+|绝对路径|可读可写 |可读可写  |
+|沙盒路径|不支持  |可读可写  |
+
+```ts
+// 相对地址
+console.log(UTSAndroid.convert2AbsFullPath('static/logo.png'))
+// 绝对地址
+console.log(UTSAndroid.convert2AbsFullPath('/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
+// 沙盒路径
+console.log(UTSAndroid.convert2AbsFullPath('unifile://sandbox/static/logo.png'))
+```
+
+备注1：因为本地调试和云打包对于项目资源的操作方式不同：
+
++ 本地调试时，项目资源为被释放到内置储存空间
+
++ 云打包后，项目资源只会保存在asset中
+
+所以在使用相对路径时只能进行读取操作。
+
+
 
 ### getFileProviderUri(file:File)
 
