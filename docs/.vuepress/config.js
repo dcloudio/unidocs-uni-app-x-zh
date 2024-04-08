@@ -107,20 +107,9 @@ const config = {
       path.resolve(process.cwd(), 'docs/.vuepress/config')
     )
   },
-  patterns: ['**/!(_sidebar).md', '**/*.vue'],
   plugins: [
     ["vuepress-plugin-juejin-style-copy", copyOptions]
-  ],
-  /**
-   *
-   * @param {string} path path: js 资源文件路径
-   * @param {string} type type: 资源文件类型，取值有 script 等
-   * @returns
-   */
-  shouldPrefetch: (path, type) => {
-    if (type === 'script') return path.includes('vendors~') || path.includes('layout-') || path.includes('index.')
-    return false
-  }
+  ]
 }
 
 module.exports = config
