@@ -534,28 +534,35 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 <!-- UTSJSON.UTSAndroid.convert2AbsFullPath.compatibility -->
 
 
-|-|uni-app|uni-app x|
-|:------|:------|:--------|
-|相对路径|只读    |只读     |
-|绝对路径|可读可写 |可读可写  |
-|沙盒路径|不支持  |可读可写  |
+注意事项：
+
++ [代码包文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#package)
+
+本地调试和云打包对于`代码包文件`的操作策略不同，因此在 `uni-app`/`uni-app x`平台均仅支持读取操作
+
++ [本地磁盘文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#disk)
+	
+	- [沙盒文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#internalsandbox)
+	
+		`uni-app x`支持读写 
+		
+		`uni-app`不支持
+		
+	- [沙盒外文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
+		
+		沙盒管理范围外的其他文件。 调用系统API返回的绝对地址属于此类。`uni-app`/`uni-app x`平台 均支持读写
+
+
 
 ```ts
-// 相对地址
+// 代码包文件
 console.log(UTSAndroid.convert2AbsFullPath('static/logo.png'))
-// 绝对地址
-console.log(UTSAndroid.convert2AbsFullPath('/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
-// 沙盒路径
+// 沙盒文件
 console.log(UTSAndroid.convert2AbsFullPath('unifile://sandbox/static/logo.png'))
+// 沙盒外文件
+console.log(UTSAndroid.convert2AbsFullPath('/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
 ```
 
-备注1：因为本地调试和云打包对于项目资源的操作方式不同：
-
-+ 本地调试时，项目资源为被释放到内置储存空间
-
-+ 云打包后，项目资源只会保存在asset中
-
-所以在使用相对路径时只能进行读取操作。
 
 
 
