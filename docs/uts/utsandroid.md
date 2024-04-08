@@ -119,7 +119,7 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 ```ts
 UTSAndroid.onAppActivityResult((requestCode : Int, resultCode : Int, data ?: Intent) => {
 		let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:" + resultCode + " -data:" + JSON.stringify(data);
-		console.log(eventName);		
+		console.log(eventName);
 });
 ```
 
@@ -196,29 +196,18 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 <!-- UTSJSON.UTSAndroid.getResourcePath.compatibility -->
 
-注意事项：
-
-+ [代码包文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#package)
-		
-		代码包文件 在`真机运行`和`云打包`模式下的释放策略不同：
-
-		本地真机运行：`代码包文件` 会被存在放内置储存目录
-
-		云打包： `代码包文件`会被存放在`asset`目录
-
-		因此 `uni-app`/`uni-app x` 平台对 `代码包文件` 均仅支持读取操作
-
-
-+ [本地磁盘文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#disk)
-	
-	- [沙盒文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#internalsandbox)
-	
-			不支持
-		
-	- [沙盒外文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
-		
-			不支持
-		
+::: warning 注意事项
+- [代码包文件](../api/file-system-spec.md#package)
+  - 代码包文件在`真机运行`和`云打包`模式下的释放策略不同：\
+  	本地真机运行：`代码包文件` 会被存在放内置储存目录\
+  	云打包： `代码包文件`会被存放在`asset`目录\
+  	因此 `uni-app`/`uni-app x` 平台对 `代码包文件` 均仅支持读取操作
+- [本地磁盘文件](../api/file-system-spec.md#disk)
+	- [沙盒文件](../api/file-system-spec.md#internalsandbox)
+		- 不支持
+	- [沙盒外文件](../api/file-system-spec.md#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
+		- 不支持
+:::
 
 ```ts
 // 代码包文件
@@ -544,31 +533,19 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 <!-- UTSJSON.UTSAndroid.convert2AbsFullPath.compatibility -->
 
 
-注意事项：
-
-+ [代码包文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#package)
-
-		`代码包文件` 在`真机运行`和`云打包`模式下的释放策略不同：
-
-		本地真机运行：`代码包文件` 会被存在放内置储存目录
-
-		云打包： `代码包文件`会被存放在`asset`目录
-
-		因此在 `uni-app`/`uni-app x` 平台对 `代码包文件` 均仅支持读取操作
-
-+ [本地磁盘文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#disk)
-	
-	- [沙盒文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#internalsandbox)
-	
-			`uni-app x`支持读写 
-			
-			`uni-app`不支持
-		
-	- [沙盒外文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
-		
-			沙盒管理范围外的其他文件。 调用系统API返回的绝对地址属于此类。`uni-app`/`uni-app x`平台 均支持读写
-
-
+::: warning 注意事项
+- [代码包文件](../api/file-system-spec.md#package)
+  - 代码包文件在`真机运行`和`云打包`模式下的释放策略不同：\
+  	本地真机运行：`代码包文件` 会被存在放内置储存目录\
+  	云打包： `代码包文件`会被存放在`asset`目录\
+  	因此在 `uni-app`/`uni-app x` 平台对 `代码包文件` 均仅支持读取操作
+- [本地磁盘文件](../api/file-system-spec.md#disk)
+	- [沙盒文件](../api/file-system-spec.md#internalsandbox)
+		- `uni-app x`支持读写
+		- `uni-app`不支持
+	- [沙盒外文件](../api/file-system-spec.md#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
+		- 沙盒管理范围外的其他文件。 调用系统API返回的绝对地址属于此类。`uni-app`/`uni-app x`平台 均支持读写
+:::
 
 ```ts
 // 代码包文件
