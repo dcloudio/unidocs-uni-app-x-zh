@@ -42,23 +42,6 @@ const add = function (x: string, y: string): string {
 }
 ```
 
-UTS 中不存在变量提升，在函数表达式中不可以访问未声明的变量（包括自身）。
-
-```ts
-const fn = function () {
-    console.log(fn) // 编译报错，此时 fn 还未声明
-}
-fn()
-```
-
-```ts
-const fn: (() => void) | null = null
-fn = function () {
-    console.log(fn) // 此时 fn 可以正常访问
-}
-fn()
-```
-
 ### 箭头函数
 
 箭头函数表达式（也称胖箭头函数）相比函数表达式具有较短的语法。箭头函数总是匿名的，也就是不需要函数名。
@@ -347,3 +330,29 @@ fn('a', ...['b', 'c']) // 'a' ['b', 'c']
 ```
 
 注意：在app-android平台，uvue 页面的 methods 中定义的方法不支持剩余参数。
+
+## 调用限制
+
+UTS 中不存在变量提升，在函数表达式中不可以访问未声明的变量或函数（包括自身）。
+
+```ts
+const fn = function () {
+    console.log(fn) // 编译报错，此时 fn 还未声明
+}
+fn()
+```
+
+```ts
+function fn () {
+    console.log(fn) // 编译报错，此时 fn 还未声明
+}
+fn()
+```
+
+```ts
+const fn: (() => void) | null = null
+fn = function () {
+    console.log(fn) // 此时 fn 可以正常访问
+}
+fn()
+```
