@@ -202,14 +202,11 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 `代码包文件` 在`真机运行`和`云打包`模式下的释放策略不同：
 
-
 本地真机运行：`代码包文件` 会被存在放内置储存目录
 
 云打包： `代码包文件`会被存放在`asset`目录
 
-
-因此在 `uni-app`/`uni-app x` 平台对 `代码包文件` 均仅支持读取操作
-
+因此 `uni-app`/`uni-app x` 平台对 `代码包文件` 均仅支持读取操作
 
 
 + [本地磁盘文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#disk)
