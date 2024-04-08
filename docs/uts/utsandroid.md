@@ -200,7 +200,9 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 + [代码包文件](https://doc.dcloud.net.cn/uni-app-x/api/file-system-spec.html#package)
 
-		`代码包文件` 在`真机运行`和`云打包`模式下的释放策略不同：
+		
+		
+		代码包文件 在`真机运行`和`云打包`模式下的释放策略不同：
 
 		本地真机运行：`代码包文件` 会被存在放内置储存目录
 
