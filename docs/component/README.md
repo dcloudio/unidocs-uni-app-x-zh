@@ -46,48 +46,95 @@ uni-app x支持的组件包括：
 - 复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。
 - `type` 不支持使用自定义的构造函数。
 
+::: preview
+> 选项式 API
 ```ts
-export default {
+<script lang="uts">
+  export default {
+    // 字符串数组方式声明，所有 prop 类型均为 any | null
+    props: ['num', 'str', 'obj', 'arr']
+  }
+</script>
+```
+> 组合式 API
+```ts
+<script setup lang="uts">
   // 字符串数组方式声明，所有 prop 类型均为 any | null
-	props: ['num', 'str', 'obj', 'arr']
-}
+  const props = defineProps(['num', 'str', 'obj', 'arr'])
+</script>
 ```
+:::
 
+::: preview
+> 选项式 API
 ```ts
-type Obj = { a: number }
+  <script lang="uts">
+  type Obj = { a: number }
 
-export default {
-	props: {
-		num: {
-			type: Number,
-			required: true
-		},
-		str: {
-			type: String,
-			default: 'str',
-			validator(value: string): boolean {
-				return value.length > 0
+  export default {
+    props: {
+      num: {
+        type: Number,
+        required: true
+      },
+      str: {
+        type: String,
+        default: 'str',
+        validator(value: string): boolean {
+          return value.length > 0
+        }
+      },
+      obj: {
+        type: UTSJSONObject as PropType<Obj>,
+        default: (): Obj => ({ a: 1 } as Obj)
+      },
+      arr: {
+        type: Array as PropType<number[]>,
+        default: (): number[] => [1, 2, 3]
       }
-		},
-		obj: {
-			type: Object as PropType<Obj>,
-			default: (): Obj => ({ a: 1 } as Obj)
-		},
-		arr: {
-			type: Array as PropType<number[]>,
-			default: (): number[] => [1, 2, 3]
-		}
-	}
-}
+    }
+  }
+</script>
 ```
+> 组合式 API
+```ts
+<script setup lang="uts">
+  type Obj = { a: number }
+  
+  const props = defineProps({
+    num: {
+      type: Number,
+      required: true
+    },
+    str: {
+      type: String,
+      default: 'str',
+      validator(value : string) : boolean {
+        return value.length > 0
+      }
+    },
+    obj: {
+      type: UTSJSONObject as PropType<Obj>,
+      default: () : Obj => ({ a: 1 } as Obj)
+    },
+    arr: {
+      type: Array as PropType<number[]>,
+      default: () : number[] => [1, 2, 3]
+    }
+  })
+</script>
+```
+:::
 
 ## 自定义组件 v-model 绑定复杂表达式 @v-model-complex-expression
 
 自定义组件 `v-model` 绑定复杂表达式时，需要通过 `as` 指定类型(仅App-Android 平台)。
 
+::: preview
+> 选项式 API
 ```ts
 <template>
-  <my-input v-model="obj.str as string" />
+  <input v-model="obj.str as string" />
 </template>
 
 <script lang="uts">
@@ -105,31 +152,87 @@ export default {
 	}
 </script>
 ```
+> 组合式 API
+```ts
+<template>
+  <input v-model="obj.str as string" />
+</template>
+
+<script setup lang="uts">
+  type Obj = {
+    str: string
+  }
+  const obj = reactive({
+      str: "str"
+    } as Obj)
+</script>
+```
+:::
 
 ## 作用域插槽的类型
 
 作用域插槽需在组件中指定插槽数据类型
+::: preview
+> 选项式 API
 ```ts
 // components/Foo.uvue
-<view>
-    <slot msg="test msg" />
-</view>
+<template>
+  <slot msg="test msg" />
+</template>
 
-import { SlotsType } from 'vue'
-export default {
-  slots: Object as SlotsType<{
-    default: { msg: string }
-  }>
-}
+<script lang="uts">
+  import { SlotsType } from 'vue'
+  
+  export default {
+    slots: Object as SlotsType<{
+      default: { msg: string }
+    }>
+  }
+</script>
+
 // page.uvue
-<view>
-	<Foo>
-		<template v-slot="slotProps">
-			<text>{{ slotProps.msg }}</text>
-		</template>
-	</Foo>
-</view>
+<template>
+  <Foo>
+    <template v-slot="{ msg }">
+      <text>{{ msg }}</text>
+    </template>
+  </Foo>
+</template>
+
+<script lang="uts">
+  import Foo from './Foo.uvue'
+  export default {
+    components: { Foo },
+  }
+</script>
 ```
+> 组合式 API
+```ts
+// components/Foo.uvue
+<template>
+  <slot msg="test msg" />
+</template>
+
+<script setup lang="uts">
+  defineSlots<{
+    default(props: { msg: string }): null
+  }>()
+</script>
+
+// page.uvue
+<template>
+  <Foo>
+    <template v-slot="{ msg }">
+      <text>{{ msg }}</text>
+    </template>
+  </Foo>
+</template>
+
+<script setup lang="uts">
+  import Foo from './Foo.uvue'
+</script>
+```
+:::
 
 ## ref
 
@@ -142,14 +245,12 @@ export default {
 - 在 `uni-app x` 中，要访问 `$refs` 中的属性，需要使用索引方式。
 
 ::: preview
-
 > uni-app js 引擎版
-
 ```ts
 <template>
 	<view>
-		<text ref="text">text node</text>
-		<Foo ref="foo" />
+		<text ref="textRef">text node</text>
+		<Foo ref="fooRef" />
 	</view>
 </template>
 
@@ -158,35 +259,49 @@ export default {
 
 	export default {
 		onReady() {
-			const text = this.$refs.text as Element // 仅H5端支持
-			const foo = this.$refs.foo as ComponentPublicInstance
+			const text = this.$refs.textRef as Element // 仅H5端支持
+			const foo = this.$refs.fooRef as ComponentPublicInstance
 		}
 	}
 </script>
 ```
-
 > uni-app x
-
 ```ts
+// 选项式 API
 <template>
 	<view>
-		<text ref="text">text node</text>
-		<Foo ref="foo" />
+		<text ref="textRef">text node</text>
+		<Foo ref="fooRef" />
 	</view>
 </template>
 
 <script lang="uts">
   import type { ComponentPublicInstance } from 'vue'
 
-	export default {
-		onReady() {
-			const text = this.$refs["text"] as Element
-			const foo = this.$refs["foo"] as ComponentPublicInstance
-		}
-	}
+  export default {
+    onReady() {
+      const text = this.$refs["textRef"] as Element
+      const foo = this.$refs["fooRef"] as ComponentPublicInstance
+    }
+  }
+</script>
+
+// 组合式 API
+<template>
+	<view>
+		<text ref="textRef">text node</text>
+		<Foo ref="fooRef" />
+	</view>
+</template>
+
+<script setup lang="uts">
+  import type { ComponentPublicInstance } from 'vue'
+  import Foo from './Foo.uvue'
+  
+  const textRef = ref<null | Element>(null)
+  const fooRef = ref<null | ComponentPublicInstance>(null)
 </script>
 ```
-
 :::
 
 ## 监听页面生命周期
@@ -219,26 +334,38 @@ Uni`组件名(驼峰)`Element
 
 **示例代码**
 
+::: preview
+> 选项式 API
 ```html
 <template>
-  <view>
-    <slider ref="slider1"></slider>
-  </view>
+  <slider ref="sliderRef" />
 </template>
 
-<script>
+<script lang="uts">
   export default {
-    data() {
-      return {
-      }
-    },
     onReady() {
       // value 为属性
-      (this.$refs["slider1"] as UniSliderElement).value = 10; //此处注意slider1必须存在，如不存在，把null as 成 UniSliderElement会引发崩溃
+      (this.$refs["sliderRef"] as UniSliderElement).value = 90;
+      //此处注意 sliderRef 必须存在，如不存在，把 null as 成 UniSliderElement 会引发崩溃
     }
   }
 </script>
 ```
+> 组合式 API
+```html
+<template>
+  <slider ref="sliderRef" />
+</template>
+
+<script setup lang="uts">
+  const sliderRef = ref<null | UniSliderElement>(null)
+
+  onReady(() => {
+    (sliderRef.value!).value = 90
+  })
+</script>
+```
+:::
 
 **bug&tips**
 
@@ -265,63 +392,89 @@ easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取�
 
 **示例代码**
 
-假使有一个component1组件，其有若干方法foo1等，如下。
+假使有一个 `Foo` 组件，其有若干方法 `foo1` 等，如下。
 
+::: preview
+> 选项式 API
 ```html
-<template>
-  <view></view>
-</template>
-
-<script>
+<script lang="uts">
   export default {
-    data() {
-      return {
-      }
-    },
     methods: {
       foo1() {
-		  console.log("foo1");
+		    console.log("foo1 triggered");
       },
-      foo2(date1 : number) {
-		  console.log(date1);
+      foo2(num : number) {
+        console.log('foo2 triggered by num:', num);
       },
-      foo3(date1 : number, date2 : number) {
-      },
-      foo4(callback : (() => void)) {
+      foo3(callback : (() => void)) {
         callback()
-      },
-      foo5(text1 : string) : any | null {
-        return text1
       }
     }
   }
 </script>
 ```
+> 组合式 API
+```html
+<script setup lang="uts">
+  const foo1 = () => {
+    console.log("foo1 triggered");
+  }
+  const foo2 = (num : number) => {
+    console.log('foo2 triggered by num:', num);
+  }
+  const foo3 = (callback : (() => void)) => {
+    callback()
+  }
+  defineExpose({
+    foo1,
+    foo2,
+    foo3,
+  })
+</script>
+```
+:::
 
-component1组件符合[easycom规范](https://uniapp.dcloud.net.cn/component/#easycom)
+`Foo` 组件符合[easycom规范](https://uniapp.dcloud.net.cn/component/#easycom)
 
-那么在页面中调用component1组件的方法如下：
+那么在页面中调用 `Foo` 组件的方法如下：
+
+::: preview
+> 选项式 API
 ```html
 <template>
-  <view>
-    <component1 ref="component1"></component1>
-  </view>
+  <Foo ref="fooRef" />
 </template>
 
-<script>
+<script lang="uts">
   export default {
-    data() {
-      return {
-      }
-    },
     onReady() {
-      let c1 = (this.$refs["component1"] as Component1ComponentPublicInstance) //注意组件必须存在，注意类型首字母大写
-      c1.foo1();
-      c1.foo2(1);
+      //注意组件必须存在，注意类型首字母大写
+      const fooRef = (this.$refs["fooRef"] as FooComponentPublicInstance)
+      fooRef.foo1();
+      fooRef.foo2(100);
+      fooRef.foo3(() => {console.log('foo3 triggered')});
     }
   }
 </script>
 ```
+> 组合式 API
+```html
+<template>
+  <Foo ref='fooRef' />
+</template>
+
+<script setup lang="uts">
+  const fooRef = ref<null | FooComponentPublicInstance>(null) 
+
+  onReady(() => {
+    (fooRef.value!).foo1();
+    (fooRef.value!).foo2(100);
+    (fooRef.value!).foo3(() => {console.log('foo3 triggered')});
+  })
+</script>
+```
+:::
+
 
 ### 其它自定义组件的方法调用使用callMethod@$callMethod
 
@@ -340,84 +493,105 @@ callMethod可用于所有自定义组件，包括easycom组件也可以使用，
 ComponentPublicInstance
 
 
-页面示例代码 `page1.uvue`
+页面示例代码 `page.uvue`
 
+::: preview
+> 选项式 API
 ```html
 <template>
-  <view>
-    <component1 ref="component1"></component1>
-  </view>
+  <Foo ref="fooRef" />
 </template>
 
-<script>
-  // 非easycom组件需import引用组件 component1.uvue
-  import component1 from './component1.uvue'
+<script lang="uts">
+  import Foo from './Foo.uvue'
 
   export default {
     components: {
-      component1
-    },
-    data() {
-      return {
-      }
+      Foo
     },
     onReady() {
-      // 通过组件 ref 属性获取组件实例
-      const component1 = this.$refs['component1'] as ComponentPublicInstance;
+      const fooRef = this.$refs['fooRef'] as ComponentPublicInstance
 
-      // 通过 $callMethod 调用组件的 foo1 方法
-      component1.$callMethod('foo1');
+      fooRef.$callMethod('foo1')
 
-      // 通过 $callMethod 调用组件的 foo2 方法并传递 1个参数
-      component1.$callMethod('foo2', Date.now());
+      const res = fooRef.$callMethod('foo2', 100, 10)
+      console.log('res of foo2', res)
 
-      // 通过 $callMethod 调用组件的 foo3 方法并传递 2个参数
-      component1.$callMethod('foo3', Date.now(), Date.now());
-
-      // 通过 $callMethod 调用组件的 foo4 方法并传递 callback
-      component1.$callMethod('foo4', () => {
-        console.log('callback')
-      });
-
-      // 通过 $callMethod 调用组件的 foo5 方法并接收返回值
-      // 注意： 返回值可能为 null，当前例子一定不为空，所以加了 !
-      const result = component1.$callMethod('foo5', 'string1')! as string;
-      console.log(result); // string1
+      fooRef.$callMethod('foo3', () => {
+        console.log('foo3 triggered')
+      })
     }
   }
 </script>
 ```
-
-组件示例代码 `component1.uvue`
-
+> 组合式 API
 ```html
 <template>
-  <view></view>
+  <Foo ref="fooRef" />
 </template>
 
-<script>
+<script setup lang="uts">
+  import Foo from './Foo.uvue'
+
+  const fooRef = ref<null | ComponentPublicInstance>(null)
+
+  onReady(() => {
+    (fooRef.value!).$callMethod('foo1')
+
+    const res = (fooRef.value!).$callMethod('foo2', 100, 10)
+    console.log('res of foo2', res);
+
+    (fooRef.value!).$callMethod('foo3', () => {
+      console.log('foo3 triggered')
+    })
+  })
+</script>
+```
+:::
+
+组件示例代码 `Foo.uvue`
+
+::: preview
+> 选项式 API
+```html
+<script lang="uts">
   export default {
-    data() {
-      return {
-      }
-    },
     methods: {
       foo1() {
+		    console.log("foo1 triggered");
       },
-      foo2(date1 : number) {
+      foo2(num1 : number, num2: number){
+        console.log(`foo2 triggered by num1: ${num1}, num2: ${num2}`)
+        return num1 + num2
       },
-      foo3(date1 : number, date2 : number) {
-      },
-      foo4(callback : (() => void)) {
+      foo3(callback : (() => void)) {
         callback()
-      },
-      foo5(text1 : string) : any | null {
-        return text1
       }
     }
   }
 </script>
 ```
+> 组合式 API
+```html
+<script setup lang="uts">
+  const foo1 = () => {
+    console.log("foo1 triggered");
+  }
+  const foo2 = (num1 : number, num2: number): number => {
+    console.log(`foo2 triggered by num1: ${num1}, num2: ${num2}`)
+    return num1 + num2
+  }
+  const foo3 = (callback : (() => void)) => {
+    callback()
+  }
+  defineExpose({
+    foo1,
+    foo2,
+    foo3,
+  })
+</script>
+```
+:::
 
 
 
