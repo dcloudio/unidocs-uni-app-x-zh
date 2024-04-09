@@ -13,7 +13,7 @@
 <!-- UTSAPIJSON.request.example -->
 
 ## cookie管理
-- uni-app x 4.0+，app-android平台的 `uni.request`、`uni.uploadFile`、`uni.downloadFile`，之间支持共享cookie。
+- uni-app x 4.0+，app-android平台的 `uni.request`、`uni.uploadFile`、`uni.downloadFile`，之间支持共享cookie [Cookie共享介绍](cookie-shared.md)。
 
 ## 注意事项
 
