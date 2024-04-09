@@ -200,7 +200,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 `getResourcePath` 与 [convert2AbsFullPath](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#convert2absfullpath-path-string) 区别在于：
 
-`getResourcePath` 屏蔽了读取`代码包文件`时 各平台/各模式下的底层细节，即使是存放在`asset`目录也会返回符合android 读取规范的协议地址，开发者只需要将返回路径当做普通文件读取即可。
+`getResourcePath` 屏蔽了读取`代码包文件`时 各平台/各模式下的底层细节，即使是存放在`asset`目录也会返回符合android 读取规范的协议地址
 
 `convert2AbsFullPath` 没有实现这一点。
 
@@ -549,6 +549,8 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 `convert2AbsFullPath` 与 [getResourcePath](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getresourcepath) 区别在于：
 
 `convert2AbsFullPath` 对文件路径支持范围更大，不仅支持 `代码包文件`内置储存目录的情况，还支持相对路径，沙盒路径，沙盒外 系统API返回的文件地址等形式。
+
+`getResourcePath` 不能支持这些
 
 当开发者明确需要操作文件，而非代码包资源时，建议使用 `convert2AbsFullPath`
 
