@@ -548,7 +548,7 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 
 `convert2AbsFullPath` 与 [getResourcePath](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getresourcepath) 区别在于：
 
-`convert2AbsFullPath` 对文件路径支持范围更大，不仅支持 `代码包文件`内置储存目录的情况，还支持沙盒路径，沙盒外 系统API返回的文件地址等形式。
+`convert2AbsFullPath` 对文件路径支持范围更大，不仅支持 `代码包文件`内置储存目录的情况，还支持相对路径，沙盒路径，沙盒外 系统API返回的文件地址等形式。
 
 当开发者明确需要操作文件，而非代码包资源时，建议使用 `convert2AbsFullPath`
 
@@ -564,6 +564,7 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 		- `uni-app`不支持
 	- [沙盒外文件](../api/file-system-spec.md#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
 		- 沙盒管理范围外的其他文件。 调用系统API返回的绝对地址属于此类。`uni-app`/`uni-app x`平台 均支持读写
+		
 :::
 
 ```ts
