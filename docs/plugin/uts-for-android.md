@@ -875,27 +875,8 @@ false
 
 -------------------------------
 
-#### 5.1.1 可为空的语法标识
 
-kotlin中可为空的语法统一为类型后加`?`，以下面的代码为例
-
-```ts
-// 一个可为空的字符串变量，变量名为user
-var user:String? = null
-```
-
-但是ts中分两种情况，如果是全局变量，可为空，需要这样写
-
-```ts
-let user:string | null
-```
-
-如果是成员变量，与kotlin类似，但是区别在于?写在变量后，而非类型后
-```ts
-let user?:string
-```
-
-#### 5.1.2  let和var
+#### let和var
 
 `kotlin`中 可变变量修饰为 `var`、`val`。 区别在于 val 不可变，var可变。
 
@@ -904,7 +885,7 @@ let user?:string
 推荐使用`let` 因为只会在作用域内生效，需要慎用`var`，因为它具备有更大的作用范围
 
 
-#### 5.1.3 方法定义
+#### 方法定义
 
 方法定义 `kotlin`里的方法只有一种定义方式
 
@@ -929,7 +910,7 @@ uts中，需要区分全局方法、成员方法
  }
 ```
 
-#### 5.1.4 extends
+#### extends
 
 `kotlin`中的: 继承操作符，需要用`extends`取代
 
@@ -955,7 +936,7 @@ class StartServiceListener extends OnClickListener{
 
 
 
-#### 5.1.5 非空断言
+#### 非空断言
 
 kotlin中的非空断言是`!!`，ts中是一个`!`
 
@@ -968,7 +949,7 @@ user!!.sayHello();
 ```
 
 
-#### 5.1.6 快速调用父类实现
+#### 快速调用父类实现
 
 
 ```kotlin
@@ -986,7 +967,7 @@ constructor (){
 ```
 
 
-#### 5.1.7 匿名内部类
+#### 匿名内部类
 
 `kotlin`中可以使用匿名内部类
 
@@ -1009,7 +990,7 @@ let myListener = new MyListener();
 user.setListener(myListener);
 ```
 
-#### 5.1.8 可为空函数调用
+#### 可为空函数调用
 
 
 有一种特殊场景，我们需要定义一些可为空的函数变量，比如下面的 success,fail：
@@ -1032,13 +1013,13 @@ options.success?.(res)
 这样的调用方式在kotlin中是非法的，属于TS中的特有语法，需要特别注意。
 
 
-#### 5.1.9 一个类只能有一个构造函数
+#### 一个类只能有一个构造函数
 
 在`Kotlin`/`java`中允许一个函数有多个构造器，但是UTS中是不被允许的
 
 
 
-#### 5.1.10 界面跳转写法
+#### 界面跳转写法
 
 android开发中场景的 intent跳转需要传入 目标界面的class对象，目前UTS中仅支持一种写法
 
@@ -1047,7 +1028,7 @@ let intent = new Intent(getUniActivity(),DemoActivity().javaClass);
 getUniActivity()!.startActivity(intent);
 ```
 
-#### 5.1.11 指定double数据类型
+#### 指定double数据类型
 
 某些场景下开发者需要获得 指定double数据类型的数据
 
@@ -1071,11 +1052,11 @@ let c:Double  = a * 1.0 / b
 
 ---------------------------------
 
-### 5.2 警告优化
+###  警告优化
 
 下面的内容不会影响功能使用，但是在UTS环境中，有合适的解决办法
 
-#### 5.2.1 java lang包的引入问题
+#### java lang包的引入问题
 
 `kotlin` 或者`java` 中java.lang.*是被特殊处理的，可以直接使用而不需要引入。
 
@@ -1096,7 +1077,7 @@ System.currentTimeMillis()
 ```
 
 
-#### 5.2.2 `UTS` 不建议使用 快捷构造
+#### `UTS` 不建议使用 快捷构造
 
 `kotlin`  中 支持通过()的方式，快速实现无参构造器的声明
 
