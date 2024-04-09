@@ -572,8 +572,8 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 console.log(UTSAndroid.convert2AbsFullPath('static/logo.png'))
 // 沙盒文件
 console.log(UTSAndroid.convert2AbsFullPath('unifile://sandbox/static/logo.png'))
-// 沙盒外文件
-console.log(UTSAndroid.convert2AbsFullPath('/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
+// 沙盒外文件 包含相对路径
+console.log(UTSAndroid.convert2AbsFullPath('../../../io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
 ```
 
 
