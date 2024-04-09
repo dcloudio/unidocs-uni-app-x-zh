@@ -197,10 +197,20 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 <!-- UTSJSON.UTSAndroid.getResourcePath.compatibility -->
 
 ::: warning 注意事项
+
+`getResourcePath` 与 [convert2AbsFullPath](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#convert2absfullpath-path-string) 区别在于：
+
+`getResourcePath` 屏蔽了读取`代码包文件`时 各平台/各模式下的底层细节，即使是存放在`asset`目录也会返回符合android 读取规范的协议地址，开发者只需要将返回路径当做普通文件读取即可。
+
+`convert2AbsFullPath` 没有实现这一点。
+
+当开发者需要读取`代码包文件`时，建议使用 `getResourcePath`
+
+
 - [代码包文件](../api/file-system-spec.md#package)
-  - 代码包文件在`真机运行`和`云打包`模式下的释放策略不同：\
-  	本地真机运行：`代码包文件` 会被存在放内置储存目录\
-  	云打包： `代码包文件`会被存放在`asset`目录\
+  - `代码包文件`在`真机运行`和`云打包`模式下的释放策略不同：\
+  	本地真机运行：会被存在放内置储存目录\
+  	云打包： `uni-app x`项目会被存放在`asset`目录, `uni-app` 项目会被存放在内置储存目录\
   	因此 `uni-app`/`uni-app x` 平台对 `代码包文件` 均仅支持读取操作
 - [本地磁盘文件](../api/file-system-spec.md#disk)
 	- [沙盒文件](../api/file-system-spec.md#internalsandbox)
@@ -208,6 +218,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 	- [沙盒外文件](../api/file-system-spec.md#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
 		- 不支持
 :::
+
 
 ```ts
 // 代码包文件
@@ -534,10 +545,18 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 
 
 ::: warning 注意事项
+
+`convert2AbsFullPath` 与 [getResourcePath](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getresourcepath) 区别在于：
+
+`convert2AbsFullPath` 对文件路径支持范围更大，不仅支持 `代码包文件`内置储存目录的情况，还支持沙盒路径，沙盒外 系统API返回的文件地址等形式。
+
+当开发者明确需要操作文件，而非代码包资源时，建议使用 `convert2AbsFullPath`
+
+
 - [代码包文件](../api/file-system-spec.md#package)
-  - 代码包文件在`真机运行`和`云打包`模式下的释放策略不同：\
-  	本地真机运行：`代码包文件` 会被存在放内置储存目录\
-  	云打包： `代码包文件`会被存放在`asset`目录\
+  - `代码包文件`在`真机运行`和`云打包`模式下的释放策略不同：\
+  	本地真机运行：会被存在放内置储存目录\
+  	云打包： `uni-app x`项目会被存放在`asset`目录, `uni-app` 项目会被存放在内置储存目录\
   	因此在 `uni-app`/`uni-app x` 平台对 `代码包文件` 均仅支持读取操作
 - [本地磁盘文件](../api/file-system-spec.md#disk)
 	- [沙盒文件](../api/file-system-spec.md#internalsandbox)
