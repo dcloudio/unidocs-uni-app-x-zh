@@ -202,7 +202,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 `getResourcePath` 屏蔽了读取`代码包文件`时 各平台/各模式下的底层细节，即使是存放在`asset`目录也会返回符合android 读取规范的协议地址
 
-`convert2AbsFullPath` 没有实现这一点。
+`convert2AbsFullPath` 没有实现这一点
 
 当开发者需要读取`代码包文件`时，建议使用 `getResourcePath`
 
@@ -210,7 +210,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 - [代码包文件](../api/file-system-spec.md#package)
   - `代码包文件`在`真机运行`和`云打包`模式下的释放策略不同：\
   	本地真机运行：会被存在放内置储存目录\
-  	云打包： `uni-app x`项目会被存放在`asset`目录, `uni-app` 项目会被存放在内置储存目录\
+  	云打包： `uni-app x`项目会被存放在`asset`目录, `uni-app` 项目默认会被存放在内置储存目录\
   	因此 `uni-app`/`uni-app x` 平台对 `代码包文件` 均仅支持读取操作
 - [本地磁盘文件](../api/file-system-spec.md#disk)
 	- [沙盒文件](../api/file-system-spec.md#internalsandbox)
