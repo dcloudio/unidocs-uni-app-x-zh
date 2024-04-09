@@ -548,9 +548,9 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 
 `convert2AbsFullPath` 与 [getResourcePath](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getresourcepath) 区别在于：
 
-`convert2AbsFullPath` 对文件路径支持范围更大，不仅支持 `代码包文件`内置储存目录的情况，还支持相对路径，沙盒路径，沙盒外 系统API返回的文件地址等形式。
+`convert2AbsFullPath` 对文件路径支持范围更大，不仅支持 `代码包文件`内置储存目录的情况，还支持相对路径，沙盒路径，沙盒外路径（包括系统API返回的文件地址） 等形式。
 
-`getResourcePath` 不能支持这些
+`getResourcePath` 不支持这些
 
 当开发者明确需要操作文件，而非代码包资源时，建议使用 `convert2AbsFullPath`
 
