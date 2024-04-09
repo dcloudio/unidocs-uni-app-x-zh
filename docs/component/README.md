@@ -245,26 +245,6 @@ uni-app x支持的组件包括：
 - 在 `uni-app x` 中，要访问 `$refs` 中的属性，需要使用索引方式。
 
 ::: preview
-> uni-app js 引擎版
-```ts
-<template>
-	<view>
-		<text ref="textRef">text node</text>
-		<Foo ref="fooRef" />
-	</view>
-</template>
-
-<script lang="ts">
-  import type { ComponentPublicInstance } from 'vue'
-
-	export default {
-		onReady() {
-			const text = this.$refs.textRef as Element // 仅H5端支持
-			const foo = this.$refs.fooRef as ComponentPublicInstance
-		}
-	}
-</script>
-```
 > uni-app x
 ```ts
 // 选项式 API
@@ -300,6 +280,26 @@ uni-app x支持的组件包括：
   
   const textRef = ref<null | Element>(null)
   const fooRef = ref<null | ComponentPublicInstance>(null)
+</script>
+```
+> uni-app js 引擎版
+```ts
+<template>
+	<view>
+		<text ref="textRef">text node</text>
+		<Foo ref="fooRef" />
+	</view>
+</template>
+
+<script lang="ts">
+  import type { ComponentPublicInstance } from 'vue'
+
+	export default {
+		onReady() {
+			const text = this.$refs.textRef as Element // 仅H5端支持
+			const foo = this.$refs.fooRef as ComponentPublicInstance
+		}
+	}
 </script>
 ```
 :::
