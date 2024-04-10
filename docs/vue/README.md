@@ -187,8 +187,9 @@ const doubleCount = computed<number>(() : number => {
 
 一个 `<style module>` 标签会被编译为 `CSS Modules` 并且将生成的 CSS class 作为 `$style` 对象暴露给组件：
 
+```html
 <template>
-  <view :class="$style.red">This should be red</view>
+  <text :class="$style.red">This should be red</text>
 </template>
 
 <style module>
@@ -196,6 +197,41 @@ const doubleCount = computed<number>(() : number => {
   color: red;
 }
 </style>
+```
+
+得出的 class 将被哈希化以避免冲突，实现了同样的将 CSS 仅作用于当前组件的效果。
+
+**自定义注入名称**
+
+你可以通过给 `module` attribute 一个值来自定义注入 class 对象的属性名：
+
+```html
+<template>
+  <text :class="classes.red">red</text>
+</template>
+
+<style module="classes">
+.red {
+  color: red;
+}
+</style>
+```
+
+**与组合式 API 一同使用**
+
+可以通过 `useCssModule` API 在 `setup()` 和 `<script setup>` 中访问注入的 class。对于使用了自定义注入名称的 `<style module>` 块，useCssModule 接收一个匹配的 module attribute 值作为第一个参数：
+
+```html
+import { useCssModule } from 'vue'
+
+// 在 setup() 作用域中...
+// 默认情况下, 返回 <style module> 的 class
+useCssModule()
+
+// 具名情况下, 返回 <style module="classes"> 的 class
+useCssModule('classes')
+```
+
 
 ### CSS 中的 v-bind()
 
