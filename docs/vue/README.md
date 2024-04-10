@@ -179,6 +179,22 @@ const doubleCount = computed<number>(() : number => {
 </style>
 ```
 
+### 深度选择器
+
+|App|Web|
+|:-:|:-:|
+|x  |4.0|
+
+处于 `scoped` 样式中的选择器如果想要做更“深度”的选择，也即：影响到子组件，可以使用 `:deep()` 这个伪类：
+
+```html
+<style scoped>
+.a :deep(.b) {
+  /* ... */
+}
+</style>
+```
+
 ### CSS Modules
 
 |App|Web|
