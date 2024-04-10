@@ -179,6 +179,56 @@ const doubleCount = computed<number>(() : number => {
 </style>
 ```
 
+### CSS 中的 v-bind()
+
+|App|Web|
+|:-:|:-:|
+|x  |x  |
+
+单文件组件的 `<style>` 标签支持使用 `v-bind` CSS 函数将 CSS 的值链接到动态的组件状态：
+
+```html
+<template>
+  <div class="text">hello</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      color: 'red'
+    }
+  }
+}
+</script>
+
+<style>
+.text {
+  color: v-bind(color);
+}
+</style>
+```
+
+这个语法同样也适用于 `<script setup>`，且支持 UTS 表达式 (需要用引号包裹起来)：
+
+```html
+<script setup>
+const theme = {
+  color: 'red'
+}
+</script>
+
+<template>
+  <p>hello</p>
+</template>
+
+<style scoped>
+p {
+  color: v-bind('theme.color');
+}
+</style>
+```
+
 ## 应用生命周期
 uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) 和 [onExit](../collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
 
