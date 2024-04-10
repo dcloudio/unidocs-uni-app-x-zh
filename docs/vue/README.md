@@ -179,6 +179,24 @@ const doubleCount = computed<number>(() : number => {
 </style>
 ```
 
+### CSS Modules
+
+|App|Web|
+|:-:|:-:|
+|x  |4.0|
+
+一个 `<style module>` 标签会被编译为 `CSS Modules` 并且将生成的 CSS class 作为 `$style` 对象暴露给组件：
+
+<template>
+  <view :class="$style.red">This should be red</view>
+</template>
+
+<style module>
+.red {
+  color: red;
+}
+</style>
+
 ### CSS 中的 v-bind()
 
 |App|Web|
@@ -189,7 +207,7 @@ const doubleCount = computed<number>(() : number => {
 
 ```html
 <template>
-  <div class="text">hello</div>
+  <text class="text">hello</text>
 </template>
 
 <script>
@@ -219,11 +237,11 @@ const theme = {
 </script>
 
 <template>
-  <p>hello</p>
+  <text class="view">hello</text>
 </template>
 
 <style scoped>
-p {
+.text {
   color: v-bind('theme.color');
 }
 </style>
