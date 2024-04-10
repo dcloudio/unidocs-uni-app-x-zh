@@ -270,7 +270,7 @@ mediaPlayer.start();
 
 ### 3.4 增加libs依赖资源
 
-下面是一个`config.json`示例
+远端插件可以通过配置 `config.json`添加依赖 ，下面是一个`config.json`示例
 
 ```json
 {
@@ -343,6 +343,8 @@ mediaPlayer.start();
 
 ```
 
+
+如果是本地依赖, 参考 [hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs) 将jar/aar 添加到 `utssdk/app-android/libs` 目录下即可使用
 
 
 ### 3.5 远程依赖仓库说明
