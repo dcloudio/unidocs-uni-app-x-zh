@@ -1,3 +1,7 @@
+#### 4.12.2024041009-alpha
+##### uts插件
+* iOS平台 修复 对象字面量as成uni-module app-js内的type时未能转为指定类型的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1314)
+
 #### 4.11.2024040401-alpha
 ##### uts插件
 * 编译器 修复 Windows 平台 编译器相关动态库没有数字签名导致可能被某些防病毒软件拦截进而导致编译失败的Bug
