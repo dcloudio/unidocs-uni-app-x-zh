@@ -8,7 +8,13 @@ uts是一门类ts的、跨平台的、新语言。uts在iOS端编译为swift、�
 
 在Android平台，uni-app x 的工程被编译为kotlin代码，本质上是换了vue写法的原生kotlin应用，在性能上与原生kotlin一致。
 
-可以体验打包后的[hello uni-app x](https://hellouniappx.dcloud.net.cn)，如下二维码包含了Android的apk和Web版地址。（Android端通过开发者工具显示界面元素边界可知界面都是原生UI，解包后也不会看到js引擎，里面的html文件是示例中演示web-view组件所用）
+可以体验打包后的[hello uni-app x](https://hellouniappx.dcloud.net.cn)，访问地址或扫描二维码后获取：
+
+- `Android` 下载 apk
+  - Android 端通过开发者工具显示界面元素边界可知界面都是原生UI，解包后也不会看到js引擎，里面的html文件是示例中演示web-view组件所用
+- `iOS` 获取 ABM（Apple 商务管理）包
+  - 使用 iPhone 扫码后会跳转页面需要使用 DCloud 账号登录，登录过后自动分发兑换码在 AppStore 获取安装包，此过程不需要您支付费用。ABM包在Appstore中无法公开搜索到，但安装后可在 AppStore 更新页面进行更新。
+- [web 预览地址](https://hellouniappx.dcloud.net.cn/web)
 
 <div class="quick">
   <div style="margin-top: 20px;justify-content: space-around;">
@@ -20,7 +26,7 @@ uts是一门类ts的、跨平台的、新语言。uts在iOS端编译为swift、�
     >
       <div class="barcode-img-box">
         <img
-          src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-qrcode.png"
+          src="https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png"
           width="160"
           loading="lazy"
         />
