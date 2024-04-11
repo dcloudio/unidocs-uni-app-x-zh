@@ -350,7 +350,7 @@ fn()
 ```
 
 ```ts
-const fn: (() => void) | null = null
+let fn: (() => void) | null = null
 fn = function () {
     console.log(fn) // 此时 fn 可以正常访问
 }
