@@ -82,6 +82,10 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 - uni-verify  
   [App一键登陆](../api/get-univerify-manager.md)模块（`HBuilderX3.99+`），包括API：[uni.getUniverifyManager](../api/get-univerify-manager.md#getuniverifymanager)、[UniverifyManager.preLogin](../api/get-univerify-manager.md#prelogin)、[UniverifyManager.login](../api/get-univerify-manager.md#login)  
   依赖的模块：无  
+- uni-payment  
+  uni-payment请求支付模块，包括API：[uni.requestPayment](../api/request-payment.md) <br>
+  依赖的模块：无  
+  注意：此模块仅包含基础支付模块，需手动配置支付方式，详情参考[uni-payment](#uni-payment)章节 
 
 再次强调，以上模块不属于ext组件或api，是内置模块。但如果你的代码中没有使用这些组件和api，打正式包或自定义基座时会被摇掉。  
 
@@ -133,4 +137,34 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 注意：穿山甲GroMore、快手广告联盟、腾讯优量汇广告联盟仅支持`armeabi-v7a`和`arm64-v8a`两个CPU平台。
 
 注意：目前仅支持上述国内广告平台，国际广告暂不支持。
+
+## uni-payment@uni-payment
+> HBuilderX 4.11+ 新增支持 uni-payment 请求支付
+
+在uni-app x客户端，uni-payment是一个独立模块。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
+
+使用 uni-payment 模块需在 manifest.json 文件中添加如下配置：  
+
+### 配置支付SDK  
+在 app -> distribute -> modules 下添加 uni-ad 节点：  
+```json
+  	modules:{
+	     	"uni-payment":{
+                       "alipay":{},
+                       "wxpay":{}
+                }
+	}
+```
+
+其中 uni-payment 下的节点表示要聚合的支付方式：  
+| 标识 | 支付方式 |
+| :-  | :- |
+| alipay | 支付宝支付 |
+| wxpay | 微信支付 |
+
+
+添加相应的节点，云端打包就会将对应的支付 SDK 打包到最终安装包中。 
+
+
+
 
