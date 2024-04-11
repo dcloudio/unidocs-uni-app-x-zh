@@ -14,13 +14,7 @@ function simplifySlugText(text) {
   return text;
 }
 
-// 顺序有要求，会影响 for 循环匹配侧边栏
-const tabs = [
-  '/compiler/', '/dom/', '/uts/', '/collocation/', '/plugin/', '/worktile/', '/component/', '/api/', '/css/', '/'
-]
-
 module.exports = {
   isExternal,
-  simplifySlugText,
-  tabs: process.env.DOCS_LITE ? [] : tabs
+  simplifySlugText
 }
