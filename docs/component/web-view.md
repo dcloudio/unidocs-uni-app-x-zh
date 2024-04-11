@@ -56,5 +56,7 @@ uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中�
 - `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）
 
 ## 注意
-- web-view组件为系统web-view，内核版本号不由uni-app x框架控制。如需x5等webview，需使用uts插件，[详见](https://ext.dcloud.net.cn/search?q=x5)。
+- web-view组件为系统web-view，内核版本号不由uni-app x框架控制。
+- Android上，web-view版本不是手机默认浏览器的版本。在部分手机上系统web-view的升级需要升级rom，部分手机则可以单独升级Android System Webview包。如需x5等三方webview，需使用uts插件，[见插件市场](https://ext.dcloud.net.cn/search?q=x5)。使用三方webview可减少系统webview的碎片化问题。
+- iOS上，web-view的版本与iOS的版本绑定，也即是手机Safari浏览器的版本。
 - 一个页面的web-view组件数量不宜太多，每个web-view都会占用不少内存

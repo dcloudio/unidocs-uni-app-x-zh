@@ -105,10 +105,13 @@ hello uni-push是可跑通、同时包含客户端和服务器完整流程的代
 
 在业务开通、配置正确的情况下，执行项目下的云函数，即可给客户端发送消息。
 
-## 注意事项
+## 高级场景用途
 
-* 关于隐私安全问题，由于在调用`getPushClientId`或者`onPushMessage`时，才会初始化个推SDK，所以开发者要确保弹出隐私框之前不调用此两项API。
-* 关于图标的配置，需要创建[nativeResources](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90)目录，放置对应分辨率的图片资源即可 ，目录配置如下
+在[nativeResources](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90)目录可以配置图片和声音的二进制文件资源。
+
+### 通知栏显示图标自定义
+关于图标的配置，需要创建[nativeResources](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90)目录，
+放置对应分辨率的图片资源即可（打包后生效），目录配置如下
 
 ```
 ├── nativeResources
@@ -135,7 +138,12 @@ hello uni-push是可跑通、同时包含客户端和服务器完整流程的代
 │               └── pushsound.mp3       // 声音文件， 自定义推送铃音时使用
 ```
 
-* `setPushChannel`设置新建渠道时，`soundName`字段的值为nativeResources->android->res->raw中存放的音频文件名称，注意不要带文件的后缀，比如`pushsound.mp3`文件，例：
+### 通知声音自定义
+
+有些场景，如到账提醒，需要自定义通知声音。
+
+`setPushChannel`设置新建渠道时，`soundName`字段的值为目录nativeResources->android->res->raw中存放的音频文件名称，（打包后生效）
+注意不要带文件的后缀，比如`pushsound.mp3`文件，例：
 ```ts
 const channelManager = getChannelManager()
 channelManager.setPushChannel({
@@ -144,8 +152,22 @@ channelManager.setPushChannel({
 	soundName: "pushsound"
 })
 ```
-* uni-app x 的push模块仅支持uni-push2，不再支持uni-push1。但这不意味着强绑uniCloud的付费行为。而是DCloud的所有云服务都将统一纳入到uniCloud体系管理，开发者在开通uni-push2后，也可以拿到mastersecret，然后在自己的服务器去直接连接个推服务器。
+
+### 在通知栏显示App下载进度
+
+很多Android应用升级下载apk时会在通知栏显示下载进度。
+
+该功能已经内置到[uni升级中心](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)中，此开源模板可直接使用。
+
+### 在通知栏显示音乐播放条
+
+需要使用uts插件，[见插件市场](https://ext.dcloud.net.cn/search?q=%E9%80%9A%E7%9F%A5%E6%A0%8F&orderBy=Relevance&uni-appx=1)
+
+## 注意事项
+
+* 关于隐私安全问题，由于在调用`getPushClientId`或者`onPushMessage`时，才会初始化个推SDK，所以开发者要确保**弹出隐私框之前不调用此两项API**。
+* 获取手机端app是否拥有push权限，请使用API [uni.getAppAuthorizeSetting](get-app-authorize-setting.md)
+* uni-app x 的push模块仅支持uni-push2，不再支持uni-push1。但不要误会这不是强绑uniCloud的付费行为。而是DCloud的所有云服务都将统一纳入到uniCloud体系管理，开发者在开通uni-push2后，也可以拿到mastersecret，然后在自己的服务器去直接连接个推服务器。另外uniCloud的免费版也足够很多开发者使用。
 * uni-push是一个独立的模块，在标准基座中并不包含。开发push需要首先编写push相关代码，然后打包自定义基座，根据摇树规则，打出的自定义基座才会包含push模块。详见[摇树](../collocation/manifest-modules.md#treeshaking)
 * 创建本地通知栏，理论上可以和个推的服务无关。但目前也都包含在push模块里了。如果您不需要服务器推送，只需要本地创建通知栏，也需要打包push模块才行。
 * 部分手机创建本地通知时，App如果在后台状态，点击通知消息并不会拉起App，原因是厂商增加了后台弹窗权限，需要用户手动打开此权限。
-* 获取手机端app是否拥有push权限，请使用API [uni.getAppAuthorizeSetting](get-app-authorize-setting.md)

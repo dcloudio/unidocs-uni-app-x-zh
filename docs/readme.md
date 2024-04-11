@@ -139,19 +139,27 @@ uvue在App端支持的css语法，是web的子集，类似于但优于nvue的css
 
 在iOS上，情况要复杂些。由于swift编译iOS应用必须依赖xcode，而DCloud的开发者中windows占比更高。且iOS上js和原生通信有解，所以uni-app x在iOS上提供js和swift双选逻辑层。
 
-|				|js逻辑层								|swift逻辑层							|
-|--				|--										|--									|
-|主应用开发平台	|windows或mac							|只能mac								|
-|uvue页面代码	|可使用js但不能调用swift API。swift调用需封装在uts插件中|只能调用swift不能使用js|
-|uts原生插件开发	|只能mac									|只能mac								|
-|uts原生插件使用	|windows下打包后使用，mac下本地直接编译	|windows下打包后使用，mac下本地直接编译|
-|性能			|丝滑流畅									|更丝滑流畅|
+|								|js逻辑层																								|swift逻辑层														|
+|--							|--																											|--																			|
+|主应用开发平台	|windows或mac																						|只能mac																|
+|uvue页面代码		|可使用js但不能直接调用swift API。swift调用需封装在uts插件中|只能调用swift不能使用js								|
+|uts原生插件开发|只能mac																								|只能mac																|
+|uts原生插件使用|windows下打包后使用，mac下本地直接编译									|windows下打包后使用，mac下本地直接编译	|
+|性能						|丝滑流畅																								|丝滑流畅															|
 
-理论上swift逻辑层的性能要高于js逻辑层，但由于iphone的硬件、iOS的jscore为系统内置、以及uni-app x的优化等一系列原因，99%的应用使用js引擎版即可满足性能需求。
+也就是uts原生插件作者必须得有mac电脑，普通的App开发者可以没有mac电脑。
 
-- js逻辑层于4.11版上线
+- js逻辑层已于4.11版上线
 - swift逻辑层还未上线
 
+虽然理论上swift逻辑层的性能要高于js逻辑层，但开发者可以放心使用js逻辑层。
+
+uni-app x在iphone上的js逻辑层和原生渲染层的通信经过特殊处理，大幅提升通信效率问题，不再需要bindingX这类技术。也不存在flutter那种混合渲染问题。\
+可以体验hello uni-app x的iOS版本，在slider-100、滚动时动态调整view的top值以维持吸顶等极端场景，均如Android一样的丝滑流畅。
+
+使用js逻辑层除了能在windows下开发，还有一个好处是大幅降低插件生态的建设难度。
+插件作者只需要特殊适配Android版本，在iOS和Web端仍使用ts/js库，即可快速把uni-app/web的生态迁移到uni-app x中。
+例如这个[request拦截库](https://ext.dcloud.net.cn/plugin?id=16177)
 
 ## 3. uni的组件 @uni-components
 
@@ -247,17 +255,17 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 
 	一般情况下，原生库的能力是大于js库的。不太可能有一个功能必须使用js库才能使用。比如md5，js有库，原生也有库，调用一个jar也很方便。
 
-	常见的[加密、md5](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&orderBy=Relevance&cat1=8&cat2=81)、[dayjs](https://ext.dcloud.net.cn/search?q=dayjs&orderBy=Relevance&cat1=8&cat2=81)等库，插件市场已经有uts版本。
+	常见的[加密、md5、sha](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&orderBy=Relevance&cat1=8&cat2=81)、[dayjs](https://ext.dcloud.net.cn/search?q=dayjs&orderBy=Relevance&cat1=8&cat2=81)等库，插件市场已经有uts版本。
 
 **如果你一定要使用某个js库，还有一个办法是在uni-app x里的[web-view](./api/create-webview-context.md)组件，让其运行js并返回值给uts代码。**
 
 目前插件市场适配uni-app x的插件已有数百款，包括丰富的ui组件库生态：
 - [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：包含了核心的uts插件基类.和uvue组件库
+- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：低代码高性能UI框架
+- [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：一款适配 uni-app x 的轻量、简洁、高效、全面的移动端组件库
 - [t-uvue-ui](https://ext.dcloud.net.cn/plugin?id=15571)：丰富的组件库
 - [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceUI作者的免费开源组件库
-- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：低代码高性能UI框架
 - [wx-ui](https://ext.dcloud.net.cn/plugin?id=15579)：基于uni-app x开发的高性能混合UI库
-- [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：一款适配 uni-app x 的轻量、简洁、高效、全面的移动端组件库
 - [OneUI](https://ext.dcloud.net.cn/plugin?id=17104)
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
 
@@ -332,7 +340,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   可以，通过uts插件，[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
 
 - uvue页面里的script可以直接调用原生代码吗？还是必须封装成uni_modules方式的uts原生插件？\
-  uvue的script里写的就是uts，Android端可以直接调原生代码。无所谓它在`uni_modules`里还是外。但如果是大段的原生代码调用，还是推荐封装为独立的`uni_modules`。以及iOS平台如果是js逻辑层模式，也只能在独立`uni_modules`中才能调用原生。
+  uvue的script里写的就是uts，Android端可以直接调原生代码。无所谓它在`uni_modules`里还是外。但如果是大段的原生代码调用，还是推荐封装为独立的`uni_modules`。iOS平台如果是js逻辑层模式，只能在独立`uni_modules`中才能调用原生。
 
 - uni-app x 的开发只能用HBuilderX吗？\
   是的。为三方ide做插件是一个投资大且充满不确定性的事情，官方有限精力会聚焦在自身产品优化上。但DCloud是开放的，不会限制三方ide的插件支持。欢迎社区投入支持。
@@ -342,7 +350,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 - uni-app x开源吗？
   * Web版开源地址：[https://github.com/dcloudio/uni-app](https://github.com/dcloudio/uni-app)
-  * App版的组件和API实现都会开源，会陆续发布在项目[uni-component](https://gitcode.net/dcloud/uni-component)和[uni-api](https://gitcode.net/dcloud/uni-api)下。\
+  * App版的组件和API实现大都开源，会陆续发布在项目[uni-api](https://gitcode.net/dcloud/uni-api)和[uni-component](https://gitcode.net/dcloud/uni-component)下。\
   开发者可以了解组件和API的实现，直接修改或优化源码，修改后的代码以[ext api](https://uniapp.dcloud.net.cn/api/extapi.html)或组件的方式下载到项目中，即可实现在本项目中替换掉官方组件和API。
 
 - 未来 uni-app js引擎版还维护吗？\

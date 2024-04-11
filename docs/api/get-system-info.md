@@ -18,6 +18,8 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 
 <!-- UTSAPIJSON.getSystemInfo.returnValue -->
 
+获取OAID、AndroidID等其他设备信息，[见插件市场](https://ext.dcloud.net.cn/search?q=oaid&orderBy=Relevance&uni-appx=1)
+
 <!-- UTSAPIJSON.getSystemInfo.example -->
 
 <!-- UTSAPIJSON.getSystemInfo.compatibility -->

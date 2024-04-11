@@ -11,16 +11,20 @@ uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app 
 - 打开三方应用：打开浏览器、应用商店、地图并传参。`plus.openUrl` [见hello uni-app x示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/schema/schema.uvue)
 - 分享：`uni.shareWithSystem` [见hello uni-app x示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/share/share.uvue)
 - 微信登录、分享、企业客服：[见插件市场](https://ext.dcloud.net.cn/search?q=%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95&orderBy=Relevance&cat1=8&cat2=81&uni-appx=1)
+- 谷歌登录：[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E7%99%BB%E5%BD%95&orderBy=Relevance&uni-appx=1)
+- 谷歌支付：[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E6%94%AF%E4%BB%98&orderBy=Relevance&uni-appx=1)
 - 打开文件：`uni.openDocument` [见hello uts示例](https://gitcode.net/dcloud/hello-uts/-/blob/dev/uni_modules/uts-nativepage/utssdk/app-android/index.uts)、[插件市场](https://ext.dcloud.net.cn/plugin?id=12731)
 - 扫码：`uni.scanCode` [见插件市场](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&cat1=8&type=UpdatedDate)
 - 文件选择：`uni.chooseFile` [见插件市场](https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9&cat1=8&cat2=81)
 - 蓝牙：Bluetooth。[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&orderBy=Relevance&cat1=8&cat2=81)
 - NFC：[见插件市场](https://ext.dcloud.net.cn/search?q=nfc&orderBy=Relevance&cat1=8&cat2=81)
-- 地图：[见插件市场](https://ext.dcloud.net.cn/search?q=%E5%9C%B0%E5%9B%BE&orderBy=Relevance&uni-appx=1)
+- 地图：chooseLocation [见插件市场](https://ext.dcloud.net.cn/search?q=%E5%9C%B0%E5%9B%BE&orderBy=Relevance&uni-appx=1)
+- 陀螺仪：`uni.onGyroscopeChange`、`uni.startGyroscope`、`uni.stopGyroscope` [见插件市场](https://ext.dcloud.net.cn/plugin?id=17540)
+- 加速度传感器：`uni.onAccelerometerChange`、`uni.startAccelerometer` [见插件市场](https://ext.dcloud.net.cn/plugin?id=17540)
 - 生物识别：指纹识别。`uni.startSoterAuthentication` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%94%9F%E7%89%A9%E8%AE%A4%E8%AF%81&uni-appx=1)
 - 自定义相机：`uni.createCameraContext` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%9B%B8%E6%9C%BA&uni-appx=1)
 - 录音：`uni.getRecorderManager` [见插件市场](https://ext.dcloud.net.cn/search?q=%E5%BD%95%E9%9F%B3&uni-appx=1)
-- 播放音频：`uni.getBackgroundAudioManager`、`uni.createInnerAudioContext`，参考如下代码：
+- 播放音频：`uni.getBackgroundAudioManager`、`uni.createInnerAudioContext`，[见插件市场](https://ext.dcloud.net.cn/search?q=%E9%9F%B3%E9%A2%91%E6%92%AD%E6%94%BE&orderBy=Relevance&uni-appx=1)或参考如下代码：
 ```vue
 <template>
 	<button @click="playAudio">播放音频</button>
@@ -59,6 +63,7 @@ uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api
 
 一些plus api在插件市场有替代：
 - plus.sqlite [插件市场](https://ext.dcloud.net.cn/search?q=sqlite&uni-appx=1)
+- plus.speech [插件市场](https://ext.dcloud.net.cn/search?q=%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3&orderBy=Relevance&uni-appx=1)
 
 还有一些plus API未封装为 uni 的API，但可以直接使用如下代码调用。
 - plus.runtime.openURL
