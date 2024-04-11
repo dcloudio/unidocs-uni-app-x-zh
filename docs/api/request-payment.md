@@ -47,6 +47,7 @@
 - App平台开发支付宝支付，无需自定义基座，真机运行可直接开发
 - 可通过Wxpay.isInstalled()方法判断微信是否安装
 - 需要在根目录的manifest.json文件中，对所使用的支付进行配置如
+```json
 app: {
 		"distribute": {
 			"modules": {
@@ -57,6 +58,9 @@ app: {
 			}
 		}
 }
+```
+
+[更多详情参考[模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html)]
 - app-android平台微信支付需要4.11及以上版本
 
 
