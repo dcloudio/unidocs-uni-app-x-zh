@@ -455,13 +455,11 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 
 在HBuilder X 中选中你的项目下 uni_modules目录,右键选择新建uni_modules插件, 例如 `uts-api`
 
-![创建插件uts-api](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/create-uts-api.png)
 
-#### 编写interface
+#### 编写interface.uts
 
-插件 `uts-api` 创建完成后，我们需要确定插件对外暴露的 API。为了多端统一规范的定义对外暴露的接口，获得 HBuilder X更好的语法提示，我们建议在 `interface.uts` 文件中统一定义插件要暴露的 API、 API 的参数、返回值、错误码等信息，然后在各端的 `index.uts` 中做具体的业务实现。
+插件 `uts-api` 创建完成后，我们需要确定插件对外暴露的 API。为了多端统一规范的定义对外暴露的接口，获得 HBuilder X更好的语法提示，我们建议在 `interface.uts` 文件中统一定义插件要暴露的 API 类型、 API 的参数类型、返回值类型、错误码类型、错误接口等信息，然后在各端的 `index.uts` 中做具体的业务实现。
 
-![编辑interface](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/edit_interface.png)
 
 打开 `interface.uts` 文件，键入下面的源码, 为了方便说明，源码的每个部分的作用都用注释来说明。
 
@@ -521,16 +519,18 @@ export type MyApiSync = (paramA : boolean) => MyApiResult
 ```
 
 > 特别注意
+> `interface.uts` 是我们推荐的做法，不做强制要求，可以根据自己的实际情况决定是否实现。
 > `interface.uts` 文件中定义并 `export` 的 `interface` 接口例如 `MyApiFail` 只能在插件内部的 `uts` 文件代码中使用，不能在 `.uvue` 文件中使用插件时导入使用。
 
 至此，我们就完成了 `interface` 的定义，如果你遵循规范，定义了错误码的类型和错误码的 `interface` 如 `MyApiFail`, 那么你还需要在 `unierror.ts` 文件中对 `MyApiFail` 这个接口做具体实现。
 
 
-#### 编写unierror
+#### 编写unierror.uts
 
-![编辑unierror](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/edit_unierror.png)
+为了获得更好语法提示和校验效果，我们在 `interface.uts` 文件中已经定义了错误的类型和错误的接口。但是错误码对应的具体错误信息，以及错误对象的具体实现，都还没有完成。
+`unierror.uts` 文件就是专门用来实现这些的。
 
-打开 `unierror.ts` 文件, 键入下面的源码。同样为了说明，源码的每个部分的作用都用注释来说明。
+打开 `unierror.uts` 文件, 键入下面的源码。同样为了说明，源码的每个部分的作用都用注释来说明。
 
 ``` ts
 // 首先导入在 interface.uts 文件中定义的错误码类型，和错误的类型
@@ -580,11 +580,9 @@ export class MyApiFailImpl extends UniError implements MyApiFail {
 至此我们完成了符合 uni 错误规范的错误码的定义和实现，后面我们就可以去实现插件的具体逻辑了。
 Uni错误规范的更多信息[详见](https://uniapp.dcloud.net.cn/tutorial/err-spec.html#unierror)。
 
-#### 编写逻辑
+#### 实现接口定义和业务逻辑
 
-![编辑index](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/edit_index.png)
-
-打开index.ts 文件，键入下面的插件源码:
+分别在插件的 `app-android` 和 `app-ios` 目录下打开 `index.uts` 文件，键入下面的插件源码:
 
 ::: preview
 
@@ -774,6 +772,9 @@ export const myApiSync : MyApiSync = function (paramA : boolean) : MyApiResult {
 ```
 
 :::
+
+
+#### 使用插件
 
 上面的代码，我们完成了一个名为 "uts-api" 的UTS 插件，在 `uvue` 文件中使用该插件的代码示例如下：
 
