@@ -171,6 +171,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	├─mp-xhs                      // 小红书小程序平台（仅限vue2），可选
 │	├─index.d.ts                  // 插件能力声明，可选，将废弃，推荐使用interface.uts
 │	├─interface.uts               // 声明插件对外暴露的API
+│	├─unierror.uts                // 定义插件对外暴露的错误信息，可选
 │	└─index.uts                   // 跨平台插件能力实现，可选
 └─package.json                    // 插件清单文件
 </code>
@@ -447,6 +448,360 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 
 
 ## 开发uts插件
+
+### 简单插件示例
+
+#### 创建插件
+
+在HBuilder X 中选中你的项目下 uni_modules目录,右键选择新建uni_modules插件, 例如 `uts-api`
+
+![创建插件uts-api](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/create-uts-api.png)
+
+#### 编写interface
+
+插件 `uts-api` 创建完成后，我们需要确定插件对外暴露的 API。为了多端统一规范的定义对外暴露的接口，获得 HBuilder X更好的语法提示，我们建议在 `interface.uts` 文件中统一定义插件要暴露的 API、 API 的参数、返回值、错误码等信息，然后在各端的 `index.uts` 中做具体的业务实现。
+
+![编辑interface](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/edit_interface.png)
+
+打开 `interface.uts` 文件，键入下面的源码, 为了方便说明，源码的每个部分的作用都用注释来说明。
+
+```ts
+// 定义 API的参数类型，基本数据类型的参数无需定义，复杂类型参数建议使用自定义type
+/**
+ * myApi 异步函数的参数，在type里定义函数需要的参数以及api成功、失败的相关回调函数。
+ */
+export type MyApiOptions = {
+  paramA : boolean
+  success ?: (res : MyApiResult) => void
+  fail ?: (res : MyApiFail) => void
+  complete ?: (res : any) => void
+}
+
+// 定义 API 的返回值类型, 基本数据类型的返回值无需特殊定义，复杂类型的参数建议使用自定义type
+/**
+ * 函数返回结果
+ * 可以是void, 基本数据类型，自定义type, 或者其他类型。
+ * [可选实现]
+ */
+export type MyApiResult = {
+  fieldA : number,
+  fieldB : boolean,
+  fieldC : string
+}
+
+// 定义 API 对外暴露的错误码，为了更好语法提示和校验效果，建议将错误码用type 定义成联合类型。定义后，使用未指定的错误码将会被警告提示。
+// 建议定义的错误码遵循uni错误规范 [详见](https://uniapp.dcloud.net.cn/tutorial/err-spec.html#unierror)。
+/**
+ * 错误码
+ * 根据uni错误码规范要求，建议错误码以90开头，以下是错误码示例：
+ * - 9010001 错误信息1
+ * - 9010002 错误信息2
+ */
+export type MyApiErrorCode = 9010001 | 9010002;
+
+
+// 定义 API 的错误回调参数类型，这里定义成 interface 并继承 IUniError 是为了遵循统一的 Uni错误码规范。
+// 这里开发者只需要指定 errCode 的类型，以便获得更好的语法提和校验效果。
+/**
+ * myApi 的错误回调参数
+ */
+export interface MyApiFail extends IUniError {
+  errCode : MyApiErrorCode
+};
+
+// 定义对外暴露的 API 类型，这里是个异步函数
+/* 异步函数定义 */
+export type MyApi = (options : MyApiOptions) => void
+
+
+// 定义对外暴露的 API 类型，这里是个同步函数
+/* 同步函数定义 */
+export type MyApiSync = (paramA : boolean) => MyApiResult
+
+```
+
+> 特别注意
+> `interface.uts` 文件中定义并 `export` 的 `interface` 接口例如 `MyApiFail` 只能在插件内部的 `uts` 文件代码中使用，不能在 `.uvue` 文件中使用插件时导入使用。
+
+至此，我们就完成了 `interfaces` 的定义，如果你遵循规范，定义了错误码的类型和错误码的 `interfaces` 如 `MyApiFail`, 那么你还需要在 `unierror.ts` 文件中对 `MyApiFail` 这个接口做具体实现。
+
+
+#### 编写unierror
+
+![编辑unierror](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/edit_unierror.png)
+
+打开 `unierror.ts` 文件, 键入下面的源码。同样为了说明，源码的每个部分的作用都用注释来说明。
+
+``` ts
+// 首先导入在 interface.uts 文件中定义的错误码类型，和错误的 interface
+import { MyApiErrorCode, MyApiFail } from "./interface.uts"
+
+/**
+ * 定义错误主题，错误主题是Uni错误码的一个标准字段。
+ * 注意：错误主题一般为插件名称，每个组件不同，需要使用时请更改。
+ * [可选实现]
+ */
+export const UniErrorSubject = 'uts-api';
+
+
+/**
+ * 错误信息，定义和错误码对应的语义化的提示信息，为了更好的获取，建议定义成Map类型。
+ * @UniError
+ * [可选实现]
+ */
+export const UTSApiUniErrors : Map<MyApiErrorCode, string> = new Map([
+  /**
+   * 错误码及对应的错误信息
+   */
+  [9010001, 'custom error mseeage1'],
+  [9010002, 'custom error mseeage2'],
+]);
+
+
+/**
+ * 错误对象的具体使用实现，该实现会在 index.uts代码中创建使用。
+ * 使用时只需要传入特定的错误码即可完成创建。
+ */
+export class MyApiFailImpl extends UniError implements MyApiFail {
+
+  /**
+   * 错误对象构造函数
+   */
+  constructor(errCode : MyApiErrorCode) {
+    super();
+    this.errSubject = UniErrorSubject;
+    this.errCode = errCode;
+    this.errMsg = UTSApiUniErrors[errCode] ?? "";
+  }
+}
+
+```
+
+至此我们完成了符合 uni 错误规范的错误码的定义和实现，后面我们就可以去实现插件的具体逻辑了。
+Uni错误规范的更多信息[详见](https://uniapp.dcloud.net.cn/tutorial/err-spec.html#unierror)。
+
+#### 编写逻辑
+
+![编辑index](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/edit_index.png)
+
+打开index.ts 文件，键入下面的插件源码:
+
+::: preview
+
+> Android
+
+```ts
+
+/**
+ * 引用 Android 系统库，示例如下：
+ * import { Context } from "android.content.Context";
+ * [可选实现，按需引入]
+ */
+
+/* 引入 interface.uts 文件中定义的变量 */
+import { MyApiOptions, MyApiResult, MyApi, MyApiSync } from '../interface.uts';
+
+/* 引入 unierror.uts 文件中定义的变量 */
+import { MyApiFailImpl } from '../unierror';
+
+/**
+ * 引入三方库
+ * [可选实现，按需引入]
+ *
+ * 在 Android 平台引入三方库有以下两种方式：
+ * 1、[推荐] 通过 仓储 方式引入，将 三方库的依赖信息 配置到 config.json 文件下的 dependencies 字段下。详细配置方式[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#dependencies)
+ * 2、直接引入，将 三方库的aar或jar文件 放到libs目录下。更多信息[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#android%E5%B9%B3%E5%8F%B0%E5%8E%9F%E7%94%9F%E9%85%8D%E7%BD%AE)
+ *
+ * 在通过上述任意方式依赖三方库后，使用时需要在文件中 import，如下示例：
+ * import { LottieAnimationView } from 'com.airbnb.lottie.LottieAnimationView'
+ */
+
+/**
+ * UTSAndroid 为平台内置对象，不需要 import 可直接调用其API，[详见](https://uniapp.dcloud.net.cn/uts/utsandroid.html#utsandroid)
+ */
+
+
+/**
+ * 异步方法
+ *
+ * uni-app项目中（vue/nvue）调用示例：
+ * 1、引入方法声明 import { myApi } from "@/uni_modules/uts-api"
+ * 2、方法调用
+ * myApi({
+ *   paramA: false,
+ *   complete: (res) => {
+ *      console.log(res)
+ *   }
+ * });
+ * uni-app x项目（uvue）中调用示例：
+ * 1、引入方法及参数声明 import { myApi, MyApiOptions } from "@/uni_modules/uts-api";
+ * 2、方法调用
+ * let options = {
+ *   paramA: false,
+ *   complete: (res : any) => {
+ *     console.log(res)
+ *   }
+ * } as MyApiOptions;
+ * myApi(options);
+ *
+ */
+export const myApi : MyApi = function (options : MyApiOptions) {
+  if (options.paramA == true) {
+    // 返回数据
+    const res : MyApiResult = {
+      fieldA: 85,
+      fieldB: true,
+      fieldC: 'some message'
+    };
+    options.success?.(res);
+    options.complete?.(res);
+  } else {
+    // 返回错误
+    const err = new MyApiFailImpl(9010001);
+    options.fail?.(err)
+    options.complete?.(err)
+  }
+}
+
+/**
+ * 同步方法
+ *
+ * uni-app项目中（vue/nvue）调用示例：
+ * 1、引入方法声明 import { myApiSync } from "@/uni_modules/uts-api"
+ * 2、方法调用 myApiSync(true)
+ *
+ * uni-app x项目（uvue）中调用示例：
+ * 1、引入方法及参数声明 import { myApiSync } from "@/uni_modules/uts-api";
+ * 2、方法调用 myApiSync(true)
+ */
+export const myApiSync : MyApiSync = function (paramA : boolean) : MyApiResult {
+  // 返回数据，根据插件功能获取实际的返回值
+  const res : MyApiResult = {
+    fieldA: 85,
+    fieldB: paramA,
+    fieldC: 'some message'
+  };
+  return res;
+}
+
+
+```
+
+> iOS
+
+```ts
+/**
+ * 引用 iOS 系统库，示例如下：
+ * import { UIDevice } from "UIKit";
+ * [可选实现，按需引入]
+ */
+
+/* 引入 interface.uts 文件中定义的变量 */
+import { MyApiOptions, MyApiResult, MyApi, MyApiSync } from '../interface.uts';
+
+/* 引入 unierror.uts 文件中定义的变量 */
+import { MyApiFailImpl } from '../unierror';
+
+/**
+ * 引入三方库
+ * [可选实现，按需引入]
+ *
+ * 在 iOS 平台引入三方库有以下两种方式：
+ * 1、通过引入三方库framework 或者.a 等方式，需要将 .framework 放到 ./Frameworks 目录下，将.a 放到 ./Libs 目录下。更多信息[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#ios-平台原生配置)
+ * 2、通过 cocoaPods 方式引入，将要引入的 pod 信息配置到 config.json 文件下的 dependencies-pods 字段下。详细配置方式[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html)
+ *
+ * 在通过上述任意方式依赖三方库后，使用时需要在文件中 import:
+ * 示例：import { LottieLoopMode } from 'Lottie'
+ */
+
+/**
+ * UTSiOS 为平台内置对象，不需要 import 可直接调用其API，[详见](https://uniapp.dcloud.net.cn/uts/utsios.html)
+ */
+
+/**
+ * 异步方法
+ *
+ * uni-app项目中（vue/nvue）调用示例：
+ * 1、引入方法声明 import { myApi } from "@/uni_modules/uts-api"
+ * 2、方法调用
+ * myApi({
+ *   paramA: false,
+ *   complete: (res) => {
+ *      console.log(res)
+ *   }
+ * });
+ *
+ */
+export const myApi : MyApi = function (options : MyApiOptions) {
+
+  if (options.paramA == true) {
+    // 返回数据
+    const res : MyApiResult = {
+      fieldA: 85,
+      fieldB: true,
+      fieldC: 'some message'
+    };
+    options.success?.(res);
+    options.complete?.(res);
+
+  } else {
+    // 返回错误
+    let failResult = new MyApiFailImpl(9010001);
+    options.fail?.(failResult)
+    options.complete?.(failResult)
+  }
+
+}
+
+/**
+ * 同步方法
+ *
+ * uni-app项目中（vue/nvue）调用示例：
+ * 1、引入方法声明 import { myApiSync } from "@/uni_modules/uts-api"
+ * 2、方法调用
+ * myApiSync(true);
+ *
+ */
+export const myApiSync : MyApiSync = function (paramA : boolean) : MyApiResult {
+  // 返回数据，根据插件功能获取实际的返回值
+  const res : MyApiResult = {
+    fieldA: 85,
+    fieldB: paramA,
+    fieldC: 'some message'
+  };
+  return res;
+}
+```
+
+:::
+
+上面的代码，我们完成了一个名为 "uts-api" 的UTS 插件，在 `uvue` 文件中使用该插件的代码示例如下：
+
+```ts
+// 导入要使用的插件  
+import { myApi, myApiSync, MyApiOptions } from "@/uni_modules/uts-api";	
+
+methods: {
+	
+	testMyApi() {
+		// 调用异步方法示例
+		let options = {
+			paramA: false,
+			complete: (res : any) => {
+			console.log(res)
+			}
+		} as MyApiOptions;
+		myApi(options);
+	},
+		
+	testMyApiSync() {
+		// 调用同步方法示例
+		console.log(myApiSync(true))
+	},
+}
+
+```
+
 
 ### 获取电量插件示例
 
