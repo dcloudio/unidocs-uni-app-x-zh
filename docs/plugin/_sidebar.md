@@ -8,4 +8,5 @@
   * [Android平台uts开发指南](uts-for-android.md)
   * [iOS平台uts开发指南](uts-for-ios.md)
   * [使用CocoaPods依赖](uts-ios-cocoapods.md)
+  * [原生插件转uts页面](native-covert-uts.md)
 * [插件作者专区](https://uniapp.dcloud.net.cn/plugin/publish.html)
