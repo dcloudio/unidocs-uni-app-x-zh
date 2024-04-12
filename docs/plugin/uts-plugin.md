@@ -523,7 +523,7 @@ export type MyApiSync = (paramA : boolean) => MyApiResult
 > 特别注意
 > `interface.uts` 文件中定义并 `export` 的 `interface` 接口例如 `MyApiFail` 只能在插件内部的 `uts` 文件代码中使用，不能在 `.uvue` 文件中使用插件时导入使用。
 
-至此，我们就完成了 `interfaces` 的定义，如果你遵循规范，定义了错误码的类型和错误码的 `interfaces` 如 `MyApiFail`, 那么你还需要在 `unierror.ts` 文件中对 `MyApiFail` 这个接口做具体实现。
+至此，我们就完成了 `interface` 的定义，如果你遵循规范，定义了错误码的类型和错误码的 `interface` 如 `MyApiFail`, 那么你还需要在 `unierror.ts` 文件中对 `MyApiFail` 这个接口做具体实现。
 
 
 #### 编写unierror
@@ -533,7 +533,7 @@ export type MyApiSync = (paramA : boolean) => MyApiResult
 打开 `unierror.ts` 文件, 键入下面的源码。同样为了说明，源码的每个部分的作用都用注释来说明。
 
 ``` ts
-// 首先导入在 interface.uts 文件中定义的错误码类型，和错误的 interface
+// 首先导入在 interface.uts 文件中定义的错误码类型，和错误的类型
 import { MyApiErrorCode, MyApiFail } from "./interface.uts"
 
 /**
