@@ -102,14 +102,14 @@ flowchart TD
 如果是 `uni-app`环境，添加下面的依赖
 
 ```gradle
-/**
- * uni-app 运行时能力
- */
-compileOnly fileTree(dir: '../app/libs', include: ['utsplugin-release.aar'])
-/**
- * 添加UTS语言能力
- */
-compileOnly fileTree(dir: '../app/libs', include: ['utsplugin-release.aar'])
+	/**
+     * uni-app 运行时能力
+     */
+    compileOnly fileTree(dir: '../app/libs', include: ['uniapp-v8-release.aar'])
+    /**
+     * 添加UTS语言能力
+     */
+    compileOnly fileTree(dir: '../app/libs', include: ['utsplugin-release.aar'])
 ```
 
 ![module_gradle_1.png](https://web-ext-storage.dcloud.net.cn/doc/uts/convert_android/module_gradle_1.png)
