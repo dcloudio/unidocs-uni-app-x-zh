@@ -69,7 +69,7 @@ app: {
 }
 ```
 
-[更多详情参考[模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html)]
+[更多详情参考[模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment)]
 - app-android平台微信支付需要4.11及以上版本
 
 
