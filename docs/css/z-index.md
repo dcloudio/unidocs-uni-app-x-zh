@@ -32,8 +32,6 @@ root
 
 <!-- CSSJSON.z-index.defaultValue -->
 
-在uni-app x 4.11以前，web平台的默认值为auto。从4.11+，web平台与app拉齐，默认值统一为0。
-
 <!-- CSSJSON.z-index.unixTags -->
 
 <!-- CSSJSON.z-index.compatibility -->
@@ -52,7 +50,7 @@ web端在**没有其他会产生层叠上下文的属性干扰时**不会创建�
 
 ```vue
 <template>
-  <view style="z-index: 0;">
+  <view style="z-index: 0;flex: 1;">
     <view>
       <view id="view-1-1" class="square" style="z-index: 4;background-color: aqua;"></view>
       <view id="view-1-2" class="square" style="z-index: 1;background-color: red;margin-top: -90px;margin-left: 10px;"></view>
@@ -84,7 +82,7 @@ web端对`position: fixed;`的元素设置z-index，此元素仍会在所属的�
 
 ```vue
 <template>
-  <view style="z-index: 0; flex: 1;">
+  <view style="z-index: 0;flex: 1;">
     <view>
       <view id="view-1-1" class="square" style="z-index: 4;background-color: aqua;"></view>
       <view id="view-1-2" class="square view-1-2" style="z-index: 1;background-color: red;"></view>
