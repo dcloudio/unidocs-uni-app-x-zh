@@ -35,7 +35,7 @@ uni.request({
 		console.log(res.data as UTSJSONObject["data"]) //UTSJSONObject支持通过下标访问属性data，但返回的仍然是any类型
 		let resData = (res.data as UTSJSONObject)["data"] as UTSJSONObject[] // as成UTSJSONObject数组
 		if (resData!=null) {
-			console.log((resData[0]) // 访问数组的第一个数组项目，仍然是any类型，仍然需要转换
+			console.log(resData[0]) // 访问数组的第一个数组项目，仍然是any类型，仍然需要转换
 			console.log((resData[0] as UTSJSONObject)["plugin_name"]) // 转为UTSJSONObject后通过下标访问plugin_name属性
 		}
 	}
