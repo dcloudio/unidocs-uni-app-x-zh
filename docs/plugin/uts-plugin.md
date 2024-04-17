@@ -299,7 +299,9 @@ dependencies {
 - minSdkVersion
 插件支持的Android最低版本，整数类型，取值范围为Android API Level
 
-默认uni-app最低支持版本为19，即Android4.4.2
+  + uni-app 项目支持最低版本为19，即Android 4.4.2  
+  + uni-app x 项目支持最低版本为21，即Android 5.0  
+
 
 - project
 	云端打包项目相关配置，当使用的三方SDK需要配置gradle插件时可配置此项：
