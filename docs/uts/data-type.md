@@ -1750,7 +1750,7 @@ uts 为自定义 type 类型提供了迭代器，可以使用 for-in 遍历出 t
 ```ts
 let person : PersonType = { id: 1, name: "zhangsan", age: 18 }
 
-for (key in person) {
+for (let key in person) {
 	console.log(key) // 输出 "id", "name", "age"
 }
 
