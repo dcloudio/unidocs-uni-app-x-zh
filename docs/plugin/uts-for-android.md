@@ -1181,7 +1181,7 @@ import R from 'io.dcloud.uni_modules.uts_nativepage.R';
 ```
 
 
-### 6.14  如何实现一个接口
+### 6.4  如何实现一个接口
 
 以HelloUTS nativepage插件 部分代码为例：
 
@@ -1271,7 +1271,7 @@ ScancodeConfig.setShowLine(false);
 ScancodeConfig.showLine = false;
 ```
 
-### 6.14 Android原生API过时警告处理
+### 6.5 Android原生API过时警告处理
 
 调用原生过时的API插件编译时产生警告，可以使用`@Suppress("DEPRECATION")`添加注解到使用的方法上忽略警告，例：
 ```js
