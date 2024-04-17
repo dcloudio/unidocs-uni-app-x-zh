@@ -37,7 +37,6 @@ console.log(financial(0.004));
 
 <!-- UTSJSON.Number.toString.compatibility -->
 
-** 已知问题：目前android 平台 Number.toString() 不支持进制参数，这个问题稍后会修复 **
 
 ### valueOf()
 
