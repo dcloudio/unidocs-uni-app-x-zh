@@ -655,16 +655,16 @@ Date对象还有很多方法属性，[详见](buildin-object-api/date.md)
 ```uts
 import JavaDate from 'java.util.Date' ;
 
-let utsDate = Date("1998-02-02 01:03:01")
-let javaDate = JavaDate(utsDate.getTime().toLong())
+let utsDate = new Date("1998-02-02 01:03:01")
+let javaDate = new JavaDate(utsDate.getTime().toLong())
 ```
 
 + java.util.Date 转 Date
 ```uts
 import JavaDate from 'java.util.Date' ;
 
-let javaDate =  JavaDate(1709208329000)
-let utsDate = Date(javaDate2.getTime())
+let javaDate =  new JavaDate(1709208329000)
+let utsDate = new Date(javaDate2.getTime())
 ```
 
 
