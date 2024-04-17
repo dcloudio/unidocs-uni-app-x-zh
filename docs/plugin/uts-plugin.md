@@ -90,9 +90,9 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 
 ## 创建uts插件
 
-### uts 插件目录结构
+### HBuilderX项目中uts插件目录结构
 
-在 uni-app 的项目工程下，提供了独立的目录 `utssdk`，来存放 uts 插件。
+在 uni-app / uni-app x 的项目工程下，提供了独立的目录 `utssdk`，来存放 uts 插件。
 
 当然官方更推荐使用 [uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html) 方式，这是更好的包管理方案。
 
@@ -196,7 +196,7 @@ index.d.ts 文件是对当前插件能力的**声明**，用于语法提示。�
 
 如果不熟悉 d.ts，可以自行网上搜索，它属于 ts 标准技术。
 
-### App原生配置
+### App原生配置@utsAppDir
 
 #### Android平台原生配置
 
