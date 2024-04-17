@@ -664,7 +664,7 @@ let javaDate = new JavaDate(utsDate.getTime().toLong())
 import JavaDate from 'java.util.Date' ;
 
 let javaDate =  new JavaDate(1709208329000)
-let utsDate = new Date(javaDate2.getTime())
+let utsDate = new Date(javaDate.getTime())
 ```
 
 
