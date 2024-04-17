@@ -50,22 +50,25 @@
 注意：
 - App平台开发支付宝支付，无需自定义基座，真机运行可直接开发
 - 可通过编写uts插件判断微信是否安装，如android中可通过引入微信自带的api进行判断<br>
-```
-   import WXAPIFactory from 'com.tencent.mm.opensdk.openapi.WXAPIFactory';
-   let api = WXAPIFactory.createWXAPI(UTSAndroid.getTopPageActivity(), '');
-   api!.isWXAppInstalled()
+``` uts
+import WXAPIFactory from 'com.tencent.mm.opensdk.openapi.WXAPIFactory';
+
+export const isWXInstalled : boolean = function () {
+	let api = WXAPIFactory.createWXAPI(UTSAndroid.getTopPageActivity(), '');
+	return api!.isWXAppInstalled()
+};
 ```
 - 需要在根目录的manifest.json文件中，对所使用的支付进行配置如
 ```json
 app: {
-		"distribute": {
-			"modules": {
-				"uni-payment": {
-					"alipay": {},//支付宝支付
-					"wxpay": {}//微信支付
-				}
+	"distribute": {
+		"modules": {
+			"uni-payment": {
+				"alipay": {},//支付宝支付
+				"wxpay": {}//微信支付
 			}
 		}
+	}
 }
 ```
 
