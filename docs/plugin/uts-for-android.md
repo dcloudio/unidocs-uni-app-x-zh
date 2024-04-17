@@ -1271,7 +1271,23 @@ ScancodeConfig.setShowLine(false);
 ScancodeConfig.showLine = false;
 ```
 
+### 6.14 Android原生API过时警告处理
 
+调用原生过时的API插件编译时产生警告，可以使用`@Suppress("DEPRECATION")`添加注解到使用的方法上忽略警告，例：
+```js
+@Suppress("DEPRECATION")
+function getAppName(context : Context) : string {
+	let appName = ""
+	try {
+		const packageManager = context.getPackageManager()
+		const applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 0)
+		appName = packageManager.getApplicationLabel(applicationInfo) as string
+	} catch (e : Exception) {
+		e.printStackTrace()
+	}
+	return appName
+}
+```
 
 
 ## 7  已知待解决问题(持续更新)
