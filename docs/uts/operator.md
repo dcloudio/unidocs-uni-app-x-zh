@@ -405,8 +405,6 @@ a as string ｜ null // 正常
 | 其他任何对象(包含但不限于：Date, Array, Map, UTSJSONObject) | "object"         |
 | any                                                    | 实际类型 |
 
-> 特别说明：
-> 平台专有字符串类型: Char 需要HBuilderX 4.0.2 及之后版本支持
 
 为了与web保持一致，typeof除了布尔、数字、字符串、函数外，全部返回object。如需判断object范围内的具体类型，需另见[instanceof](#instanceof)
 
