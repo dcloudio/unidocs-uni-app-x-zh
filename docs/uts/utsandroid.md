@@ -5,7 +5,7 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 ## 静态方法
 
 
-### onAppConfigChange(callback)
+### onAppConfigChange
 
 <!-- UTSJSON.UTSAndroid.onAppConfigChange.description -->
 
@@ -27,7 +27,7 @@ UTSAndroid.onAppConfigChange(listener!);
 
 ```
 
-### offAppConfigChange(callback?)
+### offAppConfigChange
 
 <!-- UTSJSON.UTSAndroid.offAppConfigChange.description -->
 
@@ -48,7 +48,7 @@ listener = (ret : UTSJSONObject) => {
 UTSAndroid.onAppConfigChange(listener!);
 ```
 
-### onAppTrimMemory(callback?)
+### onAppTrimMemory
 
 <!-- UTSJSON.UTSAndroid.onAppTrimMemory.description -->
 
@@ -68,7 +68,7 @@ listener = (ret : Number) => {
 UTSAndroid.onAppTrimMemory(listener);
 ```
 
-### offAppTrimMemory(callback?)
+### offAppTrimMemory
 
 <!-- UTSJSON.UTSAndroid.offAppTrimMemory.description -->
 
@@ -88,7 +88,7 @@ listener = (ret : Number) => {
 UTSAndroid.onAppTrimMemory(listener);
 ```
 
-### onAppActivityPause(callback)
+### onAppActivityPause
 
 <!-- UTSJSON.UTSAndroid.onAppActivityPause.description -->
 
@@ -108,7 +108,7 @@ listener = () => {
 UTSAndroid.onAppActivityPause(listener);
 ```
 
-### offAppActivityPause(callback?)
+### offAppActivityPause
 
 <!-- UTSJSON.UTSAndroid.offAppActivityPause.description -->
 
@@ -129,7 +129,7 @@ UTSAndroid.onAppActivityPause(listener);
 ```
 
 
-### onAppActivityResume(callback)
+### onAppActivityResume
 
 <!-- UTSJSON.UTSAndroid.onAppActivityResume.description -->
 
@@ -149,7 +149,7 @@ listener = () => {
 UTSAndroid.onAppActivityResume(listener);
 ```
 
-### offAppActivityResume(callback?)
+### offAppActivityResume
 
 <!-- UTSJSON.UTSAndroid.offAppActivityResume.description -->
 
@@ -169,7 +169,7 @@ listener = () => {
 UTSAndroid.onAppActivityResume(listener);
 ```
 
-### onAppActivityDestroy(callback)
+### onAppActivityDestroy
 
 <!-- UTSJSON.UTSAndroid.onAppActivityDestroy.description -->
 
@@ -188,7 +188,7 @@ listener = () => {
 UTSAndroid.onAppActivityDestroy(listener);
 ```
 
-### offAppActivityDestroy(callback?)
+### offAppActivityDestroy
 
 <!-- UTSJSON.UTSAndroid.offAppActivityDestroy.description -->
 
@@ -207,7 +207,7 @@ listener = () => {
 UTSAndroid.onAppActivityDestroy(listener);
 ```
 
-### onAppActivityResult(callback)
+### onAppActivityResult
 
 <!-- UTSJSON.UTSAndroid.onAppActivityResult.description -->
 
@@ -244,7 +244,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 }
 ```
 
-### offAppActivityResult(callback?)
+### offAppActivityResult
 
 <!-- UTSJSON.UTSAndroid.offAppActivityResult.description -->
 
@@ -280,7 +280,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 }
 ```
 
-### onAppActivityBack(callback)
+### onAppActivityBack
 
 <!-- UTSJSON.UTSAndroid.onAppActivityBack.description -->
 
@@ -300,7 +300,7 @@ listener = () => {
 UTSAndroid.onAppActivityBack(listener);
 ```
 
-### offAppActivityBack(callback?)
+### offAppActivityBack
 
 <!-- UTSJSON.UTSAndroid.offAppActivityBack.description -->
 
@@ -353,7 +353,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 }
 ```
 
-### getResourcePath(resourceName)
+### getResourcePath(resourceName:string)
 
 <!-- UTSJSON.UTSAndroid.getResourcePath.description -->
 
@@ -557,7 +557,6 @@ console.log("isUniAppX",isUniAppX)
 
 <!-- UTSJSON.UTSAndroid.getAppCachePath.compatibility -->
 
-* 如果编译报错找不到该方法，手动删除“uniapp-runextension”插件重新安装 或者 重新下载安装最新版本 HBuilder X 即可修复*
 
 
 ```uts
@@ -661,7 +660,7 @@ UTSAndroid.resetPrivacyAgree()
 console.log(UTSAndroid.isPrivacyAgree())
 ```
 
-### requestSystemPermission()
+### requestSystemPermission
 
 <!-- UTSJSON.UTSAndroid.requestSystemPermission.description -->
 
@@ -696,7 +695,7 @@ console.log(UTSAndroid.isPrivacyAgree())
 + 用户允许了部分请求，拒绝了部分权限请求,此时既会调用`success`也会调用`fail`。由其中的 string数组参数 标识具体被拒绝/允许的权限
 
 
-### checkSystemPermissionGranted()
+### checkSystemPermissionGranted
 
 <!-- UTSJSON.UTSAndroid.checkSystemPermissionGranted.description -->
 
@@ -717,7 +716,7 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 ```
 
 
-### gotoSystemPermissionActivity()
+### gotoSystemPermissionActivity
 
 <!-- UTSJSON.UTSAndroid.gotoSystemPermissionActivity.description -->
 
