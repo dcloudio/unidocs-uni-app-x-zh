@@ -514,6 +514,12 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 
 <!-- UTSJSON.UTSAndroid.gotoSystemPermissionActivity.compatibility -->
 
+```ts
+// 前往系统权限设置界面
+let permissionNeed = ["android.permission.READ_PHONE_STATE"]
+UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionNeed)
+```
+
 
 ### getSystemPermissionDenied()
 
@@ -526,7 +532,7 @@ if (UTSAndroid.checkSystemPermissionGranted(UTSAndroid.getUniActivity()!, permis
 <!-- UTSJSON.UTSAndroid.getSystemPermissionDenied.compatibility -->
 
 
-```uts
+```ts
 	let permissionNeed = ["android.permission.READ_PHONE_STATE"]
 	if (UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!, permissionNeed).isEmpty()) {
     	console.log("当前已具备指定权限")
