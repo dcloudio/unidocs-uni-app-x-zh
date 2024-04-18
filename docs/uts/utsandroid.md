@@ -290,6 +290,16 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 <!-- UTSJSON.UTSAndroid.onAppActivityBack.compatibility -->
 
+```ts
+// 点击设备回退按钮，观察日志输出
+let listener:(()=>void)|null = null;
+listener = () => {
+	console.log("onAppActivityBack");
+	UTSAndroid.offAppActivityBack(listener);
+}
+UTSAndroid.onAppActivityBack(listener);
+```
+
 ### offAppActivityBack(callback?)
 
 <!-- UTSJSON.UTSAndroid.offAppActivityBack.description -->
@@ -299,6 +309,16 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 <!-- UTSJSON.UTSAndroid.offAppActivityBack.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.offAppActivityBack.compatibility -->
+
+```ts
+// 点击设备回退按钮，观察日志输出
+let listener:(()=>void)|null = null;
+listener = () => {
+	console.log("onAppActivityBack");
+	UTSAndroid.offAppActivityBack(listener);
+}
+UTSAndroid.onAppActivityBack(listener);
+```
 
 ### getAppContext()
 
