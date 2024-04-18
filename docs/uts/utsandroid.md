@@ -219,10 +219,29 @@ UTSAndroid.onAppActivityDestroy(listener);
 
 
 ```ts
-UTSAndroid.onAppActivityResult((requestCode : Int, resultCode : Int, data ?: Intent) => {
-		let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:" + resultCode + " -data:" + JSON.stringify(data);
-		console.log(eventName);
-});
+import Intent from 'android.content.Intent'
+import MediaStore from "android.provider.MediaStore";	
+import ActivityCompat from "androidx.core.app.ActivityCompat";
+import Manifest from "android.Manifest";
+import PackageManager from "android.content.pm.PackageManager";
+
+// 检查相关权限是否已经具备
+if (ActivityCompat.checkSelfPermission(UTSAndroid.getUniActivity()!, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+	// 不具备权限，申请权限，并且告知用户监听失败
+	ActivityCompat.requestPermissions(UTSAndroid.getUniActivity()!, arrayOf(Manifest.permission.CAMERA), 1002)
+}
+
+let listener:((requestCode: Int, resultCode: Int, data: Intent|null)=>void)|null = null;
+listener = (requestCode : Int, resultCode : Int, data ?: Intent) => {
+	console.log(requestCode);
+	UTSAndroid.offAppActivityResult(listener);
+}
+UTSAndroid.onAppActivityResult(listener);
+// 尝试调用系统的 拍照/选择图片
+let takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageManager()) != null) {
+	UTSAndroid.getUniActivity()!.startActivityForResult(takePictureIntent, 1001);
+}
 ```
 
 ### offAppActivityResult(callback?)
@@ -234,6 +253,32 @@ UTSAndroid.onAppActivityResult((requestCode : Int, resultCode : Int, data ?: Int
 <!-- UTSJSON.UTSAndroid.offAppActivityResult.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.offAppActivityResult.compatibility -->
+
+```ts
+import Intent from 'android.content.Intent'
+import MediaStore from "android.provider.MediaStore";	
+import ActivityCompat from "androidx.core.app.ActivityCompat";
+import Manifest from "android.Manifest";
+import PackageManager from "android.content.pm.PackageManager";
+
+// 检查相关权限是否已经具备
+if (ActivityCompat.checkSelfPermission(UTSAndroid.getUniActivity()!, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+	// 不具备权限，申请权限，并且告知用户监听失败
+	ActivityCompat.requestPermissions(UTSAndroid.getUniActivity()!, arrayOf(Manifest.permission.CAMERA), 1002)
+}
+
+let listener:((requestCode: Int, resultCode: Int, data: Intent|null)=>void)|null = null;
+listener = (requestCode : Int, resultCode : Int, data ?: Intent) => {
+	console.log(requestCode);
+	UTSAndroid.offAppActivityResult(listener);
+}
+UTSAndroid.onAppActivityResult(listener);
+// 尝试调用系统的 拍照/选择图片
+let takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageManager()) != null) {
+	UTSAndroid.getUniActivity()!.startActivityForResult(takePictureIntent, 1001);
+}
+```
 
 ### onAppActivityBack(callback)
 
