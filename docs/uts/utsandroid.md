@@ -414,7 +414,7 @@ console.log(UTSAndroid.getResourcePath('/storage/emulated/0/Android/data/io.dclo
 UTSAndroid.exit()
 ```
 
-### getDispatcher(threadName)
+### getDispatcher
 
 <!-- UTSJSON.UTSAndroid.getDispatcher.description -->
 
