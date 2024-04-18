@@ -734,7 +734,7 @@ UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionN
 ```
 
 
-### getSystemPermissionDenied()
+### getSystemPermissionDenied
 
 <!-- UTSJSON.UTSAndroid.getSystemPermissionDenied.description -->
 
