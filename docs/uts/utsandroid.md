@@ -16,15 +16,13 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.onAppConfigChange.compatibility -->
 
 ```ts
-/**
- * application 状态改变的回调函数
- * 说明文档:https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#onAppConfigChange
- */
-UTSAndroid.onAppConfigChange((ret : UTSJSONObject) => {
+let listener:((res:UTSJSONObject)=>void)|null = null;
+listener = (ret : UTSJSONObject) => {
 	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
-	onLifecycleChange(eventName);
 	console.log(eventName);
-});
+	UTSAndroid.offAppConfigChange(listener);
+}
+UTSAndroid.onAppConfigChange(listener!);
 ```
 
 ### offAppConfigChange(callback?)
@@ -36,6 +34,16 @@ UTSAndroid.onAppConfigChange((ret : UTSJSONObject) => {
 <!-- UTSJSON.UTSAndroid.offAppConfigChange.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.offAppConfigChange.compatibility -->
+
+```ts
+let listener:((res:UTSJSONObject)=>void)|null = null;
+listener = (ret : UTSJSONObject) => {
+	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
+	console.log(eventName);
+	UTSAndroid.offAppConfigChange(listener);
+}
+UTSAndroid.onAppConfigChange(listener!);
+```
 
 ### onAppTrimMemory(callback?)
 
