@@ -416,6 +416,12 @@ console.log("AppCachePath",appCachePath)
 
 <!-- UTSJSON.UTSAndroid.devicePX2px.compatibility -->
 
+```ts
+// 对 100物理像素长度 进行转换
+let pagePX = UTSAndroid.devicePX2px(100)
+// 在特定设备返回值:36.3636360168457
+console.log("pagePX",pagePX)
+```
 
 ### isPrivacyAgree() : boolean;
 
@@ -426,6 +432,18 @@ console.log("AppCachePath",appCachePath)
 <!-- UTSJSON.UTSAndroid.isPrivacyAgree.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.isPrivacyAgree.compatibility -->
+
+```ts
+// 手动标记用户已同意隐私协议
+UTSAndroid.setPrivacyAgree(true)
+// 此时为 true
+console.log(UTSAndroid.isPrivacyAgree())
+// 重置用户隐私协议状态
+UTSAndroid.resetPrivacyAgree()
+// 此时为 false
+console.log(UTSAndroid.isPrivacyAgree())
+```
+
 
 
 ### setPrivacyAgree(state:boolean):void;
@@ -438,6 +456,18 @@ console.log("AppCachePath",appCachePath)
 
 <!-- UTSJSON.UTSAndroid.setPrivacyAgree.compatibility -->
 
+```ts
+// 手动标记用户已同意隐私协议
+UTSAndroid.setPrivacyAgree(true)
+// 此时为 true
+console.log(UTSAndroid.isPrivacyAgree())
+// 重置用户隐私协议状态
+UTSAndroid.resetPrivacyAgree()
+// 此时为 false
+console.log(UTSAndroid.isPrivacyAgree())
+```
+
+
 ### resetPrivacyAgree():void;
 
 <!-- UTSJSON.UTSAndroid.resetPrivacyAgree.description -->
@@ -447,6 +477,17 @@ console.log("AppCachePath",appCachePath)
 <!-- UTSJSON.UTSAndroid.resetPrivacyAgree.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.resetPrivacyAgree.compatibility -->
+
+```ts
+// 手动标记用户已同意隐私协议
+UTSAndroid.setPrivacyAgree(true)
+// 此时为 true
+console.log(UTSAndroid.isPrivacyAgree())
+// 重置用户隐私协议状态
+UTSAndroid.resetPrivacyAgree()
+// 此时为 false
+console.log(UTSAndroid.isPrivacyAgree())
+```
 
 ### requestSystemPermission()
 
