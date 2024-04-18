@@ -242,6 +242,11 @@ console.log(UTSAndroid.getResourcePath('/storage/emulated/0/Android/data/io.dclo
 
 <!-- UTSJSON.UTSAndroid.exit.compatibility -->
 
+```ts
+// 退出当前应用
+UTSAndroid.exit()
+```
+
 ### getDispatcher(threadName)
 
 <!-- UTSJSON.UTSAndroid.getDispatcher.description -->
