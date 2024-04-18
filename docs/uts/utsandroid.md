@@ -638,6 +638,11 @@ export function getJavaClassTest() : boolean {
 
 <!-- UTSJSON.UTSAndroid.getTopPageActivity.compatibility -->
 
+```ts
+// 获取当前栈顶activity
+console.log(UTSAndroid.getTopPageActivity())
+```
+
 
 <!-- UTSJSON.UTSAndroid.tutorial -->
 
