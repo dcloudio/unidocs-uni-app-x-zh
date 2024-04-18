@@ -16,6 +16,7 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.onAppConfigChange.compatibility -->
 
 ```ts
+// 切换系统主题观察日志输出
 let listener:((res:UTSJSONObject)=>void)|null = null;
 listener = (ret : UTSJSONObject) => {
 	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
@@ -23,6 +24,7 @@ listener = (ret : UTSJSONObject) => {
 	UTSAndroid.offAppConfigChange(listener);
 }
 UTSAndroid.onAppConfigChange(listener!);
+
 ```
 
 ### offAppConfigChange(callback?)
@@ -36,6 +38,7 @@ UTSAndroid.onAppConfigChange(listener!);
 <!-- UTSJSON.UTSAndroid.offAppConfigChange.compatibility -->
 
 ```ts
+// 切换系统主题观察日志输出
 let listener:((res:UTSJSONObject)=>void)|null = null;
 listener = (ret : UTSJSONObject) => {
 	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
