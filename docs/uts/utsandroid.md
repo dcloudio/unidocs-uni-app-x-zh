@@ -58,6 +58,16 @@ UTSAndroid.onAppConfigChange(listener!);
 
 <!-- UTSJSON.UTSAndroid.onAppTrimMemory.compatibility -->
 
+```ts
+// 点击Home按钮返回桌面，观察日志输出
+let listener:((res:Number)=>void)|null = null;
+listener = (ret : Number) => {
+	console.log(ret);
+	UTSAndroid.offAppTrimMemory(listener);
+}
+UTSAndroid.onAppTrimMemory(listener);
+```
+
 ### offAppTrimMemory(callback?)
 
 <!-- UTSJSON.UTSAndroid.offAppTrimMemory.description -->
@@ -67,6 +77,16 @@ UTSAndroid.onAppConfigChange(listener!);
 <!-- UTSJSON.UTSAndroid.offAppTrimMemory.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.offAppTrimMemory.compatibility -->
+
+```ts
+// 点击Home按钮返回桌面，观察日志输出
+let listener:((res:Number)=>void)|null = null;
+listener = (ret : Number) => {
+	console.log(ret);
+	UTSAndroid.offAppTrimMemory(listener);
+}
+UTSAndroid.onAppTrimMemory(listener);
+```
 
 ### onAppActivityPause(callback)
 
