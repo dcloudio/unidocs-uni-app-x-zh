@@ -96,3 +96,9 @@ uni.createSelectorQuery().select('.rect1').selectAll('.rect2').boundingClientRec
 // 共返回 2 条结果，第一项数据类型为 NodeInfo，第二项数据类型类型为 NodeInfo[]
 result = [ {}, [{},{}] ]
 ```
+
+
+** 注意事项：**
+
+1. App 平台 `<template>` 下如果存在多个节点，会导致非第一个节点查询不到的问题
+2. Web 平台 `<template>` 下如果存在多个节点，如果是在组件内部查询，可能会导致查询到其他组件或页面的元素
