@@ -346,6 +346,7 @@ mediaPlayer.start();
 
 如果是本地依赖, 参考 [hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs) 将jar/aar 添加到 `utssdk/app-android/libs` 目录下即可使用
 
+对于gradle 配置的高级写法，可以参考[文档](https://nativesupport.dcloud.net.cn/NativePlugin/course/package.html#dependencies)
 
 ### 3.5 远程依赖仓库说明
 
