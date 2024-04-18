@@ -139,6 +139,16 @@ UTSAndroid.onAppActivityPause(listener);
 
 <!-- UTSJSON.UTSAndroid.onAppActivityResume.compatibility -->
 
+```ts
+// 点击Home按钮返回桌面,再返回应用。 观察日志输出
+let listener:(()=>void)|null = null;
+listener = () => {
+	console.log("onAppActivityResume");
+	UTSAndroid.offAppActivityResume(listener);
+}
+UTSAndroid.onAppActivityResume(listener);
+```
+
 ### offAppActivityResume(callback?)
 
 <!-- UTSJSON.UTSAndroid.offAppActivityResume.description -->
@@ -148,6 +158,16 @@ UTSAndroid.onAppActivityPause(listener);
 <!-- UTSJSON.UTSAndroid.offAppActivityResume.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.offAppActivityResume.compatibility -->
+
+```ts
+// 点击Home按钮返回桌面,再返回应用。 观察日志输出
+let listener:(()=>void)|null = null;
+listener = () => {
+	console.log("onAppActivityResume");
+	UTSAndroid.offAppActivityResume(listener);
+}
+UTSAndroid.onAppActivityResume(listener);
+```
 
 ### onAppActivityDestroy(callback)
 
