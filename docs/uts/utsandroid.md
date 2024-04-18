@@ -179,6 +179,15 @@ UTSAndroid.onAppActivityResume(listener);
 
 <!-- UTSJSON.UTSAndroid.onAppActivityDestroy.compatibility -->
 
+```ts
+let listener:(()=>void)|null = null;
+listener = () => {
+	console.log("onAppActivityDestroy");
+	UTSAndroid.offAppActivityDestroy(listener);
+}
+UTSAndroid.onAppActivityDestroy(listener);
+```
+
 ### offAppActivityDestroy(callback?)
 
 <!-- UTSJSON.UTSAndroid.offAppActivityDestroy.description -->
@@ -188,6 +197,15 @@ UTSAndroid.onAppActivityResume(listener);
 <!-- UTSJSON.UTSAndroid.offAppActivityDestroy.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.offAppActivityDestroy.compatibility -->
+
+```ts
+let listener:(()=>void)|null = null;
+listener = () => {
+	console.log("onAppActivityDestroy");
+	UTSAndroid.offAppActivityDestroy(listener);
+}
+UTSAndroid.onAppActivityDestroy(listener);
+```
 
 ### onAppActivityResult(callback)
 
