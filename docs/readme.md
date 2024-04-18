@@ -307,7 +307,7 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 4. 对于script，如果你之前使用ts，那么改造成本会很低。如果使用js，那需要改造成uts，差别最大的就是补类型，没法再使用弱类型了。
 5. 组件的写法基本没有差别，只需注意uni-app x初期支持的组件不全
 
-官方近期会提供把[uni小程序sdk](https://nativesupport.dcloud.net.cn/#)集成到uni-app x的方案。届时你的uni-app js版老项目可以作为uni-app x新项目的一个小程序来使用。
+你还可以把uni-app js版老项目作为uni-app x新项目的一个小程序来使用。在uni-app x里内嵌uni小程序sdk，详见：[uni-unimp](https://ext.dcloud.net.cn/plugin?id=17638)。
 
 ### 原生/rn/flutter页面兼容指南
 
