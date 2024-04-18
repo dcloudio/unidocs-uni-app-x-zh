@@ -823,7 +823,7 @@ context.startActivity(intent);
 
 
 
-### getJavaClass(any:Any)
+### getJavaClass(input:any)
 
 <!-- UTSJSON.UTSAndroid.getJavaClass.description -->
 
