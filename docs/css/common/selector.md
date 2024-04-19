@@ -43,3 +43,7 @@
 
 以上代码示例，当我们把 `rowDesc` 变量从 `row-desc1` 变为 `row-desc2` 时，会更新 `text` 节点样式，但是如果把 `docBody` 变量从 `doc-body1` 变为 `doc-body2`，是不会更新 `text` 节点样式的。\
 因为 `doc-body` 不是最后一个选择器，非末尾的选择器变更有可能影响很多 DOM 元素，从而影响到渲染性能。
+
+::: warning 注意
+App端相邻选择器暂不支持动态新增或删减节点，为了优化性能减少一些重新渲染工作，示例 [https://issues.dcloud.net.cn/pages/issues/detail?id=1452](https://issues.dcloud.net.cn/pages/issues/detail?id=1452)
+:::
