@@ -3,3 +3,4 @@
 * [DOMRect](domrect.md)
 * [CSSStyleDeclaration](cssstyledeclaration.md)
 * [DrawableContext](drawablecontext.md)
+* [UniResizeObserver](uniresizeobserver.md)
