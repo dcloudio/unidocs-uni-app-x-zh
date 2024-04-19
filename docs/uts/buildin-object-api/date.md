@@ -75,6 +75,26 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.toDateString.compatibility -->
 
+### toISOString()
+
+<!-- UTSJSON.Date.toISOString.description -->
+
+<!-- UTSJSON.Date.toISOString.param -->
+
+<!-- UTSJSON.Date.toISOString.returnValue -->
+
+<!-- UTSJSON.Date.toISOString.compatibility -->
+
+### toJSON()
+
+<!-- UTSJSON.Date.toJSON.description -->
+
+<!-- UTSJSON.Date.toJSON.param -->
+
+<!-- UTSJSON.Date.toJSON.returnValue -->
+
+<!-- UTSJSON.Date.toJSON.compatibility -->
+
 ### getTime()
 
 <!-- UTSJSON.Date.getTime.description -->
