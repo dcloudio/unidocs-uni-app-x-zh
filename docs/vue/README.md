@@ -221,7 +221,7 @@ const doubleCount = computed<number>(() : number => {
 
 你可以通过给 `module` attribute 一个值来自定义注入 class 对象的属性名：
 
-```html
+```vue
 <template>
   <text :class="classes.red">red</text>
 </template>
@@ -237,7 +237,7 @@ const doubleCount = computed<number>(() : number => {
 
 可以通过 `useCssModule` API 在 `setup()` 和 `<script setup>` 中访问注入的 class。对于使用了自定义注入名称的 `<style module>` 块，useCssModule 接收一个匹配的 module attribute 值作为第一个参数：
 
-```html
+```ts
 import { useCssModule } from 'vue'
 
 // 在 setup() 作用域中...

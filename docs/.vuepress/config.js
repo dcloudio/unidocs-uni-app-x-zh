@@ -77,7 +77,8 @@ const config = {
     extractHeaders: ['h1', 'h2', 'h3', 'h4'],
     chainMarkdown (config) {
       const extensionMap = {
-        uts: 'ts'
+        uts: 'ts',
+        uvue: 'vue'
       }
       config.options.highlight((str, lang) => {
         const extension = extensionMap[lang]
