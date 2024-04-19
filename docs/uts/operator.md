@@ -89,7 +89,7 @@ let a = 64 | temp
 
 **注意**
 
-逻辑运算符操作数的类型必须是 boolean
+逻辑运算符操作数的类型必须是 boolean，目前不支持将操作数自动转化为布尔类型。
 
 ## 字符串运算符(String operators)@String-operators
 
