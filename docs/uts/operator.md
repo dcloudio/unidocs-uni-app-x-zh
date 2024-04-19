@@ -88,7 +88,8 @@ let a = 64 | temp
 | 逻辑非(!)    | !condition1            | (逻辑非) |
 
 **注意**
-逻辑运算符操作数的类型必须是Boolean
+
+逻辑运算符操作数的类型必须是 boolean
 
 ## 字符串运算符(String operators)@String-operators
 
