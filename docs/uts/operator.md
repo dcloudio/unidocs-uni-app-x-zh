@@ -83,9 +83,12 @@ let a = 64 | temp
 
 | 运算符       | 范例             | 描述     |
 | ------------ | ---------------- | -------- |
-| 逻辑与(&&)   | expr1 && expr2   | (逻辑与) |
-| 逻辑或(\|\|) | expr1 \|\| expr2 | (逻辑或) |
-| 逻辑非(!)    | !expr            | (逻辑非) |
+| 逻辑与(&&)   | condition1 && condition2   | (逻辑与) |
+| 逻辑或(\|\|) | condition1 \|\| condition2 | (逻辑或) |
+| 逻辑非(!)    | !condition1            | (逻辑非) |
+
+**注意**
+逻辑运算符操作数的类型必须是Boolean
 
 ## 字符串运算符(String operators)@String-operators
 
