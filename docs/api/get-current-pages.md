@@ -4,6 +4,14 @@
 
 <!-- UTSAPIJSON.getCurrentPages.param -->
 
+**PageStyle**
+
+当前仅支持的属性
+
+|属性									|类型		|默认值	|描述																																													|
+|:-:									|:-:		|:-:		|:-:																																													|
+|enablePullDownRefresh|Boolean|				|是否开启下拉刷新，详见页面[生命周期](https://uniapp.dcloud.net.cn/tutorial/page.html#lifecycle)。	|
+
 <!-- UTSAPIJSON.getCurrentPages.returnValue -->
 
 <!-- UTSAPIJSON.getCurrentPages.example -->
