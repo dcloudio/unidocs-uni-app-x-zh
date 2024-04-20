@@ -9,7 +9,7 @@ uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app 
 - 剪切板：`uni.setClipboardData`、`uni.getClipboardData` [见插件市场](https://ext.dcloud.net.cn/search?q=%E5%89%AA%E5%88%87%E6%9D%BF&orderBy=Relevance&cat1=8&cat2=81)
 - 拨打电话：`uni.makePhoneCall` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%94%B5%E8%AF%9D&orderBy=Relevance&uni-appx=1)
 - 打开三方应用：打开浏览器、应用商店、地图并传参。`plus.openUrl` [见hello uni-app x示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/schema/schema.uvue)
-- 分享：`uni.shareWithSystem` [见hello uni-app x示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/share/share.uvue)
+- 分享：`uni.shareWithSystem` [见插件市场](https://ext.dcloud.net.cn/search?q=%E5%88%86%E4%BA%AB&orderBy=Relevance&uni-appx=1)，[Android可参考hello uni-app x示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/share/share.uvue)
 - 微信登录、分享、企业客服：[见插件市场](https://ext.dcloud.net.cn/search?q=%E5%BE%AE%E4%BF%A1%E7%99%BB%E5%BD%95&orderBy=Relevance&cat1=8&cat2=81&uni-appx=1)
 - 谷歌登录：[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E7%99%BB%E5%BD%95&orderBy=Relevance&uni-appx=1)
 - 谷歌支付：[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E6%94%AF%E4%BB%98&orderBy=Relevance&uni-appx=1)
