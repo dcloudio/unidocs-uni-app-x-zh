@@ -253,7 +253,7 @@ useCssModule('classes')
 
 |App|Web|
 |:-:|:-:|
-|x  |x  |
+|x  |4.13+  |
 
 单文件组件的 `<style>` 标签支持使用 `v-bind` CSS 函数将 CSS 的值链接到动态的组件状态：
 
