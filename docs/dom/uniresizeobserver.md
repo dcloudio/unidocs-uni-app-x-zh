@@ -6,12 +6,6 @@
 
 <!-- CUSTOMTYPEJSON.UniResizeObserver.param -->
 
-
-
-<!-- CUSTOMTYPEJSON.UniResizeObserver.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniResizeObserver.example -->
-
 ### UniResizeObserver 的方法 @uniresizeobserver-methods
 <!-- CUSTOMTYPEJSON.UniResizeObserver.methods.disconnect.name -->
 
@@ -48,3 +42,8 @@
 <!-- CUSTOMTYPEJSON.UniResizeObserver.methods.unobserve.compatibility -->
 
 <!-- CUSTOMTYPEJSON.UniResizeObserver.methods.unobserve.tutorial -->
+
+
+<!-- CUSTOMTYPEJSON.UniResizeObserver.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniResizeObserver.example -->
