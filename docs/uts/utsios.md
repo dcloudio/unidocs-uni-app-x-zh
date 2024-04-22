@@ -165,56 +165,6 @@ app-iOS平台专有内置对象。在uni-app和uni-app x的uts环境中均可使
 
 <!-- UTSJSON.UTSiOS.getAppWgtVersion.compatibility -->
 
-### getHostLanguage()
-
-<!-- UTSJSON.UTSiOS.getHostLanguage.description -->
-
-<!-- UTSJSON.UTSiOS.getHostLanguage.param -->
-
-<!-- UTSJSON.UTSiOS.getHostLanguage.returnValue -->
-
-<!-- UTSJSON.UTSiOS.getHostLanguage.compatibility -->
-
-### getHostVersion()
-
-<!-- UTSJSON.UTSiOS.getHostVersion.description -->
-
-<!-- UTSJSON.UTSiOS.getHostVersion.param -->
-
-<!-- UTSJSON.UTSiOS.getHostVersion.returnValue -->
-
-<!-- UTSJSON.UTSiOS.getHostVersion.compatibility -->
-
-### getHostName()
-
-<!-- UTSJSON.UTSiOS.getHostName.description -->
-
-<!-- UTSJSON.UTSiOS.getHostName.param -->
-
-<!-- UTSJSON.UTSiOS.getHostName.returnValue -->
-
-<!-- UTSJSON.UTSiOS.getHostName.compatibility -->
-
-### getHostPackageName()
-
-<!-- UTSJSON.UTSiOS.getHostPackageName.description -->
-
-<!-- UTSJSON.UTSiOS.getHostPackageName.param -->
-
-<!-- UTSJSON.UTSiOS.getHostPackageName.returnValue -->
-
-<!-- UTSJSON.UTSiOS.getHostPackageName.compatibility -->
-
-### getHostTheme()
-
-<!-- UTSJSON.UTSiOS.getHostTheme.description -->
-
-<!-- UTSJSON.UTSiOS.getHostTheme.param -->
-
-<!-- UTSJSON.UTSiOS.getHostTheme.returnValue -->
-
-<!-- UTSJSON.UTSiOS.getHostTheme.compatibility -->
-
 ### getInnerVersion()
 
 <!-- UTSJSON.UTSiOS.getInnerVersion.description -->
