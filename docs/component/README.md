@@ -593,6 +593,9 @@ ComponentPublicInstance
 ```
 :::
 
+**注意：**
+- App-Android 平台 `4.0` 版本开始支持 `$callMethod` 调用 `defineExpose` 导出的方法
+- Web 平台、App-iOS 平台 `4.13` 版本开始支持 `$callMethod` 调用 `defineExpose` 导出的方法
 
 
 ## 如何开发同时兼容 uni-app x 和 uni-app 的组件
