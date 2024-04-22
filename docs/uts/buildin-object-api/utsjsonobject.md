@@ -172,3 +172,32 @@ person.toMap().forEach((value, key) => {
 
 <!-- UTSJSON.UTSJSONObject.tutorial -->
 
+## 注意事项
+
+需要特别注意的是： 在 Android/Ios 平台，当使用 getXXX 方法返回 对象类型时，获取的是值引用而非内存引用
+
+此时直接修改其对象的属性，并不会体现在整个UTSJSONObject上，如果需要体现此变化，则需要手动更新对应的字段
+
+```ts
+let obj = {
+    "cars":[
+      {
+        name:"car1",
+        value:100
+      }
+    ]
+  }
+  
+  let cars = obj.getArray<UTSJSONObject>("cars")
+  cars![0].set("value",20)
+  /**
+   * 此时 obj 的属性并不会改变
+   */
+  console.log("obj",obj)
+  // 需要手动更新obj的属性
+  obj.set("cars",cars)
+  /**
+   *  此时obj的属性改变了
+   */
+  console.log("obj",obj)
+```
