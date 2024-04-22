@@ -278,3 +278,4 @@ view.takeSnapshot({
 * app端如需主动删除临时文件，使用[uni.getFileSystemManager](../api/get-file-system-manager.md)。
 * app端list-view、web-view组件性能优化仅渲染屏幕显示的内容，所以截图仅能截取到当前屏幕展示的内容。
 * app端scroll-view组件设置padding后，截图内容不会包含padding区域。
+* app端由于组件背景默认透明，所以截图图片默认底色为白色。
