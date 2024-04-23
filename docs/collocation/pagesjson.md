@@ -201,6 +201,10 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 <!-- PAGESJSON.PagesOptionsPage_style.compatibility -->
 
 **Tips**
+- 横屏
+	* Web：横竖屏由手机浏览器控制，无法在pages.json中指定。uni-app x的页面和基础组件都支持自适应宽屏界面
+	* Android：默认是竖屏。从4.13起支持配置pageOrientation实现横屏或自动旋转适应
+	* iOS：在手机上目前只能竖屏。在ipad上只能自适应，ipad旋转为横屏后uni-app x应用也会横屏。可以在info.plist中调整。uni-app x的页面和基础组件都支持自适应宽屏界面
 - 状态栏
 	* 手机顶部状态栏的背景色、前景色(white/black)与navigationBarBackgroundColor和navigationBarTextStyle相同
 	* 小程序平台，pages.json中各个颜色的设置仅支持普通的16进制数值。App和Web支持设为transparent，即透明。
