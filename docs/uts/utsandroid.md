@@ -15,17 +15,7 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.onAppConfigChange.compatibility -->
 
-```ts
-// 切换系统主题观察日志输出
-let listener:((res:UTSJSONObject)=>void)|null = null;
-listener = (ret : UTSJSONObject) => {
-	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
-	console.log(eventName);
-	UTSAndroid.offAppConfigChange(listener);
-}
-UTSAndroid.onAppConfigChange(listener!);
 
-```
 
 ### offAppConfigChange
 
@@ -37,16 +27,6 @@ UTSAndroid.onAppConfigChange(listener!);
 
 <!-- UTSJSON.UTSAndroid.offAppConfigChange.compatibility -->
 
-```ts
-// 切换系统主题观察日志输出
-let listener:((res:UTSJSONObject)=>void)|null = null;
-listener = (ret : UTSJSONObject) => {
-	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
-	console.log(eventName);
-	UTSAndroid.offAppConfigChange(listener);
-}
-UTSAndroid.onAppConfigChange(listener!);
-```
 
 ### onAppTrimMemory
 
@@ -58,15 +38,7 @@ UTSAndroid.onAppConfigChange(listener!);
 
 <!-- UTSJSON.UTSAndroid.onAppTrimMemory.compatibility -->
 
-```ts
-// 点击Home按钮返回桌面，观察日志输出
-let listener:((res:Number)=>void)|null = null;
-listener = (ret : Number) => {
-	console.log(ret);
-	UTSAndroid.offAppTrimMemory(listener);
-}
-UTSAndroid.onAppTrimMemory(listener);
-```
+
 
 ### offAppTrimMemory
 
@@ -78,15 +50,7 @@ UTSAndroid.onAppTrimMemory(listener);
 
 <!-- UTSJSON.UTSAndroid.offAppTrimMemory.compatibility -->
 
-```ts
-// 点击Home按钮返回桌面，观察日志输出
-let listener:((res:Number)=>void)|null = null;
-listener = (ret : Number) => {
-	console.log(ret);
-	UTSAndroid.offAppTrimMemory(listener);
-}
-UTSAndroid.onAppTrimMemory(listener);
-```
+
 
 ### onAppActivityPause
 
@@ -98,15 +62,7 @@ UTSAndroid.onAppTrimMemory(listener);
 
 <!-- UTSJSON.UTSAndroid.onAppActivityPause.compatibility -->
 
-```ts
-// 点击Home按钮返回桌面，观察日志输出
-let listener:(()=>void)|null = null;
-listener = () => {
-	console.log("onAppActivityPause");
-	UTSAndroid.offAppActivityPause(listener);
-}
-UTSAndroid.onAppActivityPause(listener);
-```
+
 
 ### offAppActivityPause
 
@@ -118,15 +74,6 @@ UTSAndroid.onAppActivityPause(listener);
 
 <!-- UTSJSON.UTSAndroid.offAppActivityPause.compatibility -->
 
-```ts
-// 点击Home按钮返回桌面，观察日志输出
-let listener:(()=>void)|null = null;
-listener = () => {
-	console.log("onAppActivityPause");
-	UTSAndroid.offAppActivityPause(listener);
-}
-UTSAndroid.onAppActivityPause(listener);
-```
 
 
 ### onAppActivityResume
@@ -139,15 +86,6 @@ UTSAndroid.onAppActivityPause(listener);
 
 <!-- UTSJSON.UTSAndroid.onAppActivityResume.compatibility -->
 
-```ts
-// 点击Home按钮返回桌面,再返回应用。 观察日志输出
-let listener:(()=>void)|null = null;
-listener = () => {
-	console.log("onAppActivityResume");
-	UTSAndroid.offAppActivityResume(listener);
-}
-UTSAndroid.onAppActivityResume(listener);
-```
 
 ### offAppActivityResume
 
@@ -159,15 +97,7 @@ UTSAndroid.onAppActivityResume(listener);
 
 <!-- UTSJSON.UTSAndroid.offAppActivityResume.compatibility -->
 
-```ts
-// 点击Home按钮返回桌面,再返回应用。 观察日志输出
-let listener:(()=>void)|null = null;
-listener = () => {
-	console.log("onAppActivityResume");
-	UTSAndroid.offAppActivityResume(listener);
-}
-UTSAndroid.onAppActivityResume(listener);
-```
+
 
 ### onAppActivityDestroy
 
@@ -179,14 +109,7 @@ UTSAndroid.onAppActivityResume(listener);
 
 <!-- UTSJSON.UTSAndroid.onAppActivityDestroy.compatibility -->
 
-```ts
-let listener:(()=>void)|null = null;
-listener = () => {
-	console.log("onAppActivityDestroy");
-	UTSAndroid.offAppActivityDestroy(listener);
-}
-UTSAndroid.onAppActivityDestroy(listener);
-```
+
 
 ### offAppActivityDestroy
 
@@ -198,14 +121,7 @@ UTSAndroid.onAppActivityDestroy(listener);
 
 <!-- UTSJSON.UTSAndroid.offAppActivityDestroy.compatibility -->
 
-```ts
-let listener:(()=>void)|null = null;
-listener = () => {
-	console.log("onAppActivityDestroy");
-	UTSAndroid.offAppActivityDestroy(listener);
-}
-UTSAndroid.onAppActivityDestroy(listener);
-```
+
 
 ### onAppActivityResult
 
@@ -218,31 +134,7 @@ UTSAndroid.onAppActivityDestroy(listener);
 <!-- UTSJSON.UTSAndroid.onAppActivityResult.compatibility -->
 
 
-```ts
-import Intent from 'android.content.Intent'
-import MediaStore from "android.provider.MediaStore";	
-import ActivityCompat from "androidx.core.app.ActivityCompat";
-import Manifest from "android.Manifest";
-import PackageManager from "android.content.pm.PackageManager";
 
-// 检查相关权限是否已经具备
-if (ActivityCompat.checkSelfPermission(UTSAndroid.getUniActivity()!, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-	// 不具备权限，申请权限，并且告知用户监听失败
-	ActivityCompat.requestPermissions(UTSAndroid.getUniActivity()!, arrayOf(Manifest.permission.CAMERA), 1002)
-}
-
-let listener:((requestCode: Int, resultCode: Int, data: Intent|null)=>void)|null = null;
-listener = (requestCode : Int, resultCode : Int, data ?: Intent) => {
-	console.log(requestCode);
-	UTSAndroid.offAppActivityResult(listener);
-}
-UTSAndroid.onAppActivityResult(listener);
-// 尝试调用系统的 拍照/选择图片
-let takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageManager()) != null) {
-	UTSAndroid.getUniActivity()!.startActivityForResult(takePictureIntent, 1001);
-}
-```
 
 ### offAppActivityResult
 
@@ -254,31 +146,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 <!-- UTSJSON.UTSAndroid.offAppActivityResult.compatibility -->
 
-```ts
-import Intent from 'android.content.Intent'
-import MediaStore from "android.provider.MediaStore";	
-import ActivityCompat from "androidx.core.app.ActivityCompat";
-import Manifest from "android.Manifest";
-import PackageManager from "android.content.pm.PackageManager";
 
-// 检查相关权限是否已经具备
-if (ActivityCompat.checkSelfPermission(UTSAndroid.getUniActivity()!, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-	// 不具备权限，申请权限，并且告知用户监听失败
-	ActivityCompat.requestPermissions(UTSAndroid.getUniActivity()!, arrayOf(Manifest.permission.CAMERA), 1002)
-}
-
-let listener:((requestCode: Int, resultCode: Int, data: Intent|null)=>void)|null = null;
-listener = (requestCode : Int, resultCode : Int, data ?: Intent) => {
-	console.log(requestCode);
-	UTSAndroid.offAppActivityResult(listener);
-}
-UTSAndroid.onAppActivityResult(listener);
-// 尝试调用系统的 拍照/选择图片
-let takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageManager()) != null) {
-	UTSAndroid.getUniActivity()!.startActivityForResult(takePictureIntent, 1001);
-}
-```
 
 ### onAppActivityBack
 
@@ -290,15 +158,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 <!-- UTSJSON.UTSAndroid.onAppActivityBack.compatibility -->
 
-```ts
-// 点击设备回退按钮，观察日志输出
-let listener:(()=>void)|null = null;
-listener = () => {
-	console.log("onAppActivityBack");
-	UTSAndroid.offAppActivityBack(listener);
-}
-UTSAndroid.onAppActivityBack(listener);
-```
+
 
 ### offAppActivityBack
 
@@ -310,15 +170,7 @@ UTSAndroid.onAppActivityBack(listener);
 
 <!-- UTSJSON.UTSAndroid.offAppActivityBack.compatibility -->
 
-```ts
-// 点击设备回退按钮，观察日志输出
-let listener:(()=>void)|null = null;
-listener = () => {
-	console.log("onAppActivityBack");
-	UTSAndroid.offAppActivityBack(listener);
-}
-UTSAndroid.onAppActivityBack(listener);
-```
+
 
 ### getAppContext()
 
