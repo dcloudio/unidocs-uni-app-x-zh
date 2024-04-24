@@ -55,7 +55,8 @@
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.description -->
 
 **注意**
-setAttribute从HBuilderX 3.93起，调整为只能保存string类型属性值，需要保存其它类型数据请使用dataset属性。
+- setAttribute从HBuilderX 3.93起，调整为只能保存string类型属性值，需要保存其它类型数据请使用dataset属性。
+- 为保证多端一致setAttribute不应用于修改本文档中的UniElement属性，如有此类需求应使用element.xxx设置，如element.scrollTop
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.param -->
 
@@ -70,7 +71,8 @@ setAttribute从HBuilderX 3.93起，调整为只能保存string类型属性值，
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.description -->
 
 **注意**
-getAttribute返回值从HBuilderX 3.93起，调整为string类型，不要使用此方法获取非string类型的属性值。如有非string需求，请使用对象的点操作符直接访问dateset属性，不通过getAttribute方法。
+- getAttribute返回值从HBuilderX 3.93起，调整为string类型，不要使用此方法获取非string类型的属性值。如有非string需求，请使用对象的点操作符直接访问dateset属性，不通过getAttribute方法。
+- 为保证多端一致getAttribute不应用于获取本文档中的UniElement属性，如有此类需求应使用element.xxx获取，如element.scrollTop
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.param -->
 
