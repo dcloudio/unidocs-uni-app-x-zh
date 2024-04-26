@@ -237,40 +237,6 @@ console.log(`The index of the 2nd "${searchTerm}" is ${paragraph.indexOf(searchT
 
 <!-- UTSJSON.String.indexOf.compatibility -->
 
-### padEnd
-
-padEnd() 方法会用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的末尾（右侧）开始填充。
-
-**平台差异说明**
-
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
-
-```ts
-const str1 = 'Breaded Mushrooms';
-console.log(str1.padEnd(25, '.'));
-// expected output: "Breaded Mushrooms........"
-const str2 = '200';
-console.log(str2.padEnd(5));
-// expected output: "200  "
-```
-### padStart
-
-padStart() 方法用另一个字符串填充当前字符串 (如果需要的话，会重复多次)，以便产生的字符串达到给定的长度。从当前字符串的左侧开始填充。
-
-**平台差异说明**
-
-|JavaScript|Kotlin|Swift|
-|:-:|:-:|:-:|
-|√|√|√ `(3.6.11+)`|
-
-```ts
-const str1 = '5';
-console.log(str1.padStart(2, '0'));
-// expected output: "05"
-```
-
 ### lastIndexOf(searchString, position?)
 
 <!-- UTSJSON.String.lastIndexOf.description -->
@@ -485,6 +451,12 @@ console.log(sentence.toUpperCase());
 
 <!-- UTSJSON.String.padStart.compatibility -->
 
+```ts
+const str1 = '5';
+console.log(str1.padStart(2, '0'));
+// expected output: "05"
+```
+
 ### padEnd(targetLength, padString?)
 
 <!-- UTSJSON.String.padEnd.description -->
@@ -494,6 +466,15 @@ console.log(sentence.toUpperCase());
 <!-- UTSJSON.String.padEnd.returnValue -->
 
 <!-- UTSJSON.String.padEnd.compatibility -->
+
+```ts
+const str1 = 'Breaded Mushrooms';
+console.log(str1.padEnd(25, '.'));
+// expected output: "Breaded Mushrooms........"
+const str2 = '200';
+console.log(str2.padEnd(5));
+// expected output: "200  "
+```
 
 ### includes(searchString, position?)
 
