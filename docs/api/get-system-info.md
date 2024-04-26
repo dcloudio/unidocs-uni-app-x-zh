@@ -1,5 +1,7 @@
 ## uni.getSystemInfo(options) @getsysteminfo
 
+> 自HBuilderX 4.13版本起，uniPlatform属性🈶app改为app-android、app-ios。如果开发者的项目内使用uni-id-common、uni-id、uni-id-pages或uni-id-pages-x，则需要分别升级到如下版本来兼容本次调整：uni-id@3.3.32、uni-id-common@1.0.17、uni-id-pages@1.1.20、uni-id-pages-x@1.1.1
+
 <!-- UTSAPIJSON.getSystemInfo.description -->
 
 uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的2个API获取系统信息。
