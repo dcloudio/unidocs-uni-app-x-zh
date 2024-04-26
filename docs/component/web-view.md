@@ -10,9 +10,9 @@
 
 <!-- UTSCOMJSON.web-view.compatibility -->
 
-- web和小程序上，web-view是全屏的，即页面只能显示一个铺满的web-view。
-- app/web端的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。
-- web端web-view组件底层使用iframe实现，会有浏览器安全策略限制。
+- web平台web-view组件底层使用iframe实现，会有浏览器安全策略限制。一般不推荐在web平台使用web-view组件，如确需使用，且需要通信，请自行根据iframe的浏览器规范进行通信。
+- web和小程序平台上，web-view是全屏的，即页面只能显示一个铺满的web-view。
+- app/web平台的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。
 
 <!-- UTSCOMJSON.web-view.children -->
 
