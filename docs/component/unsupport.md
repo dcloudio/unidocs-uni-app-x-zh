@@ -6,7 +6,7 @@ uni-app x在App端还有一批组件未与uni-app js引擎版拉齐。有的在�
 
 - ad：正在补充
 - movable-view：没有ui层和逻辑层的通信阻塞，开发者可自己写代码拖动view。hello uni-app x中有[示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/component/general-event/touch-event.uvue)
-- picker：可改用[picker-view](picker-view.md)
+- picker：可改用[picker-view](picker-view.md)。在主流的uni-app x三方ui库中，基本都有封装好的弹出组件。uni ui的[uni-data-picker](https://ext.dcloud.net.cn/plugin?id=3796)
 - canvas：目前没有完整的canvas组件，但
 	* 每个view，都提供了[draw API](../dom/drawablecontext.md)，可以高性能的画各种形状、写字。这组API与web的canvas api接近但不同。
 	* 截图或海报需求，无需像webview那样通过canvas中转，app平台view直接提供截图API，[takesnapshot](../dom/element.md#takesnapshot)。
