@@ -15,6 +15,7 @@ uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app 
 - 谷歌支付：[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E6%94%AF%E4%BB%98&orderBy=Relevance&uni-appx=1)
 - 打开文件：`uni.openDocument` [见hello uts示例](https://gitcode.net/dcloud/hello-uts/-/blob/dev/uni_modules/uts-nativepage/utssdk/app-android/index.uts)、[插件市场](https://ext.dcloud.net.cn/plugin?id=12731)
 - 扫码：`uni.scanCode` [见插件市场](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&cat1=8&type=UpdatedDate)
+- 视频选择：`uni.chooseVideo`  [见插件市场](https://ext.dcloud.net.cn/search?q=chooseVideo&orderBy=Relevance&uni-appx=1) 、`uni.chooseMedia` [见插件市场](https://ext.dcloud.net.cn/search?q=chooseMedia&orderBy=Relevance&uni-appx=1)。或者使用下面的文件选择，也可以选择视频。
 - 文件选择：`uni.chooseFile` [见插件市场](https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9&cat1=8&cat2=81)
 - 蓝牙：Bluetooth。[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&orderBy=Relevance&cat1=8&cat2=81)
 - NFC：[见插件市场](https://ext.dcloud.net.cn/search?q=nfc&orderBy=Relevance&cat1=8&cat2=81)
@@ -64,9 +65,9 @@ uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api
 一些plus api在插件市场有替代：
 - plus.sqlite [插件市场](https://ext.dcloud.net.cn/search?q=sqlite&uni-appx=1)
 - plus.speech [插件市场](https://ext.dcloud.net.cn/search?q=%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3&orderBy=Relevance&uni-appx=1)
+- plus.runtime.openURL [插件市场](https://ext.dcloud.net.cn/plugin?id=17828)
+或者参考如下代码调用。
 
-还有一些plus API未封装为 uni 的API，但可以直接使用如下代码调用。
-- plus.runtime.openURL
 ```vue
 <template>
 	<view>
