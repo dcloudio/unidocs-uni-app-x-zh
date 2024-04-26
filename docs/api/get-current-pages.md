@@ -16,6 +16,9 @@
 |:-:                  |:-:    |:-:    |:-:                                                                                          |
 |enablePullDownRefresh|Boolean|        |是否开启下拉刷新，详见页面[生命周期](https://uniapp.dcloud.net.cn/tutorial/page.html#lifecycle)。  |
 
+**注意事项**  
+- app-ios平台需要在page.json中设置页面的 `enablePullDownRefresh` 为 `true` 才可以通过 `$setPageStyle` 动态开启或关闭页面下拉刷新
+
 <!-- UTSAPIJSON.getCurrentPages.example -->
 
 <!-- UTSAPIJSON.getCurrentPages.compatibility -->
