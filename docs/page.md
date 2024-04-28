@@ -2,13 +2,13 @@
 
 本文未包括页面生命周期的详细介绍，需另见 [页面](https://uniapp.dcloud.net.cn/tutorial/page.html)
 
-## 页面生命周期
+## 页面生命周期 @lifecycle
 
 <!-- PAGEINSTANCE.lifeCycle.compatibility -->
 
 示例代码, [详见](./vue/README.md#lifecycle-options)
 
-### 页面onLoad生命周期
+### 页面onLoad生命周期 @onload
 
 页面初始化时，会触发onLoad生命周期。此时Dom还未构建渲染完毕（需要等onReady）。
 
@@ -37,14 +37,17 @@ export default {
     this.post_id = event["post_id"] ?? "";
     // 可根据详情页id继续联网请求数据...
   },
+}
 ```
 
+::: warning 注意
 - OnLoadOptions类型，可不填。不填时可自动推导。
 - OnLoadOptions类型目前在web和Android的运行时类型不统一，web是对象，Android是map。[详见issues](https://issues.dcloud.net.cn/pages/issues/detail?id=967)
- * 但仍然可以通过上述示例代码跨平台的获取入参。
- * 后续版本会统一类型为UTSJSONObject。
+  - 但仍然可以通过上述示例代码跨平台的获取入参。
+  - 后续版本会统一类型为UTSJSONObject。
+:::
 
 
-## 页面及组件生命周期流程图@lifeCycleFlow
+## 页面及组件生命周期流程图 @lifecycleflow
 
 ![](./static/uni-app-lifecycle-vue3.png)#{.zooming width=1000 margin=auto}

@@ -7,8 +7,6 @@
   * [复杂列表开发指南](tutorial/stickynestlist.md)
   * [全局变量与状态管理](tutorial/store.md)
   * [几种组件标记的概念澄清](tutorial/idref.md)
-* vue 框架
-  * [概述](vue/README.md)
 * [web端开发指南](web/README.md)
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
