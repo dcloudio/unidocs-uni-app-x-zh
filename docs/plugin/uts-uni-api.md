@@ -100,3 +100,16 @@ error: Unresolved reference: errCode‌
 	+ [uni.showActionSheet(OBJECT)](https://uniapp.dcloud.net.cn/api/ui/prompt.html#showactionsheet)  
 
 **目前仅支持以上列出的部分uni api的调用，[uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)实现的api（如[uni.getBatteryInfo](https://ext.dcloud.net.cn/plugin?id=9295)）暂时还不支持在uts插件中调用**  
+
+## 特别说明  
+uni-app x 项目中使用的 uts插件 在 app 平台存在以下差异：
+
+- Android平台  
+uvue 页面 和 uts插件 都编译原生 kotlin 代码，因此 uts插件 可以调用所有的 uni API，不受限制。
+
+- iOS平台 
+uvue 页面 编译为 js 代码运行在 jscore 环境中，所有 uni API 都被封装为 js 层接口。uts插件则编译为原生 swfit 代码，在 swift 代码中无法直接调用 js 层接口，因此 uts插件 不能调用所有 uni API。
+上一章节中列出的 uni API 实现时做了特殊处理，额外封装了对应的 swfit 层接口，支持在uts插件中调用。
+
+
+
