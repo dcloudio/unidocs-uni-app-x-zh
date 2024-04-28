@@ -179,7 +179,7 @@ const status = age >= 18 ? "adult" : "minor";
 - `>>=`
     * 右移赋值运算符 (>>=) 将变量向右移动指定数量的位，并将结果赋值给变量。
 - `===`
-    * 当两边操作数指向同一个对象时，引用相等 (===) 运算符返回true。不同平台有差距，[见下](#completeComparison) 
+    * 当两边操作数指向同一个对象时，引用相等 (===) 运算符返回true。不同平台有差距，[见下](#completeComparison)
 - `!==`
     * 当两边操作数不指向同一个对象时，引用不等 (!==) 运算符返回true。
 - `-`
@@ -561,7 +561,7 @@ b instanceof Int //true
 > 3.93+ (Android)
 await 操作符用于等待一个 [Promise](./buildin-object-api/promise.md) 兑现并获取它兑现之后的值。它只能在[异步函数](./function.md#async)中使用。
 
-在 HBuilderX 3.93 以下的版本或者编译为swift时，await 不能与 [Promise](./buildin-object-api/promise.md) 一同使用，此时请分别参考：[安卓 异步函数](https://uniapp.dcloud.net.cn/plugin/uts-for-android.html#_6-11-synchronized-lock-等线程同步概念-在uts里怎么写)、[iOS 异步函数](https://uniapp.dcloud.net.cn/plugin/uts-for-ios.html#_5-1-13-异步方法)。
+在 HBuilderX 3.93 以下的版本或者编译为swift时，await 不能与 [Promise](./buildin-object-api/promise.md) 一同使用，此时请分别参考：[安卓 异步函数](../plugin/uts-for-android.md#thread-environment)、[iOS 异步函数](../plugin/uts-for-ios.md#async-method)。
 
 ```ts
 async function test(): Promise<string> {

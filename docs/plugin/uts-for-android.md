@@ -118,7 +118,7 @@ class XXX{
 ```
 
 
-### 2.4 线程环境差异
+### 2.4 线程环境差异 @thread-environment
 
 UTS环境中，默认是没有线程概念的。
 
@@ -1304,4 +1304,3 @@ function getAppName(context : Context) : string {
 ### android原生资源文件，暂不支持三方库依赖
 
 比如xml布局文件中暂时只支持 linearlayout等官方标签，不支持 appcompat等三方库标签。这个问题后续会被处理
-

@@ -32,7 +32,7 @@ UTS 插件是 uni-app 新型插件形式 [详情](/plugin/uts-plugin)
 
 UTS 和 swift 在数据类型上基本保持了一致，但是在部分场景下，还是会有差异，在此特别说明
 
-原则上：  
+原则上：
 
 **数据类型以 UTS 内置的类型为准， 各原生平台都会对其自动适配。**
 
@@ -50,7 +50,7 @@ UTS 中不存在 Int、Float、Double 类型开发者在开发过程中应该使
 下面以一个协议方法为例，需要实现一个三方依赖库中定义的协议方法
 
 ```swift
-// swift 
+// swift
 // 此协议定义在其他三方 SDK 中
 protocol TestProtocol {
    func addTwoInts(_ a: Int, _ b: Int) -> Int
@@ -223,17 +223,17 @@ console.log(lib.version);
 	- 将需要暴露的 public 文件 导入到 `TestSDK.h` 中，如 `#import <TestSDK/TestA.h>`;
 	- 在 `target` -> `Build Phases` -> `Headers` 中将刚创建的 `TestSDK.h` 设置为 `public`;
 	- 重新编译 SDK, 编译后可以看到 Modules 已经生成。
-	
+
 + 通过自定义 Module Map 的方式：
 	- 打开 XCode, 在 `TestSDK` SDK 源码目录下创建 ` module.map.modulemap ` 文件；
 	- 在上述文件中键入下面代码中类似的内容，下述代码是以 `TestSDK` 为例，实践时需要改为自己的 SDK 和文件名；
 	- 在 `target` -> `Build Settings` -> `Module Map File` 设置 `Module Map File` 为 `$(PROJECT_DIR)/TestSDK/module.map.modulemap`;
 	- 重新编译 SDK, 编译后可以看到 Modules 已经生成。
-	
+
 ```ts
 framework module TestSDK {
     header "TestA.h"   //需要对外暴露的头文件，需要为 plubic 的文件
-	
+
 	header "TestB.h"  //需要对外暴露的头文件，需要为 plubic 的文件
 
     export *
@@ -241,7 +241,7 @@ framework module TestSDK {
 ```
 
 ##### 无源码的情况
-	
+
 如果使用的是第三方非开源的 SDK, 那么可以使用下面的方式来生成 Modules:
 以 `TestSDK` 为例：
 
@@ -250,20 +250,20 @@ framework module TestSDK {
 + 在上述文件中键入下述的代码(其中的 .h 文件都要是 TestSDK.framework -> Headers 文件夹里的头文件)。
 + 至此 TestSDK 就可以直接放在 uts 插件中使用了。
 
-> 注意： 
+> 注意：
 > 实践时要将 `TestSDK` 改成你要操作的 SDK 名称，.h 文件也要改成你要暴露的头文件名字。
 
 ```ts
 framework module TestSDK {
 	// 下面的.h 文件都要是 TestSDK.framework -> Headers 文件夹下的头文件
-    header "AClass.h"  
-    
+    header "AClass.h"
+
     header "BClass.h"
-    
+
     header "CClass.h"
-    
+
     header "DClass.h"
-    
+
     export *
 }
 
@@ -300,26 +300,26 @@ import { UTSiOS } from "DCloudUTSFoundation"
 export function showAlert(title: string|null, message: string|null, result: (index: Number) => void) {
 	// uts方法默认会在子线程中执行，涉及 UI 操作必须在主线程中运行，通过 DispatchQueue.main.async 方法可将代码在主线程中运行
 	DispatchQueue.main.async(execute=():void => {
-		
+
 		// 初始化 UIAlertController 实例对象 alert
 		let alert = new UIAlertController(title=title,message=message,preferredStyle=UIAlertController.Style.alert)
-		
+
 		// 创建 UIAlertAction 按钮
 		let okAction = new UIAlertAction(title="确认", style=UIAlertAction.Style.default, handler=(action: UIAlertAction):void => {
 			// 点击按钮的回调方法
 			result(0)
 		})
-		
+
 		// 创建 UIAlertAction 按钮
 		let cancelAction = new UIAlertAction(title="取消", style=UIAlertAction.Style.cancel, handler=(action: UIAlertAction):void => {
 			// 点击按钮的回调方法
 			result(1)
 		})
-		
+
 		// 将 UIAlertAction 添加到 alert 上
 		alert.addAction(okAction)
 		alert.addAction(cancelAction)
-		
+
 		// 打开 alert 弹窗
 		UTSiOS.getCurrentViewController().present(alert, animated= true)
 	})
@@ -339,9 +339,9 @@ export function showAlert(title: string|null, message: string|null, result: (ind
 - RGB 如：rgb(255, 0, 0)
 - RGBA 如:rgba(255, 0, 0, 0.5)
 - 色值关键字，如： red
-   
+
 示例
- 
+
 ```ts
 let bgColor = UTSiOS.colorWithString("#000000")
 view.backgroundColor = bgColor
@@ -353,9 +353,9 @@ view.backgroundColor = bgColor
 获取指定插件资源的运行期绝对路径
 
 插架资源路径请传该资源在工程目录下的绝对路径
-   
+
 示例
- 
+
 ```ts
 const imagePath = UTSiOS.getResourcePath("/static/logo.png")
 console.log(imagePath)
@@ -439,7 +439,7 @@ var alert = new UIAlertController()
 var alert = UIAlertController(title: "提示", message: "提示内容", preferredStyle: .alert);
 ```
 
- 
+
 ```ts
 // uts 中写法
 let alert = new UIAlertController(title="提示", message="提示内容", preferredStyle=UIAlertController.Style.alert)
@@ -454,7 +454,7 @@ let alert = new UIAlertController(title="提示", message="提示内容", prefer
 .alert
 ```
 
-在 uts 中需要完整的写出 
+在 uts 中需要完整的写出
 
 ```ts
 UIAlertController.Style.alert
@@ -495,7 +495,7 @@ swift 中定义子类继承父类时需要在子类名称后加上父类名称�
 ```swift
 // swift
 class Son: Father {
-    
+
 }
 ```
 
@@ -522,7 +522,7 @@ uts 中需要使用`implements`关键字代替冒号 `:`
 
 ```ts
 class SomeClass implements FirstProtocol, AnotherProtocol {
-	
+
 }
 ```
 
@@ -533,7 +533,7 @@ swift 中系统版本判断的方法
 ```swift
 // swift
 if #available(iOS 10.0, *) {
-    
+
 }
 ```
 
@@ -552,7 +552,7 @@ swift 中闭包可以简写
 ```swift
 // swift 中最后一个参数如果是闭包称作为尾随闭包，可以忽略参数标签类型等简写为下面的方式
 let action = UIAlertAction(title: "确认", style: .default) { action in
-            
+
 }
 ```
 
@@ -626,7 +626,7 @@ map.set("name","uts")
 以 hello uts 中腾讯定位为例，监听位置变化时需要实现协议方法：
 
  `tencentLBSLocationManager(_ manager: TencentLBSLocationManager, didUpdate location: TencentLBSLocation)`
- 
+
  此方法第二个参数存在 `didUpdate` 参数标签
 
 原生 swift 中的实现为
@@ -664,7 +664,7 @@ tencentLBSLocationManager(manager: TencentLBSLocationManager, @argumentLabel("di
 
 #### 5.1.12.1 无参数标签
 
-只写参数名称的参数，编译后会在参数前默认增加 `_` 来忽略参数标签（如上面的示例，第一个参数 manager，这种方式能兼容绝大多数方法，尤其是Swift 调用 OC 方法），但是有些参数没有参数标签，默认添加 `_` 的行为会和原生方法定义不一致，这种情况需要定义一个空的参数标签来解决 `@argumentLabel("didUpdate")` 
+只写参数名称的参数，编译后会在参数前默认增加 `_` 来忽略参数标签（如上面的示例，第一个参数 manager，这种方式能兼容绝大多数方法，尤其是Swift 调用 OC 方法），但是有些参数没有参数标签，默认添加 `_` 的行为会和原生方法定义不一致，这种情况需要定义一个空的参数标签来解决 `@argumentLabel("didUpdate")`
 
 以高德定位 SDK 的代理方法为例：第三个参数 reGeocode 只有参数名称，没有参数标签
 
@@ -682,12 +682,12 @@ amapLocationManager(manager : AMapLocationManager, @argumentLabel("didUpdate") l
 }
 ```
 
-#### 5.1.13 异步方法
+#### 5.1.13 异步方法 @async-method
 
 swift 标记某个函数或者方法是异步的，你可以在它的声明中的参数列表后边加上 `async` 关键字
 
 ```swift
-// swift 
+// swift
 @available(iOS 13.0.0, *)
 func testAsync(_ opts: AsyncOptions) async -> UTSJSONObject {
     if (opts.type == "success") {
@@ -730,7 +730,7 @@ swift中try有以下三种方式:
 1. 使用try (注意：要和do {} catch {} 一起使用，捕获可能的异常)
 
 ```swift
-// swift 
+// swift
 	do{
 		let dict = try JSONSerialization.jsonObject(with: d, options: [])
 		print(dict)
@@ -744,7 +744,7 @@ swift中try有以下三种方式:
 2. 使用try? 如果能发序列化成功，就返回成功的值，不能成功就返回nil
 
 ```swift
-// swift 
+// swift
 // 注意：dict是个可选值
 	let dict = try? JSONSerialization.jsonObject(with: data, options: [])
 
@@ -753,7 +753,7 @@ swift中try有以下三种方式:
 3. 使用try! 强行try,如果不能反序列化成功，会造成应用闪退, 如果能序列化成功，就返回成功的值，注意该值是个可选值。
 
 ```swift
-// swift 
+// swift
 // 注意：dict是个可选值
 	let dict = try! JSONSerialization.jsonObject(with: data, options: [])
 
@@ -801,7 +801,7 @@ UTSiOS.try(JSONSerialization.jsonObject(with = data, options = []), "!" )
 @UTSiOS.keyword("private")
 class TestA  {
 	// 如果需要使用 weak 修饰属性，来避免循环引用，需要使用 @UTSiOS.keyword("weak")
-	@UTSiOS.keyword("weak") 
+	@UTSiOS.keyword("weak")
 	private delegate: TestProtocol | null = null
 }
 
@@ -812,8 +812,8 @@ class TestA  {
 @UTSiOS.keyword("fileprivate")
 class TestB  {
 	// 一个属性可以同时有多个修饰符，前提是所写的修饰符符合Swift语法
-	@UTSiOS.keyword("weak") 
-	@UTSiOS.keyword("fileprivate") 
+	@UTSiOS.keyword("weak")
+	@UTSiOS.keyword("fileprivate")
 	delegate: TestProtocol | null = null
 }
 
