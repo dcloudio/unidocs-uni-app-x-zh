@@ -12,51 +12,33 @@
 - 开始标签上可以写属性，属性可以有多个，多个属性之间用空格分割
 - 每个属性通过`=`赋值
 
-## 使用入门教程
 
-uni-app x 支持的组件包括：
-- 内置基础组件
-- 自定义 vue 组件
-- uts 组件插件
+<!-- TODO -->
+easycom
 
-> 除了微信小程序，其他平台不支持的小程序wxml组件。
+手动引入
 
-内置组件比较简单，扩展组件的2种方式详细介绍下
+### easycom
 
-### 自定义组件 @custom-component
+#### components 目录下创建组件 @components-directory
 
-在 components 目录新建一个 uvue/vue 文件，按 vue 组件规范编写代码。
+在 components 目录新建一个 uvue 文件，按 vue 组件规范编写代码。
 
 组件界面通过 uvue 构造，script 使用 [uts](../uts/README.md) 编写。
 
 返回的类型是组件实例 ComponentPublicInstance
 
-### uts 组件插件 @uts-component
+#### uni_modules 组件 @uni-module-components
 
-> uts组件插件，指把原生的、需要在界面上显示的、内嵌于页面中整体排版的组件，编写uts代码调用原生sdk，通过uni_modules插件的方式集成到uni-app项目中。
+> uni_module其实不止服务于组件，它可以服务于组件、js库、页面、项目等所有DCloud插件市场所支持的种类。
 
-`uts 组件插件`的名称可能有点拗口，这是因为是相对于另一个分类`uts api 插件`。\
-它们同属于`uts 插件`，是 [uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)。api 插件指能力扩展，比如蓝牙 api。而组件插件指界面元素扩展，比如 video、map、lottie 动画等。
+符合uni_module规范的组件都在项目的`uni_modules`目录下，以插件id为目录存放。（项目模板不放在`uni_modules`目录下）
 
-在 app 端，它的内部界面是由原生 SDK 绘制的，而不是 uvue 代码绘制的。通过封装嵌入到 uvue/nvue 页面中。比如
-> * lottie组件，使用uts调用原生的lottie sdk来开发组件，再引入页面中。[详见](https://ext.dcloud.net.cn/plugin?name=uni-animation-view)
-> * video组件，其实官方的video，也是用uts组件插件实现的。[详见](https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-video)
->
-> uts组件插件，主要用于原生sdk涉及界面时，将其封装为界面组件。当然uts组件也是全端支持的。上述lottie组件也支持web端。
+在HBuilderX中点右键可方便的更新插件，插件作者也可以方便的上传插件。
 
-一个 uts 插件都是可以同时兼容 uni-app x 和 uni-app js 引擎版的。目前js引擎版仅支持内嵌于nvue页面中。所以上述lottie组件也是可以在app-nvue页面中使用的。
+uni_module有详细的专项文档，请另行查阅[uni_module规范](/plugin/uni_modules.md)。
 
-uts 组件的返回类型是dom元素[Element](../dom/element.md)
-
-uts 组件插件的开发教程，[详见](https://uniapp.dcloud.net.cn/plugin/uts-component.html)
-
-## 在页面使用组件
-
-### 内置组件 @builtin-component
-
-内置组件可以直接在页面中使用，不需要引入。如：[view](../component/view.md)，组件文档中都有相应示例供查看使用
-
-### easycom
+#### 使用 easycom 组件 @easycom-component
 
 传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom` 将其精简为一步。
 
@@ -84,18 +66,6 @@ uts 组件插件的开发教程，[详见](https://uniapp.dcloud.net.cn/plugin/u
     }
   </script>
   ```
-
-#### uni_modules 组件规范
-
-uni_module其实不止服务于组件，它可以服务于组件、js库、页面、项目等所有DCloud插件市场所支持的种类。
-
-符合uni_module规范的组件都在项目的`uni_modules`目录下，以插件id为目录存放。（项目模板不放在`uni_modules`目录下）
-
-在HBuilderX中点右键可方便的更新插件，插件作者也可以方便的上传插件。
-
-uni_module还支持云端一体的插件。
-
-uni_module有详细的专项文档，请另行查阅[uni_module规范](/plugin/uni_modules.md)。
 
 ### 手动 import 组件
 
@@ -133,34 +103,14 @@ export default {
 
 ### 页面与组件通信 @page-component-communication
 
-#### 在 `main.uts` 中使用 `app.config.globalProperties`
-
-如在 `main.uts` 中的 `createApp` 方法中使用：
-```ts
-app.config.globalProperties.globalPropertiesReactiveObj = reactive({
-  str: 'default reactive string',
-  num: 0,
-  bool: false,
-} as UTSJSONObject)
-```
-
-示例 [详情](<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.gitUrl -->)
-
-::: preview <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.code -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-composition.code -->
-
-:::
-
 #### 向组件传递 `props` @transfer-component-props
 
 示例 [详情](<!-- VUEJSON.E_component-instance.props_props-options.gitUrl -->)
+
+::: warning 注意
+- 选项式 API：`this.$props` 是 `Map` 类型，需要使用 `this.$props["propName"]` 来访问
+- 组合式 API：可以使用 `.` 点操作符来访问
+:::
 
 ::: preview <!-- VUEJSON.E_component-instance.props_props-options.webUrl -->
 
@@ -196,13 +146,9 @@ app.config.globalProperties.globalPropertiesReactiveObj = reactive({
 
 ::: preview <!-- VUEJSON.E_component-instance.provide_provide-options-1.webUrl -->
 
-> 选项式 API（1）
+> 选项式 API
 
 <!-- VUEJSON.E_component-instance.provide_provide-options-1.code -->
-
-> 选项式 API（2）
-
-<!-- VUEJSON.E_component-instance.provide_provide-options-2.code -->
 
 > 组合式 API
 
@@ -211,6 +157,8 @@ app.config.globalProperties.globalPropertiesReactiveObj = reactive({
 :::
 
 #### 使用 [全局变量与状态管理](../tutorial/store.md) @global-store
+
+> store/index.uts [文件详情](https://gitcode.net/dcloud/hello-uvue/-/blob/alpha/store/index.uts)
 
 示例 [详情](<!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-options.gitUrl -->)
 
@@ -226,11 +174,91 @@ app.config.globalProperties.globalPropertiesReactiveObj = reactive({
 
 :::
 
+#### 在 `main.uts` 中使用 `app.config.globalProperties`
+
+如在 `main.uts` 中的 `createApp` 方法中使用：
+```ts
+app.config.globalProperties.globalPropertiesReactiveObj = reactive({
+  str: 'default reactive string',
+  num: 0,
+  bool: false,
+} as UTSJSONObject)
+```
+
+示例 [详情](<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.webUrl -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-composition.code -->
+
+:::
+
+
 ### 父组件与子组件通信 @parent-child-communication
 
 上述 [页面与组件通信](#page-component-communication) 方法同样适用于父组件与子组件通信。
 
 ### 页面调用组件方法 @page-call-component-method
+
+#### 调用 `easycom` 组件方法 @call-easycom-component-method
+
+> 3.97+ 支持 uni_modules 目录下的组件
+>
+> 在调用组件方法的时候如报错 `error: Reference has a nullable type` 则需要使用 `?.` 操作符，如：a?.b?.()。
+
+easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取组件并转换为组件的类型，通过 `.`操作符 调用组件方法或设置属性。
+
+**语法**
+
+```(this.$refs['组件ref属性值'] as 驼峰ComponentPublicInstance).foo();```
+
+**easycom组件的类型规范**
+
+组件标签名首字母大写，驼峰+ComponentPublicInstance，如：
+
+`<test/>` 类型为：TestComponentPublicInstance
+`<uni-data-checkbox/>` 类型为：UniDataCheckboxComponentPublicInstance
+
+示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.webUrl -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_component-instance.methods_call-method-easycom-composition.code -->
+
+:::
+
+##### 调用 `uni_modules easycom` 组件方法 <Badge text="HBuilderX 3.97+"> @call-uni-modules-easycom-component-method
+
+使用 `ref` 属性拿到组件实例，调用 `easycom` 组件方法时不需要使用 `$callMethod` 方法，直接使用点操作符即可 `.`
+
+> 在调用组件方法的时候如报错 `error: Reference has a nullable type` 则需要使用 `?.` 操作符，如：a?.b?.()。
+> 与 ts 不同，在 `()` 前也需要使用 `?.` 操作符。
+
+示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.webUrl -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-composition.code -->
+
+:::
 
 #### 使用 `ref` 属性搭配 `$callMethod` 方法 @call-component-method
 
@@ -266,62 +294,6 @@ ComponentPublicInstance
 - App-Android 平台 `4.0` 版本开始支持 `$callMethod` 调用 `defineExpose` 导出的方法
 - Web 平台、App-iOS 平台 `4.13` 版本开始支持 `$callMethod` 调用 `defineExpose` 导出的方法
 
-#### 调用 `easycom` 组件方法 @call-easycom-component-method
-
-> 3.97+ 支持 uni_modules 目录下的组件
->
-> 在调用组件方法的时候如报错 `error: Reference has a nullable type` 则需要使用 `?.` 操作符，如：a?.b?.()。
-
-easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取组件并转换为组件的类型，通过 `.`操作符 调用组件方法或设置属性。
-
-**语法**
-
-```(this.$refs['组件ref属性值'] as 驼峰ComponentPublicInstance).foo();```
-
-**easycom组件的类型规范**
-
-组件标签名首字母大写，驼峰+ComponentPublicInstance
-
-如：
-
-`<test/>` 类型为：TestComponentPublicInstance
-`<uni-data-checkbox/>` 类型为：UniDataCheckboxComponentPublicInstance
-
-
-示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.gitUrl -->)
-
-::: preview <!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.code -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_component-instance.methods_call-method-easycom-composition.code -->
-
-:::
-
-#### 调用 `uni_modules easycom` 组件方法 <Badge text="HBuilderX 3.97+"> @call-uni-modules-easycom-component-method
-
-使用 `ref` 属性拿到组件实例，调用 `easycom` 组件方法时不需要使用 `$callMethod` 方法，直接使用点操作符即可 `.`
-
-> 在调用组件方法的时候如报错 `error: Reference has a nullable type` 则需要使用 `?.` 操作符，如：a?.b?.()。
-> 与 ts 不同，在 `()` 前也需要使用 `?.` 操作符。
-
-示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.gitUrl -->)
-
-::: preview <!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.code -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-composition.code -->
-
-:::
 
 #### 内置组件的方法调用或设置属性 <Badge text="HBuilderX 3.93+"> @call-builtin-component-method
 
@@ -369,7 +341,7 @@ Uni`组件名(驼峰)`Element
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.webUrl -->
+::: preview <!-- VUEJSON.E_lifecycle.component_component-options.webUrl -->
 
 > 选项式 API
 

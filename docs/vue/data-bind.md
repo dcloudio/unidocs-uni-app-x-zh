@@ -81,7 +81,15 @@
 <!-- VUEJSON.E_built-in.component_template_template-composition.code -->
 :::
 
-### 使用 `v-bind` 在样式里绑定 @v-bind-css-data
+### 在样式里绑定 @v-bind-css-data
+
+|App|Web|
+|:-:|:-:|
+|x  |4.13+  |
+
+单文件组件的 `<style>` 标签支持使用 `v-bind` CSS 函数将 CSS 的值链接到动态的组件状态
+
+这个语法同样也适用于 `<script setup>`，且支持 UTS 表达式 (需要用引号包裹起来)
 
 `v-bind` 也可在样式中使用，可以很方便的在 uts 中改变样式，如下所示：
 
@@ -103,11 +111,8 @@
 
 定义方法之后，可以传递给子组件，子组件使用 `emit` 调用，也可以在 `script` 中直接使用
 
-::: preview <!-- VUEJSON.E_component-instance.emit-function_emit-function-options.webUrl -->
+示例 [详情](<!-- VUEJSON.E_reactivity.core_ref_ref.gitUrl -->)
 
-> 选项式 API
-<!-- VUEJSON.E_component-instance.emit-function_emit-function-options.code -->
-
-> 组合式 API
-<!-- VUEJSON.E_component-instance.emit-function_emit-function-composition.code -->
+::: preview <!-- VUEJSON.E_reactivity.core_ref_ref.webUrl -->
+<!-- VUEJSON.E_reactivity.core_ref_ref.code -->
 :::

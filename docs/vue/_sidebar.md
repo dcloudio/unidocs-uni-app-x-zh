@@ -5,6 +5,5 @@
 - [组合式 API](./composition-api.md)
 - [选项式 API](./options-api.md)
 - [内置内容](./built-in.md)
-- [单文件](./single-file-component.md)
 - [进阶 API](./advanced-api.md)
-- [其他vue特性](./others.md)
+- [vue 生态](./others.md)
