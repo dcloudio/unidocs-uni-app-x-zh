@@ -187,7 +187,7 @@ uni相关的异步api在web端不传回调时会返回promise（详情参考：[
 - [x] 地图
 - [x] uni-push2.0
 - [ ] 服务端渲染
-- [ ] 接口Promise化
+- [ ] [接口Promise化](https://uniapp.dcloud.net.cn/api/#api-promise-%E5%8C%96)
 
 ## 运行与发行
 
