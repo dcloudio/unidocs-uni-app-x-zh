@@ -140,7 +140,7 @@ UTS.entitlements 格式及配置规则与 iOS 工程中是一致的，云端打�
 
 ### 3.4 依赖三方库
 
-uts 插件支持依赖三方库，目前支持 framework、xcframework(仅云打包支持)、.a库
+uts 插件支持依赖三方库，目前支持 framework、xcframework、.a库
 
 #### 3.4.1 framework依赖库说明
 
