@@ -8,7 +8,7 @@
 
 示例代码, [详见](./vue/README.md#lifecycle-options)
 
-### 页面onLoad生命周期
+### 页面onLoad生命周期@onload
 
 页面初始化时，会触发onLoad生命周期。此时Dom还未构建渲染完毕（需要等onReady）。
 
