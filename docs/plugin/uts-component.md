@@ -197,6 +197,8 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
     /**
      * 规则：如果没有配置expose，则methods中的方法均对外暴露，如果配置了expose，则以expose的配置为准向外暴露
      * ['publicMethod'] 含义为：只有 `publicMethod` 在实例上可用
+     * 
+     * 注意：如果在data中声明了一个变量，此时组件配置了 expose字段，但未在expose字段中包含此变量。会导致该变量被标记为`private`：仅能在组件内使用，不能在组件外访问
      */
     expose: ['doSomething'],
     methods: {

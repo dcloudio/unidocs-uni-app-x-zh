@@ -74,6 +74,12 @@
 
 <!-- UTSAPIJSON.general_type.param -->
 
+## 页面跳转与参数传递
+
+A页面跳转到B页面时，有两种方式给B页面传递信息：
+1. A页面跳转时，B页面的URL中通过?param1=param1value&param2=param2value方式传递，然后B页面在Onload里接收参数。详见[页面onLoad生命周期](../page.md#onload)
+2. 通过eventbus，详见[uni.$on、uni.$emit等API](event-bus.md)
+
 ## Bug & Tips@tips
 
 * ``navigateTo``, ``redirectTo`` 只能打开非 tabBar 页面。

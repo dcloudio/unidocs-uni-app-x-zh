@@ -8,21 +8,31 @@
 
 <!-- UTSCOMJSON.form.compatibility -->
 
+## form内容项控制逻辑
+
+form组件的内容子组件包括：input、textarea、checkbox、radio、switch、slider，以及负责提交或重置的button组件。
+
+button可以设置form-type属性为submit或reset，点击时会分别触发form的提交或重置。
+
+在表单submit或reset时，这些表单内容子组件的值会被提交或重置。
+
+注意：目前不支持上述组件之外自行添加表单内容子组件。如有自定义组件，则不能使用form组件提交，需自行通过绑定data的方式获取组件值并自行编码提交数据。
+
 ### submit策略差异
 
-form 组件的表单提交，微信小程序的实现策略，与浏览器W3C的策略略有差异。目前uni-app在app和web上的实现参考了微信小程序。具体是：
+form 组件的表单提交，微信小程序的实现策略，与浏览器W3C的策略略有差异。目前uni-app(x)在submit时，app和web上的实现与微信小程序相同。具体是：
 
 - uni-app表单提交的数据是一个对象`{"name": "value"}`。而浏览器标准form是数组，每项为 pair，pair[0] 对应name，pair[1] 对应value 。
 - 多个表单子项如果 name 相同，仅保留最后一个表单子项。而浏览器标准form整体是数组，不存在覆盖的情况。
 - 设置 disabled 属性的表单子项，仍然会提交。而浏览器标准form提交时会忽略disabled的表单子项。
 
-注意uni-app编译到web平台，也是按uni-app的策略，而不是浏览器的策略。uni-app 的 web平台使用 uni-app 自己的 form 组件，而不是浏览器的 form 标签。
+注意uni-app(x)编译到web平台，也是按uni-app(x)的策略，而不是浏览器的策略。uni-app(x) 的 web平台使用 uni-app 自己的 form 组件，而不是浏览器的 form 标签。
 
 ### reset策略差异
 
 reset在浏览器W3C的策略是还原、重置。
 
-在uni-app中，不同平台的策略不同，有的是`还原`，有的是`清空`。
+在uni-app(x)中，不同平台的策略不同，有的是`还原`，有的是`清空`。
 
 各平台策略如下：
 
@@ -92,7 +102,3 @@ reset在浏览器W3C的策略是还原、重置。
 <!-- UTSCOMJSON.form.example -->
 
 <!-- UTSCOMJSON.form.reference -->
-
-## Bug & Tips
-
-- App平台仅支持 uni 内置表单组件，暂不支持开发者组件内的表单组件
