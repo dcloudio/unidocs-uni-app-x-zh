@@ -86,10 +86,10 @@
 
 用于声明组件的字符串模板。
 
-示例 [详情](<!-- VUEJSON.E_built-in.component_template_template-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_built-in.special-elements_template_template-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_built-in.component_template_template-options.webUrl -->
-<!-- VUEJSON.E_built-in.component_template_template-options.code -->
+::: preview <!-- VUEJSON.E_built-in.special-elements_template_template-options.webUrl -->
+<!-- VUEJSON.E_built-in.special-elements_template_template-options.code -->
 :::
 
 #### render

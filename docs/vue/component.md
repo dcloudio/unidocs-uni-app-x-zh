@@ -463,17 +463,17 @@ Uni`组件名(驼峰)`Element
 
 ## 作用域插槽的类型 @scoped-slot-type
 
-示例 [详情](<!-- VUEJSON.E_built-in.component_slots_child-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_built-in.special-elements_slots_child-options.gitUrl -->)
 
 作用域插槽需在组件中指定插槽数据类型
-::: preview <!-- VUEJSON.E_built-in.component_slots_child-options.webUrl -->
+::: preview <!-- VUEJSON.E_built-in.special-elements_slots_child-options.webUrl -->
 > 选项式 API
 
-<!-- VUEJSON.E_built-in.component_slots_child-options.code -->
+<!-- VUEJSON.E_built-in.special-elements_slots_child-options.code -->
 
 > 组合式 API
 
-<!-- VUEJSON.E_built-in.component_slots_child-composition.code -->
+<!-- VUEJSON.E_built-in.special-elements_slots_child-composition.code -->
 
 :::
 

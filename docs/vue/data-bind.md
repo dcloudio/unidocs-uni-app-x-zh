@@ -70,15 +70,15 @@
 - `v-if`、`v-else-if` 或 `v-else`
 - `v-for`
 
-示例 [详情](<!-- VUEJSON.E_built-in.component_template_template-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_built-in.special-elements_template_template-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_built-in.component_template_template-options.webUrl -->
+::: preview <!-- VUEJSON.E_built-in.special-elements_template_template-options.webUrl -->
 
 > 选项式 API
-<!-- VUEJSON.E_built-in.component_template_template-options.code -->
+<!-- VUEJSON.E_built-in.special-elements_template_template-options.code -->
 
 > 组合式 API
-<!-- VUEJSON.E_built-in.component_template_template-composition.code -->
+<!-- VUEJSON.E_built-in.special-elements_template_template-composition.code -->
 :::
 
 ### 在样式里绑定 @v-bind-css-data
