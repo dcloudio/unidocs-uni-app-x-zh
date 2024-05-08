@@ -5,7 +5,7 @@ uniCloud.databaseForJQL()是客户端访问云数据库的API，即[clientDB](ht
 - 暂不支持泛型传递
 - 暂不支持multiSend
 - 暂不支持getOne
-- 暂不支持数据库运算方法
+- 暂不支持调用`db.command.aggregate`
 
 **和uni-app项目的差异**
 
