@@ -1,5 +1,7 @@
 # 选项式 API @options-api
 
+选项式 API，要求在script里编写`export default {}`，在其中定义data、methods、生命周期等选项。
+
 ## 状态选项
 
 <!-- VUEJSON.options_state.compatibility -->
