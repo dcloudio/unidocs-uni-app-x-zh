@@ -19,6 +19,10 @@ input和textarea组件都一个属性`adjust-position`，默认为true，即软�
 
 因为此处内容与input重复，详见[input文档](input.md#adjust-position)
 
+## inputmode说明
+
+inputmode 兼容性：Chrome >= 66、Edge >= 79、Firefox >= 95、Chrome Android >= 66、Firefox for Android >= 79、Safari on iOS >= 12.2、WebView Android >= 66
+
 ## Tips
 
 - 从 uni-app x 4.0 起，App-Android平台 textarea 点击输入框外的屏幕会自动收起软键盘。

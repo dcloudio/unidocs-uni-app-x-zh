@@ -31,6 +31,18 @@
 在web端平台，输入框上推逻辑是由浏览器自动完成的，属性`adjust-position`无效。
 但iOS safari软键盘弹出时，整个页面会上推而不是挤压，导致pages.json配置的导航栏会上移到屏幕之外。
 
+## inputmode说明
+
+inputmode 兼容性：Chrome >= 66、Edge >= 79、Firefox >= 95、Chrome Android >= 66、Firefox for Android >= 79、Safari on iOS >= 12.2、WebView Android >= 66
+
+input组件有 inputmode 和 type、comfirm-tye 3个相似的属性，它们的区别详解如下：
+
+- type：在 uni-app 和小程序中仅仅是输入框，定义 input 的工作方式，此值决定可输入什么值。比如 number 只能输入数字。
+- comfirm-type：定义键盘右下角按键的文字
+- inputmode：inputmode 属性是当使用某些值时会对键盘所作出的优化。
+
+同时使用 inputmode 和 comfirm-type 时，若设值冲突，键盘右下角按键类型由 comfirm-type 决定。type 属性和 inputmode 属性并不冲突
+
 ## Tips
 - 从uni-app x 4.0起，App-Android平台 input 点击输入框外的屏幕会自动收起软键盘。
 - 从uni-app x 4.0起，App-Android平台 input 的 font-size 默认值统一为 16px。
