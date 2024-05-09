@@ -23,6 +23,7 @@ uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app 
 - 陀螺仪：`uni.onGyroscopeChange`、`uni.startGyroscope`、`uni.stopGyroscope` [见插件市场](https://ext.dcloud.net.cn/plugin?id=17540)
 - 加速度传感器：`uni.onAccelerometerChange`、`uni.startAccelerometer` [见插件市场](https://ext.dcloud.net.cn/plugin?id=17540)
 - 生物识别：指纹识别。`uni.startSoterAuthentication` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%94%9F%E7%89%A9%E8%AE%A4%E8%AF%81&uni-appx=1)
+- 震动：`uni.vibrate` [见插件市场](https://ext.dcloud.net.cn/search?q=%E9%9C%87%E5%8A%A8&uni-appx=1)
 - 自定义相机：`uni.createCameraContext` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%9B%B8%E6%9C%BA&uni-appx=1)
 - 录音：`uni.getRecorderManager` [见插件市场](https://ext.dcloud.net.cn/search?q=%E5%BD%95%E9%9F%B3&uni-appx=1)
 - 播放音频：`uni.getBackgroundAudioManager`、`uni.createInnerAudioContext`，[见插件市场](https://ext.dcloud.net.cn/search?q=%E9%9F%B3%E9%A2%91%E6%92%AD%E6%94%BE&orderBy=Relevance&uni-appx=1)或参考如下代码：
