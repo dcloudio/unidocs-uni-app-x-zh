@@ -291,7 +291,7 @@ DCloud做了很多年跨平台开发，uni-app在web和小程序平台取得了�
 
 这个思路的转换使得uni-app x超越了其他跨平台开发框架。
 
-在web端编译为js，在小程序端编译为wxml等，在app端编译为kotlin。
+在Web端编译为js，在小程序端编译为wxml等，在Android端编译为kotlin。
 每个平台都只是帮开发者换种一致的写法而已，运行的代码都是该平台原生的代码。
 
 然而在2年前，这条路线​有2个巨大的风险：
@@ -353,7 +353,7 @@ DCloud做了很多年跨平台开发，uni-app在web和小程序平台取得了�
 |uni-app x									|强类型	|无							|无									|无				|较小																			|较低										|
 |原生应用										|强类型	|无							|无									|无				|较小																			|较低										|
 
-当然，作为一个客观的分析，这里需要强调uni-app x刚刚面世，还有很多不成熟的地方，比如前文diss微信的暗黑模式，其实截止到目前uni-app x还不支持暗黑模式。甚至iOS版现在只能开发uts插件，还不能做完整iOS应用。
+当然，作为一个客观的分析，这里需要强调uni-app x刚刚面世，还有很多不成熟的地方。
 
 [需求墙](https://vote.dcloud.net.cn/#/?name=uni-app%20x)里都是uni-app x该做还未做的。也欢迎大家投票​。
 
@@ -363,11 +363,29 @@ uni-app x这个技术路线是产业真正需要的东西，随着产品的迭�
 
 **让跨平台开发不如原生，成为历史**。
 
-欢迎体验uni-app x的示例应用，感受它的启动速度，渲染流畅度。
+欢迎体验 hello uni-app x 示例应用，Android、iOS、Web 三个平台都有，可以亲身感受它的启动速度，渲染流畅度。
 
-源码在：[https://gitcode.net/dcloud/hello-uni-app-x/](https://gitcode.net/dcloud/hello-uni-app-x/)；打包后的apk扫描下面的二维码。
+<div class="quick">
+  <div style="margin-top: 20px;justify-content: space-around;">
+    <a
+      href="https://hellouniappx.dcloud.net.cn"
+      target="_blank"
+      style="display: flex; align-items: center;flex-direction: column;margin: 0 5px 20px;width:160px;"
+      one-link-mark="yes"
+    >
+      <div class="barcode-img-box">
+        <img
+          src="https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png"
+          width="160"
+          loading="lazy"
+        />
+      </div>
+      <b>hello uni-app x</b>
+    </a>
+  </div>
+</div>
 
-![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-apkqrcode.png)
+源码在：[https://gitcode.net/dcloud/hello-uni-app-x/](https://gitcode.net/dcloud/hello-uni-app-x/)
 
 这个示例里有几个例子非常考验通信性能，除了也内置了slider-100外，另一个是“模版-scroll-view自定义滚动吸顶”，在滚动时实时修改元素top值始终为一个固定值，一点都不抖动。
 
