@@ -1,6 +1,6 @@
 # Timers
 
-## 实例方法
+## 全局方法
 
 ### setInterval(handler, timeout?, ...arguments)
 
