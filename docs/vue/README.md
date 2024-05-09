@@ -124,7 +124,7 @@ const doubleCount = computed<number>(() : number => {
 
 ### 事件处理
 
-- [事件修饰符](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6) 只支持 `stop` 和 `once`。
+- [事件修饰符](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6) Android 端只支持 `stop` 和 `once`, IOS 端只支持 `stop`。
 
 ## script
 
