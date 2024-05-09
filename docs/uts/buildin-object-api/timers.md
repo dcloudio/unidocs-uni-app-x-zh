@@ -90,3 +90,18 @@
   }
 </script>
 ```
+
+### Android平台差异
+
+需要注意：JS环境中只有一个线程，所以 `setTimeout/setInterval` 执行任务代码的线程和 调用 setTimeout/setInterval 总是同一个线程。
+
+但是Android平台需要分两种情况：
+
++ 如果在主线程/dom 线程 等具备`Looper` 环境的线程调用`setTimeout/setInterval`： 那么可以确保 任务代码执行的线程 和调用setTimeout/setInterval的线程 是同一个线程。
+
++ 如果在匿名线程等 不具备 `Looper` 环境的线程中调用`setTimeout/setInterval`： 任务代码不会和 调用setTimeout/setInterval的线程 保持同一线程。
+
+
+关于 `Android`系统`Looper`的[更多介绍](https://developer.android.com/reference/android/os/Looper)
+
+
