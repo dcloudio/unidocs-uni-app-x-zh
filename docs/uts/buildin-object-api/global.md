@@ -1,7 +1,7 @@
 # Global
 
 
-## 实例方法
+## 全局方法
 
 
 ### parseInt(string, radix?)
