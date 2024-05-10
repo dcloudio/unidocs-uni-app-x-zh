@@ -18,7 +18,7 @@
 <!-- VUEJSON.E_component-instance.data_data-options.code -->
 :::
 
-### props
+#### props
 
 用于声明一个组件的 props。
 
@@ -104,10 +104,10 @@
 
 - 选项式 API
 
-示例 [详情](<!-- VUEJSON.E_rendering.render_render.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_render-function.render_render.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_rendering.render_render.webUrl -->
-<!-- VUEJSON.E_rendering.render_render.code -->
+::: preview <!-- VUEJSON.E_render-function.render_render.webUrl -->
+<!-- VUEJSON.E_render-function.render_render.code -->
 :::
 
 #### slots
@@ -398,10 +398,10 @@
 
 用于命令式地创建侦听器的 API。
 
-示例 [详情](<!-- VUEJSON.E_component-instance.watch-function_watch-function.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_reactivity.core_watch_watch-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.watch-function_watch-function.webUrl -->
-<!-- VUEJSON.E_component-instance.watch-function_watch-function.code -->
+::: preview <!-- VUEJSON.E_reactivity.core_watch_watch-options.webUrl -->
+<!-- VUEJSON.E_reactivity.core_watch_watch-options.code -->
 :::
 
 

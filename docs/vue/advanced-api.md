@@ -18,10 +18,10 @@
 
   为了方便阅读，当子节点不是插槽对象时，可以省略 prop 参数。
 
-示例 [详情](<!-- VUEJSON.E_rendering.render_render.gitUrl -->)
+- 示例 [详情](<!-- VUEJSON.E_render-function.render_render.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_rendering.render_render.webUrl -->
-<!-- VUEJSON.E_rendering.render_render.code -->
+::: preview <!-- VUEJSON.E_render-function.render_render.webUrl -->
+<!-- VUEJSON.E_render-function.render_render.code -->
 :::
 
 #### mergeProps()
@@ -37,29 +37,16 @@
   - onXxx 事件监听器——多个同名的事件监听器将被合并到一个数组。
   如果你不需要合并行为而是简单覆盖，可以使用原生 object spread 语法来代替。
 
-- 示例
+- 示例 [详情](<!-- VUEJSON.E_render-function.mergeProps_mergeProps-options.gitUrl -->)
 
-```ts
-import { mergeProps } from 'vue'
+::: preview <!-- VUEJSON.E_render-function.mergeProps_mergeProps-options.webUrl -->
 
-const one = {
-  class: 'foo',
-  onClick: handlerA
-}
+> 选项式 API
+<!-- VUEJSON.E_render-function.mergeProps_mergeProps-options.code -->
 
-const two = {
-  class: { bar: true },
-  onClick: handlerB
-}
-
-const merged = mergeProps(one, two)
-/**
- {
-   class: 'foo bar',
-   onClick: [handlerA, handlerB]
- }
- */
-```
+> 组合式 API
+<!-- VUEJSON.E_render-function.mergeProps_mergeProps-composition.code -->
+:::
 
 #### cloneVNode()
 
@@ -73,9 +60,31 @@ const merged = mergeProps(one, two)
 
   Vnode 具有特殊的内部属性，因此克隆它并不像 object spread 一样简单。cloneVNode() 处理了大部分这样的内部逻辑。
 
+- 示例 [详情](<!-- VUEJSON.E_render-function.cloneVNode_cloneVNode-options.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_render-function.cloneVNode_cloneVNode-options.webUrl -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.cloneVNode_cloneVNode-options.code -->
+
+> 组合式 API
+<!-- VUEJSON.E_render-function.cloneVNode_cloneVNode-composition.code -->
+:::
+
 #### isVNode()
 
 判断一个值是否为 vnode 类型。
+
+- 示例 [详情](<!-- VUEJSON.E_render-function.isVNode_isVNode-options.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_render-function.isVNode_isVNode-options.webUrl -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.isVNode_isVNode-options.code -->
+
+> 组合式 API
+<!-- VUEJSON.E_render-function.isVNode_isVNode-composition.code -->
+:::
 
 #### resolveComponent()
 
@@ -89,13 +98,35 @@ const merged = mergeProps(one, two)
 
   如果组件未找到，会抛出一个运行时警告，并返回组件名字符串。
 
+- 示例 [详情](<!-- VUEJSON.E_render-function.resolveComponent_resolveComponent-options.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_render-function.resolveComponent_resolveComponent-options.webUrl -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.resolveComponent_resolveComponent-options.code -->
+
+> 组合式 API
+<!-- VUEJSON.E_render-function.resolveComponent_resolveComponent-composition.code -->
+:::
+
 #### withDirectives()
 
 用于给 vnode 增加自定义指令。
 
-详细信息
+- 详细信息
 
   用自定义指令包装一个现有的 vnode。第二个参数是自定义指令数组。每个自定义指令也可以表示为 `[Directive, value, argument, modifiers]` 形式的数组。如果不需要，可以省略数组的尾元素。
+
+- 示例 [详情](<!-- VUEJSON.E_render-function.withDirectives_withDirectives-options.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_render-function.withDirectives_withDirectives-options.webUrl -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.withDirectives_withDirectives-options.code -->
+
+> 组合式 API
+<!-- VUEJSON.E_render-function.withDirectives_withDirectives-composition.code -->
+:::
 
 #### withModifiers()
 

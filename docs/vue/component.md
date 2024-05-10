@@ -12,21 +12,29 @@
 - 开始标签上可以写属性，属性可以有多个，多个属性之间用空格分割
 - 每个属性通过`=`赋值
 
-
-<!-- TODO -->
-easycom
-
-手动引入
+## 创建及引用组件 @create-and-import-component
 
 ### easycom
 
-#### components 目录下创建组件 @components-directory
+传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom` 将其精简为一步。
 
-在 components 目录新建一个 uvue 文件，按 vue 组件规范编写代码。
+只要组件安装在项目的 `components` 目录下或 `uni_modules/插件 id/components` 目录下，并符合 `组件名称/组件名称.(vue|uvue)` 目录结构。就可以不用引用、注册，直接在页面中使用。
 
-组件界面通过 uvue 构造，script 使用 [uts](../uts/README.md) 编写。
+- 比如 [uni-rate组件](https://ext.dcloud.net.cn/plugin?id=33)，它导入到项目后，存放在了目录 /uni_modules/uni-rate/uni-rate.vue
 
-返回的类型是组件实例 ComponentPublicInstance
+  同时它的组件名称也叫 uni-rate，所以这样的组件，不用在 script 里注册和引用。如下：
+
+  ```html
+  <template>
+      <view>
+        <uni-rate></uni-rate><!-- 这里会显示一个五角星，并且点击后会自动亮星 -->
+      </view>
+    </template>
+  <script>
+    // 这里不用import引入，也不需要在components内注册uni-list组件。template里就可以直接用
+    // ...
+  </script>
+  ```
 
 #### uni_modules 组件 @uni-module-components
 
@@ -36,38 +44,16 @@ easycom
 
 在HBuilderX中点右键可方便的更新插件，插件作者也可以方便的上传插件。
 
-uni_module有详细的专项文档，请另行查阅[uni_module规范](/plugin/uni_modules.md)。
+uni_module有详细的专项文档，请另行查阅[uni_module规范](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)。
 
-#### 使用 easycom 组件 @easycom-component
+#### easycom组件的类型规范 @easycom-component-type
 
-传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom` 将其精简为一步。
+组件标签名首字母大写，`驼峰+ComponentPublicInstance`，如：
 
-只要组件安装在项目的 `components` 目录下或 `uni_modules/插件 id/components` 目录下，并符合 `组件名称/组件名称.(vue|uvue)` 目录结构。就可以不用引用、注册，直接在页面中使用。
+`<test/>` 类型为：TestComponentPublicInstance
+`<uni-data-checkbox/>` 类型为：UniDataCheckboxComponentPublicInstance
 
-- 比如 [uni-rate组件](https://ext.dcloud.net.cn/plugin?id=33)，它导入到项目后，存放在了目录 /uni_modules/uni-rate/uni-rate.vue
-
-  同时它的组件名称也叫 uni-rate，所以这样的组件，不用在 script 里注册和引用。
-
-  如下：
-  ```html
-  <template>
-      <view>
-        <uni-rate></uni-rate><!-- 这里会显示一个五角星，并且点击后会自动亮星 -->
-      </view>
-    </template>
-  <script>
-    // 这里不用import引入，也不需要在components内注册uni-list组件。template里就可以直接用
-    export default {
-      data() {
-        return {
-
-        }
-      }
-    }
-  </script>
-  ```
-
-### 手动 import 组件
+### 手动引入组件 @manual-import-component
 
 在新建一个组件后，如果不符合 easycom 规范，则需要手动引入：
 
@@ -80,7 +66,7 @@ uni_module有详细的专项文档，请另行查阅[uni_module规范](/plugin/u
 <!-- 页面（与 child.vue 组件在同级目录 -->
 <template>
   <view>
-    <child></child>
+    <child ref="component1"></child>
   </view>
 </template>
 <script>
@@ -89,12 +75,22 @@ import child from './child.vue'
 export default {
   components: {
     child
+  },
+  data() {
+    return {
+      component1: null as ComponentPublicInstance | null // 手动引入组件时的类型
+    }
   }
 }
 </script>
 ```
 
-## 通信
+#### 手动引入组件的类型规范 @manual-import-component-type
+
+类型为：ComponentPublicInstance
+
+
+## 使用及通信 @use-and-communication
 
 ### 页面与页面通信 @page-page-communication
 
@@ -208,22 +204,13 @@ app.config.globalProperties.globalPropertiesReactiveObj = reactive({
 
 #### 调用 `easycom` 组件方法 @call-easycom-component-method
 
-> 3.97+ 支持 uni_modules 目录下的组件
->
-> 在调用组件方法的时候如报错 `error: Reference has a nullable type` 则需要使用 `?.` 操作符，如：a?.b?.()。
+> 在调用组件方法的时候如报错 `error: Reference has a nullable type` 则需要使用 `?.` 操作符（如：a?.b?.()）。
 
 easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取组件并转换为组件的类型，通过 `.`操作符 调用组件方法或设置属性。
 
 **语法**
 
-```(this.$refs['组件ref属性值'] as 驼峰ComponentPublicInstance).foo();```
-
-**easycom组件的类型规范**
-
-组件标签名首字母大写，驼峰+ComponentPublicInstance，如：
-
-`<test/>` 类型为：TestComponentPublicInstance
-`<uni-data-checkbox/>` 类型为：UniDataCheckboxComponentPublicInstance
+```(this.$refs['组件ref属性值'] as 驼峰ComponentPublicInstance)?.foo?.();```
 
 示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.gitUrl -->)
 
@@ -243,8 +230,7 @@ easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取�
 
 使用 `ref` 属性拿到组件实例，调用 `easycom` 组件方法时不需要使用 `$callMethod` 方法，直接使用点操作符即可 `.`
 
-> 在调用组件方法的时候如报错 `error: Reference has a nullable type` 则需要使用 `?.` 操作符，如：a?.b?.()。
-> 与 ts 不同，在 `()` 前也需要使用 `?.` 操作符。
+> 在调用组件方法的时候如报错 `error: Reference has a nullable type` 则需要使用 `?.` 操作符（如：a?.b?.()）。
 
 示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.gitUrl -->)
 
@@ -270,7 +256,7 @@ callMethod可用于所有自定义组件，包括easycom组件也可以使用，
 
 **语法**
 
-```(this.$refs['组件ref属性值'] as ComponentPublicInstance).$callMethod('方法名', ...args)```
+```(this.$refs['组件ref属性值'] as ComponentPublicInstance)?.$callMethod('方法名', ...args)```
 
 **组件类型**
 
@@ -301,7 +287,7 @@ ComponentPublicInstance
 
 **语法**
 
-```(this.$refs['组件ref属性值'] as Uni[xxx]Element).foo();```
+```(this.$refs['组件ref属性值'] as Uni[xxx]Element)?.foo?.();```
 
 **内置组件的element类型规范**
 

@@ -1,6 +1,7 @@
 - [概述](./README.md)
 - [数据绑定模型](./data-bind.md)
 - [组件模型](./component.md)
+- [修饰符](./modifier.md)
 - [全局 API](./global-api.md)
 - [组合式 API](./composition-api.md)
 - [选项式 API](./options-api.md)
