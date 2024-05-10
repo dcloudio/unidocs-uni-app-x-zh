@@ -10,7 +10,7 @@
 
 支持 pages.json 下 `globalStyle` 节点属性和页面下 `style` 节点属性
 
-当前版本仅支持的属性，后续实现其他属性
+当前版本仅支持设置如下属性，其他属性未测试。
 
 |属性										|类型		|Android|iOS	|web	|默认值	|描述																																													|
 |:-:										|:-:		|:-:		|:-:	|:-:	|:-:		|:-:																																													|
@@ -18,8 +18,9 @@
 |backgroundColorContent	|string	|4.15		|4.15	|x		|#ffffff|页面容器背景色																																									|
 
 **注意事项**  
-- app-ios平台：在page.json 中设置页面 `enablePullDownRefresh` 为 `false` 时，无法通过 `$setPageStyle` 方法动态开启页面下拉刷新 (app-ios平台在 `HBuilderX-4.15` 版本已修复该问题)
-- web端由于会自动优化未使用的特性，如果整个项目中都没有使用到`enablePullDownRefresh`，那么此属性也无法动态切换
+- web端由于会自动摇树优化未使用的特性，如果整个项目中都没有使用到下拉刷新`enablePullDownRefresh`，那么下拉刷新功能会被摇掉，此时设置打开下拉刷新将无效。
+- 4.15版本前，app-ios平台在page.json 中设置页面 `enablePullDownRefresh` 为 `false` 时，无法通过 `$setPageStyle` 方法动态开启页面下拉刷新。新版已修复该问题。
+
 
 <!-- UTSAPIJSON.getCurrentPages.example -->
 
