@@ -166,7 +166,7 @@ module.exports = md => {
               if (!temp) return false
               temp = temp[key]
             })
-            if (!temp) continue
+            if (typeof temp === 'undefined') continue
             lines[index] = temp
           }
         }
