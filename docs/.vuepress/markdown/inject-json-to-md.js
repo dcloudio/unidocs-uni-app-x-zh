@@ -50,100 +50,135 @@ function getRegExp(key) {
 /**
  *
  * @param {string} text
- * @returns {{match: RegExpMatchArray | null, json: {}}
+ * @returns {{match: RegExpMatchArray | null, json: {}, regExp: RegExp | null}
  */
 const getJSON = text => {
-  let match = text.match(getRegExp('CSSJSON'))
+  const CSSJSONRegExp = getRegExp('CSSJSON')
+  let match = text.match(CSSJSONRegExp)
+  CSSJSONRegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: cssJson,
+      regExp: CSSJSONRegExp,
     }
   }
 
-  match = text.match(getRegExp('UTSJSON'))
+
+  const UTSJSONRegExp = getRegExp('UTSJSON')
+  match = text.match(UTSJSONRegExp)
+  UTSJSONRegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: utsJson,
+      regExp: UTSJSONRegExp,
     }
   }
 
-  match = text.match(getRegExp('UTSAPIJSON'))
+  const UTSAPIJSONRegExp = getRegExp('UTSAPIJSON')
+  match = text.match(UTSAPIJSONRegExp)
+  UTSAPIJSONRegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: utsApiJson,
+      regExp: UTSAPIJSONRegExp,
     }
   }
 
-  match = text.match(getRegExp('UTSCOMJSON'))
+  const UTSCOMJSONRegExp = getRegExp('UTSCOMJSON')
+  match = text.match(UTSCOMJSONRegExp)
+  UTSCOMJSONRegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: utsComJson,
+      regExp: UTSCOMJSONRegExp,
     }
   }
 
-  match = text.match(getRegExp('UTSUNICLOUDAPIJSON'))
+  const UTSUNICLOUDAPIJSONRegExp = getRegExp('UTSUNICLOUDAPIJSON')
+  match = text.match(UTSUNICLOUDAPIJSONRegExp)
+  UTSUNICLOUDAPIJSONRegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: utsUnicloudApiJson,
+      regExp: UTSUNICLOUDAPIJSONRegExp,
     }
   }
 
-  match = text.match(getRegExp('CUSTOMTYPEJSON'))
+  const CUSTOMTYPEJSONRegExp = getRegExp('CUSTOMTYPEJSON')
+  match = text.match(CUSTOMTYPEJSONRegExp)
+  CUSTOMTYPEJSONRegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: customTypeJson,
+      regExp: CUSTOMTYPEJSONRegExp,
     }
   }
 
-  match = text.match(getRegExp('VUEJSON'))
+  const VUEJSONRegExp = getRegExp('VUEJSON')
+  match = text.match(VUEJSONRegExp)
+  VUEJSONRegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: vueJson,
+      regExp: VUEJSONRegExp,
     }
   }
 
-  match = text.match(getRegExp('MANIFESTJSON'))
+  const MANIFESTJSONRegExp = getRegExp('MANIFESTJSON')
+  match = text.match(MANIFESTJSONRegExp)
+  MANIFESTJSONRegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: manifestJson,
+      regExp: MANIFESTJSONRegExp,
     }
   }
 
-  match = text.match(getRegExp('PAGESJSON'))
+  const PAGESJSONRegExp = getRegExp('PAGESJSON')
+  match = text.match(PAGESJSONRegExp)
+  PAGESJSONRegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: pagesJson,
+      regExp: PAGESJSONRegExp,
     }
   }
 
-  match = text.match(getRegExp('SPECIALSTRINGJSON'))
+  const SPECIALSTRINGJSONRegExp = getRegExp('SPECIALSTRINGJSON')
+  match = text.match(SPECIALSTRINGJSONRegExp)
+  SPECIALSTRINGJSONRegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: specialStringJson,
+      regExp: SPECIALSTRINGJSONRegExp,
     }
   }
 
-  match = text.match(getRegExp('PAGEINSTANCE'))
+  const PAGEINSTANCERegExp = getRegExp('PAGEINSTANCE')
+  match = text.match(PAGEINSTANCERegExp)
+  PAGEINSTANCERegExp.lastIndex = 0
   if (match) {
     return {
       match,
       json: pageInstanceJson,
+      regExp: PAGEINSTANCERegExp,
     }
   }
 
   return {
     match: null,
     json: {},
+    regExp: null,
   }
 }
 
@@ -157,8 +192,8 @@ module.exports = md => {
         for (let index = 0; index < lines.length; index++) {
           const line = lines[index]
 
-          const { match, json } = getJSON(line)
-          if (match) {
+          const { match, json, regExp } = getJSON(line)
+          if (match && regExp) {
             const jsonPath = match[1]
             const path = jsonPath.split('.')
             let temp = json
@@ -167,7 +202,7 @@ module.exports = md => {
               temp = temp[key]
             })
             if (typeof temp === 'undefined') continue
-            lines[index] = temp
+            lines[index] = lines[index].replace(regExp, temp)
           }
         }
 
