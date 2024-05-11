@@ -1405,6 +1405,48 @@ uts插件支持debug断点调试。
 	HBuilderX 3.7.7开始，不推荐使用 UTSCallback 定义函数类型，当需要定义函数类型时，应定义为更具体的类型，如：`const callback:UTSCallback` 应调整为`const callback:()=>void`
 	如果您使用的是插件市场三方uts插件，可以检查更新插件最新版本
 
+- iOS 平台异步 Api 的回调函数不支持返回值
+	
+```uts
+// iOS 平台不支持带返回值的回调
+export type TestCallback = {
+	success : (res : any) => any
+	fail : (err : any) => any
+}
+
+export class Test {
+	static getAll(callbacks : TestCallback) : void {
+		try {
+		 let res = callbacks.success("1");
+		 console.log(res);
+		} catch (e) {
+		  let res =	callbacks.fail("2");
+		  console.log(res);
+		}
+	}
+}
+```
+
+需要将上面的写法改成：
+
+```uts
+export type TestCallback = {
+	success : (res : any) => void
+	fail : (err : any) => void
+}
+
+export class Test {
+	static getAll(callbacks : TestCallback) : void {
+		try {
+		 callbacks.success("1");
+		} catch (e) {
+		  callbacks.fail("2");
+		}
+	}
+}
+```
+
+
 ### Float类型传参
 
 android很多布局参数强制要求Float，但是ts中没有内置这种类型。可以使用下面的代码实现转换
