@@ -303,6 +303,33 @@
 
 从 `data` 选项函数中返回的对象，会被组件赋为响应式。组件实例将会代理对其数据对象的属性访问。
 
+##### 使用注意事项 @options-data
+
+data内 $ 开头的属性不可直接使用 `this.$xxx`访问，需要使用 `this.$data['$xxx']` ，这是vue的规范
+
+> 目前安卓端可以使用 this.$xxx 访问是Bug而非特性，请勿使用此特性。
+
+示例
+
+```vue
+<template>
+  <view></view>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      $a: 1
+    }
+  },
+  onReady() {
+    console.log(this.$data['$a'] as number) // 1
+  }
+}
+</script>
+```
+
+
 示例 [详情](<!-- VUEJSON.E_component-instance.data_data-options.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_component-instance.data_data-options.webUrl -->
@@ -431,40 +458,15 @@
 
 绑定在实例上的 nextTick() 函数。
 
-示例 [详情](<!-- VUEJSON.E_component-instance.nextTick_nextTick-options.gitUrl -->)
-
-::: preview <!-- VUEJSON.E_component-instance.nextTick_nextTick-options.webUrl -->
-<!-- VUEJSON.E_component-instance.nextTick_nextTick-options.code -->
-:::
-
-### $nextTick 使用注意事项 @options-nextTick
+##### 使用注意事项 @options-nextTick
 
 目前 $nextTick 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的，所以 $nextTick 不能保证 DOM 排版以及渲染完毕。\
 如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/unielement.md) 对象。\
 在修改 DOM 后，立刻使用 [Element](../dom/unielement.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
 
-### $data 使用注意事项 @options-data
 
-data内 $ 开头的属性不可直接使用 `this.$xxx`访问，需要使用 `this.$data['$xxx']` ，这是vue的规范
+示例 [详情](<!-- VUEJSON.E_component-instance.nextTick_nextTick-options.gitUrl -->)
 
-> 目前安卓端可以使用 this.$xxx 访问是Bug而非特性，请勿使用此特性。
-
-示例
-
-```vue
-<template>
-  <view></view>
-</template>
-<script>
-export default {
-  data() {
-    return {
-      $a: 1
-    }
-  },
-  onReady() {
-    console.log(this.$data['$a'] as number) // 1
-  }
-}
-</script>
-```
+::: preview <!-- VUEJSON.E_component-instance.nextTick_nextTick-options.webUrl -->
+<!-- VUEJSON.E_component-instance.nextTick_nextTick-options.code -->
+:::
