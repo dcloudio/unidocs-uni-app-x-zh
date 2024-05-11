@@ -202,7 +202,7 @@ module.exports = md => {
               temp = temp[key]
             })
             if (typeof temp === 'undefined') continue
-            lines[index] = temp
+            lines[index] = lines[index].replace(regExp, temp)
           }
         }
 

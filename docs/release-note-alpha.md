@@ -1,3 +1,8 @@
+#### 4.14.2024042905-alpha
+##### uts插件
+* App-Android平台 修复 setInterval 间隔时间参数为0或者负数会不生效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1111)
+* App-Android平台 修复 UTS组件不支持Map类型参数的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1153)
+
 #### 4.13.2024042321-alpha
 ##### uts插件
 * App平台 优化 API插件模板中 unierror.uts 错误对象构造函数，兼容 web 平台使用
