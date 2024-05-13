@@ -14,7 +14,7 @@
 
 ### 组合式 API @composition-api
 
-选用组合式 API 时，会用 `ref`、`reactive` 来声明组件的响应式状态。使用组合式 API定义的变量，需要通过 [defineExpose](#defineexpose) 导出，才能在模板中使用。
+选用组合式 API 时，会用 `ref`、`reactive` 来声明组件的响应式状态。
 
 #### ref
 
@@ -22,7 +22,7 @@
 
 `ref()` 接收参数，并将其包裹在一个带有 `.value` 属性的 `ref` 对象中返回
 
-**注意**，在模板中使用 ref 时，我们不需要附加 `.value`。为了方便起见，当在模板中使用时，ref 会自动解包。
+**注意**：在模板中使用 ref 时，我们不需要附加 `.value`（为了方便起见，当在模板中使用时，ref 会自动解包）。
 
 示例 [详情](<!-- VUEJSON.E_reactivity.core_ref_ref.gitUrl -->)
 
