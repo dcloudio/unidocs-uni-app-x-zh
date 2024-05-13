@@ -33,11 +33,16 @@
 在web端平台，输入框上推逻辑是由浏览器自动完成的，属性`adjust-position`无效。
 但iOS safari软键盘弹出时，整个页面会上推而不是挤压，导致pages.json配置的导航栏会上移到屏幕之外。
 
-## inputmode说明
+## comfirm-type和inputmode说明
 
-inputmode 兼容性：Chrome >= 66、Edge >= 79、Firefox >= 95、Chrome Android >= 66、Firefox for Android >= 79、Safari on iOS >= 12.2、WebView Android >= 66
+1. comfirm-type
+Web平台弹出键盘使用的是浏览器控制的键盘，在Chrome81+、Safari13.7+之前，键盘右下角文字只能设置完成和搜索，从Chrome81+、Safari13.7+起支持设置发送、下一个。
 
-input组件有 inputmode 和 type、comfirm-tye 3个相似的属性，它们的区别详解如下：
+2. inputmode
+
+web平台的inputmode的浏览器兼容性如下： Chrome >= 66、Edge >= 79、Firefox >= 95、Chrome Android >= 66、Firefox for Android >= 79、Safari on iOS >= 12.2、WebView Android >= 66
+
+3. input组件有 inputmode 和 type、comfirm-type 3个相似的属性，它们的区别详解如下：
 
 - type：在 uni-app 和小程序中仅仅是输入框，定义 input 的工作方式，此值决定可输入什么值。比如 number 只能输入数字。
 - comfirm-type：定义键盘右下角按键的文字
@@ -46,5 +51,6 @@ input组件有 inputmode 和 type、comfirm-tye 3个相似的属性，它们的�
 同时使用 inputmode 和 comfirm-type 时，若设值冲突，键盘右下角按键类型由 comfirm-type 决定。type 属性和 inputmode 属性并不冲突
 
 ## Tips
+- html规范中input不仅是输入框，还有radio、checkbox、时间、日期、文件选择功能。但在uni-app规范中，input仅仅是输入框，其type属性代表不同的输入框。其他功能有单独的组件或API：[radio组件](radio-group.md)、[checkbox组件](checkbox-group.md)、[图片选择](../api/choose-image.md)等。
 - 从uni-app x 4.0起，App-Android平台 input 点击输入框外的屏幕会自动收起软键盘。
 - 从uni-app x 4.0起，App-Android平台 input 的 font-size 默认值统一为 16px。

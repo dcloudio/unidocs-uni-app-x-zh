@@ -1,6 +1,9 @@
 # uvue概述
 
-[vue.js](https://vuejs.org/) 是流行的js框架，它提供了简易的模板式写法、数据双向绑定、组件机制。
+[vue.js](https://vuejs.org/) 是流行的js框架，它提供了：
+1. 简易的模板式写法。降低使用门槛，UI和逻辑分离更清晰。
+2. 数据双向绑定。减少手写dom，diff机制提高性能。
+3. 组件机制。封装UI和逻辑，让轮子更加丰富。
 
 但 vue.js 并不支持web之外的其他平台，也不支持uts。
 
@@ -14,18 +17,27 @@ uni-app x 中，web平台内置了vue.js，其他平台为 DCloud 参考vue规�
 
 在非web平台，uvue 尽可能拉齐了vue.js的功能，但仍有些不常用的功能暂未提供，需注意查看相关文档的兼容性。同时 uvue 也新增了 [easycom](./component.md#easycom) 等技术，简化组件的使用。
 
-截止到HBuilderX 4.14版，uni-app x 兼容的vue版本为3.4。
-
 hello uvue 是非常重要的vue示例，演示了各种vue功能的应用。
 
 - 插件地址：[https://ext.dcloud.net.cn/plugin?id=15021](https://ext.dcloud.net.cn/plugin?id=15021)
 - 源码地址：[https://gitcode.net/dcloud/hello-uvue](https://gitcode.net/dcloud/hello-uvue)，注意有master和alpha分支，对应HBuilderX最新的正式版和alpha版。
 
-一个 uvue 页面/组件，有3个根节点标签：
+# 版本对应@ver
+HBuilderX/uni-app x，会跟踪vue版本的升级，版本映射表如下
+
+|HBuilderX	|vue版本	|
+|--	|--	|
+|4.14	|3.4	|
+
+# 页面/组件内容构成@sfc
+
+一个 uvue 页面/组件，符合vue单文件组件规范（SFC），有3个根节点标签：
 
 1. 模板组件区 `<template>`
 2. 脚本区 `<script>`
 3. 样式区 `<style>`
+
+注意html中，根节点是`<html>`，`<script>`和`<style>`是子节点。但在uvue中，这3个节点都是一级节点。
 
 一个简单的选项式页面示例：
 ```vue
@@ -66,7 +78,7 @@ hello uvue 是非常重要的vue示例，演示了各种vue功能的应用。
 template中文名为`模板`，它类似html的标签。但有2个区别：
 
 1. html中 `script` 和 `style` 是 html 的二级节点。但在 uvue 文件中，`template`、`script`、`style` 这3个是平级关系。
-2. html 中写的是 web 标签，但 vue 的 `template` 中写的全都是 vue 组件（包括内置基础组件、自定义uvue组件、uts原生插件组件），每个组件支持属性、事件、vue 指令，还可以绑定 vue 的 data 数据。
+2. html 中写的是 web 标签，但 vue 的 `template` 中写的全都是 vue 组件（包括[内置基础组件](../component/README.md)、自定义uvue组件、[uts原生插件组件](../plugin/uts-component.md)），每个组件支持属性、事件、vue 指令，还可以绑定 vue 的 data 数据。
 
 组件，即component，是vue中非常重要的概念，或者说现代开发框架都离不开组件概念。
 
@@ -120,7 +132,7 @@ setup属性声明代表script里的代码为组合式写法，如果没有setup�
 
 <script setup>
   let title = ref("Hello world") //定义一个响应式变量。类似于选项式的定义data
-	function buttonClick() { //方法不再需要写在method下面
+	function buttonClick() { //方法不再需要写在method下面。这里从简使用了function，实际业务中推荐使用箭头函数，有更好的平台一致性
 	  console.log("按钮被点了")
 	}
 	onReady(() => {

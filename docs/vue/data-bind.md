@@ -1,10 +1,26 @@
 # 数据绑定模型
 
+vue的一大特色，就是可以定义一个响应式变量，通过模板绑定的写法，更方便的实现对dom的更改。
+
+在组合式里，定义响应式变量是`ref()`，在选项式里，定义方式是在data里return。
+
+虽然组合式和选项式的定义方式不一样，但在模板里的绑定和使用方式是一样的。
+
+响应式变量被绑定到UI界面后（template和style都可以），
+1. 在逻辑script中修改变量，UI界面会自动更新。省却再编写dom代码操作UI。
+2. 响应式变量有diff更新机制。比如对于一个大列表的UTSJSONObject数据，其中一项变更时，框架底层会自动计算diff，给UI层差量同步数据。这在大多数情况是很好的，但注意diff这个计算过程本身也会增加耗时。
+
+下面分别讲解各种方式的用法。
+
 ## 声明响应式状态 @declaring-reactive-state
 
 ### 选项式 API @options-api
 
 选用选项式 API 时，会用 `data` 选项来声明组件的响应式状态。此选项的值应为返回一个对象的函数。Vue 将在创建新组件实例的时候调用此函数，并将函数返回的对象用响应式系统进行包装。此对象的所有顶层属性都会被代理到组件实例 (即方法和生命周期钩子中的 `this`) 上。
+
+data需要特殊类型时，通过 as 来转换。
+
+如下示例中，在data的return中定义了响应式变量：str、num、arr。并在模板中通过`{{ }}`的方式绑定和显示在text组件的内容区中。
 
 示例 [详情](<!-- VUEJSON.E_component-instance.data_data-options.gitUrl -->)
 
@@ -12,17 +28,26 @@
 <!-- VUEJSON.E_component-instance.data_data-options.code -->
 :::
 
+data中的响应式变量，如需在script中使用，需通过 `this.xx` 的方式，比如上述的`this.str`。
+
 ### 组合式 API @composition-api
 
-选用组合式 API 时，会用 `ref`、`reactive` 来声明组件的响应式状态。
+组合式 API 没有 data 这种选项，而是通过 `ref`、`reactive` 方法来声明组件的响应式状态。
+
+这种定义方式更加灵活和简洁。但建议把 `ref` 定义都写在开头，否则到处都写也不好找。
 
 #### ref
 
-在组合式 API 中，推荐使用 `ref()` 函数来声明响应式状态。需要给 `ref` 标注类型，如：`ref<string>()`
+使用 `ref()` 函数来定义一个响应式变量。
 
-`ref()` 接收参数，并将其包裹在一个带有 `.value` 属性的 `ref` 对象中返回
+需要给 `ref` 标注类型时，通过泛型的写法，如：`ref<string>()`。
 
-**注意**：在模板中使用 ref 时，我们不需要附加 `.value`（为了方便起见，当在模板中使用时，ref 会自动解包）。
+当然 uts 有一定的自动推导能力，对于特别简单的布尔值/数字/字符串的字面量，不写泛型也可以自动推导类型。
+
+`ref()` 接收参数，并将其包裹在一个带有 `.value` 属性的 `ref` 对象中返回。这个对象，
+
+- 在 uts 中取值时，需要使用 `.value`属性。
+- 而在模板中使用 ref 时，不需要附加 `.value`（为了方便起见，在模板中使用时，ref 会自动解包，这样模板里的写法和选项式保持了一致）。
 
 示例 [详情](<!-- VUEJSON.E_reactivity.core_ref_ref.gitUrl -->)
 
@@ -32,9 +57,9 @@
 
 #### reactive
 
-还有另一种声明响应式状态的方式，即使用 reactive() API。与将内部值包装在特殊对象中的 ref 不同，reactive() 将使对象本身具有响应性，还可以使用 `readOnly` 来禁止修改
+还有另一种声明响应式状态的方式，即使用 reactive() API。与将内部值包装在特殊对象中的 ref 不同，reactive() 将使对象本身具有响应性，还可以使用 `readOnly` 来禁止修改。
 
-值得注意的是，reactive() 返回的是一个原始对象的 Proxy，它和原始对象是不相等的
+需要注意：reactive() 返回的是一个原始对象的代理（Proxy），它和原始对象是不相等的。
 
 只有代理对象是响应式的，更改原始对象不会触发更新。因此，使用 Vue 的响应式系统的最佳实践是仅使用你声明对象的代理版本。
 
@@ -50,7 +75,7 @@
 
 可以通过 `defineExpose` 编译器宏来显式指定在 `<script setup>` 组件中要暴露出去的属性：
 
-> 在示例中，使用 `defineExpose` 导出一个方法供自动化测试使用
+> 在示例中，使用 `defineExpose` 导出一个方法供自动化测试脚本使用
 
 示例 [详情](<!-- VUEJSON.E_component-instance.define-expose_define-expose.gitUrl -->)
 
@@ -62,11 +87,14 @@
 
 ### 在模板里绑定 @bind-template-data
 
-当使用 `Options API` `data` 或 `Composition API` 的 `ref` 、 `reactive` 定义了响应式数据后，可以在模板中使用 `{{}}` 语法绑定数据
+当使用 `Options API` `data` 或 `Composition API` 的 `ref` 、 `reactive` 定义了响应式数据后，可以在模板中使用。
 
-可以在模板中使用以下任一指令一起：
+- 组件的text区域，使用`{{}}` 语法绑定数据。这常见于`<text>`组件。
+- 组件的vue指令中，直接写变量名称。
 
-- `v-bind` 或 `:`（简写）
+比如下述组件的vue指令：
+
+- `v-bind` 或 `:`（简写）。它后面跟着组件的属性名称，可以动态修改组件的属性。
 - `v-if`、`v-else-if` 或 `v-else`
 - `v-for`
 

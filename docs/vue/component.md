@@ -18,29 +18,27 @@
 
 传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom` 将其精简为一步。
 
-只要组件安装在项目的 `components` 目录下或 `uni_modules/插件 id/components` 目录下，并符合 `组件名称/组件名称.(vue|uvue)` 目录结构。就可以不用引用、注册，直接在页面中使用。
+只要组件安装在项目的 `components` 目录下或 `uni_modules/插件 id/components/插件 id/插件 id.uvue` 目录下，并符合 `组件名称/组件名称.(vue|uvue)` 目录结构。就可以不用引用、注册，直接在页面中使用。
 
-- 比如 [uni-rate组件](https://ext.dcloud.net.cn/plugin?id=33)，它导入到项目后，存放在了目录 /uni_modules/uni-rate/uni-rate.vue
+- 比如 [uni-loading](https://ext.dcloud.net.cn/plugin?id=15980)，它导入到项目后，存放在了目录 /uni_modules/uni-loading/components/uni-loading/uni-loading.uvue
 
-  同时它的组件名称也叫 uni-rate，所以这样的组件，不用在 script 里注册和引用。如下：
+  同时它的组件名称也叫 uni-loading，所以这样的组件，不用在 script 里注册和引用。如下：
 
   ```html
   <template>
       <view>
-        <uni-rate></uni-rate><!-- 这里会显示一个五角星，并且点击后会自动亮星 -->
+        <uni-loading></uni-loading><!-- 这里会显示一个loading -->
       </view>
     </template>
   <script>
-    // 这里不用import引入，也不需要在components内注册uni-list组件。template里就可以直接用
+    // 这里不用import引入，也不需要在components内注册组件。template里就可以直接用
     // ...
   </script>
   ```
 
-#### uni_modules 组件 @uni-module-components
+这里出现了`uni_module`的概念，简单说下，它是uni-app的一种包管理方案。
 
-> uni_module其实不止服务于组件，它可以服务于组件、js库、页面、项目等所有DCloud插件市场所支持的种类。
-
-符合uni_module规范的组件都在项目的`uni_modules`目录下，以插件id为目录存放。（项目模板不放在`uni_modules`目录下）
+`uni_module`其实不止服务于组件，它可以容纳组件、script库、页面、项目等所有DCloud插件市场所支持的种类。
 
 在HBuilderX中点右键可方便的更新插件，插件作者也可以方便的上传插件。
 
@@ -55,7 +53,7 @@ uni_module有详细的专项文档，请另行查阅[uni_module规范](https://u
 
 ### 手动引入组件 @manual-import-component
 
-在新建一个组件后，如果不符合 easycom 规范，则需要手动引入：
+不符合 easycom 规范的组件，则需要手动引入：
 
 ```vue
 <!-- 组件 child.vue -->

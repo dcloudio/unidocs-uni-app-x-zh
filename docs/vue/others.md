@@ -1,5 +1,6 @@
 # vue 生态
 
-## 插件
+vue生态的功能，比如vue dev tools、pinia、vuex、i18n，在uni-app x编译到web时均支持，但在App平台目前都不支持。
 
-暂不支持vue插件，比如pinia、vuex、i18n、router。简单的状态管理可以参考文档[全局变量和状态管理](../tutorial/store.md)。
+- vue dev tools for uni-app (x) web教程：[详见](https://uniapp.dcloud.net.cn/tutorial/debug/uni-vue-devtools.html)
+- 简单的状态管理可参考文档：[全局变量和状态管理](../tutorial/store.md)。
