@@ -102,12 +102,15 @@
 
 预编译的模板，例如单文件组件中的模板，会在构建时被编译为 `render` 选项。如果一个组件中同时存在 `render` 和 `template，则` `render` 将具有更高的优先级。
 
-- 选项式 API
+示例 [详情](<!-- VUEJSON.E_render-function.render_render-options.gitUrl -->)
 
-示例 [详情](<!-- VUEJSON.E_render-function.render_render.gitUrl -->)
+::: preview <!-- VUEJSON.E_render-function.render_render-options.webUrl -->
 
-::: preview <!-- VUEJSON.E_render-function.render_render.webUrl -->
-<!-- VUEJSON.E_render-function.render_render.code -->
+> 选项式 API
+<!-- VUEJSON.E_render-function.render_render-options.code -->
+
+> 组合式 API
+<!-- VUEJSON.E_render-function.render_render-composition.code -->
 :::
 
 #### slots

@@ -18,10 +18,15 @@
 
   为了方便阅读，当子节点不是插槽对象时，可以省略 prop 参数。
 
-- 示例 [详情](<!-- VUEJSON.E_render-function.render_render.gitUrl -->)
+- 示例 [详情](<!-- VUEJSON.E_render-function.render_render-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_render-function.render_render.webUrl -->
-<!-- VUEJSON.E_render-function.render_render.code -->
+::: preview <!-- VUEJSON.E_render-function.render_render-options.webUrl -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.render_render-options.code -->
+
+> 组合式 API
+<!-- VUEJSON.E_render-function.render_render-composition.code -->
 :::
 
 #### mergeProps()
