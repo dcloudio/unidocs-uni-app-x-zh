@@ -43,7 +43,7 @@ try {
   pageInstanceJson = require('../utils/pageInstanceJson.json')
 } catch (error) {}
 
-function getRegExp(key) {
+function getRegExp(key, text) {
   return new RegExp(`<!--\\s*${key}.([\\w\\W]+[^\\s])\\s*-->`)
 }
 

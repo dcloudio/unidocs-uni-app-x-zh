@@ -35,6 +35,11 @@ export const navbar = [
         link: '/uts/'
       },
       {
+        text: 'VUE',
+        type: 'link',
+        link: '/vue/'
+      },
+      {
         text: '全局文件',
         type: 'link',
         link: '/collocation/pagesjson'

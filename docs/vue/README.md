@@ -1,154 +1,243 @@
-# vue
+# uvue概述
 
-uni-app x的vue规范，按照vue3规范实现，从4.0起支持组合式写法。
+[vue.js](https://vuejs.org/) 是流行的js框架，它提供了简易的模板式写法、数据双向绑定、组件机制。
 
-本文暂时只包括兼容性表格，vue功能详情另见 [vue3概述](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#)、[Vue3 API](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html)。
+但 vue.js 并不支持web之外的其他平台，也不支持uts。
 
-uni-app x中vue的用法，有单独的示例应用：[hello uvue](https://gitcode.net/dcloud/hello-uvue)。这里都是可以跑通的使用样例代码。
+uni-app x 为vue开发者提供了跨平台的解决方案。
 
-## 全局 API兼容性
+uni-app x 中，web平台内置了vue.js，其他平台为 DCloud 参考vue规范提供的兼容实现。
 
-### 应用实例 @app-instance
+在 uni-app x 中，页面和组件的文件后缀名均为 `*.uvue`。u 即 uni 的意思。
 
-<!-- VUEJSON.application.compatibility -->
-<!-- VUEJSON.application.example -->
+页面与组件均符合vue的单文件组件规范，只不过页面需要在pages.json中注册且多了一批生命周期和API。
 
-**注意：**
-- **app.use:** `app.use` 支持通过对象字面量、函数及 `definePlugin` 方式定义插件。\
-支持传递插件参数，当传递插件参数时，`app` 的类型需要指定为 `VueApp`。
-```ts
-// main.uts
-export function createApp() {
-  const app = createSSRApp(App)
+在非web平台，uvue 尽可能拉齐了vue.js的功能，但仍有些不常用的功能暂未提供，需注意查看相关文档的兼容性。同时 uvue 也新增了 [easycom](./component.md#easycom) 等技术，简化组件的使用。
 
-  // 通过对象字面量方式注册插件
-  app.use({
-    install(app) {
-      app.config.globalProperties.plugin1 = "plugin1"
-    }
-  })
+截止到HBuilderX 4.14版，uni-app x 兼容的vue版本为3.4。
 
-  // 通过函数方式注册插件
-  app.use(function (app) {
-    app.config.globalProperties.plugin2 = "plugin2"
-  })
+hello uvue 是非常重要的vue示例，演示了各种vue功能的应用。
 
-  // 通过 definePlugin + 对象字面量方式注册插件
-  const plugin3= definePlugin({
-    install(app) {
-      app.config.globalProperties.plugin3 = "plugin3"
-    }
-  })
-  app.use(plugin3)
+- 插件地址：[https://ext.dcloud.net.cn/plugin?id=15021](https://ext.dcloud.net.cn/plugin?id=15021)
+- 源码地址：[https://gitcode.net/dcloud/hello-uvue](https://gitcode.net/dcloud/hello-uvue)，注意有master和alpha分支，对应HBuilderX最新的正式版和alpha版。
 
-  // 通过 definePlugin + 函数方式注册插件
-  const plugin4= definePlugin(function (app) {
-    app.config.globalProperties.plugin4 = "plugin4"
-  })
-  app.use(plugin4)
+一个 uvue 页面/组件，有3个根节点标签：
 
-  // 注册插件时传递参数
-  // 注意：当传递插件参数时，app 的类型需要指定为 VueApp
-  app.use(function (app: VueApp, arg1:string, arg2:string) {
-	  app.config.globalProperties.plugin5 = `${arg1}-${arg2}`
-  }, "arg1", "arg2");
-}
-```
-- **app.config.globalProperties:** 请注意，`globalProperties` 是一个保留关键字，因此在项目中请勿声明名为 `globalProperties` 的变量。\
-在向 `globalProperties` 注册方法时，请使用直接函数表达式方式进行赋值。不支持先声明函数，再将其注册到 `globalProperties` 上的方式。同时，注册的函数一旦被赋值，不允许进行修改。\
-`globalProperties` 在编译时处理，因此确保你的操作在编译时是可知的。例如，将变量赋值给 `globalProperties` 时，这个变量在编译时必须是已知的，而不能是在运行时才能确定的变量。
+1. 模板组件区 `<template>`
+2. 脚本区 `<script>`
+3. 样式区 `<style>`
 
-### 通用
+一个简单的选项式页面示例：
+```vue
+<template>
+	<view class="content">
+		<button @click="buttonClick">{{title}}</button>
+	</view>
+</template>
 
-<!-- VUEJSON.general.compatibility -->
-<!-- VUEJSON.general.example -->
-
-#### nextTick 使用注意事项
-
-目前 nextTick 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 nextTick 不能保证 DOM 排版以及渲染完毕。如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/element.md) 对象。在修改 DOM 后，立刻使用 [Element](../dom/element.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
-
-## 组合式 API @composition-api
-
-**注意：**
-- 暂不支持 `<script setup>` 和 `<script>` 同时使用，如果需要配置 `options` 内容，比如 `name`，可以使用 `defineOptions`。
-- 暂不支持顶层 `await`。
-- 暂不支持 `<script setup>` 配置 `generic` 泛型类型参数。
-- `App.uvue` 暂不支持组合式 API。
-
-### 响应式: 核心
-
-<!-- VUEJSON.reactivity_core.compatibility -->
-<!-- VUEJSON.reactivity_core.example -->
-
-**注意：**
-- `computed` 需通过泛型指定返回值类型。
-```ts
-const count = ref(0)
-const doubleCount = computed<number>(() : number => {
-  return count.value * 2
-})
-```
-
-### 响应式: 工具
-
-<!-- VUEJSON.reactivity_utilities.compatibility -->
-<!-- VUEJSON.reactivity_utilities.example -->
-
-**注意：**
-- `toRefs` 仅支持 `Array` 和 `UTSJSONObject`, 不支持自定义类型。
-
-### 响应式: 进阶
-
-<!-- VUEJSON.reactivity_advanced.compatibility -->
-<!-- VUEJSON.reactivity_advanced.example -->
-
-### 生命周期钩子
-
-<!-- VUEJSON.composition_lifecycle.compatibility -->
-
-[页面及组件生命周期流程图](/page.md#lifeCycleFlow)
-
-<!-- VUEJSON.composition_lifecycle.example -->
-
-#### [函数 event 参数的类型](../tutorial/codegap.md#function-event-argument-type)
-
-### 指令 @directives
-
-<!-- VUEJSON.directives.compatibility -->
-<!-- VUEJSON.directives.example -->
-
-**注意：**
-- **v-html:** 在 `App-android` 平台，`v-html` 指令通过编译为 [rich-text](../component/rich-text.md) 组件实现。因此，`v-html` 指令的内容必须是 `rich-text` 支持的格式, 并且要遵循标签嵌套规则，例如， `swiper` 标签内只允许嵌套 `swiper-item` 标签。\
-同时，受限于 `rich-text` 组件不支持 `class` 样式，`v-html` 指令中同样不支持 `class` 样式。\
-绑定 `v-html` 的标签内的内容会被忽略，`v-html` 指令的内容会编译为 `rich-text` 组件渲染为该标签的子节点。
-
-### 事件处理
-
-- [事件修饰符](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6) Android 端只支持 `stop` 和 `once`, IOS 端只支持 `stop`。
-
-## script
-
-- 仅支持 `export default {}` 方式定义组件。
-- `data` 仅支持函数返回对象字面量方式。
-```ts
-<script lang="uts">
+<script>
 	export default {
 		data() {
 			return {
-				// 必须写这里
+				title: "Hello world", // 定义绑定在页面上的data数据
 			}
+		},
+		onLoad() {
+			// 页面启动的生命周期，这里编写页面加载时的逻辑
+		},
+		methods: {
+			buttonClick: function () {
+				console.log("按钮被点了")
+			},
+		}
+	}
+</script>
+
+<style>
+	.content {
+		width: 750rpx;
+		background-color: white;
+	}
+</style>
+```
+
+## template
+
+template中文名为`模板`，它类似html的标签。但有2个区别：
+
+1. html中 `script` 和 `style` 是 html 的二级节点。但在 uvue 文件中，`template`、`script`、`style` 这3个是平级关系。
+2. html 中写的是 web 标签，但 vue 的 `template` 中写的全都是 vue 组件（包括内置基础组件、自定义uvue组件、uts原生插件组件），每个组件支持属性、事件、vue 指令，还可以绑定 vue 的 data 数据。
+
+组件，即component，是vue中非常重要的概念，或者说现代开发框架都离不开组件概念。
+
+我们知道js逻辑可以封装为函数或类库。而对于页面上可视的元素，则可以将ui、样式、逻辑一起封装为组件。详见[uvue组件规范](./component.md)
+
+在 uni-app x 中， `<view>`是最基本的视图容器组件，`<text>`则是文字组件，`<button>`是按钮组件。这些都是[内置组件](../component/README.md)
+
+一个页面或组件只能有一个template标签，template下面可以有多个二级节点，如下：
+
+```vue
+<template>
+	<view>
+		<text>标题</text>
+	</view>
+	<scroll-view>
+
+	</scroll-view>
+</template>
+```
+
+## script
+
+script中编写逻辑代码。
+
+uvue中只能有一个script标签。
+
+script标签的属性如下：
+- lang
+lang 仅支持uts，不管script的lang属性写成什么，都按uts编译。
+- setup
+setup属性声明代表script里的代码为组合式写法，如果没有setup属性则为选项式写法。
+
+### 组合式API
+组合式 API，也称 Composition API，或 setup函数。
+
+组合式提供了更灵活自由、更简洁的编程方式，通过代码而不是通过规范约定死的选项来定义data、method和生命周期。
+
+如下页面代码的逻辑是：
+
+1. 定义了一个响应式`title`，初始值是"Hello world"。
+2. 在页面中放置了一个button组件，按钮文字区使用`{{}}`模板写法，里面写响应式变量`title`，那么`title`的值就会绑定到按钮的文字区，即按钮的初始文字是"Hello world"
+3. 按钮的点击事件`@click`，指向了一个方法`buttonClick`，点击按钮即触发这个方法的执行
+4. 页面onReady生命周期中打印日志
+
+```vue
+<template>
+	<view>
+		<button @click="buttonClick">{{title}}</button>
+	</view>
+</template>
+
+<script setup>
+  let title = ref("Hello world") //定义一个响应式变量。类似于选项式的定义data
+	function buttonClick() { //方法不再需要写在method下面
+	  console.log("按钮被点了")
+	}
+	onReady(() => {
+		console.log("页面onReady触发") // 页面生命周期，编写页面加载后的逻辑
+	})
+</script>
+
+```
+
+### 选项式API
+选项式 API，也称 Option API，指在script中写`export default {}`，在其中通过多个选项的对象来定义data、method和生命周期。选项所定义的属性都会暴露在函数内部的 this 上，它会指向当前的组件实例。
+
+以下代码的逻辑与上一章节组合式API的示例相同，只是写法改成了选项式写法。
+
+```vue
+<template>
+	<view>
+		<button @click="buttonClick">{{title}}</button>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				title: "Hello world", // 定义绑定在页面上的data数据
+			}
+		},
+		onReady() {
+			console.log("页面onReady触发") // 页面生命周期，编写页面加载后的逻辑
+		},
+		methods: {
+			buttonClick: function () {
+				console.log("按钮被点了")
+			},
 		}
 	}
 </script>
 ```
 
-## [Class 与 Style 绑定](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#class-%E4%B8%8E-style-%E7%BB%91%E5%AE%9A)
+#### `export default` 外的代码
 
-- `uni-app x` 支持绑定  `UTSJSONObject` 和 `Map` 类型数据。
+既然有写在写`export default {}`里的代码，那么就有 `export default {}` 外面的代码。
 
-在App-Android平台上 `Map` 的性能高于 `UTSJSONObject` 数据类型。从 `uni-app x 4.01` 起，Web平台也支持了 `Map` 类型绑定。
+写在外面一般有几种情况：
+
+1. 引入第三方 uts 模块
+2. 引入非 easycom 的组件（一般组件推荐使用[easycom](./component.md#easycom)，无需导入注册）
+3. 定义 type，对 data 进行类型定义
+4. 定义作用域更大的变量
 
 ```html
+<script>
+	const TAB_OFFSET = 1; // 外层静态变量不会跟随页面关闭而回收
+	import charts from 'charts.uts'; // 导入外部js/ts模块
+	import swiperPage from 'swiper-page.uvue'; //导入非easycom的组件
+	type GroupType = {
+		id : number,
+		title : string
+	} // 在uts中，为下面data数据的 groupList 定义类型
+	export default {
+		components: {
+		    swiperPage
+		}, // 注册非easycom组件
+		data() {
+			return {
+				groupList: [
+					{ id: 1, title: "第一组" },
+					{ id: 2, title: "第二组" },
+				] as GroupType[], // 为数据groupList定义ts类型
+			}
+		},
+		onLoad() {},
+		methods: {}
+	}
+</script>
+```
+
+开发者应谨慎编写 `export default {}` 外面的代码，这里的代码有2个注意事项：
+
+1. 影响应用性能。不管写在哪个页面，这部分代码都在应用启动时执行，而不是页面加载。如果`export default {}`外的代码写的太复杂，会影响应用启动速度，占用更多内存。
+2. 不跟随组件、页面关闭而回收。在外层的静态变量不会跟随页面关闭而回收。如果必要，你需要手动处理。比如 `beforeDestroy` 或 `destroyed` 生命周期进行处理。
+
+## style（CSS功能） @css
+
+style的写法与web的css基本相同。但在App端，由于并非webview渲染，支持的css有限。[详见](../css/README.md)
+
+本章节重点讲解uvue下样式的使用注意事项。
+
+一个页面/组件允许有多个style标签。
+
+style通过lang属性，可以支持less、scss、stylus等css预处理语言。
+
+### style 标签 @style
+
+<!-- VUEJSON.style.description -->
+
+<!-- VUEJSON.style.attribute -->
+
+<!-- VUEJSON.style.event -->
+
+<!-- VUEJSON.style.example -->
+
+<!-- VUEJSON.style.compatibility -->
+
+<!-- VUEJSON.style.children -->
+
+<!-- VUEJSON.style.reference -->
+
+
+### Class 与 Style 绑定 @class-style
+
+- `uni-app x` 支持绑定  `UTSJSONObject` 和 `Map` 类型数据。
+- 在App-Android平台上 `Map` 的性能高于 `UTSJSONObject` 数据类型。从 `uni-app x 4.01` 起，Web平台也支持了 `Map` 类型绑定。
+
+如下示例中，给view组件的style和class分别绑定了2个data，就可以通过在逻辑代码里修改data而实现动态修改样式。
+```vue
 <template>
   <view>
     <view :style="styleMap" :class="classMap"></view>
@@ -166,7 +255,7 @@ const doubleCount = computed<number>(() : number => {
   }
 </script>
 
-<style>
+<style lang="scss" scoped>
   .w-100 {
     width: 100px;
   }
@@ -179,15 +268,13 @@ const doubleCount = computed<number>(() : number => {
 </style>
 ```
 
-### 深度选择器
+- [参见](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#class-%E4%B8%8E-style-%E7%BB%91%E5%AE%9A)
 
-|App|Web|
-|:-:|:-:|
-|x  |4.0|
+### 深度选择器 @scoped
 
-处于 `scoped` 样式中的选择器如果想要做更“深度”的选择，也即：影响到子组件，可以使用 `:deep()` 这个伪类：
+> 处于 `scoped` 样式中的选择器如果想要做更“深度”的选择，也即：影响到子组件，可以使用 `:deep()` 这个伪类：
 
-```html
+```vue
 <style scoped>
 .a :deep(.b) {
   /* ... */
@@ -195,15 +282,11 @@ const doubleCount = computed<number>(() : number => {
 </style>
 ```
 
-### CSS Modules
-
-|App|Web|
-|:-:|:-:|
-|x  |4.0|
+### CSS Modules @css-module
 
 一个 `<style module>` 标签会被编译为 `CSS Modules` 并且将生成的 CSS class 作为 `$style` 对象暴露给组件：
 
-```html
+```vue
 <template>
   <text :class="$style.red">This should be red</text>
 </template>
@@ -217,7 +300,7 @@ const doubleCount = computed<number>(() : number => {
 
 得出的 class 将被哈希化以避免冲突，实现了同样的将 CSS 仅作用于当前组件的效果。
 
-**自定义注入名称**
+#### CSS Modules 自定义注入名称 @css-module-custom-injection
 
 你可以通过给 `module` attribute 一个值来自定义注入 class 对象的属性名：
 
@@ -233,7 +316,7 @@ const doubleCount = computed<number>(() : number => {
 </style>
 ```
 
-**与组合式 API 一同使用**
+#### CSS Modules 与组合式 API 一同使用 @css-module-composition-api
 
 可以通过 `useCssModule` API 在 `setup()` 和 `<script setup>` 中访问注入的 class。对于使用了自定义注入名称的 `<style module>` 块，useCssModule 接收一个匹配的 module attribute 值作为第一个参数：
 
@@ -248,16 +331,17 @@ useCssModule()
 useCssModule('classes')
 ```
 
-
-### CSS 中的 v-bind()
+### CSS 中的 v-bind() @css-v-bind
 
 |App|Web|
 |:-:|:-:|
 |x  |4.13+  |
 
+[示例](./data-bind.md#v-bind-css-data)
+
 单文件组件的 `<style>` 标签支持使用 `v-bind` CSS 函数将 CSS 的值链接到动态的组件状态：
 
-```html
+```vue
 <template>
   <text class="text">hello</text>
 </template>
@@ -281,7 +365,7 @@ export default {
 
 这个语法同样也适用于 `<script setup>`，且支持 UTS 表达式 (需要用引号包裹起来)：
 
-```html
+```vue
 <script setup>
 const theme = {
   color: 'red'
@@ -298,468 +382,3 @@ const theme = {
 }
 </style>
 ```
-
-## 应用生命周期
-uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) 和 [onExit](../collocation/App.md#applifecycle) 应用级生命周期，Android退出应用逻辑写在app.uvue里，新建项目的模板自动包含相关代码。如需修改退出逻辑，请直接修改相关代码。
-
-## 组件 @component
-
-- [props](../component/README.md#props)
-- [自定义事件](../component/README.md#自定义事件)
-- [计算属性和侦听器](../component/README.md#计算属性和侦听器)
-- [作用域插槽的类型](../component/README.md#作用域插槽的类型)
-- [监听页面生命周期](../component/README.md#监听页面生命周期)
-- [vue 与 uvue 不同文件后缀的优先级](../component/README.md#priority)
-
-::: warning 注意
-1. App 端，如需页面级滚动，根节点必须是 `scroll-view` 标签。
-:::
-
-<!-- VUEJSON.components.compatibility -->
-<!-- VUEJSON.components.example -->
-### 特殊元素 @special-elements
-
-#### script
-
-<!-- VUEJSON.script.description -->
-
-<!-- VUEJSON.script.attribute -->
-
-<!-- VUEJSON.script.event -->
-
-<!-- VUEJSON.script.example -->
-
-<!-- VUEJSON.script.compatibility -->
-
-<!-- VUEJSON.script.children -->
-
-<!-- VUEJSON.script.reference -->
-
-#### template
-
-<!-- VUEJSON.template.description -->
-
-<!-- VUEJSON.template.attribute -->
-
-<!-- VUEJSON.template.event -->
-
-<!-- VUEJSON.template.example -->
-
-<!-- VUEJSON.template.compatibility -->
-
-<!-- VUEJSON.template.children -->
-
-<!-- VUEJSON.template.reference -->
-
-
-#### slot
-
-<!-- VUEJSON.slot.description -->
-
-<!-- VUEJSON.slot.attribute -->
-
-<!-- VUEJSON.slot.event -->
-
-<!-- VUEJSON.slot.example -->
-
-<!-- VUEJSON.slot.compatibility -->
-
-<!-- VUEJSON.slot.children -->
-
-<!-- VUEJSON.slot.reference -->
-
-
-
-#### style
-
-<!-- VUEJSON.style.description -->
-
-<!-- VUEJSON.style.attribute -->
-
-<!-- VUEJSON.style.event -->
-
-<!-- VUEJSON.style.example -->
-
-<!-- VUEJSON.style.compatibility -->
-
-<!-- VUEJSON.style.children -->
-
-<!-- VUEJSON.style.reference -->
-
-
-#### keep-alive
-
-<!-- VUEJSON.keep-alive.description -->
-
-<!-- VUEJSON.keep-alive.attribute -->
-
-<!-- VUEJSON.keep-alive.event -->
-
-<!-- VUEJSON.keep-alive.example -->
-
-<!-- VUEJSON.keep-alive.compatibility -->
-
-<!-- VUEJSON.keep-alive.children -->
-
-<!-- VUEJSON.keep-alive.reference -->
-
-
-#### component
-
-<!-- VUEJSON.component.description -->
-
-<!-- VUEJSON.component.attribute -->
-
-<!-- VUEJSON.component.event -->
-
-<!-- VUEJSON.component.example -->
-
-<!-- VUEJSON.component.compatibility -->
-
-<!-- VUEJSON.component.children -->
-
-<!-- VUEJSON.component.reference -->
-
-#### transition
-
-<!-- VUEJSON.transition.description -->
-
-<!-- VUEJSON.transition.attribute -->
-
-<!-- VUEJSON.transition.event -->
-
-<!-- VUEJSON.transition.example -->
-
-<!-- VUEJSON.transition.compatibility -->
-
-<!-- VUEJSON.transition.children -->
-
-<!-- VUEJSON.transition.reference -->
-
-
-#### transition-group
-
-<!-- VUEJSON.transition-group.description -->
-
-<!-- VUEJSON.transition-group.attribute -->
-
-<!-- VUEJSON.transition-group.event -->
-
-<!-- VUEJSON.transition-group.example -->
-
-<!-- VUEJSON.transition-group.compatibility -->
-
-<!-- VUEJSON.transition-group.children -->
-
-<!-- VUEJSON.transition-group.reference -->
-
-
-#### teleport
-
-<!-- VUEJSON.teleport.description -->
-
-<!-- VUEJSON.teleport.attribute -->
-
-**注意：**
-- App-Android 平台暂不支持动态修改 `to` 属性。
-
-<!-- VUEJSON.teleport.event -->
-
-<!-- VUEJSON.teleport.example -->
-
-<!-- VUEJSON.teleport.compatibility -->
-
-<!-- VUEJSON.teleport.children -->
-
-<!-- VUEJSON.teleport.reference -->
-
-### 特殊 Attributes @special-attributes
-
-<!-- VUEJSON.special_attributes.compatibility -->
-<!-- VUEJSON.special_attributes.example -->
-
-### 生命周期选项 @lifecycle-options
-
-<!-- VUEJSON.options_lifecycle.compatibility -->
-<!-- VUEJSON.options_lifecycle.example -->
-
-#### mounted、unmounted 使用注意事项
-
-目前 mounted、unmounted 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 mounted、unmounted 不能保证 DOM 排版以及渲染完毕。如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/element.md) 对象。在修改 DOM 后，立刻使用 [Element](../dom/element.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
-
-## 插件
-
-暂不支持vue插件，比如pinia、vuex、i18n、router。简单的状态管理可以参考文档[全局变量和状态管理](../tutorial/store.md)。
-
-## 选项式 API兼容性 @options-api-compatibility
-
-### 状态选项
-
-<!-- VUEJSON.options_state.compatibility -->
-**注意：**
-- `watch immediate` 第一次调用时，App-Android 平台旧值为初始值，web 平台为 null。
-
-<!-- VUEJSON.options_state.example -->
-### 渲染选项 @rendering-options
-
-
-<!-- VUEJSON.options_rendering.compatibility -->
-<!-- VUEJSON.options_rendering.example -->
-
-### 组合选项 @composition-options
-
-
-<!-- VUEJSON.options_composition.compatibility -->
-<!-- VUEJSON.options_composition.example -->
-
-**注意：**
-- **inject:** 当使用 `inject` 声明从上层提供方注入的属性时，支持两种写法：字符串数组和对象。推荐使用对象写法，因为当使用数组方法时，类型会被推导为 `any | null` 类型。\
-使用对象写法时，额外增加 `type` 属性用于标记类型。如果注入的属性类型不是基础数据类型，需要通过 `PropType` 来标记类型。
-```ts
-export default {
-  inject: {
-    provideString: {
-      type: String,
-      default: 'default provide string value'
-    },
-    provideObject: {
-      type: Object as PropType<UTSJSONObject>
-    },
-    provideMap: {
-      type: Object as PropType<Map<string, string>>,
-      default: (): Map<string, string> => {
-        return new Map<string, string>([['key', 'default provide map value']])
-      }
-    }
-  }
-}
-```
-- **mixins:** `mixins` 仅支持通过字面量对象方式和 `defineMixin` 函数方式定义。
-```ts
-const mixin1 = defineMixin({
-  onLoad() {
-    console.log('mixin1 onLoad')
-  }
-})
-export default {
-  mixins: [
-    mixin1,
-    {
-      data() {
-        return {
-          mixin2: 'mixin2'
-        }
-      }
-    }
-  ]
-}
-```
-同名属性会被覆盖，同名生命周期会依次执行。
-
-同名属性的优先级如下：
-- 在 `app.mixin` 内嵌入的 mixin < 在 `app.mixin` 中声明的 mixin < 在 `page.mixin` 内嵌入的 mixin < 在 `page.mixin` 中声明的 mixin < 在 `component.mixin` 内嵌入的 mixin < 在 `component.mixin` 中声明的 mixin
-
-同名生命周期的执行顺序如下：
-1. 在 `app.mixin` 内嵌入的 mixin
-2. 在 `app.mixin` 中声明的 mixin
-3. 在 `page.mixin` 内嵌入的 mixin
-4. 在 `page.mixin` 中声明的 mixin
-5. 在 `component.mixin` 内嵌入的 mixin
-6. 在 `component.mixin` 中声明的 mixin
-
-### 其他杂项
-
-
-<!-- VUEJSON.options_misc.compatibility -->
-<!-- VUEJSON.options_misc.example -->
-### 组件实例 @component-instance
-
-
-<!-- VUEJSON.component_instance.compatibility -->
-<!-- VUEJSON.component_instance.example -->
-
-#### $nextTick 使用注意事项
-
-目前 $nextTick 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 $nextTick 不能保证 DOM 排版以及渲染完毕。如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/element.md) 对象。在修改 DOM 后，立刻使用 [Element](../dom/element.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
-
-#### $data 使用注意事项
-
-data内$开头的属性不可直接使用`this.$xxx`访问，需要使用`this.$data['$xxx']`，这是vue的规范。目前安卓端可以使用this.$xxx访问是Bug而非特性，请勿使用此特性。
-
-示例
-
-```vue
-<template>
-  <view></view>
-</template>
-<script>
-export default {
-  data() {
-    return {
-      $a: 1
-    }
-  },
-  onReady() {
-    console.log(this.$data['$a'] as number) // 1
-  }
-}
-</script>
-```
-
-## 进阶 API兼容性
-
-### 渲染函数
-
-
-<!-- VUEJSON.render_function.compatibility -->
-<!-- VUEJSON.render_function.example -->
-
-## 单文件组件兼容性
-
-### \<script setup>
-
-<!-- VUEJSON.single_file_component_script.compatibility -->
-
-<!-- VUEJSON.single_file_component_script.example -->
-
-**注意：**
-- `defineProps` 仅支持数组字面量、对象字面量定义（等同于 `options` 中的 `props`规则）及使用纯类型参数的方式来声明。
-```ts
-// 数组字面量
-defineProps(['str', 'num', 'bool', 'arr', 'obj', 'fn'])
-
-// 对象字面量
-defineProps({
-  str: String,
-  num: Number,
-  bool: {
-    type: Boolean,
-    default: true
-  },
-  arr: {
-    type: Array as PropType<string[]>,
-    default: () : string[] => [] as string[]
-  },
-  obj: {
-    type: Object as PropType<UTSJSONObject>,
-    default: () : UTSJSONObject => ({ a: 1 })
-  },
-  fn: {
-    type: Function as PropType<() => string>,
-    default: () : string => ''
-  }
-})
-
-// 纯类型参数
-defineProps<{
-  str : String,
-  num : Number,
-  bool : Boolean,
-  arr : PropType<string[]>,
-  obj : PropType<UTSJSONObject>,
-  fn : PropType<() => string>
-}>()
-```
-- `defineEmits` 仅支持数组字面量和纯类型参数的方式来声明。
-```ts
-// 数组字面量
-const emit = defineEmits(['change'])
-
-// 纯类型参数
-const emit = defineEmits<{
-  (e : 'change', id : number) : void
-}>()
-const emit = defineEmits<{
-  // 具名元组语法
-  change : [id: number]
-}>()
-
-```
-- `defineOptions` 仅支持对象字面量方式定义。
-```ts
-defineOptions({
-  data() {
-    return {
-      count: 0,
-      price: 10,
-      total: 0
-    }
-  },
-  computed: {
-    doubleCount() : number {
-      return this.count * 2
-    },
-  },
-  watch: {
-    count() {
-      this.total = this.price * this.count
-    },
-  },
-  methods: {
-    increment() {
-      this.count++
-    }
-  }
-})
-```
-- `defineExpose` 仅支持对象字面量方式定义，导出的变量或方法，必须是 `setup` 中定义的，暂不支持外部定义。
-```ts
-<script setup>
-  const str = 'str'
-  const num = ref(0)
-  const increment = () => {
-    num.value++
-  }
-
-  defineExpose({
-    str,
-    num,
-    increment
-  })
-</script>
-```
-
-## 其他vue特性
-
-### 递归组件
-
-实现递归组件时不要使用组件import自身的写法，直接在模板内使用组件名即可。
-
-```vue
-// component-a.uvue
-<template>
-  <view>
-    <text>component-a::{{text}}</text>
-    <component-a v-if="!end" :text="text" :limit="limit-1"></component-a>
-  </view>
-</template>
-
-<script>
-  // import componentA from './component-a' // 错误用法
-  export default {
-    name: "component-a",
-    props: {
-      text: {
-        type: String,
-        default: ''
-      },
-      limit: {
-        type: Number,
-        default: 2
-      }
-    },
-    computed: {
-      end() : boolean {
-        return this.limit <= 0
-      }
-    }
-  }
-</script>
-```
-
-## 其他示例
-
-- [嵌套组件通讯](https://gitcode.net/dcloud/hello-uvue/-/tree/master/pages/examples/nested-component-communication)
-- [自定义组件中使用 class 定制另一个自定义组件根节点样式](https://gitcode.net/dcloud/hello-uvue/-/tree/master/pages/examples/set-custom-child-component-root-node-class)
-
-<!-- ## Bug & Tips@tips -->
