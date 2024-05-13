@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.sticky-header.event -->
 
+<!-- UTSCOMJSON.sticky-header.component_type-->
+
 ### sticky-header使用场景
 
 1. 父元素滚动过程中，某个元素有固定到父元素顶部的需求
@@ -46,6 +48,8 @@
 <!-- UTSCOMJSON.sticky-section.attribute -->
 
 <!-- UTSCOMJSON.sticky-section.event -->
+
+<!-- UTSCOMJSON.sticky-section.component_type-->
 
 ### sticky-section使用场景
 

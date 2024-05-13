@@ -14,6 +14,8 @@ list-view支持通过子组件sticky-header处理吸顶的场景。
 
 <!-- UTSCOMJSON.list-view.event -->
 
+<!-- UTSCOMJSON.list-view.component_type-->
+
 ### 自定义下拉刷新样式
 
 list-view组件有默认的下拉刷新样式，如果想自定义，则需使用自定义下拉刷新。
@@ -100,11 +102,13 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 
 <!-- UTSCOMJSON.list-item.event -->
 
-<!-- UTSCOMJSON.list-item.example -->
+<!-- UTSCOMJSON.list-item.component_type-->
 
 <!-- UTSCOMJSON.list-item.compatibility -->
 
 <!-- UTSCOMJSON.list-item.children -->
+
+<!-- UTSCOMJSON.list-item.example -->
 
 <!-- UTSCOMJSON.list-item.reference -->
 

@@ -11,6 +11,8 @@
 
 <!-- UTSCOMJSON.view.event -->
 
+<!-- UTSCOMJSON.view.component_type-->
+
 <!-- UTSCOMJSON.view.compatibility -->
 
 #### App平台@app

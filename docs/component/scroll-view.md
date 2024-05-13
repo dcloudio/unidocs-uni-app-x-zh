@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.scroll-view.event -->
 
+<!-- UTSCOMJSON.scroll-view.component_type-->
+
 ### 自定义下拉刷新样式
 
 1. 设置`refresher-default-style`属性为 none 不使用默认样式
@@ -37,7 +39,7 @@
 
 当存在两个 scroll-view 相互嵌套的场景时，两者滚动存在冲突不能很丝滑的进行衔接，可将外层 scroll-view 改成嵌套模式，这样可以让两个 scroll-view 的滚动衔接起来。
 
-```vue
+```html
 <scroll-view style="flex:1" type="nested">
 	<nested-scroll-header>
 		<view style="height: 200px;background-color: #66ccff;align-items: center;justify-content: center;">

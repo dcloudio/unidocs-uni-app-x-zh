@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.swiper.event -->
 
+<!-- UTSCOMJSON.swiper.component_type-->
+
 <!-- UTSCOMJSON.swiper.compatibility -->
 
 <!-- UTSCOMJSON.swiper.children -->
@@ -22,9 +24,10 @@
 
 <!-- UTSCOMJSON.swiper-item.event -->
 
+<!-- UTSCOMJSON.swiper-item.component_type-->
+
 <!-- UTSCOMJSON.swiper-item.compatibility -->
 
 <!-- UTSCOMJSON.swiper-item.example -->
 
 <!-- UTSCOMJSON.swiper-item.reference -->
-

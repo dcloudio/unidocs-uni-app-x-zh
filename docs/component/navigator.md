@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.navigator.event -->
 
+<!-- UTSCOMJSON.navigator.component_type-->
+
 <!-- UTSCOMJSON.navigator.compatibility -->
 
 <!-- UTSCOMJSON.navigator.children -->

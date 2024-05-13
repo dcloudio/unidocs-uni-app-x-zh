@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.radio-group.event -->
 
+<!-- UTSCOMJSON.radio-group.component_type-->
+
 <!-- UTSCOMJSON.radio-group.compatibility -->
 
 <!-- UTSCOMJSON.radio-group.children -->
@@ -23,6 +25,8 @@
 
 <!-- UTSCOMJSON.radio.event -->
 
+<!-- UTSCOMJSON.radio.component_type-->
+
 <!-- UTSCOMJSON.radio.compatibility -->
 
 <!-- UTSCOMJSON.radio.children -->
@@ -30,4 +34,3 @@
 <!-- UTSCOMJSON.radio.example -->
 
 <!-- UTSCOMJSON.radio.reference -->
-

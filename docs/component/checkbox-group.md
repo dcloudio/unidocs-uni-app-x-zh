@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.checkbox-group.event -->
 
+<!-- UTSCOMJSON.checkbox-group.component_type-->
+
 <!-- UTSCOMJSON.checkbox-group.compatibility -->
 
 <!-- UTSCOMJSON.checkbox-group.children -->
@@ -23,6 +25,8 @@
 
 <!-- UTSCOMJSON.checkbox.event -->
 
+<!-- UTSCOMJSON.checkbox.component_type-->
+
 <!-- UTSCOMJSON.checkbox.compatibility -->
 
 <!-- UTSCOMJSON.checkbox.children -->
@@ -30,4 +34,3 @@
 <!-- UTSCOMJSON.checkbox.example -->
 
 <!-- UTSCOMJSON.checkbox.reference -->
-

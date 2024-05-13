@@ -10,6 +10,8 @@
 
 <!-- UTSCOMJSON.text.event -->
 
+<!-- UTSCOMJSON.text.component_type-->
+
 <!-- UTSCOMJSON.text.compatibility -->
 
 - App-Android平台文本换行规则（表现在文本断行位置等）可能和浏览器有差异。

@@ -26,6 +26,8 @@
 
 <!-- UTSCOMJSON.rich-text.event -->
 
+<!-- UTSCOMJSON.rich-text.component_type-->
+
 <!-- UTSCOMJSON.rich-text.compatibility -->
 
 <!-- UTSCOMJSON.rich-text.children -->

@@ -6,6 +6,8 @@
 
 <!-- UTSCOMJSON.progress.event -->
 
+<!-- UTSCOMJSON.progress.component_type-->
+
 <!-- UTSCOMJSON.progress.compatibility -->
 
 <!-- UTSCOMJSON.progress.children -->
@@ -13,4 +15,3 @@
 <!-- UTSCOMJSON.progress.example -->
 
 <!-- UTSCOMJSON.progress.reference -->
-
