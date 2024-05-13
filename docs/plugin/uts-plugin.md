@@ -228,8 +228,6 @@ Android平台原生三方库目录，支持以下类型文件：
 
 仓储配置参考config.json的[dependencies](#dependencies)。
 
-如果使用的三方sdk包含了so库，保存到此目录时，需按Android的abi类型分目录保存。
-
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 
 
