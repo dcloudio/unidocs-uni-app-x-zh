@@ -1,3 +1,7 @@
+#### 4.17.2024051110-alpha
+##### uts插件
+* App-iOS平台 修复 HBuilderX安装路径中包含空格或者中文时，UTS插件真机运行编译失败的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1950)
+
 #### 4.14.2024042905-alpha
 ##### uts插件
 * App-Android平台 修复 setInterval 间隔时间参数为0或者负数会不生效的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1111)
