@@ -20,7 +20,7 @@ vue的一大特色，就是可以定义一个响应式变量，通过模板绑�
 
 data需要特殊类型时，通过 as 来转换。
 
-如下示例中，在data的return中定义了响应式变量：str、num、arr。并在模板中通过`{{ }}`的方式绑定和显示在text组件的内容区中。
+如下示例中，在data的return中定义了响应式变量：str、num、arr。并在模板中通过`{{}}`的方式绑定和显示在text组件的内容区中。
 
 示例 [详情](<!-- VUEJSON.E_component-instance.data_data-options.gitUrl -->)
 
