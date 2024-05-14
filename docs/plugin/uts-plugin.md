@@ -90,6 +90,8 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 
 ## 创建uts插件
 
+>> 注意： 目前仅支持通过HBuilder X 创建和使用UTS插件，不支持通过cli的方式使用UTS插件
+
 ### HBuilderX项目中uts插件目录结构
 
 在 uni-app / uni-app x 的项目工程下，提供了独立的目录 `utssdk`，来存放 uts 插件。
