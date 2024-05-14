@@ -315,13 +315,23 @@ Uni`组件名(驼峰)`Element
 
 - 目前uts组件，即封装原生ui给uni-app或uni-app x的页面中使用，类型与内置组件的 Uni`组件名(驼峰)`Element 方式相同。目前没有代码提示。
 
+### 组件监听页面生命周期 @component-page-lifecycle
+
+> 选项式 API 和 组件式 API 在监听页面生命周期时有所不同
+>
+> 比如选项式 API 中的 `onShow`、`onHide` 监听页面生命周期在组合式 API 中分别对应 `onPageShow`、`onPageHide`（在组合式 API 时会和 App 的生命周期冲突）
+>
+> 具体请查看 [页面生命周期](../page.md#lifecycle)
+
+[示例](#component-lifecycle)
+
 ## 组件的生命周期 @component-lifecycle
 
-> 选项式 API 和 组件式 API 的组件生命周期使用时有所不同
+> 选项式 API 和 组件式 API 在监听页面生命周期时有所不同
 >
-> 比如选项式 API 中的 `onShow`、`onHide` 生命周期在组合式 API 中分别对应 `onPageShow`、`onPageHide`（在组合式 API 时会和 App 的生命周期冲突）
+> 比如选项式 API 中的 `onShow`、`onHide` 监听页面生命周期在组合式 API 中分别对应 `onPageShow`、`onPageHide`（在组合式 API 时会和 App 的生命周期冲突）
 >
-> 具体请查看 [组件生命周期](../page.md#lifecycle)
+> 具体请查看 [页面生命周期](../page.md#lifecycle)
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.gitUrl -->)
 
