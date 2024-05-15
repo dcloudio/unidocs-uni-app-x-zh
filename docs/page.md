@@ -25,14 +25,8 @@ uni-app x 在app-android上，每个页面都是一个全屏activity，不支持
 
 每次新建页面，均需在`pages.json`中配置`pages`列表；未在`pages.json -> pages` 中注册的页面，在编译阶段会被忽略。pages.json的完整配置参考：[页面配置](./collocation/pagesjson.md)。
 
-通过HBuilderX开发 `uni-app` 项目时，在项目上右键“新建页面”，HBuilderX会自动在`pages.json`中完成页面注册，开发更方便。
-<!-- 
-同时，HBuilderX 还内置了常用的页面模板，选择这些模板，可以大幅提升开发效率。
+通过HBuilderX开发 `uni-app x` 项目时，在项目上右键“新建页面”，HBuilderX会自动在`pages.json`中完成页面注册，开发更方便。
 
-<div>
-<img src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/pages-add-02.png" style="max-width:450px"></img>
-</div>
- -->
 新建页面时，可以选择`是否创建同名目录`。创建目录的意义在于：
 
 - 如果你的页面较复杂，需要拆分多个附属的uts、css、组件等文件，则使用目录归纳比较合适。
