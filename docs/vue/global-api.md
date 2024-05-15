@@ -6,6 +6,18 @@
 
 <!-- VUEJSON.application.compatibility -->
 
+### app.component
+
+如果同时传递一个组件名字符串及其定义，则注册一个全局组件；如果只传递一个名字，则会返回用该名字注册的组件 (如果存在的话)。
+
+示例 [详情](<!-- VUEJSON.E_app-instance.component_component.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_app-instance.component_component.webUrl -->
+
+<!-- VUEJSON.E_app-instance.component_component.code -->
+
+:::
+
 ### app.use
 
 `app.use` 支持通过对象字面量、函数及 `definePlugin` 方式定义插件。
