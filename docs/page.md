@@ -156,10 +156,21 @@ export default {
 - OnLoadOptions类型目前在web和Android的运行时类型不统一，web是对象，Android是map。[详见issues](https://issues.dcloud.net.cn/pages/issues/detail?id=967)
   - 但仍然可以通过上述示例代码跨平台的获取入参。
   - 后续版本会统一类型为UTSJSONObject。
+- App-iOS平台的窗体动画是异步的，onLoad时可能窗体动画已经开始，此时再设置页面的pageStyle（比如设置背景色），会出现闪烁现象。
 :::
 
+### 页面onShow生命周期@onshow
+onShow是在onLoad之后，它的意义在于，onLoad是页面创建时触发一次；而当页面隐藏（比如被新窗体遮挡），然后页面再恢复显示时，onLoad不会再触发，只会触发onShow。
+
+tabbar页面切换时，老的tabbar页面会hide，新的tabbar页面会show。
+
+onShow和onHide是成对出现的。
+
+在组合式API中，组件可以监听应用和页面的生命周期。但由于应用和页面都有onShow和onHide，导致重名。所以在组合式的组件中监听页面的显示隐藏，改为了onPageShow和onPageHide。
 
 ## 页面及组件生命周期流程图 @lifecycleflow
+
+下图展示了一个新页面，从创建开始，包括其中的组件，完整的时序。
 
 ![](./static/uni-app-lifecycle-vue3.png)#{.zooming width=1000 margin=auto}
 

@@ -2,15 +2,16 @@
 
 uni-app x项目的uts代码中可以使用很多API。包括：
 
-- uts的api，包括[内置对象](../uts/buildin-object-api/global.md)，以及平台专有对象[UTSAndroid](../uts/utsandroid.md)和[UTSiOS](../uts/utsios.md)
-- 全局api，前面不需要加`uni.`。如`getApp`
-- uni.xxx的内置api。见左侧
-- uniCloud.xxx的内置api [详见](./unicloud/README.md)
-- dom的api [详见](../dom/README.md)
-- vue的api [详见](../vue/README.md)
-- os原生api
+1. uts的api，包括[内置对象](../uts/buildin-object-api/global.md)，以及平台专有对象[UTSAndroid](../uts/utsandroid.md)和[UTSiOS](../uts/utsios.md)
+2. 全局api，前面不需要加`uni.`。如`getApp`
+3. uni.xxx的内置api。见左侧
+4. uniCloud.xxx的内置api [详见](./unicloud/README.md)
+5. dom的api [详见](../dom/README.md)
+6. vue的api [详见](../vue/README.md)
+7. os原生api
 	
-	由于uts可以直接调用Android和iOS的api，所以os和三方sdk的能力都可以在uts中调用。如下：
+## os原生api的使用
+由于uts可以直接调用Android和iOS的api，所以os和三方sdk的能力都可以在uts中调用。如下：
 
 ```vue
 <script>
@@ -39,7 +40,7 @@ uni-app x项目的uts代码中可以使用很多API。包括：
 
 插件市场也有很多做好的uts插件，方便开发者拿来即用。[uts插件](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 
-虽然上述页面可以直接调用原生能力，但一般原生能力建议封装为[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)形式的[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。这样方便共享、方便跨平台。
+虽然上述页面可以直接调用原生Android能力，但正规开发时，原生能力应封装为[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)形式的[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。这样方便共享、方便跨平台。（iOS在js驱动模式时，uvue页面中不支持调用swift API，需封装为uts插件调用原生API）
 
 uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api，一部分在uni-app x中进行了替换增补、一部分提供了uts操作原生的示例代码。[详见](ext.md)
 
@@ -70,3 +71,13 @@ function getDeviceModel(): string {
 - kotlin中定义一个常量是val，而uts是const；kotlin的变量定义是var，而uts推荐使用let。
 
 更复杂的例子可以[参考](ext.md#kt2uts)
+
+## 生命周期@liftcycle
+
+生命周期是一种特殊事件，对于应用、页面、组件，uni-app x提供了一批对应的生命周期，比如应用的onLaunch、页面的onLoad、组件的created。
+
+- 应用生命周期：[详见](../collocation/app.md#applifecycle)
+- 页面生命周期：[详见](../page.md#lifecycle)
+- 组件生命周期：[详见](../vue/component.md#component-lifecycle)
+
+除了生命周期，uni还提供了一批其他on/off事件监听API，比如uni.onPushMessage()、uni.offPushMessage()。这些不属于生命周期。
