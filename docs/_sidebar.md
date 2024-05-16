@@ -15,6 +15,20 @@
 * [源码和示例](sample.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
 * [跨平台框架及原生对比](select.md)
+* 离线打包
+  * Android离线打包
+    * [原生工程配置](native/use/android.md)
+    * 模块配置
+      * [内置模块](native/modules/android/others.md)
+      * [uni-ad](native/modules/android/uni-ad.md)
+      * [uni-push](native/modules/android/uni-push.md)
+      * [uni-verify](native/modules/android/uni-verify.md)
+      * [uni-payment](native/modules/android/uni-payment.md)
+      * [uni-facialRecognitionVerify](native/modules/android/uni-facialRecognitionVerify.md)
+    * [资源导入](native/export/export.md)
+    * [调试](native/debug/android.md)
+    * [打包发行](https://nativesupport.dcloud.net.cn/AppDocs/package/android.html)
+    * [离线SDK](native/download/android.md)
 * 更新日志
   * [正式版](release.md)
   * [Alpha 版](release-note-alpha.md)
