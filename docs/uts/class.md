@@ -494,11 +494,11 @@ class Test {
 
 #### kotlin 平台匿名内部类写法
 
-```
-		const runnable = new (class implements Runnable {
-			override run() {
-				
-			}
-		})
+```ts
+const runnable = new (class implements Runnable {
+	override run() {
+		
+	}
+})
 ```
 
