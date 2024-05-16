@@ -12,4 +12,4 @@
 
 ### 导入Android项目
 
-[将资源导入Android原生项目](/uniappxDocs/use/android.md)
+[将资源导入Android原生项目](../use/android.md)

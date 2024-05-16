@@ -1,8 +1,10 @@
 ## 简介
-uni-app x离线SDK是离线开发工具包，是把App运行环境封装为原生开发调用接口，开发者可以在自己的 Android 及 iOS 原生开发环境配置工程使用，包括 Android离线开发SDK 及 iOS离线开发SDK。
+uni-app x 原生SDK是为原生工程师提供的开发工具包，把uni-app x的runtime封装为原生开发调用的接口。开发者可以在自己的 Android 及 iOS 原生开发环境配置工程使用，包括 Android原生SDK 及 iOS原生SDK。
 
 ## 功能
-uni-app x离线SDK主要用于App本地离线打包
+uni-app x 原生SDK主要用于既有的原生项目，通过集成uni-app x sdk，实现跨平台提升效率和渐进式迁移，让部分页面或应用通过uni-app x来实现。
+
+当然本sdk也可以用于App本地离线打包，相当于新建一个空的原生项目，把uni-app x sdk集成进去然后本地打包。
 
 - App离线打包：
 
@@ -10,6 +12,3 @@ uni-app x离线SDK主要用于App本地离线打包
 		
 	+ [Android平台App本地离线打包](use/android.md)
 	+ iOS平台App本地离线打包（暂不支持）
-
-## 注意
-+ `uni-app`、`5+ App`离线打包需要参考[App离线打包](/AppDocs/README.md)

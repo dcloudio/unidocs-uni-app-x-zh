@@ -9,24 +9,17 @@
 
 ## 新建项目
 
-点击android studio 左上角的File->New->New Project...
-
-![](../image/new_project.jpg)
-
-模板选择`No Activity`，点击`Next`。
+android studio中新建项目，模板选择`No Activity`。下一步选语言kotlin和Build configuration language，如下图：
 
 ![](../image/create_project.jpg)
-
-`Name`建议与manifest.json中的`name`字段一致。
-
-`Package name`作为应用标志，涉及申请第三方平台账号，一般情况下不建议修改，包名一般设置反向域名，如：io.dcloud.HBuilder。
-
-点击`Finish`完成创建。
 
 **注意**
 - `Language` 一定要选择`Kotlin`。
 - uni-app x最低支持版本为21，`Minimum SDK`需要选择21及以上的版本。
 - `Build configuration language`建议选择`Groovy DSL(build.gradle)`。以下教程均按照此模式进行。
+- `Name`建议与manifest.json中的`name`字段一致。
+- `Package name`作为应用标志，涉及申请第三方平台账号，一般情况下不建议修改，包名一般设置反向域名。
+
 
 ## 工程配置
 
@@ -292,7 +285,7 @@ xml文件配置成功之后，修改AndroidManifest.xml中`android:name`为`io.d
 应用名称默认定义为`app_name`字段，位于`app->src->main->res->values->strings.xml`。该值为安装到手机上桌面显示的应用名称，建议与manifest.json中name（基础配置中的应用名称）对应。
 
 ### 拷贝资源文件
-1. [导出uni-app x项目的资源文件](/uniappxDocs/export/export.md)
+1. [导出uni-app x项目的资源文件](../export/export.md)
 2. 将app-android目录下与appid对应的目录拷贝到主项目的`assets/apps`目录下
 	
 	![](../image/app_assets.png)
@@ -397,7 +390,7 @@ dependencies {
 
 如果不包含config.json文件，可以[跳过](#复制资源)此章节。
 
-[config.json配置及参考文档。](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html#config-json)
+[config.json配置及参考文档。](../../plugin/uts-plugin.md#androidconfigjson)
 
 如果config.json中不存在下面示例中的任一字段，直接忽略即可。
 
@@ -579,7 +572,7 @@ dependencies {
 
 ## 配置内置模块
 
-根据`unpackage/resource/{appid}/manifest.json`的配置，添加[内置模块的配置](/uniappxDocs/modules/android/others.md)。
+根据`unpackage/resource/{appid}/manifest.json`的配置，添加[内置模块的配置](../modules/android/others.md)。
 
 以下模块可以忽略配置：
 - uni-exit
