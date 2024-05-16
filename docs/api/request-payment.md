@@ -1,7 +1,12 @@
 ## uni.requestPayment(options) @requestpayment
 
 <!-- UTSAPIJSON.requestPayment.description -->
-
+uni.requestPayment是一个统一各平台的客户端支付API，不管是在某家小程序还是在App中，客户端均使用本API调用支付。
+本API运行在各端时，会自动转换为各端的原生支付调用API。
+注意支付不仅仅需要客户端的开发，还需要服务端开发。虽然客户端API统一了，但各平台的支付申请开通、配置回填仍然需要看各个平台本身的支付文档。
+比如微信有App支付、小程序支付、H5支付等不同的申请入口和使用流程，对应到uni-app，在App端要申请微信的App支付，而小程序端则申请微信的小程序支付。
+如果服务端使用uniCloud，那么官方提供了uniPay云端统一支付服务，把App、微信小程序、支付宝小程序里的服务端支付开发进行了统一的封装。
+前端统一的uni.requestPayment和云端统一的uniPay搭配，可以极大提升支付业务的开发效率，强烈推荐给开发者使用。uniPay的文档另见：https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html
 <!-- UTSAPIJSON.requestPayment.param -->
 
 ### orderInfo参数说明
@@ -19,7 +24,7 @@
   ```
   [更多详情参考[支付宝官方文档](https://opendocs.alipay.com/open/204/105296?pathHash=22ed0058&ref=api)]
  -  微信\
-  App 支付请求参数字符串。示例
+  App 支付请求参数字符串,需要打自定义基座。示例
   ```json
   {
    "appid":"wxd569c7238830733b",
