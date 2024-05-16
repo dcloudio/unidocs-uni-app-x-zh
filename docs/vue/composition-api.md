@@ -386,9 +386,16 @@
 
 :::
 
-## 生命周期钩子 @page-lifecycle
 
-<!-- VUEJSON.composition_lifecycle.compatibility -->
+## 生命周期钩子 @lifecycle-composition
+
+> [页面及组件生命周期流程图](../page.md#lifecycleflow)
+
+### 页面生命周期 @page-lifecycle-composition
+
+#### 兼容性 @page-lifecycle-compatibility
+
+[页面生命周期](../page.md#lifecycle)
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.page_page-composition.gitUrl -->)
 
@@ -398,7 +405,25 @@
 
 :::
 
-[页面及组件生命周期流程图](../page.md#lifecycleflow)
+### 组件生命周期 @page-component-composition
+
+#### 兼容性 @component-lifecycle-compatibility
+
+<!-- PAGEINSTANCE.composition_lifecycle.compatibility -->
+
+#### onMounted、onUnmounted 使用注意事项 @mounted-unmounted-tips
+
+目前 onMounted、onUnmounted 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 onMounted、onUnmounted 不能保证 DOM 排版以及渲染完毕。\
+如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/unielement.md) 对象。\
+在修改 DOM 后，立刻使用 [Element](../dom/unielement.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
+
+示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.webUrl -->
+
+<!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.code -->
+
+:::
 
 
 ## \<script setup> @script_setup

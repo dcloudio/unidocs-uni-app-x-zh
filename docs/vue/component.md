@@ -317,12 +317,6 @@ Uni`组件名(驼峰)`Element
 
 ### 组件监听页面生命周期 @component-page-lifecycle
 
-> 选项式 API 和 组件式 API 在监听页面生命周期时有所不同
->
-> 比如选项式 API 中的 `onShow`、`onHide` 监听页面生命周期在组合式 API 中分别对应 `onPageShow`、`onPageHide`（在组合式 API 时会和 App 的生命周期冲突）
->
-> 具体请查看 [页面生命周期](../page.md#lifecycle)
-
 [示例](#component-lifecycle)
 
 ## 组件的生命周期 @component-lifecycle

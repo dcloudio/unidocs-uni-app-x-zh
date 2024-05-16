@@ -128,20 +128,39 @@
 
 ## 生命周期选项 @lifecycle-options
 
-<!-- VUEJSON.options_lifecycle.compatibility -->
+> [页面及组件生命周期流程图](../page.md#lifecycleflow)
 
-### mounted、unmounted 使用注意事项
+### 页面生命周期 @page-lifecycle-options
 
-目前 mounted、unmounted 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 mounted、unmounted 不能保证 DOM 排版以及渲染完毕。\
-如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/unielement.md) 对象。\
-在修改 DOM 后，立刻使用 [Element](../dom/unielement.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
+#### 兼容性 @page-lifecycle-compatibility
 
+[页面生命周期](../page.md#lifecycle)
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.page_page-options.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_lifecycle.page_page-options.webUrl -->
 
 <!-- VUEJSON.E_lifecycle.page_page-options.code -->
+
+:::
+
+### 组件生命周期 @page-component-options
+
+#### 兼容性 @component-lifecycle-compatibility
+
+<!-- PAGEINSTANCE.options_lifecycle.compatibility -->
+
+#### mounted、unmounted 使用注意事项 @mounted-unmounted-tips
+
+目前 mounted、unmounted 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 mounted、unmounted 不能保证 DOM 排版以及渲染完毕。\
+如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/unielement.md) 对象。\
+在修改 DOM 后，立刻使用 [Element](../dom/unielement.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
+
+示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.webUrl -->
+
+<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.code -->
 
 :::
 

@@ -111,7 +111,7 @@ uvue页面基于 vue 单文件组件规范。一个页面内，有3个根节点�
 
 <!-- PAGEINSTANCE.lifeCycle.compatibility -->
 
-示例代码, [详见](./vue/README.md#lifecycle-options)
+示例代码, [详见](./vue/composition-api.md#page-lifecycle-compatibility)
 
 ### 页面onLoad生命周期@onload
 
