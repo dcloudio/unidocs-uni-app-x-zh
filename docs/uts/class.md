@@ -492,3 +492,13 @@ class Test {
 
 更多介绍参考 [文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/)
 
+#### kotlin 平台匿名内部类写法
+
+```
+		const runnable = new (class implements Runnable {
+			override run() {
+				
+			}
+		})
+```
+
