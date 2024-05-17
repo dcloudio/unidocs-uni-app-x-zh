@@ -466,6 +466,8 @@ dependencies {
 startActivity(Intent(this, UniAppActivity::class.java))
 ```
 
+退出应用可以调用`uni.exit()`，整体退出uni-app x。
+
 连接手机，点击运行按钮，可以在手机上查看效果。
 
 ![avatar](https://img.cdn.aliyun.dcloud.net.cn/nativedocs/5%2BSDK-android/image/7-6.png)
