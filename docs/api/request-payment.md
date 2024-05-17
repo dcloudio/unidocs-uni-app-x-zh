@@ -69,12 +69,26 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 注意：
 - App平台开发支付宝支付，无需自定义基座，真机运行可直接开发
-- 可通过编写uts插件判断微信是否安装，如android中可通过引入微信自带的api进行判断
+- 判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/get-provider.html#getprovider)
 
 ```ts
-   import WXAPIFactory from 'com.tencent.mm.opensdk.openapi.WXAPIFactory';
-   let api = WXAPIFactory.createWXAPI(UTSAndroid.getTopPageActivity(), '');
-   api!.isWXAppInstalled()
+   uni.getProvider({
+      service: "payment",
+      success: (e) => {
+         const provider = e.providers.find((item): boolean => {
+            return item.id == 'wxpay'
+         })
+
+         if (provider?.isAppExist == false) {
+            console.log('WeChat 没有安装')
+         } else {
+            console.log('WeChat 已安装')
+         }
+      },
+      fail: (e) => {
+         console.log("获取支付通道失败：", e);
+      }
+   })
 ```
 
 - 需要在根目录的manifest.json文件中，对所使用的支付进行配置如
