@@ -146,13 +146,19 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 使用 uni-payment 模块需在 manifest.json 文件中添加如下配置：  
 
 ### 配置支付SDK  
-在 app -> distribute -> modules 下添加 uni-ad 节点：  
+在 app -> distribute -> modules 下添加 uni-payment 节点：  
 ```json
   	modules:{
-	     	"uni-payment":{
-                       "alipay":{},
-                       "wxpay":{}
+	     	"uni-payment": {
+              "alipay": {},//支付宝支付
+              "wxpay": {//微信支付
+                "android": {},
+                "ios": {
+                    "appid": "wxd569c7238830733b",
+                    "universalLink": "https://uniappx.dcloud.net.cn/ulink/"
                 }
+              }
+          }
 	}
 ```
 
@@ -162,8 +168,14 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 | alipay | 支付宝支付 |
 | wxpay | 微信支付 |
 
-
 添加相应的节点，云端打包就会将对应的支付 SDK 打包到最终安装包中。 
+
+- `appid`：微信开放平台申请的应用ID（AppID）
+- `universalLink`：iOS平台通用链接（Universal Link）
+   在iOS平台微信支付使用的通用链接，必须与微信开放平台 “管理中心” > “应用详情” > “开发信息” 中的“Universal Links”项中配置一致，更多详情参考 
+   [通用链接（Universal Link）](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#通用链接-universal-link)
+   [一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links)
+- app-ios平台微信支付需要4.18及以上版本
 
 
 
