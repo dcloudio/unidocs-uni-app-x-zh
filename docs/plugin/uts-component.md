@@ -669,7 +669,7 @@ NVRecycler() {
 
 **注意**
 
-`UTSAndroid.getUniActivity()` 在组件内不建议使用，请使用`$androidContext`来替代
+`UTSAndroid.getUniActivity()/UTSAndroid.getAppContext()` 在组件内不建议使用，请使用`$androidContext`来替代
 
 #### 通用事件
 
