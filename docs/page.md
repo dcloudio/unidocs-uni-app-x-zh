@@ -170,7 +170,7 @@ onShow和onHide是成对出现的。
 
 下图展示了一个新页面，从创建开始，包括其中的组件，完整的时序。
 
-![](./static/uni-app-lifecycle-vue3.jpg)#{.zooming width=1000 margin=auto}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/uni-app-lifecycle-vue3.jpg)#{.zooming width=1000 margin=auto}
 
 
 1. uni-app x框架，首先根据pages.json的配置，创建页面
