@@ -67,7 +67,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 | -6004 | 支付结果未知（有可能已经支付成功），请查询商家订单列表中订单的支付状态 |
 |  其它  | 其它支付错误 |
 
-注意：
+### 注意
 - App平台开发支付宝支付，无需自定义基座，真机运行可直接开发
 - 判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/get-provider.html#getprovider)
 
