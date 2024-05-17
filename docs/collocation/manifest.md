@@ -68,11 +68,15 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 
 <!-- MANIFESTJSON.icons_android.table -->
 
+> 必须使用 `png` 格式图标
+
 ###### iOS图标配置 @icons-ios
 
 <!-- MANIFESTJSON.icons_ios.description -->
 
 <!-- MANIFESTJSON.icons_ios.table -->
+
+> 必须使用 `png` 格式图标，图片中不能存在透明区域  
 
 <!-- MANIFESTJSON.icons_ios.compatibility -->
 
