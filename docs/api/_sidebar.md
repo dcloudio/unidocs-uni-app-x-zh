@@ -41,19 +41,15 @@
   * [内存](memory.md)
   * [截屏事件](capturescreen.md)
   * [监听权限申请](create-request-permission-listener.md)
-  * [拨打电话](make-phone-call.md)
+  <!-- * [拨打电话](make-phone-call.md) -->
 * 媒体
   * [拍照和相册选择](choose-image.md)
   * [图片预览](preview-image.md)
   * [保存图片到相册](save-image-to-photos-album.md)
 * 位置
   * [获取当前位置](get-location.md)
-  * [显示位置](open-location.md)
-  * [选择位置](choose-location.md)
-* 推送
-  * [推送](push.md)
-<!-- * 支付
-  * [发起支付](request-payment.md) -->
+<!--  * [显示位置](open-location.md)
+  * [选择位置](choose-location.md) -->
 * 数据存储
   * [storage（key-value存储）](storage.md)
 * 文件系统
@@ -66,11 +62,13 @@
 	* [请求支付](request-payment.md)
 * 广告
   * [激励视频广告](create-rewarded-video-ad.md)
+* 推送
+  * [推送](push.md)
 * 组件上下文对象
   * [web-view组件上下文对象](create-webview-context.md)
   * [video组件上下文对象](create-video-context.md)
   * [map组件上下文对象](create-map-context.md)
-  * [innerAudio上下文对象](create-inner-audio-context.md)
+  <!-- * [innerAudio上下文对象](create-inner-audio-context.md) -->
 * uniCloud客户端API
   * [概述](unicloud/README.md)
   * [云函数](unicloud/function.md)
