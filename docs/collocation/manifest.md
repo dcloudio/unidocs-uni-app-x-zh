@@ -166,8 +166,9 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 ## 其它设置  
 
 ### url scheme@urlScheme  
-uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，开发者可在 app 原生应用配置文件中进行设置支持，详情参考：  
+uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4.18及以上版本支持在 app 原生应用配置文件中进行设置，详情参考：  
 - [Android平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#urlscheme)  
 - [iOS平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)  
+
 
 > uni-app x项目标准基座已配置 url scheme 值：uniappx
