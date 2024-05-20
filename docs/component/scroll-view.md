@@ -99,7 +99,7 @@
 </scroll-view>
 ```
 
-2. 子组件准备滚动时会触发父组件的`startnestedscroll`事件。父组件响应`startnestedscroll`事件return ture则表示与子组件建立嵌套滚动协商。
+2. 子组件准备滚动时会触发父组件的`startnestedscroll`事件。父组件响应`startnestedscroll`事件return true则表示与子组件建立嵌套滚动协商。
 ```ts
 onStartNestedScroll(event: StartNestedScrollEvent): Boolean {
 	//开启与子组件建立嵌套滚动协商
