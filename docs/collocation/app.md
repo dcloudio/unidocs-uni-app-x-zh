@@ -8,7 +8,7 @@
 
 应用生命周期仅可在`App.uvue`中监听，在页面监听无效。
 
-目前`App.uvue`仅支持选项式，暂不支持组合式写法。
+`App.uvue`仅支持选项式，暂不支持组合式写法。
 
 ## 应用生命周期@applifecycle
 
@@ -63,6 +63,7 @@
 **注意**
 - **应用生命周期仅可在`App.uvue`中监听，在其它页面监听无效**。
 - 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](../api/get-launch-options-sync.md#getlaunchoptionssync)
+- 由于Android的`uni.exit()`是[热退出](../api/exit.md)，此时很多代码逻辑仍然在运行，有些on的事件监听并没有off，需要开发者在onExit生命周期中编写代码处理。比如在app的onLaunch里通过onXX监听了某事件，那么就需要在onExit里调用offXX取消某事件的监听，否则反复热退出、启动，会多次on而不会off，这会引发内存泄露。
 
 ## globalData
 
