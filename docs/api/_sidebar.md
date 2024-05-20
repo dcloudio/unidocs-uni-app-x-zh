@@ -46,6 +46,12 @@
   * [拍照和相册选择](choose-image.md)
   * [图片预览](preview-image.md)
   * [保存图片到相册](save-image-to-photos-album.md)
+  * [获取图片信息](get-image-info.md)
+  * [压缩图片](compress-image.md)
+  * [拍摄视频或从相册中选择视频](choose-video.md)
+  * [保存视频到相册](save-video-to-photos-album.md)
+  * [获取视频信息](get-video-info.md)
+  * [压缩视频](compress-video.md)
 * 位置
   * [获取当前位置](get-location.md)
 <!--  * [显示位置](open-location.md)
