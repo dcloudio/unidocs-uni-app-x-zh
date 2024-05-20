@@ -1,6 +1,4 @@
-## splash启动封面
-
-> HBuilderX 3.99+
+# splash启动界面@splash
 
 App启动时，系统加载应用渲染首页需要一定的时间，为了避免用户等待，手机操作系统提供了特殊的启动界面设计，让用户先看到一个简单的界面，等应用加载完成后正式进入应用首页。
 
@@ -12,12 +10,16 @@ uni-app x中，如不配置splash，则与计算器等应用一致，启动时�
 
 如需配置splash，注意避免splash图与首页风格差异太大。因为uni-app x启动速度非常快，splash只是一闪而过，如果颜色差异太大，会让用户视觉不舒服。
 
-uni-app x的Android版，启动封面有3种策略：
+
+## Android平台splash@android 
+
+> HBuilderX 3.99+ 版本支持配置启动界面
+
+uni-app x 的 app-android 平台，启动界面有以下策略：
 - 不配置
 - 启动图片
 - Google SplashScreen
 
-iOS平台目前还不支持splash。
 
 ### 启动图配置
 
@@ -176,3 +178,47 @@ onReady触发时机要比onShow晚一些。
 
 当然App如何退出是开发者自己定义的。很多Android App直接单击back隐藏在后台，不弹toast询问用户是否退出。此时也可以避免温启动的splash快闪。这种方式的开发详见[切换应用到后台](../api/exit.md#back)。
 
+
+## iOS平台splash@ios  
+
+> HBuilderX4.18+ 版本支持配置启动界面  
+
+uni-app x 的 app-ios 平台，启动界面有以下策略：
+- 不配置  
+- 自定义storyboard启动界面  
+
+Storyboard是Apple提供的一种简化的布局界面，通过xml描述界面，不能编程。
+虽然无法制作非常灵活的界面，但满足启动界面是没问题的，比如设定背景色背景图、设定前景文字、图片的位置。
+storyboard的优势是启动速度快。在App的真实首页被渲染完成前，可以快速给用户提供一个基于Storyboard的启动屏。
+
+### 制作storyboard文件  
+storyboard有两种制作方式：
+**1.** **直接使用[模板文件(点击下载)](https://native-res.dcloud.net.cn/uni-app/file/CustomStoryboard.zip)中提供的相对常用的 storyboard 模板，可在这个文件的基础上进行自定义（不需要 Mac 及 XCode，详情请查看附件中的 readme 教程）**
+此 storyboard 文件适用于各种 iPhone 及 iPad 设备的横竖屏，支持自定义界面元素包括
+
+- 页面背景图片或背景颜色
+- 中间显示图片
+- 底部显示文字及颜色
+注：每一项都是可选的（比如只显示背景图片，只提供背景图片即可）
+
+**2.** 使用xcode自行制作。xcode提供了可视化的制作storyboard的方式，但依赖于mac电脑。在xcode中制作storyboard的教程请自行网络搜索，请注意下面的注意事项。
+
+HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求包含XCode使用的.storyboard文件，以及.stroybard文件中使用的png图，如下图所示：
+![](https://img.cdn.aliyun.dcloud.net.cn/client/ask/pkg/splash/storyboard.png)
+
+**注意事项**
+- zip压缩包中不要包含目录，直接包含.storyboard和.png文件
+- 有且只有一个.storyboard文件
+- .storyboard文件可以通过xcode生成，也可以使用任何文本编辑器修改其源码，比如对.storyboard文件点右键，使用HBuilderX打开。它本质是一个xml文件。
+- png文件名称中的@2x和@3x是适配不同分辨率的图片，系统会自动根据设备dpi选择，可参考[这里](https://www.jianshu.com/p/5b5f47ff87d4)
+- 为了避免png文件名称与应用中内置的文件名冲突，建议以dc_launchscreen开头
+- 制作 storyboard 时，**请将图片资源直接拖到放工程中，不要放到 imageset 里面，并且图片命名要保证一定的唯一性可参考附件中的示例**
+- XCode中创建 storyboard 文件时，**页面元素添加约束时一定要相对于** `Superview`，不然启动图到 loading页面过渡时页面会跳动或者变形
+![](https://img.cdn.aliyun.dcloud.net.cn/client/ask/pkg/splash/xcode.png)
+
+
+### 使用storyboard文件
+
+打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动图设置”项下选择自己制作的storyboard文件：  
+
+![](../static/splash_screen_ios_storyboard.png)
