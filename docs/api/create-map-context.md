@@ -2,10 +2,10 @@
 
 <!-- UTSAPIJSON.createMapContext.description -->
 
+<!-- UTSAPIJSON.createMapContext.compatibility -->
+
 <!-- UTSAPIJSON.createMapContext.param -->
 
 <!-- UTSAPIJSON.createMapContext.returnValue -->
-
-<!-- UTSAPIJSON.createMapContext.compatibility -->
 
 <!-- UTSAPIJSON.createMapContext.tutorial -->

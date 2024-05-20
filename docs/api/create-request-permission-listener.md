@@ -27,8 +27,6 @@ app-android平台，可使用本API监听应用权限申请确认框的弹出和
 
 <!-- UTSAPIJSON.createRequestPermissionListener.example -->
 
-
-
 <!-- UTSAPIJSON.createRequestPermissionListener.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
