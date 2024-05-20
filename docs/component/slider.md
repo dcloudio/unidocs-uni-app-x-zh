@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.slider.description -->
 
+<!-- UTSCOMJSON.slider.compatibility -->
+
 <!-- UTSCOMJSON.slider.attribute -->
 
 <!-- UTSCOMJSON.slider.event -->
 
 <!-- UTSCOMJSON.slider.component_type-->
-
-<!-- UTSCOMJSON.slider.compatibility -->
 
 ## tips
 show-value属性设为true后，会在横条右侧显示一个数字。

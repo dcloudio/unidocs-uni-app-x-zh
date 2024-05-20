@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.image.description -->
 
+<!-- UTSCOMJSON.image.compatibility -->
+
 <!-- UTSCOMJSON.image.attribute -->
 
 <!-- UTSCOMJSON.image.event -->
@@ -50,8 +52,6 @@ app端支持的图片格式如下：
 
 	安卓端image组件内部使用facebook的[fresco](https://github.com/facebook/fresco)库(2.5.0)，自带缓存策略，也会自动清理缓存。
 	iOS端image组件内部使用[SDWebImage](https://github.com/SDWebImage/SDWebImage)库(5.10.0)，自带缓存策略，默认7天缓存，缓存过期后会自动清理。
-
-<!-- UTSCOMJSON.image.compatibility -->
 
 #### App平台
 - App-Android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸。

@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.getSystemSetting.description -->
 
+<!-- UTSAPIJSON.getSystemSetting.compatibility -->
+
 <!-- UTSAPIJSON.getSystemSetting.param -->
 
 <!-- UTSAPIJSON.getSystemSetting.returnValue -->
 
 <!-- UTSAPIJSON.getSystemSetting.example -->
-
-<!-- UTSAPIJSON.getSystemSetting.compatibility -->
 
 <!-- UTSAPIJSON.getSystemSetting.tutorial -->
 

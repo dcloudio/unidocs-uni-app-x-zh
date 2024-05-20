@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.request.description -->
 
+<!-- UTSAPIJSON.request.compatibility -->
+
 <!-- UTSAPIJSON.request.param -->
 
 <!-- UTSAPIJSON.request.returnValue -->
-
-<!-- UTSAPIJSON.request.compatibility -->
 
 <!-- UTSAPIJSON.request.tutorial -->
 

@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.getElementById.description -->
 
+<!-- UTSAPIJSON.getElementById.compatibility -->
+
 **注意：** \
 本方法获取的元素，是页面栈栈顶的页面的元素，而不是执行本方法代码所在的页面的元素。\
 因为uni是全局api，只有`this.$refs`才能和页面绑定。\
@@ -41,8 +43,6 @@
 <!-- UTSAPIJSON.getElementById.returnValue -->
 
 <!-- UTSAPIJSON.getElementById.example -->
-
-<!-- UTSAPIJSON.getElementById.compatibility -->
 
 <!-- UTSAPIJSON.getElementById.tutorial -->
 

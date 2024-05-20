@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.form.description -->
 
+<!-- UTSCOMJSON.form.compatibility -->
+
 <!-- UTSCOMJSON.form.attribute -->
 
 <!-- UTSCOMJSON.form.event -->
 
 <!-- UTSCOMJSON.form.component_type-->
-
-<!-- UTSCOMJSON.form.compatibility -->
 
 ## form内容项控制逻辑
 

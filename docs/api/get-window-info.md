@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.getWindowInfo.description -->
 
+<!-- UTSAPIJSON.getWindowInfo.compatibility -->
+
 <!-- UTSAPIJSON.getWindowInfo.param -->
 
-<!-- UTSAPIJSON.getWindowInfo.returnValue -->
+<!-- UTSAPIJSON.getWindowInfo.returnValue --><!-- UTSAPIJSON.getWindowInfo.example -->
 
-<!-- UTSAPIJSON.getWindowInfo.example -->
 
-<!-- UTSAPIJSON.getWindowInfo.compatibility -->
 
 <!-- UTSAPIJSON.getWindowInfo.tutorial -->
 

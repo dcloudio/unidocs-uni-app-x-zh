@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.getAppAuthorizeSetting.description -->
 
+<!-- UTSAPIJSON.getAppAuthorizeSetting.compatibility -->
+
 <!-- UTSAPIJSON.getAppAuthorizeSetting.param -->
 
 <!-- UTSAPIJSON.getAppAuthorizeSetting.returnValue -->
 
 <!-- UTSAPIJSON.getAppAuthorizeSetting.example -->
-
-<!-- UTSAPIJSON.getAppAuthorizeSetting.compatibility -->
 
 <!-- UTSAPIJSON.getAppAuthorizeSetting.tutorial -->
 

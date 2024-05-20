@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.showToast.description -->
 
+<!-- UTSAPIJSON.showToast.compatibility -->
+
 <!-- UTSAPIJSON.showToast.param -->
 
 <!-- UTSAPIJSON.showToast.returnValue -->
 
 <!-- UTSAPIJSON.showToast.example -->
-
-<!-- UTSAPIJSON.showToast.compatibility -->
 
 <!-- UTSAPIJSON.showToast.tutorial -->
 
@@ -20,9 +20,9 @@
 
 如果设置了`position` 字段，`uni.showToast` 会采用系统弹窗方案，即弹窗与页面无绑定关系。 页面关闭后，弹出中的/等待弹出的`Toast`会继续展示。
 
-系统弹窗在部分系统（比如 MIUI,Google）可能会有应用图标前缀。 
+系统弹窗在部分系统（比如 MIUI,Google）可能会有应用图标前缀。
 
-系统弹窗在部分系统（比如 鸿蒙 4.0以上）可能不支持顶部和居中展示。 
+系统弹窗在部分系统（比如 鸿蒙 4.0以上）可能不支持顶部和居中展示。
 
 
 
@@ -30,13 +30,13 @@
 
 <!-- UTSAPIJSON.showLoading.description -->
 
+<!-- UTSAPIJSON.showLoading.compatibility -->
+
 <!-- UTSAPIJSON.showLoading.param -->
 
 <!-- UTSAPIJSON.showLoading.returnValue -->
 
 <!-- UTSAPIJSON.showLoading.example -->
-
-<!-- UTSAPIJSON.showLoading.compatibility -->
 
 <!-- UTSAPIJSON.showLoading.tutorial -->
 
@@ -44,19 +44,21 @@
 
 <!-- UTSAPIJSON.showModal.description -->
 
+<!-- UTSAPIJSON.showModal.compatibility -->
+
 <!-- UTSAPIJSON.showModal.param -->
 
 <!-- UTSAPIJSON.showModal.returnValue -->
 
 <!-- UTSAPIJSON.showModal.example -->
 
-<!-- UTSAPIJSON.showModal.compatibility -->
-
 <!-- UTSAPIJSON.showModal.tutorial -->
 
 ## uni.showActionSheet(options) @showactionsheet
 
 <!-- UTSAPIJSON.showActionSheet.description -->
+
+<!-- UTSAPIJSON.showActionSheet.compatibility -->
 
 <!-- UTSAPIJSON.showActionSheet.param -->
 
@@ -65,8 +67,6 @@ itemList，即actionsheet的列表项，在app和小程序上最多6项，超出
 <!-- UTSAPIJSON.showActionSheet.returnValue -->
 
 <!-- UTSAPIJSON.showActionSheet.example -->
-
-<!-- UTSAPIJSON.showActionSheet.compatibility -->
 
 <!-- UTSAPIJSON.showActionSheet.tutorial -->
 

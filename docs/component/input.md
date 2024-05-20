@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.input.description -->
 
+<!-- UTSCOMJSON.input.compatibility -->
+
 <!-- UTSCOMJSON.input.attribute -->
 
 <!-- UTSCOMJSON.input.event -->
 
 <!-- UTSCOMJSON.input.component_type-->
-
-<!-- UTSCOMJSON.input.compatibility -->
 
 <!-- UTSCOMJSON.input.children -->
 

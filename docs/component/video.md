@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.video.description -->
 
+<!-- UTSCOMJSON.video.compatibility -->
+
 <!-- UTSCOMJSON.video.attribute -->
 
 <!-- UTSCOMJSON.video.event -->
@@ -19,8 +21,6 @@ app端支持的视频格式如下：
 - [x] 3gp
 - [x] flv
 - [x] m3u8 (本地m3u8文件安卓端需3.99+，iOS端需4.11+)
-
-<!-- UTSCOMJSON.video.compatibility -->
 
 #### App平台
 

@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.getAppBaseInfo.description -->
 
+<!-- UTSAPIJSON.getAppBaseInfo.compatibility -->
+
 <!-- UTSAPIJSON.getAppBaseInfo.param -->
 
 <!-- UTSAPIJSON.getAppBaseInfo.returnValue -->
 
 <!-- UTSAPIJSON.getAppBaseInfo.example -->
-
-<!-- UTSAPIJSON.getAppBaseInfo.compatibility -->
 
 <!-- UTSAPIJSON.getAppBaseInfo.tutorial -->
 

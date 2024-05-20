@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.list-view.description -->
 
+<!-- UTSCOMJSON.list-view.compatibility -->
+
 在App中，基于recycle-view的list，才能实现长列表的资源自动回收，以保障列表加载很多项目时，屏幕外的资源被有效回收。list-view就是基于recycle-view的list组件。
 
 每个list由1个父组件list-view及若干子组件list-item构成。仅有有限子组件可识别，[见下](#children-tags)
@@ -51,8 +53,6 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 
 设置内层 list-view 的 `associative-container` 属性为 "nested-scroll-view"，开启内层 list-view 支持与外层 scroll-view 嵌套滚动
 
-<!-- UTSCOMJSON.list-view.compatibility -->
-
 <!-- UTSCOMJSON.list-view.children -->
 
 <!-- UTSCOMJSON.list-view.example -->
@@ -62,6 +62,8 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 ## list-item
 
 <!-- UTSCOMJSON.list-item.description -->
+
+<!-- UTSCOMJSON.list-item.compatibility -->
 
 <!-- UTSCOMJSON.list-item.attribute -->
 
@@ -103,8 +105,6 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 <!-- UTSCOMJSON.list-item.event -->
 
 <!-- UTSCOMJSON.list-item.component_type-->
-
-<!-- UTSCOMJSON.list-item.compatibility -->
 
 <!-- UTSCOMJSON.list-item.children -->
 

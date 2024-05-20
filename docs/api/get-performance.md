@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.getPerformance.description -->
 
+<!-- UTSAPIJSON.getPerformance.compatibility -->
+
 <!-- UTSAPIJSON.getPerformance.param -->
 
 <!-- UTSAPIJSON.getPerformance.returnValue -->
-
-<!-- UTSAPIJSON.getPerformance.compatibility -->
 
 <!-- UTSAPIJSON.getPerformance.tutorial -->
 

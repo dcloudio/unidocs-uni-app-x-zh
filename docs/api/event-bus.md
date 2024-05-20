@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.$on.description -->
 
+<!-- UTSAPIJSON.$on.compatibility -->
+
 <!-- UTSAPIJSON.$on.param -->
 
 <!-- UTSAPIJSON.$on.returnValue -->
 
 <!-- UTSAPIJSON.$on.example -->
-
-<!-- UTSAPIJSON.$on.compatibility -->
 
 <!-- UTSAPIJSON.$on.tutorial -->
 
@@ -16,13 +16,13 @@
 
 <!-- UTSAPIJSON.$off.description -->
 
+<!-- UTSAPIJSON.$off.compatibility -->
+
 <!-- UTSAPIJSON.$off.param -->
 
 <!-- UTSAPIJSON.$off.returnValue -->
 
 <!-- UTSAPIJSON.$off.example -->
-
-<!-- UTSAPIJSON.$off.compatibility -->
 
 <!-- UTSAPIJSON.$off.tutorial -->
 
@@ -30,13 +30,13 @@
 
 <!-- UTSAPIJSON.$once.description -->
 
+<!-- UTSAPIJSON.$once.compatibility -->
+
 <!-- UTSAPIJSON.$once.param -->
 
 <!-- UTSAPIJSON.$once.returnValue -->
 
 <!-- UTSAPIJSON.$once.example -->
-
-<!-- UTSAPIJSON.$once.compatibility -->
 
 <!-- UTSAPIJSON.$once.tutorial -->
 
@@ -44,13 +44,13 @@
 
 <!-- UTSAPIJSON.$emit.description -->
 
+<!-- UTSAPIJSON.$emit.compatibility -->
+
 <!-- UTSAPIJSON.$emit.param -->
 
 <!-- UTSAPIJSON.$emit.returnValue -->
 
 <!-- UTSAPIJSON.$emit.example -->
-
-<!-- UTSAPIJSON.$emit.compatibility -->
 
 <!-- UTSAPIJSON.$emit.tutorial -->
 

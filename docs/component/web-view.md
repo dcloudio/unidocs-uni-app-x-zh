@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.web-view.description -->
 
+<!-- UTSCOMJSON.web-view.compatibility -->
+
 <!-- UTSCOMJSON.web-view.attribute -->
 
 <!-- UTSCOMJSON.web-view.event -->
 
 <!-- UTSCOMJSON.web-view.component_type -->
-
-<!-- UTSCOMJSON.web-view.compatibility -->
 
 - web平台web-view组件底层使用iframe实现，会有浏览器安全策略限制。一般不推荐在web平台使用web-view组件，如确需使用，且需要通信，请自行根据iframe的浏览器规范进行通信。
 - web和小程序平台上，web-view是全屏的，即页面只能显示一个铺满的web-view。

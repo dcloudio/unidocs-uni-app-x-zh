@@ -4,6 +4,8 @@
 
 <!-- UTSAPIJSON.getSystemInfo.description -->
 
+<!-- UTSAPIJSON.getSystemInfo.compatibility -->
+
 uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)的2个API获取系统信息。
 
 按照运行环境层级排序，从底层向上，systemInfo有6个概念：
@@ -24,21 +26,19 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 
 <!-- UTSAPIJSON.getSystemInfo.example -->
 
-<!-- UTSAPIJSON.getSystemInfo.compatibility -->
-
 <!-- UTSAPIJSON.getSystemInfo.tutorial -->
 
 ## uni.getSystemInfoSync() @getsysteminfosync
 
 <!-- UTSAPIJSON.getSystemInfoSync.description -->
 
+<!-- UTSAPIJSON.getSystemInfoSync.compatibility -->
+
 <!-- UTSAPIJSON.getSystemInfoSync.param -->
 
 <!-- UTSAPIJSON.getSystemInfoSync.returnValue -->
 
 <!-- UTSAPIJSON.getSystemInfoSync.example -->
-
-<!-- UTSAPIJSON.getSystemInfoSync.compatibility -->
 
 <!-- UTSAPIJSON.getSystemInfoSync.tutorial -->
 

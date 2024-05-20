@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.downloadFile.description -->
 
+<!-- UTSAPIJSON.downloadFile.compatibility -->
+
 下载文件常见场景是apk的下载更新，[app升级中心](https://doc.dcloud.net.cn/uniCloud/upgrade-center.html)是一个现成的开源项目，实现下载进度在通知栏显示等复杂交互，可直接使用。
 
 <!-- UTSAPIJSON.downloadFile.param -->
@@ -16,8 +18,6 @@
 <!-- UTSAPIJSON.downloadFile.returnValue -->
 
 <!-- UTSAPIJSON.downloadFile.example -->
-
-<!-- UTSAPIJSON.downloadFile.compatibility -->
 
 <!-- UTSAPIJSON.downloadFile.tutorial -->
 

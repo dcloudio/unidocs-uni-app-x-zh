@@ -16,11 +16,11 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 <!-- UTSAPIJSON.getPushClientId.description -->
 
+<!-- UTSAPIJSON.getPushClientId.compatibility -->
+
 <!-- UTSAPIJSON.getPushClientId.param -->
 
 <!-- UTSAPIJSON.getPushClientId.returnValue -->
-
-<!-- UTSAPIJSON.getPushClientId.compatibility -->
 
 <!-- UTSAPIJSON.getPushClientId.tutorial -->
 
@@ -28,11 +28,11 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 <!-- UTSAPIJSON.onPushMessage.description -->
 
+<!-- UTSAPIJSON.onPushMessage.compatibility -->
+
 <!-- UTSAPIJSON.onPushMessage.param -->
 
 <!-- UTSAPIJSON.onPushMessage.returnValue -->
-
-<!-- UTSAPIJSON.onPushMessage.compatibility -->
 
 <!-- UTSAPIJSON.onPushMessage.tutorial -->
 
@@ -44,11 +44,11 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 <!-- UTSAPIJSON.offPushMessage.description -->
 
+<!-- UTSAPIJSON.offPushMessage.compatibility -->
+
 <!-- UTSAPIJSON.offPushMessage.param -->
 
 <!-- UTSAPIJSON.offPushMessage.returnValue -->
-
-<!-- UTSAPIJSON.offPushMessage.compatibility -->
 
 <!-- UTSAPIJSON.offPushMessage.tutorial -->
 
@@ -56,11 +56,11 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 <!-- UTSAPIJSON.getChannelManager.description -->
 
+<!-- UTSAPIJSON.getChannelManager.compatibility -->
+
 <!-- UTSAPIJSON.getChannelManager.param -->
 
 <!-- UTSAPIJSON.getChannelManager.returnValue -->
-
-<!-- UTSAPIJSON.getChannelManager.compatibility -->
 
 <!-- UTSAPIJSON.getChannelManager.tutorial -->
 
@@ -87,11 +87,11 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 <!-- UTSAPIJSON.createPushMessage.description -->
 
+<!-- UTSAPIJSON.createPushMessage.compatibility -->
+
 <!-- UTSAPIJSON.createPushMessage.param -->
 
 <!-- UTSAPIJSON.createPushMessage.returnValue -->
-
-<!-- UTSAPIJSON.createPushMessage.compatibility -->
 
 <!-- UTSAPIJSON.createPushMessage.tutorial -->
 

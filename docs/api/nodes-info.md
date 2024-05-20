@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.createSelectorQuery.description -->
 
+<!-- UTSAPIJSON.createSelectorQuery.compatibility -->
+
 <!-- UTSAPIJSON.createSelectorQuery.param -->
 
 **selector 说明：**
@@ -26,8 +28,6 @@
 |height	|Number	|节点的高度				|
 
 <!-- UTSAPIJSON.createSelectorQuery.example -->
-
-<!-- UTSAPIJSON.createSelectorQuery.compatibility -->
 
 <!-- UTSAPIJSON.createSelectorQuery.tutorial -->
 

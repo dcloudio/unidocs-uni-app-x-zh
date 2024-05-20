@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.previewImage.description -->
 
+<!-- UTSAPIJSON.previewImage.compatibility -->
+
 <!-- UTSAPIJSON.previewImage.param -->
 
 <!-- UTSAPIJSON.previewImage.returnValue -->
 
 <!-- UTSAPIJSON.previewImage.example -->
-
-<!-- UTSAPIJSON.previewImage.compatibility -->
 
 <!-- UTSAPIJSON.previewImage.tutorial -->
 
@@ -16,13 +16,13 @@
 
 <!-- UTSAPIJSON.closePreviewImage.description -->
 
+<!-- UTSAPIJSON.closePreviewImage.compatibility -->
+
 <!-- UTSAPIJSON.closePreviewImage.param -->
 
 <!-- UTSAPIJSON.closePreviewImage.returnValue -->
 
 <!-- UTSAPIJSON.closePreviewImage.example -->
-
-<!-- UTSAPIJSON.closePreviewImage.compatibility -->
 
 <!-- UTSAPIJSON.closePreviewImage.tutorial -->
 

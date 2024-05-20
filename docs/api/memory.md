@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.onMemoryWarning.description -->
 
+<!-- UTSAPIJSON.onMemoryWarning.compatibility -->
+
 <!-- UTSAPIJSON.onMemoryWarning.param -->
 
 <!-- UTSAPIJSON.onMemoryWarning.returnValue -->
-
-<!-- UTSAPIJSON.onMemoryWarning.compatibility -->
 
 <!-- UTSAPIJSON.onMemoryWarning.tutorial -->
 
@@ -14,11 +14,11 @@
 
 <!-- UTSAPIJSON.offMemoryWarning.description -->
 
+<!-- UTSAPIJSON.offMemoryWarning.compatibility -->
+
 <!-- UTSAPIJSON.offMemoryWarning.param -->
 
 <!-- UTSAPIJSON.offMemoryWarning.returnValue -->
-
-<!-- UTSAPIJSON.offMemoryWarning.compatibility -->
 
 <!-- UTSAPIJSON.offMemoryWarning.tutorial -->
 

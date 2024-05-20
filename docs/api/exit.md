@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.exit.description -->
 
+<!-- UTSAPIJSON.exit.compatibility -->
+
 <!-- UTSAPIJSON.exit.param -->
 
 <!-- UTSAPIJSON.exit.returnValue -->
-
-<!-- UTSAPIJSON.exit.compatibility -->
 
 本API仅Android App生效。
 
@@ -16,7 +16,7 @@ Android平台的应用退出分热退出和冷退出。
 
 基本上主流Android App都是热退出。本API也是热退出。
 
-热退出，即通知了os：这个App用户不用了，在os需要时可以回收。如果在os回收之前，用户又启动这个App，会感觉启动速度更快一些。  
+热退出，即通知了os：这个App用户不用了，在os需要时可以回收。如果在os回收之前，用户又启动这个App，会感觉启动速度更快一些。
 
 <!-- UTSAPIJSON.exit.tutorial -->
 
@@ -26,7 +26,7 @@ Android平台的应用退出分热退出和冷退出。
 
 <!-- UTSAPIJSON.general_type.param -->
 
-## 切换应用到后台@back  
+## 切换应用到后台@back
 
 有的Android App，点back后不询问用户，直接隐藏到了后台。这种做法占用手机的资源一些，但确实也有一些App是这么做的。
 

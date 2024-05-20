@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.navigateTo.description -->
 
+<!-- UTSAPIJSON.navigateTo.compatibility -->
+
 <!-- UTSAPIJSON.navigateTo.param -->
 
 <!-- UTSAPIJSON.navigateTo.returnValue -->
 
 <!-- UTSAPIJSON.navigateTo.example -->
-
-<!-- UTSAPIJSON.navigateTo.compatibility -->
 
 <!-- UTSAPIJSON.navigateTo.tutorial -->
 
@@ -16,13 +16,13 @@
 
 <!-- UTSAPIJSON.redirectTo.description -->
 
+<!-- UTSAPIJSON.redirectTo.compatibility -->
+
 <!-- UTSAPIJSON.redirectTo.param -->
 
 <!-- UTSAPIJSON.redirectTo.returnValue -->
 
 <!-- UTSAPIJSON.redirectTo.example -->
-
-<!-- UTSAPIJSON.redirectTo.compatibility -->
 
 <!-- UTSAPIJSON.redirectTo.tutorial -->
 
@@ -30,13 +30,13 @@
 
 <!-- UTSAPIJSON.reLaunch.description -->
 
+<!-- UTSAPIJSON.reLaunch.compatibility -->
+
 <!-- UTSAPIJSON.reLaunch.param -->
 
 <!-- UTSAPIJSON.reLaunch.returnValue -->
 
 <!-- UTSAPIJSON.reLaunch.example -->
-
-<!-- UTSAPIJSON.reLaunch.compatibility -->
 
 <!-- UTSAPIJSON.reLaunch.tutorial -->
 
@@ -44,13 +44,13 @@
 
 <!-- UTSAPIJSON.switchTab.description -->
 
+<!-- UTSAPIJSON.switchTab.compatibility -->
+
 <!-- UTSAPIJSON.switchTab.param -->
 
 <!-- UTSAPIJSON.switchTab.returnValue -->
 
 <!-- UTSAPIJSON.switchTab.example -->
-
-<!-- UTSAPIJSON.switchTab.compatibility -->
 
 <!-- UTSAPIJSON.switchTab.tutorial -->
 
@@ -58,13 +58,13 @@
 
 <!-- UTSAPIJSON.navigateBack.description -->
 
+<!-- UTSAPIJSON.navigateBack.compatibility -->
+
 <!-- UTSAPIJSON.navigateBack.param -->
 
 <!-- UTSAPIJSON.navigateBack.returnValue -->
 
 <!-- UTSAPIJSON.navigateBack.example -->
-
-<!-- UTSAPIJSON.navigateBack.compatibility -->
 
 <!-- UTSAPIJSON.navigateBack.tutorial -->
 

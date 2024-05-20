@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.view.description -->
 
+<!-- UTSCOMJSON.view.compatibility -->
+
 <!-- UTSCOMJSON.view.attribute -->
 
 #### 说明
@@ -12,8 +14,6 @@
 <!-- UTSCOMJSON.view.event -->
 
 <!-- UTSCOMJSON.view.component_type-->
-
-<!-- UTSCOMJSON.view.compatibility -->
 
 #### App平台@app
 - HBuilder4.0以下版本`hover-class`属性App端与微信小程序效果一样，手指按下进入`hover-class`状态后，手指移动就会取消`hover-class`状态

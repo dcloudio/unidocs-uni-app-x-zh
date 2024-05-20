@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.rpx2px.description -->
 
+<!-- UTSAPIJSON.rpx2px.compatibility -->
+
 <!-- UTSAPIJSON.rpx2px.param -->
 
 <!-- UTSAPIJSON.rpx2px.returnValue -->
-
-<!-- UTSAPIJSON.rpx2px.compatibility -->
 
 <!-- UTSAPIJSON.rpx2px.tutorial -->
 

@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.saveImageToPhotosAlbum.description -->
 
+<!-- UTSAPIJSON.saveImageToPhotosAlbum.compatibility -->
+
 <!-- UTSAPIJSON.saveImageToPhotosAlbum.param -->
 
 <!-- UTSAPIJSON.saveImageToPhotosAlbum.returnValue -->
 
 <!-- UTSAPIJSON.saveImageToPhotosAlbum.example -->
-
-<!-- UTSAPIJSON.saveImageToPhotosAlbum.compatibility -->
 
 <!-- UTSAPIJSON.saveImageToPhotosAlbum.tutorial -->
 

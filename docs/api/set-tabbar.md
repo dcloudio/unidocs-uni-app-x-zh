@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.setTabBarBadge.description -->
 
+<!-- UTSAPIJSON.setTabBarBadge.compatibility -->
+
 <!-- UTSAPIJSON.setTabBarBadge.param -->
 
 <!-- UTSAPIJSON.setTabBarBadge.returnValue -->
 
 <!-- UTSAPIJSON.setTabBarBadge.example -->
-
-<!-- UTSAPIJSON.setTabBarBadge.compatibility -->
 
 <!-- UTSAPIJSON.setTabBarBadge.tutorial -->
 
@@ -16,13 +16,13 @@
 
 <!-- UTSAPIJSON.removeTabBarBadge.description -->
 
+<!-- UTSAPIJSON.removeTabBarBadge.compatibility -->
+
 <!-- UTSAPIJSON.removeTabBarBadge.param -->
 
 <!-- UTSAPIJSON.removeTabBarBadge.returnValue -->
 
 <!-- UTSAPIJSON.removeTabBarBadge.example -->
-
-<!-- UTSAPIJSON.removeTabBarBadge.compatibility -->
 
 <!-- UTSAPIJSON.removeTabBarBadge.tutorial -->
 
@@ -30,13 +30,13 @@
 
 <!-- UTSAPIJSON.setTabBarItem.description -->
 
+<!-- UTSAPIJSON.setTabBarItem.compatibility -->
+
 <!-- UTSAPIJSON.setTabBarItem.param -->
 
 <!-- UTSAPIJSON.setTabBarItem.returnValue -->
 
 <!-- UTSAPIJSON.setTabBarItem.example -->
-
-<!-- UTSAPIJSON.setTabBarItem.compatibility -->
 
 <!-- UTSAPIJSON.setTabBarItem.tutorial -->
 
@@ -44,13 +44,13 @@
 
 <!-- UTSAPIJSON.setTabBarStyle.description -->
 
+<!-- UTSAPIJSON.setTabBarStyle.compatibility -->
+
 <!-- UTSAPIJSON.setTabBarStyle.param -->
 
 <!-- UTSAPIJSON.setTabBarStyle.returnValue -->
 
 <!-- UTSAPIJSON.setTabBarStyle.example -->
-
-<!-- UTSAPIJSON.setTabBarStyle.compatibility -->
 
 <!-- UTSAPIJSON.setTabBarStyle.tutorial -->
 
@@ -58,13 +58,13 @@
 
 <!-- UTSAPIJSON.hideTabBar.description -->
 
+<!-- UTSAPIJSON.hideTabBar.compatibility -->
+
 <!-- UTSAPIJSON.hideTabBar.param -->
 
 <!-- UTSAPIJSON.hideTabBar.returnValue -->
 
 <!-- UTSAPIJSON.hideTabBar.example -->
-
-<!-- UTSAPIJSON.hideTabBar.compatibility -->
 
 <!-- UTSAPIJSON.hideTabBar.tutorial -->
 
@@ -72,13 +72,13 @@
 
 <!-- UTSAPIJSON.showTabBar.description -->
 
+<!-- UTSAPIJSON.showTabBar.compatibility -->
+
 <!-- UTSAPIJSON.showTabBar.param -->
 
 <!-- UTSAPIJSON.showTabBar.returnValue -->
 
 <!-- UTSAPIJSON.showTabBar.example -->
-
-<!-- UTSAPIJSON.showTabBar.compatibility -->
 
 <!-- UTSAPIJSON.showTabBar.tutorial -->
 
@@ -86,13 +86,13 @@
 
 <!-- UTSAPIJSON.showTabBarRedDot.description -->
 
+<!-- UTSAPIJSON.showTabBarRedDot.compatibility -->
+
 <!-- UTSAPIJSON.showTabBarRedDot.param -->
 
 <!-- UTSAPIJSON.showTabBarRedDot.returnValue -->
 
 <!-- UTSAPIJSON.showTabBarRedDot.example -->
-
-<!-- UTSAPIJSON.showTabBarRedDot.compatibility -->
 
 <!-- UTSAPIJSON.showTabBarRedDot.tutorial -->
 
@@ -100,13 +100,13 @@
 
 <!-- UTSAPIJSON.hideTabBarRedDot.description -->
 
+<!-- UTSAPIJSON.hideTabBarRedDot.compatibility -->
+
 <!-- UTSAPIJSON.hideTabBarRedDot.param -->
 
 <!-- UTSAPIJSON.hideTabBarRedDot.returnValue -->
 
 <!-- UTSAPIJSON.hideTabBarRedDot.example -->
-
-<!-- UTSAPIJSON.hideTabBarRedDot.compatibility -->
 
 <!-- UTSAPIJSON.hideTabBarRedDot.tutorial -->
 

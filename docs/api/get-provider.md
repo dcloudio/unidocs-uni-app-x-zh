@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.getProvider.description -->
 
+<!-- UTSAPIJSON.getProvider.compatibility -->
+
 <!-- UTSAPIJSON.getProvider.param -->
 
 <!-- UTSAPIJSON.getProvider.returnValue -->
-
-<!-- UTSAPIJSON.getProvider.compatibility -->
 
 <!-- UTSAPIJSON.getProvider.tutorial -->
 

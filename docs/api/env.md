@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.env.description -->
 
+<!-- UTSAPIJSON.env.compatibility -->
+
 <!-- UTSAPIJSON.env.param -->
 
 <!-- UTSAPIJSON.env.returnValue -->
-
-<!-- UTSAPIJSON.env.compatibility -->
 
 <!-- UTSAPIJSON.env.tutorial -->
 

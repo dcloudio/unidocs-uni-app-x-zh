@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.createVideoContext.description -->
 
+<!-- UTSAPIJSON.createVideoContext.compatibility -->
+
 <!-- UTSAPIJSON.createVideoContext.param -->
 
 <!-- UTSAPIJSON.createVideoContext.returnValue -->
 
 <!-- UTSAPIJSON.createVideoContext.example -->
-
-<!-- UTSAPIJSON.createVideoContext.compatibility -->
 
 <!-- UTSAPIJSON.createVideoContext.tutorial -->
 

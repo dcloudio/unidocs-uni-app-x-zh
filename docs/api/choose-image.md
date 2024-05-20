@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.chooseImage.description -->
 
+<!-- UTSAPIJSON.chooseImage.compatibility -->
+
 <!-- UTSAPIJSON.chooseImage.param -->
 
 <!-- UTSAPIJSON.chooseImage.returnValue -->
-
-<!-- UTSAPIJSON.chooseImage.compatibility -->
 
 <!-- UTSAPIJSON.chooseImage.tutorial -->
 

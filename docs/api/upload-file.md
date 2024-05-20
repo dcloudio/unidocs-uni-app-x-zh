@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.uploadFile.description -->
 
+<!-- UTSAPIJSON.uploadFile.compatibility -->
+
 推荐上传到uniCloud，uniCloud提供了更便宜CDN和更好的易用性，[详见](https://doc.dcloud.net.cn/uniCloud/storage.html)
 
 <!-- UTSAPIJSON.uploadFile.param -->
@@ -9,8 +11,6 @@
 <!-- UTSAPIJSON.uploadFile.returnValue -->
 
 <!-- UTSAPIJSON.uploadFile.example -->
-
-<!-- UTSAPIJSON.uploadFile.compatibility -->
 
 <!-- UTSAPIJSON.uploadFile.tutorial -->
 

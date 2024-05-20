@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.getUniverifyManager.description -->
 
+<!-- UTSAPIJSON.getUniverifyManager.compatibility -->
+
 App一键登陆，封装了个推的一键登陆sdk，其内部再次封装了中国三大电信运营商提供的sdk。通过运营商提供的服务，可以在手机sim卡信号正常的情况下，通过云端接口获取到当前用户的手机号。
 
 App一键登陆是替代短信验证码登录的更优选择：对开发者而言更便宜、对用户而言体验更好。
@@ -16,8 +18,6 @@ uni-id-pages，已经内置一键登陆，从云端到客户端均已开发好�
 <!-- UTSAPIJSON.getUniverifyManager.param -->
 
 <!-- UTSAPIJSON.getUniverifyManager.returnValue -->
-
-<!-- UTSAPIJSON.getUniverifyManager.compatibility -->
 
 <!-- UTSAPIJSON.getUniverifyManager.tutorial -->
 

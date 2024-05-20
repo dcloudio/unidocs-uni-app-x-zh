@@ -2,9 +2,13 @@
 
 <!-- UTSAPIJSON.loadFontFace.description -->
 
+<!-- UTSAPIJSON.loadFontFace.compatibility -->
+
 <!-- UTSAPIJSON.loadFontFace.param -->
 
-#### 注意事项  
+<!-- UTSAPIJSON.loadFontFace.returnValue -->
+
+#### 注意事项
 - app-ios平台加载字体一定是全局生效，不支持通过global属性设置为非全局生效
 - family属性指定自定义字体路径时，必须使用`url()`包裹。可能某些平台不包裹也可以生效，但标准规范是包裹，按标准写法才能全端生效。如下：
 ```uts
@@ -23,11 +27,7 @@ uni.loadFontFace({
 
 不同平台支持的字体格式不同，另见[css字体](../css/font-family.md)
 
-<!-- UTSAPIJSON.loadFontFace.returnValue -->
-
 <!-- UTSAPIJSON.loadFontFace.example -->
-
-<!-- UTSAPIJSON.loadFontFace.compatibility -->
 
 <!-- UTSAPIJSON.loadFontFace.tutorial -->
 

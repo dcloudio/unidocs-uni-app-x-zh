@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.getNetworkType.description -->
 
+<!-- UTSAPIJSON.getNetworkType.compatibility -->
+
 <!-- UTSAPIJSON.getNetworkType.param -->
 
 <!-- UTSAPIJSON.getNetworkType.returnValue -->
 
 <!-- UTSAPIJSON.getNetworkType.example -->
-
-<!-- UTSAPIJSON.getNetworkType.compatibility -->
 
 <!-- UTSAPIJSON.getNetworkType.tutorial -->
 

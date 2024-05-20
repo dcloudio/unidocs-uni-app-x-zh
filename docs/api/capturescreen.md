@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.onUserCaptureScreen.description -->
 
+<!-- UTSAPIJSON.onUserCaptureScreen.compatibility -->
+
 <!-- UTSAPIJSON.onUserCaptureScreen.param -->
 
 <!-- UTSAPIJSON.onUserCaptureScreen.returnValue -->
-
-<!-- UTSAPIJSON.onUserCaptureScreen.compatibility -->
 
 <!-- UTSAPIJSON.onUserCaptureScreen.tutorial -->
 
@@ -14,11 +14,11 @@
 
 <!-- UTSAPIJSON.offUserCaptureScreen.description -->
 
+<!-- UTSAPIJSON.offUserCaptureScreen.compatibility -->
+
 <!-- UTSAPIJSON.offUserCaptureScreen.param -->
 
 <!-- UTSAPIJSON.offUserCaptureScreen.returnValue -->
-
-<!-- UTSAPIJSON.offUserCaptureScreen.compatibility -->
 
 <!-- UTSAPIJSON.offUserCaptureScreen.tutorial -->
 

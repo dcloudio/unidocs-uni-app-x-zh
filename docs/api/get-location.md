@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.getLocation.description -->
 
+<!-- UTSAPIJSON.getLocation.compatibility -->
+
 <!-- UTSAPIJSON.getLocation.param -->
 
 <!-- UTSAPIJSON.getLocation.returnValue -->
-
-<!-- UTSAPIJSON.getLocation.compatibility -->
 
 ### 注意
 

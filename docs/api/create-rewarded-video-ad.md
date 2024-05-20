@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.createRewardedVideoAd.description -->
 
+<!-- UTSAPIJSON.createRewardedVideoAd.compatibility -->
+
 <!-- UTSAPIJSON.createRewardedVideoAd.param -->
 
 <!-- UTSAPIJSON.createRewardedVideoAd.returnValue -->
@@ -13,8 +15,6 @@
 + uni-app x 目前需要手动添加三方广告SDK。具体配置可参考[文档](../collocation/manifest-modules.md#uni-ad)。
 
 <!-- UTSAPIJSON.createRewardedVideoAd.example -->
-
-<!-- UTSAPIJSON.createRewardedVideoAd.compatibility -->
 
 <!-- UTSAPIJSON.createRewardedVideoAd.tutorial -->
 

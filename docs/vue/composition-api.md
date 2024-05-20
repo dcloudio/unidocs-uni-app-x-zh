@@ -409,7 +409,7 @@
 
 #### 兼容性 @component-lifecycle-compatibility
 
-<!-- PAGEINSTANCE.composition_lifecycle.compatibility -->
+<!-- VUEJSON.composition_lifecycle.compatibility -->
 
 #### onMounted、onUnmounted 使用注意事项 @mounted-unmounted-tips
 

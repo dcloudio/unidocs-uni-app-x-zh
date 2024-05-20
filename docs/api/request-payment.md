@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.requestPayment.description -->
 
+<!-- UTSAPIJSON.requestPayment.compatibility -->
+
 uni.requestPayment是一个统一各平台的客户端支付API，客户端均使用本API调用支付。
 
 本API运行在各端时，会自动转换为各端的原生支付调用API。
@@ -48,8 +50,6 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 
 <!-- UTSAPIJSON.requestPayment.returnValue -->
-
-<!-- UTSAPIJSON.requestPayment.compatibility -->
 
 <!-- UTSAPIJSON.requestPayment.tutorial -->
 
@@ -117,10 +117,10 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 #### iOS平台微信支付参数说明：
 - `appid`：微信开放平台申请的应用ID（AppID）
 - `universalLink`：iOS平台通用链接（Universal Link）
-   在iOS平台微信支付使用的通用链接，必须与微信开放平台 “管理中心” > “应用详情” > “开发信息” 中的“Universal Links”项中配置一致，更多详情参考 
+   在iOS平台微信支付使用的通用链接，必须与微信开放平台 “管理中心” > “应用详情” > “开发信息” 中的“Universal Links”项中配置一致，更多详情参考
    [通用链接（Universal Link）](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#通用链接-universal-link), [一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links), [模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment)
-   
-   **注意**  
+
+   **注意**
    - 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
    - 同资源文件（Bundle Resources）配置类似，iOS平台需要配置`uniapp-entitlements`文件， 详见[uniapp-entitlements 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#uniapp-entitlements-%E9%85%8D%E7%BD%AE)
 

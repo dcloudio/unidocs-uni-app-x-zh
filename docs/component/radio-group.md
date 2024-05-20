@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.radio-group.description -->
 
+<!-- UTSCOMJSON.radio-group.compatibility -->
+
 <!-- UTSCOMJSON.radio-group.attribute -->
 
 <!-- UTSCOMJSON.radio-group.event -->
 
 <!-- UTSCOMJSON.radio-group.component_type-->
-
-<!-- UTSCOMJSON.radio-group.compatibility -->
 
 <!-- UTSCOMJSON.radio-group.children -->
 
@@ -21,13 +21,13 @@
 
 <!-- UTSCOMJSON.radio.description -->
 
+<!-- UTSCOMJSON.radio.compatibility -->
+
 <!-- UTSCOMJSON.radio.attribute -->
 
 <!-- UTSCOMJSON.radio.event -->
 
 <!-- UTSCOMJSON.radio.component_type-->
-
-<!-- UTSCOMJSON.radio.compatibility -->
 
 <!-- UTSCOMJSON.radio.children -->
 

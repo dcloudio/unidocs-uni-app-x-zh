@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.picker-view.description -->
 
+<!-- UTSCOMJSON.picker-view.compatibility -->
+
 <!-- UTSCOMJSON.picker-view.attribute -->
 
 <!-- UTSCOMJSON.picker-view.event -->
 
 <!-- UTSCOMJSON.picker-view.component_type-->
-
-<!-- UTSCOMJSON.picker-view.compatibility -->
 
 <!-- UTSCOMJSON.picker-view.children -->
 
@@ -21,13 +21,13 @@
 
 <!-- UTSCOMJSON.picker-view-column.description -->
 
+<!-- UTSCOMJSON.picker-view-column.compatibility -->
+
 <!-- UTSCOMJSON.picker-view-column.attribute -->
 
 <!-- UTSCOMJSON.picker-view-column.event -->
 
 <!-- UTSCOMJSON.picker-view-column.component_type-->
-
-<!-- UTSCOMJSON.picker-view-column.compatibility -->
 
 <!-- UTSCOMJSON.picker-view-column.children -->
 

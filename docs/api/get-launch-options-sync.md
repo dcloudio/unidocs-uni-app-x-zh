@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.getLaunchOptionsSync.description -->
 
+<!-- UTSAPIJSON.getLaunchOptionsSync.compatibility -->
+
 <!-- UTSAPIJSON.getLaunchOptionsSync.param -->
 
 <!-- UTSAPIJSON.getLaunchOptionsSync.returnValue -->
 
 <!-- UTSAPIJSON.getLaunchOptionsSync.example -->
-
-<!-- UTSAPIJSON.getLaunchOptionsSync.compatibility -->
 
 <!-- UTSAPIJSON.getLaunchOptionsSync.tutorial -->
 
