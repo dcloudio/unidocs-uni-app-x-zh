@@ -87,54 +87,6 @@ globalStyle节点里是所有页面都生效的全局样式配置。它的配置
 
 <!-- PAGESJSON.pullToRefresh_contentrefresh.compatibility -->
 
-### topWindow 配置项列表 @pages-topwindow
-
-<!-- PAGESJSON.pages_topWindow.description -->
-
-<!-- PAGESJSON.pages_topWindow.table -->
-
-<!-- PAGESJSON.pages_topWindow.compatibility -->
-
-#### matchMedia 配置项列表 @topwindow-matchmedia
-
-<!-- PAGESJSON.topWindow_matchMedia.description -->
-
-<!-- PAGESJSON.topWindow_matchMedia.table -->
-
-<!-- PAGESJSON.topWindow_matchMedia.compatibility -->
-
-### leftWindow 配置项列表 @pages-leftwindow
-
-<!-- PAGESJSON.pages_leftWindow.description -->
-
-<!-- PAGESJSON.pages_leftWindow.table -->
-
-<!-- PAGESJSON.pages_leftWindow.compatibility -->
-
-#### matchMedia 配置项列表 @leftwindow-matchmedia
-
-<!-- PAGESJSON.leftWindow_matchMedia.description -->
-
-<!-- PAGESJSON.leftWindow_matchMedia.table -->
-
-<!-- PAGESJSON.leftWindow_matchMedia.compatibility -->
-
-### rightWindow 配置项列表 @pages-rightwindow
-
-<!-- PAGESJSON.pages_rightWindow.description -->
-
-<!-- PAGESJSON.pages_rightWindow.table -->
-
-<!-- PAGESJSON.pages_rightWindow.compatibility -->
-
-#### matchMedia 配置项列表 @rightwindow-matchmedia
-
-<!-- PAGESJSON.rightWindow_matchMedia.description -->
-
-<!-- PAGESJSON.rightWindow_matchMedia.table -->
-
-<!-- PAGESJSON.rightWindow_matchMedia.compatibility -->
-
 ### pages 配置项列表 @pagesoptionspage
 
 pages节点里注册页面，数据格式是数组，数组每个项都是一个对象，通过path属性指定页面路径，通过style指定该页面的样式配置。
@@ -304,6 +256,54 @@ tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更�
 <!-- PAGESJSON.tabBar_midButton.table -->
 
 <!-- PAGESJSON.tabBar_midButton.compatibility -->
+
+### topWindow 配置项列表 @pages-topwindow
+
+<!-- PAGESJSON.pages_topWindow.description -->
+
+<!-- PAGESJSON.pages_topWindow.table -->
+
+<!-- PAGESJSON.pages_topWindow.compatibility -->
+
+#### matchMedia 配置项列表 @topwindow-matchmedia
+
+<!-- PAGESJSON.topWindow_matchMedia.description -->
+
+<!-- PAGESJSON.topWindow_matchMedia.table -->
+
+<!-- PAGESJSON.topWindow_matchMedia.compatibility -->
+
+### leftWindow 配置项列表 @pages-leftwindow
+
+<!-- PAGESJSON.pages_leftWindow.description -->
+
+<!-- PAGESJSON.pages_leftWindow.table -->
+
+<!-- PAGESJSON.pages_leftWindow.compatibility -->
+
+#### matchMedia 配置项列表 @leftwindow-matchmedia
+
+<!-- PAGESJSON.leftWindow_matchMedia.description -->
+
+<!-- PAGESJSON.leftWindow_matchMedia.table -->
+
+<!-- PAGESJSON.leftWindow_matchMedia.compatibility -->
+
+### rightWindow 配置项列表 @pages-rightwindow
+
+<!-- PAGESJSON.pages_rightWindow.description -->
+
+<!-- PAGESJSON.pages_rightWindow.table -->
+
+<!-- PAGESJSON.pages_rightWindow.compatibility -->
+
+#### matchMedia 配置项列表 @rightwindow-matchmedia
+
+<!-- PAGESJSON.rightWindow_matchMedia.description -->
+
+<!-- PAGESJSON.rightWindow_matchMedia.table -->
+
+<!-- PAGESJSON.rightWindow_matchMedia.compatibility -->
 
 ### condition 配置项列表 @pages-condition
 

@@ -1,9 +1,10 @@
 # 组件
 
-## 定义
+我们可以对一段要复用的js/uts逻辑代码进行封装，抽出function、module等形式。
 
-- 组件是视图层的基本组成单元。
-- 组件是一个单独且可复用的功能模块的封装。
+那么涉及UI的复用时，该如何抽象？
+
+这就是vue的组件机制，把视图template、script、style都封装到独立的uvue组件文件中，在其他需要的地方使用组件的名称进行引用。
 
 每个组件，包括如下几个部分：以组件名称为标记的开始标签和结束标签、组件内容、组件属性、组件属性值。
 
@@ -11,6 +12,8 @@
 - 在开始标签和结束标签之间，称为组件内容。如下面示例的`content`
 - 开始标签上可以写属性，属性可以有多个，多个属性之间用空格分割
 - 每个属性通过`=`赋值
+
+组件还可以封装方法、事件、插槽，提供了组件的生命周期，提供了组件和页面的互通信机制，满足了各种高级需求。
 
 ## 创建及引用组件 @create-and-import-component
 
@@ -43,6 +46,8 @@
 在HBuilderX中点右键可方便的更新插件，插件作者也可以方便的上传插件。
 
 uni_module有详细的专项文档，请另行查阅[uni_module规范](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)。
+
+如果你的组件不满足easycom标准的目录规范，还有一种办法是在[pages.json](../collocation/pagesjson.md#pages-easycom)里声明自己的目录规则，以便编译器查找到你的组件。自定义easycom路径规则的详细教程[详见](https://uniapp.dcloud.net.cn/collocation/pages.html#easycom)
 
 #### easycom组件的类型规范 @easycom-component-type
 
