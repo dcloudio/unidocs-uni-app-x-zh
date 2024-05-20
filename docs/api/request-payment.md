@@ -122,6 +122,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
    
    **注意**  
    - 配置后需提交云端打包后才能生效，真机运行时请使用[自定义调试基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
+   - 同资源文件（Bundle Resources）配置类似，iOS平台需要配置`uniapp-entitlements`文件， 详见[uniapp-entitlements 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#uniapp-entitlements-%E9%85%8D%E7%BD%AE)
 
 - app-android平台微信支付需要4.11及以上版本
 - app-ios平台微信支付需要4.18及以上版本
