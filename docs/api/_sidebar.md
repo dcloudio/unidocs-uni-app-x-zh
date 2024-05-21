@@ -8,6 +8,7 @@
   * [拦截器](interceptor.md)
   * [获取启动参数](get-launch-options-sync.md)
   * [退出应用](exit.md)
+  * [获取服务供应商](get-provider.md)
 * 页面
   * [页面跳转](navigator.md)
   * [设置导航条颜色](set-navigation-bar-color.md)
