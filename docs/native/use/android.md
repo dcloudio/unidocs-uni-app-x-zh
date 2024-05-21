@@ -1,3 +1,6 @@
+# uni-app x 原生SDK Android版
+
+
 ## 准备
 
 - HBuilder X （4.18版本及以上）
@@ -7,7 +10,7 @@
 说明：当前文档基于android studio 2023.2.1 Patch 2。gradle版本为8.4。gradle插件版本为8.2.2。kotlin插件版本为1.9.10。
 ***
 
-注意：当前文档主要提供在已有项目中接入uni-app x。如果是新项目可以参考文[文档](./androidnewproject.md)。
+注意：当前文档主要提供在已有项目中接入uni-app x。如果是新项目则另见[文档](./androidnewproject.md)。
 
 ## 新建uni-app x模块
 
