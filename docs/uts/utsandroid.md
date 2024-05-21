@@ -723,7 +723,7 @@ console.log(UTSAndroid.getTopPageActivity())
 
 <!-- UTSJSON.UTSAndroid.registerActivityCallback.compatibility -->
 
-### unRegisterActivityCallback(unRegisterId)
+### unRegisterActivityCallback(callbackId)
 
 <!-- UTSJSON.UTSAndroid.unRegisterActivityCallback.description -->
 
