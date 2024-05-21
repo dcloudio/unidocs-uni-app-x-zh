@@ -356,6 +356,11 @@ Uni`组件名(驼峰)`Element
 >
 > 具体请查看 [页面生命周期](../page.md#lifecycle)
 
+::: warning 注意
+1. onAppHide、onAppShow 目前只有 Android 支持
+2. onPageHide、onPageShow 需要写在 setup 函数或者 `<script setup>` 中才能生效
+:::
+
 示例 [详情](<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_lifecycle.page_page-options.webUrl -->
@@ -386,7 +391,9 @@ Uni`组件名(驼峰)`Element
 
 :::
 
-## [全局组件](./global-api.md#app-component)
+## 全局组件 @global-component
+
+[详情见 app.component](./global-api.md#app-component)
 
 ## props
 
