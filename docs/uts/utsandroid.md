@@ -713,6 +713,45 @@ export function getJavaClassTest() : boolean {
 console.log(UTSAndroid.getTopPageActivity())
 ```
 
+### registerActivityCallback(callback, pageRoute?)
+
+<!-- UTSJSON.UTSAndroid.registerActivityCallback.description -->
+
+<!-- UTSJSON.UTSAndroid.registerActivityCallback.param -->
+
+<!-- UTSJSON.UTSAndroid.registerActivityCallback.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.registerActivityCallback.compatibility -->
+
+### unRegisterActivityCallback(unRegisterId)
+
+<!-- UTSJSON.UTSAndroid.unRegisterActivityCallback.description -->
+
+<!-- UTSJSON.UTSAndroid.unRegisterActivityCallback.param -->
+
+<!-- UTSJSON.UTSAndroid.unRegisterActivityCallback.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.unRegisterActivityCallback.compatibility -->
+
+### registerPrivacyAgreeListener(callback)
+
+<!-- UTSJSON.UTSAndroid.registerPrivacyAgreeListener.description -->
+
+<!-- UTSJSON.UTSAndroid.registerPrivacyAgreeListener.param -->
+
+<!-- UTSJSON.UTSAndroid.registerPrivacyAgreeListener.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.registerPrivacyAgreeListener.compatibility -->
+
+### unRegisterPrivacyAgreeListener(callbackId)
+
+<!-- UTSJSON.UTSAndroid.unRegisterPrivacyAgreeListener.description -->
+
+<!-- UTSJSON.UTSAndroid.unRegisterPrivacyAgreeListener.param -->
+
+<!-- UTSJSON.UTSAndroid.unRegisterPrivacyAgreeListener.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.unRegisterPrivacyAgreeListener.compatibility -->
 
 <!-- UTSJSON.UTSAndroid.tutorial -->
 
