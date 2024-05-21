@@ -15,9 +15,37 @@
 
 组件还可以封装方法、事件、插槽，提供了组件的生命周期，提供了组件和页面的互通信机制，满足了各种高级需求。
 
+## 组件内容构成 @component-structure
+
+uni-app x 组件基于 vue 单文件组件规范，一个组件内，有 3 个根节点标签：
+
+- `<template>`：组件的模板内容
+- `<script>`：组件的脚本代码
+- `<style>`：组件的样式
+
+### 和页面的区别 @component-page-difference
+
+组件的内容构成和页面大体上一致，但是在组件中，不支持 `onLoad`、`onShow` 等[页面生命周期](../page.md#lifecycle)，而是支持[组件生命周期](#component-lifecycle)
+
 ## 创建及引用组件 @create-and-import-component
 
-### easycom
+### 创建组件 @create-component
+
+#### easycom
+
+1. 在 `项目根目录/components` 目录上右键（如果没有，在根目录新建一个 `components` 目录即可），选择 `新建组件`，输入组件名称，选择一个模板；可勾选创建同名目录，将组件放在同名目录下。
+2. 在 `项目根目录/uni_modules` 目录上右键（如果没有，在根目录新建一个 `uni_modules` 目录即可），选择 `新建uni_modules插件`，输入`插件ID`，分类选择`前端组件-通用组件`；将组件放在和插件ID同名的目录下。
+
+#### 创建自定义组件 @create-custom-component
+
+3. 在项目 `pages 目录` 下的任意地方创建 `.uvue/.vue` 文件并编写组件代码
+
+::: warning 注意事项
+uni-app x 项目支持使用 `.vue`、`.uvue` 文件作为组件使用，但同文件名的两个文件同时存在，`.uvue` 文件会优先编译。
+:::
+
+### 引用组件 @import-component
+#### easycom
 
 传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom` 将其精简为一步。
 
@@ -49,14 +77,14 @@ uni_module有详细的专项文档，请另行查阅[uni_module规范](https://u
 
 如果你的组件不满足easycom标准的目录规范，还有一种办法是在[pages.json](../collocation/pagesjson.md#pages-easycom)里声明自己的目录规则，以便编译器查找到你的组件。自定义easycom路径规则的详细教程[详见](https://uniapp.dcloud.net.cn/collocation/pages.html#easycom)
 
-#### easycom组件的类型规范 @easycom-component-type
+##### easycom组件的类型规范 @easycom-component-type
 
 组件标签名首字母大写，`驼峰+ComponentPublicInstance`，如：
 
 `<test/>` 类型为：TestComponentPublicInstance
 `<uni-data-checkbox/>` 类型为：UniDataCheckboxComponentPublicInstance
 
-### 手动引入组件 @manual-import-component
+#### 手动引入组件 @manual-import-component
 
 不符合 easycom 规范的组件，则需要手动引入：
 
@@ -88,7 +116,7 @@ export default {
 </script>
 ```
 
-#### 手动引入组件的类型规范 @manual-import-component-type
+##### 手动引入组件的类型规范 @manual-import-component-type
 
 类型为：ComponentPublicInstance
 
@@ -320,17 +348,29 @@ Uni`组件名(驼峰)`Element
 
 - 目前uts组件，即封装原生ui给uni-app或uni-app x的页面中使用，类型与内置组件的 Uni`组件名(驼峰)`Element 方式相同。目前没有代码提示。
 
-### 组件监听页面生命周期 @component-page-lifecycle
-
-[示例](#component-lifecycle)
-
-## 组件的生命周期 @component-lifecycle
+### 组件监听应用、页面生命周期 @component-page-lifecycle
 
 > 选项式 API 和 组件式 API 在监听页面生命周期时有所不同
 >
 > 比如选项式 API 中的 `onShow`、`onHide` 监听页面生命周期在组合式 API 中分别对应 `onPageShow`、`onPageHide`（在组合式 API 时会和 App 的生命周期冲突）
 >
 > 具体请查看 [页面生命周期](../page.md#lifecycle)
+
+示例 [详情](<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_lifecycle.page_page-options.webUrl -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-composition.code -->
+
+:::
+
+## 组件的生命周期 @component-lifecycle
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.gitUrl -->)
 
@@ -345,6 +385,8 @@ Uni`组件名(驼峰)`Element
 <!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.code -->
 
 :::
+
+## [全局组件](./global-api.md#app-component)
 
 ## props
 

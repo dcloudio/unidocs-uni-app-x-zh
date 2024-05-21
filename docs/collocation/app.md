@@ -23,42 +23,8 @@
 |onExit|监听应用退出|app-uvue-android 3.9+|
 
 **示例代码**
-```html
-<script lang="uts">
-	// 只能在App.vue里监听应用的生命周期
-	export default {
-		onLaunch: function(options) {
-			console.log('App Launch')
-			console.log('应用启动路径：', options.path)
-		},
-		onShow: function(options) {
-			console.log('App Show')
-			console.log('应用启动路径：', options.path)
-		},
-		onHide: function() {
-			console.log('App Hide')
-		},
-    onLastPageBackPress: function () {
-      console.log('App LastPageBackPress')
-			// 2秒内连按2次back，退出app
-			if (firstBackTime == 0) {
-				uni.showToast({
-					title: '再按一次退出应用',
-					position: 'bottom',
-				})
-				firstBackTime = Date.now()
-				setTimeout(() => {
-					firstBackTime = 0
-				}, 2000)
-			} else if (Date.now() - firstBackTime < 2000) {
-				firstBackTime = Date.now()
-				uni.exit()
-			}
-			// 还有一些应用按1次back直接将应用切到后台，详见https://doc.dcloud.net.cn/uni-app-x/api/exit.html#back
-    }
-	}
-</script>
-```
+
+<!-- VUEJSON.E_App.example.code -->
 
 **注意**
 - **应用生命周期仅可在`App.uvue`中监听，在其它页面监听无效**。
@@ -75,21 +41,21 @@
 
 ```ts
 <script lang="uts">
-  export default {  
-    globalData: {  
+  export default {
+    globalData: {
       str: 'global data str',
       num: 123,
-      bool: true 
+      bool: true
     }
-  }  
-</script>  
+  }
+</script>
 ```
 
 页面或组件中通过 `getApp().globalData` 访问。
 
 ```ts
 <script lang="uts">
-  export default {  
+  export default {
     methods: {
       getGlobalData() {
         const app = getApp()

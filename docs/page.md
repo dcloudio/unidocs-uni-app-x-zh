@@ -111,8 +111,7 @@ uvue页面基于 vue 单文件组件规范。一个页面内，有3个根节点�
 
 <!-- PAGEINSTANCE.lifeCycle.compatibility -->
 
-在 Vue 中，页面也是一种组件，所以也支持[组件生命周期](./vue/options-api.md#page-component-options)。\
-示例代码, [详见](./vue/composition-api.md#page-lifecycle-compatibility)
+在 Vue 中，页面也是一种组件，所以也支持[组件生命周期](./vue/options-api.md#page-component-options)。
 
 ### 页面onLoad生命周期@onload
 
@@ -166,11 +165,21 @@ onShow和onHide是成对出现的。
 
 在组合式API中，组件可以监听应用和页面的生命周期。但由于应用和页面都有onShow和onHide，导致重名。所以在组合式的组件中监听页面的显示隐藏，改为了onPageShow和onPageHide。
 
+### 页面生命周期示例 @lifecycle-example
+
+[详情](<!-- VUEJSON.E_lifecycle.page_page-composition.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_lifecycle.page_page-composition.webUrl -->
+
+<!-- VUEJSON.E_lifecycle.page_page-composition.code -->
+
+:::
+
 ## 页面及组件生命周期流程图 @lifecycleflow
 
 下图展示了一个新页面，从创建开始，包括其中的组件，完整的时序。
 
-![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/uni-app-lifecycle-vue3.jpg)#{.zooming width=1000 margin=auto}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/uni-app-lifecycle-vue3.jpg)#{.zooming width=600 margin=auto}
 
 
 1. uni-app x框架，首先根据pages.json的配置，创建页面
