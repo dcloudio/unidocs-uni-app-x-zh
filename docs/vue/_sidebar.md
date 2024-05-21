@@ -5,6 +5,6 @@
 - [全局 API](./global-api.md)
 - [组合式 API](./composition-api.md)
 - [选项式 API](./options-api.md)
-- [内置内容](./built-in.md)
+- [内置组件指令属性](./built-in.md)
 - [进阶 API](./advanced-api.md)
 - [vue 生态](./others.md)

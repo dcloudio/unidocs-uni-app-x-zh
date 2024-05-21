@@ -25,10 +25,18 @@ uni-app x 组件基于 vue 单文件组件规范，一个组件内，有 3 个�
 
 ### 和页面的区别 @component-page-difference
 
-组件的内容构成和页面大体上一致，但是在组件中，不支持 `onLoad`、`onShow` 等[页面生命周期](../page.md#lifecycle)，而是支持[组件生命周期](#component-lifecycle)
+组件的内容构成和页面大体上一致，都符合vue的sfc规范。
+
+事实上，一个在pages.json注册的页面uvue文件，也可以被当做一个组件引入到其他页面。
+
+组件和页面的差别有：
+1. 组件中不支持页面相关的生命周期和API，比如 `onLoad`、`onShow` 等[页面生命周期](../page.md#lifecycle)，比如$setPageStyle等API。
+2. 组件中有一批组件独有的生命周期和API，比如 `mounted`、`unmounted` 等[组件生命周期](#component-lifecycle)，比如页面和组件通信的API。
+3. 组件文件不需要在pages.json中注册
+
 
 ## 创建及引用组件 @create-and-import-component
-
+<!-- TODO：此处需要重写 -->
 ### 创建组件 @create-component
 
 #### easycom
