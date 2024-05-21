@@ -53,7 +53,7 @@ uni-getSystemInfo-release.aar共17个aar拷贝到uni-app x模块的libs下，如
 		implementation("androidx.core:core-ktx:1.8.0")
 		implementation("androidx.recyclerview:recyclerview:1.0.0")
 		implementation("androidx.appcompat:appcompat:1.0.0")
-		implementation("androidx.exifinterssface:exifinterface:1.3.6")
+		implementation("androidx.exifinterface:exifinterface:1.3.6")
 		implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar")
 		implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 		implementation("com.google.android.material:material:1.4.0")
@@ -71,7 +71,6 @@ uni-getSystemInfo-release.aar共17个aar拷贝到uni-app x模块的libs下，如
 		implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.10")
 		implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
 		implementation("com.squareup.okhttp3:okhttp:3.12.12")
-		implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.10")
 		implementation("com.github.getActivity:XXPermissions:18.0")
 	}
 	```
