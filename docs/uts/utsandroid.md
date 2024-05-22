@@ -713,45 +713,45 @@ export function getJavaClassTest() : boolean {
 console.log(UTSAndroid.getTopPageActivity())
 ```
 
-### registerActivityCallback(callback, pageRoute?)
+### onActivityCallback(callback, pageRoute?)
 
-<!-- UTSJSON.UTSAndroid.registerActivityCallback.description -->
+<!-- UTSJSON.UTSAndroid.onActivityCallback.description -->
 
-<!-- UTSJSON.UTSAndroid.registerActivityCallback.param -->
+<!-- UTSJSON.UTSAndroid.onActivityCallback.param -->
 
-<!-- UTSJSON.UTSAndroid.registerActivityCallback.returnValue -->
+<!-- UTSJSON.UTSAndroid.onActivityCallback.returnValue -->
 
-<!-- UTSJSON.UTSAndroid.registerActivityCallback.compatibility -->
+<!-- UTSJSON.UTSAndroid.onActivityCallback.compatibility -->
 
-### unRegisterActivityCallback(callbackId)
+### offActivityCallback(callback)
 
-<!-- UTSJSON.UTSAndroid.unRegisterActivityCallback.description -->
+<!-- UTSJSON.UTSAndroid.offActivityCallback.description -->
 
-<!-- UTSJSON.UTSAndroid.unRegisterActivityCallback.param -->
+<!-- UTSJSON.UTSAndroid.offActivityCallback.param -->
 
-<!-- UTSJSON.UTSAndroid.unRegisterActivityCallback.returnValue -->
+<!-- UTSJSON.UTSAndroid.offActivityCallback.returnValue -->
 
-<!-- UTSJSON.UTSAndroid.unRegisterActivityCallback.compatibility -->
+<!-- UTSJSON.UTSAndroid.offActivityCallback.compatibility -->
 
-### registerPrivacyAgreeListener(callback)
+### onPrivacyAgreeChange(callback)
 
-<!-- UTSJSON.UTSAndroid.registerPrivacyAgreeListener.description -->
+<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.description -->
 
-<!-- UTSJSON.UTSAndroid.registerPrivacyAgreeListener.param -->
+<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.param -->
 
-<!-- UTSJSON.UTSAndroid.registerPrivacyAgreeListener.returnValue -->
+<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.returnValue -->
 
-<!-- UTSJSON.UTSAndroid.registerPrivacyAgreeListener.compatibility -->
+<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.compatibility -->
 
-### unRegisterPrivacyAgreeListener(callbackId)
+### offPrivacyAgreeChange(callback)
 
-<!-- UTSJSON.UTSAndroid.unRegisterPrivacyAgreeListener.description -->
+<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.description -->
 
-<!-- UTSJSON.UTSAndroid.unRegisterPrivacyAgreeListener.param -->
+<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.param -->
 
-<!-- UTSJSON.UTSAndroid.unRegisterPrivacyAgreeListener.returnValue -->
+<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.returnValue -->
 
-<!-- UTSJSON.UTSAndroid.unRegisterPrivacyAgreeListener.compatibility -->
+<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.compatibility -->
 
 <!-- UTSJSON.UTSAndroid.tutorial -->
 
