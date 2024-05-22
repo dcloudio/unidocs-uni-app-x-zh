@@ -170,13 +170,14 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 
 添加相应的节点，云端打包就会将对应的支付 SDK 打包到最终安装包中。 
 
-- `appid`：微信开放平台申请的应用ID（AppID）
-- `universalLink`：iOS平台通用链接（Universal Link）
-   在iOS平台微信支付使用的通用链接，必须与微信开放平台 “管理中心” > “应用详情” > “开发信息” 中的“Universal Links”项中配置一致，更多详情参考 
-   [通用链接（Universal Link）](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#通用链接-universal-link)
-   [一键生成iOS通用链接](https://uniapp.dcloud.io/api/plugins/universal-links)
-- app-ios平台微信支付需要4.18及以上版本
+- 支付宝支付 
+  app平台无需配置参数，配置`alipay`节点表示应用云端打包包含支付宝SDK  
+- 微信支付  
+  app-android平台无需配置参数，app-ios平台需配置以下参数：  
+  + `appid`：微信开放平台申请的应用ID（AppID）  
+  + `universalLink`：iOS平台的通用链接（Universal Link），通用链接配置参考：[https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#通用链接-universal-link](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5-universal-link)  
+    注意：通用链接必须与微信开放平台 “管理中心” > “应用详情” > “开发信息” 中的“Universal Links”项中配置一致  
 
 
-
+> app-ios平台支付模块需HBuilderX4.18及以上版本   
 
