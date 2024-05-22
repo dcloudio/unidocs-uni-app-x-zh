@@ -10,8 +10,7 @@ DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示
 
 在 App 端，为了减少冲突，目前不支持通过 DOM API 创建和删除 DOM 树中的元素。只支持获取元素UniElement。
 
-> 低版本使用过 INode 对象，从HBuilderX 3.91开始统一为 Element 对象，不再推荐使用 INode  
-> HBuilderX4.0开始统一调整为 UniElement 对象，不再推荐使用 Element 和 INode  
+> HBuilderX4.0 开始DOM元素的类型统一调整为 UniElement 对象。废弃之前 HBuilderX 3.91 的 Element对象 和 HBuilderX 3.91以前的 INode 对象。
 
 
 ## 使用场景
