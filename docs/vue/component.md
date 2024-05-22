@@ -385,6 +385,14 @@ Uni`组件名(驼峰)`Element
 
 ## 组件的生命周期 @component-lifecycle
 
+#### 组件生命周期（选项式 API）兼容性 @component-lifecycle-options-compatibility
+
+<!-- VUEJSON.options_lifecycle.compatibility -->
+
+### 组件生命周期（组合式 API）兼容性 @component-lifecycle-composition-compatibility
+
+<!-- VUEJSON.composition_lifecycle.compatibility -->
+
 示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_lifecycle.component_component-options.webUrl -->
