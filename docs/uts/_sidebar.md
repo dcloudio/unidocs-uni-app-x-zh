@@ -30,6 +30,7 @@
 * 平台专用对象和 API
   * [UTSAndroid](utsandroid.md)
   * [UTSAndroidHookProxy](utsandroidhookproxy.md)
+  * [UTSActivityCallback](utsactivitycallback.md)
   * [UTSiOS](utsios.md)
   * [UTSiOSHookProxy](utsioshookproxy.md)
 * [关键字](keywords.md)
