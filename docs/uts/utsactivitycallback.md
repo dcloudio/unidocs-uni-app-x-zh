@@ -1,6 +1,8 @@
 # UTSActivityCallback
 
-UniActivityCallback,UniActivityComponentCallback,UniActivityKeyEventCallback,UniActivityLifeCycleCallback,UniActivityWindowCallback为IUniActivityCallback的实现类，具体用法参考[示例](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#示例)
+[UniActivityCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityCallback) , [UniActivityComponentCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityComponentCallback) , [UniActivityKeyEventCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityKeyEventCallback) , [UniActivityLifeCycleCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityLifeCycleCallback) , [UniActivityWindowCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityWindowCallback)
+
+为IUniActivityCallback的实现类，具体用法参考[示例](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#示例)
 
 ## UniActivityCallback
 
