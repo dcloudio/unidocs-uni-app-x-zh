@@ -2,11 +2,11 @@
 #### 通过 HBuilderX 可视化界面创建的项目
 选择项目，然后点击：发行 -> 原生App-本地打包 -> 生成本地打包App资源
 
-![](../image/export.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/export.jpg)
 
 导出成功之后会在项目的unpackage/resources目录下生成资源文件
 
-![](../image/resources.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/resources.png)
 
 目录说明：
 - `app-android` 对应的是android原生代码及资源文件

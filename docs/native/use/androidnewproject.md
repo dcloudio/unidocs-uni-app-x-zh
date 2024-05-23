@@ -11,7 +11,7 @@
 
 android studio中新建项目，模板选择`No Activity`。下一步选语言kotlin和Build configuration language，如下图：
 
-![](../image/create_project.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/create_project.jpg)
 
 **注意**
 - `Language` 一定要选择`Kotlin`。
@@ -30,7 +30,7 @@ framework-release.aar，uni-exit-release.aar，uni-getAccessibilityInfo-release.
 uni-getSystemSetting-release.aar，uni-openAppAuthorizeSetting-release.aar，uni-prompt-release.aar，uni-storage-release.aar，uni-getDeviceInfo-release.aar，
 uni-getSystemInfo-release.aar共17个aar拷贝到app模块的libs下，如果没有libs需要手动创建，参考下图：
 
-![](../image/main_libs.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/main_libs.jpg)
 
 ### 修改build.gradle
 
@@ -81,7 +81,7 @@ uni-getSystemInfo-release.aar共17个aar拷贝到app模块的libs下，如果没
 
 - 配置应用版本号
 
-	![](../image/versions.jpg)
+	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/versions.jpg)
 
 	`versionCode`为应用的版本号（整数值），用于各应用市场的升级判断，建议与manifest.json中versionCode值一致
 
@@ -278,7 +278,7 @@ xml文件配置成功之后，修改AndroidManifest.xml中`android:name`为`io.d
 应用图标对应的是uni-app x项目manifest.json中的`app->distribute->icons->android`。你需要根据不同的分辨率将对应的资源拷贝到对应的drawable目录下。
 然后修改AndroidManifest.xml中application节点的`android:icon`属性值为对应图片的名称。如：我将图片命名为`icon.png`，参考下图。
 
-![](../image/set_icon.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/set_icon.jpg)
 
 ### 应用名称配置
 
@@ -288,7 +288,7 @@ xml文件配置成功之后，修改AndroidManifest.xml中`android:name`为`io.d
 1. [导出uni-app x项目的资源文件](../export/export.md)
 2. 将app-android目录下与appid对应的目录拷贝到主项目的`assets/apps`目录下
 	
-	![](../image/app_assets.png)
+	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/app_assets.png)
 	
 	**注意：apps下的appid必须与AndroidManifest.xml的`DCLOUD_UNI_APPID`保持一致。**
 	
@@ -313,7 +313,7 @@ xml文件配置成功之后，修改AndroidManifest.xml中`android:name`为`io.d
 
 点击File->New->New Module...
 
-![](../image/new_modules.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/new_modules.png)
 
 点击左侧`Templates`的`Android Library`。
 

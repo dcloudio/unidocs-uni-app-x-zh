@@ -16,7 +16,7 @@
 
 点击File->New->New Module...
 
-![](../image/new_modules.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/new_modules.png)
 
 点击左侧`Templates`的`Android Library`。
 
@@ -40,7 +40,7 @@ framework-release.aar，uni-exit-release.aar，uni-getAccessibilityInfo-release.
 uni-getSystemSetting-release.aar，uni-openAppAuthorizeSetting-release.aar，uni-prompt-release.aar，uni-storage-release.aar，uni-getDeviceInfo-release.aar，
 uni-getSystemInfo-release.aar共17个aar拷贝到uni-app x模块的libs下，如果没有libs需要手动创建，参考下图：
 
-![](../image/main_libs.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/main_libs.jpg)
 
 ### 修改build.gradle
 
@@ -151,14 +151,14 @@ android.enableJetifier=true
 1. [导出uni-app x项目的资源文件](../export/export.md)
 2. 将app-android目录下与appid对应的目录拷贝到主项目的`assets/apps`目录下
 	
-	![](../image/app_assets.png)
+	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/app_assets.png)
 	
 	**注意：apps下的appid必须与AndroidManifest.xml的`DCLOUD_UNI_APPID`保持一致。**
 	
 ### 拷贝kt文件
 需要将`unkackage/resource/app-android/uniappx/app-android/src/`目录下的所有文件拷贝到项目的`src/main/java`下
 
-![](../image/copykt.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/copykt.png)
 
 注意：不要破坏原有src下的目录结构。
 
@@ -187,7 +187,7 @@ android.enableJetifier=true
 
 点击File->New->New Module...
 
-![](../image/new_modules.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/new_modules.png)
 
 点击左侧`Templates`的`Android Library`。
 

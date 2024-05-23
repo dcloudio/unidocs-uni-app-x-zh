@@ -66,4 +66,4 @@ versionName为应用的版本名称（字符串），在系统应用管理程序
 2. 将`android_debug.apk`拷贝到uni-app x项目的unpackage/debug目录下
 3. 点击 运行按钮->运行到Android App基座，勾选`使用自定义基座运行`
 
-	![](../image/debug_hx.png)
+	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/debug_hx.png)
