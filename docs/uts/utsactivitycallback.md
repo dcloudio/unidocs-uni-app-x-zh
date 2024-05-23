@@ -1,5 +1,9 @@
 # UTSActivityCallback
 
+UniActivityCallback,UniActivityComponentCallback,UniActivityKeyEventCallback,UniActivityLifeCycleCallback,UniActivityWindowCallback为IUniActivityCallback的实现
+
+类，具体用法参考示例
+
 ## UniActivityCallback
 
 
@@ -1085,3 +1089,270 @@
 <!-- UTSJSON.UniActivityWindowCallback.dispatchPreKeyEvent.compatibility -->
 
 <!-- UTSJSON.UniActivityWindowCallback.dispatchPreKeyEvent.tutorial -->
+
+## 示例
+
+uvue代码
+
+```vue
+  <template>
+  <!-- #ifdef APP-ANDROID -->
+  <scroll-view style="flex: 1">
+    <view>
+      <view class="uni-padding-wrap uni-common-mt">
+        <view class="text-box" scroll-y="true">
+          <text>{{ text }}</text>
+        </view>
+      </view>
+      <button @tap="activityCallback">注册activity 回调方法</button>
+      <view class="uni-padding-wrap uni-common-mt">
+        <view class="uni-hello-text">
+          点击注册activity 回调方法后，可以手动切换其他APP再返回，可在控制台和界面观察事件日志
+        </view>
+      </view>
+      <view class="uni-padding-wrap uni-common-mt">
+        <view class="text-box" scroll-y="true">
+          <text>{{ cbText }}</text>
+        </view>
+      </view>
+      <button @tap="unRegActivityCallback">取消注册activity 回调方法</button>
+    </view>
+  </scroll-view>
+  <!-- #endif -->
+</template>
+
+<script>
+  // #ifdef APP-ANDROID
+  import {
+    UTSAcvitiyLifeCycleCallback,
+    UTSAcvitiyKeyEventCallback,
+    UTSActivityWindowCallback,
+    UTSActivityCallback,
+    UTSActivityComponentCallback,
+    onCallbackChange
+  } from '@/uni_modules/uts-syntaxcase'
+  // #endif
+
+
+  import File from 'java.io.File';
+  import Intent from 'android.content.Intent';
+
+
+  export default {
+    data() {
+      return {
+        text: '',
+        callback: [] as Any[]
+      }
+    },
+    unmounted() {
+      // #ifdef APP-ANDROID
+      this.unRegActivityCallback()
+      // #endif
+
+    },
+    methods: {
+      // #ifdef APP-ANDROID
+      // #ifdef UNI-APP-X
+      activityCallback() {
+        var that = this
+        onCallbackChange(function (eventLog : string) {
+          // 展示捕捉到的声明周期日志
+          let nextLine = that.cbText + eventLog
+          that.cbText = nextLine
+          let nextLineFlag = that.cbText + '\n'
+          that.cbText = nextLineFlag
+        })
+        let index = getCurrentPages().length - 1
+        let page = getCurrentPages()[index]
+        console.log('page route=' + page.route)
+        this.callback.push(new UTSAcvitiyLifeCycleCallback())
+        this.callback.push(new UTSActivityWindowCallback())
+        this.callback.push(new UTSAcvitiyKeyEventCallback())
+        this.callback.push(new UTSActivityCallback(), page.route)
+        this.callback.push(new UTSActivityComponentCallback())
+        this.callback.forEach((value) => {
+          if (value instanceof UTSAcvitiyLifeCycleCallback) {
+            UTSAndroid.onActivityCallback(value,page.route)
+          }
+          if (value instanceof UTSActivityWindowCallback) {
+            UTSAndroid.onActivityCallback(value)
+          }
+          if (value instanceof UTSAcvitiyKeyEventCallback) {
+            UTSAndroid.onActivityCallback(value)
+          }
+          if (value instanceof UTSActivityCallback) {
+            UTSAndroid.onActivityCallback(value)
+          }
+          if (value instanceof UTSActivityComponentCallback) {
+            UTSAndroid.onActivityCallback(value)
+          }
+
+        })
+      },
+      unRegActivityCallback() {
+        this.callback.forEach((value) => {
+
+          if (value instanceof UTSAcvitiyLifeCycleCallback) {
+            UTSAndroid.offActivityCallback(value)
+          }
+          if (value instanceof UTSActivityWindowCallback) {
+            UTSAndroid.offActivityCallback(value)
+          }
+          if (value instanceof UTSAcvitiyKeyEventCallback) {
+            UTSAndroid.offActivityCallback(value)
+          }
+          if (value instanceof UTSActivityCallback) {
+            UTSAndroid.offActivityCallback(value)
+          }
+          if (value instanceof UTSActivityComponentCallback) {
+            UTSAndroid.offActivityCallback(value)
+          }
+        })
+      }
+      // #endif
+      // #endif
+    },
+  }
+</script>
+```
+uts代码
+
+```ts
+let callback : (eventLog : string) => void = (res) => { };
+
+export function onCallbackChange(fn : (eventLog : string) => void) {
+  callback = fn
+}
+
+export class UTSAcvitiyLifeCycleCallback extends UniActivityLifeCycleCallback {
+  constructor() {
+    super()
+  }
+  override onCreate(params : UniActivityParams, savedInstanceState : Bundle | null) {
+    console.log('UTSAcvitiyLifeCycle', 'onCreate', savedInstanceState)
+    callback('onCreate')
+  }
+
+  override onResume(params : UniActivityParams) {
+    console.log('UTSAcvitiyLifeCycle', 'onResume', params)
+    callback('onResume')
+  }
+  override onPreResume(params : UniActivityParams) {
+    console.log('UTSAcvitiyLifeCycle', 'onPreResume', params)
+    callback('onPreResume')
+  }
+  override onStart(params : UniActivityParams) {
+    console.log('UTSAcvitiyLifeCycle', 'onStart', params)
+    callback('onStart')
+  }
+  override onPreStart(params : UniActivityParams) {
+    console.log('UTSAcvitiyLifeCycle', 'onPreStart', params)
+    callback('onPreStart')
+  }
+}
+export class UTSAcvitiyKeyEventCallback extends UniActivityKeyEventCallback {
+  constructor() {
+    super()
+  }
+  override onKeyDown(params : UniActivityParams, keyCode : Int, event : KeyEvent | null) {
+    console.log('UTSAcvitiyKeyEvent', 'onKeyDown', params, keyCode, '' + event)
+    callback('onKeyDown')
+  }
+  override onPreKeyDown(params : UniActivityParams, keyCode : Int, event : KeyEvent | null) {
+    console.log('UTSAcvitiyKeyEvent', 'onPreKeyDown', params, keyCode, '' + event)
+    callback('onPreKeyDown')
+  }
+  override onKeyLongPress(params : UniActivityParams, keyCode : Int, event : KeyEvent | null) {
+    console.log('UTSAcvitiyKeyEvent', 'onKeyLongPress', params, keyCode, '' + event)
+    callback('onKeyLongPress')
+  }
+  override onPreKeyLongPress(params : UniActivityParams, keyCode : Int, event : KeyEvent | null) {
+    console.log('UTSAcvitiyKeyEvent', 'onPreKeyLongPress', params, keyCode, '' + event)
+    callback('onPreKeyLongPress')
+  }
+}
+
+export class UTSActivityWindowCallback extends UniActivityWindowCallback {
+  constructor() {
+    super()
+  }
+  override dispatchPreKeyEvent(params : UniActivityParams, event : KeyEvent | null) {
+    console.log('UTSActivityWindowCallback', 'dispatchPreKeyEvent', params, '' + event)
+    callback('dispatchPreKeyEvent')
+  }
+  override dispatchKeyEvent(params : UniActivityParams, event : KeyEvent | null) {
+    console.log('UTSActivityWindowCallback', 'dispatchKeyEvent', params, '' + event)
+    callback('dispatchKeyEvent')
+  }
+  override  onWindowAttributesChanged(params : UniActivityParams, attrs : WindowManager.LayoutParams) {
+    console.log('UTSActivityWindowCallback', 'onWindowAttributesChanged', '' + attrs)
+    callback('onWindowAttributesChanged')
+
+  }
+  override onAttachedToWindow(params : UniActivityParams) {
+    console.log('UTSActivityWindowCallback', 'onAttachedToWindow', params)
+    callback('onAttachedToWindow')
+
+  }
+  override onPanelClosed(params : UniActivityParams, featureId : Int, menu : Menu) {
+    console.log('UTSActivityWindowCallback', 'onPanelClosed', featureId, menu)
+    callback('onPanelClosed')
+
+  }
+  override onWindowStartingActionMode(params : UniActivityParams, callback : ActionMode.Callback | null) {
+    console.log('UTSActivityWindowCallback', 'onWindowStartingActionMode', callback)
+    callback('onWindowStartingActionMode')
+  }
+  override onProvideKeyboardShortcuts(params : UniActivityParams, data : MutableList<KeyboardShortcutGroup> | null, menu : Menu | null, deviceId : Int) {
+    console.log('UTSActivityWindowCallback', 'onProvideKeyboardShortcuts', data, menu)
+    callback('onProvideKeyboardShortcuts')
+  }
+  override  onPreWindowAttributesChanged(params : UniActivityParams, attrs : WindowManager.LayoutParams) {
+    console.log('UTSActivityWindowCallback', 'onPreWindowAttributesChanged', attrs)
+    callback('onPreWindowAttributesChanged')
+  }
+  override  onPrePanelClosed(params : UniActivityParams, featureId : Int, menu : Menu) {
+    console.log('UTSActivityWindowCallback', 'onPrePanelClosed', featureId, menu)
+    callback('onPrePanelClosed')
+  }
+}
+
+export class UTSActivityCallback extends UniActivityCallback {
+  constructor() {
+    super()
+  }
+  override onBackPressed(params : UniActivityParams) {
+    console.log('UTSActivityCallback', 'onBackPressed', params)
+    callback('onBackPressed')
+  }
+  override onPreBackPressed(params : UniActivityParams) {
+    console.log('UTSActivityCallback', 'onPreBackPressed', params)
+    callback('onPreBackPressed')
+  }
+
+  override onRequestPermissionsResult(params : UniActivityParams, requestCode : Int, permissions : MutableList<String>, grantResults : IntArray) {
+    console.log('UTSActivityCallback', 'onRequestPermissionsResult', params)
+    callback('onRequestPermissionsResult')
+  }
+
+}
+
+export class UTSActivityComponentCallback extends UniActivityComponentCallback {
+  constructor() {
+    super()
+  }
+  override onConfigurationChanged(params : UniActivityParams, newConfig : Configuration) {
+    console.log('UTSActivityComponentCallback', 'onConfigurationChanged', params, '' + newConfig)
+    callback('onConfigurationChanged')
+  }
+  override onPreConfigurationChanged(params : UniActivityParams, newConfig : Configuration) {
+    console.log('UTSActivityComponentCallback', 'onPreConfigurationChanged', params, '' + newConfig)
+    callback('onPreConfigurationChanged')
+  }
+}
+```
+
+
+
+
