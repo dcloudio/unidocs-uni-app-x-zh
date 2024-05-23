@@ -23,6 +23,7 @@
   * [交互反馈](prompt.md)
   * [动态加载字体](load-font-face.md)
   * [rpx2px](rpx2px.md)
+  <!-- * [主题](theme.md) -->
 * 网络
   * [发起请求request](request.md)
   * [上传文件](upload-file.md)
