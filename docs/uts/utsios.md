@@ -195,4 +195,73 @@ app-iOS平台专有内置对象。在uni-app和uni-app x的uts环境中均可使
 
 <!-- UTSJSON.UTSiOS.isBaseIpa.compatibility -->
 
+### getOsTheme()
+
+<!-- UTSJSON.UTSiOS.getOsTheme.description -->
+
+<!-- UTSJSON.UTSiOS.getOsTheme.param -->
+
+<!-- UTSJSON.UTSiOS.getOsTheme.returnValue -->
+
+<!-- UTSJSON.UTSiOS.getOsTheme.compatibility -->
+
+### onOsThemeChange(callback)
+
+<!-- UTSJSON.UTSiOS.onOsThemeChange.description -->
+
+<!-- UTSJSON.UTSiOS.onOsThemeChange.param -->
+
+<!-- UTSJSON.UTSiOS.onOsThemeChange.returnValue -->
+
+<!-- UTSJSON.UTSiOS.onOsThemeChange.compatibility -->
+
+### offOsThemeChange(callbackId)
+
+<!-- UTSJSON.UTSiOS.offOsThemeChange.description -->
+
+<!-- UTSJSON.UTSiOS.offOsThemeChange.param -->
+
+<!-- UTSJSON.UTSiOS.offOsThemeChange.returnValue -->
+
+<!-- UTSJSON.UTSiOS.offOsThemeChange.compatibility -->
+
+### getAppTheme()
+
+<!-- UTSJSON.UTSiOS.getAppTheme.description -->
+
+<!-- UTSJSON.UTSiOS.getAppTheme.param -->
+
+<!-- UTSJSON.UTSiOS.getAppTheme.returnValue -->
+
+<!-- UTSJSON.UTSiOS.getAppTheme.compatibility -->
+
+### setAppTheme(theme)
+
+<!-- UTSJSON.UTSiOS.setAppTheme.description -->
+
+<!-- UTSJSON.UTSiOS.setAppTheme.param -->
+
+<!-- UTSJSON.UTSiOS.setAppTheme.returnValue -->
+
+<!-- UTSJSON.UTSiOS.setAppTheme.compatibility -->
+
+### onAppThemeChange(callback)
+
+<!-- UTSJSON.UTSiOS.onAppThemeChange.description -->
+
+<!-- UTSJSON.UTSiOS.onAppThemeChange.param -->
+
+<!-- UTSJSON.UTSiOS.onAppThemeChange.returnValue -->
+
+<!-- UTSJSON.UTSiOS.onAppThemeChange.compatibility -->
+
+### offAppThemeChange(callbackId)
+
+<!-- UTSJSON.UTSiOS.offAppThemeChange.description -->
+
+<!-- UTSJSON.UTSiOS.offAppThemeChange.param -->
+
+<!-- UTSJSON.UTSiOS.offAppThemeChange.returnValue -->
+
+<!-- UTSJSON.UTSiOS.offAppThemeChange.compatibility -->
 <!-- UTSJSON.UTSiOS.tutorial -->
