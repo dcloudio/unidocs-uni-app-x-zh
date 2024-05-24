@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.setAppTheme.description -->
 
+<!-- UTSAPIJSON.setAppTheme.compatibility -->
+
 <!-- UTSAPIJSON.setAppTheme.param -->
 
 <!-- UTSAPIJSON.setAppTheme.returnValue -->
-
-<!-- UTSAPIJSON.setAppTheme.compatibility -->
 
 <!-- UTSAPIJSON.setAppTheme.tutorial -->
 
@@ -14,11 +14,11 @@
 
 <!-- UTSAPIJSON.onOsThemeChange.description -->
 
+<!-- UTSAPIJSON.onOsThemeChange.compatibility -->
+
 <!-- UTSAPIJSON.onOsThemeChange.param -->
 
 <!-- UTSAPIJSON.onOsThemeChange.returnValue -->
-
-<!-- UTSAPIJSON.onOsThemeChange.compatibility -->
 
 <!-- UTSAPIJSON.onOsThemeChange.tutorial -->
 
@@ -26,11 +26,11 @@
 
 <!-- UTSAPIJSON.offOsThemeChange.description -->
 
+<!-- UTSAPIJSON.offOsThemeChange.compatibility -->
+
 <!-- UTSAPIJSON.offOsThemeChange.param -->
 
 <!-- UTSAPIJSON.offOsThemeChange.returnValue -->
-
-<!-- UTSAPIJSON.offOsThemeChange.compatibility -->
 
 <!-- UTSAPIJSON.offOsThemeChange.tutorial -->
 
@@ -38,11 +38,11 @@
 
 <!-- UTSAPIJSON.onAppThemeChange.description -->
 
+<!-- UTSAPIJSON.onAppThemeChange.compatibility -->
+
 <!-- UTSAPIJSON.onAppThemeChange.param -->
 
 <!-- UTSAPIJSON.onAppThemeChange.returnValue -->
-
-<!-- UTSAPIJSON.onAppThemeChange.compatibility -->
 
 <!-- UTSAPIJSON.onAppThemeChange.tutorial -->
 
@@ -50,11 +50,11 @@
 
 <!-- UTSAPIJSON.offAppThemeChange.description -->
 
+<!-- UTSAPIJSON.offAppThemeChange.compatibility -->
+
 <!-- UTSAPIJSON.offAppThemeChange.param -->
 
 <!-- UTSAPIJSON.offAppThemeChange.returnValue -->
-
-<!-- UTSAPIJSON.offAppThemeChange.compatibility -->
 
 <!-- UTSAPIJSON.offAppThemeChange.tutorial -->
 
