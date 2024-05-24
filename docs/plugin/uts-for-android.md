@@ -981,15 +981,12 @@ user.setListener(Listener(){
 });
 ```
 
-目前版本UTS还不支持匿名内部类，需要显性的声明再新建
+在UTS中这样使用：
 
 ```ts
-// 声明一个新的类，实现Listener
-class MyListener extends Listener{
-	// todo
-}
-// 新建实例
-let myListener = new MyListener();
+const myListener = new (class implements Listener {
+	//todo
+})
 user.setListener(myListener);
 ```
 
@@ -1255,8 +1252,6 @@ open class User : Person, android.view.View.OnClickListener, Cloneable {
 ```
 
 其中需要注意的是
-
-+ 目前暂不支持匿名声明，需要先定义一个 StartBroadcastListener 声明实现 OnClickListener 后再显性的创建
 
 ### UTS 如何访问静态实例方法
 
