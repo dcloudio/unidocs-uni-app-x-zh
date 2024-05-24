@@ -80,7 +80,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
   依赖的模块：无  
 
 - uni-verify  
-  [App一键登陆](../api/get-univerify-manager.md)模块（`HBuilderX3.99+`），包括API：[uni.getUniverifyManager](../api/get-univerify-manager.md#getuniverifymanager)、[UniverifyManager.preLogin](../api/get-univerify-manager.md#prelogin)、[UniverifyManager.login](../api/get-univerify-manager.md#login)  
+  [App一键登录](../api/get-univerify-manager.md)模块（`HBuilderX3.99+`），包括API：[uni.getUniverifyManager](../api/get-univerify-manager.md#getuniverifymanager)、[UniverifyManager.preLogin](../api/get-univerify-manager.md#prelogin)、[UniverifyManager.login](../api/get-univerify-manager.md#login)  
   依赖的模块：无  
 - uni-payment  
   uni-payment请求支付模块，包括API：[uni.requestPayment](../api/request-payment.md) <br>
