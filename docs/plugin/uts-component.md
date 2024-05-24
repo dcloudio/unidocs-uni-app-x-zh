@@ -1245,8 +1245,9 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 > Android
 
 ```ts
+
 <template>
-    <view>
+    <view class="defaultStyles">
 
     </view>
 </template>
@@ -1257,7 +1258,6 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
     import LottieAnimationView from 'com.airbnb.lottie.LottieAnimationView'
     import LottieDrawable from 'com.airbnb.lottie.LottieDrawable'
 	import FileInputStream from 'java.io.FileInputStream'
-	import { UTSAndroid } from "io.dcloud.uts";
 
     class CustomAnimListener extends Animator.AnimatorListener {
 
@@ -1267,20 +1267,20 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
                 this.comp = com
             }
 
-        override onAnimationStart(animation: Animator | null) {}
+        override onAnimationStart(animation: Animator) {}
 
-        override onAnimationEnd(animation: Animator | null, isReverse: Boolean) {
+        override onAnimationEnd(animation: Animator, isReverse: Boolean) {
             this.comp.$emit("bindended")
         }
 
-        override onAnimationEnd(animation: Animator | null) {}
+        override onAnimationEnd(animation: Animator) {}
 
-        override onAnimationCancel(animation: Animator | null) {}
+        override onAnimationCancel(animation: Animator) {}
 
-        override onAnimationRepeat(animation: Animator | null) {}
+        override onAnimationRepeat(animation: Animator) {}
     }
 
-    //原生提供以下属性或方法的实现
+    //原生提供以下属性或方法的实现  
     export default {
         name: "uts-animation-view",
         /**
@@ -1296,14 +1296,14 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
                 default: ""
             },
             /**
-             * 动画是否循环播放
+             * 动画是否自动播放
              */
             "autoplay": {
                 type: Boolean,
                 default: false
             },
             /**
-             * 动画是否自动播放
+			 * 动画是否循环播放
              */
             "loop": {
                 type: Boolean,
@@ -1334,18 +1334,20 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
             "path": {
                 handler(newPath: string) {
 
-
 					if(this.$el != null){
 						let lottieAnimationView = this.$el!
 						if (!TextUtils.isEmpty(newPath)) {
-
-
+							
 						    if (newPath.startsWith("http://") || newPath.startsWith("https://")) {
 						        lottieAnimationView.setAnimationFromUrl(newPath)
 						    } else {
-						        // 默认是static了
-								var realJsonPath = UTSAndroid.getResourcePath(newPath)
-						        lottieAnimationView.setAnimation(new FileInputStream(realJsonPath),newPath)
+                    // 正式打包会放在asset中，需要特殊处理
+                    let realJsonPath = UTSAndroid.getResourcePath(newPath)
+                    if(realJsonPath.startsWith("/android_asset")){
+                      lottieAnimationView.setAnimation(realJsonPath.substring(15))
+                    }else{
+                      lottieAnimationView.setAnimation(new FileInputStream(realJsonPath),newPath)
+                    }
 						    }
 						}
 						if (this.autoplay) {
@@ -1353,7 +1355,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						}
 					}
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false
+                immediate: false
             },
             "loop": {
                 handler(newLoop: Boolean) {
@@ -1364,14 +1366,14 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						    // 不循环则设置成1次
 						    this.$el!.repeatCount = 0
 						}
-
+						
 						if (this.autoplay) {
 						    this.$el!.playAnimation()
 						}
 					}
-
+                    
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false
+                immediate: false
             },
 
             "autoplay": {
@@ -1381,9 +1383,9 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						    this.$el!.playAnimation()
 						}
 					}
-
+                    
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false
+                immediate: false
             },
 
             "action": {
@@ -1402,12 +1404,11 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 							}
 						}
 
-
                     } else {
                         // 非法入参，不管
                     }
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false
+                immediate: false
             },
 
             "hidden": {
@@ -1420,7 +1421,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 						}
 					}
                 },
-                immediate: false //创建时是否通过此方法更新属性，默认值为false
+                immediate: false
             },
 
         },
@@ -1434,48 +1435,32 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 					}
 				}
             },
-            privateMethod() { //如何定义不对外暴露的API？ 暂不支持，需在export外写
-            }
         },
-        created() { //创建组件，替换created
-
-        },
-        NVBeforeLoad() { //组件将要创建，对应前端beforeMount
-            //可选实现，这里可以提前做一些操作
-        },
-        NVLoad(): LottieAnimationView { //创建原生View，必须定义返回值类型（Android需要明确知道View类型，需特殊校验）
-            //必须实现
+        
+        NVLoad(): LottieAnimationView { 
             let lottieAnimationView = new LottieAnimationView($androidContext)
             return lottieAnimationView
         },
-
-        NVLoaded() { //原生View已创建
-			//可选实现，这里可以做后续操作
+		
+        NVLoaded() { 
 			if(this.$el != null){
 				this.$el!.repeatMode = LottieDrawable.RESTART;
 				this.$el!.visibility = View.GONE
 				this.$el!.repeatCount = 0
 				this.$el!.addAnimatorListener(new CustomAnimListener(this))
 			}
-
-        },
-        NVLayouted() { //原生View布局完成
-            //可选实现，这里可以做布局后续操作
-        },
-        NVBeforeUnload() { //原生View将释放
-            //可选实现，这里可以做释放View之前的操作
-        },
-        NVUnloaded() { //原生View已释放
-            //可选实现，这里可以做释放View之后的操作
-        },
-        unmounted() { //组件销毁
-            //可选实现
         }
+        
     }
 </script>
 <style>
-
+    /* 定义默认样式值, 组件使用者没有配置时使用 */
+    .defaultStyles {
+        width: 750rpx;
+        height: 240rpx;
+    }
 </style>
+
 
 ```
 
