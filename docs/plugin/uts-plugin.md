@@ -1467,25 +1467,13 @@ let longVal =  1000.0.toLong()
 
 
 ### 匿名内部类
-
-UTS目前还不支持匿名内部类的写法，在android中类似这样的场景
-
-```kotlin
-getUniActivity()!!.runOnUiThread(Runnable(){
-    // do something
-});
-```
-
-需要声明一个实现类，再新建实例的方式实现，代码如下
-
 ```js
-class AddUIRunnable extends Runnable {
-    override run():void {
-		// do something
-    }
-};
-let uiRunable = new AddUIRunnable();
-getUniActivity()!.runOnUiThread(uiRunable)
+const runnable = new (class implements Runnable {
+	override run() {
+		
+	}
+})
+getUniActivity()!.runOnUiThread(runnable)
 ```
 
 ### 泛型参数
