@@ -102,15 +102,15 @@
 
 预编译的模板，例如单文件组件中的模板，会在构建时被编译为 `render` 选项。如果一个组件中同时存在 `render` 和 `template，则` `render` 将具有更高的优先级。
 
-示例 [详情](<!-- VUEJSON.E_render-function.render_render-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_render-function.render_render-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_render-function.render_render-options.webUrl -->
-
-> 选项式 API
-<!-- VUEJSON.E_render-function.render_render-options.code -->
+::: preview <!-- VUEJSON.E_render-function.render_render-composition.webUrl -->
 
 > 组合式 API
 <!-- VUEJSON.E_render-function.render_render-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.render_render-options.code -->
 :::
 
 #### slots
@@ -261,17 +261,17 @@
 - 在 Vue 开发者工具中的组件树显示时
 - 在组件抛出的警告追踪栈信息中显示时
 
-示例 [详情](<!-- VUEJSON.E_component-instance.circular-reference_circular-reference-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.circular-reference_circular-reference-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.circular-reference_circular-reference-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.circular-reference_circular-reference-options.code -->
+::: preview <!-- VUEJSON.E_component-instance.circular-reference_circular-reference-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.circular-reference_circular-reference-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.circular-reference_circular-reference-options.code -->
 
 :::
 
@@ -299,17 +299,17 @@
 
 一个对象，用于注册对当前组件实例可用的组件。
 
-示例 [详情](<!-- VUEJSON.E_component-instance.attrs_attrs-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.attrs_attrs-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.attrs_attrs-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.attrs_attrs-options.code -->
+::: preview <!-- VUEJSON.E_component-instance.attrs_attrs-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.attrs_attrs-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.attrs_attrs-options.code -->
 
 :::
 

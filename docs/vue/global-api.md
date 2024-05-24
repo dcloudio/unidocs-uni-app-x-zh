@@ -37,15 +37,15 @@ export function createApp() {
 
 支持传递插件参数，当传递插件参数时，`app` 的类型需要指定为 `VueApp`。
 
-示例 [详情](<!-- VUEJSON.E_app-instance.use_use-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_app-instance.use_use-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_app-instance.use_use-options.webUrl -->
-
-> 选项式 API
-<!-- VUEJSON.E_app-instance.use_use-options.code -->
+::: preview <!-- VUEJSON.E_app-instance.use_use-composition.webUrl -->
 
 > 组合式 API
 <!-- VUEJSON.E_app-instance.use_use-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_app-instance.use_use-options.code -->
 :::
 
 ### app.config.globalProperties
@@ -57,15 +57,15 @@ export function createApp() {
 `globalProperties` 在编译时处理，因此确保你的操作在编译时是可知的。例如，将变量赋值给 `globalProperties` 时，这个变量在编译时必须是已知的，而不能是在运行时才能确定的变量。
 件参数，当传递插件参数时，`app` 的类型需要指定为 `VueApp`。
 
-示例 [详情](<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.webUrl -->
-
-> 选项式 API
-<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.code -->
+::: preview <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-composition.webUrl -->
 
 > 组合式 API
 <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.code -->
 :::
 
 ## 应用生命周期 @app-lifecycle

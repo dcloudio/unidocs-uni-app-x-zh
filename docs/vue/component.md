@@ -140,54 +140,54 @@ export default {
 
 #### 向组件传递 `props` @transfer-component-props
 
-示例 [详情](<!-- VUEJSON.E_component-instance.props_props-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.props_props-composition.gitUrl -->)
 
 ::: warning 注意
 - 选项式 API：`this.$props` 是 `Map` 类型，需要使用 `this.$props["propName"]` 来访问
 - 组合式 API：可以使用 `.` 点操作符来访问
 :::
 
-::: preview <!-- VUEJSON.E_component-instance.props_props-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.props_props-options.code -->
+::: preview <!-- VUEJSON.E_component-instance.props_props-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.props_props-composition.code -->
 
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.props_props-options.code -->
+
 :::
 
 #### 向组件传递回调函数 @transfer-component-method
 
-示例 [详情](<!-- VUEJSON.E_component-instance.emit-function_emit-function-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.emit-function_emit-function-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.emit-function_emit-function-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.emit-function_emit-function-options.code -->
+::: preview <!-- VUEJSON.E_component-instance.emit-function_emit-function-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.emit-function_emit-function-composition.code -->
 
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.emit-function_emit-function-options.code -->
+
 :::
 
 #### 使用 `provide/inject` 来向下传递参数 @provide-inject
 
-示例 [详情](<!-- VUEJSON.E_component-instance.provide_provide-options-1.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.provide_provide-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.provide_provide-options-1.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.provide_provide-options-1.code -->
+::: preview <!-- VUEJSON.E_component-instance.provide_provide-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.provide_provide-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.provide_provide-options-1.code -->
 
 :::
 
@@ -195,17 +195,17 @@ export default {
 
 > store/index.uts [文件详情](https://gitcode.net/dcloud/hello-uvue/-/blob/alpha/store/index.uts)
 
-示例 [详情](<!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-options.code -->
+::: preview <!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-options.code -->
 
 :::
 
@@ -220,17 +220,17 @@ app.config.globalProperties.globalPropertiesReactiveObj = reactive({
 } as UTSJSONObject)
 ```
 
-示例 [详情](<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.code -->
+::: preview <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.code -->
 
 :::
 
@@ -251,17 +251,17 @@ easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取�
 
 ```(this.$refs['组件ref属性值'] as 驼峰ComponentPublicInstance)?.foo?.();```
 
-示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-easycom-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.code -->
+::: preview <!-- VUEJSON.E_component-instance.methods_call-method-easycom-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.methods_call-method-easycom-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.code -->
 
 :::
 
@@ -271,17 +271,17 @@ easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取�
 
 > 在调用组件方法的时候如报错 `error: Reference has a nullable type` 则需要使用 `?.` 操作符（如：a?.b?.()）。
 
-示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.code -->
+::: preview <!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.code -->
 
 :::
 
@@ -301,17 +301,17 @@ callMethod可用于所有自定义组件，包括easycom组件也可以使用，
 
 ComponentPublicInstance
 
-示例 [详情](<!-- VUEJSON.E_component-instance.parent_parent-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.parent_parent-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.parent_parent-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.parent_parent-options.code -->
+::: preview <!-- VUEJSON.E_component-instance.parent_parent-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.parent_parent-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.parent_parent-options.code -->
 
 :::
 
@@ -338,17 +338,17 @@ Uni`组件名(驼峰)`Element
 `<picker-view>`: UniPickerViewElement
 
 
-示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-uni-element-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.methods_call-method-uni-element-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.methods_call-method-uni-element-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.methods_call-method-uni-element-options.code -->
+::: preview <!-- VUEJSON.E_component-instance.methods_call-method-uni-element-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.methods_call-method-uni-element-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.methods_call-method-uni-element-options.code -->
 
 :::
 
@@ -369,17 +369,17 @@ Uni`组件名(驼峰)`Element
 2. onPageHide、onPageShow 需要写在 setup 函数或者 `<script setup>` 中才能生效
 :::
 
-示例 [详情](<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_lifecycle.page_page-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.code -->
+::: preview <!-- VUEJSON.E_lifecycle.page_page-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.code -->
 
 :::
 
@@ -395,15 +395,15 @@ Uni`组件名(驼峰)`Element
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_lifecycle.component_component-options.webUrl -->
-
-> 选项式 API
-
-<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.code -->
+::: preview <!-- VUEJSON.E_lifecycle.component_component-composition.webUrl -->
 
 > 组合式 API
 
 <!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.code -->
 
 :::
 
@@ -418,16 +418,16 @@ Uni`组件名(驼峰)`Element
 - 复杂数据类型需要通过 `PropType` 标记类型，[详见](https://cn.vuejs.org/guide/typescript/options-api.html#typing-component-props)。
 - `type` 不支持使用自定义的构造函数。
 
-示例 [详情](<!-- VUEJSON.E_component-instance.props_props-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.props_props-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.props_props-options.webUrl -->
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.props_props-options.code -->
-
+::: preview <!-- VUEJSON.E_component-instance.props_props-composition.webUrl -->
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.props_props-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.props_props-options.code -->
 
 :::
 
@@ -441,9 +441,9 @@ Uni`组件名(驼峰)`Element
 - 在 `v-for` 循环时，绑定 `ref` 属性会获取到节点或组件实例的集合。
 - 在 `uni-app x` 中，要访问 `$refs` 中的属性，需要使用索引方式。
 
-示例 [详情](<!-- VUEJSON.E_component-instance.refs_refs-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_component-instance.refs_refs-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.refs_refs-options.webUrl -->
+::: preview <!-- VUEJSON.E_component-instance.refs_refs-composition.webUrl -->
 > uni-app x（选项式）
 
 <!-- VUEJSON.E_component-instance.refs_refs-options.code -->
@@ -521,17 +521,17 @@ Uni`组件名(驼峰)`Element
 
 ## 作用域插槽的类型 @scoped-slot-type
 
-示例 [详情](<!-- VUEJSON.E_built-in.special-elements_slots_child-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_built-in.special-elements_slots_child-composition.gitUrl -->)
 
 作用域插槽需在组件中指定插槽数据类型
-::: preview <!-- VUEJSON.E_built-in.special-elements_slots_child-options.webUrl -->
-> 选项式 API
-
-<!-- VUEJSON.E_built-in.special-elements_slots_child-options.code -->
-
+::: preview <!-- VUEJSON.E_built-in.special-elements_slots_child-composition.webUrl -->
 > 组合式 API
 
 <!-- VUEJSON.E_built-in.special-elements_slots_child-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_built-in.special-elements_slots_child-options.code -->
 
 :::
 
