@@ -91,7 +91,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
    })
 ```
 
-- app需要在根目录manifest.json文件中配置`uni-payment`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment)
+- **app需要在根目录manifest.json文件中配置`uni-payment`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment)**
 - app-android平台微信支付需要4.11及以上版本
 - app-ios平台微信支付需要4.18及以上版本
 
