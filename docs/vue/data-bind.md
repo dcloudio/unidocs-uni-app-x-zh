@@ -71,7 +71,7 @@ const counter = ref({ count: 0 } as Counter) // 而不是 ref<Counter>({count: 0
 - 通过ref定义了3个响应式变量：count1、count2、counter（注意是小写），并赋值了初始值。
 - 在模板template中通过`{{}}`的方式绑定和显示在text组件的内容区中。即右边预览区显示的3行内容，显示了3个响应式变量的初始值。
 - 点击按钮“increment”，触发`increment()`，在这个方法里通过`.value`属性给响应式变量自增。然后界面上3行内容会被自动更新为新值。
-
+<!-- TODO 为什么加2 -->
 示例 [详情](<!-- VUEJSON.E_reactivity.core_ref_ref.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_reactivity.core_ref_ref.webUrl -->

@@ -6,14 +6,11 @@
 
 这就是vue的组件机制，把视图template、script、style都封装到独立的uvue组件文件中，在其他需要的地方使用组件的名称进行引用。
 
-每个组件，包括如下几个部分：以组件名称为标记的开始标签和结束标签、组件内容、组件属性、组件属性值。
-
-- 组件名称由尖括号包裹，称为标签，它有开始标签和结束标签。结束标签的`<`后面用`/`来表示结束。结束标签也称为闭合标签。如`<component-name>`是开始标签，`</component-name>`是结束标签
-- 在开始标签和结束标签之间，称为组件内容
-- 开始标签上可以写属性，属性可以有多个，多个属性之间用空格分割
-- 每个属性通过`=`赋值
+每个组件，包括如下几个部分：以组件名称为标记的开始标签和结束标签、组件text内容、组件属性、组件属性值。
 
 组件还可以封装方法、事件、插槽，提供了[组件的生命周期](#component-lifecycle)，提供了组件和页面的[互通信机制](#use-and-communication)，满足了各种高级需求。
+
+如果您还不了解这些概念，请务必先阅读 [组件概述文档](../compiler/README.md)
 
 ## 组件内容构成 @component-structure
 
@@ -366,7 +363,7 @@ Uni`组件名(驼峰)`Element
 
 ::: warning 注意
 1. onAppHide、onAppShow 目前只有 Android 支持
-2. onPageHide、onPageShow 需要写在 setup 函数或者 `<script setup>` 中才能生效
+2. onPageHide、onPageShow 需要写在选项式的 setup 函数 或者 组合式 `<script setup>` 中才能生效
 :::
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-composition.gitUrl -->)
@@ -385,7 +382,7 @@ Uni`组件名(驼峰)`Element
 
 ## 组件的生命周期 @component-lifecycle
 
-#### 组件生命周期（选项式 API）兼容性 @component-lifecycle-options-compatibility
+### 组件生命周期（选项式 API）兼容性 @component-lifecycle-options-compatibility
 
 <!-- VUEJSON.options_lifecycle.compatibility -->
 

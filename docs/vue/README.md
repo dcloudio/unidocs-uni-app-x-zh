@@ -39,46 +39,48 @@ HBuilderX/uni-app x，会跟踪vue版本的升级，版本映射表如下
 
 注意html中，根节点是`<html>`，`<script>`和`<style>`是子节点。但在uvue中，这3个节点都是一级节点。
 
-一个简单的选项式页面示例：
+vue的script分组合式和选项式，下面先提供1个基于组合式的数据绑定和修改的示例，点击按钮，修改按钮的文字。
+
 ```vue
 <template>
 	<view class="content">
+		<!-- button的文字绑定了响应式变量title，点击事件绑定了buttonClick方法-->
 		<button @click="buttonClick">{{title}}</button>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				title: "Hello world", // 定义绑定在页面上的data数据
-			}
-		},
-		onLoad() {
-			// 页面启动的生命周期，这里编写页面加载时的逻辑
-		},
-		methods: {
-			buttonClick: function () {
-				console.log("按钮被点了")
-			},
-		}
+<script setup>
+  let title = ref("Hello world") //定义一个响应式变量title，默认赋值为Hello world
+	const buttonClick = () => {
+		title.value = "按钮被点了" //对响应式变量title的.value属性赋值，界面上button的文字会自动同步修改
 	}
+	/*
+		function buttonClick() { // 简单的function方式也可以用，但在不同平台的作用域有细微差异。所以一般推荐上方箭头函数的写法。
+		title.value = "按钮被点了"
+	}
+	*/
+	onLoad(() => {
+		// 页面启动的生命周期，这里编写页面加载时的逻辑
+	})
 </script>
 
 <style>
 	.content {
 		width: 750rpx;
-		background-color: white;
 	}
 </style>
 ```
+
+可以看出整体和html还是很接近的。但响应式变量和绑定机制，可以免去写大量的dom操作代码，让开发更高效轻松。
+
+基于选项式的示例，下面章节会提供。
 
 ## template
 
 template中文名为`模板`，它类似html的标签。但有2个区别：
 
 1. html中 `script` 和 `style` 是 html 的二级节点。但在 uvue 文件中，`template`、`script`、`style` 这3个是平级关系。
-2. html 中写的是 web 标签，但 vue 的 `template` 中写的全都是 vue 组件（包括[内置基础组件](../component/README.md)、自定义uvue组件、[uts原生插件组件](../plugin/uts-component.md)），每个组件支持属性、事件、vue 指令，还可以绑定 vue 的 data 数据。
+2. html 中写的是 web 标签，但 vue 的 `template` 中写的全都是 vue 组件（包括[内置基础组件](../component/README.md)、自定义前端uvue组件、[uts原生插件组件](../plugin/uts-component.md)），每个组件支持属性、事件、vue 指令，还可以绑定 vue 的 data 数据。
 
 组件，即component，是vue中非常重要的概念，或者说现代开发框架都离不开组件概念。
 
@@ -86,18 +88,38 @@ template中文名为`模板`，它类似html的标签。但有2个区别：
 
 在 uni-app x 中， `<view>`是最基本的视图容器组件，`<text>`则是文字组件，`<button>`是按钮组件。这些都是[内置组件](../component/README.md)
 
-一个页面或组件只能有一个template标签，template下面可以有多个二级节点，如下：
+一个页面或组件只能有一个template标签，template下面可以有多个二级节点，即多个根组件。如下：
 
 ```vue
 <template>
 	<view>
-		<text>标题</text>
+		<text v-if="titleShow" :style="'color:' + titleColor">{{title}}</text> <!-- text组件的text绑定了响应式变量title、v-if指令绑定了titleShow、style绑定了titleColor-->
 	</view>
-	<scroll-view>
-
+	<scroll-view >
+		<button @click="buttonClick_changeText" type="primary">修改文字内容</button>
+		<button @click="buttonClick_showHide">点击让文字组件显示或消失</button>
+		<button @click="buttonClick_changeColor">修改文字颜色</button>
 	</scroll-view>
 </template>
+<script setup>
+  let title = ref("Hello world") //定义一个响应式变量title，默认赋值为hello world
+	const buttonClick_changeText = () => {
+		title.value = "新文字内容" //对响应式变量title的.value属性赋值，界面上文字会自动同步修改
+	}
+	
+	let titleShow = ref(true) //决定标题文字是否显示
+	const buttonClick_showHide = () => {
+		titleShow.value = !titleShow.value //对响应式变量的.value属性赋值，界面上文字组件的v-if指令绑定了titleShow，所以会动态显示消失
+	}
+	
+	let titleColor = ref("black") 
+	const buttonClick_changeColor = () => {
+		titleColor.value = "red" //对响应式变量的.value属性赋值，界面上文字组件的style属性绑定了titleColor，所以会变色
+	}
+</script>
 ```
+
+组件有很多概念，属性、事件、指令。如果还不了解相关概念，请参阅 [组件介绍](../compiler/README.md)
 
 ## script
 
@@ -107,9 +129,35 @@ uvue中只能有一个script标签。
 
 script标签的属性如下：
 - lang
-lang 仅支持uts，不管script的lang属性写成什么，都按uts编译。
+lang 仅支持uts，不管script的lang属性写成什么，都按uts编译。注意在iOS的js引擎驱动的uvue页面里，uts会被编译为js。
 - setup
 setup属性声明代表script里的代码为组合式写法，如果没有setup属性则为选项式写法。
+
+### 组合式和选项式的区别
+
+vue最初只有选项式API，从vue3起，新增了组合式API。
+
+所谓选项式，就是把script的内容在export default {} 中约定不同的对象，在其中通过多个选项的对象来定义data、method和生命周期。
+
+框定好这些后，开发者就在这个框框里分别写自己的业务逻辑。
+
+这种方式易用但不够灵活。所以在vue3以前，部分开发者会认为react更难学、更灵活，所以更高级。
+
+vue3新增的组合式API，是纯编程的，解决了选项式不够灵活的问题。同时维持了易学的特点。让vue变的即容易、又灵活。
+
+uni-app x不再支持vue2。在vue3中，组合式和选项式是可以混合使用的。
+1. 可以A页面使用组合式，B页面使用选项式，互相跳转。
+2. 可以页面使用组合式，其中的某些组件使用选项式。反之亦然。
+3. 一个页面或组件内，可以混合使用组合式和选项式
+- 在选项式的script里，可通过setup选项，在其中编写组合式代码
+- 在组合式script里（即script有setup属性），也可以通过defineOptions来定义选项式写法
+
+但注意不支持一个页面/组件有2个script，分别写选项式和组合式。
+
+开发者可以根据自己的喜好选择2种写法，但还有几个差别需要注意：
+1. 组合式API的组件，可以监听引用其页面的页面级生命周期。而选项式是不能的。有相关需求的组件，需使用组合式API，或在选项式中使用setup函数。[详见](./component.md#component-page-lifecycle)
+2. 选项式的type类型定义在`export default {}`外，这些都是应用级全局的，略微影响性能。[见下](#export-default-out)
+3. app.uvue和uts组件插件的index.vue，目前只支持选项式。
 
 ### 组合式API
 组合式 API，也称 Composition API，或 setup函数。
@@ -126,17 +174,23 @@ setup属性声明代表script里的代码为组合式写法，如果没有setup�
 ```vue
 <template>
 	<view>
+		<!-- button的文字绑定了响应式变量title，点击事件绑定了buttonClick方法-->
 		<button @click="buttonClick">{{title}}</button>
 	</view>
 </template>
 
 <script setup>
-  let title = ref("Hello world") //定义一个响应式变量。类似于选项式的定义data
-	function buttonClick() { //方法不再需要写在method下面。这里从简使用了function，实际业务中推荐使用箭头函数，有更好的平台一致性
-	  console.log("按钮被点了")
+  let title = ref("Hello world") //定义一个响应式变量title，默认赋值为Hello world
+	const buttonClick = () => {
+		title.value = "按钮被点了" //对响应式变量title的.value属性赋值，界面上button的文字会自动同步修改
 	}
-	onReady(() => {
-		console.log("页面onReady触发") // 页面生命周期，编写页面加载后的逻辑
+	/*
+		function buttonClick() { // 简单的function方式也可以用，但在不同平台的作用域有细微差异。所以一般推荐上方箭头函数的写法。
+		title.value = "按钮被点了"
+	}
+	*/
+	onLoad(() => {
+		// 页面启动的生命周期，这里编写页面加载时的逻辑
 	})
 </script>
 
@@ -161,21 +215,27 @@ setup属性声明代表script里的代码为组合式写法，如果没有setup�
 				title: "Hello world", // 定义绑定在页面上的data数据
 			}
 		},
-		onReady() {
-			console.log("页面onReady触发") // 页面生命周期，编写页面加载后的逻辑
+		onLoad() {
+			// 页面启动的生命周期，这里编写页面加载时的逻辑
 		},
 		methods: {
 			buttonClick: function () {
-				console.log("按钮被点了")
+				this.title= "按钮被点了" //对响应式变量title赋值，界面上button的文字会自动同步修改
 			},
 		}
 	}
 </script>
 ```
 
-#### `export default` 外的代码
+对比之前组合式的、相同业务逻辑的代码，可以看到两种方式的差异：
+1. 选项式由于有框框的存在，看起来结构清晰些，但代码行数也更长
+2. 组合式更灵活，代码更短。高级开发者也可以自己保证代码结构的清晰整洁。但初学者如果代码写的很长，容易乱糟糟
 
-既然有写在写`export default {}`里的代码，那么就有 `export default {}` 外面的代码。
+上述代码比较简单，如果涉及到响应式变量的类型定义，那么会更明显的感受到组合式的灵活和简洁。
+
+#### `export default` 外的代码@export-default-out
+
+选项式主代码在`export default {}`里。但既然有`export default {}`里的代码，那么就有 `export default {}` 外面的代码。
 
 写在外面一般有几种情况：
 
