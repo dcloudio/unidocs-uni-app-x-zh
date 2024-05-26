@@ -133,6 +133,13 @@ lang 仅支持uts，不管script的lang属性写成什么，都按uts编译。�
 - setup
 setup属性声明代表script里的代码为组合式写法，如果没有setup属性则为选项式写法。
 
+**注意：** 所有 `vue` 公开的 `API` 都是不需要 `import` 的, `uni-app x` 会自动引入。
+
+比如不需要写：
+```js
+import { ref } from 'vue';
+```
+
 ### 组合式和选项式的区别
 
 vue最初只有选项式API，从vue3起，新增了组合式API。
