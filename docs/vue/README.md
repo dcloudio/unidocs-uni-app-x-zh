@@ -111,6 +111,8 @@ lang 仅支持uts，不管script的lang属性写成什么，都按uts编译。
 - setup
 setup属性声明代表script里的代码为组合式写法，如果没有setup属性则为选项式写法。
 
+**注意：** 所有 `vue` 公开的 `API` 都是不需要 `import` 的, `uni-app x` 会自动引入。
+
 ### 组合式API
 组合式 API，也称 Composition API，或 setup函数。
 
