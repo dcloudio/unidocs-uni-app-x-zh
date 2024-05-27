@@ -3,6 +3,7 @@
 * 内置组件```{"collapsable": false}```
   * [view](view.md)
   * [scroll-view](scroll-view.md)
+  * [nested-scroll](nested-scroll.md)
   * [list-view](list-view.md)
   * [sticky](sticky.md)
   * [swiper](swiper.md)
@@ -24,6 +25,4 @@
   * [web-view](web-view.md)
   * [animation-view](animation-view.md)
   * [unicloud-db](unicloud-db.md)
-  * [nested-scroll-header](nested-scroll-header.md)
-  * [nested-scroll-body](nested-scroll-body.md)
 * [其他组件](unsupport.md)
