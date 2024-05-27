@@ -361,7 +361,7 @@ style通过lang属性，可以支持less、scss、stylus等css预处理语言。
 </style>
 ```
 
-### CSS Modules @css-module
+<!-- ### CSS Modules @css-module
 
 一个 `<style module>` 标签会被编译为 `CSS Modules` 并且将生成的 CSS class 作为 `$style` 对象暴露给组件：
 
@@ -408,7 +408,7 @@ useCssModule()
 
 // 具名情况下, 返回 <style module="classes"> 的 class
 useCssModule('classes')
-```
+``` -->
 
 ### CSS 中的 v-bind() @css-v-bind
 
