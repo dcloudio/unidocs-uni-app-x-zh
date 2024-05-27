@@ -1,8 +1,21 @@
 # UTSActivityCallback
+  
+ 为了更好的对外暴露activity的方法，我们把activity里面包含的方法按照继承关系进行了分类，下面是分类标准
 
-[UniActivityCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityCallback) , [UniActivityComponentCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityComponentCallback) , [UniActivityKeyEventCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityKeyEventCallback) , [UniActivityLifeCycleCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityLifeCycleCallback) , [UniActivityWindowCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityWindowCallback)
+第一类：activity生命周期相关方法[UniActivityLifeCycleCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityLifeCycleCallback)\
+比如 oncreate,ondestory 等\
+第二类: 键盘事件相关方法[UniActivityLifeCycleCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityLifeCycleCallback)\
+比如 onKeyDown,onKeyUp等\
+第三类:windon窗体的相关方法[UniActivityLifeCycleCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityLifeCycleCallback)\
+比如onCreatePanelMenu，onWindowDismissed等\
+第四类:activity本身自带的相关方法，不继承自其他类[UniActivityLifeCycleCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityLifeCycleCallback)\
+比如onProvideAssistData等\
+第五类：Component 组件相关方法[UniActivityLifeCycleCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityLifeCycleCallback)\
+比如onTrimMemory等
 
-为IUniActivityCallback的实现类，具体用法参考[示例](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#示例)
+并且上面的五个类都为IUniActivityCallback的实现类，我们在使用的时候可以传入具体的实现类，然后按照具体需求重写其中的某个方法，具体用法参考[示例](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#示例)
+
+
 
 ## UniActivityCallback
 
