@@ -1,0 +1,32 @@
+## uni-verify
+
+### 本地依赖库
+
+|名称                   |
+|:--				    |
+|uni-verify-release.aar |
+|GY-3.1.6.3-release.aar	|
+
+将本地依赖库复制到app项目的libs下。
+
+### 线上依赖库
+|名称                   |
+|:--                    |
+|com.getui:gtc:3.2.13.0 |
+
+将线上依赖库添加到app项目的build.gradle下。
+
+### 配置应用ID
+
+```groovy
+android {
+    defaultConfig {
+        manifestPlaceholders = [
+			"GETUI_APPID" : "%GETUI_APPID%",
+            "GY_APP_ID" : "%GY_APP_ID%",
+        ]
+    }
+}
+```
+
+GETUI_APPID与GY_APP_ID对应[开发者中心](https://dev.dcloud.net.cn/)一键登录->基础配置->一键登录应用ID（离线打包使用），GETUI_APPID与GY_APP_ID取值相同。
