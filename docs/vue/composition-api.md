@@ -631,3 +631,12 @@ defineOptions({
 <!-- VUEJSON.E_component-instance.attrs_child-composition.code -->
 
 :::
+
+### 与渲染函数一起使用
+
+
+示例 [详情](<!-- VUEJSON.E_render-function.render_render-composition.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_render-function.render_render-composition.webUrl -->
+<!-- VUEJSON.E_render-function.render_render-composition.code -->
+:::

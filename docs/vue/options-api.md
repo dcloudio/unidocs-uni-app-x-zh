@@ -105,12 +105,7 @@
 示例 [详情](<!-- VUEJSON.E_render-function.render_render-options.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_render-function.render_render-options.webUrl -->
-
-> 选项式 API
 <!-- VUEJSON.E_render-function.render_render-options.code -->
-
-> 组合式 API
-<!-- VUEJSON.E_render-function.render_render-composition.code -->
 :::
 
 #### slots
@@ -266,13 +261,8 @@
 
 ::: preview <!-- VUEJSON.E_component-instance.circular-reference_circular-reference-options.webUrl -->
 
-> 选项式 API
 
 <!-- VUEJSON.E_component-instance.circular-reference_circular-reference-options.code -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_component-instance.circular-reference_circular-reference-composition.code -->
 
 :::
 
@@ -304,13 +294,7 @@
 
 ::: preview <!-- VUEJSON.E_component-instance.attrs_attrs-options.webUrl -->
 
-> 选项式 API
-
 <!-- VUEJSON.E_component-instance.attrs_attrs-options.code -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_component-instance.attrs_attrs-composition.code -->
 
 :::
 
