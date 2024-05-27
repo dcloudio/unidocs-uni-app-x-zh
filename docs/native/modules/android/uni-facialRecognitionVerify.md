@@ -13,6 +13,7 @@
 |aliyun-facelanguage-2.3.7-20231102102722.aar	|
 |aliyun-wishverify-2.3.7-20231102102722.aar		|
 |facialRecognitionVerify-support-release.aar	|
+|uni-facialRecognitionVerify-release.aar		|
 
 将本地依赖库复制到app项目的libs下
 
