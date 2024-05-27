@@ -121,15 +121,15 @@ const counter = ref({ count: 0 } as Counter) // 而不是 ref<Counter>({count: 0
 - `v-if`、`v-else-if` 或 `v-else`
 - `v-for`
 
-示例 [详情](<!-- VUEJSON.E_built-in.special-elements_template_template-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_built-in.special-elements_template_template-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_built-in.special-elements_template_template-composition.webUrl -->
-
-> 组合式 API
-<!-- VUEJSON.E_built-in.special-elements_template_template-composition.code -->
+::: preview <!-- VUEJSON.E_built-in.special-elements_template_template-options.webUrl -->
 
 > 选项式 API
 <!-- VUEJSON.E_built-in.special-elements_template_template-options.code -->
+
+> 组合式 API
+<!-- VUEJSON.E_built-in.special-elements_template_template-composition.code -->
 :::
 
 ### 在样式里绑定 @v-bind-css-data
@@ -144,15 +144,15 @@ const counter = ref({ count: 0 } as Counter) // 而不是 ref<Counter>({count: 0
 
 `v-bind` 也可在样式中使用，可以很方便的在 uts 中改变样式，如下所示：
 
-示例 [详情](<!-- VUEJSON.E_directive.v-bind_v-bind-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-bind_v-bind-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-bind_v-bind-composition.webUrl -->
-
-> 组合式 API
-<!-- VUEJSON.E_directive.v-bind_v-bind-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-bind_v-bind-options.webUrl -->
 
 > 选项式 API
 <!-- VUEJSON.E_directive.v-bind_v-bind-options.code -->
+
+> 组合式 API
+<!-- VUEJSON.E_directive.v-bind_v-bind-composition.code -->
 :::
 
 ## 定义方法 @methods

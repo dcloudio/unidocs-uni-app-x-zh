@@ -13,17 +13,17 @@
 
   v-text 将覆盖元素中所有现有的内容。
 
-示例 [详情](<!-- VUEJSON.E_directive.v-text_v-text-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-text_v-text-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-text_v-text-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-text_v-text-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-text_v-text-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-text_v-text-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-text_v-text-composition.code -->
 
 :::
 
@@ -37,17 +37,17 @@
 绑定 `v-html` 的标签内的内容会被忽略，`v-html` 指令的内容会编译为 `rich-text` 组件渲染为该标签的子节点。
 :::
 
-示例 [详情](<!-- VUEJSON.E_directive.v-html_v-html-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-html_v-html-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-html_v-html-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-html_v-html-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-html_v-html-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-html_v-html-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-html_v-html-composition.code -->
 
 :::
 
@@ -56,17 +56,17 @@
 
 基于表达式值的真假性，来改变元素的可见性。
 
-示例 [详情](<!-- VUEJSON.E_directive.v-show_v-show-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-show_v-show-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-show_v-show-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-show_v-show-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-show_v-show-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-show_v-show-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-show_v-show-composition.code -->
 
 :::
 
@@ -80,17 +80,17 @@
 
   可用于 `<template>` 表示仅包含文本或多个元素的条件块。
 
-示例 [详情](<!-- VUEJSON.E_directive.v-if_v-if-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-if_v-if-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-if_v-if-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-if_v-if-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-if_v-if-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-if_v-if-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-if_v-if-composition.code -->
 
 :::
 
@@ -117,17 +117,17 @@
   </view>
   ```
 
-示例 [详情](<!-- VUEJSON.E_directive.v-for_v-for-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-for_v-for-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-for_v-for-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-for_v-for-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-for_v-for-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-for_v-for-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-for_v-for-composition.code -->
 
 :::
 
@@ -147,17 +147,17 @@
 
 - [事件修饰符](https://uniapp.dcloud.net.cn/tutorial/vue3-basics.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6) 只支持 `stop` 和 `once`。
 
-示例 [详情](<!-- VUEJSON.E_directive.v-on_v-on-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-on_v-on-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-on_v-on-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-on_v-on-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-on_v-on-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-on_v-on-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-on_v-on-composition.code -->
 
 :::
 
@@ -181,17 +181,17 @@
 
   当不带参数使用时，可以用于绑定一个包含了多个 attribute 名称-绑定值对的对象。
 
-示例 [详情](<!-- VUEJSON.E_directive.v-bind_v-bind-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-bind_v-bind-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-bind_v-bind-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-bind_v-bind-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-bind_v-bind-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-bind_v-bind-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-bind_v-bind-composition.code -->
 
 :::
 
@@ -206,17 +206,17 @@
   - `.number` - 将输入的合法字符串转为数字
   - `.trim` - 移除输入内容两端空格
 
-示例 [详情](<!-- VUEJSON.E_directive.v-model_v-model-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-model_v-model-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-model_v-model-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-model_v-model-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-model_v-model-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-model_v-model-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-model_v-model-composition.code -->
 
 :::
 
@@ -248,17 +248,17 @@
 
   在随后的重新渲染，元素/组件及其所有子项将被当作静态内容并跳过渲染。这可以用来优化更新时的性能。
 
-示例 [详情](<!-- VUEJSON.E_directive.v-once_v-once-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-once_v-once-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-once_v-once-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-once_v-once-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-once_v-once-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-once_v-once-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-once_v-once-composition.code -->
 
 :::
 
@@ -276,17 +276,17 @@
   - `<template>`
   - [components](./component.md) (用于带有 prop 的单个默认插槽)
 
-示例 [详情](<!-- VUEJSON.E_directive.v-slot_v-slot-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-slot_v-slot-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-slot_v-slot-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-slot_v-slot-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-slot_v-slot-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-slot_v-slot-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-slot_v-slot-composition.code -->
 
 :::
 
@@ -318,17 +318,17 @@
 
   `v-memo` 也能被用于在一些默认优化失败的边际情况下，手动避免子组件出现不需要的更新。但是一样的，开发者需要负责指定正确的依赖数组以免跳过必要的更新。
 
-示例 [详情](<!-- VUEJSON.E_directive.v-memo_v-memo-composition.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-memo_v-memo-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_directive.v-memo_v-memo-composition.webUrl -->
-
-> 组合式 API
-
-<!-- VUEJSON.E_directive.v-memo_v-memo-composition.code -->
+::: preview <!-- VUEJSON.E_directive.v-memo_v-memo-options.webUrl -->
 
 >选项式 API
 
 <!-- VUEJSON.E_directive.v-memo_v-memo-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_directive.v-memo_v-memo-composition.code -->
 
 :::
 
