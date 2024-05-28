@@ -9,7 +9,7 @@ allprojects {
 	repositories {
 		jcenter()
 		google()
-        // 个推的Maven仓地址。
+        // 个推的Maven仓库地址。
         maven { 
             url 'https://mvn.getui.com/nexus/content/repositories/releases' 
         }

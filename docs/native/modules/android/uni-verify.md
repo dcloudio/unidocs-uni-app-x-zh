@@ -10,11 +10,27 @@
 将本地依赖库复制到app项目的libs下。
 
 ### 线上依赖库
+
+首先在项目根目录下的build.gradle增加个推仓库源。
+
+```groovy
+allprojects {
+	repositories {
+		jcenter()
+		google()
+        // 个推的Maven仓库地址
+        maven { 
+            url 'https://mvn.getui.com/nexus/content/repositories/releases' 
+        }
+	}
+}
+```
+
 |名称                   |
 |:--                    |
 |com.getui:gtc:3.2.13.0 |
 
-将线上依赖库添加到app项目的build.gradle下。
+然后将线上依赖库添加到app项目的build.gradle下。
 
 ### 配置应用ID
 
