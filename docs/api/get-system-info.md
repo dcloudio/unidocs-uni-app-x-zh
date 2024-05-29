@@ -12,7 +12,7 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 - `device`：运行应用的设备，如iphone、huawei
 - `os`：设备的操作系统，如 ios、andriod、windows、mac、linux
 - `rom`：基于操作系统的定制，Android系统特有概念，如miui、鸿蒙
-- `host`：运行应用的宿主程序，即OS和应用之间的运行环境，如浏览器、微信等小程序宿主、集成uniMPSDK的App。uni-app直接开发的app没有host概念
+- `host`：运行应用的宿主程序，即OS和应用之间的运行环境，如浏览器、微信等小程序宿主、集成uniMPSDK的App
 - `uni`：uni-app框架相关的信息，如uni-app框架的编译器版本、运行时版本
 - `app`：开发者的应用相关的信息，如应用名称、版本
 
