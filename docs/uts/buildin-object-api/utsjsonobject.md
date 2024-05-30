@@ -57,11 +57,11 @@ let obj = {
   age:11
 }
 // 执行结果： 2
-UTSJSONObject.keys(obj).size)
+UTSJSONObject.keys(obj).size
 
 ```
 
-### assign(objectA: UTSJSONObject,objectB: UTSJSONObject,...): UTSJSONObject
+### assign(...items): UTSJSONObject
 
 <!-- UTSJSON.UTSJSONObject.assign.description -->
 
@@ -78,15 +78,15 @@ const source = { b: 4, c: 5 };
 const returnedTarget = UTSJSONObject.assign(target, source);
 ```
 
-### assign<T>(objectA: UTSJSONObject,objectB: UTSJSONObject,...): T
+### assign<T>(...items: T[]): T
 
-<!-- UTSJSON.UTSJSONObject.assign.description -->
+<!-- UTSJSON.UTSJSONObject.assign_1.description -->
 
-<!-- UTSJSON.UTSJSONObject.assign.param -->
+<!-- UTSJSON.UTSJSONObject.assign_1.param -->
 
-<!-- UTSJSON.UTSJSONObject.assign.returnValue -->
+<!-- UTSJSON.UTSJSONObject.assign_1.returnValue -->
 
-<!-- UTSJSON.UTSJSONObject.assign.compatibility -->
+<!-- UTSJSON.UTSJSONObject.assign_1.compatibility -->
 
 ```ts
 type User = {
@@ -248,7 +248,7 @@ let obj = {
       }
     ]
   }
-  
+
   let cars = obj.getArray<UTSJSONObject>("cars")
   cars![0].set("value",20)
   /**
