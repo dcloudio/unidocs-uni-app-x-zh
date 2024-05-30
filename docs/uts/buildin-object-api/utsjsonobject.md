@@ -44,27 +44,36 @@ if(parseRet instanceof UTSJSONObject){
 
 以数组的形式返回指定UTSJSONObjetc 对象内可枚举属性的名称列表
 
-HBuilder X 4.18版本，仅Android平台支持
+>> HBuilder X 4.18版本，仅Android平台支持
+
+```ts
+let obj = {
+  name:"zhangsan",
+  age:11
+}
+// 执行结果： 2
+UTSJSONObject.keys(obj).size)
+
+```
 
 ### assign(objectA: UTSJSONObject,objectB: UTSJSONObject,...): UTSJSONObject
 
 该方法允许输入一个或者多个UTSJSONObject对象，合并后返回一个新的UTSJSONObject，其中包含全部输入对象的属性字段，如果存在同名的属性会以后传入的属性为准
 
-HBuilder X 4.18版本，仅Android平台支持
+>> HBuilder X 4.18版本，仅Android平台支持
 
 ```ts
 const target = { a: 1, b: 2 };
 const source = { b: 4, c: 5 };
 // 得到一个UTSJSONObject对象
 const returnedTarget = UTSJSONObject.assign(target, source);
-
 ```
 
 ### assign<T>(objectA: UTSJSONObject,objectB: UTSJSONObject,...): T
 
 该方法允许输入一个或者多个UTSJSONObject对象，合并后返回一个新的泛型对象T，其中包含全部输入对象的属性字段，如果存在同名的属性会以后传入的属性为准
 
-HBuilder X 4.18版本，仅Android平台支持
+>> HBuilder X 4.18版本，仅Android平台支持
 
 ```ts
 type User = {
