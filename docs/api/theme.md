@@ -8,6 +8,8 @@
 
 <!-- UTSAPIJSON.setAppTheme.returnValue -->
 
+<!-- UTSCOMJSON.setAppTheme.example -->
+
 <!-- UTSAPIJSON.setAppTheme.tutorial -->
 
 ## uni.onOsThemeChange(callback) @onosthemechange
@@ -19,6 +21,8 @@
 <!-- UTSAPIJSON.onOsThemeChange.param -->
 
 <!-- UTSAPIJSON.onOsThemeChange.returnValue -->
+
+<!-- UTSCOMJSON.onOsThemeChange.example -->
 
 <!-- UTSAPIJSON.onOsThemeChange.tutorial -->
 
@@ -35,11 +39,9 @@
 
 <!-- UTSAPIJSON.offOsThemeChange.returnValue -->
 
+<!-- UTSCOMJSON.offOsThemeChange.example -->
+
 <!-- UTSAPIJSON.offOsThemeChange.tutorial -->
-
-**注意：**
-+ android 平台 android版本 10 开始支持深色模式主题 `dark`，低于10不支持深色模式主题
-
 
 ## uni.onAppThemeChange(callback) @onappthemechange
 
@@ -50,6 +52,8 @@
 <!-- UTSAPIJSON.onAppThemeChange.param -->
 
 <!-- UTSAPIJSON.onAppThemeChange.returnValue -->
+
+<!-- UTSCOMJSON.onAppThemeChange.example -->
 
 <!-- UTSAPIJSON.onAppThemeChange.tutorial -->
 
@@ -62,6 +66,8 @@
 <!-- UTSAPIJSON.offAppThemeChange.param -->
 
 <!-- UTSAPIJSON.offAppThemeChange.returnValue -->
+
+<!-- UTSCOMJSON.offAppThemeChange.example -->
 
 <!-- UTSAPIJSON.offAppThemeChange.tutorial -->
 
