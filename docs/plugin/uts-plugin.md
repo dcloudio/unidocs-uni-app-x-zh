@@ -244,7 +244,7 @@ Android原生应用清单文件，建议只保存UTS插件内置的清单文件�
 
 除了插件下有AndroidManifest.xml，项目下也有。注意2者的区别。一般使用者的配置不放在插件下，而放在自己的项目下。项目下配置[详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android)
 
-##### config.json
+##### config.json@androidconfigjson
 uts插件在Android平台的原生层配置文件，可以在其中配置依赖仓储等gradle相关内容。
 
 ```json
@@ -419,7 +419,7 @@ iOS平台原生 entitlements 文件配置，云端打包时会将配置信息合
 </plist>
 ```
 
-##### config.json
+##### config.json@iosconfigjson
 uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖的系统库等信息
 
 ```json
