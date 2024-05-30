@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.getImageInfo.description -->
 
+<!-- UTSAPIJSON.getImageInfo.compatibility -->
+
 <!-- UTSAPIJSON.getImageInfo.param -->
 
 <!-- UTSAPIJSON.getImageInfo.returnValue -->
-
-<!-- UTSAPIJSON.getImageInfo.compatibility -->
 
 <!-- UTSAPIJSON.getImageInfo.tutorial -->
 

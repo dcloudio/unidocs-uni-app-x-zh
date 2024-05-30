@@ -14,11 +14,11 @@ uniCloud.databaseForJQL()是客户端访问云数据库的API，即[clientDB](ht
 
 <!-- UTSUNICLOUDAPIJSON.databaseForJQL.description -->
 
+<!-- UTSUNICLOUDAPIJSON.databaseForJQL.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.databaseForJQL.param -->
 
 <!-- UTSUNICLOUDAPIJSON.databaseForJQL.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.databaseForJQL.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.databaseForJQL.tutorial -->
 

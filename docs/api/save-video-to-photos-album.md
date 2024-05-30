@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.saveVideoToPhotosAlbum.description -->
 
+<!-- UTSAPIJSON.saveVideoToPhotosAlbum.compatibility -->
+
 <!-- UTSAPIJSON.saveVideoToPhotosAlbum.param -->
 
 <!-- UTSAPIJSON.saveVideoToPhotosAlbum.returnValue -->
-
-<!-- UTSAPIJSON.saveVideoToPhotosAlbum.compatibility -->
 
 <!-- UTSAPIJSON.saveVideoToPhotosAlbum.tutorial -->
 

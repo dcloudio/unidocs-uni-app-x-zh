@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.getVideoInfo.description -->
 
+<!-- UTSAPIJSON.getVideoInfo.compatibility -->
+
 <!-- UTSAPIJSON.getVideoInfo.param -->
 
 <!-- UTSAPIJSON.getVideoInfo.returnValue -->
-
-<!-- UTSAPIJSON.getVideoInfo.compatibility -->
 
 <!-- UTSAPIJSON.getVideoInfo.tutorial -->
 

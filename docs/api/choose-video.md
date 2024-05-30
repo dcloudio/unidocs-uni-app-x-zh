@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.chooseVideo.description -->
 
+<!-- UTSAPIJSON.chooseVideo.compatibility -->
+
 <!-- UTSAPIJSON.chooseVideo.param -->
 
 <!-- UTSAPIJSON.chooseVideo.returnValue -->
-
-<!-- UTSAPIJSON.chooseVideo.compatibility -->
 
 <!-- UTSAPIJSON.chooseVideo.tutorial -->
 

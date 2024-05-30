@@ -2,11 +2,11 @@
 
 <!-- UTSUNICLOUDAPIJSON.uploadFile.description -->
 
+<!-- UTSUNICLOUDAPIJSON.uploadFile.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.uploadFile.param -->
 
 <!-- UTSUNICLOUDAPIJSON.uploadFile.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.uploadFile.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.uploadFile.tutorial -->
 
@@ -16,11 +16,11 @@
 
 <!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.description -->
 
+<!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.param -->
 
 <!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.tutorial -->
 
@@ -34,11 +34,11 @@
 
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.description -->
 
+<!-- UTSUNICLOUDAPIJSON.getTempFileURL.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.param -->
 
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.getTempFileURL.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.tutorial -->
 

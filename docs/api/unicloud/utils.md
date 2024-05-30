@@ -2,11 +2,11 @@
 
 <!-- UTSUNICLOUDAPIJSON.onResponse.description -->
 
+<!-- UTSUNICLOUDAPIJSON.onResponse.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.onResponse.param -->
 
 <!-- UTSUNICLOUDAPIJSON.onResponse.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.onResponse.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.onResponse.tutorial -->
 
@@ -14,11 +14,11 @@
 
 <!-- UTSUNICLOUDAPIJSON.offResponse.description -->
 
+<!-- UTSUNICLOUDAPIJSON.offResponse.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.offResponse.param -->
 
 <!-- UTSUNICLOUDAPIJSON.offResponse.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.offResponse.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.offResponse.tutorial -->
 
@@ -26,11 +26,11 @@
 
 <!-- UTSUNICLOUDAPIJSON.onRefreshToken.description -->
 
+<!-- UTSUNICLOUDAPIJSON.onRefreshToken.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.onRefreshToken.param -->
 
 <!-- UTSUNICLOUDAPIJSON.onRefreshToken.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.onRefreshToken.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.onRefreshToken.tutorial -->
 
@@ -38,11 +38,11 @@
 
 <!-- UTSUNICLOUDAPIJSON.offRefreshToken.description -->
 
+<!-- UTSUNICLOUDAPIJSON.offRefreshToken.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.offRefreshToken.param -->
 
 <!-- UTSUNICLOUDAPIJSON.offRefreshToken.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.offRefreshToken.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.offRefreshToken.tutorial -->
 
@@ -50,10 +50,10 @@
 
 <!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.description -->
 
+<!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.param -->
 
 <!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.tutorial -->

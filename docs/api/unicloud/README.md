@@ -15,10 +15,10 @@ uniCloud是基于serverless的云开发服务，它大幅降低开发者的开�
 
 <!-- UTSUNICLOUDAPIJSON.uniCloud_props.description -->
 
+<!-- UTSUNICLOUDAPIJSON.uniCloud_props.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.uniCloud_props.param -->
 
 <!-- UTSUNICLOUDAPIJSON.uniCloud_props.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.uniCloud_props.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.uniCloud_props.tutorial -->
