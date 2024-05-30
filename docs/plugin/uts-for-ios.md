@@ -819,7 +819,7 @@ class TestB  {
 
 ```
 
-#### 5.1.15 指针操作
+#### 5.1.16 指针操作
 
 在Swift操作指针，需要用到`&`操作符隐式转换得到`UnsafePointer`类型，UTS中提供了`UTSiOS.getPointer()`来表示`&`符号。
 
