@@ -21,7 +21,7 @@
 
 ### 组件注册
 
-将以下内容添加到主模块的build.gradle，详见[根据configjson配置应用](../../use/android.md#根据configjson配置应用)。
+将以下内容添加到主模块的build.gradle，详见[根据configjson配置应用](../../use/android.md#utscomponents)。
 
 ```groovy
 defaultConfig {

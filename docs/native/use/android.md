@@ -357,8 +357,10 @@ dependencies {
 	allprojects {}
 	```
 	
+	<a id='utscomponents'></a>
+	
 - components
-
+	
 	components 为uts组件的注册信息。需要将components对应的内容添加到主模块的build.gradle。参考配置：
 	
 	```groovy
@@ -469,6 +471,8 @@ startActivity(Intent(this, UniAppActivity::class.java))
 ```
 
 退出应用可以调用`uni.exit()`，整体退出uni-app x。
+
+如果需要在uni-app x与原生工程之间通信，可以参考[文档](androidcomm.md)。
 
 连接手机，点击运行按钮，可以在手机上查看效果。
 
