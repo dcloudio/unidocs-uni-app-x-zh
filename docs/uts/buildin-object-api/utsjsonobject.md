@@ -38,6 +38,45 @@ if(parseRet instanceof UTSJSONObject){
 
 ```
 
+## 静态方法
+
+### keys(object: UTSJSONObject): Array<String>
+
+以数组的形式返回指定UTSJSONObjetc 对象内可枚举属性名称列表
+
+HBuilder X 4.18版本，仅Android平台支持
+
+### assign(objectA: UTSJSONObject,objectB: UTSJSONObject,...): UTSJSONObject
+
+该方法允许输入一个或者多个UTSJSONObject对象，该方法会返回一个新的UTSJSONObject，其中包含全部输入对象的属性字段，如果存在同名的属性会以后传入的对象属性为准
+
+HBuilder X 4.18版本，仅Android平台支持
+
+```ts
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+// 得到一个UTSJSONObject对象
+const returnedTarget = UTSJSONObject.assign(target, source);
+
+```
+
+### assign<T>(objectA: UTSJSONObject,objectB: UTSJSONObject,...): T
+
+该方法允许输入一个或者多个UTSJSONObject对象，该方法会返回一个新的泛型对象T，其中包含全部输入对象的属性字段，如果存在同名的属性会以后传入的对象属性为准
+
+HBuilder X 4.18版本，仅Android平台支持
+
+```ts
+type User = {
+  a:number
+  b:number
+}
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+// 得到一个User对象
+const returnedTarget = UTSJSONObject.assign<User>(target, source);
+```
+
 ## 实例方法
 
 ### get(key: string): any | null
