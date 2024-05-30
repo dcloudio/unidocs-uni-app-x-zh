@@ -42,9 +42,14 @@ if(parseRet instanceof UTSJSONObject){
 
 ### keys(object: UTSJSONObject): Array<String>
 
-以数组的形式返回指定UTSJSONObjetc 对象内可枚举属性的名称列表
+<!-- UTSJSON.UTSJSONObject.keys.description -->
 
-> HBuilder X 4.18版本，仅Android平台支持
+<!-- UTSJSON.UTSJSONObject.keys.param -->
+
+<!-- UTSJSON.UTSJSONObject.keys.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.keys.compatibility -->
+
 
 ```ts
 let obj = {
@@ -58,9 +63,13 @@ UTSJSONObject.keys(obj).size)
 
 ### assign(objectA: UTSJSONObject,objectB: UTSJSONObject,...): UTSJSONObject
 
-该方法允许输入一个或者多个UTSJSONObject对象，合并后返回一个新的UTSJSONObject，其中包含全部输入对象的属性字段，如果存在同名的属性会以后传入的属性为准
+<!-- UTSJSON.UTSJSONObject.assign.description -->
 
-> HBuilder X 4.18版本，仅Android平台支持
+<!-- UTSJSON.UTSJSONObject.assign.param -->
+
+<!-- UTSJSON.UTSJSONObject.assign.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.assign.compatibility -->
 
 ```ts
 const target = { a: 1, b: 2 };
@@ -71,9 +80,13 @@ const returnedTarget = UTSJSONObject.assign(target, source);
 
 ### assign<T>(objectA: UTSJSONObject,objectB: UTSJSONObject,...): T
 
-该方法允许输入一个或者多个UTSJSONObject对象，合并后返回一个新的泛型对象T，其中包含全部输入对象的属性字段，如果存在同名的属性会以后传入的属性为准
+<!-- UTSJSON.UTSJSONObject.assign.description -->
 
-> HBuilder X 4.18版本，仅Android平台支持
+<!-- UTSJSON.UTSJSONObject.assign.param -->
+
+<!-- UTSJSON.UTSJSONObject.assign.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.assign.compatibility -->
 
 ```ts
 type User = {
