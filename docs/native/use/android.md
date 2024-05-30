@@ -10,8 +10,6 @@
 说明：当前文档基于android studio 2023.2.1 Patch 2。gradle版本为8.4。gradle插件版本为8.2.2。kotlin插件版本为1.9.10。
 ***
 
-注意：当前文档主要提供在已有项目中接入uni-app x。如果是新项目则另见[文档](./androidnewproject.md)。
-
 ## 新建uni-app x模块
 
 点击File->New->New Module...
@@ -148,7 +146,16 @@ android.enableJetifier=true
 	**注意：如果需要自定义application，必须继承自UniApplication**
 
 ### 拷贝资源文件
-1. [导出uni-app x项目的资源文件](../export/export.md)
+1. 导出uni-app x项目的资源文件
+
+	选择项目，然后点击：发行 -> 原生App-本地打包 -> 生成本地打包App资源
+
+	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/export.png)
+
+	导出成功之后会在项目的unpackage/resources目录下生成资源文件
+
+	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/resources.png)
+	
 2. 将app-android目录下与appid对应的目录拷贝到主项目的`assets/apps`目录下
 	
 	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/app_assets.png)
@@ -462,18 +469,7 @@ dependencies {
 - uni-prompt
 - uni-storage
 
-## 运行uni-app x
+## 启动
 
-需要在打开uni-app x的地方添加如下代码，触发逻辑即可打开uni-app x。
+至此，uni-app x 导入原生项目的所有配置已经完成。uni-app x的启动、退出及运行期间通讯可以参考[文档](androidcomm.md)。
 
-```kotlin
-startActivity(Intent(this, UniAppActivity::class.java))
-```
-
-退出应用可以调用`uni.exit()`，整体退出uni-app x。
-
-如果需要在uni-app x与原生工程之间通信，可以参考[文档](androidcomm.md)。
-
-连接手机，点击运行按钮，可以在手机上查看效果。
-
-![avatar](https://img.cdn.aliyun.dcloud.net.cn/nativedocs/5%2BSDK-android/image/7-6.png)

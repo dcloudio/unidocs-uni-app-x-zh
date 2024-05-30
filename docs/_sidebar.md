@@ -27,10 +27,9 @@
       * [uni-push](native/modules/android/uni-push.md)
 	  * [uni-video](native/modules/android/uni-video.md)
       * [uni-verify](native/modules/android/uni-verify.md)
-    * [资源导入](native/export/export.md)
-    * [调试](native/debug/android.md)
-    * [打包发行](https://nativesupport.dcloud.net.cn/AppDocs/package/android.html)
-    <!-- * [离线SDK](native/download/android.md) -->  
+    * [启动与通信](native/use/androidcomm.md)
+    * [自定义基座](native/debug/android.md)
+    <!-- * [SDK下载](native/download/android.md) -->  
 * 更新日志
   * [正式版](release.md)
   * [Alpha 版](release-note-alpha.md)
