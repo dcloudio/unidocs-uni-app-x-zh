@@ -22,6 +22,9 @@
 
 <!-- UTSAPIJSON.onOsThemeChange.tutorial -->
 
+**注意：**
++ android 平台 android版本 10 开始支持深色模式主题 `dark`，低于10不支持深色模式主题
+
 ## uni.offOsThemeChange(id) @offosthemechange
 
 <!-- UTSAPIJSON.offOsThemeChange.description -->
@@ -33,6 +36,10 @@
 <!-- UTSAPIJSON.offOsThemeChange.returnValue -->
 
 <!-- UTSAPIJSON.offOsThemeChange.tutorial -->
+
+**注意：**
++ android 平台 android版本 10 开始支持深色模式主题 `dark`，低于10不支持深色模式主题
+
 
 ## uni.onAppThemeChange(callback) @onappthemechange
 
