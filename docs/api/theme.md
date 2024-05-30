@@ -2,6 +2,14 @@
 
 <!-- UTSAPIJSON.setAppTheme.description -->
 
+uni.setAppTheme，并不会帮助开发者自动实现亮/暗主题切换，它的作用是：
+1. 根据theme.json，设置pages.json的亮/暗主题
+2. 触发uni.onAppThemeChange，开发者和组件作者均可监听这个事件，自行响应将页面设置为对应的亮/暗风格。
+
+当然组件作者也可以不监听onAppThemeChange，而是暴露主题切换API给开发者，由开发者监听主题切换，再调用组件的主题切换API。
+
+目前uni-app x的内置组件和UI相关的API（比如showModal），并不会响应setAppTheme。组件是暴露了样式属性供开发者自行设置，Modal相关API目前没有样式设置，后续会升级支持。
+
 <!-- UTSAPIJSON.setAppTheme.compatibility -->
 
 <!-- UTSAPIJSON.setAppTheme.param -->
