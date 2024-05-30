@@ -12,10 +12,10 @@
 uni.setAppTheme({
   theme: "auto",
   success: function() {
-    console.log("设置appTheme为", value, "成功")
+    console.log("设置appTheme为 auto 成功")
   },
   fail: function(e: IAppThemeFail) {
-    console.log("设置appTheme为", value, "失败,原因:", e.errMsg)
+    console.log("设置appTheme为 auto 失败,原因:", e.errMsg)
   }
 })
 ```
