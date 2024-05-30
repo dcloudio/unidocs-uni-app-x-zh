@@ -30,7 +30,7 @@
     * [资源导入](native/export/export.md)
     * [调试](native/debug/android.md)
     * [打包发行](https://nativesupport.dcloud.net.cn/AppDocs/package/android.html)
-    * [离线SDK](native/download/android.md)  
+    <!-- * [离线SDK](native/download/android.md) -->  
 * 更新日志
   * [正式版](release.md)
   * [Alpha 版](release-note-alpha.md)
