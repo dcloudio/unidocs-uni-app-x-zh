@@ -27,7 +27,13 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 + December 31, 1975, 23:15:30 GMT+11:00
 + 2023/08/13 12:35:54
 + 1995-02-14
-+ 2024-01-09 22:00:00  (HBuilderX 4.0支持)
++ 2024-01-09 22:00:00
++ 2024/5/1 (HBuilder X 4.18 Android/Web 支持)
++ 2024/5/1 00:00:00 (HBuilder X 4.18 Android/Web 支持)
++ 2024-05-01 00:00 (HBuilder X 4.18 Android/Web 支持)
++ 2024/05/01 00:00 (HBuilder X 4.18 Android/Web 支持)
++ 2024-5-1 00:00 (HBuilder X 4.18 Android/Web 支持)
++ 2024/5/1 00:00 (HBuilder X 4.18 Android/Web 支持)
 
 ## 静态方法
 
