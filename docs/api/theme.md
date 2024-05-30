@@ -8,7 +8,17 @@
 
 <!-- UTSAPIJSON.setAppTheme.returnValue -->
 
-<!-- UTSCOMJSON.setAppTheme.example -->
+```uts
+uni.setAppTheme({
+  theme: "auto",
+  success: function() {
+    console.log("设置appTheme为", value, "成功")
+  },
+  fail: function(e: IAppThemeFail) {
+    console.log("设置appTheme为", value, "失败,原因:", e.errMsg)
+  }
+})
+```
 
 <!-- UTSAPIJSON.setAppTheme.tutorial -->
 
@@ -22,7 +32,12 @@
 
 <!-- UTSAPIJSON.onOsThemeChange.returnValue -->
 
-<!-- UTSCOMJSON.onOsThemeChange.example -->
+```uts
+//callbackId 用于注销监听
+val callbackId = uni.onOsThemeChange((res: OsThemeChangeResult)=> {
+    console.log("onOsThemeChange---", res.osTheme)
+})
+```
 
 <!-- UTSAPIJSON.onOsThemeChange.tutorial -->
 
@@ -39,7 +54,15 @@
 
 <!-- UTSAPIJSON.offOsThemeChange.returnValue -->
 
-<!-- UTSCOMJSON.offOsThemeChange.example -->
+```uts
+val callbackId = uni.onOsThemeChange((res: OsThemeChangeResult)=> {
+    console.log("onOsThemeChange---", res.osTheme)
+})
+...
+...
+//注销监听
+uni.offOsThemeChange(callbackId)
+```
 
 <!-- UTSAPIJSON.offOsThemeChange.tutorial -->
 
@@ -53,7 +76,12 @@
 
 <!-- UTSAPIJSON.onAppThemeChange.returnValue -->
 
-<!-- UTSCOMJSON.onAppThemeChange.example -->
+```uts
+//callbackId 用于注销监听
+val callbackId = uni.onAppThemeChange((res: AppThemeChangeResult) => {
+  console.log("onAppThemeChange", res.appTheme)
+})
+```
 
 <!-- UTSAPIJSON.onAppThemeChange.tutorial -->
 
@@ -67,7 +95,15 @@
 
 <!-- UTSAPIJSON.offAppThemeChange.returnValue -->
 
-<!-- UTSCOMJSON.offAppThemeChange.example -->
+```uts
+val callbackId = uni.onAppThemeChange((res: AppThemeChangeResult) => {
+  console.log("onAppThemeChange", res.appTheme)
+})
+...
+...
+//注销监听
+uni.offAppThemeChange(this.appThemeChangeId)
+```
 
 <!-- UTSAPIJSON.offAppThemeChange.tutorial -->
 
