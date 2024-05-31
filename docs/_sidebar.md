@@ -7,9 +7,9 @@
   * [复杂列表开发指南](tutorial/stickynestlist.md)
   * [全局变量与状态管理](tutorial/store.md)
   * [几种组件标记的概念澄清](tutorial/idref.md)
-* web端开发指南
-  * [基础内容](web/README.md)
-  * [服务端渲染](web/ssr.md)
+* web平台专题指南
+  * [概述](web/README.md)
+  * [服务端渲染ssr](web/ssr.md)
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
   * [Android审查元素](debug/android-inspector.md)
