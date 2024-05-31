@@ -187,7 +187,7 @@ uni相关的异步api在web端不传回调时会返回promise（详情参考：[
 - [x] 国际化
 - [x] 地图
 - [x] uni-push2.0
-- [ ] 服务端渲染
+- [x] 服务端渲染 新增于HBuilderX 4.18
 - [ ] [接口Promise化](https://uniapp.dcloud.net.cn/api/#api-promise-%E5%8C%96)
 
 ## 运行与发行
