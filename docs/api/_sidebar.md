@@ -17,6 +17,7 @@
   * [设置tabbar](set-tabbar.md)
   * [页面下拉刷新](pull-down-refresh.md)
   * [将页面滚动到指定位置](page-scroll-to.md)
+  * [监听中间按钮的点击事件](on-tab-bar-mid-button-tap.md)
 * 元素节点
   * [获取element](get-element.md)
   * [获取node](nodes-info.md)
