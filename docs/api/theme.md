@@ -2,8 +2,8 @@
 
 <!-- UTSAPIJSON.setAppTheme.description -->
 
-uni.setAppTheme，并不会帮助开发者自动实现亮/暗主题切换，它的作用是：
-1. 根据theme.json，设置pages.json的亮/暗主题
+uni.setAppTheme，并不会帮助开发者自动实现整个应用的亮/暗主题切换，它的作用是：
+1. 根据[theme.json](../collocation/themejson.md)，设置pages.json的亮/暗主题
 2. 触发uni.onAppThemeChange，开发者和组件作者均可监听这个事件，自行响应将页面设置为对应的亮/暗风格。
 
 当然组件作者也可以不监听onAppThemeChange，而是暴露主题切换API给开发者，由开发者监听主题切换，再调用组件的主题切换API。
@@ -50,7 +50,7 @@ val callbackId = uni.onOsThemeChange((res: OsThemeChangeResult)=> {
 <!-- UTSAPIJSON.onOsThemeChange.tutorial -->
 
 **注意：**
-+ android 平台 android版本 10 开始支持深色模式主题 `dark`，低于10不支持深色模式主题
++ android 10、iOS 13 才开始支持深色模式主题 `dark`，更低版本无法获取、监听OS的主题。
 
 ## uni.offOsThemeChange(id) @offosthemechange
 

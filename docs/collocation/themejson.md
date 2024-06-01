@@ -2,36 +2,39 @@
 
 > HBuilder X 4.18+ 支持
 
-### app
+`iOS 13+`、`Android 10+` 提供了暗黑模式/深色模式，之前的模式称为light，暗黑称为dark。
 
-使用步骤
+当app需要暗黑主题时，开发者虽然可以自行决定自己的界面样式，但缺少合适的设置pages.json中样式的时机。
 
-1. 在 `theme.json` 中定义相关变量
-2. 在 `pages.json` 中以@开头引用变量
-3. 可选在 `manifest.json -> app` 中配置主题默认值 `"defaultAppTheme": "light"`, 支持通过[主题API](https://doc.dcloud.net.cn/uni-app-x/api/theme.html)动态设置
+在页面的onLoad中设置当前页面的style会来不及，因为某些平台页面早于onLoad就可以创建和进行窗体转场动画，\
+这会造成新页面动画刚开始页面的背景色、navigationBar背景色是一个风格，而在onLoad后颜色发生变化。\
+也就是俗称的 转场闪白 或 闪黑。
 
-**注意：**
-- `iOS 13+`、`Android 10+`设备上才支持
+小程序提供了theme.json来给解决这个问题。在theme.json里配置light和dark的颜色，然后在pages.json中引用。
 
-支持通过变量配置的属性如下所示：
+新页面创建时是根据pages.json的设置来初始化页面的，这样就可以在第一时间对页面样式进行适配，避免闪白闪黑。
 
-- 全局配置 globalStyle 与页面支持
+考虑到全端兼容，uni-app x的web和app也支持theme.json设置。
 
-  - navigationBarBackgroundColor
-  - navigationBarTextStyle
-  - backgroundColor
-  - backgroundTextStyle
+但需要注意：**theme.json，仅负责pages.json的页面样式、tabbar样式的控制。不负责开发者自己的页面css样式控制。**
 
-- 全局配置 tabbar 属性：
-  - color
-  - selectedColor
-  - backgroundColor
-  - borderStyle
-  - list
-    - iconPath
-    - selectedIconPath
+适配暗黑模式，除通过theme.json控制pages.json的样式外，还需要了解更多API：
+- 获取OS主题：[uni.getSystemInfo](../api/get-system-info.md)、[uni.getDevideInfo](../api/get-device-info.md)，返回的osTheme属性
+- 监听OS主题切换：[uni.onOsThemeChange](../api/theme.md#onosthemechange)、[uni.offOsThemeChange](../api/theme.md#offosthemechange)、
+- 获取App主题：[uni.getSystemInfo](../api/get-system-info.md)、[uni.getAppBaseInfo](../api/get-app-base-info.md)，返回的appTheme属性
+- 设置App主题：[uni.setAppTheme](../api/theme.md#setapptheme)
+- 监听App主题切换：[uni.onAppThemeChange](../api/theme.md#onappthemechange)、[uni.offAppThemeChange](../api/theme.md#offappthemechange)、
+- manifest.json中设置App默认主题：[defaultAppTheme](../collocation/manifest.md#manifest-app)
 
-## 变量配置文件 theme.json@themejson
+## theme.json使用步骤
+
+1. 在项目根目录下创建theme.json
+2. 在 `theme.json` 中定义相关变量
+3. 在 `pages.json` 中以@开头引用变量
+4. 可选在 `manifest.json -> app` 中配置主题默认值 `"defaultAppTheme": "light"`, 支持通过[主题API](https://doc.dcloud.net.cn/uni-app-x/api/theme.html)动态设置
+
+
+## theme.json内容描述 @themejson
 
 `theme.json` 用于颜色主题相关的变量定义，包含以下属性：
 
@@ -76,6 +79,24 @@
 ```
 
 配置完成后，调用相应 api 框架会自动所设属性，展示对应主题下的颜色。
+
+pages.json中并非所有配置项均支持使用theme.json中的变量，支持通过变量配置的属性如下所示：
+
+- 全局配置 globalStyle 与页面 style 支持：
+
+  - navigationBarBackgroundColor
+  - navigationBarTextStyle
+  - backgroundColor
+  - backgroundTextStyle
+
+- 全局配置 tabbar 属性：
+  - color
+  - selectedColor
+  - backgroundColor
+  - borderStyle
+  - list
+    - iconPath
+    - selectedIconPath
 
 ## 配置示例@themeconfig
 
@@ -146,3 +167,8 @@ theme.json
 	}
 }
 ```
+
+在[hello uni-app x](https://hellouniappx.dcloud.net.cn/)中，已经配置了theme.json，在 api 的主题切换示例中，可以体验。
+
+**注意：**
+- `iOS 13+`、`Android 10+`设备上才支持暗黑模式

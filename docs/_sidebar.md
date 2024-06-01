@@ -10,6 +10,22 @@
 * web平台专题指南
   * [概述](web/README.md)
   * [服务端渲染ssr](web/ssr.md)
+* app平台专题指南
+	* uni-app x 原生SDK和离线打包
+		* [概述](native/README.md)
+		* Android离线打包
+			* [原生工程配置](native/use/android.md)
+			* 模块配置
+				* [内置模块](native/modules/android/others.md)
+				* [uni-ad](native/modules/android/uni-ad.md)
+				* [uni-facialRecognitionVerify](native/modules/android/uni-facialRecognitionVerify.md)
+				* [uni-payment](native/modules/android/uni-payment.md)
+				* [uni-push](native/modules/android/uni-push.md)
+			* [uni-video](native/modules/android/uni-video.md)
+				* [uni-verify](native/modules/android/uni-verify.md)
+			* [启动与通信](native/use/androidcomm.md)
+			* [自定义基座](native/debug/android.md)
+			<!-- * [SDK下载](native/download/android.md) -->  
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
   * [Android审查元素](debug/android-inspector.md)
@@ -17,21 +33,6 @@
 * [源码和示例](sample.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
 * [跨平台框架及原生对比](select.md)
-* 离线打包
-  * [概述](native/README.md)
-  * Android离线打包
-    * [原生工程配置](native/use/android.md)
-    * 模块配置
-      * [内置模块](native/modules/android/others.md)
-      * [uni-ad](native/modules/android/uni-ad.md)
-      * [uni-facialRecognitionVerify](native/modules/android/uni-facialRecognitionVerify.md)
-      * [uni-payment](native/modules/android/uni-payment.md)
-      * [uni-push](native/modules/android/uni-push.md)
-	  * [uni-video](native/modules/android/uni-video.md)
-      * [uni-verify](native/modules/android/uni-verify.md)
-    * [启动与通信](native/use/androidcomm.md)
-    * [自定义基座](native/debug/android.md)
-    <!-- * [SDK下载](native/download/android.md) -->  
 * 更新日志
   * [正式版](release.md)
   * [Alpha 版](release-note-alpha.md)
