@@ -12,7 +12,7 @@ dependencies {
 
 |本地依赖库名称									|
 |:--											|
-|un-payment-release.aar	|
+|uni-payment-release.aar	|
 |uni-payment-wxpay-release.aar	|
 
 ### 支付宝支付
@@ -27,7 +27,7 @@ dependencies {
 
 |本地依赖库名称									|
 |:--											|
-|un-payment-release.aar	|
+|uni-payment-release.aar	|
 |uni-payment-alipay-release.aar	|
 
 
