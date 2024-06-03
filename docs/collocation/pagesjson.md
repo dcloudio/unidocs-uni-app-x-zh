@@ -217,6 +217,12 @@ tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更�
 
 <!-- PAGESJSON.pages_tabBar.compatibility -->
 
+**Tips**  
+- backgroundColor  
+	- app-android平台：系统导航（System navigation）栏的背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar ，系统导航栏背景色由操作系统默认值决定（部分设备会根据系统主题自动调整，部分设备会指定某种颜色）。  
+	- app-ios平台：tabBar 会自动适配安全区域，底部安全区域背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar，则不会自动适配底部安全区域，开发者需根据应用实际情况自行处理。  
+
+
 #### PagesOptionsTabbarList 配置项列表 @pagesoptionstabbarlist
 
 <!-- PAGESJSON.PagesOptionsTabbarList.description -->
