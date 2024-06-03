@@ -1285,6 +1285,38 @@ function getAppName(context : Context) : string {
 }
 ```
 
+### 6.6 泛型传递丢失的问题
+
+如果在UTS中声明一个包含泛型声明的方法，可能会出现泛型丢失，原因是因为普通的kotlin 方法没有实现泛型的传递
+
+错误的kt代码：
+
+```kotlin
+fun <T> getArtListByres(): A<T>? {
+   var aRet = UTSAndroid.consoleDebugError(JSON.parse<A<T>>("{\"x\":111,\"y\":\"aaa\",\"t\":{\"name\":\"zhangsan\"}}"), " at pages/index/index.uvue:27");
+   return aRet;
+}
+```
+
+期望得到的正确的kt代码：
+
+```ts
+inline fun <reified T> getArtListByres(): A<T>? {
+    var aRet = UTSAndroid.consoleDebugError(JSON.parse<A<T>>("{\"x\":111,\"y\":\"aaa\",\"t\":{\"name\":\"zhangsan\"}}"), " at pages/index/index.uvue:27");
+    return aRet;
+}
+```
+
+为了解决这种情况，我们可以在UTS中 添加android方法注解，来告诉编译器生成正确的代码：
+
+```kotlin
+@UTSAndroid.keyword("inline")
+@UTSAndroid.keyword('reified')
+export function request<T>(options : RequestOptions<T>) : RequestTask {
+	//xxx
+}
+```
+
 
 ## 7  已知待解决问题(持续更新)
 
