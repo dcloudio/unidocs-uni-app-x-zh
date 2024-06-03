@@ -17,7 +17,7 @@
 |enablePullDownRefresh				|Boolean|4.13		|4.13	|4.13	|false	|
 |backgroundColorContent				|String	|4.15		|4.15	|4.18	|#ffffff|
 |navigationBarBackgroundColor	|String	|4.18		|4.18	|4.18	|#007AFF|
-|navigationBarTextStyle				|String	|4.18		|4.18	|4.18	|#ffffff|
+|navigationBarTextStyle				|String	|4.18		|4.18	|4.18	|white  |
 |navigationBarTitleText				|String	|4.18		|4.18	|4.18	|				|
 |navigationStyle							|String	|x   		|x  	|4.18	|default|
 |backgroundColor							|String	|4.18		|4.18	|x		|#ffffff|
