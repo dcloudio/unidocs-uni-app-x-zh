@@ -437,7 +437,7 @@ dependencies {
 
 如果存在AndroidManifest.xml文件，需要将AndroidManifest.xml拷贝到`android uts插件模块/src/main/`目录下。
 
-注意：如果AndroidManifest.xml中设置了package字段，必须将此字段删除并将package的内容设置到build.gradle的`namespace`和`applicationId`。`namespace`和`applicationId`的内容必须一致，也必须与原AndroidManifest.xml的`package`一致，否则编译会报错。
+注意：如果AndroidManifest.xml中设置了package字段，必须将此字段删除并将package的内容设置到build.gradle的`namespace`。
 
 #### src
 
@@ -449,6 +449,7 @@ dependencies {
 ```groovy
 dependencies {
     ...
+	// uts-progressNotification为示例，实际中你需要将uts-progressNotification替换成自己的模块名称
 	implementation project(':uts-progressNotification')
 }
 ```

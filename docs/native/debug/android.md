@@ -7,10 +7,22 @@
 	}
 	```
 2. 将debug-server-release.aar拷贝到主项目的libs目录下
-3. 在AndroidManifest.xml的application节点下添加如下内容
+3. 修改AndroidManifest.xml
+
+	在application节点下添加如下内容
+	
 	```xml
 	<meta-data android:name="DCLOUD_DEBUG" android:value="true"/>
 	```
+	
+	添加网络权限
+	
+	```xml
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	```
+	
+注意：如果android原生项目的drawable目录下不存在名称为icon的图片，需要临时先补充一个命名为icon的文件。
 
 ## 导出自定义基座
 

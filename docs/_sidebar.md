@@ -21,11 +21,11 @@
 				* [uni-facialRecognitionVerify](native/modules/android/uni-facialRecognitionVerify.md)
 				* [uni-payment](native/modules/android/uni-payment.md)
 				* [uni-push](native/modules/android/uni-push.md)
-			* [uni-video](native/modules/android/uni-video.md)
+				* [uni-video](native/modules/android/uni-video.md)
 				* [uni-verify](native/modules/android/uni-verify.md)
 			* [启动与通信](native/use/androidcomm.md)
 			* [自定义基座](native/debug/android.md)
-			<!-- * [SDK下载](native/download/android.md) -->  
+			* [SDK下载](native/download/android.md) 
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
   * [Android审查元素](debug/android-inspector.md)
