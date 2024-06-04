@@ -24,6 +24,19 @@
 
 系统弹窗在部分系统（比如 鸿蒙 4.0以上）可能不支持顶部和居中展示。
 
+## uni.hideToast() @hidetoast
+
+<!-- UTSAPIJSON.hideToast.description -->
+
+<!-- UTSAPIJSON.hideToast.param -->
+
+<!-- UTSAPIJSON.hideToast.returnValue -->
+
+<!-- UTSAPIJSON.hideToast.example -->
+
+<!-- UTSAPIJSON.hideToast.compatibility -->
+
+<!-- UTSAPIJSON.hideToast.tutorial -->
 
 
 ## uni.showLoading(options) @showloading
@@ -39,6 +52,20 @@
 <!-- UTSAPIJSON.showLoading.example -->
 
 <!-- UTSAPIJSON.showLoading.tutorial -->
+
+## uni.hideLoading() @hideloading
+
+<!-- UTSAPIJSON.hideLoading.description -->
+
+<!-- UTSAPIJSON.hideLoading.param -->
+
+<!-- UTSAPIJSON.hideLoading.returnValue -->
+
+<!-- UTSAPIJSON.hideLoading.example -->
+
+<!-- UTSAPIJSON.hideLoading.compatibility -->
+
+<!-- UTSAPIJSON.hideLoading.tutorial -->
 
 ## uni.showModal(options) @showmodal
 
