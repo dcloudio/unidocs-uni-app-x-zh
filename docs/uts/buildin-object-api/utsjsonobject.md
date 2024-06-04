@@ -233,6 +233,17 @@ person.toMap().forEach((value, key) => {
 
 <!-- UTSJSON.UTSJSONObject.tutorial -->
 
+
+### parse<T>(): T | null
+
+<!-- UTSJSON.UTSJSONObject.parse.description -->
+
+<!-- UTSJSON.UTSJSONObject.parse.param -->
+
+<!-- UTSJSON.UTSJSONObject.parse.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.parse.compatibility -->
+
 ## 注意事项
 
 需要特别注意的是： 在 Android/Ios 平台，当使用 getXXX 方法返回 对象类型时，获取的是值引用而非内存引用
