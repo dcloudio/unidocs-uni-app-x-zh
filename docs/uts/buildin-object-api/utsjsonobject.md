@@ -214,6 +214,29 @@ console.log(genericArray)
 
 ```
 
+### parse<T>(): T | null
+
+<!-- UTSJSON.UTSJSONObject.parse.description -->
+
+<!-- UTSJSON.UTSJSONObject.parse.param -->
+
+<!-- UTSJSON.UTSJSONObject.parse.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.parse.compatibility -->
+
+```ts
+type A = {
+	x:number,
+	y:string,
+}
+let rootObj = JSON.parseObject('{"x":111,"y":"aaa","t":{"name":"zhangsan"}}')
+let a = rootObj!.parse<A>()
+// UTSJSONObject
+console.log(rootObj)
+// A
+console.log(a)
+```
+
 ### toMap(): Map<string, any>
 
 <!-- UTSJSON.UTSJSONObject.toMap.description -->
@@ -234,15 +257,7 @@ person.toMap().forEach((value, key) => {
 <!-- UTSJSON.UTSJSONObject.tutorial -->
 
 
-### parse<T>(): T | null
 
-<!-- UTSJSON.UTSJSONObject.parse.description -->
-
-<!-- UTSJSON.UTSJSONObject.parse.param -->
-
-<!-- UTSJSON.UTSJSONObject.parse.returnValue -->
-
-<!-- UTSJSON.UTSJSONObject.parse.compatibility -->
 
 ## 注意事项
 
