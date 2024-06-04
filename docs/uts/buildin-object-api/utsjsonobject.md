@@ -214,28 +214,6 @@ console.log(genericArray)
 
 ```
 
-### parse<T>(): T | null
-
-<!-- UTSJSON.UTSJSONObject.parse.description -->
-
-<!-- UTSJSON.UTSJSONObject.parse.param -->
-
-<!-- UTSJSON.UTSJSONObject.parse.returnValue -->
-
-<!-- UTSJSON.UTSJSONObject.parse.compatibility -->
-
-```ts
-type A = {
-	x:number,
-	y:string,
-}
-let rootObj = JSON.parseObject('{"x":111,"y":"aaa","t":{"name":"zhangsan"}}')
-let a = rootObj!.parse<A>()
-// UTSJSONObject
-console.log(rootObj)
-// A
-console.log(a)
-```
 
 ### toMap(): Map<string, any>
 
@@ -261,9 +239,10 @@ person.toMap().forEach((value, key) => {
 
 ## 注意事项
 
-需要特别注意的是： 在 Android/Ios 平台，当使用 getXXX 方法返回 对象类型时，获取的是值引用而非内存引用
+需要特别注意的是： 在 Android 平台，当使用 getXXX 方法返回 对象类型时，获取的是值引用而非内存引用 
 
 此时直接修改其对象的属性，并不会体现在整个UTSJSONObject上，如果需要体现此变化，则需要手动更新对应的字段
+
 
 ```ts
 let obj = {
@@ -288,3 +267,7 @@ let obj = {
    */
   console.log("obj",obj)
 ```
+
++ 此问题稍后版本会修复
+
++ get方法不存在此问题
