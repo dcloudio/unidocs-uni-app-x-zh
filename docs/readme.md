@@ -347,7 +347,10 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   是的。为三方ide做插件是一个投资大且充满不确定性的事情，官方有限精力会聚焦在自身产品优化上。但DCloud是开放的，不会限制三方ide的插件支持。欢迎社区投入支持。
 
 - uni-app x 支持最低的Android版本多少？浏览器版本多少？\
-  Android App最低支持`Android 5`；Web版最低支持`chrome 64`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；iOS版最低支持`iOS12`
+  * Android App最低支持`Android 5`；
+  * iOS版最低支持`iOS12`
+  * Web版发行模式最低支持`chrome 64`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；
+  * Web版运行模式最低支持`chrome 66`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；另外由于运行时不会对语法进行转化来兼容低版本浏览器，如果使用了一些比较新的语法可能会无法在低版本浏览器上运行。
 
 - uni-app x开源吗？
   * Web版开源地址：[https://github.com/dcloudio/uni-app](https://github.com/dcloudio/uni-app)
