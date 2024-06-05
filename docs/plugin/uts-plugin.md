@@ -1372,21 +1372,21 @@ uts插件编译需要XCode环境，因此在mac电脑安装了XCode工具时支�
 
 在windows电脑或者mac电脑没有安装XCode工具时，需要提交云端打包生成自定义基座后才能调用uts插件。
 
-### debug断点调试
-uts插件支持debug断点调试。
+### Debug断点调试
+uts插件支持debug断点调试。可以在uts插件代码中打断点、查看上下文，与前端代码联调。
 
 - [Android debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
 - [iOS debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
 
 #### Bug&Tips
-- 目前仅支持uni-app js项目使用uts插件时的调试；uni-app x预计在HBuilderX4.0起支持debug uts插件。
 - Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台
 
 
-## 云端打包
+## 打包
 
 正常支持云端打包。但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
 
+本地打包：[另见文档](../native/README.md)
 
 ## 常见问题
 
