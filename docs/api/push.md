@@ -105,9 +105,9 @@ hello uni-push是可跑通、同时包含客户端和服务器完整流程的代
 
 在业务开通、配置正确的情况下，执行项目下的云函数，即可给客户端发送消息。
 
-## 高级场景用途
+## app-android平台高级场景用途
 
-在[nativeResources](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90)目录可以配置图片和声音的二进制文件资源。
+在[nativeResources/android](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90)目录可以配置图片和声音的二进制文件资源。
 
 ### 通知栏显示图标自定义
 关于图标的配置，需要创建[nativeResources](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E8%B5%84%E6%BA%90)目录，
