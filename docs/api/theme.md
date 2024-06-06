@@ -30,6 +30,51 @@ uni.setAppTheme({
 
 <!-- UTSAPIJSON.setAppTheme.tutorial -->
 
+## uni.onAppThemeChange(callback) @onappthemechange
+
+<!-- UTSAPIJSON.onAppThemeChange.description -->
+
+**注意**  
+- HBuilderX4.18版本为 [uni.setAppTheme](#setapptheme) 设置的 theme 值变化时触发监听回调，回调参数中的 appTheme 值可能是"light" | "dark" | "auto"。在 app 平台设置应用的 theme 值为 auto 后，需同时使用 [uni.onOsThemeChange](#onOsThemeChange) 监听系统主题变化来计算应用使用的主题。  
+- HBuilderX4.19版本调整为 应用实际计算后使用的主题值发生变化时才触发监听回调，回调参数中的 appTheme 值只可能是"light" | "dark"。 在 app 平台设置应用的 theme 值为 auto 后，当系统主题发生变化时会自动计算决定是否触发回调，也就是说无需使用 [uni.onOsThemeChange](#onOsThemeChange) 监听系统主题变化。  
+
+<!-- UTSAPIJSON.onAppThemeChange.compatibility -->
+
+<!-- UTSAPIJSON.onAppThemeChange.param -->
+
+<!-- UTSAPIJSON.onAppThemeChange.returnValue -->
+
+```uts
+//callbackId 用于注销监听
+val callbackId = uni.onAppThemeChange((res: AppThemeChangeResult) => {
+  console.log("onAppThemeChange", res.appTheme)
+})
+```
+
+<!-- UTSAPIJSON.onAppThemeChange.tutorial -->
+
+## uni.offAppThemeChange(id) @offappthemechange
+
+<!-- UTSAPIJSON.offAppThemeChange.description -->
+
+<!-- UTSAPIJSON.offAppThemeChange.compatibility -->
+
+<!-- UTSAPIJSON.offAppThemeChange.param -->
+
+<!-- UTSAPIJSON.offAppThemeChange.returnValue -->
+
+```uts
+val callbackId = uni.onAppThemeChange((res: AppThemeChangeResult) => {
+  console.log("onAppThemeChange", res.appTheme)
+})
+//...
+//...
+//注销监听
+uni.offAppThemeChange(this.appThemeChangeId)
+```
+
+<!-- UTSAPIJSON.offAppThemeChange.tutorial -->
+
 ## uni.onOsThemeChange(callback) @onosthemechange
 
 <!-- UTSAPIJSON.onOsThemeChange.description -->
@@ -73,47 +118,6 @@ uni.offOsThemeChange(callbackId)
 ```
 
 <!-- UTSAPIJSON.offOsThemeChange.tutorial -->
-
-## uni.onAppThemeChange(callback) @onappthemechange
-
-<!-- UTSAPIJSON.onAppThemeChange.description -->
-
-<!-- UTSAPIJSON.onAppThemeChange.compatibility -->
-
-<!-- UTSAPIJSON.onAppThemeChange.param -->
-
-<!-- UTSAPIJSON.onAppThemeChange.returnValue -->
-
-```uts
-//callbackId 用于注销监听
-val callbackId = uni.onAppThemeChange((res: AppThemeChangeResult) => {
-  console.log("onAppThemeChange", res.appTheme)
-})
-```
-
-<!-- UTSAPIJSON.onAppThemeChange.tutorial -->
-
-## uni.offAppThemeChange(id) @offappthemechange
-
-<!-- UTSAPIJSON.offAppThemeChange.description -->
-
-<!-- UTSAPIJSON.offAppThemeChange.compatibility -->
-
-<!-- UTSAPIJSON.offAppThemeChange.param -->
-
-<!-- UTSAPIJSON.offAppThemeChange.returnValue -->
-
-```uts
-val callbackId = uni.onAppThemeChange((res: AppThemeChangeResult) => {
-  console.log("onAppThemeChange", res.appTheme)
-})
-...
-...
-//注销监听
-uni.offAppThemeChange(this.appThemeChangeId)
-```
-
-<!-- UTSAPIJSON.offAppThemeChange.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
 
