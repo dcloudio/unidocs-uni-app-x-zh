@@ -91,7 +91,7 @@ export default {
 
 #### vuex
 
-对于复杂的数据，如需保持云端客户端一致，建议使用vuex进行存储
+对于复杂的数据，如需保持云端客户端一致，建议使用vuex进行存储。下面是一个简单的示例：
 
 **main.uts**
 
@@ -276,9 +276,9 @@ uni-app-x内page-meta仅保留了存放head的功能，page-meta内的head节点
 
 1. 编译：
 
-  cli工程：`npm run build:h5:ssr`或通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
+  cli工程：`npm run build:h5:ssr`或通过`HBuilderX 4.18及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
 
-  非cli工程：通过`HBuilderX 3.1.16及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
+  非cli工程：通过`HBuilderX 4.18及以上版本`的`发行菜单->网站 PC-Web或手机H5`、勾选`ssr`
 
   ![以ssr模式发行](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/ssr-publish.jpg)
 
