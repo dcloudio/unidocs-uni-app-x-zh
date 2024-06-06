@@ -133,7 +133,9 @@ App端专有目录，为应用沙盒根目录，其下包含了`缓存文件目�
 
 uni-app x的部分内置API会产生临时文件会放置在本cache目录，如：
 - uni.downloadFile下载的文件
-- uni.chooseImage的拍照或选择的相册文件
+- uni.chooseImage、uni.chooseVideo拍摄或选择的相册文件
+- uni.compressImage、uni.compressVideo压缩后的文件
+- uni.getImageInfo网络图片下载到本地的文件
 <!-- - 录音的文件 -->
 - dom element的截图API
 
@@ -143,7 +145,7 @@ uni-app x的部分内置API会产生临时文件会放置在本cache目录，如
 
 在`uni.env.CACHE_PATH`目录下，uni官方使用了如下目录，请开发者避免使用uni-开头的目录：
 - uni-download // uni.downloadFile的默认下载地址 （在HBuilderX 3.98时曾使用目录uniDownloads，从3.99起调整为uni-download）
-- uni-media // uni.chooseImage的拍照或选择相册的文件
+- uni-media // uni.chooseImage、uni.chooseVideo拍摄或选择的相册文件，uni.compressImage、uni.compressVideo压缩后的文件，uni.getImageInfo网络图片下载到本地的文件
 - uni-snapshot // element takeSnapShot截图APi存储的路径
 - uni-crash //存放崩溃日志
 	* java //java、kotlin层崩溃日志
