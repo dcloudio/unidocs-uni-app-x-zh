@@ -22,7 +22,8 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 
 <!-- UTSAPIJSON.getSystemInfo.returnValue -->
 
-获取OAID、AndroidID等其他设备信息，[见插件市场](https://ext.dcloud.net.cn/search?q=oaid&orderBy=Relevance&uni-appx=1)
+- appTheme如取值为`auto`，代表跟随系统。此时需查询osTheme获取当前到底是light还是dark。
+- 获取OAID、AndroidID等其他设备信息，[见插件市场](https://ext.dcloud.net.cn/search?q=oaid&orderBy=Relevance&uni-appx=1)
 
 <!-- UTSAPIJSON.getSystemInfo.example -->
 
