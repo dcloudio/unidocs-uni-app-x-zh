@@ -184,7 +184,7 @@ android.enableJetifier=true
 
 离线打包导出成功之后，uts插件资源位于`unpackage/resource/app-android/uni_modules`下。
 
-如果不包含uts插件，可以[跳过](#configModules)此章节。
+如果不包含uts插件，可以[跳过](#configmodules)此章节。
 
 注意：付费uts插件不支持离线打包。
 
@@ -269,7 +269,7 @@ dependencies {
 
 ### 根据config.json配置应用
 
-如果不包含config.json文件，可以[跳过](#copyResources)此章节。
+如果不包含config.json文件，可以[跳过](#copyresources)此章节。
 
 [config.json配置及参考文档。](../../plugin/uts-plugin.md#androidconfigjson)
 
@@ -406,7 +406,7 @@ dependencies {
 	
 	**注意：转义符不能删掉，格式一定严格一致。**
 
-### 复制资源@copyResources
+### 复制资源@copyresources
 
 根据uts插件的资源目录，将对应的内容拷贝到android uts插件模块下。
 
@@ -454,7 +454,9 @@ dependencies {
 }
 ```
 
-## 配置内置模块@configModules
+**注意：uni-app集成uts插件文档到此截止。**
+
+## 配置内置模块@configmodules
 
 根据`unpackage/resource/{appid}/manifest.json`的配置，添加[内置模块的配置](../modules/android/others.md)。
 
