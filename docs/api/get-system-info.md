@@ -25,6 +25,39 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 - appTheme如取值为`auto`，代表跟随系统。此时需查询osTheme获取当前到底是light还是dark。
 - 获取OAID、AndroidID等其他设备信息，[见插件市场](https://ext.dcloud.net.cn/search?q=oaid&orderBy=Relevance&uni-appx=1)
 
+#### romName 返回值说明 @romname
+
+|值|解释|
+|:-|:-|
+|MIUI|小米|
+|EMUI|华为|
+|HarmonyOS|华为鸿蒙|
+|Magic OS|荣耀|
+|ColorOS|oppo|
+|Funtouch OS|vivo|
+|FLymeOS|魅族|
+|SmartisanOS|锤子|
+
+注意：不同rom的版本号规则不同，比如`MIUI`版本号是`V130`，而`HarmonyOS`的版本号是`2.0.0`
+
+#### hostName 返回值说明 @hostname
+
+|值|解释|
+|:-|:-|
+|WeChat|微信|
+|wxwork|微信企业版|
+|[百度宿主平台枚举值列表](https://smartprogram.baidu.com/docs/develop/api/device_sys/hostlist/)|百度|
+|alipay|支付宝|
+|amap|高德|
+|DINGTALK|钉钉|
+|UC|UC浏览器|
+|QUARK|夸克浏览器|
+|AK|阿里健康|
+|YK|优酷|
+|[抖音宿主平台枚举值列表](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/device/system-information/tt-get-system-info/#appname-%E8%AF%B4%E6%98%8E)|抖音系列|
+|qq|QQ|
+|KUAISHOU|快手|
+
 <!-- UTSAPIJSON.getSystemInfo.example -->
 
 <!-- UTSAPIJSON.getSystemInfo.tutorial -->
@@ -32,6 +65,9 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 ## uni.getSystemInfoSync() @getsysteminfosync
 
 <!-- UTSAPIJSON.getSystemInfoSync.description -->
+
+本API是同步API，仅为上面异步API的同步形式，返回值内容没有区别。但由于本API涉及的查询内容较多，耗时长，一般情况下不推荐同步获取。\
+如果希望使用同步方式，推荐使用分拆后的API：[uni.getDeviceInfo](./get-device-info.md)、[uni.getWindowInfo](./get-window-info.md)、[uni.getAppBaseInfo](./get-app-base-info.md)。
 
 <!-- UTSAPIJSON.getSystemInfoSync.compatibility -->
 
