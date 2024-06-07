@@ -11,6 +11,10 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 2. 客户端API，即本文
 3. 服务器API，[另见](https://doc.dcloud.net.cn/uniCloud/uni-cloud-push/api)
 
+## 注意事项
+* Android离线推送消息，需要开通厂商通道，在UniPush2.0中进行配置 [文档](https://uniapp.dcloud.net.cn/unipush-v2.html#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E9%85%8D%E7%BD%AE)
+* iOS平台配置证书时，请注意开通推送能力，否则云打包会报错，配置如下图：
+  ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/uni-push/iOS/ios-profile-push-notification.jpg)
 
 ## uni.getPushClientId(options) @getpushclientid
 
