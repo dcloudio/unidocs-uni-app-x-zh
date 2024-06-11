@@ -370,7 +370,7 @@ maven { url 'https://jitpack.io' }
 
 ### 3.6 Android 编译SDK版本说明
 
-截止 HBuilderX 4.05 版本：
+截止 HBuilderX 4.15 版本：
 
 + uni-app x 项目： 本地Android sdk 版本为34
 
