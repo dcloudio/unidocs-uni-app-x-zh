@@ -6,9 +6,9 @@
 
 <!-- UTSAPIJSON.getWindowInfo.param -->
 
-<!-- UTSAPIJSON.getWindowInfo.returnValue --><!-- UTSAPIJSON.getWindowInfo.example -->
+<!-- UTSAPIJSON.getWindowInfo.returnValue -->
 
-
+<!-- UTSAPIJSON.getWindowInfo.example -->
 
 <!-- UTSAPIJSON.getWindowInfo.tutorial -->
 
