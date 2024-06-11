@@ -368,6 +368,15 @@ maven { url 'https://jitpack.io' }
 这种情况，推荐开发者上传到 jitpack.io  这也是目前android 原生开发主流的远程仓库。 [使用文档](https://docs.jitpack.io/)
 
 
+### 3.6 Android 编译SDK版本说明
+
+截止 HBuilderX 4.05 版本：
+
++ uni-app x 项目： 本地Android sdk 版本为34
+
++ uni-app   项目： 本地Android sdk 版本为31
+
+开发者在使用系统api时，需要注意版本兼容性
 
 
 
