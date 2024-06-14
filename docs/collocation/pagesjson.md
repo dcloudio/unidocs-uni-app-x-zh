@@ -152,6 +152,7 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 
 <!-- PAGESJSON.PagesOptionsPage_style.compatibility -->
 
+<a id="pagesoptionspage-tips" />
 **Tips**
 - 横屏
 	* Web：横竖屏由手机浏览器控制，无法在pages.json中指定。uni-app x的页面和基础组件都支持自适应宽屏界面
@@ -166,7 +167,11 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 - 下拉刷新
 	* pages.json中下拉刷新是页面级配置，方便使用但灵活度有限。
 	* 如需自定义下拉刷新，请使用[scroll-view](../component/scroll-view.md)或[list-view](../component/list-view.md)的下拉刷新。
+- android系统导航栏
 
+	系统导航栏通常指手机底部按钮或手势提示线区域，部分系统设备可以设置隐藏系统导航栏
+	* Android: 系统导航栏的背景颜色与backgroundColorContent颜色一致，导航栏的前景色会根据backgroundColorContent颜色自动适配 (4.21版本开始支持)
+	* Android: tabBar页面的系统导航栏背景颜色取值策略[参考](#tabbar-tips) 
 **style示例**
 ```javascript
 {
@@ -217,9 +222,10 @@ tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更�
 
 <!-- PAGESJSON.pages_tabBar.compatibility -->
 
+<a id="tabbar-tips" />
 **Tips**  
 - backgroundColor  
-	- app-android平台：系统导航（System navigation）栏的背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar ，系统导航栏背景色由操作系统默认值决定（部分设备会根据系统主题自动调整，部分设备会指定某种颜色）。  
+	- app-android平台：系统导航（System navigation）栏的背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar 页面导航栏背景颜色取值策略[参考](#pagesoptionspage-tips) 
 	- app-ios平台：tabBar 会自动适配安全区域，底部安全区域背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar，则不会自动适配底部安全区域，开发者需根据应用实际情况自行处理。  
 
 
