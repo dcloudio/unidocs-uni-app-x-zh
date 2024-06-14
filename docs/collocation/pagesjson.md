@@ -152,7 +152,7 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 
 <!-- PAGESJSON.PagesOptionsPage_style.compatibility -->
 
-<a id="pagesoptionspage-tips"/>
+<a id="pagesoptionspage-tips"></a>
 
 **Tips**
 - 横屏
@@ -169,7 +169,6 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 	* pages.json中下拉刷新是页面级配置，方便使用但灵活度有限。
 	* 如需自定义下拉刷新，请使用[scroll-view](../component/scroll-view.md)或[list-view](../component/list-view.md)的下拉刷新。
 - Android系统导航栏
-
 	系统导航栏通常指手机底部按钮或手势提示线区域，部分系统设备可以设置隐藏系统导航栏
 	* 系统导航栏的背景颜色与backgroundColorContent颜色一致，导航栏的前景色会根据backgroundColorContent颜色自动适配 (4.21版本开始支持)
 	* tabBar页面的系统导航栏背景颜色取值策略[参考](#tabbar-tips) 
@@ -223,7 +222,7 @@ tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更�
 
 <!-- PAGESJSON.pages_tabBar.compatibility -->
 
-<a id="tabbar-tips"/>
+<a id="tabbar-tips"></a>
 
 **Tips**  
 - backgroundColor  
