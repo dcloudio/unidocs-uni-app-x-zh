@@ -4,7 +4,7 @@
 
 ### 4.19.2024060704-alpha
 
-**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android-uni-app-x-SDK@11848-4.19.zip)**
+**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android-uni-app-x-SDK@11848-4.19-1.zip)**
 
 * 更新uni-app离线打包支持，需使用HBuilderX（4.19.2024060704-alpha）版本生成本地打包App资源。
 * 新增 uniCloud.chooseAndUploadFile 支持选择视频并上传 [详情](https://doc.dcloud.net.cn/uni-app-x/api/unicloud/storage.html#chooseanduploadfile)

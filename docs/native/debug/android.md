@@ -22,7 +22,9 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	```
 	
-注意：如果android原生项目的drawable目录下不存在名称为icon的图片，需要临时先补充一个命名为icon的文件。
+注意：
+- 如果android原生项目的drawable目录下不存在名称为icon的图片，需要临时先补充一个命名为icon的文件。
+- 当build.gradle中的`targetSdk`为34时，在安卓14设备上资源同步会失败。建议将`targetSdk`调整到30至33之间。
 
 ## 导出自定义基座
 

@@ -87,18 +87,47 @@ uni-getSystemInfo-release.aar共17个aar拷贝到uni-app x模块的libs下，如
 	```
 	
 	***注意：上面的配置需要同时设置到主模块中。***
+	
+### 配置gradle插件
+
+在项目根目录的build.gradle的顶部添加gradle插件的依赖。参考：
+
+```groovy
+buildscript {
+    dependencies {
+		...
+        classpath(files('plugins/uts-kotlin-compiler-plugin-0.0.1.jar'))
+        classpath(files('plugins/uts-kotlin-gradle-plugin-0.0.1.jar'))
+    }
+}
+```
+
+**注意：文件uts-kotlin-compiler-plugin-0.0.1.jar和uts-kotlin-gradle-plugin-0.0.1.jar位于离线SDK中，示例中放到了项目根目录的`plugin`文件夹下。参考：**
+
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/gradle_plugins.png)
+
+然后在`uniappx`模块的build.gradle下添加插件`io.dcloud.uts.kotlin`的依赖。参考：
+
+```groovy
+plugins {
+	...
+    id 'io.dcloud.uts.kotlin'
+}
+```
+
+**注意：`io.dcloud.uts.kotlin`仅需要配置到uniappx模块和android uts插件模块中。原有的主项目不需要配置。**
 
 ### 修改项目的settings.gradle
 
-在项目根路径下的settings.gradle中添加`jitpack`的maven的仓库地址，参考如下：
+在项目根路径下的settings.gradle中添加`jitpack`的maven的仓库地址和本地gradle插件的路径配置。参考如下：
 
 ```groovy
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
-        mavenCentral()
+        ...
         maven { url = uri("https://jitpack.io") }
+		flatDir { dirs('./plugins/') }
     }
 }
 ```
@@ -213,7 +242,22 @@ android.enableJetifier=true
 
 ### 修改android uts插件模块的build.gradle
 
-添加依赖
+#### 添加gradle插件
+
+uni-app可以忽略gradle插件配置。
+
+在build.gradle的plugins节点下添加`io.dcloud.uts.kotlin`的依赖。参考：
+
+```groovy
+plugins {
+    ...
+    id 'io.dcloud.uts.kotlin'
+}
+```
+
+#### 添加依赖
+
+将下面内容拷贝到build.gradle中，替换原有的`dependencies`节点。
 
 ```groovy
 dependencies {
@@ -327,6 +371,7 @@ dependencies {
 	
 	```groovy
 	dependencies {
+		...
 		implementation 'androidx.core:core-ktx:1.6.0'
 	}
 	```
@@ -335,6 +380,7 @@ dependencies {
 	
 	```groovy
 	dependencies {
+		...
 		implementation 'com.xxx.richtext:richtext:3.0.7'
 	}
 	```
@@ -347,7 +393,7 @@ dependencies {
 	
 	```groovy
 	plugins {
-		id 'com.android.application'
+		...
 		id 'com.huawei.agconnect'
 	}
 	```
@@ -357,11 +403,13 @@ dependencies {
 	```groovy
 	buildscript {
 		dependencies {
-			classpath 'com.android.tools.build:gradle:7.2.0'
+			...
 			classpath "com.huawei.agconnect:agcp:1.6.0.300"
 		}
 	}
-	allprojects {}
+	plugins {
+		...
+	}
 	```
 	
 	<a id='utscomponents'></a>
