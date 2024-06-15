@@ -1333,9 +1333,6 @@ export function request<T>(options : RequestOptions<T>) : RequestTask {
 
 当以type 结构体为参数时，其内部boolean字段 默认值为false，不支持指定。
 
-### 目前尚不支持 8.x 版本gradle
-
-建议先使用7.X版本，这个问题后续会处理
 
 ### android原生资源文件，暂不支持三方库依赖
 
