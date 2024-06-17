@@ -1342,7 +1342,7 @@ export function request<T>(options : RequestOptions<T>) : RequestTask {
 
 截止HBuilder X 4.19 ：
 
-UTS插件还不支持直接使用so文件，需要将so文件和调用代码封装为AAR供UTS插件调用
+UTS插件本地调试尚不支持直接使用so文件，需要将so文件和调用代码封装为AAR供UTS插件调用
 
 AAR调用示例参考：[hello uts](!https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-toast)
 
