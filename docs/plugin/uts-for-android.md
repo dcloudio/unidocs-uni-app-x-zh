@@ -1337,3 +1337,12 @@ export function request<T>(options : RequestOptions<T>) : RequestTask {
 ### android原生资源文件，暂不支持三方库依赖
 
 比如xml布局文件中暂时只支持 linearlayout等官方标签，不支持 appcompat等三方库标签。这个问题后续会被处理
+
+### 不支持直接添加so文件到插件目录
+
+截止HBuilder X 4.19 ：
+
+UTS插件还不支持直接使用so文件，需要将so文件和调用代码封装为AAR供UTS插件调用
+
+AAR调用示例参考：[hello uts](!https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-toast)
+
