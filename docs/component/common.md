@@ -59,6 +59,7 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 ::: tip Tips
 - 通过[DrawableContext](../dom/drawablecontext.md)或其他方式绘制复杂图形时，建议设置为`hardware`
 - 执行复杂动画或大量动画时，建议设置为`hardware`
+- 由于安卓原生限制，当设置`android-layer-type`为`hardware`或`software`时，`overflow: visible`不生效。
 :::
 
 <!-- CUSTOMTYPEJSON.general-attribute.example -->
