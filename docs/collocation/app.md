@@ -21,6 +21,7 @@
 |onHide|当 `uni-app-x` 从前台进入后台，包括手机息屏||
 |onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出|app-uvue-android 3.9+|
 |onExit|监听应用退出|app-uvue-android 3.9+|
+|onError|监听应用发生脚本错误或 API 调用报错|4.21+|
 
 **示例代码**
 
