@@ -171,11 +171,10 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	├─mp-toutiao                  // 抖音小程序平台，可选
 │	├─mp-weixin                   // 微信小程序平台，可选
 │	├─mp-xhs                      // 小红书小程序平台（仅限vue2），可选
-│	├─index.d.ts                  // 插件能力声明，可选，将废弃，推荐使用interface.uts
-│	├─interface.uts               // 声明插件对外暴露的API
+│	├─interface.uts               // 声明插件对外暴露的API，必需
 │	├─unierror.uts                // 定义插件对外暴露的错误信息，可选
 │	└─index.uts                   // 跨平台插件能力实现，可选
-└─package.json                    // 插件清单文件
+└─package.json                    // 插件清单文件，必需
 </code>
 </pre>
 
@@ -192,11 +191,10 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 2. 在插件根目录 index.uts 中写条件编译，import 分平台的文件
 3. 不写根目录的 index.uts，直接在分平台目录写 index.uts。不跨端时，比如只做一个 Android 插件，这样写比较简单
 
-index.d.ts 文件是对当前插件能力的**声明**，用于语法提示。已不推荐使用，请使用interface.uts。
+插件对外暴露能力的总入口在 `interface.uts` ，他与 `index.uts`的关系是声明和实现的关系。
 
-因为 uts 写好后，HBuilderX 可以自动识别 uts api 并进行语法提示。它更多的用于后续 uts 插件加密时给予语法提示。
+在这里声明的类型，HBuilderX 可以自动识别 并进行语法提示。
 
-如果不熟悉 d.ts，可以自行网上搜索，它属于 ts 标准技术。
 
 ### App原生配置@utsAppDir
 
