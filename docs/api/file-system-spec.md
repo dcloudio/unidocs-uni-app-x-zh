@@ -178,7 +178,7 @@ FileSystemManager目前对内置应用沙盒目录为只读。如需写入，需
 FileSystemManager暂不支持访问沙盒外目录。如有相关需求目前需开发uts插件。
 
 ## 常见问题  
-### 文件路径中字母大小写敏感问题  
+### 文件路径中字母大小写敏感问题@casesensitive  
 - Android平台  
 文件路径中字母大小写不敏感  
 - iOS平台  
