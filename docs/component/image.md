@@ -54,7 +54,8 @@ app端支持的图片格式如下：
 	iOS端image组件内部使用[SDWebImage](https://github.com/SDWebImage/SDWebImage)库(5.10.0)，自带缓存策略，默认7天缓存，缓存过期后会自动清理。
 
 #### App平台
-- App-Android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸。
+- app-android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸  
+- app-ios平台在真机设备上，本地图片路径中的字母大小写敏感，实际项目中需注意字母大小写问题 [详情](../api/file-system-spec.md#casesensitive)  
 
 <!-- UTSCOMJSON.image.children -->
 
@@ -63,5 +64,5 @@ app端支持的图片格式如下：
 <!-- UTSCOMJSON.image.reference -->
 
 ### tips
-- 在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/image/image-path.uvue)
-- 图片文件需在static目录（项目下或uni_modules下都支持static目录）下，或者import导入文件，否则文件不会被copy到最终的包中，导致无法访问。
+- 在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/image/image-path.uvue)  
+- 图片文件需在static目录（项目下或uni_modules下都支持static目录）下，或者import导入文件，否则文件不会被copy到最终的包中，导致无法访问  
