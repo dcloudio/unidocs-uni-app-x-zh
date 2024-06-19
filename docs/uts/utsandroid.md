@@ -240,7 +240,12 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 
 ```ts
-// 代码包文件
+/**
+ * 代码包文件在真机运行模式下：
+ * /storage/emulated/0/Android/data/io.dcloud.uniappx/apps/__UNI__XXXXXXX/www/static/logo.png 
+ * 代码包文件在云打包模式下：
+ * file:///android_asset/apps/__UNI__XXXXXXX/www/static/logo.png
+ * /
 console.log(UTSAndroid.getResourcePath('static/logo.png'))
 // 沙盒文件
 console.log(UTSAndroid.getResourcePath('unifile://sandbox/static/logo.png'))
