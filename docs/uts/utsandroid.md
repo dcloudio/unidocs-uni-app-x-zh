@@ -247,9 +247,9 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
  * file:///android_asset/apps/__UNI__XXXXXXX/www/static/logo.png
  * /
 console.log(UTSAndroid.getResourcePath('static/logo.png'))
-// 沙盒文件
+// 沙盒文件,不支持，会返回不存在的路径
 console.log(UTSAndroid.getResourcePath('unifile://sandbox/static/logo.png'))
-// 沙盒外文件
+// 沙盒外文件,不支持，会返回不存在的路径
 console.log(UTSAndroid.getResourcePath('/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
 ```
 
