@@ -4,6 +4,19 @@
 Number 对象是经过封装的能让你处理数字值的对象。
 
 
+### Constructor(value?)
+
+<!-- UTSJSON.Number.Constructor.description -->
+
+<!-- UTSJSON.Number.Constructor.param -->
+
+<!-- UTSJSON.Number.Constructor.returnValue -->
+
+<!-- UTSJSON.Number.Constructor.compatibility -->
+
+<!-- UTSJSON.Number.Constructor.tutorial -->
+
+
 ## 实例方法
 
 

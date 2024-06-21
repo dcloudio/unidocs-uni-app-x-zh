@@ -45,9 +45,45 @@ new Date("Hello")
 在Android/IOS平台，会转换为程序执行时的时间
 
 ```ts
-// ‍当前日期：[Date]‍ Fri May 31 2024 17:18:02 GMT+0800 
+// ‍当前日期：[Date]‍ Fri May 31 2024 17:18:02 GMT+0800
 new Date("Hello")
 ```
+
+### Constructor()
+
+<!-- UTSJSON.Date.Constructor.description -->
+
+<!-- UTSJSON.Date.Constructor.param -->
+
+<!-- UTSJSON.Date.Constructor.returnValue -->
+
+<!-- UTSJSON.Date.Constructor.compatibility -->
+
+<!-- UTSJSON.Date.Constructor.tutorial -->
+
+### Constructor(value)_1
+
+<!-- UTSJSON.Date.Constructor_1.description -->
+
+<!-- UTSJSON.Date.Constructor_1.param -->
+
+<!-- UTSJSON.Date.Constructor_1.returnValue -->
+
+<!-- UTSJSON.Date.Constructor_1.compatibility -->
+
+<!-- UTSJSON.Date.Constructor_1.tutorial -->
+
+### Constructor(year, monthIndex, date?, hours?, minutes?, seconds?, ms?)_2
+
+<!-- UTSJSON.Date.Constructor_2.description -->
+
+<!-- UTSJSON.Date.Constructor_2.param -->
+
+<!-- UTSJSON.Date.Constructor_2.returnValue -->
+
+<!-- UTSJSON.Date.Constructor_2.compatibility -->
+
+<!-- UTSJSON.Date.Constructor_2.tutorial -->
 
 
 ## 静态方法

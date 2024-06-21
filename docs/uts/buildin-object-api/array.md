@@ -2,8 +2,44 @@
 
 Array 对象是用于构造数组的全局对象，数组是类似于列表的高阶对象。
 
-## 实例属性
+### Constructor(arrayLength?)
 
+<!-- UTSJSON.Array.Constructor.description -->
+
+<!-- UTSJSON.Array.Constructor.param -->
+
+<!-- UTSJSON.Array.Constructor.returnValue -->
+
+<!-- UTSJSON.Array.Constructor.compatibility -->
+
+<!-- UTSJSON.Array.Constructor.tutorial -->
+
+### Constructor(arrayLength)_1
+
+<!-- UTSJSON.Array.Constructor_1.description -->
+
+<!-- UTSJSON.Array.Constructor_1.param -->
+
+<!-- UTSJSON.Array.Constructor_1.returnValue -->
+
+<!-- UTSJSON.Array.Constructor_1.compatibility -->
+
+<!-- UTSJSON.Array.Constructor_1.tutorial -->
+
+### Constructor(...items)_2
+
+<!-- UTSJSON.Array.Constructor_2.description -->
+
+<!-- UTSJSON.Array.Constructor_2.param -->
+
+<!-- UTSJSON.Array.Constructor_2.returnValue -->
+
+<!-- UTSJSON.Array.Constructor_2.compatibility -->
+
+<!-- UTSJSON.Array.Constructor_2.tutorial -->
+
+
+## 实例属性
 
 ### length
 
@@ -703,5 +739,3 @@ const shallowCopy = fruits.slice() // this is how to make a copy
 ```ts
 console.log(arr.0) // a syntax error
 ```
-
-
