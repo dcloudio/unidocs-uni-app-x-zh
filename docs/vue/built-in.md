@@ -201,6 +201,10 @@
 
 - 期望的绑定值类型：根据表单输入元素或组件输出的值而变化
 
+- 仅限：
+  - `<input>`
+  - `<textarea>`
+
 - 修饰符 <Badge text="仅 Android">
   - `.lazy` - 监听 `change` 事件而不是 `input` 事件
   - `.number` - 将输入的合法字符串转为数字
