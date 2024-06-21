@@ -3,6 +3,7 @@
 
 Number 对象是经过封装的能让你处理数字值的对象。
 
+## 构造函数
 
 ### Constructor(value?)
 
@@ -15,6 +16,10 @@ Number 对象是经过封装的能让你处理数字值的对象。
 <!-- UTSJSON.Number.Constructor.compatibility -->
 
 <!-- UTSJSON.Number.Constructor.tutorial -->
+
+
+注意：通过构造器函数创建`Number`对象的语法，目前仅支持web平台。 在app 平台，需要使用字面量定义或者`Number.from()`进行数字变量的创建 [文档](!https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#%E6%95%B0%E5%AD%97-number)
+
 
 
 ## 实例方法
