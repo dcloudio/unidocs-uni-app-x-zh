@@ -2,6 +2,8 @@
 
 Array 对象是用于构造数组的全局对象，数组是类似于列表的高阶对象。
 
+## 构造函数
+
 ### Constructor(arrayLength?)
 
 <!-- UTSJSON.Array.Constructor.description -->
@@ -14,7 +16,7 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.Constructor.tutorial -->
 
-### Constructor(arrayLength)_1
+### Constructor(arrayLength)
 
 <!-- UTSJSON.Array.Constructor_1.description -->
 
@@ -26,7 +28,7 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.Constructor_1.tutorial -->
 
-### Constructor(...items)_2
+### Constructor(...items)
 
 <!-- UTSJSON.Array.Constructor_2.description -->
 
