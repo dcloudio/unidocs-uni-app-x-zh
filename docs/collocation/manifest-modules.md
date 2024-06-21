@@ -100,9 +100,11 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 
 ## uni-ad@uni-ad
 
-> HBuilderX 3.99+ 新增支持 uni-ad 开屏广告
+> HBuilderX 3.99 app-android平台 新增支持 uni-ad 开屏广告
+> HBuilderX 4.22 app-ios平台 新增支持 uni-ad 开屏广告
 
-[uni-ad](https://uniad.dcloud.net.cn/) 是DCloud提供的聚合广告服务。
+[uni-ad](https://uniad.dcloud.net.cn/) 是DCloud提供的聚合广告服务。  
+
 
 在uni-app x客户端，uni-ad是一个独立模块。使用开屏广告不需要调用任何API，应用启动时会自动拉取并展示开屏广告。这也导致 uni-ad 模块无法参与摇树。
 需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
