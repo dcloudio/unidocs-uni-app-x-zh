@@ -61,7 +61,7 @@ new Date("Hello")
 
 <!-- UTSJSON.Date.Constructor.tutorial -->
 
-### Constructor(value)_1
+### Constructor(value)
 
 <!-- UTSJSON.Date.Constructor_1.description -->
 
@@ -73,7 +73,7 @@ new Date("Hello")
 
 <!-- UTSJSON.Date.Constructor_1.tutorial -->
 
-### Constructor(year, monthIndex, date?, hours?, minutes?, seconds?, ms?)_2
+### Constructor(year, monthIndex, date?, hours?, minutes?, seconds?, ms?)
 
 <!-- UTSJSON.Date.Constructor_2.description -->
 
