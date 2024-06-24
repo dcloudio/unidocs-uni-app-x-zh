@@ -14,7 +14,7 @@ RegExp 对象用于将文本与一个模式匹配。
 
 <!-- UTSJSON.RegExp.Constructor.tutorial -->
 
-### Constructor(pattern, flags?)_1
+### Constructor(pattern, flags?)
 
 <!-- UTSJSON.RegExp.Constructor_1.description -->
 
