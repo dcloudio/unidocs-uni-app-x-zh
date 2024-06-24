@@ -24,7 +24,7 @@ console.log(map.get('key1')) // 跨端用法
 
 <!-- UTSJSON.Map.Constructor.tutorial -->
 
-### Constructor(entries?)_1
+### Constructor(entries?)
 
 <!-- UTSJSON.Map.Constructor_1.description -->
 
