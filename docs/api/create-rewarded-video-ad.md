@@ -1,6 +1,3 @@
-> HBuilderX 4.0 app-android平台 新增支持 uni-ad 激励视频广告  
-> HBuilderX 4.22 app-ios平台 新增支持 uni-ad 激励视频广告  
-
 ## uni.createRewardedVideoAd(option) @createrewardedvideoad
 
 <!-- UTSAPIJSON.createRewardedVideoAd.description -->
