@@ -20,7 +20,7 @@
 
 和 W3C 规范保持一致 [https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/canvas](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/canvas)
 
-**注意事项**@hidpi
+## 注意事项@hidpi
 
 uni-app 1 canvas 组件内部默认处理了高清逻辑，uni-app x 和 W3C 规范一致，需要开发者根据自己的场景手动处理
 
