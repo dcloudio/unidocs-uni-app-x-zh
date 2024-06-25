@@ -2,38 +2,6 @@
 
 每个组件都有属性和事件。有些属性和事件，是所有组件都支持的。
 
-::: info 调整
-
-1. uni-app x 4.0+ ，组件事件类型的名称增加 Uni 前缀，避免与浏览器全局事件冲突
-2. 非 Uni 开头的事件类型名称被标记为废弃，功能不受影响。
-3. 如您使用uni-app x 4.0以下版本，仍需去掉 Uni 前缀
-
-变更示例
-```html
-<template>
-  <slider @change="sliderChange" />
-</template>
-<script>
-  export default {
-    data() {
-      return {
-      }
-    },
-    methods: {
-      // 变更之前类型为 SliderChangeEvent
-      // sliderChange(e : SliderChangeEvent) {
-      // }
-
-      // 变更之后类型为 UniSliderChangeEvent
-      sliderChange(e : UniSliderChangeEvent) {
-      }
-    }
-  }
-</script>
-```
-:::
-
-
 ## 组件公共属性
 
 <!-- CUSTOMTYPEJSON.general-attribute.attribute -->
@@ -192,7 +160,38 @@ handleClick (event : UniPointerEvent) {
 
 ### Bug & Tips
 
-- HBuilder X 4.0以前，连续触发`click`或`tap`事件，可能会出现事件丢失的情况。请升级新版
+- uni-app x 4.0以前，连续触发`click`或`tap`事件，可能会出现事件丢失的情况。请升级新版
+
+::: info 调整
+
+1. uni-app x 4.0+ ，组件事件类型的名称增加 Uni 前缀，避免与浏览器全局事件冲突
+2. 非 Uni 开头的事件类型名称被标记为废弃，功能不受影响。
+3. 如您使用uni-app x 4.0以下版本，仍需去掉 Uni 前缀
+
+变更示例
+```html
+<template>
+  <slider @change="sliderChange" />
+</template>
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods: {
+      // 变更之前类型为 SliderChangeEvent
+      // sliderChange(e : SliderChangeEvent) {
+      // }
+
+      // 变更之后类型为 UniSliderChangeEvent
+      sliderChange(e : UniSliderChangeEvent) {
+      }
+    }
+  }
+</script>
+```
+:::
 
 ## UniEvent
 
