@@ -47,11 +47,12 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 
 ### tap/click 事件@tap
 
-#### App端
-- HBuilderX4.0及以下版本手指按下后移动会取消tap/click事件的触发，即手指移动后抬起不会响应tap/click事件
-- HBuilder4.0及以上版本App端调整手指按下后在组件区域内移动不会取消tap/click事件的触发，移动到组件区域外才会取消tap/click事件的触发
+- App端
+App端手指按下后在组件区域内移动不会取消tap/click事件的触发，移动到组件区域外才会取消tap/click事件的触发。
 
-#### Web端
+注意老版问题：uni-app x 4.0及以下版本手指按下后移动会取消tap/click事件的触发，即手指移动后抬起不会响应tap/click事件。
+
+- Web端
 手指按下后移动会取消tap/click事件的触发，即手指移动后抬起不会响应tap/click事件
 
 
