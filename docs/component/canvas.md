@@ -20,7 +20,7 @@
 
 和 W3C 规范保持一致 [https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/canvas](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/canvas)
 
-## 注意事项@hidpi
+## 注意事项@tips
 
 老版 uni-app 的 canvas 使用了微信小程序的的旧版规范，和 W3C 规范有差异。微信小程序新版的 canvas 规范已经与 W3C 规范拉齐。
 
