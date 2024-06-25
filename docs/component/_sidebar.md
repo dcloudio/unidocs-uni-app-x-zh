@@ -21,6 +21,7 @@
   * [slider](slider.md)
   * [switch](switch.md)
   * [form](form.md)
+  * [canvas](canvas.md)
   * [video](video.md)
   * [web-view](web-view.md)
   * [animation-view](animation-view.md)
