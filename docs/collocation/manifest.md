@@ -29,6 +29,10 @@ uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选�
 
 <!-- MANIFESTJSON.manifest_app.table -->
 
+老uni-app可配置原生的隐私弹框。这是因为开发者的js执行较慢，在原生代码获取隐私前来不及弹框，不能满足先弹隐私政策后采集数据的合规要求。
+
+但uni-app x是原生的，开发者的代码执行非常快，无需再提供隐私政策弹框配置。自行弹框即可。
+
 #### Android权限配置@permissions
 
 uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中。
