@@ -134,6 +134,24 @@ console.log(array1.fill(6));
 
 ```
 
+需要注意的是，截止HBuilder 4.22  部分平台尚不支持[根据元素个数构造`Array`的写法](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/array.html#constructor) 
+
+所以下面的代码在 部分平台可能不符合预期
+
+
+```ts
+new Array(20).fill(0)
+```
+
+可以使用下面的代码替代
+
+```ts
+let b = Array<Number>()
+for(let i = 0; i < 20; i++){
+  b.add(0)
+}
+```
+
 <!-- UTSJSON.Array.fill.compatibility -->
 
 ### copyWithin(target, start?, end?)
