@@ -26,7 +26,9 @@
 				* [uni-verify](native/modules/android/uni-verify.md)
 			* [启动与通信](native/use/androidcomm.md)
 			* [自定义基座](native/debug/android.md)
-			* [SDK下载](native/download/android.md) 
+			* [SDK下载](native/download/android.md)
+	* 应用市场上架注意
+		* [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
   * [Android审查元素](debug/android-inspector.md)
