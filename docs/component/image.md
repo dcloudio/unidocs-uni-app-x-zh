@@ -53,4 +53,5 @@ app端支持的图片格式如下：
 ### tips
 - 在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/image/image-path.uvue)  
 - 图片文件需在static目录（项目下或uni_modules下都支持static目录）下，或者import导入文件，否则文件不会被copy到最终的包中，导致无法访问  
-- app-android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸  
+- app-android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸
+- app-ios平台 iOS14 版本开始系统原生支持 WebP 图片格式，运行到之前的 iOS 版本时会使用三方解码器软解码实现对 WebP 的支持，性能存在一定损耗，如果您的应用支持 iOS14 之前的版本，建议使用 png 或 jpg 图片格式
