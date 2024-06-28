@@ -39,8 +39,10 @@ startActivity(Intent(this, UniAppActivity::class.java))
 	import Context from 'android.content.Context'
 	import Intent from 'android.content.Intent'
 	import IntentFilter from 'android.content.IntentFilter'
+	import ContextCompat from 'androidx.core.content.ContextCompat'
 	class MyReciver extends BroadcastReceiver {
 		constructor() {
+
 		}
 		override onReceive(context : Context, intent : Intent) {
 			var action = intent.getAction()
@@ -68,7 +70,7 @@ startActivity(Intent(this, UniAppActivity::class.java))
 		onReady() {
 			// #ifdef APP-ANDROID
 			this.receiver = new MyReciver()
-			UTSAndroid.getUniActivity()?.registerReceiver(this.receiver!, new IntentFilter("ACTION_FROM_NATIVE"))
+			ContextCompat.registerReceiver(UTSAndroid.getUniActivity()!,this.receiver, IntentFilter("ACTION_FROM_NATIVE"),ContextCompat.RECEIVER_EXPORTED)
 			// #endif
 		},
 
@@ -123,7 +125,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         findViewById<View>(R.id.btn_goto).setOnClickListener {
             startActivity(Intent(this@MainActivity, UniAppActivity::class.java))
-            registerReceiver(broadcast, IntentFilter("ACTION_TO_NATIVE"))
+            ContextCompat.registerReceiver(this,broadcast, IntentFilter("ACTION_TO_NATIVE"),
+                ContextCompat.RECEIVER_EXPORTED)
         }
     }
 
