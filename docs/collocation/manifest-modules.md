@@ -18,77 +18,77 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 您在工程中下载的ext api、三方uts插件也同理，没有引用就不会打进去。
 
-### App端支持摇树的内置模块列表@utsmodules
+### app平台支持摇树的内置模块列表@utsmodules
 
-- uni-ad
+- uni-ad  
   uni-ad[广告联盟](https://uniad.dcloud.net.cn/)模块（`HBuilderX4.0+`），包括API：[uni.createRewardedVideoAd](../api/create-rewarded-video-ad.md)
   依赖的模块：无
   注意：此模块仅包含基础广告模块，配置聚合广告平台需手动配置，详情参考[uni-ad](#uni-ad)章节
 
-- uni-cloud-client
+- uni-cloud-client  
   调用uniCloud[云函数/云对象](https://doc.dcloud.net.cn/uniCloud/cf-functions.html)模块，包括API：[uniCloud.importObject](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%B0%83%E7%94%A8)、[uniCloud.callFunction](https://doc.dcloud.net.cn/uniCloud/cf-callfunction.html#callfunction%E6%96%B9%E6%B3%95)
   依赖的模块：uni-media、uni-network
 
-- uni-createRequestPermissionListener
+- uni-createRequestPermissionListener  
   监听权限申请模块（`HBuilderX4.0+`），包括API：[uni.createRequestPermissionListener](../api/create-request-permission-listener.md)
   依赖的模块：无
   注意：HBuilderX4.0版本新增，仅App-Android平台支持。
 
-- uni-createWebviewContext
+- uni-createWebviewContext  
   创建 web-view 组件的上下文对象模块，包括API：[uni.createWebviewContext](../api/create-webview-context.md)
   依赖的模块：无
 
-- uni-facialRecognitionVerify
+- uni-facialRecognitionVerify  
   [uni实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)模块，包括API：[uni.getFacialRecognitionMetaInfo](../api/facial-recognition-verify.md#getfacialrecognitionmetainfo)、[uni.startFacialRecognitionVerify](../api/facial-recognition-verify.md#startfacialrecognitionverify)
   依赖的模块：无
 
-- uni-fileSystemManager
+- uni-fileSystemManager  
   文件管理模块（`HBuilderX3.99+`），包括API：[uni.getFileSystemManager](../api/get-file-system-manager.md)
   依赖的模块：无
 
-- uni-getLocation-system
+- uni-getLocation-system  
   系统定位模块，包括API：[uni.getLocation](../api/get-location.md)
   依赖的模块：无
 
-- uni-getNetworkType
+- uni-getNetworkType  
   获取网络类型模块，包括API：[uni.getNetworkType](../api/get-network-type.md)
   依赖的模块：无
 
-- uni-installApk
+- uni-installApk  
   安装apk模块（`HBuilderX3.99+`），包括API：[uni.installApk](../api/install-apk.md)
   依赖的模块：无
   注意：HBuilderX3.99版本新增，仅App-Android平台支持。
 
-- uni-payment
+- uni-payment  
   uni-payment请求支付模块，包括API：[uni.requestPayment](../api/request-payment.md) <br>
   依赖的模块：无
   注意：此模块仅包含基础支付模块，需手动配置支付方式，详情参考[uni-payment](#uni-payment)章节
 
-- uni-getProvider
+- uni-getProvider  
   获取服务供应商模块（`HBuilderX4.11+`），包括API：[uni.getProvider](../api/get-provider.md#getprovider)
   依赖的模块：无
 
-- uni-push
+- uni-push  
   [uni-push统一推送](https://uniapp.dcloud.net.cn/unipush-v2.html)模块（`HBuilderX3.97+`），包括API：[uni.createPushMessage](../api/push.md#createpushmessage)、[uni.getPushClientId](../api/push.md#getpushclientid)、[uni.offPushMessage](../api/push.md#offpushmessage)、[uni.onPushMessage](../api/push.md#onpushmessage)
   依赖的模块：无
 
-- uni-media
+- uni-media  
   多媒体相关API模块，包括API：[uni.chooseImage](../api/choose-image.md)、[uni.previewImage](../api/preview-image.md)、[uni.saveImageToPhotosAlbum](../api/save-image-to-photos-album.md)、[uni.getImageInfo](../api/get-image-info.md)、[uni.compressImage](../api/compress-image.md)、[uni.chooseVideo](../api/choose-video.md)、[uni.saveVideoToPhotosAlbum](../api/save-video-to-photos-album.md)、[uni.getVideoInfo](../api/get-video-info.md)、[uni.compressVideo](../api/compress-video.md)
   依赖的模块：无
 
-- uni-network
+- uni-network  
   网络请求（文件上传/下载）模块，包括API：[uni.downloadFile](../api/download-file.md)、[uni.request](../api/request.md)、[uni.uploadFile](../api/upload-file.md)
   依赖的模块：无
 
-- uni-video
+- uni-video  
   [video视频组件](../component/video.md)模块，包括内置组件：[video](../component/video.md)；包括API：[uni.createVideoContext](../api/create-video-context.md)
   依赖的模块：无
 
-- uni-websocket
+- uni-websocket  
   WebSocket模块，包括API：[uni.connectSocket](../api/websocket-global.md)、[uni.onSocketOpen](../api/websocket-global.md#onsocketopen)、[uni.onSocketError](../api/websocket-global.md#onsocketerror)、[uni.sendSocketMessage](../api/websocket-global.md#sendsocketmessage)、[uni.onSocketMessage](../api/websocket-global.md#onsocketmessage)、[uni.closeSocket](../api/websocket-global.md#closesocket)、[uni.onSocketClose](../api/websocket-global.md#onsocketclose)
   依赖的模块：无
 
-- uni-verify
+- uni-verify  
   [App一键登录](../api/get-univerify-manager.md)模块（`HBuilderX3.99+`），包括API：[uni.getUniverifyManager](../api/get-univerify-manager.md#getuniverifymanager)、[UniverifyManager.preLogin](../api/get-univerify-manager.md#prelogin)、[UniverifyManager.login](../api/get-univerify-manager.md#login)
   依赖的模块：无
 
@@ -114,7 +114,7 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 在uni-app x客户端，uni-ad是一个独立模块。使用开屏广告不需要调用任何API，应用启动时会自动拉取并展示开屏广告。这也导致 uni-ad 模块无法参与摇树。
 需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
 
-使用 uni-ad 模块需在 manifest.json 文件中添加如下配置：
+使用 uni-ad 模块需在 manifest.json 文件中添加 uni-ad 节点，并配置使用的广告 SDK。
 
 ### 配置三方广告SDK
 在 app -> distribute -> modules 下添加 uni-ad 节点：
@@ -144,6 +144,11 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 注意：穿山甲GroMore、快手广告联盟、腾讯优量汇广告联盟仅支持`armeabi-v7a`和`arm64-v8a`两个CPU平台。
 
 注意：目前仅支持上述国内广告平台，国际广告暂不支持。
+
+::: warning 注意事项  
+开屏广告展示前会显示启动界面，等待2.5秒加载开屏广告，超过2.5秒未成功加载广告则不显示开屏广告，直接进入应用首页。  
+app平台默认启动界面为白色（暗黑模式下为黑色），为了避免等待加载开屏广告时白屏，建议开通开屏广告后应用配置启动界面，详情参考[splash启动界面](./manifest-splashscreen.md)  
+:::
 
 ## uni-payment@uni-payment
 > HBuilderX 4.11+ 新增支持 uni-payment 请求支付
