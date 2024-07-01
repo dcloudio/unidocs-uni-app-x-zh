@@ -1,4 +1,4 @@
-## getPerformance
+## uni.getPerformance
 
 <!-- UTSAPIJSON.getPerformance.description -->
 
