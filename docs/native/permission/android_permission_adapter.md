@@ -4,7 +4,7 @@
 
 ### 相册权限
 
-- 19-23版本 
+- 19-23版本（指API Level，下同）
   - 只需要`AndroidManifest.xml`内注册`READ_EXTERNAL_STORAGE`权限，就可以访问相册。
 - 23-29 
   - `READ_EXTERNAL_STORAGE`为敏感权限，所以需要动态申请权限。
