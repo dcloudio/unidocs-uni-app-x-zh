@@ -14,7 +14,7 @@
 	* [uni-app x 云端打包环境](tutorial/app-env.md)
 	* uni-app x 原生SDK和离线打包
 		* [概述](native/README.md)
-		* Android离线打包
+		* Android原生SDK和离线打包
 			* [原生工程配置](native/use/android.md)
 			* 模块配置
 				* [内置模块](native/modules/android/others.md)
