@@ -16,6 +16,10 @@
 
 <!-- UTSCOMJSON.swiper.reference -->
 
+**平台差异**
+
+- web端swiper默认高度为150px。app端swiper默认会以内容高度作为其高度。
+
 ## swiper-item
 
 <!-- UTSCOMJSON.swiper-item.description -->
