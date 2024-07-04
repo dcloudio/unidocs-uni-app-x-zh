@@ -173,6 +173,10 @@ android.enableJetifier=true
 	将`application`节点的`android:name`修改为`io.dcloud.uniapp.UniApplication`
 
 	**注意：如果需要自定义application，必须继承自UniApplication**
+	
+- 合并AndroidManifest.xml
+
+	如果uni-app x项目根目录下有AndroidManifest.xml文件，你需要按照xml文件的结构将内容拷贝到`uniappx`模块的AndroidManifest.xml中。
 
 ### 拷贝资源文件
 1. 导出uni-app x项目的资源文件

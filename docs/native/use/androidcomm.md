@@ -39,7 +39,7 @@ startActivity(Intent(this, UniAppActivity::class.java))
 	import Context from 'android.content.Context'
 	import Intent from 'android.content.Intent'
 	import IntentFilter from 'android.content.IntentFilter'
-	import ContextCompat from 'androidx.core.content.ContextCompat'
+	import Build from 'android.os.Build'
 	class MyReciver extends BroadcastReceiver {
 		constructor() {
 
@@ -70,7 +70,11 @@ startActivity(Intent(this, UniAppActivity::class.java))
 		onReady() {
 			// #ifdef APP-ANDROID
 			this.receiver = new MyReciver()
-			ContextCompat.registerReceiver(UTSAndroid.getUniActivity()!,this.receiver, IntentFilter("ACTION_FROM_NATIVE"),ContextCompat.RECEIVER_EXPORTED)
+			if (Build.VERSION.SDK_INT >= 33) {
+				UTSAndroid.getUniActivity()?.registerReceiver(this.receiver, IntentFilter("ACTION_FROM_NATIVE"), Context.RECEIVER_EXPORTED)
+			} else {
+				UTSAndroid.getUniActivity()?.registerReceiver(this.receiver, IntentFilter("ACTION_FROM_NATIVE"))
+			}
 			// #endif
 		},
 
