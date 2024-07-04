@@ -243,7 +243,8 @@ person.toMap().forEach((value, key) => {
 
 <s>
 需要特别注意的是： 在 Android 平台，当使用 getXXX 方法返回 对象类型时，获取的是值引用而非内存引用 
-
+</s>
+<s>
 此时直接修改其对象的属性，并不会体现在整个UTSJSONObject上，如果需要体现此变化，则需要手动更新对应的字段
 </s>
 
