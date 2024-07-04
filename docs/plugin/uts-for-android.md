@@ -285,62 +285,69 @@ mediaPlayer.start();
 
 ------
 
-截止 HBuilder 3.8.2 版本内置了以下依赖
+截止 HBuilder X 4.23 版本内置了以下依赖
 
 开发者在使用列表中的依赖时，需要注意两点：
 
 +  真机运行时，不需要添加列表中的依赖，即可直接引用相关类
 +  请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
 
+
+
+#### uni-app x
+
 ```gradle
-+--- my-imageloader.jar
-+--- my-nineoldandroids-2.4.0.jar
-+--- zip4j-2.8.0.jar
-+--- com.github.getActivity:XXPermissions:18.0@jar
-+--- android-gif-drawable-release@1.2.23.aar
-+--- msa_mdid_1.0.13.aar
-+--- breakpad-build-release.aar
-+--- androidx.multidex:multidex:2.0.0@aar
-+--- androidx.recyclerview:recyclerview:1.0.0@aar
-+--- androidx.legacy:legacy-support-v4:1.0.0@aar
-+--- androidx.appcompat:appcompat:1.0.0@aar
-+--- com.github.bumptech.glide:glide:4.9.0@aar
-+--- com.alibaba:fastjson:1.1.46.android@jar
-+--- androidx.fragment:fragment:1.0.0@aar
-+--- androidx.vectordrawable:vectordrawable-animated:1.0.0@aar
-+--- androidx.legacy:legacy-support-core-ui:1.0.0@aar
-+--- androidx.media:media:1.0.0@aar
-+--- androidx.legacy:legacy-support-core-utils:1.0.0@aar
-+--- androidx.vectordrawable:vectordrawable:1.0.0@aar
-+--- androidx.viewpager:viewpager:1.0.0@aar
-+--- androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar
-+--- androidx.drawerlayout:drawerlayout:1.0.0@aar
-+--- androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar
-+--- androidx.customview:customview:1.0.0@aar
-+--- androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar
-+--- androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar
-+--- androidx.loader:loader:1.0.0@aar
-+--- androidx.core:core:1.0.0@aar
-+--- androidx.versionedparcelable:versionedparcelable:1.0.0@aar
-+--- androidx.collection:collection:1.0.0@jar
-+--- androidx.cursoradapter:cursoradapter:1.0.0@aar
-+--- com.github.bumptech.glide:gifdecoder:4.9.0@aar
-+--- androidx.lifecycle:lifecycle-runtime:2.0.0@aar
-+--- androidx.interpolator:interpolator:1.0.0@aar
-+--- androidx.documentfile:documentfile:1.0.0@aar
-+--- androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar
-+--- androidx.print:print:1.0.0@aar
-+--- androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar
-+--- androidx.lifecycle:lifecycle-livedata:2.0.0@aar
-+--- androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar
-+--- androidx.lifecycle:lifecycle-common:2.0.0@jar
-+--- androidx.arch.core:core-runtime:2.0.0@aar
-+--- androidx.arch.core:core-common:2.0.0@jar
-+--- androidx.annotation:annotation:1.0.0@jar
-+--- com.github.bumptech.glide:disklrucache:4.9.0@jar
-\--- com.github.bumptech.glide:annotations:4.9.0@jar
 
+implementation 'androidx.core:core-ktx:1.10.1'
+implementation 'androidx.recyclerview:recyclerview:1.3.2'
+implementation 'androidx.appcompat:appcompat:1.0.0'
+implementation 'androidx.exifinterface:exifinterface:1.3.6'
+implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar'
+implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+implementation 'com.google.android.material:material:1.4.0'
+implementation 'androidx.viewpager2:viewpager2:1.1.0-beta02'
+implementation 'com.alibaba:fastjson:1.2.83'
+implementation 'com.facebook.fresco:fresco:3.1.3'
+implementation 'com.facebook.fresco:middleware:3.1.3'
+implementation 'com.facebook.fresco:animated-gif:3.1.3'
+implementation 'com.facebook.fresco:webpsupport:3.1.3'
+implementation 'com.facebook.fresco:animated-webp:3.1.3'
+implementation 'com.github.bumptech.glide:glide:4.9.0'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+implementation 'org.jetbrains.kotlin:kotlin-reflect:1.8.10'
+implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1'
+implementation 'com.squareup.okhttp3:okhttp:3.12.12'
+implementation 'com.github.getActivity:XXPermissions:18.0'
+implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
+```
+
+#### uni-app 
+
+```gradle
+implementation 'com.github.bumptech.glide:glide:4.9.0'
+implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+implementation 'androidx.core:core:1.1.0'
+implementation 'androidx.fragment:fragment:1.1.0'
+implementation 'androidx.recyclerview:recyclerview:1.1.0'
+implementation 'androidx.appcompat:appcompat:1.1.0'
+implementation 'com.alibaba:fastjson:1.2.83'
+implementation 'androidx.webkit:webkit:1.3.0'
+implementation 'com.squareup.okhttp3:okhttp:3.12.12'
+implementation 'androidx.core:core-ktx:1.6.0'
+implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+implementation 'org.jetbrains.kotlin:kotlin-reflect:1.6.0'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8'
+implementation 'com.github.getActivity:XXPermissions:18.0'
+implementation 'com.facebook.fresco:fresco:2.5.0'
+implementation 'com.facebook.fresco:animated-gif:2.5.0'
+implementation 'com.facebook.fresco:webpsupport:2.5.0'
+implementation 'com.facebook.fresco:animated-webp:2.5.0'
+implementation 'androidx.recyclerview:recyclerview:1.0.0'
+implementation 'androidx.appcompat:appcompat:1.0.0'
 ```
 
 
