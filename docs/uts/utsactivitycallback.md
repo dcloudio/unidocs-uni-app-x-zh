@@ -6,7 +6,7 @@
 比如 oncreate,ondestory 等\
 第二类: 键盘事件相关方法[UniActivityKeyEventCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityKeyEventCallback)\
 比如 onKeyDown,onKeyUp等\
-第三类:windon窗体的相关方法[UniActivityWindowCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityWindowCallback)\
+第三类:window窗体的相关方法[UniActivityWindowCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityWindowCallback)\
 比如onCreatePanelMenu，onWindowDismissed等\
 第四类:activity本身自带的相关方法，不继承自其他类[UniActivityCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityCallback)\
 比如onProvideAssistData等\
