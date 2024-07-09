@@ -62,6 +62,12 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.onAppActivityPause.compatibility -->
 
+```ts
+UTSAndroid.onAppActivityPause(() => {
+    let eventName = "onAppActivityPause - " + Date.now();
+    console.log(eventName);
+});
+```
 
 
 ### offAppActivityPause
@@ -74,6 +80,13 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.offAppActivityPause.compatibility -->
 
+```ts
+// 移除全部监听
+UTSAndroid.offAppActivityPause();
+// 移除指定监听
+UTSAndroid.offAppActivityPause(() => {
+});
+```
 
 
 ### onAppActivityResume
@@ -85,6 +98,16 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.onAppActivityResume.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.onAppActivityResume.compatibility -->
+
+
+
+```ts
+UTSAndroid.onAppActivityResume(() => {
+     let eventName = "onAppActivityResume - " + Date.now();
+     console.log(eventName);
+});
+```
+
 
 
 ### offAppActivityResume
@@ -99,6 +122,15 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 
 
+```ts
+// 移除全部监听
+UTSAndroid.onAppActivityResume();
+// 移除指定监听
+UTSAndroid.onAppActivityResume(() => {
+});
+```
+
+
 ### onAppActivityDestroy
 
 <!-- UTSJSON.UTSAndroid.onAppActivityDestroy.description -->
@@ -109,6 +141,12 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.onAppActivityDestroy.compatibility -->
 
+```ts
+UTSAndroid.onAppActivityDestroy(() => {
+     let eventName = "onAppActivityDestroy- " + Date.now();
+     console.log(eventName);
+});
+```
 
 
 ### offAppActivityDestroy
@@ -122,6 +160,14 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.offAppActivityDestroy.compatibility -->
 
 
+```ts
+// 移除全部监听
+UTSAndroid.offAppActivityDestroy();
+// 移除指定监听
+UTSAndroid.offAppActivityDestroy(() => {
+});
+```
+
 
 ### onAppActivityResult
 
@@ -134,6 +180,24 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.onAppActivityResult.compatibility -->
 
 
+App 的 activity 启动其他activity的回调结果监听 对应原生的  [onActivityResult](https://developer.android.com/training/basics/intents/result)
+
+需要特别注意的是 `requestCode` 参数，这个参数用于区别 不同的请求来源,开发者应该只处理自己发起请求
+
+```ts
+let customRequestCode = 12000
+
+UTSAndroid.onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
+	if(requestCode == 12000){
+		// 我们发起的请求
+		let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:"+resultCode + " -data:"+JSON.stringify(data);
+    	console.log(eventName);
+	}else{
+		// 别的代码发起的请求，不要处理
+	}
+
+});
+```
 
 
 ### offAppActivityResult
@@ -145,6 +209,14 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.offAppActivityResult.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.offAppActivityResult.compatibility -->
+
+```ts
+// 移除全部监听
+UTSAndroid.offAppActivityResult();
+// 移除指定监听
+UTSAndroid.offAppActivityResult(() => {
+});
+```
 
 
 
