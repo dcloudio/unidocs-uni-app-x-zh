@@ -230,6 +230,11 @@ Android平台原生三方库目录，支持以下类型文件：
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 
 
+截止HBuilder X 4.23 , UTS插件本地调试尚不支持直接使用so文件，需要将so文件和调用代码封装为AAR供UTS插件调用
+
+AAR调用示例参考：(Hello UTS)[https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-toast]
+
+
 ##### res
 Android平台原生res资源目录，建议只保存UTS插件内置的资源文件。
 
