@@ -314,7 +314,7 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 ```ts
 /**
  * 代码包文件在真机运行模式下：
- * /storage/emulated/0/Android/data/io.dcloud.uniappx/apps/__UNI__XXXXXXX/www/static/logo.png 
+ * /storage/emulated/0/Android/data/io.dcloud.uniappx/apps/__UNI__XXXXXXX/www/static/logo.png
  * 代码包文件在云打包模式下：
  * file:///android_asset/apps/__UNI__XXXXXXX/www/static/logo.png
  * /
@@ -713,7 +713,7 @@ UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionN
 		- `uni-app`不支持
 	- [沙盒外文件](../api/file-system-spec.md#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
 		- 沙盒管理范围外的其他文件。 调用系统API返回的绝对地址属于此类。`uni-app`/`uni-app x`平台 均支持读写
-		
+
 :::
 
 ```ts
@@ -871,15 +871,4 @@ console.log(UTSAndroid.getTopPageActivity())
 
 <!-- UTSJSON.UTSAndroid.onOsThemeChanged.compatibility -->
 
-### offOsThemeChanged(callbackId)
-
-<!-- UTSJSON.UTSAndroid.offOsThemeChanged.description -->
-
-<!-- UTSJSON.UTSAndroid.offOsThemeChanged.param -->
-
-<!-- UTSJSON.UTSAndroid.offOsThemeChanged.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.offOsThemeChanged.compatibility -->
-
 <!-- UTSJSON.UTSAndroid.tutorial -->
-
