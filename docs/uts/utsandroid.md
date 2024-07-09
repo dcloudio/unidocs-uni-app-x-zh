@@ -844,45 +844,4 @@ console.log(UTSAndroid.getTopPageActivity())
 
 <!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.compatibility -->
 
-
-### setAppTheme(theme)
-
-<!-- UTSJSON.UTSAndroid.setAppTheme.description -->
-
-<!-- UTSJSON.UTSAndroid.setAppTheme.param -->
-
-<!-- UTSJSON.UTSAndroid.setAppTheme.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.setAppTheme.compatibility -->
-
-### onAppThemeChanged(callback)
-
-<!-- UTSJSON.UTSAndroid.onAppThemeChanged.description -->
-
-<!-- UTSJSON.UTSAndroid.onAppThemeChanged.param -->
-
-<!-- UTSJSON.UTSAndroid.onAppThemeChanged.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.onAppThemeChanged.compatibility -->
-
-### offAppThemeChanged(callbackId)
-
-<!-- UTSJSON.UTSAndroid.offAppThemeChanged.description -->
-
-<!-- UTSJSON.UTSAndroid.offAppThemeChanged.param -->
-
-<!-- UTSJSON.UTSAndroid.offAppThemeChanged.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.offAppThemeChanged.compatibility -->
-
-### onOsThemeChanged(callback)
-
-<!-- UTSJSON.UTSAndroid.onOsThemeChanged.description -->
-
-<!-- UTSJSON.UTSAndroid.onOsThemeChanged.param -->
-
-<!-- UTSJSON.UTSAndroid.onOsThemeChanged.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.onOsThemeChanged.compatibility -->
-
 <!-- UTSJSON.UTSAndroid.tutorial -->
