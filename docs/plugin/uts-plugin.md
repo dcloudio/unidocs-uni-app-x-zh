@@ -222,6 +222,10 @@ Android平台原生assets资源目录，建议只保存UTS插件内置的资源�
 Android平台原生三方库目录，支持以下类型文件：
 - jar
 - aar
+- so库
+
+注意：UTS插件本地调试不支持直接使用so文件，需要将so文件和调用代码封装为AAR 或者分别集成 so和jar文件
+
 
 如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但因为多个uts插件引用相同三方原生sdk时可能会产生冲突，所以如果sdk支持仓储，建议优先使用仓储配置，而不是直接把jar等文件放在libs目录。
 
@@ -230,9 +234,7 @@ Android平台原生三方库目录，支持以下类型文件：
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 
 
-截止HBuilder X 4.23 , UTS插件本地调试尚不支持直接使用so文件，需要将so文件和调用代码封装为AAR供UTS插件调用
 
-AAR调用示例参考：(Hello UTS)[https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-toast]
 
 
 ##### res
