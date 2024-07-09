@@ -53,6 +53,9 @@
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/utsconfig.png)
 
 
+### 隐私清单
+如果HBuilderX导出的离线资源中包含`PrivacyInfo.xcprivacy`文件，需要将文件内容添加到`插件工程`的同名文件中，注意去重
+
 ## 编译导出xcframework
 选择构建目标(Any iOS Device/Any iOS Simulator Device)，在菜单栏中，选择`Product -> Build`（或使用快捷键`Command + B`），分别编译出真机以及模拟器的Framework文件。
 在菜单栏中，选择`Product -> Show Build Floder in Finder` 获取编译产物所在路径。

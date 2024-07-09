@@ -45,7 +45,7 @@
 ### 配置uts-config.json(可选)
 
 在`DCloudUTSExtAPI`工程中新建 `uts-config.json` 文件，
-uni-video模块需要添加如下配置
+`uni-video`模块需要添加如下配置
 ```
 {
 	"components": [{
@@ -55,7 +55,8 @@ uni-video模块需要添加如下配置
 	}]
 }
 ```
-uni-payment-alipay模块需要添加如下配置
+
+`uni-payment-alipay`模块需要添加如下配置
 ```
 {
 	"hooksClasses": [
@@ -68,7 +69,8 @@ uni-payment-alipay模块需要添加如下配置
 	}]
 }
 ```
-uni-payment-wxpay模块需要添加如下配置
+
+`uni-payment-wxpay`模块需要添加如下配置
 ```
 {
 	"hooksClasses": [
@@ -81,31 +83,45 @@ uni-payment-wxpay模块需要添加如下配置
 	}]
 }
 ```
+
 `uts-config.json`配置示例图
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/utsconfig.png)
 
 
+### 隐私清单
+> 新建隐私清单：`Command + N`选择`App Privacy`点击`Next`，文件名称必须为`PrivacyInfo`
+
+集成`uni-media`模块需要填写如下隐私清单
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/unimedia_privacyinfo.png)
+
+集成`uni-payment-wxpay`模块需要填写如下隐私清单
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniwxpay_privacyinfo.png)
+
+
 ### 编译导出DCloudUTSExtAPI.xcframework
 选择构建目标(Any iOS Device/Any iOS Simulator Device)，在菜单栏中，选择`Product -> Build`（或使用快捷键`Command + B`），分别编译出真机以及模拟器的Framework文件。
-在菜单栏中，选择`Product -> Copy Build Floder Path` 获取编译产物所在路径。
+在菜单栏中，选择`Product -> Show Build Floder in Finder` 获取编译产物所在路径。
 使用xcodebuild命令行创建xcframework
 ```
 xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework -framework 模拟器路径/DCloudUTSExtAPI.framework -output 导出路径/DCloudUTSExtAPI.xcframework
 ```
 导出成功后，将 `DCloudUTSExtAPI.xcframework` 添加到主工程，并设置为 `Embed && Sign` 
 
-**> 编译模拟器注意事项
-> `Apple芯片`的设备编译模拟器需要在菜单栏中点击 `Product -> Destination -> Show All Run Destinations` ，然后选择 `Rosetta模拟器` 编译**
+
+> `Apple芯片`的设备编译模拟器需要在菜单栏中点击 `Product -> Destination -> Show All Run Destinations` ，然后选择 `Rosetta模拟器` 编译
 
 
 
 ## 主工程配置
 根据离线资源中的`manifest.json`文件包含的模块名称，根据下述相关模块文档向`主工程`添加依赖以及工程配置
+
 ## uni-prompt
 ### 添加依赖库以及资源文件
 | 资源文件 |
 |---|
 |  uni_uts_toast_error.png、uni_uts_toast_success.png  |
+
+
 ## uni-media
 ### 添加依赖库以及资源文件
 | 依赖库 | 资源文件 |
@@ -127,6 +143,8 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 </dict>
 ```
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/unimedia_permission.png)
+
+
 
 ## uni-getLocation-system
 ### 添加依赖库以及资源文件

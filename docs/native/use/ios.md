@@ -5,11 +5,11 @@
 * Xcode 15.2及以上版本
 
 ## 接入流程
-* 通过 `HBuilder X` 导出离线资源，根据资源内容，配置**原生主工程**环境，添加基础模块需要的依赖库以及资源文件
-* 根据离线资源中的`manifest.json`文件中包含的模块，制作`DCloudUTSExtAPI.xcframework`，并将其添加到**原生主工程**中，详见[集成内置模块](../modules/ios/modules.md)
-* 根据离线资源中的`manifest.json`文件中包含的模块，向**原生主工程**添加工程配置以及内置模块需要的资源文件等，详见[集成内置模块](../modules/ios/modules.md)
-* 根据离线资源中的`uni_modules`文件夹中包含的UTS插件，制作对应的原生xcframework，并将其添加到**原生主工程**(付费购买的uts插件不支持离线打包)，详见[制作UTS插件](iosuts.md)
-* 编写代码通过离线API初始化SDK，详见[接入API](iosapi.md)
+* 通过 `HBuilder X` 导出离线资源，根据资源内容，配置`原生主工程`环境，添加基础模块需要的依赖库以及资源文件
+* 根据离线资源中的`manifest.json`文件中包含的模块，制作`DCloudUTSExtAPI.xcframework`，并将其添加到`原生主工程`中，详见[集成内置模块](../modules/ios/modules.md)
+* 根据离线资源中的`manifest.json`文件中包含的模块，向`原生主工程`添加工程配置以及内置模块需要的资源文件等，详见[集成内置模块](../modules/ios/modules.md)
+* 根据离线资源中的`uni_modules`文件夹中包含的UTS插件，制作对应的原生xcframework，并将其添加到`原生主工程`(付费购买的uts插件不支持离线打包)，详见[制作UTS插件](iosuts.md)
+* 编写代码通过离线API初始化SDK，详见[接入离线SDK](iosapi.md)
 
 ## 新建项目(已有可跳过)
 1. 启动`Xcode`，点击`File->New->Project`，选择`App`点击`Next`
@@ -24,8 +24,8 @@
 `Target -> General -> Identity -> Build` 输入应用`versionCode`
 
 ## Info.plist配置
-
-`Target -> Info` 下，添加如下配置
+1. 若HBuilderX项目`根目录`下包含`Info.plist`文件，需要将该文件内容拷贝到`原生主工程`的`Target -> Info` 下
+2. 在`Target -> Info` 下，添加如下配置
 ```
 <dict>
 	<key>NSAppTransportSecurity</key>
