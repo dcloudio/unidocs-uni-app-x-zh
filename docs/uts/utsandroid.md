@@ -230,6 +230,13 @@ UTSAndroid.offAppActivityResult(() => {
 
 <!-- UTSJSON.UTSAndroid.onAppActivityBack.compatibility -->
 
+```ts
+UTSAndroid.onAppActivityBack(() => {
+     let eventName = "onAppActivityBack- " + Date.now();
+     console.log(eventName);
+});
+
+```
 
 
 ### offAppActivityBack
@@ -242,6 +249,13 @@ UTSAndroid.offAppActivityResult(() => {
 
 <!-- UTSJSON.UTSAndroid.offAppActivityBack.compatibility -->
 
+```ts
+// 移除全部监听
+UTSAndroid.offAppActivityBack();
+// 移除指定监听
+UTSAndroid.offAppActivityBack(() => {
+});
+```
 
 
 ### getAppContext()
