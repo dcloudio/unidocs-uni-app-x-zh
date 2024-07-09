@@ -8,8 +8,6 @@
 
 <!-- UTSAPIJSON.connectSocket.returnValue -->
 
-<!-- UTSAPIJSON.connectSocket.example -->
-
 <!-- UTSAPIJSON.connectSocket.tutorial -->
 
 ## uni.onSocketOpen(options) @onsocketopen
@@ -21,8 +19,6 @@
 <!-- UTSAPIJSON.onSocketOpen.param -->
 
 <!-- UTSAPIJSON.onSocketOpen.returnValue -->
-
-<!-- UTSAPIJSON.onSocketOpen.example -->
 
 <!-- UTSAPIJSON.onSocketOpen.tutorial -->
 
@@ -36,8 +32,6 @@
 
 <!-- UTSAPIJSON.onSocketError.returnValue -->
 
-<!-- UTSAPIJSON.onSocketError.example -->
-
 <!-- UTSAPIJSON.onSocketError.tutorial -->
 
 ## uni.sendSocketMessage(options) @sendsocketmessage
@@ -50,9 +44,11 @@
 
 <!-- UTSAPIJSON.sendSocketMessage.returnValue -->
 
-<!-- UTSAPIJSON.sendSocketMessage.example -->
-
 <!-- UTSAPIJSON.sendSocketMessage.tutorial -->
+
+## 注意事项
+
+* 出于性能的权衡，在底层实现上发送队列占用的内存不能超过16M，一旦超过将导致连接被关闭。
 
 ## uni.onSocketMessage(callback) @onsocketmessage
 
@@ -63,8 +59,6 @@
 <!-- UTSAPIJSON.onSocketMessage.param -->
 
 <!-- UTSAPIJSON.onSocketMessage.returnValue -->
-
-<!-- UTSAPIJSON.onSocketMessage.example -->
 
 <!-- UTSAPIJSON.onSocketMessage.tutorial -->
 
@@ -78,8 +72,6 @@
 
 <!-- UTSAPIJSON.closeSocket.returnValue -->
 
-<!-- UTSAPIJSON.closeSocket.example -->
-
 <!-- UTSAPIJSON.closeSocket.tutorial -->
 
 ## uni.onSocketClose(callback) @onsocketclose
@@ -91,8 +83,6 @@
 <!-- UTSAPIJSON.onSocketClose.param -->
 
 <!-- UTSAPIJSON.onSocketClose.returnValue -->
-
-<!-- UTSAPIJSON.onSocketClose.example -->
 
 <!-- UTSAPIJSON.onSocketClose.tutorial -->
 

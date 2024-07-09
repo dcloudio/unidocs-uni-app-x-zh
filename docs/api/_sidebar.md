@@ -1,53 +1,59 @@
 * [概述](README.md)
 * 全局
-  * [getApp](get-app.md)
-  * [getCurrentPages](get-current-pages.md)
+  * [获取当前应用实例](get-app.md)
+  * [获取当前页面栈](get-current-pages.md)
 * 基础
-  * [uni.env](env.md)
-  * [事件总线event-bus](event-bus.md)
+  * [环境变量](env.md)
+  * [事件总线](event-bus.md)
   * [拦截器](interceptor.md)
   * [获取启动参数](get-launch-options-sync.md)
   * [退出应用](exit.md)
-  * [获取服务供应商](get-provider.md)
-  * [性能](get-performance.md)
-* 页面
+  * [获取服务提供商](get-provider.md)
+  * [getPerformance](get-performance.md)
+* 页面和路由
   * [页面跳转](navigator.md)
   * [设置导航条颜色](set-navigation-bar-color.md)
   * [设置导航条标题](set-navigation-bar-title.md)
-  * [设置tabbar](set-tabbar.md)
+  * [设置tabBar](set-tab-bar.md)
   * [页面下拉刷新](pull-down-refresh.md)
   * [将页面滚动到指定位置](page-scroll-to.md)
   * [监听中间按钮的点击事件](on-tab-bar-mid-button-tap.md)
-* 元素节点
-  * [获取element](get-element.md)
-  * [获取node](nodes-info.md)
+* Dom 节点
+  * [通过 id 获取 element](get-element-by-id.md)
+  * [创建 SelectorQuery 实例](create-selector-query.md)
 * 界面
-  * [交互反馈](prompt.md)
+  * [弹出操作菜单](show-action-sheet.md)
+  * [显示模态弹窗](show-modal.md)
+  * [显示 loading 提示框](show-loading.md)
+  * [显示消息提示框](show-toast.md)
   * [动态加载字体](load-font-face.md)
-  * [rpx2px](rpx2px.md)
-  * [暗黑主题](theme.md)
+  * [将rpx单位值转换成px](rpx2px.md)
+  * [主题切换](theme-change.md)
+  * [语言](locale.md)
 * 网络
-  * [发起请求request](request.md)
+  * [发起网络请求](request.md)
   * [上传文件](upload-file.md)
   * [下载文件](download-file.md)
-  * [获取设备网络状态](get-network-type.md)
-  * [websocket](websocket-global.md)
+  * [获取网络类型](get-network-type.md)
+  * [websocket](websocket.md)
 * 设备
   * [获取系统信息](get-system-info.md)
   * [获取设备信息](get-device-info.md)
   * [获取窗口信息](get-window-info.md)
-  * [获取app基础信息](get-app-base-info.md)
-  * [获取app授权设置](get-app-authorize-setting.md)
+  * [获取APP基础信息](get-app-base-info.md)
+  * [获取APP授权设置](get-app-authorize-setting.md)
   * [获取系统设置](get-system-setting.md)
-  * [获取电量信息](get-battery-info.md)
   * [安装 APK](install-apk.md)
+  * [推送](push.md)
+  * [获取电池电量信息](get-battery-info.md)
+  * [打电话](make-phone-call.md)
+  * [罗盘](compass.md)
   * [wifi](wifi.md)
   * [内存](memory.md)
-  * [截屏事件](capturescreen.md)
+  * [截屏事件](capture-screen.md)
   * [监听权限申请](create-request-permission-listener.md)
-  <!-- * [拨打电话](make-phone-call.md) -->
 * 媒体
-  * [拍照和相册选择](choose-image.md)
+  * [拍照或从相册选择图片](choose-image.md)
   * [图片预览](preview-image.md)
   * [保存图片到相册](save-image-to-photos-album.md)
   * [获取图片信息](get-image-info.md)
@@ -56,29 +62,34 @@
   * [保存视频到相册](save-video-to-photos-album.md)
   * [获取视频信息](get-video-info.md)
   * [压缩视频](compress-video.md)
+  * [音频](create-inner-audio-context.md)
 * 位置
   * [获取当前位置](get-location.md)
-<!--  * [显示位置](open-location.md)
-  * [选择位置](choose-location.md) -->
+  * [使用地图查看位置](open-location.md)
+  * [使用地图选择位置](choose-location.md)
 * 数据存储
-  * [storage（key-value存储）](storage.md)
-* 文件系统
+  * [key-value本地数据存储](storage.md)
+* 文件
   * [文件系统规范](file-system-spec.md)
-  * [getFileSystemManager](get-file-system-manager.md)
-* 登录和验证
-	* [App一键登录](get-univerify-manager.md)
-  * [金融级实人认证](facial-recognition-verify.md)
-* 支付
-	* [请求支付](request-payment.md)
+  * [获取文件管理器](get-file-system-manager.md)
+* 登录与认证
+  * [App一键登录](get-univerify-manager.md)
+  * [金融级实人认证](facial-recognition-meta-info.md)
 * 广告
   * [激励视频广告](create-rewarded-video-ad.md)
 * 推送
-  * [推送](push.md)
+  * [push](uni-push.md)
+* 支付
+  * [发起支付](request-payment.md)
+* 绘画
+  * [canvasToTempFilePath](canvas-to-temp-file-path.md)
+  * [canvasGetImageData](canvas-get-image-data.md)
+  * [canvasPutImageData](canvas-put-image-data.md)
 * 组件上下文对象
-  * [web-view组件上下文对象](create-webview-context.md)
-  * [video组件上下文对象](create-video-context.md)
-  * [map组件上下文对象](create-map-context.md)
-  <!-- * [innerAudio上下文对象](create-inner-audio-context.md) -->
+  * [创建 web-view 组件上下文对象](create-webview-context.md)
+  * [创建 video 组件上下文对象](create-video-context.md)
+  * [创建 map 组件上下文对象](create-map-context.md)
+  * [创建 canvas 组件上下文对象](create-canvas-context.md)
 * uniCloud客户端API
   * [概述](unicloud/README.md)
   * [云函数](unicloud/function.md)
