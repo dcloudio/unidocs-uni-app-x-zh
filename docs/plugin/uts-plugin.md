@@ -5,7 +5,7 @@
 > HBuilderX 3.6+ 支持uni-app中使用uts插件
 > HBuilderX 3.9+ 支持uni-app x中使用uts插件
 
-UTS插件开发官方QQ交流群：527828934 [点此加入](https://qm.qq.com/cgi-bin/qm/qr?k=3Z-cQCXGiTyThkrqufUNNw7TaJd2xEPb&jump_from=webapi&authKey=4UQdplol3kPLwlDfuSdYleE8JUHnJChC2+8HcuBavZq2q51iAkLdzT4Bupt4ZJZu)
+UTS插件开发官方uni-im交流群[点此加入](https://im.dcloud.net.cn/#/?joinGroup=668cac1f8185e1e6e7c1bb87)
 
 ### 什么是uts语言
 
