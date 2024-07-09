@@ -4,21 +4,21 @@
   * 视图容器
     * [基本视图容器](view.md)
     * [可滚动视图容器](scroll-view.md)
-    * 滑块视图容器
-      * [滑块视图容器](swiper.md)
+    * 滑块视图容器```{"collapsable": false}```
+      * [swiper](swiper.md)
       * [swiper-item](swiper-item.md)
     * [match-media](match-media.md)
     * [可拖动区域](movable-area.md)
     * [可移动的视图容器](movable-view.md)
     * [cover-view](cover-view.md)
     * [cover-image](cover-image.md)
-    * 列表组件
-      * [列表组件](list-view.md)
+    * 列表组件```{"collapsable": false}```
+      * [list-view](list-view.md)
       * [list-item](list-item.md)
-    * sticky
-      * [吸顶布局容器](sticky-header.md)
-      * [吸顶布局容器](sticky-section.md)
-    * nested-scroll
+    * sticky```{"collapsable": false}```
+      * [sticky-header](sticky-header.md)
+      * [sticky-section](sticky-section.md)
+    * nested-scroll```{"collapsable": false}```
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
   * 基础内容
@@ -28,7 +28,7 @@
     * [进度条](progress.md)
   * 表单组件
     * [按钮](button.md)
-    * 多选框
+    * 多选框```{"collapsable": false}```
       * [多选框组](checkbox-group.md)
       * [多选框](checkbox.md)
     * [表单](form.md)
@@ -36,10 +36,10 @@
     * [富文本编辑器](editor.md)
     * [label](label.md)
     * [底部弹出的滚动选择器](picker.md)
-    * 嵌入页面的滚动选择器
-      * [嵌入页面的滚动选择器](picker-view.md)
+    * 嵌入页面的滚动选择器```{"collapsable": false}```
+      * [picker-view](picker-view.md)
       * [picker-view-column](picker-view-column.md)
-    * 单选项
+    * 单选项```{"collapsable": false}```
       * [单选组](radio-group.md)
       * [单选项](radio.md)
     * [滑动选择器](slider.md)
@@ -51,7 +51,7 @@
     * [音频](audio.md)
     * [图片](image.md)
     * [视频](video.md)
-    * live
+    * live```{"collapsable": false}```
       * [live-player](live-player.md)
       * [live-pusher](live-pusher.md)
   * 地图
