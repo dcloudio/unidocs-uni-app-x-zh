@@ -1,29 +1,70 @@
 * [概述](README.md)
 * [公共属性和事件](common.md)
 * 内置组件```{"collapsable": false}```
-  * [view](view.md)
-  * [scroll-view](scroll-view.md)
-  * [nested-scroll](nested-scroll.md)
-  * [list-view](list-view.md)
-  * [sticky](sticky.md)
-  * [swiper](swiper.md)
-  * [navigator](navigator.md)
-  * [text](text.md)
-  * [rich-text](rich-text.md)
-  * [image](image.md)
-  * [input](input.md)
-  * [textarea](textarea.md)
-  * [button](button.md)
-  * [checkbox](checkbox-group.md)
-  * [radio](radio-group.md)
-  * [picker-view](picker-view.md)
-  * [progress](progress.md)
-  * [slider](slider.md)
-  * [switch](switch.md)
-  * [form](form.md)
-  * [canvas](canvas.md)
-  * [video](video.md)
-  * [web-view](web-view.md)
+  * 视图容器
+    * [基本视图容器](view.md)
+    * [可滚动视图容器](scroll-view.md)
+    * 滑块视图容器```{"collapsable": false}```
+      * [swiper](swiper.md)
+      * [swiper-item](swiper-item.md)
+    * [match-media](match-media.md)
+    * [可拖动区域](movable-area.md)
+    * [可移动的视图容器](movable-view.md)
+    * [cover-view](cover-view.md)
+    * [cover-image](cover-image.md)
+    * 列表组件```{"collapsable": false}```
+      * [list-view](list-view.md)
+      * [list-item](list-item.md)
+    * sticky```{"collapsable": false}```
+      * [sticky-header](sticky-header.md)
+      * [sticky-section](sticky-section.md)
+    * nested-scroll```{"collapsable": false}```
+      * [nested-scroll-header](nested-scroll-header.md)
+      * [nested-scroll-body](nested-scroll-body.md)
+  * 基础内容
+    * [图标](icon.md)
+    * [文本](text.md)
+    * [富图标](rich-text.md)
+    * [进度条](progress.md)
+  * 表单组件
+    * [按钮](button.md)
+    * 多选框```{"collapsable": false}```
+      * [多选框组](checkbox-group.md)
+      * [多选框](checkbox.md)
+    * [表单](form.md)
+    * [输入框](input.md)
+    * [富文本编辑器](editor.md)
+    * [label](label.md)
+    * [底部弹出的滚动选择器](picker.md)
+    * 嵌入页面的滚动选择器```{"collapsable": false}```
+      * [picker-view](picker-view.md)
+      * [picker-view-column](picker-view-column.md)
+    * 单选项```{"collapsable": false}```
+      * [单选组](radio-group.md)
+      * [单选项](radio.md)
+    * [滑动选择器](slider.md)
+    * [开关选择器](switch.md)
+    * [多行输入框](textarea.md)
+  * 导航
+    * [页面链接](navigator.md)
+  * 媒体组件
+    * [音频](audio.md)
+    * [图片](image.md)
+    * [视频](video.md)
+    * live```{"collapsable": false}```
+      * [live-player](live-player.md)
+      * [live-pusher](live-pusher.md)
+  * 地图
+    * [地图](map.md)
+  * 画布
+    * [画布](canvas.md)
+  * 网页
+    * [web-view](web-view.md)
+  * 页面属性配置节点
+    * [page-meta](page-meta.md)
+    * [navigation-bar](navigation-bar.md)
+    * [custom-tab-bar](custom-tab-bar.md)
+  * unicloud
+    * [unicloud-db](unicloud-db.md)
   * [animation-view](animation-view.md)
-  * [unicloud-db](unicloud-db.md)
 * [其他组件](unsupport.md)

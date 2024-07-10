@@ -389,16 +389,14 @@ maven { url 'https://jitpack.io' }
 
 ## 4 Android内置库@iodcloudutsandroid
 
-在uts里，Android的所有api都可以访问。
+**在UTS语言中，所有的Android原生API都可以调用**
 
-但是对于Android开发中高频使用`application`和`activity`等，UTS通过内置对象`UTSAndroid` 进行了包裹和封装。具体见下：
+对于Android开发中高频使用的`application`/`activity`等系统能力、`uni-app`/`uni-app x` 运行时框架信息等，UTS通过内置对象`UTSAndroid` 进行了封装，以便开发者调用
 
-### 4.1 application 上下文相关
+下面列出了常见API的使用示例，完整的 `UTSAndroid` API文档参考：https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html
 
-#### 4.1.1 getAppContext
 
-> HBuilderX 3.6.3+
-
+#### getAppContext
 
 ```ts
 import { UTSAndroid } from "io.dcloud.uts";
@@ -434,110 +432,7 @@ console.log(app)
 ```
 
 
-#### 4.1.2 getResourcePath(resourceName:String)
-
-> HBuilderX 3.6.3+
-
-
-```ts
-import { UTSAndroid } from "io.dcloud.uts";
-```
-
-获取指定插件资源的运行期绝对路径
-
-```ts
-// [示例]获取指定资源路径
-// 得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
-UTSAndroid.getResourcePath("uni_modules/test-uts-static/static/logo.png")
-
-```
-
-#### 4.1.3 onAppTrimMemory / offAppTrimMemory
-
-##### onAppTrimMemory
-
-> HBuilderX 3.6.11+
-
-
-App 内存不足时，系统回调函数 对应原生的API: onTrimMemory
-
-```ts
-UTSAndroid.onAppTrimMemory((level:Number) => {
-	let eventName = "onAppTrimMemory - " + level;
-	console.log(eventName);
-});
-```
-
-##### offAppTrimMemory
-
-> HBuilderX 3.6.11+
-
-
-onAppTrimMemory 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-```ts
-// 移除所有监听
-UTSAndroid.offAppTrimMemory()
-// 移除指定监听
-UTSAndroid.offAppTrimMemory((level:Number) => {
-
-});
-```
-
-
-#### 4.1.4 onAppConfigChange / offAppConfigChange
-
-##### onAppConfigChange
-
-> HBuilderX 3.6.1+
-
-
-App 配置发生变化时触发，比如横竖屏切换 对应原生的API: onConfigurationChanged
-
-```ts
-UTSAndroid.onAppConfigChange((ret:UTSJSONObject) => {
-	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
-	console.log(eventName);
-});
-```
-
-##### offAppConfigChange
-
-
-与onAppConfigChange 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-```ts
-// 移除所有监听
-UTSAndroid.offAppConfigChange();
-// 移除指定监听
-UTSAndroid.offAppConfigChange(function(ret){
-
-});
-```
-
-
---------------------------------
-
-
-特别说明：除了本章节列出的函数外，android环境下 application 其他上下文方法都可以通过 getAppContext()!.xxx()的方式实现
-
-比如获取app缓存目录：
-
-```ts
-UTSAndroid.getAppContext()!.getExternalCacheDir()!.getPath()
-```
-
-
-### 4.2 Activity 上下文 @activity
-
-#### 4.2.1 getUniActivity
-
-> HBuilderX 3.6.11+
-
+#### getUniActivity
 
 获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
 
@@ -549,257 +444,13 @@ let decorView = UTSAndroid.getUniActivity()!.window.decorView;
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 
-#### 4.2.2 onAppActivityPause / offAppActivityPause
-
-##### onAppActivityPause
-
-> HBuilderX 3.6.3+
-
-
-App的activity onPause时触发
-
-```ts
-UTSAndroid.onAppActivityPause(() => {
-    let eventName = "onAppActivityPause - " + Date.now();
-    console.log(eventName);
-});
-```
-
-##### offAppActivityPause
-
-> HBuilderX 3.6.9+
-
-onAppActivityPause 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.offAppActivityPause();
-// 移除指定监听
-UTSAndroid.offAppActivityPause(() => {
-});
-```
-
-
-
-#### 4.2.3 onAppActivityResume / offAppActivityResume
-
-##### onAppActivityResume
-
-> HBuilderX 3.6.3+
-
-
-
-App的activity onResume时触发
-
-```ts
-UTSAndroid.onAppActivityResume(() => {
-     let eventName = "onAppActivityResume - " + Date.now();
-     console.log(eventName);
-});
-```
-
-##### offAppActivityResume
-
-> HBuilderX 3.6.9+
-
-onAppActivityResume 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.onAppActivityResume();
-// 移除指定监听
-UTSAndroid.onAppActivityResume(() => {
-});
-```
-
-
-
-#### 4.2.4 onAppActivityDestroy / offAppActivityDestroy
-
-##### onAppActivityDestroy
-
-> HBuilderX 3.6.3+
-
-
-App 的 activity onDestroy时触发
-
-```ts
-UTSAndroid.onAppActivityDestroy(() => {
-     let eventName = "onAppActivityDestroy- " + Date.now();
-     console.log(eventName);
-});
-```
-
-##### offAppActivityDestroy
-
-> HBuilderX 3.6.9+
-
-onAppActivityDestroy 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.offAppActivityDestroy();
-// 移除指定监听
-UTSAndroid.offAppActivityDestroy(() => {
-});
-```
-
-
-
-#### 4.2.5 onAppActivityBack / offAppActivityBack
-
-##### onAppActivityBack
-
-> HBuilderX 3.6.3+
-
-
-App 的 activity 回退物理按键点击时触发
-
-```ts
-UTSAndroid.onAppActivityBack(() => {
-     let eventName = "onAppActivityBack- " + Date.now();
-     console.log(eventName);
-});
-
-```
-
-##### offAppActivityBack
-
-> HBuilderX 3.6.9+
-
-onAppActivityBack 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.offAppActivityBack();
-// 移除指定监听
-UTSAndroid.offAppActivityBack(() => {
-});
-```
-
-
-
-#### 4.2.6 onAppActivityResult / offAppActivityResult
-
-
-
-##### onAppActivityResult
-
-> HBuilderX 3.6.8+
-
-App 的 activity 启动其他activity的回调结果监听 对应原生的  [onActivityResult](https://developer.android.com/training/basics/intents/result)
-
-需要特别注意的是 `requestCode` 参数，这个参数用于区别 不同的请求来源,开发者应该只处理自己发起请求
-
-```ts
-let customRequestCode = 12000
-
-UTSAndroid.onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
-	if(requestCode == 12000){
-		// 我们发起的请求
-		let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:"+resultCode + " -data:"+JSON.stringify(data);
-    	console.log(eventName);
-	}else{
-		// 别的代码发起的请求，不要处理
-	}
-
-});
-```
-
-##### offAppActivityResult
-
-> HBuilderX 3.6.9+
-
-onAppActivityResult 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.offAppActivityResult();
-// 移除指定监听
-UTSAndroid.offAppActivityResult(() => {
-});
-```
-
-
-#### 4.2.7 onAppActivityRequestPermissionsResult / offAppActivityRequestPermissionsResult
-
-> 已废弃，请使用 4.4章节系统权限管理替代此api
-
-##### onAppActivityRequestPermissionsResult
-
-> HBuilderX 3.6.3+
-
-
-App 的 activity 获得权限请求结果的回调
-
-```ts
-UTSAndroid.onAppActivityRequestPermissionsResult((requestCode: number,
-                                                     permissions: Array<string>,
-                                                     grantResults: Array<number>) => {
-
-		console.log(grantResults);
-		console.log(permissions);
-		console.log(requestCode);
-	});
-
-//发起定位权限申请
-let permission = [Manifest.permission.ACCESS_COARSE_LOCATION]
-ActivityCompat.requestPermissions(getUniActivity()!,
-	    permission, 1001);
-
-```
-
-##### offAppActivityRequestPermissionsResult
-
-> HBuilderX 3.6.9+
-
-onAppActivityRequestPermissionsResult 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.offAppActivityRequestPermissionsResult();
-// 移除指定监听
-UTSAndroid.offAppActivityRequestPermissionsResult(() => {
-});
-```
------------------------------
-
-
-特别说明：除了本章节列出的函数外，android环境下 activity 其他上下文方法都可以通过 getUniActivity()!.xxx()的方式实现
-
-比如获取当前activity的顶层View容器
-
-```ts
-UTSAndroid.getUniActivity()!.getWindow().getDecorView();
-```
-
-### 4.3 UTS插件开发中Activity生命周期注意事项
+#### onAppActivityDestroy
 
 即使在android原生开发中，应用的生命周期管理也是十分重要的。 [android生命周期](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=zh_cn)
 
 UTS环境中对原生的生命周期进行了封装和简化，大多数情况下，开发者只需要了解本章节中列出的 activity相关生命周期即可。
 
-
-其中最为常见的场景，要数`onAppActivityDestroy`中释放系统资源了：
-
+其中最为常见的场景，要数`onAppActivityDestroy`中释放系统资源：
 
 举个例子，以Hello UTS  [用户截屏插件](https://ext.dcloud.net.cn/plugin?id=9897)为例。
 
@@ -819,17 +470,14 @@ UTSAndroid.onAppActivityDestroy(function(){
 开发者在开发UTS插件时，如果遇到了类似使用系统组件的情况，也需要特别关注资源释放情况。
 
 
-### 4.4 系统权限管理
+
+#### 4.4 requestSystemPermission
 
 HBuilder X 3.8.2版本之后支持
 
 系统权限管理使用了 https://github.com/getActivity/XXPermissions 工具库
 
 如果开发者使用了相同依赖，可能打包冲突。需要修改为 complileOnly 或者 修改为本章节内置API
-
-
-
-##### 4.4.1 requestSystemPermission
 
 请求系统权限,对应的两个参数：
 1  请求的权限列表
@@ -851,37 +499,32 @@ UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!,permission,funct
 	})
 ```
 
-##### 4.4.2 gotoSystemPermissionActivity
-
-跳转至系统设置权限设置界面，一般是用户选择了不再继续询问选项后
-
-```
-let permissionWifi = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"]
-UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionWifi)
-```
+--------------------------------
 
 
-##### 4.4.3 getSystemPermissionDenied@getSystemPermissionDenied
+特别说明：
 
-判断权限是否已经被用户禁止
+除了本章节列出的函数外，android环境下 application 其他上下文方法都可以通过 getAppContext()!.xxx()的方式实现
+
+比如获取app缓存目录：
 
 ```ts
-let permission = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"]
-let denied = UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!, permission)
-// 执行结果
-[android.permission.ACCESS_FINE_LOCATION, android.permission.ACCESS_FINE_LOCATION]
+UTSAndroid.getAppContext()!.getExternalCacheDir()!.getPath()
 ```
 
-##### 4.4.4 checkSystemPermissionGranted
 
-判断权限是否已经被用户授予
+activity 其他上下文方法都可以通过 getUniActivity()!.xxx()的方式实现
+
+比如获取当前activity的顶层View容器
 
 ```ts
-let permission = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"]
-let grant = UTSAndroid.checkSystemPermissionGranted (UTSAndroid.getUniActivity()!, permission)
-// 执行结果
-false
+UTSAndroid.getUniActivity()!.getWindow().getDecorView();
 ```
+
+
+
+
+
 
 ## 5 Kotlin与UTS差异重点介绍 (持续更新)
 

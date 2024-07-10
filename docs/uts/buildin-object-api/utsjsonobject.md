@@ -71,6 +71,8 @@ UTSJSONObject.keys(obj).size
 
 <!-- UTSJSON.UTSJSONObject.assign.compatibility -->
 
+>> 注意： 与js中的`Object.assign`不同， 这里每次返回的都是一个新的对象
+
 ```ts
 const target = { a: 1, b: 2 };
 const source = { b: 4, c: 5 };
@@ -87,6 +89,8 @@ const returnedTarget = UTSJSONObject.assign(target, source);
 <!-- UTSJSON.UTSJSONObject.assign_1.returnValue -->
 
 <!-- UTSJSON.UTSJSONObject.assign_1.compatibility -->
+
+>> 注意： 与js中的`Object.assign`不同， 这里每次返回的都是一个新的对象
 
 ```ts
 type User = {
