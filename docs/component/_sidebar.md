@@ -2,65 +2,67 @@
 * [公共属性和事件](common.md)
 * 内置组件```{"collapsable": false}```
   * 视图容器
-    * [基本视图容器](view.md)
-    * [可滚动视图容器](scroll-view.md)
-    * 滑块视图容器```{"collapsable": false}```
+    * [view | 基本视图容器](view.md)
+    * [scroll-view | 可滚动视图容器](scroll-view.md)
+    * swiper | 滑块视图容器```{"collapsable": false}```
       * [swiper](swiper.md)
       * [swiper-item](swiper-item.md)
-    * [match-media](match-media.md)
-    * [可拖动区域](movable-area.md)
-    * [可移动的视图容器](movable-view.md)
-    * [cover-view](cover-view.md)
-    * [cover-image](cover-image.md)
-    * 列表组件```{"collapsable": false}```
+    * [match-media | 匹配检测节点](match-media.md)
+    * movable | 可拖动组件```{"collapsable": false}```
+      * [movable-area | 可拖动区域](movable-area.md)
+      * [movable-view | 可拖动视图容器](movable-view.md)
+    * cover```{"collapsable": false}```
+      * [cover-view](cover-view.md)
+      * [cover-image](cover-image.md)
+    * list-view | 列表组件```{"collapsable": false}```
       * [list-view](list-view.md)
       * [list-item](list-item.md)
-    * sticky```{"collapsable": false}```
+    * sticky | 吸顶```{"collapsable": false}```
       * [sticky-header](sticky-header.md)
       * [sticky-section](sticky-section.md)
-    * nested-scroll```{"collapsable": false}```
+    * nested-scroll | 嵌套滚动```{"collapsable": false}```
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
   * 基础内容
-    * [图标](icon.md)
-    * [文本](text.md)
-    * [富图标](rich-text.md)
-    * [进度条](progress.md)
+    * [icon | 图标](icon.md)
+    * [text | 文本](text.md)
+    * [rich-text | 富图标](rich-text.md)
+    * [progress | 进度条](progress.md)
   * 表单组件
-    * [按钮](button.md)
-    * 多选框```{"collapsable": false}```
-      * [多选框组](checkbox-group.md)
-      * [多选框](checkbox.md)
-    * [表单](form.md)
-    * [输入框](input.md)
-    * [富文本编辑器](editor.md)
+    * [button | 按钮](button.md)
+    * checkbox | 多选框```{"collapsable": false}```
+      * [checkbox-group | 多选框组](checkbox-group.md)
+      * [checkbox | 多选框](checkbox.md)
+    * [form | 表单](form.md)
+    * [input | 输入框](input.md)
+    * [editor | 富文本编辑器](editor.md)
     * [label](label.md)
-    * [底部弹出的滚动选择器](picker.md)
-    * 嵌入页面的滚动选择器```{"collapsable": false}```
+    * [picker | 底部弹出滚动选择器](picker.md)
+    * picker-view | 嵌入页面滚动选择器```{"collapsable": false}```
       * [picker-view](picker-view.md)
       * [picker-view-column](picker-view-column.md)
-    * 单选项```{"collapsable": false}```
-      * [单选组](radio-group.md)
-      * [单选项](radio.md)
-    * [滑动选择器](slider.md)
-    * [开关选择器](switch.md)
-    * [多行输入框](textarea.md)
+    * radio | 单选项```{"collapsable": false}```
+      * [radio-group | 单选组](radio-group.md)
+      * [radio | 单选项](radio.md)
+    * [slider | 滑动选择器](slider.md)
+    * [switch | 开关选择器](switch.md)
+    * [textarea | 多行输入框](textarea.md)
   * 导航
-    * [页面链接](navigator.md)
+    * [navigator | 页面链接](navigator.md)
   * 媒体组件
-    * [音频](audio.md)
-    * [图片](image.md)
-    * [视频](video.md)
+    * [audio | 音频](audio.md)
+    * [image | 图片](image.md)
+    * [video | 视频](video.md)
     * live```{"collapsable": false}```
       * [live-player](live-player.md)
       * [live-pusher](live-pusher.md)
   * 地图
-    * [地图](map.md)
+    * [map | 地图](map.md)
   * 画布
-    * [画布](canvas.md)
+    * [canvas | 画布](canvas.md)
   * 网页
     * [web-view](web-view.md)
-  * 页面属性配置节点
+  * page-meta | 页面属性配置节点
     * [page-meta](page-meta.md)
     * [navigation-bar](navigation-bar.md)
     * [custom-tab-bar](custom-tab-bar.md)

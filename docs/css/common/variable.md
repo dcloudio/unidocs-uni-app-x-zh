@@ -1,4 +1,4 @@
-# CSS 变量 <Badge text="4.0">
+# CSS 变量 <Badge text="4.0（仅 Web 平台）">
 
 > uni-app x 4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。
 
@@ -11,6 +11,7 @@
 ::: warning 注意
 - 当设置 `"navigationStyle":"custom"` 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 `var(--status-bar-height)` 的 view 放在页面顶部，避免页面内容出现在状态栏。
 - 在 Web 端，由于不存在原生导航栏和 tabBar（是前端 div 模拟的），如果设置了一个固定位置的居底 view，在小程序和 App 端是在 tabBar 上方，但在 H5 端会与 tabBar 重叠。此时可使用`--window-bottom`，不管在哪个端，都是固定在 tabBar 上方。
+- Android、iOS目前不支持自定义css变量
 :::
 
 ## 代码块
