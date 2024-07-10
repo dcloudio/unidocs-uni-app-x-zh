@@ -1,3 +1,3 @@
-# uni-app x iOS离线打包SDK
+# uni-app x iOS原生SDK
 
 ## alpha版

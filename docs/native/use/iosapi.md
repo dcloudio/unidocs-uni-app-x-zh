@@ -1,20 +1,5 @@
-> * 仅需要离线打包可直接使用或参考`HBuilder`工程
-> * 原生项目接入离线SDK可参考示例`UniAppXDemo`工程
-> * 离线SDK基于Swift开发，因此原生Objective-C语言开发的应用需要新建一个Swift文件用于添加Swift运行环境以及桥接离线SDK的API，详情可参考UniAppXDemo工程中的`UniAppBridge`
-
-# 仅离线打包
-1. 参考如下示例修改AppDelegate(建议直接使用示例中的`HBuilder`工程)
-    ```
-    import DCloudUniappRuntime
-    @main
-    class AppDelegate: UniAppRootAppDelegate {
-    }
-    ```
-2. `Main.storyboard`文件中将`ViewController`的`Class`设置为`UniAppRootViewController`，`Module`设置为`DCloudUniappRuntime`. 
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/main_storyboard_viewcontroller.png)
-
-
-# 采用SDK方式接入
+> * 仅打包可参考HBuilder工程
+> * SDK基于Swift开发，因此原生Objective-C语言开发的应用需要新建一个Swift文件用于添加Swift运行环境以及桥接SDK的API，详情可参考UniAppXDemo工程中的`UniAppBridge`
 
 ## 初始化SDK
 在 AppDelegate 的 didFinishLaunchingWithOptions 中初始化
