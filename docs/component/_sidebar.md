@@ -4,9 +4,9 @@
   * 视图容器
     * [view | 基本视图容器](view.md)
     * [scroll-view | 可滚动视图容器](scroll-view.md)
-    * swiper | 滑块视图容器```{"collapsable": false}```
-      * [swiper](swiper.md)
-      * [swiper-item](swiper-item.md)
+    * swiper | 滑块视图组件```{"collapsable": false}```
+      * [swiper | 滑块视图容器](swiper.md)
+      * [swiper-item | 滑块视图容器子项](swiper-item.md)
     * [match-media | 匹配检测节点](match-media.md)
     * movable | 可拖动组件```{"collapsable": false}```
       * [movable-area | 可拖动区域](movable-area.md)
@@ -14,12 +14,12 @@
     * cover```{"collapsable": false}```
       * [cover-view](cover-view.md)
       * [cover-image](cover-image.md)
-    * list-view | 列表组件```{"collapsable": false}```
-      * [list-view](list-view.md)
-      * [list-item](list-item.md)
-    * sticky | 吸顶```{"collapsable": false}```
-      * [sticky-header](sticky-header.md)
-      * [sticky-section](sticky-section.md)
+    * list-view | 列表布局组件```{"collapsable": false}```
+      * [list-view | 列表容器](list-view.md)
+      * [list-item | 列表容器子项](list-item.md)
+    * sticky | 粘性布局组件```{"collapsable": false}```
+      * [sticky-header | 吸顶布局容器](sticky-header.md)
+      * [sticky-section | 吸顶布局容器](sticky-section.md)
     * nested-scroll | 嵌套滚动```{"collapsable": false}```
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
@@ -38,9 +38,9 @@
     * [editor | 富文本编辑器](editor.md)
     * [label](label.md)
     * [picker | 底部弹出滚动选择器](picker.md)
-    * picker-view | 嵌入页面滚动选择器```{"collapsable": false}```
-      * [picker-view](picker-view.md)
-      * [picker-view-column](picker-view-column.md)
+    * picker-view | 滚动选择器组件```{"collapsable": false}```
+      * [picker-view | 嵌入页面的滚动选择器](picker-view.md)
+      * [picker-view-column | 滚动选择器子项](picker-view-column.md)
     * radio | 单选项```{"collapsable": false}```
       * [radio-group | 单选组](radio-group.md)
       * [radio | 单选项](radio.md)
@@ -53,9 +53,6 @@
     * [audio | 音频](audio.md)
     * [image | 图片](image.md)
     * [video | 视频](video.md)
-    * live```{"collapsable": false}```
-      * [live-player](live-player.md)
-      * [live-pusher](live-pusher.md)
   * 地图
     * [map | 地图](map.md)
   * 画布
