@@ -13,6 +13,8 @@
 uni-app x的app平台，页面不再由webview渲染，其实不需要原生提供特殊配置来优化。但为了开发的便利和多端的统一，也支持了tabbar和导航栏设置。\
 但不再支持uni-app的app-plus专用配置以及tabbar的midbutton。
 
+导航栏高度为 44px (不含状态栏)，tabBar 高度为 50px (不含安全区)。
+
 如pages.json中配置的导航栏和tabbar功能无法满足你的需求，可以不在pages.json中配置，自己用view做导航栏和tabbar。\
 hello uni-app x有相关示例，参考：
 - 自定义导航栏：[插件地址](https://ext.dcloud.net.cn/plugin?id=14618)
