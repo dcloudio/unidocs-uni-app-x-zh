@@ -36,7 +36,7 @@
 将uts-runtime-release.aar，android-gif-drawable-1.2.28.aar，app-common-release.aar，app-runtime-release.aar，breakpad-build-release.aar，dcloud-layout-release.aar，
 framework-release.aar，uni-exit-release.aar，uni-getAccessibilityInfo-release.aar，uni-getAppAuthorizeSetting-release.aar，uni-getAppBaseInfo-release.aar，
 uni-getSystemSetting-release.aar，uni-openAppAuthorizeSetting-release.aar，uni-prompt-release.aar，uni-storage-release.aar，uni-getDeviceInfo-release.aar，
-uni-getSystemInfo-release.aar共17个aar拷贝到uni-app x模块的libs下，如果没有libs需要手动创建，参考下图：
+uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar共19个aar拷贝到uni-app x模块的libs下，如果没有libs需要手动创建，参考下图：
 
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/android/main_libs.jpg)
 
@@ -523,6 +523,8 @@ dependencies {
 - uni-openAppAuthorizeSetting
 - uni-prompt
 - uni-storage
+- uni-rpx2px
+- uni-theme
 
 ## 启动
 
