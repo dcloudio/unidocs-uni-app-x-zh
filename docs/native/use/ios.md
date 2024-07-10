@@ -8,7 +8,7 @@
 * 通过 `HBuilder X` 导出资源文件，根据资源内容，配置`原生主工程`环境，添加基础模块需要的依赖库以及资源文件
 * 根据资源文件中的`manifest.json`文件中包含的模块，制作`DCloudUTSExtAPI.xcframework`，并将其添加到`原生主工程`中，详见[集成内置模块](../modules/ios/modules.md)
 * 根据资源文件中的`manifest.json`文件中包含的模块，向`原生主工程`添加工程配置以及内置模块需要的资源文件等，详见[集成内置模块](../modules/ios/modules.md)
-* 根据资源文件中的`uni_modules`文件夹中包含的UTS插件，制作对应的原生xcframework，并将其添加到`原生主工程`(付费购买的uts插件不支持原生工程使用)，详见[制作UTS插件](iosuts.md)
+* 根据资源文件中的`uni_modules`文件夹中包含的UTS插件，制作对应的原生xcframework，并将其添加到`原生主工程`(付费购买的uts插件不支持原生工程接入)，详见[制作UTS插件](iosuts.md)
 * 根据API文档接入SDK，详见[API文档](iosapi.md)
 
 ## 导出资源文件
@@ -43,7 +43,7 @@
 	<key>uniapp-x</key>
 	<dict>
 		<key>appid</key>
-		<string>您应用的appid</string>
+		<string>应用的appid</string>
 		<key>ipatype</key>
 		<integer>1</integer>
 		<key>singleThread</key>
@@ -55,7 +55,7 @@
 	</dict>
 </dict>
 ```
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniappx_info.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniappx_app_info.png)
 
 
 

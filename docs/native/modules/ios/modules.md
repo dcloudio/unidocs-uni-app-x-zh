@@ -8,12 +8,17 @@
 > 你可以选择新建工程或直接使用demo中的`DCloudUTSExtAPI`工程
 
 ### 工程环境设置
-`Target -> General -> Minimum Deployments` 选择 `12.0`
-`Target -> Build Settings -> Mach-O Type` 设置为`Dynamic Library`
-`Target -> Build Settings -> Other Linker Flags` 中添加`-ObjC`, 字母o和c大写
-`Target -> Build Settings -> Enable Module Verifier` 设置为`NO`
-`Target -> Build Settings -> Build Libraries for Distribution` 设置为`YES`
-`Target -> Build Settings -> Framework Search Paths` 中添加SDK的Libs目录（操作方法：双击展开`Framework Search Paths`将`SDK/Libs`文件夹拖入即可）
+`Target -> General -> Minimum Deployments` 选择 `12.0`  
+
+`Target -> Build Settings -> Mach-O Type` 设置为`Dynamic Library`  
+
+`Target -> Build Settings -> Other Linker Flags` 中添加`-ObjC`, 字母o和c大写  
+
+`Target -> Build Settings -> Enable Module Verifier` 设置为`NO`  
+
+`Target -> Build Settings -> Build Libraries for Distribution` 设置为`YES`  
+
+`Target -> Build Settings -> Framework Search Paths` 中添加SDK的Libs目录（操作方法：双击展开`Framework Search Paths`将`SDK/Libs`文件夹拖入即可）  
 
 ### 配置基础模块(必须)
 将以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到`DCloudUTSExtAPI`工程中，并将依赖库均设置为`Do Not Embed`
@@ -352,7 +357,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 	<string>广告联盟id，如未开通uniad可不填</string>
 </dict>
 ```
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniappx_info.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniappx_app_info.png)
 
 ### 增强广告(可选)
 #### 添加依赖库以及资源文件
