@@ -4,6 +4,8 @@
 
 <!-- UTSCOMJSON.label.compatibility -->
 
+App平台可以用view加事件来替代label。
+
 <!-- UTSCOMJSON.label.attribute -->
 
 <!-- UTSCOMJSON.label.event -->
