@@ -62,9 +62,7 @@
     * [canvas | 画布](canvas.md)
   * 网页
     * [web-view](web-view.md)
-  * page-meta | 页面属性配置节点
-    * [page-meta](page-meta.md)
-    * [navigation-bar](navigation-bar.md)
+  * 页面属性配置节点
     * [custom-tab-bar](custom-tab-bar.md)
   * unicloud
     * [unicloud-db](unicloud-db.md)
