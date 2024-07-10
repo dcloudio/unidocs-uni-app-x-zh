@@ -6,7 +6,7 @@
 
 **[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android-uni-app-x-SDK@11973-4.23.zip)**
 
-* 更新uni-app原生SDK打包支持，需使用HBuilderX（4.23.2024070804）版本生成本地打包App资源。
+* 更新 uni-app x 原生SDK打包支持，需使用HBuilderX（4.23.2024070804）版本生成本地打包App资源。
 * 新增 uni_modules 前端 easycom 组件支持加密付费销售 [详情](https://uniapp.dcloud.net.cn/plugin/publish.html#components-pay)
 * 新增 theme.json 用于pages.json中颜色主题变量定义，处理暗黑模式的pages.json兼容 [详情](https://doc.dcloud.net.cn/uni-app-x/collocation/themejson.html)
 * 新增 onError 应用生命周期 [详情](https://doc.dcloud.net.cn/uni-app-x/collocation/app.html)
@@ -73,7 +73,6 @@
 * 修复 VUE ref、reactive、readonly、shallowRef、shallowReactive、shallowReadonly 使用泛型+对象/数组字面量编译报错的Bug [详情](http://git.dcloud.io/uni-app-next/uts/commit/5f9278a020c435a35b0a782e2d56fcc9dbd78f08)
 * 修复 VUE v-for 不支持循环 UTSJSONObject 的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1839)
 * 修复 VUE inject 不支持泛型的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1787)
-* 修复 离线打包 number 类型判断相等可能与云打包结果不一致的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2422)
 
 ## alpha版
 
@@ -81,7 +80,7 @@
 
 **[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android-uni-app-x-SDK@11973-4.23.zip)**
 
-* 更新uni-app原生SDK打包支持，需使用HBuilderX（4.23.2024070309-alpha）版本生成本地打包App资源。
+* 更新 uni-app x 原生SDK打包支持，需使用HBuilderX（4.23.2024070309-alpha）版本生成本地打包App资源。
 * 新增 API uni.setTabBarStyle/pages.json 支持传递 borderColor 设定自定义边框颜色，优先级高于 borderStyle [详情](https://doc.dcloud.net.cn/uni-app-x/api/set-tabbar.html#settabbarstyle)
 * 调整 API uni.setTabBarStyle/pages.json 中 borderStyle 只支持 black/white [详情](https://doc.dcloud.net.cn/uni-app-x/api/set-tabbar.html#settabbarstyle)
 * 修复 组件 list-view 设置 scroll-top 属性值域与 upper-threshold 属性值域相同时，部分安卓设备可能不触发 scrolltoupper 事件的Bug[详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2847)
