@@ -215,11 +215,11 @@ android.enableJetifier=true
 
 ## 配置uts插件
 
-离线打包导出成功之后，uts插件资源位于`unpackage/resource/app-android/uni_modules`下。
+资源导出成功之后，uts插件资源位于`unpackage/resource/app-android/uni_modules`下。
 
 如果不包含uts插件，可以[跳过](#configmodules)此章节。
 
-注意：付费uts插件不支持离线打包。
+注意：付费uts插件不支持通过原生SDK打包。
 
 为方便区分，`uts插件`指前端封装的uni_modules插件；`android uts插件`指根据编译后的`uts插件`生成的安卓原生模块。
 

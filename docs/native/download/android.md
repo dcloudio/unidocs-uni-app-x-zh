@@ -1,4 +1,4 @@
-# uni-app x Android离线打包SDK
+# uni-app x Android原生SDK
 
 ## 正式版
 
@@ -6,7 +6,7 @@
 
 **[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android-uni-app-x-SDK@11973-4.23.zip)**
 
-* 更新uni-app离线打包支持，需使用HBuilderX（4.22.2024062415-alpha）版本生成本地打包App资源。
+* 更新uni-app原生SDK打包支持，需使用HBuilderX（4.23.2024070804）版本生成本地打包App资源。
 * 新增 uni_modules 前端 easycom 组件支持加密付费销售 [详情](https://uniapp.dcloud.net.cn/plugin/publish.html#components-pay)
 * 新增 theme.json 用于pages.json中颜色主题变量定义，处理暗黑模式的pages.json兼容 [详情](https://doc.dcloud.net.cn/uni-app-x/collocation/themejson.html)
 * 新增 onError 应用生命周期 [详情](https://doc.dcloud.net.cn/uni-app-x/collocation/app.html)
@@ -31,7 +31,7 @@
 * 修复 CSS border 在某些情况下渲染导常的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1701)
 * 修复 CSS position 设置为 fixed 时某些情况下位置不对的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1681)
 * 修复 CSS flex-direction 设置为 row，flex-wrap 为 wrap 且设置 min-height 时可能高度计算不正确的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1528)
-* 新增 `uni-app x 原生SDK`，可用于原生App集成和离线打包 [详情](https://doc.dcloud.net.cn/uni-app-x/native/)
+* 新增 `uni-app x 原生SDK`，可用于原生App集成和原生打包 [详情](https://doc.dcloud.net.cn/uni-app-x/native/)
 * 新增 pages.json 配置页面动画属性 animationType [详情](https://doc.dcloud.net.cn/uni-app-x/collocation/pagesjson.html)
 * 新增 API uni.getImageInfo 获取图片信息 [详情](https://doc.dcloud.net.cn/uni-app-x/api/get-image-info.html)
 * 新增 API uni.compressImage 压缩图片 [详情](https://doc.dcloud.net.cn/uni-app-x/api/compress-image.html)
@@ -81,7 +81,7 @@
 
 **[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android-uni-app-x-SDK@11973-4.23.zip)**
 
-* 更新uni-app离线打包支持，需使用HBuilderX（4.22.2024062415-alpha）版本生成本地打包App资源。
+* 更新uni-app原生SDK打包支持，需使用HBuilderX（4.23.2024070309-alpha）版本生成本地打包App资源。
 * 新增 API uni.setTabBarStyle/pages.json 支持传递 borderColor 设定自定义边框颜色，优先级高于 borderStyle [详情](https://doc.dcloud.net.cn/uni-app-x/api/set-tabbar.html#settabbarstyle)
 * 调整 API uni.setTabBarStyle/pages.json 中 borderStyle 只支持 black/white [详情](https://doc.dcloud.net.cn/uni-app-x/api/set-tabbar.html#settabbarstyle)
 * 修复 组件 list-view 设置 scroll-top 属性值域与 upper-threshold 属性值域相同时，部分安卓设备可能不触发 scrolltoupper 事件的Bug[详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2847)

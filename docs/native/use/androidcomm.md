@@ -157,7 +157,7 @@ class MainActivity : AppCompatActivity() {
 
 **注意：广播要在页面关闭的时候取消注册，避免可能出现崩溃的问题。**
 
-示例可以参考离线打包SDK中的`app-comm`工程。
+示例可以参考原生SDK中的`app-comm`工程。
 
 ## 退出
 
