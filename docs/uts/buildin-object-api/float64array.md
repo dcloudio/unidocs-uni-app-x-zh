@@ -38,7 +38,7 @@
 <!-- UTSJSON.Float64Array.Constructor_2.tutorial -->
 
 
-## 实例属性
+## 静态属性
 
 
 ### BYTES_PER_ELEMENT
@@ -52,6 +52,38 @@
 <!-- UTSJSON.Float64Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Float64Array.BYTES_PER_ELEMENT.tutorial -->
+
+
+## 静态方法
+
+
+### of(...items)
+
+<!-- UTSJSON.Float64Array.of.description -->
+
+<!-- UTSJSON.Float64Array.of.param -->
+
+<!-- UTSJSON.Float64Array.of.returnValue -->
+
+<!-- UTSJSON.Float64Array.of.compatibility -->
+
+<!-- UTSJSON.Float64Array.of.tutorial -->
+
+### from(arrayLike,mapFn?)
+
+<!-- UTSJSON.Float64Array.from.description -->
+
+<!-- UTSJSON.Float64Array.from.param -->
+
+<!-- UTSJSON.Float64Array.from.returnValue -->
+
+<!-- UTSJSON.Float64Array.from.compatibility -->
+
+<!-- UTSJSON.Float64Array.from.tutorial -->
+
+
+## 实例属性
+
 
 ### BYTES_PER_ELEMENT
 
@@ -100,6 +132,18 @@
 <!-- UTSJSON.Float64Array.byteOffset.compatibility -->
 
 <!-- UTSJSON.Float64Array.byteOffset.tutorial -->
+
+### length
+
+<!-- UTSJSON.Float64Array.length.description -->
+
+<!-- UTSJSON.Float64Array.length.param -->
+
+<!-- UTSJSON.Float64Array.length.returnValue -->
+
+<!-- UTSJSON.Float64Array.length.compatibility -->
+
+<!-- UTSJSON.Float64Array.length.tutorial -->
 
 
 ## 实例方法
@@ -212,18 +256,6 @@
 <!-- UTSJSON.Float64Array.join.compatibility -->
 
 <!-- UTSJSON.Float64Array.join.tutorial -->
-
-### lastIndexOf(searchElement, fromIndex?)
-
-<!-- UTSJSON.Float64Array.lastIndexOf.description -->
-
-<!-- UTSJSON.Float64Array.lastIndexOf.param -->
-
-<!-- UTSJSON.Float64Array.lastIndexOf.returnValue -->
-
-<!-- UTSJSON.Float64Array.lastIndexOf.compatibility -->
-
-<!-- UTSJSON.Float64Array.lastIndexOf.tutorial -->
 
 ### map(callbackfn)
 
@@ -382,29 +414,3 @@
 <!-- UTSJSON.Float64Array.keys.tutorial -->
 
 
-## 静态方法
-
-
-### of(...items)
-
-<!-- UTSJSON.Float64Array.of.description -->
-
-<!-- UTSJSON.Float64Array.of.param -->
-
-<!-- UTSJSON.Float64Array.of.returnValue -->
-
-<!-- UTSJSON.Float64Array.of.compatibility -->
-
-<!-- UTSJSON.Float64Array.of.tutorial -->
-
-### from(arrayLike,mapFn?)
-
-<!-- UTSJSON.Float64Array.from.description -->
-
-<!-- UTSJSON.Float64Array.from.param -->
-
-<!-- UTSJSON.Float64Array.from.returnValue -->
-
-<!-- UTSJSON.Float64Array.from.compatibility -->
-
-<!-- UTSJSON.Float64Array.from.tutorial -->

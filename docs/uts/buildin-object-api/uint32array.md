@@ -41,7 +41,7 @@
 <!-- UTSJSON.Uint32Array.Constructor_2.tutorial -->
 
 
-## 实例属性
+## 静态属性
 
 
 ### BYTES_PER_ELEMENT
@@ -55,6 +55,38 @@
 <!-- UTSJSON.Uint32Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Uint32Array.BYTES_PER_ELEMENT.tutorial -->
+
+
+## 静态方法
+
+
+### of(...items)
+
+<!-- UTSJSON.Uint32Array.of.description -->
+
+<!-- UTSJSON.Uint32Array.of.param -->
+
+<!-- UTSJSON.Uint32Array.of.returnValue -->
+
+<!-- UTSJSON.Uint32Array.of.compatibility -->
+
+<!-- UTSJSON.Uint32Array.of.tutorial -->
+
+### from(arrayLike,mapFn?)
+
+<!-- UTSJSON.Uint32Array.from.description -->
+
+<!-- UTSJSON.Uint32Array.from.param -->
+
+<!-- UTSJSON.Uint32Array.from.returnValue -->
+
+<!-- UTSJSON.Uint32Array.from.compatibility -->
+
+<!-- UTSJSON.Uint32Array.from.tutorial -->
+
+
+## 实例属性
+
 
 ### BYTES_PER_ELEMENT
 
@@ -103,6 +135,19 @@
 <!-- UTSJSON.Uint32Array.byteOffset.compatibility -->
 
 <!-- UTSJSON.Uint32Array.byteOffset.tutorial -->
+
+### length
+
+<!-- UTSJSON.Uint32Array.length.description -->
+
+<!-- UTSJSON.Uint32Array.length.param -->
+
+<!-- UTSJSON.Uint32Array.length.returnValue -->
+
+<!-- UTSJSON.Uint32Array.length.compatibility -->
+
+<!-- UTSJSON.Uint32Array.length.tutorial -->
+
 
 
 ## 实例方法
@@ -215,18 +260,6 @@
 <!-- UTSJSON.Uint32Array.join.compatibility -->
 
 <!-- UTSJSON.Uint32Array.join.tutorial -->
-
-### lastIndexOf(searchElement, fromIndex?)
-
-<!-- UTSJSON.Uint32Array.lastIndexOf.description -->
-
-<!-- UTSJSON.Uint32Array.lastIndexOf.param -->
-
-<!-- UTSJSON.Uint32Array.lastIndexOf.returnValue -->
-
-<!-- UTSJSON.Uint32Array.lastIndexOf.compatibility -->
-
-<!-- UTSJSON.Uint32Array.lastIndexOf.tutorial -->
 
 ### map(callbackfn)
 
@@ -385,29 +418,3 @@
 <!-- UTSJSON.Uint32Array.keys.tutorial -->
 
 
-## 静态方法
-
-
-### of(...items)
-
-<!-- UTSJSON.Uint32Array.of.description -->
-
-<!-- UTSJSON.Uint32Array.of.param -->
-
-<!-- UTSJSON.Uint32Array.of.returnValue -->
-
-<!-- UTSJSON.Uint32Array.of.compatibility -->
-
-<!-- UTSJSON.Uint32Array.of.tutorial -->
-
-### from(arrayLike,mapFn?)
-
-<!-- UTSJSON.Uint32Array.from.description -->
-
-<!-- UTSJSON.Uint32Array.from.param -->
-
-<!-- UTSJSON.Uint32Array.from.returnValue -->
-
-<!-- UTSJSON.Uint32Array.from.compatibility -->
-
-<!-- UTSJSON.Uint32Array.from.tutorial -->

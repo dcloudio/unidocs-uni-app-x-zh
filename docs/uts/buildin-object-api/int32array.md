@@ -41,7 +41,7 @@
 <!-- UTSJSON.Int32Array.Constructor_2.tutorial -->
 
 
-## 实例属性
+## 静态属性
 
 
 ### BYTES_PER_ELEMENT
@@ -55,6 +55,38 @@
 <!-- UTSJSON.Int32Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Int32Array.BYTES_PER_ELEMENT.tutorial -->
+
+
+## 静态方法
+
+
+### of(...items)
+
+<!-- UTSJSON.Int32Array.of.description -->
+
+<!-- UTSJSON.Int32Array.of.param -->
+
+<!-- UTSJSON.Int32Array.of.returnValue -->
+
+<!-- UTSJSON.Int32Array.of.compatibility -->
+
+<!-- UTSJSON.Int32Array.of.tutorial -->
+
+### from(arrayLike,mapFn?)
+
+<!-- UTSJSON.Int32Array.from.description -->
+
+<!-- UTSJSON.Int32Array.from.param -->
+
+<!-- UTSJSON.Int32Array.from.returnValue -->
+
+<!-- UTSJSON.Int32Array.from.compatibility -->
+
+<!-- UTSJSON.Int32Array.from.tutorial -->
+
+
+## 实例属性
+
 
 ### BYTES_PER_ELEMENT
 
@@ -103,6 +135,18 @@
 <!-- UTSJSON.Int32Array.byteOffset.compatibility -->
 
 <!-- UTSJSON.Int32Array.byteOffset.tutorial -->
+
+### length
+
+<!-- UTSJSON.Int32Array.length.description -->
+
+<!-- UTSJSON.Int32Array.length.param -->
+
+<!-- UTSJSON.Int32Array.length.returnValue -->
+
+<!-- UTSJSON.Int32Array.length.compatibility -->
+
+<!-- UTSJSON.Int32Array.length.tutorial -->
 
 
 ## 实例方法
@@ -215,18 +259,6 @@
 <!-- UTSJSON.Int32Array.join.compatibility -->
 
 <!-- UTSJSON.Int32Array.join.tutorial -->
-
-### lastIndexOf(searchElement, fromIndex?)
-
-<!-- UTSJSON.Int32Array.lastIndexOf.description -->
-
-<!-- UTSJSON.Int32Array.lastIndexOf.param -->
-
-<!-- UTSJSON.Int32Array.lastIndexOf.returnValue -->
-
-<!-- UTSJSON.Int32Array.lastIndexOf.compatibility -->
-
-<!-- UTSJSON.Int32Array.lastIndexOf.tutorial -->
 
 ### map(callbackfn)
 
@@ -383,31 +415,3 @@
 <!-- UTSJSON.Int32Array.keys.compatibility -->
 
 <!-- UTSJSON.Int32Array.keys.tutorial -->
-
-
-## 静态方法
-
-
-### of(...items)
-
-<!-- UTSJSON.Int32Array.of.description -->
-
-<!-- UTSJSON.Int32Array.of.param -->
-
-<!-- UTSJSON.Int32Array.of.returnValue -->
-
-<!-- UTSJSON.Int32Array.of.compatibility -->
-
-<!-- UTSJSON.Int32Array.of.tutorial -->
-
-### from(arrayLike,mapFn?)
-
-<!-- UTSJSON.Int32Array.from.description -->
-
-<!-- UTSJSON.Int32Array.from.param -->
-
-<!-- UTSJSON.Int32Array.from.returnValue -->
-
-<!-- UTSJSON.Int32Array.from.compatibility -->
-
-<!-- UTSJSON.Int32Array.from.tutorial -->
