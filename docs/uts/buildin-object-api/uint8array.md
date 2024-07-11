@@ -41,7 +41,7 @@
 <!-- UTSJSON.Uint8Array.Constructor_2.tutorial -->
 
 
-## 实例属性
+## 静态属性
 
 
 ### BYTES_PER_ELEMENT
@@ -55,6 +55,38 @@
 <!-- UTSJSON.Uint8Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Uint8Array.BYTES_PER_ELEMENT.tutorial -->
+
+
+## 静态方法
+
+
+### of(...items)
+
+<!-- UTSJSON.Uint8Array.of.description -->
+
+<!-- UTSJSON.Uint8Array.of.param -->
+
+<!-- UTSJSON.Uint8Array.of.returnValue -->
+
+<!-- UTSJSON.Uint8Array.of.compatibility -->
+
+<!-- UTSJSON.Uint8Array.of.tutorial -->
+
+### from(arrayLike,mapFn?)
+
+<!-- UTSJSON.Uint8Array.from.description -->
+
+<!-- UTSJSON.Uint8Array.from.param -->
+
+<!-- UTSJSON.Uint8Array.from.returnValue -->
+
+<!-- UTSJSON.Uint8Array.from.compatibility -->
+
+<!-- UTSJSON.Uint8Array.from.tutorial -->
+
+
+## 实例属性
+
 
 ### BYTES_PER_ELEMENT
 
@@ -103,6 +135,18 @@
 <!-- UTSJSON.Uint8Array.byteOffset.compatibility -->
 
 <!-- UTSJSON.Uint8Array.byteOffset.tutorial -->
+
+### length
+
+<!-- UTSJSON.Uint8Array.length.description -->
+
+<!-- UTSJSON.Uint8Array.length.param -->
+
+<!-- UTSJSON.Uint8Array.length.returnValue -->
+
+<!-- UTSJSON.Uint8Array.length.compatibility -->
+
+<!-- UTSJSON.Uint8Array.length.tutorial -->
 
 
 ## 实例方法
@@ -215,18 +259,6 @@
 <!-- UTSJSON.Uint8Array.join.compatibility -->
 
 <!-- UTSJSON.Uint8Array.join.tutorial -->
-
-### lastIndexOf(searchElement, fromIndex?)
-
-<!-- UTSJSON.Uint8Array.lastIndexOf.description -->
-
-<!-- UTSJSON.Uint8Array.lastIndexOf.param -->
-
-<!-- UTSJSON.Uint8Array.lastIndexOf.returnValue -->
-
-<!-- UTSJSON.Uint8Array.lastIndexOf.compatibility -->
-
-<!-- UTSJSON.Uint8Array.lastIndexOf.tutorial -->
 
 ### map(callbackfn)
 
@@ -384,30 +416,3 @@
 
 <!-- UTSJSON.Uint8Array.keys.tutorial -->
 
-
-## 静态方法
-
-
-### of(...items)
-
-<!-- UTSJSON.Uint8Array.of.description -->
-
-<!-- UTSJSON.Uint8Array.of.param -->
-
-<!-- UTSJSON.Uint8Array.of.returnValue -->
-
-<!-- UTSJSON.Uint8Array.of.compatibility -->
-
-<!-- UTSJSON.Uint8Array.of.tutorial -->
-
-### from(arrayLike,mapFn?)
-
-<!-- UTSJSON.Uint8Array.from.description -->
-
-<!-- UTSJSON.Uint8Array.from.param -->
-
-<!-- UTSJSON.Uint8Array.from.returnValue -->
-
-<!-- UTSJSON.Uint8Array.from.compatibility -->
-
-<!-- UTSJSON.Uint8Array.from.tutorial -->
