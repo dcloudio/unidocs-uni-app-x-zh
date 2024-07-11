@@ -4,18 +4,6 @@
 ## 构造函数
 
 
-### Constructor(length)
-
-<!-- UTSJSON.Int16Array.Constructor.description -->
-
-<!-- UTSJSON.Int16Array.Constructor.param -->
-
-<!-- UTSJSON.Int16Array.Constructor.returnValue -->
-
-<!-- UTSJSON.Int16Array.Constructor.compatibility -->
-
-<!-- UTSJSON.Int16Array.Constructor.tutorial -->
-
 ### Constructor(array)
 
 <!-- UTSJSON.Int16Array.Constructor_1.description -->
@@ -39,6 +27,50 @@
 <!-- UTSJSON.Int16Array.Constructor_2.compatibility -->
 
 <!-- UTSJSON.Int16Array.Constructor_2.tutorial -->
+
+
+## 静态属性
+
+
+### BYTES_PER_ELEMENT
+
+<!-- UTSJSON.Int16Array.BYTES_PER_ELEMENT.description -->
+
+<!-- UTSJSON.Int16Array.BYTES_PER_ELEMENT.param -->
+
+<!-- UTSJSON.Int16Array.BYTES_PER_ELEMENT.returnValue -->
+
+<!-- UTSJSON.Int16Array.BYTES_PER_ELEMENT.compatibility -->
+
+<!-- UTSJSON.Int16Array.BYTES_PER_ELEMENT.tutorial -->
+
+
+## 静态方法
+
+
+### of(...items)
+
+<!-- UTSJSON.Int8Array.of.description -->
+
+<!-- UTSJSON.Int8Array.of.param -->
+
+<!-- UTSJSON.Int8Array.of.returnValue -->
+
+<!-- UTSJSON.Int8Array.of.compatibility -->
+
+<!-- UTSJSON.Int8Array.of.tutorial -->
+
+### from(arrayLike,mapFn?)
+
+<!-- UTSJSON.Int8Array.from.description -->
+
+<!-- UTSJSON.Int8Array.from.param -->
+
+<!-- UTSJSON.Int8Array.from.returnValue -->
+
+<!-- UTSJSON.Int8Array.from.compatibility -->
+
+<!-- UTSJSON.Int8Array.from.tutorial -->
 
 
 ## 实例属性
@@ -103,6 +135,18 @@
 <!-- UTSJSON.Int16Array.byteOffset.compatibility -->
 
 <!-- UTSJSON.Int16Array.byteOffset.tutorial -->
+
+### length
+
+<!-- UTSJSON.Int16Array.length.description -->
+
+<!-- UTSJSON.Int16Array.length.param -->
+
+<!-- UTSJSON.Int16Array.length.returnValue -->
+
+<!-- UTSJSON.Int16Array.length.compatibility -->
+
+<!-- UTSJSON.Int16Array.length.tutorial -->
 
 
 ## 实例方法
@@ -215,18 +259,6 @@
 <!-- UTSJSON.Int16Array.join.compatibility -->
 
 <!-- UTSJSON.Int16Array.join.tutorial -->
-
-### lastIndexOf(searchElement, fromIndex?)
-
-<!-- UTSJSON.Int16Array.lastIndexOf.description -->
-
-<!-- UTSJSON.Int16Array.lastIndexOf.param -->
-
-<!-- UTSJSON.Int16Array.lastIndexOf.returnValue -->
-
-<!-- UTSJSON.Int16Array.lastIndexOf.compatibility -->
-
-<!-- UTSJSON.Int16Array.lastIndexOf.tutorial -->
 
 ### map(callbackfn)
 

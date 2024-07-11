@@ -41,7 +41,35 @@
 <!-- UTSJSON.Uint8ClampedArray.Constructor_2.tutorial -->
 
 
-## 实例属性
+## 静态方法
+
+
+### of(...items)
+
+<!-- UTSJSON.Uint8ClampedArray.of.description -->
+
+<!-- UTSJSON.Uint8ClampedArray.of.param -->
+
+<!-- UTSJSON.Uint8ClampedArray.of.returnValue -->
+
+<!-- UTSJSON.Uint8ClampedArray.of.compatibility -->
+
+<!-- UTSJSON.Uint8ClampedArray.of.tutorial -->
+
+### from(arrayLike,mapFn?)
+
+<!-- UTSJSON.Uint8ClampedArray.from.description -->
+
+<!-- UTSJSON.Uint8ClampedArray.from.param -->
+
+<!-- UTSJSON.Uint8ClampedArray.from.returnValue -->
+
+<!-- UTSJSON.Uint8ClampedArray.from.compatibility -->
+
+<!-- UTSJSON.Uint8ClampedArray.from.tutorial -->
+
+
+## 静态属性
 
 
 ### BYTES_PER_ELEMENT
@@ -55,6 +83,10 @@
 <!-- UTSJSON.Uint8ClampedArray.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Uint8ClampedArray.BYTES_PER_ELEMENT.tutorial -->
+
+
+## 实例属性
+
 
 ### BYTES_PER_ELEMENT
 
@@ -103,6 +135,18 @@
 <!-- UTSJSON.Uint8ClampedArray.byteOffset.compatibility -->
 
 <!-- UTSJSON.Uint8ClampedArray.byteOffset.tutorial -->
+
+### length
+
+<!-- UTSJSON.Uint8ClampedArray.length.description -->
+
+<!-- UTSJSON.Uint8ClampedArray.length.param -->
+
+<!-- UTSJSON.Uint8ClampedArray.length.returnValue -->
+
+<!-- UTSJSON.Uint8ClampedArray.length.compatibility -->
+
+<!-- UTSJSON.Uint8ClampedArray.length.tutorial -->
 
 
 ## 实例方法
@@ -215,18 +259,6 @@
 <!-- UTSJSON.Uint8ClampedArray.join.compatibility -->
 
 <!-- UTSJSON.Uint8ClampedArray.join.tutorial -->
-
-### lastIndexOf(searchElement, fromIndex?)
-
-<!-- UTSJSON.Uint8ClampedArray.lastIndexOf.description -->
-
-<!-- UTSJSON.Uint8ClampedArray.lastIndexOf.param -->
-
-<!-- UTSJSON.Uint8ClampedArray.lastIndexOf.returnValue -->
-
-<!-- UTSJSON.Uint8ClampedArray.lastIndexOf.compatibility -->
-
-<!-- UTSJSON.Uint8ClampedArray.lastIndexOf.tutorial -->
 
 ### map(callbackfn)
 
@@ -383,31 +415,3 @@
 <!-- UTSJSON.Uint8ClampedArray.keys.compatibility -->
 
 <!-- UTSJSON.Uint8ClampedArray.keys.tutorial -->
-
-
-## 静态方法
-
-
-### of(...items)
-
-<!-- UTSJSON.Uint8ClampedArray.of.description -->
-
-<!-- UTSJSON.Uint8ClampedArray.of.param -->
-
-<!-- UTSJSON.Uint8ClampedArray.of.returnValue -->
-
-<!-- UTSJSON.Uint8ClampedArray.of.compatibility -->
-
-<!-- UTSJSON.Uint8ClampedArray.of.tutorial -->
-
-### from(arrayLike,mapFn?)
-
-<!-- UTSJSON.Uint8ClampedArray.from.description -->
-
-<!-- UTSJSON.Uint8ClampedArray.from.param -->
-
-<!-- UTSJSON.Uint8ClampedArray.from.returnValue -->
-
-<!-- UTSJSON.Uint8ClampedArray.from.compatibility -->
-
-<!-- UTSJSON.Uint8ClampedArray.from.tutorial -->

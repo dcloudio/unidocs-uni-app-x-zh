@@ -41,7 +41,7 @@
 <!-- UTSJSON.Float32Array.Constructor_2.tutorial -->
 
 
-## 实例属性
+## 静态属性
 
 
 ### BYTES_PER_ELEMENT
@@ -55,6 +55,38 @@
 <!-- UTSJSON.Float32Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Float32Array.BYTES_PER_ELEMENT.tutorial -->
+
+
+## 静态方法
+
+
+### of(...items)
+
+<!-- UTSJSON.Float32Array.of.description -->
+
+<!-- UTSJSON.Float32Array.of.param -->
+
+<!-- UTSJSON.Float32Array.of.returnValue -->
+
+<!-- UTSJSON.Float32Array.of.compatibility -->
+
+<!-- UTSJSON.Float32Array.of.tutorial -->
+
+### from(arrayLike,mapFn?)
+
+<!-- UTSJSON.Float32Array.from.description -->
+
+<!-- UTSJSON.Float32Array.from.param -->
+
+<!-- UTSJSON.Float32Array.from.returnValue -->
+
+<!-- UTSJSON.Float32Array.from.compatibility -->
+
+<!-- UTSJSON.Float32Array.from.tutorial -->
+
+
+## 实例属性
+
 
 ### BYTES_PER_ELEMENT
 
@@ -104,6 +136,18 @@
 
 <!-- UTSJSON.Float32Array.byteOffset.tutorial -->
 
+### length
+
+<!-- UTSJSON.Float32Array.length.description -->
+
+<!-- UTSJSON.Float32Array.length.param -->
+
+<!-- UTSJSON.Float32Array.length.returnValue -->
+
+<!-- UTSJSON.Float32Array.length.compatibility -->
+
+<!-- UTSJSON.Float32Array.length.tutorial -->
+
 
 ## 实例方法
 
@@ -115,6 +159,19 @@
 <!-- UTSJSON.Float32Array.copyWithin.param -->
 
 <!-- UTSJSON.Float32Array.copyWithin.returnValue -->
+
+```ts
+
+let float32 = new Float32Array(8);
+
+float32.set([1, 2, 3], 1);
+
+float32.copyWithin(3, 0, 3);
+
+console.log(float32.toString())
+// expected output: "0,1,2,0,1,2,0,0"
+
+```
 
 <!-- UTSJSON.Float32Array.copyWithin.compatibility -->
 
@@ -130,6 +187,16 @@
 
 <!-- UTSJSON.Float32Array.every.compatibility -->
 
+```ts
+
+let result = new Float32Array([12, 5, 8, 130, 44]).every((value: number, _: number, _a: Float32Array):
+boolean => value < 40); 
+
+expect(result).toEqual(false);
+// expected output: false
+
+```
+
 <!-- UTSJSON.Float32Array.every.tutorial -->
 
 ### fill(value, start?, end?)
@@ -142,6 +209,35 @@
 
 <!-- UTSJSON.Float32Array.fill.compatibility -->
 
+```ts
+
+let float32 = new Float32Array([1, 2, 3]).fill(4);
+
+console.log(float32.toString())
+// expected output: "4,4,4"
+
+float32 = new Float32Array([1, 2, 3]).fill(4, 1);
+
+console.log(float32.toString())
+// expected output: "1,4,4"
+
+float32 = new Float32Array([1, 2, 3]).fill(4, 1, 2);
+
+console.log(float32.toString())
+// expected output: "1,4,3"
+
+float32 = new Float32Array([1, 2, 3]).fill(4, 1, 1);
+
+console.log(float32.toString())
+// expected output: "1,2,3"
+
+float32 = new Float32Array([1, 2, 3]).fill(4, -3, -2);
+
+console.log(float32.toString())
+// expected output: "4,2,3"
+
+```
+
 <!-- UTSJSON.Float32Array.fill.tutorial -->
 
 ### filter(predicate)
@@ -151,6 +247,16 @@
 <!-- UTSJSON.Float32Array.filter.param -->
 
 <!-- UTSJSON.Float32Array.filter.returnValue -->
+
+```ts
+
+let float32 = new Float32Array([12, 5, 8, 44]).filter((value: number, _: number, _a: Float32Array):
+boolean => value >= 10);
+
+console.log(float32.toString())
+// expected output: "12,44""
+
+```
 
 <!-- UTSJSON.Float32Array.filter.compatibility -->
 
@@ -166,6 +272,17 @@
 
 <!-- UTSJSON.Float32Array.find.compatibility -->
 
+```ts
+
+let float32 = new Float32Array([4, 5, 8, 12]);
+
+let res = float32.find((value : number, _ : number, _a : Float32Array) : boolean => value > 5);
+
+console.log(res)
+// expected output: 8
+
+```
+
 <!-- UTSJSON.Float32Array.find.tutorial -->
 
 ### findIndex(predicate)
@@ -175,6 +292,24 @@
 <!-- UTSJSON.Float32Array.findIndex.param -->
 
 <!-- UTSJSON.Float32Array.findIndex.returnValue -->
+
+```ts
+
+let float32 = new Float32Array([4, 6, 8, 12]);
+
+let res = float32.findIndex((value : number, _ : number, _a : Float32Array) : boolean => value > 100);
+
+console.log(res) 
+// expected output: -1
+
+let ufloat32 = new Float32Array([4, 6, 7, 120]);
+
+res = ufloat32.findIndex((value : number, _ : number, _a : Float32Array) : boolean => value > 100);
+
+console.log(res) 
+// expected output: 3
+
+```
 
 <!-- UTSJSON.Float32Array.findIndex.compatibility -->
 
@@ -188,6 +323,14 @@
 
 <!-- UTSJSON.Float32Array.forEach.returnValue -->
 
+```ts
+
+new Float32Array([0, 1, 2, 3]).forEach((value : number, index : number, _ : Float32Array) => {
+  console.log(`a[${index}] = ${value}`);
+});
+
+```
+
 <!-- UTSJSON.Float32Array.forEach.compatibility -->
 
 <!-- UTSJSON.Float32Array.forEach.tutorial -->
@@ -199,6 +342,22 @@
 <!-- UTSJSON.Float32Array.indexOf.param -->
 
 <!-- UTSJSON.Float32Array.indexOf.returnValue -->
+
+```ts
+
+let float32 = new Float32Array([2, 5, 9])
+
+let res = float32.indexOf(2);
+
+console.log(res)
+// expected output: 0
+
+res = float32.indexOf(7);
+
+console.log(res)
+// expected output: -1
+
+```
 
 <!-- UTSJSON.Float32Array.indexOf.compatibility -->
 
@@ -212,21 +371,34 @@
 
 <!-- UTSJSON.Float32Array.join.returnValue -->
 
+```ts
+
+let float32 = new Float32Array([1, 2, 3]);
+
+let res = float32.join();
+
+expect(res).toEqual("1,2,3");
+
+console.log(res); 
+// expected output: "1,2,3"
+
+res = float32.join(" / ");
+
+expect(res).toEqual("1 / 2 / 3");
+
+console.log(res); 
+// expected output: "1 / 2 / 3"
+
+res = float32.join("");
+
+console.log(res); 
+// expected output: "123""
+
+```
+
 <!-- UTSJSON.Float32Array.join.compatibility -->
 
 <!-- UTSJSON.Float32Array.join.tutorial -->
-
-### lastIndexOf(searchElement, fromIndex?)
-
-<!-- UTSJSON.Float32Array.lastIndexOf.description -->
-
-<!-- UTSJSON.Float32Array.lastIndexOf.param -->
-
-<!-- UTSJSON.Float32Array.lastIndexOf.returnValue -->
-
-<!-- UTSJSON.Float32Array.lastIndexOf.compatibility -->
-
-<!-- UTSJSON.Float32Array.lastIndexOf.tutorial -->
 
 ### map(callbackfn)
 
@@ -380,35 +552,10 @@
 
 <!-- UTSJSON.Float32Array.keys.returnValue -->
 
+
+
 <!-- UTSJSON.Float32Array.keys.compatibility -->
 
 <!-- UTSJSON.Float32Array.keys.tutorial -->
 
-
-## 静态方法
-
-
-### of(...items)
-
-<!-- UTSJSON.Float32Array.of.description -->
-
-<!-- UTSJSON.Float32Array.of.param -->
-
-<!-- UTSJSON.Float32Array.of.returnValue -->
-
-<!-- UTSJSON.Float32Array.of.compatibility -->
-
-<!-- UTSJSON.Float32Array.of.tutorial -->
-
-### from(arrayLike,mapFn?)
-
-<!-- UTSJSON.Float32Array.from.description -->
-
-<!-- UTSJSON.Float32Array.from.param -->
-
-<!-- UTSJSON.Float32Array.from.returnValue -->
-
-<!-- UTSJSON.Float32Array.from.compatibility -->
-
-<!-- UTSJSON.Float32Array.from.tutorial -->
 

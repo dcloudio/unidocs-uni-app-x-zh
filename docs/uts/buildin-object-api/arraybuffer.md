@@ -1,6 +1,39 @@
 # ArrayBuffer
 
 
+
+## 构造函数
+
+
+### Constructor(byteLength)
+
+<!-- UTSJSON.ArrayBuffer.Constructor.description -->
+
+<!-- UTSJSON.ArrayBuffer.Constructor.param -->
+
+<!-- UTSJSON.ArrayBuffer.Constructor.returnValue -->
+
+<!-- UTSJSON.ArrayBuffer.Constructor.compatibility -->
+
+<!-- UTSJSON.ArrayBuffer.Constructor.tutorial -->
+
+
+## 静态方法
+
+
+### isView(arg)
+
+<!-- UTSJSON.ArrayBuffer.isView.description -->
+
+<!-- UTSJSON.ArrayBuffer.isView.param -->
+
+<!-- UTSJSON.ArrayBuffer.isView.returnValue -->
+
+<!-- UTSJSON.ArrayBuffer.isView.compatibility -->
+
+<!-- UTSJSON.ArrayBuffer.isView.tutorial -->
+
+
 ## 实例属性
 
 
@@ -32,34 +65,3 @@
 
 <!-- UTSJSON.ArrayBuffer.slice.tutorial -->
 
-
-## 构造方法
-
-
-### Constructor(byteLength)
-
-<!-- UTSJSON.ArrayBuffer.Constructor.description -->
-
-<!-- UTSJSON.ArrayBuffer.Constructor.param -->
-
-<!-- UTSJSON.ArrayBuffer.Constructor.returnValue -->
-
-<!-- UTSJSON.ArrayBuffer.Constructor.compatibility -->
-
-<!-- UTSJSON.ArrayBuffer.Constructor.tutorial -->
-
-
-## 静态方法
-
-
-### isView(arg)
-
-<!-- UTSJSON.ArrayBuffer.isView.description -->
-
-<!-- UTSJSON.ArrayBuffer.isView.param -->
-
-<!-- UTSJSON.ArrayBuffer.isView.returnValue -->
-
-<!-- UTSJSON.ArrayBuffer.isView.compatibility -->
-
-<!-- UTSJSON.ArrayBuffer.isView.tutorial -->

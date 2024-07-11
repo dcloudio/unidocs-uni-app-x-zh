@@ -41,7 +41,7 @@
 <!-- UTSJSON.Uint16Array.Constructor_2.tutorial -->
 
 
-## 实例属性
+## 静态属性
 
 
 ### BYTES_PER_ELEMENT
@@ -55,6 +55,38 @@
 <!-- UTSJSON.Uint16Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Uint16Array.BYTES_PER_ELEMENT.tutorial -->
+
+
+## 静态方法
+
+
+### of(...items)
+
+<!-- UTSJSON.Uint16Array.of.description -->
+
+<!-- UTSJSON.Uint16Array.of.param -->
+
+<!-- UTSJSON.Uint16Array.of.returnValue -->
+
+<!-- UTSJSON.Uint16Array.of.compatibility -->
+
+<!-- UTSJSON.Uint16Array.of.tutorial -->
+
+### from(arrayLike,mapFn?)
+
+<!-- UTSJSON.Uint16Array.from.description -->
+
+<!-- UTSJSON.Uint16Array.from.param -->
+
+<!-- UTSJSON.Uint16Array.from.returnValue -->
+
+<!-- UTSJSON.Uint16Array.from.compatibility -->
+
+<!-- UTSJSON.Uint16Array.from.tutorial -->
+
+
+## 实例属性
+
 
 ### BYTES_PER_ELEMENT
 
@@ -103,6 +135,18 @@
 <!-- UTSJSON.Uint16Array.byteOffset.compatibility -->
 
 <!-- UTSJSON.Uint16Array.byteOffset.tutorial -->
+
+### length
+
+<!-- UTSJSON.Uint16Array.length.description -->
+
+<!-- UTSJSON.Uint16Array.length.param -->
+
+<!-- UTSJSON.Uint16Array.length.returnValue -->
+
+<!-- UTSJSON.Uint16Array.length.compatibility -->
+
+<!-- UTSJSON.Uint16Array.length.tutorial -->
 
 
 ## 实例方法
@@ -215,18 +259,6 @@
 <!-- UTSJSON.Uint16Array.join.compatibility -->
 
 <!-- UTSJSON.Uint16Array.join.tutorial -->
-
-### lastIndexOf(searchElement, fromIndex?)
-
-<!-- UTSJSON.Uint16Array.lastIndexOf.description -->
-
-<!-- UTSJSON.Uint16Array.lastIndexOf.param -->
-
-<!-- UTSJSON.Uint16Array.lastIndexOf.returnValue -->
-
-<!-- UTSJSON.Uint16Array.lastIndexOf.compatibility -->
-
-<!-- UTSJSON.Uint16Array.lastIndexOf.tutorial -->
 
 ### map(callbackfn)
 
@@ -383,31 +415,3 @@
 <!-- UTSJSON.Uint16Array.keys.compatibility -->
 
 <!-- UTSJSON.Uint16Array.keys.tutorial -->
-
-
-## 静态方法
-
-
-### of(...items)
-
-<!-- UTSJSON.Uint16Array.of.description -->
-
-<!-- UTSJSON.Uint16Array.of.param -->
-
-<!-- UTSJSON.Uint16Array.of.returnValue -->
-
-<!-- UTSJSON.Uint16Array.of.compatibility -->
-
-<!-- UTSJSON.Uint16Array.of.tutorial -->
-
-### from(arrayLike,mapFn?)
-
-<!-- UTSJSON.Uint16Array.from.description -->
-
-<!-- UTSJSON.Uint16Array.from.param -->
-
-<!-- UTSJSON.Uint16Array.from.returnValue -->
-
-<!-- UTSJSON.Uint16Array.from.compatibility -->
-
-<!-- UTSJSON.Uint16Array.from.tutorial -->
