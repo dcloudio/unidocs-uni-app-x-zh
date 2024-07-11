@@ -87,9 +87,12 @@
 		"class": "UTSSDKModulesDCloudUniPaymentWxpayUniPaymentWxpayProvider"
 	}]
 }
-```
+```  
+  
+  
 
-`uts-config.json`配置示例图
+`uts-config.json`配置示例图     
+   
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/utsconfig.png)
 
 

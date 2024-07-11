@@ -49,7 +49,8 @@
 | provider | 组件的注册信息 | 在`插件工程`中找到上面创建的`uts-config.json`文件，将该配置内容添加到`providers`节点下 |
 | components | 组件的注册信息 | 在`插件工程`中找到上面创建的`uts-config.json`文件，将该配置内容添加到`components`节点下 |
 
-`uts-config.json`配置示例图
+`uts-config.json`配置示例图   
+
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/utsconfig.png)
 
 
