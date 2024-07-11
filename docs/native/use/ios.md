@@ -12,23 +12,27 @@
 * 根据API文档接入SDK，详见[API文档](iosapi.md)
 
 ## 导出资源文件
-1. 在主工程中新建文件目录`uni-app-x/apps`
+1. 在主工程中新建文件目录`uni-app-x/apps`   
+
     ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/create_resources_document.png)
 
 2. 打开 `HBuilder X -> 发行 -> 原生App-本地打包 -> 生成本地打包App资源` 勾选iOS点击生成  
     ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/export.png)
 
 
-3. 导出成功之后会在项目的`unpackage/resources`目录下生成资源文件
+3. 导出成功之后会在项目的`unpackage/resources`目录下生成资源文件   
+
     ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/resources.png)
 
-4. 将 `app-ios` 目录下与`appid`对应的目录拷贝到主工程的 `uni-app-x/apps` 目录下
+4. 将 `app-ios` 目录下与`appid`对应的目录拷贝到主工程的 `uni-app-x/apps` 目录下    
+
     ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/copy_resources.png)
 
 
 
 ## 工程配置
-`Target -> General -> Minimum Deployments` 选择 `12.0`
+`Target -> General -> Minimum Deployments` 选择 `12.0`   
+
 `Target -> Build Settings -> Other Linker Flags` 中添加`-ObjC`、`-ld_classic`、`-weak_framework SwiftUI`
 
 1. 若HBuilderX项目`根目录`下包含`Info.plist`文件，需要将该文件内容拷贝到`原生主工程`的`Target -> Info` 下
