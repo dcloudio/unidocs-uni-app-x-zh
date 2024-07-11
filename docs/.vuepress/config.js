@@ -1,8 +1,6 @@
 const path = require('path');
 const { slugify } = require('@vuepress/shared-utils')
 const highlight = require('@vuepress/markdown/lib/highlight')
-const translatePlugin = require('./markdown/translate')
-const headerPlugin = require('./markdown/header')
 const createSidebar = require('./markdown/createSidebar')
 const { simplifySlugText } = require('./utils')
 const copyOptions = require('./config/copy');
@@ -87,13 +85,13 @@ const config = {
 
       config
         .plugin('translate')
-        .use(translatePlugin)
+        .use(require('./markdown/translate'))
         .end()
         .plugin('convert-header')
-        .use(headerPlugin)
+        .use( require('./markdown/header'))
         .end()
-        .plugin('normallize-link')
-        .use(require('./markdown/normallizeLink'))
+        .plugin('normalize-link')
+        .use(require('./markdown/normalizeLink'))
         .end()
 				.plugin('img-add-attrs')
 				.use(require('./markdown/img-add-attrs'))
