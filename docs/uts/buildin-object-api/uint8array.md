@@ -12,6 +12,8 @@
 
 <!-- UTSJSON.Uint8Array.Constructor.returnValue -->
 
+<!-- UTSJSON.Uint8Array.Constructor.test -->
+
 <!-- UTSJSON.Uint8Array.Constructor.compatibility -->
 
 <!-- UTSJSON.Uint8Array.Constructor.tutorial -->
@@ -24,6 +26,8 @@
 
 <!-- UTSJSON.Uint8Array.Constructor_1.returnValue -->
 
+<!-- UTSJSON.Uint8Array.Constructor_1.test -->
+
 <!-- UTSJSON.Uint8Array.Constructor_1.compatibility -->
 
 <!-- UTSJSON.Uint8Array.Constructor_1.tutorial -->
@@ -35,6 +39,8 @@
 <!-- UTSJSON.Uint8Array.Constructor_2.param -->
 
 <!-- UTSJSON.Uint8Array.Constructor_2.returnValue -->
+
+<!-- UTSJSON.Uint8Array.Constructor_2.test -->
 
 <!-- UTSJSON.Uint8Array.Constructor_2.compatibility -->
 
@@ -52,6 +58,8 @@
 
 <!-- UTSJSON.Uint8Array.BYTES_PER_ELEMENT.returnValue -->
 
+<!-- UTSJSON.Uint8Array.BYTES_PER_ELEMENT.test -->
+
 <!-- UTSJSON.Uint8Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Uint8Array.BYTES_PER_ELEMENT.tutorial -->
@@ -68,6 +76,8 @@
 
 <!-- UTSJSON.Uint8Array.of.returnValue -->
 
+<!-- UTSJSON.Uint8Array.of.test -->
+
 <!-- UTSJSON.Uint8Array.of.compatibility -->
 
 <!-- UTSJSON.Uint8Array.of.tutorial -->
@@ -79,6 +89,8 @@
 <!-- UTSJSON.Uint8Array.from.param -->
 
 <!-- UTSJSON.Uint8Array.from.returnValue -->
+
+<!-- UTSJSON.Uint8Array.from.test -->
 
 <!-- UTSJSON.Uint8Array.from.compatibility -->
 
@@ -96,6 +108,8 @@
 
 <!-- UTSJSON.Uint8Array.BYTES_PER_ELEMENT.returnValue -->
 
+<!-- UTSJSON.Uint8Array.BYTES_PER_ELEMENT.test -->
+
 <!-- UTSJSON.Uint8Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Uint8Array.BYTES_PER_ELEMENT.tutorial -->
@@ -107,6 +121,8 @@
 <!-- UTSJSON.Uint8Array.buffer.param -->
 
 <!-- UTSJSON.Uint8Array.buffer.returnValue -->
+
+<!-- UTSJSON.Uint8Array.buffer.test -->
 
 <!-- UTSJSON.Uint8Array.buffer.compatibility -->
 
@@ -120,6 +136,8 @@
 
 <!-- UTSJSON.Uint8Array.byteLength.returnValue -->
 
+<!-- UTSJSON.Uint8Array.byteLength.test -->
+
 <!-- UTSJSON.Uint8Array.byteLength.compatibility -->
 
 <!-- UTSJSON.Uint8Array.byteLength.tutorial -->
@@ -132,6 +150,8 @@
 
 <!-- UTSJSON.Uint8Array.byteOffset.returnValue -->
 
+<!-- UTSJSON.Uint8Array.byteOffset.test -->
+
 <!-- UTSJSON.Uint8Array.byteOffset.compatibility -->
 
 <!-- UTSJSON.Uint8Array.byteOffset.tutorial -->
@@ -143,6 +163,8 @@
 <!-- UTSJSON.Uint8Array.length.param -->
 
 <!-- UTSJSON.Uint8Array.length.returnValue -->
+
+<!-- UTSJSON.Uint8Array.length.test -->
 
 <!-- UTSJSON.Uint8Array.length.compatibility -->
 
@@ -160,6 +182,8 @@
 
 <!-- UTSJSON.Uint8Array.copyWithin.returnValue -->
 
+<!-- UTSJSON.Uint8Array.copyWithin.test -->
+
 <!-- UTSJSON.Uint8Array.copyWithin.compatibility -->
 
 <!-- UTSJSON.Uint8Array.copyWithin.tutorial -->
@@ -171,6 +195,8 @@
 <!-- UTSJSON.Uint8Array.every.param -->
 
 <!-- UTSJSON.Uint8Array.every.returnValue -->
+
+<!-- UTSJSON.Uint8Array.every.test -->
 
 <!-- UTSJSON.Uint8Array.every.compatibility -->
 
@@ -184,6 +210,8 @@
 
 <!-- UTSJSON.Uint8Array.fill.returnValue -->
 
+<!-- UTSJSON.Uint8Array.fill.test -->
+
 <!-- UTSJSON.Uint8Array.fill.compatibility -->
 
 <!-- UTSJSON.Uint8Array.fill.tutorial -->
@@ -195,6 +223,8 @@
 <!-- UTSJSON.Uint8Array.filter.param -->
 
 <!-- UTSJSON.Uint8Array.filter.returnValue -->
+
+<!-- UTSJSON.Uint8Array.filter.test -->
 
 <!-- UTSJSON.Uint8Array.filter.compatibility -->
 
@@ -208,6 +238,8 @@
 
 <!-- UTSJSON.Uint8Array.find.returnValue -->
 
+<!-- UTSJSON.Uint8Array.find.test -->
+
 <!-- UTSJSON.Uint8Array.find.compatibility -->
 
 <!-- UTSJSON.Uint8Array.find.tutorial -->
@@ -219,6 +251,8 @@
 <!-- UTSJSON.Uint8Array.findIndex.param -->
 
 <!-- UTSJSON.Uint8Array.findIndex.returnValue -->
+
+<!-- UTSJSON.Uint8Array.findIndex.test -->
 
 <!-- UTSJSON.Uint8Array.findIndex.compatibility -->
 
@@ -232,6 +266,8 @@
 
 <!-- UTSJSON.Uint8Array.forEach.returnValue -->
 
+<!-- UTSJSON.Uint8Array.forEach.test -->
+
 <!-- UTSJSON.Uint8Array.forEach.compatibility -->
 
 <!-- UTSJSON.Uint8Array.forEach.tutorial -->
@@ -243,6 +279,8 @@
 <!-- UTSJSON.Uint8Array.indexOf.param -->
 
 <!-- UTSJSON.Uint8Array.indexOf.returnValue -->
+
+<!-- UTSJSON.Uint8Array.indexOf.test -->
 
 <!-- UTSJSON.Uint8Array.indexOf.compatibility -->
 
@@ -256,6 +294,8 @@
 
 <!-- UTSJSON.Uint8Array.join.returnValue -->
 
+<!-- UTSJSON.Uint8Array.join.test -->
+
 <!-- UTSJSON.Uint8Array.join.compatibility -->
 
 <!-- UTSJSON.Uint8Array.join.tutorial -->
@@ -267,6 +307,8 @@
 <!-- UTSJSON.Uint8Array.map.param -->
 
 <!-- UTSJSON.Uint8Array.map.returnValue -->
+
+<!-- UTSJSON.Uint8Array.map.test -->
 
 <!-- UTSJSON.Uint8Array.map.compatibility -->
 
@@ -280,6 +322,8 @@
 
 <!-- UTSJSON.Uint8Array.reduce.returnValue -->
 
+<!-- UTSJSON.Uint8Array.reduce.test -->
+
 <!-- UTSJSON.Uint8Array.reduce.compatibility -->
 
 <!-- UTSJSON.Uint8Array.reduce.tutorial -->
@@ -291,6 +335,8 @@
 <!-- UTSJSON.Uint8Array.reduceRight.param -->
 
 <!-- UTSJSON.Uint8Array.reduceRight.returnValue -->
+
+<!-- UTSJSON.Uint8Array.reduceRight.test -->
 
 <!-- UTSJSON.Uint8Array.reduceRight.compatibility -->
 
@@ -304,6 +350,8 @@
 
 <!-- UTSJSON.Uint8Array.reverse.returnValue -->
 
+<!-- UTSJSON.Uint8Array.reverse.test -->
+
 <!-- UTSJSON.Uint8Array.reverse.compatibility -->
 
 <!-- UTSJSON.Uint8Array.reverse.tutorial -->
@@ -315,6 +363,8 @@
 <!-- UTSJSON.Uint8Array.set.param -->
 
 <!-- UTSJSON.Uint8Array.set.returnValue -->
+
+<!-- UTSJSON.Uint8Array.set.test -->
 
 <!-- UTSJSON.Uint8Array.set.compatibility -->
 
@@ -328,6 +378,8 @@
 
 <!-- UTSJSON.Uint8Array.slice.returnValue -->
 
+<!-- UTSJSON.Uint8Array.slice.test -->
+
 <!-- UTSJSON.Uint8Array.slice.compatibility -->
 
 <!-- UTSJSON.Uint8Array.slice.tutorial -->
@@ -339,6 +391,8 @@
 <!-- UTSJSON.Uint8Array.some.param -->
 
 <!-- UTSJSON.Uint8Array.some.returnValue -->
+
+<!-- UTSJSON.Uint8Array.some.test -->
 
 <!-- UTSJSON.Uint8Array.some.compatibility -->
 
@@ -352,6 +406,8 @@
 
 <!-- UTSJSON.Uint8Array.sort.returnValue -->
 
+<!-- UTSJSON.Uint8Array.sort.test -->
+
 <!-- UTSJSON.Uint8Array.sort.compatibility -->
 
 <!-- UTSJSON.Uint8Array.sort.tutorial -->
@@ -363,6 +419,8 @@
 <!-- UTSJSON.Uint8Array.subarray.param -->
 
 <!-- UTSJSON.Uint8Array.subarray.returnValue -->
+
+<!-- UTSJSON.Uint8Array.subarray.test -->
 
 <!-- UTSJSON.Uint8Array.subarray.compatibility -->
 
@@ -376,6 +434,8 @@
 
 <!-- UTSJSON.Uint8Array.toString.returnValue -->
 
+<!-- UTSJSON.Uint8Array.toString.test -->
+
 <!-- UTSJSON.Uint8Array.toString.compatibility -->
 
 <!-- UTSJSON.Uint8Array.toString.tutorial -->
@@ -387,6 +447,8 @@
 <!-- UTSJSON.Uint8Array.values.param -->
 
 <!-- UTSJSON.Uint8Array.values.returnValue -->
+
+<!-- UTSJSON.Uint8Array.values.test -->
 
 <!-- UTSJSON.Uint8Array.values.compatibility -->
 
@@ -400,6 +462,8 @@
 
 <!-- UTSJSON.Uint8Array.entries.returnValue -->
 
+<!-- UTSJSON.Uint8Array.entries.test -->
+
 <!-- UTSJSON.Uint8Array.entries.compatibility -->
 
 <!-- UTSJSON.Uint8Array.entries.tutorial -->
@@ -411,6 +475,8 @@
 <!-- UTSJSON.Uint8Array.keys.param -->
 
 <!-- UTSJSON.Uint8Array.keys.returnValue -->
+
+<!-- UTSJSON.Uint8Array.keys.test -->
 
 <!-- UTSJSON.Uint8Array.keys.compatibility -->
 

@@ -12,6 +12,10 @@
 
 <!-- UTSJSON.Float32Array.Constructor.returnValue -->
 
+<!-- UTSJSON.Float32Array.Constructor.test -->
+
+<!-- UTSJSON.Float32Array.Constructor.test -->
+
 <!-- UTSJSON.Float32Array.Constructor.compatibility -->
 
 <!-- UTSJSON.Float32Array.Constructor.tutorial -->
@@ -24,6 +28,8 @@
 
 <!-- UTSJSON.Float32Array.Constructor_1.returnValue -->
 
+<!-- UTSJSON.Float32Array.Constructor_1.test -->
+
 <!-- UTSJSON.Float32Array.Constructor_1.compatibility -->
 
 <!-- UTSJSON.Float32Array.Constructor_1.tutorial -->
@@ -35,6 +41,8 @@
 <!-- UTSJSON.Float32Array.Constructor_2.param -->
 
 <!-- UTSJSON.Float32Array.Constructor_2.returnValue -->
+
+<!-- UTSJSON.Float32Array.Constructor_2.test -->
 
 <!-- UTSJSON.Float32Array.Constructor_2.compatibility -->
 
@@ -52,6 +60,8 @@
 
 <!-- UTSJSON.Float32Array.BYTES_PER_ELEMENT.returnValue -->
 
+<!-- UTSJSON.Float32Array.BYTES_PER_ELEMENT.test -->
+
 <!-- UTSJSON.Float32Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Float32Array.BYTES_PER_ELEMENT.tutorial -->
@@ -68,6 +78,8 @@
 
 <!-- UTSJSON.Float32Array.of.returnValue -->
 
+<!-- UTSJSON.Float32Array.of.test -->
+
 <!-- UTSJSON.Float32Array.of.compatibility -->
 
 <!-- UTSJSON.Float32Array.of.tutorial -->
@@ -79,6 +91,8 @@
 <!-- UTSJSON.Float32Array.from.param -->
 
 <!-- UTSJSON.Float32Array.from.returnValue -->
+
+<!-- UTSJSON.Float32Array.from.test -->
 
 <!-- UTSJSON.Float32Array.from.compatibility -->
 
@@ -96,6 +110,8 @@
 
 <!-- UTSJSON.Float32Array.BYTES_PER_ELEMENT.returnValue -->
 
+<!-- UTSJSON.Float32Array.BYTES_PER_ELEMENT.test -->
+
 <!-- UTSJSON.Float32Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Float32Array.BYTES_PER_ELEMENT.tutorial -->
@@ -107,6 +123,8 @@
 <!-- UTSJSON.Float32Array.buffer.param -->
 
 <!-- UTSJSON.Float32Array.buffer.returnValue -->
+
+<!-- UTSJSON.Float32Array.buffer.test -->
 
 <!-- UTSJSON.Float32Array.buffer.compatibility -->
 
@@ -120,6 +138,8 @@
 
 <!-- UTSJSON.Float32Array.byteLength.returnValue -->
 
+<!-- UTSJSON.Float32Array.byteLength.test -->
+
 <!-- UTSJSON.Float32Array.byteLength.compatibility -->
 
 <!-- UTSJSON.Float32Array.byteLength.tutorial -->
@@ -132,6 +152,8 @@
 
 <!-- UTSJSON.Float32Array.byteOffset.returnValue -->
 
+<!-- UTSJSON.Float32Array.byteOffset.test -->
+
 <!-- UTSJSON.Float32Array.byteOffset.compatibility -->
 
 <!-- UTSJSON.Float32Array.byteOffset.tutorial -->
@@ -143,6 +165,8 @@
 <!-- UTSJSON.Float32Array.length.param -->
 
 <!-- UTSJSON.Float32Array.length.returnValue -->
+
+<!-- UTSJSON.Float32Array.length.test -->
 
 <!-- UTSJSON.Float32Array.length.compatibility -->
 
@@ -160,18 +184,7 @@
 
 <!-- UTSJSON.Float32Array.copyWithin.returnValue -->
 
-```ts
-
-let float32 = new Float32Array(8);
-
-float32.set([1, 2, 3], 1);
-
-float32.copyWithin(3, 0, 3);
-
-console.log(float32.toString())
-// expected output: "0,1,2,0,1,2,0,0"
-
-```
+<!-- UTSJSON.Float32Array.copyWithin.test -->
 
 <!-- UTSJSON.Float32Array.copyWithin.compatibility -->
 
@@ -185,17 +198,9 @@ console.log(float32.toString())
 
 <!-- UTSJSON.Float32Array.every.returnValue -->
 
+<!-- UTSJSON.Float32Array.every.test -->
+
 <!-- UTSJSON.Float32Array.every.compatibility -->
-
-```ts
-
-let result = new Float32Array([12, 5, 8, 130, 44]).every((value: number, _: number, _a: Float32Array):
-boolean => value < 40); 
-
-expect(result).toEqual(false);
-// expected output: false
-
-```
 
 <!-- UTSJSON.Float32Array.every.tutorial -->
 
@@ -207,36 +212,9 @@ expect(result).toEqual(false);
 
 <!-- UTSJSON.Float32Array.fill.returnValue -->
 
+<!-- UTSJSON.Float32Array.fill.test -->
+
 <!-- UTSJSON.Float32Array.fill.compatibility -->
-
-```ts
-
-let float32 = new Float32Array([1, 2, 3]).fill(4);
-
-console.log(float32.toString())
-// expected output: "4,4,4"
-
-float32 = new Float32Array([1, 2, 3]).fill(4, 1);
-
-console.log(float32.toString())
-// expected output: "1,4,4"
-
-float32 = new Float32Array([1, 2, 3]).fill(4, 1, 2);
-
-console.log(float32.toString())
-// expected output: "1,4,3"
-
-float32 = new Float32Array([1, 2, 3]).fill(4, 1, 1);
-
-console.log(float32.toString())
-// expected output: "1,2,3"
-
-float32 = new Float32Array([1, 2, 3]).fill(4, -3, -2);
-
-console.log(float32.toString())
-// expected output: "4,2,3"
-
-```
 
 <!-- UTSJSON.Float32Array.fill.tutorial -->
 
@@ -248,15 +226,7 @@ console.log(float32.toString())
 
 <!-- UTSJSON.Float32Array.filter.returnValue -->
 
-```ts
-
-let float32 = new Float32Array([12, 5, 8, 44]).filter((value: number, _: number, _a: Float32Array):
-boolean => value >= 10);
-
-console.log(float32.toString())
-// expected output: "12,44""
-
-```
+<!-- UTSJSON.Float32Array.filter.test -->
 
 <!-- UTSJSON.Float32Array.filter.compatibility -->
 
@@ -270,18 +240,9 @@ console.log(float32.toString())
 
 <!-- UTSJSON.Float32Array.find.returnValue -->
 
+<!-- UTSJSON.Float32Array.find.test -->
+
 <!-- UTSJSON.Float32Array.find.compatibility -->
-
-```ts
-
-let float32 = new Float32Array([4, 5, 8, 12]);
-
-let res = float32.find((value : number, _ : number, _a : Float32Array) : boolean => value > 5);
-
-console.log(res)
-// expected output: 8
-
-```
 
 <!-- UTSJSON.Float32Array.find.tutorial -->
 
@@ -293,23 +254,7 @@ console.log(res)
 
 <!-- UTSJSON.Float32Array.findIndex.returnValue -->
 
-```ts
-
-let float32 = new Float32Array([4, 6, 8, 12]);
-
-let res = float32.findIndex((value : number, _ : number, _a : Float32Array) : boolean => value > 100);
-
-console.log(res) 
-// expected output: -1
-
-let ufloat32 = new Float32Array([4, 6, 7, 120]);
-
-res = ufloat32.findIndex((value : number, _ : number, _a : Float32Array) : boolean => value > 100);
-
-console.log(res) 
-// expected output: 3
-
-```
+<!-- UTSJSON.Float32Array.findIndex.test -->
 
 <!-- UTSJSON.Float32Array.findIndex.compatibility -->
 
@@ -323,13 +268,7 @@ console.log(res)
 
 <!-- UTSJSON.Float32Array.forEach.returnValue -->
 
-```ts
-
-new Float32Array([0, 1, 2, 3]).forEach((value : number, index : number, _ : Float32Array) => {
-  console.log(`a[${index}] = ${value}`);
-});
-
-```
+<!-- UTSJSON.Float32Array.forEach.test -->
 
 <!-- UTSJSON.Float32Array.forEach.compatibility -->
 
@@ -343,21 +282,7 @@ new Float32Array([0, 1, 2, 3]).forEach((value : number, index : number, _ : Floa
 
 <!-- UTSJSON.Float32Array.indexOf.returnValue -->
 
-```ts
-
-let float32 = new Float32Array([2, 5, 9])
-
-let res = float32.indexOf(2);
-
-console.log(res)
-// expected output: 0
-
-res = float32.indexOf(7);
-
-console.log(res)
-// expected output: -1
-
-```
+<!-- UTSJSON.Float32Array.indexOf.test -->
 
 <!-- UTSJSON.Float32Array.indexOf.compatibility -->
 
@@ -371,30 +296,7 @@ console.log(res)
 
 <!-- UTSJSON.Float32Array.join.returnValue -->
 
-```ts
-
-let float32 = new Float32Array([1, 2, 3]);
-
-let res = float32.join();
-
-expect(res).toEqual("1,2,3");
-
-console.log(res); 
-// expected output: "1,2,3"
-
-res = float32.join(" / ");
-
-expect(res).toEqual("1 / 2 / 3");
-
-console.log(res); 
-// expected output: "1 / 2 / 3"
-
-res = float32.join("");
-
-console.log(res); 
-// expected output: "123""
-
-```
+<!-- UTSJSON.Float32Array.join.test -->
 
 <!-- UTSJSON.Float32Array.join.compatibility -->
 
@@ -408,6 +310,8 @@ console.log(res);
 
 <!-- UTSJSON.Float32Array.map.returnValue -->
 
+<!-- UTSJSON.Float32Array.map.test -->
+
 <!-- UTSJSON.Float32Array.map.compatibility -->
 
 <!-- UTSJSON.Float32Array.map.tutorial -->
@@ -419,6 +323,8 @@ console.log(res);
 <!-- UTSJSON.Float32Array.reduce.param -->
 
 <!-- UTSJSON.Float32Array.reduce.returnValue -->
+
+<!-- UTSJSON.Float32Array.reduce.test -->
 
 <!-- UTSJSON.Float32Array.reduce.compatibility -->
 
@@ -432,6 +338,8 @@ console.log(res);
 
 <!-- UTSJSON.Float32Array.reduceRight.returnValue -->
 
+<!-- UTSJSON.Float32Array.reduceRight.test -->
+
 <!-- UTSJSON.Float32Array.reduceRight.compatibility -->
 
 <!-- UTSJSON.Float32Array.reduceRight.tutorial -->
@@ -443,6 +351,8 @@ console.log(res);
 <!-- UTSJSON.Float32Array.reverse.param -->
 
 <!-- UTSJSON.Float32Array.reverse.returnValue -->
+
+<!-- UTSJSON.Float32Array.reverse.test -->
 
 <!-- UTSJSON.Float32Array.reverse.compatibility -->
 
@@ -456,6 +366,8 @@ console.log(res);
 
 <!-- UTSJSON.Float32Array.set.returnValue -->
 
+<!-- UTSJSON.Float32Array.set.test -->
+
 <!-- UTSJSON.Float32Array.set.compatibility -->
 
 <!-- UTSJSON.Float32Array.set.tutorial -->
@@ -467,6 +379,8 @@ console.log(res);
 <!-- UTSJSON.Float32Array.slice.param -->
 
 <!-- UTSJSON.Float32Array.slice.returnValue -->
+
+<!-- UTSJSON.Float32Array.slice.test -->
 
 <!-- UTSJSON.Float32Array.slice.compatibility -->
 
@@ -480,6 +394,8 @@ console.log(res);
 
 <!-- UTSJSON.Float32Array.some.returnValue -->
 
+<!-- UTSJSON.Float32Array.some.test -->
+
 <!-- UTSJSON.Float32Array.some.compatibility -->
 
 <!-- UTSJSON.Float32Array.some.tutorial -->
@@ -491,6 +407,8 @@ console.log(res);
 <!-- UTSJSON.Float32Array.sort.param -->
 
 <!-- UTSJSON.Float32Array.sort.returnValue -->
+
+<!-- UTSJSON.Float32Array.sort.test -->
 
 <!-- UTSJSON.Float32Array.sort.compatibility -->
 
@@ -504,6 +422,8 @@ console.log(res);
 
 <!-- UTSJSON.Float32Array.subarray.returnValue -->
 
+<!-- UTSJSON.Float32Array.subarray.test -->
+
 <!-- UTSJSON.Float32Array.subarray.compatibility -->
 
 <!-- UTSJSON.Float32Array.subarray.tutorial -->
@@ -515,6 +435,8 @@ console.log(res);
 <!-- UTSJSON.Float32Array.toString.param -->
 
 <!-- UTSJSON.Float32Array.toString.returnValue -->
+
+<!-- UTSJSON.Float32Array.toString.test -->
 
 <!-- UTSJSON.Float32Array.toString.compatibility -->
 
@@ -528,6 +450,8 @@ console.log(res);
 
 <!-- UTSJSON.Float32Array.values.returnValue -->
 
+<!-- UTSJSON.Float32Array.values.test -->
+
 <!-- UTSJSON.Float32Array.values.compatibility -->
 
 <!-- UTSJSON.Float32Array.values.tutorial -->
@@ -539,6 +463,8 @@ console.log(res);
 <!-- UTSJSON.Float32Array.entries.param -->
 
 <!-- UTSJSON.Float32Array.entries.returnValue -->
+
+<!-- UTSJSON.Float32Array.entries.test -->
 
 <!-- UTSJSON.Float32Array.entries.compatibility -->
 
@@ -552,7 +478,7 @@ console.log(res);
 
 <!-- UTSJSON.Float32Array.keys.returnValue -->
 
-
+<!-- UTSJSON.Float32Array.keys.test -->
 
 <!-- UTSJSON.Float32Array.keys.compatibility -->
 

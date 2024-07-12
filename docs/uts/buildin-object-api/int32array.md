@@ -12,6 +12,8 @@
 
 <!-- UTSJSON.Int32Array.Constructor.returnValue -->
 
+<!-- UTSJSON.Int32Array.Constructor.test -->
+
 <!-- UTSJSON.Int32Array.Constructor.compatibility -->
 
 <!-- UTSJSON.Int32Array.Constructor.tutorial -->
@@ -24,6 +26,8 @@
 
 <!-- UTSJSON.Int32Array.Constructor_1.returnValue -->
 
+<!-- UTSJSON.Int32Array.Constructor_1.test -->
+
 <!-- UTSJSON.Int32Array.Constructor_1.compatibility -->
 
 <!-- UTSJSON.Int32Array.Constructor_1.tutorial -->
@@ -35,6 +39,8 @@
 <!-- UTSJSON.Int32Array.Constructor_2.param -->
 
 <!-- UTSJSON.Int32Array.Constructor_2.returnValue -->
+
+<!-- UTSJSON.Int32Array.Constructor_2.test -->
 
 <!-- UTSJSON.Int32Array.Constructor_2.compatibility -->
 
@@ -52,6 +58,8 @@
 
 <!-- UTSJSON.Int32Array.BYTES_PER_ELEMENT.returnValue -->
 
+<!-- UTSJSON.Int32Array.BYTES_PER_ELEMENT.test -->
+
 <!-- UTSJSON.Int32Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Int32Array.BYTES_PER_ELEMENT.tutorial -->
@@ -68,6 +76,8 @@
 
 <!-- UTSJSON.Int32Array.of.returnValue -->
 
+<!-- UTSJSON.Int32Array.of.test -->
+
 <!-- UTSJSON.Int32Array.of.compatibility -->
 
 <!-- UTSJSON.Int32Array.of.tutorial -->
@@ -79,6 +89,8 @@
 <!-- UTSJSON.Int32Array.from.param -->
 
 <!-- UTSJSON.Int32Array.from.returnValue -->
+
+<!-- UTSJSON.Int32Array.from.test -->
 
 <!-- UTSJSON.Int32Array.from.compatibility -->
 
@@ -96,6 +108,8 @@
 
 <!-- UTSJSON.Int32Array.BYTES_PER_ELEMENT.returnValue -->
 
+<!-- UTSJSON.Int32Array.BYTES_PER_ELEMENT.test -->
+
 <!-- UTSJSON.Int32Array.BYTES_PER_ELEMENT.compatibility -->
 
 <!-- UTSJSON.Int32Array.BYTES_PER_ELEMENT.tutorial -->
@@ -107,6 +121,8 @@
 <!-- UTSJSON.Int32Array.buffer.param -->
 
 <!-- UTSJSON.Int32Array.buffer.returnValue -->
+
+<!-- UTSJSON.Int32Array.buffer.test -->
 
 <!-- UTSJSON.Int32Array.buffer.compatibility -->
 
@@ -120,6 +136,8 @@
 
 <!-- UTSJSON.Int32Array.byteLength.returnValue -->
 
+<!-- UTSJSON.Int32Array.byteLength.test -->
+
 <!-- UTSJSON.Int32Array.byteLength.compatibility -->
 
 <!-- UTSJSON.Int32Array.byteLength.tutorial -->
@@ -132,6 +150,8 @@
 
 <!-- UTSJSON.Int32Array.byteOffset.returnValue -->
 
+<!-- UTSJSON.Int32Array.byteOffset.test -->
+
 <!-- UTSJSON.Int32Array.byteOffset.compatibility -->
 
 <!-- UTSJSON.Int32Array.byteOffset.tutorial -->
@@ -143,6 +163,8 @@
 <!-- UTSJSON.Int32Array.length.param -->
 
 <!-- UTSJSON.Int32Array.length.returnValue -->
+
+<!-- UTSJSON.Int32Array.length.test -->
 
 <!-- UTSJSON.Int32Array.length.compatibility -->
 
@@ -160,6 +182,8 @@
 
 <!-- UTSJSON.Int32Array.copyWithin.returnValue -->
 
+<!-- UTSJSON.Int32Array.copyWithin.test -->
+
 <!-- UTSJSON.Int32Array.copyWithin.compatibility -->
 
 <!-- UTSJSON.Int32Array.copyWithin.tutorial -->
@@ -171,6 +195,8 @@
 <!-- UTSJSON.Int32Array.every.param -->
 
 <!-- UTSJSON.Int32Array.every.returnValue -->
+
+<!-- UTSJSON.Int32Array.Constructor.test -->
 
 <!-- UTSJSON.Int32Array.every.compatibility -->
 
@@ -184,6 +210,8 @@
 
 <!-- UTSJSON.Int32Array.fill.returnValue -->
 
+<!-- UTSJSON.Int32Array.fill.test -->
+
 <!-- UTSJSON.Int32Array.fill.compatibility -->
 
 <!-- UTSJSON.Int32Array.fill.tutorial -->
@@ -195,6 +223,8 @@
 <!-- UTSJSON.Int32Array.filter.param -->
 
 <!-- UTSJSON.Int32Array.filter.returnValue -->
+
+<!-- UTSJSON.Int32Array.filter.test -->
 
 <!-- UTSJSON.Int32Array.filter.compatibility -->
 
@@ -208,6 +238,8 @@
 
 <!-- UTSJSON.Int32Array.find.returnValue -->
 
+<!-- UTSJSON.Int32Array.find.test -->
+
 <!-- UTSJSON.Int32Array.find.compatibility -->
 
 <!-- UTSJSON.Int32Array.find.tutorial -->
@@ -219,6 +251,8 @@
 <!-- UTSJSON.Int32Array.findIndex.param -->
 
 <!-- UTSJSON.Int32Array.findIndex.returnValue -->
+
+<!-- UTSJSON.Int32Array.findIndex.test -->
 
 <!-- UTSJSON.Int32Array.findIndex.compatibility -->
 
@@ -232,6 +266,8 @@
 
 <!-- UTSJSON.Int32Array.forEach.returnValue -->
 
+<!-- UTSJSON.Int32Array.forEach.test -->
+
 <!-- UTSJSON.Int32Array.forEach.compatibility -->
 
 <!-- UTSJSON.Int32Array.forEach.tutorial -->
@@ -243,6 +279,8 @@
 <!-- UTSJSON.Int32Array.indexOf.param -->
 
 <!-- UTSJSON.Int32Array.indexOf.returnValue -->
+
+<!-- UTSJSON.Int32Array.indexOf.test -->
 
 <!-- UTSJSON.Int32Array.indexOf.compatibility -->
 
@@ -256,6 +294,8 @@
 
 <!-- UTSJSON.Int32Array.join.returnValue -->
 
+<!-- UTSJSON.Int32Array.join.test -->
+
 <!-- UTSJSON.Int32Array.join.compatibility -->
 
 <!-- UTSJSON.Int32Array.join.tutorial -->
@@ -267,6 +307,8 @@
 <!-- UTSJSON.Int32Array.map.param -->
 
 <!-- UTSJSON.Int32Array.map.returnValue -->
+
+<!-- UTSJSON.Int32Array.map.test -->
 
 <!-- UTSJSON.Int32Array.map.compatibility -->
 
@@ -280,6 +322,8 @@
 
 <!-- UTSJSON.Int32Array.reduce.returnValue -->
 
+<!-- UTSJSON.Int32Array.reduce.test -->
+
 <!-- UTSJSON.Int32Array.reduce.compatibility -->
 
 <!-- UTSJSON.Int32Array.reduce.tutorial -->
@@ -291,6 +335,8 @@
 <!-- UTSJSON.Int32Array.reduceRight.param -->
 
 <!-- UTSJSON.Int32Array.reduceRight.returnValue -->
+
+<!-- UTSJSON.Int32Array.reduceRight.test -->
 
 <!-- UTSJSON.Int32Array.reduceRight.compatibility -->
 
@@ -304,6 +350,8 @@
 
 <!-- UTSJSON.Int32Array.reverse.returnValue -->
 
+<!-- UTSJSON.Int32Array.reverse.test -->
+
 <!-- UTSJSON.Int32Array.reverse.compatibility -->
 
 <!-- UTSJSON.Int32Array.reverse.tutorial -->
@@ -315,6 +363,8 @@
 <!-- UTSJSON.Int32Array.set.param -->
 
 <!-- UTSJSON.Int32Array.set.returnValue -->
+
+<!-- UTSJSON.Int32Array.set.test -->
 
 <!-- UTSJSON.Int32Array.set.compatibility -->
 
@@ -328,6 +378,8 @@
 
 <!-- UTSJSON.Int32Array.slice.returnValue -->
 
+<!-- UTSJSON.Int32Array.slice.test -->
+
 <!-- UTSJSON.Int32Array.slice.compatibility -->
 
 <!-- UTSJSON.Int32Array.slice.tutorial -->
@@ -339,6 +391,8 @@
 <!-- UTSJSON.Int32Array.some.param -->
 
 <!-- UTSJSON.Int32Array.some.returnValue -->
+
+<!-- UTSJSON.Int32Array.some.test -->
 
 <!-- UTSJSON.Int32Array.some.compatibility -->
 
@@ -352,6 +406,8 @@
 
 <!-- UTSJSON.Int32Array.sort.returnValue -->
 
+<!-- UTSJSON.Int32Array.sort.test -->
+
 <!-- UTSJSON.Int32Array.sort.compatibility -->
 
 <!-- UTSJSON.Int32Array.sort.tutorial -->
@@ -363,6 +419,8 @@
 <!-- UTSJSON.Int32Array.subarray.param -->
 
 <!-- UTSJSON.Int32Array.subarray.returnValue -->
+
+<!-- UTSJSON.Int32Array.subarray.test -->
 
 <!-- UTSJSON.Int32Array.subarray.compatibility -->
 
@@ -376,6 +434,8 @@
 
 <!-- UTSJSON.Int32Array.toString.returnValue -->
 
+<!-- UTSJSON.Int32Array.toString.test -->
+
 <!-- UTSJSON.Int32Array.toString.compatibility -->
 
 <!-- UTSJSON.Int32Array.toString.tutorial -->
@@ -387,6 +447,8 @@
 <!-- UTSJSON.Int32Array.values.param -->
 
 <!-- UTSJSON.Int32Array.values.returnValue -->
+
+<!-- UTSJSON.Int32Array.values.test -->
 
 <!-- UTSJSON.Int32Array.values.compatibility -->
 
@@ -400,6 +462,8 @@
 
 <!-- UTSJSON.Int32Array.entries.returnValue -->
 
+<!-- UTSJSON.Int32Array.entries.test -->
+
 <!-- UTSJSON.Int32Array.entries.compatibility -->
 
 <!-- UTSJSON.Int32Array.entries.tutorial -->
@@ -411,6 +475,8 @@
 <!-- UTSJSON.Int32Array.keys.param -->
 
 <!-- UTSJSON.Int32Array.keys.returnValue -->
+
+<!-- UTSJSON.Int32Array.keys.test -->
 
 <!-- UTSJSON.Int32Array.keys.compatibility -->
 
