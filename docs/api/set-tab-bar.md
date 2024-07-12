@@ -97,3 +97,6 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+## Bug & Tips @tips
+- 自 4.23 起，在非 tabbar 页面调用已上 API 会报错：hideTabBar:fail not TabBar page
