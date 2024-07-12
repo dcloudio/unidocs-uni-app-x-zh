@@ -12,6 +12,8 @@ uni.env提供了一些环境变量，主要是文件系统相关的。理解这�
 
 <!-- UTSAPIJSON.env.tutorial -->
 
+<!-- UTSAPIJSON.env.example -->
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
