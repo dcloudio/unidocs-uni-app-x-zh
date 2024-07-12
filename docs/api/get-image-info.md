@@ -10,7 +10,7 @@
 
 <!-- UTSAPIJSON.getImageInfo.tutorial -->
 
-<!-- UTSAPIJSON.get-image-info.example -->
+<!-- UTSAPIJSON.getImageInfo.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

@@ -54,7 +54,7 @@
 
 <!-- UTSAPIJSON.$emit.tutorial -->
 
-<!-- UTSAPIJSON.event-bus.example -->
+<!-- UTSAPIJSON.eventBus.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

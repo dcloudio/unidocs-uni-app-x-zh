@@ -10,7 +10,7 @@
 
 <!-- UTSAPIJSON.compressVideo.tutorial -->
 
-<!-- UTSAPIJSON.compress-video.example -->
+<!-- UTSAPIJSON.compressVideo.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

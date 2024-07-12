@@ -30,7 +30,7 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。�
 
 <!-- UTSAPIJSON.getProvider.tutorial -->
 
-<!-- UTSAPIJSON.get-provider.example -->
+<!-- UTSAPIJSON.getProvider.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

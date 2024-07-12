@@ -26,8 +26,6 @@
 
 <!-- UTSAPIJSON.closePreviewImage.tutorial -->
 
-<!-- UTSAPIJSON.preview-image.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

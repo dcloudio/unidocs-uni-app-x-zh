@@ -22,8 +22,6 @@ Android和iOS的权限设计并不相同，比如iOS有相册权限，Android则
 
 本API只返回部分权限，Android平台的权限非常多，在Android上获取所有未授权权限，另见[UTSAndroid.getSystemPermissionDenied](../uts/utsandroid.md#getsystempermissiondenied)，这里的权限名称就是Android原始的权限名称了。
 
-<!-- UTSAPIJSON.get-app-authorize-setting.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

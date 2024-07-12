@@ -21,8 +21,6 @@
 
 <!-- UTSAPIJSON.downloadFile.tutorial -->
 
-<!-- UTSAPIJSON.download-file.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

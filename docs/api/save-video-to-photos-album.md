@@ -10,7 +10,7 @@
 
 <!-- UTSAPIJSON.saveVideoToPhotosAlbum.tutorial -->
 
-<!-- UTSAPIJSON.save-video-to-photos-album.example -->
+<!-- UTSAPIJSON.saveVideoToPhotosAlbum.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

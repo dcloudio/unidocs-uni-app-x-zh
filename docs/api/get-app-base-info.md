@@ -14,8 +14,6 @@
 
 <!-- UTSAPIJSON.getAppBaseInfo.tutorial -->
 
-<!-- UTSAPIJSON.get-app-base-info.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

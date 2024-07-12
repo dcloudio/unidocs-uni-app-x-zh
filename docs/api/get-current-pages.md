@@ -31,14 +31,9 @@
 - app-android平台的页面是activity，不支持`backgroundColorContent`设为透明。
 - 4.15版本前，app-ios平台在page.json 中设置页面 `enablePullDownRefresh` 为 `false` 时，无法通过 `$setPageStyle` 方法动态开启页面下拉刷新。新版已修复该问题。
 
-
 <!-- UTSAPIJSON.getCurrentPages.example -->
 
-
-
 <!-- UTSAPIJSON.getCurrentPages.tutorial -->
-
-<!-- UTSAPIJSON.get-current-pages.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

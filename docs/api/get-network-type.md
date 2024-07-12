@@ -12,8 +12,6 @@
 
 <!-- UTSAPIJSON.getNetworkType.tutorial -->
 
-<!-- UTSAPIJSON.get-network-type.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

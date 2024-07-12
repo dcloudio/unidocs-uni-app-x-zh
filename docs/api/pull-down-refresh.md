@@ -31,8 +31,6 @@
 
 <!-- UTSAPIJSON.stopPullDownRefresh.tutorial -->
 
-<!-- UTSAPIJSON.pull-down-refresh.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

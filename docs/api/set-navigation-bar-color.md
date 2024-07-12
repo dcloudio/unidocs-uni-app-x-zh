@@ -16,8 +16,6 @@
 
 <!-- UTSAPIJSON.setNavigationBarColor.tutorial -->
 
-<!-- UTSAPIJSON.set-navigation-bar-color.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

@@ -10,7 +10,7 @@
 
 <!-- UTSAPIJSON.chooseVideo.tutorial -->
 
-<!-- UTSAPIJSON.choose-video.example -->
+<!-- UTSAPIJSON.chooseVideo.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

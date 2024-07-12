@@ -81,8 +81,6 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 
 <!-- UTSAPIJSON.getSystemInfoSync.tutorial -->
 
-<!-- UTSAPIJSON.get-system-info.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

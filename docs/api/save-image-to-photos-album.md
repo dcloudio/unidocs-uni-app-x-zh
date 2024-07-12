@@ -12,8 +12,6 @@
 
 <!-- UTSAPIJSON.saveImageToPhotosAlbum.tutorial -->
 
-<!-- UTSAPIJSON.save-image-to-photos-album.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

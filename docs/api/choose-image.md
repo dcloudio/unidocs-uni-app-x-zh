@@ -10,7 +10,7 @@
 
 <!-- UTSAPIJSON.chooseImage.tutorial -->
 
-<!-- UTSAPIJSON.choose-image.example -->
+<!-- UTSAPIJSON.chooseImage.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

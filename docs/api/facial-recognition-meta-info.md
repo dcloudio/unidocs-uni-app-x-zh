@@ -17,7 +17,9 @@ uni-id-pages，已经内置实人认证，从云端到客户端均已开发好�
 
 <!-- UTSAPIJSON.getFacialRecognitionMetaInfo.param -->
 
-<!-- UTSAPIJSON.getFacialRecognitionMetaInfo.returnValue -->
+<!-- UTSAPIJSON.getFacialRecognitionMetaInfo.example -->
+
+<!-- UTSAPIJSON.getFacialRecognitionMetaInfo.tutorial -->
 
 <!-- UTSAPIJSON.getFacialRecognitionMetaInfo.tutorial -->
 
@@ -31,9 +33,11 @@ uni-id-pages，已经内置实人认证，从云端到客户端均已开发好�
 
 <!-- UTSAPIJSON.startFacialRecognitionVerify.returnValue -->
 
+<!-- UTSAPIJSON.startFacialRecognitionVerify.example -->
+
 <!-- UTSAPIJSON.startFacialRecognitionVerify.tutorial -->
 
-<!-- UTSAPIJSON.facial-recognition-verify.example -->
+<!-- UTSAPIJSON.facialRecognitionVerify.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

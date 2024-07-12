@@ -26,8 +26,6 @@
 
 <!-- UTSAPIJSON.getBatteryInfoSync.tutorial -->
 
-<!-- UTSAPIJSON.get-battery-info.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

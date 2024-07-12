@@ -31,8 +31,6 @@ uni.loadFontFace({
 
 <!-- UTSAPIJSON.loadFontFace.tutorial -->
 
-<!-- UTSAPIJSON.load-font-face.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

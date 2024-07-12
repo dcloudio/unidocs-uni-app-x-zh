@@ -45,8 +45,6 @@ uni.pageScrollTo({
 });
 ```
 
-<!-- UTSAPIJSON.page-scroll-to.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

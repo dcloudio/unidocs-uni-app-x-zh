@@ -10,7 +10,7 @@
 
 <!-- UTSAPIJSON.compressImage.tutorial -->
 
-<!-- UTSAPIJSON.compress-image.example -->
+<!-- UTSAPIJSON.compressImage.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

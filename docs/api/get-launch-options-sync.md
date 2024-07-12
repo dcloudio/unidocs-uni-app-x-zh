@@ -12,8 +12,6 @@
 
 <!-- UTSAPIJSON.getLaunchOptionsSync.tutorial -->
 
-<!-- UTSAPIJSON.get-launch-options-sync.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

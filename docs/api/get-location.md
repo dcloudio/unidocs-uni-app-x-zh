@@ -30,7 +30,7 @@ uni-app x的标准基座定位仅支持wgs84坐标系、不支持逆地址解析
 
 <!-- UTSAPIJSON.getLocation.tutorial -->
 
-<!-- UTSAPIJSON.get-location.example -->
+<!-- UTSAPIJSON.getLocation.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

@@ -10,7 +10,7 @@
 
 <!-- UTSAPIJSON.getVideoInfo.tutorial -->
 
-<!-- UTSAPIJSON.get-video-info.example -->
+<!-- UTSAPIJSON.getVideoInfo.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

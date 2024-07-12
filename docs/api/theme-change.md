@@ -119,7 +119,7 @@ uni.offOsThemeChange(callbackId)
 
 <!-- UTSAPIJSON.offOsThemeChange.tutorial -->
 
-<!-- UTSAPIJSON.theme-change.example -->
+<!-- UTSAPIJSON.offOsThemeChange.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

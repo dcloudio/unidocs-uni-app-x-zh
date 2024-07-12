@@ -12,7 +12,7 @@
 
 <!-- UTSAPIJSON.installApk.tutorial -->
 
-<!-- UTSAPIJSON.install-apk.example -->
+<!-- UTSAPIJSON.installApk.example -->
 
 ## Tips
 - HBuilderX 3.99以前，uni.install是ext api，需单独[下载](https://ext.dcloud.net.cn/plugin?id=15118)。从HBuilderX 3.99起 uni-app x 内置了该api，无需再单独下载。

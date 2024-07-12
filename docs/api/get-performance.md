@@ -10,7 +10,7 @@
 
 <!-- UTSAPIJSON.getPerformance.tutorial -->
 
-<!-- UTSAPIJSON.get-performance.example -->
+<!-- UTSAPIJSON.getPerformance.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 
