@@ -1,11 +1,17 @@
-## uni.makePhoneCalll(options) @makephonecalll
+## uni.makePhoneCall(options) @makephonecall
 
-<!-- UTSAPIJSON.makePhoneCalll.description -->
+<!-- UTSAPIJSON.makePhoneCall.description -->
 
-<!-- UTSAPIJSON.makePhoneCalll.compatibility -->
+<!-- UTSAPIJSON.makePhoneCall.compatibility -->
 
-<!-- UTSAPIJSON.makePhoneCalll.param -->
+<!-- UTSAPIJSON.makePhoneCall.param -->
 
-<!-- UTSAPIJSON.makePhoneCalll.returnValue -->
+<!-- UTSAPIJSON.makePhoneCall.returnValue -->
 
-<!-- UTSAPIJSON.makePhoneCalll.tutorial -->
+<!-- UTSAPIJSON.makePhoneCall.tutorial -->
+
+<!-- UTSAPIJSON.makePhoneCall.example -->
+
+<!-- UTSAPIJSON.general_type.name -->
+
+<!-- UTSAPIJSON.general_type.param -->
