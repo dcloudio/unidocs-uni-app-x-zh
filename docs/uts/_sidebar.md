@@ -28,6 +28,7 @@
   * [Console](buildin-object-api/console.md)
   * [全局](buildin-object-api/global.md)
   * [ArrayBuffer](buildin-object-api/arraybuffer.md)
+  * [DataView](buildin-object-api/dataview.md)
   * [Float32Array](buildin-object-api/float32array.md)
   * [Float64Array](buildin-object-api/float64array.md)
   * [Int8Array](buildin-object-api/int8array.md)
