@@ -4,7 +4,7 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 ## 构造函数
 
-### Constructor(arrayLength?)
+### new(arrayLength ?: number) : any[];@Constructor(arrayLength?)_0
 
 <!-- UTSJSON.Array.Constructor.description -->
 
@@ -12,11 +12,13 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.Constructor.returnValue -->
 
+<!-- UTSJSON.Array.Constructor.test -->
+
 <!-- UTSJSON.Array.Constructor.compatibility -->
 
 <!-- UTSJSON.Array.Constructor.tutorial -->
 
-### Constructor(arrayLength)
+### new \<T>(arrayLength : number) : T[];@Constructor(arrayLength)_1
 
 <!-- UTSJSON.Array.Constructor_1.description -->
 
@@ -24,11 +26,13 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.Constructor_1.returnValue -->
 
+<!-- UTSJSON.Array.Constructor_1.test -->
+
 <!-- UTSJSON.Array.Constructor_1.compatibility -->
 
 <!-- UTSJSON.Array.Constructor_1.tutorial -->
 
-### Constructor(...items)
+### new \<T>(...items : T\[]) : T[]@Constructor(...items)_2
 
 <!-- UTSJSON.Array.Constructor_2.description -->
 
@@ -36,10 +40,11 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.Constructor_2.returnValue -->
 
+<!-- UTSJSON.Array.Constructor_2.test -->
+
 <!-- UTSJSON.Array.Constructor_2.compatibility -->
 
 <!-- UTSJSON.Array.Constructor_2.tutorial -->
-
 
 ## 实例属性
 
@@ -134,7 +139,7 @@ console.log(array1.fill(6));
 
 ```
 
-需要注意的是，截止HBuilder 4.22  部分平台尚不支持[根据元素个数构造`Array`的写法](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/array.html#constructor) 
+需要注意的是，截止HBuilder 4.22  部分平台尚不支持[根据元素个数构造`Array`的写法](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/array.html#constructor)
 
 所以下面的代码在 部分平台可能不符合预期
 
