@@ -61,7 +61,7 @@
 
 <!-- UTSJSON.ArrayBuffer.slice.returnValue -->
 
-<!-- UTSJSON.DataView.slice.test -->
+<!-- UTSJSON.ArrayBuffer.slice.test -->
 
 <!-- UTSJSON.ArrayBuffer.slice.compatibility -->
 
