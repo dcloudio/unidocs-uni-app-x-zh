@@ -21,6 +21,20 @@ App端与web常见的区别是：
 
 > 但以上仅是常见的区别，并非所有，需开发者继续阅读全文。
 
+## 盒模型
+uni-app x 排版引擎根据 CSS-Box 模型将元素表示为一个矩形盒子，这个盒子由以下四个主要部分组成：
+-  外边距盒子 ：外边距是最外层，其包裹内容、内边距和边框，作为该盒子与其他元素之间的空白；使用 margin 和相关属性确定其大小
+-  边框盒子：边框盒子包住内容和内边距，使用 border 和相关属性确定其大小
+-  内边距盒子：内容与边框之间的空间，使用 padding 和相关属性确定其大小
+-  内容盒子：元素本身的主体内容，使用 width 和 height 等属性确定其大小
+
+下图显示了这些层次：
+![](../static/css-box.png)
+
+App端与web的区别：
+1. uni-app x 默认为border-box，即width/height包含border和padding，web默认为content-box。具体二者差异可参考[MDN box-sizing](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing)
+2. uni-app x 盒模型不支持外边距合并
+
 ## 页面布局
 
 > uni-app x 使用flex布局。\
