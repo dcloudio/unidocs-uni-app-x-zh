@@ -154,6 +154,7 @@ export default {
   - 后续版本会统一类型为UTSJSONObject。
 - App-iOS平台的窗体动画是异步的，onLoad时可能窗体动画已经开始，此时再设置页面的pageStyle（比如设置背景色），会出现闪烁现象。
 - onLoad里不适合进行大量同步耗时运算，因为此时转场动画还没开始。尤其app-Android平台，onLoad里的代码（除了联网和加载图片）默认是在UI线程运行的，大量同步耗时计算很容易卡住页面动画不启动。除非开发者显式指定在其他线程运行。
+- `uni-app x android` 平台，如需获取 [activity 实例](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#activity)，此时当前页面的 `activity 实例`并未创建完成，会获取到上一个页面的 `activity 实例`（首页会获取应用默认的 `activity 实例`）。如需获取当前页面的 `activity 实例`，应在 `onShow` 或 `onReady` 生命周期中获取。
 :::
 
 ### 页面 onShow 生命周期@onshow
@@ -164,6 +165,11 @@ tabbar页面切换时，老的tabbar页面会hide，新的tabbar页面会show。
 onShow和onHide是成对出现的。
 
 在组合式API中，组件可以监听应用和页面的生命周期。但由于应用和页面都有onShow和onHide，导致重名。所以在组合式的组件中监听页面的显示隐藏，改为了onPageShow和onPageHide。
+
+### onReachBottom
+
+可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pagesjson#pages-globalstyle)，
+比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
 
 ### 页面 onPageScroll 生命周期 @onpagescroll
 
@@ -182,6 +188,11 @@ onShow和onHide是成对出现的。
 <!-- PAGEINSTANCE.onBackPress.param -->
 
 <!-- PAGEINSTANCE.onBackPress.returnValue -->
+
+::: warning 注意
+- `onBackPress`上不可使用`async`，会导致无法阻止默认返回
+:::
+详细说明及使用：[onBackPress 详解](http://ask.dcloud.net.cn/article/35120)
 
 #### 示例
 
@@ -204,6 +215,10 @@ onShow和onHide是成对出现的。
 <!-- PAGEINSTANCE.onTabItemTap.param -->
 
 <!-- PAGEINSTANCE.onTabItemTap.returnValue -->
+
+::: warning 注意
+- onTabItemTap常用于点击当前 tabItem，滚动或刷新当前页面。如果是点击不同的 tabItem，一定会触发页面切换。
+:::
 
 ### 页面 onNavigationBarButtonTap 生命周期 @onnavigationbarbuttontap
 
