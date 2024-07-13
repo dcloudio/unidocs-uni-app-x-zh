@@ -113,7 +113,7 @@ uvue页面基于 vue 单文件组件规范。一个页面内，有3个根节点�
 
 在 Vue 中，页面也是一种组件，所以也支持[组件生命周期](./vue/options-api.md#page-component-options)。
 
-### 页面onLoad生命周期@onload
+### 页面 onLoad 生命周期@onload
 
 页面初始化时，会触发onLoad生命周期。此时Dom还未构建渲染完毕，ref和getElementById都拿不到Dom（需要等onReady）。
 
@@ -156,7 +156,7 @@ export default {
 - onLoad里不适合进行大量同步耗时运算，因为此时转场动画还没开始。尤其app-Android平台，onLoad里的代码（除了联网和加载图片）默认是在UI线程运行的，大量同步耗时计算很容易卡住页面动画不启动。除非开发者显式指定在其他线程运行。
 :::
 
-### 页面onShow生命周期@onshow
+### 页面 onShow 生命周期@onshow
 onShow是在onLoad之后，它的意义在于，onLoad是页面创建时触发一次；而当页面隐藏（比如被新窗体遮挡），然后页面再恢复显示时，onLoad不会再触发，只会触发onShow。
 
 tabbar页面切换时，老的tabbar页面会hide，新的tabbar页面会show。
@@ -164,6 +164,64 @@ tabbar页面切换时，老的tabbar页面会hide，新的tabbar页面会show。
 onShow和onHide是成对出现的。
 
 在组合式API中，组件可以监听应用和页面的生命周期。但由于应用和页面都有onShow和onHide，导致重名。所以在组合式的组件中监听页面的显示隐藏，改为了onPageShow和onPageHide。
+
+### 页面 onPageScroll 生命周期 @onpagescroll
+
+<!-- PAGEINSTANCE.onPageScroll.param -->
+
+<!-- PAGEINSTANCE.onPageScroll.returnValue -->
+
+### 页面 onResize 生命周期 @onresize
+
+<!-- PAGEINSTANCE.onResize.param -->
+
+<!-- PAGEINSTANCE.onResize.returnValue -->
+
+### 页面 onBackPress 生命周期 @onbackpress
+
+<!-- PAGEINSTANCE.onBackPress.param -->
+
+<!-- PAGEINSTANCE.onBackPress.returnValue -->
+
+#### 示例
+
+[详情](<!-- VUEJSON.E_lifecycle.page_onBackPress_on-back-press-composition.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_lifecycle.page_onBackPress_on-back-press-composition.webUrl -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_lifecycle.page_onBackPress_on-back-press-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_lifecycle.page_onBackPress_on-back-press-options.code -->
+
+:::
+
+### 页面 onTabItemTap 生命周期 @ontabitemtap
+
+<!-- PAGEINSTANCE.onTabItemTap.param -->
+
+<!-- PAGEINSTANCE.onTabItemTap.returnValue -->
+
+### 页面 onNavigationBarButtonTap 生命周期 @onnavigationbarbuttontap
+
+<!-- PAGEINSTANCE.onNavigationBarButtonTap.param -->
+
+<!-- PAGEINSTANCE.onNavigationBarButtonTap.returnValue -->
+
+### 页面 onNavigationBarSearchInputChanged 生命周期 @onnavigationbarsearchinputchanged
+
+<!-- PAGEINSTANCE.onNavigationBarSearchInputChanged.param -->
+
+<!-- PAGEINSTANCE.onNavigationBarSearchInputChanged.returnValue -->
+
+### 页面 onNavigationBarSearchInputConfirmed 生命周期 @onnavigationbarsearchinputconfirmed
+
+<!-- PAGEINSTANCE.onNavigationBarSearchInputConfirmed.param -->
+
+<!-- PAGEINSTANCE.onNavigationBarSearchInputConfirmed.returnValue -->
 
 ### 页面生命周期示例 @lifecycle-example
 
