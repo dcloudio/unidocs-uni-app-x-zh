@@ -6,8 +6,6 @@ uni-app x 项目中，页面文件的后缀名`.uvue`文件。
 
 每个uvue文件，都是一个符合`Vue SFC规范`的 vue 文件。
 
-在 uni-app x 中，后缀名是`.uvue`文件
-
 uni-app x 只有 `.uvue`页面，不支持和vue页面并存（因vue是js驱动、webview渲染，uni-app x在app-Android中没有js引擎，app中渲染是原生渲染，无法使用vue页面）。
 
 当然某些组件可以通过条件编译同时适配uni-app和uni-app x，所以在uni-app x的项目中，看到某些组件代码也有vue文件，但这些vue文件并不在uni-app x项目中生效。
