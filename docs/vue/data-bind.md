@@ -49,18 +49,6 @@ data中的响应式变量，如需在script中使用，需通过 `this.xx` 的�
 
 当然 uts 有一定的自动推导能力，对于特别简单的布尔值/数字/字符串的字面量，不写泛型或as，也可以自动推导类型。
 
-::: warning 注意
-在使用复杂类型时，Android 端暂不支持通过泛型指定类型，可通过 as 方式指定类型。如：
-
-```ts
-type Counter = {
-  count : number
-}
-
-const counter = ref({ count: 0 } as Counter) // 而不是 ref<Counter>({count: 0})
-```
-:::
-
 `ref()` 接收参数，并将其包裹在一个带有 `.value` 属性的 `ref` 对象中返回。这个对象，
 
 - 在 uts 中取值时，需要使用 `.value`属性。
