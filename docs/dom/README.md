@@ -305,3 +305,4 @@ DrawableContext 在调用 API 之后不会主动更新到画布上，需要主�
 ## 注意事项
 
 由于排版和渲染是异步的的，在修改 DOM 后，立刻使用 DOM 的同步接口获取 DOM 状态可能获取到的是排版之前的，如果需要及时准确的获取到排版之后的 DOM 状态需要使用 [uni.createSelectorQuery](../api/nodes-info.md) 。
+目前App Android平台总元素个数不能超过51200，后续版本会解决该问题
