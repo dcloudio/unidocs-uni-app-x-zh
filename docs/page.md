@@ -190,7 +190,6 @@ onShow和onHide是成对出现的。
 ::: warning 注意
 - `onBackPress`上不可使用`async`，会导致无法阻止默认返回
 :::
-详细说明及使用：[onBackPress 详解](http://ask.dcloud.net.cn/article/35120)
 
 #### 示例
 
