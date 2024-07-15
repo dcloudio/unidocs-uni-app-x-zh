@@ -2,15 +2,35 @@
 
 <!-- UTSAPIJSON.getProvider.description -->
 
+uni-app的api，统一了多平台的差异。但在app平台，有的功能可以由很多SDK来支撑。比如
+- 支付：有支付宝支持、微信支付、iap支付
+- 定位：有系统定位、腾讯定位、高德定位
+
+不同的SDK，本身的api是完全不同的，甚至同一个SDK的Android和iOS的API也不一样。
+
+uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。同一个功能的不同的SDK，都被称为该功能的 provider，即供应商。
+
+比如对于支付模块，有 支付宝 和 微信 这2个 provider 可用。
+
+由于这些[模块和SDK](../collocation/manifest-modules.md)在打包时是可选的，那么在运行时可以通过 `uni.getProvider`，来获取到本App包中包含的provider清单。
+
+注意我们要把SDK和App的概念区分清楚。对于支付的2个provider，支付宝和微信，它们也有各自的主App。
+
+本API `uni.getProvider`，只是获取开发者的App包中的provider清单。但本API不负责判断这些provider的主App是否安装在同一台手机上。
+
+微信比较特殊，如果没有微信App，微信支付无法完成。其他SDK无此限制。
+
+所以微信支付SDK，自身提供了获取微信主App是否安装的API，那么这个API也被封装到了本API返回的对象里。
+
+<!-- UTSAPIJSON.getProvider.compatibility -->
+
 <!-- UTSAPIJSON.getProvider.param -->
 
 <!-- UTSAPIJSON.getProvider.returnValue -->
 
-<!-- UTSAPIJSON.getProvider.compatibility -->
-
 <!-- UTSAPIJSON.getProvider.tutorial -->
 
-<!-- UTSAPIJSON.get-provider.example -->
+<!-- UTSAPIJSON.getProvider.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

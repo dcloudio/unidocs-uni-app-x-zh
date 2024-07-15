@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.navigator.description -->
 
+<!-- UTSCOMJSON.navigator.compatibility -->
+
 <!-- UTSCOMJSON.navigator.attribute -->
 
 <!-- UTSCOMJSON.navigator.event -->
 
 <!-- UTSCOMJSON.navigator.component_type-->
-
-<!-- UTSCOMJSON.navigator.compatibility -->
 
 <!-- UTSCOMJSON.navigator.children -->
 

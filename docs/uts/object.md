@@ -133,6 +133,8 @@ function test() {
 
 UTS 语言虽然不支持匿名对象类型声明，但是支持匿名的对象字面量作为值使用。匿名的对象字面量作为值使用时，编译器会自动将其初始化为 [UTSJSONObject](./buildin-object-api/utsjsonobject.md) 类型的实例。
 
+>  仅支持UTSJSONObject 或者 type 定义的类型
+
 ```ts
 const person: UTSJSONObject = {
     name: 'Tom',

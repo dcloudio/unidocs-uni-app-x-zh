@@ -285,62 +285,69 @@ mediaPlayer.start();
 
 ------
 
-截止 HBuilder 3.8.2 版本内置了以下依赖
+截止 HBuilder X 4.23 版本内置了以下依赖
 
 开发者在使用列表中的依赖时，需要注意两点：
 
 +  真机运行时，不需要添加列表中的依赖，即可直接引用相关类
 +  请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
 
+
+
+#### uni-app x
+
 ```gradle
-+--- my-imageloader.jar
-+--- my-nineoldandroids-2.4.0.jar
-+--- zip4j-2.8.0.jar
-+--- com.github.getActivity:XXPermissions:18.0@jar
-+--- android-gif-drawable-release@1.2.23.aar
-+--- msa_mdid_1.0.13.aar
-+--- breakpad-build-release.aar
-+--- androidx.multidex:multidex:2.0.0@aar
-+--- androidx.recyclerview:recyclerview:1.0.0@aar
-+--- androidx.legacy:legacy-support-v4:1.0.0@aar
-+--- androidx.appcompat:appcompat:1.0.0@aar
-+--- com.github.bumptech.glide:glide:4.9.0@aar
-+--- com.alibaba:fastjson:1.1.46.android@jar
-+--- androidx.fragment:fragment:1.0.0@aar
-+--- androidx.vectordrawable:vectordrawable-animated:1.0.0@aar
-+--- androidx.legacy:legacy-support-core-ui:1.0.0@aar
-+--- androidx.media:media:1.0.0@aar
-+--- androidx.legacy:legacy-support-core-utils:1.0.0@aar
-+--- androidx.vectordrawable:vectordrawable:1.0.0@aar
-+--- androidx.viewpager:viewpager:1.0.0@aar
-+--- androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar
-+--- androidx.drawerlayout:drawerlayout:1.0.0@aar
-+--- androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar
-+--- androidx.customview:customview:1.0.0@aar
-+--- androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar
-+--- androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar
-+--- androidx.loader:loader:1.0.0@aar
-+--- androidx.core:core:1.0.0@aar
-+--- androidx.versionedparcelable:versionedparcelable:1.0.0@aar
-+--- androidx.collection:collection:1.0.0@jar
-+--- androidx.cursoradapter:cursoradapter:1.0.0@aar
-+--- com.github.bumptech.glide:gifdecoder:4.9.0@aar
-+--- androidx.lifecycle:lifecycle-runtime:2.0.0@aar
-+--- androidx.interpolator:interpolator:1.0.0@aar
-+--- androidx.documentfile:documentfile:1.0.0@aar
-+--- androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar
-+--- androidx.print:print:1.0.0@aar
-+--- androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar
-+--- androidx.lifecycle:lifecycle-livedata:2.0.0@aar
-+--- androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar
-+--- androidx.lifecycle:lifecycle-common:2.0.0@jar
-+--- androidx.arch.core:core-runtime:2.0.0@aar
-+--- androidx.arch.core:core-common:2.0.0@jar
-+--- androidx.annotation:annotation:1.0.0@jar
-+--- com.github.bumptech.glide:disklrucache:4.9.0@jar
-\--- com.github.bumptech.glide:annotations:4.9.0@jar
 
+implementation 'androidx.core:core-ktx:1.10.1'
+implementation 'androidx.recyclerview:recyclerview:1.3.2'
+implementation 'androidx.appcompat:appcompat:1.0.0'
+implementation 'androidx.exifinterface:exifinterface:1.3.6'
+implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar'
+implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+implementation 'com.google.android.material:material:1.4.0'
+implementation 'androidx.viewpager2:viewpager2:1.1.0-beta02'
+implementation 'com.alibaba:fastjson:1.2.83'
+implementation 'com.facebook.fresco:fresco:3.1.3'
+implementation 'com.facebook.fresco:middleware:3.1.3'
+implementation 'com.facebook.fresco:animated-gif:3.1.3'
+implementation 'com.facebook.fresco:webpsupport:3.1.3'
+implementation 'com.facebook.fresco:animated-webp:3.1.3'
+implementation 'com.github.bumptech.glide:glide:4.9.0'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+implementation 'org.jetbrains.kotlin:kotlin-reflect:1.8.10'
+implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1'
+implementation 'com.squareup.okhttp3:okhttp:3.12.12'
+implementation 'com.github.getActivity:XXPermissions:18.0'
+implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
+```
+
+#### uni-app 
+
+```gradle
+implementation 'com.github.bumptech.glide:glide:4.9.0'
+implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+implementation 'androidx.core:core:1.1.0'
+implementation 'androidx.fragment:fragment:1.1.0'
+implementation 'androidx.recyclerview:recyclerview:1.1.0'
+implementation 'androidx.appcompat:appcompat:1.1.0'
+implementation 'com.alibaba:fastjson:1.2.83'
+implementation 'androidx.webkit:webkit:1.3.0'
+implementation 'com.squareup.okhttp3:okhttp:3.12.12'
+implementation 'androidx.core:core-ktx:1.6.0'
+implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+implementation 'org.jetbrains.kotlin:kotlin-reflect:1.6.0'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8'
+implementation 'com.github.getActivity:XXPermissions:18.0'
+implementation 'com.facebook.fresco:fresco:2.5.0'
+implementation 'com.facebook.fresco:animated-gif:2.5.0'
+implementation 'com.facebook.fresco:webpsupport:2.5.0'
+implementation 'com.facebook.fresco:animated-webp:2.5.0'
+implementation 'androidx.recyclerview:recyclerview:1.0.0'
+implementation 'androidx.appcompat:appcompat:1.0.0'
 ```
 
 
@@ -368,21 +375,28 @@ maven { url 'https://jitpack.io' }
 这种情况，推荐开发者上传到 jitpack.io  这也是目前android 原生开发主流的远程仓库。 [使用文档](https://docs.jitpack.io/)
 
 
+### 3.6 Android 编译SDK版本说明
+
+截止 HBuilderX 4.15 版本：
+
++ uni-app x 项目： 本地Android sdk 版本为34
+
++ uni-app   项目： 本地Android sdk 版本为31
+
+开发者在使用系统api时，需要注意版本兼容性
 
 
 
 ## 4 Android内置库@iodcloudutsandroid
 
-在uts里，Android的所有api都可以访问。
+**在UTS语言中，所有的Android原生API都可以调用**
 
-但是对于Android开发中高频使用`application`和`activity`等，UTS通过内置对象`UTSAndroid` 进行了包裹和封装。具体见下：
+对于Android开发中高频使用的`application`/`activity`等系统能力、`uni-app`/`uni-app x` 运行时框架信息等，UTS通过内置对象`UTSAndroid` 进行了封装，以便开发者调用
 
-### 4.1 application 上下文相关
+下面列出了常见API的使用示例，完整的 `UTSAndroid` API文档参考：https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html
 
-#### 4.1.1 getAppContext
 
-> HBuilderX 3.6.3+
-
+#### getAppContext
 
 ```ts
 import { UTSAndroid } from "io.dcloud.uts";
@@ -418,110 +432,7 @@ console.log(app)
 ```
 
 
-#### 4.1.2 getResourcePath(resourceName:String)
-
-> HBuilderX 3.6.3+
-
-
-```ts
-import { UTSAndroid } from "io.dcloud.uts";
-```
-
-获取指定插件资源的运行期绝对路径
-
-```ts
-// [示例]获取指定资源路径
-// 得到文件运行时路径: `/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/__UNI__3732623/www/uni_modules/test-uts-static/static/logo.png`
-UTSAndroid.getResourcePath("uni_modules/test-uts-static/static/logo.png")
-
-```
-
-#### 4.1.3 onAppTrimMemory / offAppTrimMemory
-
-##### onAppTrimMemory
-
-> HBuilderX 3.6.11+
-
-
-App 内存不足时，系统回调函数 对应原生的API: onTrimMemory
-
-```ts
-UTSAndroid.onAppTrimMemory((level:Number) => {
-	let eventName = "onAppTrimMemory - " + level;
-	console.log(eventName);
-});
-```
-
-##### offAppTrimMemory
-
-> HBuilderX 3.6.11+
-
-
-onAppTrimMemory 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-```ts
-// 移除所有监听
-UTSAndroid.offAppTrimMemory()
-// 移除指定监听
-UTSAndroid.offAppTrimMemory((level:Number) => {
-
-});
-```
-
-
-#### 4.1.4 onAppConfigChange / offAppConfigChange
-
-##### onAppConfigChange
-
-> HBuilderX 3.6.1+
-
-
-App 配置发生变化时触发，比如横竖屏切换 对应原生的API: onConfigurationChanged
-
-```ts
-UTSAndroid.onAppConfigChange((ret:UTSJSONObject) => {
-	let eventName = "onAppConfigChange - " + JSON.stringify(ret);
-	console.log(eventName);
-});
-```
-
-##### offAppConfigChange
-
-
-与onAppConfigChange 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-```ts
-// 移除所有监听
-UTSAndroid.offAppConfigChange();
-// 移除指定监听
-UTSAndroid.offAppConfigChange(function(ret){
-
-});
-```
-
-
---------------------------------
-
-
-特别说明：除了本章节列出的函数外，android环境下 application 其他上下文方法都可以通过 getAppContext()!.xxx()的方式实现
-
-比如获取app缓存目录：
-
-```ts
-UTSAndroid.getAppContext()!.getExternalCacheDir()!.getPath()
-```
-
-
-### 4.2 Activity 上下文 @activity
-
-#### 4.2.1 getUniActivity
-
-> HBuilderX 3.6.11+
-
+#### getUniActivity
 
 获取当前插件所属的activity实例，对应android平台 getActivity 函数实现
 
@@ -533,257 +444,13 @@ let decorView = UTSAndroid.getUniActivity()!.window.decorView;
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 
-#### 4.2.2 onAppActivityPause / offAppActivityPause
-
-##### onAppActivityPause
-
-> HBuilderX 3.6.3+
-
-
-App的activity onPause时触发
-
-```ts
-UTSAndroid.onAppActivityPause(() => {
-    let eventName = "onAppActivityPause - " + Date.now();
-    console.log(eventName);
-});
-```
-
-##### offAppActivityPause
-
-> HBuilderX 3.6.9+
-
-onAppActivityPause 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.offAppActivityPause();
-// 移除指定监听
-UTSAndroid.offAppActivityPause(() => {
-});
-```
-
-
-
-#### 4.2.3 onAppActivityResume / offAppActivityResume
-
-##### onAppActivityResume
-
-> HBuilderX 3.6.3+
-
-
-
-App的activity onResume时触发
-
-```ts
-UTSAndroid.onAppActivityResume(() => {
-     let eventName = "onAppActivityResume - " + Date.now();
-     console.log(eventName);
-});
-```
-
-##### offAppActivityResume
-
-> HBuilderX 3.6.9+
-
-onAppActivityResume 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.onAppActivityResume();
-// 移除指定监听
-UTSAndroid.onAppActivityResume(() => {
-});
-```
-
-
-
-#### 4.2.4 onAppActivityDestroy / offAppActivityDestroy
-
-##### onAppActivityDestroy
-
-> HBuilderX 3.6.3+
-
-
-App 的 activity onDestroy时触发
-
-```ts
-UTSAndroid.onAppActivityDestroy(() => {
-     let eventName = "onAppActivityDestroy- " + Date.now();
-     console.log(eventName);
-});
-```
-
-##### offAppActivityDestroy
-
-> HBuilderX 3.6.9+
-
-onAppActivityDestroy 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.offAppActivityDestroy();
-// 移除指定监听
-UTSAndroid.offAppActivityDestroy(() => {
-});
-```
-
-
-
-#### 4.2.5 onAppActivityBack / offAppActivityBack
-
-##### onAppActivityBack
-
-> HBuilderX 3.6.3+
-
-
-App 的 activity 回退物理按键点击时触发
-
-```ts
-UTSAndroid.onAppActivityBack(() => {
-     let eventName = "onAppActivityBack- " + Date.now();
-     console.log(eventName);
-});
-
-```
-
-##### offAppActivityBack
-
-> HBuilderX 3.6.9+
-
-onAppActivityBack 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.offAppActivityBack();
-// 移除指定监听
-UTSAndroid.offAppActivityBack(() => {
-});
-```
-
-
-
-#### 4.2.6 onAppActivityResult / offAppActivityResult
-
-
-
-##### onAppActivityResult
-
-> HBuilderX 3.6.8+
-
-App 的 activity 启动其他activity的回调结果监听 对应原生的  [onActivityResult](https://developer.android.com/training/basics/intents/result)
-
-需要特别注意的是 `requestCode` 参数，这个参数用于区别 不同的请求来源,开发者应该只处理自己发起请求
-
-```ts
-let customRequestCode = 12000
-
-UTSAndroid.onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
-	if(requestCode == 12000){
-		// 我们发起的请求
-		let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:"+resultCode + " -data:"+JSON.stringify(data);
-    	console.log(eventName);
-	}else{
-		// 别的代码发起的请求，不要处理
-	}
-
-});
-```
-
-##### offAppActivityResult
-
-> HBuilderX 3.6.9+
-
-onAppActivityResult 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.offAppActivityResult();
-// 移除指定监听
-UTSAndroid.offAppActivityResult(() => {
-});
-```
-
-
-#### 4.2.7 onAppActivityRequestPermissionsResult / offAppActivityRequestPermissionsResult
-
-> 已废弃，请使用 4.4章节系统权限管理替代此api
-
-##### onAppActivityRequestPermissionsResult
-
-> HBuilderX 3.6.3+
-
-
-App 的 activity 获得权限请求结果的回调
-
-```ts
-UTSAndroid.onAppActivityRequestPermissionsResult((requestCode: number,
-                                                     permissions: Array<string>,
-                                                     grantResults: Array<number>) => {
-
-		console.log(grantResults);
-		console.log(permissions);
-		console.log(requestCode);
-	});
-
-//发起定位权限申请
-let permission = [Manifest.permission.ACCESS_COARSE_LOCATION]
-ActivityCompat.requestPermissions(getUniActivity()!,
-	    permission, 1001);
-
-```
-
-##### offAppActivityRequestPermissionsResult
-
-> HBuilderX 3.6.9+
-
-onAppActivityRequestPermissionsResult 对应的反注册函数
-
-如果传入的函数可为空，如果为空，则视为移除所有监听
-
-
-```ts
-// 移除全部监听
-UTSAndroid.offAppActivityRequestPermissionsResult();
-// 移除指定监听
-UTSAndroid.offAppActivityRequestPermissionsResult(() => {
-});
-```
------------------------------
-
-
-特别说明：除了本章节列出的函数外，android环境下 activity 其他上下文方法都可以通过 getUniActivity()!.xxx()的方式实现
-
-比如获取当前activity的顶层View容器
-
-```ts
-UTSAndroid.getUniActivity()!.getWindow().getDecorView();
-```
-
-### 4.3 UTS插件开发中Activity生命周期注意事项
+#### onAppActivityDestroy
 
 即使在android原生开发中，应用的生命周期管理也是十分重要的。 [android生命周期](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=zh_cn)
 
 UTS环境中对原生的生命周期进行了封装和简化，大多数情况下，开发者只需要了解本章节中列出的 activity相关生命周期即可。
 
-
-其中最为常见的场景，要数`onAppActivityDestroy`中释放系统资源了：
-
+其中最为常见的场景，要数`onAppActivityDestroy`中释放系统资源：
 
 举个例子，以Hello UTS  [用户截屏插件](https://ext.dcloud.net.cn/plugin?id=9897)为例。
 
@@ -803,17 +470,14 @@ UTSAndroid.onAppActivityDestroy(function(){
 开发者在开发UTS插件时，如果遇到了类似使用系统组件的情况，也需要特别关注资源释放情况。
 
 
-### 4.4 系统权限管理
+
+#### 4.4 requestSystemPermission
 
 HBuilder X 3.8.2版本之后支持
 
 系统权限管理使用了 https://github.com/getActivity/XXPermissions 工具库
 
 如果开发者使用了相同依赖，可能打包冲突。需要修改为 complileOnly 或者 修改为本章节内置API
-
-
-
-##### 4.4.1 requestSystemPermission
 
 请求系统权限,对应的两个参数：
 1  请求的权限列表
@@ -835,37 +499,32 @@ UTSAndroid.requestSystemPermission(UTSAndroid.getUniActivity()!,permission,funct
 	})
 ```
 
-##### 4.4.2 gotoSystemPermissionActivity
-
-跳转至系统设置权限设置界面，一般是用户选择了不再继续询问选项后
-
-```
-let permissionWifi = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"]
-UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionWifi)
-```
+--------------------------------
 
 
-##### 4.4.3 getSystemPermissionDenied@getSystemPermissionDenied
+特别说明：
 
-判断权限是否已经被用户禁止
+除了本章节列出的函数外，android环境下 application 其他上下文方法都可以通过 getAppContext()!.xxx()的方式实现
+
+比如获取app缓存目录：
 
 ```ts
-let permission = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"]
-let denied = UTSAndroid.getSystemPermissionDenied(UTSAndroid.getUniActivity()!, permission)
-// 执行结果
-[android.permission.ACCESS_FINE_LOCATION, android.permission.ACCESS_FINE_LOCATION]
+UTSAndroid.getAppContext()!.getExternalCacheDir()!.getPath()
 ```
 
-##### 4.4.4 checkSystemPermissionGranted
 
-判断权限是否已经被用户授予
+activity 其他上下文方法都可以通过 getUniActivity()!.xxx()的方式实现
+
+比如获取当前activity的顶层View容器
 
 ```ts
-let permission = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"]
-let grant = UTSAndroid.checkSystemPermissionGranted (UTSAndroid.getUniActivity()!, permission)
-// 执行结果
-false
+UTSAndroid.getUniActivity()!.getWindow().getDecorView();
 ```
+
+
+
+
+
 
 ## 5 Kotlin与UTS差异重点介绍 (持续更新)
 
@@ -981,15 +640,12 @@ user.setListener(Listener(){
 });
 ```
 
-目前版本UTS还不支持匿名内部类，需要显性的声明再新建
+在UTS中这样使用：
 
 ```ts
-// 声明一个新的类，实现Listener
-class MyListener extends Listener{
-	// todo
-}
-// 新建实例
-let myListener = new MyListener();
+const myListener = new (class implements Listener {
+	//todo
+})
 user.setListener(myListener);
 ```
 
@@ -1256,8 +912,6 @@ open class User : Person, android.view.View.OnClickListener, Cloneable {
 
 其中需要注意的是
 
-+ 目前暂不支持匿名声明，需要先定义一个 StartBroadcastListener 声明实现 OnClickListener 后再显性的创建
-
 ### UTS 如何访问静态实例方法
 
 kotlin编译产出的AAR，会将访问方法修改为私有，不能以下面的方法访问
@@ -1290,6 +944,38 @@ function getAppName(context : Context) : string {
 }
 ```
 
+### 6.6 泛型传递丢失的问题
+
+如果在UTS中声明一个包含泛型声明的方法，可能会出现泛型丢失，原因是因为普通的kotlin 方法没有实现泛型的传递
+
+错误的kt代码：
+
+```kotlin
+fun <T> getArtListByres(): A<T>? {
+   var aRet = UTSAndroid.consoleDebugError(JSON.parse<A<T>>("{\"x\":111,\"y\":\"aaa\",\"t\":{\"name\":\"zhangsan\"}}"), " at pages/index/index.uvue:27");
+   return aRet;
+}
+```
+
+期望得到的正确的kt代码：
+
+```ts
+inline fun <reified T> getArtListByres(): A<T>? {
+    var aRet = UTSAndroid.consoleDebugError(JSON.parse<A<T>>("{\"x\":111,\"y\":\"aaa\",\"t\":{\"name\":\"zhangsan\"}}"), " at pages/index/index.uvue:27");
+    return aRet;
+}
+```
+
+为了解决这种情况，我们可以在UTS中 添加android方法注解，来告诉编译器生成正确的代码：
+
+```kotlin
+@UTSAndroid.keyword("inline")
+@UTSAndroid.keyword('reified')
+export function request<T>(options : RequestOptions<T>) : RequestTask {
+	//xxx
+}
+```
+
 
 ## 7  已知待解决问题(持续更新)
 
@@ -1297,10 +983,16 @@ function getAppName(context : Context) : string {
 
 当以type 结构体为参数时，其内部boolean字段 默认值为false，不支持指定。
 
-### 目前尚不支持 8.x 版本gradle
-
-建议先使用7.X版本，这个问题后续会处理
 
 ### android原生资源文件，暂不支持三方库依赖
 
 比如xml布局文件中暂时只支持 linearlayout等官方标签，不支持 appcompat等三方库标签。这个问题后续会被处理
+
+### 不支持直接添加so文件到插件目录
+
+截止HBuilder X 4.19 ：
+
+UTS插件本地调试尚不支持直接使用so文件，需要将so文件和调用代码封装为AAR 或者分别集成 so和jar文件
+
+AAR调用示例参考：[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-toast)
+

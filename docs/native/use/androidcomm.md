@@ -1,4 +1,17 @@
-## uni-app x 与 android 原生工程通信
+## 启动
+
+需要在打开uni-app x的地方添加如下代码，触发逻辑即可打开uni-app x。
+
+```kotlin
+startActivity(Intent(this, UniAppActivity::class.java))
+```
+
+连接手机，点击运行按钮，可以在手机上查看效果。
+
+![avatar](https://img.cdn.aliyun.dcloud.net.cn/nativedocs/5%2BSDK-android/image/7-6.png)
+
+
+## 通信
 
 ### 广播方式
 
@@ -26,8 +39,10 @@
 	import Context from 'android.content.Context'
 	import Intent from 'android.content.Intent'
 	import IntentFilter from 'android.content.IntentFilter'
+	import Build from 'android.os.Build'
 	class MyReciver extends BroadcastReceiver {
 		constructor() {
+
 		}
 		override onReceive(context : Context, intent : Intent) {
 			var action = intent.getAction()
@@ -55,7 +70,11 @@
 		onReady() {
 			// #ifdef APP-ANDROID
 			this.receiver = new MyReciver()
-			UTSAndroid.getUniActivity()?.registerReceiver(this.receiver!, new IntentFilter("ACTION_FROM_NATIVE"))
+			if (Build.VERSION.SDK_INT >= 33) {
+				UTSAndroid.getUniActivity()?.registerReceiver(this.receiver, IntentFilter("ACTION_FROM_NATIVE"), Context.RECEIVER_EXPORTED)
+			} else {
+				UTSAndroid.getUniActivity()?.registerReceiver(this.receiver, IntentFilter("ACTION_FROM_NATIVE"))
+			}
 			// #endif
 		},
 
@@ -110,7 +129,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         findViewById<View>(R.id.btn_goto).setOnClickListener {
             startActivity(Intent(this@MainActivity, UniAppActivity::class.java))
-            registerReceiver(broadcast, IntentFilter("ACTION_TO_NATIVE"))
+            ContextCompat.registerReceiver(this,broadcast, IntentFilter("ACTION_TO_NATIVE"),
+                ContextCompat.RECEIVER_EXPORTED)
         }
     }
 
@@ -137,4 +157,8 @@ class MainActivity : AppCompatActivity() {
 
 **注意：广播要在页面关闭的时候取消注册，避免可能出现崩溃的问题。**
 
-具体可以参考离线打包SDK中的`app-comm`示例。
+示例可以参考原生SDK中的`app-comm`工程。
+
+## 退出
+
+退出应用可以在uni-app x中调用`uni.exit()`，整体退出uni-app x。

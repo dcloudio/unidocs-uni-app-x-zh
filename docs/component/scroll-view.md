@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.scroll-view.description -->
 
+<!-- UTSCOMJSON.scroll-view.compatibility -->
+
 <!-- UTSCOMJSON.scroll-view.attribute -->
 
 <!-- UTSCOMJSON.scroll-view.event -->
@@ -99,7 +101,7 @@
 </scroll-view>
 ```
 
-2. 子组件准备滚动时会触发父组件的`startnestedscroll`事件。父组件响应`startnestedscroll`事件return ture则表示与子组件建立嵌套滚动协商。
+2. 子组件准备滚动时会触发父组件的`startnestedscroll`事件。父组件响应`startnestedscroll`事件return true则表示与子组件建立嵌套滚动协商。
 ```ts
 onStartNestedScroll(event: StartNestedScrollEvent): Boolean {
 	//开启与子组件建立嵌套滚动协商
@@ -131,8 +133,6 @@ onNestedPreScroll(event: NestedPreScrollEvent) {
 + 与`nested-scroll-header` 和 `nested-scroll-body`不兼容，scroll-view 设置嵌套模式后，嵌套滚动手势协商相关事件将不会触发
 
 **具体代码请参考：**[nested-scroll嵌套滚动示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list/long-list.uvue)
-
-<!-- UTSCOMJSON.scroll-view.compatibility -->
 
 #### App平台
 

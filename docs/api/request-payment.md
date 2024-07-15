@@ -2,6 +2,20 @@
 
 <!-- UTSAPIJSON.requestPayment.description -->
 
+<!-- UTSAPIJSON.requestPayment.compatibility -->
+
+uni.requestPayment是一个统一各平台的客户端支付API，客户端均使用本API调用支付。
+
+本API运行在各端时，会自动转换为各端的原生支付调用API。
+
+注意支付不仅仅需要客户端的开发，还需要服务端开发。虽然客户端API统一了，但各平台的支付申请开通、配置回填仍然需要看各个平台本身的支付文档。
+
+比如微信有App支付的申请入口和使用流程，对应到uni-app，在App端要申请微信的App支付。
+
+如果服务端使用[uniCloud](https://uniapp.dcloud.io/uniCloud/README)，那么官方提供了[uniPay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)云端统一支付服务，把App、微信小程序、支付宝小程序里的服务端支付开发进行了统一的封装。
+
+前端统一的`uni.requestPayment`和云端统一的`uniPay`搭配，可以极大提升支付业务的开发效率，强烈推荐给开发者使用。`uniPay`的文档另见：[https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)
+
 <!-- UTSAPIJSON.requestPayment.param -->
 
 ### orderInfo参数说明
@@ -19,7 +33,7 @@
   ```
   [更多详情参考[支付宝官方文档](https://opendocs.alipay.com/open/204/105296?pathHash=22ed0058&ref=api)]
  -  微信\
-  App 支付请求参数字符串。示例
+  App 支付请求参数字符串,需要打自定义基座。示例
   ```json
   {
    "appid":"wxd569c7238830733b",
@@ -37,8 +51,6 @@
 
 <!-- UTSAPIJSON.requestPayment.returnValue -->
 
-<!-- UTSAPIJSON.requestPayment.compatibility -->
-
 <!-- UTSAPIJSON.requestPayment.tutorial -->
 
 ### cause支付sdk错误码汇总
@@ -55,35 +67,33 @@
 | -6004 | 支付结果未知（有可能已经支付成功），请查询商家订单列表中订单的支付状态 |
 |  其它  | 其它支付错误 |
 
-注意：
+### 注意
 - App平台开发支付宝支付，无需自定义基座，真机运行可直接开发
-- 可通过编写uts插件判断微信是否安装，如android中可通过引入微信自带的api进行判断
+- 判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/get-provider.html#getprovider)
 
 ```ts
-   import WXAPIFactory from 'com.tencent.mm.opensdk.openapi.WXAPIFactory';
-   let api = WXAPIFactory.createWXAPI(UTSAndroid.getTopPageActivity(), '');
-   api!.isWXAppInstalled()
-```
+   uni.getProvider({
+      service: "payment",
+      success: (e) => {
+         const provider = e.providers.find((item): boolean => {
+            return item.id == 'wxpay'
+         })
 
-- 需要在根目录的manifest.json文件中，对所使用的支付进行配置如
-
-```json
-{
-   "app": {
-      "distribute": {
-         "modules": {
-            "uni-payment": {
-               "alipay": {},//支付宝支付
-               "wxpay": {}//微信支付
-            }
+         if (provider?.isAppExist == false) {
+            console.log('WeChat 没有安装')
+         } else {
+            console.log('WeChat 已安装')
          }
+      },
+      fail: (e) => {
+         console.log("获取支付通道失败：", e);
       }
-   }
-}
+   })
 ```
 
-[更多详情参考[模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment)]
+- **app需要在根目录manifest.json文件中配置`uni-payment`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment)**
 - app-android平台微信支付需要4.11及以上版本
+- app-ios平台微信支付需要4.18及以上版本
 
 
 <!-- UTSAPIJSON.requestPayment.example -->

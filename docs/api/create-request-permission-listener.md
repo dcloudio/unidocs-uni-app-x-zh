@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.createRequestPermissionListener.description -->
 
+<!-- UTSAPIJSON.createRequestPermissionListener.compatibility -->
+
 app-android平台，可使用本API监听应用权限申请确认框的弹出和关闭。不管是哪处的业务代码在申请权限，当弹出和关闭权限申请确认框时均会触发本监听事件。
 
 华为应用市场审核时要求：`APP在调用终端权限时，应同步告知用户申请该权限的目的`。此时即可使用本API，在app.uvue里全局监听。
@@ -24,8 +26,6 @@ app-android平台，可使用本API监听应用权限申请确认框的弹出和
 - 全局监听权限申请可参考插件[uni-registerRequestPermissionTips](https://ext.dcloud.net.cn/plugin?name=uni-registerRequestPermissionTips)。
 
 <!-- UTSAPIJSON.createRequestPermissionListener.example -->
-
-<!-- UTSAPIJSON.createRequestPermissionListener.compatibility -->
 
 <!-- UTSAPIJSON.createRequestPermissionListener.tutorial -->
 

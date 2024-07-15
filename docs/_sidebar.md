@@ -7,12 +7,14 @@
   * [复杂列表开发指南](tutorial/stickynestlist.md)
   * [全局变量与状态管理](tutorial/store.md)
   * [几种组件标记的概念澄清](tutorial/idref.md)
-* [web端开发指南](web/README.md)
+* web平台专题指南
+  * [概述](web/README.md)
+  * [服务端渲染ssr](web/ssr.md)
 * app平台专题指南
 	* [uni-app x 云端打包环境](tutorial/app-env.md)
 	* uni-app x 原生SDK和离线打包
 		* [概述](native/README.md)
-		* Android离线打包
+		* Android平台
 			* [原生工程配置](native/use/android.md)
 			* 模块配置
 				* [内置模块](native/modules/android/others.md)
@@ -24,13 +26,19 @@
 				* [uni-verify](native/modules/android/uni-verify.md)
 			* [启动与通信](native/use/androidcomm.md)
 			* [自定义基座](native/debug/android.md)
-			* [SDK下载](native/download/android.md) 
+			* [SDK下载](native/download/android.md)
+	* 应用市场上架注意
+		* [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
   * [Android审查元素](debug/android-inspector.md)
+  * [uts插件Android Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
+  * [uts插件iOS Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
 * [性能优化](performance.md)
-* [源码和示例](sample.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
+* [暗黑模式](api/theme.md)
+* [国际化](i18n.md)
+* [源码和示例](sample.md)
 * [跨平台框架及原生对比](select.md)
 * 更新日志
   * [正式版](release.md)

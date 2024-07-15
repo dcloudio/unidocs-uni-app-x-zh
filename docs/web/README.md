@@ -134,6 +134,7 @@ type XxxComponentPublicInstanceEmit = (event: 'change' | 'input', ...args: any[]
 - 安卓端由于kotlin特性组件内部使用组件data内定义的属性时this可以省略，请勿在web端使用此特性。
 - web端由于是一个单页应用，使用`$root`会获取应用根组件，而不是页面根组件。而安卓端是多页应用，`$root`获取的是页面根组件。
 - web端使用`$parent`会获取父组件（含内置组件），安卓端只会获取父级非内置组件，web端后续会调整，请勿利用此特性。
+- web端切换页面后上一个页面的元素、组件会从dom树上移除，并触发组件及页面的`deactivate`生命周期，此时部分dom事件无法触发（如：transitionEnd）。可以视情况使用`activate`、`deactivate`生命周期重新触发dom相关操作。
 
 ## uts
 
@@ -183,10 +184,11 @@ uni相关的异步api在web端不传回调时会返回promise（详情参考：[
 ## 特性支持
 
 - [x] 宽屏适配
+- [x] 暗黑模式
 - [x] 国际化
 - [x] 地图
 - [x] uni-push2.0
-- [ ] 服务端渲染
+- [x] 服务端渲染 新增于HBuilderX 4.18
 - [ ] [接口Promise化](https://uniapp.dcloud.net.cn/api/#api-promise-%E5%8C%96)
 
 ## 运行与发行

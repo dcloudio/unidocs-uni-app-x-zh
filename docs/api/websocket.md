@@ -2,13 +2,11 @@
 
 <!-- UTSAPIJSON.connectSocket.description -->
 
+<!-- UTSAPIJSON.connectSocket.compatibility -->
+
 <!-- UTSAPIJSON.connectSocket.param -->
 
 <!-- UTSAPIJSON.connectSocket.returnValue -->
-
-<!-- UTSAPIJSON.connectSocket.example -->
-
-<!-- UTSAPIJSON.connectSocket.compatibility -->
 
 <!-- UTSAPIJSON.connectSocket.tutorial -->
 
@@ -16,13 +14,11 @@
 
 <!-- UTSAPIJSON.onSocketOpen.description -->
 
+<!-- UTSAPIJSON.onSocketOpen.compatibility -->
+
 <!-- UTSAPIJSON.onSocketOpen.param -->
 
 <!-- UTSAPIJSON.onSocketOpen.returnValue -->
-
-<!-- UTSAPIJSON.onSocketOpen.example -->
-
-<!-- UTSAPIJSON.onSocketOpen.compatibility -->
 
 <!-- UTSAPIJSON.onSocketOpen.tutorial -->
 
@@ -30,13 +26,11 @@
 
 <!-- UTSAPIJSON.onSocketError.description -->
 
+<!-- UTSAPIJSON.onSocketError.compatibility -->
+
 <!-- UTSAPIJSON.onSocketError.param -->
 
 <!-- UTSAPIJSON.onSocketError.returnValue -->
-
-<!-- UTSAPIJSON.onSocketError.example -->
-
-<!-- UTSAPIJSON.onSocketError.compatibility -->
 
 <!-- UTSAPIJSON.onSocketError.tutorial -->
 
@@ -44,27 +38,27 @@
 
 <!-- UTSAPIJSON.sendSocketMessage.description -->
 
+<!-- UTSAPIJSON.sendSocketMessage.compatibility -->
+
 <!-- UTSAPIJSON.sendSocketMessage.param -->
 
 <!-- UTSAPIJSON.sendSocketMessage.returnValue -->
 
-<!-- UTSAPIJSON.sendSocketMessage.example -->
-
-<!-- UTSAPIJSON.sendSocketMessage.compatibility -->
-
 <!-- UTSAPIJSON.sendSocketMessage.tutorial -->
+
+## 注意事项
+
+* 出于性能的权衡，在底层实现上发送队列占用的内存不能超过16M，一旦超过将导致连接被关闭。
 
 ## uni.onSocketMessage(callback) @onsocketmessage
 
 <!-- UTSAPIJSON.onSocketMessage.description -->
 
+<!-- UTSAPIJSON.onSocketMessage.compatibility -->
+
 <!-- UTSAPIJSON.onSocketMessage.param -->
 
 <!-- UTSAPIJSON.onSocketMessage.returnValue -->
-
-<!-- UTSAPIJSON.onSocketMessage.example -->
-
-<!-- UTSAPIJSON.onSocketMessage.compatibility -->
 
 <!-- UTSAPIJSON.onSocketMessage.tutorial -->
 
@@ -72,13 +66,11 @@
 
 <!-- UTSAPIJSON.closeSocket.description -->
 
+<!-- UTSAPIJSON.closeSocket.compatibility -->
+
 <!-- UTSAPIJSON.closeSocket.param -->
 
 <!-- UTSAPIJSON.closeSocket.returnValue -->
-
-<!-- UTSAPIJSON.closeSocket.example -->
-
-<!-- UTSAPIJSON.closeSocket.compatibility -->
 
 <!-- UTSAPIJSON.closeSocket.tutorial -->
 
@@ -86,13 +78,11 @@
 
 <!-- UTSAPIJSON.onSocketClose.description -->
 
+<!-- UTSAPIJSON.onSocketClose.compatibility -->
+
 <!-- UTSAPIJSON.onSocketClose.param -->
 
 <!-- UTSAPIJSON.onSocketClose.returnValue -->
-
-<!-- UTSAPIJSON.onSocketClose.example -->
-
-<!-- UTSAPIJSON.onSocketClose.compatibility -->
 
 <!-- UTSAPIJSON.onSocketClose.tutorial -->
 

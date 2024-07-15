@@ -5,7 +5,7 @@
 > HBuilderX 3.6+ 支持uni-app中使用uts插件
 > HBuilderX 3.9+ 支持uni-app x中使用uts插件
 
-UTS插件开发官方QQ交流群：527828934 [点此加入](https://qm.qq.com/cgi-bin/qm/qr?k=3Z-cQCXGiTyThkrqufUNNw7TaJd2xEPb&jump_from=webapi&authKey=4UQdplol3kPLwlDfuSdYleE8JUHnJChC2+8HcuBavZq2q51iAkLdzT4Bupt4ZJZu)
+UTS插件开发官方uni-im交流群[点此加入](https://im.dcloud.net.cn/#/?joinGroup=668cac1f8185e1e6e7c1bb87)
 
 ### 什么是uts语言
 
@@ -171,11 +171,10 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	├─mp-toutiao                  // 抖音小程序平台，可选
 │	├─mp-weixin                   // 微信小程序平台，可选
 │	├─mp-xhs                      // 小红书小程序平台（仅限vue2），可选
-│	├─index.d.ts                  // 插件能力声明，可选，将废弃，推荐使用interface.uts
-│	├─interface.uts               // 声明插件对外暴露的API
+│	├─interface.uts               // 声明插件对外暴露的API，必需
 │	├─unierror.uts                // 定义插件对外暴露的错误信息，可选
 │	└─index.uts                   // 跨平台插件能力实现，可选
-└─package.json                    // 插件清单文件
+└─package.json                    // 插件清单文件，必需
 </code>
 </pre>
 
@@ -192,11 +191,10 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 2. 在插件根目录 index.uts 中写条件编译，import 分平台的文件
 3. 不写根目录的 index.uts，直接在分平台目录写 index.uts。不跨端时，比如只做一个 Android 插件，这样写比较简单
 
-index.d.ts 文件是对当前插件能力的**声明**，用于语法提示。已不推荐使用，请使用interface.uts。
+插件对外暴露能力的总入口在 `interface.uts` ，他与 `index.uts`的关系是声明和实现的关系。
 
-因为 uts 写好后，HBuilderX 可以自动识别 uts api 并进行语法提示。它更多的用于后续 uts 插件加密时给予语法提示。
+在这里声明的类型，HBuilderX 可以自动识别 并进行语法提示。
 
-如果不熟悉 d.ts，可以自行网上搜索，它属于 ts 标准技术。
 
 ### App原生配置@utsAppDir
 
@@ -226,11 +224,17 @@ Android平台原生三方库目录，支持以下类型文件：
 - aar
 - so库
 
+注意：UTS插件本地调试不支持直接使用so文件，需要将so文件和调用代码封装为AAR 或者分别集成 so和jar文件
+
+
 如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但因为多个uts插件引用相同三方原生sdk时可能会产生冲突，所以如果sdk支持仓储，建议优先使用仓储配置，而不是直接把jar等文件放在libs目录。
 
 仓储配置参考config.json的[dependencies](#dependencies)。
 
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
+
+
+
 
 
 ##### res
@@ -1372,21 +1376,21 @@ uts插件编译需要XCode环境，因此在mac电脑安装了XCode工具时支�
 
 在windows电脑或者mac电脑没有安装XCode工具时，需要提交云端打包生成自定义基座后才能调用uts插件。
 
-### debug断点调试
-uts插件支持debug断点调试。
+### Debug断点调试
+uts插件支持debug断点调试。可以在uts插件代码中打断点、查看上下文，与前端代码联调。
 
 - [Android debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
 - [iOS debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
 
 #### Bug&Tips
-- 目前仅支持uni-app js项目使用uts插件时的调试；uni-app x预计在HBuilderX4.0起支持debug uts插件。
 - Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台
 
 
-## 云端打包
+## 打包
 
 正常支持云端打包。但打包后uts编译为了纯原生二进制代码，不支持wgt热更新。
 
+本地打包：[另见文档](../native/README.md)
 
 ## 常见问题
 
@@ -1467,25 +1471,13 @@ let longVal =  1000.0.toLong()
 
 
 ### 匿名内部类
-
-UTS目前还不支持匿名内部类的写法，在android中类似这样的场景
-
-```kotlin
-getUniActivity()!!.runOnUiThread(Runnable(){
-    // do something
-});
-```
-
-需要声明一个实现类，再新建实例的方式实现，代码如下
-
 ```js
-class AddUIRunnable extends Runnable {
-    override run():void {
-		// do something
-    }
-};
-let uiRunable = new AddUIRunnable();
-getUniActivity()!.runOnUiThread(uiRunable)
+const runnable = new (class implements Runnable {
+	override run() {
+		
+	}
+})
+getUniActivity()!.runOnUiThread(runnable)
 ```
 
 ### 泛型参数
@@ -1698,16 +1690,11 @@ utsJsonObj.forEach(function(perField:any){
 
 ## Bug & Tips@tips
 
-### uts插件支持热更新的问题
-> uts插件中的源码编译为原生二进制代码，uts插件自身不支持热更新。
-> 在 uni-app 项目中调用uts插件的源码（如vue页面），打包时编译为js代码，可支持wgt热更新。
-> 在 uni-app x 项目中调用uts插件的源码（如uvue页面），打包时编译为原生二进制代码，不支持热更新。
+### uniapp项目安卓环境 不支持函数重载
 
-目前已知问题：uni-app 项目中使用uts加密插件（从插件市场购买的uts插件），wgt热更新后无法正常调用uts插件，[ask相关帖子](https://ask.dcloud.net.cn/question/187762)
+如果同时存在两个同名函数，仅参数个数/类型不同，在Uni-app 项目 android环境中会无法正确区分两个函数
 
-此问题仅影响uts加密插件，普通uts插件不影响。
-
-HBuilderX4.04版本已解决此问题。
+临时解决办法：以不同的函数名称来区分函数
 
 
 ## 示例项目

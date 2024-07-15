@@ -10,8 +10,6 @@
 说明：当前文档基于android studio 2023.2.1 Patch 2。gradle版本为8.4。gradle插件版本为8.2.2。kotlin插件版本为1.9.10。
 ***
 
-注意：当前文档主要提供在已有项目中接入uni-app x。如果是新项目则另见[文档](./androidnewproject.md)。
-
 ## 新建uni-app x模块
 
 点击File->New->New Module...
@@ -38,7 +36,7 @@
 将uts-runtime-release.aar，android-gif-drawable-1.2.28.aar，app-common-release.aar，app-runtime-release.aar，breakpad-build-release.aar，dcloud-layout-release.aar，
 framework-release.aar，uni-exit-release.aar，uni-getAccessibilityInfo-release.aar，uni-getAppAuthorizeSetting-release.aar，uni-getAppBaseInfo-release.aar，
 uni-getSystemSetting-release.aar，uni-openAppAuthorizeSetting-release.aar，uni-prompt-release.aar，uni-storage-release.aar，uni-getDeviceInfo-release.aar，
-uni-getSystemInfo-release.aar共17个aar拷贝到uni-app x模块的libs下，如果没有libs需要手动创建，参考下图：
+uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar共19个aar拷贝到uni-app x模块的libs下，如果没有libs需要手动创建，参考下图：
 
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/android/main_libs.jpg)
 
@@ -89,18 +87,47 @@ uni-getSystemInfo-release.aar共17个aar拷贝到uni-app x模块的libs下，如
 	```
 	
 	***注意：上面的配置需要同时设置到主模块中。***
+	
+### 配置gradle插件
+
+在项目根目录的build.gradle的顶部添加gradle插件的依赖。参考：
+
+```groovy
+buildscript {
+    dependencies {
+		...
+        classpath(files('plugins/uts-kotlin-compiler-plugin-0.0.1.jar'))
+        classpath(files('plugins/uts-kotlin-gradle-plugin-0.0.1.jar'))
+    }
+}
+```
+
+**注意：文件uts-kotlin-compiler-plugin-0.0.1.jar和uts-kotlin-gradle-plugin-0.0.1.jar位于离线SDK中，示例中放到了项目根目录的`plugin`文件夹下。参考：**
+
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/gradle_plugins.png)
+
+然后在`uniappx`模块的build.gradle下添加插件`io.dcloud.uts.kotlin`的依赖。参考：
+
+```groovy
+plugins {
+	...
+    id 'io.dcloud.uts.kotlin'
+}
+```
+
+**注意：`io.dcloud.uts.kotlin`仅需要配置到uniappx模块和android uts插件模块中。原有的主项目不需要配置。**
 
 ### 修改项目的settings.gradle
 
-在项目根路径下的settings.gradle中添加`jitpack`的maven的仓库地址，参考如下：
+在项目根路径下的settings.gradle中添加`jitpack`的maven的仓库地址和本地gradle插件的路径配置。参考如下：
 
 ```groovy
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
-        mavenCentral()
+        ...
         maven { url = uri("https://jitpack.io") }
+		flatDir { dirs('./plugins/') }
     }
 }
 ```
@@ -146,9 +173,22 @@ android.enableJetifier=true
 	将`application`节点的`android:name`修改为`io.dcloud.uniapp.UniApplication`
 
 	**注意：如果需要自定义application，必须继承自UniApplication**
+	
+- 合并AndroidManifest.xml
+
+	如果uni-app x项目根目录下有AndroidManifest.xml文件，你需要按照xml文件的结构将内容拷贝到`uniappx`模块的AndroidManifest.xml中。
 
 ### 拷贝资源文件
-1. [导出uni-app x项目的资源文件](../export/export.md)
+1. 导出uni-app x项目的资源文件
+
+	选择项目，然后点击：发行 -> 原生App-本地打包 -> 生成本地打包App资源
+
+	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/export.png)
+
+	导出成功之后会在项目的unpackage/resources目录下生成资源文件
+
+	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/resources.png)
+	
 2. 将app-android目录下与appid对应的目录拷贝到主项目的`assets/apps`目录下
 	
 	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/app_assets.png)
@@ -175,11 +215,11 @@ android.enableJetifier=true
 
 ## 配置uts插件
 
-离线打包导出成功之后，uts插件资源位于`unpackage/resource/app-android/uni_modules`下。
+资源导出成功之后，uts插件资源位于`unpackage/resource/app-android/uni_modules`下。
 
-如果不包含uts插件，可以[跳过](#configModules)此章节。
+如果不包含uts插件，可以[跳过](#configmodules)此章节。
 
-注意：付费uts插件不支持离线打包。
+注意：付费uts插件不支持通过原生SDK打包。
 
 为方便区分，`uts插件`指前端封装的uni_modules插件；`android uts插件`指根据编译后的`uts插件`生成的安卓原生模块。
 
@@ -206,7 +246,22 @@ android.enableJetifier=true
 
 ### 修改android uts插件模块的build.gradle
 
-添加依赖
+#### 添加gradle插件
+
+uni-app可以忽略gradle插件配置。
+
+在build.gradle的plugins节点下添加`io.dcloud.uts.kotlin`的依赖。参考：
+
+```groovy
+plugins {
+    ...
+    id 'io.dcloud.uts.kotlin'
+}
+```
+
+#### 添加依赖
+
+将下面内容拷贝到build.gradle中，替换原有的`dependencies`节点。
 
 ```groovy
 dependencies {
@@ -262,7 +317,7 @@ dependencies {
 
 ### 根据config.json配置应用
 
-如果不包含config.json文件，可以[跳过](#copyResources)此章节。
+如果不包含config.json文件，可以[跳过](#copyresources)此章节。
 
 [config.json配置及参考文档。](../../plugin/uts-plugin.md#androidconfigjson)
 
@@ -320,6 +375,7 @@ dependencies {
 	
 	```groovy
 	dependencies {
+		...
 		implementation 'androidx.core:core-ktx:1.6.0'
 	}
 	```
@@ -328,6 +384,7 @@ dependencies {
 	
 	```groovy
 	dependencies {
+		...
 		implementation 'com.xxx.richtext:richtext:3.0.7'
 	}
 	```
@@ -340,7 +397,7 @@ dependencies {
 	
 	```groovy
 	plugins {
-		id 'com.android.application'
+		...
 		id 'com.huawei.agconnect'
 	}
 	```
@@ -350,11 +407,13 @@ dependencies {
 	```groovy
 	buildscript {
 		dependencies {
-			classpath 'com.android.tools.build:gradle:7.2.0'
+			...
 			classpath "com.huawei.agconnect:agcp:1.6.0.300"
 		}
 	}
-	allprojects {}
+	plugins {
+		...
+	}
 	```
 	
 	<a id='utscomponents'></a>
@@ -399,7 +458,7 @@ dependencies {
 	
 	**注意：转义符不能删掉，格式一定严格一致。**
 
-### 复制资源@copyResources
+### 复制资源@copyresources
 
 根据uts插件的资源目录，将对应的内容拷贝到android uts插件模块下。
 
@@ -430,7 +489,7 @@ dependencies {
 
 如果存在AndroidManifest.xml文件，需要将AndroidManifest.xml拷贝到`android uts插件模块/src/main/`目录下。
 
-注意：如果AndroidManifest.xml中设置了package字段，必须将此字段删除并将package的内容设置到build.gradle的`namespace`和`applicationId`。`namespace`和`applicationId`的内容必须一致，也必须与原AndroidManifest.xml的`package`一致，否则编译会报错。
+注意：如果AndroidManifest.xml中设置了package字段，必须将此字段删除并将package的内容设置到build.gradle的`namespace`。
 
 #### src
 
@@ -442,11 +501,14 @@ dependencies {
 ```groovy
 dependencies {
     ...
+	// uts-progressNotification为示例，实际中你需要将uts-progressNotification替换成自己的模块名称
 	implementation project(':uts-progressNotification')
 }
 ```
 
-## 配置内置模块@configModules
+**注意：uni-app集成uts插件文档到此截止。**
+
+## 配置内置模块@configmodules
 
 根据`unpackage/resource/{appid}/manifest.json`的配置，添加[内置模块的配置](../modules/android/others.md)。
 
@@ -461,19 +523,10 @@ dependencies {
 - uni-openAppAuthorizeSetting
 - uni-prompt
 - uni-storage
+- uni-rpx2px
+- uni-theme
 
-## 运行uni-app x
+## 启动
 
-需要在打开uni-app x的地方添加如下代码，触发逻辑即可打开uni-app x。
+至此，uni-app x 导入原生项目的所有配置已经完成。uni-app x的启动、退出及运行期间通讯可以参考[文档](androidcomm.md)。
 
-```kotlin
-startActivity(Intent(this, UniAppActivity::class.java))
-```
-
-退出应用可以调用`uni.exit()`，整体退出uni-app x。
-
-如果需要在uni-app x与原生工程之间通信，可以参考[文档](androidcomm.md)。
-
-连接手机，点击运行按钮，可以在手机上查看效果。
-
-![avatar](https://img.cdn.aliyun.dcloud.net.cn/nativedocs/5%2BSDK-android/image/7-6.png)

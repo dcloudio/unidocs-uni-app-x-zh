@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.setNavigationBarColor.description -->
 
+<!-- UTSAPIJSON.setNavigationBarColor.compatibility -->
+
 注意当pages.json中设置导航栏为custom时：
 1. 状态栏的背景色将恒为透明。此时无法通过本API设置状态栏背景色。开发者可自行在状态栏区域放置view，设置背景色。
 2. 本API设置前景色frontColor时，会修改状态栏的前景色。
@@ -12,11 +14,7 @@
 
 <!-- UTSAPIJSON.setNavigationBarColor.example -->
 
-<!-- UTSAPIJSON.setNavigationBarColor.compatibility -->
-
 <!-- UTSAPIJSON.setNavigationBarColor.tutorial -->
-
-<!-- UTSAPIJSON.set-navigation-bar-color.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

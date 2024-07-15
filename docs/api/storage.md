@@ -19,13 +19,13 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.setStorage.description -->
 
+<!-- UTSAPIJSON.setStorage.compatibility -->
+
 <!-- UTSAPIJSON.setStorage.param -->
 
 <!-- UTSAPIJSON.setStorage.returnValue -->
 
 <!-- UTSAPIJSON.setStorage.example -->
-
-<!-- UTSAPIJSON.setStorage.compatibility -->
 
 <!-- UTSAPIJSON.setStorage.tutorial -->
 
@@ -33,13 +33,13 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.setStorageSync.description -->
 
+<!-- UTSAPIJSON.setStorageSync.compatibility -->
+
 <!-- UTSAPIJSON.setStorageSync.param -->
 
 <!-- UTSAPIJSON.setStorageSync.returnValue -->
 
 <!-- UTSAPIJSON.setStorageSync.example -->
-
-<!-- UTSAPIJSON.setStorageSync.compatibility -->
 
 <!-- UTSAPIJSON.setStorageSync.tutorial -->
 
@@ -47,13 +47,13 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.getStorage.description -->
 
+<!-- UTSAPIJSON.getStorage.compatibility -->
+
 <!-- UTSAPIJSON.getStorage.param -->
 
 <!-- UTSAPIJSON.getStorage.returnValue -->
 
 <!-- UTSAPIJSON.getStorage.example -->
-
-<!-- UTSAPIJSON.getStorage.compatibility -->
 
 <!-- UTSAPIJSON.getStorage.tutorial -->
 
@@ -63,13 +63,13 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.getStorageSync.description -->
 
+<!-- UTSAPIJSON.getStorageSync.compatibility -->
+
 <!-- UTSAPIJSON.getStorageSync.param -->
 
 <!-- UTSAPIJSON.getStorageSync.returnValue -->
 
 <!-- UTSAPIJSON.getStorageSync.example -->
-
-<!-- UTSAPIJSON.getStorageSync.compatibility -->
 
 <!-- UTSAPIJSON.getStorageSync.tutorial -->
 
@@ -79,13 +79,13 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.getStorageInfo.description -->
 
+<!-- UTSAPIJSON.getStorageInfo.compatibility -->
+
 <!-- UTSAPIJSON.getStorageInfo.param -->
 
 <!-- UTSAPIJSON.getStorageInfo.returnValue -->
 
 <!-- UTSAPIJSON.getStorageInfo.example -->
-
-<!-- UTSAPIJSON.getStorageInfo.compatibility -->
 
 <!-- UTSAPIJSON.getStorageInfo.tutorial -->
 
@@ -93,13 +93,13 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.getStorageInfoSync.description -->
 
+<!-- UTSAPIJSON.getStorageInfoSync.compatibility -->
+
 <!-- UTSAPIJSON.getStorageInfoSync.param -->
 
 <!-- UTSAPIJSON.getStorageInfoSync.returnValue -->
 
 <!-- UTSAPIJSON.getStorageInfoSync.example -->
-
-<!-- UTSAPIJSON.getStorageInfoSync.compatibility -->
 
 <!-- UTSAPIJSON.getStorageInfoSync.tutorial -->
 
@@ -107,13 +107,13 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.removeStorage.description -->
 
+<!-- UTSAPIJSON.removeStorage.compatibility -->
+
 <!-- UTSAPIJSON.removeStorage.param -->
 
 <!-- UTSAPIJSON.removeStorage.returnValue -->
 
 <!-- UTSAPIJSON.removeStorage.example -->
-
-<!-- UTSAPIJSON.removeStorage.compatibility -->
 
 <!-- UTSAPIJSON.removeStorage.tutorial -->
 
@@ -121,13 +121,13 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.removeStorageSync.description -->
 
+<!-- UTSAPIJSON.removeStorageSync.compatibility -->
+
 <!-- UTSAPIJSON.removeStorageSync.param -->
 
 <!-- UTSAPIJSON.removeStorageSync.returnValue -->
 
 <!-- UTSAPIJSON.removeStorageSync.example -->
-
-<!-- UTSAPIJSON.removeStorageSync.compatibility -->
 
 <!-- UTSAPIJSON.removeStorageSync.tutorial -->
 
@@ -135,13 +135,13 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.clearStorage.description -->
 
+<!-- UTSAPIJSON.clearStorage.compatibility -->
+
 <!-- UTSAPIJSON.clearStorage.param -->
 
 <!-- UTSAPIJSON.clearStorage.returnValue -->
 
 <!-- UTSAPIJSON.clearStorage.example -->
-
-<!-- UTSAPIJSON.clearStorage.compatibility -->
 
 <!-- UTSAPIJSON.clearStorage.tutorial -->
 
@@ -149,13 +149,13 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.clearStorageSync.description -->
 
+<!-- UTSAPIJSON.clearStorageSync.compatibility -->
+
 <!-- UTSAPIJSON.clearStorageSync.param -->
 
 <!-- UTSAPIJSON.clearStorageSync.returnValue -->
 
 <!-- UTSAPIJSON.clearStorageSync.example -->
-
-<!-- UTSAPIJSON.clearStorageSync.compatibility -->
 
 <!-- UTSAPIJSON.clearStorageSync.tutorial -->
 

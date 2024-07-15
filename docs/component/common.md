@@ -2,38 +2,6 @@
 
 每个组件都有属性和事件。有些属性和事件，是所有组件都支持的。
 
-::: info 调整
-
-1. uni-app x 4.0+ ，组件事件类型的名称增加 Uni 前缀，避免与浏览器全局事件冲突
-2. 非 Uni 开头的事件类型名称被标记为废弃，功能不受影响。
-3. 如您使用uni-app x 4.0以下版本，仍需去掉 Uni 前缀
-
-变更示例
-```html
-<template>
-  <slider @change="sliderChange" />
-</template>
-<script>
-  export default {
-    data() {
-      return {
-      }
-    },
-    methods: {
-      // 变更之前类型为 SliderChangeEvent
-      // sliderChange(e : SliderChangeEvent) {
-      // }
-
-      // 变更之后类型为 UniSliderChangeEvent
-      sliderChange(e : UniSliderChangeEvent) {
-      }
-    }
-  }
-</script>
-```
-:::
-
-
 ## 组件公共属性
 
 <!-- CUSTOMTYPEJSON.general-attribute.attribute -->
@@ -59,6 +27,7 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 ::: tip Tips
 - 通过[DrawableContext](../dom/drawablecontext.md)或其他方式绘制复杂图形时，建议设置为`hardware`
 - 执行复杂动画或大量动画时，建议设置为`hardware`
+- 由于安卓原生限制，当设置`android-layer-type`为`hardware`或`software`时，`overflow: visible`不生效。
 :::
 
 <!-- CUSTOMTYPEJSON.general-attribute.example -->
@@ -78,11 +47,12 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 
 ### tap/click 事件@tap
 
-#### App端
-- HBuilderX4.0及以下版本手指按下后移动会取消tap/click事件的触发，即手指移动后抬起不会响应tap/click事件
-- HBuilder4.0及以上版本App端调整手指按下后在组件区域内移动不会取消tap/click事件的触发，移动到组件区域外才会取消tap/click事件的触发
+- App端
+App端手指按下后在组件区域内移动不会取消tap/click事件的触发，移动到组件区域外才会取消tap/click事件的触发。
 
-#### Web端
+注意老版问题：uni-app x 4.0及以下版本手指按下后移动会取消tap/click事件的触发，即手指移动后抬起不会响应tap/click事件。
+
+- Web端
 手指按下后移动会取消tap/click事件的触发，即手指移动后抬起不会响应tap/click事件
 
 
@@ -191,7 +161,38 @@ handleClick (event : UniPointerEvent) {
 
 ### Bug & Tips
 
-- HBuilder X 4.0以前，连续触发`click`或`tap`事件，可能会出现事件丢失的情况。请升级新版
+- uni-app x 4.0以前，连续触发`click`或`tap`事件，可能会出现事件丢失的情况。请升级新版
+
+::: info 调整
+
+1. uni-app x 4.0+ ，组件事件类型的名称增加 Uni 前缀，避免与浏览器全局事件冲突
+2. 非 Uni 开头的事件类型名称被标记为废弃，功能不受影响。
+3. 如您使用uni-app x 4.0以下版本，仍需去掉 Uni 前缀
+
+变更示例
+```html
+<template>
+  <slider @change="sliderChange" />
+</template>
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods: {
+      // 变更之前类型为 SliderChangeEvent
+      // sliderChange(e : SliderChangeEvent) {
+      // }
+
+      // 变更之后类型为 UniSliderChangeEvent
+      sliderChange(e : UniSliderChangeEvent) {
+      }
+    }
+  }
+</script>
+```
+:::
 
 ## UniEvent
 

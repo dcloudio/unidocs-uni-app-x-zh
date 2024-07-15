@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.button.description -->
 
+<!-- UTSCOMJSON.button.compatibility -->
+
 <!-- UTSCOMJSON.button.attribute -->
 
 <!-- UTSCOMJSON.button.event -->
 
 <!-- UTSCOMJSON.button.component_type-->
-
-<!-- UTSCOMJSON.button.compatibility -->
 
 - 在web平台，由于0.5px有兼容性问题，button的边框使用伪类实现。
 - 在app平台，HBuilderX4.02及以上版本调整为原生实现button组件，默认边框不占高度，解决button实际渲染宽高与Web端不一致的问题；HBuilderX4.01及以下版本封装text实现button组件，由于不支持伪类，默认边框使用 border 样式实现，会导致button的实际的渲染宽高在app端比web端多1px。

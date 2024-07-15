@@ -2,8 +2,51 @@
 
 Array 对象是用于构造数组的全局对象，数组是类似于列表的高阶对象。
 
-## 实例属性
+## 构造函数
 
+### new(arrayLength ?: number) : any[];@Constructor(arrayLength?)_0
+
+<!-- UTSJSON.Array.Constructor.description -->
+
+<!-- UTSJSON.Array.Constructor.param -->
+
+<!-- UTSJSON.Array.Constructor.returnValue -->
+
+<!-- UTSJSON.Array.Constructor.test -->
+
+<!-- UTSJSON.Array.Constructor.compatibility -->
+
+<!-- UTSJSON.Array.Constructor.tutorial -->
+
+### new \<T>(arrayLength : number) : T[];@Constructor(arrayLength)_1
+
+<!-- UTSJSON.Array.Constructor_1.description -->
+
+<!-- UTSJSON.Array.Constructor_1.param -->
+
+<!-- UTSJSON.Array.Constructor_1.returnValue -->
+
+<!-- UTSJSON.Array.Constructor_1.test -->
+
+<!-- UTSJSON.Array.Constructor_1.compatibility -->
+
+<!-- UTSJSON.Array.Constructor_1.tutorial -->
+
+### new \<T>(...items : T\[]) : T[]@Constructor(...items)_2
+
+<!-- UTSJSON.Array.Constructor_2.description -->
+
+<!-- UTSJSON.Array.Constructor_2.param -->
+
+<!-- UTSJSON.Array.Constructor_2.returnValue -->
+
+<!-- UTSJSON.Array.Constructor_2.test -->
+
+<!-- UTSJSON.Array.Constructor_2.compatibility -->
+
+<!-- UTSJSON.Array.Constructor_2.tutorial -->
+
+## 实例属性
 
 ### length
 
@@ -94,6 +137,24 @@ console.log(array1.fill(5, 1));
 console.log(array1.fill(6));
 // expected output: [6, 6, 6, 6]
 
+```
+
+需要注意的是，截止HBuilder 4.22  部分平台尚不支持[根据元素个数构造`Array`的写法](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/array.html#constructor)
+
+所以下面的代码在 部分平台可能不符合预期
+
+
+```ts
+new Array(20).fill(0)
+```
+
+可以使用下面的代码替代
+
+```ts
+let b = Array<Number>()
+for(let i = 0; i < 20; i++){
+  b.add(0)
+}
 ```
 
 <!-- UTSJSON.Array.fill.compatibility -->
@@ -423,6 +484,49 @@ console.log(array1.every(isBelowThreshold));
 
 <!-- UTSJSON.Array.every.compatibility -->
 
+### every(predicate, thisArg?)_1
+
+<!-- UTSJSON.Array.every_1.description -->
+
+<!-- UTSJSON.Array.every_1.param -->
+
+<!-- UTSJSON.Array.every_1.returnValue -->
+
+<!-- UTSJSON.Array.every_1.test -->
+
+<!-- UTSJSON.Array.every_1.compatibility -->
+
+<!-- UTSJSON.Array.every_1.tutorial -->
+
+### every(predicate, thisArg?)_2
+
+<!-- UTSJSON.Array.every_2.description -->
+
+<!-- UTSJSON.Array.every_2.param -->
+
+<!-- UTSJSON.Array.every_2.returnValue -->
+
+<!-- UTSJSON.Array.every_2.test -->
+
+<!-- UTSJSON.Array.every_2.compatibility -->
+
+<!-- UTSJSON.Array.every_2.tutorial -->
+
+### every(predicate, thisArg?)_3
+
+<!-- UTSJSON.Array.every_3.description -->
+
+<!-- UTSJSON.Array.every_3.param -->
+
+<!-- UTSJSON.Array.every_3.returnValue -->
+
+<!-- UTSJSON.Array.every_3.test -->
+
+<!-- UTSJSON.Array.every_3.compatibility -->
+
+<!-- UTSJSON.Array.every_3.tutorial -->
+
+
 ### some(predicate, thisArg?)
 
 <!-- UTSJSON.Array.some.description -->
@@ -443,6 +547,34 @@ console.log(array.some(even));
 ```
 
 <!-- UTSJSON.Array.some.compatibility -->
+
+### some(predicate, thisArg?)_1
+
+<!-- UTSJSON.Array.some_1.description -->
+
+<!-- UTSJSON.Array.some_1.param -->
+
+<!-- UTSJSON.Array.some_1.returnValue -->
+
+<!-- UTSJSON.Array.some_1.test -->
+
+<!-- UTSJSON.Array.some_1.compatibility -->
+
+<!-- UTSJSON.Array.some_1.tutorial -->
+
+### some(predicate, thisArg?)_2
+
+<!-- UTSJSON.Array.some_2.description -->
+
+<!-- UTSJSON.Array.some_2.param -->
+
+<!-- UTSJSON.Array.some_2.returnValue -->
+
+<!-- UTSJSON.Array.some_2.test -->
+
+<!-- UTSJSON.Array.some_2.compatibility -->
+
+<!-- UTSJSON.Array.some_2.tutorial -->
 
 ### forEach(callbackfn, thisArg?)
 
@@ -703,5 +835,3 @@ const shallowCopy = fruits.slice() // this is how to make a copy
 ```ts
 console.log(arr.0) // a syntax error
 ```
-
-

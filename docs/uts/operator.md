@@ -357,6 +357,38 @@ type t = {
 {"id":1} as t
 ```
 
+number数据类型与平台专有数字类型不应该直接使用as转换：
+- number转平台专有数字类型应该使用 [Number对象](buildin-object-api/number.md) 的 toXXX 方法转换
+```ts
+let a:number = 1;
+
+let i:Int = a.toInt()				// 正确
+let i:Int = a as Int				// 错误
+
+let f:Float = a.toFloat()		// 正确
+let f:Float = a as Float		// 错误
+
+let d:Double = a.toDouble()	// 正确
+let d:Double = a as Double	// 错误
+
+//系统API需要平台专有数字类型，也应该使用 toXXX 方法转换平台专有数字类型
+systemAPI(a.toDouble())			// 正确
+systemAPI(a as Double)			// 错误
+```
+- 平台专有数字类型应该使用  [Number.from()](buildin-object-api/number.md#from) 方法转换
+```
+let i:Int = 1;
+let d:Double = 1.0;
+
+let n:number = Number.from(i)	// 正确
+let n:number = i as number		// 错误
+
+let n:number = Number.from(d)	// 正确
+let n:number = d as number		// 错误
+```
+
+> 虽然在某些情况下使用 as 转换也可以正常工作，但为了保证各平台兼容性推荐使用上述方法转换  
+
 只允许将类型as为具体或更不具体的类型，不能强制转换两个不可能兼容的类型：
 
 ```ts

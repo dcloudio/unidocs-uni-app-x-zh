@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.request.description -->
 
+<!-- UTSAPIJSON.request.compatibility -->
+
 <!-- UTSAPIJSON.request.param -->
 
 <!-- UTSAPIJSON.request.returnValue -->
-
-<!-- UTSAPIJSON.request.compatibility -->
 
 <!-- UTSAPIJSON.request.tutorial -->
 
@@ -17,17 +17,18 @@
 
 ## 注意事项
 
-* app-android平台 request 接口内部通过[特殊方式读取了泛型类型](../uts/generics.md#使用限制)，不支持传入动态的泛型：比如将外层方法的普通泛型参数传入 request。
+* 推荐使用成熟的网络拦截器插件，见[插件市场](https://ext.dcloud.net.cn/search?q=%E7%BD%91%E7%BB%9C%E6%8B%A6%E6%88%AA%E5%99%A8&uni-appx=1)
+* app-android平台 request 接口如需包装和传递泛型，需参考[泛型传递丢失注意](../plugin/uts-for-android.md#6.6 泛型传递丢失的问题)。成熟的拦截器插件均已自动处理这些问题。
 * 如果使用泛型先创建RequestOptions实例，再传入uni.request()，此时请务必确保request要显式指定泛型，例：
-    ```typescript
-    const options: RequestOptions<Person> = ...
-    uni.request<Person>(options)
-    ```
+```typescript
+const options: RequestOptions<Person> = ...
+uni.request<Person>(options)
+```
 * app-android平台 uni.request()暂未支持Promise，返回值是RequestTask。
 * web平台 request接口在 4.01版本之前返回数据是一个普通对象，4.01起调整为UTSJSONObject类型
 * web平台 request接口目前不支持创建传入的泛型的实例
 
-由于uni-app x的强类型，导致联网相关开发有一些不同，请参考完整教程：[uni-app x的联网教程](../tutorial/request.md)
+由于uni-app x的强类型，导致联网相关开发有一些不同，请不熟悉强类型的开发者务必阅读教程：[uni-app x的联网教程](../tutorial/request.md)
 
 <!-- UTSAPIJSON.general_type.name -->
 

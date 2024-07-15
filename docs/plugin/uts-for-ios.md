@@ -819,6 +819,30 @@ class TestB  {
 
 ```
 
+#### 5.1.16 指针操作
+
+在Swift操作指针，需要用到`&`操作符隐式转换得到`UnsafePointer`类型，UTS中提供了`UTSiOS.getPointer()`来表示`&`符号。
+
+以获取字符串MD5为例，如下
+```ts
+private convertToMD5(param : string) : string {
+		const strData = param.data(using = String.Encoding.utf8)!
+		let digest = new Array<UInt8>(repeating = 0, count = new Int(CC_MD5_DIGEST_LENGTH))
+		strData.withUnsafeBytes((body : UnsafeRawBufferPointer) => {
+			CC_MD5(body.baseAddress, new UInt32(strData.count), UTSiOS.getPointer(digest))
+		})
+		let md5String = ""
+		digest.forEach((byte : UInt8) => {
+			md5String += new String(format = "%02x", new UInt8(byte))
+		})
+
+		return md5String
+	}
+```
+
+
+其中`UTSiOS.getPointer(digest)`编译后会变成`&digest`
+
 
 ## 6  常见问题(持续更新)
 

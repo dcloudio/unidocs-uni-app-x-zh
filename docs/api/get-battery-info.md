@@ -2,13 +2,13 @@
 
 <!-- UTSAPIJSON.getBatteryInfo.description -->
 
+<!-- UTSAPIJSON.getBatteryInfo.compatibility -->
+
 <!-- UTSAPIJSON.getBatteryInfo.param -->
 
 <!-- UTSAPIJSON.getBatteryInfo.returnValue -->
 
 <!-- UTSAPIJSON.getBatteryInfo.example -->
-
-<!-- UTSAPIJSON.getBatteryInfo.compatibility -->
 
 <!-- UTSAPIJSON.getBatteryInfo.tutorial -->
 
@@ -16,17 +16,15 @@
 
 <!-- UTSAPIJSON.getBatteryInfoSync.description -->
 
+<!-- UTSAPIJSON.getBatteryInfoSync.compatibility -->
+
 <!-- UTSAPIJSON.getBatteryInfoSync.param -->
 
 <!-- UTSAPIJSON.getBatteryInfoSync.returnValue -->
 
 <!-- UTSAPIJSON.getBatteryInfoSync.example -->
 
-<!-- UTSAPIJSON.getBatteryInfoSync.compatibility -->
-
 <!-- UTSAPIJSON.getBatteryInfoSync.tutorial -->
-
-<!-- UTSAPIJSON.get-battery-info.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

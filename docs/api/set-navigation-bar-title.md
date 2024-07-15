@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.setNavigationBarTitle.description -->
 
+<!-- UTSAPIJSON.setNavigationBarTitle.compatibility -->
+
 <!-- UTSAPIJSON.setNavigationBarTitle.param -->
 
 <!-- UTSAPIJSON.setNavigationBarTitle.returnValue -->
-
-<!-- UTSAPIJSON.setNavigationBarTitle.compatibility -->
 
 <!-- UTSAPIJSON.setNavigationBarTitle.tutorial -->
 

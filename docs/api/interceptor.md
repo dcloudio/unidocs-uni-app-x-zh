@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.addInterceptor.description -->
 
+<!-- UTSAPIJSON.addInterceptor.compatibility -->
+
 <!-- UTSAPIJSON.addInterceptor.param -->
 
 <!-- UTSAPIJSON.addInterceptor.returnValue -->
-
-<!-- UTSAPIJSON.addInterceptor.compatibility -->
 
 <!-- UTSAPIJSON.addInterceptor.tutorial -->
 
@@ -14,11 +14,11 @@
 
 <!-- UTSAPIJSON.removeInterceptor.description -->
 
+<!-- UTSAPIJSON.removeInterceptor.compatibility -->
+
 <!-- UTSAPIJSON.removeInterceptor.param -->
 
 <!-- UTSAPIJSON.removeInterceptor.returnValue -->
-
-<!-- UTSAPIJSON.removeInterceptor.compatibility -->
 
 <!-- UTSAPIJSON.removeInterceptor.tutorial -->
 

@@ -8,12 +8,17 @@
 > 你可以选择新建工程或直接使用demo中的`DCloudUTSExtAPI`工程
 
 ### 工程环境设置
-`Target -> General -> Minimum Deployments` 选择 `12.0`
-`Target -> Build Settings -> Mach-O Type` 设置为`Dynamic Library`
-`Target -> Build Settings -> Other Linker Flags` 中添加`-ObjC`, 字母o和c大写
-`Target -> Build Settings -> Enable Module Verifier` 设置为`NO`
-`Target -> Build Settings -> Build Libraries for Distribution` 设置为`YES`
-`Target -> Build Settings -> Framework Search Paths` 中添加SDK的Libs目录（操作方法：双击展开`Framework Search Paths`将`SDK/Libs`文件夹拖入即可）
+`Target -> General -> Minimum Deployments` 选择 `12.0`  
+
+`Target -> Build Settings -> Mach-O Type` 设置为`Dynamic Library`  
+
+`Target -> Build Settings -> Other Linker Flags` 中添加`-ObjC`, 字母o和c大写  
+
+`Target -> Build Settings -> Enable Module Verifier` 设置为`NO`  
+
+`Target -> Build Settings -> Build Libraries for Distribution` 设置为`YES`  
+
+`Target -> Build Settings -> Framework Search Paths` 中添加SDK的Libs目录（操作方法：双击展开`Framework Search Paths`将`SDK/Libs`文件夹拖入即可）  
 
 ### 配置基础模块(必须)
 将以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到`DCloudUTSExtAPI`工程中，并将依赖库均设置为`Do Not Embed`
@@ -23,7 +28,7 @@
 | UTSOC.h、UTSOC.mm、uni-getAppAuthorizeSetting-index.swift、uni-getAppBaseInfo-index.swift、uni-getDeviceInfo-index.swift、uni-getSystemInfo-index.swift、uni-getSystemSetting-index.swift、uni-openAppAuthorizeSetting-index.swift、uni-prompt-index.swift、uni-rpx2px-index.swift、uni-storage-index.swift、uni-theme-index.swift | DCloudUniappRuntime.xcframework、DCloudUTSFoundation.xcframework、DCUniToast.xcframework、DCloudAlertController.xcframework、storage.framework| uts-config.json |
 
 ### 配置其他模块(可选)
-根据离线资源中的`manifest.json`文件包含的模块名称，选择以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到DCloudUTSExtAPI工程中，依赖库均设置为`Do Not Embed`
+根据资源文件中的`manifest.json`文件包含的模块名称，选择以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到DCloudUTSExtAPI工程中，依赖库均设置为`Do Not Embed`
 | 模块名称 | 源文件 | 依赖库 | 系统依赖库 |
 |---|---|---|---|
 | uni-createWebviewContext | uni-createWebviewContext-index.swift | | |
@@ -82,9 +87,12 @@
 		"class": "UTSSDKModulesDCloudUniPaymentWxpayUniPaymentWxpayProvider"
 	}]
 }
-```
+```  
+  
+  
 
-`uts-config.json`配置示例图
+`uts-config.json`配置示例图     
+   
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/utsconfig.png)
 
 
@@ -113,7 +121,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 
 
 ## 主工程配置
-根据离线资源中的`manifest.json`文件包含的模块名称，根据下述相关模块文档向`主工程`添加依赖以及工程配置
+根据资源文件中的`manifest.json`文件包含的模块名称，根据下述相关模块文档向`主工程`添加依赖以及工程配置
 
 ## uni-prompt
 ### 添加依赖库以及资源文件
@@ -352,7 +360,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 	<string>广告联盟id，如未开通uniad可不填</string>
 </dict>
 ```
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniappx_info.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniappx_app_info.png)
 
 ### 增强广告(可选)
 #### 添加依赖库以及资源文件
@@ -378,4 +386,4 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 
 
 #### 隐私清单
-开通 `优量汇、Gromore` 渠道需要将该渠道的隐私清单内容手动合并到主工程的隐私清单文件中，详见目录`SDK/PrivacyInfo/优量汇`，`SDK/PrivacyInfo/Gromore`
+开通 `优量汇、Gromore` 渠道需要将该渠道的隐私清单内容手动合并到`主工程`的隐私清单文件中，详见目录`SDK/PrivacyInfo/优量汇`，`SDK/PrivacyInfo/Gromore`

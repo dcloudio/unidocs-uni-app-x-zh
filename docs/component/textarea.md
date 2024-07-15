@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.textarea.description -->
 
+<!-- UTSCOMJSON.textarea.compatibility -->
+
 <!-- UTSCOMJSON.textarea.attribute -->
 
 <!-- UTSCOMJSON.textarea.event -->
 
 <!-- UTSCOMJSON.textarea.component_type-->
-
-<!-- UTSCOMJSON.textarea.compatibility -->
 
 <!-- UTSCOMJSON.textarea.children -->
 

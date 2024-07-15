@@ -64,6 +64,9 @@
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.compatibility -->
 
+**App平台**  
+app平台 setAttribute 不支持设置 class、style 属性，设置了也不会生效，class 属性需在 uvue/vue 页面中设置，style 信息可以通过 [style](#style) 属性设置。
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.tutorial -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.name -->
@@ -79,6 +82,9 @@
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.returnValue -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.compatibility -->
+
+**App平台**  
+app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面中设置的 class 属性暂不支持通过 UniElement 对象获取，style 信息可以通过 [style](#style) 属性获取。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.tutorial -->
 

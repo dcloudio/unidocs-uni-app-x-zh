@@ -27,7 +27,64 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 + December 31, 1975, 23:15:30 GMT+11:00
 + 2023/08/13 12:35:54
 + 1995-02-14
-+ 2024-01-09 22:00:00  (HBuilderX 4.0支持)
++ 2024-01-09 22:00:00
++ 2024/5/1 (HBuilder X 4.18 Android/Web 支持)
++ 2024/5/1 00:00:00 (HBuilder X 4.18 Android/Web 支持)
++ 2024-05-01 00:00 (HBuilder X 4.18 Android/Web 支持)
++ 2024/05/01 00:00 (HBuilder X 4.18 Android/Web 支持)
++ 2024-5-1 00:00 (HBuilder X 4.18 Android/Web 支持)
++ 2024/5/1 00:00 (HBuilder X 4.18 Android/Web 支持)
+
+如果传入Date构造器的参数字符串不合法，在web平台会抛出 "Invalid Date" 异常
+
+```ts
+// Invalid Date
+new Date("Hello")
+```
+
+在Android/IOS平台，会转换为程序执行时的时间
+
+```ts
+// ‍当前日期：[Date]‍ Fri May 31 2024 17:18:02 GMT+0800
+new Date("Hello")
+```
+
+### Constructor()
+
+<!-- UTSJSON.Date.Constructor.description -->
+
+<!-- UTSJSON.Date.Constructor.param -->
+
+<!-- UTSJSON.Date.Constructor.returnValue -->
+
+<!-- UTSJSON.Date.Constructor.compatibility -->
+
+<!-- UTSJSON.Date.Constructor.tutorial -->
+
+### Constructor(value)
+
+<!-- UTSJSON.Date.Constructor_1.description -->
+
+<!-- UTSJSON.Date.Constructor_1.param -->
+
+<!-- UTSJSON.Date.Constructor_1.returnValue -->
+
+<!-- UTSJSON.Date.Constructor_1.compatibility -->
+
+<!-- UTSJSON.Date.Constructor_1.tutorial -->
+
+### Constructor(year, monthIndex, date?, hours?, minutes?, seconds?, ms?)
+
+<!-- UTSJSON.Date.Constructor_2.description -->
+
+<!-- UTSJSON.Date.Constructor_2.param -->
+
+<!-- UTSJSON.Date.Constructor_2.returnValue -->
+
+<!-- UTSJSON.Date.Constructor_2.compatibility -->
+
+<!-- UTSJSON.Date.Constructor_2.tutorial -->
+
 
 ## 静态方法
 

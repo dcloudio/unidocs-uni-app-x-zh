@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.startWifi.description -->
 
+<!-- UTSAPIJSON.startWifi.compatibility -->
+
 <!-- UTSAPIJSON.startWifi.param -->
 
 <!-- UTSAPIJSON.startWifi.returnValue -->
-
-<!-- UTSAPIJSON.startWifi.compatibility -->
 
 <!-- UTSAPIJSON.startWifi.tutorial -->
 
@@ -14,11 +14,11 @@
 
 <!-- UTSAPIJSON.stopWifi.description -->
 
+<!-- UTSAPIJSON.stopWifi.compatibility -->
+
 <!-- UTSAPIJSON.stopWifi.param -->
 
 <!-- UTSAPIJSON.stopWifi.returnValue -->
-
-<!-- UTSAPIJSON.stopWifi.compatibility -->
 
 <!-- UTSAPIJSON.stopWifi.tutorial -->
 
@@ -26,11 +26,11 @@
 
 <!-- UTSAPIJSON.connectWifi.description -->
 
+<!-- UTSAPIJSON.connectWifi.compatibility -->
+
 <!-- UTSAPIJSON.connectWifi.param -->
 
 <!-- UTSAPIJSON.connectWifi.returnValue -->
-
-<!-- UTSAPIJSON.connectWifi.compatibility -->
 
 <!-- UTSAPIJSON.connectWifi.tutorial -->
 
@@ -38,11 +38,11 @@
 
 <!-- UTSAPIJSON.getWifiList.description -->
 
+<!-- UTSAPIJSON.getWifiList.compatibility -->
+
 <!-- UTSAPIJSON.getWifiList.param -->
 
 <!-- UTSAPIJSON.getWifiList.returnValue -->
-
-<!-- UTSAPIJSON.getWifiList.compatibility -->
 
 <!-- UTSAPIJSON.getWifiList.tutorial -->
 
@@ -50,11 +50,11 @@
 
 <!-- UTSAPIJSON.onGetWifiList.description -->
 
+<!-- UTSAPIJSON.onGetWifiList.compatibility -->
+
 <!-- UTSAPIJSON.onGetWifiList.param -->
 
 <!-- UTSAPIJSON.onGetWifiList.returnValue -->
-
-<!-- UTSAPIJSON.onGetWifiList.compatibility -->
 
 <!-- UTSAPIJSON.onGetWifiList.tutorial -->
 
@@ -62,11 +62,11 @@
 
 <!-- UTSAPIJSON.offGetWifiList.description -->
 
+<!-- UTSAPIJSON.offGetWifiList.compatibility -->
+
 <!-- UTSAPIJSON.offGetWifiList.param -->
 
 <!-- UTSAPIJSON.offGetWifiList.returnValue -->
-
-<!-- UTSAPIJSON.offGetWifiList.compatibility -->
 
 <!-- UTSAPIJSON.offGetWifiList.tutorial -->
 
@@ -74,11 +74,11 @@
 
 <!-- UTSAPIJSON.getConnectedWifi.description -->
 
+<!-- UTSAPIJSON.getConnectedWifi.compatibility -->
+
 <!-- UTSAPIJSON.getConnectedWifi.param -->
 
 <!-- UTSAPIJSON.getConnectedWifi.returnValue -->
-
-<!-- UTSAPIJSON.getConnectedWifi.compatibility -->
 
 <!-- UTSAPIJSON.getConnectedWifi.tutorial -->
 
@@ -86,11 +86,11 @@
 
 <!-- UTSAPIJSON.onWifiConnected.description -->
 
+<!-- UTSAPIJSON.onWifiConnected.compatibility -->
+
 <!-- UTSAPIJSON.onWifiConnected.param -->
 
 <!-- UTSAPIJSON.onWifiConnected.returnValue -->
-
-<!-- UTSAPIJSON.onWifiConnected.compatibility -->
 
 <!-- UTSAPIJSON.onWifiConnected.tutorial -->
 
@@ -98,11 +98,11 @@
 
 <!-- UTSAPIJSON.onWifiConnectedWithPartialInfo.description -->
 
+<!-- UTSAPIJSON.onWifiConnectedWithPartialInfo.compatibility -->
+
 <!-- UTSAPIJSON.onWifiConnectedWithPartialInfo.param -->
 
 <!-- UTSAPIJSON.onWifiConnectedWithPartialInfo.returnValue -->
-
-<!-- UTSAPIJSON.onWifiConnectedWithPartialInfo.compatibility -->
 
 <!-- UTSAPIJSON.onWifiConnectedWithPartialInfo.tutorial -->
 
@@ -110,11 +110,11 @@
 
 <!-- UTSAPIJSON.offWifiConnected.description -->
 
+<!-- UTSAPIJSON.offWifiConnected.compatibility -->
+
 <!-- UTSAPIJSON.offWifiConnected.param -->
 
 <!-- UTSAPIJSON.offWifiConnected.returnValue -->
-
-<!-- UTSAPIJSON.offWifiConnected.compatibility -->
 
 <!-- UTSAPIJSON.offWifiConnected.tutorial -->
 

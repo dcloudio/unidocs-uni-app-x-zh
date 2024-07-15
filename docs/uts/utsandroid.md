@@ -62,6 +62,12 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.onAppActivityPause.compatibility -->
 
+```ts
+UTSAndroid.onAppActivityPause(() => {
+    let eventName = "onAppActivityPause - " + Date.now();
+    console.log(eventName);
+});
+```
 
 
 ### offAppActivityPause
@@ -74,6 +80,13 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.offAppActivityPause.compatibility -->
 
+```ts
+// 移除全部监听
+UTSAndroid.offAppActivityPause();
+// 移除指定监听
+UTSAndroid.offAppActivityPause(() => {
+});
+```
 
 
 ### onAppActivityResume
@@ -85,6 +98,16 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.onAppActivityResume.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.onAppActivityResume.compatibility -->
+
+
+
+```ts
+UTSAndroid.onAppActivityResume(() => {
+     let eventName = "onAppActivityResume - " + Date.now();
+     console.log(eventName);
+});
+```
+
 
 
 ### offAppActivityResume
@@ -99,6 +122,15 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 
 
+```ts
+// 移除全部监听
+UTSAndroid.onAppActivityResume();
+// 移除指定监听
+UTSAndroid.onAppActivityResume(() => {
+});
+```
+
+
 ### onAppActivityDestroy
 
 <!-- UTSJSON.UTSAndroid.onAppActivityDestroy.description -->
@@ -109,6 +141,12 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.onAppActivityDestroy.compatibility -->
 
+```ts
+UTSAndroid.onAppActivityDestroy(() => {
+     let eventName = "onAppActivityDestroy- " + Date.now();
+     console.log(eventName);
+});
+```
 
 
 ### offAppActivityDestroy
@@ -122,6 +160,14 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.offAppActivityDestroy.compatibility -->
 
 
+```ts
+// 移除全部监听
+UTSAndroid.offAppActivityDestroy();
+// 移除指定监听
+UTSAndroid.offAppActivityDestroy(() => {
+});
+```
+
 
 ### onAppActivityResult
 
@@ -134,6 +180,24 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.onAppActivityResult.compatibility -->
 
 
+App 的 activity 启动其他activity的回调结果监听 对应原生的  [onActivityResult](https://developer.android.com/training/basics/intents/result)
+
+需要特别注意的是 `requestCode` 参数，这个参数用于区别 不同的请求来源,开发者应该只处理自己发起请求
+
+```ts
+let customRequestCode = 12000
+
+UTSAndroid.onAppActivityResult((requestCode: Int, resultCode: Int, data?: Intent) => {
+	if(requestCode == 12000){
+		// 我们发起的请求
+		let eventName = "onAppActivityResult  -  requestCode:" + requestCode + " -resultCode:"+resultCode + " -data:"+JSON.stringify(data);
+    	console.log(eventName);
+	}else{
+		// 别的代码发起的请求，不要处理
+	}
+
+});
+```
 
 
 ### offAppActivityResult
@@ -145,6 +209,14 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 <!-- UTSJSON.UTSAndroid.offAppActivityResult.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.offAppActivityResult.compatibility -->
+
+```ts
+// 移除全部监听
+UTSAndroid.offAppActivityResult();
+// 移除指定监听
+UTSAndroid.offAppActivityResult(() => {
+});
+```
 
 
 
@@ -158,6 +230,13 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.onAppActivityBack.compatibility -->
 
+```ts
+UTSAndroid.onAppActivityBack(() => {
+     let eventName = "onAppActivityBack- " + Date.now();
+     console.log(eventName);
+});
+
+```
 
 
 ### offAppActivityBack
@@ -170,6 +249,13 @@ app-android平台专有内置对象。在uni-app和uni-app x的uts环境中均�
 
 <!-- UTSJSON.UTSAndroid.offAppActivityBack.compatibility -->
 
+```ts
+// 移除全部监听
+UTSAndroid.offAppActivityBack();
+// 移除指定监听
+UTSAndroid.offAppActivityBack(() => {
+});
+```
 
 
 ### getAppContext()
@@ -240,11 +326,16 @@ if (takePictureIntent.resolveActivity(UTSAndroid.getUniActivity()!.getPackageMan
 
 
 ```ts
-// 代码包文件
+/**
+ * 代码包文件在真机运行模式下：
+ * /storage/emulated/0/Android/data/io.dcloud.uniappx/apps/__UNI__XXXXXXX/www/static/logo.png
+ * 代码包文件在云打包模式下：
+ * file:///android_asset/apps/__UNI__XXXXXXX/www/static/logo.png
+ * /
 console.log(UTSAndroid.getResourcePath('static/logo.png'))
-// 沙盒文件
+// 沙盒文件,不支持，会返回不存在的路径
 console.log(UTSAndroid.getResourcePath('unifile://sandbox/static/logo.png'))
-// 沙盒外文件
+// 沙盒外文件,不支持，会返回不存在的路径
 console.log(UTSAndroid.getResourcePath('/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
 ```
 
@@ -636,7 +727,7 @@ UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionN
 		- `uni-app`不支持
 	- [沙盒外文件](../api/file-system-spec.md#%E6%B2%99%E7%9B%92%E5%A4%96%E7%9B%AE%E5%BD%95)
 		- 沙盒管理范围外的其他文件。 调用系统API返回的绝对地址属于此类。`uni-app`/`uni-app x`平台 均支持读写
-		
+
 :::
 
 ```ts
@@ -713,6 +804,44 @@ export function getJavaClassTest() : boolean {
 console.log(UTSAndroid.getTopPageActivity())
 ```
 
+### onActivityCallback(callback, pageRoute?)
+
+<!-- UTSJSON.UTSAndroid.onActivityCallback.description -->
+
+<!-- UTSJSON.UTSAndroid.onActivityCallback.param -->
+
+<!-- UTSJSON.UTSAndroid.onActivityCallback.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.onActivityCallback.compatibility -->
+
+### offActivityCallback(callback)
+
+<!-- UTSJSON.UTSAndroid.offActivityCallback.description -->
+
+<!-- UTSJSON.UTSAndroid.offActivityCallback.param -->
+
+<!-- UTSJSON.UTSAndroid.offActivityCallback.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.offActivityCallback.compatibility -->
+
+### onPrivacyAgreeChange(callback)
+
+<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.description -->
+
+<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.param -->
+
+<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.compatibility -->
+
+### offPrivacyAgreeChange(callback)
+
+<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.description -->
+
+<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.param -->
+
+<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.compatibility -->
 
 <!-- UTSJSON.UTSAndroid.tutorial -->
-

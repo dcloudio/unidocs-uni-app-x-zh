@@ -486,7 +486,10 @@ let list: any[] = [1, true, "free"];
 list[1] = 100;
 ```
 
-- 注意：在 TS 中可以将 null 赋值给 any 类型的变量，但是在 Swift 和 Kottlin 中，any 类型属于非空类型，也就是不能将 null 赋值给 any 类型的变量。因此 在 UTS 中 也不能将 null 赋值给 any 类型，以免编译失败。
+**注意**
+
+- 在 TS 中可以将 null 赋值给 any 类型的变量，但是在 Swift 和 Kottlin 中，any 类型属于非空类型，也就是不能将 null 赋值给 any 类型的变量。因此 在 UTS 中 也不能将 null 赋值给 any 类型，以免编译失败。
+- 4.18版本起uts在编译到js时，any类型会包含null类型。
 
 ## null类型 @null
 

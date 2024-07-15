@@ -13,10 +13,12 @@
 uni-app x的app平台，页面不再由webview渲染，其实不需要原生提供特殊配置来优化。但为了开发的便利和多端的统一，也支持了tabbar和导航栏设置。\
 但不再支持uni-app的app-plus专用配置以及tabbar的midbutton。
 
+导航栏高度为 44px (不含状态栏)，tabBar 高度为 50px (不含安全区)。
+
 如pages.json中配置的导航栏和tabbar功能无法满足你的需求，可以不在pages.json中配置，自己用view做导航栏和tabbar。\
 hello uni-app x有相关示例，参考：
 - 自定义导航栏：[插件地址](https://ext.dcloud.net.cn/plugin?id=14618)
-- 自定义tabbar：[源码参考](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/custom-tab-bar)
+- 自定义tabbar：[源码参考](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/custom-tab-bar/custom-tab-bar.uvue)；注意事项[见下](#pages-tabbar)
 插件市场也有其他封装好的插件，请自行搜索。
 
 ## 配置项列表
@@ -87,54 +89,6 @@ globalStyle节点里是所有页面都生效的全局样式配置。它的配置
 
 <!-- PAGESJSON.pullToRefresh_contentrefresh.compatibility -->
 
-### topWindow 配置项列表 @pages-topwindow
-
-<!-- PAGESJSON.pages_topWindow.description -->
-
-<!-- PAGESJSON.pages_topWindow.table -->
-
-<!-- PAGESJSON.pages_topWindow.compatibility -->
-
-#### matchMedia 配置项列表 @topwindow-matchmedia
-
-<!-- PAGESJSON.topWindow_matchMedia.description -->
-
-<!-- PAGESJSON.topWindow_matchMedia.table -->
-
-<!-- PAGESJSON.topWindow_matchMedia.compatibility -->
-
-### leftWindow 配置项列表 @pages-leftwindow
-
-<!-- PAGESJSON.pages_leftWindow.description -->
-
-<!-- PAGESJSON.pages_leftWindow.table -->
-
-<!-- PAGESJSON.pages_leftWindow.compatibility -->
-
-#### matchMedia 配置项列表 @leftwindow-matchmedia
-
-<!-- PAGESJSON.leftWindow_matchMedia.description -->
-
-<!-- PAGESJSON.leftWindow_matchMedia.table -->
-
-<!-- PAGESJSON.leftWindow_matchMedia.compatibility -->
-
-### rightWindow 配置项列表 @pages-rightwindow
-
-<!-- PAGESJSON.pages_rightWindow.description -->
-
-<!-- PAGESJSON.pages_rightWindow.table -->
-
-<!-- PAGESJSON.pages_rightWindow.compatibility -->
-
-#### matchMedia 配置项列表 @rightwindow-matchmedia
-
-<!-- PAGESJSON.rightWindow_matchMedia.description -->
-
-<!-- PAGESJSON.rightWindow_matchMedia.table -->
-
-<!-- PAGESJSON.rightWindow_matchMedia.compatibility -->
-
 ### pages 配置项列表 @pagesoptionspage
 
 pages节点里注册页面，数据格式是数组，数组每个项都是一个对象，通过path属性指定页面路径，通过style指定该页面的样式配置。
@@ -200,11 +154,13 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 
 <!-- PAGESJSON.PagesOptionsPage_style.compatibility -->
 
+<a id="pagesoptionspage-tips"></a>
+
 **Tips**
 - 横屏
 	* Web：横竖屏由手机浏览器控制，无法在pages.json中指定。uni-app x的页面和基础组件都支持自适应宽屏界面
 	* Android：默认是竖屏。从4.13起支持配置pageOrientation实现横屏或自动旋转适应
-	* iOS：在手机上目前只能竖屏。在ipad上只能自适应，ipad旋转为横屏后uni-app x应用也会横屏。可以在info.plist中调整。uni-app x的页面和基础组件都支持自适应宽屏界面
+	* iOS：在iPhone手机上默认竖屏，在ipad上默认自适应，ipad旋转为横屏后uni-app x应用也会横屏。可以在项目的 Info.plist 中配置应用可支持的横竖屏列表来修改默认横竖屏状态，详见[应用可支持横竖屏列表配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#orientation)，配置后应用将限定在可支持的横竖屏列表中配置的值（如配置应用可支持的列表仅为横屏，则应用只能显示为横屏）。uni-app x的页面和基础组件都支持自适应宽屏界面
 - 状态栏
 	* 手机顶部状态栏的背景色、前景色(white/black)与navigationBarBackgroundColor和navigationBarTextStyle相同
 	* 小程序平台，pages.json中各个颜色的设置仅支持普通的16进制数值。App和Web支持设为transparent，即透明。
@@ -214,6 +170,9 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 - 下拉刷新
 	* pages.json中下拉刷新是页面级配置，方便使用但灵活度有限。
 	* 如需自定义下拉刷新，请使用[scroll-view](../component/scroll-view.md)或[list-view](../component/list-view.md)的下拉刷新。
+- Android系统导航栏 (通常指手机底部按钮或手势提示线区域)
+	* 系统导航栏的背景颜色与backgroundColorContent颜色一致，导航栏的前景色会根据backgroundColorContent颜色自动适配 (4.21版本开始支持)
+	* tabBar页面的系统导航栏背景颜色取值策略[参考](#tabbar-tips) 
 
 **style示例**
 ```javascript
@@ -252,13 +211,26 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 
 ### tabBar 配置项列表 @pages-tabbar
 
-tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更多页面配置tabbar，请使用view自行封装。
+tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更多页面配置tabbar，见下面的自定义tabbar。
+
+- 自定义tabbar：[源码参考](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/custom-tab-bar/custom-tab-bar.uvue)
+自定义tabbar的逻辑较多，这里写出pages.json的tabbar的逻辑，供自定义tabbar参考：
+1. tabbar页面刚开始只载入第一个子tab组件，其他tab组件是在点击相应的选项卡时v-if设为true来创建
+2. 一个子tab一旦被v-if加载后，不要再v-if设为false去掉，也不通过v-show控制，而是通过css的visibility来控制显示和隐藏。这样可以保留每个子tab的状态，比如滚动位置、输入框内容。切换tab也会更快速。
 
 <!-- PAGESJSON.pages_tabBar.description -->
 
 <!-- PAGESJSON.pages_tabBar.table -->
 
 <!-- PAGESJSON.pages_tabBar.compatibility -->
+
+<a id="tabbar-tips"></a>
+
+**Tips**  
+- backgroundColor  
+	- app-android平台：系统导航（System navigation）栏的背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar 页面导航栏背景颜色取值策略[参考](#pagesoptionspage-tips) 
+	- app-ios平台：tabBar 会自动适配安全区域，底部安全区域背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar，则不会自动适配底部安全区域，开发者需根据应用实际情况自行处理。  
+
 
 #### PagesOptionsTabbarList 配置项列表 @pagesoptionstabbarlist
 
@@ -304,6 +276,54 @@ tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更�
 <!-- PAGESJSON.tabBar_midButton.table -->
 
 <!-- PAGESJSON.tabBar_midButton.compatibility -->
+
+### topWindow 配置项列表 @pages-topwindow
+
+<!-- PAGESJSON.pages_topWindow.description -->
+
+<!-- PAGESJSON.pages_topWindow.table -->
+
+<!-- PAGESJSON.pages_topWindow.compatibility -->
+
+#### matchMedia 配置项列表 @topwindow-matchmedia
+
+<!-- PAGESJSON.topWindow_matchMedia.description -->
+
+<!-- PAGESJSON.topWindow_matchMedia.table -->
+
+<!-- PAGESJSON.topWindow_matchMedia.compatibility -->
+
+### leftWindow 配置项列表 @pages-leftwindow
+
+<!-- PAGESJSON.pages_leftWindow.description -->
+
+<!-- PAGESJSON.pages_leftWindow.table -->
+
+<!-- PAGESJSON.pages_leftWindow.compatibility -->
+
+#### matchMedia 配置项列表 @leftwindow-matchmedia
+
+<!-- PAGESJSON.leftWindow_matchMedia.description -->
+
+<!-- PAGESJSON.leftWindow_matchMedia.table -->
+
+<!-- PAGESJSON.leftWindow_matchMedia.compatibility -->
+
+### rightWindow 配置项列表 @pages-rightwindow
+
+<!-- PAGESJSON.pages_rightWindow.description -->
+
+<!-- PAGESJSON.pages_rightWindow.table -->
+
+<!-- PAGESJSON.pages_rightWindow.compatibility -->
+
+#### matchMedia 配置项列表 @rightwindow-matchmedia
+
+<!-- PAGESJSON.rightWindow_matchMedia.description -->
+
+<!-- PAGESJSON.rightWindow_matchMedia.table -->
+
+<!-- PAGESJSON.rightWindow_matchMedia.compatibility -->
 
 ### condition 配置项列表 @pages-condition
 

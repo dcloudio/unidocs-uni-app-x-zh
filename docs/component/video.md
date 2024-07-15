@@ -2,13 +2,16 @@
 
 <!-- UTSCOMJSON.video.description -->
 
+<!-- UTSCOMJSON.video.compatibility -->
+
 <!-- UTSCOMJSON.video.attribute -->
 
 <!-- UTSCOMJSON.video.event -->
 
 <!-- UTSCOMJSON.video.component_type -->
 
-### 视频格式
+
+### 视频格式  
 web端支持的视频格式，不同浏览器有差异，可查询caniuse。
 
 app端支持的视频格式如下：
@@ -20,10 +23,17 @@ app端支持的视频格式如下：
 - [x] flv
 - [x] m3u8 (本地m3u8文件安卓端需3.99+，iOS端需4.11+)
 
-<!-- UTSCOMJSON.video.compatibility -->
+### src路径支持说明  
+- 本地路径/static方式  
+	由于uni-app/uni-app x编译时，只把/static目录下的静态资源copy到app中，所以src均需指向/static目录下。  
+	其他目录的视频文件由于不会被打包进去，所以无法访问。  
+	app平台文件路径会存在大小写敏感问题，为了有更好的兼容性，建议统一按大小写敏感原则处理 [详情](../api/file-system-spec.md#casesensitive)  
 
-#### App平台
+- 支持网络路径  
+	网络媒体 http、https协议  
+	流媒体 rtmp/hls/rtsp 协议  
 
+### app平台组件实现  
 App-Android平台video组件使用ijkplayer库实现：[https://github.com/bilibili/ijkplayer](https://github.com/bilibili/ijkplayer)；
 
 弹幕功能使用DanmakuFlameMaster库实现：[https://github.com/bilibili/DanmakuFlameMaster](https://github.com/bilibili/DanmakuFlameMaster)
@@ -46,8 +56,8 @@ video的操作api为[uni.createVideoContext()](../api/create-video-context.md)�
 
 <!-- UTSCOMJSON.video.reference -->
 
-### Bug & Tips@tips
-- App暂不支持横屏全屏后放置子组件
+### Bug & Tips@tips  
+- app平台暂不支持横屏全屏后放置子组件
 - 标准运行基座默认不包含intel x86 cpu的兼容so库，所以video组件在标准基座运行时无法在x86 cpu的设备上运行（常见于模拟器）。如需支持x86 cpu，请在manifest里配置`abiFilters`，打包或自定义基座后生效 [详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest.html#android)
 - App默认拦截触摸事件，目前会导致父组件无法响应触摸事件
 - video 默认宽度为300px，高度为225px。（App平台从 uni-app x 4.0起支持该默认宽高）

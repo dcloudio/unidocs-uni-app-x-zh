@@ -277,7 +277,14 @@ js中refs拿到一个组件后，可以直接`.`出它的方法。但uts中只�
 
 ## vue使用注意
 
-[详见](../vue/README.md)
+所有 `vue` 公开的 `API` 都是不需要 `import` 的, `uni-app x` 会自动引入。
+
+比如不需要写：
+```js
+import { ref } from 'vue';
+```
+
+其他[详见](../vue/README.md)
 
 ## css使用注意
 

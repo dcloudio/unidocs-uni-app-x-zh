@@ -133,7 +133,9 @@ App端专有目录，为应用沙盒根目录，其下包含了`缓存文件目�
 
 uni-app x的部分内置API会产生临时文件会放置在本cache目录，如：
 - uni.downloadFile下载的文件
-- uni.chooseImage的拍照或选择的相册文件
+- uni.chooseImage、uni.chooseVideo拍摄或选择的相册文件
+- uni.compressImage、uni.compressVideo压缩后的文件
+- uni.getImageInfo网络图片下载到本地的文件
 <!-- - 录音的文件 -->
 - dom element的截图API
 
@@ -143,7 +145,7 @@ uni-app x的部分内置API会产生临时文件会放置在本cache目录，如
 
 在`uni.env.CACHE_PATH`目录下，uni官方使用了如下目录，请开发者避免使用uni-开头的目录：
 - uni-download // uni.downloadFile的默认下载地址 （在HBuilderX 3.98时曾使用目录uniDownloads，从3.99起调整为uni-download）
-- uni-media // uni.chooseImage的拍照或选择相册的文件
+- uni-media // uni.chooseImage、uni.chooseVideo拍摄或选择的相册文件，uni.compressImage、uni.compressVideo压缩后的文件，uni.getImageInfo网络图片下载到本地的文件
 - uni-snapshot // element takeSnapShot截图APi存储的路径
 - uni-crash //存放崩溃日志
 	* java //java、kotlin层崩溃日志
@@ -174,3 +176,14 @@ FileSystemManager目前对内置应用沙盒目录为只读。如需写入，需
 
 ### 沙盒外目录
 FileSystemManager暂不支持访问沙盒外目录。如有相关需求目前需开发uts插件。
+
+## 常见问题  
+### 文件路径中字母大小写敏感问题@casesensitive  
+- Android平台  
+	+ 本地磁盘文件路径中字母大小写不敏感，真机运行时会将应用资源同步到设备的SD卡中，此时路径中字母大小写不敏感  
+	+ 代码包文件中的文件打包后到apk中后，由于Android系统的要求是大小写敏感，因此发布为后应用资源路径中的字母大小写敏感  
+- iOS平台  
+	+ iOS真机文件路径中字母大小写敏感  
+	+ iOS模拟器文件路径中字母大小写不敏感  
+
+> 为了有更好的兼容性，建议处理文件路径时按大小写敏感原则处理  

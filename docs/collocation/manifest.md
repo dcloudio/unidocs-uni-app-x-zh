@@ -29,6 +29,10 @@ uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选�
 
 <!-- MANIFESTJSON.manifest_app.table -->
 
+老uni-app可配置原生的隐私弹框。这是因为开发者的js执行较慢，在原生代码获取隐私前来不及弹框，不能满足先弹隐私政策后采集数据的合规要求。
+
+但uni-app x是原生的，开发者的代码执行非常快，无需再提供隐私政策弹框配置。自行弹框即可。
+
 #### Android权限配置@permissions
 
 uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中。
@@ -68,11 +72,15 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 
 <!-- MANIFESTJSON.icons_android.table -->
 
+> 必须使用 `png` 格式图标
+
 ###### iOS图标配置 @icons-ios
 
 <!-- MANIFESTJSON.icons_ios.description -->
 
 <!-- MANIFESTJSON.icons_ios.table -->
+
+> 必须使用 `png` 格式图标，图片中不能存在透明区域  
 
 <!-- MANIFESTJSON.icons_ios.compatibility -->
 
@@ -129,6 +137,18 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 
 <!-- MANIFESTJSON.distribute_ios.compatibility -->
 
+
+## 其它设置  
+
+### url scheme@urlScheme  
+uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4.18及以上版本支持在 app 原生应用配置文件中进行设置，详情参考：  
+- [Android平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#urlscheme)  
+- [iOS平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)  
+
+
+> uni-app x项目标准基座已配置 url scheme 值：uniappx
+
+
 ## 示例
 ```json
 {
@@ -158,3 +178,4 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 ```
 
 <!-- MANIFESTJSON.tutorial -->
+

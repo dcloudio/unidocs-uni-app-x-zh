@@ -17,7 +17,7 @@
 
 ## 配置
 
-根据编译出来的`unpackage/resource/app-android/{appid}/manifest.json`中的`app->distribute->modules`下的模块配置。
+根据编译出来的`unpackage/resource/app-android/{appid}/www/manifest.json`中的`app->distribute->modules`下的模块配置。
 
 ### 配置本地依赖库
 

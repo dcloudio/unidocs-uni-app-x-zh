@@ -386,9 +386,16 @@
 
 :::
 
-## 生命周期钩子 @page-lifecycle
 
-<!-- VUEJSON.composition_lifecycle.compatibility -->
+## 生命周期钩子 @lifecycle-composition
+
+> [页面及组件生命周期流程图](../page.md#lifecycleflow)
+
+### 页面生命周期 @page-lifecycle-composition
+
+#### 兼容性 @page-lifecycle-compatibility
+
+[页面生命周期](../page.md#lifecycle)
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.page_page-composition.gitUrl -->)
 
@@ -398,7 +405,25 @@
 
 :::
 
-[页面及组件生命周期流程图](../page.md#lifecycleflow)
+### 组件生命周期 @page-component-composition
+
+#### 兼容性 @component-lifecycle-compatibility
+
+<!-- VUEJSON.composition_lifecycle.compatibility -->
+
+#### onMounted、onUnmounted 使用注意事项 @mounted-unmounted-tips
+
+目前 onMounted、onUnmounted 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 onMounted、onUnmounted 不能保证 DOM 排版以及渲染完毕。\
+如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/unielement.md) 对象。\
+在修改 DOM 后，立刻使用 [Element](../dom/unielement.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
+
+示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.webUrl -->
+
+<!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.code -->
+
+:::
 
 
 ## \<script setup> @script_setup
@@ -537,9 +562,15 @@ defineOptions({
 
 使用 `<script setup>` 的组件是默认关闭的——即通过模板引用或者 $parent 链获取到的组件的公开实例，不会暴露任何在 `<script setup>` 中声明的绑定。
 
-可以通过 `defineExpose` 编译器宏来显式指定在 `<script setup>` 组件中要暴露出去的属性：
+可以通过 `defineExpose` 编译器宏来显式指定在 `<script setup>` 组件中要暴露出去的属性，注意：
 
-仅支持对象字面量方式定义，导出的变量或方法，必须是 `setup` 中定义的，暂不支持外部定义。
+- 仅支持对象字面量方式定义 `defineExpose` 导出的属性, 例如：
+```js
+defineExpose({
+  count
+})
+```
+- 导出的变量或方法，必须是 `setup` 中定义的，暂不支持外部定义
 
 示例 [详情](<!-- VUEJSON.E_component-instance.data_data-composition.gitUrl -->)
 
@@ -553,6 +584,8 @@ defineOptions({
 这个宏可以用来声明一个双向绑定 prop，通过父组件的 `v-model` 来使用。组件 [v-model](./built-in.md#v-model) 指南中也讨论了示例用法。
 
 在底层，这个宏声明了一个 model prop 和一个相应的值更新事件。如果第一个参数是一个字符串字面量，它将被用作 prop 名称；否则，prop 名称将默认为 `"modelValue"`。在这两种情况下，你都可以再传递一个额外的对象，它可以包含 prop 的选项和 model ref 的值转换选项。
+
+**注意：** android 端 `defineModel` 暂不支持创建 `Array` 类型 `prop`。
 
 #### 示例
 
@@ -605,4 +638,13 @@ defineOptions({
 
 <!-- VUEJSON.E_component-instance.attrs_child-composition.code -->
 
+:::
+
+### 与渲染函数一起使用
+
+
+示例 [详情](<!-- VUEJSON.E_render-function.render_render-composition.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_render-function.render_render-composition.webUrl -->
+<!-- VUEJSON.E_render-function.render_render-composition.code -->
 :::

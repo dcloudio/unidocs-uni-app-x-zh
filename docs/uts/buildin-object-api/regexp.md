@@ -2,6 +2,30 @@
 
 RegExp 对象用于将文本与一个模式匹配。
 
+### Constructor(pattern)
+
+<!-- UTSJSON.RegExp.Constructor.description -->
+
+<!-- UTSJSON.RegExp.Constructor.param -->
+
+<!-- UTSJSON.RegExp.Constructor.returnValue -->
+
+<!-- UTSJSON.RegExp.Constructor.compatibility -->
+
+<!-- UTSJSON.RegExp.Constructor.tutorial -->
+
+### Constructor(pattern, flags?)
+
+<!-- UTSJSON.RegExp.Constructor_1.description -->
+
+<!-- UTSJSON.RegExp.Constructor_1.param -->
+
+<!-- UTSJSON.RegExp.Constructor_1.returnValue -->
+
+<!-- UTSJSON.RegExp.Constructor_1.compatibility -->
+
+<!-- UTSJSON.RegExp.Constructor_1.tutorial -->
+
 ## 实例属性
 
 

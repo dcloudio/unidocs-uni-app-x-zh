@@ -73,6 +73,8 @@ console.log(result instanceof Obj) // true
 
 ### any类型
 
+> 4.18版本起，uts在编译到js时，any类型会包含null类型。
+
 不同于ts，uts中any类型不包含null类型。
 
 例如定义可选参数时应使用下面的写法：

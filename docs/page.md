@@ -6,8 +6,6 @@ uni-app x 项目中，页面文件的后缀名`.uvue`文件。
 
 每个uvue文件，都是一个符合`Vue SFC规范`的 vue 文件。
 
-在 uni-app x 中，后缀名是`.uvue`文件
-
 uni-app x 只有 `.uvue`页面，不支持和vue页面并存（因vue是js驱动、webview渲染，uni-app x在app-Android中没有js引擎，app中渲染是原生渲染，无法使用vue页面）。
 
 当然某些组件可以通过条件编译同时适配uni-app和uni-app x，所以在uni-app x的项目中，看到某些组件代码也有vue文件，但这些vue文件并不在uni-app x项目中生效。
@@ -111,9 +109,9 @@ uvue页面基于 vue 单文件组件规范。一个页面内，有3个根节点�
 
 <!-- PAGEINSTANCE.lifeCycle.compatibility -->
 
-示例代码, [详见](./vue/README.md#lifecycle-options)
+在 Vue 中，页面也是一种组件，所以也支持[组件生命周期](./vue/options-api.md#page-component-options)。
 
-### 页面onLoad生命周期@onload
+### 页面 onLoad 生命周期@onload
 
 页面初始化时，会触发onLoad生命周期。此时Dom还未构建渲染完毕，ref和getElementById都拿不到Dom（需要等onReady）。
 
@@ -154,9 +152,10 @@ export default {
   - 后续版本会统一类型为UTSJSONObject。
 - App-iOS平台的窗体动画是异步的，onLoad时可能窗体动画已经开始，此时再设置页面的pageStyle（比如设置背景色），会出现闪烁现象。
 - onLoad里不适合进行大量同步耗时运算，因为此时转场动画还没开始。尤其app-Android平台，onLoad里的代码（除了联网和加载图片）默认是在UI线程运行的，大量同步耗时计算很容易卡住页面动画不启动。除非开发者显式指定在其他线程运行。
+- `uni-app x android` 平台，如需获取 [activity 实例](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#activity)，此时当前页面的 `activity 实例`并未创建完成，会获取到上一个页面的 `activity 实例`（首页会获取应用默认的 `activity 实例`）。如需获取当前页面的 `activity 实例`，应在 `onShow` 或 `onReady` 生命周期中获取。
 :::
 
-### 页面onShow生命周期@onshow
+### 页面 onShow 生命周期@onshow
 onShow是在onLoad之后，它的意义在于，onLoad是页面创建时触发一次；而当页面隐藏（比如被新窗体遮挡），然后页面再恢复显示时，onLoad不会再触发，只会触发onShow。
 
 tabbar页面切换时，老的tabbar页面会hide，新的tabbar页面会show。
@@ -165,11 +164,92 @@ onShow和onHide是成对出现的。
 
 在组合式API中，组件可以监听应用和页面的生命周期。但由于应用和页面都有onShow和onHide，导致重名。所以在组合式的组件中监听页面的显示隐藏，改为了onPageShow和onPageHide。
 
+### onReachBottom
+
+可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pagesjson#pages-globalstyle)，
+比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
+
+### 页面 onPageScroll 生命周期 @onpagescroll
+
+<!-- PAGEINSTANCE.onPageScroll.param -->
+
+<!-- PAGEINSTANCE.onPageScroll.returnValue -->
+
+### 页面 onResize 生命周期 @onresize
+
+<!-- PAGEINSTANCE.onResize.param -->
+
+<!-- PAGEINSTANCE.onResize.returnValue -->
+
+### 页面 onBackPress 生命周期 @onbackpress
+
+<!-- PAGEINSTANCE.onBackPress.param -->
+
+<!-- PAGEINSTANCE.onBackPress.returnValue -->
+
+::: warning 注意
+- `onBackPress`上不可使用`async`，会导致无法阻止默认返回
+:::
+
+#### 示例
+
+[详情](<!-- VUEJSON.E_lifecycle.page_onBackPress_on-back-press-composition.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_lifecycle.page_onBackPress_on-back-press-composition.webUrl -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_lifecycle.page_onBackPress_on-back-press-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_lifecycle.page_onBackPress_on-back-press-options.code -->
+
+:::
+
+### 页面 onTabItemTap 生命周期 @ontabitemtap
+
+<!-- PAGEINSTANCE.onTabItemTap.param -->
+
+<!-- PAGEINSTANCE.onTabItemTap.returnValue -->
+
+::: warning 注意
+- onTabItemTap常用于点击当前 tabItem，滚动或刷新当前页面。如果是点击不同的 tabItem，一定会触发页面切换。
+:::
+
+### 页面 onNavigationBarButtonTap 生命周期 @onnavigationbarbuttontap
+
+<!-- PAGEINSTANCE.onNavigationBarButtonTap.param -->
+
+<!-- PAGEINSTANCE.onNavigationBarButtonTap.returnValue -->
+
+### 页面 onNavigationBarSearchInputChanged 生命周期 @onnavigationbarsearchinputchanged
+
+<!-- PAGEINSTANCE.onNavigationBarSearchInputChanged.param -->
+
+<!-- PAGEINSTANCE.onNavigationBarSearchInputChanged.returnValue -->
+
+### 页面 onNavigationBarSearchInputConfirmed 生命周期 @onnavigationbarsearchinputconfirmed
+
+<!-- PAGEINSTANCE.onNavigationBarSearchInputConfirmed.param -->
+
+<!-- PAGEINSTANCE.onNavigationBarSearchInputConfirmed.returnValue -->
+
+### 页面生命周期示例 @lifecycle-example
+
+[详情](<!-- VUEJSON.E_lifecycle.page_page-composition.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_lifecycle.page_page-composition.webUrl -->
+
+<!-- VUEJSON.E_lifecycle.page_page-composition.code -->
+
+:::
+
 ## 页面及组件生命周期流程图 @lifecycleflow
 
 下图展示了一个新页面，从创建开始，包括其中的组件，完整的时序。
 
-![](./static/uni-app-lifecycle-vue3.png)#{.zooming width=1000 margin=auto}
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/uni-app-lifecycle-vue3.jpg)#{.zooming width=600 margin=auto}
 
 
 1. uni-app x框架，首先根据pages.json的配置，创建页面

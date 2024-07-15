@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.nested-scroll-body.description -->
 
+<!-- UTSCOMJSON.nested-scroll-body.compatibility -->
+
 <!-- UTSCOMJSON.nested-scroll-body.attribute -->
 
 <!-- UTSCOMJSON.nested-scroll-body.event -->
@@ -18,8 +20,6 @@ scroll-view 嵌套场景中。内层 scroll-view 滚动时无法与外层 scroll
 + `nested-scroll-body` 组件不支持复数子节点，渲染时会取其第一个子节点来渲染
 + `nested-scroll-body` 组件只能渲染在 `nested-scroll-header`组件下面
 + 外层 scroll-view 的子节点中只能有一个 `nested-scroll-body`
-
-<!-- UTSCOMJSON.nested-scroll-body.compatibility -->
 
 <!-- UTSCOMJSON.nested-scroll-body.children -->
 

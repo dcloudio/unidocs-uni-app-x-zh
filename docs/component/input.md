@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.input.description -->
 
+<!-- UTSCOMJSON.input.compatibility -->
+
 <!-- UTSCOMJSON.input.attribute -->
 
 <!-- UTSCOMJSON.input.event -->
 
 <!-- UTSCOMJSON.input.component_type-->
-
-<!-- UTSCOMJSON.input.compatibility -->
 
 <!-- UTSCOMJSON.input.children -->
 
@@ -33,6 +33,8 @@
 在web端平台，输入框上推逻辑是由浏览器自动完成的，属性`adjust-position`无效。
 但iOS safari软键盘弹出时，整个页面会上推而不是挤压，导致pages.json配置的导航栏会上移到屏幕之外。
 
+推荐参考代码：[hello uni-app x -> 模板 -> 自定义导航栏](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/navbar-lite/navbar-lite.uvue)。为了避免自定义导航栏被顶飞，有的可以自动上推，有的需手动控制，这里均有示例。
+
 ## comfirm-type和inputmode说明
 
 1. comfirm-type
@@ -54,3 +56,4 @@ web平台的inputmode的浏览器兼容性如下： Chrome >= 66、Edge >= 79、
 - html规范中input不仅是输入框，还有radio、checkbox、时间、日期、文件选择功能。但在uni-app规范中，input仅仅是输入框，其type属性代表不同的输入框。其他功能有单独的组件或API：[radio组件](radio-group.md)、[checkbox组件](checkbox-group.md)、[图片选择](../api/choose-image.md)等。
 - 从uni-app x 4.0起，App-Android平台 input 点击输入框外的屏幕会自动收起软键盘。
 - 从uni-app x 4.0起，App-Android平台 input 的 font-size 默认值统一为 16px。
+- `Web` 平台，iOS 自带键盘的智能标点功能会导致：在 type 为 `number`、`digit` 时，连续输入两次 `.` 后，在第三次输入 `.` 时，会触发两次 deleteContentBackward（删除） 的输入外加一次 insertText 为 `…`（三个点） 的输入。会导致表现异常，关闭智能标点功能后正常。

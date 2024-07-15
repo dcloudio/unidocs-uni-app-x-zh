@@ -201,6 +201,10 @@
 
 - 期望的绑定值类型：根据表单输入元素或组件输出的值而变化
 
+- 仅限：
+  - `<input>`
+  - `<textarea>`
+
 - 修饰符 <Badge text="仅 Android">
   - `.lazy` - 监听 `change` 事件而不是 `input` 事件
   - `.number` - 将输入的合法字符串转为数字
@@ -519,13 +523,49 @@
 使用选项式 API，引用将被注册在组件的 `this.$refs` 对象里：
 
 ```vue
-<!-- 存储为 this.$refs["textRef"] -->
-<text ref="textRef">hello</text>
+<script lang="uts">
+  export default {
+    mounted() {
+      // #ifdef APP
+      (this.$refs['input'] as UniInputElement).setAttribute('value', 'input value')
+      // #endif
+      // #ifdef WEB
+      (this.$refs['input'] as UniInputElement).value = 'input value'
+      // #endif
+    }
+  }
+</script>
+
+<template>
+  <input ref="input" />
+</template>
+```
+`this.$refs` 也是非响应式的，因此你不应该尝试在模板中使用它来进行数据绑定。
+
+使用组合式 API，引用将存储在与名字匹配的 ref 里：
+```vue
+<script setup lang="uts">
+// 声明一个 ref 来存放该元素的引用
+// 必须和模板里的 ref 同名
+const input = ref<UniInputElement | null>(null)
+
+onMounted(() => {
+  // #ifdef APP
+  input.value!.setAttribute('value', 'input value')
+  // #endif
+  // #ifdef WEB
+  input.value!.value = 'input value'
+  // #endif
+})
+</script>
+
+<template>
+  <input ref="input" />
+</template>
 ```
 
-使用组合式 API，引用将存储在与名字匹配的 ref 里：[详情](./component.md#page-call-component-method)
+[详情](./component.md#page-call-component-method)
 
-`this.$refs` 也是非响应式的，因此你不应该尝试在模板中使用它来进行数据绑定。
 
 ### is
 

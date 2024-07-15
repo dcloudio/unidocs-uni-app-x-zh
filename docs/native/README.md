@@ -32,5 +32,5 @@ uni-app x原生SDK，给原生开发者提供了更多可能性：
 2. 在HBuilderX中导出应用原生资源，生成一批kt或swift代码及相关图片等附件资源
 3. 开发者在原生工程中引入uni-app x原生SDK，合并入导出的应用原生资源，整体运行编译
 
-+ [Android平台App本地离线打包](./use/android.md)
-+ iOS平台App本地离线打包（暂不支持）
++ [Android平台原生SDK和离线打包](./use/android.md)
++ iOS平台原生SDK和离线打包（暂不支持）

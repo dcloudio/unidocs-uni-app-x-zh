@@ -1,20 +1,56 @@
 # 组件
 
-## 定义
+我们可以对一段要复用的js/uts逻辑代码进行封装，抽出function、module等形式。
 
-- 组件是视图层的基本组成单元。
-- 组件是一个单独且可复用的功能模块的封装。
+那么涉及UI的复用时，该如何抽象？
 
-每个组件，包括如下几个部分：以组件名称为标记的开始标签和结束标签、组件内容、组件属性、组件属性值。
+这就是vue的组件机制，把视图template、script、style都封装到独立的uvue组件文件中，在其他需要的地方使用组件的名称进行引用。
 
-- 组件名称由尖括号包裹，称为标签，它有开始标签和结束标签。结束标签的`<`后面用`/`来表示结束。结束标签也称为闭合标签。如下面示例的`<component-name>`是开始标签，`</component-name>`是结束标签。
-- 在开始标签和结束标签之间，称为组件内容。如下面示例的`content`
-- 开始标签上可以写属性，属性可以有多个，多个属性之间用空格分割
-- 每个属性通过`=`赋值
+每个组件，包括如下几个部分：以组件名称为标记的开始标签和结束标签、组件text内容、组件属性、组件属性值。
+
+组件还可以封装方法、事件、插槽，提供了[组件的生命周期](#component-lifecycle)，提供了组件和页面的[互通信机制](#use-and-communication)，满足了各种高级需求。
+
+如果您还不了解这些概念，请务必先阅读 [组件概述文档](../compiler/README.md)
+
+## 组件内容构成 @component-structure
+
+uni-app x 组件基于 vue 单文件组件规范，一个组件内，有 3 个根节点标签：
+
+- `<template>`：组件的模板内容
+- `<script>`：组件的脚本代码
+- `<style>`：组件的样式
+
+### 和页面的区别 @component-page-difference
+
+组件的内容构成和页面大体上一致，都符合vue的sfc规范。
+
+事实上，一个在pages.json注册的页面uvue文件，也可以被当做一个组件引入到其他页面。
+
+组件和页面的差别有：
+1. 组件中不支持页面相关的生命周期和API，比如 `onLoad`、`onShow` 等[页面生命周期](../page.md#lifecycle)，比如$setPageStyle等API。
+2. 组件中有一批组件独有的生命周期和API，比如 `mounted`、`unmounted` 等[组件生命周期](#component-lifecycle)，比如页面和组件通信的API。
+3. 组件文件不需要在pages.json中注册
+
 
 ## 创建及引用组件 @create-and-import-component
+<!-- TODO：此处需要重写 -->
+### 创建组件 @create-component
 
-### easycom
+#### easycom
+
+1. 在 `项目根目录/components` 目录上右键（如果没有，在根目录新建一个 `components` 目录即可），选择 `新建组件`，输入组件名称，选择一个模板；可勾选创建同名目录，将组件放在同名目录下。
+2. 在 `项目根目录/uni_modules` 目录上右键（如果没有，在根目录新建一个 `uni_modules` 目录即可），选择 `新建uni_modules插件`，输入`插件ID`，分类选择`前端组件-通用组件`；将组件放在和插件ID同名的目录下。
+
+#### 创建自定义组件 @create-custom-component
+
+3. 在项目 `pages 目录` 下的任意地方创建 `.uvue/.vue` 文件并编写组件代码
+
+::: warning 注意事项
+uni-app x 项目支持使用 `.vue`、`.uvue` 文件作为组件使用，但同文件名的两个文件同时存在，`.uvue` 文件会优先编译。
+:::
+
+### 引用组件 @import-component
+#### easycom
 
 传统vue组件，需要安装、引用、注册，三个步骤后才能使用组件。`easycom` 将其精简为一步。
 
@@ -44,14 +80,16 @@
 
 uni_module有详细的专项文档，请另行查阅[uni_module规范](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)。
 
-#### easycom组件的类型规范 @easycom-component-type
+如果你的组件不满足easycom标准的目录规范，还有一种办法是在[pages.json](../collocation/pagesjson.md#pages-easycom)里声明自己的目录规则，以便编译器查找到你的组件。自定义easycom路径规则的详细教程[详见](https://uniapp.dcloud.net.cn/collocation/pages.html#easycom)
+
+##### easycom组件的类型规范 @easycom-component-type
 
 组件标签名首字母大写，`驼峰+ComponentPublicInstance`，如：
 
 `<test/>` 类型为：TestComponentPublicInstance
 `<uni-data-checkbox/>` 类型为：UniDataCheckboxComponentPublicInstance
 
-### 手动引入组件 @manual-import-component
+#### 手动引入组件 @manual-import-component
 
 不符合 easycom 规范的组件，则需要手动引入：
 
@@ -83,7 +121,7 @@ export default {
 </script>
 ```
 
-#### 手动引入组件的类型规范 @manual-import-component-type
+##### 手动引入组件的类型规范 @manual-import-component-type
 
 类型为：ComponentPublicInstance
 
@@ -315,7 +353,7 @@ Uni`组件名(驼峰)`Element
 
 - 目前uts组件，即封装原生ui给uni-app或uni-app x的页面中使用，类型与内置组件的 Uni`组件名(驼峰)`Element 方式相同。目前没有代码提示。
 
-### 组件监听页面生命周期 @component-page-lifecycle
+### 组件监听应用、页面生命周期 @component-page-lifecycle
 
 > 选项式 API 和 组件式 API 在监听页面生命周期时有所不同
 >
@@ -323,15 +361,34 @@ Uni`组件名(驼峰)`Element
 >
 > 具体请查看 [页面生命周期](../page.md#lifecycle)
 
-[示例](#component-lifecycle)
+::: warning 注意
+1. onAppHide、onAppShow 目前只有 Android 支持
+2. onPageHide、onPageShow 需要写在选项式的 setup 函数 或者 组合式 `<script setup>` 中才能生效
+:::
+
+示例 [详情](<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_lifecycle.page_page-options.webUrl -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.code -->
+
+> 组合式 API
+
+<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-composition.code -->
+
+:::
 
 ## 组件的生命周期 @component-lifecycle
 
-> 选项式 API 和 组件式 API 在监听页面生命周期时有所不同
->
-> 比如选项式 API 中的 `onShow`、`onHide` 监听页面生命周期在组合式 API 中分别对应 `onPageShow`、`onPageHide`（在组合式 API 时会和 App 的生命周期冲突）
->
-> 具体请查看 [页面生命周期](../page.md#lifecycle)
+### 组件生命周期（选项式 API）兼容性 @component-lifecycle-options-compatibility
+
+<!-- VUEJSON.options_lifecycle.compatibility -->
+
+### 组件生命周期（组合式 API）兼容性 @component-lifecycle-composition-compatibility
+
+<!-- VUEJSON.composition_lifecycle.compatibility -->
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.gitUrl -->)
 
@@ -346,6 +403,10 @@ Uni`组件名(驼峰)`Element
 <!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.code -->
 
 :::
+
+## 全局组件 @global-component
+
+[详情见 app.component](./global-api.md#app-component)
 
 ## props
 

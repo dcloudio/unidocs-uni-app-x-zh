@@ -2,13 +2,13 @@
 
 <!-- UTSCOMJSON.slider.description -->
 
+<!-- UTSCOMJSON.slider.compatibility -->
+
 <!-- UTSCOMJSON.slider.attribute -->
 
 <!-- UTSCOMJSON.slider.event -->
 
 <!-- UTSCOMJSON.slider.component_type-->
-
-<!-- UTSCOMJSON.slider.compatibility -->
 
 ## tips
 show-value属性设为true后，会在横条右侧显示一个数字。
@@ -21,6 +21,8 @@ show-value属性设为true后，会在横条右侧显示一个数字。
 - 在 uni-app x 的 App 和 web 平台高度为 `block-size(28px) 大小 + 阴影(4px * 2)`，默认 `margin: 1px 0;`，暂不支持设置 padding，实际占用高度为 `38px`
 - 在 app-vue/web/小程序 平台高度为 18px, 默认 `margin: 10px 18px;`，实际占用高度为 `38px`
 - 默认占用高度是一致的，调整样式后会出现差异
+- 4.18+ App-Android 平台，优化了在滚动容器中的行为，当水平拖动 slider 超过 4 * dpi 时将阻止默认行为，避免滚动过程中触发 slider 变动
+
 
 <!-- UTSCOMJSON.slider.children -->
 

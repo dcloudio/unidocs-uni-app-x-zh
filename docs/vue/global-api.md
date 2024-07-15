@@ -14,6 +14,19 @@
 
 ::: preview <!-- VUEJSON.E_app-instance.component_component.webUrl -->
 
+> 注册全局组件
+
+```ts
+import App from './App.uvue'
+import CompForAppComponent from '@/components/CompForAppComponent.uvue'
+export function createApp() {
+  const app = createSSRApp(App)
+  app.component('CompForAppComponent', CompForAppComponent)
+}
+```
+
+> 使用全局组件
+
 <!-- VUEJSON.E_app-instance.component_component.code -->
 
 :::

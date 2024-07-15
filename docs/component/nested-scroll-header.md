@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.nested-scroll-header.description -->
 
+<!-- UTSCOMJSON.nested-scroll-header.compatibility -->
+
 <!-- UTSCOMJSON.nested-scroll-header.attribute -->
 
 <!-- UTSCOMJSON.nested-scroll-header.event -->
@@ -17,8 +19,6 @@ scroll-view 嵌套场景中。外层 scroll-view 滚动时无法与内层 scroll
 + `nested-scroll-header` 组件不支持css, 排版需求要交给子节点实现
 + `nested-scroll-header` 组件不支持复数子节点，渲染时会取其第一个子节点来渲染
 + `nested-scroll-header` 组件只能渲染在 `nested-scroll-body`组件上面
-
-<!-- UTSCOMJSON.nested-scroll-header.compatibility -->
 
 <!-- UTSCOMJSON.nested-scroll-header.children -->
 

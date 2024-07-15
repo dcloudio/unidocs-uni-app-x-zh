@@ -15,7 +15,6 @@ uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app 
 - 谷歌支付：[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%B0%B7%E6%AD%8C%E6%94%AF%E4%BB%98&orderBy=Relevance&uni-appx=1)
 - 打开文件：`uni.openDocument` [见hello uts示例](https://gitcode.net/dcloud/hello-uts/-/blob/dev/uni_modules/uts-nativepage/utssdk/app-android/index.uts)、[插件市场](https://ext.dcloud.net.cn/plugin?id=12731)
 - 扫码：`uni.scanCode` [见插件市场](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&cat1=8&type=UpdatedDate)
-- 视频选择：`uni.chooseVideo`  [见插件市场](https://ext.dcloud.net.cn/search?q=chooseVideo&orderBy=Relevance&uni-appx=1) 、`uni.chooseMedia` [见插件市场](https://ext.dcloud.net.cn/search?q=chooseMedia&orderBy=Relevance&uni-appx=1)。或者使用下面的文件选择，也可以选择视频。
 - 文件选择：`uni.chooseFile` [见插件市场](https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9&cat1=8&cat2=81)
 - 蓝牙：Bluetooth。[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&orderBy=Relevance&cat1=8&cat2=81)
 - NFC：[见插件市场](https://ext.dcloud.net.cn/search?q=nfc&orderBy=Relevance&cat1=8&cat2=81)
@@ -24,6 +23,7 @@ uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app 
 - 加速度传感器：`uni.onAccelerometerChange`、`uni.startAccelerometer` [见插件市场](https://ext.dcloud.net.cn/plugin?id=17540)
 - 生物识别：指纹识别。`uni.startSoterAuthentication` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%94%9F%E7%89%A9%E8%AE%A4%E8%AF%81&uni-appx=1)
 - 震动：`uni.vibrate` [见插件市场](https://ext.dcloud.net.cn/search?q=%E9%9C%87%E5%8A%A8&uni-appx=1)
+- 亮度：`uni.setScreenBrightness`、`uni.getScreenBrightness`、`uni.setKeepScreenOn` [见插件市场](https://ext.dcloud.net.cn/search?q=%E4%BA%AE%E5%BA%A6&uni-appx=1)
 - 自定义相机：`uni.createCameraContext` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%9B%B8%E6%9C%BA&uni-appx=1)
 - 录音：`uni.getRecorderManager` [见插件市场](https://ext.dcloud.net.cn/search?q=%E5%BD%95%E9%9F%B3&uni-appx=1)
 - 播放音频：`uni.getBackgroundAudioManager`、`uni.createInnerAudioContext`，[见插件市场](https://ext.dcloud.net.cn/search?q=%E9%9F%B3%E9%A2%91%E6%92%AD%E6%94%BE&orderBy=Relevance&uni-appx=1)或参考如下代码：

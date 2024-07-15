@@ -2,17 +2,19 @@
 
 <!-- UTSAPIJSON.startPullDownRefresh.description -->
 
+<!-- UTSAPIJSON.startPullDownRefresh.compatibility -->
+
 <!-- UTSAPIJSON.startPullDownRefresh.param -->
 
 <!-- UTSAPIJSON.startPullDownRefresh.returnValue -->
-
-<!-- UTSAPIJSON.startPullDownRefresh.compatibility -->
 
 <!-- UTSAPIJSON.startPullDownRefresh.tutorial -->
 
 ## uni.stopPullDownRefresh() @stoppulldownrefresh
 
 <!-- UTSAPIJSON.stopPullDownRefresh.description -->
+
+<!-- UTSAPIJSON.stopPullDownRefresh.compatibility -->
 
 使用：
 1. 首先pages.json里配置了页面可下拉刷新`"enablePullDownRefresh": true`
@@ -27,11 +29,7 @@
 
 <!-- UTSAPIJSON.stopPullDownRefresh.example -->
 
-<!-- UTSAPIJSON.stopPullDownRefresh.compatibility -->
-
 <!-- UTSAPIJSON.stopPullDownRefresh.tutorial -->
-
-<!-- UTSAPIJSON.pull-down-refresh.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

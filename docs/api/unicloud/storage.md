@@ -2,11 +2,11 @@
 
 <!-- UTSUNICLOUDAPIJSON.uploadFile.description -->
 
+<!-- UTSUNICLOUDAPIJSON.uploadFile.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.uploadFile.param -->
 
 <!-- UTSUNICLOUDAPIJSON.uploadFile.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.uploadFile.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.uploadFile.tutorial -->
 
@@ -16,11 +16,11 @@
 
 <!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.description -->
 
+<!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.param -->
 
 <!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.chooseAndUploadFile.tutorial -->
 
@@ -28,17 +28,18 @@
 
 **注意**
 
-- 由于uni-app-x暂不支持选择视频、文件，目前此接口仅能上传图片，即type参数仅能设为`image`。
+- 4.18之前uni-app-x在app端仅支持选择图片，即type参数仅能设为`image`。
+- 4.18及之后的版本uni-app-x在app端仅支持选择图片、视频，即type参数仅能设为`image`、`video`。
 
 ## getTempFileURL(options) @gettempfileurl
 
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.description -->
 
+<!-- UTSUNICLOUDAPIJSON.getTempFileURL.compatibility -->
+
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.param -->
 
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.returnValue -->
-
-<!-- UTSUNICLOUDAPIJSON.getTempFileURL.compatibility -->
 
 <!-- UTSUNICLOUDAPIJSON.getTempFileURL.tutorial -->
 

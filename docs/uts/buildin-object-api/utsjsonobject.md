@@ -38,6 +38,71 @@ if(parseRet instanceof UTSJSONObject){
 
 ```
 
+## 静态方法
+
+### keys(object: UTSJSONObject): Array<String>
+
+<!-- UTSJSON.UTSJSONObject.keys.description -->
+
+<!-- UTSJSON.UTSJSONObject.keys.param -->
+
+<!-- UTSJSON.UTSJSONObject.keys.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.keys.compatibility -->
+
+
+```ts
+let obj = {
+  name:"zhangsan",
+  age:11
+}
+// 执行结果： 2
+UTSJSONObject.keys(obj).size
+
+```
+
+### assign(...items): UTSJSONObject
+
+<!-- UTSJSON.UTSJSONObject.assign.description -->
+
+<!-- UTSJSON.UTSJSONObject.assign.param -->
+
+<!-- UTSJSON.UTSJSONObject.assign.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.assign.compatibility -->
+
+> 注意： 与js中的`Object.assign`不同， 这里每次返回的都是一个新的对象
+
+```ts
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+// 得到一个UTSJSONObject对象
+const returnedTarget = UTSJSONObject.assign(target, source);
+```
+
+### assign<T>(...items: T[]): T
+
+<!-- UTSJSON.UTSJSONObject.assign_1.description -->
+
+<!-- UTSJSON.UTSJSONObject.assign_1.param -->
+
+<!-- UTSJSON.UTSJSONObject.assign_1.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.assign_1.compatibility -->
+
+> 注意： 与js中的`Object.assign`不同， 这里每次返回的都是一个新的对象
+
+```ts
+type User = {
+  a:number
+  b:number
+}
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+// 得到一个User对象
+const returnedTarget = UTSJSONObject.assign<User>(target, source);
+```
+
 ## 实例方法
 
 ### get(key: string): any | null
@@ -153,6 +218,7 @@ console.log(genericArray)
 
 ```
 
+
 ### toMap(): Map<string, any>
 
 <!-- UTSJSON.UTSJSONObject.toMap.description -->
@@ -172,11 +238,19 @@ person.toMap().forEach((value, key) => {
 
 <!-- UTSJSON.UTSJSONObject.tutorial -->
 
+
+
+
 ## 注意事项
 
-需要特别注意的是： 在 Android/Ios 平台，当使用 getXXX 方法返回 对象类型时，获取的是值引用而非内存引用
+此问题在 HBuilder X 4.21.2024061818-alpha 及之后版本已修复
 
+<s>
+需要特别注意的是： 在 Android 平台，当使用 getXXX 方法返回 对象类型时，获取的是值引用而非内存引用 
+</s>
+<s>
 此时直接修改其对象的属性，并不会体现在整个UTSJSONObject上，如果需要体现此变化，则需要手动更新对应的字段
+</s>
 
 ```ts
 let obj = {
@@ -187,7 +261,7 @@ let obj = {
       }
     ]
   }
-  
+
   let cars = obj.getArray<UTSJSONObject>("cars")
   cars![0].set("value",20)
   /**
@@ -201,3 +275,5 @@ let obj = {
    */
   console.log("obj",obj)
 ```
+
+

@@ -12,6 +12,30 @@ console.log(map['key1']) // 不跨端的用法
 console.log(map.get('key1')) // 跨端用法
 ```
 
+### Constructor()
+
+<!-- UTSJSON.Map.Constructor.description -->
+
+<!-- UTSJSON.Map.Constructor.param -->
+
+<!-- UTSJSON.Map.Constructor.returnValue -->
+
+<!-- UTSJSON.Map.Constructor.compatibility -->
+
+<!-- UTSJSON.Map.Constructor.tutorial -->
+
+### Constructor(entries?)
+
+<!-- UTSJSON.Map.Constructor_1.description -->
+
+<!-- UTSJSON.Map.Constructor_1.param -->
+
+<!-- UTSJSON.Map.Constructor_1.returnValue -->
+
+<!-- UTSJSON.Map.Constructor_1.compatibility -->
+
+<!-- UTSJSON.Map.Constructor_1.tutorial -->
+
 ## 实例属性
 
 
@@ -95,7 +119,7 @@ console.log(map1.has('bar'));
 let mapObj = new Map<string,any>()
 mapObj.put("name","zhangsan")
 mapObj.put("age",12)
-// 需要特别注意迭代方法的第一个参数是value.第二个是key. 
+// 需要特别注意迭代方法的第一个参数是value.第二个是key.
 mapObj.forEach(function(value:any,key:string){
     console.log(key)
     console.log(value)

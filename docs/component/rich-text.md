@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.rich-text.description -->
 
+<!-- UTSCOMJSON.rich-text.compatibility -->
+
 ### 支持的HTML标签和属性
 |HTML   |属性    |样式   |
 |-------|-------|-------|
@@ -27,8 +29,6 @@
 <!-- UTSCOMJSON.rich-text.event -->
 
 <!-- UTSCOMJSON.rich-text.component_type-->
-
-<!-- UTSCOMJSON.rich-text.compatibility -->
 
 <!-- UTSCOMJSON.rich-text.children -->
 

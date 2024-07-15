@@ -8,7 +8,7 @@
 
 应用生命周期仅可在`App.uvue`中监听，在页面监听无效。
 
-目前`App.uvue`仅支持选项式，暂不支持组合式写法。
+`App.uvue`仅支持选项式，暂不支持组合式写法。
 
 ## 应用生命周期@applifecycle
 
@@ -17,52 +17,20 @@
 |函数名|说明|平台兼容|
 |:-|:-|:-|
 |onLaunch|当`uni-app-x` 初始化完成时触发（全局只触发一次），参数为应用启动参数，同 [uni.getLaunchOptionsSync](../api/get-launch-options-sync.md#getlaunchoptionssync) 的返回值||
-|onShow|当 `uni-app-x` 启动，或从后台进入前台显示，参数为应用启动参数，同 [uni.getLaunchOptionsSync](../api/get-launch-options-sync.md#getlaunchoptionssync) 的返回值||
+|onShow|当 `uni-app-x` 启动，或从后台进入前台显示，参数为应用启动参数||
 |onHide|当 `uni-app-x` 从前台进入后台，包括手机息屏||
 |onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出|app-uvue-android 3.9+|
 |onExit|监听应用退出|app-uvue-android 3.9+|
+|onError|监听应用发生脚本错误或 API 调用报错|4.21+|
 
 **示例代码**
-```html
-<script lang="uts">
-	// 只能在App.vue里监听应用的生命周期
-	export default {
-		onLaunch: function(options) {
-			console.log('App Launch')
-			console.log('应用启动路径：', options.path)
-		},
-		onShow: function(options) {
-			console.log('App Show')
-			console.log('应用启动路径：', options.path)
-		},
-		onHide: function() {
-			console.log('App Hide')
-		},
-    onLastPageBackPress: function () {
-      console.log('App LastPageBackPress')
-			// 2秒内连按2次back，退出app
-			if (firstBackTime == 0) {
-				uni.showToast({
-					title: '再按一次退出应用',
-					position: 'bottom',
-				})
-				firstBackTime = Date.now()
-				setTimeout(() => {
-					firstBackTime = 0
-				}, 2000)
-			} else if (Date.now() - firstBackTime < 2000) {
-				firstBackTime = Date.now()
-				uni.exit()
-			}
-			// 还有一些应用按1次back直接将应用切到后台，详见https://doc.dcloud.net.cn/uni-app-x/api/exit.html#back
-    }
-	}
-</script>
-```
+
+<!-- VUEJSON.E_App.example.code -->
 
 **注意**
 - **应用生命周期仅可在`App.uvue`中监听，在其它页面监听无效**。
 - 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](../api/get-launch-options-sync.md#getlaunchoptionssync)
+- 由于Android的`uni.exit()`是[热退出](../api/exit.md)，此时很多代码逻辑仍然在运行，有些on的事件监听并没有off，需要开发者在onExit生命周期中编写代码处理。比如在app的onLaunch里通过onXX监听了某事件，那么就需要在onExit里调用offXX取消某事件的监听，否则反复热退出、启动，会多次on而不会off，这会引发内存泄露。
 
 ## globalData
 
@@ -74,21 +42,21 @@
 
 ```ts
 <script lang="uts">
-  export default {  
-    globalData: {  
+  export default {
+    globalData: {
       str: 'global data str',
       num: 123,
-      bool: true 
+      bool: true
     }
-  }  
-</script>  
+  }
+</script>
 ```
 
 页面或组件中通过 `getApp().globalData` 访问。
 
 ```ts
 <script lang="uts">
-  export default {  
+  export default {
     methods: {
       getGlobalData() {
         const app = getApp()
