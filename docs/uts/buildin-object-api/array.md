@@ -484,6 +484,49 @@ console.log(array1.every(isBelowThreshold));
 
 <!-- UTSJSON.Array.every.compatibility -->
 
+### every(predicate, thisArg?)_1
+
+<!-- UTSJSON.Array.every_1.description -->
+
+<!-- UTSJSON.Array.every_1.param -->
+
+<!-- UTSJSON.Array.every_1.returnValue -->
+
+<!-- UTSJSON.Array.every_1.test -->
+
+<!-- UTSJSON.Array.every_1.compatibility -->
+
+<!-- UTSJSON.Array.every_1.tutorial -->
+
+### every(predicate, thisArg?)_2
+
+<!-- UTSJSON.Array.every_2.description -->
+
+<!-- UTSJSON.Array.every_2.param -->
+
+<!-- UTSJSON.Array.every_2.returnValue -->
+
+<!-- UTSJSON.Array.every_2.test -->
+
+<!-- UTSJSON.Array.every_2.compatibility -->
+
+<!-- UTSJSON.Array.every_2.tutorial -->
+
+### every(predicate, thisArg?)_3
+
+<!-- UTSJSON.Array.every_3.description -->
+
+<!-- UTSJSON.Array.every_3.param -->
+
+<!-- UTSJSON.Array.every_3.returnValue -->
+
+<!-- UTSJSON.Array.every_3.test -->
+
+<!-- UTSJSON.Array.every_3.compatibility -->
+
+<!-- UTSJSON.Array.every_3.tutorial -->
+
+
 ### some(predicate, thisArg?)
 
 <!-- UTSJSON.Array.some.description -->
@@ -504,6 +547,34 @@ console.log(array.some(even));
 ```
 
 <!-- UTSJSON.Array.some.compatibility -->
+
+### some(predicate, thisArg?)_1
+
+<!-- UTSJSON.Array.some_1.description -->
+
+<!-- UTSJSON.Array.some_1.param -->
+
+<!-- UTSJSON.Array.some_1.returnValue -->
+
+<!-- UTSJSON.Array.some_1.test -->
+
+<!-- UTSJSON.Array.some_1.compatibility -->
+
+<!-- UTSJSON.Array.some_1.tutorial -->
+
+### some(predicate, thisArg?)_2
+
+<!-- UTSJSON.Array.some_2.description -->
+
+<!-- UTSJSON.Array.some_2.param -->
+
+<!-- UTSJSON.Array.some_2.returnValue -->
+
+<!-- UTSJSON.Array.some_2.test -->
+
+<!-- UTSJSON.Array.some_2.compatibility -->
+
+<!-- UTSJSON.Array.some_2.tutorial -->
 
 ### forEach(callbackfn, thisArg?)
 
