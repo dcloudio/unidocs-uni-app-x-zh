@@ -53,7 +53,7 @@
 ## 实例方法
 
 
-### slice(begin, end?)
+### slice(begin?, end?)
 
 <!-- UTSJSON.ArrayBuffer.slice.description -->
 
