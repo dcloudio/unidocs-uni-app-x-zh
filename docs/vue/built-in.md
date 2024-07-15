@@ -527,17 +527,26 @@
   export default {
     mounted() {
       // #ifdef APP
-      (this.$refs['input'] as UniInputElement).setAttribute('value', 'input value')
+      (this.$refs['input'] as UniInputElement).setAttribute('value', 'input value');
       // #endif
       // #ifdef WEB
-      (this.$refs['input'] as UniInputElement).value = 'input value'
+      (this.$refs['input'] as UniInputElement).value = 'input value';
       // #endif
+      // 当在 v-for 中使用模板引用时，this.$refs 中对应的值是一个数组
+      (this.$refs['textItems'] as UniTextElement[]).forEach((item : UniTextElement) => {
+        item.style.setProperty('color', 'red')
+      })
     }
   }
 </script>
 
 <template>
-  <input ref="input" />
+  <view>
+    <input ref="input" />
+    <text v-for="item in 3" ref="textItems" :key="item">{{
+      item
+    }}</text>
+  </view>
 </template>
 ```
 `this.$refs` 也是非响应式的，因此你不应该尝试在模板中使用它来进行数据绑定。
@@ -545,22 +554,31 @@
 使用组合式 API，引用将存储在与名字匹配的 ref 里：
 ```vue
 <script setup lang="uts">
-// 声明一个 ref 来存放该元素的引用
-// 必须和模板里的 ref 同名
-const input = ref<UniInputElement | null>(null)
+  // 声明一个 ref 来存放该元素的引用, 必须和模板里的 ref 同名
+  const input = ref<UniInputElement | null>(null)
+  // 当在 v-for 中使用模板引用时，对应的 ref 中包含的值是一个数组
+  const textItems = ref<UniTextElement[] | null>(null)
 
-onMounted(() => {
-  // #ifdef APP
-  input.value!.setAttribute('value', 'input value')
-  // #endif
-  // #ifdef WEB
-  input.value!.value = 'input value'
-  // #endif
-})
+  onMounted(() => {
+    // #ifdef APP
+    input.value!.setAttribute('value', 'input value')
+    // #endif
+    // #ifdef WEB
+    input.value!.value = 'input value'
+    // #endif
+    textItems.value!.forEach((item: UniTextElement) => {
+      item.style.setProperty('color', 'red')
+    })
+  })
 </script>
 
 <template>
-  <input ref="input" />
+  <view>
+    <input ref="input" />
+    <text v-for="item in 3" ref="textItems" :key="item">{{
+      item
+    }}</text>
+  </view>
 </template>
 ```
 
