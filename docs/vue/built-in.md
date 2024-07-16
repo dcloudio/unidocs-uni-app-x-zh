@@ -524,7 +524,10 @@
 
 ```vue
 <script lang="uts">
+  import Foo from '@/components/Foo.uvue'
+
   export default {
+    components: { Foo },
     mounted() {
       // #ifdef APP
       (this.$refs['input'] as UniInputElement).setAttribute('value', 'input value');
@@ -535,7 +538,11 @@
       // 当在 v-for 中使用模板引用时，this.$refs 中对应的值是一个数组
       (this.$refs['textItems'] as UniTextElement[]).forEach((item : UniTextElement) => {
         item.style.setProperty('color', 'red')
-      })
+      });
+      // 调用自定义组件方法
+      (this.$refs['foo'] as ComponentPublicInstance).$callMethod('updateTitle');
+      // 获取自定义组件响应式数据
+      console.log((this.$refs['foo'] as ComponentPublicInstance).$data['title']); // new title
     }
   }
 </script>
@@ -546,6 +553,7 @@
     <text v-for="item in 3" ref="textItems" :key="item">{{
       item
     }}</text>
+    <Foo ref="foo" />
   </view>
 </template>
 ```
@@ -554,10 +562,14 @@
 使用组合式 API，引用将存储在与名字匹配的 ref 里：
 ```vue
 <script setup lang="uts">
+  import Foo from '@/components/Foo.uvue'
+
   // 声明一个 ref 来存放该元素的引用, 必须和模板里的 ref 同名
   const input = ref<UniInputElement | null>(null)
   // 当在 v-for 中使用模板引用时，对应的 ref 中包含的值是一个数组
   const textItems = ref<UniTextElement[] | null>(null)
+  // 声明一个 ref 来存放自定义组件的引用, 必须和模板里的 ref 同名
+  const foo = ref<ComponentPublicInstance | null>(null)
 
   onMounted(() => {
     // #ifdef APP
@@ -569,6 +581,10 @@
     textItems.value!.forEach((item: UniTextElement) => {
       item.style.setProperty('color', 'red')
     })
+    // 调用自定义组件方法
+    foo.value!.$callMethod('updateTitle')
+    // 获取自定义组件响应式数据
+    console.log(foo.value!.$data['title']) // new title
   })
 </script>
 
@@ -578,11 +594,39 @@
     <text v-for="item in 3" ref="textItems" :key="item">{{
       item
     }}</text>
+    <Foo ref="foo" />
   </view>
 </template>
 ```
 
-[详情](./component.md#page-call-component-method)
+```vue
+<!-- components/Foo.uvue -->
+<template>
+  <view>
+    <text>title: {{title}}</text>
+  </view>
+</template>
+
+<script>
+  export default {
+    name:"Foo",
+    data() {
+      return {
+        title: 'default title'
+      }
+    },
+    methods: {
+      updateTitle(){
+        this.title = 'new title'
+      }
+    }
+  }
+</script>
+```
+
+#### 获取内置组件与自定义组件的区别
+- 使用 `ref` 获取内置组件实例时会获取到对应的 `Element`，例如上述代码示例中，`input` 组件获取到的是 `UniInputElement`, `text` 组件获取到的是 `UniTextElement`，可以调用 `Element` 的方法和属性。
+- 使用 `ref` 获取自定义组件实例时会获取到对应的 vue 组件实例，例如上述代码示例中，`Foo` 组件获取到的是 `ComponentPublicInstance`，可以获取自定义组件的属性或调用方法，[详情](./component.md#page-call-component-method)。
 
 
 ### is
