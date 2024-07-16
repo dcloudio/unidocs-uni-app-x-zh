@@ -1,8 +1,8 @@
-# 组件的公共属性和事件
+# 组件的全局属性和事件
 
 每个组件都有属性和事件。有些属性和事件，是所有组件都支持的。
 
-## 组件公共属性
+## 组件全局属性
 
 <!-- CUSTOMTYPEJSON.general-attribute.attribute -->
 
@@ -32,7 +32,11 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 
 <!-- CUSTOMTYPEJSON.general-attribute.example -->
 
-## 组件公共事件
+### 参见
+
+- [相关 Bug](https://issues.dcloud.net.cn/?mid=component.global-properties-events.global-properties)
+
+## 组件全局事件
 
 <!-- CUSTOMTYPEJSON.general-event.attribute -->
 
@@ -193,6 +197,10 @@ handleClick (event : UniPointerEvent) {
 </script>
 ```
 :::
+
+### 参见
+
+- [相关 Bug](https://issues.dcloud.net.cn/?mid=component.global-properties-events.global-events)
 
 ## UniEvent
 
@@ -382,5 +390,4 @@ UniTouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchc
 
 ## 参见
 
-- [相关 Bug](https://issues.dcloud.net.cn/?mid=component.common)
-
+- [相关 Bug](https://issues.dcloud.net.cn/?mid=component.global-properties-events)
