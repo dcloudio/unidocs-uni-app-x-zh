@@ -844,4 +844,28 @@ console.log(UTSAndroid.getTopPageActivity())
 
 <!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.compatibility -->
 
+
+
+### getGenericType<T>(): Type
+
+<!-- UTSJSON.UTSAndroid.getGenericType.description -->
+
+<!-- UTSJSON.UTSAndroid.getGenericType.param -->
+
+<!-- UTSJSON.UTSAndroid.getGenericType.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getGenericType.compatibility -->
+
+### getGenericClassName<T>(): string
+
+<!-- UTSJSON.UTSAndroid.getGenericClassName.description -->
+
+<!-- UTSJSON.UTSAndroid.getGenericClassName.param -->
+
+<!-- UTSJSON.UTSAndroid.getGenericClassName.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getGenericClassName.compatibility -->
+
+
+
 <!-- UTSJSON.UTSAndroid.tutorial -->
