@@ -101,3 +101,46 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+## 自定义支付provider
+
+第一步，在interface.uts 中定义接口,继承UniPaymentProvider，代码如下
+
+```ts
+export interface UniPaymentAlipayProvider extends UniPaymentProvider{}
+```
+
+第二步，在app-android或者app-ios的index.uts中实现接口，代码如下
+
+```ts
+import { UniPaymentAlipayProvider } from '../interface.uts'
+export class UniPaymentAlipayProviderImpl implements UniPaymentAlipayProvider{
+	override id : String = "alipay"
+	override description : String = "Alipay"
+	override isAppExist : boolean | null = null
+	
+	constructor(){}
+
+	override requestPayment(options : RequestPaymentOptions) {
+		//todo 具体逻辑
+	}
+}
+```
+
+第三步，在manifest.json中配置
+
+```ts
+  "app": {
+    "distribute": {
+      /* android打包配置 */
+      "modules": {
+        "uni-payment":{
+          "alipay":{}
+        }
+      }
+    }
+  }
+```
+
+第四步，打自定义基座
+
