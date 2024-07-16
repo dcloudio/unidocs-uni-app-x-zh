@@ -16,6 +16,7 @@ uts，全称 uni type script，统一、强类型、脚本语言。
 - web平台，编译为JavaScript
 - Android平台，编译为Kotlin
 - iOS平台，编译为Swift（HX 3.6.7+ 版本支持）
+- 鸿蒙OS平台，编译为ets（HX 4.22+ 版本支持）在现有架构下，ets文件和js文件在同一环境下执行，不涉及类型、通讯等问题。
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
@@ -452,6 +453,13 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 - dependencies-pods：插件需要依赖的 pod 库,  HBuilderX3.8.5+ 版本新增支持
 	+ 有关 dependencies-pods 配置和 CocoaPods 使用的更多细节[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html)
 
+#### 鸿蒙原生配置
+
+app-harmony文件夹存放uts插件编译到鸿蒙时的代码逻辑，目前仅支持uts文件。
+
+|目录名/文件名	|用途																				|
+|:---					|:---																				|
+|index.uts		|主入口，interface.uts声明的能力在iOS平台下的实现	|
 
 ## 开发uts插件
 
@@ -569,7 +577,7 @@ export const UTSApiUniErrors : Map<MyApiErrorCode, string> = new Map([
  * 使用时只需要传入特定的错误码即可完成创建。
  */
 export class MyApiFailImpl extends UniError implements MyApiFail {
-
+  override errCode: MyApiErrorCode
   /**
    * 错误对象构造函数
    */
@@ -577,7 +585,7 @@ export class MyApiFailImpl extends UniError implements MyApiFail {
     super();
     this.errSubject = UniErrorSubject;
     this.errCode = errCode;
-    this.errMsg = UTSApiUniErrors[errCode] ?? "";
+    this.errMsg = UTSApiUniErrors.get(errCode) ?? "";
   }
 }
 
@@ -720,6 +728,82 @@ import { MyApiFailImpl } from '../unierror';
 
 /**
  * UTSiOS 为平台内置对象，不需要 import 可直接调用其API，[详见](https://uniapp.dcloud.net.cn/uts/utsios.html)
+ */
+
+/**
+ * 异步方法
+ *
+ * uni-app项目中（vue/nvue）调用示例：
+ * 1、引入方法声明 import { myApi } from "@/uni_modules/uts-api"
+ * 2、方法调用
+ * myApi({
+ *   paramA: false,
+ *   complete: (res) => {
+ *      console.log(res)
+ *   }
+ * });
+ *
+ */
+export const myApi : MyApi = function (options : MyApiOptions) {
+
+  if (options.paramA == true) {
+    // 返回数据
+    const res : MyApiResult = {
+      fieldA: 85,
+      fieldB: true,
+      fieldC: 'some message'
+    };
+    options.success?.(res);
+    options.complete?.(res);
+
+  } else {
+    // 返回错误
+    let failResult = new MyApiFailImpl(9010001);
+    options.fail?.(failResult)
+    options.complete?.(failResult)
+  }
+
+}
+
+/**
+ * 同步方法
+ *
+ * uni-app项目中（vue/nvue）调用示例：
+ * 1、引入方法声明 import { myApiSync } from "@/uni_modules/uts-api"
+ * 2、方法调用
+ * myApiSync(true);
+ *
+ */
+export const myApiSync : MyApiSync = function (paramA : boolean) : MyApiResult {
+  // 返回数据，根据插件功能获取实际的返回值
+  const res : MyApiResult = {
+    fieldA: 85,
+    fieldB: paramA,
+    fieldC: 'some message'
+  };
+  return res;
+}
+```
+
+> harmonyOS
+
+```ts
+
+/**
+ * 引用鸿蒙系统库，示例如下：
+ * import deviceInfo from "@ohos.deviceInfo";
+ * [可选实现，按需引入]
+ */
+
+/* 引入 interface.uts 文件中定义的变量 */
+import { MyApiOptions, MyApiResult, MyApi, MyApiSync } from '../interface.uts';
+
+/* 引入 unierror.uts 文件中定义的变量 */
+import { MyApiFailImpl } from '../unierror';
+
+/**
+ * 引入三方库
+ * 暂不支持，请留意后续更新
  */
 
 /**
@@ -997,6 +1081,42 @@ export default function getBatteryLevel():number {
 
 至此，我们已经完成一个 iOS 平台上获取电量的原生能力封装。
 
+#### harmonyOS平台
+
+在utssdk目录下创建harmonyOS平台目录app-harmony
+
+在harmonyOS平台目录下，编辑index.uts，键入以下内容，即可完成harmonyOS平台获取电量能力。
+
+```ts
+import batteryInfo from '@ohos.batteryInfo';
+import { GetBatteryInfo, GetBatteryInfoOptions, GetBatteryInfoSuccess, GetBatteryInfoResult, GetBatteryInfoSync } from '../interface.uts';
+
+export const getBatteryInfoSync : GetBatteryInfoSync = function () : GetBatteryInfoResult {
+  return {
+    level: batteryInfo.batterySOC,
+    isCharging: batteryInfo.chargingStatus === batteryInfo.BatteryChargeState.ENABLE || batteryInfo.chargingStatus === batteryInfo.BatteryChargeState.FULL,
+  };
+}
+
+export const getBatteryInfo : GetBatteryInfo = function (options : GetBatteryInfoOptions) {
+  const batteryInfoResult : GetBatteryInfoSuccess = {
+    errMsg: "getBatteryInfo:ok",
+    level: batteryInfo.batterySOC,
+    isCharging: batteryInfo.chargingStatus === batteryInfo.BatteryChargeState.ENABLE || batteryInfo.chargingStatus === batteryInfo.BatteryChargeState.FULL,
+  }
+  try {
+    options.success && options.success(batteryInfoResult)
+  } catch (e) {
+    console.error(e)
+  }
+  try {
+    options.complete && options.complete(batteryInfoResult)
+  } catch (e) {
+    console.error(e)
+  }
+}
+```
+
 
 ### 应用程序生命周期函数监听@hooksClass
 
@@ -1137,10 +1257,14 @@ HelloUTS nativepage 插件增加了UTSAndroidHookProxy [源码示例](https://gi
 + onCreate回调后应尽可能的判断隐私合规是否同意再初始化，否则影响app上架
 + Android平台添加或修改UTSAndroidHookProxy实现代码需要重新提交云端打包才能生效
 
+#### harmonyOS平台
 
+暂不支持此能力
 
 
 ### `uts`与`uni-app`环境数据交互说明
+
+> harmonyOS目前的架构为ets和js在同一环境下运行，不涉及此章节内容
 
 
 UTS向uni-app传值，支持下列类型：
@@ -1359,6 +1483,11 @@ getBatteryCapacity()
 - HBuilderX 3.6.9以下版本，uts插件不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 - HBuilderX 3.6.9+，uts插件，支持本地编译和真机运行 [详情](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
 
+#### harmonyOS平台
+
+- uni-app-x项目暂不支持运行到harmonyOS平台
+- 目前运行到真机或者模拟的需要在鸿蒙DevEco-studio内手动操作
+
 ### 自定义基座
 
 自定义基座支持uts插件。
@@ -1381,6 +1510,7 @@ uts插件支持debug断点调试。可以在uts插件代码中打断点、查看
 
 - [Android debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
 - [iOS debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
+- [ArkTs debug教程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-debug-arkts-breakpoint-0000001807387305-V5)
 
 #### Bug&Tips
 - Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台
