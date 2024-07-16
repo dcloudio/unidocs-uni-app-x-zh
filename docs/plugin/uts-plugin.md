@@ -16,7 +16,7 @@ uts，全称 uni type script，统一、强类型、脚本语言。
 - web平台，编译为JavaScript
 - Android平台，编译为Kotlin
 - iOS平台，编译为Swift（HX 3.6.7+ 版本支持）
-- 鸿蒙OS平台，编译为ets（HX 4.22+ 版本支持）在现有架构下，ets文件和js文件在同一环境下执行，不涉及类型、通讯等问题。
+- 鸿蒙OS平台，编译为ArkTS（HX 4.22+ 版本支持）在现有架构下，ets文件和js文件在同一环境下执行，不涉及类型、通讯等问题。
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
@@ -82,6 +82,8 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 7. uts插件可同时支持uni-app和uni-app x。
 
 如果您是插件作者，可以了解更多uts插件和uni原生语言插件对插件作者的区别。[详见](https://uniapp.dcloud.net.cn/plugin/publish.html#utsdiff)
+
+更新：“App原生语言插件”已停止维护。请插件开发者都使用uts插件。
 
 ### uts插件和Native.js的区别
 
@@ -459,7 +461,7 @@ app-harmony文件夹存放uts插件编译到鸿蒙时的代码逻辑，目前仅
 
 |目录名/文件名	|用途																				|
 |:---					|:---																				|
-|index.uts		|主入口，interface.uts声明的能力在iOS平台下的实现	|
+|index.uts		|主入口，interface.uts声明的能力在harmony平台下的实现	|
 
 ## 开发uts插件
 
@@ -467,13 +469,14 @@ app-harmony文件夹存放uts插件编译到鸿蒙时的代码逻辑，目前仅
 
 #### 创建插件
 
-在HBuilder X 中选中你的项目下 uni_modules目录,右键选择新建uni_modules插件, 例如 `uts-api`
+在HBuilder X 中选中你的项目下`uni_modules`目录，右键选择新建uni_modules插件, 例如 `uts-api`
 
 
 #### 编写interface.uts
 
-插件 `uts-api` 创建完成后，我们需要确定插件对外暴露的 API。为了多端统一规范的定义对外暴露的接口，获得 HBuilder X更好的语法提示，我们建议在 `interface.uts` 文件中统一定义插件要暴露的 API 类型、 API 的参数类型、返回值类型、错误码类型、错误接口等信息，然后在各端的 `index.uts` 中做具体的业务实现。
+插件 `uts-api` 创建完成后，我们需要确定插件对外暴露的 API。
 
+为了多端统一规范的定义对外暴露的接口，获得更好的语法提示和多端一致性约束，标准做法是在 `interface.uts` 文件中统一定义插件要暴露的 API 类型、 API 的参数类型、返回值类型、错误码类型、错误接口等信息，然后在各端的 `index.uts` 中做具体的业务实现。
 
 打开 `interface.uts` 文件，键入下面的源码, 为了方便说明，源码的每个部分的作用都用注释来说明。
 
@@ -533,7 +536,7 @@ export type MyApiSync = (paramA : boolean) => MyApiResult
 ```
 
 > 特别注意
-> `interface.uts` 是我们推荐的做法，不做强制要求，可以根据自己的实际情况决定是否实现。
+> `interface.uts` 是官方推荐的多端一致性的最佳实践，不做强制要求，可以根据自己的实际情况决定是否实现。比如某个插件只有一个平台，不写interface也可以。
 > `interface.uts` 文件中定义并 `export` 的 `interface` 接口例如 `MyApiFail` 只能在插件内部的 `uts` 文件代码中使用，不能在 `.uvue` 文件中使用插件时导入使用。
 
 至此，我们就完成了 `interface` 的定义，如果你遵循规范，定义了错误码的类型和错误码的 `interface` 如 `MyApiFail`, 那么你还需要在 `unierror.uts` 文件中对 `MyApiFail` 这个接口做具体实现。
@@ -596,7 +599,7 @@ Uni错误规范的更多信息[详见](https://uniapp.dcloud.net.cn/tutorial/err
 
 #### 实现接口定义和业务逻辑
 
-分别在插件的 `app-android` 和 `app-ios` 目录下打开 `index.uts` 文件，键入下面的插件源码:
+分别在插件的 `app-android` 、`app-ios` 等目录下打开 `index.uts` 文件，键入下面的插件源码:
 
 ::: preview
 
@@ -1414,7 +1417,7 @@ list1.forEach((item : any) => {
 
 ## 前端使用插件
 
-虽然uts插件由uts语法开发，但前端引用插件并不要求一定需要ts，普通js即可引用uts插件。
+虽然uts插件由uts语法开发，但前端引用插件并不要求一定需要uts，普通js亦可引用uts插件。这也是uts插件同时支持uni-app和uni-app x的重要原因。
 
 下面介绍两种常见的引入方式
 
@@ -1462,7 +1465,7 @@ getBatteryCapacity()
 ```
 
 
-关于电量这个插件，插件市场已提供现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+关于电量这个插件，插件市场已提供现成的插件，除了Android、iOS、鸿蒙，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
 
 更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
 

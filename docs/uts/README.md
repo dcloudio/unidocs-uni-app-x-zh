@@ -5,23 +5,26 @@
 uts，全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。
 
 它可以被编译为不同平台的编程语言，如：
-- web平台，编译为JavaScript
+- web平台/小程序，编译为JavaScript
 - Android平台，编译为Kotlin
 - iOS平台，编译Swift
+- 鸿蒙OS平台，编译为ArkTS（HBuilderX 4.22+）
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
 但为了跨端，uts进行了一些约束和特定平台的增补。
 
-过去在js引擎下运行支持的语法，大部分在uts的处理下也可以平滑的在kotlin和swift中使用。但有一些无法抹平，需要使用条件编译。和uni-app的条件编译类似，uts也支持条件编译。写在条件编译里的，可以调用平台特有的扩展语法。
+过去在js引擎下运行支持的语法，大部分在uts的处理下也可以平滑的在kotlin和swift中使用。但有一些无法抹平，需要使用条件编译。
+
+和uni-app的条件编译类似，uts也支持条件编译。写在条件编译里的，可以调用平台特有的扩展语法。
 
 ### 用途和关系
 
 uts是一门语言。也仅是一门语言，不包含ui框架。
 
-uvue是DCloud提供的跨平台的、基于vue语法的ui框架。
+uvue是DCloud提供的跨平台的、基于uts的、使用vue方式的ui框架。
 
-uts相当于js，uvue相当于html和css。它们类似于v8和webkit的关系、类似于dart和flutter的关系。
+uts相当于js，uvue相当于html和css。它们类似于v8和webkit的关系，或者类似于dart和flutter的关系。
 
 uts这门语言，有2个用途：
 

@@ -4,7 +4,7 @@
 
 上述概念，其实都是为了给组件一个标记，通过标记拿到组件的上下文对象，然后操作这个对象的方法。
 
-但因为平台不同，制造了不同的概念。id在web和小程序中存在，ref是vue的概念。uni-app中这些皆而有之。
+但因为平台不同，制造了不同的概念。id在web和小程序中存在，NodeRef是小程序的概念、ref和ComponentPublicInstance是vue的概念。uni-app中这些皆而有之。
 
 我们以video为例，解释这些概念的相同和差别之处。
 
@@ -20,9 +20,11 @@ html内置标签有id属性，通过document.getElmenetById("")可以返回一�
 ```
 
 ### vue自定义组件@vuecomponent
-vue框架中组件有ref属性，通过this.refs可以返回一个组件实例ComponentPublicInstance。可以进一步调用组件的方法。
+vue框架中组件有ref属性，选项式中通过this.refs可以返回一个组件实例ComponentPublicInstance，组合式则是定义一个同名的ref()变量。得到组件实例可以进一步调用组件的属性和方法。
 
 对于html内置元素，在web中一般不通过ref获取。ref更多是服务于自定义的vue组件。
+
+但在uni-app x中，ref获取内置组件时，App和Web平台得到的是UniElement。获取非内置组件才是vue组件实例。
 
 假使有一个vue组件，其有一个方法getSome()，那么用法是：\
 template区：
@@ -57,6 +59,8 @@ uni.createVideoContext('vid').play()
   }).exec()
 ```
 
+一般推荐使用第1种方法，也就是createXXContext方式。这种方式简洁并且可以跨平台。
+
 ### vue自定义组件
 uni-app编译到小程序时，vue组件的用法与web相同，具体[见上](#vuecomponent)。
 
@@ -81,7 +85,7 @@ uni-app x提供了[uni.getElementById](../api/get-element.md)方法，返回的�
 
 但是由于本方法不与页面绑定，获取的是栈顶页面的element，所以可能发生预期外的情况，[详见](../api/get-element.md)
 
-UniVideoElement 继承自 Element，拥有video专用的一批方法。
+UniVideoElement 继承自 UniElement，拥有video专用的一批方法。
 
 template区：
 ```html
@@ -106,7 +110,7 @@ uni-app x 虽然支持 `uni.createSelectorQuery()` API，传入选择器，可�
 
 其实`this.$refs`获取到的内置组件，通过as也可以转换为Element。
 
-与`uni.getElementById`相比，`this.$refs`方式与调用页面绑定，日常更推荐使用。
+与`uni.getElementById`相比，`this.$refs`方式与调用页面绑定。
 
 script区：
 ```js

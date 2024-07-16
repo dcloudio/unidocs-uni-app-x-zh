@@ -1,12 +1,22 @@
 ## uts for harmonyOS
 
-本文旨在帮助 harmonyOS 开发者，快速上手 UTS。注意目前编译到鸿蒙时uts仅能编写uts api，uni-app-x项目不支持编译到harmonyOS。
+鸿蒙系统有很多原生API，这些API通过ArkTS来调用。
+
+由于uts可以编译为ArkTS，所以uts可以调用鸿蒙的所有原生API。
+
+如需在uni-app中使用，就需要把鸿蒙的原生API封装为uts插件，然后在uni-app中使用。
+
+这些uts插件，是同时兼容uni-app和uni-app x的。
+
+但目前仅uni-app支持鸿蒙next，uni-app x还需过段时间。
+
+uni-app中开发者的逻辑是编译为js，js无法直接调用鸿蒙原生API。而uts插件是编译为ets文件，所以可以调用鸿蒙原生API。（ArkTS的文件后缀为.ets）
 
 ## 1 了解 UTS 插件是什么
 
-UTS 插件是 uni-app 新型插件形式 [详情](/plugin/uts-plugin)
+UTS 插件是 uni-app 扩展API的标准插件形式 [详情](./uts-plugin.md)
 
-uts插件在编译到harmonyOS端时会被编译成ArkTs代码。因此编写代码时应注意遵循uts规范+ets规范。
+uts插件在编译到harmonyOS端时会被编译成ArkTs代码。因此编写代码时应注意遵循 `uts规范` 和 `ets规范`。
 
 ## 2 掌握UTS语法及ArkTs语法
 
@@ -45,6 +55,7 @@ interface Obj {
 const obj: Obj = {
   a: 1
 }
+//或
 const obj = {
   a: 1
 } as Obj
