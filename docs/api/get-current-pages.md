@@ -8,6 +8,10 @@
 
 <!-- UTSAPIJSON.getCurrentPages.returnValue -->
 
+::: warning 注意
+- 使用`选项式 API` 时，不可创建 `route`、`options` 同名响应式变量，否则会覆盖当前 `page 实例` 的同名属性。
+:::
+
 **PageStyle**
 
 支持 pages.json 下 `globalStyle` 节点属性和页面下 `style` 节点属性
