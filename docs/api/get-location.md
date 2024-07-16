@@ -87,3 +87,4 @@ export class UniLocationTencentProviderImpl implements UniLocationTencentProvide
 
 第四步，打自定义基座
 
+[示例代码](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getLocation-tencent)
