@@ -35,3 +35,55 @@ uni-app x的标准基座定位仅支持wgs84坐标系、不支持逆地址解析
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+## 自定义定位provider
+
+以自定义腾讯定位为例
+
+第一步，在interface.uts 中定义接口,继承UniLocationProvider，代码如下
+
+```ts
+export interface UniLocationTencentProvider extends UniLocationProvider{}
+```
+
+第二步，在app-android或者app-ios的index.uts中实现接口，代码如下
+
+```ts
+import { UniLocationTencentProvider } from '../interface';
+
+export class UniLocationTencentProviderImpl implements UniLocationTencentProvider{
+
+
+	override id : String = 'tencent'
+
+	override description : String = "tencent"
+
+	override isAppExist : boolean | null = null
+
+	override getLocation(options : GetLocationOptions) {
+		//todo 具体逻辑
+	}
+
+	constructor() {
+	}
+
+}
+```
+
+第三步，在manifest.json中配置
+
+```ts
+  "app": {
+    "distribute": {
+      /* android打包配置 */
+      "modules": {
+        "uni-getLocation":{
+          "tencent":{}
+        }
+      }
+    }
+  }
+```
+
+第四步，打自定义基座
+
