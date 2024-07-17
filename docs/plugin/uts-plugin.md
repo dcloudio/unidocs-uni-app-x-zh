@@ -1421,6 +1421,92 @@ list1.forEach((item : any) => {
 > 在uni-app 环境下，在 index.uts 文件中 `export` 的 `class` 默认会对 `js`暴露，因此要建立起原生 `class` 和 `js`类型的映射关系，只有能正常建立起这种映射关系的类才能导出。除一些基本数据类型外的系统类例如 `Activity`、`UIViewController`等是无法 `export` 的。
 
 
+
+## UTS混编
+
+HBuilder X 4.25 及之后版本，UTS插件可以直接使用原生代码， 即 `UTS混编`
+
+#### Android平台
+
+在app-android 可以直接添加 kotlin/java 源码
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/mixCodeAndroid.png)
+
+> 注意：java代码需要云打包自定义基座后生效，kotlin代码不需要云端打包本地即可生效
+
+Android包名说明:
+
+大多数情况下，我们建议混编代码的包名与[UTS插件默认包名](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#_3-1-%E9%85%8D%E7%BD%AEandroidmanifest-xml)保持一致，这样在UTS调用原生代码时，可以省去手动引入包名的步骤。
+
+```kotlin
+// hello uts 混编示例中的包名
+package uts.sdk.modules.utsSyntaxcase
+```
+
+如果混编代码的包名与`UTS插件默认包名`不一致，则需要像使用原生对象一样手动引入
+
+```ts
+import KotlinObject from 'xxx.xxx.KotlinObject';
+```
+
+
+
+#### iOS平台
+
+在插件的app-ios 目录下可以直接添加 Swift 源码文件
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/mixCodeIOS.png)
+
+如图所示，可以将 Swift 文件直接放在 app-ios 目录下，也可以放在 app-ios 的子目录下。
+
+在 uts 代码中使用 Swift 文件中定义的函数、变量、类等时无需导入，可以直接调用。
+
+如果你想将 Swift 文件中的变量输出到 HX 控制台中，可以将基础库 `DCloudUTSFoundation` 导入到 Swift 源码文件中，不过这个导入和使用过程将没有代码提示，
+输出的变量信息也不会包含变量所在的文件和代码行号等信息。
+
+示例如下：
+
+```swift
+
+import DCloudUTSFoundation;
+
+func test1() -> String {
+    console.log("this is in swift file")
+    return "123"
+}
+```
+
+> 注意：
+> 目前仅支持 Swift 源码混编，OC 源码即使添加也不会参与编译
+> Swift 源码文件中定义的函数、全局变量、类 等符号名称不要和 uts 文件中的符号名相同，否则会因为符号冲突导致编译不过
+
+
+
+#### 注意事项：
+
++ `index`是保留文件名，原生代码不能命名为 index.kt/index.java/index.swift
+ 
++ HBuilder X 目前不支持原生代码的语法提示
+
++ HBuilder X 目前不支持原生代码的debug断点调试
+
++ 混编需要使用[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91%E5%A4%84%E7%90%86%E5%A4%9A%E7%AB%AF%E5%B7%AE%E5%BC%82)限制编译入口
+
+```uts
+// 下面的代码只会在Android平台编译
+// #ifdef APP-ANDROID
+export function callKotlinMethodGetInfo():String {
+	return NativeCode.getPhoneInfo()
+}
+export function callJavaMethodGetInfo():String {
+	return new JavaUser("jack",12).name
+}
+// #endif
+```
+
+完整的混编示例可以在[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/dev/uni_modules/uts-syntaxcase/utssdk)中找到
+
+
 ## 前端使用插件
 
 虽然uts插件由uts语法开发，但前端引用插件并不要求一定需要uts，普通js亦可引用uts插件。这也是uts插件同时支持uni-app和uni-app x的重要原因。
