@@ -869,9 +869,8 @@ DispatchQueue.main.async(execute=():void => {
 
 ### 6.3 插件中需要显示使用类型，不能省略
 
-由于在uts插件环境，无法默认推断出类型，所以需要显示类型，不能推断出类型
+由于在uts插件环境，无法默认推断出类型，所以需要显示类型，以`uni.request()`为例：
 
-以`uni.request()`为例：
 ```
 		uni.request<any>({
 			url: "http://xxx",
