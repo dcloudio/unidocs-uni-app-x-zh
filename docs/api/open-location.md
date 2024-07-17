@@ -8,4 +8,6 @@
 
 <!-- UTSAPIJSON.openLocation.returnValue -->
 
+<!-- UTSAPIJSON.openLocation.example -->
+
 <!-- UTSAPIJSON.openLocation.tutorial -->

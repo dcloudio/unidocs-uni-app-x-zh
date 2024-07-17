@@ -44,7 +44,6 @@
   * [获取APP授权设置](get-app-authorize-setting.md)
   * [获取系统设置](get-system-setting.md)
   * [安装 APK](install-apk.md)
-  * [推送](push.md)
   * [获取电池电量信息](get-battery-info.md)
   * [打电话](make-phone-call.md)
   * [罗盘](compass.md)

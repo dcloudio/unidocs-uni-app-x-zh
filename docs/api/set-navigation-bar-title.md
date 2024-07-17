@@ -10,6 +10,8 @@
 
 <!-- UTSAPIJSON.setNavigationBarTitle.tutorial -->
 
+<!-- UTSAPIJSON.setNavigationBarTitle.example -->
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

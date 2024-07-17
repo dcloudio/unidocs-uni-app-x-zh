@@ -9,3 +9,5 @@
 <!-- UTSAPIJSON.chooseLocation.returnValue -->
 
 <!-- UTSAPIJSON.chooseLocation.tutorial -->
+
+<!-- UTSAPIJSON.chooseLocation.example -->
