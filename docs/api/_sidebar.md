@@ -88,7 +88,6 @@
   * [创建 web-view 组件上下文对象](create-webview-context.md)
   * [创建 video 组件上下文对象](create-video-context.md)
   * [创建 map 组件上下文对象](create-map-context.md)
-  * [创建 canvas 组件上下文对象](create-canvas-context.md)
 * uniCloud客户端API
   * [概述](unicloud/README.md)
   * [云函数](unicloud/function.md)

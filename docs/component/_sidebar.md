@@ -50,7 +50,6 @@
   * 导航
     * [navigator | 页面链接](navigator.md)
   * 媒体组件
-    * [audio | 音频](audio.md)
     * [image | 图片](image.md)
     * [video | 视频](video.md)
   * 地图
