@@ -36,11 +36,11 @@ uts插件在编译到harmonyOS端时会被编译成ArkTs代码。因此编写代
 
 #### any类型
 
-ArkTs内不能使用any类型，但是uts内any用处比较多，因此在编译为ArkTs时，any类型被转为了ESObject这个ArkTs特有的类型。
+ArkTs内不能使用any类型，但是uts内any用处比较多，因此在编译为ArkTs时，any类型被转为了Object类型。
 
 #### 对象字面量
 
-ArkTs不允许无类型的对象字面量，编写代码时应注意为对象字面量指定类型。如未指定类型，uts会将此对象字面量编译成`as UTSJSONObject`的形式。
+ArkTs不允许无类型的对象字面量，编写代码时应注意在需要类型时为对象字面量指定类型。如未指定类型，uts会将此对象字面量编译成`as UTSJSONObject`的形式。
 
 ```ts
 // 源码
