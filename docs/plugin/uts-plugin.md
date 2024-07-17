@@ -16,7 +16,7 @@ uts，全称 uni type script，统一、强类型、脚本语言。
 - web平台，编译为JavaScript
 - Android平台，编译为Kotlin
 - iOS平台，编译为Swift（HX 3.6.7+ 版本支持）
-- 鸿蒙OS平台，编译为ArkTS（HX 4.22+ 版本支持）在现有架构下，ets文件和js文件在同一环境下执行，不涉及类型、通讯等问题。
+- harmonyOS平台，编译为ArkTs（HX 4.22+ 版本支持）在现有架构下，ArkTs和JS在同一环境下执行，不涉及通讯等问题。
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
@@ -804,6 +804,10 @@ import { MyApiOptions, MyApiResult, MyApi, MyApiSync } from '../interface.uts';
 /* 引入 unierror.uts 文件中定义的变量 */
 import { MyApiFailImpl } from '../unierror';
 
+export {
+  MyApiOptions
+}
+
 /**
  * 引入三方库
  * 暂不支持，请留意后续更新
@@ -868,6 +872,8 @@ export const myApiSync : MyApiSync = function (paramA : boolean) : MyApiResult {
 
 
 #### 使用插件
+
+> 注意uni-app-x暂不支持运行到harmonyOS，下面的示例代码为uni-app-x代码
 
 上面的代码，我们完成了一个名为 "uts-api" 的UTS 插件，在 `uvue` 文件中使用该插件的代码示例如下：
 

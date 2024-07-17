@@ -40,18 +40,35 @@ ArkTs内不能使用any类型，但是uts内any用处比较多，因此在编译
 
 #### 对象字面量
 
-ArkTs不允许无类型的对象字面量，编写代码时应注意为对象字面量指定类型
+ArkTs不允许无类型的对象字面量，编写代码时应注意为对象字面量指定类型。如未指定类型，uts会将此对象字面量编译成`as UTSJSONObject`的形式。
 
 ```ts
-// 错误用法
+// 源码
 const obj = {
   a: 1
 }
 
-// 正确用法
+// 编译结果
+const obj = {
+  a: 1
+} as UTSJSONObject
+```
+
+```ts
+// 源码
 interface Obj {
   a: number
 }
+const obj: Obj = {
+  a: 1
+}
+//或
+const obj = {
+  a: 1
+} as Obj
+
+// 编译结果
+class Obj { ... }
 const obj: Obj = {
   a: 1
 }
@@ -65,7 +82,7 @@ const obj = {
 
 ### context的获取
 
-很多鸿蒙原生接口需要传入context作为参数。多数情况下可以直接调用鸿蒙全局方法`getContext()`获取。例如：
+很多harmonyOS原生接口需要传入context作为参数。多数情况下可以直接调用harmonyOS全局方法`getContext()`获取。例如：
 
 ```ts
 import settings from '@ohos.settings';
