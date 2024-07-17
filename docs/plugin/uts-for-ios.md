@@ -867,6 +867,25 @@ DispatchQueue.main.async(execute=():void => {
 路径:
 > ~/uni_modules/uts-toast/utssdk/app-ios/index.uts
 
+### 6.3 插件中需要显示使用类型，不能省略
+
+由于在uts插件环境，无法默认推断出类型，所以需要显示类型，不能推断出类型
+
+以`uni.request()`为例：
+```
+		uni.request<any>({
+			url: "http://xxx",
+			method: "GET",
+			success: (e : RequestSuccess<any>) => {
+				
+			},
+			fail(e : RequestFail) {
+				
+			},
+		} as RequestOptions<any>)
+```
+
+
 
 
 ## 7  已知待解决问题(持续更新)
