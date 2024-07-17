@@ -976,6 +976,17 @@ export function request<T>(options : RequestOptions<T>) : RequestTask {
 }
 ```
 
+### 6.7 获取原生Class 对象
+
+可以使用下面的代码获取指定class对象
+```kotlin
+// 根据 类名 获取 class
+let getClassByName = Class.forName("io.dcloud.uts.UTSJSONObject")
+console.log(getClassByName);
+// 根据 实例 获取 class
+let getClassByInstance = UTSAndroid.getJavaClass(UTSAndroid.getUniActivity()!)
+console.log(getClassByInstance);
+```
 
 ## 7  已知待解决问题(持续更新)
 
