@@ -4,9 +4,11 @@ uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
 
 uni-app x 是一个庞大的工程，它包括uts语言、uvue渲染引擎、uni的组件和API、以及扩展机制。
 
-uts是一门类ts的、跨平台的、新语言。uts在iOS端编译为swift、在Android端编译为kotlin、在Web端编译为js。
+uts是一门类ts的、跨平台的、新语言。
 
-在Android平台，uni-app x 的工程被编译为kotlin代码，本质上是换了vue写法的原生kotlin应用，在性能上与原生kotlin一致。
+uts在iOS平台编译为swift、在Android平台编译为kotlin、在Web和小程序平台编译为js、在鸿蒙next平台上编译为ArkTS。
+
+在Android平台，uni-app x 的工程被整体编译为kotlin代码，本质上是换了vue写法的原生kotlin应用，在性能上与原生kotlin一致。
 
 可以体验打包后的[hello uni-app x](https://hellouniappx.dcloud.net.cn)，访问地址或扫描二维码后获取：
 
