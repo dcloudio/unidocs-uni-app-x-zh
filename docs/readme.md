@@ -357,11 +357,13 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 - 未来 uni-app js引擎版还维护吗？\
   维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。不再维护不是下线，而是没有重大问题的话（如新手机不兼容）不会再更新了。
 
-  并非所有应用都需要达到微信、抖音的性能，js引擎版如能满足你的性能需求，那继续使用js引擎版。
+  如果开发小程序和Web，那使用哪个都差不多。
+  
+  如果开发App，那uni-app面向的是对体验不敏感，只了解web技术，对开发成本更敏感的前端开发者。而uni-app x则适用于愿意多付出一些开发成本、以追求更好体验的开发者。当然这个多付出的开发成本也远低于原生开发各端的成本。
 
-  未来vue页面也会支持uts组件。无论js引擎版还是x版，都支持uts插件生态，未来的原生扩展api和插件会是复用的。
+  不管uni-app还是uni-app x，都支持uts插件生态，原生扩展api和插件是复用的。
 
-  包括官方的组件和API也会复用，比如电量API [uni.getbatteryinfo](https://ext.dcloud.net.cn/plugin?id=9295)，和[lottie组件](https://ext.dcloud.net.cn/plugin?id=10674)，它们使用uts开发，在 uni-app js引擎版和x版上，调用的都是一套代码。
+  包括官方的组件和API也是复用的，比如电量API [uni.getbatteryinfo](https://ext.dcloud.net.cn/plugin?id=9295)，和[lottie组件](https://ext.dcloud.net.cn/plugin?id=10674)，它们使用uts开发，在 uni-app js引擎版和x版上，调用的都是一套代码。
 所以不必担心官方精力不足，顾此失彼。
 
 ::: tip 加群交流
