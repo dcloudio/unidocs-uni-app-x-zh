@@ -8,7 +8,7 @@
   * [拦截器](interceptor.md)
   * [获取启动参数](get-launch-options-sync.md)
   * [退出应用](exit.md)
-  * [获取服务提供商](get-provider.md)
+  * [获取服务提供商](provider.md)
   * [getPerformance](get-performance.md)
 * 页面和路由
   * [页面跳转](navigator.md)
@@ -80,6 +80,7 @@
   * [push](uni-push.md)
 * 支付
   * [发起支付](request-payment.md)
+  * [苹果内购](virtual-payment.md)
 * 绘画
   * [canvasToTempFilePath](canvas-to-temp-file-path.md)
   * [canvasGetImageData](canvas-get-image-data.md)
