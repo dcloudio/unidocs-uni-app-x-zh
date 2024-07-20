@@ -1,13 +1,30 @@
 # 虚拟支付
-虚拟支付有两个api：
-1. uni.requestVirtualPayment(options) :统一各平台的虚拟支付API，暂时只支持iOS平台。
-2. uni.createVirtualPaymentContext() :获取各平台虚拟支付的上下文对象，统一调用各自虚拟支付涉及api的入口, 暂时只支持iOS平台。
+
+一些平台，对非实物交易，比如vip会员、游戏道具，会进行支付分账。
+
+比如Apple要求在iOS上的所有虚拟商品交易必须且只能使用应用内支付IAP，比如微信小程序对网剧的虚拟支付要求。
+
+此时开发者需要按照平台的规范开发虚拟支付。
+
+本文档仅对各平台虚拟支付的API进行封装，具体业务仍需参考平台自身的文档。不符合平台要求会导致无法通过上架审核。
+
+一般而言，开发者需要在平台后台上架虚拟商品，获取产品id，然后在客户端发起虚拟支付请求，传入产品id等参数，进行支付。
+
+虚拟支付请求发起后，平台会要求手机用户付款，用户会付款到平台，平台再扣除分成后结算给开发者。
+
+平台一般还会有查询订单、关闭订单等API，只不过有的是客户端API，有的是服务器API。
+
+目前uni-app x中，虚拟支付有两个api：
+1. uni.requestVirtualPayment(options)：发起虚拟支付请求。
+2. uni.createVirtualPaymentContext()：获取各平台虚拟支付的上下文对象，在该对象上会挂载平台专有的一些API。当需要平台扩展功能时，则需要使用本API。
 
 ::: warning Note：
-1. iOS平台采用新的框架StoreKit2实现IAP，目前仅支持iOS15.0以上版本；
-2. 为了规避Apple Store审核规则，请在iOS15.0版本以下， 关闭项目中的购买入口；
+1. iOS平台采用Apple新提供的框架StoreKit2实现IAP，该框架目前仅支持iOS15.0及以上版本；
+2. 为了避免Apple Store审核不过，请在iOS15.0版本以下，关闭项目中的购买入口；
 :::
 
+支付不仅需要客户端开发，也需要服务器开发。
+[uni-pay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)是一个云端一体的开源组件，下载这个插件，客户端和服务器代码都已封装好，开发者填入参数即可使用。[详见](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app.html)
 
 ## uni.requestVirtualPayment(options) @requestvirtualpayment
 
@@ -15,7 +32,11 @@
 
 <!-- UTSAPIJSON.requestVirtualPayment.compatibility -->
 
-uni.requestVirtualPayment是一个统一各平台的客户端虚拟支付API。
+uni.requestVirtualPayment是一个统一各平台虚拟支付客户端API。
+
+> 在uni-app中，iOS的IAP是放置在uni.requestPayment中的。但后期微信小程序独立了虚拟支付的API。考虑到Apple、微信、鸿蒙next都有虚拟支付，所以在uni-app x中，也独立出了单独的虚拟支付的API。
+
+目前本API仅支持IAP。待uni-app x可以编译为微信小程序和鸿蒙hap时，也会支持相应的虚拟支付。
 
 <!-- UTSAPIJSON.requestVirtualPayment.param -->
 
@@ -66,9 +87,9 @@ uni.requestVirtualPayment({
 <!-- UTSAPIJSON.createVirtualPaymentContext.compatibility -->
 
 
-uni.createVirtualPaymentContext(): 用来创建各个平台虚拟支付上下文对象，暂时仅支持iOS平台。
+uni.createVirtualPaymentContext(): 用来创建各个平台虚拟支付上下文对象，暂时仅支持iOS平台IAP支付。
 
-### 对象持有方法：
+对象持有如下方法：
 1. restoreCompletedTransactions(options): 获取苹果服务器已支付的交易列表
 
 2. getUnfinishedTransactions(options): 获取苹果服务器已支付且未关闭的交易列表
