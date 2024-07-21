@@ -2,6 +2,10 @@
 
 <!-- UTSAPIJSON.getLocation.description -->
 
+::: warning 注意
+Web平台本API调用了腾讯地图的gcj02坐标转换接口，该接口从2024年7月18日起开始陆续下线。[详见](https://ask.dcloud.net.cn/question/195113)
+:::
+
 <!-- UTSAPIJSON.getLocation.compatibility -->
 
 <!-- UTSAPIJSON.getLocation.param -->
@@ -10,7 +14,7 @@
 
 ### 注意
 
-uni-app x的标准基座定位仅支持wgs84坐标系、不支持逆地址解析、且某些老型号国产Android机因gms问题不支持系统定位、国产Rom可能不支持高度信息。
+uni-app x的App标准基座定位仅支持wgs84坐标系、不支持逆地址解析、且某些老型号国产Android机因gms问题不支持系统定位、国产Rom可能不支持高度信息。
 
 如需更强的定位能力，需加载专业定位sdk。
 
