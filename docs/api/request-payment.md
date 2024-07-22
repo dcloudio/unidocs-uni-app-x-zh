@@ -105,7 +105,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 ## 支付provider对象描述
 
-#### UniPaymentAlipayProvider(阿里支付)
+### UniPaymentAlipayProvider(阿里支付)
 
 | 名称           | 类型      | 必备 | 默认值 | 兼容性 | 描述                                  |
 | -------------- | --------- | ---- | ------ | ------ | ------------------------------------- |
@@ -113,7 +113,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 | description    | string    | 是   | -      | -      | 服务供应商描述                        |
 | isAppExist     | boolean   | 是   | -      | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
 
-#### UniPaymentWxpayProvider(微信支付)
+### UniPaymentWxpayProvider(微信支付)
 
 | 名称           | 类型      | 必备 | 默认值 | 兼容性 | 描述                                  |
 | -------------- | --------- | ---- | ------ | ------ | ------------------------------------- |
