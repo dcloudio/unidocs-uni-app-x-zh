@@ -102,6 +102,28 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 <!-- UTSAPIJSON.general_type.param -->
 
+
+## 支付provider对象描述
+
+#### UniPaymentAlipayProvider(阿里支付)
+
+| 名称           | 类型      | 必备 | 默认值 | 兼容性 | 描述                                  |
+| -------------- | --------- | ---- | ------ | ------ | ------------------------------------- |
+| id             | string    | 是   | -      | -      | 服务供应商标识                        |
+| description    | string    | 是   | -      | -      | 服务供应商描述                        |
+| isAppExist     | boolean   | 是   | -      | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
+
+#### UniPaymentWxpayProvider(微信支付)
+
+| 名称           | 类型      | 必备 | 默认值 | 兼容性 | 描述                                  |
+| -------------- | --------- | ---- | ------ | ------ | ------------------------------------- |
+| id             | string    | 是   | -      | -      | 服务供应商标识                        |
+| description    | string    | 是   | -      | -      | 服务供应商描述                        |
+| isAppExist     | boolean   | 是   | -      | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
+| isWeChatInstalled     | boolean   | 是   | -      | -      | 判断微信是否安装 |
+
+
+
 ## 自定义支付provider
 
 第一步，在interface.uts 中定义接口,继承UniPaymentProvider，代码如下
