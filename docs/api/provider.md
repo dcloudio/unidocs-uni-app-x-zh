@@ -56,6 +56,12 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。�
 
 <!-- UTSAPIJSON.getProviderObject.returnValue -->
 
+### UniProvider说明
+
+支付Provider：[UniPaymentAlipayProvider](https://doc.dcloud.net.cn/uni-app-x/api/request-payment.html#UniPaymentAlipayProvider(%E9%98%BF%E9%87%8C%E6%94%AF%E4%BB%98)),[UniPaymentWxpayProvider](https://doc.dcloud.net.cn/uni-app-x/api/request-payment.html#UniPaymentWxpayProvider(%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98))
+
+定位Provider：[UniLocationSystemProvider](https://doc.dcloud.net.cn/uni-app-x/api/get-location.html#UniLocationSystemProvider(%E7%B3%BB%E7%BB%9F%E5%AE%9A%E4%BD%8D)),[UniLocationTencentProvider](https://doc.dcloud.net.cn/uni-app-x/api/get-location.html#UniLocationTencentProvider(%E8%85%BE%E8%AE%AF%E5%AE%9A%E4%BD%8D))
+
 <!-- UTSAPIJSON.getProviderObject.example -->
 
 <!-- UTSAPIJSON.getProviderObject.tutorial -->
