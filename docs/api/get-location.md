@@ -3,7 +3,7 @@
 <!-- UTSAPIJSON.getLocation.description -->
 
 ::: warning 注意
-Web平台本API调用了腾讯地图的gcj02坐标转换接口，该接口从2024年7月18日起开始陆续下线。[详见](https://ask.dcloud.net.cn/question/195113)
+Web平台本API调用了腾讯地图的gcj02坐标转换接口，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 uni-app 4.26版。
 :::
 
 <!-- UTSAPIJSON.getLocation.compatibility -->
