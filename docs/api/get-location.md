@@ -43,7 +43,7 @@ uni-app x的App标准基座定位仅支持wgs84坐标系、不支持逆地址解
 
 ## 定位provider对象描述
 
-#### UniLocationSystemProvider(系统定位)
+### UniLocationSystemProvider(系统定位)
 
 | 名称           | 类型      | 必备 | 默认值 | 兼容性 | 描述                                  |
 | -------------- | --------- | ---- | ------ | ------ | ------------------------------------- |
@@ -51,7 +51,7 @@ uni-app x的App标准基座定位仅支持wgs84坐标系、不支持逆地址解
 | description    | string    | 是   | -      | -      | 服务供应商描述                        |
 | isAppExist     | boolean   | 是   | -      | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
 
-#### UniLocationTencentProvider(腾讯定位)
+### UniLocationTencentProvider(腾讯定位)
 
 | 名称           | 类型      | 必备 | 默认值 | 兼容性 | 描述                                  |
 | -------------- | --------- | ---- | ------ | ------ | ------------------------------------- |
