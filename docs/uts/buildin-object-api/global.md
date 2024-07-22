@@ -128,3 +128,28 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.encodeURIComponent.compatibility -->
 
 <!-- UTSJSON.Global.encodeURIComponent.tutorial -->
+
+### atob(encodedData:string):string
+
+<!-- UTSJSON.Global.atob.description -->
+
+<!-- UTSJSON.Global.atob.param -->
+
+<!-- UTSJSON.Global.atob.returnValue -->
+
+<!-- UTSJSON.Global.atob.compatibility -->
+
+<!-- UTSJSON.Global.atob.tutorial -->
+
+
+### btoa(stringToEncode:string):string
+
+<!-- UTSJSON.Global.btoa.description -->
+
+<!-- UTSJSON.Global.btoa.param -->
+
+<!-- UTSJSON.Global.btoa.returnValue -->
+
+<!-- UTSJSON.Global.btoa.compatibility -->
+
+<!-- UTSJSON.Global.btoa.tutorial -->
