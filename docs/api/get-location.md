@@ -40,27 +40,31 @@ uni-app x的App标准基座定位仅支持wgs84坐标系、不支持逆地址解
 
 <!-- UTSAPIJSON.general_type.param -->
 
-## 自定义定位provider
+## 自定义定位provider接入到uni API 
 
-以自定义腾讯定位为例
+背景：目前基座已经内置了系统定位，腾讯定位，基于开放的原则，在以上定位不满足用户需求的情况下，用户可以基于我们规范化的接口，错误信息描述等实现自己的定位需求。而在最终使用方式上与内置API无任何别
+
+举个例子，用户想实现高德定位，但是内置定位api不支持，那您只需要按照下面的模版自己实现一套即可
+
+以自定义高德定位为例
 
 第一步，在interface.uts 中定义接口,继承UniLocationProvider，代码如下
 
 ```ts
-export interface UniLocationTencentProvider extends UniLocationProvider{}
+export interface UniLocationAMapProvider extends UniLocationProvider{}
 ```
 
 第二步，在app-android或者app-ios的index.uts中实现接口，代码如下
 
 ```ts
-import { UniLocationTencentProvider } from '../interface';
+import { UniLocationAMapProvider } from '../interface';
 
-export class UniLocationTencentProviderImpl implements UniLocationTencentProvider{
+export class UniLocationAMapProviderImpl implements UniLocationAMapProvider{
 
 
-	override id : String = 'tencent'
+	override id : String = 'amap'
 
-	override description : String = "tencent"
+	override description : String = "amap"
 
 	override isAppExist : boolean | null = null
 
@@ -82,7 +86,7 @@ export class UniLocationTencentProviderImpl implements UniLocationTencentProvide
       /* android打包配置 */
       "modules": {
         "uni-getLocation":{
-          "tencent":{}
+          "amap":{}
         }
       }
     }
@@ -91,4 +95,5 @@ export class UniLocationTencentProviderImpl implements UniLocationTencentProvide
 
 第四步，打自定义基座
 
-[示例代码](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getLocation-tencent)
+通过以上步骤就可以实现自定义定位provider接入到uni API 
+
