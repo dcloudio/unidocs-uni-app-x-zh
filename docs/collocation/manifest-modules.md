@@ -192,3 +192,23 @@ app平台默认启动界面为白色（暗黑模式下为黑色），为了避�
 
 
 > app-ios平台支付模块需HBuilderX4.18及以上版本
+
+### 配置定位SDK
+在 app -> distribute -> modules 下添加 uni-getLocation 节点：
+```json
+	modules:{
+		"uni-getLocation":{
+			"system":{},
+			"tencent":{}
+		}
+	}
+```
+
+其中 uni-getLocation 下的节点表示要聚合的定位方式：
+| 标识 | 定位方式 |
+| :-  | :- |
+| system | 系统定位 |
+| tencent | 腾讯定位 |
+
+添加相应的节点，云端打包就会将对应的定位 SDK 打包到最终安装包中。
+
