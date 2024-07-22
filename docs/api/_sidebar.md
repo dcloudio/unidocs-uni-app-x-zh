@@ -79,8 +79,8 @@
 * 推送
   * [push](uni-push.md)
 * 支付
-  * [发起支付](request-payment.md)
-  * [苹果内购](virtual-payment.md)
+  * [支付（requestPayment）](request-payment.md)
+  * [虚拟支付（requestVirtualPayment）](virtual-payment.md)
 * 绘画
   * [canvasToTempFilePath](canvas-to-temp-file-path.md)
   * [canvasGetImageData](canvas-get-image-data.md)

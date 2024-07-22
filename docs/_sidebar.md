@@ -36,7 +36,7 @@
   * [uts插件iOS Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
 * [性能优化](performance.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
-* [暗黑模式](api/theme.md)
+* [暗黑模式](api/theme-change.md)
 * [国际化](i18n.md)
 * [源码和示例](sample.md)
 * [跨平台框架及原生对比](select.md)
