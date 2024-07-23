@@ -6,7 +6,7 @@
   * [环境变量](env.md)
   * [事件总线](event-bus.md)
   * [拦截器](interceptor.md)
-  * [获取启动参数](get-launch-options-sync.md)
+  * [启动](launch.md)
   * [退出应用](exit.md)
   * [获取服务提供商](provider.md)
   * [getPerformance](get-performance.md)

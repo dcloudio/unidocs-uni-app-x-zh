@@ -1,17 +1,1 @@
-## uni.getLaunchOptionsSync() @getlaunchoptionssync
-
-<!-- UTSAPIJSON.getLaunchOptionsSync.description -->
-
-<!-- UTSAPIJSON.getLaunchOptionsSync.compatibility -->
-
-<!-- UTSAPIJSON.getLaunchOptionsSync.param -->
-
-<!-- UTSAPIJSON.getLaunchOptionsSync.returnValue -->
-
-<!-- UTSAPIJSON.getLaunchOptionsSync.example -->
-
-<!-- UTSAPIJSON.getLaunchOptionsSync.tutorial -->
-
-<!-- UTSAPIJSON.general_type.name -->
-
-<!-- UTSAPIJSON.general_type.param -->
+文档已迁移，请前往[launch](launch.md)查看最新文档

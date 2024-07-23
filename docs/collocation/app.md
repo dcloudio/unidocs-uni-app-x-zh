@@ -16,7 +16,7 @@
 
 |函数名|说明|平台兼容|
 |:-|:-|:-|
-|onLaunch|当`uni-app-x` 初始化完成时触发（全局只触发一次），参数为应用启动参数，同 [uni.getLaunchOptionsSync](../api/get-launch-options-sync.md#getlaunchoptionssync) 的返回值||
+|onLaunch|当`uni-app-x` 初始化完成时触发（全局只触发一次），参数为应用启动参数，同 [uni.getLaunchOptionsSync](../api/launch.md#getlaunchoptionssync) 的返回值||
 |onShow|当 `uni-app-x` 启动，或从后台进入前台显示，参数为应用启动参数||
 |onHide|当 `uni-app-x` 从前台进入后台，包括手机息屏||
 |onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出|app-uvue-android 3.9+|
@@ -29,7 +29,7 @@
 
 **注意**
 - **应用生命周期仅可在`App.uvue`中监听，在其它页面监听无效**。
-- 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](../api/get-launch-options-sync.md#getlaunchoptionssync)
+- 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](../api/launch.md#getlaunchoptionssync)
 - 由于Android的`uni.exit()`是[热退出](../api/exit.md)，此时很多代码逻辑仍然在运行，有些on的事件监听并没有off，需要开发者在onExit生命周期中编写代码处理。比如在app的onLaunch里通过onXX监听了某事件，那么就需要在onExit里调用offXX取消某事件的监听，否则反复热退出、启动，会多次on而不会off，这会引发内存泄露。
 
 ## globalData
