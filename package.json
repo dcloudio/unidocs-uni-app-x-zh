@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "vuepress": "1.9.9",
-    "vuepress-theme-uniapp-official": "1.4.21"
+    "vuepress-theme-uniapp-official": "1.4.22"
   },
   "resolutions": {
     "markdown-it": "< 14"
