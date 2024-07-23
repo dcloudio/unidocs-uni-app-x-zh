@@ -1179,6 +1179,8 @@ NVRecycler() {
 			doSth() {
 				// nvue 页面调用方法
 				this.$refs["helloView"].doSomething("param doSomething");
+        // uvue 页面调用方法
+        //(this.$refs["helloView"] as UtsHelloViewElement).doSth("param doSomething");
 			}
 		}
   }
