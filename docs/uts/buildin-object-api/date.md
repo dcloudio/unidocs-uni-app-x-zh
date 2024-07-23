@@ -35,19 +35,25 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 + 2024-5-1 00:00 (HBuilder X 4.18 Android/Web 支持)
 + 2024/5/1 00:00 (HBuilder X 4.18 Android/Web 支持)
 
-如果传入Date构造器的参数字符串不合法，在web平台会抛出 "Invalid Date" 异常
+::: warning 注意事项
+
+如果Date构造函数传入不合法的字符串，比如：
 
 ```ts
-// Invalid Date
-new Date("Hello")
+let date = new Date("Hello World")
 ```
 
-在Android/IOS平台，会转换为程序执行时的时间
+在不同的平台的表现有差异:
 
-```ts
-// ‍当前日期：[Date]‍ Fri May 31 2024 17:18:02 GMT+0800
-new Date("Hello")
-```
+- web平台
+	
+	会抛出异常:`Invalid Date`
+
+- Android/ios平台
+	
+	不会抛出异常，会变成程序执行时日期 比如：[Date]‍ Fri May 31 2024 17:18:02 GMT+0800
+
+:::
 
 ### Constructor()
 
