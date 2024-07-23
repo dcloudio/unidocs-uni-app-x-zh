@@ -81,11 +81,11 @@ uni.requestVirtualPayment({
   }
 })
 ```
-## uni.createVirtualPaymentContext() @createvirtualpaymentcontext
+## uni.getVirtualPaymentManager() @getVirtualPaymentManager
 
-<!-- UTSAPIJSON.createVirtualPaymentContext.description -->
+<!-- UTSAPIJSON.getVirtualPaymentManager.description -->
 
-<!-- UTSAPIJSON.createVirtualPaymentContext.compatibility -->
+<!-- UTSAPIJSON.getVirtualPaymentManager.compatibility -->
 
 
 uni.getVirtualPaymentManager(): 用来创建各个平台虚拟支付上下文对象，暂时仅支持iOS平台IAP支付。
@@ -97,7 +97,7 @@ uni.getVirtualPaymentManager(): 用来创建各个平台虚拟支付上下文对
 
 3. finishTransaction(options): 关闭苹果服务器订单
 
-<!-- UTSAPIJSON.createVirtualPaymentContext.returnValue -->
+<!-- UTSAPIJSON.getVirtualPaymentManager.returnValue -->
 ### 注意事项
 1. restoreTransactions(options): 获取苹果服务器已支付的交易列表
 ::: warning restoreTransactions api iOS平台说明：
@@ -121,7 +121,7 @@ getUnfinishedTransactions api 适用于获取未完成的各种类型产品的�
 ::: warning finishTransaction api iOS平台说明：
 finishTransaction api 适用于各种类型产品的购买经自己服务器验证成功后，用来关闭苹果服务器对应订单。
 :::
-<!-- UTSAPIJSON.createVirtualPaymentContext.example -->
+<!-- UTSAPIJSON.getVirtualPaymentManager.example -->
 
 ```ts
 //创建虚拟支付上下文对象
