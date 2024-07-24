@@ -18,7 +18,18 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.Constructor.tutorial -->
 
-
+```ts
+/**
+ * 用法1：创建数组时需要指定类型，即:Array<string>
+ */
+let arrA = new Array<string>()
+console.log(arrA)
+/**
+ * 用法2：创建数组时根据初始元素，推导出类型为:Array<number>
+ */
+let arrB = new Array(32,87,32)
+console.log(arrB)
+```
 
 ## 实例属性
 
