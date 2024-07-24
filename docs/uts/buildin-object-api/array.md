@@ -4,7 +4,7 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 ## 构造函数
 
-### new(arrayLength ?: number) : any[];@Constructor(arrayLength?)_0
+### new \<T>(...items : T\[]) : T[]@Constructor(...items)_0
 
 <!-- UTSJSON.Array.Constructor.description -->
 
@@ -18,33 +18,7 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.Constructor.tutorial -->
 
-### new \<T>(arrayLength : number) : T[];@Constructor(arrayLength)_1
 
-<!-- UTSJSON.Array.Constructor_1.description -->
-
-<!-- UTSJSON.Array.Constructor_1.param -->
-
-<!-- UTSJSON.Array.Constructor_1.returnValue -->
-
-<!-- UTSJSON.Array.Constructor_1.test -->
-
-<!-- UTSJSON.Array.Constructor_1.compatibility -->
-
-<!-- UTSJSON.Array.Constructor_1.tutorial -->
-
-### new \<T>(...items : T\[]) : T[]@Constructor(...items)_2
-
-<!-- UTSJSON.Array.Constructor_2.description -->
-
-<!-- UTSJSON.Array.Constructor_2.param -->
-
-<!-- UTSJSON.Array.Constructor_2.returnValue -->
-
-<!-- UTSJSON.Array.Constructor_2.test -->
-
-<!-- UTSJSON.Array.Constructor_2.compatibility -->
-
-<!-- UTSJSON.Array.Constructor_2.tutorial -->
 
 ## 实例属性
 
