@@ -23,13 +23,35 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
  * 用法1：创建数组时需要指定类型，即:Array<string>
  */
 let arrA = new Array<string>()
-console.log(arrA)
+
 /**
  * 用法2：创建数组时根据初始元素，推导出类型为:Array<number>
  */
 let arrB = new Array(32,87,32)
-console.log(arrB)
+
 ```
+
+
+::: warning 注意事项
+
+与JS中的`Array` 不同，`UTS`不支持的指定长度初始化Array的写法
+
+```ts
+let arr = new Array(10)
+```
+
+上面的代码在不同的平台的表现有差异:
+
+- web平台
+	
+	一个长度为10的数组，每一个元素都是 undefined
+
+- Android/ios平台
+	
+	一个长度为1的数组，其元素为 数字10
+
+:::
+
 
 ## 实例属性
 
