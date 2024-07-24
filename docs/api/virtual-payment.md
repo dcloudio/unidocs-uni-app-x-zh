@@ -16,7 +16,7 @@
 
 目前uni-app x中，虚拟支付有两个api：
 1. uni.requestVirtualPayment(options)：发起虚拟支付请求。
-2. uni.getVirtualPaymentManager()：获取各平台虚拟支付的上下文对象，在该对象上会挂载平台专有的一些API。当需要平台扩展功能时，则需要使用本API。
+2. uni.getVirtualPaymentManager()：获取各平台虚拟支付的管理类，在该对象上会挂载平台专有的一些API。当需要平台扩展功能时，则需要使用本API。
 
 ::: warning Note：
 1. iOS平台采用Apple新提供的框架StoreKit2实现IAP，该框架目前仅支持iOS15.0及以上版本；
@@ -88,9 +88,9 @@ uni.requestVirtualPayment({
 <!-- UTSAPIJSON.getVirtualPaymentManager.compatibility -->
 
 
-uni.getVirtualPaymentManager(): 用来创建各个平台虚拟支付上下文对象，暂时仅支持iOS平台IAP支付。
+uni.getVirtualPaymentManager(): 用来创建各个平台虚拟支付的管理类，暂时仅支持iOS平台IAP支付。
 
-对象持有如下方法：
+### 持有方法：
 1. restoreTransactions(options): 获取苹果服务器已支付的交易列表
 
 2. getUnfinishedTransactions(options): 获取苹果服务器已支付且未关闭的交易列表
@@ -124,7 +124,7 @@ finishTransaction api 适用于各种类型产品的购买经自己服务器验�
 <!-- UTSAPIJSON.getVirtualPaymentManager.example -->
 
 ```ts
-//创建虚拟支付上下文对象
+//创建虚拟支付管理类
 const virtualPaymentManager = uni.getVirtualPaymentManager()
 
 //获取苹果服务器已支付的交易列表
