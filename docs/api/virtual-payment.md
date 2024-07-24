@@ -60,7 +60,7 @@ uni.requestVirtualPayment({
   },
   success: (res) => {
     uni.hideLoading()
-    console.log("购买成功：该productId= " + res.apple?.payment.productId)
+    console.log("购买成功：该productId= " + res.apple?.productId)
     //TODO: 开发者server验证逻辑
 
     //经过开发者server验证成功后请结束该交易
@@ -68,10 +68,10 @@ uni.requestVirtualPayment({
     virtualPaymentManager.finishTransaction({
       transaction: res.apple,
       success: (r) => {
-        console.log("关单成功, 该productId= " + res.apple?.payment.productId)
+        console.log("关单成功, 该productId= " + res.apple?.productId)
       },
       fail: (e) => {
-        console.log("关单失败, 该productId= " + res.apple?.payment.productId)
+        console.log("关单失败, 该productId= " + res.apple?.productId)
       }
     })
   },
@@ -136,7 +136,7 @@ virtualPaymentManager.restoreTransactions({
 
         //TODO: 开发者server验证逻辑
 
-        console.log("restore成功的交易productId= " + transaction.payment.productId)
+        console.log("restore成功的交易productId= " + transaction.productId)
         })
     },
     fail: (e) => {
@@ -152,17 +152,17 @@ virtualPaymentManager.getUnfinishedTransactions({
     console.log("获取未结束的订单列表个数：" + res.transactions.length)
 
     res.transactions.forEach(transaction => {
-      console.log("getUnfinishedTransactions成功的交易productId= " + transaction.payment.productId)
+      console.log("getUnfinishedTransactions成功的交易productId= " + transaction.productId)
       //TODO: 开发者server验证逻辑
 
       //经过开发者server验证成功后关闭苹果服务器订单
       virtualPaymentManager.finishTransaction({
         transaction: transaction,
         success: (r) => {
-          console.log("关单成功, 该productId= " + transaction.payment.productId)
+          console.log("关单成功, 该productId= " + transaction.productId)
         },
         fail: (e) => {
-          console.log("关单失败, 该productId= " + transaction.payment.productId)
+          console.log("关单失败, 该productId= " + transaction.productId)
         }
       })
     })
