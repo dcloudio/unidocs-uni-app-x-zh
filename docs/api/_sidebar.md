@@ -62,6 +62,10 @@
   * [获取视频信息](get-video-info.md)
   * [压缩视频](compress-video.md)
   * [音频](create-inner-audio-context.md)
+* 画布
+  * [canvasToTempFilePath](canvas-to-temp-file-path.md)
+  * [canvasGetImageData](canvas-get-image-data.md)
+  * [canvasPutImageData](canvas-put-image-data.md)
 * 位置
   * [获取当前位置](get-location.md)
   * [使用地图查看位置](open-location.md)
@@ -76,15 +80,11 @@
   * [金融级实人认证](facial-recognition-meta-info.md)
 * 广告
   * [激励视频广告](create-rewarded-video-ad.md)
-* 推送
-  * [push](uni-push.md)
 * 支付
   * [支付（requestPayment）](request-payment.md)
   * [虚拟支付（requestVirtualPayment）](virtual-payment.md)
-* 绘画
-  * [canvasToTempFilePath](canvas-to-temp-file-path.md)
-  * [canvasGetImageData](canvas-get-image-data.md)
-  * [canvasPutImageData](canvas-put-image-data.md)
+* 推送
+  * [push](uni-push.md)
 * 组件上下文对象
   * [创建 web-view 组件上下文对象](create-webview-context.md)
   * [创建 video 组件上下文对象](create-video-context.md)
