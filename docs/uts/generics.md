@@ -160,7 +160,7 @@ test2<MyResult>(p)
 
 ## 注意
 
-ts本质是擦除类型的。在强类型语言中，传递泛型时如将泛型类型作为值使用，需通过特殊方式将泛型类型作为值使用，可以根据传入来动态决定返回类型。[详见](../plugin/uts-for-android.md#6.6 泛型传递丢失的问题)
+ts本质是擦除类型的。在强类型语言中，传递泛型时如将泛型类型作为值使用，需通过特殊方式将泛型类型作为值使用，可以根据传入来动态决定返回类型。[详见](../plugin/uts-for-android.html#_6-6-%E6%B3%9B%E5%9E%8B%E4%BC%A0%E9%80%92%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98)
 
 > 泛型用法最常用的是在request api里，[详见](../tutorial/request.md)
 > 网络请求包装推荐使用成熟的网络拦截器插件，见[插件市场](https://ext.dcloud.net.cn/search?q=%E7%BD%91%E7%BB%9C%E6%8B%A6%E6%88%AA%E5%99%A8&uni-appx=1)
