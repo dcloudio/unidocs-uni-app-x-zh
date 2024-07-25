@@ -16,3 +16,9 @@
 
 - XCode 版本：15.2  
 - iOS SDK 版本：17.2  
+
+### HBuilderX4.25升级云端打包环境
+
+- XCode 版本：15.4  
+- iOS SDK 版本：17.5  
+
