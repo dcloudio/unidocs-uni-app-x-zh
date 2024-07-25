@@ -241,39 +241,28 @@ person.toMap().forEach((value, key) => {
 
 
 
-## 注意事项
+## 常见问题
 
-此问题在 HBuilder X 4.21.2024061818-alpha 及之后版本已修复
+#### UTSJSONObject 与 type 相互转换
 
-<s>
-需要特别注意的是： 在 Android 平台，当使用 getXXX 方法返回 对象类型时，获取的是值引用而非内存引用 
-</s>
-<s>
-此时直接修改其对象的属性，并不会体现在整个UTSJSONObject上，如果需要体现此变化，则需要手动更新对应的字段
-</s>
+可以使用下面的代码，进行 `UTSJSONObject` 和 `type` 转换
 
 ```ts
-let obj = {
-    "cars":[
-      {
-        name:"car1",
-        value:100
-      }
-    ]
-  }
+type User = {
+	name:string,
+	age:number
+}
+let jsonObj = {
+  name:"张三",
+  age:12
+}
+// UTSJSONObject => 自定义type
+let userA = JSON.parse<User>(jsonObj.toJSONString())
+console.log(userA!.name)
+// 自定义type => UTSJSONObject
+let utsJsonA = JSON.parseObject(JSON.stringify(userA))
+console.log(utsJsonA)
 
-  let cars = obj.getArray<UTSJSONObject>("cars")
-  cars![0].set("value",20)
-  /**
-   * 此时 obj 的属性并不会改变
-   */
-  console.log("obj",obj)
-  // 需要手动更新obj的属性
-  obj.set("cars",cars)
-  /**
-   *  此时obj的属性改变了
-   */
-  console.log("obj",obj)
 ```
 
 
