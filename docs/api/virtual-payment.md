@@ -43,11 +43,19 @@ uni.requestVirtualPayment是一个统一各平台虚拟支付客户端API。
 <!-- UTSAPIJSON.requestVirtualPayment.returnValue -->
 
 ### 注意事项
-::: warning iOS平台说明：
+1. uni.requestVirtualPayment api 适用Apple虚拟产品类型说明
+::: warning requestVirtualPayment iOS平台说明：
 uni.requestVirtualPayment api 适用于消耗性类型、非消耗性类型、自动续期订阅类型、非自动续期订阅类型产品的购买。
 1. 消耗性类型：该类型的产品可以设置购买数量，默认是1，最大值是10；
 2. 非消耗性类型、自动续期订阅类型、非自动续期订阅类型: 这些类型的产品购买数量设置无效，数量只能是1;
 3. 非消耗性类型：该类型产品一个appleId只能购买一次，可以在任何登录该appleId账号的设备上通过restoreTransactions api获取。
+:::
+
+2. 请求支付可选参数 appAccountToken 说明
+::: AppleIAPOptions 参数 appAccountToken 说明：
+1. 参数功能：透传参数，一般用于标记订单和用户的关系，可以用来验证和关联用户账户和购买记录，功能类似 StoreKit1 中 accountUserName 参数；
+2. 建议开发者每笔支付传入该参数，该参数在Apple新提供的框架StoreKit2中会和每笔交易始终一一对应存在，不存在像 StoreKit1 中 accountUserName 参数会丢的情况；
+3. 对接Apple新提供的框架StoreKit2，appAccountToken需要是符合uuid规则的字符串，如："123eaaaa-e89b-12d3-a456-42661417400b"，建议将orderId信息转换为符合uuid规则的字符串；
 :::
 
 <!-- UTSAPIJSON.requestVirtualPayment.example -->
