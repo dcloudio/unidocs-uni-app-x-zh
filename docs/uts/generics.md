@@ -80,6 +80,84 @@ function testArray<T extends Array<unknown>>(arg: T): T {
 }
 ```
 
+## iOS 平台中泛型的差异性
+
+由于 iOS 平台 uni-app x 运行在 js 环境中，以及 swift 语法的特殊性，泛型在 iOS 平台上的使用有一定限制和差异。
+
+- uvue 中可以正常使用泛型，iOS 平台上 uvue运行在 js 环境中，在 uvue 中的泛型就是 js 泛型。
+- 在 uvue 页面中使用的泛型类型传递给 uts 插件使用时，泛型信息会丢失。
+- uts 插件中支持使用泛型函数、泛型类、泛型约束、泛型推断。目前仅适合在 uts 插件内部使用，运行在纯 swift 环境中。
+- uts 插件中暂不支持泛型接口的定义。
+- uts 插件中不能导出泛型函数、泛型类给 JS 使用。
+  + 说明：因为导出的泛型函数、泛型类不能被反射识别，无法使用。导出泛型函数还可能会导致编译失败。
+
+
+下面是在 uts 插件内部使用泛型的一些示例代码：
+
+泛型函数和泛型推断示例，泛型用在返回值上：
+
+```ts
+// 定义泛型函数
+function test1<T>(param: any): T | null {
+	if (param instanceof T) {
+		return param as T
+	}
+	return null
+}
+
+// 使用：
+let str: string | null = test1<string>("12345")
+console.log(str)
+```
+
+> 特别注意：
+
+> 在 `swift` 中调用泛型函数时不能直接指定泛型类型，只能靠参数或者返回值来进行泛型类型的推断。
+
+> 上述示例代码使用泛型函数时，给变量 `str` 指定了具体类型，这个是必须的，且指定的类型要和泛型函数的返回值是否可选保持一致（泛型函数返回值是 T | null, str 类型就得是 string | null, 否则
+> 将会因为推断不出泛型类型导致编译报错。
+
+泛型类和泛型约束示例：
+
+```ts
+// 自定义type
+type MyResult = {
+	name: string
+	age: number
+}
+
+// 定义泛型类，并指定泛型约束
+class TestOption<T extends Decodable> {
+	a: string = ""
+	b: number = 0
+	success?: (res: T) => void
+}
+
+// 定义泛型函数
+function test2<T extends Decodable>(param: TestOption<T>) {
+	
+	let str = "{\"name\":\"2024\",\"age\":2}"
+	// 这句代码是为了让编译给 MyResult 实现 Decodable 协议，不可省略。后续版本会给出让开发者指定某个 type 遵循 Decodable 协议的方式。
+	JSON.parseObject<MyResult>(str)
+	
+	let ret = JSON.parseObject<T>(str)
+	if (ret != null) {
+		param.success?.(ret!)
+	}   
+} 
+
+// 使用：
+let p = new TestOption<MyResult>()
+p.success = (res: MyResult) => {
+	console.log(res)
+}
+test2<MyResult>(p)
+```
+
+> 特别注意：
+
+> 目前版本不支持在自定义 type 上指定泛型，因为在通过字面量创建 type 类型的对象时，泛型信息丢失导致编译失败。这是一个 BUG，我们将在后续版本中进行修复。
+
 ## 注意
 
 ts本质是擦除类型的。在强类型语言中，传递泛型时如将泛型类型作为值使用，需通过特殊方式将泛型类型作为值使用，可以根据传入来动态决定返回类型。[详见](../plugin/uts-for-android.md#6.6 泛型传递丢失的问题)
