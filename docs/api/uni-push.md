@@ -103,6 +103,40 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 <!-- UTSAPIJSON.general_type.param -->
 
+## uni.getPushChannelManager() @getpushchannelmanager
+
+<!-- UTSAPIJSON.getPushChannelManager.description -->
+
+<!-- UTSAPIJSON.getPushChannelManager.compatibility -->
+
+<!-- UTSAPIJSON.getPushChannelManager.param -->
+
+<!-- UTSAPIJSON.getPushChannelManager.returnValue -->
+
+<!-- UTSAPIJSON.getPushChannelManager.example -->
+
+<!-- UTSAPIJSON.getPushChannelManager.tutorial -->
+
+## uni.setAppBadgeNumber(num, options?) @setappbadgenumber
+
+<!-- UTSAPIJSON.setAppBadgeNumber.description -->
+
+<!-- UTSAPIJSON.setAppBadgeNumber.compatibility -->
+
+<!-- UTSAPIJSON.setAppBadgeNumber.param -->
+
+<!-- UTSAPIJSON.setAppBadgeNumber.returnValue -->
+
+<!-- UTSAPIJSON.setAppBadgeNumber.example -->
+
+<!-- UTSAPIJSON.setAppBadgeNumber.tutorial -->
+
+<!-- UTSAPIJSON.uni-push.example -->
+
+<!-- UTSAPIJSON.general_type.name -->
+
+<!-- UTSAPIJSON.general_type.param -->
+
 ## 示例代码
 
 hello uni-push是可跑通、同时包含客户端和服务器完整流程的代码。[https://gitcode.net/dcloud/hello-uni-push](https://gitcode.net/dcloud/hello-uni-push)
