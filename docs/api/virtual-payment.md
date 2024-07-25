@@ -52,11 +52,12 @@ uni.requestVirtualPayment api 适用于消耗性类型、非消耗性类型、�
 :::
 
 2. 请求支付可选参数 appAccountToken 说明
-::: AppleIAPOptions 参数 appAccountToken 说明：
+::: warning AppleIAPOptions 参数 appAccountToken 说明：
 1. 参数功能：透传参数，一般用于标记订单和用户的关系，可以用来验证和关联用户账户和购买记录，功能类似 StoreKit1 中 accountUserName 参数；
 2. 建议开发者每笔支付传入该参数，该参数在Apple新提供的框架StoreKit2中会和每笔交易始终一一对应存在，不存在像 StoreKit1 中 accountUserName 参数会丢的情况；
 3. 对接Apple新提供的框架StoreKit2，appAccountToken需要是符合uuid规则的字符串，如："123eaaaa-e89b-12d3-a456-42661417400b"，建议将orderId信息转换为符合uuid规则的字符串；
 :::
+
 
 <!-- UTSAPIJSON.requestVirtualPayment.example -->
 ```ts
