@@ -32,9 +32,11 @@
 
 **注意：**
 
-+ android平台绑定的view暂时不支持[组件全局事件](common.md#组件全局事件)，后续会提供相关实现方式响应组件公共事件。
-+ android平台绑定的view暂时不支持[list-item复用机制](list-item.md#list-item复用机制)，list-item其他子元素不受影响正常启动复用业务。
-+ android平台绑定的view不支持overflow: visible。
++ android平台绑定的View暂时不支持[组件全局事件](common.md#组件全局事件)，后续会提供相关实现方式响应组件公共事件。
++ android平台绑定的View暂时不支持[list-item复用机制](list-item.md#list-item复用机制)，list-item其他子组件不受影响正常启动复用业务。
++ android平台绑定的View不能设置原生的background，会导致`object`组件的background、border、boxshadow 失效。
++ android平台`object`封装的是容器视图，不能自带子View，子组件插入时可能导致子View被其组件覆盖显示不出来。
++ android平台绑定的View不支持overflow: visible。
 
 <!-- UTSCOMJSON.object.children -->
 
