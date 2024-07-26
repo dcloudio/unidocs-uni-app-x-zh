@@ -4,5 +4,5 @@
 * [CSSStyleDeclaration](cssstyledeclaration.md)
 * [DrawableContext](drawablecontext.md)
 * [UniResizeObserver](uniresizeobserver.md)
-* [UniObjectElement](uniobjectelement.md)
+<!-- * [UniObjectElement](uniobjectelement.md) -->
 * [UniCanvasElement](unicanvaselement.md)
