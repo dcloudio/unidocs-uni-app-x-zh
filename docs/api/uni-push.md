@@ -131,6 +131,12 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 <!-- UTSAPIJSON.setAppBadgeNumber.tutorial -->
 
+#### 注意事项
+
+- Android原生的系统其实是不支持设置角标的，在原生系统中应用有通知时，会在图标右上角出现圆点，所以原生系统并不适用 `setAppBadgeNumber`。
+- 支持的手机品牌为：小米、华为、荣耀、OPPO、vivo、三星、索尼。
+
+
 <!-- UTSAPIJSON.uni-push.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
