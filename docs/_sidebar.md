@@ -32,6 +32,8 @@
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
   * [Android审查元素](debug/android-inspector.md)
+	* [uts插件Android运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html)
+  * [uts插件iOS运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
   * [uts插件Android Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
   * [uts插件iOS Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
 * [性能优化](performance.md)

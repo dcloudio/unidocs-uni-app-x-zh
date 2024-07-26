@@ -903,6 +903,14 @@ methods: {
 ```
 
 
+运行和编译uts插件，需要在HBuilderX的设置中配置Android和iOS的环境，见如下文档：
+* [uts插件Android运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html)
+* [uts插件iOS运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
+
+开发uts插件，调试、打断点是重要帮手，参考如下文档
+* [uts插件Android Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
+* [uts插件iOS Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
+
 ### 获取电量插件示例
 
 以获取电量为例，介绍`uts`插件开发步骤
@@ -1422,9 +1430,15 @@ list1.forEach((item : any) => {
 
 
 
-## UTS混编
+## UTS混编@utshybrid
 
-HBuilder X 4.25 及之后版本，UTS插件可以直接使用原生代码， 即 `UTS混编`
+`HBuilder X 4.25`起，UTS插件可以直接使用原生的kt、java、swift代码，即 `UTS混编`。
+
+在以前，开发者需要把kt、swift代码封装为库，比如arr文件，然后才能被uts调用。有了 UTS混编 ，免去了封装过程。
+
+uts插件的主入口仍然是uts文件，混编kt、swift文件可以作为uts调用的代码。
+
+因为uts编译到Android就是变成了kt，编译到iOS就变成了swift，那么uts文件调用kt代码，其实本质还是kt之间不同函数/对象的调用。
 
 #### Android平台
 
@@ -1484,13 +1498,11 @@ func test1() -> String {
 
 
 
-#### 注意事项：
+#### 混编注意事项：
 
 + `index`是保留文件名，原生代码不能命名为 index.kt/index.java/index.swift
  
-+ HBuilder X 目前不支持原生代码的语法提示
-
-+ HBuilder X 目前不支持原生代码的debug断点调试
++ HBuilder X 目前不支持原生代码的语法提示、转到定义、debug断点。仅支持高亮和格式化。
 
 + 混编需要使用[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91%E5%A4%84%E7%90%86%E5%A4%9A%E7%AB%AF%E5%B7%AE%E5%BC%82)限制编译入口
 
