@@ -188,9 +188,9 @@ console.log(userA)
 
 注意花括号还有一个使用场景，被用于type时，是定义了一个自定义类型。下面的代码通过type关键字定义了一个 User类型，该自定义类型有2个属性，string类型的name和number类型的age。
 ```ts
-type User{
-	name:string = ""
-	age:number = 0
+type User = {
+	name:string
+	age:number
 }
 ```
 
