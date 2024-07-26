@@ -28,6 +28,69 @@ app 平台子组件设置的排版相关样式（如position、display、width�
 
 <!-- UTSCOMJSON.text.example -->
 
+::: warning 注意
+App 端不支持 `text` 组件中渲染多段文本，如果 `text` 组件中的文本是动态的，可以将计算后的结果通过数据给到 `text` 组件, 而不是在模板中通过 `template` 拼接多段文本, 以免出现渲染异常，例如：
+```vue
+<template>
+  <view>
+    <text>
+      <template v-for="item in list">
+        <template v-if="item['show']">{{item['text']}}</template>
+      </template>
+    </text>
+  </view>
+</template>
+
+<script setup lang="uts">
+  const list = ref([
+    {
+      show: true,
+      text: 'a'
+    },{
+      show: false,
+      text: 'b'
+    },{
+      show: true,
+      text: 'c'
+    }
+  ])
+  
+</script>
+```
+上述代码应调整为：
+```vue
+<template>
+  <view>
+    <text>{{textValue}}</text>
+  </view>
+</template>
+
+<script setup lang="uts">
+  const list = ref([
+    {
+      show: true,
+      text: 'a'
+    }, {
+      show: false,
+      text: 'b'
+    }, {
+      show: true,
+      text: 'c'
+    }
+  ])
+  const textValue = computed((): string => {
+    let res = ''
+    list.value.forEach(item => {
+      if (item['show'] === true) {
+        res += item['text']
+      }
+    })
+    return res
+  })
+</script>
+```
+:::
+
 <!-- UTSCOMJSON.text.reference -->
 
 ## Bug & Tips@tips
