@@ -7,11 +7,11 @@
 <!-- CUSTOMTYPEJSON.UniElement.param -->
 
 #### style@style
-- App端  
-获取的是元素对象计算后的CSS样式集合对象，包括通过样式选择器设置的CSS样式。  
+- App端
+获取的是元素对象计算后的CSS样式集合对象，包括通过样式选择器设置的CSS样式。
 
-- Web端  
-获取的是元素对象style属性设置的CSS样式集合对象，不包括通过样式选择器设置的CSS样式。  
+- Web端
+获取的是元素对象style属性设置的CSS样式集合对象，不包括通过样式选择器设置的CSS样式。
 
 ### 方法
 <!-- CUSTOMTYPEJSON.UniElement.methods.getNodeId.name -->
@@ -64,7 +64,7 @@
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.compatibility -->
 
-**App平台**  
+**App平台**
 app平台 setAttribute 不支持设置 class、style 属性，设置了也不会生效，class 属性需在 uvue/vue 页面中设置，style 信息可以通过 [style](#style) 属性设置。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.tutorial -->
@@ -83,7 +83,7 @@ app平台 setAttribute 不支持设置 class、style 属性，设置了也不会
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.compatibility -->
 
-**App平台**  
+**App平台**
 app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面中设置的 class 属性暂不支持通过 UniElement 对象获取，style 信息可以通过 [style](#style) 属性获取。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.tutorial -->
@@ -220,6 +220,30 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.scrollBy.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.focus.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.focus.description -->
@@ -256,6 +280,53 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.tutorial -->
 
 ```ts
 // 找到需要截图节点
