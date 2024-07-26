@@ -112,6 +112,42 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.removeAttribute.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRect.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRect.description -->
@@ -135,6 +171,18 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 <!-- CUSTOMTYPEJSON.UniElement.methods.getDrawableContext.compatibility -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getDrawableContext.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.tutorial -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.addEventListener.name -->
 
@@ -280,54 +328,6 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.tutorial -->
 
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.name -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.description -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.param -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.tutorial -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.name -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.description -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.param -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.tutorial -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.name -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.description -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.param -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.tutorial -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.name -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.description -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.param -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.tutorial -->
-
 ```ts
 // 找到需要截图节点
 const view = uni.getElementById('snapshot-content')!
@@ -358,3 +358,4 @@ view.takeSnapshot({
 * app端list-view、web-view组件性能优化仅渲染屏幕显示的内容，所以截图仅能截取到当前屏幕展示的内容。
 * app端scroll-view组件设置padding后，截图内容不会包含padding区域。
 * app端由于组件背景默认透明，所以截图图片默认底色为白色。
+
