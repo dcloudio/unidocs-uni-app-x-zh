@@ -434,6 +434,21 @@
 
 <!-- VUEJSON.template.children -->
 
+::: warning 注意
+对 `<template>` 的特殊处理只有在它与以下任一指令一起使用时才会被触发：
+
+- `v-if`、`v-else-if` 或 `v-else`
+- `v-for`
+- `v-slot`
+
+如果这些指令都不存在，那么它\
+在 `Web` 端将被渲染成一个[原生的 `<template>` 元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)；\
+在 `App` 端将被渲染成 `view`。
+
+单文件组件使用顶层的 `<template>` 标签来包裹整个模板，`lang` 属性仅对顶层 `<template>` 生效。这种用法与上面描述的 `<template>` 使用方式是有区别的。\
+该顶层标签不是模板本身的一部分，不支持指令等模板语法。
+:::
+
 <!-- VUEJSON.template.reference -->
 
 
