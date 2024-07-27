@@ -27,7 +27,7 @@
   * 基础内容
     * [icon | 图标](icon.md)
     * [text | 文本](text.md)
-    * [rich-text | 富图标](rich-text.md)
+    * [rich-text | 富文本](rich-text.md)
     * [progress | 进度条](progress.md)
   * 表单组件
     * [button | 按钮](button.md)
@@ -42,9 +42,9 @@
     * picker-view | 滚动选择器组件```{"collapsable": false}```
       * [picker-view | 嵌入页面的滚动选择器](picker-view.md)
       * [picker-view-column | 滚动选择器子项](picker-view-column.md)
-    * radio | 单选项```{"collapsable": false}```
-      * [radio-group | 单选组](radio-group.md)
-      * [radio | 单选项](radio.md)
+    * radio | 单选框```{"collapsable": false}```
+      * [radio-group | 单选框组](radio-group.md)
+      * [radio | 单选框](radio.md)
     * [slider | 滑动选择器](slider.md)
     * [switch | 开关选择器](switch.md)
     * [textarea | 多行输入框](textarea.md)
