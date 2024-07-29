@@ -182,6 +182,8 @@ hello uni-push是可跑通、同时包含客户端和服务器完整流程的代
 │               └── pushsound.mp3       // 声音文件， 自定义推送铃音时使用
 ```
 
+[小图标要求](https://uniapp.dcloud.net.cn/tutorial/app-push-unipush.html#%E6%8E%A8%E9%80%81%E5%B0%8F%E5%9B%BE%E6%A0%87-small-%E8%A6%81%E6%B1%82)
+
 ### 通知声音自定义
 
 有些场景，如到账提醒，需要自定义通知声音。
