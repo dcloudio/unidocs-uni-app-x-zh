@@ -124,6 +124,15 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.tutorial -->
 
+```uts
+//通过elementId 获取到UniElement对象
+const element = uni.getElementById(elementId)
+//getElementById不设置泛型，获取到安卓View
+if(element != null) {
+	const view = element.getAndroidView()
+}
+```
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.description -->
@@ -135,6 +144,24 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.compatibility -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.tutorial -->
+
+```uts
+//通过elementId 获取web-view便签的UniElement对象
+const element = uni.getElementById(elementId)
+//getElementById设置泛型为安卓底层WebView对象, 直接获取WebView 如果泛型不匹配会返回null
+if(element != null) {
+	const webview = element.getAndroidView<WebView>()
+}
+```
+
+#### 可通过getAndroidView泛型明确定义View类型的组件
+
+| 组件      | android平台原生View类型         |
+| --------- | ------------------------------ |
+| [view](https://doc.dcloud.net.cn/uni-app-x/component/view.html) | [ViewGroup](https://developer.android.google.cn/reference/android/view/ViewGroup) |
+| [input](https://doc.dcloud.net.cn/uni-app-x/component/input.html) | [EditText](https://developer.android.google.cn/reference/android/widget/EditText) |
+| [textarea](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) | [EditText](https://developer.android.google.cn/reference/android/widget/EditText) |
+| [web-view](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) | [WebView](https://developer.android.google.cn/reference/android/webkit/WebView) |
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.name -->
 
