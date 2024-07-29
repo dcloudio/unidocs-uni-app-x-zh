@@ -124,6 +124,8 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.tutorial -->
 
+**getAndroidView获取原生View：**
+
 ```uts
 //通过elementId 获取到UniElement对象
 const element = uni.getElementById(elementId)
@@ -145,19 +147,21 @@ if(element != null) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.tutorial -->
 
+**getAndroidView通过泛型定义获取原生View：**
+
 ```uts
-//通过elementId 获取web-view便签的UniElement对象
-const element = uni.getElementById(elementId)
+//通过webViewElementId 获取web-view标签的UniElement对象
+const webViewElement = uni.getElementById(webViewElementId)
 //getElementById设置泛型为安卓底层WebView对象, 直接获取WebView 如果泛型不匹配会返回null
-if(element != null) {
-	const webview = element.getAndroidView<WebView>()
+if(webViewElement != null) {
+	const webview = webViewElement.getAndroidView<WebView>()
 }
 ```
 
 #### 可通过getAndroidView泛型明确定义View类型的组件
 
-| 组件      | android平台原生View类型         |
-| --------- | ------------------------------ |
+| 组件      | 对应 android 平台原生View         |
+| --------- | -------------------------------- |
 | [view](https://doc.dcloud.net.cn/uni-app-x/component/view.html) | [ViewGroup](https://developer.android.google.cn/reference/android/view/ViewGroup) |
 | [input](https://doc.dcloud.net.cn/uni-app-x/component/input.html) | [EditText](https://developer.android.google.cn/reference/android/widget/EditText) |
 | [textarea](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) | [EditText](https://developer.android.google.cn/reference/android/widget/EditText) |
