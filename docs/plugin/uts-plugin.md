@@ -1512,6 +1512,50 @@ console.log("Hello World")
 
 在 uts 代码中使用 Swift 文件中定义的函数、变量、类等时无需导入，可以直接调用。
 
+
+##### 原生代码使用UTS内置对象
+
+UTS的[内置对象](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html)和[平台专用对象](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html)均可以在原生环境使用，
+但是在使用前需要导入基础库 `DCloudUTSFoundation`。
+
+我们知道在 uts 中使用的 uts 内置对象会被编成原生类型，那么在混编的 swift 文件中要想使用 uts 内置对象，就要直接使用其编译后的原生类型。
+下面列出 uts 内置对象对应的 swift 原生类名
+
+|uts 内置对象		|编译成的原生类名		  			
+|:----			|:---						
+|Array			|Array						
+|Number			|NSNumber 					
+|String			|String						
+|Set			|UTSSet						
+|Map			|Map						
+|UTSJSONObject	|UTSJSONObject				
+|JSON			|JSON						
+|Date			|Date						
+|Math			|Math										
+|RegExp			|UTSRegExp					
+|Error			|UTSError					
+|console		|console					
+
+
+如果你想在 swift 代码中使用 `UTSiOS` 对象提供的能力，你需要先导入基础库 `DCloudUniappRuntime`.
+
+示例如下：
+
+```swift
+
+import DCloudUniappRuntime;
+
+func getKeyWindow() -> UIWindow {
+    return UTSiOS.getKeyWindow()
+}
+```
+
+> 注意：
+
+> UTSiOSHookProxy 因为涉及到自动注册的问题，在 swift 代码中直接使用将不生效。
+
+##### 原生代码向 HX 控制台打印日志
+
 如果你想将 Swift 文件中的变量输出到 HX 控制台中，可以将基础库 `DCloudUTSFoundation` 导入到 Swift 源码文件中，不过这个导入和使用过程将没有代码提示，
 输出的变量信息也不会包含变量所在的文件和代码行号等信息。
 
