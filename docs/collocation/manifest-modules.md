@@ -105,14 +105,22 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 
 ## uni-ad@uni-ad
 
-> HBuilderX 3.99 app-android平台 新增支持 uni-ad 开屏广告
-> HBuilderX 4.22 app-ios平台 新增支持 uni-ad 开屏广告
+**开屏广告兼容性**
+
+|Web|Android|iOS	|
+|--	|--			|--		|
+|x	|3.99		|4.22	|
+
 
 [uni-ad](https://uniad.dcloud.net.cn/) 是DCloud提供的聚合广告服务，使用前需先登录 [uni-ad 广告联盟](https://uniad.dcloud.net.cn/) 开通。
-激励视频广告请参考：[uni.createRewardedVideoAd](../api/create-rewarded-video-ad.md)
 
-在uni-app x客户端，uni-ad是一个独立模块。使用开屏广告不需要调用任何API，应用启动时会自动拉取并展示开屏广告。这也导致 uni-ad 模块无法参与摇树。
-需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
+在uni-app x客户端，uni-ad是一个独立模块。该SDK已经在工信部完成SDK备案，确保隐私合规。
+
+广告包括很多形式，其中有的需要开发代码调用，比如激励视频广告，另参考：[uni.createRewardedVideoAd](../api/create-rewarded-video-ad.md)
+
+使用开屏广告不需要调用任何API，应用启动时会自动拉取并展示开屏广告。
+
+这也导致 uni-ad 模块无法参与摇树。需要开发者在 manifest.json 中手动配置，打包后才能生效。
 
 使用 uni-ad 模块需在 manifest.json 文件中添加 uni-ad 节点，并配置使用的广告 SDK。
 
@@ -141,13 +149,13 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 
 添加相应的节点，云端打包就会将对应的广告平台 SDK 打包到最终安装包中。
 
-注意：穿山甲GroMore、快手广告联盟、腾讯优量汇广告联盟仅支持`armeabi-v7a`和`arm64-v8a`两个CPU平台。
-
-注意：目前仅支持上述国内广告平台，国际广告暂不支持。
+注意：
+- 穿山甲GroMore、快手广告联盟、腾讯优量汇广告联盟仅支持`armeabi-v7a`和`arm64-v8a`两个CPU平台。
+- 目前仅支持上述国内广告平台，国际广告暂不支持。
 
 ::: warning 注意事项  
-开屏广告展示前会显示启动界面，等待2.5秒加载开屏广告，超过2.5秒未成功加载广告则不显示开屏广告，直接进入应用首页。  
-app平台默认启动界面为白色（暗黑模式下为黑色），为了避免等待加载开屏广告时白屏，建议开通开屏广告后应用配置启动界面，详情参考[splash启动界面](./manifest-splashscreen.md)  
+开屏广告展示前会先显示`splash启动界面`，等待开屏广告服务器返回数据后渲染开屏广告，超过2.5秒未成功加载广告则不显示开屏广告，直接进入应用首页。  
+app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避免等待加载开屏广告时白屏，建议开通开屏广告后在manifest中配置`启动界面`，详情参考[splash启动界面](./manifest-splashscreen.md)  
 :::
 
 ## uni-payment@uni-payment

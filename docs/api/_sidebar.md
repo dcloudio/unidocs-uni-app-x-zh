@@ -79,6 +79,7 @@
   * [App一键登录](get-univerify-manager.md)
   * [金融级实人认证](facial-recognition-meta-info.md)
 * 广告
+  * [开屏广告manifest配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-ad)
   * [激励视频广告](create-rewarded-video-ad.md)
 * 支付
   * [支付（requestPayment）](request-payment.md)
