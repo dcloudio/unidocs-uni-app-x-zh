@@ -4,7 +4,7 @@
 
 <!-- UTSCOMJSON.canvas.compatibility -->
 
-App平台目前没有完整的canvas组件，但
+App平台4.25之前没有完整的canvas组件，但
 * 每个view，都提供了[draw API](../dom/drawablecontext.md)，可以高性能的画各种形状、写字。这组API与web的canvas api接近但不同。
 * 截图或海报需求，无需像webview那样通过canvas中转，app平台view直接提供截图API，[takesnapshot](../dom/element.md#takesnapshot)。
 * 使用web-view中的canvas也是一种方案，uvue页面里的web-view组件可以和uvue页面里的uts代码双向通信。
@@ -41,17 +41,45 @@ uni-app x 中废弃了老版方案，使用了 W3C 规范和微信小程序的�
 
 注意：新版规范需要开发者根据自己的场景手动处理高清屏问题。
 
+**异步方式**
+
 ```html
 <template>
   <canvas id="canvas"></canvas>
 </template>
 <script setup>
-// 获取 canvas element
+// HBuilderX 4.25
+// 异步调用方式, 跨平台写法
+uni.createCanvasContextAsync({
+  id: 'canvas',
+  component: this,
+  success: (context : CanvasContext) => {
+    const canvasContext = context.getContext('2d')!;
+    const canvas = canvasContext.canvas;
+
+    // 处理高清屏逻辑
+    const dpr = uni.getDeviceInfo().devicePixelRatio ?? 1;
+    canvas.width = canvas.offsetWidth * dpr;
+    canvas.height = canvas.offsetHeight * dpr;
+    canvasContext.scale(dpr, dpr); // 仅需调用一次，当调用 reset 方法后需要再次 scale
+  }
+})
+</script>
+```
+
+**同步方式**
+
+```html
+<template>
+  <canvas id="canvas"></canvas>
+</template>
+<script setup>
+// 同步调用方式，仅支持 app/web
 const canvas = uni.getElementById("canvas") as UniCanvasElement
 const context = canvas.getContext("2d")!;
 
 // 处理高清屏逻辑
-const dpr = uni.getSystemInfoSync().pixelRatio;
+const dpr = uni.getDeviceInfo().devicePixelRatio ?? 1;
 canvas.width = canvas.offsetWidth * dpr;
 canvas.height = canvas.offsetHeight * dpr;
 context.scale(dpr, dpr); // 仅需调用一次，当调用 reset 方法后需要再次 scale
