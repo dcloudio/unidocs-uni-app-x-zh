@@ -1484,21 +1484,21 @@ console.log("Hello World")
 
 下面列出内置对象对应的类名，如果需要在原生环境和UTS环境/uvue环境中互传数据，建议转换为标准内置对象实现后再进行传递。
 
-|对象		|类名						|备注|
-|:----		|:---						|:----|
-|Array		|io.dcloud.uts.UTSArray		||
-|Number		|io.dcloud.uts.UTSNumber 	||
-|String		|kotlin.String				|不需要转换|
-|Set		|io.dcloud.uts.Set			||
-|Map		|io.dcloud.uts.Map			||
-|UTSJSONObject|io.dcloud.uts.UTSJSONObject||
-|JSON		|io.dcloud.uts.JSON			||
-|Date		|io.dcloud.uts.Date			||
-|Math		|io.dcloud.uts.Math			||
-|Promise	|io.dcloud.uts.UTSPromise	||
-|RegExp		|io.dcloud.uts.UTSRegExp	||
-|Error		|io.dcloud.uts.UTSError		||
-|console	|io.dcloud.uts.console		||
+|uts 内置对象		|编译成的原生类名		 
+|:----		|:---						
+|Array		|io.dcloud.uts.UTSArray		
+|Number		|io.dcloud.uts.UTSNumber 	
+|String		|kotlin.String				
+|Set		|io.dcloud.uts.Set			
+|Map		|io.dcloud.uts.Map			
+|UTSJSONObject|io.dcloud.uts.UTSJSONObject
+|JSON		|io.dcloud.uts.JSON			
+|Date		|io.dcloud.uts.Date			
+|Math		|io.dcloud.uts.Math			
+|Promise	|io.dcloud.uts.UTSPromise	
+|RegExp		|io.dcloud.uts.UTSRegExp	
+|Error		|io.dcloud.uts.UTSError		
+|console	|io.dcloud.uts.console		
 
 
 
