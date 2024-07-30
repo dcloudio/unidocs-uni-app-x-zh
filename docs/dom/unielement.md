@@ -163,8 +163,8 @@ if(webViewElement != null) {
 | 组件      | 对应 android 平台原生View         |
 | --------- | -------------------------------- |
 | [view](https://doc.dcloud.net.cn/uni-app-x/component/view.html) | [ViewGroup](https://developer.android.google.cn/reference/android/view/ViewGroup) |
-| [input](https://doc.dcloud.net.cn/uni-app-x/component/input.html) | [EditText](https://developer.android.google.cn/reference/android/widget/EditText) |
-| [textarea](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) | [EditText](https://developer.android.google.cn/reference/android/widget/EditText) |
+| [input](https://doc.dcloud.net.cn/uni-app-x/component/input.html) | [AppCompatEditText](https://developer.android.google.cn/reference/kotlin/androidx/appcompat/widget/AppCompatEditText) |
+| [textarea](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) | [AppCompatEditText](https://developer.android.google.cn/reference/kotlin/androidx/appcompat/widget/AppCompatEditText) |
 | [web-view](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) | [WebView](https://developer.android.google.cn/reference/android/webkit/WebView) |
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.name -->
