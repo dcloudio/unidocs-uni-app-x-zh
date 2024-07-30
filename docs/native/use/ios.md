@@ -5,12 +5,11 @@
 * Xcode 15.2及以上版本
 
 ## 接入流程
-1. 在你的原生xcode工程中，接入uni原生SDK
-2. 在 `HBuilder X` 中导出资源文件，根据资源内容，配置`原生主工程`环境，添加基础模块需要的依赖库以及资源文件
-* 根据资源文件中的`manifest.json`文件中包含的模块，制作`DCloudUTSExtAPI.xcframework`，并将其添加到`原生主工程`中，详见[集成内置模块](../modules/ios/modules.md)
-* 根据资源文件中的`manifest.json`文件中包含的模块，向`原生主工程`添加工程配置以及内置模块需要的资源文件等，详见[集成内置模块](../modules/ios/modules.md)
-* 根据资源文件中的`uni_modules`文件夹中包含的UTS插件，制作对应的原生xcframework，并将其添加到`原生主工程`(付费购买的uts插件不支持原生工程接入)，详见[制作UTS插件](iosuts.md)
-3. 在原生工程中，通过API启动uni原生SDK，详见[API文档](iosapi.md)
+1. 在 `HBuilder X` 中导出资源文件，根据资源内容，配置`原生主工程`环境，添加基础模块需要的依赖库以及资源文件
+2. 根据资源文件中的`manifest.json`文件中包含的模块，制作`DCloudUTSExtAPI.xcframework`，并将其添加到`原生主工程`中，详见[集成内置模块](../modules/ios/modules.md)
+3. 根据资源文件中的`manifest.json`文件中包含的模块，向`原生主工程`添加工程配置以及内置模块需要的资源文件等，详见[集成内置模块](../modules/ios/modules.md)
+4. 根据资源文件中的`uni_modules`文件夹中包含的UTS插件，制作对应的原生xcframework，并将其添加到`原生主工程`(付费购买的uts插件不支持原生工程接入)，详见[制作UTS插件](iosuts.md)
+5. 在原生工程中，通过API启动uni原生SDK，详见[API文档](iosapi.md)
 
 ## 导出资源文件
 1. 在原生工程中新建文件目录`uni-app-x/apps`   
