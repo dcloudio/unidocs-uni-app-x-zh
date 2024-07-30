@@ -1,6 +1,6 @@
 ## uni.createCanvasContextAsync(options) @createcanvascontextasync
 
-<!-- UTSAPIJSON.createCanvasContextAsync.description -->
+<!-- UTSAPIJSON.c.description -->
 
 <!-- UTSAPIJSON.createCanvasContextAsync.compatibility -->
 
@@ -11,8 +11,6 @@
 <!-- UTSAPIJSON.createCanvasContextAsync.example -->
 
 <!-- UTSAPIJSON.createCanvasContextAsync.tutorial -->
-
-<!-- UTSAPIJSON.createCanvasContextAsync.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

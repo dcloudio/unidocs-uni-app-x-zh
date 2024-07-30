@@ -246,32 +246,6 @@ handleClick (event : UniPointerEvent) {
 <!-- CUSTOMTYPEJSON.UniCustomEvent.param -->
 
 
-
-### UniCustomEvent 方法 @customevent-methods
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.name -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.description -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.param -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.tutorial -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.name -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.description -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.param -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.tutorial -->
-
 ## UniPointerEvent
 
 <!-- CUSTOMTYPEJSON.UniPointerEvent.description -->
@@ -282,31 +256,6 @@ handleClick (event : UniPointerEvent) {
 
 <!-- CUSTOMTYPEJSON.UniPointerEvent.example -->
 
-### UniPointerEvent 的方法 @unipointerevent-methods
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.name -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.description -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.param -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.tutorial -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.name -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.description -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.param -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.tutorial -->
-
 ## UniTouchEvent
 
 <!-- CUSTOMTYPEJSON.UniTouchEvent.description -->
@@ -316,31 +265,6 @@ handleClick (event : UniPointerEvent) {
 <!-- CUSTOMTYPEJSON.UniTouchEvent.param -->
 
 UniTouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchcancel、longpress。
-
-### UniTouchEvent 方法 @touchevent-methods
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.name -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.description -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.param -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.tutorial -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.name -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.description -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.param -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.tutorial -->
 
 ## UniTouch
 
@@ -362,31 +286,17 @@ UniTouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchc
 
 <!-- CUSTOMTYPEJSON.UniMouseEvent.example -->
 
-### UniMouseEvent 的方法 @unimouseevent-methods
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.name -->
+## UniKeyEvent
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.description -->
+<!-- CUSTOMTYPEJSON.UniKeyEvent.description -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.param -->
+<!-- CUSTOMTYPEJSON.UniKeyEvent.extends -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.returnValue -->
+<!-- CUSTOMTYPEJSON.UniKeyEvent.param -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.compatibility -->
+<!-- CUSTOMTYPEJSON.UniKeyEvent.compatibility -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.tutorial -->
-
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.name -->
-
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.description -->
-
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.param -->
-
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.tutorial -->
-
+<!-- CUSTOMTYPEJSON.UniKeyEvent.example -->
 
 ## 参见
 
