@@ -424,6 +424,40 @@
 
 <!-- VUEJSON.template.description -->
 
+`<template>` 有2个用途：
+1. 作为单文件组件规范的模板根节点。在 `<template>` 下面放置页面模板真正的组件内容。
+此时lang属性生效。但vue指令不生效。
+
+2. 在根 `<template>` 下面，继续放置`<template>`虚节点，可以让多个组件遵守相同的vue指令。
+比如下面的示例中，通过`<template v-if="isShow">`包裹了text和button，让2个组件共同遵守同一个`v-if`指令，且不增加层级。
+如果把这个子`<template>`改成`<view>`，会增加一层节点，层级太多会影响性能。
+```vue
+<template>
+  <view>
+    <template v-if="isShow">
+      <text>abc</text>
+      <button>按钮</button>
+    </template>
+		<view></view>
+  </view>
+</template>
+```
+
+此时lang属性不生效。
+
+::: warning 注意
+对非根的 `<template>` 的特殊处理，只有在它与以下任一指令一起使用时才会被触发：
+
+- `v-if`、`v-else-if` 或 `v-else`
+- `v-for`
+- `v-slot`
+
+正常情况下，应该搭配如上vue指令使用。但异常情况下，如果这些指令都不存在，那么容错策略如下：\
+在 `Web` 端将被渲染成一个[原生的 `<template>` 元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)；\
+在 `App` 端将被渲染成 `view`。此时会多个层级。
+
+:::
+
 <!-- VUEJSON.template.attribute -->
 
 <!-- VUEJSON.template.event -->
@@ -433,21 +467,6 @@
 <!-- VUEJSON.template.compatibility -->
 
 <!-- VUEJSON.template.children -->
-
-::: warning 注意
-对 `<template>` 的特殊处理只有在它与以下任一指令一起使用时才会被触发：
-
-- `v-if`、`v-else-if` 或 `v-else`
-- `v-for`
-- `v-slot`
-
-如果这些指令都不存在，那么它\
-在 `Web` 端将被渲染成一个[原生的 `<template>` 元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)；\
-在 `App` 端将被渲染成 `view`。
-
-单文件组件使用顶层的 `<template>` 标签来包裹整个模板，`lang` 属性仅对顶层 `<template>` 生效。这种用法与上面描述的 `<template>` 使用方式是有区别的。\
-该顶层标签不是模板本身的一部分，不支持指令等模板语法。
-:::
 
 <!-- VUEJSON.template.reference -->
 

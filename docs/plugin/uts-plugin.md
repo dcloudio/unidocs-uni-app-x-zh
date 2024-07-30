@@ -31,6 +31,8 @@ uts语言，
 uts插件，指利用uts语法，操作原生的API（包括手机os的api或三方sdk），并封装成一个[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)插件，供前端调用。
 
 - uni-app中，是js来调用uts插件。（HBuilderX 3.6支持vue3编译器，3.6.8支持vue2编译器）
+![uts插件结构](https://native-res.dcloud.net.cn/images/uts/UTS%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE1.png)
+
 - uni-app x中，是uts来调用uts插件。（HBuilderX 3.9支持）
 
 也就是一个uts插件，可以同时支持uni-app和uni-app x。
@@ -48,8 +50,6 @@ uts插件分api和组件。这和uni-app的组件、api的概念是一样的。
 api插件也可以操作界面，但更多是独立的全屏窗口或弹出窗口。而不能嵌入在template中。
 
 比如lottie动画的uts插件，就是一个组件插件。[https://ext.dcloud.net.cn/plugin?id=10674](https://ext.dcloud.net.cn/plugin?id=10674)，其源码在[https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view](https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view)
-
-![uts插件结构](https://native-res.dcloud.net.cn/images/uts/UTS%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE1.png)
 
 ### uts插件与uni原生语言插件的区别
 
@@ -154,6 +154,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	│	├─res                     //Android原生res资源目录，可选
 │	│	├─AndroidManifest.xml     //Android原生应用清单文件，可选
 │	│	├─config.json             //Android原生配置文件
+│	│	├─hybrid.kt               //Android混编的kt文件
 │	│	└─index.uts               //Android原生插件能力实现
 │	├─app-ios                     //iOS平台目录
 │	│	├─Frameworks              //iOS原生依赖的第三方 framework 依赖库存放目录，可选
@@ -162,6 +163,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	│	├─info.plist              //iOS原生所需要添加到主 info.plist 文件中的配置文件，可选
 │	│	├─UTS.entitlements        //iOS原生所需要添加到主工程 .entitlements 文件中的配置文件，可选
 │	│	├─config.json             //iOS原生配置文件
+│	│	├─hybrid.swift            //ios混编的swift文件
 │	│	└─index.uts               //iOS原生插件能力实现
 │	├─web                         //web平台目录
 │	│	└─index.uts
@@ -1430,15 +1432,21 @@ list1.forEach((item : any) => {
 
 
 
-## UTS混编@utshybrid
+## UTS原生混编@utshybrid
 
-`HBuilder X 4.25`起，UTS插件可以直接使用原生的kt、java、swift代码，即 `UTS混编`。
+`HBuilder X 4.25`起，UTS插件可以直接使用原生的kt、java、swift代码，即 `UTS原生混编`。
 
-在以前，开发者需要把kt、swift代码封装为库，比如aar文件，然后才能被uts调用。有了 UTS混编 ，免去了封装过程。
+在以前，开发者需要把kt、swift代码封装为库，比如aar文件，然后才能被uts调用。有了 UTS原生混编 ，免去了封装过程。
 
 uts插件的主入口仍然是uts文件，混编kt、swift文件可以作为uts调用的代码。
 
 因为uts编译到Android就是变成了kt，编译到iOS就变成了swift，那么uts文件调用kt代码，其实本质还是kt之间不同函数/对象的调用。
+
+和uts插件代码一样，混编的原生代码可以直接真机运行，原生代码中也可以打console.log到HBuilderX控制台中。
+
+但目前HBuilderX并未提供原生代码的语法提示和校验。所以如果编写大段原生代码，推荐在原生ide中编写好，再放入uts插件下混编联调。
+
+如果是一小段简单代码，比如从网络或AI摘抄了一段，也可以直接在HBuilderX中开发联调。
 
 #### Android平台
 
@@ -1446,7 +1454,7 @@ uts插件的主入口仍然是uts文件，混编kt、swift文件可以作为uts�
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/mixCodeAndroid.png)
 
-> 注意：java代码需要云打包自定义基座后生效，kotlin代码不需要云端打包本地即可生效
+> 注意：java代码需要云打包自定义基座后生效，kotlin代码不需要打包，标准基座即可生效
 
 ##### 包名说明
 
@@ -1466,21 +1474,24 @@ import KotlinObject from 'xxx.xxx.KotlinObject';
 
 ##### 原生代码使用UTS内置对象
 
-UTS的[内置对象](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html)和[平台专用对象](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html)均可以在原生环境使用，下面以kotlin中打印日志到HBuilder X 控制台为例说明：
+UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象](../uts/utsandroid.md)均可以在原生环境使用，下面以kotlin中打印日志到HBuilder X 控制台为例说明：
 
 
 第一步：手动导入对应的包名，包名规则为： `io.dcloud.uts.xxx` 。这里的 xxx 是具体的对象的类名 ：
 
-```ts
-import io.dcloud.uts.console
+```kotlin
+import io.dcloud.uts.console // kt或java代码
 ```
 
 第二步： 导入包名后，以原生方式使用内置对象
 
-```ts
-console.log("Hello World")
+```kotlin
+console.log("Hello World") // kt或java代码
 ```
 
+这样就实现了在kt或java代码中打印日志到HBuilderX的控制台。
+
+不过这个导入和使用过程将没有代码提示，输出的变量信息也不会包含变量所在的文件和代码行号等信息。
 
 下面列出内置对象对应的类名，如果需要在原生环境和UTS环境/uvue环境中互传数据，建议转换为标准内置对象实现后再进行传递。
 
@@ -1500,8 +1511,6 @@ console.log("Hello World")
 |Error		|io.dcloud.uts.UTSError		
 |console	|io.dcloud.uts.console		
 
-
-
 #### iOS平台
 
 在插件的app-ios 目录下可以直接添加 Swift 源码文件
@@ -1515,7 +1524,7 @@ console.log("Hello World")
 
 ##### 原生代码使用UTS内置对象
 
-UTS的[内置对象](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html)和[平台专用对象](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html)均可以在原生环境使用，
+UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象](../uts/utsios.md)均可以在原生环境使用，
 但是在使用前需要导入基础库 `DCloudUTSFoundation`。
 
 我们知道在 uts 中使用的 uts 内置对象会被编成原生类型，那么在混编的 swift 文件中要想使用 uts 内置对象，就要直接使用其编译后的原生类型。
@@ -1536,6 +1545,22 @@ UTS的[内置对象](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/
 |Error			|UTSError					
 |console		|console					
 
+**以console对象为例，演示原生代码向 HX 控制台打印日志**
+
+首先将基础库 `DCloudUTSFoundation` 导入到 Swift 源码文件中，不过这个导入和使用过程将没有代码提示，输出的变量信息也不会包含变量所在的文件和代码行号等信息。
+
+示例如下：
+
+```swift
+
+import DCloudUTSFoundation;
+
+func test1() -> String {
+    console.log("this is in swift file")
+    return "123"
+}
+```
+
 
 如果你想在 swift 代码中使用 `UTSiOS` 对象提供的能力，你需要先导入基础库 `DCloudUniappRuntime`.
 
@@ -1550,36 +1575,13 @@ func getKeyWindow() -> UIWindow {
 }
 ```
 
-> 注意：
+**注意：**
 
-> UTSiOSHookProxy 因为涉及到自动注册的问题，在 swift 代码中直接使用将不生效。
+- UTSiOSHookProxy 因为涉及到自动注册的问题，在 swift 代码中直接使用将不生效。
+- 目前仅支持 Swift 源码混编，OC 源码即使添加也不会参与编译
+- Swift 源码文件中定义的函数、全局变量、类 等符号名称不要和 uts 文件中的符号名相同，否则会因为符号冲突导致编译不过
 
-##### 原生代码向 HX 控制台打印日志
-
-如果你想将 Swift 文件中的变量输出到 HX 控制台中，可以将基础库 `DCloudUTSFoundation` 导入到 Swift 源码文件中，不过这个导入和使用过程将没有代码提示，
-输出的变量信息也不会包含变量所在的文件和代码行号等信息。
-
-示例如下：
-
-```swift
-
-import DCloudUTSFoundation;
-
-func test1() -> String {
-    console.log("this is in swift file")
-    return "123"
-}
-```
-
-> 注意：
-
-> 目前仅支持 Swift 源码混编，OC 源码即使添加也不会参与编译
-
-> Swift 源码文件中定义的函数、全局变量、类 等符号名称不要和 uts 文件中的符号名相同，否则会因为符号冲突导致编译不过
-
-
-
-#### 混编注意事项：
+#### 混编注意事项
 
 + `index`是保留文件名，原生代码不能命名为 index.kt/index.java/index.swift
  
