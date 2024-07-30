@@ -1434,7 +1434,7 @@ list1.forEach((item : any) => {
 
 `HBuilder X 4.25`起，UTS插件可以直接使用原生的kt、java、swift代码，即 `UTS混编`。
 
-在以前，开发者需要把kt、swift代码封装为库，比如arr文件，然后才能被uts调用。有了 UTS混编 ，免去了封装过程。
+在以前，开发者需要把kt、swift代码封装为库，比如aar文件，然后才能被uts调用。有了 UTS混编 ，免去了封装过程。
 
 uts插件的主入口仍然是uts文件，混编kt、swift文件可以作为uts调用的代码。
 
@@ -1448,7 +1448,7 @@ uts插件的主入口仍然是uts文件，混编kt、swift文件可以作为uts�
 
 > 注意：java代码需要云打包自定义基座后生效，kotlin代码不需要云端打包本地即可生效
 
-Android包名说明:
+##### 包名说明
 
 大多数情况下，我们建议混编代码的包名与[UTS插件默认包名](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#_3-1-%E9%85%8D%E7%BD%AEandroidmanifest-xml)保持一致，这样在UTS调用原生代码时，可以省去手动引入包名的步骤。
 
@@ -1462,6 +1462,43 @@ package uts.sdk.modules.utsSyntaxcase
 ```ts
 import KotlinObject from 'xxx.xxx.KotlinObject';
 ```
+
+
+##### 原生代码使用UTS内置对象
+
+UTS的[内置对象](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html)和[平台专用对象](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html)均可以在原生环境使用，下面以kotlin中打印日志到HBuilder X 控制台为例说明：
+
+
+第一步：手动导入对应的包名，包名规则为： `io.dcloud.uts.xxx` 。这里的 xxx 是具体的对象的类名 ：
+
+```ts
+import io.dcloud.uts.console
+```
+
+第二步： 导入包名后，以原生方式使用内置对象
+
+```ts
+console.log("Hello World")
+```
+
+
+下面列出内置对象对应的类名，如果需要在原生环境和UTS环境/uvue环境中互传数据，建议转换为标准内置对象实现后再进行传递。
+
+|对象		|类名						|备注|
+|:----		|:---						|:----|
+|Array		|io.dcloud.uts.UTSArray		||
+|Number		|io.dcloud.uts.UTSNumber 	||
+|String		|kotlin.String				|不需要转换|
+|Set		|io.dcloud.uts.Set			||
+|Map		|io.dcloud.uts.Map			||
+|UTSJSONObject|io.dcloud.uts.UTSJSONObject||
+|JSON		|io.dcloud.uts.JSON			||
+|Date		|io.dcloud.uts.Date			||
+|Math		|io.dcloud.uts.Math			||
+|Promise	|io.dcloud.uts.UTSPromise	||
+|RegExp		|io.dcloud.uts.UTSRegExp	||
+|Error		|io.dcloud.uts.UTSError		||
+|console	|io.dcloud.uts.console		||
 
 
 
