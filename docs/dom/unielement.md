@@ -225,6 +225,36 @@ if(webViewElement != null) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.tutorial -->
 
+**getIOSView 获取原生 View：**
+
+```uts
+//通过 webViewElementId 获取 web-view 标签的 UniElement 对象
+const webViewElement = uni.getElementById(webViewElementId)
+//获取原生 view
+const view = webViewElement?.getIOSView();
+//判断 view 是否存在，类型是否为 WKWebView
+if (view != null && view instanceof WKWebView) {
+    //将 view 转换为 WKWebView 类型 
+    const webView = view! as WKWebView;
+}
+```
+
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+
+**组件对应原生 View 类型：**
+
+| 组件      | 对应 iOS 平台原生 View         |
+| --------- | -------------------------------- |
+| [view](https://doc.dcloud.net.cn/uni-app-x/component/view.html) | [UIView](https://developer.apple.com/documentation/uikit/uiview) |
+| [input](https://doc.dcloud.net.cn/uni-app-x/component/input.html) | [UITextField](https://developer.apple.com/documentation/uikit/uitextfield) |
+| [textarea](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) | [UITextView](https://developer.apple.com/documentation/uikit/uitextview) |
+| [web-view](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) | [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) |
+
+**注意事项：**
+
++ iOS平台 uvue 环境使用 js 驱动无法处理原生类型，getIOSView 方法需要在 uts 插件中使用。
++ iOS平台页面渲染时元素才会构建View，所以元素刚创建就获取 View 大概率是 null，推荐页面 onReady 时获取。
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.addEventListener.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.addEventListener.description -->
