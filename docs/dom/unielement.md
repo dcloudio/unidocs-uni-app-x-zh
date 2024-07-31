@@ -137,7 +137,8 @@ if(element != null) {
 
 **注意事项：**
 
-+ 安卓平台获取的原生View尽可能的避免设置View的background属性，会导致元素background、border、boxshadow css效果失效或设置的background失效，与设置background时机有关。
++ 安卓平台页面渲染时元素才会构建View，所以元素刚创建就获取View大概率是null，推荐页面onReady时获取。
++ 安卓平台获取的原生View尽可能的避免设置View的background属性，会导致元素background、border、boxshadow css效果失效或设置的background不生效，与设置background时机有关。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.name -->
 
@@ -173,7 +174,8 @@ if(webViewElement != null) {
 
 **注意事项：**
 
-+ 安卓平台获取的原生View尽可能的避免设置View的background属性，会导致元素background、border、boxshadow 失效或你设置的background失效，与设置background时机有关。
++ 安卓平台页面渲染时元素才会构建View，所以元素刚创建就获取View大概率是null，推荐页面onReady时获取。
++ 安卓平台获取的原生View尽可能的避免设置View的background属性，会导致元素background、border、boxshadow 失效或设置的background不生效，与设置background时机有关。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.name -->
 
