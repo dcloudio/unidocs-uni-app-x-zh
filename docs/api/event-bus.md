@@ -48,6 +48,14 @@
 
 <!-- UTSAPIJSON.$emit.param -->
 
+
+:::warning
+参数 `args` 为对象字面量时，需要通过 `as UTSJSONObject` 明确类型，例如：
+```js
+uni.$emit('fn', {"a": 1} as UTSJSONObject)
+```
+:::
+
 <!-- UTSAPIJSON.$emit.returnValue -->
 
 <!-- UTSAPIJSON.$emit.example -->
