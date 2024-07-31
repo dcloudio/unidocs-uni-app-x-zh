@@ -135,6 +135,10 @@ if(element != null) {
 }
 ```
 
+**注意事项：**
+
++ 安卓平台获取的原生View尽可能的避免设置View的background属性，会导致元素background、border、boxshadow css效果失效或设置的background失效，与设置background时机有关。
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.description -->
@@ -158,7 +162,7 @@ if(webViewElement != null) {
 }
 ```
 
-#### 可通过getAndroidView泛型明确定义View类型的组件
+**可通过getAndroidView泛型明确定义View类型的组件：**
 
 | 组件      | 对应 android 平台原生View         |
 | --------- | -------------------------------- |
@@ -166,6 +170,10 @@ if(webViewElement != null) {
 | [input](https://doc.dcloud.net.cn/uni-app-x/component/input.html) | [AppCompatEditText](https://developer.android.google.cn/reference/kotlin/androidx/appcompat/widget/AppCompatEditText) |
 | [textarea](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) | [AppCompatEditText](https://developer.android.google.cn/reference/kotlin/androidx/appcompat/widget/AppCompatEditText) |
 | [web-view](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) | [WebView](https://developer.android.google.cn/reference/android/webkit/WebView) |
+
+**注意事项：**
+
++ 安卓平台获取的原生View尽可能的避免设置View的background属性，会导致元素background、border、boxshadow 失效或你设置的background失效，与设置background时机有关。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.name -->
 
