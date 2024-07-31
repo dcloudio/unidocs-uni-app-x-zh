@@ -283,7 +283,7 @@ UTS组件的优势在于，它秉承了UTS的跨平台特性，统一的UTS语�
      * 一般情况下，组件的宽高应该是由终端系统的排版引擎决定，组件开发者不需要实现此函数
      * 但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
      */
-    NVMeasure(size : UTSSize) : UTSSize {
+    NVMeasure(size : UTSSize,mode:UTSMeasureMode) : UTSSize {
       // size.width = 300.0.toFloat();
       // size.height = 200.0.toFloat();
       return size;
@@ -614,7 +614,13 @@ NVMeasure 用于告诉排版系统，组件自身需要的宽高，具体的调�
 
 但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
 
-**注意：只有非容器组件生效，容器组件不应该重写此函数**
+
+注意:
+
+    + 只有非容器组件生效，容器组件不应该重写此函数
+
+    + HBuilder X 4.25 版本后新增 `UTSMeasureMode` 类型入参，包含组件宽高在css中的设定： 0 代表未指定css中的宽高属性 / 1 代表已指定css中的宽高属性
+
 
 + NVUpdateStyles
 
@@ -874,8 +880,10 @@ NVRecycler() {
      * [可选实现] 自定组件布局尺寸，用于告诉排版系统，组件自身需要的宽高
      * 一般情况下，组件的宽高应该是由终端系统的排版引擎决定，组件开发者不需要实现此函数
      * 但是部分场景下，组件开发者需要自己维护宽高，则需要开发者重写此函数
+     * 
+     * HBuilder X 4.25 版本后新增 UTSMeasureMode 参数
      */
-    NVMeasure(size : UTSSize) : UTSSize {
+    NVMeasure(size : UTSSize,mode:UTSMeasureMode) : UTSSize {
       // size.width = 300.0.toFloat();
       // size.height = 200.0.toFloat();
       return size;
