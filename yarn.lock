@@ -8915,10 +8915,10 @@ term-size@^2.1.0:
   resolved "https://registry.npmmirror.com/term-size/-/term-size-2.2.1.tgz#2a6a54840432c2fb6320fea0f415531e90189f54"
   integrity sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==
 
-terser-webpack-plugin@^1.4.3:
-  version "1.4.5"
-  resolved "https://registry.npmmirror.com/terser-webpack-plugin/-/terser-webpack-plugin-1.4.5.tgz#a217aefaea330e734ffacb6120ec1fa312d6040b"
-  integrity sha512-04Rfe496lN8EYruwi6oPQkG0vo8C+HT49X687FZnpPF0qMAIHONI6HEXYPKDOE8e5HjXTyKfqRd/agHtH0kOtw==
+terser-webpack-plugin@1.4.6, terser-webpack-plugin@^1.4.3:
+  version "1.4.6"
+  resolved "https://registry.npmmirror.com/terser-webpack-plugin/-/terser-webpack-plugin-1.4.6.tgz#87fcb6593fd1c977cd09e56143ecd31404600755"
+  integrity sha512-2lBVf/VMVIddjSn3GqbT90GvIJ/eYXJkt8cTzU7NbjKqK8fwv18Ftr4PlbF46b/e88743iZFL5Dtr/rC4hjIeA==
   dependencies:
     cacache "^12.0.2"
     find-cache-dir "^2.1.0"
@@ -9566,10 +9566,10 @@ vuepress-plugin-zooming@^1.1.8:
   dependencies:
     zooming "^2.1.1"
 
-vuepress-theme-uniapp-official@1.4.24:
-  version "1.4.24"
-  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.4.24.tgz#8776985415c31dfe670859f7920c981f81f3db6b"
-  integrity sha512-Xaz8m3dj+7Nwk5LoZB8iM+lXL/P9aqyYlkAiwaXE3H3iJ4M2eTFXVILFImc6rmrHSTUOgfCIAvuAu4D3A3V5BA==
+vuepress-theme-uniapp-official@1.4.25:
+  version "1.4.25"
+  resolved "https://registry.npmmirror.com/vuepress-theme-uniapp-official/-/vuepress-theme-uniapp-official-1.4.25.tgz#0985eb8ca54e2d6a43dcc8c99cf985d7b2ce7764"
+  integrity sha512-OWX0QUUI+MAtkmBwUFJeQ/l0/sxgBwPj+rjkroCZ8GAffyev5ejh7wKyoCirhWyI4F1NWIR22Tp87FstfURLoA==
   dependencies:
     "@docsearch/css" "^3.6.0"
     "@vuepress/plugin-back-to-top" "^1.9.5"
