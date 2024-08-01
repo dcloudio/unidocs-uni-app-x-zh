@@ -20,7 +20,7 @@
 - HBuilder4.0及以上版本App端调整为手指在view范围内移动不会取消`hover-class`状态，手指移动到view范围之外才会取消`hover-class`状态
 
 
-#### 如何获取原生view对象
+#### 获取原生view对象
 
 **Android 平台：**
 

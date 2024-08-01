@@ -10,7 +10,7 @@
 
 <!-- UTSCOMJSON.textarea.component_type-->
 
-#### 如何获取原生view对象
+#### 获取原生view对象
 
 **Android 平台：**
 
