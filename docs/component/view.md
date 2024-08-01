@@ -24,6 +24,8 @@
 
 **Android 平台：**
 
+获取view组件对应的UniElement对象，通过UniElement对象的[getAndroidView](../dom/unielement.md#getandroidview-2)函数获取组件原生view对象
+
 ```uts
 //导入安卓原生ViewGroup对象
 import ViewGroup from "android.view.ViewGroup"
