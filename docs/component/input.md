@@ -29,6 +29,22 @@ if(inputElement != null) {
 }
 ```
 
+**iOS 平台：**
+
+获取view组件对应的UniElement对象，通过UniElement对象的[getIOSView](../dom/unielement.html#getiosview)函数获取组件原生view对象
+
+```uts
+//通过 input 组件定义的 id 属性值，获取 input 标签的 UniElement 对象
+const inputElement = uni.getElementById(id)
+//获取原生 view
+const view = inputElement?.getIOSView();
+//判断 view 是否存在，类型是否为 UITextField
+if (view != null && view instanceof UITextField) {
+    //将 view 转换为 UITextField 类型 
+    const textField = view! as UITextField;
+}
+```
+
 更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
 
 <!-- UTSCOMJSON.input.children -->
