@@ -10,6 +10,25 @@
 
 <!-- UTSCOMJSON.input.component_type-->
 
+#### 如何获取原生view对象
+
+**Android 平台：**
+
+```uts
+//导入安卓原生AppCompatEditText对象
+import AppCompatEditText from "androidx.appcompat.widget.AppCompatEditText"
+
+//通过input组件定义的id属性值，获取input标签的UniElement对象
+const inputElement = uni.getElementById(id)
+//UniElement.getAndroidView设置泛型为安卓底层AppCompatEditText对象，直接获取AppCompatEditText， 如果泛型不匹配会返回null
+if(inputElement != null) {
+	//editText就是input组件对应的原生view对象
+	const editText = inputElement.getAndroidView<AppCompatEditText>()
+}
+```
+
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+
 <!-- UTSCOMJSON.input.children -->
 
 <!-- UTSCOMJSON.input.example -->

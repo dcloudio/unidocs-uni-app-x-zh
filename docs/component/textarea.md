@@ -10,6 +10,25 @@
 
 <!-- UTSCOMJSON.textarea.component_type-->
 
+#### 如何获取原生view对象
+
+**Android 平台：**
+
+```uts
+//导入安卓原生AppCompatEditText对象
+import AppCompatEditText from "androidx.appcompat.widget.AppCompatEditText"
+
+//通过textarea组件定义的id属性值，获取textarea标签的UniElement对象
+const textareaElement = uni.getElementById(id)
+//UniElement.getAndroidView设置泛型为安卓底层AppCompatEditText对象，直接获取AppCompatEditText， 如果泛型不匹配会返回null
+if(textareaElement != null) {
+	//editText就是textarea组件对应的原生view对象
+	const editText = textareaElement.getAndroidView<AppCompatEditText>()
+}
+```
+
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+
 <!-- UTSCOMJSON.textarea.children -->
 
 <!-- UTSCOMJSON.textarea.example -->

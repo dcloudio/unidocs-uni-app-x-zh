@@ -127,13 +127,15 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 **getAndroidView获取原生View：**
 
 ```uts
-//通过elementId 获取到UniElement对象
-const element = uni.getElementById(elementId)
-//getElementById不设置泛型，获取到安卓View
+//通过组件定义的id属性值，获取到UniElement对象
+const element = uni.getElementById(id)
+//getAndroidView不设置泛型，获取到安卓View
 if(element != null) {
 	const view = element.getAndroidView()
 }
 ```
+
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
 
 **注意事项：**
 
@@ -155,13 +157,18 @@ if(element != null) {
 **getAndroidView通过泛型定义获取原生View：**
 
 ```uts
-//通过webViewElementId 获取web-view标签的UniElement对象
-const webViewElement = uni.getElementById(webViewElementId)
-//getElementById设置泛型为安卓底层WebView对象, 直接获取WebView 如果泛型不匹配会返回null
+//导入安卓原生WebView对象
+import WebView from "android.webkit.WebView"
+
+//通过web-view组件定义的id属性值，获取web-view标签的UniElement对象
+const webViewElement = uni.getElementById(id)
+//getAndroidView设置泛型为安卓底层WebView对象, 直接获取WebView 如果泛型不匹配会返回null
 if(webViewElement != null) {
 	const webview = webViewElement.getAndroidView<WebView>()
 }
 ```
+
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
 
 **可通过getAndroidView泛型明确定义View类型的组件：**
 

@@ -20,6 +20,25 @@
 - HBuilder4.0及以上版本App端调整为手指在view范围内移动不会取消`hover-class`状态，手指移动到view范围之外才会取消`hover-class`状态
 
 
+#### 如何获取原生view对象
+
+**Android 平台：**
+
+```uts
+//导入安卓原生ViewGroup对象
+import ViewGroup from "android.view.ViewGroup"
+
+//通过view组件定义的id属性值，获取view标签的UniElement对象
+const viewElement = uni.getElementById(id)
+//UniElement.getAndroidView设置泛型为安卓底层ViewGroup对象, 直接获取ViewGroup 如果泛型不匹配会返回null
+if(viewElement != null) {
+	//viewGroup就是view组件对应的原生view对象
+	const viewGroup = viewElement.getAndroidView<ViewGroup>()
+}
+```
+
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+
 <!-- UTSCOMJSON.view.children -->
 
 <!-- UTSCOMJSON.view.example -->
