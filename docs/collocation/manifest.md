@@ -145,8 +145,9 @@ uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4
 - [Android平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#urlscheme)  
 - [iOS平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)  
 
-
-> uni-app x项目标准基座已配置 url scheme 值：uniappx
+**注意**  
+- uni-app x项目标准基座已配置 url scheme 值："uniappx"
+- 配置scheme需提交云端打包才能生效  
 
 
 ## 示例
