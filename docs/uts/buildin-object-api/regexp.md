@@ -141,12 +141,13 @@ console.log(regex1.lastIndex);
 ```ts
 const regex1 = RegExp('foo*', 'g');
 const str1 = 'table football, foosball';
-let array1;
+let array1 = regex1.exec(str1);
 
-while ((array1 = regex1.exec(str1)) !== null) {
+while ((array1) !== null) {
   console.log(`Found ${array1[0]}. Next starts at ${regex1.lastIndex}.`);
   // expected output: "Found foo. Next starts at 9."
   // expected output: "Found foo. Next starts at 19."
+  array1 = regex1.exec(str1);
 }
 ```
 <!-- UTSJSON.RegExp.exec.compatibility -->
