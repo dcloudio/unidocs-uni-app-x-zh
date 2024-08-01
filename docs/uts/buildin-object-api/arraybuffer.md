@@ -56,6 +56,20 @@ ArrayBuffer 对象用来表示通用的原始二进制数据缓冲区。
 
 <!-- UTSJSON.ArrayBuffer.isView.tutorial -->
 
+### fromByteBuffer(byteBuffer: ByteBuffer)
+
+<!-- UTSJSON.ArrayBuffer.fromByteBuffer.description -->
+
+<!-- UTSJSON.ArrayBuffer.fromByteBuffer.param -->
+
+<!-- UTSJSON.ArrayBuffer.fromByteBuffer.returnValue -->
+
+<!-- UTSJSON.ArrayBuffer.fromByteBuffer.test -->
+
+<!-- UTSJSON.ArrayBuffer.fromByteBuffer.compatibility -->
+
+<!-- UTSJSON.ArrayBuffer.fromByteBuffer.tutorial -->
+
 
 ## 实例属性
 
@@ -89,4 +103,20 @@ ArrayBuffer 对象用来表示通用的原始二进制数据缓冲区。
 <!-- UTSJSON.ArrayBuffer.slice.compatibility -->
 
 <!-- UTSJSON.ArrayBuffer.slice.tutorial -->
+
+### toByteBuffer()
+
+<!-- UTSJSON.ArrayBuffer.toByteBuffer.description -->
+
+<!-- UTSJSON.ArrayBuffer.toByteBuffer.param -->
+
+<!-- UTSJSON.ArrayBuffer.toByteBuffer.returnValue -->
+
+<!-- UTSJSON.ArrayBuffer.toByteBuffer.test -->
+
+<!-- UTSJSON.ArrayBuffer.toByteBuffer.compatibility -->
+
+<!-- UTSJSON.ArrayBuffer.toByteBuffer.tutorial -->
+
+
 
