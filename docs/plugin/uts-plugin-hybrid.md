@@ -1,28 +1,74 @@
 # UTS原生混编介绍
 
-`HBuilder X 4.25`起，UTS插件可以直接使用原生的kt、java、swift代码，即 `UTS原生混编`。
+`HBuilder X 4.25`起，UTS插件可以直接使用原生的kotlin、java、swift代码，即 `UTS原生混编`
 
-在以前，开发者需要把kt、swift代码封装为库，比如aar文件或者framework, .a库，然后才能被uts调用。有了 UTS原生混编 ，免去了封装过程。
+## `UTS原生混编`的优势和适用场景
 
-uts插件的主入口仍然是uts文件，混编kt、swift文件可以作为uts调用的代码。
+之前，开发者只能使用[UTS语言](https://doc.dcloud.net.cn/uni-app-x/uts/) 来开发[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)。 
 
-因为uts编译到Android就是变成了kt，编译到iOS就变成了swift，那么uts文件调用kt代码，其实本质还是kt之间不同函数/对象的调用。
+对于不熟悉原生开发的插件作者来说，往往需要下面的步骤来实现原生API功能的封装：
 
-和uts插件代码一样，混编的原生代码可以直接真机运行，原生代码中也可以打console.log到HBuilderX控制台中。
++ 1 通过搜索引擎/AIGC/原生API文档 得到一段自己想要的功能对应原生代码(kotlin/swift等)
 
-但目前HBuilderX并未提供原生代码的语法提示和校验。所以如果编写大段原生代码，推荐在原生ide中编写好，再放入uts插件下混编联调。
++ 2 手动翻译这段代码为UTS
 
-如果是一小段简单代码，比如从网络或AI摘抄了一段，也可以直接在HBuilderX中开发联调。
++ 3 如果存在UTS不支持的语法，还需要把原生代码封装成 aar/framework 等原生库形式，再供UTS代码调用
+
+
+这是一件很繁琐的事情，`UTS原生混编`的出现彻底解决了这个问题：
+
+开发者只需要把原生环境中可用的 kotlin/swift/java 等原生代码按照约定放在UTS插件中，就可以通过 `uts` 文件就可以无缝的使用。
+
+在UTS插件的编译流程中，UTS源码是 Kotlin/swift 源码的上游环节，也就是说 UTS本身就会被编译为Kotlin/swift 源码，所以 uts 与原生语言之间的相互调用 本质是kotlin/swift语言内部 不同函数/对象的调用，不会有任何调用成本和性能损耗
+
+
+和uts插件代码一样，混编的原生代码可以直接真机运行，省去了手动集成AAR三方库需要打包自定义基座的环节，大大提升了开发效率。
+
+
+有了`UTS原生混编`之后，开发者如果想要实现对应的原生功能，仅需要：
+
++   1  通过搜索引擎/AI/原生API文档 得到原生代码片段，
++   2  放入UTS插件中，真机运行
+
+即可以看到执行结果，大大简化了原生功能步骤。
+
+
+下面我们以内存监控功能为例，分别拆解 在android和ios平台上的实现步骤
+
 
 ## Android平台
 
-在app-android 可以直接添加 kotlin/java 源码
+#### 选择UTS插件
 
-![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/mixCodeAndroid.png)
+在开始集成之前，你需要确保你拥有一个的UTS插件。
 
-> 注意：java代码需要云打包自定义基座后生效，kotlin代码不需要打包，标准基座即可生效
+UTS插件创建步骤：[参考这里](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html#%E7%AE%80%E5%8D%95%E6%8F%92%E4%BB%B6%E7%A4%BA%E4%BE%8B)
 
-### 包名说明
+
+#### 获取和验证原生代码
+
+原生代码的获取一般有三种方式：
+
+1 [Android官方文档](https://developer.android.google.cn/?hl=zh-cn)
+
+2 搜索引擎/AI工具
+
+
+我们在这里使用AI工具通过限定语言得到了原生代码。
+
+AI工具和原生文档得到的代码并不总是准确的，我们需要去验证它。
+
+目前HBuilderX并未提供原生代码的语法提示和校验。所以如果编写大段原生代码，推荐在原生ide中编写好，再放入uts插件下混编联调。
+
+如果是小的代码片段，我们可以通过经验判断或者直接依靠HBuilderX本地编译功能来实现原生代码的校验。
+
+
+这里我们选择直接集成UTS插件, 使用HBuilderX来验证
+
+
+#### 集成原生代码
+
+在 kotlin/java语言中，存在包名的概念，在添加原生代码之前，我们要先确保
 
 大多数情况下，我们建议混编代码的包名与[UTS插件默认包名](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#_3-1-%E9%85%8D%E7%BD%AEandroidmanifest-xml)保持一致，这样在UTS调用原生代码时，可以省去手动引入包名的步骤。
 
@@ -37,8 +83,39 @@ package uts.sdk.modules.utsSyntaxcase
 import KotlinObject from 'xxx.xxx.KotlinObject';
 ```
 
+接下来，我们 在app-android 可以直接添加 kotlin/java 源码
 
-### 原生代码使用UTS内置对象
+![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/mixCodeAndroid.png)
+
+> 注意：java代码需要云打包自定义基座后生效，kotlin代码不需要打包，标准基座即可生效
+
+
+是的，就是这样简单。如图所示，我们已经完成了原生代码的集成。接下来，我们来编写UTS代码来使用它。
+
+#### 编写uts调用代码
+
+
+#### 在原生代码中调用UTS内置对象
+
+在上面的示例中，我们已经实现了使用kotlin代码，获取当前设备内存信息的功能，但是可能我们还想更进一步实现持续监控内存
+
+想要实现持续调用的方法有很多，包括在 uvue界面中连续调用等。这里我们为了演示在原生kotlin代码中调用
+UTS内置对象的，选择采用[setInterval](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/timers.html#setinterval-handler-timeout-arguments)函数，实现这个功能：
+
+
+使用 UTS内置对象 需要注意两点：
+
+1 正确引入包名：
+
+2 正确的处理 原生对象和内置对象直接的转换
+
+
+### 注意事项
+
+##### Android包名说明
+
+
+##### 原生代码使用UTS内置对象
 
 UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象](../uts/utsandroid.md)均可以在原生环境使用，下面以kotlin中打印日志到HBuilder X 控制台为例说明：
 
@@ -170,3 +247,11 @@ export function callJavaMethodGetInfo():String {
 ```
 
 完整的混编示例可以在[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/dev/uni_modules/uts-syntaxcase/utssdk)中找到
+
+
+
+## 支持情况说明
+
+但目前HBuilderX并未提供原生代码的语法提示和校验。所以如果编写大段原生代码，推荐在原生ide中编写好，再放入uts插件下混编联调。
+
+如果是一小段简单代码，比如从网络或AI摘抄了一段，也可以直接在HBuilderX中开发联调。
