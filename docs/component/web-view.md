@@ -25,6 +25,29 @@
 	支持http、https。  
 	app平台使用系统Webview组件，由系统Webview管理缓存。  
 
+### 获取原生WebView对象
+
+通过 UniElement 的 getAndroidView 和 getIOSView 方法可以获取到 web-view 组件对应的原生 Webview 对象，从而可以调用部分原生 API 以扩展当前 web-view 组件未提供的能力。
+
+比如：Android 平台和 iOS 平台的原生 WebView 都提供了 canGoBack 和 canGoForward 两个 API，用来判断当前网页是否可以回退和前进。但 uni-app x 的 web-view 组件没有提供上述 API，下面则举例说明在 Android 平台如何通过获取原生 WebView 对象来实现上述能力（iOS 平台写法类似）。
+
+```js
+import WebView from 'android.webkit.WebView';
+
+function canGoBack() : boolean {
+	const element = uni.getElementById(elementId);
+    const webview = element?.getAndroidView<WebView>();
+	// 调用原生 WebView 的 canGoBack 方法
+    return webview == null ? false : webview.canGoBack();
+}
+
+function canGoForward() : boolean {
+    const element = uni.getElementById(elementId);
+    const webview = element?.getAndroidView<WebView>();
+    return webview == null ? false : webview.canGoForward();
+}
+```
+
 <!-- UTSCOMJSON.web-view.children -->
 
 <!-- UTSCOMJSON.web-view.example -->
