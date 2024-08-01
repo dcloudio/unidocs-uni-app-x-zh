@@ -1,4 +1,4 @@
-## uni.chooseVideo(options) @chooseVideo
+## uni.chooseVideo(options) @choosevideo
 
 <!-- UTSAPIJSON.chooseVideo.description -->
 

@@ -23,8 +23,8 @@
 | ----------------------------------- | ------------------------------------------- | ---------------- |
 | 等于 Equal (==)                     | 如果两边操作数相等时返回 true。             | var1==var2       |
 | 不等于 Not equal (!=)               | 如果两边操作数不相等时返回 true             | var1!=var2       |
-| 引用相等 Reference equal (===)      | 比较对象类型时，两边操作数指向同一个对象返回 true。比较基础类型时各平台有差异，[详情](#completeComparison)。 | var1===var2      |
-| 引用不等 Reference not equal (!==)  | 比较对象类型时，两边操作数不指向同一个对象时返回 true。比较基础类型时各平台有差异，[详情](#completeComparison)。 | var1!==var2      |
+| 引用相等 Reference equal (===)      | 比较对象类型时，两边操作数指向同一个对象返回 true。比较基础类型时各平台有差异，[详情](#completecomparison)。 | var1===var2      |
+| 引用不等 Reference not equal (!==)  | 比较对象类型时，两边操作数不指向同一个对象时返回 true。比较基础类型时各平台有差异，[详情](#completecomparison)。 | var1!==var2      |
 | 大于 Greater than (>)               | 左边的操作数大于右边的操作数返回 true       | var1>var2        |
 | 大于等于 Greater than or equal (>=) | 左边的操作数大于或等于右边的操作数返回 true | var1>=var2       |
 | 小于 Less than (<)                  | 左边的操作数小于右边的操作数返回 true       | var1<var2        |
@@ -179,7 +179,7 @@ const status = age >= 18 ? "adult" : "minor";
 - `>>=`
     * 右移赋值运算符 (>>=) 将变量向右移动指定数量的位，并将结果赋值给变量。
 - `===`
-    * 当两边操作数指向同一个对象时，引用相等 (===) 运算符返回true。不同平台有差距，[见下](#completeComparison)
+    * 当两边操作数指向同一个对象时，引用相等 (===) 运算符返回true。不同平台有差距，[见下](#completecomparison)
 - `!==`
     * 当两边操作数不指向同一个对象时，引用不等 (!==) 运算符返回true。
 - `-`
@@ -258,7 +258,7 @@ uts 中比较运算符在大部分场景下和 ts 中的行为一致，但是在
 | 不同的专有类型变量比较                   | let a: Int = 1; let b: Float = 3.14.toFloat(); a > b	  | 结果为false         |编译失败，不同类型变量不能比较                 |
 
 
-### 比较运算符 == != === !==@completeComparison
+### 比较运算符 == != === !==@completecomparison
 
 
 | 场景                                  | 示例                                           | Kottlin 结果                   |  Swift 结果 							  |
@@ -387,7 +387,7 @@ let n:number = Number.from(d)	// 正确
 let n:number = d as number		// 错误
 ```
 
-> 虽然在某些情况下使用 as 转换也可以正常工作，但为了保证各平台兼容性推荐使用上述方法转换  
+> 虽然在某些情况下使用 as 转换也可以正常工作，但为了保证各平台兼容性推荐使用上述方法转换
 
 只允许将类型as为具体或更不具体的类型，不能强制转换两个不可能兼容的类型：
 

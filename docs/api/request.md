@@ -18,7 +18,7 @@
 ## 注意事项
 
 * 推荐使用成熟的网络拦截器插件，见[插件市场](https://ext.dcloud.net.cn/search?q=%E7%BD%91%E7%BB%9C%E6%8B%A6%E6%88%AA%E5%99%A8&uni-appx=1)
-* app-android平台 request 接口如需包装和传递泛型，需参考[泛型传递丢失注意](../plugin/uts-for-android.md#6.6 泛型传递丢失的问题)。成熟的拦截器插件均已自动处理这些问题。
+* app-android平台 request 接口如需包装和传递泛型，需参考[泛型传递丢失注意](../plugin/uts-for-android.md#lost-generics)。成熟的拦截器插件均已自动处理这些问题。
 * 如果使用泛型先创建RequestOptions实例，再传入uni.request()，此时请务必确保request要显式指定泛型，例：
 ```typescript
 const options: RequestOptions<Person> = ...

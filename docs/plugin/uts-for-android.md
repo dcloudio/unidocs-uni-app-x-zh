@@ -324,7 +324,7 @@ implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
 ```
 
-#### uni-app 
+#### uni-app
 
 ```gradle
 implementation 'com.github.bumptech.glide:glide:4.9.0'
@@ -944,7 +944,7 @@ function getAppName(context : Context) : string {
 }
 ```
 
-### 6.6 泛型传递丢失的问题
+### 6.6 泛型传递丢失的问题 @lost-generics
 
 如果在UTS中声明一个包含泛型声明的方法，可能会出现泛型丢失，原因是因为普通的kotlin 方法没有实现泛型的传递
 
@@ -1006,4 +1006,3 @@ console.log(getClassByInstance);
 UTS插件本地调试尚不支持直接使用so文件，需要将so文件和调用代码封装为AAR 或者分别集成 so和jar文件
 
 AAR调用示例参考：[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-toast)
-
