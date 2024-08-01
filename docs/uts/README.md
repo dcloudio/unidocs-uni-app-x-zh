@@ -44,9 +44,69 @@ uts这门语言，有2个用途：
 
 这2个uts插件，一个是api插件，一个是组件插件，它们同时兼容uni-app和uni-app x。
 
+可以通过表格更清晰的了解uts语言在uni-app和uni-app x下的编译关系。
+<table>
+	<caption>
+    UTS语言的编译输出表格
+  </caption>
+	<thead>
+		<tr>
+			<th scope="col"></th>
+			<th scope="col" colspan="2">uni-app</th>
+			<th scope="col" colspan="2">uni-app x</th>
+		</tr>
+		<tr>
+			<th scope="col"></th>
+			<th scope="col">普通页面和脚本</th>
+			<th scope="col">uts插件</th>
+			<th scope="col">普通页面和脚本</th>
+			<th scope="col">uts插件</th>
+		</tr>
+	</thead>
+	<tr></tr>
+		<td>Web和小程序</td>
+		<td>JS</td>
+		<td>JS</td>
+		<td>JS</td>
+		<td>JS</td>
+	<tr></tr>
+	<tr></tr>
+		<td>Android</td>
+		<td>JS</td>
+		<td>Kotlin</td>
+		<td>Kotlin</td>
+		<td>Kotlin</td>
+	<tr></tr>
+	<tr></tr>
+		<td>iOS</td>
+		<td>JS</td>
+		<td>Swift</td>
+		<td>JS(JS驱动时)</td>
+		<td>Swift</td>
+	<tr></tr>
+	<tr></tr>
+		<td>HarmonyNext</td>
+		<td>JS</td>
+		<td>ArkTS</td>
+		<td>x</td>
+		<td>x</td>
+	<tr></tr>
+</table>
+
+这里的概念解释是：
+- uts插件，指`uni_modules`目录下utssdk目录下的代码
+- 除uts插件外，其他都属于 `普通页面和脚本`，包含vue、nvue、uvue等页面及单独的uts文件
+- 在uni-app x的iOS平台，目前`普通页面和脚本`是编译为js的，而不是Swift。
+	这个策略主要是为了解决windows电脑开发uni-app x的问题。它并不影响性能，uni-app x的iOS通过优化解决了js性能问题。同时未来也会提供js驱动和Swift驱动双选
+
+除了查阅表格，也可以简单的记3个原则：
+1. 所有的uts插件，都会编译为原生语言
+2. web和小程序上，原生语言就是js
+3. App上，目前仅uni-app x的Android平台会编译为原生语言，其他都编译为js
+
 本文是 uts 的基本语法介绍。
-- 想了解 uni-app 下如何开发 uts插件，另见文档[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
-- 想了解 uni-app x，另见文档[https://uniapp.dcloud.net.cn/uni-app-x/](https://uniapp.dcloud.net.cn/uni-app-x/)
+- 想了解 uni-app 下如何开发 uts插件，另见文档[https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html](../plugin/uts-plugin.md)
+- 想了解 uni-app x，另见文档[https://doc.dcloud.net.cn/uni-app-x/](../readme.md)
 
 
 ## 类型声明

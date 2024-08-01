@@ -2,6 +2,8 @@
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.description -->
 
+参考：[canvas组件](../component/canvas.md)
+
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.extends -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.param -->

@@ -2,6 +2,8 @@
 
 <!-- CUSTOMTYPEJSON.UniCanvasElement.description -->
 
+参考：[canvas组件](../component/canvas.md)
+
 <!-- CUSTOMTYPEJSON.UniCanvasElement.extends -->
 
 <!-- CUSTOMTYPEJSON.UniCanvasElement.param -->
