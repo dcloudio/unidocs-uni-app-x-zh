@@ -56,7 +56,7 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 <!-- UTSAPIJSON.offPushMessage.tutorial -->
 
-## uni.getChannelManager() @getchannelmanager
+<!-- UTSAPIJSON.getChannelManager.name -->
 
 <!-- UTSAPIJSON.getChannelManager.description -->
 

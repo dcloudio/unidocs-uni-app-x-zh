@@ -1,4 +1,4 @@
-## uni.getProvider(options) @getprovider
+<!-- UTSAPIJSON.getProvider.name -->
 
 <!-- UTSAPIJSON.getProvider.description -->
 
