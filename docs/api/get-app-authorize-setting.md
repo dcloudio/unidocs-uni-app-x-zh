@@ -12,7 +12,7 @@
 
 <!-- UTSAPIJSON.getAppAuthorizeSetting.tutorial -->
 
-如需跳转到权限设置界面，参考[utsAndroid.gotoSystemPermissionActivity](../uts/utsandroid.md#gotoSystemPermissionActivity)
+如需跳转到权限设置界面，参考[utsAndroid.gotoSystemPermissionActivity](../uts/utsandroid.md#gotosystempermissionactivity)
 
 注意：
 

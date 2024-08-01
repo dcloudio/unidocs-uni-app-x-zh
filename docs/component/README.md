@@ -38,17 +38,17 @@
 	const buttonClick_changeText = () => {
 		title.value = "新文字内容" //对响应式变量title的.value属性赋值，界面上文字会自动同步修改
 	}
-	
+
 	let titleShow = ref(true) //决定标题文字是否显示
 	const buttonClick_showHide = () => {
 		titleShow.value = !titleShow.value //对响应式变量的.value属性赋值，界面上文字组件的v-if指令绑定了titleShow，所以会动态显示消失
 	}
-	
+
 	let titleColor = ref("black") //定义一个响应式变量titleColor，默认为黑色
 	const buttonClick_changeColor = () => {
 		titleColor.value = "red" //对响应式变量的.value属性赋值，界面上文字组件的style属性绑定了titleColor，所以会变为红色
 	}
-	
+
 	const imgerror = (event : ImageErrorEvent) => { // image组件加载失败时触发
 		console.log(event.type, event.detail); //错误的详情
 	}
@@ -92,7 +92,7 @@ buttonClick_changeText 是script里定义的一个函数。\
 比如上面例子中image组件的error事件，绑定到imgerror函数，它有一个参数event对象，类型是ImageErrorEvent。接下来的代码打印了event对象的2个属性。
 
 - vue指令
-vue提供的一批特殊写法的属性，它们以v-开头，比如上面例子中text组件的v-if指令，绑定了一个titleShow的响应式变量，根据变量的true或false可以决定text组件是否显示。详见[vue指令](./built-in.md)\
+vue提供的一批特殊写法的属性，它们以v-开头，比如上面例子中text组件的v-if指令，绑定了一个titleShow的响应式变量，根据变量的true或false可以决定text组件是否显示。详见[vue指令](../vue/built-in.md)\
 有一种特殊指令`v-bind`，一种把属性值变成script以便绑定响应式变量的写法，它的完整写法是 v-bind:普通属性名 = "属性值"，
 但它更常见的写法是简写为在普通属性前面加个冒号，比如上面例子中text组件的:style，`:style="'color:' + titleColor"`。\
 这个写法的意思是，text组件的style样式中，color属性的值绑定到了script定义的响应式变量titleColor上，修改这个响应式变量的值，text组件的文字颜色就会跟着变化。\
