@@ -47,7 +47,7 @@ uni-app x的App标准基座定位仅支持wgs84坐标系、不支持逆地址解
 
 ::: warning 4.25及以上版本 uni.getLocation 支持provider机制，使用需注意：
 
-- app需要在根目录manifest.json文件中配置`uni-getLocation`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-getLocation模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-getLocation)**
+- app需要在根目录manifest.json文件中配置`uni-getLocation`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-getLocation模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-getLocation)
 :::
 
 
