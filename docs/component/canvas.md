@@ -46,7 +46,7 @@ canvas相关的API非常多，参考如下：
 - canvas.toDataURL()  [W3C](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL)
 - uni.createCanvasContextAsync 获取[CanvasContext对象](../api/create-canvas-context-async.md)
 - [CanvasRenderingContext2D对象](../dom/canvasrenderingcontext2d.md)
-
+- [动画帧](../api/animation-frame.html)
 
 ## 获取组件上下文对象CanvasContext@CanvasContext
 
