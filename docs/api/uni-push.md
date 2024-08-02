@@ -56,18 +56,6 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 <!-- UTSAPIJSON.offPushMessage.tutorial -->
 
-<!-- UTSAPIJSON.getChannelManager.name -->
-
-<!-- UTSAPIJSON.getChannelManager.description -->
-
-<!-- UTSAPIJSON.getChannelManager.compatibility -->
-
-<!-- UTSAPIJSON.getChannelManager.param -->
-
-<!-- UTSAPIJSON.getChannelManager.returnValue -->
-
-<!-- UTSAPIJSON.getChannelManager.tutorial -->
-
 ### 注意事项
 
 * 由于各大厂商限制推送频次，当使用厂商离线推送的时，需要在不同品牌手机后台开通自分类权益，[限制数量说明](https://docs.getui.com/getui/mobile/vendor/qps/)
@@ -130,6 +118,18 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 <!-- UTSAPIJSON.setAppBadgeNumber.example -->
 
 <!-- UTSAPIJSON.setAppBadgeNumber.tutorial -->
+
+<!-- UTSAPIJSON.getChannelManager.name -->
+
+<!-- UTSAPIJSON.getChannelManager.description -->
+
+<!-- UTSAPIJSON.getChannelManager.compatibility -->
+
+<!-- UTSAPIJSON.getChannelManager.param -->
+
+<!-- UTSAPIJSON.getChannelManager.returnValue -->
+
+<!-- UTSAPIJSON.getChannelManager.tutorial -->
 
 #### 注意事项
 

@@ -1,3 +1,27 @@
+## uni.getProviderIds(options) @getproviderids
+
+<!-- UTSAPIJSON.getProviderIds.description -->
+
+<!-- UTSAPIJSON.getProviderIds.compatibility -->
+
+<!-- UTSAPIJSON.getProviderIds.param -->
+
+<!-- UTSAPIJSON.getProviderIds.returnValue -->
+
+<!-- UTSAPIJSON.getProviderIds.example -->
+
+<!-- UTSAPIJSON.getProviderIds.tutorial -->
+
+## uni.getProviderObject(options) @getproviderobject
+
+<!-- UTSAPIJSON.getProviderObject.description -->
+
+<!-- UTSAPIJSON.getProviderObject.compatibility -->
+
+<!-- UTSAPIJSON.getProviderObject.param -->
+
+<!-- UTSAPIJSON.getProviderObject.returnValue -->
+
 <!-- UTSAPIJSON.getProvider.name -->
 
 <!-- UTSAPIJSON.getProvider.description -->
@@ -31,30 +55,6 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。�
 <!-- UTSAPIJSON.getProvider.tutorial -->
 
 <!-- UTSAPIJSON.getProvider.example -->
-
-## uni.getProviderIds(options) @getproviderids
-
-<!-- UTSAPIJSON.getProviderIds.description -->
-
-<!-- UTSAPIJSON.getProviderIds.compatibility -->
-
-<!-- UTSAPIJSON.getProviderIds.param -->
-
-<!-- UTSAPIJSON.getProviderIds.returnValue -->
-
-<!-- UTSAPIJSON.getProviderIds.example -->
-
-<!-- UTSAPIJSON.getProviderIds.tutorial -->
-
-## uni.getProviderObject(options) @getproviderobject
-
-<!-- UTSAPIJSON.getProviderObject.description -->
-
-<!-- UTSAPIJSON.getProviderObject.compatibility -->
-
-<!-- UTSAPIJSON.getProviderObject.param -->
-
-<!-- UTSAPIJSON.getProviderObject.returnValue -->
 
 ### UniProvider说明
 
