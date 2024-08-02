@@ -20,7 +20,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 ### orderInfo参数说明
 
- - 支付宝\
+ - 支付宝支付  
   App 支付请求参数字符串，主要包含商家的订单信息，key=value 形式，以 & 连接。示例
   ```
   app_id=2015052600090779&biz_content=%7B%22timeout_express%22%3A%2230m%22%2C%22seller_id%22%3A%22%22%2C%22product_code%
@@ -32,7 +32,8 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
   hIukuKygrXucvejOUgTCfoUdwTi7z%2BZzQ%3D<br>
   ```
   [更多详情参考[支付宝官方文档](https://opendocs.alipay.com/open/204/105296?pathHash=22ed0058&ref=api)]
- -  微信\
+ 
+ -  微信支付  
   App 支付请求参数字符串,需要打自定义基座。示例
   ```json
   {
@@ -69,7 +70,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 ### 注意
 - App平台开发支付宝支付，无需自定义基座，真机运行可直接开发
-- 判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/get-provider.html#getprovider)
+- App平台判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/get-provider.html#getprovider)
 
 ```ts
    uni.getProvider({
@@ -174,5 +175,5 @@ export class UniPaymentAlipayProviderImpl implements UniPaymentAlipayProvider{
 
 第四步，打自定义基座
 
-[示例代码](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-payment-alipay)
+[完整示例可参考支付宝支付插件的实现源码](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-payment-alipay)
 
