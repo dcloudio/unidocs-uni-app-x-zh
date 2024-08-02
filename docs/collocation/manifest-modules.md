@@ -26,7 +26,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
   注意：此模块仅包含基础广告模块，配置聚合广告平台需手动配置，详情参考[uni-ad](#uni-ad)章节  
 
 - uni-canvas  
-  [canvas画布组件](../component/canvas.md)模块，包括内置组件：[canvas](../component/canvas.md)；包括API：[UniCanvasElement](../dom/unicanvaselement.md)、[CanvasRenderingContext2D](../dom/canvasrenderingcontext2d.md)  
+  [canvas画布组件](../component/canvas.md)模块（`HBuilderX4.25+`），包括内置组件：[canvas](../component/canvas.md)；包括API：[UniCanvasElement](../dom/unicanvaselement.md)、[CanvasRenderingContext2D](../dom/canvasrenderingcontext2d.md)  
   依赖的模块：无  
 
 - uni-cloud-client  
@@ -85,7 +85,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
   依赖的模块：无  
 
 - uni-virtualPayment  
-  虚拟支付模块，包括API：[uni.requestVirtualPayment](../api/virtual-payment.md#requestvirtualpayment)、[uni.getVirtualPaymentManager](../api/virtual-payment.md#getvirtualpaymentmanager)  
+  虚拟支付模块（`HBuilderX4.25+`），包括API：[uni.requestVirtualPayment](../api/virtual-payment.md#requestvirtualpayment)、[uni.getVirtualPaymentManager](../api/virtual-payment.md#getvirtualpaymentmanager)  
   依赖的模块：无  
 
 - uni-video  
