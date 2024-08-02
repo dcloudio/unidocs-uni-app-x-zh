@@ -15,25 +15,28 @@
 	3   如果存在`UTS`不支持的语法，还需要把原生代码封装成 `aar`/`framework` 等原生库形式，再供`UTS`代码调用
 
 
-**这是一件很繁琐的事情，`UTS原生混编`的出现彻底解决了这个问题：**
+**这是一件很繁琐的事情，`原生混编`的出现彻底解决了这个问题：**
 
 
-开发者只需要把正确的 `Kotlin`/`swift`/`java` 原生代码按照约定放在`UTS插件`目录中，就可以通过 `uts`无缝使用这些代码。
 
-在`UTS插件`的编译流程中，`UTS`源码是 `Kotlin`/`swift` 源码的上游环节，也就是说 `UTS`本身就会被编译为`Kotlin`/`swift` 源码，所以 `UTS` 与原生语言之间的相互调用，本质是**同一语言内部，不同函数/对象之间的相互调用，不会有任何调用成本和性能损耗**
+开发者只需要把正确的 `Kotlin`/`swift`/`java` 原生代码放在`UTS插件`目录中，就可以通过 `uts`无缝使用这些代码。
 
 
-和uts插件代码一样，混编的原生代码可以直接真机运行，省去了手动集成`AAR`三方库需要打包自定义基座的环节，大大提升了开发效率。
+在[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)的编译流程中，`UTS`代码是原生代码的上游环节，也就是说 `UTS`本身就会被编译为`Kotlin`/`swift` 源码。所以 `UTS` 调用原生代码的过程，**本质是同一语言内部，不同函数/对象之间的调用过程，不会有任何额外的调用成本和性能损耗**
 
 ---
 
+和`uts代码`一样，混编的原生代码可以直接真机运行，省去了手动集成`AAR`三方库后打包自定义基座的环节，大大提升了开发效率。
+
+
 使用`UTS原生混编`之后，开发者想要实现原生功能，仅需要：
 
-+   1  通过`搜索引擎`/`AIGC`/`原生API文档` 得到原生代码片段
-+   2  放入UTS插件中，真机运行
+	1  通过`搜索引擎`/`AIGC`/`原生API文档` 得到原生代码片段
+	
+	2  放入UTS插件中，真机运行。就可以看到效果。
 
-即可以看到执行结果。
 
+---
 
 下面我们以`内存监控`功能为例，分别拆解 `UTS原生混编`技术在`Android`和`ios`平台上的使用步骤
 
@@ -113,26 +116,24 @@ import io.dcloud.uts.console
 
 object NativeCode {
 
-
-    fun memMonitor(){
-
-		val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
-		val memoryInfo = ActivityManager.MemoryInfo()
-		activityManager.getMemoryInfo(memoryInfo)
-		val availMem = memoryInfo.availMem / 1024 / 1024
-		val totalMem = memoryInfo.totalMem / 1024 / 1024
-	  
-		// availMem 可用内存，单位MB
-		// totalMem 设备内存，单位MB
-		console.log(availMem,totalMem)
-		
+    fun getMemInfo():Array<Number>{
+    
+    	val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
+    	val memoryInfo = ActivityManager.MemoryInfo()
+    	activityManager.getMemoryInfo(memoryInfo)
+    	val availMem = memoryInfo.availMem / 1024 / 1024
+    	val totalMem = memoryInfo.totalMem / 1024 / 1024
+      
+    	// availMem 可用内存，单位MB
+    	// totalMem 设备内存，单位MB
+    	console.log(availMem,totalMem)
+    	return arrayOf(availMem,totalMem)
     }
-   
 
 }
 ```
 
-上面的代码中，我们将获取内存的信息的功能以`Kotlin`静态方法`NativeCode.memMonitor()` 的形式对外暴露
+上面的代码中，我们将获取内存的信息的功能以`Kotlin`静态方法`NativeCode.getMemInfo()` 的形式对外暴露
 
 接下来，我们将整理好的原生代码添加到 在`app-android` 目录
 
@@ -174,10 +175,26 @@ import android.content.Context.ACTIVITY_SERVICE
 import io.dcloud.uts.UTSAndroid
 import io.dcloud.uts.setInterval
 import io.dcloud.uts.clearInterval
-import io.dcloud.uts.UTSArray
 import io.dcloud.uts.console
 
 object NativeCode {
+
+	/**
+	 * 同步获取内存信息
+	 */
+	fun getMemInfo():Array<Number>{
+
+		val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
+		val memoryInfo = ActivityManager.MemoryInfo()
+		activityManager.getMemoryInfo(memoryInfo)
+		val availMem = memoryInfo.availMem / 1024 / 1024
+		val totalMem = memoryInfo.totalMem / 1024 / 1024
+	  
+		// availMem 可用内存，单位MB
+		// totalMem 设备内存，单位MB
+		console.log(availMem,totalMem)
+		return arrayOf(availMem,totalMem)
+    }
 
      /**
      * 记录上一次的任务id
@@ -187,7 +204,7 @@ object NativeCode {
 	/**
 	 * 开启内存监控
 	 */
-    fun startMemMonitor(callback: (UTSArray<Number>) -> Unit){
+    fun startMemMonitor(callback: (Array<Number>) -> Unit){
 
         if(lastTaskId != -1){
             // 避免重复开启
@@ -204,11 +221,8 @@ object NativeCode {
           val totalMem = memoryInfo.totalMem / 1024 / 1024
           
 		  console.log(availMem,totalMem)
-		  // 将得到的内存信息，封装为UTSArray(即UTS环境中的Array对象)
-          val retArray = UTSArray<Number>()
-          retArray.add(availMem)
-          retArray.add(totalMem)
-          callback(retArray)
+		  // 将得到的内存信息，封装为kotlin.Array 单位是MB
+          callback(arrayOf(availMem,totalMem))
           
         },1000,2000)
 		
@@ -249,18 +263,22 @@ object NativeCode {
 在我们的示例中,UTS中的调用的代码是这样的：
 
 ```ts
-// 开启内存监控
-export function callKotlinCallbackUTS(callback: (res: string) => void) {
-	NativeCode.startMemMonitor(function(res:Array<number>){
-    console.log(res)
-    callback("设备内存:" + res[0] + ",可用内存:" + res[1])
-  })
+// 开启内存监听
+export function callKotlinCallbackUTS(callback: (res: Array<number>) => void) {
+	NativeCode.startMemMonitor(function(res:kotlin.Array<number>){
+		callback(Array.fromNative(res))
+	})
 }
-// 停止内存监控任务
+// 结束内存监听
 export function callKotlinStopCallbackUTS() {
 	NativeCode.stopMemMonitor()
 }
 
+// 同步获取内存信息
+export function callKotlinMemGet():Array<number> {
+	let kotlinArray = NativeCode.getMemInfo()
+	return UTSArray.fromNative(kotlinArray)
+}
 ```
 
 上面的代码，我们在UTS中使用一个 入参为`Array<number>`类型的`function`对象就完成了对`kotlin`原生代码的调用。
@@ -275,6 +293,7 @@ uts文件与uvue 之间的相互调用，属于[UTS插件开发](https://doc.dcl
 ```vue
 <template>
 	<view>
+		<button @tap="kotlinMemGetTest">通过kotlin获取内存(同步)</button>
 		<button @tap="kotlinMemListenTest">kotlin监听内存并持续回调UTS</button>
 		<button @tap="kotlinStopMemListenTest">停止监听</button>
 		<text>{{memInfo}}</text>
@@ -283,26 +302,32 @@ uts文件与uvue 之间的相互调用，属于[UTS插件开发](https://doc.dcl
 
 <script>
 	
-	import { callKotlinCallbackUTS,callKotlinStopCallbackUTS} from "../../uni_modules/demo-mem";
+	import { callKotlinCallbackUTS,callKotlinStopCallbackUTS,callKotlinMemGet} from "../../uni_modules/demo-mem";
 	 
 	export default {
 		data() {
 			return {
-				memInfo: 'Hello'
+				memInfo: '-'
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
+			
+			kotlinMemGetTest:function () {
+			    let array = callKotlinMemGet()
+				this.memInfo = "可用内存:" + array[0] + "MB--整体内存:" + array[1] + "MB"
+			},
 			kotlinMemListenTest: function () {
-			    callKotlinCallbackUTS(function(ret:string){
-			      this.memInfo = ret
+			    callKotlinCallbackUTS(function(ret:Array<number>){
+				  this.memInfo = "可用内存:" + ret[0] + "MB--整体内存:" + ret[1] + "MB"
 			    })
 			},
 			
 			kotlinStopMemListenTest:function () {
 			    callKotlinStopCallbackUTS()
+				this.memInfo = "已暂停"
 			},
 		}
 	}
