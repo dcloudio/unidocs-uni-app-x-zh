@@ -6,7 +6,7 @@
 
 ## 原生混编的优势和适用场景
 
-`原生混编`出现之前，开发者只能使用[UTS语言](https://doc.dcloud.net.cn/uni-app-x/uts/) 来开发[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)。 
+`原生混编`出现之前，开发者只能使用[UTS语言](https://doc.dcloud.net.cn/uni-app-x/uts/) 来开发[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html) 
 
 对于不熟悉原生的开发者来说，要实现原生功能的开发，往往要经过下面的步骤：
 
@@ -97,14 +97,15 @@ import KotlinObject from 'xxx.xxx.KotlinObject';
 ```
 
 
-整理完的`Kotlin`代码是这样的：
+回到我们的示例，现在整理完的`Kotlin`代码是这样的：
 
 ```kotlin
-package uts.sdk.modules.utsSyntaxcase
+package uts.sdk.modules.utsDemoMem
 
 // 这里是原生的包名引用
 import android.app.ActivityManager
 import android.content.Context.ACTIVITY_SERVICE
+// UTS内置对象的包名引用
 import io.dcloud.uts.UTSAndroid
 import io.dcloud.uts.setInterval
 import io.dcloud.uts.clearInterval
@@ -132,7 +133,7 @@ object NativeCode {
 }
 ```
 
-上面的代码，我们将获取内存的信息的功能以kotlin静态方法的形式对外uts进行暴露。
+上面的代码中，我们将获取内存的信息的功能以kotlin静态方法`NativeCode.memMonitor()` 的形式对外暴露
 
 接下来，我们将整理好的原生代码添加到 在`app-android` 目录
 
@@ -140,28 +141,28 @@ object NativeCode {
 
 > 注意：java代码需要云打包自定义基座后生效，kotlin代码不需要打包，标准基座即可生效
 
-是的，就是这样简单。如图所示，我们已经完成了原生代码的集成。
+是的，就是这样简单。如图所示，我们已经完成了对原生代码的集成。
 
 
 #### 第三步 在原生代码中调用UTS内置对象
 
-在上面的示例中，我们已经实现获取当前设备内存信息的功能，但是可能我们还想更进一步:持续监控内存，并且回调信息到uvue页面
+在上面的示例中，我们已经实现了获取当前设备内存信息的功能，但是我们还想更进一步:持续监控内存，并且回调信息到uvue页面
 
-实现持续调用的方法有很多。这里我们为了演示在原生kotlin代码中调用UTS内置对象，选择采用[setInterval](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/timers.html#setinterval-handler-timeout-arguments)函数，实现这个功能：
+实现持续调用的方法有很多。这里我们为了演示在`Kotlin`代码中调用UTS内置对象，选择采用[setInterval](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/timers.html#setinterval-handler-timeout-arguments)内置对象来实现这个功能:
 
 
 使用 UTS内置对象 需要注意两点：
 
 1 正确引入类名：
 
-	UTS内置对象在具体的平台会有一个对应的类名，举例： Array -> io.dcloud.uts.UTSArray
+	UTS内置对象在具体的平台会有一个对应的类名，举例： UTS内置的Array -> kotlin中的io.dcloud.uts.UTSArray
 
-2 正确的处理 原生对象和内置对象直接的转换
+2 正确的处理原生对象和内置对象直接的转换
 
-	当前示例中不涉及，但如果开发者遇到 kotlin.Array 转换
+	当前示例中不涉及，但如果开发者可能遇到类似 kotlin.Array 转换 UTS内置Array的情况，这种情况可以通过查阅内置对象文档来解决。
 
 
-完整内置对象和原生对象转换代码示例，大家都可以在具体的内置对象文档上找到。
+> 完整的内置对象实现清单和与原生对象转换代码示例，大家都可以在内置对象文档的具体章节找到
 
 
 原生`kotlin`代码的最终形态:
@@ -175,6 +176,7 @@ import io.dcloud.uts.UTSAndroid
 import io.dcloud.uts.setInterval
 import io.dcloud.uts.clearInterval
 import io.dcloud.uts.UTSArray
+import io.dcloud.uts.console
 
 object NativeCode {
 
@@ -186,7 +188,7 @@ object NativeCode {
 	/**
 	 * 开启内存监控
 	 */
-    fun memMonitor(callback: (UTSArray<Number>) -> Unit){
+    fun startMemMonitor(callback: (UTSArray<Number>) -> Unit){
 
         if(lastTaskId != -1){
             // 避免重复开启
@@ -202,6 +204,7 @@ object NativeCode {
           val availMem = memoryInfo.availMem / 1024 / 1024
           val totalMem = memoryInfo.totalMem / 1024 / 1024
           
+		  console.log(availMem,totalMem)
 		  // 将得到的内存信息，封装为UTSArray(即UTS环境中的Array对象)
           val retArray = UTSArray<Number>()
           retArray.add(availMem)
@@ -226,71 +229,89 @@ object NativeCode {
 }
 ```
 
+上面的代码中，我们将获取内存的信息的功能以`Kotlin`静态方法`NativeCode.startMemMonitor(callback)` 的形式对外暴露。 
+
+这里的 `callback`参数是一个 参数为`UTSArray`类型的`Kotlin`函数，对应`UTS`中一个参数为`Array`的`function`对象
+
 至此，内存监控功能的原生代码部分已经完全开发完毕。接下来，我们编写UTS代码来使用它。
 
 
-#### 第三步 编写uts调用代码
+#### 第四步 编写`UTS`调用代码
 
-如我们在前文所讲，UTS是kotlin语言的上游语言。所有kotlin 代码中的：类、对象、函数、变量，均可以在uts中直接使用。 
+如我们在前文所讲，`UTS`是`Kotlin`语言的上游语言。所有`Kotlin`代码中的：`类`、`对象`、`函数`、`变量`，均可以在uts中直接使用。 
+
+**但是反之，则不行**。
+
+因为`UTS`的编译器兼容了`Kotlin`的语法规则，所以`UTS`中调用`Kotlin`代码可以被很好的支持，即使升级HBuilderX版本也不会有什么问题。
+
+但`UTS`从未保证过编译对应的`Kotlin`的具体规则。所以虽然开发者可以通过一些取巧的方式实现：kotlin中调用UTS代码，但这是不被支持的，遇到类似HBuilderX版本升级之类的情况，类似代码可能会失效或者异常。
 
 
-调用的代码是这样的：
+在我们的示例中,UTS中的调用的代码是这样的：
 
 ```ts
+// 开启内存监控
 export function callKotlinCallbackUTS(callback: (res: string) => void) {
-	NativeCode.kotlinCallbackUTS(function(res:Array<number>){
+	NativeCode.startMemMonitor(function(res:Array<number>){
     console.log(res)
     callback("设备内存:" + res[0] + ",可用内存:" + res[1])
   })
 }
+// 停止内存监控任务
+export function callKotlinStopCallbackUTS() {
+	NativeCode.stopMemMonitor()
+}
+
+```
+
+上面的代码，我们在UTS中使用一个 入参为`Array<number>`类型的`function`对象就完成了对`kotlin`原生代码的调用。
+
+
+#### 第五步 回调参数到uvue页面
+
+uts文件与uvue 之间的相互调用，属于[UTS插件开发](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)的相关内容，这里不展开叙述。开发者可以查阅相关文档掌握这部分知识。
+
+下面仅列出了uvue示例代码。用于完整展示内存监控示例：
+
+```vue
+<template>
+	<view>
+		<button @tap="kotlinMemListenTest">kotlin监听内存并持续回调UTS</button>
+		<button @tap="kotlinStopMemListenTest">停止监听</button>
+		<text>{{memInfo}}</text>
+	</view>
+</template>
+
+<script>
+	
+	import { callKotlinCallbackUTS,callKotlinStopCallbackUTS} from "../../uni_modules/demo-mem";
+	 
+	export default {
+		data() {
+			return {
+				memInfo: 'Hello'
+			}
+		},
+		onLoad() {
+
+		},
+		methods: {
+			kotlinMemListenTest: function () {
+			    callKotlinCallbackUTS(function(ret:string){
+			      this.memInfo = ret
+			    })
+			},
+			
+			kotlinStopMemListenTest:function () {
+			    callKotlinStopCallbackUTS()
+			},
+		}
+	}
+</script>
 
 ```
 
 
-
-
-#### 注意事项
-
-##### 原生代码使用UTS内置对象
-
-UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象](../uts/utsandroid.md)均可以在原生环境使用，下面以kotlin中打印日志到HBuilder X 控制台为例说明：
-
-
-第一步：手动导入对应的包名，包名规则为： `io.dcloud.uts.xxx` 。这里的 xxx 是具体的对象的类名 ：
-
-```kotlin
-import io.dcloud.uts.console // kt或java代码
-```
-
-第二步： 导入包名后，以原生方式使用内置对象
-
-```kotlin
-console.log("Hello World") // kt或java代码
-```
-
-这样就实现了在kt或java代码中打印日志到HBuilderX的控制台。
-
-不过这个导入和使用过程将没有代码提示，输出的变量信息也不会包含变量所在的文件和代码行号等信息。
-
-##### UTS内置对象与原生类型的对应关系
-
-下面列出内置对象对应的类名，如果需要在原生环境和UTS环境/uvue环境中互传数据，建议转换为标准内置对象实现后再进行传递。
-
-|uts 内置对象		|编译成的原生类名		 
-|:----		|:---						
-|Array		|io.dcloud.uts.UTSArray		
-|Number		|io.dcloud.uts.UTSNumber 	
-|String		|kotlin.String				
-|Set		|io.dcloud.uts.Set			
-|Map		|io.dcloud.uts.Map			
-|UTSJSONObject|io.dcloud.uts.UTSJSONObject
-|JSON		|io.dcloud.uts.JSON			
-|Date		|io.dcloud.uts.Date			
-|Math		|io.dcloud.uts.Math			
-|Promise	|io.dcloud.uts.UTSPromise	
-|RegExp		|io.dcloud.uts.UTSRegExp	
-|Error		|io.dcloud.uts.UTSError		
-|console	|io.dcloud.uts.console		
 
 ## iOS平台
 
