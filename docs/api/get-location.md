@@ -42,6 +42,12 @@ uni-app x的App标准基座定位仅支持wgs84坐标系、不支持逆地址解
 
 不管系统定位、还是三方sdk定位，都有很多注意事项，包括gms、坐标系、隐私和权限等，请仔细阅读下面的参考链接。
 
+::: warning 使用支持provider机制的 uni.getLocation 需注意：
+- app需要在根目录manifest.json文件中配置`uni-getLocation`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-getLocation模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-getLocation)**
+- App平台需要4.25及以上版本
+:::
+
+
 <!-- UTSAPIJSON.getLocation.tutorial -->
 
 <!-- UTSAPIJSON.getLocation.example -->
