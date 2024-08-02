@@ -14,14 +14,77 @@
 
 `uni-app-x` 支持如下应用生命周期函数：
 
-|函数名|说明|平台兼容|
-|:-|:-|:-|
-|onLaunch|当`uni-app-x` 初始化完成时触发（全局只触发一次），参数为应用首次启动参数，同 [uni.getLaunchOptionsSync](../api/launch.md#getlaunchoptionssync) 的返回值||
-|onShow|当 `uni-app-x` 启动，或从后台进入前台显示，参数为应用本次启动参数，同 [uni.getEnterOptionsSync](../api/launch.md#getenteroptionssync) 的返回值||
-|onHide|当 `uni-app-x` 从前台进入后台，包括手机息屏||
-|onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出|app-uvue-android 3.9+|
-|onExit|监听应用退出|app-uvue-android 3.9+|
-|onError|监听应用发生脚本错误或 API 调用报错|4.21+|
+<!-- VUEJSON.application.onLaunch.name -->
+
+<!-- VUEJSON.application.onLaunch.description -->
+
+<!-- VUEJSON.application.onLaunch.compatibility -->
+
+<!-- VUEJSON.application.onLaunch.param -->
+
+<!-- VUEJSON.application.onLaunch.returnValue -->
+
+<!-- VUEJSON.application.onLaunch.tutorial -->
+
+<!-- VUEJSON.application.onShow.name -->
+
+<!-- VUEJSON.application.onShow.description -->
+
+<!-- VUEJSON.application.onShow.compatibility -->
+
+<!-- VUEJSON.application.onShow.param -->
+
+<!-- VUEJSON.application.onShow.returnValue -->
+
+<!-- VUEJSON.application.onShow.tutorial -->
+
+<!-- VUEJSON.application.onHide.name -->
+
+<!-- VUEJSON.application.onHide.description -->
+
+<!-- VUEJSON.application.onHide.compatibility -->
+
+<!-- VUEJSON.application.onHide.param -->
+
+<!-- VUEJSON.application.onHide.returnValue -->
+
+<!-- VUEJSON.application.onHide.tutorial -->
+
+<!-- VUEJSON.application.onLastPageBackPress.name -->
+
+<!-- VUEJSON.application.onLastPageBackPress.description -->
+
+<!-- VUEJSON.application.onLastPageBackPress.compatibility -->
+
+<!-- VUEJSON.application.onLastPageBackPress.param -->
+
+<!-- VUEJSON.application.onLastPageBackPress.returnValue -->
+
+<!-- VUEJSON.application.onLastPageBackPress.tutorial -->
+
+<!-- VUEJSON.application.onExit.name -->
+
+<!-- VUEJSON.application.onExit.description -->
+
+<!-- VUEJSON.application.onExit.compatibility -->
+
+<!-- VUEJSON.application.onExit.param -->
+
+<!-- VUEJSON.application.onExit.returnValue -->
+
+<!-- VUEJSON.application.onExit.tutorial -->
+
+<!-- VUEJSON.application.onError.name -->
+
+<!-- VUEJSON.application.onError.description -->
+
+<!-- VUEJSON.application.onError.compatibility -->
+
+<!-- VUEJSON.application.onError.param -->
+
+<!-- VUEJSON.application.onError.returnValue -->
+
+<!-- VUEJSON.application.onError.tutorial -->
 
 **示例代码**
 
