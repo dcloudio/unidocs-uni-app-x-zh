@@ -65,8 +65,7 @@
   * [音频](create-inner-audio-context.md)
 * 画布
   * [canvasToTempFilePath](canvas-to-temp-file-path.md)
-  * [canvasGetImageData](canvas-get-image-data.md)
-  * [canvasPutImageData](canvas-put-image-data.md)
+  * [create-canvas-context-async](create-canvas-context-async.md)
 * 位置
   * [获取当前位置](get-location.md)
   * [使用地图查看位置](open-location.md)
