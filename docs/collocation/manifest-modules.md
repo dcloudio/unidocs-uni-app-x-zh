@@ -209,6 +209,14 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 > app-ios平台支付模块需HBuilderX4.18及以上版本
 
+## uni-getLocation@uni-getLocation
+> HBuilderX 4.25+ 新增支持 provider 机制的获取定位API（支持system、tencent定位）
+
+在uni-app x客户端，uni-getLocation是一个独立模块。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
+
+使用 uni-getLocation 模块需在 manifest.json 文件中添加如下配置：
+
+
 ### 配置定位SDK
 在 app -> distribute -> modules 下添加 uni-getLocation 节点：
 ```json
