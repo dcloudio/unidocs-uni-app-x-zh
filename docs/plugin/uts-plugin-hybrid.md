@@ -1,16 +1,14 @@
 # UTS原生混编介绍
 
-`HBuilder X 4.25`起，UTS插件可以直接使用原生的kotlin、java、swift代码，即 `UTS原生混编`(下文简称：`原生混编`)
+`HBuilder X 4.25`起，UTS插件可以直接使用原生的`kotlin`、`java`、`swift`代码，即 `UTS原生混编`(下文简称：`原生混编`)
 
-
-
-## 原生混编的优势和适用场景
+## 原生混编的优势和使用场景
 
 `原生混编`出现之前，开发者只能使用[UTS语言](https://doc.dcloud.net.cn/uni-app-x/uts/) 来开发[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html) 
 
-对于不熟悉原生的开发者来说，要实现原生功能的开发，往往要经过下面的步骤：
+对于不熟悉`Android`/`ios`的开发者来说，要实现原生功能的开发，往往要经过下面的步骤：
 
-	1   通过`搜索引擎`/`AIGC`/`原生API`文档 得到对应功能的关键原生代码(kotlin/swift等)
+	1   通过`搜索引擎`/`AIGC`/`原生API文档` 得到对应功能的关键代码(`Kotlin`/`swift`等)
 
 	2   手动翻译这段代码为`UTS`
 
@@ -20,34 +18,35 @@
 **这是一件很繁琐的事情，`UTS原生混编`的出现彻底解决了这个问题：**
 
 
-开发者只需要把正确的 kotlin/swift/java 原生代码按照约定放在UTS插件目录中，就可以通过 `uts`无缝的使用这些原生代码。
+开发者只需要把正确的 `Kotlin`/`swift`/`java` 原生代码按照约定放在`UTS插件`目录中，就可以通过 `uts`无缝使用这些代码。
 
-在`UTS插件`的编译流程中，UTS源码是 Kotlin/swift 源码的上游环节，也就是说 UTS本身就会被编译为Kotlin/swift 源码，所以 uts 与原生语言之间的相互调用 本质是**同一语言内部 不同函数/对象之间的相互调用，不会有任何调用成本和性能损耗**
-
-
-和uts插件代码一样，混编的原生代码可以直接真机运行，省去了手动集成AAR三方库需要打包自定义基座的环节，大大提升了开发效率。
+在`UTS插件`的编译流程中，`UTS`源码是 `Kotlin`/`swift` 源码的上游环节，也就是说 `UTS`本身就会被编译为`Kotlin`/`swift` 源码，所以 `UTS` 与原生语言之间的相互调用，本质是**同一语言内部，不同函数/对象之间的相互调用，不会有任何调用成本和性能损耗**
 
 
-有了`UTS原生混编`之后，开发者如果想要实现对应的原生功能，仅需要：
+和uts插件代码一样，混编的原生代码可以直接真机运行，省去了手动集成`AAR`三方库需要打包自定义基座的环节，大大提升了开发效率。
 
-+   1  通过`搜索引擎`/`AIGC`/`原生API` 得到原生代码片段，
+---
+
+使用`UTS原生混编`之后，开发者想要实现原生功能，仅需要：
+
++   1  通过`搜索引擎`/`AIGC`/`原生API文档` 得到原生代码片段
 +   2  放入UTS插件中，真机运行
 
 即可以看到执行结果。
 
 
-下面我们以内存监控功能为例，分别拆解 `UTS原生混编`技术在`Android`和`ios`平台上的使用步骤
+下面我们以`内存监控`功能为例，分别拆解 `UTS原生混编`技术在`Android`和`ios`平台上的使用步骤
 
 
 ## Android平台
 
 #### 前置条件
 
-在真正开始使用 `UTS原生混编`之前，开发者需要确保两个前置条件：
+在开始使用 `UTS原生混编`之前，开发者需要确保两个前置条件：
 
 1  `HBuidlerX` 最低 4.25 版本
 
-2  对[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html#%E7%AE%80%E5%8D%95%E6%8F%92%E4%BB%B6%E7%A4%BA%E4%BE%8B)的有基本的认识，和一定的开发经验。
+2  对[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html#%E7%AE%80%E5%8D%95%E6%8F%92%E4%BB%B6%E7%A4%BA%E4%BE%8B)的有基本的认知和一定的开发经验。
 
 
 在进行下一步的操作之前，你的目录应该是这样的：
@@ -64,7 +63,7 @@
 2 搜索引擎/AI工具
 
 
-我们在这里使用AI工具得到了关键代码：
+我们这里使用AI工具得到了关键代码：
 
 ![获取代码](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_hybrid_plugin/hybrid_android_getcode.png)
 
@@ -72,12 +71,12 @@ AI工具或官方文档得到的代码并不总是准确的，我们需要去验
 
 目前`HBuilderX`并未提供原生代码的语法提示和校验，因此我们建议：
 
-+ 如果编写大段原生代码，推荐在原生IDE(比如：AndroidStudo)中编写验证，再放入uts插件混编联调
++ 如果编写大段原生代码，推荐在原生IDE(比如：`AndroidStudio`)中编写验证，再放入`UTS插件`混编联调
 
-+ 如果是小的代码片段，可以直接放入UTS插件目录，依靠HBuilderX本地编译功能来完成原生代码的校验
++ 如果是小的代码片段，可以直接放入`UTS插件`目录，依靠`HBuilderX`本地编译功能来完成原生代码的校验
 
 
-这里我们选择直接集成UTS插件, 使用`HBuilderX`来验证
+这里我们选择直接集成`UTS插件`, 使用`HBuilderX`来验证
 
 #### 第二步 集成原生代码
 
@@ -133,7 +132,7 @@ object NativeCode {
 }
 ```
 
-上面的代码中，我们将获取内存的信息的功能以kotlin静态方法`NativeCode.memMonitor()` 的形式对外暴露
+上面的代码中，我们将获取内存的信息的功能以`Kotlin`静态方法`NativeCode.memMonitor()` 的形式对外暴露
 
 接下来，我们将整理好的原生代码添加到 在`app-android` 目录
 
@@ -148,14 +147,14 @@ object NativeCode {
 
 在上面的示例中，我们已经实现了获取当前设备内存信息的功能，但是我们还想更进一步:持续监控内存，并且回调信息到uvue页面
 
-实现持续调用的方法有很多。这里我们为了演示在`Kotlin`代码中调用UTS内置对象，选择采用[setInterval](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/timers.html#setinterval-handler-timeout-arguments)内置对象来实现这个功能:
+实现持续调用的方法有很多,这里我们为了演示在`Kotlin`代码中调用`UTS内置对象`的情况，选择采用[setInterval](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/timers.html#setinterval-handler-timeout-arguments)来实现这个功能:
 
 
-使用 UTS内置对象 需要注意两点：
+使用 [UTS内置对象](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html) 需要注意两点：
 
 1 正确引入类名：
 
-	UTS内置对象在具体的平台会有一个对应的类名，举例： UTS内置的Array -> kotlin中的io.dcloud.uts.UTSArray
+	`UTS内置对象`在具体的平台会有一个对应的类名，举例： UTS内置的[Array](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/array.html) 对应 `Kotlin`中的`io.dcloud.uts.UTSArray`
 
 2 正确的处理原生对象和内置对象直接的转换
 
@@ -168,7 +167,7 @@ object NativeCode {
 原生`kotlin`代码的最终形态:
 
 ```kotlin
-package uts.sdk.modules.utsDemoMem
+package uts.sdk.modules.demoMem;
 
 import android.app.ActivityManager
 import android.content.Context.ACTIVITY_SERVICE
