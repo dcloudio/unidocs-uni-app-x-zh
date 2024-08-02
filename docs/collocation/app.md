@@ -16,8 +16,8 @@
 
 |函数名|说明|平台兼容|
 |:-|:-|:-|
-|onLaunch|当`uni-app-x` 初始化完成时触发（全局只触发一次），参数为应用启动参数，同 [uni.getLaunchOptionsSync](../api/launch.md#getlaunchoptionssync) 的返回值||
-|onShow|当 `uni-app-x` 启动，或从后台进入前台显示，参数为应用启动参数||
+|onLaunch|当`uni-app-x` 初始化完成时触发（全局只触发一次），参数为应用首次启动参数，同 [uni.getLaunchOptionsSync](../api/launch.md#getlaunchoptionssync) 的返回值||
+|onShow|当 `uni-app-x` 启动，或从后台进入前台显示，参数为应用本次启动参数，同 [uni.getEnterOptionsSync](../api/launch.md#getenteroptionssync) 的返回值||
 |onHide|当 `uni-app-x` 从前台进入后台，包括手机息屏||
 |onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出|app-uvue-android 3.9+|
 |onExit|监听应用退出|app-uvue-android 3.9+|
