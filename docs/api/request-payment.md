@@ -54,7 +54,9 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 <!-- UTSAPIJSON.requestPayment.tutorial -->
 
-### cause支付sdk错误码汇总
+### 支付SDK错误码
+
+支付失败时可通过错误回调参数`IRequestPaymentFail`中的`cause`属性获取支付SDK的源错误信息，类型为[SourceError](https://uniapp.dcloud.net.cn/tutorial/err-spec.html#sourceerror)，其包含 code 属性存储了支付SDK的原始错误码。 
 
 #### 支付宝支付
 | 支付宝错误码 | 错误信息 |
