@@ -10,6 +10,7 @@
   * [退出应用](exit.md)
   * [获取服务提供商](provider.md)
   * [getPerformance](get-performance.md)
+  * [动画帧](animation-frame.md)
 * 页面和路由
   * [页面跳转](navigator.md)
   * [设置导航条颜色](set-navigation-bar-color.md)
