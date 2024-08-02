@@ -32,6 +32,8 @@ uni-app x的App标准基座定位仅支持wgs84坐标系、不支持逆地址解
 
 三方定位sdk方面，暂不支持高德、百度，但支持腾讯定位。
 
+::: warning 4.25及以下低版本使用注意：
+
 可下载[腾讯定位插件](https://ext.dcloud.net.cn/plugin?id=14569)，在插件中配置key打包后生效。
 
 上述腾讯定位插件属于[ext api插件](https://uniapp.dcloud.net.cn/api/extapi.html)，引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。
@@ -41,10 +43,11 @@ uni-app x的App标准基座定位仅支持wgs84坐标系、不支持逆地址解
 获取手机端app是否拥有定位权限，请使用API [uni.getAppAuthorizeSetting](get-app-authorize-setting.md)
 
 不管系统定位、还是三方sdk定位，都有很多注意事项，包括gms、坐标系、隐私和权限等，请仔细阅读下面的参考链接。
+:::
 
-::: warning 使用支持provider机制的 uni.getLocation 需注意：
+::: warning 4.25及以上版本 uni.getLocation 支持provider机制，使用需注意：
+
 - app需要在根目录manifest.json文件中配置`uni-getLocation`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-getLocation模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-getLocation)**
-- App平台需要4.25及以上版本
 :::
 
 
