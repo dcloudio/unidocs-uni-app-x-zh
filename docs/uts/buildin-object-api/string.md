@@ -516,6 +516,26 @@ console.log(str2.padEnd(5));
 
 <!-- UTSJSON.String.startsWith.compatibility -->
 
+### isWellFormed()
+
+<!-- UTSJSON.String.isWellFormed.description -->
+
+<!-- UTSJSON.String.isWellFormed.param -->
+
+<!-- UTSJSON.String.isWellFormed.returnValue -->
+
+<!-- UTSJSON.String.isWellFormed.compatibility -->
+
+### toWellFormed()
+
+<!-- UTSJSON.String.toWellFormed.description -->
+
+<!-- UTSJSON.String.toWellFormed.param -->
+
+<!-- UTSJSON.String.toWellFormed.returnValue -->
+
+<!-- UTSJSON.String.toWellFormed.compatibility -->
+
 ### at(index)
 
 <!-- UTSJSON.String.at.description -->
@@ -527,3 +547,5 @@ console.log(str2.padEnd(5));
 <!-- UTSJSON.String.at.compatibility -->
 
 <!-- UTSJSON.String.tutorial -->
+
+
