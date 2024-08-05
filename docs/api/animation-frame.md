@@ -31,3 +31,9 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+
+**提示**
+
+- `uni.requestAnimationFrame` 替代 web 平台的 `requestAnimationFrame`
+- `uni.cancelAnimationFrame` 替代 web 平台的 `cancelAnimationFrame`
