@@ -6,4 +6,3 @@
 * [UniResizeObserver](uniresizeobserver.md)
 <!-- * [UniObjectElement](uniobjectelement.md) -->
 * [UniCanvasElement](unicanvaselement.md)
-* [CanvasRenderingContext2D](canvasrenderingcontext2d.md)
