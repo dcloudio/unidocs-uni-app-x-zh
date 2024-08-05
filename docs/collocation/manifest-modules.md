@@ -12,11 +12,13 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 如应用中没有使用video组件相关功能，将不再包含video内置模块，减少安装包体积。
 
-**摇树注意事项：**
-当你打包自定义基座时，如果你的工程代码没有使用video、定位、相册、摄像头等涉及三方sdk或敏感权限的api，打出的自定义基座包就不会包含这些组件和api的功能，那么在这些自定义基座上运行时，调用相关的组件和api就会报错。\
+**摇树注意事项：**  
+当你打包自定义基座时，如果你的工程代码没有使用video、定位、相册、摄像头等涉及三方sdk或敏感权限的api，打出的自定义基座包就不会包含这些组件和api的功能，那么在这些自定义基座上运行时，调用相关的组件和api就会报错。  
 此时您需要在工程中写相关的代码，如引用video组件或调用定位api，保存代码后重新打包自定义基座，才会包含相关模块。
 
 您在工程中下载的ext api、三方uts插件也同理，没有引用就不会打进去。
+
+摇树不支持 `provider` 机制，定位（[uni-getLocation](#uni-getLocation)） 和 支付（[uni-payment](#uni-payment)） 模块需要手动配置使用 Provider 依赖的三方SDK模块。
 
 ### app平台支持摇树的内置模块列表@utsmodules
 
@@ -50,7 +52,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
   文件管理模块（`HBuilderX3.99+`），包括API：[uni.getFileSystemManager](../api/get-file-system-manager.md)
   依赖的模块：无
 
-- uni-getLocation-system
+- uni-getLocation
   系统定位模块，包括API：[uni.getLocation](../api/get-location.md)
   依赖的模块：无
 
