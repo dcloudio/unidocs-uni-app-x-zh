@@ -70,9 +70,9 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。�
 
 ## 自定义provider
 
-[自定义支付provider](https://doc.dcloud.net.cn/uni-app-x/api/request-payment.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%94%AF%E4%BB%98provider)
+[自定义支付provider](request-payment.md#customprovider)
 
-[自定义定位provider](https://doc.dcloud.net.cn/uni-app-x/api/get-location.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9A%E4%BD%8Dprovider)
+[自定义定位provider](get-location.md#customprovider)
 
 
 ### 注意点
