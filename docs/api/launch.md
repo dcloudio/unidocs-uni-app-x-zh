@@ -8,6 +8,8 @@
 
 <!-- UTSAPIJSON.getLaunchOptionsSync.returnValue -->
 
+- 如果应用通过scheme或applink（通用链接）启动，可以通过本API获取。配置scheme或applink需在AndroidManifest.xml或info.plist中配置，打包后生效。
+
 <!-- UTSAPIJSON.getLaunchOptionsSync.example -->
 
 <!-- UTSAPIJSON.getLaunchOptionsSync.tutorial -->
@@ -16,11 +18,15 @@
 
 <!-- UTSAPIJSON.getEnterOptionsSync.description -->
 
+uni.getEnterOptionsSync 和 uni.getLaunchOptionsSync 的区别，相当于应用的 onShow 和 onLaunch 的区别，详见[应用生命周期](../collocation/app.md#applifecycle)
+
 <!-- UTSAPIJSON.getEnterOptionsSync.compatibility -->
 
 <!-- UTSAPIJSON.getEnterOptionsSync.param -->
 
 <!-- UTSAPIJSON.getEnterOptionsSync.returnValue -->
+
+- 如果应用通过scheme或applink（通用链接）启动，可以通过本API获取。配置scheme或applink需在AndroidManifest.xml或info.plist中配置，打包后生效。
 
 <!-- UTSAPIJSON.getEnterOptionsSync.example -->
 

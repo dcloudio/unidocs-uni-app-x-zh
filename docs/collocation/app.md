@@ -4,7 +4,11 @@
 
 所有页面都是在`App.uvue`下进行切换的，是应用入口文件。但`App.uvue`本身不是页面，这里不能编写视图元素，也就是没有`<template>`。
 
-这个文件的作用包括：监听应用生命周期、配置全局样式、配置全局的存储globalData
+这个文件的作用包括：
+1. 监听应用生命周期
+2. 配置全局变量globalData
+3. 编写全局可用的method方法
+4. 配置全局样式
 
 应用生命周期仅可在`App.uvue`中监听，在页面监听无效。
 
@@ -24,6 +28,8 @@
 
 <!-- VUEJSON.application.onLaunch.returnValue -->
 
+- 如果应用通过scheme或applink（通用链接）启动，可在本生命周期获取。配置scheme或applink需在AndroidManifest.xml或info.plist中配置，打包后生效。
+
 <!-- VUEJSON.application.onLaunch.tutorial -->
 
 <!-- VUEJSON.application.onShow.name -->
@@ -35,6 +41,8 @@
 <!-- VUEJSON.application.onShow.param -->
 
 <!-- VUEJSON.application.onShow.returnValue -->
+
+- 如果应用通过scheme或applink（通用链接）启动，可在本生命周期获取。配置scheme或applink需在AndroidManifest.xml或info.plist中配置，打包后生效。
 
 <!-- VUEJSON.application.onShow.tutorial -->
 
@@ -95,7 +103,7 @@
 
 **注意**
 - **应用生命周期仅可在`App.uvue`中监听，在其它页面监听无效**。
-- 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](../api/launch.md#getlaunchoptionssync)
+- 应用启动参数，也可以在API `uni.getLaunchOptionsSync`获取，[详见](../api/launch.md#getlaunchoptionssync)
 - 由于Android的`uni.exit()`是[热退出](../api/exit.md)，此时很多代码逻辑仍然在运行，有些on的事件监听并没有off，需要开发者在onExit生命周期中编写代码处理。比如在app的onLaunch里通过onXX监听了某事件，那么就需要在onExit里调用offXX取消某事件的监听，否则反复热退出、启动，会多次on而不会off，这会引发内存泄露。
 
 ## globalData
