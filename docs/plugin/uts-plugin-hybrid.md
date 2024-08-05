@@ -41,7 +41,6 @@
 下面我们以`内存监控`功能为例，分别拆解 `UTS原生混编`技术在`Android`和`ios`平台上的使用步骤
 
 
-## Android平台
 
 #### 前置条件
 
@@ -51,6 +50,7 @@
 
 2  对[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html#%E7%AE%80%E5%8D%95%E6%8F%92%E4%BB%B6%E7%A4%BA%E4%BE%8B)的有基本的认知和一定的开发经验。
 
+## Android平台
 
 在进行下一步的操作之前，你的目录应该是这样的：
 
@@ -339,39 +339,311 @@ uts文件与uvue 之间的相互调用，属于[UTS插件开发](https://doc.dcl
 
 ## iOS平台
 
-在插件的app-ios 目录下可以直接添加 swift 源码文件
+在进行下一步的操作之前，你的目录应该是这样的：
 
-![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/mixCodeIOS.png)
-
-如图所示，可以将 swift 文件直接放在 app-ios 目录下，也可以放在 app-ios 的子目录下。
-
-在 uts 代码中使用 swift 文件中定义的函数、变量、类等时无需导入，可以直接调用。
+![目录](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_hybrid_plugin/bybrid_ios_start.png)
 
 
-### 原生代码使用UTS内置对象
+#### 第一步 获取和验证原生代码
 
-UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象](../uts/utsios.md)均可以在原生环境使用，
-但是在使用前需要导入基础库 `DCloudUTSFoundation`。
+原生代码的获取有以下方式：
 
-我们知道在 uts 中使用的 uts 内置对象会被编成原生类型，那么在混编的 swift 文件中要想使用 uts 内置对象，就要直接使用其编译后的原生类型。
-下面列出 uts 内置对象对应的 swift 原生类名
+1 原生官方文档：
+ + [swift官方文档](https://docs.swift.org/swift-book/)
+ + [swift 中文版](https://swiftgg.gitbook.io/swift/)
 
-|uts 内置对象		|编译成的原生类名		  			
-|:----			|:---						
-|Array			|Array						
-|Number			|NSNumber 					
-|String			|String						
-|Set			|UTSSet						
-|Map			|Map						
-|UTSJSONObject	|UTSJSONObject				
-|JSON			|JSON						
-|Date			|Date						
-|Math			|Math										
-|RegExp			|UTSRegExp					
-|Error			|UTSError					
-|console		|console					
 
-**以console对象为例，演示原生代码向 HX 控制台打印日志**
+2 搜索引擎/AI工具
+
+AI工具或官方文档得到的代码并不总是准确的，我们需要去验证它。
+
+目前`HBuilderX`并未提供原生代码的语法提示和校验，因此我们建议：
+
++ 如果编写大段原生代码，推荐在原生IDE(比如：`Xcode`)中编写验证，再放入`UTS插件`混编联调
+
++ 如果是小的代码片段，可以直接放入`UTS插件`目录，依靠`HBuilderX`本地编译功能来完成原生代码的校验
+
+
+这里我们选择直接集成`UTS插件`, 使用`HBuilderX`来验证
+
+#### 第二步 集成原生代码
+
+swift 文件默认会引入原生系统库 `Foundation`, 如果需要调用 UI 相关的代码，则需要引入 `UIKit`,
+如果你需要使用 uts 内置对象，则需要引入 uts 基础库 `DCloudUTSFoundation`。
+
+回到我们的示例，现在整理完的`swift`代码是这样的：
+
+```swift
+
+// 这里是原生库的引用
+import Foundation
+// UTS内置对象的引用
+import DCloudUTSFoundation
+
+public class NativeCode {
+  
+    /// 同步获取内存信息
+    static func getMemInfo() -> [Int] {
+        let freeMem = NativeCode.getFreeMemory()
+        let totalMem = NativeCode.getTotalMemory()
+        
+        // freeMem 可用内存，单位MB
+        // totalMem 设备内存，单位MB
+        console.log(freeMem, totalMem)
+        return [freeMem, totalMem]
+    }
+}
+
+// MARK: - 获取内存工具函数
+extension NativeCode {
+    
+    /// 获取总内存大小（以MB为单位）
+    /// - Returns: 设备总内存
+    static func getTotalMemory() -> Int {
+        return Int(ProcessInfo.processInfo.physicalMemory / 1024 / 1024)
+    }
+
+    
+    /// 获取可用内存大小（以MB为单位）
+    /// - Returns: 设备可用内存
+    static func getFreeMemory() -> Int {
+        var vmStats = vm_statistics_data_t()
+        var infoCount = mach_msg_type_number_t(MemoryLayout<vm_statistics_data_t>.size / MemoryLayout<integer_t>.size)
+        let kernReturn = withUnsafeMutablePointer(to: &vmStats) {
+            $0.withMemoryRebound(to: integer_t.self, capacity: Int(infoCount)) {
+                host_statistics(mach_host_self(), HOST_VM_INFO, $0, &infoCount)
+            }
+        }
+        
+        if kernReturn != KERN_SUCCESS {
+            return 0
+        }
+        
+        let vmPageSize = vm_page_size
+        let freeMemorySize = Int(vmPageSize) * Int(vmStats.free_count + vmStats.inactive_count)
+        return freeMemorySize / 1024 / 1024
+    }
+}
+
+```
+
+上面的代码中，我们将获取内存的信息的功能以`swift`静态方法`NativeCode.getMemInfo()` 的形式对外暴露。 而获取内存信息具体功能的实现，则是由 `NativeCode` 的两个拓展方法实现。
+
+接下来，我们将整理好的原生代码添加到 在`app-ios` 目录
+
+![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_hybrid_plugin/bybrid_ios_add.png)
+
+
+是的，就是这样简单。如图所示，我们已经完成了对原生代码的集成。
+
+
+#### 第三步 在原生代码中调用UTS内置对象
+
+在上面的示例中，我们已经实现了获取当前设备内存信息的功能，但是我们还想更进一步:持续监控内存，并且回调信息到uvue页面
+
+实现持续调用的方法有很多,这里我们为了演示在`swift`代码中调用`UTS内置对象`的情况，选择采用[setInterval](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/timers.html#setinterval-handler-timeout-arguments)来实现这个功能:
+
+
+使用 [UTS内置对象](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html) 需要注意两点：
+
+1 正确引入类名：
+
+`UTS内置对象`在具体的平台会有一个对应的类名，举例： UTS内置的[Set](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/array.html) 对应 `swift`中的`UTSSet`
+
+2 正确的处理原生对象和内置对象直接的转换
+
+下面的示例代码中涉及到 uts 内置对象 `Number` 转换成原生类型 `Int` 的例子，实现方式为 `toInt()`, 具体见示例代码。如果你遇到其他类型的转换，请查阅内置对象文档来确定转换方法。
+
+
+> 完整的内置对象实现清单和与原生对象转换代码示例，大家都可以在内置对象文档的具体章节找到
+
+
+原生`swift`代码的最终形态:
+
+```swift
+
+// 这里是原生库的引用
+import Foundation
+// UTS内置对象的引用
+import DCloudUTSFoundation
+
+public class NativeCode {
+  
+    /// 同步获取内存信息
+    static func getMemInfo() -> [Int] {
+        let freeMem = NativeCode.getFreeMemory()
+        let totalMem = NativeCode.getTotalMemory()
+        
+        // freeMem 可用内存，单位MB
+        // totalMem 设备内存，单位MB
+        console.log(freeMem, totalMem)
+        return [freeMem, totalMem]
+    }
+    
+    /// 记录上一次的任务id
+   static private var lastTaskId = -1
+    
+    /// 开启内存监控
+   static func startMemMonitor(_ callback: @escaping (_ res: [Int]) -> Void) {
+        
+        if lastTaskId != -1 {
+            // 避免重复开启
+            clearInterval(NSNumber.from(lastTaskId))
+        }
+        
+        lastTaskId = setInterval({ 
+            let freeMem = NativeCode.getFreeMemory()
+            let totalMem = NativeCode.getTotalMemory()
+            console.log(freeMem, totalMem)
+            callback([freeMem, totalMem])
+        }, 2000).toInt()
+    }
+    
+    /// 关闭内存监控
+    static func stopMemMonitor() {
+        if lastTaskId != -1 {
+            clearInterval(NSNumber.from(lastTaskId))
+			lastTaskId = -1
+        }
+    }
+}
+
+// MARK: - 获取内存工具函数
+extension NativeCode {
+    
+    /// 获取总内存大小（以MB为单位）
+    /// - Returns: 设备总内存
+    static func getTotalMemory() -> Int {
+        return Int(ProcessInfo.processInfo.physicalMemory / 1024 / 1024)
+    }
+
+    
+    /// 获取可用内存大小（以MB为单位）
+    /// - Returns: 设备可用内存
+    static func getFreeMemory() -> Int {
+        var vmStats = vm_statistics_data_t()
+        var infoCount = mach_msg_type_number_t(MemoryLayout<vm_statistics_data_t>.size / MemoryLayout<integer_t>.size)
+        let kernReturn = withUnsafeMutablePointer(to: &vmStats) {
+            $0.withMemoryRebound(to: integer_t.self, capacity: Int(infoCount)) {
+                host_statistics(mach_host_self(), HOST_VM_INFO, $0, &infoCount)
+            }
+        }
+        
+        if kernReturn != KERN_SUCCESS {
+            return 0
+        }
+        
+        let vmPageSize = vm_page_size
+        let freeMemorySize = Int(vmPageSize) * Int(vmStats.free_count + vmStats.inactive_count)
+        return freeMemorySize / 1024 / 1024
+    }
+}
+
+```
+
+上面的代码中，我们将获取内存的信息的功能以`swift`静态方法`NativeCode.startMemMonitor(callback)` 的形式对外暴露。 
+
+这里的 `callback`参数是一个 参数为`[Int]`(即 `Array<Int>`) 类型的 `swift`函数，对应`UTS`中一个参数为`Array`的`function`对象
+
+至此，内存监控功能的原生代码部分已经完全开发完毕。接下来，我们编写UTS代码来使用它。
+
+
+#### 第四步 编写`UTS`调用代码
+
+如我们在前文所讲，`UTS`是`swift`语言的上游语言。所有`swift`代码中的：`类`、`对象`、`函数`、`变量`，均可以在uts中直接使用。 
+
+**但是反之，则不行**。
+
+因为`UTS`的编译器兼容了`swift`的语法规则，所以`UTS`中调用`swift`代码可以被很好的支持，即使升级 HBuilderX 版本也不会有什么问题。
+
+但`UTS`从未保证过编译对应的`swift`的具体规则。所以虽然开发者可以通过一些取巧的方式实现：swift 中调用 UTS 代码，但这是不被支持的，遇到类似 HBuilderX 版本升级之类的情况，类似代码可能会失效或者异常。
+
+
+在我们的示例中, UTS 中的调用的代码是这样的：
+
+```ts
+
+export function onCallNativeCallbackUTS(callback: (res: Array<number>) => void) {
+	NativeCode.startMemMonitor((res: Int[]) => {
+		// 将 Int 数组转换成 number数组
+		let numberArray = res.map((value: Int, index: number): number => {
+			// 将 Int 转换成 number
+			return Number.from(value);
+		})
+		callback(numberArray)   
+	})
+}
+
+export function callNativeStopCallbackUTS() {
+	NativeCode.stopMemMonitor()
+}
+
+export function callNativeMemGet():Array<number> {
+	// 将 Int 数组转换成 number数组
+	let numberArray = NativeCode.getMemInfo().map((value: Int, index: number): number => {
+		// 将 Int 转换成 number
+		return Number.from(value);
+	}) 
+	return numberArray;
+}
+
+```
+
+上面的代码，我们在UTS中使用一个 入参为`Array<number>`类型的`function`对象就完成了对`swift`原生代码的调用。
+
+
+#### 第五步 回调参数到uvue页面
+
+uts文件与uvue 之间的相互调用，属于[UTS插件开发](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)的相关内容，这里不展开叙述。开发者可以查阅相关文档掌握这部分知识。
+
+下面仅列出了uvue示例代码。用于完整展示内存监控示例：
+
+```vue
+<template>
+	<view>
+		<button @tap="nativeMemGetTest">通过原生代码获取内存(同步)</button>
+		<button @tap="nativeMemListenTest">原生代码监听内存并持续回调UTS</button>
+		<button @tap="nativeStopMemListenTest">停止监听</button>
+		<text>{{memInfo}}</text>
+	</view>
+</template>
+
+<script>
+	
+	import { onCallNativeCallbackUTS,callNativeStopCallbackUTS,callNativeMemGet} from "../../uni_modules/demo-mem";
+	 
+	export default {
+		data() {
+			return {
+				memInfo: '-'
+			}
+		},
+		onLoad() {
+
+		},
+		methods: {
+			
+			nativeMemGetTest() {
+			    let array = callNativeMemGet()
+				this.memInfo = "可用内存:" + array[0] + "MB--整体内存:" + array[1] + "MB"
+			},   
+			nativeMemListenTest() {
+				onCallNativeCallbackUTS((ret: number[]) => {
+					this.memInfo = "可用内存:" + ret[0] + "MB--整体内存:" + ret[1] + "MB"
+				});
+			},
+			
+			nativeStopMemListenTest() {
+			    callNativeStopCallbackUTS()
+				this.memInfo = "已暂停"
+			},
+		}
+	}
+</script>
+
+```
+
+### 原生代码使用 console 向 HX 控制台输出打印日志			
 
 首先将基础库 `DCloudUTSFoundation` 导入到 swift 源码文件中，不过这个导入和使用过程将没有代码提示，输出的变量信息也不会包含变量所在的文件和代码行号等信息。
 
