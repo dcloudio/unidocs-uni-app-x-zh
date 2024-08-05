@@ -79,7 +79,7 @@ uni-app x的App标准基座定位仅支持wgs84坐标系、不支持逆地址解
 | ~~isAppExist~~      | boolean   | 是   | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
 
 
-## 自定义定位provider接入到uni API 
+## 自定义定位provider接入到uni API @customprovider
 
 背景：目前基座已经内置了系统定位，腾讯定位，基于开放的原则，在以上定位不满足用户需求的情况下，
 
