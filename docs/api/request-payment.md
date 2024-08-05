@@ -194,5 +194,5 @@ export class UniPaymentAlipayProviderImpl implements UniPaymentAlipayProvider{
 
 第四步，打自定义基座
 
-[完整示例可参考支付宝支付插件的实现源码](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-payment-alipay)
+[完整示例可参考支付宝支付插件的实现源码](https://gitcode.net/dcloud/uni-api/-/tree/alpha/uni_modules/uni-payment-alipay)
 
