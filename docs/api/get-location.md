@@ -138,3 +138,6 @@ export class UniLocationAMapProviderImpl implements UniLocationAMapProvider{
 
 通过以上步骤就可以实现自定义定位provider接入到uni API 
 
+[完整示例可参考腾讯定位插件的实现源码](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getLocation-tencent)
+
+
