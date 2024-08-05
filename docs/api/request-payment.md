@@ -144,7 +144,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 
 
-## 自定义支付provider接入到uni API 
+## 自定义支付provider接入到uni API @customprovider
 
 背景：目前基座已经内置了阿里支付，微信支付，基于开放的原则，在以上支付不满足用户需求的情况下，
 
