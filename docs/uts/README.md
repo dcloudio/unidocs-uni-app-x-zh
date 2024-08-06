@@ -45,52 +45,52 @@ uts这门语言，有2个用途：
 这2个uts插件，一个是api插件，一个是组件插件，它们同时兼容uni-app和uni-app x。
 
 可以通过表格更清晰的了解uts语言在uni-app和uni-app x下的编译关系。
+
 <table>
-	<caption>
-    UTS语言的编译输出表格
-  </caption>
-	<thead>
-		<tr>
-			<th scope="col"></th>
-			<th scope="col" colspan="2">uni-app</th>
-			<th scope="col" colspan="2">uni-app x</th>
-		</tr>
-		<tr>
-			<th scope="col"></th>
-			<th scope="col">普通页面和脚本</th>
-			<th scope="col">uts插件</th>
-			<th scope="col">普通页面和脚本</th>
-			<th scope="col">uts插件</th>
-		</tr>
-	</thead>
-	<tr></tr>
-		<td>Web和小程序</td>
-		<td>JS</td>
-		<td>JS</td>
-		<td>JS</td>
-		<td>JS</td>
-	<tr></tr>
-	<tr></tr>
-		<td>Android</td>
-		<td>JS</td>
-		<td>Kotlin</td>
-		<td>Kotlin</td>
-		<td>Kotlin</td>
-	<tr></tr>
-	<tr></tr>
-		<td>iOS</td>
-		<td>JS</td>
-		<td>Swift</td>
-		<td>JS(JS驱动时)</td>
-		<td>Swift</td>
-	<tr></tr>
-	<tr></tr>
-		<td>HarmonyNext</td>
-		<td>JS</td>
-		<td>ArkTS</td>
-		<td>x</td>
-		<td>x</td>
-	<tr></tr>
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2">uni-app</th>
+      <th colspan="2">uni-app x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td>普通页面和脚本</td>
+      <td>uts插件</td>
+      <td>普通页面和脚本</td>
+      <td>uts插件</td>
+    </tr>
+    <tr>
+      <td>Web和小程序</td>
+      <td>JS</td>
+      <td>JS</td>
+      <td>JS</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <td>Android</td>
+      <td>JS</td>
+      <td>Kotlin</td>
+      <td>Kotlin</td>
+      <td>Kotlin</td>
+    </tr>
+    <tr>
+      <td>iOS</td>
+      <td>JS</td>
+      <td>Swift</td>
+      <td>JS(JS驱动时)</td>
+      <td>Swift</td>
+    </tr>
+    <tr>
+      <td>HarmonyNext</td>
+      <td>JS</td>
+      <td>ArkTS</td>
+      <td>x</td>
+      <td>x</td>
+    </tr>
+  </tbody>
 </table>
 
 这里的概念解释是：
@@ -319,4 +319,3 @@ let a:number = 1 //行尾可以不加分号
 let b:boolean = false; //行尾可以加分号
 let c:number = 3 ; let d:number = 4 // 同行多语句需要用分号分割
 ```
-
