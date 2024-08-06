@@ -754,6 +754,38 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 
 * 目前 Array 类型编译到 `kotlin` 为 `io.dcloud.uts.UTSArray`, 该类继承自 `java.util.ArrayList`,所有`java` /`kotlin` 为其提供的扩展函数(如:`toTypedArray` 等)，均可以正常调用。
 
+
+::: 
+
+> UTS
+
+```ts
+let utsArray = ["1",2,3.0]
+// UTSArray 分别转换为 Java Array / Kotlin Array
+let javaArray = utsArray.toTypedArray();
+let kotlinArray = utsArray.toKotlinList()
+// 从Java Array 转换为 UTSArray
+let convertArrayFromJava = Array.fromNative(javaArray);
+// 从Kotlin Array 转换为 UTSArray
+let convertArrayFromKotlin = Array.fromNative(kotlinArray);
+```
+
+> Kotlin
+
+```kotlin
+val utsArray = utsArrayOf("1",2,3.0)
+// UTSArray 分别转换为 Java Array / Kotlin Array
+val javaArray = utsArray.toTypedArray();
+val kotlinArray = utsArray.toKotlinList()
+// 从Java Array 转换为 UTSArray
+val convertArrayFromJava = UTSArray.fromNative(javaArray);
+// 从Kotlin Array 转换为 UTSArray
+val convertArrayFromKotlin = UTSArray.fromNative(kotlinArray);
+```
+
+:::
+
+
 更多平台专属Array 参考[文档](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#kotlin%E4%B8%93%E6%9C%89%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B)
 
 ## 常见操作
