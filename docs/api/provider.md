@@ -81,6 +81,12 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。�
 
 - 自注册的provider无法保障顺序，请不要依赖自注册provider的顺序。
 
+- provider 获取规则：
+
+  1，如果自定义的service 与 provider 配置与内置的一样，优先采用本地的。
+
+  2，如果自定义了多个相同的的service 与 provider ，编译器会报错。
+
 
 <!-- UTSAPIJSON.general_type.name -->
 
