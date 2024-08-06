@@ -332,3 +332,45 @@ setTimeout(() => {
 <!-- UTSJSON.Date.parse.compatibility -->
 
 <!-- UTSJSON.Date.tutorial -->
+
+## Android 平台方法
+
+* 目前 Date 类型编译到 `kotlin` 为 `io.dcloud.uts.Date`
+
+
+::: 
+
+> UTS
+
+```ts
+let utsDate = new Date("1991-02-03")
+
+// UTS Date 转换 java Date
+let javaDate = new java.util.Date()
+javaDate.time = utsDate.getTime().toLong()
+// Sun Feb 03 1991 08:00:00 GMT+0800
+console.log(javaDate)
+// java date 转 UTS Date
+let nextUTSDate = new Date(javaDate.time)
+// Sun Feb 03 1991 08:00:00 GMT+0800
+console.log(nextUTSDate)
+```
+
+> Kotlin
+
+```kotlin
+	val utsDate = Date("1991-02-03")
+	// UTS Date 转换 java Date
+	val javaDate = java.util.Date()
+	javaDate.time = utsDate.getTime().toLong()
+	// Sun Feb 03 1991 08:00:00 GMT+0800
+	console.log(javaDate)
+	// java date 转 UTS Date
+	val nextUTSDate = Date(javaDate.time)
+	// Sun Feb 03 1991 08:00:00 GMT+0800
+	console.log(nextUTSDate)
+```
+
+:::
+
+
