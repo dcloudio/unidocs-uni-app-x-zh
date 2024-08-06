@@ -218,6 +218,14 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 使用 uni-getLocation 模块需在 manifest.json 文件中添加如下配置：
 
+其中 uni-getLocation 下的节点表示要聚合的定位方式：
+| 标识 | 定位方式 |
+| :-  | :- |
+| system | 系统定位 |
+| tencent | 腾讯定位 |
+
+添加相应的节点，云端打包就会将对应的定位 SDK 打包到最终安装包中。
+
 
 ### 配置定位SDK
 在 app -> distribute -> modules 下添加 uni-getLocation 节点：
@@ -229,11 +237,36 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 		}
 	}
 ```
+### 在info.plist配置定位相关的Key
+在 info.plist 中增加腾讯定位的TencentLBSAPIKey、高精度授权的 PurposeKey、以及定位需要的其他 Key，如下 ：
+参考 [info.plist 的创建和配置文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)
 
-其中 uni-getLocation 下的节点表示要聚合的定位方式：
-| 标识 | 定位方式 |
-| :-  | :- |
-| system | 系统定位 |
-| tencent | 腾讯定位 |
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>TencentLBSAPIKey</key>
+		<string>WZCBZ-OLPCU-TJJVJ-4LZTE-SSG5O-6JFEM</string>
+		<key>UIBackgroundModes</key>
+		<array>
+			<string>location</string>
+		</array>
 
-添加相应的节点，云端打包就会将对应的定位 SDK 打包到最终安装包中。
+		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>允许使用定位权限吗</string>
+		<key>NSLocationAlwaysUsageDescription</key>
+		<string>允许一直使用定位权限</string>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>允许仅在app运行期间使用定位权限</string>
+		<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+		<dict>
+			<key>PurposeKey</key>
+			<string>这里需要您临时授权高精度定位权限,一次临时授权时效仅app一个周期内, 每次硬启动都需要临时授权</string>
+		</dict>
+	</dict>
+</plist>
+```
+
+- 
+
