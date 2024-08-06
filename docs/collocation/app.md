@@ -153,6 +153,50 @@
 
 globalData是简单的全局变量，其他状态管理方式，可参考文档[全局变量和状态管理](../tutorial/store.md)。
 
+## 全局方法
+在 `App.uvue methods` 中，可以定义全局方法，这里定义的方法，在项目中可以通过 `getApp().methodName()` 调用, 例如：
+```vue
+<!-- App.uvue -->
+<script lang="uts">
+  export default {
+    onLaunch: function () {
+      console.log('App Launch')
+    },
+    onShow: function () {
+      console.log('App Show')
+    },
+    onHide: function () {
+      console.log('App Hide')
+    },
+    methods: {
+      globalFn(){
+        console.log('The global fn is triggered')
+      }
+    }
+  }
+</script>
+
+<!-- pages/index/index.uvue -->
+<template>
+  <view>
+    <button @click="triggerGlobalFn">trigger global fn</button>
+  </view>
+</template>
+
+<script lang="uts">
+  export default {
+    onReady() {
+      getApp().globalFn()
+    },
+    methods: {
+      triggerGlobalFn() {
+        const app = getApp()
+        app.globalFn()
+      }
+    }
+  }
+</script>
+```
 ## 全局样式
 
 在`App.uvue`中，可以定义一些全局通用样式，这里定义的class，每个页面都可以直接使用。
