@@ -86,7 +86,13 @@
 
 <!-- VUEJSON.application.onError.description -->
 :::warning
-`onError` 只能监听到如生命周期、事件以及模板渲染等中的同步错误，\
+`onError` 可以监听以下来源中的同步错误：
+- 组件渲染器
+- 事件处理器
+- 生命周期钩子
+- setup() 函数
+- 侦听器
+
 无法监听异步逻辑（例如：`setTimeout`）中的错误和应用初始化之前、 App 崩溃等错误。
 :::
 <!-- VUEJSON.application.onError.compatibility -->
