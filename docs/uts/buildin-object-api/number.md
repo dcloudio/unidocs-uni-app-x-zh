@@ -280,3 +280,8 @@ console.log(b);
 ```
 
 <!-- UTSJSON.Number.tutorial -->
+
+## Android 平台方法
+
+Number 类型编译到 `kotlin` 为 `kotlin.Number`
+
