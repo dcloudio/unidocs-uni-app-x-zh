@@ -1,26 +1,26 @@
-## uni.getProviderIds(options) @getproviderids
+## uni.getProviderSync(options) @getProviderSync
 
-<!-- UTSAPIJSON.getProviderIds.description -->
+<!-- UTSAPIJSON.getProviderSync.description -->
 
-<!-- UTSAPIJSON.getProviderIds.compatibility -->
+<!-- UTSAPIJSON.getProviderSync.compatibility -->
 
-<!-- UTSAPIJSON.getProviderIds.param -->
+<!-- UTSAPIJSON.getProviderSync.param -->
 
-<!-- UTSAPIJSON.getProviderIds.returnValue -->
+<!-- UTSAPIJSON.getProviderSync.returnValue -->
 
-<!-- UTSAPIJSON.getProviderIds.example -->
+<!-- UTSAPIJSON.getProviderSync.example -->
 
-<!-- UTSAPIJSON.getProviderIds.tutorial -->
+<!-- UTSAPIJSON.getProviderSync.tutorial -->
 
-## uni.getProviderObject(options) @getproviderobject
+## uni.getProviderObjectById(options) @getProviderObjectById
 
-<!-- UTSAPIJSON.getProviderObject.description -->
+<!-- UTSAPIJSON.getProviderObjectById.description -->
 
-<!-- UTSAPIJSON.getProviderObject.compatibility -->
+<!-- UTSAPIJSON.getProviderObjectById.compatibility -->
 
-<!-- UTSAPIJSON.getProviderObject.param -->
+<!-- UTSAPIJSON.getProviderObjectById.param -->
 
-<!-- UTSAPIJSON.getProviderObject.returnValue -->
+<!-- UTSAPIJSON.getProviderObjectById.returnValue -->
 
 <!-- UTSAPIJSON.getProvider.name -->
 
