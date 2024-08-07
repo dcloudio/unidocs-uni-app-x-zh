@@ -184,3 +184,5 @@ export class UniLocationAMapProviderImpl implements UniLocationAMapProvider{
 通过以上步骤就可以实现自定义定位provider接入到uni API。
 
 由于uni-app x自带的腾讯定位，也是基于provider注册机制开发的，可参考[腾讯定位插件的实现源码](https://gitcode.net/dcloud/uni-api/-/tree/alpha/uni_modules/uni-getLocation-tencent)
+
+App平台，腾讯定位SDK，除了本API封装的功能，还有一些其他功能。如开发者需要调用这些SDK的其他API，可以使用uts直接调用，同样参考上述源码。

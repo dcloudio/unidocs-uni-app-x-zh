@@ -1,44 +1,33 @@
 # UTS原生混编介绍
 
-`HBuilder X 4.25`起，UTS插件可以直接使用原生的`kotlin`、`java`、`swift`代码，即 `UTS原生混编`(下文简称：原生混编)
+`HBuilder X 4.25`起，UTS插件可以直接使用原生的`kotlin`、`java`、`swift`代码，和`uts`代码混合使用，即 `UTS原生混编`(下文简称：原生混编)
 
-## 原生混编的优势和使用场景
+UTS插件的入口仍然是uts代码，但在uts代码里，可以直接调用插件下的kotlin、swift代码中的函数、对象。
 
-`原生混编`出现之前，开发者只能使用[UTS语言](https://doc.dcloud.net.cn/uni-app-x/uts/) 来开发[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html) 
+在[UTS插件](./uts-plugin.md)的编译流程中，`UTS`本身就会被编译为`Kotlin`/`swift` 源码。所以 `UTS` 调用原生代码的过程，**本质是同一语言内部，不同函数/对象之间的调用过程，无缝且不会有任何性能损耗**
 
-对于不熟悉`Android`/`ios`的开发者来说，要实现原生功能的开发，往往要经过下面的步骤：
+同时在HBuilderX的真机运行中，可以直接改动uts或kotlin、swift代码、整体联编、差量热刷，无需打包自定义基座。（java代码仍需打包自定义基座）
 
-	1   通过`搜索引擎`/`AIGC`/`原生API文档` 得到对应功能的关键代码(`Kotlin`/`swift`等)
+甚至在原生代码中，也可以使用console.log，把日志打印在HBuilderX的控制台中。
 
-	2   手动翻译这段代码为`UTS`
+## UTS原生混编的优势和使用场景
 
-	3   如果存在`UTS`不支持的语法，还需要把原生代码封装成 `aar`/`framework` 等原生库形式，再供`UTS`代码调用
+`原生混编`出现之前，开发者只能使用[UTS语言](../uts/README.md) 来开发[UTS插件](./uts-plugin.md) 
 
+不管是网上搜的还是历史存留的，当涉及到原生的kotlin、java、swift代码时，开发者要不把这些代码自行翻译成uts代码，要不把这些代码封装成arr、framework等包，再被uts引用。
 
-**这是一件很繁琐的事情，`原生混编`的出现彻底解决了这个问题：**
+有时会遇到uts还不支持的语法，只能使用原生语言，就必须封装库了。
 
+如原生代码数量较多，则翻译比较吃力；如封装成arr等库，每次改动都需要打自定义基座，也很麻烦。
 
-开发者只需要把 `Kotlin`/`swift`/`java` 代码放在`UTS插件`目录中，就可以通过 `UTS`直接使用这些代码：
+`UTS原生混编`的解决了上述问题：
 
+开发者只需要把 `Kotlin`/`swift`/`java` 代码放在`UTS插件`目录中，就可以通过 `UTS`直接使用这些代码。
 
-+ 在[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)的编译流程中，`UTS`本身就会被编译为`Kotlin`/`swift` 源码。所以 `UTS` 调用原生代码的过程，**本质是同一语言内部，不同函数/对象之间的调用过程，不会有任何性能损耗**
+并且和`uts代码`一样，混编的原生代码（除java）可以直接真机运行，省去了手动集成`AAR`三方库后打包自定义基座的环节，提升了开发效率。
 
-
-+ 和`uts代码`一样，混编的原生代码可以直接真机运行，省去了手动集成`AAR`三方库后打包自定义基座的环节，大大提升了开发效率。
-
-
-
-使用`UTS原生混编`之后，开发者想要实现原生功能，仅需要：
-
-	1  通过`搜索引擎`/`AIGC`/`原生API文档` 得到原生代码片段
-	
-	2  放入UTS插件中，真机运行，查看效果。
-
-
----
 
 下面我们以`内存监控`功能为例，分别拆解 `UTS原生混编`技术在`Android`和`ios`平台上的使用步骤
-
 
 
 #### 前置条件
@@ -47,7 +36,7 @@
 
 1  `HBuidlerX` 4.25 以上版本
 
-2  对[UTS插件](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html#%E7%AE%80%E5%8D%95%E6%8F%92%E4%BB%B6%E7%A4%BA%E4%BE%8B)具备一定的了解和开发经验
+2  对[UTS插件](./uts-plugin.md)具备一定的了解和开发经验
 
 ## Android平台
 
@@ -74,7 +63,7 @@ AI工具或官方文档得到的代码并不总是准确的，我们需要去验
 
 + 如果编写大段原生代码，推荐在原生IDE(比如：`AndroidStudio`)中编写，再放入`UTS插件`混编联调
 
-+ 如果是小的代码片段，可以直接放入`UTS插件`目录，依靠`HBuilderX`本地编译功能来完成原生代码的校验
++ 如果是小的代码片段，可以直接放入`UTS插件`目录，依靠`HBuilderX`本地编译和打log功能来完成原生代码的校验
 
 
 这里我们选择直接集成`UTS插件`, 使用`HBuilderX`来验证
@@ -144,20 +133,60 @@ object NativeCode {
 
 #### 第三步 在原生代码中调用UTS内置对象
 
-在上面的示例中，我们已经实现了获取当前系统内存的功能，但我们还想更进一步:持续监控内存，并且回调信息到`uvue`页面
+为了让原生代码中方便调用UTS的内置对象，尤其是用于数据类型转换。官方提供了在原生代码调用UTS对象的方法。
 
-实现持续调用的方法有很多，这里我们为了演示在`Kotlin`代码中调用`UTS内置对象`的情况，选择采用[setInterval](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/timers.html#setinterval-handler-timeout-arguments)来实现这个功能:
+UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象](../uts/utsandroid.md)均可以在原生环境使用，下面以kotlin中打印日志到HBuilder X 控制台为例说明：
+
+下面以kotlin中打印日志到HBuilder X 控制台为例说明：
+
+第一步：手动导入对应的包名，包名规则为： `io.dcloud.uts.xxx` 。这里的 xxx 是具体的对象的类名 ：
+
+```kotlin
+import io.dcloud.uts.console // kt或java代码
+```
+
+第二步： 导入包名后，以原生方式使用内置对象
+
+```kotlin
+console.log("Hello World") // kt或java代码
+```
+
+这样就实现了在kt或java代码中打印日志到HBuilderX的控制台。
+
+不过这个导入和使用过程将没有代码提示，输出的变量信息也不会包含变量所在的文件和代码行号等信息。
+
+下面列出内置对象对应的类名，如果需要在原生环境和UTS环境/uvue环境中互传数据，建议转换为标准内置对象实现后再进行传递。
+
+|uts 内置对象		|编译成的原生类名		 
+|:----		|:---						
+|Array		|io.dcloud.uts.UTSArray		
+|Number		|io.dcloud.uts.UTSNumber 	
+|String		|kotlin.String				
+|Set		|io.dcloud.uts.Set			
+|Map		|io.dcloud.uts.Map			
+|UTSJSONObject|io.dcloud.uts.UTSJSONObject
+|JSON		|io.dcloud.uts.JSON			
+|Date		|io.dcloud.uts.Date			
+|Math		|io.dcloud.uts.Math			
+|Promise	|io.dcloud.uts.UTSPromise	
+|RegExp		|io.dcloud.uts.UTSRegExp	
+|Error		|io.dcloud.uts.UTSError		
+|console	|io.dcloud.uts.console		
 
 
-使用 [UTS内置对象](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html) 需要注意两点：
+回到内存监控的例子，在上面的示例中，我们已经实现了获取当前系统内存的功能，但我们还想更进一步持续监控内存，并且回调信息到`uvue`页面
+
+实现持续调用的方法有很多，这里我们为了演示在`Kotlin`代码中调用`UTS内置对象`的情况，选择采用[setInterval](../uts/buildin-object-api/timers.md#setinterval-handler-timeout-arguments)来实现这个功能:
+
+使用 [UTS内置对象](../uts/buildin-object-api/number.md) 需要注意两点：
 
 +  正确引入类名：
 
-	`UTS内置对象`在具体的平台会有一个对应的类名，举例： UTS内置的[Array](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/array.html) 对应 `Kotlin`中的`io.dcloud.uts.UTSArray`
+	`UTS内置对象`在具体的平台会有一个对应的类名，举例： UTS内置的[Array](../uts/buildin-object-api/array.md) 对应 `Kotlin`中的`io.dcloud.uts.UTSArray`
 
 +  正确的处理原生对象和内置对象直接的转换
 
-	当前示例中不涉及，但如果开发者可能遇到类似 kotlin.Array 转换 UTS内置Array的情况，这种情况可以通过查阅[内置对象文档](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html)来解决。
+	当前示例中不涉及，但如果开发者可能遇到类似 kotlin.Array 转换 UTS内置Array的情况，这种情况可以通过查阅[内置对象文档](../uts/buildin-object-api/number.md)来解决。
 
 
 > 完整的内置对象实现清单和与原生对象转换代码示例，大家都可以在内置对象文档的具体章节找到
@@ -255,10 +284,10 @@ object NativeCode {
 
 因为`UTS`的编译器兼容了`Kotlin`的语法规则，所以`UTS`中调用`Kotlin`代码可以被很好的支持，即使升级HBuilderX版本也不会有什么问题。
 
-但`UTS`从未保证过编译`Kotlin`的具体规则。所以虽然开发者可以通过一些取巧的方式实现 在`Kotlin`中调用`UTS`代码，但这是不被支持的，遇到`HBuilderX`升级的情况，类似的代码可能会失效/异常
+但`UTS`从未保证过编译`Kotlin`的具体规则。所以虽然开发者可以通过一些取巧的方式实现 在`Kotlin`中调用`UTS`代码，但这是不安全的，`HBuilderX`升级后，类似的代码可能会失效/异常。
 
 
-在我们的示例里,UTS的调用的代码是这样的：
+在我们的示例里，UTS的调用的代码是这样的：
 
 ```ts
 // 开启内存监听
@@ -284,7 +313,7 @@ export function callKotlinMemGet():Array<number> {
 
 #### 第五步 回调参数到uvue页面
 
-`UTS`与`uvue`之间的相互调用，属于[UTS插件开发](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)的相关内容，这里不展开叙述，开发者可以查阅相关文档掌握这部分知识。
+`UTS`与`uvue`之间的相互调用，属于[UTS插件开发](../plugin/uts-plugin.md)的相关内容，这里不展开叙述，开发者可以查阅相关文档掌握这部分知识。
 
 下面仅列出了uvue示例代码，用于完整示例：
 
@@ -359,7 +388,7 @@ AI工具或官方文档得到的代码并不总是准确的，我们需要去验
 
 + 如果编写大段原生代码，推荐在原生IDE(比如：`Xcode`)中编写验证，再放入`UTS插件`混编联调
 
-+ 如果是小的代码片段，可以直接放入`UTS插件`目录，依靠`HBuilderX`本地编译功能来完成原生代码的校验
++ 如果是小的代码片段，可以直接放入`UTS插件`目录，依靠`HBuilderX`本地编译和打log功能来完成原生代码的校验
 
 
 这里我们选择直接集成`UTS插件`, 使用`HBuilderX`来验证
@@ -367,6 +396,7 @@ AI工具或官方文档得到的代码并不总是准确的，我们需要去验
 #### 第二步 集成原生代码
 
 swift 文件默认会引入原生系统库 `Foundation`, 如果需要调用 UI 相关的代码，则需要引入 `UIKit`,
+
 如果你需要使用 uts 内置对象，则需要引入 uts 基础库 `DCloudUTSFoundation`。
 
 回到我们的示例，现在整理完的`swift`代码是这样的：
@@ -437,16 +467,37 @@ extension NativeCode {
 
 #### 第三步 在原生代码中调用UTS内置对象
 
-在上面的示例中，我们已经实现了获取当前设备内存信息的功能，但是我们还想更进一步:持续监控内存，并且回调信息到uvue页面
+UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象](../uts/utsios.md)均可以在原生环境使用，
+但是在使用前需要导入基础库 `DCloudUTSFoundation`。
 
-实现持续调用的方法有很多,这里我们为了演示在`swift`代码中调用`UTS内置对象`的情况，选择采用[setInterval](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/timers.html#setinterval-handler-timeout-arguments)来实现这个功能:
+我们知道在 uts 中使用的 uts 内置对象会被编成原生类型，那么在混编的 swift 文件中要想使用 uts 内置对象，就要直接使用其编译后的原生类型。
+下面列出 uts 内置对象对应的 swift 原生类名
+
+|uts 内置对象		|编译成的原生类名		  			
+|:----			|:---						
+|Array			|Array						
+|Number			|NSNumber 					
+|String			|String						
+|Set			|UTSSet						
+|Map			|Map						
+|UTSJSONObject	|UTSJSONObject				
+|JSON			|JSON						
+|Date			|Date						
+|Math			|Math										
+|RegExp			|UTSRegExp					
+|Error			|UTSError					
+|console		|console					
+
+回到内存监控的例子。在上面的示例中，我们已经实现了获取当前设备内存信息的功能，但是我们还想更进一步持续监控内存，并且回调信息到uvue页面
+
+实现持续调用的方法有很多,这里我们为了演示在`swift`代码中调用`UTS内置对象`的情况，选择采用[setInterval](../uts/buildin-object-api/timers.md#setinterval-handler-timeout-arguments)来实现这个功能:
 
 
-使用 [UTS内置对象](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html) 需要注意两点：
+使用 [UTS内置对象](../uts/buildin-object-api/number.md) 需要注意两点：
 
 1 正确引入类名：
 
-`UTS内置对象`在具体的平台会有一个对应的类名，举例： UTS内置的[Set](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/array.html) 对应 `swift`中的`UTSSet`
+`UTS内置对象`在具体的平台会有一个对应的类名，举例： UTS内置的[Set](../uts/buildin-object-api/array.md) 对应 `swift`中的`UTSSet`
 
 2 正确的处理原生对象和内置对象直接的转换
 
@@ -554,7 +605,7 @@ extension NativeCode {
 
 因为`UTS`的编译器兼容了`swift`的语法规则，所以`UTS`中调用`swift`代码可以被很好的支持，即使升级 HBuilderX 版本也不会有什么问题。
 
-但`UTS`从未保证过编译对应的`swift`的具体规则。所以虽然开发者可以通过一些取巧的方式实现：swift 中调用 UTS 代码，但这是不被支持的，遇到类似 HBuilderX 版本升级之类的情况，类似代码可能会失效或者异常。
+但`UTS`从未保证过编译对应的`swift`的具体规则。所以虽然开发者可以通过一些取巧的方式实现：swift 中调用 UTS 代码，但这是不安全的。HBuilderX 版本升级后，类似代码可能会失效或者异常。
 
 
 在我们的示例中, UTS 中的调用的代码是这样的：
@@ -592,7 +643,7 @@ export function callNativeMemGet():Array<number> {
 
 #### 第五步 回调参数到uvue页面
 
-uts文件与uvue 之间的相互调用，属于[UTS插件开发](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html)的相关内容，这里不展开叙述。开发者可以查阅相关文档掌握这部分知识。
+uts文件与uvue 之间的相互调用，属于[UTS插件开发](../plugin/uts-plugin.md)的相关内容，这里不展开叙述。开发者可以查阅相关文档掌握这部分知识。
 
 下面仅列出了uvue示例代码。用于完整展示内存监控示例：
 
@@ -641,7 +692,7 @@ uts文件与uvue 之间的相互调用，属于[UTS插件开发](https://doc.dcl
 
 ```
 
-### 原生代码使用 console 向 HX 控制台输出打印日志			
+#### 原生代码使用 console 向 HX 控制台输出打印日志			
 
 首先将基础库 `DCloudUTSFoundation` 导入到 swift 源码文件中，不过这个导入和使用过程将没有代码提示，输出的变量信息也不会包含变量所在的文件和代码行号等信息。
 
@@ -657,7 +708,7 @@ func test1() -> String {
 }
 ```
 
-### 原生代码使用 UTSiOS 对象
+#### 原生代码使用 UTSiOS 对象
 
 如果你想在 swift 代码中使用 `UTSiOS` 对象提供的能力，你需要先导入基础库 `DCloudUniappRuntime`.
 
@@ -700,11 +751,3 @@ export function callJavaMethodGetInfo():String {
 ```
 
 完整的混编示例可以在[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/dev/uni_modules/uts-syntaxcase/utssdk)中找到
-
-
-
-## 支持情况说明
-
-但目前HBuilderX并未提供原生代码的语法提示和校验。所以如果编写大段原生代码，推荐在原生ide中编写好，再放入uts插件下混编联调。
-
-如果是一小段简单代码，比如从网络或AI摘抄了一段，也可以直接在HBuilderX中开发联调。
