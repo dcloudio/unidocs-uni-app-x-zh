@@ -28,6 +28,17 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。�
 
 <!-- UTSAPIJSON.getProvider.returnValue -->
 
+::: warning uni.getProvider 返回顺序说明：
+1. 目前标准基座中注册的 provider 返回顺序如下：
+    支付： 微信支付、支付宝；
+    定位/地图： 系统定位、腾讯定位
+
+2. 相同 service 下，其他的自注册 provider， 返回顺序在官方 provider 之后；
+
+3. 自注册的 provider 无法保障顺序， 请不要依赖自注册 provider 的顺序；
+:::
+
+
 <!-- UTSAPIJSON.getProvider.tutorial -->
 
 <!-- UTSAPIJSON.getProvider.example -->
