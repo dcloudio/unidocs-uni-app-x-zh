@@ -237,7 +237,8 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 		}
 	}
 ```
-### 在info.plist配置定位相关的Key
+
+### 在info.plist配置定位相关的Key@uni-getLocation-key
 在 info.plist 中增加腾讯定位的TencentLBSAPIKey、高精度授权的 PurposeKey、以及定位需要的其他 Key，如下 ：
 参考 [info.plist 的创建和配置文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)
 

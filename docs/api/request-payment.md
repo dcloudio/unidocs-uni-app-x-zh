@@ -54,6 +54,26 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 <!-- UTSAPIJSON.requestPayment.tutorial -->
 
+### 支付provider对象描述
+
+#### UniPaymentAlipayProvider(支付宝支付)@paymentalipayprovider
+
+| 名称           | 类型      | 必备 | 默认值  | 描述                                  |
+| -------------- | --------- | ---- | ------ | ------------------------------------- |
+| id             | string    | 是   | -      | 服务供应商标识                        |
+| description    | string    | 是   | -      | 服务供应商描述                        |
+| ~~isAppExist~~      | boolean   | 是   | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
+
+#### UniPaymentWxpayProvider(微信支付)@paymentwxpayprovider
+
+| 名称           | 类型      | 必备 | 默认值  | 描述                                  |
+| -------------- | --------- | ---- | ------ | ------------------------------------- |
+| id             | string    | 是   | -      | 服务供应商标识                        |
+| description    | string    | 是   | -      | 服务供应商描述                        |
+| ~~isAppExist~~      | boolean   | 是   | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
+| isWeChatInstalled     | boolean   | 是    | -      | 判断微信是否安装 |
+
+
 ### 支付SDK错误码
 
 支付失败时可通过错误回调参数`IRequestPaymentFail`中的`cause`属性获取支付SDK的源错误信息，类型为[SourceError](https://uniapp.dcloud.net.cn/tutorial/err-spec.html#sourceerror)，其包含 code 属性存储了支付SDK的原始错误码。 
@@ -82,10 +102,6 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 | -5 | 不支持 |
 | -6 | 禁止 |
 | 其它 | 其它支付错误 |
-
-
-
-
 
 ### 注意
 - App平台开发支付宝支付，无需自定义基座，真机运行可直接开发
@@ -132,38 +148,29 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 <!-- UTSAPIJSON.general_type.param -->
 
 
-## 支付provider对象描述
+## API源码和更多SDK功能
 
-### UniPaymentAlipayProvider(支付宝支付)
+App平台，微信和支付宝的SDK，除了requestPayment API封装的功能，还有一些其他功能。如开发者需要调用这些SDK的其他API，可以使用uts直接调用（注意打包时勾选相应的模块）
 
-| 名称           | 类型      | 必备 | 默认值  | 描述                                  |
-| -------------- | --------- | ---- | ------ | ------------------------------------- |
-| id             | string    | 是   | -      | 服务供应商标识                        |
-| description    | string    | 是   | -      | 服务供应商描述                        |
-| ~~isAppExist~~      | boolean   | 是   | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
-
-### UniPaymentWxpayProvider(微信支付)
-
-| 名称           | 类型      | 必备 | 默认值  | 描述                                  |
-| -------------- | --------- | ---- | ------ | ------------------------------------- |
-| id             | string    | 是   | -      | 服务供应商标识                        |
-| description    | string    | 是   | -      | 服务供应商描述                        |
-| ~~isAppExist~~      | boolean   | 是   | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
-| isWeChatInstalled     | boolean   | 是    | -      | 判断微信是否安装 |
-
-
+可以参考uni.requestPayment的源码，也是通过uts调用这2个原生SDK：
+- [支付宝](https://gitcode.net/dcloud/uni-api/-/tree/alpha/uni_modules/uni-payment-alipay)
+- [微信](https://gitcode.net/dcloud/uni-api/-/tree/alpha/uni_modules/uni-payment-wxpay)
 
 ## 自定义支付provider接入到uni API @customprovider
 
-背景：目前基座已经内置了阿里支付，微信支付，基于开放的原则，在以上支付不满足用户需求的情况下，
+背景：目前uni-app x引擎已经内置了支付宝支付、微信支付。但支付SDK还有很多，比如银联SDK。
 
-用户可以基于我们规范化的接口，错误信息描述等实现自己的支付需求，而在最终使用方式上与内置API无任何差别。
+以往这些SDK可以通过独立插件的方式集成到uni-app x中，但需要提供单独的API给开发者使用。
 
-举个例子，用户想使用uni.requestPayment()的方式调用阿里支付，但是内置支付api不支持（这里假设内置api不支持阿里支付），
+uni-app x从4.25起，开放了provider自接入机制，让三方SDK可以以[provider](./provider.md)方式被开发者集成。
+
+开发一个UTS插件，对接uni规范化的API、错误信息描述等实现自己的支付插件，这样插件使用者就可以通过uni的标准API使用三方SDK。
+
+举个例子，开发者想使用uni.requestPayment()的方式调用XX支付，但是内置支付api不支持，
 
 那只需要按照下面四个步骤实现即可:
 
-第一步，在interface.uts 中定义接口,继承UniPaymentProvider，代码如下
+第一步，新建一个UTS插件，在interface.uts 中定义接口，继承UniPaymentProvider，代码如下
 
 ```ts
 export interface UniPaymentAlipayProvider extends UniPaymentProvider{}
@@ -174,14 +181,14 @@ export interface UniPaymentAlipayProvider extends UniPaymentProvider{}
 ```ts
 import { UniPaymentAlipayProvider } from '../interface.uts'
 export class UniPaymentAlipayProviderImpl implements UniPaymentAlipayProvider{
-	override id : String = "alipay"
-	override description : String = "Alipay"
+	override id : String = "XX" // id必须有插件作者前缀，避免冲突，避免不同插件作者的插件id重名
+	override description : String = "XX的描述"
 	override isAppExist : boolean | null = null
 	
 	constructor(){}
 
 	override requestPayment(options : RequestPaymentOptions) {
-		//todo 具体逻辑
+		//todo 具体逻辑，接收uni规范的入参，进行业务处理，返回uni规范的返回值。如遇到错误，按uni的规范返回错误码
 	}
 }
 ```
@@ -194,14 +201,14 @@ export class UniPaymentAlipayProviderImpl implements UniPaymentAlipayProvider{
       /* android打包配置 */
       "modules": {
         "uni-payment":{
-          "alipay":{}
+          "XX":{}
         }
       }
     }
   }
 ```
 
-第四步，打自定义基座
+第四步，打包自定义基座然后运行
 
-[完整示例可参考支付宝支付插件的实现源码](https://gitcode.net/dcloud/uni-api/-/tree/alpha/uni_modules/uni-payment-alipay)
-
+由于uni-app x内置的支付API也是基于这套规范实现的，所以推荐参考
+[uni-app x支付宝支付插件的实现源码](https://gitcode.net/dcloud/uni-api/-/tree/alpha/uni_modules/uni-payment-alipay)

@@ -605,7 +605,7 @@ const l = b!.length
 
 ### vue data中null的用法
 
-很多时候，data的数据需要通过script获取，而 uts 不支持 undefined，初始化时就只能赋null。一旦定义可为null后，调用时就需要用`?.`操作可选属性。
+很多时候，data的数据需要通过script获取，而 uts 编译为非js时不支持 undefined，初始化时就只能赋null。一旦定义可为null后，调用时就需要用`?.`操作可选属性。
 
 ```html
 <script lang=uts>
@@ -636,7 +636,11 @@ const l = b!.length
 
 > 此类型仅在目标语言为js时支持
 
-在js环境下，`undefined == null`的结果是`true`。我们可以利用此特性来判断一个值是不是空值。
+undefined是弱类型语言的特色，在js环境下，`undefined == null`的结果是`true`。
+
+在kotlin和swift环境下，是没有undefined的，空就是null。
+
+当需要跨平台判空时，可以利用js下`undefined == null`的特性，用 `== null`来跨平台的判断一个值是不是空值。
 
 ```ts
 let a: number | undefined = undefined
