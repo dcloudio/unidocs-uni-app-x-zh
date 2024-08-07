@@ -10,6 +10,7 @@
 
 ::: warning 注意
 - 使用`选项式 API` 时，不可创建 `route`、`options` 同名响应式变量，否则会覆盖当前 `page 实例` 的同名属性。
+- 仅 `Web` 与 `iOS` 端支持通过 `page.$vm` 获取 vue 实例。
 :::
 
 **PageStyle**
