@@ -632,6 +632,19 @@ const l = b!.length
 </script>
 ```
 
+## undefined
+
+> 此类型仅在目标语言为js时支持
+
+在js环境下，`undefined == null`的结果是`true`。我们可以利用此特性来判断一个值是不是空值。
+
+```ts
+let a: number | undefined = undefined
+let b: number | undefined = 1
+console.log(a == null) // true
+console.log(b == null) // false
+```
+
 ## 日期（Date）@date
 
 日期对象表示日期，包括年月日时分秒等各种日期。
