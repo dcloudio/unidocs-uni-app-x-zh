@@ -89,7 +89,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 ### 注意
 - App平台开发支付宝支付，无需自定义基座，真机运行可直接开发
-- App平台判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/get-provider.html#getprovider)
+- App平台判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#getprovider)
 
 ```ts
    uni.getProvider({
@@ -99,11 +99,20 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
             return item.id == 'wxpay'
          })
 
-         if (provider?.isAppExist == false) {
+          // #ifdef APP-ANDROID
+          if (provider != null && provider instanceof UniPaymentWxpayProvider && !((provider as UniPaymentWxpayProvider).isWeChatInstalled)) {
             console.log('WeChat 没有安装')
-         } else {
+          } else {
+             console.log('WeChat 已安装')
+          }
+          // #endif
+          // #ifdef APP-IOS
+          if (provider != null && ((provider as UniPaymentWxpayProvider).isWeChatInstalled == undefined || ((provider as UniPaymentWxpayProvider).isWeChatInstalled != null && (provider as UniPaymentWxpayProvider).isWeChatInstalled == false))) {
+            console.log('WeChat 没有安装')
+          } else {
             console.log('WeChat 已安装')
-         }
+          }
+          // #endif
       },
       fail: (e) => {
          console.log("获取支付通道失败：", e);
