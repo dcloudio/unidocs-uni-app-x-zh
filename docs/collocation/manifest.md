@@ -140,18 +140,23 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 
 ## 其它设置  
 
-### url scheme @urlScheme  
+### URL Scheme @urlScheme  
 uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4.18及以上版本支持在 app 原生应用配置文件中进行设置，详情参考：  
 - [Android平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#urlscheme)  
 - [iOS平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)  
 
 **注意**  
 - uni-app x项目标准基座已配置 url scheme 值："uniappx"
-- 配置scheme需提交云端打包才能生效  
+- 配置 url scheme 需提交云端打包才能生效  
 
 ### Universal Link @ulink  
 uni-app x 项目 manifest.json 文件不再提供 iOS 平台的 通用链接（universal link）相关配置，HBuilderX4.18及以上版本支持在 iOS原生应用配置文件中通过 `关联域（Associated Domains）` 配置通用链接，详情参考：
 - [iOS平台通用链接配置教程](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5-universal-link)  
+
+**注意**  
+- uni-app x项目标准基座已配置 universal link 值："https://uniappx.dcloud.net.cn/ulink"，但重签名会使得通用链接配置失效，无法通过通用链接启动标准基座  
+- 配置 universal link 需提交云端打包才能生效
+
 
 ## 示例
 ```json
