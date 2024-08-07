@@ -736,6 +736,8 @@ func getKeyWindow() -> UIWindow {
  
 + HBuilder X 目前不支持原生代码的语法提示、转到定义、debug断点。仅支持高亮和格式化。
 
++ 插件市场暂不支持原生代码的加密
+
 + 混编需要使用[条件编译](https://uniapp.dcloud.net.cn/tutorial/platform.html#%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91%E5%A4%84%E7%90%86%E5%A4%9A%E7%AB%AF%E5%B7%AE%E5%BC%82)限制编译入口
 
 ```uts
