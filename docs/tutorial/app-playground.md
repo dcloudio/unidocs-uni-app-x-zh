@@ -21,6 +21,8 @@
 - 注册的Url Scheme: uniappx  
 - 注册的通用链接：https://uniappx.dcloud.net.cn/ulink  
 
+注意：ios平台标准基座需要重签名才能使用，重签名后会改变包名信息，从而导致注册的通用链接失效。
+
 ## 标准基座包含的功能模块  
 - uni-ad：[uni-ad广告联盟](https://uniad.dcloud.net.cn/)  
     + gdt：腾讯优量汇广告联盟SDK  
