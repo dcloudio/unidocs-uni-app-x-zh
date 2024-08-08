@@ -149,6 +149,9 @@ uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4
 - uni-app x项目标准基座已配置 url scheme 值："uniappx"
 - 配置 url scheme 需提交云端打包才能生效  
 
+标准基座可通过此网页体验 Url Scheme 启动 App：[https://uniappx.dcloud.net.cn/scheme.html](https://uniappx.dcloud.net.cn/scheme.html)
+
+
 ### Universal Link @ulink  
 uni-app x 项目 manifest.json 文件不再提供 iOS 平台的 通用链接（universal link）相关配置，HBuilderX4.18及以上版本支持在 iOS原生应用配置文件中通过 `关联域（Associated Domains）` 配置通用链接，详情参考：
 - [iOS平台通用链接配置教程](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5-universal-link)  
