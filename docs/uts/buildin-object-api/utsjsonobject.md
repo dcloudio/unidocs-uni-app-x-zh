@@ -266,3 +266,41 @@ console.log(utsJsonA)
 ```
 
 
+## Android 平台方法
+
+* 目前 UTSJSONObject 类型编译到 kotlin 为 io.dcloud.uts.UTSJSONObject
+
+
+::: preview
+
+> UTS
+
+```ts
+// 创建一个kotlin hashmap
+let kotlinMap = new kotlin.collections.HashMap<string,number>()
+kotlinMap.put("a",111)
+kotlinMap.put("b",2)
+// 转换为UTSJSONObject
+let utsObj = new UTSJSONObject(kotlinMap)
+console.log(utsObj)
+// UTSJSONObject 转换为 Map
+let nextMap = utsObj.toMap()
+console.log(nextMap)
+```
+
+> Kotlin
+
+```kotlin
+// 创建一个kotlin hashmap
+var kotlinMap = kotlin.collections.HashMap<String, Number>();
+kotlinMap.put("a", 111);
+kotlinMap.put("b", 2);
+// 转换为UTSJSONObject
+var utsObj = UTSJSONObject(kotlinMap, UTSSourceMapPosition("utsObj", "pages/index/helloView.uvue", 33, 8));
+console.log(utsObj);
+// UTSJSONObject 转换为 Map
+var nextMap = utsObj.toMap();
+console.log(nextMap);
+```
+
+:::

@@ -549,3 +549,6 @@ console.log(str2.padEnd(5));
 <!-- UTSJSON.String.tutorial -->
 
 
+## Bug & Tips@tips
+
+* 目前 string 类型编译到 kotlin 为 kotlin.String

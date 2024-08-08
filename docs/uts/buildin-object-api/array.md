@@ -755,7 +755,7 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 * 目前 Array 类型编译到 `kotlin` 为 `io.dcloud.uts.UTSArray`, 该类继承自 `java.util.ArrayList`,所有`java` /`kotlin` 为其提供的扩展函数(如:`toTypedArray` 等)，均可以正常调用。
 
 
-::: 
+::: preview
 
 > UTS
 

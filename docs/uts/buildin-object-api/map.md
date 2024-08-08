@@ -239,3 +239,7 @@ map.forEach(function(value:any | null,key:string,map: Map<string,any | null>){
 ```
 
 <!-- UTSJSON.Map.tutorial -->
+
+## Bug & Tips@tips
+
+* 目前 Error 类型编译到 kotlin 为 io.dcloud.uts.Map
