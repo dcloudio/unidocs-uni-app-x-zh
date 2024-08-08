@@ -20,7 +20,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 ### orderInfo参数说明
 
- - 支付宝支付  
+ - 支付宝支付
   App 支付请求参数字符串，主要包含商家的订单信息，key=value 形式，以 & 连接。示例
   ```
   app_id=2015052600090779&biz_content=%7B%22timeout_express%22%3A%2230m%22%2C%22seller_id%22%3A%22%22%2C%22product_code%
@@ -32,8 +32,8 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
   hIukuKygrXucvejOUgTCfoUdwTi7z%2BZzQ%3D<br>
   ```
   [更多详情参考[支付宝官方文档](https://opendocs.alipay.com/open/204/105296?pathHash=22ed0058&ref=api)]
- 
- -  微信支付  
+
+ -  微信支付
   App 支付请求参数字符串,需要打自定义基座。示例
   ```json
   {
@@ -56,10 +56,15 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 ### 支付provider对象描述
 
-**UniPaymentAlipayProvider(支付宝支付)** @paymentalipayprovider 继承自 [UniProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#uniprovider)
+**UniPaymentAlipayProvider(支付宝支付)** @paymentalipayprovider
 
-**UniPaymentWxpayProvider(微信支付)** @paymentwxpayprovider 继承自 [UniProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#uniprovider), 特有字段说明
+继承自 [UniProvider](./provider.md#uniprovider)
 
+**UniPaymentWxpayProvider(微信支付)** @paymentwxpayprovider
+
+继承自 [UniProvider](./provider.md#uniprovider)
+
+特有字段说明
 
 | 名称           | 类型      | 必备 | 默认值  | 描述                                  |
 | -------------- | --------- | ---- | ------ | ------------------------------------- |
@@ -68,7 +73,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 ### 支付SDK错误码
 
-支付失败时可通过错误回调参数`IRequestPaymentFail`中的`cause`属性获取支付SDK的源错误信息，类型为[SourceError](https://uniapp.dcloud.net.cn/tutorial/err-spec.html#sourceerror)，其包含 code 属性存储了支付SDK的原始错误码。 
+支付失败时可通过错误回调参数`IRequestPaymentFail`中的`cause`属性获取支付SDK的源错误信息，类型为[SourceError](https://uniapp.dcloud.net.cn/tutorial/err-spec.html#sourceerror)，其包含 code 属性存储了支付SDK的原始错误码。
 
 #### 支付宝支付
 | 支付宝错误码 | 错误信息 |
@@ -176,7 +181,7 @@ export class UniPaymentAlipayProviderImpl implements UniPaymentAlipayProvider{
 	override id : String = "XX" // id必须有插件作者前缀，避免冲突，避免不同插件作者的插件id重名
 	override description : String = "XX的描述"
 	override isAppExist : boolean | null = null
-	
+
 	constructor(){}
 
 	override requestPayment(options : RequestPaymentOptions) {
