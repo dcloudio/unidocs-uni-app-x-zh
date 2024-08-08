@@ -104,22 +104,9 @@ app平台目前还没有可视化界面，需要在manifest的源码视图中配
 
 ## 定位provider对象描述
 
-### UniLocationSystemProvider(系统定位)@locationsystemprovider
+### UniLocationSystemProvider(系统定位)@locationsystemprovider 继承自[UniProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#uniprovider)
 
-| 名称           | 类型      | 必备 | 默认值 | 描述                                  |
-| -------------- | --------- | ---- | ------ | ------------------------------------- |
-| id             | string    | 是   | -      | 服务供应商标识                        |
-| description    | string    | 是   | -      | 服务供应商描述                        |
-| ~~isAppExist~~      | boolean   | 是   | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
-
-### UniLocationTencentProvider(腾讯定位)@locationtencentprovider
-
-| 名称           | 类型      | 必备 | 默认值 | 描述                                  |
-| -------------- | --------- | ---- | ------ | ------------------------------------- |
-| id             | string    | 是   | -      | 服务供应商标识                        |
-| description    | string    | 是   | -      | 服务供应商描述                        |
-| ~~isAppExist~~      | boolean   | 是   | -      | 已废弃,判断服务供应商依赖的App是否安装（仅支持微信支付） |
-
+### UniLocationTencentProvider(腾讯定位)@locationtencentprovider 继承自[UniProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#uniprovider) 特有字段说明
 
 ## 自定义定位provider接入到uni API @customprovider
 
