@@ -49,10 +49,11 @@
 Android平台标准基座尽量包含所有可能用到的权限，以便在开发过程中可调用所有系统API。
 包含以下权限：
 ```
+	<!-- 网络权限 -->
 	<uses-permission android:name="android.permission.INTERNET" />
+	<!-- 存储卡权限 -->
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-	<!--permissions-->
 	<!-- 通过GPS得到精确位置 -->
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<!-- 通过网络得到粗略位置 -->
@@ -81,7 +82,7 @@ Android平台标准基座尽量包含所有可能用到的权限，以便在开�
 	<!-- 安装应用权限 -->
 	<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
-	<!-- 补齐其它权限 -->
+	<!-- 其它权限 -->
 	<uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES"/>
 	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
 	<uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER"/>
