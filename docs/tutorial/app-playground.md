@@ -71,7 +71,7 @@ Android平台标准基座尽量包含所有可能用到的权限，以便在开�
 	<uses-permission android:name="android.permission.BLUETOOTH" />
 	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 	<uses-permission android:name="android.permission.BLUETOOTH_SCAN" android:usesPermissionFlags="neverForLocation" />
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+	<uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 	<!-- 前台service权限 -->
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<!-- 后台定位权限 -->
