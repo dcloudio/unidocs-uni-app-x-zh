@@ -1,37 +1,30 @@
-## uni.requestAnimationFrame(callback) @requestanimationframe
+### requestAnimationFrame(callback)@requestanimationframe
 
-<!-- UTSAPIJSON.requestAnimationFrame.description -->
+<!-- UTSJSON.Global.requestAnimationFrame.description -->
 
-<!-- UTSAPIJSON.requestAnimationFrame.compatibility -->
+<!-- UTSJSON.Global.requestAnimationFrame.param -->
 
-<!-- UTSAPIJSON.requestAnimationFrame.param -->
+<!-- UTSJSON.Global.requestAnimationFrame.returnValue -->
 
-<!-- UTSAPIJSON.requestAnimationFrame.returnValue -->
+<!-- UTSJSON.Global.requestAnimationFrame.test -->
 
-<!-- UTSAPIJSON.requestAnimationFrame.example -->
+<!-- UTSJSON.Global.requestAnimationFrame.compatibility -->
 
-<!-- UTSAPIJSON.requestAnimationFrame.tutorial -->
+<!-- UTSJSON.Global.requestAnimationFrame.tutorial -->
 
-## uni.cancelAnimationFrame(taskId) @cancelanimationframe
+### cancelAnimationFrame(taskId) @cancelanimationframe
 
-<!-- UTSAPIJSON.cancelAnimationFrame.description -->
+<!-- UTSJSON.Global.cancelAnimationFrame.description -->
 
-<!-- UTSAPIJSON.cancelAnimationFrame.compatibility -->
+<!-- UTSJSON.Global.cancelAnimationFrame.param -->
 
-<!-- UTSAPIJSON.cancelAnimationFrame.param -->
+<!-- UTSJSON.Global.cancelAnimationFrame.returnValue -->
 
-<!-- UTSAPIJSON.cancelAnimationFrame.returnValue -->
+<!-- UTSJSON.Global.cancelAnimationFrame.test -->
 
-<!-- UTSAPIJSON.cancelAnimationFrame.example -->
+<!-- UTSJSON.Global.cancelAnimationFrame.compatibility -->
 
-<!-- UTSAPIJSON.cancelAnimationFrame.tutorial -->
-
-<!-- UTSAPIJSON.animationFrame.example -->
-
-<!-- UTSAPIJSON.general_type.name -->
-
-<!-- UTSAPIJSON.general_type.param -->
-
+<!-- UTSJSON.Global.cancelAnimationFrame.tutorial -->
 
 **提示**
 
