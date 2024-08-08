@@ -11,6 +11,7 @@
   * [概述](web/README.md)
   * [服务端渲染ssr](web/ssr.md)
 * app平台专题指南
+	* [标准基座信息](tutorial/app-playground.md)
 	* [uni-app x 云端打包环境](tutorial/app-env.md)
 	* uni-app x 原生SDK和离线打包
 		* [概述](native/README.md)
