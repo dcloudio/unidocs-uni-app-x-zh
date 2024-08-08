@@ -76,39 +76,6 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 
 - 定位Provider：[UniLocationSystemProvider](./get-location.md#locationsystemprovider),[UniLocationTencentProvider](./get-location.md#locationtencentprovider)
 
-
-## uni.getProviderSync(options) @getProviderSync
-
-<!-- UTSAPIJSON.getProviderSync.description -->
-
-<!-- UTSAPIJSON.getProviderSync.compatibility -->
-
-<!-- UTSAPIJSON.getProviderSync.param -->
-
-<!-- UTSAPIJSON.getProviderSync.returnValue -->
-
-<!-- UTSAPIJSON.getProviderSync.example -->
-
-<!-- UTSAPIJSON.getProviderSync.tutorial -->
-
-## uni.getProviderObjectById(options) @getProviderObjectById
-
-<!-- UTSAPIJSON.getProviderObjectById.description -->
-
-<!-- UTSAPIJSON.getProviderObjectById.compatibility -->
-
-<!-- UTSAPIJSON.getProviderObjectById.param -->
-
-<!-- UTSAPIJSON.getProviderObjectById.returnValue -->
-
-<!-- UTSAPIJSON.getProviderObjectById.example -->
-
-<!-- UTSAPIJSON.getProviderObjectById.tutorial -->
-
-<!-- UTSAPIJSON.getProviderObject.example -->
-
-<!-- UTSAPIJSON.getProviderObject.tutorial -->
-
 ## UniProvider
 
 <!-- CUSTOMTYPEJSON.UniProvider.description -->
