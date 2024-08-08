@@ -238,21 +238,28 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 	}
 ```
 
-### 在info.plist配置定位相关的Key@uni-getLocation-key
-在 info.plist 中增加腾讯定位的TencentLBSAPIKey、高精度授权的 PurposeKey、以及定位需要的其他 Key，如下 ：
-参考 [info.plist 的创建和配置文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)
+### 配置腾讯定位SDK的参数
 
+使用腾讯定位SDK需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请TencentLBSAPIKey，并配置到应用中。 
+
+#### iOS平台配置腾讯定位相关参数 @uni-getLocation-key
+
+需在项目根目录下的 Info.plist 中配置，包括以下内容：
+- 腾讯定位的 TencentLBSAPIKey  
+- 使用定位权限弹出的授权提示信息：NSLocationAlwaysAndWhenInUseUsageDescription、NSLocationAlwaysUsageDescription、NSLocationWhenInUseUsageDescription  
+- 应用需要使用高精度定位时还需配置 NSLocationTemporaryUsageDescriptionDictionary 的 PurposeKey，说明高精度定位的原因 
+- 如果应用需要后台定位能力，配置 UIBackgroundModes 的 location，注意需苹果后台配置描述文件是勾选`后台运行能力`  
+
+配置教程参考： [iOS原生配置文件Info.plist文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)
+
+以下为配置示例：  
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 	<dict>
 		<key>TencentLBSAPIKey</key>
-		<string>WZCBZ-OLPCU-TJJVJ-4LZTE-SSG5O-6JFEM</string>
-		<key>UIBackgroundModes</key>
-		<array>
-			<string>location</string>
-		</array>
+		<string>腾讯位置服务官网申请的Key</string>
 
 		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 		<string>允许使用定位权限吗</string>
@@ -265,6 +272,12 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 			<key>PurposeKey</key>
 			<string>这里需要您临时授权高精度定位权限,一次临时授权时效仅app一个周期内, 每次硬启动都需要临时授权</string>
 		</dict>
+
+  	<key>UIBackgroundModes</key>
+		<array>
+			<string>location</string>
+		</array>
+
 	</dict>
 </plist>
 ```
