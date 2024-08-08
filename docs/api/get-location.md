@@ -59,7 +59,9 @@ web平台有可视化界面，在manifest的Web配置中寻找定位和地图。
 app平台目前还没有可视化界面，需要在manifest的源码视图中配置。
 
 - app需要在manifest.json文件中配置`uni-getLocation`节点，[详见](../collocation/manifest-modules.md#uni-getLocation)
-- 使用内置腾讯定位和iOS14以上高精度定位时，需要在info.plist中配置对应的Key，参考[在info.plist配置定位相关的Key](../collocation/manifest-modules.md#uni-getLocation-key)
+- iOS平台：使用内置腾讯定位和iOS14以上高精度定位时，需要在info.plist中配置对应的Key，参考[iOS平台在info.plist配置定位相关的Key](../collocation/manifest-modules.md#uni-getlocation-key)
+- Android平台：使用内置腾讯定位时，需要在info.plist中配置对应的Key，参考[Android平台在info.plist配置定位相关的Key](../collocation/manifest-modules.md#uni-getlocation-android-key)
+
 
 地图厂商在App端大多会校验包名和证书，请务必保证在地图厂商后台创建的应用，填写的包名、证书摘要，和实际运行的应用匹配，否则无法使用三方定位。
 
