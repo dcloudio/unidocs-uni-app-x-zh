@@ -87,6 +87,42 @@
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip.tutorial -->
 
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_1.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_1.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_1.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_1.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_2.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_2.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_2.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_2.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_2.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_2.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_3.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_3.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_3.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_3.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_3.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.clip_3.tutorial -->
+
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.closePath.name -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.closePath.description -->
@@ -171,6 +207,30 @@
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage.tutorial -->
 
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_1.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_1.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_1.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_1.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_2.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_2.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_2.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_2.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_2.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.drawImage_2.tutorial -->
+
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.ellipse.name -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.ellipse.description -->
@@ -194,6 +254,42 @@
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill.returnValue -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_1.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_1.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_1.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_1.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_2.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_2.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_2.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_2.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_2.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_2.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_3.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_3.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_3.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_3.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_3.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fill_3.tutorial -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.fillRect.name -->
 
@@ -254,6 +350,42 @@
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath.returnValue -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_1.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_1.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_1.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_1.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_2.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_2.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_2.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_2.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_2.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_2.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_3.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_3.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_3.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_3.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_3.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInPath_3.tutorial -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.isPointInStroke.name -->
 
@@ -326,6 +458,18 @@
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.putImageData.returnValue -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.putImageData.tutorial -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.putImageData_1.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.putImageData_1.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.putImageData_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.putImageData_1.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.putImageData_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.putImageData_1.tutorial -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.quadraticCurveTo.name -->
 
@@ -459,6 +603,18 @@
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.stroke.tutorial -->
 
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.stroke_1.name -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.stroke_1.description -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.stroke_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.stroke_1.param -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.stroke_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.stroke_1.tutorial -->
+
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.strokeRect.name -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.strokeRect.description -->
@@ -506,4 +662,3 @@
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.translate.returnValue -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.translate.tutorial -->
-

@@ -50,6 +50,18 @@
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.description -->
@@ -245,7 +257,7 @@ const webViewElement = uni.getElementById(webViewElementId)
 const view = webViewElement?.getIOSView();
 //判断 view 是否存在，类型是否为 WKWebView
 if (view != null && view instanceof WKWebView) {
-    //将 view 转换为 WKWebView 类型 
+    //将 view 转换为 WKWebView 类型
     const webView = view! as WKWebView;
 }
 ```
@@ -445,4 +457,3 @@ view.takeSnapshot({
 * app端list-view、web-view组件性能优化仅渲染屏幕显示的内容，所以截图仅能截取到当前屏幕展示的内容。
 * app端scroll-view组件设置padding后，截图内容不会包含padding区域。
 * app端由于组件背景默认透明，所以截图图片默认底色为白色。
-
