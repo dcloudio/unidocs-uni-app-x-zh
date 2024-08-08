@@ -48,7 +48,7 @@
 ## Android平台包含的权限
 Android平台标准基座尽量包含所有可能用到的权限，以便在开发过程中可调用所有系统API。
 包含以下权限：
-```
+```xml
 	<!-- 网络权限 -->
 	<uses-permission android:name="android.permission.INTERNET" />
 	<!-- 存储卡权限 -->
