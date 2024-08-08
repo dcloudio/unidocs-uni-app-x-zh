@@ -108,7 +108,7 @@ app平台目前还没有可视化界面，需要在manifest的源码视图中配
 
 ### UniLocationSystemProvider(系统定位)@locationsystemprovider 继承自[UniProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#uniprovider)
 
-### UniLocationTencentProvider(腾讯定位)@locationtencentprovider 继承自[UniProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#uniprovider) 特有字段说明
+### UniLocationTencentProvider(腾讯定位)@locationtencentprovider 继承自[UniProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#uniprovider) 
 
 ## 自定义定位provider接入到uni API @customprovider
 
