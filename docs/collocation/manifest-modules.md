@@ -273,9 +273,9 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 需在项目根目录下的 Info.plist 中配置，包括以下内容：
 - 腾讯定位的 TencentLBSAPIKey  
-- 使用定位权限弹出的授权提示信息：NSLocationAlwaysAndWhenInUseUsageDescription、NSLocationAlwaysUsageDescription、NSLocationWhenInUseUsageDescription  
+- 使用定位权限弹出的授权提示信息：NSLocationAlwaysAndWhenInUseUsageDescription、NSLocationWhenInUseUsageDescription  
 - 应用需要使用高精度定位时还需配置 NSLocationTemporaryUsageDescriptionDictionary 的 PurposeKey，说明高精度定位的原因 
-- 如果应用需要后台定位能力，配置 UIBackgroundModes 的 location，注意需苹果后台配置描述文件是勾选`后台运行能力`  
+- 如果应用需要后台定位能力，配置 UIBackgroundModes 的 location，注意需Xcode工程中添加相对应 Capabilities 中的 Background Modes，并且勾选 Location updates
 
 配置教程参考： [iOS原生配置文件Info.plist文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)
 
@@ -290,8 +290,6 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 		<string>允许使用定位权限吗</string>
-		<key>NSLocationAlwaysUsageDescription</key>
-		<string>允许一直使用定位权限</string>
 		<key>NSLocationWhenInUseUsageDescription</key>
 		<string>允许仅在app运行期间使用定位权限</string>
 		<key>NSLocationTemporaryUsageDescriptionDictionary</key>
