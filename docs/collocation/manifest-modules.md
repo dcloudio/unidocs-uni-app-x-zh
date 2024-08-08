@@ -74,29 +74,17 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
     + 包括API：[uni.getNetworkType](../api/get-network-type.md)
     + 依赖的模块：无
 
+- uni-getProvider
+  获取服务供应商模块（`HBuilderX4.11+`）
+    + 包括API：[uni.getProvider](../api/get-provider.md#getprovider)
+    + 依赖的模块：无
+
 - uni-installApk
   安装apk模块（`HBuilderX3.99+`）
     + 包括API：[uni.installApk](../api/install-apk.md)
     + 依赖的模块：无
   
   注意：仅App-Android平台支持。
-
-- uni-payment
-  uni-payment请求支付模块
-    + 包括API：[uni.requestPayment](../api/request-payment.md)
-    + 依赖的模块：无
-  
-  注意：此模块仅包含基础支付模块，需手动配置支付方式，详情参考[uni-payment](#uni-payment)章节
-
-- uni-getProvider
-  获取服务供应商模块（`HBuilderX4.11+`）
-    + 包括API：[uni.getProvider](../api/get-provider.md#getprovider)
-    + 依赖的模块：无
-
-- uni-push
-  [uni-push统一推送](https://uniapp.dcloud.net.cn/unipush-v2.html)模块（`HBuilderX3.97+`）
-    + 包括API：[uni.createPushMessage](../api/push.md#createpushmessage)、[uni.getPushClientId](../api/push.md#getpushclientid)、[uni.offPushMessage](../api/push.md#offpushmessage)、[uni.onPushMessage](../api/push.md#onpushmessage)
-    + 依赖的模块：无
 
 - uni-media
   多媒体相关API模块
@@ -108,9 +96,21 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
     + 包括API：[uni.downloadFile](../api/download-file.md)、[uni.request](../api/request.md)、[uni.uploadFile](../api/upload-file.md)
     + 依赖的模块：无
 
-- uni-virtualPayment
-  虚拟支付模块（`HBuilderX4.25+`）
-    + 包括API：[uni.requestVirtualPayment](../api/virtual-payment.md#requestvirtualpayment)、[uni.getVirtualPaymentManager](../api/virtual-payment.md#getvirtualpaymentmanager)
+- uni-payment
+  uni-payment请求支付模块
+    + 包括API：[uni.requestPayment](../api/request-payment.md)
+    + 依赖的模块：无
+  
+  注意：此模块仅包含基础支付模块，需手动配置支付方式，详情参考[uni-payment](#uni-payment)章节
+
+- uni-push
+  [uni-push统一推送](https://uniapp.dcloud.net.cn/unipush-v2.html)模块（`HBuilderX3.97+`）
+    + 包括API：[uni.createPushMessage](../api/push.md#createpushmessage)、[uni.getPushClientId](../api/push.md#getpushclientid)、[uni.offPushMessage](../api/push.md#offpushmessage)、[uni.onPushMessage](../api/push.md#onpushmessage)
+    + 依赖的模块：无
+
+- uni-verify
+  [App一键登录](../api/get-univerify-manager.md)模块（`HBuilderX3.99+`）
+    + 包括API：[uni.getUniverifyManager](../api/get-univerify-manager.md#getuniverifymanager)、[UniverifyManager.preLogin](../api/get-univerify-manager.md#prelogin)、[UniverifyManager.login](../api/get-univerify-manager.md#login)
     + 依赖的模块：无
 
 - uni-video
@@ -119,14 +119,14 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
     + 包括API：[uni.createVideoContext](../api/create-video-context.md)
     + 依赖的模块：无
 
+- uni-virtualPayment
+  虚拟支付模块（`HBuilderX4.25+`）
+    + 包括API：[uni.requestVirtualPayment](../api/virtual-payment.md#requestvirtualpayment)、[uni.getVirtualPaymentManager](../api/virtual-payment.md#getvirtualpaymentmanager)
+    + 依赖的模块：无
+
 - uni-websocket
   WebSocket模块
     + 包括API：[uni.connectSocket](../api/websocket-global.md)、[uni.onSocketOpen](../api/websocket-global.md#onsocketopen)、[uni.onSocketError](../api/websocket-global.md#onsocketerror)、[uni.sendSocketMessage](../api/websocket-global.md#sendsocketmessage)、[uni.onSocketMessage](../api/websocket-global.md#onsocketmessage)、[uni.closeSocket](../api/websocket-global.md#closesocket)、[uni.onSocketClose](../api/websocket-global.md#onsocketclose)
-    + 依赖的模块：无
-
-- uni-verify
-  [App一键登录](../api/get-univerify-manager.md)模块（`HBuilderX3.99+`）
-    + 包括API：[uni.getUniverifyManager](../api/get-univerify-manager.md#getuniverifymanager)、[UniverifyManager.preLogin](../api/get-univerify-manager.md#prelogin)、[UniverifyManager.login](../api/get-univerify-manager.md#login)
     + 依赖的模块：无
 
 再次强调，以上模块不属于ext组件或api，是内置模块。但如果你的代码中没有使用这些组件和api，打正式包或自定义基座时会被摇掉。
