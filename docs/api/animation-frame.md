@@ -28,3 +28,4 @@
 
 **提示**
 - requestanimationframe/cancelanimationframe 为全局 API，如果需要跨平台处理 canvas 动画需要使用 [uni.createCanvasContextAsync]("./create-canvas-context-async.md")
+- `Android uni-app x` requestanimationframe 目前仅支持有参数callback，示例：`requestAnimationFrame((timestamp : number) => {})`
