@@ -109,6 +109,18 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 
 <!-- UTSAPIJSON.getProviderObject.tutorial -->
 
+## UniProvider
+
+<!-- CUSTOMTYPEJSON.UniProvider.description -->
+
+<!-- CUSTOMTYPEJSON.UniProvider.extends -->
+
+<!-- CUSTOMTYPEJSON.UniProvider.param -->
+
+<!-- CUSTOMTYPEJSON.UniProvider.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniProvider.example -->
+
 <!-- UTSAPIJSON.provider.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
