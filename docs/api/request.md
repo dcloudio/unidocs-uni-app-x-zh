@@ -17,7 +17,7 @@ complete: () => {
           },
 ```
 
-如不释放，可能导致控制台报错：
+如不释放，在调用Task对象的方法将导致控制台报错：
 ```
 error: instance object does not exist: id:15
 
