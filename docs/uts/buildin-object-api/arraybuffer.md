@@ -119,3 +119,11 @@ ArrayBuffer 对象用来表示通用的原始二进制数据缓冲区。
 <!-- UTSJSON.ArrayBuffer.toByteBuffer.compatibility -->
 
 <!-- UTSJSON.ArrayBuffer.toByteBuffer.tutorial -->
+
+
+## 注意事项
+
+- iOS的uvue页面编译成js时，可以使用ArrayBuffer，但由于iOS的uts插件暂时不支持ArrayBuffer,所以不能和uts插件进行通信
+
+
+
