@@ -58,9 +58,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 UniPaymentAlipayProvider(支付宝支付)继承自 [UniProvider](./provider.md#uniprovider)
 
-UniPaymentWxpayProvider(微信支付)继承自 [UniProvider](./provider.md#uniprovider)
-
-特有字段说明
+UniPaymentWxpayProvider(微信支付)继承自 [UniProvider](./provider.md#uniprovider)，特有字段说明：
 
 | 名称           | 类型      | 必备 | 默认值  | 描述                                  |
 | -------------- | --------- | ---- | ------ | ------------------------------------- |
