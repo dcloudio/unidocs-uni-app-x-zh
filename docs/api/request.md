@@ -9,7 +9,7 @@
 <!-- UTSAPIJSON.request.returnValue -->
 
 ### 注意事项
-- 在4.25版本iOS平台增加了Task原生对象自动销毁的逻辑，即网络请求完成后自动释放原生的Task对象，建议开发者在`complete`回调中置空task对象，例
+- 在4.25版本iOS平台增加了Task原生对象自动销毁的逻辑，即网络请求完成后自动释放原生的Task对象，建议开发者在`complete`回调中置空Task对象，例
 
 ```typescript
 complete: () => {
