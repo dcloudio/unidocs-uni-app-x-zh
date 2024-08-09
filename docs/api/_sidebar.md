@@ -2,6 +2,7 @@
 * 全局
   * [获取当前应用实例](get-app.md)
   * [获取当前页面栈](get-current-pages.md)
+  * [动画帧](animation-frame.md)
 * 基础
   * [环境变量](env.md)
   * [事件总线](event-bus.md)
@@ -30,7 +31,6 @@
   * [将rpx单位值转换成px](rpx2px.md)
   * [主题切换](theme-change.md)
   * [语言](locale.md)
-  * [动画帧](animation-frame.md)
 * 网络
   * [发起网络请求](request.md)
   * [上传文件](upload-file.md)
