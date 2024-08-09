@@ -90,7 +90,7 @@ function testArray<T extends Array<unknown>>(arg: T): T {
 
 ### 安卓平台使用泛型注意事项
 
-ts本质是擦除类型的。在强类型语言中，传递泛型时如将泛型类型作为值使用，需通过特殊方式将泛型类型作为值使用，可以根据传入来动态决定返回类型。[详见](../plugin/uts-for-android.html#_6-6-%E6%B3%9B%E5%9E%8B%E4%BC%A0%E9%80%92%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98)
+ts本质是擦除类型的。在强类型语言中，传递泛型时如将泛型类型作为值使用，需通过特殊方式将泛型类型作为值使用，可以根据传入来动态决定返回类型。[详见](../plugin/uts-for-android.md#_6-6-%E6%B3%9B%E5%9E%8B%E4%BC%A0%E9%80%92%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98)
 
 ### iOS 平台使用泛型注意事项
 
@@ -150,16 +150,16 @@ class TestOption<T extends Decodable> {
 
 // 定义泛型函数
 function test2<T extends Decodable>(param: TestOption<T>) {
-	
+
 	let str = "{\"name\":\"2024\",\"age\":2}"
 	// 这句代码是为了让编译给 MyResult 实现 Decodable 协议，不可省略。后续版本会给出让开发者指定某个 type 遵循 Decodable 协议的方式。
 	JSON.parseObject<MyResult>(str)
-	
+
 	let ret = JSON.parseObject<T>(str)
 	if (ret != null) {
 		param.success?.(ret!)
-	}   
-} 
+	}
+}
 
 // 使用：
 let p = new TestOption<MyResult>()
@@ -172,4 +172,3 @@ test2<MyResult>(p)
 > 特别注意：
 
 > 目前版本不支持在自定义 type 上指定泛型，因为在通过字面量创建 type 类型的对象时，泛型信息丢失导致编译失败。这是一个 BUG，我们将在后续版本中进行修复。
-

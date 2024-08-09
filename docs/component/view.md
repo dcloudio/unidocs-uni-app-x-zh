@@ -52,7 +52,7 @@ if(viewElement != null) {
 
 **iOS 平台：**
 
-获取view组件对应的UniElement对象，通过UniElement对象的[getIOSView](../dom/unielement.html#getiosview)函数获取组件原生UIView对象
+获取view组件对应的UniElement对象，通过UniElement对象的[getIOSView](../dom/unielement.md#getiosview)函数获取组件原生UIView对象
 
 ```uts
 //通过 view 组件定义的 id 属性值，获取 view 标签的 UniElement 对象

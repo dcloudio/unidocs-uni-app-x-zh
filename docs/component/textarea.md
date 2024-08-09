@@ -37,7 +37,7 @@ if(textareaElement != null) {
 
 **iOS 平台：**
 
-获取textarea组件对应的UniElement对象，通过UniElement对象的[getIOSView](../dom/unielement.html#getiosview)方法获取组件原生UITextView对象。
+获取textarea组件对应的UniElement对象，通过UniElement对象的[getIOSView](../dom/unielement.md#getiosview)方法获取组件原生UITextView对象。
 
 ```uts
 //通过 textarea 组件定义的 id 属性值，获取 textarea 标签的 UniElement 对象
@@ -46,7 +46,7 @@ const textareaElement = uni.getElementById(id)
 const view = inputElement?.getIOSView();
 //判断 view 是否存在，类型是否为 UITextView
 if (view != null && view instanceof UITextView) {
-    //将 view 转换为 UITextView 类型 
+    //将 view 转换为 UITextView 类型
     const textField = view! as UITextView;
 }
 ```
