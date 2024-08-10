@@ -28,7 +28,7 @@
 
 <!-- VUEJSON.application.onLaunch.returnValue -->
 
-- 如果应用通过scheme或applink（通用链接）启动，可在本生命周期获取。配置scheme或applink需在AndroidManifest.xml或info.plist中配置，打包后生效。
+- 如果应用通过scheme或applink（通用链接）启动，可在本生命周期获取相应参数。配置scheme或applink需在AndroidManifest.xml或info.plist中配置，打包后生效。
 
 <!-- VUEJSON.application.onLaunch.tutorial -->
 
@@ -42,7 +42,9 @@
 
 <!-- VUEJSON.application.onShow.returnValue -->
 
-- 如果应用通过scheme或applink（通用链接）启动，可在本生命周期获取。配置scheme或applink需在AndroidManifest.xml或info.plist中配置，打包后生效。
+- 如果应用通过scheme或applink（通用链接）启动（不管首次启动还是后台激活到前台，均触发本生命周期），可在本生命周期获取。配置scheme或applink需在AndroidManifest.xml或info.plist中配置，打包后生效。
+- 如开发App页面直达功能，在配置scheme或通用链接并打包后，一般在onShow生命周期里解析scheme或applink参数，然后自行写navigatorTo等路由API跳转页面。onShow的好处是不管首页启动还是后台激活到前台，都触发。当然如果是初次启动，仍然会先打开App的首页再执行开发者编写的路由代码。
+- Web的页面直达无需使用scheme或通用链接，所有页面地址都可以直接在地址栏访问。
 
 <!-- VUEJSON.application.onShow.tutorial -->
 
