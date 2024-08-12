@@ -54,7 +54,7 @@ uni.requestPayment是一个统一各平台的客户端支付API，客户端均�
 
 <!-- UTSAPIJSON.requestPayment.tutorial -->
 
-### 支付provider对象描述
+### 支付provider对象描述 @providerDes
 
 UniPaymentAlipayProvider(支付宝支付)继承自 [UniProvider](./provider.md#uniprovider)
 
