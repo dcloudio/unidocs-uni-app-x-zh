@@ -90,7 +90,7 @@
 
 <!-- UTSJSON.Uint16Array.from.returnValue -->
 
-<!-- UTSJSON.Uint16Array.Constructor.test -->
+<!-- UTSJSON.Uint16Array.from.test -->
 
 <!-- UTSJSON.Uint16Array.from.compatibility -->
 
