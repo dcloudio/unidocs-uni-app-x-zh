@@ -72,7 +72,7 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 
 ### UniProvider说明文档链接
 
-- 支付Provider：[UniPaymentAlipayProvider](./request-payment.md#paymentalipayprovider),[UniPaymentWxpayProvider](./request-payment.md#paymentwxpayprovider)
+- 支付Provider：[UniPaymentAlipayProvider](./request-payment.md#providerDes),[UniPaymentWxpayProvider](./request-payment.md#providerDes)
 
 - 定位Provider：[UniLocationSystemProvider](./get-location.md#locationsystemprovider),[UniLocationTencentProvider](./get-location.md#locationtencentprovider)
 
