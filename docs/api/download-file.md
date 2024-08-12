@@ -17,7 +17,7 @@
 
 <!-- UTSAPIJSON.downloadFile.returnValue -->
 
-### 注意事项
+::: danger 注意事项
 - 在4.25版本iOS平台增加了Task原生对象自动销毁的逻辑，即下载完成后自动释放原生的Task对象，建议开发者在`complete`回调中置空Task对象，例
 
 ```typescript
@@ -27,10 +27,9 @@ complete: () => {
 ```
 
 如不释放，在调用Task对象的方法将导致控制台报错：
-```
-error: instance object does not exist: id:15
+`error: instance object does not exist: id:15`
 
-```
+::: 
 
 <!-- UTSAPIJSON.downloadFile.example -->
 
