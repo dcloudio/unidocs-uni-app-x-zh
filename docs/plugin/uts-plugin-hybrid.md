@@ -729,6 +729,33 @@ func getKeyWindow() -> UIWindow {
 - 目前仅支持 Swift 源码混编，OC 源码即使添加也不会参与编译
 - Swift 源码文件中定义的函数、全局变量、类 等符号名称不要和 uts 文件中的符号名相同，否则会因为符号冲突导致编译不过
 
+## 目标语言为js的情况
+
+在uts编译为js时，uts和js可以任意混编，就像ts和js可以互相引用一样。
+
+在js中可直接调用uts代码，反之亦然。
+
+```ts
+// test-uts.uts
+export function testUts() {
+	const obj = {
+		name: "uts"
+	}
+	console.log(obj) // UTSJSONObject
+}
+```
+
+```ts
+// test-js.js
+import { testUts } from './test-uts.uts'
+export function testJs() {
+	const obj = {
+		name: "js"
+	}
+	console.log(obj) // js object
+	testUts()
+}
+```
 
 ## 混编注意事项
 
