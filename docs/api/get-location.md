@@ -104,7 +104,7 @@ app平台目前还没有可视化界面，需要在manifest的源码视图中配
 <!-- UTSAPIJSON.general_type.param -->
 
 
-## 定位provider对象描述 @providerDes
+## 定位provider对象描述 @providerdes
 
 UniLocationSystemProvider(系统定位)继承自[UniProvider](./provider.md#uniprovider)
 
