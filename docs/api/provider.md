@@ -82,7 +82,7 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 
 <!-- UTSAPIJSON.getProviderSync.tutorial -->
 
-<!-- UTSAPIJSON.getProviderSync.example -->
+<!-- UTSAPIJSON.getProvider.example -->
 
 
 ### UniProvider说明文档链接
