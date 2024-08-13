@@ -70,6 +70,21 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 
 <!-- UTSAPIJSON.getProvider.example -->
 
+<!-- UTSAPIJSON.getProviderSync.name -->
+
+<!-- UTSAPIJSON.getProviderSync.description -->
+
+<!-- UTSAPIJSON.getProviderSync.compatibility -->
+
+<!-- UTSAPIJSON.getProviderSync.param -->
+
+<!-- UTSAPIJSON.getProviderSync.returnValue -->
+
+<!-- UTSAPIJSON.getProviderSync.tutorial -->
+
+<!-- UTSAPIJSON.getProviderSync.example -->
+
+
 ### UniProvider说明文档链接
 
 - 支付Provider：[UniPaymentAlipayProvider](./request-payment.md#providerdes),[UniPaymentWxpayProvider](./request-payment.md#providerdes)
