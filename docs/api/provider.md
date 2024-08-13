@@ -68,8 +68,6 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 
 <!-- UTSAPIJSON.getProvider.tutorial -->
 
-<!-- UTSAPIJSON.getProvider.example -->
-
 <!-- UTSAPIJSON.getProviderSync.name -->
 
 <!-- UTSAPIJSON.getProviderSync.description -->
