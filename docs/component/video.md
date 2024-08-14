@@ -45,6 +45,7 @@ video组件的源码[详见](https://gitcode.net/dcloud/uni-component/-/tree/mas
 另外ijkplayer作为一个开源库，比腾讯视频等商业sdk仍有差距。如无法在开源库上满足需求，可在插件市场寻找腾讯视频等商业sdk插件：[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91&orderBy=Relevance&cat1=5&cat2=51)、[阿里云视频](https://ext.dcloud.net.cn/search?q=%E9%98%BF%E9%87%8C%E4%BA%91%E8%A7%86%E9%A2%91&orderBy=Relevance&cat1=5&cat2=51)
 
 <!-- UTSCOMJSON.video.children -->
+4.25版本起，App-Android平台支持子组件。
 
 ### 上下文对象API
 
