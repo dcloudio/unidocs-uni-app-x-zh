@@ -3,6 +3,7 @@
   * [获取当前应用实例](get-app.md)
   * [获取当前页面栈](get-current-pages.md)
   * [动画帧](animation-frame.md)
+  * [Path2D](path2d.md)
 * 基础
   * [环境变量](env.md)
   * [事件总线](event-bus.md)
@@ -67,7 +68,6 @@
   * [canvasToTempFilePath](canvas-to-temp-file-path.md)
   * [createCanvasContextAsync](create-canvas-context-async.md)
   * [CanvasRenderingContext2D](canvasrenderingcontext2d.md)
-  * [Path2D](path2d.md)
 * 位置
   * [获取当前位置](get-location.md)
   * [使用地图查看位置](open-location.md)
