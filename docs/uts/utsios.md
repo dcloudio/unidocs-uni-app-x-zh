@@ -65,3 +65,22 @@ app-iOS平台专有内置对象。在uni-app和uni-app x的uts环境中均可使
 
 <!-- UTSJSON.UTSiOS.getDataPath.compatibility -->
 
+### convert2AbsFullPath()
+
+<!-- UTSJSON.UTSiOS.convert2AbsFullPath.description -->
+
+<!-- UTSJSON.UTSiOS.convert2AbsFullPath.param -->
+
+<!-- UTSJSON.UTSiOS.convert2AbsFullPath.returnValue -->
+
+<!-- UTSJSON.UTSiOS.convert2AbsFullPath.compatibility -->
+
+### destroyInstance()
+
+<!-- UTSJSON.UTSiOS.destroyInstance.description -->
+
+<!-- UTSJSON.UTSiOS.destroyInstance.param -->
+
+<!-- UTSJSON.UTSiOS.destroyInstance.returnValue -->
+
+<!-- UTSJSON.UTSiOS.destroyInstance.compatibility -->
