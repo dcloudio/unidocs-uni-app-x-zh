@@ -28,7 +28,7 @@
 |backgroundColor							|String	|4.18		|4.18	|x		|#ffffff|
 |backgroundTextStyle					|String	|4.18		|4.18	|x		|light	|
 |onReachBottomDistance				|Number	|x			|x		|4.18	|50			|
-|pageOrientation							|String	|4.18		|x		|x		|auto		|
+|pageOrientation							|String	|4.18		|4.25		|x		|auto		|
 
 
 **注意事项**
