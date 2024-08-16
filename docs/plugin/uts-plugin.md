@@ -875,7 +875,7 @@ export const myApiSync : MyApiSync = function (paramA : boolean) : MyApiResult {
 
 #### 使用插件
 
-> 注意uni-app-x暂不支持运行到harmonyOS，下面的示例代码为uni-app-x代码
+> 下面的示例代码为uni-app-x代码
 
 上面的代码，我们完成了一个名为 "uts-api" 的UTS 插件，在 `uvue` 文件中使用该插件的代码示例如下：
 
