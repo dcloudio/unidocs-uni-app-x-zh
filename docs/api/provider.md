@@ -38,7 +38,8 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 
 **注意**
 
-标准基座android需要在manifest.json中配置才能获取到对应的provider，ios不需要。自定义基座都需要配置
+- 标准基座android需要在manifest.json中配置才能获取到对应的provider，ios不需要。自定义基座都需要配置
+- 自定义的provider不要在构造函数中写逻辑，因为现在provider会预先实例化，如果在构造函数中写逻辑，会导致代码在应用启动的时候就被执行
 
 <!-- UTSAPIJSON.getProvider.name -->
 
