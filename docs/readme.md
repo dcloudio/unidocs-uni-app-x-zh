@@ -278,7 +278,7 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 
 - 平台支持：Android、Web、iOS版已发布。小程序、鸿蒙还未支持。虽然uts语言支持swift，可以写原生插件，但uvue的iOS版目前只上线了js逻辑层，还未发布swift逻辑层。
 - 小程序平台：目前也可以通过编译到H5，在小程序的web-view里临时替代使用。24年下半年会正式支持小程序。
-- 鸿蒙next平台：24年7月会发布uni-app编译为鸿蒙hap，采用web-view；下半年内会提供uni-app x编译为鸿蒙hap，采用原生渲染。推荐不熟悉ts的开发者先学习ts，鸿蒙的artTs和uts，都是ts的变种，掌握类型系统是必须的。
+- 鸿蒙next平台：24年7月会发布uni-app编译为鸿蒙hap，采用web-view；下半年内会提供uni-app x编译为鸿蒙hap，采用原生渲染。推荐不熟悉ts的开发者先学习ts，鸿蒙的arkTS和uts，都是ts的变种，掌握类型系统是必须的。
 - 目前不支持国际区账户创建和打包uni-app x，仅大陆区开发者账户可用。
 
 ::: info
