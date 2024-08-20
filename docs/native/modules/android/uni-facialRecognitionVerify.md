@@ -4,7 +4,7 @@
 
 |本地依赖库名称									|
 |:--											|
-|APSecuritySDK-DeepSec-7.0.1.20230914.jiagu.aar	|
+|APSecuritySDK-deepSec-7.0.1.20240415.jiagu.aar	|
 |Android-AliyunFaceGuard-10042.aar				|
 |aliyun-base-2.3.7-20231102102722.aar			|
 |aliyun-facade-2.3.7-20231102102722.aar			|

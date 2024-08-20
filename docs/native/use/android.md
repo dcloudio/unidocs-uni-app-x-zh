@@ -27,7 +27,7 @@
 **注意**
 - `Language` 一定要选择`Kotlin`。
 - uni-app x最低支持版本为21，`Minimum SDK`需要选择21及以上的版本。
-- `Build configuration language`建议选择`Groovy DSL(build.gradle)`。以下教程均按照此模式进行。。
+- `Build configuration language`建议选择`Groovy DSL(build.gradle)`。以下教程均按照此模式进行。
 
 ## 工程配置
 
@@ -42,7 +42,7 @@ uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar�
 
 ### 修改build.gradle
 
-修改uni-app x模块下的build.gradle
+修改uniappx模块下的build.gradle
 
 - 添加依赖
 	
@@ -141,7 +141,7 @@ android.useAndroidX=true
 android.enableJetifier=true
 ```
 
-### 修改AndroidManifest.xml
+### 修改uniappx模块下的AndroidManifest.xml
 
 - 添加activity
 	
@@ -248,7 +248,7 @@ android.enableJetifier=true
 
 #### 添加gradle插件
 
-uni-app可以忽略gradle插件配置。
+**uni-app可以忽略gradle插件配置。**
 
 在build.gradle的plugins节点下添加`io.dcloud.uts.kotlin`的依赖。参考：
 
