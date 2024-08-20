@@ -1,5 +1,5 @@
 * [概述](README.md)
-* [公共属性和事件](common.md)
+* [全局属性和事件](common.md)
 * 内置组件```{"collapsable": false}```
   * 视图容器
     * [view | 基本视图容器](view.md)
