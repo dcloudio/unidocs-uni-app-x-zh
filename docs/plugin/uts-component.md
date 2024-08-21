@@ -1859,7 +1859,7 @@ iOS 平台需要将三方依赖库放到 组件目录下 app-ios/Frameworks 中
 
 UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 
-唯一的区别在于 当组件布局中包含 `<solt>` 标签时，编译器会自动将其转换为容器组件
+唯一的区别在于 当组件布局中包含 `<slot>` 标签时，编译器会自动将其转换为容器组件
 
 ::: preview
 
@@ -1868,7 +1868,7 @@ UTS组件作为容器组件与普通View组件遵循完全相同的规范，
 ```ts
 <template>
 	<view>
-		<solt/>
+		<slot/>
 	</view>
 </template>
 <script lang="uts">
