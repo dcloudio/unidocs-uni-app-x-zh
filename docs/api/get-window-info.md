@@ -16,11 +16,13 @@
 
 由于部分手机屏幕有顶部的“刘海”和底部导航的存在，为了确保内容区域不被遮挡，提出了安全区域，以便于在安全区域内布局。
 
-部分安全区域字段说明：
+Android端部分安全区域字段说明：
 
 - safeArea.top : statusBarHeight
 - safeArea.bottom: statusBarHeight + 标题栏高度 + windowHeight + tabbar高度
 - safeArea.height: safeArea.bottom - safeArea.top
+
+iOS端safeArea与iOS原生的安全区域概念相同，top与bottom分别对应`window.safeAreaInsets.top` `window.safeAreaInsets.bottom`，具体请参照[Apple文档](https://developer.apple.com/documentation/uikit/uiview/positioning_content_relative_to_the_safe_area)
 
 ::: warning 注意事项
 - Android端的`windowHeight`属性是有时机的考量的，如果在全局作用域获取`windowHeight`，有可能当前Activity还未加载，所以导航栏和Tabbar的高度是不会计算进去的，稳妥起见，建议在`onReady`或者`onPageShow`内获取`windowheight`。
