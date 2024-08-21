@@ -25,9 +25,10 @@ Android端部分安全区域字段说明：
 iOS端safeArea与iOS原生的安全区域概念相同，top与bottom分别对应`window.safeAreaInsets.top` `window.safeAreaInsets.bottom`，具体请参照[Apple文档](https://developer.apple.com/documentation/uikit/uiview/positioning_content_relative_to_the_safe_area)
 
 ::: warning 注意事项
-- Android端的`windowHeight`属性是有时机的考量的，如果在全局作用域获取`windowHeight`，有可能当前Activity还未加载，所以导航栏和Tabbar的高度是不会计算进去的，稳妥起见，建议在`onReady`或者`onPageShow`内获取`windowheight`。
-- `windowHeight`属性是依赖于调用Api时栈顶Page的，比如延迟获取`windowHeight`，很可能页面已经切换了，这时候获取的高度是新的页面的。
-- 4.25开始，Android端安全区域top调整为手机状态栏高度
+- `windowWidth`/`windowHeight`获取的是当前栈顶页面的可使用窗口宽高信息，调用此API前如果打开了新页面，可能获取到的是新开页面的信息
+    + app平台需要在页面渲染后才能获取到准确信息，稳妥起见，建议在页面生命周期`onReady`后获取
+- `windowTop`/`windowBottom` 在app平台页面内容无法渲染顶部默认导航栏或底部tabBar区域，返回的值一定为0
+- HBuilderX4.25版本开始，app-android平台返回的安全区域的 top 属性值调整为手机状态栏高度
 :::
 
 <!-- UTSAPIJSON.getWindowInfo.example -->
