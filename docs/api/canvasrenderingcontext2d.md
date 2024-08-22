@@ -15,6 +15,7 @@
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.example -->
 
 ### CanvasRenderingContext2D 的方法 @canvasrenderingcontext2d-methods
+
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.arc.name -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.arc.description -->
@@ -663,7 +664,7 @@
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.translate.tutorial -->
 
-### 使用自定义字体@custonfont
+## 使用自定义字体@custonfont
 在 canvas 中调用 [CanvasRenderingContext2D.filltext](#filltext)、[CanvasRenderingContext2D.stroketext](#stroketext) 绘制文字时，可通过 `font` 属性指定绘制文字所使用的字体样式，其中字体名称（fontfamily）可设置自定义字体。
 
 当使用自定义字体时，需先通过 [uni.loadFontFace](load-font-face.md) 加载字体，字体加载成功之后在设置 `font` 属性指定字体名称。
