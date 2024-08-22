@@ -58,6 +58,15 @@ uni.requestVirtualPayment api 适用于消耗性类型、非消耗性类型、�
 3. 对接Apple新提供的框架StoreKit2，appAccountToken需要是符合uuid规则的字符串，如："123eaaaa-e89b-12d3-a456-42661417400b"，必须将orderId信息转换为符合uuid规则的字符串，否则无效；
 :::
 
+3. 沙盒环境测试IAP的相关说明
+::: warning 沙盒环境测试IAP的相关说明：
+1. IAP仅支持真机测试，并且需要打自定义基座；
+2. 打自定义基座前，需要替换该示例项目中 productList 列表中的 id 为自己在 Apple Connect 对应app中创建的产品ID；
+3. 如果购买弹出 ‘不允许App内购买项目’ 的系统框，需要开启应用内购买权限 [具体操作详见](https://support.apple.com/zh-cn/102470)；
+4. 测试前需要在 Apple Connect 中添加沙盒测试账号 [详见](https://appstoreconnect.apple.com/access/users/sandbox)；
+5. 如果使用未添加的沙盒测试账号购买，会弹出系统提示框：‘此 Apple 账户无权在 App 内购买’，需要更换已经添加的账号测试；
+:::
+
 
 <!-- UTSAPIJSON.requestVirtualPayment.example -->
 ```ts
