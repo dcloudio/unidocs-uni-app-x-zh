@@ -4,10 +4,6 @@
 
 参考：[canvas组件](../component/canvas.md)
 
-### 关于自定义字体
-当使用自定义字体时，首先使用uni.loadFontFace加载字体[见API](load-font-face.md)，成功之后使用font属性指定fontfamily
-完整示例代码参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/canvas/canvas-context.uvue)
-
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.extends -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.param -->
@@ -666,3 +662,11 @@
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.translate.returnValue -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.methods.translate.tutorial -->
+
+### 使用自定义字体@custonfont
+在 canvas 中调用 [CanvasRenderingContext2D.filltext](#filltext)、[CanvasRenderingContext2D.stroketext](#stroketext) 绘制文字时，可通过 `font` 属性指定绘制文字所使用的字体样式，其中字体名称（fontfamily）可设置自定义字体。
+
+当使用自定义字体时，需先通过 [uni.loadFontFace](load-font-face.md) 加载字体，字体加载成功之后在设置 `font` 属性指定字体名称。
+
+完整示例代码参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/canvas/canvas-context.uvue)
+
