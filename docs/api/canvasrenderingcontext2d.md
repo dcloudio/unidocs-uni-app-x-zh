@@ -4,6 +4,10 @@
 
 参考：[canvas组件](../component/canvas.md)
 
+### 关于自定义字体
+当使用自定义字体时，首先使用uni.loadFontFace加载字体[见API](load-font-face.md)，成功之后使用font属性指定fontfamily
+完整示例代码参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/canvas/canvas-context.uvue)
+
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.extends -->
 
 <!-- CUSTOMTYPEJSON.CanvasRenderingContext2D.param -->
