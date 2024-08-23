@@ -28,7 +28,7 @@ allprojects {
 
 |名称                   |
 |:--                    |
-|com.getui:gtc:3.2.13.0 |
+|com.getui:gtc-dcloud:3.2.16.7 |
 
 然后将线上依赖库添加到app项目的build.gradle下。
 
