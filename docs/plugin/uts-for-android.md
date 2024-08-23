@@ -120,11 +120,12 @@ class XXX{
 
 ### 2.4 线程环境差异 @thread-environment
 
-UTS语言本身没有线程的概念。 但在具体的运行平台上会有线程环境差异，特此说明：
+UTS语言本身没有线程的概念。 但在具体的运行平台上会有线程环境差异：
 
 + uni-app 平台：默认代码执行在 `WeexJSBridgeThread`
 
 + uni-app x 平台：默认代码执行在 `main`线程
+
 
 `Android`系统对线程操作存在较多的限制， UTS内置了[UTSAndroid.getDispatcher方法](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getdispatcher)  用来屏蔽大多数底层细节，一般来说开发者只需要关心两种特殊情况：
 
