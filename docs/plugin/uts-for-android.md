@@ -471,7 +471,7 @@ UTSAndroid.onAppActivityDestroy(function(){
 
 
 
-#### 4.4 requestSystemPermission
+#### requestSystemPermission
 
 HBuilder X 3.8.2版本之后支持
 
