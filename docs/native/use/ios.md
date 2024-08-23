@@ -1,7 +1,7 @@
 # uni-app x 原生SDK iOS版
 
 ## 准备环境
-* HBuilder X (4.23及以上版本）
+* HBuilder X (4.26及以上版本）
 * Xcode 15.2及以上版本
 
 ## 接入流程
