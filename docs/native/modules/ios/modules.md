@@ -25,7 +25,7 @@
 
 | 源文件 | 依赖库 | 资源文件 |
 | ---   | ---| ---|
-| UTSOC.h、UTSOC.mm、uni-getAppAuthorizeSetting-index.swift、uni-getAppBaseInfo-index.swift、uni-getDeviceInfo-index.swift、uni-getSystemInfo-index.swift、uni-getSystemSetting-index.swift、uni-openAppAuthorizeSetting-index.swift、uni-prompt-index.swift、uni-rpx2px-index.swift、uni-storage-index.swift、uni-theme-index.swift | DCloudUniappRuntime.xcframework、DCloudUTSFoundation.xcframework、DCUniToast.xcframework、DCloudAlertController.xcframework、storage.framework| uts-config.json |
+| UTSOC.h、UTSOC.mm、uni-getAppAuthorizeSetting-index.swift、uni-getAppBaseInfo-index.swift、uni-getDeviceInfo-index.swift、uni-getSystemInfo-index.swift、uni-getSystemSetting-index.swift、uni-openAppAuthorizeSetting-index.swift、uni-prompt-index.swift、uni-rpx2px-index.swift、uni-storage-index.swift、uni-theme-index.swift、uni-getElementById-DCUniGetElementById.swift、uni-getElementById-index.swift | DCloudUniappRuntime.xcframework、DCloudUTSFoundation.xcframework、DCUniToast.xcframework、DCloudAlertController.xcframework、storage.framework| uts-config.json |
 
 ### 配置其他模块(可选)
 根据资源文件中的`manifest.json`文件包含的模块名称，选择以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到DCloudUTSExtAPI工程中，依赖库均设置为`Do Not Embed`
@@ -36,15 +36,19 @@
 | uni-network | uni-network-index.swift | | |
 | uni-getNetworkType | uni-getNetworkType-index.swift | | |
 | uni-websocket | uni-websocket-index.swift | websocket.xcframework、Starscream.xcframework | |
+| uni-canvas |  | DCloudUniCanvas.xcframework | |
 | uni-media | uni-media-index.swift | DCloudMediaPicker.xcframework |  AssetsLibrary、Photos、AVFoundation、CoreServices、CoreFoundation、CoreGraphics、CoreImage、GLKit、MetalKit、MobileCoreServices、QuartzCore、ImageIO、MediaPlayer、CoreText  |
 | uni-payment-alipay | uni-payment-alipay-index.swift、uni-payment-index.swift | AlipaySDK.xcframework |c++、z、SystemConfiguration、CoreTelephony、QuartzCore、CoreText、CoreGraphics、CFNetwork、CoreMotion |
 | uni-payment-wxpay | uni-payment-wxpay-index.swift、uni-payment-index.swift | libWeChatSDK.a | CoreGraphics、WebKit、Security |
-| uni-getLocation-system | uni-getLocation-system-index.swift | | |
+| uni-virtualPayment | uni-virtualPayment-index.swift、uni-virtualPayment-ProductService.swift、uni-virtualPayment-PurchaseService.swift、uni-virtualPayment-Types.swift、uni-virtualPayment-UniProduct.swift、uni-virtualPayment-UniPurchase.swift、uni-virtualPayment-UniStoreKit+Closure.swift、uni-virtualPayment-UniStoreKit.swift | | StoreKit |
+| uni-getLocation-system | uni-getLocation-system-index.swift、uni-getLocation-index.swift | | |
+| uni-getLocation-tencent | uni-getLocation-tencent-index.swift、uni-getLocation-index.swift | TencentLBS.framework | libz.1.2.5.tbd |
 | uni-video | uni-video-index.swift | DCUniVideo.xcframework、IJKMediaFrameworkWithSSL.xcframework、UniDCSVProgressHUD.xcframework | |
 | uni-push | uni-push-index.swift | GTCommonSDK.xcframework、GTSDK.xcframework、ZXSDK.framework | c++、resolv、z、sqlite3、MobileCoreServices、Security、SystemConfiguration、CoreTelephony、AVFoundation、UserNotifications、AdSupport |
 | uni-verify | uni-verify-index.swift、uni-network-index.swift | GTCommonSDK.xcframework、GeYanSdk.xcframework | resolv.9、c++、z、sqlite3.0、WebKit、CoreFoundation、Network、AdSupport |
 | uni-ad | uni-ad-index.swift | DCUniAdFoundation.xcframework | |
 | uni-facialRecognitionVerify | uni-facialRecognitionVerify-index.swift | AliyunFaceAuthFacade.framework、AliyunMobileRPC.framework、AliyunOSSiOS.framework、APBToygerFacade.framework、APPSecuritySDK.framework、BioAuthAPI.framework、BioAuthEngine.framework、deviceiOS.framework、DTFIdentityManager.framework、DTFSensorServices.framework、DTFUIModule.framework、DTFUtility.framework、MPRemoteLogging.framework、ToygerNative.framework、ToygerService.framework | c++、z、resolv、c++.1、c++abi、z.1.2.8、Accelerate、AssetsLibrary、QuartzCore、CoreFoundation、CoreLocation、ImageIO、CoreMedia、CoreMotion、AVFoundation、WebKit、AudioToolbox、CFNetwork、MobileCoreServices、SystemConfiguration、CoreTelephony、QuartzCore、CoreGraphics、AdSupport |
+| uni-cloud-client | uni-websocket-index.swift、uni-network-index.swift、uni-media-index.swift| DCloudMediaPicker.xcframework |AssetsLibrary、Photos、AVFoundation、CoreServices、CoreFoundation、CoreGraphics、CoreImage、GLKit、MetalKit、MobileCoreServices、QuartzCore、ImageIO、MediaPlayer、CoreText|
 
 
 ### 配置uts-config.json(可选)
@@ -60,6 +64,16 @@
 	}]
 }
 ```
+
+`uni-push`模块需要添加如下配置
+```
+{
+	"hooksClasses": [
+		"UTSSDKModulesDCloudUniPushHookProxy"
+	]
+}
+```
+
 
 `uni-payment-alipay`模块需要添加如下配置
 ```
@@ -88,7 +102,28 @@
 	}]
 }
 ```  
-  
+
+`uni-getLocation-systemy`模块需要添加如下配置
+  ```
+{
+	"providers": [{
+		"name":"system",
+		"service":"location",
+		"class":"UTSSDKModulesDCloudUniGetLocationSystemUniLocationSystemProviderImpl"
+	}]
+}
+``` 
+
+`uni-getLocation-tencent`模块需要添加如下配置
+  ```
+{
+	"providers": [{
+		"name":"tencent",
+		"service":"location",
+		"class":"UTSSDKModulesDCloudUniGetLocationTencentUniLocationTencentProviderImpl"
+	}]
+}
+``` 
   
 
 `uts-config.json`配置示例图     
@@ -128,6 +163,12 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 | 资源文件 |
 |---|
 |  uni_uts_toast_error.png、uni_uts_toast_success.png  |
+
+## uni-canvas
+### 添加依赖库以及资源文件
+| 依赖库 |
+|---|
+|  DCloudUniCanvas.xcframework`（Embed & Sign）`  |
 
 
 ## uni-media
@@ -178,7 +219,34 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ```
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/location_permission.png)
 
+## uni-getLocation-tencent
+### 添加依赖库以及资源文件
+| 依赖库 |
+|---|
+| DCloudPermissionLocation.xcframework |
 
+### Info.plist
+1. 添加`仅运行期间使用定位权限描述(NSLocationWhenInUseUsageDescription)`、`始终使用定位权限描述(NSLocationAlwaysAndWhenInUseUsageDescription)`、`使用临时位置权限描述(NSLocationTemporaryUsageDescriptionDictionary)`
+
+    ```
+    	<dict>
+    		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    		<string>需要您的同意，才能访问位置信息</string>
+    		<key>NSLocationWhenInUseUsageDescription</key>
+    		<string>需要您的同意，才能在仅运行期间获取位置信息</string>
+    		<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+    		<dict>
+    			<key>YourPurposeKey</key>
+    			<string>这里需要您临时授权高精度定位权限,一次临时授权时效仅app一个周期内, 每次硬启动都需要临时授权</string>
+    		</dict>
+    	</dict>
+    ```
+    ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/location_permission.png)
+2. 添加 `TencentLBSAPIKey` 配置项
+    ```
+    <key>TencentLBSAPIKey</key>
+    <string>此处填写腾讯定位的ApiKey</string>
+    ```
 ## uni-payment-alipay
 
 ### 添加依赖库以及资源文件

@@ -33,4 +33,4 @@ uni-app x原生SDK，给原生开发者提供了更多可能性：
 3. 开发者在原生工程中引入uni-app x原生SDK，合并入导出的应用原生资源，整体运行编译
 
 + [Android平台原生SDK和离线打包](./use/android.md)
-+ iOS平台原生SDK和离线打包（暂不支持）
++ [iOS平台原生SDK和离线打包](./use/ios.md)

@@ -28,6 +28,13 @@
 			* [启动与通信](native/use/androidcomm.md)
 			* [自定义基座](native/debug/android.md)
 			* [SDK下载](native/download/android.md)
+		* iOS平台
+		   * [原生工程配置](native/use/ios.md)
+		   * [内置模块](native/modules/ios/modules.md)
+		   * [UTS插件](native/use/iosuts.md)
+		   * [启动与通信](native/use/iosapi.md)
+			* [自定义基座](native/debug/ios.md)
+			* [SDK下载](native/download/ios.md)
 	* 应用市场上架注意
 		* [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
 * 运行和调试
