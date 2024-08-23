@@ -120,7 +120,7 @@ class XXX{
 
 ### 2.4 线程环境差异 @thread-environment
 
-UTS语言本身没有线程的概念。 但其在具体的平台上会有线程环境差异，特此说明：
+UTS语言本身没有线程的概念。 但在具体的运行平台上会有线程环境差异，特此说明：
 
 + uni-app 平台：默认代码执行在 `WeexJSBridgeThread`
 
