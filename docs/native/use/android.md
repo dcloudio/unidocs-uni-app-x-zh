@@ -51,28 +51,29 @@ uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar�
 	```groovy
 	dependencies {
 		implementation fileTree(include: ['*.aar'], dir: './libs')
-		implementation("androidx.core:core-ktx:1.8.0")
-		implementation("androidx.recyclerview:recyclerview:1.0.0")
-		implementation("androidx.appcompat:appcompat:1.0.0")
-		implementation("androidx.exifinterface:exifinterface:1.3.6")
-		implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar")
-		implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-		implementation("com.google.android.material:material:1.4.0")
-		implementation("androidx.viewpager2:viewpager2:1.1.0-beta02")
-		implementation("com.alibaba:fastjson:1.2.83")
-		implementation("com.facebook.fresco:fresco:3.1.3")
-		implementation("com.facebook.fresco:middleware:3.1.3")
-		implementation("com.facebook.fresco:animated-gif:3.1.3")
-		implementation("com.facebook.fresco:webpsupport:3.1.3")
-		implementation("com.facebook.fresco:animated-webp:3.1.3")
-		implementation("com.github.bumptech.glide:glide:4.9.0")
-		implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-		implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-		implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
-		implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.10")
-		implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
-		implementation("com.squareup.okhttp3:okhttp:3.12.12")
-		implementation("com.github.getActivity:XXPermissions:18.0")
+		implementation "androidx.core:core-ktx:1.10.1"
+		implementation "androidx.recyclerview:recyclerview:1.3.2"
+		implementation "androidx.appcompat:appcompat:1.0.0"
+		implementation "androidx.exifinterface:exifinterface:1.3.6"
+		implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar"
+		implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+		implementation "androidx.webkit:webkit:1.6.0"
+		implementation "com.google.android.material:material:1.4.0"
+		implementation "androidx.viewpager2:viewpager2:1.1.0-beta02"
+		implementation "com.alibaba:fastjson:1.2.83"
+		implementation "com.facebook.fresco:fresco:3.1.3"
+		implementation "com.facebook.fresco:middleware:3.1.3"
+		implementation "com.facebook.fresco:animated-gif:3.1.3"
+		implementation "com.facebook.fresco:webpsupport:3.1.3"
+		implementation "com.facebook.fresco:animated-webp:3.1.3"
+		implementation "com.github.bumptech.glide:glide:4.9.0"
+		implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+		implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+		implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.10"
+		implementation "org.jetbrains.kotlin:kotlin-reflect:1.8.10"
+		implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
+		implementation "com.squareup.okhttp3:okhttp:3.12.12"
+		implementation "com.github.getActivity:XXPermissions:18.63"
 	}
 	```
 
@@ -457,6 +458,8 @@ dependencies {
 	```
 	
 	**注意：转义符不能删掉，格式一定严格一致。**
+	
+	**注意：暂不支持在build.gradle中设置`applicationIdSuffix`，添加`applicationIdSuffix`会导致组件初始化失败。**
 
 ### 复制资源@copyresources
 

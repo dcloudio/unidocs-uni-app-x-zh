@@ -1,17 +1,17 @@
 ## API与对应的库参照表
 
-|模块名称							|本地依赖库												|线上依赖库																													|最低支持安卓版本	|依赖的模块					|
-|:--								|:--													|:--																														|:--				|:--						|
-|uni-createRequestPermissionListener|uni-createRequestPermissionListener-release.aar		|-																															|-					|-							|
-|uni-createWebviewContext			|uni-createWebviewContext-release.aar					|-																															|-					|-							|
-|uni-fileSystemManager				|uni-fileSystemManager-release.aar						|-																															|-					|-							|
-|uni-getLocation-system				|uni-getLocation-system-release.aar						|-																															|-					|-							|
-|uni-getNetworkType					|uni-getNetworkType-release.aar							|-																															|-					|-							|
-|uni-installApk						|uni-installApk-release.aar								|-																															|-					|-							|
-|uni-network						|uni-network-release.aar								|com.squareup.okhttp3:okhttp:3.12.12																						|-					|-							|
-|uni-websocket						|uni-websocket-release.aar								|com.squareup.okhttp3:okhttp:3.12.12																						|-					|-							|
-|uni-cloud-client					|uni-cloud-client-release.aar							|-																															|-					|uni-media<br/>uni-network	|
-|uni-media							|uni-media-release.aar<br/>nativeobj-preview-release.aar|com.github.bumptech.glide:glide:4.9.0<br/>androidx.recyclerview:recyclerview:1.0.0<br/>androidx.appcompat:appcompat:1.0.0	|-					|uni-prompt					|
+|模块名称							|本地依赖库												|线上依赖库																													|最低支持安卓版本	|依赖的模块																							|
+|:--								|:--													|:--																														|:--				|:--																								|
+|uni-createRequestPermissionListener|uni-createRequestPermissionListener-release.aar		|-																															|-					|-																									|
+|uni-createWebviewContext			|uni-createWebviewContext-release.aar					|-																															|-					|-																									|
+|uni-fileSystemManager				|uni-fileSystemManager-release.aar						|-																															|-					|-																									|
+|uni-getLocation-system				|uni-getLocation-system-release.aar						|-																															|-					|-																									|
+|uni-getNetworkType					|uni-getNetworkType-release.aar							|-																															|-					|-																									|
+|uni-installApk						|uni-installApk-release.aar								|-																															|-					|-																									|
+|uni-network						|uni-network-release.aar								|com.squareup.okhttp3:okhttp:3.12.12																						|-					|-																									|
+|uni-websocket						|uni-websocket-release.aar								|com.squareup.okhttp3:okhttp:3.12.12																						|-					|-																									|
+|uni-cloud-client					|uni-cloud-client-release.aar							|-																															|-					|uni-network<br/>uni-storage<br/>uni-getSystemInfo<br/>uni-prompt<br/>uni-media<br/>uni-websocket	|
+|uni-media							|uni-media-release.aar<br/>nativeobj-preview-release.aar|com.github.bumptech.glide:glide:4.9.0<br/>androidx.recyclerview:recyclerview:1.0.0<br/>androidx.appcompat:appcompat:1.0.0	|-					|uni-prompt																							|
 
 各模块对应的API可参考文档[App端支持的内置模块列表](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#utsmodules)
 
@@ -34,6 +34,25 @@
 ```
 
 ## 其他模块
+
+### canvas
+
+#### 本地依赖库
+
+|名称							|
+|:--							|
+|uni-canvas-release.aar			|
+|uni-canvas-native-release.aar	|
+
+#### 组件注册
+
+将以下内容添加到主模块的build.gradle，详见[根据configjson配置应用](../../use/android.md#utscomponents)。
+
+```groovy
+defaultConfig {
+    buildConfigField "String", "UTSRegisterComponents", "\"[{\"name\":\"canvas\",\"class\":\"io.dcloud.canvas.CanvasComponent\",\"node\":\"io.dcloud.canvas.UniCanvasElementImpl\"}]\""
+}
+```
 
 [uni-ad](/native/modules/android/uni-ad.md)
 
