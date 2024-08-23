@@ -28,6 +28,9 @@ iOS端safeArea与iOS原生的安全区域概念相同，top与bottom分别对应
     + app平台应用在非全屏模式（如“浮窗”或“分屏”）时，仍然返回的设备屏幕的宽高
 - `windowWidth`/`windowHeight`获取的是当前栈顶页面的可使用窗口宽高信息，调用此API前如果打开了新页面，可能获取到的是新开页面的信息
     + app平台需要在页面渲染后才能获取到准确信息，稳妥起见，建议在页面生命周期`onReady`后获取
+- `statusBarHeight`获取的是系统状态栏高度
+    + app-Android平台横屏时获取的状态栏高度与竖屏一致
+    + app-iOS平台横屏时获取的状态栏高度为0，与竖屏时获取的高度不一致
 - `windowTop`/`windowBottom` 在app平台页面内容无法渲染顶部默认导航栏或底部tabBar区域，返回的值一定为0
 - HBuilderX4.25版本开始，app-android平台返回的安全区域的 top 属性值调整为手机状态栏高度
 :::
