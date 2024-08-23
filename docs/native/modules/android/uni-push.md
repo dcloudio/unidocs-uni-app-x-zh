@@ -48,8 +48,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.getui:gtc:3.2.13.0'  //个推核心组件
-    implementation 'com.getui:gtsdk:3.3.6.0'  //个推SDK
+    implementation 'com.getui:gtc-dcloud:3.2.16.7'  //个推核心组件
+    implementation('com.getui:gtsdk:3.3.7.0'){ exclude(group: 'com.getui') }  //个推SDK
 }
 
 
