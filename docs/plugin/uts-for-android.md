@@ -120,40 +120,27 @@ class XXX{
 
 ### 2.4 线程环境差异 @thread-environment
 
-UTS环境中，默认是没有线程概念的。
+UTS语言本身没有线程的概念。 但其在具体的平台上会有线程环境差异，特此说明：
 
-如果需要执行异步任务，建议通过内置函数`UTSAndroid.getDispatcher("io")`执行
++ uni-app 平台：默认代码执行在 `WeexJSBridgeThread`
 
-[文档地址](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getdispatcher)
++ uni-app x 平台：默认代码执行在 `main`线程
 
+`Android`系统对线程操作存在较多的限制， UTS内置了[UTSAndroid.getDispatcher方法](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getdispatcher)  用来屏蔽大多数底层细节，一般来说开发者只需要关心两种特殊情况：
 
+如果需要执行耗时任务：
+
+```ts
+UTSAndroid.getDispatcher("io").async(function(_){
+	// 执行耗时任务
+},null)
+```
+
+如果需要操作UI：
 
 ```ts
 UTSAndroid.getDispatcher("main").async(function(_){
-	if(Thread.currentThread().name != 'main'){
-		callback(false,"main thread error")
-		return
-	}
-	UTSAndroid.getDispatcher("dom").async(function(_){
-		/**
-		 * dom 参数，只在2.0生效，1.0会自动切换到main线程
-		 */
-		if(Thread.currentThread().name != 'main' && Thread.currentThread().name != 'io_dcloud_uniapp_dom'){
-			callback(false,"dom thread error")
-			return
-		}
-		UTSAndroid.getDispatcher("io").async(function(_){
-			/**
-			 * dom 参数，只在2.0生效，1.0会自动切换到main线程
-			 */
-			if(!Thread.currentThread().name.contains("DefaultDispatcher")){
-				callback(false,"io thread error")
-				return
-			}
-			callback(true,"pass")
-		},null)
-
-	},null)
+	// 执行界面修改，包括view添加移除等
 },null)
 ```
 
