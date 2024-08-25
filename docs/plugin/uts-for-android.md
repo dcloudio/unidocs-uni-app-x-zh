@@ -375,6 +375,7 @@ maven { url 'https://jitpack.io' }
 
 
 
+
 ## 4 Android内置库@iodcloudutsandroid
 
 **在UTS语言中，所有的Android原生API都可以调用**
@@ -521,7 +522,7 @@ UTSAndroid.getUniActivity()!.getWindow().getDecorView();
 但是对于一个熟悉android开发的kotlin语言者来说，有很多常用的习惯发生了改变，我们会在这个章节特别指出，便于开发者加深认识。
 
 
-### 5.1 语法差异
+### 语法差异
 
 -------------------------------
 
