@@ -18,7 +18,7 @@
 
 app-android平台全屏模式下分安全区域字段说明：
 - safeArea.top : statusBarHeight
-- safeArea.bottom: statusBarHeight + 标题栏高度 + windowHeight + tabbar高度
+- safeArea.bottom: statusBarHeight + 应用导航栏高度 + windowHeight + tabbar高度
 - safeArea.height: safeArea.bottom - safeArea.top
 
 iOS端safeArea与iOS原生的安全区域概念相同，top与bottom分别对应`window.safeAreaInsets.top` `window.safeAreaInsets.bottom`，具体请参照[Apple文档](https://developer.apple.com/documentation/uikit/uiview/positioning_content_relative_to_the_safe_area)
