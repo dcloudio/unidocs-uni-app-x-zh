@@ -127,6 +127,45 @@ console.log(set1.has(6));
 
 <!-- UTSJSON.Set.tutorial -->
 
-## Bug & Tips@tips
+## Android 平台方法
 
 * 目前 Set 类型编译到 kotlin 为 io.dcloud.uts.Set
+
+
+::: preview
+
+> UTS
+
+```ts
+// 创建Kotlin HashSet
+let kotlinSet = new kotlin.collections.HashSet<string>()
+kotlinSet.add("a")
+kotlinSet.add("b")
+// 转换为 UTS Set
+let utsSet = new Set<string>()
+utsSet.addAll(kotlinSet)
+console.log(utsSet)
+// UTS Set 转换为 Kotlin HashSet
+let nextKotlinSet = new kotlin.collections.HashSet<string>()
+nextKotlinSet.addAll(utsSet)
+console.log(nextKotlinSet)
+```
+
+> Kotlin
+
+```Kotlin
+// 创建Kotlin HashSet
+var kotlinSet = kotlin.collections.HashSet<String>();
+kotlinSet.add("a");
+kotlinSet.add("b");
+// 转换为 UTS Set
+var utsSet = Set<String>();
+utsSet.addAll(kotlinSet);
+console.log(utsSet, " at pages/index/helloView.uvue:35");
+// UTS Set 转换为 Kotlin HashSet
+var nextKotlinSet = kotlin.collections.HashSet<String>();
+nextKotlinSet.addAll(utsSet);
+console.log(nextKotlinSet, " at pages/index/helloView.uvue:38");
+```
+
+:::

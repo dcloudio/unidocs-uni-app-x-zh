@@ -258,6 +258,8 @@ mediaPlayer.start();
 
 ### 3.4 增加libs依赖资源
 
+#### 远程依赖
+
 远端插件可以通过配置 `config.json`添加依赖 ，下面是一个`config.json`示例
 
 ```json
@@ -282,7 +284,7 @@ mediaPlayer.start();
 
 
 
-#### uni-app x
+##### uni-app x
 
 ```gradle
 
@@ -312,7 +314,7 @@ implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
 ```
 
-#### uni-app
+##### uni-app
 
 ```gradle
 implementation 'com.github.bumptech.glide:glide:4.9.0'
@@ -338,10 +340,20 @@ implementation 'androidx.recyclerview:recyclerview:1.0.0'
 implementation 'androidx.appcompat:appcompat:1.0.0'
 ```
 
+关于 `config.json` 的更多写法，可以参考[文档](https://nativesupport.dcloud.net.cn/NativePlugin/course/package.html#dependencies)
 
-如果是本地依赖, 参考 [hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs) 将jar/aar 添加到 `utssdk/app-android/libs` 目录下即可使用
 
-对于gradle 配置的高级写法，可以参考[文档](https://nativesupport.dcloud.net.cn/NativePlugin/course/package.html#dependencies)
+#### 本地依赖
+
+jar/aar文件:
+
+参考 [hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs) 将jar/aar 添加到 `utssdk/app-android/libs` 目录下即可使用
+
+so文件:
+
+目前暂不支持so文件直接本地调试，所以在HBuilderX 4.26版本支持 [混编](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin-hybrid.html) 之前,推荐开发者将so 封装为AAR，或者分别集成 so和jar文件，自定义基座后再进行调试
+
+HBuilderX 4.26版本之后，开发者可以使用混编kotlin代码的方式，直接集成so文件。参考[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs)
 
 ### 3.5 远程依赖仓库说明
 
