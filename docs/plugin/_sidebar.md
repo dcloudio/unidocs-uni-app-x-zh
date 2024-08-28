@@ -4,6 +4,7 @@
 * uts插件
   * [uts插件开发入门](uts-plugin.md)
   * [uts页面组件开发入门](uts-component.md)
+  * [uts原生混编](uts-plugin-hybrid.md)
   * [uts中使用uni api](uts-uni-api.md)
   * [Android平台uts开发指南](uts-for-android.md)
   * [iOS平台uts开发指南](uts-for-ios.md)
