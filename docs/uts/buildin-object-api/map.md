@@ -12,7 +12,7 @@ console.log(map['key1']) // 不跨端的用法
 console.log(map.get('key1')) // 跨端用法
 ```
 
-### Constructor()
+### new() : Map\<any, any>;@Constructor()
 
 <!-- UTSJSON.Map.Constructor.description -->
 
@@ -24,7 +24,7 @@ console.log(map.get('key1')) // 跨端用法
 
 <!-- UTSJSON.Map.Constructor.tutorial -->
 
-### Constructor(entries?)
+### new \<K, V>(entries ?: readonly (readonly \[K, V])[]\| null) : Map\<K, V>;@Constructor(entries?)
 
 <!-- UTSJSON.Map.Constructor_1.description -->
 
@@ -125,6 +125,34 @@ mapObj.forEach(function(value:any,key:string){
     console.log(value)
 })
 ```
+
+### forEach(callbackfn, thisArg?)
+
+<!-- UTSJSON.Map.forEach_1.description -->
+
+<!-- UTSJSON.Map.forEach_1.param -->
+
+<!-- UTSJSON.Map.forEach_1.returnValue -->
+
+<!-- UTSJSON.Map.forEach_1.test -->
+
+<!-- UTSJSON.Map.forEach_1.compatibility -->
+
+<!-- UTSJSON.Map.forEach_1.tutorial -->
+
+### forEach(callbackfn, thisArg?)
+
+<!-- UTSJSON.Map.forEach_2.description -->
+
+<!-- UTSJSON.Map.forEach_2.param -->
+
+<!-- UTSJSON.Map.forEach_2.returnValue -->
+
+<!-- UTSJSON.Map.forEach_2.test -->
+
+<!-- UTSJSON.Map.forEach_2.compatibility -->
+
+<!-- UTSJSON.Map.forEach_2.tutorial -->
 
 ### get(key)
 

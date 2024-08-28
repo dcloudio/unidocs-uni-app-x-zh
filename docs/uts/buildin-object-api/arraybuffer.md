@@ -28,13 +28,15 @@ ArrayBuffer 对象用来表示通用的原始二进制数据缓冲区。
 ## 构造函数
 
 
-### Constructor(byteLength)
+### new(byteLength : number) : ArrayBuffer;@Constructor(byteLength)
 
 <!-- UTSJSON.ArrayBuffer.Constructor.description -->
 
 <!-- UTSJSON.ArrayBuffer.Constructor.param -->
 
 <!-- UTSJSON.ArrayBuffer.Constructor.returnValue -->
+
+<!-- UTSJSON.ArrayBuffer.Constructor.test -->
 
 <!-- UTSJSON.ArrayBuffer.Constructor.compatibility -->
 
@@ -124,6 +126,3 @@ ArrayBuffer 对象用来表示通用的原始二进制数据缓冲区。
 ## 注意事项
 
 - iOS的uvue页面编译成js时，可以使用ArrayBuffer，但由于iOS的uts插件暂时不支持ArrayBuffer,所以不能和uts插件进行通信
-
-
-

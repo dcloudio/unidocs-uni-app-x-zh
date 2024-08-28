@@ -3,8 +3,22 @@
 
 ## 构造函数
 
+### new(length : number) : Int16Array;@Constructor(length)
 
-### Constructor(array)
+<!-- UTSJSON.Int16Array.Constructor.description -->
+
+<!-- UTSJSON.Int16Array.Constructor.param -->
+
+<!-- UTSJSON.Int16Array.Constructor.returnValue -->
+
+<!-- UTSJSON.Int16Array.Constructor.test -->
+
+<!-- UTSJSON.Int16Array.Constructor.compatibility -->
+
+<!-- UTSJSON.Int16Array.Constructor.tutorial -->
+
+
+### new(array : ArrayLike\<number> \| ArrayBufferLike) : Int16Array;@Constructor(array)
 
 <!-- UTSJSON.Int16Array.Constructor_1.description -->
 
@@ -18,7 +32,7 @@
 
 <!-- UTSJSON.Int16Array.Constructor_1.tutorial -->
 
-### Constructor(buffer, byteOffset?, length?)
+### new(buffer : ArrayBufferLike, byteOffset ?: number, length ?: number) : Int16Array;@Constructor(buffer, byteOffset?, length?)
 
 <!-- UTSJSON.Int16Array.Constructor_2.description -->
 
@@ -439,4 +453,3 @@
 <!-- UTSJSON.Int16Array.toString.compatibility -->
 
 <!-- UTSJSON.Int16Array.toString.tutorial -->
-

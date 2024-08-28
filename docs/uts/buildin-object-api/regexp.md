@@ -2,7 +2,7 @@
 
 RegExp 对象用于将文本与一个模式匹配。
 
-### Constructor(pattern)
+### new(pattern : RegExp \| string) : RegExp;@Constructor(pattern)
 
 <!-- UTSJSON.RegExp.Constructor.description -->
 
@@ -14,7 +14,7 @@ RegExp 对象用于将文本与一个模式匹配。
 
 <!-- UTSJSON.RegExp.Constructor.tutorial -->
 
-### Constructor(pattern, flags?)
+### new(pattern : string, flags ?: string) : RegExp;@Constructor(pattern, flags?)
 
 <!-- UTSJSON.RegExp.Constructor_1.description -->
 
@@ -44,6 +44,62 @@ console.log(/bar/myu.flags);
 // expected output: "muy"
 ```
 <!-- UTSJSON.RegExp.flags.compatibility -->
+
+### dotAll
+
+<!-- UTSJSON.RegExp.dotAll.description -->
+
+<!-- UTSJSON.RegExp.dotAll.param -->
+
+<!-- UTSJSON.RegExp.dotAll.returnValue -->
+
+<!-- UTSJSON.RegExp.dotAll.test -->
+
+<!-- UTSJSON.RegExp.dotAll.compatibility -->
+
+<!-- UTSJSON.RegExp.dotAll.tutorial -->
+
+### hasIndices
+
+<!-- UTSJSON.RegExp.hasIndices.description -->
+
+<!-- UTSJSON.RegExp.hasIndices.param -->
+
+<!-- UTSJSON.RegExp.hasIndices.returnValue -->
+
+<!-- UTSJSON.RegExp.hasIndices.test -->
+
+<!-- UTSJSON.RegExp.hasIndices.compatibility -->
+
+<!-- UTSJSON.RegExp.hasIndices.tutorial -->
+
+### sticky
+
+<!-- UTSJSON.RegExp.sticky.description -->
+
+<!-- UTSJSON.RegExp.sticky.param -->
+
+<!-- UTSJSON.RegExp.sticky.returnValue -->
+
+<!-- UTSJSON.RegExp.sticky.test -->
+
+<!-- UTSJSON.RegExp.sticky.compatibility -->
+
+<!-- UTSJSON.RegExp.sticky.tutorial -->
+
+### unicode
+
+<!-- UTSJSON.RegExp.unicode.description -->
+
+<!-- UTSJSON.RegExp.unicode.param -->
+
+<!-- UTSJSON.RegExp.unicode.returnValue -->
+
+<!-- UTSJSON.RegExp.unicode.test -->
+
+<!-- UTSJSON.RegExp.unicode.compatibility -->
+
+<!-- UTSJSON.RegExp.unicode.tutorial -->
 
 ### source
 
@@ -227,4 +283,3 @@ console.log(nextKotlinSet, " at pages/index/helloView.uvue:38");
 ```
 
 :::
-

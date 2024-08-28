@@ -4,7 +4,7 @@
 ## 构造函数
 
 
-### Constructor(length)
+### new(length : number) : Float32Array;@Constructor(length)
 
 <!-- UTSJSON.Float32Array.Constructor.description -->
 
@@ -20,7 +20,7 @@
 
 <!-- UTSJSON.Float32Array.Constructor.tutorial -->
 
-### Constructor(array)
+### new(array : ArrayLike\<number> \| ArrayBufferLike) : Float32Array;@Constructor(array)
 
 <!-- UTSJSON.Float32Array.Constructor_1.description -->
 
@@ -34,7 +34,7 @@
 
 <!-- UTSJSON.Float32Array.Constructor_1.tutorial -->
 
-### Constructor(buffer, byteOffset?, length?)
+### new(buffer : ArrayBufferLike, byteOffset ?: number, length ?: number) : Float32Array;@Constructor(buffer, byteOffset?, length?)
 
 <!-- UTSJSON.Float32Array.Constructor_2.description -->
 
@@ -483,5 +483,3 @@
 <!-- UTSJSON.Float32Array.keys.compatibility -->
 
 <!-- UTSJSON.Float32Array.keys.tutorial -->
-
-

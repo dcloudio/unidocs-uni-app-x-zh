@@ -40,7 +40,21 @@ if(parseRet instanceof UTSJSONObject){
 
 ## 静态方法
 
-### keys(object: UTSJSONObject): Array<String>
+### parse()
+
+<!-- UTSJSON.UTSJSONObject.parse.description -->
+
+<!-- UTSJSON.UTSJSONObject.parse.param -->
+
+<!-- UTSJSON.UTSJSONObject.parse.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.parse.test -->
+
+<!-- UTSJSON.UTSJSONObject.parse.compatibility -->
+
+<!-- UTSJSON.UTSJSONObject.parse.tutorial -->
+
+### keys(object: UTSJSONObject): Array\<String>
 
 <!-- UTSJSON.UTSJSONObject.keys.description -->
 
@@ -80,7 +94,7 @@ const source = { b: 4, c: 5 };
 const returnedTarget = UTSJSONObject.assign(target, source);
 ```
 
-### assign<T>(...items: T[]): T
+### assign\<T>(...items: T[]): T
 
 <!-- UTSJSON.UTSJSONObject.assign_1.description -->
 
@@ -182,7 +196,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getJSON.compatibility -->
 
-### getArray(key): Array<any> | null
+### getArray(key): Array\<any> | null
 
 <!-- UTSJSON.UTSJSONObject.getArray.description -->
 
@@ -192,7 +206,7 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getArray.compatibility -->
 
-### getArray(key): Array<T> | null
+### getArray(key): Array\<T> | null
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.description -->
 
@@ -219,7 +233,7 @@ console.log(genericArray)
 ```
 
 
-### toMap(): Map<string, any>
+### toMap(): Map\<string, any>
 
 <!-- UTSJSON.UTSJSONObject.toMap.description -->
 

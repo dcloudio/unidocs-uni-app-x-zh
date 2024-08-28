@@ -28,14 +28,27 @@ console.log(obj["result"]);
 - 如果输入的字符串不是合法的json格式，则会返回 null
 - JSON.parse 接口内部通过[特殊方式读取了范型类型](../generics.md#使用限制)，不支持传入动态的范型：比如将外层方法的普通范型参数传入 JSON.parse。
 
-
-### parse\<T\>(text: string)
+### parse(text, reviver?)
 
 <!-- UTSJSON.JSON.parse.description -->
 
 <!-- UTSJSON.JSON.parse.param -->
 
 <!-- UTSJSON.JSON.parse.returnValue -->
+
+<!-- UTSJSON.JSON.parse.test -->
+
+<!-- UTSJSON.JSON.parse.compatibility -->
+
+<!-- UTSJSON.JSON.parse.tutorial -->
+
+### parse\<T\>(text: string)
+
+<!-- UTSJSON.JSON.parse_1.description -->
+
+<!-- UTSJSON.JSON.parse_1.param -->
+
+<!-- UTSJSON.JSON.parse_1.returnValue -->
 
  ```ts
 class Person {
@@ -55,8 +68,9 @@ HBuilderX 3.9+，支持JSON.parse传入[泛型](../generics.md)。
 
 相比不带泛型的`parse`函数，带泛型的 `parse`函数，会提高反序列数据的开发效率，明确的结构数据可以提升工程健壮度
 
+<!-- UTSJSON.JSON.parse_1.test -->
 
-<!-- UTSJSON.JSON.parse.compatibility -->
+<!-- UTSJSON.JSON.parse_1.compatibility -->
 
 ### stringify(value, replacer?, space?)
 
@@ -155,7 +169,7 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 
 从 HBuilder X 4.21 版本开始，JSON.parse 未指定类型泛型的情况下解析得到的 number 类型，不再是 `kotlin.Number` 而是 `UTSNumber` 类型。
 
-对开发者影响在于：之前允许 `number` 类型使用 `as` 操作符进行数据类型转换，在4.21 之后版本，此行为会导致编译报错. 
+对开发者影响在于：之前允许 `number` 类型使用 `as` 操作符进行数据类型转换，在4.21 之后版本，此行为会导致编译报错.
 
 ```ts
 let jsonObject = JSON.parseObject('{"a":1}') ;
@@ -176,8 +190,3 @@ let jsonObject = JSON.parseObject('{"a":1}') ;
 let b:Int = (jsonObject!['a'] as Number).toInt()
 console.log(b)
 ```
-
-
-
-
-

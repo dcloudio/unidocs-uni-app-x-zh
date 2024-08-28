@@ -2,8 +2,23 @@
 
 Set 对象是值的集合，你可以按照插入的顺序迭代它的元素。Set 中的元素只会出现一次，即 Set 中的元素是唯一的。
 
-## 实例属性
+## 构造函数
 
+### new \<T = any>(values ?: readonly T[] \| null) : Set\<T>;@Constructor(values?)
+
+<!-- UTSJSON.Set.Constructor.description -->
+
+<!-- UTSJSON.Set.Constructor.param -->
+
+<!-- UTSJSON.Set.Constructor.returnValue -->
+
+<!-- UTSJSON.Set.Constructor.test -->
+
+<!-- UTSJSON.Set.Constructor.compatibility -->
+
+<!-- UTSJSON.Set.Constructor.tutorial -->
+
+## 实例属性
 
 ### size
 
@@ -102,6 +117,34 @@ set1.forEach((item)=>{
 })
 ```
 <!-- UTSJSON.Set.forEach.compatibility -->
+
+### forEach(callbackfn, thisArg?)
+
+<!-- UTSJSON.Set.forEach_1.description -->
+
+<!-- UTSJSON.Set.forEach_1.param -->
+
+<!-- UTSJSON.Set.forEach_1.returnValue -->
+
+<!-- UTSJSON.Set.forEach_1.test -->
+
+<!-- UTSJSON.Set.forEach_1.compatibility -->
+
+<!-- UTSJSON.Set.forEach_1.tutorial -->
+
+### forEach(callbackfn, thisArg?)
+
+<!-- UTSJSON.Set.forEach_2.description -->
+
+<!-- UTSJSON.Set.forEach_2.param -->
+
+<!-- UTSJSON.Set.forEach_2.returnValue -->
+
+<!-- UTSJSON.Set.forEach_2.test -->
+
+<!-- UTSJSON.Set.forEach_2.compatibility -->
+
+<!-- UTSJSON.Set.forEach_2.tutorial -->
 
 ### has(value)
 

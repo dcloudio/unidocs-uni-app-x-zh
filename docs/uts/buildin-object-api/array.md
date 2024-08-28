@@ -4,7 +4,7 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 ## 构造函数
 
-### new \<T>(...items : T\[]) : T[]@Constructor(...items)_0
+### new \<T>(...items : T\[]) : T[]@Constructor(...items)
 
 <!-- UTSJSON.Array.Constructor.description -->
 
@@ -43,11 +43,11 @@ let arr = new Array(10)
 上面的代码在不同的平台的表现有差异:
 
 - web平台
-	
+
 	一个长度为10的数组，每一个元素都是 undefined
 
 - Android/ios平台
-	
+
 	一个长度为1的数组，其元素为 数字10
 
 :::
@@ -81,6 +81,61 @@ console.log(clothing.length);
 
 ## 实例方法
 
+### toString()
+
+<!-- UTSJSON.Array.toString.description -->
+
+<!-- UTSJSON.Array.toString.param -->
+
+<!-- UTSJSON.Array.toString.returnValue -->
+
+<!-- UTSJSON.Array.toString.test -->
+
+<!-- UTSJSON.Array.toString.compatibility -->
+
+<!-- UTSJSON.Array.toString.tutorial -->
+
+### add(item)
+
+<!-- UTSJSON.Array.add.description -->
+
+<!-- UTSJSON.Array.add.param -->
+
+<!-- UTSJSON.Array.add.returnValue -->
+
+<!-- UTSJSON.Array.add.test -->
+
+<!-- UTSJSON.Array.add.compatibility -->
+
+<!-- UTSJSON.Array.add.tutorial -->
+
+### toLocaleString()
+
+<!-- UTSJSON.Array.toLocaleString.description -->
+
+<!-- UTSJSON.Array.toLocaleString.param -->
+
+<!-- UTSJSON.Array.toLocaleString.returnValue -->
+
+<!-- UTSJSON.Array.toLocaleString.test -->
+
+<!-- UTSJSON.Array.toLocaleString.compatibility -->
+
+<!-- UTSJSON.Array.toLocaleString.tutorial -->
+
+### joinToString(separator)
+
+<!-- UTSJSON.Array.joinToString.description -->
+
+<!-- UTSJSON.Array.joinToString.param -->
+
+<!-- UTSJSON.Array.joinToString.returnValue -->
+
+<!-- UTSJSON.Array.joinToString.test -->
+
+<!-- UTSJSON.Array.joinToString.compatibility -->
+
+<!-- UTSJSON.Array.joinToString.tutorial -->
 
 ### find(predicate, thisArg?)
 
@@ -102,6 +157,34 @@ console.log(found);
 
 <!-- UTSJSON.Array.find.compatibility -->
 
+### find(predicate, thisArg?)
+
+<!-- UTSJSON.Array.find_1.description -->
+
+<!-- UTSJSON.Array.find_1.param -->
+
+<!-- UTSJSON.Array.find_1.returnValue -->
+
+<!-- UTSJSON.Array.find_1.test -->
+
+<!-- UTSJSON.Array.find_1.compatibility -->
+
+<!-- UTSJSON.Array.find_1.tutorial -->
+
+### find(predicate, thisArg?)
+
+<!-- UTSJSON.Array.find_2.description -->
+
+<!-- UTSJSON.Array.find_2.param -->
+
+<!-- UTSJSON.Array.find_2.returnValue -->
+
+<!-- UTSJSON.Array.find_2.test -->
+
+<!-- UTSJSON.Array.find_2.compatibility -->
+
+<!-- UTSJSON.Array.find_2.tutorial -->
+
 ### findIndex(predicate, thisArg?)
 
 <!-- UTSJSON.Array.findIndex.description -->
@@ -121,6 +204,34 @@ console.log(array1.findIndex(isLargeNumber));
 ```
 
 <!-- UTSJSON.Array.findIndex.compatibility -->
+
+### findIndex(predicate, thisArg?)
+
+<!-- UTSJSON.Array.findIndex_1.description -->
+
+<!-- UTSJSON.Array.findIndex_1.param -->
+
+<!-- UTSJSON.Array.findIndex_1.returnValue -->
+
+<!-- UTSJSON.Array.findIndex_1.test -->
+
+<!-- UTSJSON.Array.findIndex_1.compatibility -->
+
+<!-- UTSJSON.Array.findIndex_1.tutorial -->
+
+### findIndex(predicate, thisArg?)
+
+<!-- UTSJSON.Array.findIndex_2.description -->
+
+<!-- UTSJSON.Array.findIndex_2.param -->
+
+<!-- UTSJSON.Array.findIndex_2.returnValue -->
+
+<!-- UTSJSON.Array.findIndex_2.test -->
+
+<!-- UTSJSON.Array.findIndex_2.compatibility -->
+
+<!-- UTSJSON.Array.findIndex_2.tutorial -->
 
 ### fill(value, start?, end?)
 
@@ -491,7 +602,7 @@ console.log(array1.every(isBelowThreshold));
 
 <!-- UTSJSON.Array.every.compatibility -->
 
-### every(predicate, thisArg?)_1
+### every(predicate, thisArg?)
 
 <!-- UTSJSON.Array.every_1.description -->
 
@@ -505,7 +616,7 @@ console.log(array1.every(isBelowThreshold));
 
 <!-- UTSJSON.Array.every_1.tutorial -->
 
-### every(predicate, thisArg?)_2
+### every(predicate, thisArg?)
 
 <!-- UTSJSON.Array.every_2.description -->
 
@@ -519,7 +630,7 @@ console.log(array1.every(isBelowThreshold));
 
 <!-- UTSJSON.Array.every_2.tutorial -->
 
-### every(predicate, thisArg?)_3
+### every(predicate, thisArg?)
 
 <!-- UTSJSON.Array.every_3.description -->
 
@@ -555,7 +666,7 @@ console.log(array.some(even));
 
 <!-- UTSJSON.Array.some.compatibility -->
 
-### some(predicate, thisArg?)_1
+### some(predicate, thisArg?)
 
 <!-- UTSJSON.Array.some_1.description -->
 
@@ -569,7 +680,7 @@ console.log(array.some(even));
 
 <!-- UTSJSON.Array.some_1.tutorial -->
 
-### some(predicate, thisArg?)_2
+### some(predicate, thisArg?)
 
 <!-- UTSJSON.Array.some_2.description -->
 
@@ -624,6 +735,34 @@ while (index < array1.length) {
 
 <!-- UTSJSON.Array.forEach.compatibility -->
 
+### forEach(callbackfn, thisArg?)
+
+<!-- UTSJSON.Array.forEach_1.description -->
+
+<!-- UTSJSON.Array.forEach_1.param -->
+
+<!-- UTSJSON.Array.forEach_1.returnValue -->
+
+<!-- UTSJSON.Array.forEach_1.test -->
+
+<!-- UTSJSON.Array.forEach_1.compatibility -->
+
+<!-- UTSJSON.Array.forEach_1.tutorial -->
+
+### forEach(callbackfn, thisArg?)
+
+<!-- UTSJSON.Array.forEach_2.description -->
+
+<!-- UTSJSON.Array.forEach_2.param -->
+
+<!-- UTSJSON.Array.forEach_2.returnValue -->
+
+<!-- UTSJSON.Array.forEach_2.test -->
+
+<!-- UTSJSON.Array.forEach_2.compatibility -->
+
+<!-- UTSJSON.Array.forEach_2.tutorial -->
+
 ### map(callbackfn, thisArg?)
 
 <!-- UTSJSON.Array.map.description -->
@@ -645,6 +784,34 @@ console.log(map1);
 
 <!-- UTSJSON.Array.map.compatibility -->
 
+### map(callbackfn, thisArg?)
+
+<!-- UTSJSON.Array.map_1.description -->
+
+<!-- UTSJSON.Array.map_1.param -->
+
+<!-- UTSJSON.Array.map_1.returnValue -->
+
+<!-- UTSJSON.Array.map_1.test -->
+
+<!-- UTSJSON.Array.map_1.compatibility -->
+
+<!-- UTSJSON.Array.map_1.tutorial -->
+
+### map(callbackfn, thisArg?)
+
+<!-- UTSJSON.Array.map_2.description -->
+
+<!-- UTSJSON.Array.map_2.param -->
+
+<!-- UTSJSON.Array.map_2.returnValue -->
+
+<!-- UTSJSON.Array.map_2.test -->
+
+<!-- UTSJSON.Array.map_2.compatibility -->
+
+<!-- UTSJSON.Array.map_2.tutorial -->
+
 ### filter(predicate, thisArg?)
 
 <!-- UTSJSON.Array.filter.description -->
@@ -664,6 +831,48 @@ console.log(result);
 ```
 
 <!-- UTSJSON.Array.filter.compatibility -->
+
+### filter(predicate, thisArg?)
+
+<!-- UTSJSON.Array.filter_1.description -->
+
+<!-- UTSJSON.Array.filter_1.param -->
+
+<!-- UTSJSON.Array.filter_1.returnValue -->
+
+<!-- UTSJSON.Array.filter_1.test -->
+
+<!-- UTSJSON.Array.filter_1.compatibility -->
+
+<!-- UTSJSON.Array.filter_1.tutorial -->
+
+### filter(predicate, thisArg?)
+
+<!-- UTSJSON.Array.filter_2.description -->
+
+<!-- UTSJSON.Array.filter_2.param -->
+
+<!-- UTSJSON.Array.filter_2.returnValue -->
+
+<!-- UTSJSON.Array.filter_2.test -->
+
+<!-- UTSJSON.Array.filter_2.compatibility -->
+
+<!-- UTSJSON.Array.filter_2.tutorial -->
+
+### filter(predicate, thisArg?)
+
+<!-- UTSJSON.Array.filter_3.description -->
+
+<!-- UTSJSON.Array.filter_3.param -->
+
+<!-- UTSJSON.Array.filter_3.returnValue -->
+
+<!-- UTSJSON.Array.filter_3.test -->
+
+<!-- UTSJSON.Array.filter_3.compatibility -->
+
+<!-- UTSJSON.Array.filter_3.tutorial -->
 
 ### reduce(callbackfn)
 
@@ -690,6 +899,77 @@ console.log(sumWithInitial);
 
 <!-- UTSJSON.Array.reduce.compatibility -->
 
+
+### reduce(callbackfn)
+
+<!-- UTSJSON.Array.reduce_1.description -->
+
+<!-- UTSJSON.Array.reduce_1.param -->
+
+<!-- UTSJSON.Array.reduce_1.returnValue -->
+
+<!-- UTSJSON.Array.reduce_1.test -->
+
+<!-- UTSJSON.Array.reduce_1.compatibility -->
+
+<!-- UTSJSON.Array.reduce_1.tutorial -->
+
+### reduce(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduce_2.description -->
+
+<!-- UTSJSON.Array.reduce_2.param -->
+
+<!-- UTSJSON.Array.reduce_2.returnValue -->
+
+<!-- UTSJSON.Array.reduce_2.test -->
+
+<!-- UTSJSON.Array.reduce_2.compatibility -->
+
+<!-- UTSJSON.Array.reduce_2.tutorial -->
+
+### reduce(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduce_3.description -->
+
+<!-- UTSJSON.Array.reduce_3.param -->
+
+<!-- UTSJSON.Array.reduce_3.returnValue -->
+
+<!-- UTSJSON.Array.reduce_3.test -->
+
+<!-- UTSJSON.Array.reduce_3.compatibility -->
+
+<!-- UTSJSON.Array.reduce_3.tutorial -->
+
+### reduce(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduce_4.description -->
+
+<!-- UTSJSON.Array.reduce_4.param -->
+
+<!-- UTSJSON.Array.reduce_4.returnValue -->
+
+<!-- UTSJSON.Array.reduce_4.test -->
+
+<!-- UTSJSON.Array.reduce_4.compatibility -->
+
+<!-- UTSJSON.Array.reduce_4.tutorial -->
+
+### reduce(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduce_5.description -->
+
+<!-- UTSJSON.Array.reduce_5.param -->
+
+<!-- UTSJSON.Array.reduce_5.returnValue -->
+
+<!-- UTSJSON.Array.reduce_5.test -->
+
+<!-- UTSJSON.Array.reduce_5.compatibility -->
+
+<!-- UTSJSON.Array.reduce_5.tutorial -->
+
 ### reduceRight(callbackfn)
 
 <!-- UTSJSON.Array.reduceRight.description -->
@@ -699,6 +979,90 @@ console.log(sumWithInitial);
 <!-- UTSJSON.Array.reduceRight.returnValue -->
 
 <!-- UTSJSON.Array.reduceRight.compatibility -->
+
+### reduceRight(callbackfn)
+
+<!-- UTSJSON.Array.reduceRight_1.description -->
+
+<!-- UTSJSON.Array.reduceRight_1.param -->
+
+<!-- UTSJSON.Array.reduceRight_1.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_1.test -->
+
+<!-- UTSJSON.Array.reduceRight_1.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_1.tutorial -->
+
+### reduceRight(callbackfn)
+
+<!-- UTSJSON.Array.reduceRight_2.description -->
+
+<!-- UTSJSON.Array.reduceRight_2.param -->
+
+<!-- UTSJSON.Array.reduceRight_2.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_2.test -->
+
+<!-- UTSJSON.Array.reduceRight_2.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_2.tutorial -->
+
+### reduceRight(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduceRight_3.description -->
+
+<!-- UTSJSON.Array.reduceRight_3.param -->
+
+<!-- UTSJSON.Array.reduceRight_3.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_3.test -->
+
+<!-- UTSJSON.Array.reduceRight_3.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_3.tutorial -->
+
+### reduceRight(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduceRight_4.description -->
+
+<!-- UTSJSON.Array.reduceRight_4.param -->
+
+<!-- UTSJSON.Array.reduceRight_4.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_4.test -->
+
+<!-- UTSJSON.Array.reduceRight_4.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_4.tutorial -->
+
+### reduceRight(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduceRight_5.description -->
+
+<!-- UTSJSON.Array.reduceRight_5.param -->
+
+<!-- UTSJSON.Array.reduceRight_5.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_5.test -->
+
+<!-- UTSJSON.Array.reduceRight_5.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_5.tutorial -->
+
+### reduceRight(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduceRight_6.description -->
+
+<!-- UTSJSON.Array.reduceRight_6.param -->
+
+<!-- UTSJSON.Array.reduceRight_6.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_6.test -->
+
+<!-- UTSJSON.Array.reduceRight_6.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_6.tutorial -->
 
 ### isArray(arg)
 

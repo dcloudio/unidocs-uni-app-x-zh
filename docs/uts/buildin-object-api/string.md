@@ -47,6 +47,21 @@ console.log("The empty string is has a length of " + empty.length);
 
 ## 实例方法
 
+
+### toString()
+
+<!-- UTSJSON.String.toString.description -->
+
+<!-- UTSJSON.String.toString.param -->
+
+<!-- UTSJSON.String.toString.returnValue -->
+
+<!-- UTSJSON.String.toString.test -->
+
+<!-- UTSJSON.String.toString.compatibility -->
+
+<!-- UTSJSON.String.toString.tutorial -->
+
 ### includes(searchString, position?)
 
 <!-- UTSJSON.String.includes.description -->
@@ -247,6 +262,20 @@ console.log(`The index of the 2nd "${searchTerm}" is ${paragraph.indexOf(searchT
 
 <!-- UTSJSON.String.lastIndexOf.compatibility -->
 
+### localeCompare(that)
+
+<!-- UTSJSON.String.localeCompare.description -->
+
+<!-- UTSJSON.String.localeCompare.param -->
+
+<!-- UTSJSON.String.localeCompare.returnValue -->
+
+<!-- UTSJSON.String.localeCompare.test -->
+
+<!-- UTSJSON.String.localeCompare.compatibility -->
+
+<!-- UTSJSON.String.localeCompare.tutorial -->
+
 ### match(regexp : string | RegExp) : RegExpMatchArray | null;
 
 <!-- UTSJSON.String.match.description -->
@@ -415,6 +444,20 @@ console.log('中文简体 zh-CN || zh-Hans'.toLowerCase());
 
 <!-- UTSJSON.String.toLowerCase.compatibility -->
 
+### toLocaleLowerCase(locales?)
+
+<!-- UTSJSON.String.toLocaleLowerCase.description -->
+
+<!-- UTSJSON.String.toLocaleLowerCase.param -->
+
+<!-- UTSJSON.String.toLocaleLowerCase.returnValue -->
+
+<!-- UTSJSON.String.toLocaleLowerCase.test -->
+
+<!-- UTSJSON.String.toLocaleLowerCase.compatibility -->
+
+<!-- UTSJSON.String.toLocaleLowerCase.tutorial -->
+
 ### toUpperCase()
 
 <!-- UTSJSON.String.toUpperCase.description -->
@@ -431,6 +474,20 @@ console.log(sentence.toUpperCase());
 
 <!-- UTSJSON.String.toUpperCase.compatibility -->
 
+### toLocaleUpperCase(locales?)
+
+<!-- UTSJSON.String.toLocaleUpperCase.description -->
+
+<!-- UTSJSON.String.toLocaleUpperCase.param -->
+
+<!-- UTSJSON.String.toLocaleUpperCase.returnValue -->
+
+<!-- UTSJSON.String.toLocaleUpperCase.test -->
+
+<!-- UTSJSON.String.toLocaleUpperCase.compatibility -->
+
+<!-- UTSJSON.String.toLocaleUpperCase.tutorial -->
+
 ### trim()
 
 <!-- UTSJSON.String.trim.description -->
@@ -440,6 +497,20 @@ console.log(sentence.toUpperCase());
 <!-- UTSJSON.String.trim.returnValue -->
 
 <!-- UTSJSON.String.trim.compatibility -->
+
+### substr(from, length?)
+
+<!-- UTSJSON.String.substr.description -->
+
+<!-- UTSJSON.String.substr.param -->
+
+<!-- UTSJSON.String.substr.returnValue -->
+
+<!-- UTSJSON.String.substr.test -->
+
+<!-- UTSJSON.String.substr.compatibility -->
+
+<!-- UTSJSON.String.substr.tutorial -->
 
 ### padStart(targetLength, padString?)
 
@@ -476,6 +547,20 @@ console.log(str2.padEnd(5));
 // expected output: "200  "
 ```
 
+### codePointAt(pos)
+
+<!-- UTSJSON.String.codePointAt.description -->
+
+<!-- UTSJSON.String.codePointAt.param -->
+
+<!-- UTSJSON.String.codePointAt.returnValue -->
+
+<!-- UTSJSON.String.codePointAt.test -->
+
+<!-- UTSJSON.String.codePointAt.compatibility -->
+
+<!-- UTSJSON.String.codePointAt.tutorial -->
+
 ### includes(searchString, position?)
 
 <!-- UTSJSON.String.includes.description -->
@@ -495,6 +580,34 @@ console.log(str2.padEnd(5));
 <!-- UTSJSON.String.endsWith.returnValue -->
 
 <!-- UTSJSON.String.endsWith.compatibility -->
+
+### normalize(form)
+
+<!-- UTSJSON.String.normalize.description -->
+
+<!-- UTSJSON.String.normalize.param -->
+
+<!-- UTSJSON.String.normalize.returnValue -->
+
+<!-- UTSJSON.String.normalize.test -->
+
+<!-- UTSJSON.String.normalize.compatibility -->
+
+<!-- UTSJSON.String.normalize.tutorial -->
+
+### normalize(form?)
+
+<!-- UTSJSON.String.normalize_1.description -->
+
+<!-- UTSJSON.String.normalize_1.param -->
+
+<!-- UTSJSON.String.normalize_1.returnValue -->
+
+<!-- UTSJSON.String.normalize_1.test -->
+
+<!-- UTSJSON.String.normalize_1.compatibility -->
+
+<!-- UTSJSON.String.normalize_1.tutorial -->
 
 ### repeat(count)
 
@@ -546,8 +659,233 @@ console.log(str2.padEnd(5));
 
 <!-- UTSJSON.String.at.compatibility -->
 
-<!-- UTSJSON.String.tutorial -->
 
+### toCharArray()
+
+<!-- UTSJSON.String.toCharArray.description -->
+
+<!-- UTSJSON.String.toCharArray.param -->
+
+<!-- UTSJSON.String.toCharArray.returnValue -->
+
+<!-- UTSJSON.String.toCharArray.test -->
+
+<!-- UTSJSON.String.toCharArray.compatibility -->
+
+<!-- UTSJSON.String.toCharArray.tutorial -->
+
+### valueOf()
+
+<!-- UTSJSON.String.valueOf.description -->
+
+<!-- UTSJSON.String.valueOf.param -->
+
+<!-- UTSJSON.String.valueOf.returnValue -->
+
+<!-- UTSJSON.String.valueOf.test -->
+
+<!-- UTSJSON.String.valueOf.compatibility -->
+
+<!-- UTSJSON.String.valueOf.tutorial -->
+
+### anchor(name)
+
+<!-- UTSJSON.String.anchor.description -->
+
+<!-- UTSJSON.String.anchor.param -->
+
+<!-- UTSJSON.String.anchor.returnValue -->
+
+<!-- UTSJSON.String.anchor.test -->
+
+<!-- UTSJSON.String.anchor.compatibility -->
+
+<!-- UTSJSON.String.anchor.tutorial -->
+
+### big()
+
+<!-- UTSJSON.String.big.description -->
+
+<!-- UTSJSON.String.big.param -->
+
+<!-- UTSJSON.String.big.returnValue -->
+
+<!-- UTSJSON.String.big.test -->
+
+<!-- UTSJSON.String.big.compatibility -->
+
+<!-- UTSJSON.String.big.tutorial -->
+
+### blink()
+
+<!-- UTSJSON.String.blink.description -->
+
+<!-- UTSJSON.String.blink.param -->
+
+<!-- UTSJSON.String.blink.returnValue -->
+
+<!-- UTSJSON.String.blink.test -->
+
+<!-- UTSJSON.String.blink.compatibility -->
+
+<!-- UTSJSON.String.blink.tutorial -->
+
+### bold()
+
+<!-- UTSJSON.String.bold.description -->
+
+<!-- UTSJSON.String.bold.param -->
+
+<!-- UTSJSON.String.bold.returnValue -->
+
+<!-- UTSJSON.String.bold.test -->
+
+<!-- UTSJSON.String.bold.compatibility -->
+
+<!-- UTSJSON.String.bold.tutorial -->
+
+### fixed()
+
+<!-- UTSJSON.String.fixed.description -->
+
+<!-- UTSJSON.String.fixed.param -->
+
+<!-- UTSJSON.String.fixed.returnValue -->
+
+<!-- UTSJSON.String.fixed.test -->
+
+<!-- UTSJSON.String.fixed.compatibility -->
+
+<!-- UTSJSON.String.fixed.tutorial -->
+
+### fontcolor(color)
+
+<!-- UTSJSON.String.fontcolor.description -->
+
+<!-- UTSJSON.String.fontcolor.param -->
+
+<!-- UTSJSON.String.fontcolor.returnValue -->
+
+<!-- UTSJSON.String.fontcolor.test -->
+
+<!-- UTSJSON.String.fontcolor.compatibility -->
+
+<!-- UTSJSON.String.fontcolor.tutorial -->
+
+### fontsize(size)
+
+<!-- UTSJSON.String.fontsize.description -->
+
+<!-- UTSJSON.String.fontsize.param -->
+
+<!-- UTSJSON.String.fontsize.returnValue -->
+
+<!-- UTSJSON.String.fontsize.test -->
+
+<!-- UTSJSON.String.fontsize.compatibility -->
+
+<!-- UTSJSON.String.fontsize.tutorial -->
+
+### fontsize(size)
+
+<!-- UTSJSON.String.fontsize_1.description -->
+
+<!-- UTSJSON.String.fontsize_1.param -->
+
+<!-- UTSJSON.String.fontsize_1.returnValue -->
+
+<!-- UTSJSON.String.fontsize_1.test -->
+
+<!-- UTSJSON.String.fontsize_1.compatibility -->
+
+<!-- UTSJSON.String.fontsize_1.tutorial -->
+
+### italics()
+
+<!-- UTSJSON.String.italics.description -->
+
+<!-- UTSJSON.String.italics.param -->
+
+<!-- UTSJSON.String.italics.returnValue -->
+
+<!-- UTSJSON.String.italics.test -->
+
+<!-- UTSJSON.String.italics.compatibility -->
+
+<!-- UTSJSON.String.italics.tutorial -->
+
+### link(url)
+
+<!-- UTSJSON.String.link.description -->
+
+<!-- UTSJSON.String.link.param -->
+
+<!-- UTSJSON.String.link.returnValue -->
+
+<!-- UTSJSON.String.link.test -->
+
+<!-- UTSJSON.String.link.compatibility -->
+
+<!-- UTSJSON.String.link.tutorial -->
+
+### small()
+
+<!-- UTSJSON.String.small.description -->
+
+<!-- UTSJSON.String.small.param -->
+
+<!-- UTSJSON.String.small.returnValue -->
+
+<!-- UTSJSON.String.small.test -->
+
+<!-- UTSJSON.String.small.compatibility -->
+
+<!-- UTSJSON.String.small.tutorial -->
+
+### strike()
+
+<!-- UTSJSON.String.strike.description -->
+
+<!-- UTSJSON.String.strike.param -->
+
+<!-- UTSJSON.String.strike.returnValue -->
+
+<!-- UTSJSON.String.strike.test -->
+
+<!-- UTSJSON.String.strike.compatibility -->
+
+<!-- UTSJSON.String.strike.tutorial -->
+
+### sub()
+
+<!-- UTSJSON.String.sub.description -->
+
+<!-- UTSJSON.String.sub.param -->
+
+<!-- UTSJSON.String.sub.returnValue -->
+
+<!-- UTSJSON.String.sub.test -->
+
+<!-- UTSJSON.String.sub.compatibility -->
+
+<!-- UTSJSON.String.sub.tutorial -->
+
+### sup()
+
+<!-- UTSJSON.String.sup.description -->
+
+<!-- UTSJSON.String.sup.param -->
+
+<!-- UTSJSON.String.sup.returnValue -->
+
+<!-- UTSJSON.String.sup.test -->
+
+<!-- UTSJSON.String.sup.compatibility -->
+
+<!-- UTSJSON.String.sup.tutorial -->
+
+
+<!-- UTSJSON.String.tutorial -->
 
 ## Android 平台实现
 

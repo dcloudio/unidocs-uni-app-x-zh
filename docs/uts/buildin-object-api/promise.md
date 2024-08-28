@@ -12,7 +12,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.Constructor.compatibility -->
 
-### Constructor(fn)_1
+### Constructor(fn)
 
 <!-- UTSJSON.Promise.Constructor_1.description -->
 
@@ -35,7 +35,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.then.compatibility -->
 
-### then(onFulfilled, onRejected?)_1
+### then(onFulfilled, onRejected?)
 
 <!-- UTSJSON.Promise.then_1.description -->
 
@@ -45,7 +45,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.then_1.compatibility -->
 
-### then(onFulfilled, onRejected?)_2
+### then(onFulfilled, onRejected?)
 
 <!-- UTSJSON.Promise.then_2.description -->
 
@@ -55,7 +55,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.then_2.compatibility -->
 
-### then(onFulfilled, onRejected?)_3
+### then(onFulfilled, onRejected?)
 
 <!-- UTSJSON.Promise.then_3.description -->
 
@@ -65,7 +65,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.then_3.compatibility -->
 
-### then(onFulfilled, onRejected?)_4
+### then(onFulfilled, onRejected?)
 
 <!-- UTSJSON.Promise.then_4.description -->
 
@@ -85,7 +85,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.catch.compatibility -->
 
-### catch(onRejected)_1
+### catch(onRejected)
 
 <!-- UTSJSON.Promise.catch_1.description -->
 
@@ -95,7 +95,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.catch_1.compatibility -->
 
-### catch(onRejected)_2
+### catch(onRejected)
 
 <!-- UTSJSON.Promise.catch_2.description -->
 
@@ -105,7 +105,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.catch_2.compatibility -->
 
-### catch(onRejected)_3
+### catch(onRejected)
 
 <!-- UTSJSON.Promise.catch_3.description -->
 
@@ -115,7 +115,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.catch_3.compatibility -->
 
-### catch(onRejected)_4
+### catch(onRejected)
 
 <!-- UTSJSON.Promise.catch_4.description -->
 
@@ -145,7 +145,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.resolve.compatibility -->
 
-### resolve(value)_1
+### resolve(value)
 
 <!-- UTSJSON.Promise.resolve_1.description -->
 
@@ -155,7 +155,7 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.resolve_1.compatibility -->
 
-### resolve(value)_2
+### resolve(value)
 
 <!-- UTSJSON.Promise.resolve_2.description -->
 

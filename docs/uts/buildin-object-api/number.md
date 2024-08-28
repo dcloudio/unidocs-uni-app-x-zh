@@ -5,7 +5,7 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 ## 构造函数
 
-### Constructor(value?)
+### new(value ?: any) : Number;@Constructor(value?)
 
 <!-- UTSJSON.Number.Constructor.description -->
 
@@ -20,7 +20,77 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 注意：通过构造器函数创建`Number`对象的语法，目前仅支持web平台。 在app 平台，需要使用字面量定义或者`Number.from()`进行数字变量的创建 [文档](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#%E6%95%B0%E5%AD%97-number)
 
+## 实例属性
 
+### MAX_VALUE
+
+<!-- UTSJSON.Number.MAX_VALUE.description -->
+
+<!-- UTSJSON.Number.MAX_VALUE.param -->
+
+<!-- UTSJSON.Number.MAX_VALUE.returnValue -->
+
+<!-- UTSJSON.Number.MAX_VALUE.test -->
+
+<!-- UTSJSON.Number.MAX_VALUE.compatibility -->
+
+<!-- UTSJSON.Number.MAX_VALUE.tutorial -->
+
+### MIN_VALUE
+
+<!-- UTSJSON.Number.MIN_VALUE.description -->
+
+<!-- UTSJSON.Number.MIN_VALUE.param -->
+
+<!-- UTSJSON.Number.MIN_VALUE.returnValue -->
+
+<!-- UTSJSON.Number.MIN_VALUE.test -->
+
+<!-- UTSJSON.Number.MIN_VALUE.compatibility -->
+
+<!-- UTSJSON.Number.MIN_VALUE.tutorial -->
+
+### NaN
+
+<!-- UTSJSON.Number.NaN.description -->
+
+<!-- UTSJSON.Number.NaN.param -->
+
+<!-- UTSJSON.Number.NaN.returnValue -->
+
+<!-- UTSJSON.Number.NaN.test -->
+
+<!-- UTSJSON.Number.NaN.compatibility -->
+
+<!-- UTSJSON.Number.NaN.tutorial -->
+
+### NEGATIVE_INFINITY
+
+<!-- UTSJSON.Number.NEGATIVE_INFINITY.description -->
+
+<!-- UTSJSON.Number.NEGATIVE_INFINITY.param -->
+
+<!-- UTSJSON.Number.NEGATIVE_INFINITY.returnValue -->
+
+<!-- UTSJSON.Number.NEGATIVE_INFINITY.test -->
+
+<!-- UTSJSON.Number.NEGATIVE_INFINITY.compatibility -->
+
+<!-- UTSJSON.Number.NEGATIVE_INFINITY.tutorial -->
+
+### POSITIVE_INFINITY
+
+<!-- UTSJSON.Number.POSITIVE_INFINITY.description -->
+
+<!-- UTSJSON.Number.POSITIVE_INFINITY.param -->
+
+<!-- UTSJSON.Number.POSITIVE_INFINITY.returnValue -->
+
+<!-- UTSJSON.Number.POSITIVE_INFINITY.test -->
+
+<!-- UTSJSON.Number.POSITIVE_INFINITY.compatibility -->
+
+<!-- UTSJSON.Number.POSITIVE_INFINITY.tutorial -->
 
 ## 实例方法
 
@@ -45,7 +115,7 @@ console.log(financial(0.004));
 
 <!-- UTSJSON.Number.toFixed.compatibility -->
 
-### toString()
+### toString(radix?)
 
 <!-- UTSJSON.Number.toString.description -->
 
@@ -53,8 +123,39 @@ console.log(financial(0.004));
 
 <!-- UTSJSON.Number.toString.returnValue -->
 
+<!-- UTSJSON.Number.toString.test -->
+
 <!-- UTSJSON.Number.toString.compatibility -->
 
+<!-- UTSJSON.Number.toString.tutorial -->
+
+### toExponential(fractionDigits?)
+
+<!-- UTSJSON.Number.toExponential.description -->
+
+<!-- UTSJSON.Number.toExponential.param -->
+
+<!-- UTSJSON.Number.toExponential.returnValue -->
+
+<!-- UTSJSON.Number.toExponential.test -->
+
+<!-- UTSJSON.Number.toExponential.compatibility -->
+
+<!-- UTSJSON.Number.toExponential.tutorial -->
+
+### toPrecision(precision?)
+
+<!-- UTSJSON.Number.toPrecision.description -->
+
+<!-- UTSJSON.Number.toPrecision.param -->
+
+<!-- UTSJSON.Number.toPrecision.returnValue -->
+
+<!-- UTSJSON.Number.toPrecision.test -->
+
+<!-- UTSJSON.Number.toPrecision.compatibility -->
+
+<!-- UTSJSON.Number.toPrecision.tutorial -->
 
 ### valueOf()
 
@@ -284,4 +385,3 @@ console.log(b);
 ## Android 平台方法
 
 Number 类型编译到 `kotlin` 为 `kotlin.Number`
-

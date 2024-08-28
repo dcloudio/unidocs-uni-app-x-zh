@@ -1,6 +1,6 @@
 # Float64Array
 
-### Constructor(length)
+### new(length : number) : Float64Array;@Constructor(length)
 
 <!-- UTSJSON.Float64Array.Constructor.description -->
 
@@ -14,7 +14,7 @@
 
 <!-- UTSJSON.Float64Array.Constructor.tutorial -->
 
-### Constructor(array)
+### new(array : ArrayLike\<number> \| ArrayBufferLike) : Float64Array;@Constructor(array)
 
 <!-- UTSJSON.Float64Array.Constructor_1.description -->
 
@@ -28,7 +28,7 @@
 
 <!-- UTSJSON.Float64Array.Constructor_1.tutorial -->
 
-### Constructor(buffer, byteOffset?, length?)
+### new(buffer : ArrayBufferLike, byteOffset ?: number, length ?: number) : Float64Array;@Constructor(buffer, byteOffset?, length?)
 
 <!-- UTSJSON.Float64Array.Constructor_2.description -->
 
