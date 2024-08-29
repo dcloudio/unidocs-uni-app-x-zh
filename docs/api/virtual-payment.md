@@ -192,4 +192,32 @@ virtualPaymentManager.getUnfinishedTransactions({
 })
 ```
 
+## 开发者验单逻辑说明：
+::: warning 验单说明：
+1. 开发者服务器的验单流程完全由开发者自己实现，该流程不受框架控制。
+2. 与IAP相关的服务器逻辑比较复杂，Uni 封装了相关的插件 uni-pay，不但减少开发者服务器相关开发的工作量，而且可以高效接入IAP功能，推荐使用 uni-pay 插件。[uni-pay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app-x.html#appleiap)是一个云端一体的开源组件，下载这个插件，客户端和服务器代码都已封装好，开发者填入参数即可使用。[详见](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app-x.html)
+:::
+
+### 验单涉及到的api：
+1. uni.requestVirtualPayment() :购买成功并且获取到对应的交易信息，需要先验单成功，再通过uni.getVirtualPaymentManager().finishTransaction 关单；
+2. uni.getVirtualPaymentManager().getUnfinishedTransactions() :获取苹果服务器已支付且未关闭的交易列表后，每笔交易都需要先验单成功，再通过uni.getVirtualPaymentManager().finishTransaction 关单；
+
+### 服务器验单机制：
+1. 服务器调用Apple 提供的验单api：
+  正式环境：https://api.storekit.itunes.apple.com/inApps/v1/transactions/{transactionId}
+  Sandbox环境：https://api.storekit-sandbox.itunes.apple.com/inApps/v1/transactions/{transactionId}
+
+  具体参考[Apple 文档](https://developer.apple.com/documentation/appstoreserverapi/get_transaction_info)
+
+2. 由于当前采用Apple 最新的StoreKit 2.0 版本，所以验单api不同于StoreKit 1.0版本Apple提供的验单api，详见已废弃的[StoreKit 1.0版本Apple提供的验单api](https://developer.apple.com/documentation/appstorereceipts/verifyreceipt)
+
+### 使用App Store Server Notifications V2 机制
+该通知机制是当发生有效购买后 Apple 服务器主动通知开发者自己服务器具体交易信息的机制，需要开发者自己的服务器按照Apple相关要求进行正确配置后才能生效。
+
+具体参考相关文档：
+1. [App Store Server API](https://developer.apple.com/documentation/appstoreserverapi)
+2. [Enabling App Store Server Notifications](https://developer.apple.com/documentation/appstoreservernotifications/enabling_app_store_server_notifications）
+3. [Enter server URLs for App Store Server Notifications](https://developer.apple.com/help/app-store-connect/configure-in-app-purchase-settings/enter-server-urls-for-app-store-server-notifications)
+
+
 <!-- UTSAPIJSON.virtualPayment.example -->
