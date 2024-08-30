@@ -49,7 +49,7 @@ let arr = new Array(10)
 
 <!-- UTSJSON.Array.length.returnValue -->
 
-<!-- UTSJSON.Array.Constructor.test -->
+<!-- UTSJSON.Array.length.test -->
 
 <!-- UTSJSON.Array.length.compatibility -->
 
