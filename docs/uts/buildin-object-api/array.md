@@ -18,20 +18,6 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.Constructor.tutorial -->
 
-```ts
-/**
- * 用法1：创建数组时需要指定类型，即:Array<string>
- */
-let arrA = new Array<string>()
-
-/**
- * 用法2：创建数组时根据初始元素，推导出类型为:Array<number>
- */
-let arrB = new Array(32,87,32)
-
-```
-
-
 ::: warning 注意事项
 
 与JS中的`Array` 不同，`UTS`不支持的指定长度初始化Array的写法
@@ -63,11 +49,7 @@ let arr = new Array(10)
 
 <!-- UTSJSON.Array.length.returnValue -->
 
-```ts
-const clothing = ['shoes', 'shirts', 'socks', 'sweaters'];
-console.log(clothing.length);
-// expected output: 4
-```
+<!-- UTSJSON.Array.Constructor.test -->
 
 <!-- UTSJSON.Array.length.compatibility -->
 
@@ -145,15 +127,7 @@ console.log(clothing.length);
 
 <!-- UTSJSON.Array.find.returnValue -->
 
-```ts
-const array1 = [5, 12, 8, 130, 44];
-
-const found = array1.find((element:number):boolean => element > 10);
-
-console.log(found);
-// expected output: 12
-
-```
+<!-- UTSJSON.Array.find.test -->
 
 <!-- UTSJSON.Array.find.compatibility -->
 
