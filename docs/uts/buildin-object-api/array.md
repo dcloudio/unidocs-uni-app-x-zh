@@ -167,15 +167,7 @@ let arr = new Array(10)
 
 <!-- UTSJSON.Array.findIndex.returnValue -->
 
-```ts
-const array1 = [5, 12, 8, 130, 44];
-
-const isLargeNumber = (element:number):boolean => element > 13;
-
-console.log(array1.findIndex(isLargeNumber));
-// expected output: 3
-
-```
+<!-- UTSJSON.Array.findIndex.test -->
 
 <!-- UTSJSON.Array.findIndex.compatibility -->
 
@@ -215,21 +207,7 @@ console.log(array1.findIndex(isLargeNumber));
 
 <!-- UTSJSON.Array.fill.returnValue -->
 
-```ts
-const array1 = [1, 2, 3, 4];
-
-// fill with 0 from position 2 until position 4
-console.log(array1.fill(0, 2, 4));
-// expected output: [1, 2, 0, 0]
-
-// fill with 5 from position 1
-console.log(array1.fill(5, 1));
-// expected output: [1, 5, 5, 5]
-
-console.log(array1.fill(6));
-// expected output: [6, 6, 6, 6]
-
-```
+<!-- UTSJSON.Array.fill.test -->
 
 需要注意的是，截止HBuilder 4.22  部分平台尚不支持[根据元素个数构造`Array`的写法](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/array.html#constructor)
 
@@ -259,15 +237,7 @@ for(let i = 0; i < 20; i++){
 
 <!-- UTSJSON.Array.copyWithin.returnValue -->
 
-```ts
-const array1 = ['a', 'b', 'c', 'd', 'e'];
-// copy to index 0 the element at index 3
-console.log(array1.copyWithin(0, 3, 4));
-// expected output: Array ["d", "b", "c", "d", "e"]
-// copy to index 1 all elements from index 3 to the end
-console.log(array1.copyWithin(1, 3));
-// expected output: Array ["d", "d", "e", "d", "e"]
-```
+<!-- UTSJSON.Array.copyWithin.test -->
 
 <!-- UTSJSON.Array.copyWithin.compatibility -->
 
@@ -279,21 +249,7 @@ console.log(array1.copyWithin(1, 3));
 
 <!-- UTSJSON.Array.pop.returnValue -->
 
-```ts
-const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
-
-console.log(plants.pop());
-// expected output: "tomato"
-
-console.log(plants);
-// expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
-
-plants.pop();
-
-console.log(plants);
-// expected output: Array ["broccoli", "cauliflower", "cabbage"]
-
-```
+<!-- UTSJSON.Array.pop.test -->
 
 <!-- UTSJSON.Array.pop.compatibility -->
 
@@ -305,20 +261,7 @@ console.log(plants);
 
 <!-- UTSJSON.Array.push.returnValue -->
 
-```ts
-const animals = ['pigs', 'goats', 'sheep'];
-
-const count = animals.push('cows');
-console.log(count);
-// expected output: 4
-console.log(animals);
-// expected output: Array ["pigs", "goats", "sheep", "cows"]
-
-animals.push('chickens', 'cats', 'dogs');
-console.log(animals);
-// expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
-
-```
+<!-- UTSJSON.Array.push.test -->
 
 <!-- UTSJSON.Array.push.compatibility -->
 
@@ -330,13 +273,7 @@ console.log(animals);
 
 <!-- UTSJSON.Array.concat.returnValue -->
 
-```ts
-const array1 = ['a', 'b', 'c'];
-const array2 = ['d', 'e', 'f'];
-const array3 = array1.concat(array2);
-console.log(array3);
-// expected output: Array ["a", "b", "c", "d", "e", "f"]
-```
+<!-- UTSJSON.Array.concat.test -->
 
 <!-- UTSJSON.Array.concat.compatibility -->
 
@@ -348,6 +285,8 @@ console.log(array3);
 
 <!-- UTSJSON.Array.concat_1.returnValue -->
 
+<!-- UTSJSON.Array.concat_1.test -->
+
 <!-- UTSJSON.Array.concat_1.compatibility -->
 
 ### join(separator?)
@@ -358,19 +297,7 @@ console.log(array3);
 
 <!-- UTSJSON.Array.join.returnValue -->
 
-```ts
-const elements = ['Fire', 'Air', 'Water'];
-
-console.log(elements.join());
-// expected output: "Fire,Air,Water"
-
-console.log(elements.join(''));
-// expected output: "FireAirWater"
-
-console.log(elements.join('-'));
-// expected output: "Fire-Air-Water"
-
-```
+<!-- UTSJSON.Array.concat_1.test -->
 
 <!-- UTSJSON.Array.join.compatibility -->
 
@@ -392,18 +319,7 @@ console.log(elements.join('-'));
 
 <!-- UTSJSON.Array.shift.returnValue -->
 
-```ts
-const array1 = [1, 2, 3];
-
-const firstElement = array1.shift();
-
-console.log(array1);
-// expected output: Array [2, 3]
-
-console.log(firstElement);
-// expected output: 1
-
-```
+<!-- UTSJSON.Array.concat_1.test -->
 
 <!-- UTSJSON.Array.shift.compatibility -->
 
@@ -415,27 +331,7 @@ console.log(firstElement);
 
 <!-- UTSJSON.Array.slice.returnValue -->
 
-```ts
-const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
-
-console.log(animals.slice(2));
-// expected output: Array ["camel", "duck", "elephant"]
-
-console.log(animals.slice(2, 4));
-// expected output: Array ["camel", "duck"]
-
-console.log(animals.slice(1, 5));
-// expected output: Array ["bison", "camel", "duck", "elephant"]
-
-console.log(animals.slice(-2));
-// expected output: Array ["duck", "elephant"]
-
-console.log(animals.slice(2, -1));
-// expected output: Array ["camel", "duck"]
-
-console.log(animals.slice());
-// expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
-```
+<!-- UTSJSON.Array.slice.test -->
 
 <!-- UTSJSON.Array.slice.compatibility -->
 
@@ -447,11 +343,7 @@ console.log(animals.slice());
 
 <!-- UTSJSON.Array.sort.returnValue -->
 
-```ts
-const array2 = [5, 1, 4, 2, 3];
-array2.sort((a: number, b: number):number => a - b);
-// expect(array2).toEqual([1, 2, 3, 4, 5]);
-```
+<!-- UTSJSON.Array.sort.test -->
 
 <!-- UTSJSON.Array.sort.compatibility -->
 
@@ -479,18 +371,7 @@ a.sort((a, b) : number => {
 
 <!-- UTSJSON.Array.splice.returnValue -->
 
-```ts
-const months = ['Jan', 'March', 'April', 'June'];
-months.splice(1, 0, 'Feb');
-// inserts at index 1
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "June"]
-
-months.splice(4, 1, 'May');
-// replaces 1 element at index 4
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "May"]
-```
+<!-- UTSJSON.Array.splice.test -->
 
 <!-- UTSJSON.Array.splice.compatibility -->
 
