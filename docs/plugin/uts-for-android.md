@@ -357,9 +357,9 @@ HBuilderX 4.26版本之后，开发者可以使用混编kotlin代码的方式，
 
 ### 3.5 其他配置文件
 
-uni-app x / uni-app 均支持打包时模块资源干预 [说明文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#nativeresources)
+uni-app x / uni-app 均支持打包时手动指定资源位置 [说明文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#nativeresources)
 
-例如 `google-services.json`等验证文件需要打包时放在 `app` 目录下，则可以放置在如下位置：
+例如 接入`Firebase` 时需要将`google-services.json`文件放在 `app` 目录下，则可以通过如下的配置来实现：
 
 
 <pre v-pre="" data-lang="">
