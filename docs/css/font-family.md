@@ -13,6 +13,8 @@
 
 <!-- CSSJSON.font-family.compatibility -->
 
+<!-- CSSJSON.font-family.example -->
+
 ### 字体设置
 
 对于系统中已经存在的字体，font-family里直接写字体名称即可。\

@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.background-color.compatibility -->
 
+<!-- CSSJSON.background-color.example -->
+
 <!-- CSSJSON.background-color.reference -->

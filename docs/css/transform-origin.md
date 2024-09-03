@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.transform-origin.compatibility -->
 
+<!-- CSSJSON.transform-origin.example -->
+
 <!-- CSSJSON.transform-origin.reference -->

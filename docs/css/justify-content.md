@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.justify-content.compatibility -->
 
+<!-- CSSJSON.justify-content.example -->
+
 <!-- CSSJSON.justify-content.reference -->

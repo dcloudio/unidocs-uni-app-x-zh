@@ -16,4 +16,6 @@
 
 <!-- CSSJSON.width.compatibility -->
 
+<!-- CSSJSON.width.example -->
+
 <!-- CSSJSON.width.reference -->

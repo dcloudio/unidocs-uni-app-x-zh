@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.background.compatibility -->
 
+<!-- CSSJSON.background.example -->
+
 <!-- CSSJSON.background.reference -->

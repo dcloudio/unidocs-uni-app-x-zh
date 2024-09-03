@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.align-self.compatibility -->
 
+<!-- CSSJSON.align-self.example -->
+
 <!-- CSSJSON.align-self.reference -->

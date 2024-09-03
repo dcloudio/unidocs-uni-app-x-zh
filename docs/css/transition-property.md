@@ -16,4 +16,6 @@
 
 <!-- CSSJSON.transition-property.compatibility -->
 
+<!-- CSSJSON.transition-property.example -->
+
 <!-- CSSJSON.transition-property.reference -->

@@ -13,6 +13,8 @@
 
 <!-- CSSJSON.line-height.compatibility -->
 
+<!-- CSSJSON.line-height.example -->
+
 #### App平台
 App平台仅支持以像素值（px）、相对像素值（rpx）和相对当前元素字体字体单位（em），em单位表示数字值乘以该元素的字体大小，无单位值时使用em，默认值为1.2em。
 line-height 样式不支持继承，仅对 [text](../component/text.md) 组件生效。

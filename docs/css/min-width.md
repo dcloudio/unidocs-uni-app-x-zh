@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.min-width.compatibility -->
 
+<!-- CSSJSON.min-width.example -->
+
 <!-- CSSJSON.min-width.reference -->

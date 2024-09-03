@@ -13,6 +13,8 @@
 
 <!-- CSSJSON.border-style.compatibility -->
 
+<!-- CSSJSON.border-style.example -->
+
 <!-- CSSJSON.border-style.reference -->
 
 ## 注意事项

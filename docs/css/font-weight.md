@@ -13,7 +13,9 @@
 
 <!-- CSSJSON.font-weight.compatibility -->
 
-#### App平台差异  
+<!-- CSSJSON.font-weight.example -->
+
+#### App平台差异
 font-weight 样式不支持继承
 
 <!-- CSSJSON.font-weight.reference -->

@@ -13,7 +13,9 @@
 
 <!-- CSSJSON.color.compatibility -->
 
-#### App平台  
+<!-- CSSJSON.color.example -->
+
+#### App平台
 App端 color 样式不支持继承，
 
 #### 浏览器或webview平台

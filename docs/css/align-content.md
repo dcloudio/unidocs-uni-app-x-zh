@@ -15,4 +15,6 @@
 
 <!-- CSSJSON.align-content.compatibility -->
 
+<!-- CSSJSON.align-content.example -->
+
 <!-- CSSJSON.align-content.reference -->
