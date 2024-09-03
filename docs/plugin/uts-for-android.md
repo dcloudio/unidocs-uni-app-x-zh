@@ -368,7 +368,8 @@ uni-app x / uni-app 均支持打包时手动指定资源位置 [说明文档](ht
 │  └─[具体内容]                   
 ├─nativeResources               //配置文件目录
 │  └─android
-│  		└─google-services.json
+│  	└─google-services.json
+├─ // 其他文件
 └─App.vue 
 	</code>
 </pre>
