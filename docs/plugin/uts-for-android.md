@@ -355,7 +355,27 @@ so文件:
 
 HBuilderX 4.26版本之后，开发者可以使用混编kotlin代码的方式，直接集成so文件。参考[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs)
 
-### 3.5 远程依赖仓库说明
+### 3.5 其他配置文件
+
+uni-app x / uni-app 均支持打包时模块资源干预 [说明文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#nativeresources)
+
+例如 `google-services.json`等验证文件需要打包时放在 `app` 目录下，则可以放置在如下位置：
+
+
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+┌─pages                         //页面目录
+│  └─[具体内容]                   
+├─nativeResources               //配置文件目录
+│  └─android
+│  		└─google-services.json
+└─App.vue 
+	</code>
+</pre>
+
+具体的打包示例，参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts) 
+
+### 3.6 远程依赖仓库说明
 
 目前云打包机支持下面的仓库：
 
@@ -375,7 +395,7 @@ maven { url 'https://jitpack.io' }
 这种情况，推荐开发者上传到 jitpack.io  这也是目前android 原生开发主流的远程仓库。 [使用文档](https://docs.jitpack.io/)
 
 
-### 3.6 Android 编译SDK版本说明
+### 3.7 Android 编译SDK版本说明
 
 截止 HBuilderX 4.15 版本：
 
