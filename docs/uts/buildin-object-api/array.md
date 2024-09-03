@@ -383,15 +383,7 @@ a.sort((a, b) : number => {
 
 <!-- UTSJSON.Array.unshift.returnValue -->
 
-```ts
-const array1 = [1, 2, 3];
-
-console.log(array1.unshift(4, 5));
-// expected output: 5
-
-console.log(array1);
-// expected output: Array [4, 5, 1, 2, 3]
-```
+<!-- UTSJSON.Array.unshift.test -->
 
 <!-- UTSJSON.Array.unshift.compatibility -->
 
@@ -403,20 +395,7 @@ console.log(array1);
 
 <!-- UTSJSON.Array.indexOf.returnValue -->
 
-```ts
-const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
-
-console.log(beasts.indexOf('bison'));
-// expected output: 1
-
-// start from index 2
-console.log(beasts.indexOf('bison', 2));
-// expected output: 4
-
-console.log(beasts.indexOf('giraffe'));
-// expected output: -1
-
-```
+<!-- UTSJSON.Array.indexOf.test -->
 
 <!-- UTSJSON.Array.indexOf.compatibility -->
 
@@ -428,15 +407,7 @@ console.log(beasts.indexOf('giraffe'));
 
 <!-- UTSJSON.Array.lastIndexOf.returnValue -->
 
-```ts
-const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
-
-console.log(animals.lastIndexOf('Dodo'));
-// expected output: 3
-
-console.log(animals.lastIndexOf('Tiger'));
-// expected output: 1
-```
+<!-- UTSJSON.Array.lastIndexOf.test -->
 
 <!-- UTSJSON.Array.lastIndexOf.compatibility -->
 
@@ -448,12 +419,7 @@ console.log(animals.lastIndexOf('Tiger'));
 
 <!-- UTSJSON.Array.every.returnValue -->
 
-```ts
-const isBelowThreshold = (currentValue:number):boolean => currentValue < 40;
-const array1 = [1, 30, 39, 29, 10, 13];
-console.log(array1.every(isBelowThreshold));
-// expected output: true
-```
+<!-- UTSJSON.Array.every.test -->
 
 <!-- UTSJSON.Array.every.compatibility -->
 
@@ -508,16 +474,7 @@ console.log(array1.every(isBelowThreshold));
 
 <!-- UTSJSON.Array.some.returnValue -->
 
-
-```ts
-const array = [1, 2, 3, 4, 5];
-
-// checks whether an element is even
-const even = (element:number):boolean=> element % 2 == 0;
-
-console.log(array.some(even));
-// expected output: true
-```
+<!-- UTSJSON.Array.some.test -->
 
 <!-- UTSJSON.Array.some.compatibility -->
 
@@ -557,13 +514,7 @@ console.log(array.some(even));
 
 <!-- UTSJSON.Array.forEach.returnValue -->
 
-```ts
-const array1 = ['a', 'b', 'c'];
-array1.forEach(element => console.log(element));
-// expected output: "a"
-// expected output: "b"
-// expected output: "c"
-```
+<!-- UTSJSON.Array.forEach.test -->
 
 > 特别注意：
 > 不可在 forEach 的 callbackFn 里添加或者删除原数组元素，此行为是危险的，在 Android 平台会造成闪退，在 iOS 平台会造成行为不符合预期。如果想实现该效果，请用 while 循环。
@@ -626,16 +577,7 @@ while (index < array1.length) {
 
 <!-- UTSJSON.Array.map.returnValue -->
 
-```ts
-const array1 = [1, 4, 9, 16];
-
-// pass a function to map
-const map1 = array1.map((x:number):number => x * 2);
-
-console.log(map1);
-// expected output: Array [2, 8, 18, 32]
-
-```
+<!-- UTSJSON.Array.map.test -->
 
 <!-- UTSJSON.Array.map.compatibility -->
 
@@ -675,15 +617,7 @@ console.log(map1);
 
 <!-- UTSJSON.Array.filter.returnValue -->
 
-```ts
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-
-const result = words.filter((word:string):boolean => word.length > 6);
-
-console.log(result);
-// expected output: Array ["exuberant", "destruction", "present"]
-
-```
+<!-- UTSJSON.Array.filter_1.test -->
 
 <!-- UTSJSON.Array.filter.compatibility -->
 
@@ -737,20 +671,7 @@ console.log(result);
 
 <!-- UTSJSON.Array.reduce.returnValue -->
 
-```ts
-const array1 = [1, 2, 3, 4];
-
-// 0 + 1 + 2 + 3 + 4
-const initialValue = 0;
-const sumWithInitial = array1.reduce(
-  (previousValue:number, currentValue:number):number => previousValue + currentValue,
-  initialValue
-);
-
-console.log(sumWithInitial);
-// expected output: 10
-
-```
+<!-- UTSJSON.Array.reduce.test -->
 
 <!-- UTSJSON.Array.reduce.compatibility -->
 
@@ -832,6 +753,8 @@ console.log(sumWithInitial);
 <!-- UTSJSON.Array.reduceRight.param -->
 
 <!-- UTSJSON.Array.reduceRight.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight.test -->
 
 <!-- UTSJSON.Array.reduceRight.compatibility -->
 
@@ -927,19 +850,7 @@ console.log(sumWithInitial);
 
 <!-- UTSJSON.Array.isArray.returnValue -->
 
-```ts
-console.log(Array.isArray([1, 3, 5]));
-// Expected output: true
-
-console.log(Array.isArray('[]'));
-// Expected output: false
-
-console.log(Array.isArray(new Array(5)));
-// Expected output: true
-
-console.log(Array.isArray(new Int16Array([15, 33])));
-// Expected output: false
-```
+<!-- UTSJSON.Array.isArray.test -->
 
 <!-- UTSJSON.Array.isArray.compatibility -->
 
@@ -950,6 +861,8 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 <!-- UTSJSON.Array.includes.param -->
 
 <!-- UTSJSON.Array.includes.returnValue -->
+
+<!-- UTSJSON.Array.includes.test -->
 
 <!-- UTSJSON.Array.includes.compatibility -->
 
@@ -962,6 +875,8 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 <!-- UTSJSON.Array.toKotlinList.returnValue -->
 
 <!-- UTSJSON.Array.toKotlinList.compatibility -->
+
+<!-- UTSJSON.Array.toKotlinList.test -->
 
 <!-- UTSJSON.Array.toKotlinList.tutorial -->
 
