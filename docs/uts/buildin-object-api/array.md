@@ -214,18 +214,11 @@ let arr = new Array(10)
 所以下面的代码在 部分平台可能不符合预期
 
 
-```ts
-new Array(20).fill(0)
-```
+<!-- UTSJSON.Array.sampleFillError.test -->
 
 可以使用下面的代码替代
 
-```ts
-let b = Array<Number>()
-for(let i = 0; i < 20; i++){
-  b.add(0)
-}
-```
+<!-- UTSJSON.Array.sampleFill.test -->
 
 <!-- UTSJSON.Array.fill.compatibility -->
 
@@ -350,16 +343,7 @@ for(let i = 0; i < 20; i++){
 **平台差异性**
 
 在android平台，一定不能忽略两个对比元素相等的场景，否则可能会出现`java.lang.IllegalArgumentException: Comparison method violates its general contract!‌`
-```
-
-a.sort((a, b) : number => {
-  // 这里的判断不能省略
-  if(a.compareTo(b) == 0){
-    return 0
-  }
-  return a - b
-})
-```
+<!-- UTSJSON.Array.sampleSort.test -->
 
 
 
@@ -519,25 +503,7 @@ a.sort((a, b) : number => {
 > 特别注意：
 > 不可在 forEach 的 callbackFn 里添加或者删除原数组元素，此行为是危险的，在 Android 平台会造成闪退，在 iOS 平台会造成行为不符合预期。如果想实现该效果，请用 while 循环。
 
-```ts
-
-const array1 = ['a', 'b', 'c'];
-array1.forEach(element => {
-	console.log(element)
-	array1.pop() // 此行为在 Android 平台会造成闪退，在 iOS 平台会输出 'a', 'b', 'c', 而 JS 会输出 'a', 'b'
-});
-
-// 如果想让上述行为正常运行，可以用 while 循环实现：
-
-let array1 = ['a', 'b', 'c'];
-let index = 0;
-while (index < array1.length) {
-  console.log(array1[index]);
-  array1.pop();
-  index += 1;
-}
-
-```
+<!-- UTSJSON.Array.sampleForEachCallback.test -->
 
 <!-- UTSJSON.Array.forEach.compatibility -->
 
