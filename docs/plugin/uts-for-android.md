@@ -382,6 +382,7 @@ uni-app x / uni-app 均支持打包时手动指定资源位置 [说明文档](ht
 
 ```gradle
 
+mavenCentral()
 jcenter()
 google()
 // huawei
