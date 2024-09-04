@@ -59,6 +59,19 @@ web平台有可视化界面，在manifest的Web配置中寻找定位和地图。
 app平台目前还没有可视化界面，需要在manifest的源码视图中配置。
 
 - app需要在manifest.json文件中配置`uni-getLocation`节点，[详见](../collocation/manifest-modules.md#uni-getLocation)
+- iOS平台：如果应用需要后台定位能力，需要在 info.plist 中配置 UIBackgroundModes 的 location，注意需Xcode工程中添加相对应 Capabilities 中的 Background Modes，并且勾选 Location updates。
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  	<key>UIBackgroundModes</key>
+		<array>
+			<string>location</string>
+		</array>
+
+	</dict>
+</plist>
+```
 - iOS平台：使用内置腾讯定位和iOS14以上高精度定位时，需要在info.plist中配置对应的Key，参考[iOS平台在info.plist配置定位相关的Key](../collocation/manifest-modules.md#uni-getlocation-key)
 - Android平台：使用内置腾讯定位时，配置 Key 参考[Andoird平台配置腾讯定位key](../collocation/manifest-modules.md#uni-getlocation-android-key)
 
