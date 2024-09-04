@@ -925,7 +925,7 @@ val convertArrayFromKotlin = UTSArray.fromNative(kotlinArray);
 ## 常见操作
 
 - 创建数组
-<!-- UTSJSON.Array.aaa.sampleCreate -->
+<!-- UTSJSON.Array.sampleCreate.test -->
 - 通过索引访问数组元素
 ```ts
 const first = fruits[0]
