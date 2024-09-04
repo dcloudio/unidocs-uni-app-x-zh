@@ -522,10 +522,20 @@ UTSAndroid.getUniActivity()!.getWindow().getDecorView();
 
 
 
+## 5 隐私协议适配说明@iodcloudprivacy
+
+UTS内置了隐私状态管理API，以支持开发者管理用户隐私协议状态配置的需求：
+
+获取用户当前是否已同意隐私协议[isPrivacyAgree](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#isprivacyagree-boolean)
+
+更新用户对隐私协议的状态[setprivacyagree](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#setprivacyagree-state-boolean-void)
+
+重置隐私协议状态[resetPrivacyAgree](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#resetprivacyagree-void)
 
 
 
-## 5 Kotlin与UTS差异重点介绍 (持续更新)
+
+## 6 Kotlin与UTS差异重点介绍 (持续更新)
 
 通过上面的章节的阅读,至此我们认为你已经掌握了UTS语法，掌握了基本的Kotlin语法，掌握了UTS对于android资源的支持。
 
@@ -761,19 +771,19 @@ class ScreenReceiver extends BroadcastReceiver{
 
 
 
-## 6  常见问题(持续更新)
+## 7  常见问题(持续更新)
 
-### 6.1 如何在UTS环境中，新建一个`activity`？
-
-参考Hello UTS项目中的uts-nativepage插件
-
-
-### 6.2 如何在UTS环境中，新建一个`service`？
+### 7.1 如何在UTS环境中，新建一个`activity`？
 
 参考Hello UTS项目中的uts-nativepage插件
 
 
-### 6.3 如何在UTS环境中，新建一个`Thread`？
+### 7.2 如何在UTS环境中，新建一个`service`？
+
+参考Hello UTS项目中的uts-nativepage插件
+
+
+### 7.3 如何在UTS环境中，新建一个`Thread`？
 
 简单示例
 ```ts
@@ -837,7 +847,7 @@ import R from 'io.dcloud.uni_modules.uts_nativepage.R';
 ```
 
 
-### 6.4  如何实现一个接口
+### 7.4  如何实现一个接口
 
 以HelloUTS nativepage插件 部分代码为例：
 
@@ -925,7 +935,7 @@ ScancodeConfig.setShowLine(false);
 ScancodeConfig.showLine = false;
 ```
 
-### 6.5 Android原生API过时警告处理
+### 7.5 Android原生API过时警告处理
 
 调用原生过时的API插件编译时产生警告，可以使用`@Suppress("DEPRECATION")`添加注解到使用的方法上忽略警告，例：
 ```js
@@ -975,7 +985,7 @@ export function request<T>(options : RequestOptions<T>) : RequestTask {
 }
 ```
 
-### 6.7 获取原生Class 对象
+### 7.7 获取原生Class 对象
 
 可以使用下面的代码获取指定class对象
 ```kotlin
@@ -987,7 +997,7 @@ let getClassByInstance = UTSAndroid.getJavaClass(UTSAndroid.getUniActivity()!)
 console.log(getClassByInstance);
 ```
 
-## 7  已知待解决问题(持续更新)
+## 已知待解决问题(持续更新)
 
 ### 结构入参 boolean 参数默认为true
 
