@@ -161,6 +161,14 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 
 使用 uni-ad 模块需在 manifest.json 文件中添加 uni-ad 节点，并配置使用的广告 SDK。
 
+::: tip Tips
+为确保隐私合规及广告的正常展示，开发者需要在用户同意隐私政策时，主动调用[UTSAndroid.setPrivacyAgree(true)](../uts/utsandroid.md#setprivacyagree-state-boolean-void)。参考代码：
+```uts
+// #ifdef APP-ANDROID
+UTSAndroid.setPrivacyAgree(true)
+// #endif
+```
+:::
 ### 配置三方广告SDK
 在 app -> distribute -> modules 下添加 uni-ad 节点：
 ```json
