@@ -927,74 +927,27 @@ val convertArrayFromKotlin = UTSArray.fromNative(kotlinArray);
 - 创建数组
 <!-- UTSJSON.Array.sampleCreate.test -->
 - 通过索引访问数组元素
-```ts
-const first = fruits[0]
-// Apple
-const last = fruits[fruits.length - 1]
-// Banana
-```
+<!-- UTSJSON.Array.sampleVisit.test -->
 - 遍历数组
-```ts
-fruits.forEach(function(item, index, array) {
-  console.log(item, index)
-})
-// Apple 0
-// Banana 1
-```
+<!-- UTSJSON.Array.sampleForEach.test -->
 - 注意：数组遍历不推荐使用 for in 语句，因为在 ts 中 for in 遍历的是数组的下标，而在 Swift 和 Kottlin 中遍历的是数组的元素，存在行为不一致。
 
 - 添加元素到数组的末尾
-```ts
-const newLength = fruits.push('Orange')
-// ["Apple", "Banana", "Orange"]
-```
+<!-- UTSJSON.Array.sampleAdd.test -->
 - 删除数组末尾的元素
-```ts
-const last = fruits.pop() // remove Orange (from the end)
-// ["Apple", "Banana"]
-```
+<!-- UTSJSON.Array.samplePop.test -->
 - 删除数组头部元素
-```ts
-const first = fruits.shift() // remove Apple from the front
-// ["Banana"]
-```
+<!-- UTSJSON.Array.sampleShift.test -->
 - 添加元素到数组的头部
-```ts
-const newLength = fruits.unshift('Strawberry') // add to the front
-// ["Strawberry", "Banana"]
-```
+<!-- UTSJSON.Array.sampleUnshift.test -->
 - 找出某个元素在数组中的索引
-```ts
-fruits.push('Mango')
-// ["Strawberry", "Banana", "Mango"]
-const pos = fruits.indexOf('Banana')
-// 1
-```
+<!-- UTSJSON.Array.sampleIndexOf.test -->
 - 通过索引删除某个元素
-```ts
-const removedItem = fruits.splice(pos, 1) // this is how to remove an item
-// ["Strawberry", "Mango"]
-```
+<!-- UTSJSON.Array.sampleSplice.test -->
 - 从一个索引位置删除多个元素
-```ts
-const vegetables = ['Cabbage', 'Turnip', 'Radish', 'Carrot']
-console.log(vegetables)
-// ["Cabbage", "Turnip", "Radish", "Carrot"]
-const pos = 1
-const n = 2
-const removedItems = vegetables.splice(pos, n)
-// this is how to remove items, n defines the number of items to be removed,
-// starting at the index position specified by pos and progressing toward the end of array.
-console.log(vegetables)
-// ["Cabbage", "Carrot"] (the original array is changed)
-console.log(removedItems)
-// ["Turnip", "Radish"]
-```
+<!-- UTSJSON.Array.sampleSpliceMul.test -->
 - 复制一个数组
-```ts
-const shallowCopy = fruits.slice() // this is how to make a copy
-// ["Strawberry", "Mango"]
-```
+<!-- UTSJSON.Array.sampleSpliceCopy.test -->
 ### 访问数组元素
 
 数组的索引是从 0 开始的，第一个元素的索引为 0，最后一个元素的索引等于该数组的 长度 减 1。
@@ -1002,7 +955,6 @@ const shallowCopy = fruits.slice() // this is how to make a copy
 如果指定的索引是一个无效值，将会抛出 IndexOutOfBoundsException 异常
 
 下面的写法是错误的，运行时会抛出 SyntaxError 异常，而原因则是使用了非法的属性名：
-
 ```ts
 console.log(arr.0) // a syntax error
 ```
