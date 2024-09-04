@@ -382,13 +382,15 @@ uni-app x / uni-app 均支持打包时手动指定资源位置 [说明文档](ht
 
 ```gradle
 
-mavenCentral()
+
 jcenter()
 google()
 // huawei
 maven {url 'https://developer.huawei.com/repo/'}
 // jitpack 远程仓库：https://jitpack.io
 maven { url 'https://jitpack.io' }
+// mavenCentral 默认支持
+mavenCentral()
 
 ```
 
