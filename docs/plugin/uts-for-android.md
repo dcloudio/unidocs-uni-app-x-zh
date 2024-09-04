@@ -469,32 +469,6 @@ let decorView = UTSAndroid.getUniActivity()!.window.decorView;
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 
-#### onAppActivityDestroy
-
-即使在android原生开发中，应用的生命周期管理也是十分重要的。 [android生命周期](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=zh_cn)
-
-UTS环境中对原生的生命周期进行了封装和简化，大多数情况下，开发者只需要了解本章节中列出的 activity相关生命周期即可。
-
-其中最为常见的场景，要数`onAppActivityDestroy`中释放系统资源：
-
-举个例子，以Hello UTS  [用户截屏插件](https://ext.dcloud.net.cn/plugin?id=9897)为例。
-
-在注册监听回调时，添加了下列代码。
-```ts
-UTSAndroid.onAppActivityDestroy(function(){
-	screenOB?.stopWatching()
-	screenOB = null
-})
-```
-
-这段代码的意思是当宿主activity被销毁时，主动回收屏幕监听的FileObserver
-
-这是因为除了正常的用户注册/注册 之外，还存在一种情况：用户没有反注册，便关闭了应用。   此时FileObserver 并没有被反注册回收。就会导致应用关闭后继续持有上一个uni-app js引擎实例的引用，从而导致下一次启动时出现引擎回调找不到的情况。
-
-
-开发者在开发UTS插件时，如果遇到了类似使用系统组件的情况，也需要特别关注资源释放情况。
-
-
 
 #### requestSystemPermission
 
