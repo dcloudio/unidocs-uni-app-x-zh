@@ -925,10 +925,7 @@ val convertArrayFromKotlin = UTSArray.fromNative(kotlinArray);
 ## 常见操作
 
 - 创建数组
-```ts
-const fruits = ['Apple', 'Banana']
-console.log(fruits.length)
-```
+<!-- UTSJSON.Array.aaa.sampleCreate -->
 - 通过索引访问数组元素
 ```ts
 const first = fruits[0]
