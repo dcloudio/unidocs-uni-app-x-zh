@@ -297,7 +297,7 @@ for(let i = 0; i < 20; i++){
 
 <!-- UTSJSON.Array.join.returnValue -->
 
-<!-- UTSJSON.Array.concat_1.test -->
+<!-- UTSJSON.Array.join.test -->
 
 <!-- UTSJSON.Array.join.compatibility -->
 
@@ -319,7 +319,7 @@ for(let i = 0; i < 20; i++){
 
 <!-- UTSJSON.Array.shift.returnValue -->
 
-<!-- UTSJSON.Array.concat_1.test -->
+<!-- UTSJSON.Array.shift.test -->
 
 <!-- UTSJSON.Array.shift.compatibility -->
 
