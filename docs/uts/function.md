@@ -356,3 +356,34 @@ fn = function () {
 }
 fn()
 ```
+
+## 方法参数为回调函数
+
+方法参数为一个回调函数时，如果需要多次调用该回调，则该方法需要以 `on` 开头
+
+举例：
+
+```ts
+export function onCallback(callback: (sth:string) => void) {
+  /**
+   * 模拟多次回调
+   */
+  let count = 1
+  let taskId = -1
+  taskId = setInterval(function() {
+    callback("第" + count + "次回调")
+    count++;
+    console.log("count",count)
+    if(count > 3){
+      clearInterval(taskId)
+    }
+  }, 500);
+	
+}
+```
+
+如果违背此原则，则`uni-app` 平台多次调用时会提示 `method not found`
+
+
+
+
