@@ -103,15 +103,7 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 <!-- UTSJSON.Number.toFixed.returnValue -->
 
-```ts
-function financial(x: Number): String {
-  return x.toFixed(2);
-}
-console.log(financial(123.456));
-// expected output: "123.46"
-console.log(financial(0.004));
-// expected output: "0.00"
-```
+<!-- UTSJSON.Number.toFixed.test -->
 
 <!-- UTSJSON.Number.toFixed.compatibility -->
 
@@ -165,6 +157,8 @@ console.log(financial(0.004));
 
 <!-- UTSJSON.Number.valueOf.returnValue -->
 
+<!-- UTSJSON.Number.valueOf.test -->
+
 <!-- UTSJSON.Number.valueOf.compatibility -->
 
 ### toInt()
@@ -175,15 +169,7 @@ console.log(financial(0.004));
 
 <!-- UTSJSON.Number.toInt.returnValue -->
 
-```ts
-let a = 12
-console.log(a.toInt());
-// expected output: 12
-
-// Int最大值2147483647,溢出了
-let b = 2147483648
-// expected output: -2147483648
-```
+<!-- UTSJSON.Number.toInt.test -->
 
 <!-- UTSJSON.Number.toInt.compatibility -->
 
@@ -225,11 +211,7 @@ let b = 2147483648
 
 <!-- UTSJSON.Number.toByte.returnValue -->
 
-```ts
-let a = 12
-console.log(a.toByte());
-// expected output: 12
-```
+<!-- UTSJSON.Number.toByte.test -->
 
 <!-- UTSJSON.Number.toByte.compatibility -->
 
@@ -241,11 +223,7 @@ console.log(a.toByte());
 
 <!-- UTSJSON.Number.toLong.returnValue -->
 
-```ts
-let a = 12
-console.log(a.toLong());
-// expected output: 12
-```
+<!-- UTSJSON.Number.toLong.test -->
 
 <!-- UTSJSON.Number.toLong.compatibility -->
 
@@ -372,13 +350,7 @@ console.log(a.toLong());
 
 <!-- UTSJSON.Number.from.compatibility -->
 
-```ts
-let a: Int = 12
-let b = Number.from(a)
-console.log(b);
-// expected output: 12
-
-```
+<!-- UTSJSON.Number.from.test -->
 
 <!-- UTSJSON.Number.tutorial -->
 
