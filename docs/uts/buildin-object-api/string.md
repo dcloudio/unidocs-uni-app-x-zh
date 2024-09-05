@@ -561,15 +561,6 @@ console.log(str2.padEnd(5));
 
 <!-- UTSJSON.String.codePointAt.tutorial -->
 
-### includes(searchString, position?)
-
-<!-- UTSJSON.String.includes.description -->
-
-<!-- UTSJSON.String.includes.param -->
-
-<!-- UTSJSON.String.includes.returnValue -->
-
-<!-- UTSJSON.String.includes.compatibility -->
 
 ### endsWith(searchString, endPosition?)
 
