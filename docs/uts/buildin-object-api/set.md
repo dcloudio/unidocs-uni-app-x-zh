@@ -166,7 +166,7 @@ console.log(set1.has(5));
 console.log(set1.has(6));
 // expected output: false
 ```
-<!-- UTSJSON.Set.has.compatibility -->.
+<!-- UTSJSON.Set.has.compatibility -->
 
 <!-- UTSJSON.Set.tutorial -->
 
