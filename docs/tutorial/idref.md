@@ -31,7 +31,7 @@ template区：
 ```html
 <component1 ref="c1"></component1>
 ```
-scrip区：
+script区：
 ```js
 this.$refs.c1.getSome() //js写法
 this.$refs["c1"].getSome() //与上一行等价
