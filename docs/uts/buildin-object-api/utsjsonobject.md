@@ -40,20 +40,6 @@ if(parseRet instanceof UTSJSONObject){
 
 ## 静态方法
 
-### parse()
-
-<!-- UTSJSON.UTSJSONObject.parse.description -->
-
-<!-- UTSJSON.UTSJSONObject.parse.param -->
-
-<!-- UTSJSON.UTSJSONObject.parse.returnValue -->
-
-<!-- UTSJSON.UTSJSONObject.parse.test -->
-
-<!-- UTSJSON.UTSJSONObject.parse.compatibility -->
-
-<!-- UTSJSON.UTSJSONObject.parse.tutorial -->
-
 ### keys(object: UTSJSONObject): Array\<String>
 
 <!-- UTSJSON.UTSJSONObject.keys.description -->
@@ -118,6 +104,20 @@ const returnedTarget = UTSJSONObject.assign<User>(target, source);
 ```
 
 ## 实例方法
+
+### parse()
+
+<!-- UTSJSON.UTSJSONObject.parse.description -->
+
+<!-- UTSJSON.UTSJSONObject.parse.param -->
+
+<!-- UTSJSON.UTSJSONObject.parse.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.parse.test -->
+
+<!-- UTSJSON.UTSJSONObject.parse.compatibility -->
+
+<!-- UTSJSON.UTSJSONObject.parse.tutorial -->
 
 ### get(key: string): any | null
 
