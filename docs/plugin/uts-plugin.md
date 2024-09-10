@@ -351,11 +351,6 @@ dependencies {
 
     2 请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
 
-- project 节点下的 Gradle 插件仅支持以下列表（如需添加新的插件，需联系DCloud技术支持申请）：
-	+ com.google.gms.google-services
-	+ com.huawei.agconnect
-	+ com.hihonor.mcs.asplugin
-
 #### iOS 平台原生配置
 
 app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
@@ -1847,6 +1842,71 @@ utsJsonObj.forEach(function(perField:any){
 ```
 
 
+### HX 4.25 版本及以后 UTS 插件如何定义一个可以持续回调的函数@keepalive
+
+HX 4.25版本以前向 js 暴露的 callback 是一直保存在内存中的，所有带 callback 回调的函数 都可以持续回调，但这也带来了一个致命的问题， 当频繁长时间调用带 callback 回调的函数时，由于 callback 一直保存在内存中，会创建大量 callback 对象，造成内存暴增甚至闪退。
+为了处理这个问题，从 HX 4.25 版本我们做了调整，只有以 on 开头，且仅有一个 callback 类型的参数的函数 才能持续回调，其他函数一律只能回调一次。这种做法处理了内存问题，但带来了向下兼容的问题。
+
+为了更彻底的解决这个问题，从 HX 4.27 版本开始，我们新增了通过装饰器(注解)的方式定义回调函数是否一直存活。
+
+下面的方式均可以使回调函数一直存活。
+
+```ts
+
+export type Options = {
+	a: string
+	success: (res: string) => void
+}
+
+export function onTest(callback : (msg : string) => void) {
+    callback("a")
+    callback("b")
+}
+
+@UTSJS.keepAlive
+export function test(callback : (msg : string) => void) {
+    callback("a")
+    callback("b")
+}
+
+@UTSJS.keepAlive
+export function testOption(option : Options) {
+    option.success("a")
+    option.success("b")
+}
+
+export class Test {
+	onTest(callback : (msg : string) => void) {
+	    callback("a")
+	    callback("b")
+	}
+	
+	@UTSJS.keepAlive
+	testOption(option : Options) {
+	    option.success("a")
+	    option.success("b")
+	}
+	
+	
+    @UTSJS.keepAlive
+    test(callback : (msg : string) => void) {
+        callback("a")
+        callback("b")
+    }
+	
+	@UTSJS.keepAlive
+	static testStatic(callback : (msg : string) => void) {
+        callback("a")
+        callback("b")
+    }
+	
+	@UTSJS.keepAlive
+	static testOptionStatic(option : Options) {
+	    option.success("a")
+	    option.success("b")
+	}
+}
+```
 
 
 ## Bug & Tips@tips
