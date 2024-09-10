@@ -351,6 +351,11 @@ dependencies {
 
     2 请勿通过 手动添加jar/aar 等方式引入相同的依赖，否则会因依赖冲突导致云打包失败。
 
+- project 节点下的 Gradle 插件仅支持以下列表（如需添加新的插件，需联系DCloud技术支持申请）：
+	+ com.google.gms.google-services
+	+ com.huawei.agconnect
+	+ com.hihonor.mcs.asplugin
+
 #### iOS 平台原生配置
 
 app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
