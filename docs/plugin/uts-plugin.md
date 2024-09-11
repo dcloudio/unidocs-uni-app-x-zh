@@ -1923,10 +1923,8 @@ export class Test {
 ```
 
 > 特别注意：
-
-> 1. 如果带了该装饰器，则该方法参数里的所有回调都会在内存中持续存在
-
-> 2. 目前装饰器不支持 export const test:Test = ()=>{} // 这种导出方式，需要使用export function test(){}
+> 1. 如果带了该装饰器，则该方法参数里的所有回调都会在内存中持续存在，需提醒使用者避免频繁调用此方法  
+> 2. 目前装饰器不支持 export const test:Test = ()=>{} // 这种导出方式，需要使用export function test(){}  
 
 
 ## Bug & Tips@tips
