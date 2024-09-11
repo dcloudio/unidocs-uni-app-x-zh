@@ -1842,18 +1842,27 @@ utsJsonObj.forEach(function(perField:any){
 ```
 
 
-### HBuilderX 4.25 版本及以后 UTS 插件如何定义一个可以持续回调的函数@keepalive
+### `UTS插件`导出方法中的回调函数参数如何支持持续触发@keepalive
+**HBuilderX4.25版本以前**  
+`UTS插件`导出方法的参数中存在回调函数时，在JS环境中调用会将回调函数 callback 一直保存在内存中，这时回调函数可以持续触发回调。这种策略会带来一个致命的问题， 当频繁调用这些导出方法时，每次调用都会创建回调函数 callback 对象，并一直保存在内存中，从而造成内存泄漏，可能引发应用闪退。  
 
-HBuilderX 4.25版本以前向 js 暴露的 callback 是一直保存在内存中的，所有带 callback 回调的函数 都可以持续回调。但这也带来了一个致命的问题， 当频繁长时间调用带 callback 回调的函数时，由于 callback 一直保存在内存中，会创建大量 callback 对象，造成内存暴增甚至闪退。
-为了处理这个问题，从 HBuilderX 4.25 版本开始我们做了调整，只有 `以 on 开头，且仅有一个 callback 类型的参数的函数` 如 `function onTest(callback : (msg : string) => void) { }` 才能持续回调，其他函数一律只能回调一次。这种做法处理了内存问题，但带来了向下兼容的问题，
-需要插件作者修改函数名（`影响范围： HBuilderX 4.25 和 4.26 版本 iOS 端 uni-app 和 uni-app x, 安卓端 uni-app，顶层函数或者自定义 class 中的静态或者实例函数`）
+为了解决此问题，回调函数参数策略做了调整：  
 
-为了更彻底的解决这个问题，从 HBuilderX 4.27 版本开始，我们新增了 `通过装饰器(注解) @UTSJS.keepAlive ` 的方式定义回调函数是否一直存活，同时符合 `以 on 开头，且仅有一个 callback 类型的参数的函数` 这个规则的函数依然可以持续回调。
+**HBuilderX4.25版本及以后**  
+`UTS插件`导出的方法中的回调函数参数触发一次后立即自动回收，避免内存泄漏，也就是默认情况下回调函数 callback 只能触发一次。这次调整可能带来向下兼容的问题，导致方法中的回调函数参数无法持续回调。  
+影响范围： `HBuilderX4.25+版本 iOS 平台的 uni-app 和 uni-app x 项目, Android平台的 uni-app 项目，顶层方法或者自定义 class 中的静态方法或者实例方法`  
 
-下面的方式均可以使回调函数一直存活。
-
+如果回调函数参数需支持可持续触发， 按以下方案进行适配：
+将方法名称调整为`以 on 开头，且仅有一个 callback 类型的参数`，如下示例：  
 ```ts
+function onTest(callback : (msg : string) => void) {
+	//...
+}
+```
 
+**HBuilderX4.27版本新增适配方案**
+通过装饰器(注解) `@UTSJS.keepAlive` 声明方法中的回调函数参数一直存活（不自动回收），支持回调函数可持续触发回调，如下示例：  
+```ts
 export type Options = {
 	a: string
 	success: (res: string) => void
