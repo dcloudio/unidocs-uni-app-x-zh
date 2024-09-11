@@ -1844,10 +1844,10 @@ utsJsonObj.forEach(function(perField:any){
 
 ### HX 4.25 版本及以后 UTS 插件如何定义一个可以持续回调的函数@keepalive
 
-HX 4.25版本以前向 js 暴露的 callback 是一直保存在内存中的，所有带 callback 回调的函数 都可以持续回调，但这也带来了一个致命的问题， 当频繁长时间调用带 callback 回调的函数时，由于 callback 一直保存在内存中，会创建大量 callback 对象，造成内存暴增甚至闪退。
-为了处理这个问题，从 HX 4.25 版本我们做了调整，只有以 on 开头，且仅有一个 callback 类型的参数的函数 才能持续回调，其他函数一律只能回调一次。这种做法处理了内存问题，但带来了向下兼容的问题。
+HBuilderX 4.25版本以前向 js 暴露的 callback 是一直保存在内存中的，所有带 callback 回调的函数 都可以持续回调。但这也带来了一个致命的问题， 当频繁长时间调用带 callback 回调的函数时，由于 callback 一直保存在内存中，会创建大量 callback 对象，造成内存暴增甚至闪退。
+为了处理这个问题，从 HBuilderX 4.25 版本开始我们做了调整，只有以 on 开头，且仅有一个 callback 类型的参数的函数才能持续回调，其他函数一律只能回调一次。这种做法处理了内存问题，但带来了向下兼容的问题，需要插件作者修改函数名（影响范围： HX 4.25 和 4.26 版本 iOS 端 uni-app 和 uni-app x, 安卓端 uni-app，单个函数或者自定义 class 中的静态或者实例函数）
 
-为了更彻底的解决这个问题，从 HX 4.27 版本开始，我们新增了通过装饰器(注解)的方式定义回调函数是否一直存活。
+为了更彻底的解决这个问题，从 HBuilderX 4.27 版本开始，我们新增了通过装饰器(注解)的方式定义回调函数是否一直存活，同时符合 `以 on 开头，且仅有一个 callback 类型的参数的函数` 这个规则的函数依然可以持续回调。
 
 下面的方式均可以使回调函数一直存活。
 
@@ -1858,23 +1858,27 @@ export type Options = {
 	success: (res: string) => void
 }
 
+// 以 on 开头，且仅有一个 callback 类型的参数的函数
 export function onTest(callback : (msg : string) => void) {
     callback("a")
     callback("b")
 }
 
+// 使用 @UTSJS.keepAlive 注解方式，不限制参数个数
 @UTSJS.keepAlive
 export function test(callback : (msg : string) => void) {
     callback("a")
     callback("b")
 }
 
+// 使用 @UTSJS.keepAlive 注解方式，callback 可以包含在自定义type中
 @UTSJS.keepAlive
 export function testOption(option : Options) {
     option.success("a")
     option.success("b")
 }
 
+// 以上规则在自定义class中同样适用
 export class Test {
 	onTest(callback : (msg : string) => void) {
 	    callback("a")
@@ -1908,6 +1912,11 @@ export class Test {
 }
 ```
 
+> 特别注意：
+
+> 1. 如果带了该装饰器，则该方法参数里的所有回调都会在内存中持续存在
+
+> 2. 目前装饰器不支持 export const test:Test = ()=>{} // 这种导出方式，需要使用export function test(){}
 
 ## Bug & Tips@tips
 
