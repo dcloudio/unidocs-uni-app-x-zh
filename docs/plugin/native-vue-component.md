@@ -65,7 +65,7 @@ HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键�
 </template>
 ```
 
-#### native-view 与 原生view 进行绑定
+#### native-view 与 UTS插件关联
 
 引入 native-button 插件, native-view 初始化时会触发 @init 事件，此时创建UTS插件实例button对象，vue组件用button调用UTS插件相关的API。将 UniNativeViewElement 通过button对象传递给UTS插件，进行view关联绑定
 ```uts
@@ -86,7 +86,6 @@ HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键�
 			onviewinit(e : UniNativeViewInitEvent) {
 				//获取UniNativeViewElement 实例化NativeButton将element以构造参数传递给NativeButton插件
 				this.button = new NativeButton(e.detail.element);
-				this.button?.updateText(this.value)
 			}
 		}
 	}
