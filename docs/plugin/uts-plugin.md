@@ -1852,11 +1852,12 @@ utsJsonObj.forEach(function(perField:any){
 `UTS插件`导出的方法中的回调函数参数触发一次后立即自动回收，避免内存泄漏，也就是默认情况下回调函数 callback 只能触发一次。这次调整可能带来向下兼容的问题，导致方法中的回调函数参数无法持续回调。  
 影响范围： `HBuilderX4.25+版本 iOS 平台的 uni-app 和 uni-app x 项目, Android平台的 uni-app 项目，顶层方法或者自定义 class 中的静态方法或者实例方法`  
 
-如果回调函数参数需支持可持续触发， 按以下方案进行适配：
+如果回调函数参数需支持可持续触发， 按以下方案进行适配：  
+
 将方法名称调整为`以 on 开头，且仅有一个 callback 类型的参数`，如下示例：  
 ```ts
 function onTest(callback : (msg : string) => void) {
-	//...
+    //...
 }
 ```
 
@@ -1864,8 +1865,8 @@ function onTest(callback : (msg : string) => void) {
 通过装饰器(注解) `@UTSJS.keepAlive` 声明方法中的回调函数参数一直存活（不自动回收），支持回调函数可持续触发回调，如下示例：  
 ```ts
 export type Options = {
-	a: string
-	success: (res: string) => void
+    a: string
+    success: (res: string) => void
 }
 
 // 以 on 开头，且仅有一个 callback 类型的参数的函数
@@ -1890,35 +1891,34 @@ export function testOption(option : Options) {
 
 // 以上规则在自定义class中同样适用
 export class Test {
-	onTest(callback : (msg : string) => void) {
-	    callback("a")
-	    callback("b")
-	}
-	
-	@UTSJS.keepAlive
-	testOption(option : Options) {
-	    option.success("a")
-	    option.success("b")
-	}
-	
-	
+    onTest(callback : (msg : string) => void) {
+        callback("a")
+        callback("b")
+    }
+
+    @UTSJS.keepAlive
+    testOption(option : Options) {
+        option.success("a")
+        option.success("b")
+    }
+
     @UTSJS.keepAlive
     test(callback : (msg : string) => void) {
         callback("a")
         callback("b")
     }
-	
-	@UTSJS.keepAlive
-	static testStatic(callback : (msg : string) => void) {
+
+    @UTSJS.keepAlive
+    static testStatic(callback : (msg : string) => void) {
         callback("a")
         callback("b")
     }
-	
-	@UTSJS.keepAlive
-	static testOptionStatic(option : Options) {
-	    option.success("a")
-	    option.success("b")
-	}
+
+    @UTSJS.keepAlive
+    tatic testOptionStatic(option : Options) {
+        option.success("a")
+        option.success("b")
+    }
 }
 ```
 
@@ -1927,6 +1927,7 @@ export class Test {
 > 1. 如果带了该装饰器，则该方法参数里的所有回调都会在内存中持续存在
 
 > 2. 目前装饰器不支持 export const test:Test = ()=>{} // 这种导出方式，需要使用export function test(){}
+
 
 ## Bug & Tips@tips
 
