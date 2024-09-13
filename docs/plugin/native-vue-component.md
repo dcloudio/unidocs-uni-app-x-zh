@@ -59,7 +59,8 @@ HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键�
 #### vue组件添加 native-view
 
 构建vue原生组件后，HBuilder X 会自动创建components/native-button/native-button.uvue文件，在该文件编写代码添加 native-view 标签
-```uts
+
+```html
 <template>
 	<native-view></native-view>
 </template>
@@ -68,7 +69,8 @@ HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键�
 #### native-view 与 UTS插件关联
 
 引入 native-button 插件, native-view 初始化时会触发 @init 事件，此时创建UTS插件实例button对象，vue组件用button调用UTS插件相关的API。将 UniNativeViewElement 通过button对象传递给UTS插件，进行view关联绑定
-```uts
+
+```ts
 <template>
 	<native-view @init="onviewinit"></native-view>
 </template>
@@ -95,7 +97,7 @@ HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键�
 
 在 methods 节点中添加updateText方法，native-button组件使用者可调用该方法更新native-button文案。 [页面调用组件方法](https://doc.dcloud.net.cn/uni-app-x/vue/component.html#page-call-component-method)
 
-```uts
+```ts
 methods: {
 	//对外函数
 	updateText(value: string) {
@@ -107,44 +109,51 @@ methods: {
 #### vue原生组件声明props
 
 native-button 声明props，例如native-button的文案信息text属性，按vue规范监听到text属性更新，通过this.button驱动UTS插件更新原生view属性，在components/native-button/native-button.uvue编写如下代码，具体参考[vue组件Props规范](https://cn.vuejs.org/guide/components/props.html)
-```uts
-props: {
-	"text": {
-		type: String,
-		default: ''
-	}
-},
-watch: {
-	"text": {
-		handler(newValue : string, oldValue : string) {
-			this.value = newValue
-			this.button?.updateText(this.value)
+
+```html
+<script lang="uts">
+	export default {
+		props: {
+			"text": {
+				type: String,
+				default: ''
+			}
 		},
-		immediate: true
-	},
-},
+		watch: {
+			"text": {
+				handler(newValue : string, oldValue : string) {
+					this.value = newValue
+					this.button?.updateText(this.value)
+				},
+				immediate: true
+			},
+		},
+	}
+</script>
 ```
 
 #### vue原生组件声明事件
 
 native-button 声明事件，例如原生组件触发点击事件@buttonTap, UTS插件通过 UniNativeViewElement 的 dispatchEvent 函数触发native-view的 @customClick 自定义事件。vue组件监听native-view的 @customClick 自定义事件实现this.$emit触发声明事件，具体参考[vue组件事件规范](https://cn.vuejs.org/guide/components/events.html)
-```uts
+
+```html
 <template>
 	<native-view @customClick="ontap"></native-view>
 </template>
-... ...
-export default {
-	... ...
-	methods: {
-		ontap(e: UniNativeViewEvent) {
-			this.$emit("buttonTap", e)
+<script lang="uts">
+	export default {
+		methods: {
+			ontap(e: UniNativeViewEvent) {
+				this.$emit("buttonTap", e)
+			}
 		}
 	}
-}
+</script>
 ```
 
 native-button/components/native-button/native-button.uvue 最终代码如下：
-```uts
+
+```html
 <template>
 	<native-view @init="onviewinit" @customClick="ontap"></native-view>
 </template>
@@ -198,11 +207,11 @@ native-button/components/native-button/native-button.uvue 最终代码如下：
 
 UTS插件中通过传递过来的UniNativeViewElement实现view关联绑定
 
-android平台：
+::: preview
 
-native-button/utssdk/app-android/index.uts 中编写UTS插件android平台代码，代码中android原生组件 Button 与 UniNativeViewElement 进行绑定，dispatchEvent实现自定义事件，目前native-view触发事件的参数暂时只支持UniNativeViewEvent
+> Android
 
-```uts
+```html
 import { Button } from "android.widget"
 
 export class NativeButton {
@@ -243,20 +252,74 @@ export class NativeButton {
 }
 ```
 
-IOS平台：
+> iOS
+
+```html
+import { UIButton, UIControl } from "UIKit"
+
+export class NativeButton {
+
+	element : UniNativeViewElement;
+	button : UIButton | null;
+
+	constructor(element : UniNativeViewElement) {
+    // 接收组件传递过来的UniNativeViewElement
+		this.element = element;
+		super.init()
+		this.bindView();
+	}
+
+	// element 绑定原生view
+	bindView() {
+    // 初始化原生 UIButton
+    this.button = new UIButton(type=UIButton.ButtonType.system)
+    // 构建方法选择器
+    const method = Selector("buttonClickAction")
+    // button 绑定点击回调方法
+    button?.addTarget(this, action = method, for = UIControl.Event.touchUpInside)
+    // UniNativeViewElement 绑定原生 view
+		this.element.bindIOSView(this.button!);
+	}
+
+	updateText(text : string) {
+    // 更新 button 显示文字
+		this.button?.setTitle(text, for = UIControl.State.normal)
+	}
+
+	/**
+	 * 按钮点击回调方法
+	 * 在 swift 中，所有target-action (例如按钮的点击事件，NotificationCenter 的通知事件等)对应的 action 函数前面都要使用 @objc 进行标记。
+	 */
+	@objc buttonClickAction() {
+    //构建自定义 UniNativeViewEvent 对象
+		let event = new UniNativeViewEvent("customClick")
+    //触发自定义事件
+		this.element.dispatchEvent(event)
+	}
+
+	destroy() {
+    // 释放 UTS 实例对象，避免内存泄露
+		UTSiOS.destroyInstance(this)
+	}
+}
+```
+
+:::
+
+更多实现可参考 UTS 插件 [native-button](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/dev/uni_modules/native-button)
 
 此时一个简单的vue原生组件就完成了，
 
 **注意:**
 + vue原生组件的 components 目录下的代码中不能含有原生平台任何引用对象，这会导致vue原生组件无法跨平台，与原生平台关联的代码都应放在UTS插件中
-+ ios平台需要vue组件主动释放 uts 实例，所以页面触发 unmounted 生命周期时需要调用this.button?.destroy()
++ ios平台需要vue组件主动释放 uts 实例，所以页面触发 unmounted 生命周期时需要调用 this.button?.destroy() 避免内存泄露
 + android平台 native-view 组件不支持border、background、box-shadow属性，如需以上效果可以使用view标签包裹native-view,在view标签设置以上属性
 
 ### vue原生插件使用
 
 以 native-button 为例, 创建插件的项目页面可以直接使用 native-button 标签，也可将native-button插件包放置其他项目的uni-modules文件夹中。项目页面即可使用 native-button 标签
 
-```uts
+```html
 <template>
 	<view style="flex:1">
 		<native-button class="native-button" text="buttonText" @buttonTap="ontap"></native-button>
