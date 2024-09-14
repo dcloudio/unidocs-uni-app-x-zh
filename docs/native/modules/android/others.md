@@ -39,10 +39,10 @@
 
 #### 本地依赖库
 
-|名称							|
-|:--							|
-|uni-canvas-release.aar			|
-|uni-canvas-native-release.aar	|
+|名称								|
+|:--								|
+|uni-canvas-release.aar				|
+|uni-canvas-component-release.aar	|
 
 #### 组件注册
 
