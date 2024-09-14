@@ -109,7 +109,7 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 
 <!-- UTSJSON.UTSJSONObject.getAny.compatibility -->
 
-### getAny(key: string, def: any): any
+### getAny(key, def): any
 
 <!-- UTSJSON.UTSJSONObject.getAny_1.description -->
 
@@ -129,7 +129,7 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 
 <!-- UTSJSON.UTSJSONObject.getBoolean.compatibility -->
 
-### getBoolean(key: string, def: boolean): boolean
+### getBoolean(key, def): boolean
 
 <!-- UTSJSON.UTSJSONObject.getBoolean_1.description -->
 
@@ -149,7 +149,7 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 
 <!-- UTSJSON.UTSJSONObject.getNumber.compatibility -->
 
-### getNumber(key: string, def: number): number
+### getNumber(key, def): number
 
 <!-- UTSJSON.UTSJSONObject.getNumber_1.description -->
 
@@ -172,7 +172,7 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 <!-- UTSJSON.UTSJSONObject.getString.compatibility -->
 
 
-### getString(key: string, def: string): string
+### getString(key, def): string
 
 <!-- UTSJSON.UTSJSONObject.getString_1.description -->
 
@@ -196,7 +196,7 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 
 <!-- UTSJSON.UTSJSONObject.getJSON.compatibility -->
 
-### getJSON(key: string, def: UTSJSONObject): UTSJSONObject
+### getJSON(key, def): UTSJSONObject
 
 <!-- UTSJSON.UTSJSONObject.getJSON_1.description -->
 
@@ -220,7 +220,7 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 
 <!-- UTSJSON.UTSJSONObject.getArray.compatibility -->
 
-### getArray(key: string, def: Array\<T>): Array\<T>
+### getArray(key, def: Array\<T>): Array\<T>
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.description -->
 
@@ -245,7 +245,7 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 <!-- UTSJSON.UTSJSONObject.getArray_2.compatibility -->
 
 
-### getArray(key: string, def: Array\<any>): Array\<any>
+### getArray(key, def: Array\<any>): Array\<any>
 
 <!-- UTSJSON.UTSJSONObject.getArray_3.description -->
 
