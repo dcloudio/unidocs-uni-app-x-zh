@@ -10,6 +10,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.Constructor.returnValue -->
 
+<!-- UTSJSON.Promise.Constructor.test -->
+
 <!-- UTSJSON.Promise.Constructor.compatibility -->
 
 ### Constructor(fn)
@@ -19,6 +21,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.Constructor_1.param -->
 
 <!-- UTSJSON.Promise.Constructor_1.returnValue -->
+
+<!-- UTSJSON.Promise.Constructor_1.test -->
 
 <!-- UTSJSON.Promise.Constructor_1.compatibility -->
 
@@ -33,6 +37,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.then.returnValue -->
 
+<!-- UTSJSON.Promise.then.test -->
+
 <!-- UTSJSON.Promise.then.compatibility -->
 
 ### then(onFulfilled, onRejected?)
@@ -42,6 +48,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.then_1.param -->
 
 <!-- UTSJSON.Promise.then_1.returnValue -->
+
+<!-- UTSJSON.Promise.then_1.test -->
 
 <!-- UTSJSON.Promise.then_1.compatibility -->
 
@@ -53,6 +61,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.then_2.returnValue -->
 
+<!-- UTSJSON.Promise.then_2.test -->
+
 <!-- UTSJSON.Promise.then_2.compatibility -->
 
 ### then(onFulfilled, onRejected?)
@@ -62,6 +72,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.then_3.param -->
 
 <!-- UTSJSON.Promise.then_3.returnValue -->
+
+<!-- UTSJSON.Promise.then_3.test -->
 
 <!-- UTSJSON.Promise.then_3.compatibility -->
 
@@ -73,6 +85,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.then_4.returnValue -->
 
+<!-- UTSJSON.Promise.then_4.test -->
+
 <!-- UTSJSON.Promise.then_4.compatibility -->
 
 ### catch()
@@ -82,6 +96,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.catch.param -->
 
 <!-- UTSJSON.Promise.catch.returnValue -->
+
+<!-- UTSJSON.Promise.catch.test -->
 
 <!-- UTSJSON.Promise.catch.compatibility -->
 
@@ -93,6 +109,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.catch_1.returnValue -->
 
+<!-- UTSJSON.Promise.catch_1.test -->
+
 <!-- UTSJSON.Promise.catch_1.compatibility -->
 
 ### catch(onRejected)
@@ -102,6 +120,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.catch_2.param -->
 
 <!-- UTSJSON.Promise.catch_2.returnValue -->
+
+<!-- UTSJSON.Promise.catch_2.test -->
 
 <!-- UTSJSON.Promise.catch_2.compatibility -->
 
@@ -113,6 +133,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.catch_3.returnValue -->
 
+<!-- UTSJSON.Promise.catch_3.test -->
+
 <!-- UTSJSON.Promise.catch_3.compatibility -->
 
 ### catch(onRejected)
@@ -122,6 +144,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.catch_4.param -->
 
 <!-- UTSJSON.Promise.catch_4.returnValue -->
+
+<!-- UTSJSON.Promise.catch_4.test -->
 
 <!-- UTSJSON.Promise.catch_4.compatibility -->
 
@@ -133,6 +157,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.finally.returnValue -->
 
+<!-- UTSJSON.Promise.finally.test -->
+
 <!-- UTSJSON.Promise.finally.compatibility -->
 
 ### resolve()
@@ -142,6 +168,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.resolve.param -->
 
 <!-- UTSJSON.Promise.resolve.returnValue -->
+
+<!-- UTSJSON.Promise.resolve.test -->
 
 <!-- UTSJSON.Promise.resolve.compatibility -->
 
@@ -153,6 +181,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.resolve_1.returnValue -->
 
+<!-- UTSJSON.Promise.resolve_1.test -->
+
 <!-- UTSJSON.Promise.resolve_1.compatibility -->
 
 ### resolve(value)
@@ -162,6 +192,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.resolve_2.param -->
 
 <!-- UTSJSON.Promise.resolve_2.returnValue -->
+
+<!-- UTSJSON.Promise.resolve_2.test -->
 
 <!-- UTSJSON.Promise.resolve_2.compatibility -->
 
@@ -173,6 +205,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.reject.returnValue -->
 
+<!-- UTSJSON.Promise.reject.test -->
+
 <!-- UTSJSON.Promise.reject.compatibility -->
 
 ### all(arr)
@@ -182,6 +216,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.all.param -->
 
 <!-- UTSJSON.Promise.all.returnValue -->
+
+<!-- UTSJSON.Promise.all.test -->
 
 <!-- UTSJSON.Promise.all.compatibility -->
 
@@ -193,6 +229,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.race.returnValue -->
 
+<!-- UTSJSON.Promise.race.test -->
+
 <!-- UTSJSON.Promise.race.compatibility -->
 
 ### any(arr)
@@ -203,6 +241,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 
 <!-- UTSJSON.Promise.any.returnValue -->
 
+<!-- UTSJSON.Promise.any.test -->
+
 <!-- UTSJSON.Promise.any.compatibility -->
 
 ### allSettled(arr)
@@ -212,6 +252,8 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 <!-- UTSJSON.Promise.allSettled.param -->
 
 <!-- UTSJSON.Promise.allSettled.returnValue -->
+
+<!-- UTSJSON.Promise.allSettled.test -->
 
 <!-- UTSJSON.Promise.allSettled.compatibility -->
 

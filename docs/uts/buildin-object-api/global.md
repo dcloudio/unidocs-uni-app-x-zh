@@ -14,6 +14,8 @@
 
 > 注意：返回值类型一定是`number`，不是平台专有数字类型（如Int、Float、Double等）。
 
+<!-- UTSJSON.Global.parseInt.test -->
+
 <!-- UTSJSON.Global.parseInt.compatibility -->
 
 <!-- UTSJSON.Global.parseInt.tutorial -->
@@ -50,6 +52,7 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.parseFloat.returnValue -->
 
 > 注意：返回值类型一定是`number`，不是平台专有数字类型（如Int、Float、Double等）。
+<!-- UTSJSON.Global.parseFloat.test -->
 
 <!-- UTSJSON.Global.parseFloat.compatibility -->
 
@@ -65,6 +68,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 
 <!-- UTSJSON.Global.isNaN.returnValue -->
 
+<!-- UTSJSON.Global.isNaN.test -->
+
 <!-- UTSJSON.Global.isNaN.compatibility -->
 
 <!-- UTSJSON.Global.isNaN.tutorial -->
@@ -76,6 +81,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.isFinite.param -->
 
 <!-- UTSJSON.Global.isFinite.returnValue -->
+
+<!-- UTSJSON.Global.isFinite.test -->
 
 <!-- UTSJSON.Global.isFinite.compatibility -->
 
@@ -89,6 +96,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 
 <!-- UTSJSON.Global.decodeURI.returnValue -->
 
+<!-- UTSJSON.Global.decodeURI.test -->
+
 <!-- UTSJSON.Global.decodeURI.compatibility -->
 
 <!-- UTSJSON.Global.decodeURI.tutorial -->
@@ -100,6 +109,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.decodeURIComponent.param -->
 
 <!-- UTSJSON.Global.decodeURIComponent.returnValue -->
+
+<!-- UTSJSON.Global.decodeURIComponent.test -->
 
 <!-- UTSJSON.Global.decodeURIComponent.compatibility -->
 
@@ -113,6 +124,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 
 <!-- UTSJSON.Global.encodeURI.returnValue -->
 
+<!-- UTSJSON.Global.encodeURI.test -->
+
 <!-- UTSJSON.Global.encodeURI.compatibility -->
 
 <!-- UTSJSON.Global.encodeURI.tutorial -->
@@ -124,6 +137,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.encodeURIComponent.param -->
 
 <!-- UTSJSON.Global.encodeURIComponent.returnValue -->
+
+<!-- UTSJSON.Global.encodeURIComponent.test -->
 
 <!-- UTSJSON.Global.encodeURIComponent.compatibility -->
 
@@ -137,6 +152,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 
 <!-- UTSJSON.Global.atob.returnValue -->
 
+<!-- UTSJSON.Global.atob.test -->
+
 <!-- UTSJSON.Global.atob.compatibility -->
 
 <!-- UTSJSON.Global.atob.tutorial -->
@@ -149,6 +166,8 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.btoa.param -->
 
 <!-- UTSJSON.Global.btoa.returnValue -->
+
+<!-- UTSJSON.Global.btoa.test -->
 
 <!-- UTSJSON.Global.btoa.compatibility -->
 
