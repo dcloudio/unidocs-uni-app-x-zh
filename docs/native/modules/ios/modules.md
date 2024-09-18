@@ -25,7 +25,7 @@
 
 | 源文件 | 依赖库 | 资源文件 |
 | ---   | ---| ---|
-| UTSOC.h、UTSOC.mm、uni-getAppAuthorizeSetting-index.swift、uni-getAppBaseInfo-index.swift、uni-getDeviceInfo-index.swift、uni-getSystemInfo-index.swift、uni-getSystemSetting-index.swift、uni-openAppAuthorizeSetting-index.swift、uni-prompt-index.swift、uni-rpx2px-index.swift、uni-storage-index.swift、uni-theme-index.swift、uni-getElementById-DCUniGetElementById.swift、uni-getElementById-index.swift | DCloudUniappRuntime.xcframework、DCloudUTSFoundation.xcframework、DCUniToast.xcframework、DCloudAlertController.xcframework、storage.framework| uts-config.json |
+| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift | DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> storage.framework| uts-config.json |
 
 ### 配置其他模块(可选)
 根据资源文件中的`manifest.json`文件包含的模块名称，选择以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到DCloudUTSExtAPI工程中，依赖库均设置为`Do Not Embed`
@@ -35,20 +35,20 @@
 | uni-getProvider | uni-getProvider-index.swift | | |
 | uni-network | uni-network-index.swift | | |
 | uni-getNetworkType | uni-getNetworkType-index.swift | | |
-| uni-websocket | uni-websocket-index.swift | websocket.xcframework、Starscream.xcframework | |
+| uni-websocket | uni-websocket-index.swift | websocket.xcframework <br> Starscream.xcframework | |
 | uni-canvas |  | DCloudUniCanvas.xcframework | |
-| uni-media | uni-media-index.swift | DCloudMediaPicker.xcframework |  AssetsLibrary、Photos、AVFoundation、CoreServices、CoreFoundation、CoreGraphics、CoreImage、GLKit、MetalKit、MobileCoreServices、QuartzCore、ImageIO、MediaPlayer、CoreText  |
-| uni-payment-alipay | uni-payment-alipay-index.swift、uni-payment-index.swift | AlipaySDK.xcframework |c++、z、SystemConfiguration、CoreTelephony、QuartzCore、CoreText、CoreGraphics、CFNetwork、CoreMotion |
-| uni-payment-wxpay | uni-payment-wxpay-index.swift、uni-payment-index.swift | libWeChatSDK.a | CoreGraphics、WebKit、Security |
-| uni-virtualPayment | uni-virtualPayment-index.swift、uni-virtualPayment-ProductService.swift、uni-virtualPayment-PurchaseService.swift、uni-virtualPayment-Types.swift、uni-virtualPayment-UniProduct.swift、uni-virtualPayment-UniPurchase.swift、uni-virtualPayment-UniStoreKit+Closure.swift、uni-virtualPayment-UniStoreKit.swift | | StoreKit |
-| uni-getLocation-system | uni-getLocation-system-index.swift、uni-getLocation-index.swift | | |
-| uni-getLocation-tencent | uni-getLocation-tencent-index.swift、uni-getLocation-index.swift | TencentLBS.framework | libz.1.2.5.tbd |
+| uni-media | uni-media-index.swift | DCloudMediaPicker.xcframework |  AssetsLibrary <br> Photos <br> AVFoundation <br> CoreServices <br> CoreFoundation <br> CoreGraphics <br> CoreImage <br> GLKit <br> MetalKit <br> MobileCoreServices <br> QuartzCore <br> ImageIO <br> MediaPlayer <br> CoreText  |
+| uni-payment-alipay | uni-payment-alipay-index.swift <br> uni-payment-index.swift | AlipaySDK.xcframework |c++ <br> z <br> SystemConfiguration <br> CoreTelephony <br> QuartzCore <br> CoreText <br> CoreGraphics <br> CFNetwork <br> CoreMotion |
+| uni-payment-wxpay | uni-payment-wxpay-index.swift <br> uni-payment-index.swift | libWeChatSDK.a | CoreGraphics <br> WebKit <br> Security |
+| uni-virtualPayment | uni-virtualPayment-index.swift <br> uni-virtualPayment-ProductService.swift <br> uni-virtualPayment-PurchaseService.swift <br> uni-virtualPayment-Types.swift <br> uni-virtualPayment-UniProduct.swift <br> uni-virtualPayment-UniPurchase.swift <br> uni-virtualPayment-UniStoreKit+Closure.swift <br> uni-virtualPayment-UniStoreKit.swift | | StoreKit |
+| uni-getLocation-system | uni-getLocation-system-index.swift <br> uni-getLocation-index.swift | | |
+| uni-getLocation-tencent | uni-getLocation-tencent-index.swift <br> uni-getLocation-index.swift | TencentLBS.framework | libz.1.2.5.tbd |
 | uni-video | uni-video-index.swift | DCUniVideo.xcframework、IJKMediaFrameworkWithSSL.xcframework、UniDCSVProgressHUD.xcframework | |
-| uni-push | uni-push-index.swift | GTCommonSDK.xcframework、GTSDK.xcframework、ZXSDK.framework | c++、resolv、z、sqlite3、MobileCoreServices、Security、SystemConfiguration、CoreTelephony、AVFoundation、UserNotifications、AdSupport |
-| uni-verify | uni-verify-index.swift、uni-network-index.swift | GTCommonSDK.xcframework、GeYanSdk.xcframework | resolv.9、c++、z、sqlite3.0、WebKit、CoreFoundation、Network、AdSupport |
+| uni-push | uni-push-index.swift | GTCommonSDK.xcframework <br> GTSDK.xcframework <br> ZXSDK.framework | c++ <br> resolv <br> z <br> sqlite3 <br> MobileCoreServices <br> Security <br> SystemConfiguration <br> CoreTelephony <br> AVFoundation <br> UserNotifications <br> AdSupport |
+| uni-verify | uni-verify-index.swift <br> uni-network-index.swift | GTCommonSDK.xcframework <br> GeYanSdk.xcframework | resolv.9 <br> c++ <br> z <br> sqlite3.0、WebKit <br> CoreFoundation <br> Network <br> AdSupport |
 | uni-ad | uni-ad-index.swift | DCUniAdFoundation.xcframework | |
-| uni-facialRecognitionVerify | uni-facialRecognitionVerify-index.swift | AliyunFaceAuthFacade.framework、AliyunMobileRPC.framework、AliyunOSSiOS.framework、APBToygerFacade.framework、APPSecuritySDK.framework、BioAuthAPI.framework、BioAuthEngine.framework、deviceiOS.framework、DTFIdentityManager.framework、DTFSensorServices.framework、DTFUIModule.framework、DTFUtility.framework、MPRemoteLogging.framework、ToygerNative.framework、ToygerService.framework | c++、z、resolv、c++.1、c++abi、z.1.2.8、Accelerate、AssetsLibrary、QuartzCore、CoreFoundation、CoreLocation、ImageIO、CoreMedia、CoreMotion、AVFoundation、WebKit、AudioToolbox、CFNetwork、MobileCoreServices、SystemConfiguration、CoreTelephony、QuartzCore、CoreGraphics、AdSupport |
-| uni-cloud-client | uni-websocket-index.swift、uni-network-index.swift、uni-media-index.swift| DCloudMediaPicker.xcframework |AssetsLibrary、Photos、AVFoundation、CoreServices、CoreFoundation、CoreGraphics、CoreImage、GLKit、MetalKit、MobileCoreServices、QuartzCore、ImageIO、MediaPlayer、CoreText|
+| uni-facialRecognitionVerify | uni-facialRecognitionVerify-index.swift | AliyunFaceAuthFacade.framework <br> AliyunMobileRPC.framework <br> AliyunOSSiOS.framework <br> APBToygerFacade.framework <br> APPSecuritySDK.framework <br> BioAuthAPI.framework <br> BioAuthEngine.framework <br> deviceiOS.framework <br> DTFIdentityManager.framework <br> DTFSensorServices.framework <br> DTFUIModule.framework <br> DTFUtility.framework <br> MPRemoteLogging.framework <br> ToygerNative.framework <br> ToygerService.framework | c++ <br> z <br> resolv <br> c++.1 <br> c++abi <br> z.1.2.8 <br> Accelerate <br> AssetsLibrary <br> QuartzCore <br> CoreFoundation <br> CoreLocation <br> ImageIO <br> CoreMedia <br> CoreMotion <br> AVFoundation <br> WebKit <br> AudioToolbox <br> CFNetwork <br> MobileCoreServices <br> SystemConfiguration <br> CoreTelephony <br> QuartzCore <br> CoreGraphics、AdSupport |
+| uni-cloud-client | uni-websocket-index.swift <br> uni-network-index.swift <br> uni-media-index.swift| DCloudMediaPicker.xcframework |AssetsLibrary <br> Photos <br> AVFoundation <br> CoreServices <br> CoreFoundation <br> CoreGraphics <br> CoreImage <br> GLKit <br> MetalKit <br> MobileCoreServices <br> QuartzCore <br> ImageIO <br> MediaPlayer <br> CoreText|
 
 
 ### 配置uts-config.json(可选)
@@ -162,7 +162,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ### 添加依赖库以及资源文件
 | 资源文件 |
 |---|
-|  uni_uts_toast_error.png、uni_uts_toast_success.png  |
+|  uni_uts_toast_error.png <br> uni_uts_toast_success.png  |
 
 ## uni-canvas
 ### 添加依赖库以及资源文件
@@ -175,7 +175,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ### 添加依赖库以及资源文件
 | 依赖库 | 资源文件 |
 |---|---|
-| DCloudPermissionAlbum.xcframework、DCloudPermissionCamera.xcframework、DCloudPermissionMicrophone.xcframework | DCMediaEditingController.bundle、DCTZImagePickerController.bundle |
+| DCloudPermissionAlbum.xcframework <br> DCloudPermissionCamera.xcframework <br> DCloudPermissionMicrophone.xcframework | DCMediaEditingController.bundle <br> DCTZImagePickerController.bundle |
 
 ### Info.plist
 添加`相机权限描述(NSCameraUsageDescription)`、`麦克风权限描述(NSMicrophoneUsageDescription)`、`相册读写权限描述(NSPhotoLibraryUsageDescription)`、`相册写权限描述(NSPhotoLibraryAddUsageDescription)`
@@ -398,7 +398,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ### 添加依赖库以及资源文件
 | 依赖库 | 资源文件 |
 |---|---|
-| DCloudPermissionCamera.xcframework | APBToygerFacade.bundle、BioAuthEngine.bundle、ToygerNative.bundle |
+| DCloudPermissionCamera.xcframework | APBToygerFacade.bundle <br> BioAuthEngine.bundle <br> ToygerNative.bundle |
 
 ### Info.plist
 添加`相机权限描述(NSCameraUsageDescription)`
@@ -434,11 +434,11 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 #### 添加依赖库以及资源文件
 | 广告渠道 | 依赖库 | 资源文件 |  系统库 |
 |---|---|---|---|
-| 优量汇 | DCUniAdGdt.xcframework、libGDTMobSDK.a、DCloudPermissionIDFA.xcframework |  | AppTrackingTransparency、AdSupport、CoreLocation、QuartzCore、SystemConfiguration、CoreTelephony、Security、StoreKit、AVFoundation、WebKit、JavaScriptCore、z、xml2、sqlite3、c++ |
-| Gromore | DCUniAdGm.xcframework、CSJMediation.xcframework、BUAdSDK.xcframework、DCloudPermissionIDFA.xcframework | CSJAdSDK.bundle | AppTrackingTransparency、Accelerate、AdSupport、AudioToolbox、AVFoundation、CoreGraphics、CoreImage、CoreLocation、CoreMotion、CoreMedia、CoreTelephony、CoreText、ImageIO、JavaScriptCore、MapKit、MediaPlayer、MobileCoreServices、QuartzCore、SystemConfiguration、Security、StoreKit、WebKit、DeviceCheck、z、xml2、sqlite3、c++、bz2、iconv、resolv.9、c++abi |
-| 快手 | DCUniAdKs.xcframework、DCloudPermissionIDFA.xcframework、KSAdSDK.xcframework`（Embed & Sign）` |  | AppTrackingTransparency、AdSupport、MobileCoreServices、CoreGraphics、CoreData、CoreLocation、MediaPlayer、CoreMedia、WebKit、Accelerate、AVKit、MessageUI、QuickLook、AddressBook、CoreMotion、QuartzCore、SystemConfiguration、CoreTelephony、Security、StoreKit、AVFoundation、WebKit、z、resolv.9、sqlite3、c++、c++abi |
-| 百度 | DCUniAdBd.xcframework、DCloudPermissionIDFA.xcframework、BaiduMobAdSDK.framework | baidumobadsdk.bundle | AppTrackingTransparency、AdSupport、StoreKit、SafariServices、MessageUI、CoreMedia、CoreMotion、SystemConfiguration、CoreLocation、CoreTelephony、AVFoundation、Webkit、c++ |
-| sigmob | DCUniAdSgm.xcframework、DCloudPermissionIDFA.xcframework、WindSDK.xcframework、WindFoundation.xcframework |  | AppTrackingTransparency、AdSupport、StoreKit、CFNetwork、CoreMedia、CoreGraphics、AVFoundation、CoreLocation、CoreTelephony、SafariServices、MobileCoreServices、WebKit、SystemConfiguration、ImageIO、z、sqlite3 |
+| 优量汇 | DCUniAdGdt.xcframework <br> libGDTMobSDK.a <br> DCloudPermissionIDFA.xcframework |  | AppTrackingTransparency <br> AdSupport <br> CoreLocation <br> QuartzCore <br> SystemConfiguration <br> CoreTelephony <br> Security <br> StoreKit <br> AVFoundation <br> WebKit <br> JavaScriptCore <br> z <br> xml2 <br> sqlite3 <br> c++ |
+| Gromore | DCUniAdGm.xcframework <br> CSJMediation.xcframework <br> BUAdSDK.xcframework <br> DCloudPermissionIDFA.xcframework | CSJAdSDK.bundle | AppTrackingTransparency <br> Accelerate <br> AdSupport <br> AudioToolbox <br> AVFoundation <br> CoreGraphics <br> CoreImage <br> CoreLocation <br> CoreMotion <br> CoreMedia <br> CoreTelephony <br> CoreText <br> ImageIO <br> JavaScriptCore <br> MapKit <br> MediaPlayer <br> MobileCoreServices <br> QuartzCore <br> SystemConfiguration <br> Security <br> StoreKit <br> WebKit <br> DeviceCheck <br> z <br> xml2 <br> sqlite3 <br> c++ <br> bz2 <br> iconv <br> resolv.9 <br> c++abi |
+| 快手 | DCUniAdKs.xcframework <br> DCloudPermissionIDFA.xcframework <br> KSAdSDK.xcframework`（Embed & Sign）` |  | AppTrackingTransparency <br> AdSupport <br> MobileCoreServices <br> CoreGraphics <br> CoreData <br> CoreLocation <br> MediaPlayer <br> CoreMedia <br> WebKit <br> Accelerate <br> AVKit <br> MessageUI <br> QuickLook <br> AddressBook <br> CoreMotion <br> QuartzCore <br> SystemConfiguration <br> CoreTelephony <br> Security <br> StoreKit <br> AVFoundation <br> WebKit <br> z <br> resolv.9 <br> sqlite3 <br> c++ <br> c++abi |
+| 百度 | DCUniAdBd.xcframework <br> DCloudPermissionIDFA.xcframework <br> BaiduMobAdSDK.framework | baidumobadsdk.bundle | AppTrackingTransparency <br> AdSupport <br> StoreKit <br> SafariServices <br> MessageUI <br> CoreMedia <br> CoreMotion <br> SystemConfiguration <br> CoreLocation <br> CoreTelephony <br> AVFoundation <br> Webkit <br> c++ |
+| sigmob | DCUniAdSgm.xcframework <br> DCloudPermissionIDFA.xcframework <br> WindSDK.xcframework <br> WindFoundation.xcframework |  | AppTrackingTransparency <br> AdSupport <br> StoreKit <br> CFNetwork <br> CoreMedia <br> CoreGraphics <br> AVFoundation <br> CoreLocation <br> CoreTelephony <br> SafariServices <br> MobileCoreServices <br> WebKit <br> SystemConfiguration <br> ImageIO <br> z <br> sqlite3 |
 
 
 #### Info.plist
