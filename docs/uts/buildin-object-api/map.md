@@ -174,4 +174,5 @@ console.log(map.get('key1')) // 跨端用法
 
 ## Bug & Tips@tips
 
-* 目前 Error 类型编译到 kotlin 为 io.dcloud.uts.Map
+* 目前 `Map` 类型编译到 kotlin 为 io.dcloud.uts.Map
+
