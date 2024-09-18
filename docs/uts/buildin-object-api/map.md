@@ -176,3 +176,12 @@ console.log(map.get('key1')) // 跨端用法
 
 * 目前 `Map` 类型编译到 kotlin 为 io.dcloud.uts.Map
 
+```ts
+// kotlin map 转换为 uts map
+let kotlinMap = getMapFromNative()
+console.log(kotlinMap)
+let utsMap = new Map<string, any>()
+utsMap.putAll(kotlinMap)
+```
+
+
