@@ -417,6 +417,16 @@
 如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/unielement.md) 对象。\
 在修改 DOM 后，立刻使用 [Element](../dom/unielement.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
 
+#### onActivated、onDeactivated 使用注意事项 @activated-deactivated-tips
+
+当 A 页面存在 `keepAlive` 组件，A 页面 `navigateTo` B 页面时
+- Web 端 A 页面中 `keepAlive` 的组件会触发 `onDeactivated` 生命周期
+- App 端 A 页面中 `keepAlive` 的组件不会触发 `onDeactivated` 生命周期
+
+当 B 页面 back 返回 A 页面时
+- Web 端 A 页面中 `keepAlive` 的组件会触发 `onActivated` 生命周期
+- App 端 A 页面中 `keepAlive` 的组件不会触发 `onActivated` 生命周期
+
 示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.webUrl -->
