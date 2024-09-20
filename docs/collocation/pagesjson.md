@@ -160,7 +160,7 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 - 横屏
 	* Web：横竖屏由手机浏览器控制，无法在pages.json中指定。uni-app x的页面和基础组件都支持自适应宽屏界面
 	* Android：默认是竖屏。从4.13起支持配置pageOrientation实现横屏或自动旋转适应
-	* iOS：在iPhone手机上默认竖屏，在ipad上默认自适应，ipad旋转为横屏后uni-app x应用也会横屏。可以在项目的 Info.plist 中配置应用可支持的横竖屏列表来修改默认横竖屏状态，详见[应用可支持横竖屏列表配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#orientation)，配置后应用将限定在可支持的横竖屏列表中配置的值（如配置应用可支持的列表仅为横屏，则应用只能显示为横屏）。uni-app x的页面和基础组件都支持自适应宽屏界面
+	* iOS：在iPhone手机上默认竖屏，在iPad上默认自动旋转适应。从4.25起iPhone设置支持配置pageOrientation，iPad设备不受pageOrientation配置影响（表现为自动旋转适配），如需在iPad设备固定某个方向可以在项目的 Info.plist 中配置应用可支持的横竖屏列表来配置，详见[应用可支持横竖屏列表配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#orientation)，配置后应用将限定在可支持的横竖屏列表中配置的值（如配置应用可支持的列表仅为横屏，则应用只能显示为横屏）。uni-app x的页面和基础组件都支持自适应宽屏界面
 - 状态栏
 	* 手机顶部状态栏的背景色、前景色(white/black)与navigationBarBackgroundColor和navigationBarTextStyle相同
 	* 小程序平台，pages.json中各个颜色的设置仅支持普通的16进制数值。App和Web支持设为transparent，即透明。
