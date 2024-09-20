@@ -79,7 +79,7 @@ uni-app x中，web、小程序、vue这3类概念都支持，所以id、ref、El
 
 #### Element方式
 
-uni-app x提供了[uni.getElementById](../api/get-element.md)方法，返回的是[Element](../dom/element.md)类型。
+uni-app x提供了[uni.getElementById](../api/get-element.md)方法，返回的是[Element](../dom/unielement.md)类型。
 
 通用的元素操作方法，比如getAttribute、setStyle，在Element上就可以操作。
 
