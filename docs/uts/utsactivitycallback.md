@@ -131,18 +131,6 @@
 
 <!-- UTSJSON.UniActivityCallback.onChildTitleChanged.tutorial -->
 
-#### onBackPressed(params)
-
-<!-- UTSJSON.UniActivityCallback.onBackPressed.description -->
-
-<!-- UTSJSON.UniActivityCallback.onBackPressed.param -->
-
-<!-- UTSJSON.UniActivityCallback.onBackPressed.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onBackPressed.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onBackPressed.tutorial -->
-
 #### onContextMenuClosed(params, menu)
 
 <!-- UTSJSON.UniActivityCallback.onContextMenuClosed.description -->
@@ -322,18 +310,6 @@
 <!-- UTSJSON.UniActivityCallback.onPreChildTitleChanged.compatibility -->
 
 <!-- UTSJSON.UniActivityCallback.onPreChildTitleChanged.tutorial -->
-
-#### onPreBackPressed(params)
-
-<!-- UTSJSON.UniActivityCallback.onPreBackPressed.description -->
-
-<!-- UTSJSON.UniActivityCallback.onPreBackPressed.param -->
-
-<!-- UTSJSON.UniActivityCallback.onPreBackPressed.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onPreBackPressed.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onPreBackPressed.tutorial -->
 
 #### onPreContextMenuClosed(params, menu)
 
@@ -1335,15 +1311,6 @@ export class UTSActivityCallback extends UniActivityCallback {
   constructor() {
     super()
   }
-  override onBackPressed(params : UniActivityParams) {
-    console.log('UTSActivityCallback', 'onBackPressed', params)
-    callback('onBackPressed')
-  }
-  override onPreBackPressed(params : UniActivityParams) {
-    console.log('UTSActivityCallback', 'onPreBackPressed', params)
-    callback('onPreBackPressed')
-  }
-
   override onRequestPermissionsResult(params : UniActivityParams, requestCode : Int, permissions : MutableList<String>, grantResults : IntArray) {
     console.log('UTSActivityCallback', 'onRequestPermissionsResult', params)
     callback('onRequestPermissionsResult')
