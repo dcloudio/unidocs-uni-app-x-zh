@@ -23,12 +23,12 @@
     * nested-scroll | 嵌套滚动```{"collapsable": false}```
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
-<!--    * [object](object.md) -->
   * 基础内容
     * [icon | 图标](icon.md)
     * [text | 文本](text.md)
     * [rich-text | 富文本](rich-text.md)
     * [progress | 进度条](progress.md)
+    <!-- * [native-view](native-view.md) -->
   * 表单组件
     * [button | 按钮](button.md)
     * checkbox | 多选框```{"collapsable": false}```
