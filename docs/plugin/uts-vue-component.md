@@ -1,6 +1,6 @@
-## uts组件标准模式
+## uts组件-标准模式
 
-使用vue组件开发规范，通过uts插件封装原生平台view提供给native-view组件，实现组件特定功能及UI展示。
+使用vue组件开发规范，通过插件封装原生平台view提供给native-view组件，实现组件特定功能及UI展示。
 
 ## 前置条件
 
@@ -10,13 +10,13 @@
 + 了解 [vue组件](https://uniapp.dcloud.net.cn/tutorial/vue3-components.html)
 + 了解 [native-view组件](https://doc.dcloud.net.cn/uni-app-x/component/native-view.html)
 
-## uts组件-标准模式目录结构
+## 标准模式的uts组件目录结构
 
 <pre v-pre="" data-lang="">
 <code class="lang-" style="padding:0">
-┌─components                      // vue组件代码，该文件夹不强制放在此处， 可选
-|   ├─xxxxxx                      // vue组件名称文件夹  xxxxxx代替组件名称
-|       ├─xxxxxx.uvue             // vue组件uts代码 xxxxxx代替组件名称
+┌─components                      // vue组件代码
+|   ├─xxx                      // vue组件名称文件夹  xxx代替组件名称
+|       ├─xxx.uvue             // vue组件uts代码 xxx代替组件名称
 ├─static                          // 静态资源
 ├─utssdk
 │	├─app-android                 //Android平台目录
@@ -40,21 +40,21 @@
 </code>
 </pre>
 
-如上所示，uts组件-标准模式的目录结构与UTS插件基本相同，差别在于components目录，vue组件代码存放components目录下。
+如上所示，标准模式的uts组件目录结构与UTS插件基本相同，差别在于components目录，vue组件代码存放components目录下。
 
 其他目录文件详情可参考[UTS插件文档](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html#%E6%8F%92%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84)
 
-## 开发uts组件
+## 开发标准模式的uts组件
 
-### 构建uts组件-标准模式模版
+### 构建标准模式的uts组件
 
 HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键选择新建uni_modules插件，弹窗后分类选择 “uts组件-标准模式”，填写组件名称，以下均已 native-button 为例
 
 //截图
 
-创建完毕 HBuilder X 会自动构建模版文件，参考:`uts组件-标准模式目录结构`
+创建完毕 HBuilder X 会自动构建模版文件，参考:`标准模式的uts组件目录结构`
 
-### uts组件-标准模式代码编写
+### 标准模式的uts组件代码编写
 
 #### 添加 native-view
 

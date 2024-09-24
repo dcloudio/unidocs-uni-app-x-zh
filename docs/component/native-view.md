@@ -2,8 +2,7 @@
 
 <!-- UTSCOMJSON.native-view.description -->
 
-`native-view`自身没有渲染内容，开发者提供对应平台原生view与`native-view`进行绑定，`native-view`将展示该view的渲染内容。vue组件集成`native-view`，实现可展示原生view渲染内容的vue组件
-
+`native-view`自身没有渲染内容，开发者提供对应平台原生view与`native-view`进行绑定，`native-view`将展示该view的渲染内容
 <!-- UTSCOMJSON.native-view.compatibility -->
 
 <!-- UTSCOMJSON.native-view.attribute -->
@@ -14,7 +13,7 @@
 
 ### 使用场景
 
-vue组件开发规范开发集成原生view渲染内容的通用组件
+`native-view` 适用于开发[标准模式的uts组件](../plugin/uts-vue-component.md)
 
 ### 使用教程
 
