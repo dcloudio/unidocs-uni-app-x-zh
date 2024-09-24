@@ -16,9 +16,10 @@
 
 - XCode：15.2  
 - iOS SDK：17.2  
+- pod仓库：https://gitee.com/mirrors/CocoaPods-Specs.git
 
 ### HBuilderX4.25升级云端打包环境
 
 - XCode：15.4  
 - iOS SDK：17.5  
-
+- pod仓库：https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git
