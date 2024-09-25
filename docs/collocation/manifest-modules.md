@@ -275,7 +275,7 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 ### 配置腾讯定位SDK的参数
 
-使用腾讯定位SDK需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请TencentLBSAPIKey，并配置到应用中。 
+使用腾讯定位SDK需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请TencentLBSAPIKey，并配置到应用中，配置好TencentLBSAPIKey后，需要打自定义基座才可以生效。 
 
 #### iOS平台配置腾讯定位相关参数 @uni-getLocation-key
 
