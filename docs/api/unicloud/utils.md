@@ -57,3 +57,15 @@
 <!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.returnValue -->
 
 <!-- UTSUNICLOUDAPIJSON.getCurrentUserInfo.tutorial -->
+
+## connectWebSocket() @connectWebSocket
+
+<!-- UTSUNICLOUDAPIJSON.connectWebSocket.description -->
+
+<!-- UTSUNICLOUDAPIJSON.connectWebSocket.compatibility -->
+
+<!-- UTSUNICLOUDAPIJSON.connectWebSocket.param -->
+
+<!-- UTSUNICLOUDAPIJSON.connectWebSocket.returnValue -->
+
+<!-- UTSUNICLOUDAPIJSON.connectWebSocket.tutorial -->
