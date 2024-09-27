@@ -315,7 +315,7 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 </plist>
 ```
 
-#### Andoird平台配置腾讯定位key到项目 @uni-getLocation-android-key
+#### Android平台配置腾讯定位key到项目 @uni-getLocation-android-key
 
 在项目根目录下添加 AndroidManifest.xml 文件，详情参考：[Android原生应用清单文件](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6-androidmanifest-xml)。将申请的 key 配置到项目 AndroidManifest.xml 的 application 节点中，如下：
 ```xml
