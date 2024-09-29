@@ -25,7 +25,7 @@
 |navigationBarTextStyle				|String	|4.18		|4.18	|4.18	|white  |
 |navigationBarTitleText				|String	|4.18		|4.18	|4.18	|				|
 |navigationStyle							|String	|x   		|x  	|4.18	|default|
-|backgroundColor							|String	|x      |x    |x		|#ffffff|
+|backgroundColor							|String	|4.18   |4.18 |x		|#ffffff|
 |backgroundTextStyle					|String	|x      |x    |x		|light	|
 |onReachBottomDistance				|Number	|x			|x		|4.18	|50			|
 |pageOrientation							|String	|4.18		|4.25		|x		|auto		|
