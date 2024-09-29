@@ -25,8 +25,8 @@
 |navigationBarTextStyle				|String	|4.18		|4.18	|4.18	|white  |
 |navigationBarTitleText				|String	|4.18		|4.18	|4.18	|				|
 |navigationStyle							|String	|x   		|x  	|4.18	|default|
-|backgroundColor							|String	|4.18		|4.18	|x		|#ffffff|
-|backgroundTextStyle					|String	|4.18		|4.18	|x		|light	|
+|backgroundColor							|String	|x      |x    |x		|#ffffff|
+|backgroundTextStyle					|String	|x      |x    |x		|light	|
 |onReachBottomDistance				|Number	|x			|x		|4.18	|50			|
 |pageOrientation							|String	|4.18		|4.25		|x		|auto		|
 |showStatusBar                  |Boolean    |4.31   |x  |x  |true
