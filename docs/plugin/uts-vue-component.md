@@ -1,4 +1,4 @@
-## uts组件-标准模式
+## UTS插件-标准模式组件
 
 使用vue组件开发规范，通过插件封装原生平台view提供给native-view组件，实现组件特定功能及UI展示。
 
@@ -10,7 +10,7 @@
 + 了解 [vue组件](https://uniapp.dcloud.net.cn/tutorial/vue3-components.html)
 + 了解 [native-view组件](https://doc.dcloud.net.cn/uni-app-x/component/native-view.html)
 
-## 标准模式的uts组件目录结构
+## UTS插件-标准模式组件目录结构
 
 <pre v-pre="" data-lang="">
 <code class="lang-" style="padding:0">
@@ -40,25 +40,25 @@
 </code>
 </pre>
 
-如上所示，标准模式的uts组件目录结构与UTS插件基本相同，差别在于components目录，vue组件代码存放components目录下。
+如上所示，UTS插件-标准模式组件目录结构与UTS插件基本相同，差别在于components目录，vue组件代码存放components目录下。
 
 其他目录文件详情可参考[UTS插件文档](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html#%E6%8F%92%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84)
 
-## 开发标准模式的uts组件
+## 开发UTS插件-标准模式组件
 
-### 构建标准模式的uts组件
+### 构建标准模式组件
 
-HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键选择新建uni_modules插件，弹窗后分类选择 “uts组件-标准模式”，填写组件名称，以下均已 native-button 为例
+HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键选择新建uni_modules插件，弹窗后分类选择 “UTS插件-标准模式组件”，填写组件名称，以下均已 native-button 为例
 
 //截图
 
-创建完毕 HBuilder X 会自动构建模版文件，参考:`标准模式的uts组件目录结构`
+创建完毕 HBuilder X 会自动构建模版文件，参考:`UTS插件-标准模式组件目录结构`
 
-### 标准模式的uts组件代码编写
+### UTS插件-标准模式组件代码编写
 
 #### 添加 native-view
 
-构建uts组件后，HBuilder X 会自动创建components/native-button/native-button.uvue文件，在该文件编写代码添加 native-view 标签
+构建标准模式组件后，HBuilder X 会自动创建components/native-button/native-button.uvue文件，在该文件编写代码添加 native-view 标签
 
 ```ts
 <template>
@@ -308,18 +308,18 @@ export class NativeButton {
 
 :::
 
-更多实现可参考 UTS组件 [native-button](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/dev/uni_modules/native-button)
+更多实现可参考 标准模式组件 [native-button](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/dev/uni_modules/native-button)
 
-此时一个简单的标准模式UTS组件就完成了，
+此时一个简单的UTS插件-标准模式组件就完成了，
 
 **注意:**
-+ UTS组件的 components 目录下的代码中不能含有原生平台任何引用对象，这会导致vue原生组件无法跨平台，与原生平台关联的代码都应放在UTS插件中
++ UTS插件-标准模式组件的 components 目录下的代码中不能含有原生平台任何引用对象，这会导致vue原生组件无法跨平台，与原生平台关联的代码都应放在UTS插件中
 + ios平台需要vue组件主动释放 uts 实例，所以页面触发 unmounted 生命周期时需要调用 this.button?.destroy() 避免内存泄露
 + android平台 native-view 组件不支持border、background、box-shadow属性，可以使用view标签包裹native-view,在view标签设置以上属性
 
-### 页面引用uts组件
+### 页面引用UTS插件-标准模式组件
 
-以 native-button 为例, 创建uts组件的项目页面可以直接使用 native-button 标签，也可将native-button插件包放置其他项目的uni-modules文件夹中。项目页面即可使用 native-button 标签
+以 native-button 为例, 创建标准模式组件的项目页面可以直接使用 native-button 标签，也可将native-button插件包放置其他项目的uni-modules文件夹中。项目页面即可使用 native-button 标签
 
 ```html
 <template>
