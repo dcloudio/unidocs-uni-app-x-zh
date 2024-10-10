@@ -50,7 +50,7 @@
 
 ```groovy
 defaultConfig {
-    buildConfigField "String", "UTSRegisterComponents", "\"[{\"name\":\"canvas\",\"class\":\"io.dcloud.canvas.CanvasComponent\",\"node\":\"io.dcloud.canvas.UniCanvasElementImpl\"}]\""
+    buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"canvas\\\",\\\"class\\\":\\\"io.dcloud.canvas.CanvasComponent\\\",\\\"node\\\":\\\"io.dcloud.canvas.UniCanvasElementImpl\\\"}]\""
 }
 ```
 
