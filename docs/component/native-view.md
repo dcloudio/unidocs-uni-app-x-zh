@@ -13,19 +13,27 @@
 
 ### 使用场景
 
-`native-view` 适用于开发[标准模式的uts组件](../plugin/uts-vue-component.md)
+`native-view` 适用于开发[uts插件-标准模式组件](../plugin/uts-vue-component.md)
 
 ### 使用教程
 
-+ 获取 UniNativeViewElement
+#### 获取 UniNativeViewElement
 
 `native-view`提供 @init 监听元素初始化，通过事件[UniNativeViewInitEvent](#uninativeviewinitevent)的 detail.element 获取到 [UniNativeViewElement](../dom/uninativeviewelement.md)。
 
-+ 绑定原生view
+#### UniNativeViewElement绑定原生view
 
-[UniNativeViewElement](../dom/uninativeviewelement.md) 提供了[bindAndroidView](../dom/uninativeviewelement.md#bindandroidview)与`native-view`绑定安卓原生view, [bindIOSView](../dom/uninativeviewelement.md#bindiosview)与`native-view`绑定IOS原生view, 绑定后view则自动适配[组件全局属性](common.md#组件全局属性)。
+**Android 平台：**
 
-+ 分发自定义事件
+[UniNativeViewElement](../dom/uninativeviewelement.md) 提供[bindAndroidView](../dom/uninativeviewelement.md#bindandroidview)函数与`native-view`绑定android平台原生view
+
+**IOS 平台：**
+
+[UniNativeViewElement](../dom/uninativeviewelement.md) 提供[bindIOSView](../dom/uninativeviewelement.md#bindiosview)函数与`native-view`绑定ios平台原生view
+
+绑定后view则自动适配[组件全局属性](common.md#组件全局属性)。
+
+#### 分发自定义事件
 
 [UniNativeViewElement](../dom/uninativeviewelement.md) 提供了dispatchEvent分发event事件API，注意：事件数据类型暂时只支持[UniNativeViewEvent](#uninativeviewevent)。
 
