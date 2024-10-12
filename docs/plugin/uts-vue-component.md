@@ -60,7 +60,7 @@ HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键�
 
 构建标准模式组件后，HBuilder X 会自动创建components/native-button/native-button.uvue文件，在该文件编写代码添加 native-view 标签
 
-```ts
+```html
 <template>
 	<native-view></native-view>
 </template>
@@ -72,11 +72,33 @@ native-view 初始化会触发 @init 事件，此时创建NativeButton对象，n
 
 [NativeButton](#实现nativebutton对象)是在utssdk目录构建的原生对象。NativeButton对象内部处理原生view与native-view绑定关联业务
 
-```ts
+::: preview
+
+> 组合式 API
+
+```html
 <template>
 	<native-view @init="onviewinit"></native-view>
 </template>
-... ...
+<script setup lang="uts">
+	//引入 NativeButton 原生对象
+	import { NativeButton } from "@/uni_modules/native-button";
+	let button : NativeButton | null = null
+	//native-view初始化时触发此方法
+	function onviewinit(e : UniNativeViewInitEvent) {
+		//获取UniNativeViewElement 传递给NativeButton对象
+		button = new NativeButton(e.detail.element);
+	}
+</script>
+```
+
+> 选项式 API
+
+```html
+<template>
+	<native-view @init="onviewinit"></native-view>
+</template>
+<script lang="uts">
 	//引入 NativeButton 原生对象
 	import { NativeButton } from "@/uni_modules/native-button";
 	export default {
@@ -93,11 +115,30 @@ native-view 初始化会触发 @init 事件，此时创建NativeButton对象，n
 			}
 		}
 	}
+</script>
 ```
 
 #### 组件声明方法
 
 在 methods 节点中添加updateText方法，native-button组件使用者可调用该方法更新native-button文案。 [页面调用组件方法](https://doc.dcloud.net.cn/uni-app-x/vue/component.html#page-call-component-method)
+
+::: preview
+
+> 组合式 API
+
+```ts
+<script setup lang="uts">
+	//引入 NativeButton 原生对象
+	import { NativeButton } from "@/uni_modules/native-button";
+	let button : NativeButton | null = null
+	//声明方法
+	function updateText(value : string) {
+		button?.updateText(value)
+	}
+</script>
+```
+
+> 选项式 API
 
 ```ts
 methods: {
@@ -111,6 +152,29 @@ methods: {
 #### 组件声明props
 
 native-button 声明props，例如native-button的文案信息text属性，按vue规范监听到text属性更新，通过NativeButton对象驱动更新原生view属性，在components/native-button/native-button.uvue编写如下代码，具体参考[vue组件Props规范](https://cn.vuejs.org/guide/components/props.html)
+
+::: preview
+
+> 组合式 API
+
+```html
+<script setup lang="uts">
+	//声明属性
+	const props = defineProps<{ text : string }>()
+	//声明方法
+	function updateText(value : string) {
+		button?.updateText(value)
+	}
+	//监听属性变化
+	watchEffect(() => {
+		// console.log("watchEffect   "+props.text)
+		const text = props.text
+		updateText(text)
+	})
+</script>
+```
+
+> 选项式 API
 
 ```html
 <script lang="uts">
@@ -138,6 +202,28 @@ native-button 声明props，例如native-button的文案信息text属性，按vu
 
 native-button 声明事件，例如原生组件触发点击事件@buttonTap, NativeButton对象通过 UniNativeViewElement 的 dispatchEvent 函数触发native-view的 @customClick 自定义事件。native-button.uvue监听native-view的 @customClick 自定义事件实现this.$emit触发声明事件，具体参考[vue组件事件规范](https://cn.vuejs.org/guide/components/events.html)
 
+::: preview
+
+> 组合式 API
+
+```html
+<template>
+	<native-view @customClick="ontap"></native-view>
+</template>
+<script setup lang="uts">
+	//声明事件
+	const emit = defineEmits<{
+		(e : "buttonTap", event : UniNativeViewEvent) : void
+	}>()
+	
+	function ontap(e : UniNativeViewEvent) {
+		emit("buttonTap", e)
+	}
+</script>
+```
+
+> 选项式 API
+
 ```html
 <template>
 	<native-view @customClick="ontap"></native-view>
@@ -158,6 +244,59 @@ native-button 声明事件，例如原生组件触发点击事件@buttonTap, Nat
 目前自定义事件参数仅支持[UniNativeViewEvent]()
 
 native-button/components/native-button/native-button.uvue 最终代码如下：
+
+::: preview
+
+> 组合式 API
+
+``` html
+<template>
+	<native-view @init="onviewinit" @customClick="ontap"></native-view>
+</template>
+<script setup lang="uts">
+	import { NativeButton } from "@/uni_modules/native-button";
+	let button : NativeButton | null = null
+	
+	//声明属性
+	const props = defineProps<{ text : string }>()
+	
+	//声明事件
+	const emit = defineEmits<{
+		(e : "load") : void
+		(e : "buttonTap", event : UniNativeViewEvent) : void
+	}>()
+	
+	//声明方法
+	function updateText(value : string) {
+		button?.updateText(value)
+	}
+	
+	//监听属性变化
+	watchEffect(() => {
+		const text = props.text
+		updateText(text)
+	})
+
+	//native-view初始化时触发此方法
+	function onviewinit(e : UniNativeViewInitEvent) {
+		//获取UniNativeViewElement 传递给NativeButton对象
+		button = new NativeButton(e.detail.element);
+		updateText(props.text)
+		emit("load")
+	}
+
+	function ontap(e : UniNativeViewEvent) {
+		emit("buttonTap", e)
+	}
+
+	function onUnmounted() {
+		// iOS平台需要主动释放 uts 实例
+		button?.destroy()
+	}
+</script>
+```
+
+> 选项式 API
 
 ```html
 <template>
@@ -217,7 +356,7 @@ utssdk目录实现不同平台的原生NativeButton对象，构造参数获取Un
 
 > Android
 
-```html
+```uts
 import { Button } from "android.widget"
 
 export class NativeButton {
@@ -260,7 +399,7 @@ export class NativeButton {
 
 > iOS
 
-```html
+```uts
 import { UIButton, UIControl } from "UIKit"
 
 export class NativeButton {
