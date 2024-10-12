@@ -241,7 +241,7 @@ native-button 声明事件，例如原生组件触发点击事件@buttonTap, Nat
 
 **注意：**
 
-目前自定义事件参数仅支持[UniNativeViewEvent]()
+目前自定义事件参数仅支持[UniNativeViewEvent](../component/native-view#uninativeviewevent)
 
 native-button/components/native-button/native-button.uvue 最终代码如下：
 
