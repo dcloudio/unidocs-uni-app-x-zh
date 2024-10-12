@@ -50,7 +50,7 @@
 
 HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键选择新建uni_modules插件，弹窗后分类选择 “UTS插件-标准模式组件”，填写组件名称，以下均已 native-button 为例
 
-//截图
+![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/create-uts-vue-component.png)
 
 创建完毕 HBuilder X 会自动构建模版文件，参考:`UTS插件-标准模式组件目录结构`
 
@@ -70,7 +70,7 @@ HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键�
 
 native-view 初始化会触发 @init 事件，此时创建NativeButton对象，native-button.uvue代码中用NativeButton对象调用插件相关的API。将 UniNativeViewElement 传递给NativeButton对象对象，进行关联绑定
 
-[NativeButton](#NativeButton对象)是在utssdk目录构建的原生对象。NativeButton对象内部处理原生view与native-view绑定关联业务
+[NativeButton](#实现nativebutton对象)是在utssdk目录构建的原生对象。NativeButton对象内部处理原生view与native-view绑定关联业务
 
 ```ts
 <template>
@@ -152,6 +152,10 @@ native-button 声明事件，例如原生组件触发点击事件@buttonTap, Nat
 	}
 </script>
 ```
+
+**注意：**
+
+目前自定义事件参数仅支持[UniNativeViewEvent]()
 
 native-button/components/native-button/native-button.uvue 最终代码如下：
 
