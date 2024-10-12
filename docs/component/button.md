@@ -29,7 +29,7 @@
 
 ## hover-class 属性值
 
-## button样式修改@style
+### button样式修改@style
 
 button在元素的text区域直接写文字，和text组件一样。可以这么理解，button是一个特殊的text组件，文字样式可以直接写在button组件的style或class上。
 
