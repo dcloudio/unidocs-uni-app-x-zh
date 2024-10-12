@@ -118,6 +118,8 @@ native-view 初始化会触发 @init 事件，此时创建NativeButton对象，n
 </script>
 ```
 
+:::
+
 #### 组件声明方法
 
 在 methods 节点中添加updateText方法，native-button组件使用者可调用该方法更新native-button文案。 [页面调用组件方法](https://doc.dcloud.net.cn/uni-app-x/vue/component.html#page-call-component-method)
@@ -148,6 +150,8 @@ methods: {
 	}
 }
 ```
+
+:::
 
 #### 组件声明props
 
@@ -198,6 +202,8 @@ native-button 声明props，例如native-button的文案信息text属性，按vu
 </script>
 ```
 
+:::
+
 #### 组件声明事件
 
 native-button 声明事件，例如原生组件触发点击事件@buttonTap, NativeButton对象通过 UniNativeViewElement 的 dispatchEvent 函数触发native-view的 @customClick 自定义事件。native-button.uvue监听native-view的 @customClick 自定义事件实现this.$emit触发声明事件，具体参考[vue组件事件规范](https://cn.vuejs.org/guide/components/events.html)
@@ -239,6 +245,8 @@ native-button 声明事件，例如原生组件触发点击事件@buttonTap, Nat
 </script>
 ```
 
+:::
+
 **注意：**
 
 目前自定义事件参数仅支持[UniNativeViewEvent](../component/native-view#uninativeviewevent)
@@ -262,7 +270,6 @@ native-button/components/native-button/native-button.uvue 最终代码如下：
 	
 	//声明事件
 	const emit = defineEmits<{
-		(e : "load") : void
 		(e : "buttonTap", event : UniNativeViewEvent) : void
 	}>()
 	
@@ -282,7 +289,6 @@ native-button/components/native-button/native-button.uvue 最终代码如下：
 		//获取UniNativeViewElement 传递给NativeButton对象
 		button = new NativeButton(e.detail.element);
 		updateText(props.text)
-		emit("load")
 	}
 
 	function ontap(e : UniNativeViewEvent) {
@@ -347,6 +353,8 @@ native-button/components/native-button/native-button.uvue 最终代码如下：
 	}
 </script>
 ```
+
+:::
 
 #### 实现NativeButton对象
 
