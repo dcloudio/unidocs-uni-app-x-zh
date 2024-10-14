@@ -1,0 +1,104 @@
+# 云打包  
+
+在HBuilderX中开发完成后，提交到云端打包生成发布安装包。  
+可点击菜单 “发行” -> “App-Android/iOS-云打包” 打开 “App打包”界面：  
+
+![](https://web-ext-storage.dcloud.net.cn/doc/app/cloudpackage/package.png)
+
+## Android平台  
+
+云端打包需配置包名、证书以及安装包格式信息。
+
+### Android包名  
+在Android中，包名（Package Name）是应用的唯一标识符。采用反写域名命名规则（如com.xxx.xxx形式），可以包含大写或小写字母、数字和下划线（“_”）。不过，各个名称部分只能以字母开头。
+
+### 证书类型  
+#### 云证书  
+由服务自动生成证书，生成证书后可登录[DCloud开发者中心](https://dev.dcloud.net.cn/)查看证书详情或下载证书文件。  
+
+**注意**  
+- 服务器生成的证书绑定应用appid，即每个appid会各自生成证书
+- 服务器生成的证书会自动填写证书信息，不支持自定义证书信息，有效期为100年
+
+#### 自选证书  
+开发者如果已经有自己的安卓签名证书，可直接使用。  
+如果没有证书，使用JDK的keytool工具生成一个，不像Apple证书那样收费，制作Android证书没有费用，参考[Android平台签名证书(.keystore)生成指南](https://ask.dcloud.net.cn/article/35777)。  
+
+在 “证书类型” 中勾选 “云端证书”：  
+
+![](https://web-ext-storage.dcloud.net.cn/doc/app/cloudpackage/package-android.png)
+
+- 证书库文件  
+	选择要使用的证书库文件  
+- 证书库密码  
+	输入访问证书库的密码  
+- 证书别名  
+	选择用于签名的证书别名  
+- 证书密码  
+	输入访问选择别名对应证书的密码  
+
+**注意**  
+- 证书别名使用英文字母或数字，避免使用中文  
+- 提交云端打包后，打包机会立即删除的证书，不会保存或泄露证书，请放心使用  
+
+### APK安装包  
+生成apk格式的安装包，国内应用市场支持使用此格式。
+
+### AAB安装包（HBuilderX4.31+支持）@aab  
+生成aab格式的安装包，Google Play 应用市场要求必须使用此格式，国内的华为应用市场支持使用此格式。  
+
+**注意**  
+- aab格式不支持通过adb命令安装到手机，可参考[本地离线打包支持Android App Bundle (AAB)](https://ask.dcloud.net.cn/article/39052#install)进行安装测试  
+
+
+## iOS平台  
+
+云端打包需配置Bundle ID、支持的设备、证书信息。
+
+![](https://web-ext-storage.dcloud.net.cn/doc/app/cloudpackage/package-ios.png)
+
+### Bundle ID  
+Bundle ID （Bundle identifier）也叫 App ID 或者应用ID，是每个 iOS 应用的唯一标识。  
+申请 iOS 证书、打包 ipa 和在 itunesconnect 创建 App 都要用到 Bundle ID， 整个 App 上架流程就是靠这个 Bundle ID 关联在一起。
+
+### 支持的设备  
+
+必须勾选支持iPhone、支持iPad中的至少一项。  
+
+- 支持iPhone  
+	勾选此项才能安装到iPhone设备，不勾选则无法安装到iPhone设备。  
+
+- 支持iPad
+	勾选此项才能在iPad设备全屏运行，不勾选此项也可以安装到iPad设备，但运行时会有黑边。  
+
+### 证书信息  
+
+打包iOS安装必须使用Apple证书，需到 Apple 开发者网站申请，详情参考[Apple证书申请](https://ask.dcloud.net.cn/article/152)。  
+
+- 私钥证书  
+	选择在 Apple 开发者网站申请的证书  
+- 证书私钥密码  
+	访问私钥证书的密码  
+- 证书Profile文件  
+	选择与证书关联的Profile文件  
+
+## 制作自定义调试基座  
+
+HBuilderX中内置“使用标准基座运行”功能，是DCloud为方便开发者低门槛调试而提供的，此基座App使用的是DCloud的包名、证书和三方SDK配置。  
+如果要自定义原生层能力（如三方SDK配置），则需要走一遍iOS或Android的打包流程，由XCode或Android studio编译打包生成ipa或apk安装包。但发布打包后无法方便调试，不能热重载和显示控制台日志。所以HBuilder在打包时提供了一个特殊选项，打包“自定义运行基座”。  
+
+自定义调试基座可以生效的配置（主要是manifest.json的配置），包括：
+- App名称、图标、封面splash、包名、证书
+- App模块配置、三方sdk配置（如微信、推送、地图、语音识别等三方sdk配置）
+- App权限配置
+- uni原生插件
+- 其他manifest.json文档提到的需打包生效的配置
+
+生成自定义调试基座后，可参考[使用自定义调试基座真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)  
+
+**注意**  
+- 自定义调试基座生成的安装包不能用于提交应用市场上架审核  
+
+## 广告联盟  
+用于配置 uni-AD 相关，详情参考[uni-AD开发文档](https://uniapp.dcloud.net.cn/uni-ad/intro.html)  
+
