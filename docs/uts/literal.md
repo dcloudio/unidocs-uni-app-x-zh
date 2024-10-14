@@ -197,8 +197,8 @@ type User = {
 function printUser(user: User){
 	console.log(user) 
 }
-printUser({name: 'DCloud',age: 12} as User) // 通过对象字面量 as User 构造一个 type 定义的 User 对象
-printUser({name: 'DCloud',age: 12}) // 从 HBuilderX 4.31+ 起，无需手动 as User
+printUser({name: 'zhangsan',age: 12} as User) // 通过对象字面量 as User 构造一个 type 定义的 User 对象
+printUser({name: 'zhangsan',age: 12}) // 从 HBuilderX 4.31+ 起，无需手动 as User
 
 ```
 
