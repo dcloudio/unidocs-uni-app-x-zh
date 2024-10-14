@@ -129,10 +129,6 @@ var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 ```
 
-**注意**
-
-目前 Android、iOS 平台不支持`标签函数`的用法
-
 #### 转义特殊字符
 
 |字符	|意思		|
