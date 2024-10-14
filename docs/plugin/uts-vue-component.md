@@ -155,7 +155,7 @@ methods: {
 
 #### 组件声明props
 
-native-button 声明props，例如native-button的文案信息text属性，按vue规范监听到text属性更新，通过NativeButton对象驱动更新原生view属性，在components/native-button/native-button.uvue编写如下代码，具体参考[vue组件Props规范](https://cn.vuejs.org/guide/components/props.html)
+native-button 声明props，例如native-button的文案信息text属性，按vue组件规范监听到text属性更新，通过NativeButton对象驱动更新原生view属性，在components/native-button/native-button.uvue编写如下代码，具体参考[vue组件Props规范](https://cn.vuejs.org/guide/typescript/composition-api#typing-component-props)
 
 ::: preview
 
@@ -206,7 +206,7 @@ native-button 声明props，例如native-button的文案信息text属性，按vu
 
 #### 组件声明事件
 
-native-button 声明事件，例如原生组件触发点击事件@buttonTap, NativeButton对象通过 UniNativeViewElement 的 dispatchEvent 函数触发native-view的 @customClick 自定义事件。native-button.uvue监听native-view的 @customClick 自定义事件实现this.$emit触发声明事件，具体参考[vue组件事件规范](https://cn.vuejs.org/guide/components/events.html)
+native-button 声明事件，例如原生组件触发点击事件@buttonTap, NativeButton对象通过 UniNativeViewElement 的 dispatchEvent 函数触发native-view的 @customClick 自定义事件。native-button.uvue监听native-view的 @customClick 自定义事件实现emit触发声明事件，具体参考[vue组件事件规范](https://cn.vuejs.org/guide/typescript/composition-api#typing-component-emits)
 
 ::: preview
 
