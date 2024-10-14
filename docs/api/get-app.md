@@ -14,9 +14,8 @@
 
 以上示例，getApp()后调用了app.uvue里定义的increasetLifeCycleNum方法。app.uvue的源码[另见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/App.uvue)
 
-## 注意事项@matters
-123123
-
+## 注意事项@appmethods
+4.31+ `getApp()` 返回值调整为 `UniApp` 类型，调用 `App.uvue` 中定义的方法时，需要由 `getApp().fnName()` 调整为 `getApp().vm.fnName()`。
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
