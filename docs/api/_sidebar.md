@@ -15,6 +15,7 @@
   * [getPerformance](get-performance.md)
 * 页面和路由
   * [页面跳转](navigator.md)
+  * [弹框页面](dialog-page.md)
   * [设置导航条颜色](set-navigation-bar-color.md)
   * [设置导航条标题](set-navigation-bar-title.md)
   * [设置tabBar](set-tab-bar.md)

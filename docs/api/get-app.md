@@ -14,6 +14,9 @@
 
 以上示例，getApp()后调用了app.uvue里定义的increasetLifeCycleNum方法。app.uvue的源码[另见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/App.uvue)
 
+## 注意事项@matters
+123123
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
