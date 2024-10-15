@@ -29,6 +29,7 @@
 |backgroundTextStyle					|String	|4.31      |4.31    |x		|dark	|
 |onReachBottomDistance				|Number	|x			|x		|4.18	|50			|
 |pageOrientation							|String	|4.18		|4.25		|x		|auto		|
+|disableSwipeBack							|Boolean|x		|4.18		|x		|false	|
 |showStatusBar                  |Boolean    |4.31   |x  |x  |true
 |showBottomNavigationIndicator  |Boolean    |4.31   |x  |x  |true
 
