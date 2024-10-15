@@ -53,10 +53,13 @@
   * 媒体组件
     * [image | 图片](image.md)
     * [video | 视频](video.md)
+    <!-- * [animation-view | Lottie动画](animation-view.md) -->
   * 地图
     * [map | 地图](map.md)
   * 画布
     * [canvas | 画布](canvas.md)
+  <!-- * 广告
+    * [ad | 信息流广告](ad.md) -->
   * 网页
     * [web-view](web-view.md)
   * 页面属性配置节点

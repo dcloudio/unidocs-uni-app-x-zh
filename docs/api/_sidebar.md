@@ -8,6 +8,7 @@
 * 基础
   * [环境变量](env.md)
   * [事件总线](event-bus.md)
+  * [Base64](base64.md)
   * [拦截器](interceptor.md)
   * [启动](launch.md)
   * [退出应用](exit.md)
@@ -15,7 +16,7 @@
   * [getPerformance](get-performance.md)
 * 页面和路由
   * [页面跳转](navigator.md)
-  * [弹框页面](dialog-page.md)
+  * [dialogPage](dialog-page.md)
   * [设置导航条颜色](set-navigation-bar-color.md)
   * [设置导航条标题](set-navigation-bar-title.md)
   * [设置tabBar](set-tab-bar.md)
@@ -26,6 +27,7 @@
   * [通过 id 获取 element](get-element-by-id.md)
   * [创建 SelectorQuery 实例](create-selector-query.md)
 * 界面
+  * [节点布局相交状态](create-intersection-observer.md)
   * [弹出操作菜单](show-action-sheet.md)
   * [显示模态弹窗](show-modal.md)
   * [显示 loading 提示框](show-loading.md)
@@ -50,6 +52,7 @@
   * [安装 APK](install-apk.md)
   * [获取电池电量信息](get-battery-info.md)
   * [打电话](make-phone-call.md)
+  * [剪切板](clipboard.md)
   * [罗盘](compass.md)
   * [wifi](wifi.md)
   * [内存](memory.md)
@@ -85,6 +88,7 @@
 * 广告
   * [开屏广告manifest配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-ad)
   * [激励视频广告](create-rewarded-video-ad.md)
+  * [插屏广告](create-interstitial-ad.md)
 * 支付
   * [支付（requestPayment）](request-payment.md)
   * [虚拟支付（requestVirtualPayment）](virtual-payment.md)
