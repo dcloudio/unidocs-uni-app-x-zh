@@ -37,6 +37,8 @@
   * [Error](buildin-object-api/error.md)
   * [Timers](buildin-object-api/timers.md)
   * [Console](buildin-object-api/console.md)
+  * [TextEncoder](buildin-object-api/textencoder.md)
+  * [TextDecoder](buildin-object-api/textdecoder.md)
   * [全局](buildin-object-api/global.md)
 * 平台专用对象和 API
   * [UTSAndroid](utsandroid.md)
