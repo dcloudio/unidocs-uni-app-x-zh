@@ -2,7 +2,10 @@
 
 <!-- UTSCOMJSON.native-view.description -->
 
-`native-view`自身没有渲染内容，开发者提供对应平台原生view与`native-view`进行绑定，`native-view`将展示该view的渲染内容
+`native-view`自身没有渲染内容，开发者可以通过DOM API获取到`native-view`对应的原生view，然后提供平台原生view与`native-view`进行绑定，`native-view`将展示该view的渲染内容。
+
+`<native-view>`组件是uni-app x下扩展原生组件（如map）的重要方式。事实上官方的map组件就是使用`<native-view>`开发的。详见下方的使用场景章节。
+
 <!-- UTSCOMJSON.native-view.compatibility -->
 
 <!-- UTSCOMJSON.native-view.attribute -->
