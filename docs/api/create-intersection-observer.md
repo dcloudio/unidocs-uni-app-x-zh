@@ -12,8 +12,6 @@
 
 <!-- UTSAPIJSON.createIntersectionObserver.tutorial -->
 
-<!-- UTSAPIJSON.createIntersectionObserver.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

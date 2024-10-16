@@ -12,8 +12,6 @@
 
 <!-- UTSAPIJSON.createInterstitialAd.tutorial -->
 
-<!-- UTSAPIJSON.createInterstitialAd.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
