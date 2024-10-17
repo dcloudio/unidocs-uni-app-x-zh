@@ -68,7 +68,7 @@ HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键�
 
 #### native-view 与 原生对象关联
 
-native-view 初始化会触发 @init 事件，此时创建NativeButton对象，native-button.uvue代码中用NativeButton对象调用插件相关的API。将 UniNativeViewElement 传递给NativeButton对象对象，进行关联绑定
+native-view 初始化会触发 @init 事件，此时创建NativeButton对象，native-button.uvue代码中用NativeButton对象调用插件相关的API。将 UniNativeViewElement 传递给NativeButton对象，进行关联绑定
 
 [NativeButton](#实现nativebutton对象)是在utssdk目录构建的原生对象。NativeButton对象内部处理原生view与native-view绑定关联业务
 
