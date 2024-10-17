@@ -53,6 +53,7 @@ uts 全称 uni type script，是一门跨平台的、高性能的、强类型的
 * `web/小程序`平台，编译为JavaScript
 * `Android`平台，编译为Kotlin
 * `iOS`平台，编译Swift
+* `鸿蒙next`平台，编译为arkts
 
 uts和ts很相似，但为了跨端，uts进行了一些约束和特定平台的增补。详见 [uts语言介绍](./uts/README.md)
 
@@ -277,8 +278,8 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 除上述文档中声明已经完成的，还有如下需要注意：
 
 - 平台支持：Android、Web、iOS版已发布。小程序、鸿蒙还未支持。虽然uts语言支持swift，可以写原生插件，但uvue的iOS版目前只上线了js逻辑层，还未发布swift逻辑层。
-- 小程序平台：目前也可以通过编译到H5，在小程序的web-view里临时替代使用。24年下半年会正式支持小程序。
-- 鸿蒙next平台：uni-app已支持鸿蒙next，采用web-view；下半年内会提供uni-app x编译为鸿蒙，采用原生渲染。推荐不熟悉ts的开发者先学习ts，鸿蒙的arkTS和uts，都是ts的变种，掌握类型系统是必须的。
+- 小程序平台：目前也可以通过编译到H5，在小程序的web-view里临时替代使用。24年Q3会正式支持小程序。
+- 鸿蒙next平台：uni-app已支持鸿蒙next，采用web-view渲染；24年年底会提供uni-app x编译为鸿蒙，采用原生渲染。目前uni-app的鸿蒙版，所有API实现均使用uts方式，可与uni-app x复用。
 - 目前不支持国际区账户创建和打包uni-app x，仅大陆区开发者账户可用。
 
 ::: info
@@ -286,9 +287,7 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 :::
 
 ## 案例
-- 快亿商城，[App端](https://ext.dcloud.net.cn/plugin?id=15458)、[管理端](https://ext.dcloud.net.cn/plugin?id=15568)
-- [ai(chatGPT)聊天对话，uni-app x(uvue+uts)和uniCloud云端一体完整](https://ext.dcloud.net.cn/plugin?id=17075)
-- 槟购跨境，[App端](https://sj.qq.com/appdetail/com.bingo.bg)
+[另见](./sample.md)
 
 ## 自动化测试
 uni-app x 从源头重视产品质量，第一个版本就支持自动化测试。并为uni-app x产品编写了数十万行自动化测试例代码。
