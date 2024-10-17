@@ -350,3 +350,56 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 ```
 
 
+## uni-map-tencent@uni-map-tencent
+
+在uni-app x客户端，uni-map-tencent是一个独立模块。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
+
+使用 uni-map-tencent 模块需在 manifest.json 文件中添加如下配置：
+
+### 配置腾讯地图
+在 app -> distribute -> modules 下添加 uni-map-tencent 节点：
+```json
+	modules:{
+		"uni-map-tencent": {}
+	}
+```
+### 配置腾讯地图SDK的参数
+
+使用腾讯地图需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请TencentLBSAPIKey，并配置到应用中。 
+
+#### iOS平台配置腾讯地图Key @uni-map-tencent-ios-key
+
+
+需在项目根目录下的 Info.plist配置腾讯地图的 TencentLBSAPIKey，然后 iOS 需要打自定义基座才可以生效。
+
+配置教程参考： [iOS原生配置文件Info.plist文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)
+
+以下为配置示例：  
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>TencentLBSAPIKey</key>
+		<string>腾讯位置服务官网申请的Key</string>
+	</dict>
+</plist>
+```
+
+#### Andoird平台配置腾讯地图Key @uni-map-tencent-android-key
+
+
+在项目根目录下添加 AndroidManifest.xml 文件，详情参考：[Android原生应用清单文件](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6-androidmanifest-xml)。将申请的 key 配置到项目 AndroidManifest.xml 的 application 节点中，如下：
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+>
+  <application>
+
+    <!-- 将申请到的 key 配置在 android:value 属性中 -->
+    <meta-data android:name="TencentMapSDK" android:value="您申请的Key" />
+
+  </application>
+
+</manifest>
+```
