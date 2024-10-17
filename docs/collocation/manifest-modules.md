@@ -170,6 +170,11 @@ UTSAndroid.setPrivacyAgree(true)
 ```
 :::
 ### 配置三方广告SDK
+
+::: tip Tips
+HBuilderX 4.31 支持打包界面直接勾选广告渠道。
+:::
+
 在 app -> distribute -> modules 下添加 uni-ad 节点：
 ```json
 	modules:{
@@ -184,19 +189,31 @@ UTSAndroid.setPrivacyAgree(true)
 ```
 
 其中 uni-ad 下的节点表示要聚合的广告平台：
-| 标识 | 广告平台名称 |
-| :-  | :- |
-| gdt | 腾讯优量汇广告联盟 |
-| gm | 穿山甲GroMore |
-| ks | 快手广告联盟 |
-| sgm | Sigmob广告联盟 |
-| bd | 百度百青藤广告联盟 |
+
+| 标识			| 广告平台名称						|Web|Android|iOS	|
+| :-				| :-										|:-	|:-			|:-		|
+| gdt				| 腾讯优量汇广告联盟			|x	|3.99		|4.22	|
+| gm				| 穿山甲GroMore					|x	|3.99		|4.22	|
+| ks				| 快手广告联盟						|x	|3.99		|4.22	|
+| sgm				| Sigmob广告联盟					|x	|3.99		|4.22	|
+| hw				| 华为鲸鸿动能						|x	|4.31		|x		|
+| bz				| AdScope倍孜广告				|x	|4.31		|x		|
+| zy				| Octopus章鱼移动广告			|x	|4.31		|4.31	|
+| fl				| 泛连										|x	|4.31		|x		|
+| jl				| 聚力阅盟								|x	|4.31		|x		|
+| gg				| google AdMob					|x	|4.31		|4.31	|
+| pg				| Pangle								|x	|4.31		|4.31	|
+| inmobi		| inMobi								|x	|4.31		|4.31	|
+| ironsource| ironSource						|x	|4.31		|4.31	|
+| liftoff		| Liftoff								|x	|4.31		|4.31	|
+| meta			| Meta Audience Network	|x	|4.31		|4.31	|
+| mintegral	| Mintegral							|x	|4.31		|4.31	|
+| unity			| Unity Ads							|x	|4.31		|4.31	|
 
 添加相应的节点，云端打包就会将对应的广告平台 SDK 打包到最终安装包中。
 
 注意：
-- 穿山甲GroMore、快手广告联盟、腾讯优量汇广告联盟仅支持`armeabi-v7a`和`arm64-v8a`两个CPU平台。
-- 目前仅支持上述国内广告平台，国际广告暂不支持。
+- 穿山甲GroMore、快手广告联盟、腾讯优量汇广告联盟、泛连仅支持`armeabi-v7a`和`arm64-v8a`两个CPU平台。
 
 ::: warning 注意事项
 开屏广告展示前会先显示`splash启动界面`，等待开屏广告服务器返回数据后渲染开屏广告，超过2.5秒未成功加载广告则不显示开屏广告，直接进入应用首页。
