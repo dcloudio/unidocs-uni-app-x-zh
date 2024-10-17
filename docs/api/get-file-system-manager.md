@@ -14,6 +14,8 @@
 
 注意：读取文件API受具体设备内存大小限制，为了在老旧设备具备更好的兼容性，请避免一次性读取大文件的情况（建议文件大小不要超过16M）。
 
+注意：[ReadFileSuccessResult](https://doc.dcloud.net.cn/uni-app-x/api/get-file-system-manager.html#readfilesuccessresult-values) 的data参数在4.31以前类型是string，4.31起为了同时支持arraybuffer，类型改成了any，请在使用时手动as为指定类型
+
 
 <!-- UTSAPIJSON.getFileSystemManager.param -->
 
