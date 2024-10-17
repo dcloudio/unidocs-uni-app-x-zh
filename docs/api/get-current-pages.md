@@ -30,8 +30,8 @@
 |onReachBottomDistance				|Number	|x			|x		|4.18	|50			|
 |pageOrientation							|String	|4.18		|4.25		|x		|auto		|
 |disableSwipeBack							|Boolean|x		|4.18		|x		|false	|
-|showStatusBar                  |Boolean    |4.31   |x  |x  |true
-|showBottomNavigationIndicator  |Boolean    |4.31   |x  |x  |true
+|hideStatusBar                  |Boolean    |4.31   |x  |x  |false
+|hideBottomNavigationIndicator  |Boolean    |4.31   |x  |x  |false
 
 **注意事项**
 - web端由于会自动摇树优化未使用的特性，如果整个项目中都没有使用到下拉刷新`enablePullDownRefresh`，那么下拉刷新功能会被摇掉，此时设置打开下拉刷新将无效。
