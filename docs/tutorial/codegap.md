@@ -266,10 +266,10 @@ request({url: 'https://www.example.com/request'} as RequestOptions)
 ## uts不支持js的一些功能和特性
 
 - 不支持undefined。任何变量被定义后，都需要赋值
-- App-iOS平台暂不支持async、await
 - 函数声明方式不支持[作为值传递](../uts/function.md#作为值传递)
 - 函数表达式方式不支持[默认参数](../uts/function.md#默认参数)
 - 不存在（变量、函数等）声明提升，需要先声明，后使用，不可以访问未声明的变量或函数（包括自身）。
+- App-iOS平台的uts插件环境中支持async、await需HBuilderX 4.31+
 
 ## 调用组件方法@methods
 
