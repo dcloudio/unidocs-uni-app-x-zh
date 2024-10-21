@@ -129,6 +129,40 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 - `targetSdkVersion` 一个用于指定应用的目标 API 级别的整数。如果未设置，其默认值与为 minSdkVersion 指定的值相等。该值用于通知系统，您已针对目标版本进行了测试，并且系统不应通过启用任何兼容性行为，以保持您的应用与目标版本的向前兼容性。
 - `minSdkVersion` 和 `targetSdkVersion` 设置的值是 API 级别（API Level），完整API级别信息请参考[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)
 
+###### aaptOptions @aaptoptions  
+Android平台云端打包时build.gradle的aaptOptions配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/AaptOptions?hl=en)，如下示例源码：  
+```json  
+"aaptOptions": [
+    "noCompress 'png', 'jpg', 'jpeg'"  //配置禁止对 png、jpg、jpeg格式的文件进行压缩
+]
+```
+
+云端打包默认包含以下配置：  
+- additionalParameters '--auto-add-overlay'  
+- ignoreAssetsPattern '!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~'  
+
+###### buildFeatures @buildfeatures  
+Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
+```json  
+"buildFeatures": [
+	"viewBinding true",  //开启dataBinding
+	"dataBinding true"   //开启viewBinding
+]
+```
+
+###### packagingOptions @packagingoptions  
+Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions)，如下示例源码：  
+```json  
+"packagingOptions": [
+	"exclude 'META-INF/LICENSE'",    //排除文件META-INF/LICENSE
+	"exclude 'META-INF/LICENSE.txt'" //排除文件META-INF/LICENSE.txt
+]
+```
+
+云端打包默认包含以下配置：  
+- pickFirst 'lib/*/libstlport_shared.so'  
+- pickFirst 'lib/*/libc++_shared.so'  
+
 ##### IOS配置 @distribute-ios
 
 <!-- MANIFESTJSON.distribute_ios.description -->
