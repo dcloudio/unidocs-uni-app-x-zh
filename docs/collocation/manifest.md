@@ -130,6 +130,9 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 - `minSdkVersion` 和 `targetSdkVersion` 设置的值是 API 级别（API Level），完整API级别信息请参考[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)
 
 ###### aaptOptions @aaptoptions  
+
+> HBuilder4.31版本新增支持  
+
 Android平台云端打包时build.gradle的aaptOptions配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/AaptOptions?hl=en)，如下示例源码：  
 ```json  
 "aaptOptions": [
@@ -142,6 +145,9 @@ Android平台云端打包时build.gradle的aaptOptions配置项，支持的属�
 - ignoreAssetsPattern '!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~'  
 
 ###### buildFeatures @buildfeatures  
+
+> HBuilder4.31版本新增支持  
+
 Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
 ```json  
 "buildFeatures": [
@@ -187,6 +193,7 @@ uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4
 
 
 ### Universal Link @ulink  
+
 uni-app x 项目 manifest.json 文件不再提供 iOS 平台的 通用链接（universal link）相关配置，HBuilderX4.18及以上版本支持在 iOS原生应用配置文件中通过 `关联域（Associated Domains）` 配置通用链接，详情参考：
 - [iOS平台通用链接配置教程](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5-universal-link)  
 
