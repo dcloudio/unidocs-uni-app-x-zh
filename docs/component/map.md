@@ -35,7 +35,7 @@ GS粤（2023）1171号
 
 #### Map Key配置
 
-app平台目前还没有可视化界面，采用摇树机制，即调用地图相关api才会把地图组件编译到基座中。
+app平台目前还没有可视化界面，采用摇树机制，即调用地图相关api才会把地图组件编译到基座中，Map Key配置方式如下：
 
 - iOS平台：需要在info.plist中配置对应的Key，参考[iOS平台配置腾讯地图Key](../collocation/manifest-modules.md#uni-map-tencent-ios-key)
 - Android平台：需要在AndroidManifest.xml配置Key， 参考[Andoird平台配置腾讯地图Key](../collocation/manifest-modules.md#uni-map-tencent-android-key)
