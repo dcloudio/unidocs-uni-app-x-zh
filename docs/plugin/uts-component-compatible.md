@@ -8,7 +8,7 @@
 
 继续阅读文档前，开发者需要了解以下前置条件：
 
-- 了解 `标准模式` 和 `uni-app兼容模式` 的差异，详情参考[uts插件开发概述](./uts-component.md)
+- 了解 `标准模式` 和 `uni-app兼容模式` 的差异，详情参考[uts组件开发概述](./uts-component.md)
 - 了解 [uts语法](/uts/) 和 [uts原生插件](uts-plugin.md)
 - 了解 [Vue组件](https://uniapp.dcloud.net.cn/tutorial/vue3-components.html)
 
