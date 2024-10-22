@@ -352,17 +352,6 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 ## uni-map-tencent@uni-map-tencent
 
-在uni-app x客户端，uni-map-tencent是一个独立模块。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
-
-使用 uni-map-tencent 模块需在 manifest.json 文件中添加如下配置：
-
-### 配置腾讯地图
-在 app -> distribute -> modules 下添加 uni-map-tencent 节点：
-```json
-	modules:{
-		"uni-map-tencent": {}
-	}
-```
 ### 配置腾讯地图SDK的参数
 
 使用腾讯地图需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请TencentLBSAPIKey，并配置到应用中。 
