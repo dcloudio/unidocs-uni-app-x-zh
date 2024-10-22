@@ -52,7 +52,7 @@ HBuilder X 选中你的项目，项目根目录选中uni_modules目录，右键�
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_plugin/create-uts-vue-component.png)
 
-创建完毕 HBuilder X 会自动构建模版文件，参考:`UTS插件-标准模式组件目录结构`
+创建完毕 HBuilder X 会自动构建模版文件，参考: [UTS插件-标准模式组件目录结构](#UTS插件-标准模式组件目录结构)
 
 ### UTS插件-标准模式组件代码编写
 
@@ -251,6 +251,8 @@ native-button 声明事件，例如原生组件触发点击事件@buttonTap, Nat
 
 目前自定义事件参数仅支持[UniNativeViewEvent](../component/native-view#uninativeviewevent)
 
+#### 组件完整代码
+
 native-button/components/native-button/native-button.uvue 最终代码如下：
 
 ::: preview
@@ -356,7 +358,7 @@ native-button/components/native-button/native-button.uvue 最终代码如下：
 
 :::
 
-#### 实现NativeButton对象
+#### 实现原生view封装对象
 
 utssdk目录实现不同平台的原生NativeButton对象，构造参数获取UniNativeViewElement对象与原生view绑定，封装原生view功能关联的API。
 
