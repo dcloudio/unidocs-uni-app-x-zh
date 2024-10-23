@@ -43,6 +43,8 @@
 
 ### 打包格式  
 
+> HBuilder4.31版本新增支持  
+
 #### APK安装包  
 生成apk格式的安装包，国内应用市场支持使用此格式。
 
@@ -53,6 +55,9 @@
 - aab格式不支持通过adb命令安装到手机，可参考[本地离线打包支持Android App Bundle (AAB)](https://ask.dcloud.net.cn/article/39052#install)进行安装测试  
 
 ### 渠道包 @channel  
+
+> HBuilder4.31版本新增支持  
+
 APK格式安装包支持配置渠道信息，默认提供以下渠道配置项：
 
 | 渠道名称     | 渠道标识 |
@@ -135,6 +140,48 @@ HBuilderX中内置“使用标准基座运行”功能，是DCloud为方便开�
 **注意**  
 - 自定义调试基座生成的安装包不能用于提交应用市场上架审核  
 
-## 广告联盟  
-用于配置 uni-AD 相关，详情参考[uni-AD开发文档](https://uniapp.dcloud.net.cn/uni-ad/intro.html)  
+## 广告联盟 @uniad  
+
+> HBuilder4.31版本新增支持  
+
+用于配置 uni-AD 需要使用的广告，使用前需申请开通 uni-AD，详情参考[uni-AD开发文档](https://uniapp.dcloud.net.cn/uni-ad/intro.html) 。  
+勾选则表示开通/集成渠道：
+
+![](https://web-ext-storage.dcloud.net.cn/doc/app/cloudpackage/package-uniad.png)
+
+### 开通DCloud快捷广告  
+
+- 快捷开屏广告  
+  DCloud自营开屏广告  
+- uniMP激励视频广告  
+
+**注意**  
+开通DCloud快捷广告后需登录[uni-ad 广告联盟](https://uniad.dcloud.net.cn/)关闭。  
+
+### 集成渠道SDK广告SDK
+
+勾选云打包需要使用的广告渠道，支持以下广告平台：
+
+| 广告平台名称						|Web|Android|iOS	|
+| :-										|:-	|:-			|:-		|
+| 腾讯优量汇							|x	|3.99		|4.22	|
+| 穿山甲GroMore					|x	|3.99		|4.22	|
+| 快手广告联盟						|x	|3.99		|4.22	|
+| 百度百青藤广告联盟			|x	|4.31		|4.31	|
+| 华为广告联盟						|x	|4.31		|x		|
+| Sigmob广告联盟					|x	|3.99		|4.22	|
+| Octopus章鱼移动广告		|x	|4.31		|4.31	|
+| AdScope倍孜广告				|x	|4.31		|x		|
+| 泛连									|x	|4.31		|x		|
+| 聚力阅盟								|x	|4.31		|x		|
+| Pangle(海外穿山甲)			|x	|4.31		|4.31	|
+| Google AdMob					|x	|4.31		|4.31	|
+| unity									|x	|4.31		|4.31	|
+| liftoff								|x	|4.31		|4.31	|
+| inmobi								|x	|4.31		|4.31	|
+| ironsource						|x	|4.31		|4.31	|
+| mintegral							|x	|4.31		|4.31	|
+
+**注意**  
+- 勾选后需提交云端打包后才能生效  
 

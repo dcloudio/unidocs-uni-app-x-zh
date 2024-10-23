@@ -48,6 +48,11 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 
 使用[uni内置模块](./manifest-modules.md#utsmodules)时，云端打包回自动添加模块需要的隐私信息访问的许可描述，但许可描述信息是通用描述，不一定适合应用的实际使用场景描述，需根据应用的实际情况在[Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoPlist)中配置准确的许可描述。
 
+#### 渠道信息  
+
+> HBuilder4.31版本新增支持  
+
+uni-app x 的渠道信息配置，需在“App打包”界面配置，详情参考[渠道包配置](../tutorial/app-package.md#channel)。
 
 #### DISTRIBUTE配置 @app-distribute
 
