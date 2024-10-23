@@ -171,8 +171,8 @@ UTSAndroid.setPrivacyAgree(true)
 :::
 ### 配置三方广告SDK
 
-::: tip Tips
-HBuilderX 4.31 支持打包界面直接勾选广告渠道。
+::: tip Tips  
+HBuilderX4.31 支持打包界面直接勾选广告渠道，参考[App打包配置](../tutorial/app-package.md#uniad)。
 :::
 
 在 app -> distribute -> modules 下添加 uni-ad 节点：
