@@ -262,11 +262,15 @@ UTSAndroid.offAppActivityBack(() => {
 
 <!-- UTSJSON.UTSAndroid.getAppContext.description -->
 
+> HBuilderX4.31及以上版本推荐使用 [getApp().getAndroidApplication()](../api/get-app.md#getandroidapplication) 获取android原生 [Application](https://developer.android.google.cn/reference/android/app/Application)。
+
 <!-- UTSJSON.UTSAndroid.getAppContext.param -->
 
 <!-- UTSJSON.UTSAndroid.getAppContext.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getAppContext.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getAppContext.tutorial -->
 
 ```uts
 let packageName = UTSAndroid.getAppContext()?.packageName
@@ -277,11 +281,15 @@ console.log("packageName",packageName)
 
 <!-- UTSJSON.UTSAndroid.getUniActivity.description -->
 
+> 在uvue页面中也可先通过 [uni.getElementById](../api/get-element-by-id.md) 获取节点元素对象 [UniElement](../dom/unielement.md)，在调用其 [getAndroidActivity](../dom/unielement.md#getandroidactivity) 获取android原生 [Activity](https://developer.android.google.cn/reference/android/app/Activity)。
+
 <!-- UTSJSON.UTSAndroid.getUniActivity.param -->
 
 <!-- UTSJSON.UTSAndroid.getUniActivity.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getUniActivity.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getUniActivity.tutorial -->
 
 ```uts
 // 获取第一个可以响应图像采集行为组件
