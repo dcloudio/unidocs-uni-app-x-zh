@@ -118,7 +118,7 @@
 
 > HBuilderX 3.99+
 
-小程序有 globalData，这是一种简单的全局变量机制。这套机制在 uni-app-x 里也可以使用，并且全端通用。
+小程序有 globalData，这是一种简单的全局变量机制。这套机制在 uni-app-x 里也可以使用，仅 `iOS uts 插件` 环境不支持。
 
 **以下是 App.uvue 中定义globalData的相关配置：**
 
