@@ -182,7 +182,7 @@ HBuilderX 4.31 支持打包界面直接勾选广告渠道。
 			"gdt":{},
 			"gm":{},
 			"ks":{},
-			"sgm":{},
+			"sigmob":{},
 			"bd":{}
 		}
 	}
@@ -190,25 +190,26 @@ HBuilderX 4.31 支持打包界面直接勾选广告渠道。
 
 其中 uni-ad 下的节点表示要聚合的广告平台：
 
-| 标识			| 广告平台名称						|Web|Android|iOS	|
-| :-				| :-										|:-	|:-			|:-		|
-| gdt				| 腾讯优量汇广告联盟			|x	|3.99		|4.22	|
-| gm				| 穿山甲GroMore					|x	|3.99		|4.22	|
-| ks				| 快手广告联盟						|x	|3.99		|4.22	|
-| sgm				| Sigmob广告联盟					|x	|3.99		|4.22	|
-| hw				| 华为鲸鸿动能						|x	|4.31		|x		|
-| bz				| AdScope倍孜广告				|x	|4.31		|x		|
-| zy				| Octopus章鱼移动广告			|x	|4.31		|4.31	|
-| fl				| 泛连										|x	|4.31		|x		|
-| jl				| 聚力阅盟								|x	|4.31		|x		|
-| gg				| google AdMob					|x	|4.31		|4.31	|
-| pg				| Pangle								|x	|4.31		|4.31	|
-| inmobi		| inMobi								|x	|4.31		|4.31	|
-| ironsource| ironSource						|x	|4.31		|4.31	|
-| liftoff		| Liftoff								|x	|4.31		|4.31	|
-| meta			| Meta Audience Network	|x	|4.31		|4.31	|
-| mintegral	| Mintegral							|x	|4.31		|4.31	|
-| unity			| Unity Ads							|x	|4.31		|4.31	|
+| 标识		| 广告平台名称			|Web|Android|iOS	|
+| :-		| :-					|:-	|:-		|:-		|
+| gdt		| 腾讯优量汇广告联盟		|x	|3.99	|4.22	|
+| gm		| 穿山甲GroMore			|x	|3.99	|4.22	|
+| ks		| 快手广告联盟			|x	|3.99	|4.22	|
+| bd		| 百度百青藤广告联盟		|x	|3.99	|4.22	|
+| sigmob	| Sigmob广告联盟			|x	|3.99	|4.22	|
+| hw		| 华为鲸鸿动能			|x	|4.31	|x		|
+| bz		| AdScope倍孜广告		|x	|4.31	|x		|
+| zy		| Octopus章鱼移动广告		|x	|4.31	|4.31	|
+| fl		| 泛连					|x	|4.31	|x		|
+| jl		| 聚力阅盟				|x	|4.31	|x		|
+| gg		| google AdMob			|x	|4.31	|4.31	|
+| pg		| Pangle				|x	|4.31	|4.31	|
+| inmobi	| inMobi				|x	|4.31	|4.31	|
+| ironsource| ironSource			|x	|4.31	|4.31	|
+| liftoff	| Liftoff				|x	|4.31	|4.31	|
+| meta		| Meta Audience Network	|x	|4.31	|4.31	|
+| mintegral	| Mintegral				|x	|4.31	|4.31	|
+| unity		| Unity Ads				|x	|4.31	|4.31	|
 
 添加相应的节点，云端打包就会将对应的广告平台 SDK 打包到最终安装包中。
 
