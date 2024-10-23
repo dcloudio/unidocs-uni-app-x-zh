@@ -13,14 +13,14 @@
 在Android中，包名（Package Name）是应用的唯一标识符。采用反写域名命名规则（如com.xxx.xxx形式），可以包含大写或小写字母、数字和下划线（“_”）。不过，各个名称部分只能以字母开头。
 
 ### 证书类型  
-#### 云证书  
+#### 云证书 @servercert  
 由服务自动生成证书，生成证书后可登录[DCloud开发者中心](https://dev.dcloud.net.cn/)查看证书详情或下载证书文件。  
 
 **注意**  
 - 服务器生成的证书绑定应用appid，即每个appid会各自生成证书
 - 服务器生成的证书会自动填写证书信息，不支持自定义证书信息，有效期为100年
 
-#### 自选证书  
+#### 自选证书 @customcert  
 开发者如果已经有自己的安卓签名证书，可直接使用。  
 如果没有证书，使用JDK的keytool工具生成一个，不像Apple证书那样收费，制作Android证书没有费用，参考[Android平台签名证书(.keystore)生成指南](https://ask.dcloud.net.cn/article/35777)。  
 
@@ -41,15 +41,51 @@
 - 证书别名使用英文字母或数字，避免使用中文  
 - 提交云端打包后，打包机会立即删除的证书，不会保存或泄露证书，请放心使用  
 
-### APK安装包  
+### 打包格式  
+
+#### APK安装包  
 生成apk格式的安装包，国内应用市场支持使用此格式。
 
-### AAB安装包（HBuilderX4.31+支持）@aab  
-生成aab格式的安装包，Google Play 应用市场要求必须使用此格式，国内的华为应用市场支持使用此格式。  
+#### AAB安装包（HBuilderX4.31+支持）@aab  
+生成aab格式的安装包，Google Play 应用市场要求必须使用此格式。勾选此格式固定渠道为“google”。  
 
 **注意**  
 - aab格式不支持通过adb命令安装到手机，可参考[本地离线打包支持Android App Bundle (AAB)](https://ask.dcloud.net.cn/article/39052#install)进行安装测试  
 
+### 渠道包 @channel  
+APK格式安装包支持配置渠道信息，默认提供以下渠道配置项：
+
+| 渠道名称     | 渠道标识 |
+| ------------ | -------- |
+| 华为   |  huawei   |
+| OPPO   |  oppo     |
+| VIVO   |  vivo     |
+| 小米   |  xiaomi   |
+| 荣耀   |  honor    |
+| 应用宝 |  yyb      |
+
+**注意**
+- 应用中可通过 [uni.getAppBaseInfo](../api/get-app-base-info.md#getappbaseinfo) 返回的 channel 属性获取应用的渠道信息  
+- 勾选“无”表示不使用渠道信息，[uni.getAppBaseInfo](../api/get-app-base-info.md#getappbaseinfo) 返回的 channel 属性值为空字符串  
+
+#### 自定义渠道  
+如果默认的渠道信息不够使，想要更多渠道，可在 [manifest.json](../collocation/manifest.md) 的 `源码视图` 配置 "__hbuilderx" -> "channel_list"，如下：
+```json
+{
+  //其它数据
+  //根节点下配置__hbuilderx如下
+  "__hbuilderx": {
+    "channel_list":[
+      {
+        "id":"lenovo",
+        "name":"联想"
+      }
+    ]
+  }
+}
+```
+
+保存后，重新打开“App打包”界面，在“APK渠道包”项中会列出新增加的自定义渠道，勾选后提交云端打包才能生效。
 
 ## iOS平台  
 
