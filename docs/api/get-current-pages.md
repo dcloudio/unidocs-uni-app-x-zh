@@ -15,7 +15,8 @@ UniPage对象强化了开发者对页面的管理功能，并且支持在uts插�
 ::: warning 注意
 - HBuilderX 4.31+，$getPageStyle和$setPageStyle不再需要加前缀$。
 - 使用`选项式 API` 时，不可创建 `route`、`options` 同名响应式变量，否则会覆盖当前 `page 实例` 的同名属性。
-- 仅 `Web` 与 `iOS` 端支持通过 `page.$vm` 获取 vue 实例。
+- 4.31 前仅 `Web` 与 `iOS(非 uts 插件)` 端支持通过 `page.$vm` 获取 vue 实例。\
+	4.31+ 仅 `iOS uts 插件` 环境不支持通过 `page.vm` 获取 vue 实例。
 :::
 
 **PageStyle**
