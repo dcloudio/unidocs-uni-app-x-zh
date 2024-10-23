@@ -25,6 +25,13 @@
 
 <!-- UTSCOMJSON.map.children -->
 
+::: warning 注意事项
+- App平台 layer-style 属性需要在地图服务商后台创建，值设置为腾讯后台申请的字符串，[详情](https://lbs.qq.com/dev/console/custom/mapStyle)
+- App平台暂未支持
+    - Marker的callout、customCallout、label属性
+    - 点聚合
+:::
+
 <!-- UTSCOMJSON.map.example -->
 
 ### 腾讯地图
