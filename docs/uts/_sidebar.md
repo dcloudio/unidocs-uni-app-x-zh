@@ -46,6 +46,7 @@
   * [UTSActivityCallback](utsactivitycallback.md)
   * [UTSiOS](utsios.md)
   * [UTSiOSHookProxy](utsioshookproxy.md)
+  * [UTSHarmony](utsharmony.md)
 * [关键字](keywords.md)
 * [UTS App插件开发](../plugin/uts-plugin.md)
 <!-- * [学习资料](learning.md) -->
