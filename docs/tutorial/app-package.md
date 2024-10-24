@@ -4,7 +4,6 @@
 离线打包需在原生工程环境中进行配置  
 - Android平台离线打包参考[Android平台原生工程配置](../native/use/android.md)  
 - iOS平台离线打包参考[iOS平台原生工程配置](../native/use/ios.md)  
-
 :::
 
 在HBuilderX中开发完成后，提交到云端打包生成发布安装包。  

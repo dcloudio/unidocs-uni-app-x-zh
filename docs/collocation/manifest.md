@@ -52,7 +52,9 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 
 > HBuilder4.31版本新增支持  
 
-uni-app x 的渠道信息配置，需在“App打包”界面配置，详情参考[渠道包配置](../tutorial/app-package.md#channel)。
+uni-app x 的渠道信息配置，云端需在“App打包”界面配置，详情参考[配置渠道包](../tutorial/app-package.md#channel)。  
+离线打包时需在原生工程中配置，详情参考[Android平台配置应用渠道包](../native/use/android.md#androidmanifest)。  
+
 
 #### DISTRIBUTE配置 @app-distribute
 

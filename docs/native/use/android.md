@@ -142,7 +142,7 @@ android.useAndroidX=true
 android.enableJetifier=true
 ```
 
-### 修改uniappx模块下的AndroidManifest.xml
+### 修改uniappx模块下的AndroidManifest.xml @androidmanifest  
 
 - 添加activity
 	
