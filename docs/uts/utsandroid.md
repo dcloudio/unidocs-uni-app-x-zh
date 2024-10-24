@@ -400,6 +400,8 @@ console.log("pagePX",pagePX)
 
 <!-- UTSJSON.UTSAndroid.isPrivacyAgree.description -->
 
+> HBuilderX4.31及以上版本推荐使用 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 获取用户是否同意隐私协议。
+
 <!-- UTSJSON.UTSAndroid.isPrivacyAgree.param -->
 
 <!-- UTSJSON.UTSAndroid.isPrivacyAgree.returnValue -->
@@ -423,6 +425,8 @@ console.log(UTSAndroid.isPrivacyAgree())
 
 <!-- UTSJSON.UTSAndroid.setPrivacyAgree.description -->
 
+> HBuilderX4.31及以上版本推荐使用 [button](../component/button.md) 设置 `open-type` 值为 `agreePrivacyAuthorization` 来实现设置用户同意隐私协议。
+
 <!-- UTSJSON.UTSAndroid.setPrivacyAgree.param -->
 
 <!-- UTSJSON.UTSAndroid.setPrivacyAgree.returnValue -->
@@ -444,6 +448,8 @@ console.log(UTSAndroid.isPrivacyAgree())
 ### resetPrivacyAgree():void;
 
 <!-- UTSJSON.UTSAndroid.resetPrivacyAgree.description -->
+
+> HBuilderX4.31及以上版本推荐使用 [uni.resetPrivacyAuthorization](../api/privacy.md#resetprivacyauthorization) 重置隐私协议状态为未同意。
 
 <!-- UTSJSON.UTSAndroid.resetPrivacyAgree.param -->
 
@@ -687,6 +693,8 @@ console.log(UTSAndroid.getTopPageActivity())
 
 <!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.description -->
 
+> HBuilderX4.31及以上版本推荐使用 [uni.onPrivacyAuthorizationChange](../api/privacy.md#onprivacyauthorizationchange) 监听隐私协议状态的变化。
+
 <!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.param -->
 
 <!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.returnValue -->
@@ -696,6 +704,8 @@ console.log(UTSAndroid.getTopPageActivity())
 ### offPrivacyAgreeChange(callback)
 
 <!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.description -->
+
+> HBuilderX4.31及以上版本推荐使用 [uni.offPrivacyAuthorizationChange](../api/privacy.md#offprivacyauthorizationchange) 取消监听隐私协议状态的变化。
 
 <!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.param -->
 
