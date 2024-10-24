@@ -26,7 +26,7 @@
 <!-- UTSCOMJSON.map.children -->
 
 ::: warning 注意事项
-- App平台 layer-style 属性需要在地图服务商后台创建，值设置为腾讯后台申请的字符串，[详情](https://lbs.qq.com/dev/console/custom/mapStyle)
+- App平台 l`ayer-style` 属性需要在腾讯地图服务商后台创建，值设置为腾讯后台申请的字符串，[详情](https://lbs.qq.com/dev/console/custom/mapStyle)
 - App平台暂未支持
     - Marker的callout、customCallout、label属性
     - 点聚合
@@ -50,6 +50,7 @@ app平台目前还没有可视化界面，采用摇树机制，即调用地图�
 
 ## Tips
 - 在App和Web平台，没有在manifest中配置好图商的sdk key信息，将无法使用地图。某些图商的sdk key，区分Web、Android、iOS，注意别配混了。有些sdk key，会绑定校验web的域名或app的包名和签名证书摘要，都要匹配准确才能使用地图。
+- 如需地图适配暗黑模式，需要在[腾讯地图服务商后台](https://lbs.qq.com/dev/console/custom/mapStyle)创建响应样式配置，使用`layer-style`进行设置。
 - 谷歌地图仅支持 `wgs84` 坐标，中国的各个地图仅支持 `gcj02` 坐标，注意使用定位API获取的位置，需与map组件的图商需求一致，把 wgs84 的坐标显示在中国地图上会导致偏移。
 - 地图是商业服务，需购买商业地图授权（5万/年）。如果没有授权，不但使用会被限频，还会被某些应用商店拒绝上架。DCloud与地图厂商谈判，给开发者提供了优惠，点此详询 [地图商业授权咨询](https://ask.dcloud.net.cn/explore/map/)。
 
