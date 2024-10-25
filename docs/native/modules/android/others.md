@@ -68,3 +68,5 @@ defaultConfig {
 [uni-verify](/native/modules/android/uni-verify.md)
 
 [uni-payment](/native/modules/android/uni-payment.md)
+
+[uni-map-tencent](/native/modules/android/uni-map-tencent.md)
