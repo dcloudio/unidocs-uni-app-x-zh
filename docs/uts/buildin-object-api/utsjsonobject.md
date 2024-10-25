@@ -276,6 +276,19 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 
 ## 常见问题
 
+#### 目标语言为js时UTSJSONObject实例方法可以被覆盖
+
+> 如非必要请勿利用此特性
+
+如下代码会将getString覆盖为1
+
+```typescript
+const a = {
+  getString: 1
+}
+console.log(a.getString) // 1
+```
+
 #### UTSJSONObject 与 type 相互转换
 
 可以使用下面的代码，进行 `UTSJSONObject` 和 `type` 转换
