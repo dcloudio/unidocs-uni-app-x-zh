@@ -145,7 +145,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─common                          // 可跨端公用的uts代码。推荐，不强制
+┌─common                          // 可跨端公用的uts代码。utssdk目录内如果要引入外部的uts文件，需要放在common中，不支持其他目录名称。
 ├─static                          // 静态资源
 ├─utssdk
 │	├─app-android                 //Android平台目录
