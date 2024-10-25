@@ -13,7 +13,9 @@
 |uni-cloud-client					|uni-cloud-client-release.aar							|-																															|-				|uni-network<br/>uni-storage<br/>uni-getSystemInfo<br/>uni-prompt<br/>uni-media<br/>uni-websocket	|
 |uni-media							|uni-media-release.aar<br/>nativeobj-preview-release.aar|com.github.bumptech.glide:glide:4.9.0<br/>androidx.recyclerview:recyclerview:1.0.0<br/>androidx.appcompat:appcompat:1.0.0	|-				|uni-prompt																							|
 |uni-privacy						|uni-privacy-release.aar								|-																															|-				|-																									|
-
+|uni-fileSystemManager|uni-fileSystemManager-release.aar		|org.brotli:dec:0.1.2																															|-				|-																									|
+|uni-getProvider|uni-getProvider-release.aar		|-																															|-				|-																							
+		
 各模块对应的API可参考文档[App端支持的内置模块列表](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#utsmodules)
 
 ## 配置
