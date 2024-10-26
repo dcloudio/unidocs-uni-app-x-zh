@@ -49,6 +49,10 @@
 | uni-ad | uni-ad-index.swift | DCUniAdFoundation.xcframework | |
 | uni-facialRecognitionVerify | uni-facialRecognitionVerify-index.swift | AliyunFaceAuthFacade.framework <br> AliyunMobileRPC.framework <br> AliyunOSSiOS.framework <br> APBToygerFacade.framework <br> APPSecuritySDK.framework <br> BioAuthAPI.framework <br> BioAuthEngine.framework <br> deviceiOS.framework <br> DTFIdentityManager.framework <br> DTFSensorServices.framework <br> DTFUIModule.framework <br> DTFUtility.framework <br> MPRemoteLogging.framework <br> ToygerNative.framework <br> ToygerService.framework | c++ <br> z <br> resolv <br> c++.1 <br> c++abi <br> z.1.2.8 <br> Accelerate <br> AssetsLibrary <br> QuartzCore <br> CoreFoundation <br> CoreLocation <br> ImageIO <br> CoreMedia <br> CoreMotion <br> AVFoundation <br> WebKit <br> AudioToolbox <br> CFNetwork <br> MobileCoreServices <br> SystemConfiguration <br> CoreTelephony <br> QuartzCore <br> CoreGraphics、AdSupport |
 | uni-cloud-client | uni-websocket-index.swift <br> uni-network-index.swift <br> uni-media-index.swift| DCloudMediaPicker.xcframework |AssetsLibrary <br> Photos <br> AVFoundation <br> CoreServices <br> CoreFoundation <br> CoreGraphics <br> CoreImage <br> GLKit <br> MetalKit <br> MobileCoreServices <br> QuartzCore <br> ImageIO <br> MediaPlayer <br> CoreText|
+| uni-crash | uni-crash-index.swift <br> uni-crash-UniCrashManager.swift | KSCrash.xcframework | |
+| uni-privacy | uni-privacy-index.swift | | |
+| uni-dialogPage | uni-dialogPage-index.swift <br> uni-dialogPage-native.swift  | | |
+| uni-event | uni-event-index.swift <br> uni-event-native.swift  | | |
 
 
 ### 配置uts-config.json(可选)
@@ -430,7 +434,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ```
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniappx_app_info.png)
 
-### 增强广告(可选)
+### 增强广告-国内(可选)
 #### 添加依赖库以及资源文件
 | 广告渠道 | 依赖库 | 资源文件 |  系统库 |
 |---|---|---|---|
@@ -439,7 +443,23 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 | 快手 | DCUniAdKs.xcframework <br> DCloudPermissionIDFA.xcframework <br> KSAdSDK.xcframework`（Embed & Sign）` |  | AppTrackingTransparency <br> AdSupport <br> MobileCoreServices <br> CoreGraphics <br> CoreData <br> CoreLocation <br> MediaPlayer <br> CoreMedia <br> WebKit <br> Accelerate <br> AVKit <br> MessageUI <br> QuickLook <br> AddressBook <br> CoreMotion <br> QuartzCore <br> SystemConfiguration <br> CoreTelephony <br> Security <br> StoreKit <br> AVFoundation <br> WebKit <br> z <br> resolv.9 <br> sqlite3 <br> c++ <br> c++abi |
 | 百度 | DCUniAdBd.xcframework <br> DCloudPermissionIDFA.xcframework <br> BaiduMobAdSDK.framework | baidumobadsdk.bundle | AppTrackingTransparency <br> AdSupport <br> StoreKit <br> SafariServices <br> MessageUI <br> CoreMedia <br> CoreMotion <br> SystemConfiguration <br> CoreLocation <br> CoreTelephony <br> AVFoundation <br> Webkit <br> c++ |
 | sigmob | DCUniAdSgm.xcframework <br> DCloudPermissionIDFA.xcframework <br> WindSDK.xcframework <br> WindFoundation.xcframework |  | AppTrackingTransparency <br> AdSupport <br> StoreKit <br> CFNetwork <br> CoreMedia <br> CoreGraphics <br> AVFoundation <br> CoreLocation <br> CoreTelephony <br> SafariServices <br> MobileCoreServices <br> WebKit <br> SystemConfiguration <br> ImageIO <br> z <br> sqlite3 |
+| 章鱼 | OctUniAdSDK.xcframework <br> DCloudPermissionIDFA.xcframework <br> OctCore.xcframework <br> OctAdSDK.xcframework | OctAdSDK.bundle <br> OctCore.bundle | AppTrackingTransparency <br> AdSupport <br> c++|
 
+
+### 增强广告-国际(可选)
+#### 添加依赖库以及资源文件
+| 广告渠道 | 依赖库 | 资源文件 |  系统库 |
+|---|---|---|---|
+| Google AdMob | DCUniAdGg.xcframework <br> DCloudPermissionIDFA.xcframework <br> UserMessagingPlatform.xcframework | | |
+| Pangle | PangleAdapter.xcframework <br> DCloudPermissionIDFA.xcframework <br> BURelyFoundation_Global.xcframework.xcframework <br> PAGAdSDK.xcframework | PAGAdSDK.bundle | StoreKit.framework<br>MobileCoreServices.framework<br>WebKit.framework<br>MediaPlayer.framework<br>CoreMedia.framework<br>CoreLocation.framework<br>AVFoundation.framework<br>CoreTelephony.framework<br>SystemConfiguration.framework<br>AdSupport.framework<br>CoreMotion.framework<br>JavaScriptCore.framework<br>DeviceCheck.framework<br>libresolv.9.tbd<br>libc++.tbd<br>libc++abi.tbd<br>libz.tbd<br>libsqlite3.tbd |
+| InMobi | InMobiSDK.xcframework <br> DCloudPermissionIDFA.xcframework <br> InMobiAdapter.xcframework | | sqlite3.0 <br> z <br> WebKit|
+| IronSource | IronSource.xcframework <br> DCloudPermissionIDFA.xcframework <br> IronSourceAdapter.xcframework | | |
+| Liftoff | VungleAdsSDK.xcframework <br> DCloudPermissionIDFA.xcframework <br> LiftoffMonetizeAdapter.xcframework | | AdSupport <br> AudioToolbox <br> AVFoundation <br> CFNetwork <br> CoreGraphics <br> CoreMedia <br> MediaPlayer <br> QuartzCore <br> StoreKit <br> SystemConfiguration <br> z |
+| Mintegral | MintegralAdapter.xcframework <br> DCloudPermissionIDFA.xcframework <br> MTGSDK.xcframework <br> MTGSDKBanner.xcframework <br> MTGSDKBidding.xcframework <br> MTGSDKInterstitialVideo.xcframework <br> MTGSDKNativeAdvanced.xcframework <br> MTGSDKNewInterstitial.xcframework <br> MTGSDKReward.xcframework <br> MTGSDKSplash.xcframework | | |
+| UnityAds | UnityAds.xcframework <br> DCloudPermissionIDFA.xcframework <br> UnityAdapter.xcframework | | |
+
+> 集成Pangle、InMobi、IronSource、Liftoff、Mingetral、UnityAds渠道必须集成Google AdMob
+> 国际广告需要在[uni-AD后台](https://uniad.dcloud.net.cn/)后台审核通过之后才可以集成。审核通过之后可以连续客服获取国际广告SDK及配置。
 
 #### Info.plist
 添加`IDFA权限描述(NSUserTrackingUsageDescription)`
@@ -447,6 +467,14 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 <dict>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>获取标记权限向您提供更优质、安全的个性化服务及内容，未经同意我们不会用于其他目的；开启后，您也可以前往系统“设置-隐私 ”中随时关闭</string>
+</dict>
+```
+
+开通 `Google AdMob` 渠道必须添加以下
+```  
+<dict>
+	<key>GADApplicationIdentifier</key>
+	<string>填写您的Google Admob 应用ID</string>
 </dict>
 ```
 开通 `快手、sigmob、百度` 渠道建议添加以下权限描述

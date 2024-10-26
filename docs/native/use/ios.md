@@ -59,6 +59,10 @@
 		<string>SDK版本号</string>
 		<key>unionid</key>
 		<string>广告联盟id，如未开通uniad可不填</string>
+		<key>channel</key>
+		<string>appstore</string>
+		<key>initPrivacyAuthorization</key>
+		<true/>
 	</dict>
 </dict>
 ```
