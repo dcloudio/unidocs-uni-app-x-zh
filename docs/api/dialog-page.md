@@ -21,7 +21,7 @@ dialogPage和主page的区别：
 - dialogPage不使用uni.navigatorTo等路由API，而是单独提供了`openDialogPage`和`closeDialogPage`
 - dialogPage不影响页面栈和路由地址，在getCurrentPages里不能直接得到dialogPage（需在UniPage对象通过getDialogPages获取）
 - dialogPage在Android上并不是一个activity，而是一个全屏view，它和主page所属同一个activity。
-- dialogPage不响应iOS侧滑返回，即disableSwipeBack永远为true。响应Android的back键和back手势，可以在dialogPage中自定义如何响应。
+- dialogPage不响应iOS侧滑返回，即disableSwipeBack永远为true。响应Android的back键和back手势，可通过dialogPage onBackPress生命周期控制是否阻止Android的back键和back手势关闭dialogPage。
 - dialogPage不影响调用页面或其parentPage的show、hide生命周期。
 - dialogPage中可以调用普通路由api，比如uni.navigateTo、navigateBack，但并不作用于dialogPage，而是作用于其parentPage。即，之前的路由API均只作用于主Page。
 - 在web平台，dialogPage显示时，不影响URL的变化。
