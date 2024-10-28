@@ -25,7 +25,7 @@
 
 | 源文件 | 依赖库 | 资源文件 |
 | ---   | ---| ---|
-| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift | DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> storage.framework| uts-config.json |
+| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift <br> uni-crash-index.swift <br> uni-crash-UniCrashManager.swift <br> uni-privacy-index.swift <br> uni-dialogPage-index.swift <br> uni-dialogPage-native.swift <br> uni-event-index.swift <br> uni-event-native.swift| DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> KSCrash.xcframework <br> storage.framework| uts-config.json |
 
 ### 配置其他模块(可选)
 根据资源文件中的`manifest.json`文件包含的模块名称，选择以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到DCloudUTSExtAPI工程中，依赖库均设置为`Do Not Embed`
@@ -49,11 +49,7 @@
 | uni-ad | uni-ad-index.swift | DCUniAdFoundation.xcframework | |
 | uni-facialRecognitionVerify | uni-facialRecognitionVerify-index.swift | AliyunFaceAuthFacade.framework <br> AliyunMobileRPC.framework <br> AliyunOSSiOS.framework <br> APBToygerFacade.framework <br> APPSecuritySDK.framework <br> BioAuthAPI.framework <br> BioAuthEngine.framework <br> deviceiOS.framework <br> DTFIdentityManager.framework <br> DTFSensorServices.framework <br> DTFUIModule.framework <br> DTFUtility.framework <br> MPRemoteLogging.framework <br> ToygerNative.framework <br> ToygerService.framework | c++ <br> z <br> resolv <br> c++.1 <br> c++abi <br> z.1.2.8 <br> Accelerate <br> AssetsLibrary <br> QuartzCore <br> CoreFoundation <br> CoreLocation <br> ImageIO <br> CoreMedia <br> CoreMotion <br> AVFoundation <br> WebKit <br> AudioToolbox <br> CFNetwork <br> MobileCoreServices <br> SystemConfiguration <br> CoreTelephony <br> QuartzCore <br> CoreGraphics、AdSupport |
 | uni-cloud-client | uni-websocket-index.swift <br> uni-network-index.swift <br> uni-media-index.swift| DCloudMediaPicker.xcframework |AssetsLibrary <br> Photos <br> AVFoundation <br> CoreServices <br> CoreFoundation <br> CoreGraphics <br> CoreImage <br> GLKit <br> MetalKit <br> MobileCoreServices <br> QuartzCore <br> ImageIO <br> MediaPlayer <br> CoreText|
-| uni-crash | uni-crash-index.swift <br> uni-crash-UniCrashManager.swift | KSCrash.xcframework | |
-| uni-privacy | uni-privacy-index.swift | | |
-| uni-dialogPage | uni-dialogPage-index.swift <br> uni-dialogPage-native.swift  | | |
-| uni-event | uni-event-index.swift <br> uni-event-native.swift  | | |
-
+| uni-map-tencent | uni-map-tencent-animation-AnimationLocation.swift <br> uni-map-tencent-circle-DCCircle.swift <br> uni-map-tencent-circle-DCCircleModel.swift <br> uni-map-tencent-control-DCControl.swift <br> uni-map-tencent-control-DCControlModel.swift <br> uni-map-tencent-DCLatLng.swift <br> uni-map-tencent-ground-DCGroundOverlayModel.swift <br> uni-map-tencent-IInternalMap.swift <br> uni-map-tencent-index.swift <br> uni-map-tencent-marker-DCMakerModel.swift <br> uni-map-tencent-marker-DCMarker.swift <br> uni-map-tencent-polygon-DCPolygon.swift <br> uni-map-tencent-polygon-DCPolygonModel.swift <br> uni-map-tencent-polyline-DCPolyline.swift <br> uni-map-tencent-polyline-DCPolylineModel.swift <br> uni-map-tencent-TencentMapImpl.swift | QMapFoundationKit.framework <br> QMapKit.framework <br> QMapSDKUtils.framework <br> QMapVisualPlugin.framework | sqlite3 <br> c++|
 
 ### 配置uts-config.json(可选)
 
@@ -125,6 +121,17 @@
 		"name":"tencent",
 		"service":"location",
 		"class":"UTSSDKModulesDCloudUniGetLocationTencentUniLocationTencentProviderImpl"
+	}]
+}
+``` 
+
+`uni-map-tencent`模块需要添加如下配置
+  ```
+{
+    "components": [{
+		"name": "map",
+		"class": "UTSSDKModulesDCloudUniMapMapComponent",
+		"delegateClass": "UniMapComponentRegister"
 	}]
 }
 ``` 
@@ -251,6 +258,29 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
     <key>TencentLBSAPIKey</key>
     <string>此处填写腾讯定位的ApiKey</string>
     ```
+
+
+## uni-map-tencent
+
+### 添加依赖库以及资源文件
+| 依赖库 |  资源文件 |
+|---|---|
+| DCloudPermissionLocation.xcframework | dcloud_map_marker_ic.png <br> dcloud_traffic_texture_blue.png | 
+
+### Info.plist
+1. 添加`仅运行期间使用定位权限描述(NSLocationWhenInUseUsageDescription)`  
+    ```
+    	<dict>
+    		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    		<string>需要您的同意，才能访问位置信息</string>
+    	</dict>
+    ```
+2. 添加 `TencentLBSAPIKey` 配置项
+    ```
+    <key>TencentLBSAPIKey</key>
+    <string>此处填写腾讯地图的ApiKey</string>
+    ```
+
 ## uni-payment-alipay
 
 ### 添加依赖库以及资源文件
