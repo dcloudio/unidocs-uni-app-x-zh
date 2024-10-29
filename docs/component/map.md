@@ -34,7 +34,21 @@
 
 <!-- UTSCOMJSON.map.example -->
 
+## 三方地图SDK  
+
 ### 腾讯地图
+
+#### app-android平台仓储依赖
+- com.tencent.map:tencent-map-vector-sdk:5.6.0
+- com.tencent.map:sdk-utilities:1.0.9
+- com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.5.4.3
+- com.github.bumptech.glide:glide:4.16.0
+
+#### app-ios平台Cocoapods依赖
+- {"name":"Tencent-MapSDK", "version": "5.1.0"}
+- {"name": "Tencent-MapVisualPlugin", "version": "3.1.0"}
+- {"name": "Tencent-MapFoundation", "version": ">=3.3.0"}
+- {"name": "Tencent-MapUtils", "version": "1.2.3"}
 
 #### 审图号
 
