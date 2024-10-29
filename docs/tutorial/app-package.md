@@ -105,7 +105,7 @@ APK格式安装包支持配置渠道信息，默认提供以下渠道配置项�
 ![](https://web-ext-storage.dcloud.net.cn/doc/app/cloudpackage/package-ios.png)
 
 ### Bundle ID  
-Bundle ID （Bundle identifier）也叫 App ID 或者应用ID，是每个 iOS 应用的唯一标识。  
+Bundle ID （Bundle identifier）也叫 App ID 或者应用ID，是每个 iOS 应用的唯一标识。通常以反转的域名格式命名（如：com.example.appname），只能包含字母、数字、中划线和点号（.），不能包含特殊字符或空格，Bundle ID不区分大小写，推荐使用权小写字母。  
 申请 iOS 证书、打包 ipa 和在 itunesconnect 创建 App 都要用到 Bundle ID， 整个 App 上架流程就是靠这个 Bundle ID 关联在一起。
 
 ### 支持的设备  
