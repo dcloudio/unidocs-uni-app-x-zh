@@ -472,7 +472,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 | Gromore | DCUniAdGm.xcframework <br> CSJMediation.xcframework <br> BUAdSDK.xcframework <br> DCloudPermissionIDFA.xcframework | CSJAdSDK.bundle | AppTrackingTransparency <br> Accelerate <br> AdSupport <br> AudioToolbox <br> AVFoundation <br> CoreGraphics <br> CoreImage <br> CoreLocation <br> CoreMotion <br> CoreMedia <br> CoreTelephony <br> CoreText <br> ImageIO <br> JavaScriptCore <br> MapKit <br> MediaPlayer <br> MobileCoreServices <br> QuartzCore <br> SystemConfiguration <br> Security <br> StoreKit <br> WebKit <br> DeviceCheck <br> z <br> xml2 <br> sqlite3 <br> c++ <br> bz2 <br> iconv <br> resolv.9 <br> c++abi |
 | 快手 | DCUniAdKs.xcframework <br> DCloudPermissionIDFA.xcframework <br> KSAdSDK.xcframework`（Embed & Sign）` |  | AppTrackingTransparency <br> AdSupport <br> MobileCoreServices <br> CoreGraphics <br> CoreData <br> CoreLocation <br> MediaPlayer <br> CoreMedia <br> WebKit <br> Accelerate <br> AVKit <br> MessageUI <br> QuickLook <br> AddressBook <br> CoreMotion <br> QuartzCore <br> SystemConfiguration <br> CoreTelephony <br> Security <br> StoreKit <br> AVFoundation <br> WebKit <br> z <br> resolv.9 <br> sqlite3 <br> c++ <br> c++abi |
 | 百度 | DCUniAdBd.xcframework <br> DCloudPermissionIDFA.xcframework <br> BaiduMobAdSDK.framework | baidumobadsdk.bundle | AppTrackingTransparency <br> AdSupport <br> StoreKit <br> SafariServices <br> MessageUI <br> CoreMedia <br> CoreMotion <br> SystemConfiguration <br> CoreLocation <br> CoreTelephony <br> AVFoundation <br> Webkit <br> c++ |
-| sigmob | DCUniAdSgm.xcframework <br> DCloudPermissionIDFA.xcframework <br> WindSDK.xcframework <br> WindFoundation.xcframework |  | AppTrackingTransparency <br> AdSupport <br> StoreKit <br> CFNetwork <br> CoreMedia <br> CoreGraphics <br> AVFoundation <br> CoreLocation <br> CoreTelephony <br> SafariServices <br> MobileCoreServices <br> WebKit <br> SystemConfiguration <br> ImageIO <br> z <br> sqlite3 |
+| Sigmob | DCUniAdSgm.xcframework <br> DCloudPermissionIDFA.xcframework <br> WindSDK.xcframework <br> WindFoundation.xcframework |  | AppTrackingTransparency <br> AdSupport <br> StoreKit <br> CFNetwork <br> CoreMedia <br> CoreGraphics <br> AVFoundation <br> CoreLocation <br> CoreTelephony <br> SafariServices <br> MobileCoreServices <br> WebKit <br> SystemConfiguration <br> ImageIO <br> z <br> sqlite3 |
 | 章鱼 | OctUniAdSDK.xcframework <br> DCloudPermissionIDFA.xcframework <br> OctCore.xcframework <br> OctAdSDK.xcframework | OctAdSDK.bundle <br> OctCore.bundle | AppTrackingTransparency <br> AdSupport <br> c++|
 
 
@@ -507,8 +507,17 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 	<string>填写您的Google Admob 应用ID</string>
 </dict>
 ```
-开通 `快手、sigmob、百度` 渠道建议添加以下权限描述
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/location_permission.png)
+
+开通 `快手、Sigmob、百度` 渠道建议添加以下权限描述  
+
+```
+    	<dict>
+    		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    		<string>需要您的同意，才能访问位置信息</string>
+    		<key>NSLocationWhenInUseUsageDescription</key>
+    		<string>需要您的同意，才能在仅运行期间获取位置信息</string>
+    	</dict>
+```
 
 
 #### 隐私清单
