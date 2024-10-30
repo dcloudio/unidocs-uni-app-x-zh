@@ -61,6 +61,22 @@ app平台目前还没有可视化界面，采用摇树机制，即调用地图�
 - iOS平台：需要在info.plist中配置对应的Key，参考[iOS平台配置腾讯地图Key](../collocation/manifest-modules.md#uni-map-tencent-ios-key)
 - Android平台：需要在AndroidManifest.xml配置Key， 参考[Andoird平台配置腾讯地图Key](../collocation/manifest-modules.md#uni-map-tencent-android-key)
 
+### 地图扩展
+
+所谓地图扩展就是可以通过获取map组件的形式扩展地图功能，暂时只有Android支持，步骤如下：
+
+1. 新建一个uts插件，配置依赖腾讯地图SDK 
+2. 在uvue页面调用`uni.getElementById()`获取组件对象`UniElement`，将`UniElement`对象传入uts插件
+3. 在uts插件中通过`UniElement`的`getAndroidView`获取原生地图View，使用原生地图view与地图SDK提供的API开发扩展功能,例：
+
+```ts
+import { CameraUpdateFactory } from "com.tencent.tencentmap.mapsdk.maps"
+import { MapView } from "com.tencent.tencentmap.mapsdk.maps"
+export function setScale(element : UniElement, scale : number) : void {
+	(element?.getAndroidView() as MapView)?.map?.moveCamera(CameraUpdateFactory.zoomTo(scale.toFloat()));
+}
+```
+
 
 ## Tips
 - 在App和Web平台，没有在manifest中配置好图商的sdk key信息，将无法使用地图。某些图商的sdk key，区分Web、Android、iOS，注意别配混了。有些sdk key，会绑定校验web的域名或app的包名和签名证书摘要，都要匹配准确才能使用地图。
