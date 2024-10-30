@@ -31,7 +31,7 @@ template区：
 ```html
 <component1 ref="c1"></component1>
 ```
-scrip区：
+script区：
 ```js
 this.$refs.c1.getSome() //js写法
 this.$refs["c1"].getSome() //与上一行等价
@@ -79,7 +79,7 @@ uni-app x中，web、小程序、vue这3类概念都支持，所以id、ref、El
 
 #### Element方式
 
-uni-app x提供了[uni.getElementById](../api/get-element.md)方法，返回的是[Element](../dom/element.md)类型。
+uni-app x提供了[uni.getElementById](../api/get-element.md)方法，返回的是[Element](../dom/unielement.md)类型。
 
 通用的元素操作方法，比如getAttribute、setStyle，在Element上就可以操作。
 

@@ -59,7 +59,7 @@ video的操作api为[uni.createVideoContext()](../api/create-video-context.md)�
 <!-- UTSCOMJSON.video.reference -->
 
 ### Bug & Tips@tips  
-- app平台暂不支持横屏全屏后放置子组件
+- App-iOS平台暂不支持横屏全屏后放置子组件
 - 标准运行基座默认不包含intel x86 cpu的兼容so库，所以video组件在标准基座运行时无法在x86 cpu的设备上运行（常见于模拟器）。如需支持x86 cpu，请在manifest里配置`abiFilters`，打包或自定义基座后生效 [详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest.html#android)
 - App默认拦截触摸事件，目前会导致父组件无法响应触摸事件
 - video 默认宽度为300px，高度为225px。（App平台从 uni-app x 4.0起支持该默认宽高）

@@ -13,7 +13,9 @@
 
 <!-- CSSJSON.text-overflow.compatibility -->
 
-#### App平台差异  
+<!-- CSSJSON.text-overflow.example -->
+
+#### App平台差异
 text-overflow 样式不支持继承
 
 <!-- CSSJSON.text-overflow.reference -->

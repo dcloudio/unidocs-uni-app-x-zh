@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.box-sizing.compatibility -->
 
+<!-- CSSJSON.box-sizing.example -->
+
 <!-- CSSJSON.box-sizing.reference -->

@@ -18,7 +18,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 您在工程中下载的ext api、三方uts插件也同理，没有引用就不会打进去。
 
-摇树不支持 `provider` 机制，定位（[uni-getLocation](#uni-getLocation)） 和 支付（[uni-payment](#uni-payment)） 模块需要手动配置使用 Provider 依赖的三方SDK模块。
+摇树不支持 `provider` 机制，定位（[uni-getLocation](#uni-getlocation)） 和 支付（[uni-payment](#uni-payment)） 模块需要手动配置使用 Provider 依赖的三方SDK模块。
 
 ### app平台支持摇树的内置模块列表@utsmodules
 
@@ -161,7 +161,20 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 
 使用 uni-ad 模块需在 manifest.json 文件中添加 uni-ad 节点，并配置使用的广告 SDK。
 
+::: tip Tips
+为确保隐私合规及广告的正常展示，开发者需要在用户同意隐私政策时，主动调用[UTSAndroid.setPrivacyAgree(true)](../uts/utsandroid.md#setprivacyagree-state-boolean-void)。参考代码：
+```uts
+// #ifdef APP-ANDROID
+UTSAndroid.setPrivacyAgree(true)
+// #endif
+```
+:::
 ### 配置三方广告SDK
+
+::: tip Tips  
+HBuilderX4.31 支持打包界面直接勾选广告渠道，参考[App打包配置](../tutorial/app-package.md#uniad)。
+:::
+
 在 app -> distribute -> modules 下添加 uni-ad 节点：
 ```json
 	modules:{
@@ -169,26 +182,39 @@ uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需�
 			"gdt":{},
 			"gm":{},
 			"ks":{},
-			"sgm":{},
+			"sigmob":{},
 			"bd":{}
 		}
 	}
 ```
 
 其中 uni-ad 下的节点表示要聚合的广告平台：
-| 标识 | 广告平台名称 |
-| :-  | :- |
-| gdt | 腾讯优量汇广告联盟 |
-| gm | 穿山甲GroMore |
-| ks | 快手广告联盟 |
-| sgm | Sigmob广告联盟 |
-| bd | 百度百青藤广告联盟 |
+
+| 标识		| 广告平台名称			|Web|Android|iOS	|
+| :-		| :-					|:-	|:-		|:-		|
+| gdt		| 腾讯优量汇广告联盟		|x	|3.99	|4.22	|
+| gm		| 穿山甲GroMore			|x	|3.99	|4.22	|
+| ks		| 快手广告联盟			|x	|3.99	|4.22	|
+| bd		| 百度百青藤广告联盟		|x	|3.99	|4.22	|
+| sigmob	| Sigmob广告联盟			|x	|3.99	|4.22	|
+| hw		| 华为鲸鸿动能			|x	|4.31	|x		|
+| bz		| AdScope倍孜广告		|x	|4.31	|x		|
+| zy		| Octopus章鱼移动广告		|x	|4.31	|4.31	|
+| fl		| 泛连					|x	|4.31	|x		|
+| jl		| 聚力阅盟				|x	|4.31	|x		|
+| gg		| google AdMob			|x	|4.31	|4.31	|
+| pg		| Pangle				|x	|4.31	|4.31	|
+| inmobi	| inMobi				|x	|4.31	|4.31	|
+| ironsource| ironSource			|x	|4.31	|4.31	|
+| liftoff	| Liftoff				|x	|4.31	|4.31	|
+| meta		| Meta Audience Network	|x	|4.31	|4.31	|
+| mintegral	| Mintegral				|x	|4.31	|4.31	|
+| unity		| Unity Ads				|x	|4.31	|4.31	|
 
 添加相应的节点，云端打包就会将对应的广告平台 SDK 打包到最终安装包中。
 
 注意：
-- 穿山甲GroMore、快手广告联盟、腾讯优量汇广告联盟仅支持`armeabi-v7a`和`arm64-v8a`两个CPU平台。
-- 目前仅支持上述国内广告平台，国际广告暂不支持。
+- 穿山甲GroMore、快手广告联盟、腾讯优量汇广告联盟、泛连仅支持`armeabi-v7a`和`arm64-v8a`两个CPU平台。
 
 ::: warning 注意事项
 开屏广告展示前会先显示`splash启动界面`，等待开屏广告服务器返回数据后渲染开屏广告，超过2.5秒未成功加载广告则不显示开屏广告，直接进入应用首页。
@@ -238,7 +264,7 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 > app-ios平台支付模块需HBuilderX4.18及以上版本
 
-## uni-getLocation@uni-getLocation
+## uni-getLocation@uni-getlocation
 > HBuilderX 4.25+ 新增支持 provider 机制的获取定位API（支持system、tencent定位）
 
 在uni-app x客户端，uni-getLocation是一个独立模块。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
@@ -272,7 +298,7 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 #### iOS平台配置腾讯定位相关参数 @uni-getLocation-key
 
 需在项目根目录下的 Info.plist 中配置，包括以下内容：
-- 腾讯定位的 TencentLBSAPIKey  
+- 腾讯定位的 TencentLBSAPIKey，配置好TencentLBSAPIKey后，iOS 需要打自定义基座才可以生效
 - 使用定位权限弹出的授权提示信息：NSLocationAlwaysAndWhenInUseUsageDescription、NSLocationWhenInUseUsageDescription  
 - 应用需要使用高精度定位时还需配置 NSLocationTemporaryUsageDescriptionDictionary 的 PurposeKey，说明高精度定位的原因 
 - 如果应用需要后台定位能力，配置 UIBackgroundModes 的 location，注意需Xcode工程中添加相对应 Capabilities 中的 Background Modes，并且勾选 Location updates
@@ -307,7 +333,7 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 </plist>
 ```
 
-#### Andoird平台配置腾讯定位key到项目 @uni-getLocation-android-key
+#### Android平台配置腾讯定位key到项目 @uni-getLocation-android-key
 
 在项目根目录下添加 AndroidManifest.xml 文件，详情参考：[Android原生应用清单文件](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6-androidmanifest-xml)。将申请的 key 配置到项目 AndroidManifest.xml 的 application 节点中，如下：
 ```xml
@@ -325,3 +351,45 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 ```
 
 
+## uni-map-tencent@uni-map-tencent
+
+### 配置腾讯地图SDK的参数
+
+使用腾讯地图需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请TencentLBSAPIKey，并配置到应用中。 
+
+#### iOS平台配置腾讯地图Key @uni-map-tencent-ios-key
+
+
+需在项目根目录下的 Info.plist配置腾讯地图的 TencentLBSAPIKey，然后 iOS 需要打自定义基座才可以生效。
+
+配置教程参考： [iOS原生配置文件Info.plist文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)
+
+以下为配置示例：  
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>TencentLBSAPIKey</key>
+		<string>腾讯位置服务官网申请的Key</string>
+	</dict>
+</plist>
+```
+
+#### Andoird平台配置腾讯地图Key @uni-map-tencent-android-key
+
+
+在项目根目录下添加 AndroidManifest.xml 文件，详情参考：[Android原生应用清单文件](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6-androidmanifest-xml)。将申请的 key 配置到项目 AndroidManifest.xml 的 application 节点中，如下：
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+>
+  <application>
+
+    <!-- 将申请到的 key 配置在 android:value 属性中 -->
+    <meta-data android:name="TencentMapSDK" android:value="您申请的Key" />
+
+  </application>
+
+</manifest>
+```

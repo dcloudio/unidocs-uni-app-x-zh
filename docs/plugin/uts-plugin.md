@@ -145,7 +145,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─common                          // 可跨端公用的uts代码。推荐，不强制
+┌─common                          // 可跨端公用的uts代码。utssdk目录内如果要引入外部的uts文件，需要放在common中，不支持其他目录名称。
 ├─static                          // 静态资源
 ├─utssdk
 │	├─app-android                 //Android平台目录
@@ -1842,6 +1842,90 @@ utsJsonObj.forEach(function(perField:any){
 ```
 
 
+### `UTS插件`导出方法中的回调函数参数如何支持持续触发@keepalive
+**HBuilderX4.25版本以前**  
+`UTS插件`导出方法的参数中存在回调函数时，在JS环境中调用会将回调函数 callback 一直保存在内存中，这时回调函数可以持续触发回调。这种策略会带来一个致命的问题， 当频繁调用这些导出方法时，每次调用都会创建回调函数 callback 对象，并一直保存在内存中，从而造成内存泄漏，可能引发应用闪退。  
+
+为了解决此问题，回调函数参数策略做了调整：  
+
+**HBuilderX4.25版本及以后**  
+`UTS插件`导出的方法中的回调函数参数触发一次后立即自动回收，避免内存泄漏，也就是默认情况下回调函数 callback 只能触发一次。这次调整可能带来向下兼容的问题，导致方法中的回调函数参数无法持续回调。  
+影响范围： `HBuilderX4.25+版本 iOS 平台的 uni-app 和 uni-app x 项目, Android平台的 uni-app 项目，顶层方法或者自定义 class 中的静态方法或者实例方法`  
+
+如果回调函数参数需支持可持续触发， 按以下方案进行适配：  
+
+将方法名称调整为`以 on 开头，且仅有一个 callback 类型的参数`，如下示例：  
+```ts
+function onTest(callback : (msg : string) => void) {
+    //...
+}
+```
+
+**HBuilderX4.27版本新增适配方案**
+通过装饰器(注解) `@UTSJS.keepAlive` 声明方法中的回调函数参数一直存活（不自动回收），支持回调函数可持续触发回调，如下示例：  
+```ts
+export type Options = {
+    a: string
+    success: (res: string) => void
+}
+
+// 以 on 开头，且仅有一个 callback 类型的参数的函数
+export function onTest(callback : (msg : string) => void) {
+    callback("a")
+    callback("b")
+}
+
+// 使用 @UTSJS.keepAlive 注解方式，不限制参数个数
+@UTSJS.keepAlive
+export function test(callback : (msg : string) => void) {
+    callback("a")
+    callback("b")
+}
+
+// 使用 @UTSJS.keepAlive 注解方式，callback 可以包含在自定义type中
+@UTSJS.keepAlive
+export function testOption(option : Options) {
+    option.success("a")
+    option.success("b")
+}
+
+// 以上规则在自定义class中同样适用
+export class Test {
+    onTest(callback : (msg : string) => void) {
+        callback("a")
+        callback("b")
+    }
+
+    @UTSJS.keepAlive
+    testOption(option : Options) {
+        option.success("a")
+        option.success("b")
+    }
+
+    @UTSJS.keepAlive
+    test(callback : (msg : string) => void) {
+        callback("a")
+        callback("b")
+    }
+
+    @UTSJS.keepAlive
+    static testStatic(callback : (msg : string) => void) {
+        callback("a")
+        callback("b")
+    }
+
+    @UTSJS.keepAlive
+    tatic testOptionStatic(option : Options) {
+        option.success("a")
+        option.success("b")
+    }
+}
+```
+
+> 特别注意：
+> 1. 如果带了该装饰器，则该方法参数里的所有回调都会在内存中持续存在，需提醒使用者避免频繁调用此方法  
+> 2. 目前装饰器不支持 export const test:Test = ()=>{} // 这种导出方式，需要使用export function test(){}  
+> 3. 如果同时存在app-android/app-ios，需要两个平台都同时配置@UTSJS.keepAlive
 
 
 ## Bug & Tips@tips
@@ -1852,6 +1936,7 @@ utsJsonObj.forEach(function(perField:any){
 
 临时解决办法：以不同的函数名称来区分函数
 
+### uts插件只能引入插件目录内部的文件，不能import插件外部的文件。
 
 ## 示例项目
 

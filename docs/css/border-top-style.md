@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.border-top-style.compatibility -->
 
+<!-- CSSJSON.border-top-style.example -->
+
 <!-- CSSJSON.border-top-style.reference -->

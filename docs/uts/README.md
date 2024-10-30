@@ -155,8 +155,6 @@ str = "hello world"; // 报错，不允许重新赋值
 -   除了下划线 \_ 外，不能包含其他特殊字符，包括空格。
 -   变量名不能以数字开头。
 
-> 注意：与 TypeScript 不同的是，uts 不允许以 $ 开头命名变量
-
 ### 方法参数及返回值类型定义
 
 方法的参数、返回值，也通过冒号定义。
@@ -210,6 +208,8 @@ vue 选项式开发时，冒号被用于赋值，无法通过let、const和冒�
 
 ### 类型自动推导
 
+#### 字面量推导
+
 现代语言（ts、kotlin、swift），都具备自动识别[字面量](literal.md)，进行类型推导的功能。
 
 即：如果开发者声明变量的同时，进行了初始化赋值。那么编译器可以根据赋值的[字面量](literal.md)，自动推导出变量类型，不必开发者显式声明。
@@ -248,6 +248,71 @@ let a1:Array<number> = [1,2,3,4]
 HBuilderX 3.9+， uts 统一了字面量自动类型推导。
 
 建议插件作者，除了boolean和string外，其他包括数字和数组在内的类型，尽量不使用字面量自动类型推导，而是显式声明类型。避免 uts 统一自动类型推导时引发的向下兼容问题。
+
+在 HBuilderX 4.31 以前，对象字面量{}的推导，默认是UTSJSONObject，无论是变量声明，还是传参（除了uni、uniCloud等官方API）等场景，只要没有手动 as，均会推导为 UTSJSONObject 类型。
+
+HBuilderX 4.31+，uts 增强了对象字面量的类型推导，会根据当前上下文，来推断是否是某个type定义的类型（如果type是定义在非当前文件，需要该type对外导出）
+
+```ts
+type User = {
+	name: string
+	age: number
+}
+function printUser(user: User){
+	console.log(user) 
+}
+printUser({ name: 'zhangsan', age: 12 }) // 从 HBuilderX 4.31+ 起，无需手动 as User
+
+function createUser(name : string, age : number) : User {
+    return { name, age } // 从 HBuilderX 4.31+ 起，无需手动 as User
+}
+printUser(createUser({ name: 'zhangsan', age: 12 }))
+
+```
+
+#### 函数返回值类型推导
+
+在 HBuilderX 4.31 以前，所有的函数如果有 return 语句，均需要主动声明返回值类型。
+
+HBuilderX 4.31+，uts 增强了函数返回值类型的推导，会根据当前上下文，来自动推断补充当前函数的返回值类型
+
+```ts
+function test1() { // 自动推导返回值类型为 string
+    return "test1"
+}
+function test2(arg : boolean) { // 自动推导返回值类型为 number | null
+    if (arg) {
+        return 1
+    }
+    return null
+}
+function test3(arg : boolean): any { // 暂不支持多个不同类型的返回值推导，需要主动声明为 any
+    if (arg) {
+        return 1
+    }
+    return "test2"
+}
+```
+
+注意：目前函数返回值仅推导相同类型，或可为空类型，不支持多个类型的推导，比如 test3 函数，可能返回 string | number，此时需要主动声明为 any 类型。
+
+#### 函数参数推导
+
+在 HBuilderX 4.31 以前，函数赋值或作为参数时，当前函数的参数数量必须和目标函数保持一致。
+
+HBuilderX 4.31+，uts 增强了函数参数数量的自动推导
+
+```ts
+type TestFn = (a1: string, a2: string) => void
+function callTestFn(test: TestFn) {
+  test('1', '2')
+}
+// HBuilderX 4.31 以前仅支持传递两个参数的函数
+callTestFn((arg1, arg2) => {})
+// HBuilderX 4.31+支持以下调用方式
+callTestFn(() => {})
+callTestFn((arg1) => {})
+```
 
 ### 类型判断
 

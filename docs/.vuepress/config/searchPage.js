@@ -5,6 +5,10 @@ export default {
       type: 'algolia',
     },
     {
+      text: 'uni-app',
+      type: 'algolia',
+    },
+    {
       text: '问答社区',
       tag: 'ask',
       type: 'link',

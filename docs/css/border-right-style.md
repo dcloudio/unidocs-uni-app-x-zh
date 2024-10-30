@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.border-right-style.compatibility -->
 
+<!-- CSSJSON.border-right-style.example -->
+
 <!-- CSSJSON.border-right-style.reference -->

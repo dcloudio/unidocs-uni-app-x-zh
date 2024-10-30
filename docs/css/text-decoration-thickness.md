@@ -13,7 +13,9 @@
 
 <!-- CSSJSON.text-decoration-thickness.compatibility -->
 
-#### App平台差异  
+<!-- CSSJSON.text-decoration-thickness.example -->
+
+#### App平台差异
 text-decoration-thickness 样式不支持继承
 
 <!-- CSSJSON.text-decoration-thickness.reference -->

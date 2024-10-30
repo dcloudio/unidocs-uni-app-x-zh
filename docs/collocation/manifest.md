@@ -48,6 +48,13 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 
 使用[uni内置模块](./manifest-modules.md#utsmodules)时，云端打包回自动添加模块需要的隐私信息访问的许可描述，但许可描述信息是通用描述，不一定适合应用的实际使用场景描述，需根据应用的实际情况在[Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoPlist)中配置准确的许可描述。
 
+#### 渠道信息  
+
+> HBuilder4.31版本新增支持  
+
+uni-app x 的渠道信息配置，云端需在“App打包”界面配置，详情参考[配置渠道包](../tutorial/app-package.md#channel)。  
+离线打包时需在原生工程中配置，详情参考[Android平台配置应用渠道包](../native/use/android.md#androidmanifest)。  
+
 
 #### DISTRIBUTE配置 @app-distribute
 
@@ -129,6 +136,46 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 - `targetSdkVersion` 一个用于指定应用的目标 API 级别的整数。如果未设置，其默认值与为 minSdkVersion 指定的值相等。该值用于通知系统，您已针对目标版本进行了测试，并且系统不应通过启用任何兼容性行为，以保持您的应用与目标版本的向前兼容性。
 - `minSdkVersion` 和 `targetSdkVersion` 设置的值是 API 级别（API Level），完整API级别信息请参考[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)
 
+###### aaptOptions @aaptoptions  
+
+> HBuilder4.31版本新增支持  
+
+Android平台云端打包时build.gradle的aaptOptions配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/AaptOptions?hl=en)，如下示例源码：  
+```json  
+"aaptOptions": [
+    "noCompress 'png', 'jpg', 'jpeg'"  //配置禁止对 png、jpg、jpeg格式的文件进行压缩
+]
+```
+
+云端打包默认包含以下配置：  
+- additionalParameters '--auto-add-overlay'  
+- ignoreAssetsPattern '!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~'  
+
+###### buildFeatures @buildfeatures  
+
+> HBuilder4.31版本新增支持  
+
+Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
+```json  
+"buildFeatures": [
+	"viewBinding true",  //开启dataBinding
+	"dataBinding true"   //开启viewBinding
+]
+```
+
+###### packagingOptions @packagingoptions  
+Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions)，如下示例源码：  
+```json  
+"packagingOptions": [
+	"exclude 'META-INF/LICENSE'",    //排除文件META-INF/LICENSE
+	"exclude 'META-INF/LICENSE.txt'" //排除文件META-INF/LICENSE.txt
+]
+```
+
+云端打包默认包含以下配置：  
+- pickFirst 'lib/*/libstlport_shared.so'  
+- pickFirst 'lib/*/libc++_shared.so'  
+
 ##### IOS配置 @distribute-ios
 
 <!-- MANIFESTJSON.distribute_ios.description -->
@@ -153,6 +200,7 @@ uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4
 
 
 ### Universal Link @ulink  
+
 uni-app x 项目 manifest.json 文件不再提供 iOS 平台的 通用链接（universal link）相关配置，HBuilderX4.18及以上版本支持在 iOS原生应用配置文件中通过 `关联域（Associated Domains）` 配置通用链接，详情参考：
 - [iOS平台通用链接配置教程](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5-universal-link)  
 

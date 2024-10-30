@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.max-width.compatibility -->
 
+<!-- CSSJSON.max-width.example -->
+
 <!-- CSSJSON.max-width.reference -->

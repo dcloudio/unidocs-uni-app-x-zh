@@ -1,5 +1,20 @@
 # DataView
 
+## 构造函数
+
+### new(buffer : ArrayBufferLike & { BYTES_PER_ELEMENT ?: never; }, byteOffset ?: number, byteLength ?: number) : DataView;@Constructor(buffer, byteOffset?, byteLength?)
+
+<!-- UTSJSON.DataView.Constructor.description -->
+
+<!-- UTSJSON.DataView.Constructor.param -->
+
+<!-- UTSJSON.DataView.Constructor.returnValue -->
+
+<!-- UTSJSON.DataView.Constructor.test -->
+
+<!-- UTSJSON.DataView.Constructor.compatibility -->
+
+<!-- UTSJSON.DataView.Constructor.tutorial -->
 
 ## 实例属性
 

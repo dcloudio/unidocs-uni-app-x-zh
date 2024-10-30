@@ -237,7 +237,7 @@ handleClick (event : UniPointerEvent) {
 
 <!-- CUSTOMTYPEJSON.UniEvent.methods.preventDefault.tutorial -->
 
-## UniCustomEvent
+## UniCustomEvent\<T> @unicustomevent
 
 <!-- CUSTOMTYPEJSON.UniCustomEvent.description -->
 

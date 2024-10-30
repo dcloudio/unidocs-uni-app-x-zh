@@ -142,7 +142,7 @@ android.useAndroidX=true
 android.enableJetifier=true
 ```
 
-### 修改uniappx模块下的AndroidManifest.xml
+### 修改uniappx模块下的AndroidManifest.xml @androidmanifest  
 
 - 添加activity
 	
@@ -175,6 +175,16 @@ android.enableJetifier=true
 
 	**注意：如果需要自定义application，必须继承自UniApplication**
 	
+- 配置应用分发渠道
+	
+	在application节点下添加`DCLOUD_CHANNEL`节点
+	```xml
+	<meta-data
+		android:name="DCLOUD_CHANNEL" android:value="替换成需要发布的应用分发渠道" />
+	```
+	
+	获取配置的应用分发渠道，可以通过[uni.getAppBaseInfo()](../../api/get-app-base-info.md)。
+
 - 合并AndroidManifest.xml
 
 	如果uni-app x项目根目录下有AndroidManifest.xml文件，你需要按照xml文件的结构将内容拷贝到`uniappx`模块的AndroidManifest.xml中。

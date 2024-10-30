@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.background-clip.compatibility -->
 
+<!-- CSSJSON.background-clip.example -->
+
 <!-- CSSJSON.background-clip.reference -->

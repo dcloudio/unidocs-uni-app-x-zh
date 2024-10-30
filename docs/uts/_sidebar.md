@@ -37,6 +37,8 @@
   * [Error](buildin-object-api/error.md)
   * [Timers](buildin-object-api/timers.md)
   * [Console](buildin-object-api/console.md)
+  * [TextEncoder](buildin-object-api/textencoder.md)
+  * [TextDecoder](buildin-object-api/textdecoder.md)
   * [全局](buildin-object-api/global.md)
 * 平台专用对象和 API
   * [UTSAndroid](utsandroid.md)
@@ -44,6 +46,7 @@
   * [UTSActivityCallback](utsactivitycallback.md)
   * [UTSiOS](utsios.md)
   * [UTSiOSHookProxy](utsioshookproxy.md)
+  * [UTSHarmony](utsharmony.md)
 * [关键字](keywords.md)
 * [UTS App插件开发](../plugin/uts-plugin.md)
 <!-- * [学习资料](learning.md) -->

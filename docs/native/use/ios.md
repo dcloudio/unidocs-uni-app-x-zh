@@ -59,6 +59,10 @@
 		<string>SDK版本号</string>
 		<key>unionid</key>
 		<string>广告联盟id，如未开通uniad可不填</string>
+		<key>channel</key>
+		<string>appstore</string>
+		<key>initPrivacyAuthorization</key>
+		<true/>
 	</dict>
 </dict>
 ```
@@ -71,7 +75,7 @@
 
 | 依赖库 | 系统依赖库 |
 | ---   | ---|
-| DCloudDebugServe.xcframework `（Do Not Embed）Debug环境下集成`、DCloudUTSFoundation.xcframework `（Embed & Sign）`、DCloudUniappRuntime.xcframework `（Embed & Sign）`、SDWebImage.xcframework `（Embed & Sign）`、DCloudUTSExtAPI.xcframework `（Embed & Sign）`   |   JavaScriptCore.framework、c++ |
+| DCloudDebugServe.xcframework `（Do Not Embed）Debug环境下集成）` <br> DCloudUTSFoundation.xcframework `（Embed & Sign）` <br> DCloudUniappRuntime.xcframework `（Embed & Sign）` <br> SDWebImage.xcframework `（Embed & Sign）` <br> DCloudUTSExtAPI.xcframework `（Embed & Sign）`   |   JavaScriptCore.framework <br> c++ |
 
 > `Target -> Build Phases -> Link Binary With Libraries` 下添加依赖库
 > `Target -> General -> Frameworks,Libraries,and Embedded Content` 下设置`Embed & Sign`

@@ -118,7 +118,7 @@
 
 > HBuilderX 3.99+
 
-小程序有 globalData，这是一种简单的全局变量机制。这套机制在 uni-app-x 里也可以使用，并且全端通用。
+小程序有 globalData，这是一种简单的全局变量机制。这套机制在 uni-app-x 里也可以使用，仅 `iOS uts 插件` 环境不支持。
 
 **以下是 App.uvue 中定义globalData的相关配置：**
 
@@ -156,7 +156,7 @@
 globalData是简单的全局变量，其他状态管理方式，可参考文档[全局变量和状态管理](../tutorial/store.md)。
 
 ## 全局方法
-在 `App.uvue methods` 中，可以定义全局方法，这里定义的方法，在项目中可以通过 `getApp().methodName()` 调用, 例如：
+在 `App.uvue methods` 中，可以定义全局方法，这里定义的方法，在项目中可以通过 `getApp().vm?.methodName()` 调用, 例如：
 ```vue
 <!-- App.uvue -->
 <script lang="uts">
@@ -193,12 +193,16 @@ globalData是简单的全局变量，其他状态管理方式，可参考文档[
     methods: {
       triggerGlobalFn() {
         const app = getApp()
-        app.globalFn()
+        app.vm?.globalFn()
       }
     }
   }
 </script>
 ```
+::: warning 注意
+HBuilderX 4.31 `getApp()` 返回值调整为 `UniApp` 类型，调用 `App.uvue` 中定义的全局方法，需要由 `getApp().methodName()` 调整为 `getApp().vm?.methodName()`。
+:::
+
 ## 全局样式
 
 在`App.uvue`中，可以定义一些全局通用样式，这里定义的class，每个页面都可以直接使用。

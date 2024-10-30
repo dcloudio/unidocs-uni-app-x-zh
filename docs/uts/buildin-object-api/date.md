@@ -46,16 +46,16 @@ let date = new Date("Hello World")
 在不同的平台的表现有差异:
 
 - web平台
-	
+
 	会抛出异常:`Invalid Date`
 
 - Android/ios平台
-	
+
 	不会抛出异常，会变成程序执行时日期 比如：[Date]‍ Fri May 31 2024 17:18:02 GMT+0800
 
 :::
 
-### Constructor()
+### new() : Date;@Constructor()
 
 <!-- UTSJSON.Date.Constructor.description -->
 
@@ -63,11 +63,13 @@ let date = new Date("Hello World")
 
 <!-- UTSJSON.Date.Constructor.returnValue -->
 
+<!-- UTSJSON.Date.Constructor.test -->
+
 <!-- UTSJSON.Date.Constructor.compatibility -->
 
 <!-- UTSJSON.Date.Constructor.tutorial -->
 
-### Constructor(value)
+### new(value : number \| string) : Date;@Constructor(value)
 
 <!-- UTSJSON.Date.Constructor_1.description -->
 
@@ -75,17 +77,21 @@ let date = new Date("Hello World")
 
 <!-- UTSJSON.Date.Constructor_1.returnValue -->
 
+<!-- UTSJSON.Date.Constructor_1.test -->
+
 <!-- UTSJSON.Date.Constructor_1.compatibility -->
 
 <!-- UTSJSON.Date.Constructor_1.tutorial -->
 
-### Constructor(year, monthIndex, date?, hours?, minutes?, seconds?, ms?)
+### new(year : number, monthIndex : number, date ?: number, hours ?: number, minutes ?: number, seconds ?: number, ms ?: number) : Date;@Constructor(year, monthIndex, date?, hours?, minutes?, seconds?, ms?)
 
 <!-- UTSJSON.Date.Constructor_2.description -->
 
 <!-- UTSJSON.Date.Constructor_2.param -->
 
 <!-- UTSJSON.Date.Constructor_2.returnValue -->
+
+<!-- UTSJSON.Date.Constructor_2.test -->
 
 <!-- UTSJSON.Date.Constructor_2.compatibility -->
 
@@ -102,18 +108,23 @@ let date = new Date("Hello World")
 
 <!-- UTSJSON.Date.now.returnValue -->
 
-```ts
-// this example takes 2 seconds to run
-const start = Date.now()
-console.log('starting timer...')
-// expected output: starting timer...
-setTimeout(() => {
-  const millis = Date.now() - start
-  console.log(`seconds elapsed = ${Math.floor(millis / 1000)}`)
-  // expected output: seconds elapsed = 2
-}, 2000)
-```
+<!-- UTSJSON.Date.now.test -->
+
 <!-- UTSJSON.Date.now.compatibility -->
+
+### UTC(year, monthIndex, date?, hours?, minutes?, seconds?, ms?)
+
+<!-- UTSJSON.Date.UTC.description -->
+
+<!-- UTSJSON.Date.UTC.param -->
+
+<!-- UTSJSON.Date.UTC.returnValue -->
+
+<!-- UTSJSON.Date.UTC.test -->
+
+<!-- UTSJSON.Date.UTC.compatibility -->
+
+<!-- UTSJSON.Date.UTC.tutorial -->
 
 ## 实例方法
 
@@ -126,6 +137,8 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.toString.returnValue -->
 
+<!-- UTSJSON.Date.toString.test -->
+
 <!-- UTSJSON.Date.toString.compatibility -->
 
 ### toDateString()
@@ -136,7 +149,79 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.toDateString.returnValue -->
 
+<!-- UTSJSON.Date.toDateString.test -->
+
 <!-- UTSJSON.Date.toDateString.compatibility -->
+
+### toTimeString()
+
+<!-- UTSJSON.Date.toTimeString.description -->
+
+<!-- UTSJSON.Date.toTimeString.param -->
+
+<!-- UTSJSON.Date.toTimeString.returnValue -->
+
+<!-- UTSJSON.Date.toTimeString.test -->
+
+<!-- UTSJSON.Date.toTimeString.compatibility -->
+
+<!-- UTSJSON.Date.toTimeString.tutorial -->
+
+### toLocaleString()
+
+<!-- UTSJSON.Date.toLocaleString.description -->
+
+<!-- UTSJSON.Date.toLocaleString.param -->
+
+<!-- UTSJSON.Date.toLocaleString.returnValue -->
+
+<!-- UTSJSON.Date.toLocaleString.test -->
+
+<!-- UTSJSON.Date.toLocaleString.compatibility -->
+
+<!-- UTSJSON.Date.toLocaleString.tutorial -->
+
+### toLocaleDateString()
+
+<!-- UTSJSON.Date.toLocaleDateString.description -->
+
+<!-- UTSJSON.Date.toLocaleDateString.param -->
+
+<!-- UTSJSON.Date.toLocaleDateString.returnValue -->
+
+<!-- UTSJSON.Date.toLocaleDateString.test -->
+
+<!-- UTSJSON.Date.toLocaleDateString.compatibility -->
+
+<!-- UTSJSON.Date.toLocaleDateString.tutorial -->
+
+### toLocaleTimeString()
+
+<!-- UTSJSON.Date.toLocaleTimeString.description -->
+
+<!-- UTSJSON.Date.toLocaleTimeString.param -->
+
+<!-- UTSJSON.Date.toLocaleTimeString.returnValue -->
+
+<!-- UTSJSON.Date.toLocaleTimeString.test -->
+
+<!-- UTSJSON.Date.toLocaleTimeString.compatibility -->
+
+<!-- UTSJSON.Date.toLocaleTimeString.tutorial -->
+
+### valueOf()
+
+<!-- UTSJSON.Date.valueOf.description -->
+
+<!-- UTSJSON.Date.valueOf.param -->
+
+<!-- UTSJSON.Date.valueOf.returnValue -->
+
+<!-- UTSJSON.Date.valueOf.test -->
+
+<!-- UTSJSON.Date.valueOf.compatibility -->
+
+<!-- UTSJSON.Date.valueOf.tutorial -->
 
 ### toISOString()
 
@@ -146,7 +231,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.toISOString.returnValue -->
 
+<!-- UTSJSON.Date.toISOString.test -->
+
 <!-- UTSJSON.Date.toISOString.compatibility -->
+
+### toUTCString()
+
+<!-- UTSJSON.Date.toUTCString.description -->
+
+<!-- UTSJSON.Date.toUTCString.param -->
+
+<!-- UTSJSON.Date.toUTCString.returnValue -->
+
+<!-- UTSJSON.Date.toUTCString.test -->
+
+<!-- UTSJSON.Date.toUTCString.compatibility -->
+
+<!-- UTSJSON.Date.toUTCString.tutorial -->
 
 ### toJSON()
 
@@ -155,6 +256,8 @@ setTimeout(() => {
 <!-- UTSJSON.Date.toJSON.param -->
 
 <!-- UTSJSON.Date.toJSON.returnValue -->
+
+<!-- UTSJSON.Date.toJSON.test -->
 
 <!-- UTSJSON.Date.toJSON.compatibility -->
 
@@ -166,6 +269,8 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getTime.returnValue -->
 
+<!-- UTSJSON.Date.getTime.test -->
+
 <!-- UTSJSON.Date.getTime.compatibility -->
 
 ### getFullYear()
@@ -176,7 +281,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getFullYear.returnValue -->
 
+<!-- UTSJSON.Date.getFullYear.test -->
+
 <!-- UTSJSON.Date.getFullYear.compatibility -->
+
+### getUTCFullYear()
+
+<!-- UTSJSON.Date.getUTCFullYear.description -->
+
+<!-- UTSJSON.Date.getUTCFullYear.param -->
+
+<!-- UTSJSON.Date.getUTCFullYear.returnValue -->
+
+<!-- UTSJSON.Date.getUTCFullYear.test -->
+
+<!-- UTSJSON.Date.getUTCFullYear.compatibility -->
+
+<!-- UTSJSON.Date.getUTCFullYear.tutorial -->
 
 ### getMonth()
 
@@ -186,7 +307,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getMonth.returnValue -->
 
+<!-- UTSJSON.Date.getMonth.test -->
+
 <!-- UTSJSON.Date.getMonth.compatibility -->
+
+### getUTCMonth()
+
+<!-- UTSJSON.Date.getUTCMonth.description -->
+
+<!-- UTSJSON.Date.getUTCMonth.param -->
+
+<!-- UTSJSON.Date.getUTCMonth.returnValue -->
+
+<!-- UTSJSON.Date.getUTCMonth.test -->
+
+<!-- UTSJSON.Date.getUTCMonth.compatibility -->
+
+<!-- UTSJSON.Date.getUTCMonth.tutorial -->
 
 ### getDate()
 
@@ -196,7 +333,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getDate.returnValue -->
 
+<!-- UTSJSON.Date.getDate.test -->
+
 <!-- UTSJSON.Date.getDate.compatibility -->
+
+### getUTCDate()
+
+<!-- UTSJSON.Date.getUTCDate.description -->
+
+<!-- UTSJSON.Date.getUTCDate.param -->
+
+<!-- UTSJSON.Date.getUTCDate.returnValue -->
+
+<!-- UTSJSON.Date.getUTCDate.test -->
+
+<!-- UTSJSON.Date.getUTCDate.compatibility -->
+
+<!-- UTSJSON.Date.getUTCDate.tutorial -->
 
 ### getDay()
 
@@ -206,7 +359,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getDay.returnValue -->
 
+<!-- UTSJSON.Date.getDay.test -->
+
 <!-- UTSJSON.Date.getDay.compatibility -->
+
+### getUTCDay()
+
+<!-- UTSJSON.Date.getUTCDay.description -->
+
+<!-- UTSJSON.Date.getUTCDay.param -->
+
+<!-- UTSJSON.Date.getUTCDay.returnValue -->
+
+<!-- UTSJSON.Date.getUTCDay.test -->
+
+<!-- UTSJSON.Date.getUTCDay.compatibility -->
+
+<!-- UTSJSON.Date.getUTCDay.tutorial -->
 
 ### getHours()
 
@@ -216,7 +385,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getHours.returnValue -->
 
+<!-- UTSJSON.Date.getHours.test -->
+
 <!-- UTSJSON.Date.getHours.compatibility -->
+
+### getUTCHours()
+
+<!-- UTSJSON.Date.getUTCHours.description -->
+
+<!-- UTSJSON.Date.getUTCHours.param -->
+
+<!-- UTSJSON.Date.getUTCHours.returnValue -->
+
+<!-- UTSJSON.Date.getUTCHours.test -->
+
+<!-- UTSJSON.Date.getUTCHours.compatibility -->
+
+<!-- UTSJSON.Date.getUTCHours.tutorial -->
 
 ### getMinutes()
 
@@ -226,7 +411,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getMinutes.returnValue -->
 
+<!-- UTSJSON.Date.getMinutes.test -->
+
 <!-- UTSJSON.Date.getMinutes.compatibility -->
+
+### getUTCMinutes()
+
+<!-- UTSJSON.Date.getUTCMinutes.description -->
+
+<!-- UTSJSON.Date.getUTCMinutes.param -->
+
+<!-- UTSJSON.Date.getUTCMinutes.returnValue -->
+
+<!-- UTSJSON.Date.getUTCMinutes.test -->
+
+<!-- UTSJSON.Date.getUTCMinutes.compatibility -->
+
+<!-- UTSJSON.Date.getUTCMinutes.tutorial -->
 
 ### getSeconds()
 
@@ -236,7 +437,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.getSeconds.returnValue -->
 
+<!-- UTSJSON.Date.getSeconds.test -->
+
 <!-- UTSJSON.Date.getSeconds.compatibility -->
+
+### getUTCSeconds()
+
+<!-- UTSJSON.Date.getUTCSeconds.description -->
+
+<!-- UTSJSON.Date.getUTCSeconds.param -->
+
+<!-- UTSJSON.Date.getUTCSeconds.returnValue -->
+
+<!-- UTSJSON.Date.getUTCSeconds.test -->
+
+<!-- UTSJSON.Date.getUTCSeconds.compatibility -->
+
+<!-- UTSJSON.Date.getUTCSeconds.tutorial -->
 
 ### setTime(time)
 
@@ -245,6 +462,8 @@ setTimeout(() => {
 <!-- UTSJSON.Date.setTime.param -->
 
 <!-- UTSJSON.Date.setTime.returnValue -->
+
+<!-- UTSJSON.Date.setTime.test -->
 
 <!-- UTSJSON.Date.setTime.compatibility -->
 
@@ -256,7 +475,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setMilliseconds.returnValue -->
 
+<!-- UTSJSON.Date.setMilliseconds.test -->
+
 <!-- UTSJSON.Date.setMilliseconds.compatibility -->
+
+### setUTCMilliseconds(ms)
+
+<!-- UTSJSON.Date.setUTCMilliseconds.description -->
+
+<!-- UTSJSON.Date.setUTCMilliseconds.param -->
+
+<!-- UTSJSON.Date.setUTCMilliseconds.returnValue -->
+
+<!-- UTSJSON.Date.setUTCMilliseconds.test -->
+
+<!-- UTSJSON.Date.setUTCMilliseconds.compatibility -->
+
+<!-- UTSJSON.Date.setUTCMilliseconds.tutorial -->
 
 ### setSeconds(sec)
 
@@ -266,7 +501,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setSeconds.returnValue -->
 
+<!-- UTSJSON.Date.setSeconds.test -->
+
 <!-- UTSJSON.Date.setSeconds.compatibility -->
+
+### setUTCSeconds(sec)
+
+<!-- UTSJSON.Date.setUTCSeconds.description -->
+
+<!-- UTSJSON.Date.setUTCSeconds.param -->
+
+<!-- UTSJSON.Date.setUTCSeconds.returnValue -->
+
+<!-- UTSJSON.Date.setUTCSeconds.test -->
+
+<!-- UTSJSON.Date.setUTCSeconds.compatibility -->
+
+<!-- UTSJSON.Date.setUTCSeconds.tutorial -->
 
 ### setMinutes(min)
 
@@ -276,7 +527,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setMinutes.returnValue -->
 
+<!-- UTSJSON.Date.setMinutes.test -->
+
 <!-- UTSJSON.Date.setMinutes.compatibility -->
+
+### setUTCMinutes(min)
+
+<!-- UTSJSON.Date.setUTCMinutes.description -->
+
+<!-- UTSJSON.Date.setUTCMinutes.param -->
+
+<!-- UTSJSON.Date.setUTCMinutes.returnValue -->
+
+<!-- UTSJSON.Date.setUTCMinutes.test -->
+
+<!-- UTSJSON.Date.setUTCMinutes.compatibility -->
+
+<!-- UTSJSON.Date.setUTCMinutes.tutorial -->
 
 ### setHours(hours)
 
@@ -286,7 +553,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setHours.returnValue -->
 
+<!-- UTSJSON.Date.setHours.test -->
+
 <!-- UTSJSON.Date.setHours.compatibility -->
+
+### setUTCHours(hours)
+
+<!-- UTSJSON.Date.setUTCHours.description -->
+
+<!-- UTSJSON.Date.setUTCHours.param -->
+
+<!-- UTSJSON.Date.setUTCHours.returnValue -->
+
+<!-- UTSJSON.Date.setUTCHours.test -->
+
+<!-- UTSJSON.Date.setUTCHours.compatibility -->
+
+<!-- UTSJSON.Date.setUTCHours.tutorial -->
 
 ### setDate(date)
 
@@ -296,7 +579,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setDate.returnValue -->
 
+<!-- UTSJSON.Date.setDate.test -->
+
 <!-- UTSJSON.Date.setDate.compatibility -->
+
+### setUTCDate(date)
+
+<!-- UTSJSON.Date.setUTCDate.description -->
+
+<!-- UTSJSON.Date.setUTCDate.param -->
+
+<!-- UTSJSON.Date.setUTCDate.returnValue -->
+
+<!-- UTSJSON.Date.setUTCDate.test -->
+
+<!-- UTSJSON.Date.setUTCDate.compatibility -->
+
+<!-- UTSJSON.Date.setUTCDate.tutorial -->
 
 ### setMonth(month)
 
@@ -306,7 +605,23 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setMonth.returnValue -->
 
+<!-- UTSJSON.Date.setMonth.test -->
+
 <!-- UTSJSON.Date.setMonth.compatibility -->
+
+### setUTCMonth(month)
+
+<!-- UTSJSON.Date.setUTCMonth.description -->
+
+<!-- UTSJSON.Date.setUTCMonth.param -->
+
+<!-- UTSJSON.Date.setUTCMonth.returnValue -->
+
+<!-- UTSJSON.Date.setUTCMonth.test -->
+
+<!-- UTSJSON.Date.setUTCMonth.compatibility -->
+
+<!-- UTSJSON.Date.setUTCMonth.tutorial -->
 
 ### setFullYear(year)
 
@@ -318,8 +633,24 @@ setTimeout(() => {
 
 <!-- UTSJSON.Date.setFullYear.returnValue -->
 
+<!-- UTSJSON.Date.setFullYear.test -->
+
 <!-- UTSJSON.Date.setFullYear.compatibility -->
 
+
+### setUTCFullYear(year)
+
+<!-- UTSJSON.Date.setUTCFullYear.description -->
+
+<!-- UTSJSON.Date.setUTCFullYear.param -->
+
+<!-- UTSJSON.Date.setUTCFullYear.returnValue -->
+
+<!-- UTSJSON.Date.setUTCFullYear.test -->
+
+<!-- UTSJSON.Date.setUTCFullYear.compatibility -->
+
+<!-- UTSJSON.Date.setUTCFullYear.tutorial -->
 
 ### parse(s)
 
@@ -328,6 +659,8 @@ setTimeout(() => {
 <!-- UTSJSON.Date.parse.param -->
 
 <!-- UTSJSON.Date.parse.returnValue -->
+
+<!-- UTSJSON.Date.parse.test -->
 
 <!-- UTSJSON.Date.parse.compatibility -->
 
@@ -372,5 +705,3 @@ console.log(nextUTSDate)
 ```
 
 :::
-
-

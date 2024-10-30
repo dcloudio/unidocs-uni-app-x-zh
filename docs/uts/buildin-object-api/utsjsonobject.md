@@ -10,37 +10,15 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 
 * 通过[对象字面量](../literal.md#object-literal)
 
-```ts
-const person: UTSJSONObject = {
-    name: 'Tom',
-    printName: () => {
-      // ...
-    }
-}
-```
+<!-- UTSJSON.UTSJSONObject.sample_create.test -->
 
 * 通过 JSON 字符串
 
-```ts
-
-// 写法1 推荐
-const person: UTSJSONObject = JSON.parseObject('{"name":"Tom"}')!
-
-// 写法2 推荐
-const person: UTSJSONObject = JSON.parse<UTSJSONObject>('{"name":"Tom"}')!
-
-
-// 写法3  如果 as 转换的实际类型不匹配 会导致 crash，建议先通过 `instanceof` 判断类型再进行as转换。
-const parseRet = JSON.parse('{"name":"Tom"}')
-if(parseRet instanceof UTSJSONObject){
-  const person = parseRet as UTSJSONObject
-}
-
-```
+<!-- UTSJSON.UTSJSONObject.sample_create1.test -->
 
 ## 静态方法
 
-### keys(object: UTSJSONObject): Array<String>
+### keys(object: UTSJSONObject): Array\<String>
 
 <!-- UTSJSON.UTSJSONObject.keys.description -->
 
@@ -48,18 +26,10 @@ if(parseRet instanceof UTSJSONObject){
 
 <!-- UTSJSON.UTSJSONObject.keys.returnValue -->
 
+<!-- UTSJSON.UTSJSONObject.keys.test -->
+
 <!-- UTSJSON.UTSJSONObject.keys.compatibility -->
 
-
-```ts
-let obj = {
-  name:"zhangsan",
-  age:11
-}
-// 执行结果： 2
-UTSJSONObject.keys(obj).size
-
-```
 
 ### assign(...items): UTSJSONObject
 
@@ -69,18 +39,13 @@ UTSJSONObject.keys(obj).size
 
 <!-- UTSJSON.UTSJSONObject.assign.returnValue -->
 
+<!-- UTSJSON.UTSJSONObject.assign.test -->
+
 <!-- UTSJSON.UTSJSONObject.assign.compatibility -->
 
 > 注意： 与js中的`Object.assign`不同， 这里每次返回的都是一个新的对象
 
-```ts
-const target = { a: 1, b: 2 };
-const source = { b: 4, c: 5 };
-// 得到一个UTSJSONObject对象
-const returnedTarget = UTSJSONObject.assign(target, source);
-```
-
-### assign<T>(...items: T[]): T
+### assign\<T>(...items: T[]): T
 
 <!-- UTSJSON.UTSJSONObject.assign_1.description -->
 
@@ -88,50 +53,52 @@ const returnedTarget = UTSJSONObject.assign(target, source);
 
 <!-- UTSJSON.UTSJSONObject.assign_1.returnValue -->
 
+<!-- UTSJSON.UTSJSONObject.assign_1.test -->
+
 <!-- UTSJSON.UTSJSONObject.assign_1.compatibility -->
 
 > 注意： 与js中的`Object.assign`不同， 这里每次返回的都是一个新的对象
 
-```ts
-type User = {
-  a:number
-  b:number
-}
-const target = { a: 1, b: 2 };
-const source = { b: 4, c: 5 };
-// 得到一个User对象
-const returnedTarget = UTSJSONObject.assign<User>(target, source);
-```
-
 ## 实例方法
+
+### parse()
+
+<!-- UTSJSON.UTSJSONObject.parse.description -->
+
+<!-- UTSJSON.UTSJSONObject.parse.param -->
+
+<!-- UTSJSON.UTSJSONObject.parse.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.parse.test -->
+
+<!-- UTSJSON.UTSJSONObject.parse.compatibility -->
+
+<!-- UTSJSON.UTSJSONObject.parse.tutorial -->
 
 ### get(key: string): any | null
 
-返回指定键对应的值，如果对象中不存在此键则返回 null。
+<!-- UTSJSON.UTSJSONObject.get.description -->
 
-```ts
-const name: string = person.get('name') as string
-```
+<!-- UTSJSON.UTSJSONObject.get.param -->
 
-get 方法可以简化为使用下标运算符 `[]` 访问
+<!-- UTSJSON.UTSJSONObject.get.returnValue -->
 
-```ts
-const name: string = person['name'] as string
-```
+<!-- UTSJSON.UTSJSONObject.get.test -->
+
+<!-- UTSJSON.UTSJSONObject.get.compatibility -->
 
 ### set(key: string, value: any | null)
 
-增加或更新指定键对应的值。
+<!-- UTSJSON.UTSJSONObject.set.description -->
 
-```ts
-person.set('name', 'Tom')
-```
+<!-- UTSJSON.UTSJSONObject.set.param -->
 
-set 方法可以简化为使用下标运算符 `[]` 赋值
+<!-- UTSJSON.UTSJSONObject.set.returnValue -->
 
-```ts
-person['name'] = 'Tom'
-```
+<!-- UTSJSON.UTSJSONObject.set.test -->
+
+<!-- UTSJSON.UTSJSONObject.set.compatibility -->
+
 ### getAny(key): any | null
 
 <!-- UTSJSON.UTSJSONObject.getAny.description -->
@@ -141,6 +108,16 @@ person['name'] = 'Tom'
 <!-- UTSJSON.UTSJSONObject.getAny.returnValue -->
 
 <!-- UTSJSON.UTSJSONObject.getAny.compatibility -->
+
+### getAny(key, def): any
+
+<!-- UTSJSON.UTSJSONObject.getAny_1.description -->
+
+<!-- UTSJSON.UTSJSONObject.getAny_1.param -->
+
+<!-- UTSJSON.UTSJSONObject.getAny_1.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getAny_1.compatibility -->
 
 ### getBoolean(key): boolean | null
 
@@ -152,6 +129,16 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getBoolean.compatibility -->
 
+### getBoolean(key, def): boolean
+
+<!-- UTSJSON.UTSJSONObject.getBoolean_1.description -->
+
+<!-- UTSJSON.UTSJSONObject.getBoolean_1.param -->
+
+<!-- UTSJSON.UTSJSONObject.getBoolean_1.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getBoolean_1.compatibility -->
+
 ### getNumber(key): number | null
 
 <!-- UTSJSON.UTSJSONObject.getNumber.description -->
@@ -162,6 +149,16 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getNumber.compatibility -->
 
+### getNumber(key, def): number
+
+<!-- UTSJSON.UTSJSONObject.getNumber_1.description -->
+
+<!-- UTSJSON.UTSJSONObject.getNumber_1.param -->
+
+<!-- UTSJSON.UTSJSONObject.getNumber_1.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getNumber_1.compatibility -->
+
 ### getString(key): string | null
 
 <!-- UTSJSON.UTSJSONObject.getString.description -->
@@ -170,7 +167,22 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getString.returnValue -->
 
+<!-- UTSJSON.UTSJSONObject.getString.test -->
+
 <!-- UTSJSON.UTSJSONObject.getString.compatibility -->
+
+
+### getString(key, def): string
+
+<!-- UTSJSON.UTSJSONObject.getString_1.description -->
+
+<!-- UTSJSON.UTSJSONObject.getString_1.param -->
+
+<!-- UTSJSON.UTSJSONObject.getString_1.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getString_1.test -->
+
+<!-- UTSJSON.UTSJSONObject.getString_1.compatibility -->
 
 ### getJSON(key): UTSJSONObject | null
 
@@ -180,9 +192,23 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getJSON.returnValue -->
 
+<!-- UTSJSON.UTSJSONObject.getJSON.test -->
+
 <!-- UTSJSON.UTSJSONObject.getJSON.compatibility -->
 
-### getArray(key): Array<any> | null
+### getJSON(key, def): UTSJSONObject
+
+<!-- UTSJSON.UTSJSONObject.getJSON_1.description -->
+
+<!-- UTSJSON.UTSJSONObject.getJSON_1.param -->
+
+<!-- UTSJSON.UTSJSONObject.getJSON_1.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getJSON_1.test -->
+
+<!-- UTSJSON.UTSJSONObject.getJSON_1.compatibility -->
+
+### getArray(key): Array\<T> | null
 
 <!-- UTSJSON.UTSJSONObject.getArray.description -->
 
@@ -190,9 +216,11 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getArray.returnValue -->
 
+<!-- UTSJSON.UTSJSONObject.getArray.test -->
+
 <!-- UTSJSON.UTSJSONObject.getArray.compatibility -->
 
-### getArray(key): Array<T> | null
+### getArray(key, def: Array\<T>): Array\<T>
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.description -->
 
@@ -200,26 +228,36 @@ person['name'] = 'Tom'
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.returnValue -->
 
+<!-- UTSJSON.UTSJSONObject.getArray_1.test -->
+
 <!-- UTSJSON.UTSJSONObject.getArray_1.compatibility -->
 
-这个方法用来获取指定元素类型的数组
+### getArray(key): Array\<any> | null
 
-```uts
+<!-- UTSJSON.UTSJSONObject.getArray_2.description -->
 
-let obj = JSON.parseObject('{"name":"tom","tag":["student","user"]}')
+<!-- UTSJSON.UTSJSONObject.getArray_2.param -->
 
-// 这里得到是 Array<*>
-let noGenericArray = obj!.getArray("tag")
-console.log(noGenericArray)
+<!-- UTSJSON.UTSJSONObject.getArray_2.returnValue -->
 
-// 这里得到是 Array<string>
-let genericArray = obj!.getArray<string>("tag")
-console.log(genericArray)
+<!-- UTSJSON.UTSJSONObject.getArray_2.test -->
 
-```
+<!-- UTSJSON.UTSJSONObject.getArray_2.compatibility -->
 
 
-### toMap(): Map<string, any>
+### getArray(key, def: Array\<any>): Array\<any>
+
+<!-- UTSJSON.UTSJSONObject.getArray_3.description -->
+
+<!-- UTSJSON.UTSJSONObject.getArray_3.param -->
+
+<!-- UTSJSON.UTSJSONObject.getArray_3.returnValue -->
+
+<!-- UTSJSON.UTSJSONObject.getArray_3.test -->
+
+<!-- UTSJSON.UTSJSONObject.getArray_3.compatibility -->
+
+### toMap(): Map\<string, any>
 
 <!-- UTSJSON.UTSJSONObject.toMap.description -->
 
@@ -227,12 +265,7 @@ console.log(genericArray)
 
 <!-- UTSJSON.UTSJSONObject.toMap.returnValue -->
 
-```ts
-person.toMap().forEach((value, key) => {
-    console.log(key)
-    console.log(value)
-})
-```
+<!-- UTSJSON.UTSJSONObject.toMap.test -->
 
 <!-- UTSJSON.UTSJSONObject.toMap.compatibility -->
 
@@ -243,28 +276,24 @@ person.toMap().forEach((value, key) => {
 
 ## 常见问题
 
+#### 目标语言为js时UTSJSONObject实例方法可以被覆盖
+
+> 如非必要请勿利用此特性
+
+如下代码会将getString覆盖为1
+
+```typescript
+const a = {
+  getString: 1
+}
+console.log(a.getString) // 1
+```
+
 #### UTSJSONObject 与 type 相互转换
 
 可以使用下面的代码，进行 `UTSJSONObject` 和 `type` 转换
 
-```ts
-type User = {
-	name:string,
-	age:number
-}
-let jsonObj = {
-  name:"张三",
-  age:12
-}
-// UTSJSONObject => 自定义type
-let userA = JSON.parse<User>(jsonObj.toJSONString())
-console.log(userA!.name)
-// 自定义type => UTSJSONObject
-let utsJsonA = JSON.parseObject(JSON.stringify(userA))
-console.log(utsJsonA)
-
-```
-
+<!-- UTSJSON.UTSJSONObject.convert.test -->
 
 ## Android 平台方法
 

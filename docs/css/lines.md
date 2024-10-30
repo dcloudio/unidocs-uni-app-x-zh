@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.lines.compatibility -->
 
+<!-- CSSJSON.lines.example -->
+
 <!-- CSSJSON.lines.reference -->

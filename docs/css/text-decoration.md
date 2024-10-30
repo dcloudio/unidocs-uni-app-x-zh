@@ -13,7 +13,9 @@
 
 <!-- CSSJSON.text-decoration.compatibility -->
 
-#### App平台差异  
+<!-- CSSJSON.text-decoration.example -->
+
+#### App平台差异
 text-decoration 样式不支持继承
 
 <!-- CSSJSON.text-decoration.reference -->

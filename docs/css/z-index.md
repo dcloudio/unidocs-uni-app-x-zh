@@ -36,6 +36,8 @@ root
 
 <!-- CSSJSON.z-index.compatibility -->
 
+<!-- CSSJSON.z-index.example -->
+
 ### 平台差异
 
 1. app端z-index默认值为0，web端默认值为auto。position的默认值都是relative。
@@ -101,7 +103,7 @@ export default {}
     width: 100px;
     height: 100px;
   }
-  
+
   .view-1-2 {
     position: fixed;
     left: 10px;

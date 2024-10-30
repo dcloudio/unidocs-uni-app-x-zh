@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.max-height.compatibility -->
 
+<!-- CSSJSON.max-height.example -->
+
 <!-- CSSJSON.max-height.reference -->

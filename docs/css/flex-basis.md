@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.flex-basis.compatibility -->
 
+<!-- CSSJSON.flex-basis.example -->
+
 <!-- CSSJSON.flex-basis.reference -->

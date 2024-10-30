@@ -12,16 +12,19 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/API/getWindowInfo/size.png)
 
-### 安全区域说明
+### 安全区域说明 @safearea  
 
 由于部分手机屏幕有顶部的“刘海”和底部导航的存在，为了确保内容区域不被遮挡，提出了安全区域，以便于在安全区域内布局。
 
-app-android平台全屏模式下分安全区域字段说明：
-- safeArea.top : statusBarHeight
-- safeArea.bottom: statusBarHeight + 应用导航栏高度 + windowHeight + tabbar高度
-- safeArea.height: safeArea.bottom - safeArea.top
+app-android平台全屏模式下分安全区域字段说明：  
+- safeArea.top : statusBarHeight  
+- safeArea.bottom: statusBarHeight + 应用导航栏高度 + windowHeight + tabbar高度  
+- safeArea.height: safeArea.bottom - safeArea.top  
+- safeAreaInsets: 安全区域与可渲染内容区域边界的距离  
 
-iOS端safeArea与iOS原生的安全区域概念相同，top与bottom分别对应`window.safeAreaInsets.top` `window.safeAreaInsets.bottom`，具体请参照[Apple文档](https://developer.apple.com/documentation/uikit/uiview/positioning_content_relative_to_the_safe_area)
+HBuilderX4.31版本页面内容可渲染区域在设备系统导航栏设置为`全面屏手势`时，调整为可渲染到手势指示条区域，如不想将页面内容渲染到此区域，可在页面底部设置占位view，其高度为safeAreaInsets.bottom值。  
+
+app-ios平台safeArea与iOS原生的安全区域概念相同，top与bottom分别对应`window.safeAreaInsets.top` `window.safeAreaInsets.bottom`，具体请参照[Apple文档](https://developer.apple.com/documentation/uikit/uiview/positioning_content_relative_to_the_safe_area)
 
 ::: warning 注意事项
 - `screenWidth`/`screenHeight`获取的是设备屏幕宽高信息

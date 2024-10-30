@@ -12,13 +12,13 @@
 
 uni-app中开发者的逻辑是编译为js，js无法直接调用鸿蒙原生API。而uts插件是编译为ets文件，所以可以调用鸿蒙原生API。（ArkTS的文件后缀为.ets）
 
-## 1 了解 UTS 插件是什么
+## 了解 UTS 插件是什么
 
 UTS 插件是 uni-app 扩展API的标准插件形式 [详情](./uts-plugin.md)
 
 uts插件在编译到HarmonyOS端时会被编译成ArkTS代码。因此编写代码时应注意遵循 `uts规范` 和 `ets规范`。
 
-## 2 掌握UTS语法及ArkTs语法
+## 掌握UTS语法及ArkTs语法
 
 无论是uts还是arkTs都是在ts的语法基础上进行扩展来的。建议先阅读如下文档
 
@@ -78,7 +78,29 @@ const obj = {
 } as Obj
 ```
 
-## 5 常见问题
+## 配置uts插件依赖
+
+uts插件的`utssdk/app-harmony/config.json`文件内可以配置依赖，配置方式如下：
+
+```json
+{
+  "dependencies": {
+    "@cashier_alipay/cashiersdk": "15.8.26", // ohpm依赖
+    "local-deps": "./libs/local-deps.har" // 本地依赖
+  }
+}
+```
+
+**注意**
+
+- config.json文件不能含注释。
+- 本地依赖相对路径是相对于config.json文件所在目录的路径，例如上面的示例中local-deps.har文件位于`utssdk/app-harmony/libs/local-deps.har`。
+
+## 使用resources
+
+uts 插件内包含了一个resources目录，用于存放插件的资源文件，如图片、字体等，关于resources的更多信息请参考：[鸿蒙资源分类与访问](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5)。此目录位于`utssdk/app-harmony/resources`。
+
+## 常见问题
 
 ### context的获取
 

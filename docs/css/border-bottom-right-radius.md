@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.border-bottom-right-radius.compatibility -->
 
+<!-- CSSJSON.border-bottom-right-radius.example -->
+
 <!-- CSSJSON.border-bottom-right-radius.reference -->

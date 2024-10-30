@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.border-left-color.compatibility -->
 
+<!-- CSSJSON.border-left-color.example -->
+
 <!-- CSSJSON.border-left-color.reference -->

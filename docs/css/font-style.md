@@ -13,7 +13,9 @@
 
 <!-- CSSJSON.font-style.compatibility -->
 
-#### App平台差异  
-font-style 样式不支持继承 
+<!-- CSSJSON.font-style.example -->
+
+#### App平台差异
+font-style 样式不支持继承
 
 <!-- CSSJSON.font-style.reference -->

@@ -9,10 +9,15 @@
   * [几种组件标记的概念澄清](tutorial/idref.md)
 * web平台专题指南
   * [概述](web/README.md)
+  * [跨域](https://uniapp.dcloud.net.cn/tutorial/CORS.html)
+  * [宽屏适配](https://uniapp.dcloud.net.cn/tutorial/adapt.html)
   * [服务端渲染ssr](web/ssr.md)
+  * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
 * app平台专题指南
 	* [标准基座信息](tutorial/app-playground.md)
-	* [uni-app x 云端打包环境](tutorial/app-env.md)
+	* 云端打包
+		* [概述](tutorial/app-package.md)
+		* [云端打包环境](tutorial/app-env.md)
 	* uni-app x 原生SDK和离线打包
 		* [概述](native/README.md)
 		* Android平台

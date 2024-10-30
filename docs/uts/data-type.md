@@ -1291,9 +1291,8 @@ let rect = {
 #### 1. `.` 操作符
 	即 `rect.x`、`rect.size.width`。
 
-	这种写法比较简单，和js习惯一致，但在 UTS 中限制较多。它的使用有如下前提：
-	- 仅限于web和Android，在iOS上swift不支持`.`操作符。
-	- 在Android上也只支持字面量定义json（因为类型可推导）。如果是`JSON.parse()`转换 或者 动态赋值的，则不能使用。
+	这种写法比较简单，和js习惯一致，但在 UTS 存在以下限制：
+	- 仅限于web，在iOS/Android不支持`.`操作符。
 
 #### 2. `[""]` 下标
 	即 `rect["x"]`。

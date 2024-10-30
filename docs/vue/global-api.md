@@ -55,9 +55,11 @@ export function createApp() {
 在向 `globalProperties` 注册方法时，请使用直接函数表达式方式进行赋值。不支持先声明函数，再将其注册到 `globalProperties` 上的方式。同时，注册的函数一旦被赋值，不允许进行修改。
 
 `globalProperties` 在编译时处理，因此确保你的操作在编译时是可知的。例如，将变量赋值给 `globalProperties` 时，这个变量在编译时必须是已知的，而不能是在运行时才能确定的变量。
-件参数，当传递插件参数时，`app` 的类型需要指定为 `VueApp`。
+当传递插件参数时，`app` 的类型需要指定为 `VueApp`。
 
 示例 [详情](<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.gitUrl -->)
+
+[设置 app.config.globalProperties](https://gitcode.net/dcloud/hello-uvue/-/blob/alpha/main.uts)
 
 ::: preview <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.webUrl -->
 
@@ -87,4 +89,4 @@ uni-app x 新增了 [onLastPageBackPress](../collocation/App.md#applifecycle) �
 
 ### nextTick 使用注意事项 @nexttick
 
-目前 nextTick 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 nextTick 不能保证 DOM 排版以及渲染完毕。如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/element.md) 对象。在修改 DOM 后，立刻使用 [Element](../dom/element.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
+目前 nextTick 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 nextTick 不能保证 DOM 排版以及渲染完毕。如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/unielement.md) 对象。在修改 DOM 后，立刻使用 [Element](../dom/unielement.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。

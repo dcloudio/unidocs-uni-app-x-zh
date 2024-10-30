@@ -355,11 +355,33 @@ so文件:
 
 HBuilderX 4.26版本之后，开发者可以使用混编kotlin代码的方式，直接集成so文件。参考[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs)
 
-### 3.5 远程依赖仓库说明
+### 3.5 其他配置文件
+
+uni-app x / uni-app 均支持打包时手动指定资源位置 [说明文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#nativeresources)
+
+例如 接入`Firebase` 时需要将`google-services.json`文件放在 `app` 目录下，则可以通过如下的配置来实现：
+
+
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+┌─pages                         //页面目录
+│  └─[具体内容]                   
+├─nativeResources               //配置文件目录
+│  └─android
+│  	└─google-services.json
+├─ // 其他文件
+└─App.vue 
+	</code>
+</pre>
+
+具体的打包示例，参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts) 
+
+### 3.6 远程依赖仓库说明
 
 目前云打包机支持下面的仓库：
 
 ```gradle
+
 
 jcenter()
 google()
@@ -367,6 +389,8 @@ google()
 maven {url 'https://developer.huawei.com/repo/'}
 // jitpack 远程仓库：https://jitpack.io
 maven { url 'https://jitpack.io' }
+// mavenCentral 默认支持
+mavenCentral()
 
 ```
 
@@ -375,7 +399,7 @@ maven { url 'https://jitpack.io' }
 这种情况，推荐开发者上传到 jitpack.io  这也是目前android 原生开发主流的远程仓库。 [使用文档](https://docs.jitpack.io/)
 
 
-### 3.6 Android 编译SDK版本说明
+### 3.7 Android 编译SDK版本说明
 
 截止 HBuilderX 4.15 版本：
 
@@ -445,32 +469,6 @@ let decorView = UTSAndroid.getUniActivity()!.window.decorView;
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 
-#### onAppActivityDestroy
-
-即使在android原生开发中，应用的生命周期管理也是十分重要的。 [android生命周期](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=zh_cn)
-
-UTS环境中对原生的生命周期进行了封装和简化，大多数情况下，开发者只需要了解本章节中列出的 activity相关生命周期即可。
-
-其中最为常见的场景，要数`onAppActivityDestroy`中释放系统资源：
-
-举个例子，以Hello UTS  [用户截屏插件](https://ext.dcloud.net.cn/plugin?id=9897)为例。
-
-在注册监听回调时，添加了下列代码。
-```ts
-UTSAndroid.onAppActivityDestroy(function(){
-	screenOB?.stopWatching()
-	screenOB = null
-})
-```
-
-这段代码的意思是当宿主activity被销毁时，主动回收屏幕监听的FileObserver
-
-这是因为除了正常的用户注册/注册 之外，还存在一种情况：用户没有反注册，便关闭了应用。   此时FileObserver 并没有被反注册回收。就会导致应用关闭后继续持有上一个uni-app js引擎实例的引用，从而导致下一次启动时出现引擎回调找不到的情况。
-
-
-开发者在开发UTS插件时，如果遇到了类似使用系统组件的情况，也需要特别关注资源释放情况。
-
-
 
 #### requestSystemPermission
 
@@ -524,10 +522,20 @@ UTSAndroid.getUniActivity()!.getWindow().getDecorView();
 
 
 
+## 5 隐私协议适配说明@iodcloudprivacy
+
+UTS内置了隐私状态管理API，以支持开发者管理用户隐私协议状态配置的需求：
+
+获取用户当前是否已同意隐私协议[isPrivacyAgree](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#isprivacyagree-boolean)
+
+更新用户对隐私协议的状态[setprivacyagree](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#setprivacyagree-state-boolean-void)
+
+重置隐私协议状态[resetPrivacyAgree](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#resetprivacyagree-void)
 
 
 
-## 5 Kotlin与UTS差异重点介绍 (持续更新)
+
+## 6 Kotlin与UTS差异重点介绍 (持续更新)
 
 通过上面的章节的阅读,至此我们认为你已经掌握了UTS语法，掌握了基本的Kotlin语法，掌握了UTS对于android资源的支持。
 
@@ -763,19 +771,19 @@ class ScreenReceiver extends BroadcastReceiver{
 
 
 
-## 6  常见问题(持续更新)
+## 7  常见问题(持续更新)
 
-### 6.1 如何在UTS环境中，新建一个`activity`？
-
-参考Hello UTS项目中的uts-nativepage插件
-
-
-### 6.2 如何在UTS环境中，新建一个`service`？
+### 7.1 如何在UTS环境中，新建一个`activity`？
 
 参考Hello UTS项目中的uts-nativepage插件
 
 
-### 6.3 如何在UTS环境中，新建一个`Thread`？
+### 7.2 如何在UTS环境中，新建一个`service`？
+
+参考Hello UTS项目中的uts-nativepage插件
+
+
+### 7.3 如何在UTS环境中，新建一个`Thread`？
 
 简单示例
 ```ts
@@ -839,7 +847,7 @@ import R from 'io.dcloud.uni_modules.uts_nativepage.R';
 ```
 
 
-### 6.4  如何实现一个接口
+### 7.4  如何实现一个接口
 
 以HelloUTS nativepage插件 部分代码为例：
 
@@ -927,7 +935,7 @@ ScancodeConfig.setShowLine(false);
 ScancodeConfig.showLine = false;
 ```
 
-### 6.5 Android原生API过时警告处理
+### 7.5 Android原生API过时警告处理
 
 调用原生过时的API插件编译时产生警告，可以使用`@Suppress("DEPRECATION")`添加注解到使用的方法上忽略警告，例：
 ```js
@@ -977,7 +985,7 @@ export function request<T>(options : RequestOptions<T>) : RequestTask {
 }
 ```
 
-### 6.7 获取原生Class 对象
+### 7.7 获取原生Class 对象
 
 可以使用下面的代码获取指定class对象
 ```kotlin
@@ -989,7 +997,7 @@ let getClassByInstance = UTSAndroid.getJavaClass(UTSAndroid.getUniActivity()!)
 console.log(getClassByInstance);
 ```
 
-## 7  已知待解决问题(持续更新)
+## 已知待解决问题(持续更新)
 
 ### 结构入参 boolean 参数默认为true
 

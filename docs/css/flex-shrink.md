@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.flex-shrink.compatibility -->
 
+<!-- CSSJSON.flex-shrink.example -->
+
 <!-- CSSJSON.flex-shrink.reference -->

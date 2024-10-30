@@ -2,6 +2,10 @@
 
 <!-- UTSAPIJSON.getCurrentPages.description -->
 
+HBuilderX 4.31+，强化了页面对象，新增了UniPage对象。getCurrentPages()返回值改为UniPage对象数组。
+
+UniPage对象强化了开发者对页面的管理功能，并且支持在uts插件中使用。
+
 <!-- UTSAPIJSON.getCurrentPages.compatibility -->
 
 <!-- UTSAPIJSON.getCurrentPages.param -->
@@ -9,8 +13,10 @@
 <!-- UTSAPIJSON.getCurrentPages.returnValue -->
 
 ::: warning 注意
+- HBuilderX 4.31+，$getPageStyle和$setPageStyle不再需要加前缀$。
 - 使用`选项式 API` 时，不可创建 `route`、`options` 同名响应式变量，否则会覆盖当前 `page 实例` 的同名属性。
-- 仅 `Web` 与 `iOS` 端支持通过 `page.$vm` 获取 vue 实例。
+- 4.31 前仅 `Web` 与 `iOS(非 uts 插件)` 端支持通过 `page.$vm` 获取 vue 实例。\
+	4.31+ 仅 `iOS uts 插件` 环境不支持通过 `page.vm` 获取 vue 实例。
 :::
 
 **PageStyle**
@@ -25,11 +31,13 @@
 |navigationBarTextStyle				|String	|4.18		|4.18	|4.18	|white  |
 |navigationBarTitleText				|String	|4.18		|4.18	|4.18	|				|
 |navigationStyle							|String	|x   		|x  	|4.18	|default|
-|backgroundColor							|String	|4.18		|4.18	|x		|#ffffff|
-|backgroundTextStyle					|String	|4.18		|4.18	|x		|light	|
+|backgroundColor							|String	|4.18   |4.18 |x		|#ffffff|
+|backgroundTextStyle					|String	|4.31      |4.31    |x		|dark	|
 |onReachBottomDistance				|Number	|x			|x		|4.18	|50			|
 |pageOrientation							|String	|4.18		|4.25		|x		|auto		|
-
+|disableSwipeBack							|Boolean|x		|4.18		|x		|false	|
+|hideStatusBar                  |Boolean    |4.31   |x  |x  |false
+|hideBottomNavigationIndicator  |Boolean    |4.31   |x  |x  |false
 
 **注意事项**
 - web端由于会自动摇树优化未使用的特性，如果整个项目中都没有使用到下拉刷新`enablePullDownRefresh`，那么下拉刷新功能会被摇掉，此时设置打开下拉刷新将无效。

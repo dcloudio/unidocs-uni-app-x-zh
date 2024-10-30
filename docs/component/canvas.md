@@ -6,7 +6,7 @@
 
 App平台4.25之前没有完整的canvas组件，但提供了`drawablecontext`。
 * 每个view，都可以通过[draw API](../dom/drawablecontext.md)，高性能的画各种形状、写字。这组API与web的canvas api接近但不同。
-* 截图或海报需求，无需像webview那样通过canvas中转，app平台view直接提供截图API，[takesnapshot](../dom/element.md#takesnapshot)。
+* 截图或海报需求，无需像webview那样通过canvas中转，app平台view直接提供截图API，[takesnapshot](../dom/unielement.html#takesnapshot)。
 * 二维码展示需求：[见插件市场](https://ext.dcloud.net.cn/search?q=%E4%BA%8C%E7%BB%B4%E7%A0%81&uni-appx=1)
 * 图表需求：[插件市场搜echart](https://ext.dcloud.net.cn/search?q=chart&orderBy=Relevance&uni-appx=1)、[插件市场搜F2](https://ext.dcloud.net.cn/search?q=f2&orderBy=Relevance&uni-appx=1)
 * 手写签名：[见插件市场](https://ext.dcloud.net.cn/search?q=%E7%AD%BE%E5%90%8D&orderBy=Relevance&uni-appx=1)
