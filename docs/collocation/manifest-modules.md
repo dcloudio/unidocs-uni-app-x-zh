@@ -32,7 +32,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 - uni-canvas
   [canvas画布组件](../component/canvas.md)模块（`HBuilderX4.25+`）
     + 包括内置组件：[canvas](../component/canvas.md)
-    + 包括API：[UniCanvasElement](../dom/unicanvaselement.md)、[CanvasRenderingContext2D](../api/canvasrenderingcontext2d.md)
+    + 包括API：[uni.createCanvasContextAsync](../api/create-canvas-context-async.md)、[CanvasRenderingContext2D](../api/canvasrenderingcontext2d.md)、[UniCanvasElement](../dom/unicanvaselement.md)
     + 依赖的模块：无
 
 - uni-cloud-client
@@ -85,6 +85,12 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
     + 依赖的模块：无
   
   注意：仅App-Android平台支持。
+
+- uni-map-tencent
+  [map地图组件](../component/map.md)模块（`HBuilderX4.31+`）
+    + 包括内置组件：[map](../component/map.md)
+    + 包括API：[uni.createMapContext](../api/create-map-context.md)
+    + 依赖的模块：无
 
 - uni-media
   多媒体相关API模块
