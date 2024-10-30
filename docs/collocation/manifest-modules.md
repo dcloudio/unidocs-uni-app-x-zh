@@ -24,7 +24,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 - uni-ad
   uni-ad[广告联盟](https://uniad.dcloud.net.cn/)模块（`HBuilderX4.0+`）  
-    + 包括API：[uni.createRewardedVideoAd](../api/create-rewarded-video-ad.md)
+    + 包括API：[uni.createRewardedVideoAd](../api/create-rewarded-video-ad.md)、[uni.createInterstitialAd](../api/create-interstitial-ad.md)
     + 依赖的模块：无
   
   注意：此模块仅包含基础广告模块，配置聚合广告平台需手动配置，详情参考[uni-ad](#uni-ad)章节
