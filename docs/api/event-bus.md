@@ -68,3 +68,6 @@ uni.$emit('fn', {"a": 1} as UTSJSONObject)
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+## Tips
+* - `eventName` 应避免使用 `uni` 开头，以免与 uni-app x 内置事件冲突
