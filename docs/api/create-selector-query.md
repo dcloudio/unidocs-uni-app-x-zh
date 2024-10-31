@@ -100,6 +100,47 @@ result = [ {}, [{},{}] ]
 ```
 
 
+通过id查询组件内多节点
+
+和单根节点组件有所不同，有着多个根节点的组件需要透传 attribute
+
+页面
+
+```html
+<template>
+  <view>
+    <custom-component1 id="custom-component1"></custom-component1>
+
+    <button @click="query">query</button>
+  </view>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods: {
+      query() {
+        uni.createSelectorQuery().in(this).select('#scustom-component1').boundingClientRect().exec((ret) => {
+          console.log(ret)
+        })
+      }
+    }
+  }
+</script>
+```
+
+组件 custom-component1
+
+```html
+<template>
+  <text>1</text>
+  <text v-bind="$attrs">2</text>
+  <text>3</text>
+</template>
+```
+
 **注意事项：**
 
 1. App 平台 `<template>` 下如果存在多个节点，会导致非第一个节点查询不到的问题
