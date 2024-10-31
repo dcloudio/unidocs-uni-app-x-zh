@@ -26,4 +26,5 @@ uni-app x的组件和API，大多是uts语言开发的。和开发者做的uts�
 - 快亿商城，[App端](https://ext.dcloud.net.cn/plugin?id=15458)、[管理端](https://ext.dcloud.net.cn/plugin?id=15568)
 - 槟购跨境，[App端](https://sj.qq.com/appdetail/com.bingo.bg)
 - 金股讯，[App端](https://sj.qq.com/appdetail/com.jinguxun.app)
-- [ai(chatGPT)聊天对话，uni-app x(uvue+uts)和uniCloud云端一体完整](https://ext.dcloud.net.cn/plugin?id=17075)
+- 时一助手，[App端](http://app.yuteng.vip/sy/index.html)
+- [ai(chatGPT)聊天对话，uni-app x(uvue+uts)和uniCloud云端一体完整项目模板](https://ext.dcloud.net.cn/plugin?id=17075)
