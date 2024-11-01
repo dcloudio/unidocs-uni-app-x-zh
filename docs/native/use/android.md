@@ -103,7 +103,7 @@ buildscript {
 }
 ```
 
-**注意：文件uts-kotlin-compiler-plugin-0.0.1.jar和uts-kotlin-gradle-plugin-0.0.1.jar位于离线SDK中，示例中放到了项目根目录的`plugin`文件夹下。参考：**
+**注意：文件uts-kotlin-compiler-plugin-0.0.1.jar和uts-kotlin-gradle-plugin-0.0.1.jar位于原生SDK中，示例中放到了项目根目录的`plugin`文件夹下。参考：**
 
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/android/gradle_plugins.png)
 
