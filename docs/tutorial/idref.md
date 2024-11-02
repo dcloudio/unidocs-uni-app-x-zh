@@ -79,11 +79,13 @@ uni-app x中，web、小程序、vue这3类概念都支持，所以id、ref、El
 
 #### Element方式
 
-uni-app x提供了[uni.getElementById](../api/get-element.md)方法，返回的是[Element](../dom/unielement.md)类型。
+uni-app x提供了[uni.getElementById](../api/get-element.md)等多种方法获取[Element](../dom/unielement.md)类型。
 
 通用的元素操作方法，比如getAttribute、setStyle，在Element上就可以操作。
 
-但是由于本方法不与页面绑定，获取的是栈顶页面的element，所以可能发生预期外的情况，[详见](../api/get-element.md)
+获取Element有很多方法，全局方法[uni.getElementById](../api/get-element.md)、[UniPage的getElementById](../api/get-current-pages.md#getelementbyid)
+
+还可以通过this.refs获取到vue实例然后as为Element。[见下](#ref方式)
 
 UniVideoElement 继承自 UniElement，拥有video专用的一批方法。
 

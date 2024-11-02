@@ -5,11 +5,12 @@
 <!-- UTSAPIJSON.getElementById.compatibility -->
 
 **注意：** \
-本方法获取的元素，是页面栈栈顶（不包括 dialogPage）的页面的元素，而不是执行本方法代码所在的页面的元素。\
-因为uni是全局api，只有`this.$refs`才能和页面绑定。\
+uni是全局api，本方法获取的元素，是页面栈栈顶（不包括 dialogPage）的页面的元素，而不是执行本方法代码所在的页面的元素。\
 如果A页面被栈顶的B页面盖住，在A页面执行`uni.getElementById`会访问到B页面的元素。\
-除非您确认清楚这个逻辑，否则不建议使用本方法。\
 
+如需寻找特定页面上的Element，应使用[UniPage对象的getElementById方法](../api/get-current-pages.md#getelementbyid)
+
+如果不确定当前页面是不是在页面栈顶，则推荐使用ref方式，`this.$refs`可以和当前代码调用的页面绑定。\
 与页面绑定的获取元素的方式是`this.$refs`获取的对象再进一步as为element。[详见](../tutorial/idref.md#ref方式)
 
 <!-- UTSAPIJSON.getElementById.param -->
