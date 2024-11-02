@@ -89,3 +89,4 @@ const dialogPages = page.getDialogPages()
 // 2. 在 dialogPage 中通过 this.$page 获取 dialogPage 实例
 const dialogPage = this.$page
 ```
+* `UniDialogPage` 实例的 `getElementById` 方法仅 `Android` 端支持，其他端返回 `null`。
