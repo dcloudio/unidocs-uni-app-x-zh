@@ -38,7 +38,7 @@ framework-release.aar，uni-exit-release.aar，uni-getAccessibilityInfo-release.
 uni-getSystemSetting-release.aar，uni-openAppAuthorizeSetting-release.aar，uni-prompt-release.aar，uni-storage-release.aar，uni-getDeviceInfo-release.aar，
 uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar共19个aar拷贝到uni-app x模块的libs下，如果没有libs需要手动创建，参考下图：
 
-![](https://web-ext-storage.dcloud.net.cn/native/doc/android/main_libs.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/main_libs_2.jpg)
 
 ### 修改build.gradle
 
@@ -202,7 +202,7 @@ android.enableJetifier=true
 	
 2. 将app-android目录下与appid对应的目录拷贝到主项目的`assets/apps`目录下
 	
-	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/app_assets.png)
+	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/app_assets_2.png)
 	
 	**注意：apps下的appid必须与AndroidManifest.xml的`DCLOUD_UNI_APPID`保持一致。**
 	
