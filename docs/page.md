@@ -8,12 +8,14 @@ uni-app x 项目中，页面文件的后缀名`.uvue`文件。
 
 uni-app x 只有 `.uvue`页面，不支持和vue页面并存（因vue是js驱动、webview渲染，uni-app x在app-Android中没有js引擎，app中渲染是原生渲染，无法使用vue页面）。
 
-当然某些组件可以通过条件编译同时适配uni-app和uni-app x，所以在uni-app x的项目中，看到某些组件代码也有vue文件，但这些vue文件并不在uni-app x项目中生效。
+当然某些组件可以通过条件编译同时适配uni-app和uni-app x，所以在uni-app x的项目中，看到某些组件代码也有vue文件，但这些vue文件并不在uni-app x项目中生效，或者被当做uvue组件对待。
 
-另外uts组件插件的入口文件命名是index.vue。因为uts插件在uni-app和uni-app x中均可使用，所以文件后缀名为vue。\
+另外uts组件的[uni-app兼容模式插件](./plugin/uts-component.md)的入口文件命名是index.vue。因为uts插件在uni-app和uni-app x中均可使用，所以文件后缀名为vue。\
 但这个vue文件并不是真正的页面，它只是uts组件插件为了尽可能照顾开发者习惯而参考vue规范定义的原生组件入口文件。
 
-uni-app x 在app-android上，每个页面都是一个全屏activity，不支持透明。
+uni-app x 在非小程序平台上，提供了[dialogPage](./api/dialog-page.md)，这是一种在主页面上弹出全屏的、背景透明的模态子页面。
+
+uni-app x 在app-android上，每个页面都是一个全屏activity，不支持透明。如需要透明页面请使用[dialogPage](./api/dialog-page.md)
 
 ## 页面管理
 
@@ -21,7 +23,9 @@ uni-app x 在app-android上，每个页面都是一个全屏activity，不支持
 
 新建页面，默认保存在工程根目录下的`pages`目录下。
 
-每次新建页面，均需在`pages.json`中配置`pages`列表；未在`pages.json -> pages` 中注册的页面，在编译阶段会被忽略。pages.json的完整配置参考：[页面配置](./collocation/pagesjson.md)。
+每次新建页面，均需在`pages.json`中配置`pages`列表；未在`pages.json -> pages` 中注册的页面，在编译阶段会被忽略，不会进入编译产物。
+
+pages.json的完整配置参考：[页面配置](./collocation/pagesjson.md)。
 
 通过HBuilderX开发 `uni-app x` 项目时，在项目上右键“新建页面”，HBuilderX会自动在`pages.json`中完成页面注册，开发更方便。
 
@@ -29,6 +33,8 @@ uni-app x 在app-android上，每个页面都是一个全屏activity，不支持
 
 - 如果你的页面较复杂，需要拆分多个附属的uts、css、组件等文件，则使用目录归纳比较合适。
 - 如果只有一个页面文件，大可不必多放一层目录。
+
+不管是普通页面，还是dialogPage页面，都需要在pages.json中注册。
 
 ### 删除页面
 
@@ -39,15 +45,15 @@ uni-app x 在app-android上，每个页面都是一个全屏activity，不支持
 
 ### 页面改名
 
-操作和删除页面同理，依次修改文件和 `pages.json`。
+操作和删除页面同理，依次修改文件名和 `pages.json`。
 
 ### pages.json
 
-pages.json是工程的页面管理配置文件，包括：页面路由注册、页面style参数配置（原生标题栏、下拉刷新...）、首页tabbar等众多功能。
+pages.json位于工程根目录，是工程的页面管理配置文件，功能包括：页面路由注册、页面style参数配置（背景色、原生标题栏、下拉刷新...）、首页tabbar等众多功能。
 
 其篇幅较长，另见 [pages.json](./collocation/pagesjson.md)
 
-### 设置应用首页@startpage
+#### 设置应用首页@startpage
 
 `pages.json -> pages`配置项中的第一个页面，作为当前工程的首页（启动页）。
 
@@ -105,11 +111,21 @@ uvue页面基于 vue 单文件组件规范。一个页面内，有3个根节点�
 
 页面内容构成，另有[详细文档](./vue/README.md)
 
+## 页面对象实例
+
+运行时每个打开的页面，都有一个UniPage实例。
+
+通过全局API [getCurrentPages()](./api/get-current-pages.md) 可以获取到当前应用的页面栈，即所有打开的页面数组。
+
+页面栈数组中的每个页面都是一个UniPage实例对象。
+
+该对象上有很多方法，比如可以获取和设置页面样式（pages.json里配置的页面Style），比如可以获取页面的子弹窗页面（dialogPages）和页面上的元素（UniElement）。[详见](./api/get-current-pages.md)
+
 ## 页面生命周期 @lifecycle
 
 <!-- PAGEINSTANCE.lifeCycle.compatibility -->
 
-在 Vue 中，页面也是一种组件，所以也支持[组件生命周期](./vue/options-api.md#page-component-options)。
+在 Vue 中，页面也是一种组件，所以也同时支持[组件生命周期](./vue/options-api.md#page-component-options)。
 
 ### 页面 onLoad 生命周期@onload
 
@@ -296,3 +312,5 @@ onReady后，页面元素就可以自由操作了，比如ref获取节点。同�
 6. 转场动画结束
 
 再次强调，5和6的先后顺序不一定，取决于首批dom渲染的速度。
+
+
