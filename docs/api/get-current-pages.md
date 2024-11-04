@@ -21,7 +21,7 @@ UniPage对象强化了开发者对页面的管理功能，并且支持在uts插�
 
 **PageStyle**
 
-支持 pages.json 下 `globalStyle` 节点属性和页面下 `style` 节点属性
+支持当前页面 `style` 节点属性
 
 |属性													|类型		|Android|iOS	|web	|默认值	|
 |:-:													|:-:		|:-:		|:-:	|:-:	|:-:		|
