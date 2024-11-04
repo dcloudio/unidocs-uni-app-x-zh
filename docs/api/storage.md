@@ -10,7 +10,7 @@ uni-app的Storage在不同端的实现不同：
 	* 支付宝小程序单条数据转换成字符串后，字符串长度最大200*1024。同一个支付宝用户，同一个小程序缓存总上限为10MB。
 	* 百度小程序策略[详见](https://smartprogram.baidu.com/docs/develop/api/storage/save_process/)
 	* 抖音小程序策略[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/data-caching/tt-get-storage)
-	* `Android` 端采用应用内SQLIte数据库储存，每个apk对应一个数据库文件，储存位置为：/data/data/io.dcloud.uniappx(基座包名)/databases/DCStorage,同apk内的不同应用，以表名区分。
+	* `Android` 端采用应用内SQLIte数据库储存，每个基座对应一个数据库文件，储存位置为：/data/data/io.dcloud.uniappx(基座包名)/databases/DCStorage,同基座内的不同应用，以表名区分。
 
 **注意**
 - `uni-`、`uni_`、`dcloud-`、`dcloud_`为前缀的key，为系统保留关键前缀。如`uni_deviceId`、`uni_id_token`，请开发者为key命名时避开这些前缀。
