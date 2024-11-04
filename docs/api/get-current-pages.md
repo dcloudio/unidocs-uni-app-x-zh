@@ -51,3 +51,13 @@ UniPage对象强化了开发者对页面的管理功能，并且支持在uts插�
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+## Tips
+* `4.32` 新增支持通过 `this.$page` 获取当前 `UniPage` 实例, 代码示例：
+```js
+// 选项式 API
+const dialogPage = this.$page
+// 组合式 API
+const currentInstance = getCurrentInstance()
+const dialogPage = instance?.proxy?.$page
+```
