@@ -94,3 +94,7 @@ const currentInstance = getCurrentInstance()
 const dialogPage = instance?.proxy?.$page
 ```
 * `UniDialogPage` 实例的 `getElementById` 方法仅 `Android` 端支持，其他端返回 `null`。
+* tabBar 页面中的 `dialogPage`，在 App 端不会随 tabBar 页面切换而隐藏，在 Web 端会随 tabBar 页面切换而隐藏。\
+即：在 tabA 页面打开 dialogPage 后 switchTab 到 tabB 页面
+在 App 端 dialogPage 仍会显示,\
+在 Web 端 dialogPage 会隐藏，再次 switchTab 到 tabA 页面 dialogPage 会显示。
