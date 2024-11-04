@@ -202,6 +202,7 @@ onShow和onHide是成对出现的。
 
 ::: warning 注意
 - `onBackPress`上不可使用`async`，会导致无法阻止默认返回
+- - iOS 端侧滑返回不会触发 `onBackPress`
 :::
 
 #### 示例
