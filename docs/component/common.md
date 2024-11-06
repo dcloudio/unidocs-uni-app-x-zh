@@ -298,6 +298,18 @@ UniTouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchc
 
 <!-- CUSTOMTYPEJSON.UniKeyEvent.example -->
 
+## UniNativeViewEvent
+
+<!-- CUSTOMTYPEJSON.UniNativeViewEvent.description -->
+
+<!-- CUSTOMTYPEJSON.UniNativeViewEvent.extends -->
+
+<!-- CUSTOMTYPEJSON.UniNativeViewEvent.param -->
+
+<!-- CUSTOMTYPEJSON.UniNativeViewEvent.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniNativeViewEvent.example -->
+
 ## 参见
 
 - [相关 Bug](https://issues.dcloud.net.cn/?mid=component.global-properties-events)
