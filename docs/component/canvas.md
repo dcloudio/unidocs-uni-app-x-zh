@@ -54,6 +54,8 @@ canvas相关的API非常多，参考如下：
 
 这种方式跨平台，一般推荐这种写法。需HBuilderX 4.25+支持。
 
+组合式
+
 ```html
 <template>
   <canvas id="canvas"></canvas>
@@ -75,6 +77,42 @@ uni.createCanvasContextAsync({
     canvasContext.scale(dpr, dpr); // 仅需调用一次，当调用 reset 方法后需要再次 scale
   }
 })
+</script>
+```
+
+选项式
+
+```html
+<template>
+  <view>
+    <canvas id="canvas"></canvas>
+  </view>
+</template>
+
+<script>
+  export default {
+    name: 'canvas',
+    data() {
+      return {
+      }
+    },
+    onReady() {
+      uni.createCanvasContextAsync({
+        id: 'canvas',
+        component: this,
+        success: (context : CanvasContext) => {
+          const canvasContext = context.getContext('2d')!;
+          const canvas = canvasContext.canvas;
+
+          // 处理高清屏逻辑
+          const dpr = uni.getDeviceInfo().devicePixelRatio ?? 1;
+          canvas.width = canvas.offsetWidth * dpr;
+          canvas.height = canvas.offsetHeight * dpr;
+          canvasContext.scale(dpr, dpr); // 仅需调用一次，当调用 reset 方法后需要再次 scale
+        }
+      })
+    }
+  }
 </script>
 ```
 
