@@ -63,7 +63,7 @@ canvas相关的API非常多，参考如下：
 // 异步调用方式, 跨平台写法
 uni.createCanvasContextAsync({
   id: 'canvas',
-  component: this,
+  component: getCurrentInstance().proxy,
   success: (context : CanvasContext) => {
     const canvasContext = context.getContext('2d')!;
     const canvas = canvasContext.canvas;
