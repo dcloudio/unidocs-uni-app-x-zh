@@ -262,4 +262,4 @@ Promise 对象表示异步操作最终的完成（或失败）以及其结果值
 ## Bug & Tips@tips
 
 * 目前 Promise 类型编译到 kotlin 为 io.dcloud.uts.UTSPromise
-* 编译到swift时暂不支持。但在uvue里因为iOS默认js驱动所以可以使用Promise
+* 自 HBuilder X 4.31 版本起支持编译到 swift。在 swift 中编译为 UTSPromise。在uvue里因为iOS默认js驱动所以可以使用Promise，没有 4.31 版本的限制。
