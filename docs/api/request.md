@@ -38,7 +38,7 @@ complete: () => {
 const options: RequestOptions<Person> = ...
 uni.request<Person>(options)
 ```
-* app-android平台 uni.request()暂未支持Promise，返回值是RequestTask。
+* app-android、app-ios平台 uni.request()暂未支持Promise，返回值是RequestTask。
 * web平台 request接口在 4.01版本之前返回数据是一个普通对象，4.01起调整为UTSJSONObject类型
 * web平台 request接口目前不支持创建传入的泛型的实例
 
