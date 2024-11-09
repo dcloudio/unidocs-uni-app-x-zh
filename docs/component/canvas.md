@@ -39,6 +39,25 @@ uni-app x 中废弃了老版方案，使用了 W3C 规范和微信小程序的�
 
 注意：在uni-app x 4.21版以前，开发者写的老版canvas是可以运行的。但从 4.21+ 支持新版规范起，不再支持老版规范。开发者需调整代码。
 
+注意：App平台Canvas组件大小发生变化或者从界面栈中移除再重新添加等情况会导致context失效需要监听对应事件进行重绘。
+
+```html
+<template>
+  <canvas id="canvas"></canvas>
+</template>
+<script setup>
+// 获取 canvas element
+const canvas = uni.getElementById("canvas") as UniCanvasElement
+canvas!.addEventListener("contextrestored", (e: UniEvent)=>{
+  console.log("contextrestored")
+  //重绘
+})
+canvas!.addEventListener("contextlost", (e: UniEvent)=>{
+  console.log("contextlost")
+})
+</script>
+```
+
 注意：新版规范需要开发者根据自己的场景手动处理高清屏问题。
 
 ```html
