@@ -2,7 +2,7 @@
 
 <!-- CSSJSON.at_rules_values.compatibility -->
 
-## 字体  
+## 字体 @font
 
 @font-face自定义字体示例：
 ```html
@@ -14,8 +14,8 @@
 </style>
 ```
 
-### 内置字体图标 uni-icon @uniicon  
-> HBuilderX4.33版本开始 app-android、app-ios平台支持内置字体图标 uni-icon  
+### 内置字体图标 uni-icon @uniicon
+> HBuilderX4.33版本开始 app-android、app-ios平台支持内置字体图标 uni-icon
 
 内置 `uni-icon` 字体图标示例：
 ```html
@@ -42,7 +42,7 @@
 </script>
 ```
 
-内置 `uni-icon` 包括以下图标：  
+内置 `uni-icon` 包括以下图标：
 
 <div class="iconSample">
   <div class="iconContainer">
@@ -162,13 +162,13 @@
 .iconSample {
     background-color: #f8f8f8;
 }
-.iconContainer {
+.iconSample .iconContainer {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   display: flex;
 }
-.iconItem {
+.iconSample .iconItem {
   width: 100px;
   height: 150px;
   align-items: center;
@@ -177,7 +177,7 @@
   flex-direction: column;
   justify-content: center;
 }
-.icon {
+.iconSample .icon {
   width: 48px;
   height: 48px;
   font-family: uni-icon;
@@ -187,12 +187,12 @@
   margin-bottom: 8px;
   display: block;
 }
-.code {
+.iconSample .code {
   font-size: 14px;
   color: #f00;
   display: block;
 }
-.name {
+.iconSample .name {
   font-size: 12px;
   color: #000;
   display: block;
