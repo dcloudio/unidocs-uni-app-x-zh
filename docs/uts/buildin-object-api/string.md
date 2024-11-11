@@ -137,17 +137,6 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
 
 <!-- UTSJSON.String.charCodeAt.compatibility -->
 
-### fromCharCode(...codes : number[]):string
-
-<!-- UTSJSON.String.fromCharCode.description -->
-
-<!-- UTSJSON.String.fromCharCode.param -->
-
-<!-- UTSJSON.String.fromCharCode.returnValue -->
-
-<!-- UTSJSON.String.fromCharCode.test -->
-
-<!-- UTSJSON.String.fromCharCode.compatibility -->
 
 
 ### concat(...strings)
@@ -694,6 +683,21 @@ let b = 2
 
 
 <!-- UTSJSON.String.tutorial -->
+
+## 静态方法
+
+### fromCharCode(...codes : number[]):string
+
+<!-- UTSJSON.String.fromCharCode.description -->
+
+<!-- UTSJSON.String.fromCharCode.param -->
+
+<!-- UTSJSON.String.fromCharCode.returnValue -->
+
+<!-- UTSJSON.String.fromCharCode.test -->
+
+<!-- UTSJSON.String.fromCharCode.compatibility -->
+
 
 ## Android 平台实现
 
