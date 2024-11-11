@@ -23,3 +23,27 @@ Web平台本API调用了腾讯地图的免费gcj02坐标转换接口，该接口
 <!-- UTSAPIJSON.chooseLocation.tutorial -->
 
 <!-- UTSAPIJSON.chooseLocation.example -->
+
+## 三方地图SDK  
+
+uni.chooseLocation 依赖三方地图SDK，点击[查看详情](../component/map.md#mapsdk)
+
+## uniCloud依赖
+
+uni.chooseLocation 依赖 uniCloud 的 uni-map-common 插件，请先关联服务空间后，并安装 uni-map-common 插件，插件地址：[https://ext.dcloud.net.cn/plugin?id=13872](https://ext.dcloud.net.cn/plugin?id=13872)
+
+如果你的项目没有创建过 uniCloud 环境，则先右键项目名，创建uniCloud云开发环境，uniCloud 的 web控制台地址：[https://unicloud.dcloud.net.cn](https://unicloud.dcloud.net.cn)
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/API/chooseLocation/aa35d5a6-9b13-4fea-8a0c-1b3534584659.png)
+
+安装完 uni-map-common 插件后，需要将你的地图key配置在 `/uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-map/config.js` 如果你的项目没有此配置文件，则直接根据目录创建对应的目录和 `config.js` 文件，文件内容如下：
+
+```js
+module.exports = {
+	"default": "qqmap", // 当前使用哪个平台
+	"key": {
+		"qqmap": "", // 腾讯地图key
+		"amap": "", // 高德地图key
+	}
+}
+```
