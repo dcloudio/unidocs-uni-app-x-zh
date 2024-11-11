@@ -140,6 +140,14 @@ uni-app x 的渠道信息配置，云端需在“App打包”界面配置，详�
 
 manifest.json中不提供配置 `manifestPlaceholders` 数据，如果应用使用的插件或三方SDK需要使用，可在项目的 `nativeResources/android/manifestPlaceholders.json` 文件中配置，详情参考[Android原生应用清单文件和资源](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#manifestplaceholders)。  
 
+###### enableResourceOptimizations @enableresourceoptimizations
+
+> HBuilder4.33版本新增支持  
+
+Android平台云端打包时gradle.properties的android.enableResourceOptimizations配置项，配置后会混淆原生res资源文件，默认值为 ture，如不希望混淆原生res资源文件，可通过以下方式配置关闭：  
+```json
+"enableResourceOptimizations": false
+```
 
 ###### aaptOptions @aaptoptions  
 
