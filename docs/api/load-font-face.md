@@ -4,10 +4,10 @@
 
 <!-- UTSAPIJSON.loadFontFace.compatibility -->
 
-<!-- UTSAPIJSON.loadFontFace.param -->
-
-#### source 格式说明
+**source 格式说明**
 source 属性指定自定义字体路径时，必须使用`url()`包裹，支持本地文件路径、远程地址，app 端 4.33 版本开始支持 base64 格式数据；
+
+<!-- UTSAPIJSON.loadFontFace.param -->
 
 <!-- UTSAPIJSON.loadFontFace.returnValue -->
 
