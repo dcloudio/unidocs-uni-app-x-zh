@@ -142,9 +142,9 @@ manifest.json中不提供配置 `manifestPlaceholders` 数据，如果应用使�
 
 ###### enableResourceOptimizations @enableresourceoptimizations
 
-> HBuilder4.33版本新增支持  
+> HBuilder4.33版本新增支持 enableResourceOptimizations 配置项  
 
-Android平台云端打包时gradle.properties的android.enableResourceOptimizations配置项，配置后会混淆原生res资源文件，默认值为 ture，如不希望混淆原生res资源文件，可通过以下方式配置关闭：  
+Android平台云端打包时gradle.properties的android.enableResourceOptimizations配置项，配置是否开启Android原生res资源文件优化，开启后res资源文件名称会被混淆，默认值为 ture，如不希望混淆原生res资源文件名称，可在 app -> distribute -> android 节点下配置以下字段关闭：  
 ```json
 "enableResourceOptimizations": false
 ```
