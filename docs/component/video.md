@@ -47,6 +47,7 @@ video组件的源码[详见](https://gitcode.net/dcloud/uni-component/-/tree/mas
 <!-- UTSCOMJSON.video.children -->
 
 - 4.25版本起，App-Android平台支持子组件，可自定义全屏时的UI表现。开发者可以通过子组件替换默认的控件样式以及进一步扩展组件能力。hello uni-app x中给出了如何通过子组件实现自定义快进、快退控件的示例。
+- 4.33版本起，App-iOS平台支持子组件，可自定义全屏时的UI表现。开发者可以通过子组件替换默认的控件样式以及进一步扩展组件能力。hello uni-app x中给出了如何通过子组件实现自定义快进、快退控件的示例。
 
 ### 上下文对象API
 
