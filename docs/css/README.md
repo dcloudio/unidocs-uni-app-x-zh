@@ -233,7 +233,7 @@ app中，设置样式只有内联样式即style属性和class属性这两种方�
 
 在web中，还存在`!important`例外规则，可参考[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity#!important_%E4%BE%8B%E5%A4%96%E8%A7%84%E5%88%99)
 
-在app中，`!important`仅支持在class选择器中书写，style内联属性不支持。
+在app中，`!important`仅支持在class选择器（可以覆盖内联style中的样式）中书写，style内联属性不支持。
 
 除了`!important`外，后设的样式总是覆盖先设的样式。如果通过响应式变量绑定或DOM API操作时，要注意这一点。
 
