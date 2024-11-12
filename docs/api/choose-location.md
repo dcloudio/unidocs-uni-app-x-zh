@@ -47,3 +47,55 @@ module.exports = {
 	}
 }
 ```
+
+## 自定义样式
+
+uni.chooseLocation 内的 icon字体颜色支持通过在App.vue中写入全局css样式进行修改，以下是css样式名称
+
+以 .uni-choose-location-light 开头的为明亮模式下的样式
+
+以 .uni-choose-location-dark 开头的为暗黑模式下的样式
+
+地图中心点的icon
+
+```css
+.uni-choose-location-light .uni-choose-location-map-target-icon {
+	color: red !important;
+}
+.uni-choose-location-dark .uni-choose-location-map-target-icon {
+	color: red !important;
+}
+```
+
+确认按钮颜色
+
+```css
+.uni-choose-location-light .uni-choose-location-nav-confirm-text {
+	background-color: red !important;
+}
+.uni-choose-location-dark .uni-choose-location-nav-confirm-text {
+	background-color: red !important;
+}
+```
+
+取消按钮颜色
+
+```css
+.uni-choose-location-light .uni-choose-location-poi-search-cancel {
+	color: red !important;
+}
+.uni-choose-location-dark .uni-choose-location-poi-search-cancel {
+	color: red !important;
+}
+```
+
+已选中的POI右侧的对钩icon颜色
+
+```css
+.uni-choose-location-light .uni-choose-location-poi-item-selected-icon {
+	color: red !important;
+} 
+.uni-choose-location-dark .uni-choose-location-poi-item-selected-icon {
+	color: red !important;
+} 
+```
