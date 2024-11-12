@@ -50,11 +50,13 @@ module.exports = {
 
 ## 自定义样式
 
-uni.chooseLocation 内的 icon字体颜色支持通过在App.vue中写入全局css样式进行修改，以下是css样式名称
+uni.chooseLocation 内的 icon字体颜色支持通过在App.vue中写入全局css样式进行修改
 
 以 .uni-choose-location-light 开头的为明亮模式下的样式
 
 以 .uni-choose-location-dark 开头的为暗黑模式下的样式
+
+样式必须以 `!important;` 结尾才能生效，以下是css样式名称
 
 地图中心点的icon
 
@@ -72,9 +74,11 @@ uni.chooseLocation 内的 icon字体颜色支持通过在App.vue中写入全局c
 ```css
 .uni-choose-location-light .uni-choose-location-nav-confirm-text {
 	background-color: red !important;
+	color: #fff !important;
 }
 .uni-choose-location-dark .uni-choose-location-nav-confirm-text {
 	background-color: red !important;
+	color: #fff !important;
 }
 ```
 
