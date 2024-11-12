@@ -32,6 +32,13 @@
     - 点聚合
 :::
 
+### 上下文对象API
+
+map组件的操作api为[uni.createMapContext()](../api/create-map-context.md)。
+
+给map组件设一个id属性，将id的值传入uni.createMapContext()，即可得到map组件的上下文对象，进一步可使用`.addMarkers()`等方法。
+
+
 <!-- UTSCOMJSON.map.example -->
 
 ## 三方地图SDK@mapsdk  

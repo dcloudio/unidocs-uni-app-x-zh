@@ -122,6 +122,8 @@ uni.createCanvasContextAsync({
 
 需HBuilderX 4.21+支持。
 
+同步方式不支持小程序。仅App和web可以使用。
+
 ```html
 <template>
   <canvas id="canvas"></canvas>
