@@ -75,6 +75,8 @@ uni.chooseLocation 虽然是一个框架内置的页面。但提供了丰富的�
 
 样式必须以 `!important;` 结尾才能生效，以下是css的class名称，写入同名名称就可以覆盖。
 
+文本样式除了下方列出的 color 和 background-color 外，你还可以替换 font-family 等任何 text 标签支持的样式。
+
 地图中心点的icon
 
 ```css
@@ -86,7 +88,7 @@ uni.chooseLocation 虽然是一个框架内置的页面。但提供了丰富的�
 }
 ```
 
-确认按钮颜色
+右上方"确认"按钮
 
 ```css
 .uni-choose-location-light .uni-choose-location-nav-confirm-text {
@@ -99,7 +101,18 @@ uni.chooseLocation 虽然是一个框架内置的页面。但提供了丰富的�
 }
 ```
 
-取消按钮颜色
+左上方"取消"按钮
+
+```css
+.uni-choose-location-light .uni-choose-location-nav-back-text {
+	color: red !important;
+}
+.uni-choose-location-dark .uni-choose-location-nav-back-text {
+	color: red !important;
+}
+```
+
+搜索框右侧的"取消"文字
 
 ```css
 .uni-choose-location-light .uni-choose-location-poi-search-cancel {
@@ -110,7 +123,7 @@ uni.chooseLocation 虽然是一个框架内置的页面。但提供了丰富的�
 }
 ```
 
-已选中的POI右侧的对钩icon颜色
+已选中的POI右侧的对钩icon
 
 ```css
 .uni-choose-location-light .uni-choose-location-poi-item-selected-icon {
@@ -119,6 +132,28 @@ uni.chooseLocation 虽然是一个框架内置的页面。但提供了丰富的�
 .uni-choose-location-dark .uni-choose-location-poi-item-selected-icon {
 	color: red !important;
 } 
+```
+
+POI标题
+
+```css
+.uni-choose-location-light .uni-choose-location-poi-item-title-text {
+  color: red !important;
+}
+.uni-choose-location-dark .uni-choose-location-poi-item-title-text {
+  color: red !important;
+}
+```
+
+POI地址
+
+```css
+.uni-choose-location-light .uni-choose-location-poi-item-detail-text {
+  color: red !important;
+}
+.uni-choose-location-dark .uni-choose-location-poi-item-detail-text {
+  color: red !important;
+}
 ```
 
 ## 历史问题
