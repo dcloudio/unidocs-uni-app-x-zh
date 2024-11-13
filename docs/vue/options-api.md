@@ -112,12 +112,12 @@
 
 一个在渲染函数中以编程方式使用插槽时辅助类型推断的选项。
 
-示例 [详情](<!-- VUEJSON.E_component-instance.slots_slots-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-slot_v-slot-options.gitUrl -->)
 
 作用域插槽需在组件中指定插槽数据类型
-::: preview <!-- VUEJSON.E_component-instance.slots_slots-options.webUrl -->
+::: preview <!-- VUEJSON.E_directive.v-slot_v-slot-options.webUrl -->
 
-<!-- VUEJSON.E_component-instance.slots_slots-options.code -->
+<!-- VUEJSON.E_directive.v-slot_v-slot-options.code -->
 
 :::
 
