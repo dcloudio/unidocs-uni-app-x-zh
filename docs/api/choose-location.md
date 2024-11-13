@@ -2,17 +2,22 @@
 
 <!-- UTSAPIJSON.chooseLocation.description -->
 
-::: warning 注意
+调用本API会打开一个新窗体，在地图中选择一个位置，在success回调中返回选择的位置名称和坐标。
+
+本功能依赖地图组件。App和Web需在manifest.json中正确配置地图模块以及相关的key信息。
+
+不同平台支持的地图不同，具体见[map组件](../component/map.md)。
+
+国内图商的坐标系都是gcj02坐标，国外图商是wgs84坐标。
+
 地图是商业服务，授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。
-:::
+
 
 <!-- UTSAPIJSON.chooseLocation.compatibility -->
 
 <!-- UTSAPIJSON.chooseLocation.param -->
 
 <!-- UTSAPIJSON.chooseLocation.returnValue -->
-
-<!-- UTSAPIJSON.chooseLocation.tutorial -->
 
 <!-- UTSAPIJSON.chooseLocation.example -->
 
@@ -164,3 +169,5 @@ uni-app x 4.24以前，Web平台本API调用了腾讯地图的免费gcj02坐标�
 2. 确保在地图厂商那里配额足够
 3. 确保在地图厂商那里有周边服务的权限。否则无法获取周围地址
 4. 确保自己的域名在地图厂商那里正确配置了域名白名单
+
+<!-- UTSAPIJSON.chooseLocation.tutorial -->
