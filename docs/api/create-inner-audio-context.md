@@ -1,5 +1,26 @@
 ## uni.createInnerAudioContext() @createinneraudiocontext
 
+**注意：使用完后，必须调用destory方法将资源进行释放**
+
+**支持格式**
+
+|格式|web|Android|
+|:-|:-|:-|
+|flac	|√|√|
+|m4a	|√|√|
+|ogg	|√|√|
+|ape	|√|√|
+|amr	|√|√|
+|wma	|√|√|
+|wav	|√|√|
+|mp3	|√|√|
+|mp4	|√|√|
+|aac	|√|√|
+|aiff	|√|x|
+|caf	|√|x|
+
+
+
 <!-- UTSAPIJSON.createInnerAudioContext.description -->
 
 <!-- UTSAPIJSON.createInnerAudioContext.compatibility -->
