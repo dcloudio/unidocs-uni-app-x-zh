@@ -59,7 +59,7 @@ module.exports = {
 
 配置完毕后，本地运行即可使用。正式发布时，记得对uniCloud目录点右键，将相关云函数和模块提交发布到正式服务器上。
 
-如果需要在uniCloud服务器更安全的验证客户端的身份，请开通[云端一体安全网络](https://doc.dcloud.net.cn/uniCloud/secure-network.html)。它可以对App的包名、证书进行校验，防止其他人盗用你的接口。
+如果需要在uniCloud服务器更安全的验证客户端的身份，你可以在云函数中校验客户的token，避免其他人伪造请求访问你的云函数。
 
 ## 自定义样式@custom
 > HBuilderX 4.33+
