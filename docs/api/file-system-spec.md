@@ -30,6 +30,13 @@ const fs = uni.getFileSystemManager()
 	+ 应用内置沙盒目录（`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`）：存放框架的网络缓存（如网络图片、视频、web-view的缓存）、storage。
 	+ 沙盒外目录
 
+**uts插件开发**  
+在uts插件开发中调用系统 API 时可能需要平台相关的绝对路径，可以通过以下方式进行转换：  
+- app-android平台  
+  [UTSAndroid.convert2AbsFullPath](../uts/utsandroid.md#convert2absfullpath)  
+- app-ios平台  
+  [UTSiOS.convert2AbsFullPath](../uts/utsios.md#convert2absfullpath)  
+
 ## 代码包文件@package
 
 代码包文件，是源码工程中的静态资源文件，由编译器打包到发行包（如apk）中。全平台都如此。
