@@ -418,7 +418,7 @@ mavenCentral()
 
 对于Android开发中高频使用的`application`/`activity`等系统能力、`uni-app`/`uni-app x` 运行时框架信息等，UTS通过内置对象`UTSAndroid` 进行了封装，以便开发者调用
 
-下面列出了常见API的使用示例，完整的 `UTSAndroid` API文档参考：https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html
+下面列出了常见API的使用示例，完整的 `UTSAndroid` [API文档](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html)
 
 
 #### getAppContext
