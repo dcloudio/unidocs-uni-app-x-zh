@@ -59,6 +59,7 @@
   * [内存](memory.md)
   * [截屏事件](capture-screen.md)
   * [监听权限申请](create-request-permission-listener.md)
+  * [扫码](scan-code.md)
 * 媒体
   * [拍照或从相册选择图片](choose-image.md)
   * [图片预览](preview-image.md)
@@ -93,8 +94,12 @@
 * 支付
   * [支付（requestPayment）](request-payment.md)
   * [虚拟支付（requestVirtualPayment）](virtual-payment.md)
+* 分享
+  * [shareWithSystem](share-with-system.md)
 * 推送
   * [push](uni-push.md)
+* 统计
+  * [统计采集上报](report.md)
 * 组件上下文对象
   * [创建 web-view 组件上下文对象](create-webview-context.md)
   * [创建 video 组件上下文对象](create-video-context.md)
