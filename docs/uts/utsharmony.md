@@ -1,7 +1,7 @@
 # UTSHarmony
 
 
-## 实例方法
+## 静态方法
 
 
 ### devicePX2px(px)

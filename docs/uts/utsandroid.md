@@ -715,7 +715,7 @@ console.log(UTSAndroid.getTopPageActivity())
 
 
 
-### getGenericType<T>(): Type
+### getGenericType\<T>(): Type
 
 <!-- UTSJSON.UTSAndroid.getGenericType.description -->
 
@@ -725,7 +725,7 @@ console.log(UTSAndroid.getTopPageActivity())
 
 <!-- UTSJSON.UTSAndroid.getGenericType.compatibility -->
 
-### getGenericClassName<T>(): string
+### getGenericClassName\<T>(): string
 
 <!-- UTSJSON.UTSAndroid.getGenericClassName.description -->
 
