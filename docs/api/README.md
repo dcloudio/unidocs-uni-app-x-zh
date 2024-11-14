@@ -72,6 +72,9 @@ function getDeviceModel(): string {
 
 更复杂的例子可以[参考](ext.md#kt2uts)
 
+## promise
+uni的异步api，均支持callback，但只有部分支持promise。对于支持promise的API，在API文档的返回值描述中会包含`Promise`。
+
 ## 生命周期@liftcycle
 
 生命周期是一种特殊事件，对于应用、页面、组件，uni-app x提供了一批对应的生命周期，比如应用的onLaunch、页面的onLoad、组件的created。
