@@ -15,7 +15,9 @@
 ```
 
 ### 内置字体图标 uni-icon @uniicon
-> HBuilderX4.33版本开始 app-android、app-ios平台支持内置字体图标 uni-icon
+> HBuilderX4.33+
+
+app-android、app-ios内部框架在开发时用到了一些字体，同时共享出来给开发者，也可以使用这些内置字体。
 
 内置 `uni-icon` 字体图标示例：
 ```html
