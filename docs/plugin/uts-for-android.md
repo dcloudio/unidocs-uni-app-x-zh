@@ -353,7 +353,7 @@ so文件:
 
 目前暂不支持so文件直接本地调试，所以在HBuilderX 4.26版本支持 [混编](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin-hybrid.html) 之前,推荐开发者将so 封装为AAR，或者分别集成 so和jar文件，自定义基座后再进行调试
 
-HBuilderX 4.26版本之后，开发者可以使用混编kotlin代码的方式，直接集成so文件。参考[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs)
+HBuilderX 4.26版本之后，开发者可以使用混编kotlin代码的方式，直接集成so文件。参考[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/alpha/uni_modules/uts-nativepage/utssdk/app-android/libs)
 
 ### 3.5 其他配置文件
 
