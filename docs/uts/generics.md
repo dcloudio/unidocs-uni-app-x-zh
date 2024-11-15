@@ -90,7 +90,7 @@ function testArray<T extends Array<unknown>>(arg: T): T {
 
 ### 安卓平台使用泛型注意事项
 
-ts本质是擦除类型的。在强类型语言中，传递泛型时如将泛型类型作为值使用，需通过特殊方式将泛型类型作为值使用，可以根据传入来动态决定返回类型。[详见](../plugin/uts-for-android.md#_6-6-%E6%B3%9B%E5%9E%8B%E4%BC%A0%E9%80%92%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98)
+ts本质是擦除类型的。在强类型语言中，传递泛型时如将泛型类型作为值使用，需通过特殊方式将泛型类型作为值使用，可以根据传入来动态决定返回类型。[详见](../plugin/uts-for-android.html#lost-generics)
 
 ### iOS 平台使用泛型注意事项
 
