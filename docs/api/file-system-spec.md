@@ -154,8 +154,8 @@ uni-app x的部分内置API会产生临时文件会放置在本cache目录，如
 - uni-download // uni.downloadFile的默认下载地址 （在HBuilderX 3.98时曾使用目录uniDownloads，从3.99起调整为uni-download）
 - uni-media // uni.chooseImage、uni.chooseVideo拍摄或选择的相册文件，uni.compressImage、uni.compressVideo压缩后的文件，uni.getImageInfo网络图片下载到本地的文件
 - uni-snapshot // element takeSnapShot截图APi存储的路径
-- uni-crash //存放崩溃日志
 - uni-audio //存放音频文件
+- uni-crash //存放崩溃日志
 	* java //java、kotlin层崩溃日志
 	* c //c、so库崩溃日志
 
