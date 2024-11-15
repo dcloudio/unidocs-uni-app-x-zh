@@ -22,7 +22,7 @@ show-value属性设为true后，会在横条右侧显示一个数字。
 - 在 app-vue/web/小程序 平台高度为 18px, 默认 `margin: 10px 18px;`，实际占用高度为 `38px`
 - 默认占用高度是一致的，调整样式后会出现差异
 - 4.18+ App-Android 平台，优化了在滚动容器中的行为，当水平拖动 slider 超过 4 * dpi 时将阻止默认行为，避免滚动过程中触发 slider 变动
-- 平台差异：当 max 值不能整除 step 值时，app-android/web 平台滑块最大值只能滑动到 max 值整除 step 值的位置，app-ios/微信小程序平台滑块可以滑动到最右侧返回值会四舍五入到 step 的精度值，app-ios 平台 4.33 版本调整为和 app-android/web 平台一致，示例如下:
+- 平台差异：当 max 值不能整除 step 值时，app-android/web 平台滑块不能滑动到最末端，最大滑动值为 max 值整除 step 值的位置，app-ios/微信小程序平台滑块可以滑动到最末端，返回值会四舍五入到 step 的精度值，app-ios 平台 4.33 版本调整为和 app-android/web 平台一致，示例如下:
 ```html
 <template>
   <view>
