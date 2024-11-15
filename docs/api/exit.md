@@ -8,7 +8,7 @@
 
 <!-- UTSAPIJSON.exit.returnValue -->
 
-本API在iOS平台仅uni-app x SDK模式中支持应用退出
+本API在iOS平台仅[uni-app x SDK](../native/)模式中支持应用退出
 
 Android平台的应用退出分热退出和冷退出。
 - 冷退出是彻底杀掉
