@@ -953,7 +953,7 @@ function getAppName(context : Context) : string {
 }
 ```
 
-### 6.6 泛型传递丢失的问题 @lost-generics
+### 7.6 泛型传递丢失的问题 @lost-generics
 
 如果在UTS中声明一个包含泛型声明的方法，可能会出现泛型丢失，原因是因为普通的kotlin 方法没有实现泛型的传递
 
@@ -984,6 +984,49 @@ export function request<T>(options : RequestOptions<T>) : RequestTask {
 	//xxx
 }
 ```
+
+
+**注意：不要在`inline`方法中创建局部function，比如request的success回调、Promise的回调，原因是kotlin语言的限制（inline方法展开到内联位置，也会把局部方法展开过去，这是不允许的），由此把使用局部function的逻辑封装到非内联的方法中，绕过此限制。**  
+
+使用
+
+```
+const respone = await boxRequest<CustomType>("xxxx")
+```
+
+此示例中，网络请求泛型为`string`在4.25版本以下会导致错误，此问题已在4.25进行修复 [issue](https://issues.dcloud.net.cn/pages/issues/detail?id=4010)
+
+```
+@UTSAndroid.keyword("inline")
+@UTSAndroid.keyword("reified")
+export function boxRequest<T>(url : string) : Promise<T> {
+	return innerRequest<T>(url, UTSAndroid.getGenericClassName<T>(), UTSAndroid.getGenericType<T>())
+}
+
+function innerRequest<T>(url : string, clzName : string, type : Type) : Promise<T> {
+	return new Promise<T>((resolve, reject) => {
+		uni.request<string>({
+			url: url,
+			method: "GET",
+			success: (e : RequestSuccess<string>) => {
+				const result = JSON.parse<T>(e.data!, type)
+				if (result != null) {
+					resolve(result)
+				} else if ("java.lang.Object".equals(clzName, true)) {// 解决泛型是any，但后端返回string的情况。
+					resolve(e.data! as T)
+				} else{
+					reject("parsing failure")
+				}
+			},
+			fail(e : RequestFail) {
+				reject(e)
+			},
+		} as RequestOptions<string>)
+	});
+}
+```
+
+
 
 ### 7.7 获取原生Class 对象
 
