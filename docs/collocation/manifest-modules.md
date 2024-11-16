@@ -35,10 +35,20 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
     + 包括API：[uni.createCanvasContextAsync](../api/create-canvas-context-async.md)、[CanvasRenderingContext2D](../api/canvasrenderingcontext2d.md)、[UniCanvasElement](../dom/unicanvaselement.md)
     + 依赖的模块：无
 
+- uni-chooseLocation
+  [使用地图选择位置](../api/choose-location.md)模块（`HBuilderX4.33+`）
+    + 包括API：[uni.chooseLocation](../api/choose-location.md)
+    + 依赖的模块：uni-getLocation、uni-cloud-client、
+
 - uni-cloud-client
   调用uniCloud[云函数/云对象](https://doc.dcloud.net.cn/uniCloud/cf-functions.html)模块
     + 包括API：[uniCloud.importObject](https://doc.dcloud.net.cn/uniCloud/cloud-obj.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%B0%83%E7%94%A8)、[uniCloud.callFunction](https://doc.dcloud.net.cn/uniCloud/cf-callfunction.html#callfunction%E6%96%B9%E6%B3%95)
-    + 依赖的模块：uni-media、uni-network
+    + 依赖的模块：uni-media、uni-network、uni-map-tencent
+
+- uni-createInnerAudioContext
+  [音频](../api/create-inner-audio-context.md)模块（`HBuilderX4.33+`）
+    + 包括API：[uni.createInnerAudioContext](../api/create-inner-audio-context.md#createinneraudiocontext)
+    + 依赖的模块：无
 
 - uni-createRequestPermissionListener
   监听权限申请模块（`HBuilderX4.0+`）
@@ -114,6 +124,11 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
     + 包括API：[uni.createPushMessage](../api/push.md#createpushmessage)、[uni.getPushClientId](../api/push.md#getpushclientid)、[uni.offPushMessage](../api/push.md#offpushmessage)、[uni.onPushMessage](../api/push.md#onpushmessage)
     + 依赖的模块：无
 
+- uni-shareWithSystem
+  [系统分享](../api/share-with-system.md)模块（`HBuilderX4.33+`）
+    + 包括API：[uni.shareWithSystem](../api/share-with-system.md#sharewithsystem)
+    + 依赖的模块：无
+
 - uni-verify
   [App一键登录](../api/get-univerify-manager.md)模块（`HBuilderX3.99+`）
     + 包括API：[uni.getUniverifyManager](../api/get-univerify-manager.md#getuniverifymanager)、[UniverifyManager.preLogin](../api/get-univerify-manager.md#prelogin)、[UniverifyManager.login](../api/get-univerify-manager.md#login)
@@ -138,6 +153,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 再次强调，以上模块不属于ext组件或api，是内置模块。但如果你的代码中没有使用这些组件和api，打正式包或自定义基座时会被摇掉。
 
 **注意**
+
 uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需在使用此uts插件的 uni-app x 项目 manifest.json 文件的 app -> distribute -> modules 下手动添加对应节点：
 ```json
 	//以下示例手动添加  uni-media  模块
