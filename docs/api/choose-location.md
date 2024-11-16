@@ -62,7 +62,9 @@ module.exports = {
 
 请务必注意地图的key，是有权限的可以访问周围POI信息的，且有足够的额度。这涉及付费采购。点此联系DCloud咨询[获取优惠](https://ask.dcloud.net.cn/explore/map/)
 
-配置完毕后，本地运行即可使用。正式发布时，记得对uniCloud目录点右键，将相关云函数和模块提交发布到正式服务器上。
+配置完毕后，本地运行即可使用。正式发布时，记得对uniCloud目录点右键，将相关云函数和模块提交发布到正式服务器上。具体操作如下图所示
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/API/chooseLocation/6ce6b6f3-2334-40d5-bd06-69efb5174305.png)
 
 如果需要在uniCloud服务器更安全的验证客户端的身份，你可以在云函数中校验客户的token，避免其他人伪造请求访问你的云函数。
 
