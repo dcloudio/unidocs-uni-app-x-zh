@@ -4,12 +4,9 @@
 
 <!-- UTSAPIJSON.exit.compatibility -->
 
-<!-- UTSAPIJSON.exit.param -->
+#### app平台差异  
 
-<!-- UTSAPIJSON.exit.returnValue -->
-
-本API在iOS平台仅[uni-app x SDK](../native/)模式中支持应用退出
-
+##### app-android平台  
 Android平台的应用退出分热退出和冷退出。
 - 冷退出是彻底杀掉
 - 热退出是关闭可见的activity，后台进程不退出（比如push）
@@ -17,6 +14,14 @@ Android平台的应用退出分热退出和冷退出。
 基本上主流Android App都是热退出。本API也是热退出。
 
 热退出，即通知了os：这个App用户不用了，在os需要时可以回收。如果在os回收之前，用户又启动这个App，会感觉启动速度更快一些。
+
+##### app-ios平台  
+iOS平台仅[uni-app x SDK](../native)模式中支持应用退出。
+
+
+<!-- UTSAPIJSON.exit.param -->
+
+<!-- UTSAPIJSON.exit.returnValue -->
 
 <!-- UTSAPIJSON.exit.tutorial -->
 
