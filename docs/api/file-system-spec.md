@@ -143,7 +143,7 @@ uni-app x的部分内置API会产生临时文件会放置在本cache目录，如
 - uni.chooseImage、uni.chooseVideo拍摄或选择的相册文件
 - uni.compressImage、uni.compressVideo压缩后的文件
 - uni.getImageInfo网络图片下载到本地的文件
-- uni.createInnerAudioContext()缓存的audio文件
+- uni.createInnerAudioContext缓存的audio文件
 <!-- - 录音的文件 -->
 - dom element的截图API
 
