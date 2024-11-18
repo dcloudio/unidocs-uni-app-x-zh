@@ -46,7 +46,7 @@ DCloud的所有服务器API，都是基于uniCloud的。并且uniCloud早已经�
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/API/chooseLocation/aa35d5a6-9b13-4fea-8a0c-1b3534584659.png)
 
-关联服务空间后，将 uni-map-common 插件导入项目，插件地址：[https://ext.dcloud.net.cn/plugin?id=13872](https://ext.dcloud.net.cn/plugin?id=13872)
+关联服务空间后，将 uni-map-common 插件导入项目，插件地址：[https://ext.dcloud.net.cn/plugin?id=13872](https://ext.dcloud.net.cn/plugin?id=13872) 
 
 安装完 uni-map-common 插件后，需要将你的地图key配置在 `/uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-map/config.js` 如果你的项目没有此配置文件，则直接根据目录创建对应的目录和 `config.js` 文件，文件内容如下：
 
@@ -67,6 +67,8 @@ module.exports = {
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/API/chooseLocation/6ce6b6f3-2334-40d5-bd06-69efb5174305.png)
 
 如果需要在uniCloud服务器更安全的验证客户端的身份，你可以在云函数中校验客户的token，避免其他人伪造请求访问你的云函数。
+
+[uni-map-common错误码](https://doc.dcloud.net.cn/uniCloud/uni-map-common.html#errorcode)
 
 ## 自定义样式@custom
 > HBuilderX 4.33+
