@@ -21,7 +21,7 @@
 
 **缓存说明**
 
-播放的网络音频，默认会缓存到应用cache目录的uni-audio文件夹下，默认大小为100M,超过后会根据最近最少使用的缓存算法自动进行清除
+播放的网络音频，默认会缓存到应用cache目录的uni-audio文件夹下，默认大小为100M，超过后会根据最近最少使用的缓存算法自动进行清除
 
 
 <!-- UTSAPIJSON.createInnerAudioContext.description -->
