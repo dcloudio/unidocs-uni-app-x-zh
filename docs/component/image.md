@@ -27,6 +27,8 @@ app端支持的图片格式如下：
 - [svg插件](https://ext.dcloud.net.cn/search?q=svg&orderBy=Relevance&cat1=8&cat2=82)
 - [apng插件](https://ext.dcloud.net.cn/search?q=apng&orderBy=Relevance&cat1=8&cat2=82)
 
+注意：webp在不同小程序平台策略不同，有的需要打开 webp 属性，有的仅支持来自服务器的webp。
+
 ### src路径支持说明
 
 - 本地路径/static方式  
