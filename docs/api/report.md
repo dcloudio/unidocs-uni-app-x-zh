@@ -1,24 +1,17 @@
 ## uni.report(options) @report
 
 <!-- UTSAPIJSON.report.description -->
+
 ### 注意事项
 `uni.report` 需要依赖 [`uni统计`](https://ext.dcloud.net.cn?name=uni-stat)，集成方式请查看[文档](https://uniapp.dcloud.net.cn/uni-stat-uniappx)。
+
 <!-- UTSAPIJSON.report.compatibility -->
 
 <!-- UTSAPIJSON.report.param -->
 
 <!-- UTSAPIJSON.report.returnValue -->
 
-<!-- UTSAPIJSON.report.example -->
-
-<!-- UTSAPIJSON.report.tutorial -->
-
-<!-- UTSAPIJSON.report.example -->
-
-<!-- UTSAPIJSON.general_type.name -->
-
-<!-- UTSAPIJSON.general_type.param -->
-### 如何使用自定义上报
+### 如何使用自定义上报@custom-report
 
 ```js
 // 参数支持字符串
@@ -38,5 +31,12 @@ uni.report({
   // ...
  }
 })
-
 ```
+
+<!-- UTSAPIJSON.report.example -->
+
+<!-- UTSAPIJSON.report.tutorial -->
+
+<!-- UTSAPIJSON.general_type.name -->
+
+<!-- UTSAPIJSON.general_type.param -->
