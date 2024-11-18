@@ -1041,6 +1041,10 @@ let getClassByInstance = UTSAndroid.getJavaClass(UTSAndroid.getUniActivity()!)
 console.log(getClassByInstance);
 ```
 
+### 7.8 推断为XXX，但预期为Unit
+
+`uts`中的 `Void` 对应 `kotlin`语言中的 `Unit`,当报错：预期为 Unit 时，实际上是期望`Void`
+
 ## 已知待解决问题(持续更新)
 
 ### 结构入参 boolean 参数默认为true
