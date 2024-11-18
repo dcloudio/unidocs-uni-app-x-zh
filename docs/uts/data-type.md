@@ -645,6 +645,22 @@ console.log(a == null) // true
 console.log(b == null) // false
 ```
 
+HBuilderX 4.31之前的版本，在编译为kotlin或swift时，uts不会自动推断函数的返回值，因此在函数返回值并非undefined类型时需要自行添加返回值的类型信息。例如如下代码
+
+```ts
+const arr: number[] = [1,2,3]
+
+// 错误写法
+const arr1: number[] = arr.map((item: number) => { 
+	return item + 1;‌
+});
+
+// 正确写法
+const arr2: number[] = arr.map((item: number): number => { 
+  return item + 1;‌
+});
+```
+
 ## 日期（Date）@date
 
 日期对象表示日期，包括年月日时分秒等各种日期。
