@@ -1,4 +1,3 @@
-> * 快速集成打包，可参考HBuilder工程
 > * SDK基于Swift开发，因此原生Objective-C语言开发的应用需要新建一个Swift文件用于添加Swift运行环境以及桥接SDK的API，详情可参考UniAppXDemo工程中的`UniAppBridge`
 
 ## 初始化SDK
@@ -52,9 +51,14 @@ UniSDKEngine.didFailToRegisterForRemoteNotifications(error)
 UniSDKEngine.applicationDidReceiveRemoteNotificationCompletionHandler(application, userInfo, completionHandler)
 ```
 
-## 开始渲染
+## 跳转页面
 ``` swift
-UniSDKEngine.shared.render(toView: toView)
+if UniSDKEngine.shared.getAppManager()?.getCurrentApp() == nil {
+    // uni.exit() 方法会销毁app，所以在这里需要判断currentApp是否为空
+    UniSDKEngine.shared.getAppManager()?.create()
+}
+let viewController = UniAppRootViewController()
+self.navigationController?.pushViewController(viewController, animated: true)
 ```
 
 
