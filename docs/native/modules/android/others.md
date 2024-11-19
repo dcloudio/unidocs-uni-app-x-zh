@@ -13,7 +13,9 @@
 |uni-cloud-client					|uni-cloud-client-release.aar							|-																																										|-				|uni-network<br/>uni-storage<br/>uni-getSystemInfo<br/>uni-prompt<br/>uni-media<br/>uni-websocket	|
 |uni-media							|uni-media-release.aar<br/>nativeobj-preview-release.aar|com.github.bumptech.glide:glide:4.9.0<br/>androidx.recyclerview:recyclerview:1.0.0<br/>androidx.appcompat:appcompat:1.6.1<br/>"androidx.activity:activity-ktx:1.9.2"	|-				|uni-prompt																							|
 |uni-privacy						|uni-privacy-release.aar								|-																																										|-				|-																									|
-|uni-getProvider					|uni-getProvider-release.aar							|-																																										|-				|-																									|
+|uni-getProvider					|uni-getProvider-release.aar							|-																																										|-				|-	
+|uni-shareWithSystem				|uni-shareWithSystem-release.arr						|-																																										|-				|-		
+|uni-createInnerAudioContext		|uni-createInnerAudioContext-release.aar				|com.google.android.exoplayer:exoplayer-core:2.18.0																																										|-				|-																								|
 		
 各模块对应的API可参考文档[App端支持的内置模块列表](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#utsmodules)
 
