@@ -51,7 +51,7 @@ UniSDKEngine.didFailToRegisterForRemoteNotifications(error)
 UniSDKEngine.applicationDidReceiveRemoteNotificationCompletionHandler(application, userInfo, completionHandler)
 ```
 
-## 跳转页面
+## 进入SDK页面
 ``` swift
 if UniSDKEngine.shared.getAppManager()?.getCurrentApp() == nil {
     // uni.exit() 方法会销毁app，所以在这里需要判断currentApp是否为空
@@ -61,6 +61,8 @@ let viewController = UniAppRootViewController()
 self.navigationController?.pushViewController(viewController, animated: true)
 ```
 
+## 退出SDK页面
+通过[uni.exit()](https://doc.dcloud.net.cn/uni-app-x/api/exit.html#exit)退出
 
 # 通信
 iOS平台目前不支持直接在uvue页面调用原生API，开发者可通过UTS插件`发送/接收 通知消息`实现与原生App通信，具体实现代码如下：
