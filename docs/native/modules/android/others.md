@@ -3,7 +3,7 @@
 |模块名称							|本地依赖库												|线上依赖库																																								|最低支持安卓版本	|依赖的模块																							|
 |:--								|:--													|:--																																									|:--			|:--																								|
 |uni-createRequestPermissionListener|uni-createRequestPermissionListener-release.aar		|-																																										|-				|-																									|
-|uni-createWebviewContext			|uni-createWebviewContext-release.aar					|-																																										|-				|-																									|
+|uni-createWebviewContext			|uni-createWebviewContext-release.aar					|androidx.webkit:webkit:1.6.0																																			|-				|-																									|
 |uni-fileSystemManager				|uni-fileSystemManager-release.aar						|org.brotli:dec:0.1.2																																					|-				|-																									|
 |uni-getLocation-system				|uni-getLocation-system-release.aar						|-																																										|-				|-																									|
 |uni-getNetworkType					|uni-getNetworkType-release.aar							|-																																										|-				|-																									|
