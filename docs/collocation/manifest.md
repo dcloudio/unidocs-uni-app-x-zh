@@ -197,6 +197,29 @@ Android平台云端打包时build.gradle的buildFeatures配置项，支持的属
 
 <!-- MANIFESTJSON.distribute_ios.compatibility -->
 
+###### CFBundleName @cfbundlename  
+
+>HBuilder4.34版本新增支持  
+
+iOS平台配置应用内部名称，默认值为“UniAppX”，最多支持15个字符，详细说明参考[苹果官方文档](https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundlename)。  
+以下为配置应用内部名称示例：
+```json  
+{
+  "CFBundleName": "MyApp"
+}
+```
+
+###### UIRequiresFullScreen @uirequiresfullscreen  
+
+>HBuilder4.34版本新增支持  
+
+iOS平台配置应用在iPad设置是否能够与其他应用程序共享屏幕（分屏显示），需配置应用支持iPad设备时有效，默认值为true（可与其他应用程序共享屏幕）。更多信息参考[苹果官方文档](https://developer.apple.com/documentation/bundleresources/information-property-list/uirequiresfullscreen)。  
+以下为配置应用不与其他应用共享屏幕示例：
+```json  
+{
+  "UIRequiresFullScreen": false
+}
+```
 
 ## 其它设置  
 
