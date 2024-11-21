@@ -60,6 +60,16 @@
     return count.value * 2
   })
   ```
+- 目前需要可传参的计算属性时，需要手动指定返回值类型
+  ```ts
+  const stateText = computed(() : (state : number) => string => {
+    return (state : number) : string => {
+      const stateArr = ['未审核', '审核中', '审核通过']
+      return stateArr[state]
+    }
+  })
+  stateText.value(1)
+  ```  
 :::
 
 示例 [详情](<!-- VUEJSON.E_reactivity.core_computed_computed-composition.gitUrl -->)
