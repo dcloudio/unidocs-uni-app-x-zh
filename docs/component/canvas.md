@@ -4,22 +4,18 @@
 
 <!-- UTSCOMJSON.canvas.compatibility -->
 
-App平台4.25之前没有完整的canvas组件，但提供了`drawablecontext`。
+App平台4.25之前没有完整的canvas组件，但提供了`DrawableContext`。
 * 每个view，都可以通过[draw API](../dom/drawablecontext.md)，高性能的画各种形状、写字。这组API与web的canvas api接近但不同。
 * 截图或海报需求，无需像webview那样通过canvas中转，app平台view直接提供截图API，[takesnapshot](../dom/unielement.html#takesnapshot)。
-* 二维码展示需求：[见插件市场](https://ext.dcloud.net.cn/search?q=%E4%BA%8C%E7%BB%B4%E7%A0%81&uni-appx=1)
-* 图表需求：[插件市场搜echart](https://ext.dcloud.net.cn/search?q=chart&orderBy=Relevance&uni-appx=1)、[插件市场搜F2](https://ext.dcloud.net.cn/search?q=f2&orderBy=Relevance&uni-appx=1)
-* 手写签名：[见插件市场](https://ext.dcloud.net.cn/search?q=%E7%AD%BE%E5%90%8D&orderBy=Relevance&uni-appx=1)
-* 使用web-view中的canvas也是一种方案，uvue页面里的web-view组件可以和uvue页面里的uts代码双向通信。
 
 从4.25起，App平台也补充了canvas组件。
 
-canvas组件和drawablecontext的区别是：
+`canvas组件`和`DrawableContext`的区别是：
 1. canvas组件的语法是W3C标准语法
-2. canvas组件全平台支持，而drawablecontext仅app支持
-3. canvas组件是一个独立组件，而drawablecontext是对现有的view组件进行绘制
-4. drawablecontext在iOS上绘制文字的性能不佳，其原生系统如此
-5. 对于复杂绘制场景，比如游戏，canvas组件的性能优于drawablecontext
+2. canvas组件全平台支持，而DrawableContext仅app支持
+3. canvas组件是一个独立组件，而DrawableContext是对现有的view组件进行绘制
+4. DrawableContext在iOS上绘制文字的性能略低，其原生系统如此
+5. 对于复杂绘制场景，比如游戏，canvas组件的性能优于DrawableContext
 6. canvas是一个独立模块，占用几百K体积，不使用时会被摇树摇掉
 
 <!-- UTSCOMJSON.canvas.attribute -->
@@ -144,5 +140,17 @@ context.scale(dpr, dpr); // 仅需调用一次，当调用 reset 方法后需要
 ```
 
 <!-- UTSCOMJSON.canvas.example -->
+
+## 场景
+
+canvas有很多应用场景，插件市场有很多封装好的插件：
+
+* 图表需求：[xCharts 基于原生canvas的图表方案](https://ext.dcloud.net.cn/plugin?id=21099)。插件市场还有基于webview的图表插件：[echart](https://ext.dcloud.net.cn/search?q=chart&orderBy=Relevance&uni-appx=1)、[F2](https://ext.dcloud.net.cn/search?q=f2&orderBy=Relevance&uni-appx=1)
+* 二维码展示：[见插件市场](https://ext.dcloud.net.cn/search?q=%E4%BA%8C%E7%BB%B4%E7%A0%81&uni-appx=1)
+* 手写签名：[见插件市场](https://ext.dcloud.net.cn/search?q=%E7%AD%BE%E5%90%8D&orderBy=Relevance&uni-appx=1)
+* 抽奖转盘：[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%BD%AC%E7%9B%98&orderBy=Relevance&uni-appx=1)
+* 刮刮卡：[见插件市场](https://ext.dcloud.net.cn/search?q=%E5%88%AE%E5%88%AE%E5%8D%A1&orderBy=Relevance&uni-appx=1)
+
+一些web平台的canvas插件，并没有适配uts。此时使用web-view中的canvas也是一种方案，uvue页面里的[web-view组件](./web-view.md)可以和uvue页面里的uts代码双向通信。
 
 <!-- UTSCOMJSON.canvas.reference -->

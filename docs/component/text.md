@@ -16,15 +16,14 @@
 
 - App-Android平台文本换行规则（表现在文本断行位置等）可能和浏览器有差异。
 
-## 子组件
+<!-- UTSCOMJSON.text.children -->
 
 text组件在web浏览器渲染（含浏览器、小程序webview渲染模式、app-vue）和uvue中，可以并只能嵌套text组件。
 
-app-uvue中的 text 组件虽然支持嵌套，但子组件不继承父组件样式。这样使用会在编译到各平台时可能产生差异，所以尽量避免使用text嵌套。
-
-app 平台子组件设置的排版相关样式（如position、display、width、height、margin、padding等）以及部分text独有样式（如text-align、lines、white-space、text-overflow）不生效，
-
-<!-- UTSCOMJSON.text.children -->
+app-uvue中的 text 组件虽然支持嵌套，但其实只是提供一个简单的样式变化方案，其实限制较多：
+1. 子组件不继承父组件样式。这样使用会在编译到各平台时可能产生差异。
+2. 子组件设置的排版相关样式（如position、display、width、height、margin、padding等）以及部分text独有样式（如text-align、lines、white-space、text-overflow）不生效
+3. 子组件没有单独的事件响应。如有这方面需求，请改用 [rich-text](./rich-text.md)
 
 <!-- UTSCOMJSON.text.example -->
 
