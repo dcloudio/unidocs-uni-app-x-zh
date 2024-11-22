@@ -70,7 +70,117 @@ module.exports = {
 
 ### uni-map-common错误码
 
-uni.chooseLocation 获取POI列表的功能依赖uniCloud中的 uni-map-common 插件，该插件在请求地图服务器失败时会抛出错误信息，点击查看[uni-map-common错误码](https://doc.dcloud.net.cn/uniCloud/uni-map-common.html#errorcode)
+uni.chooseLocation 获取POI列表的功能依赖uniCloud中的 [uni-map-common](https://doc.dcloud.net.cn/uniCloud/uni-map-common.html) 插件，该插件在请求地图服务器失败时会抛出错误信息，点击查看[uni-map-common错误码](https://doc.dcloud.net.cn/uniCloud/uni-map-common.html#errorcode)
+
+
+### 透传鉴权参数payload@payload
+> HBuilderX 4.35+
+
+uni.chooseLocation 自HBuilderX 4.35+ 起，新增了一个参数payload，为 UTSJSONObject 类型，此参数会透传给uni-map-co，开发者可在请求地图服务器之前对参数进行鉴权，比如只有登录用户才能调用POI查询接口等等。
+
+**示例代码**
+
+```js
+uni.chooseLocation({
+  payload: {
+    token: "xxx",
+  },
+  success: (res) => {
+    console.log('res: ', res);
+  }
+});
+```
+
+#### 鉴权payload参数
+> HBuilderX 4.35+
+
+开发者可以在 uni-map-co 的 `_before` 方法内进行鉴权，鉴权代码可以写在 `_before` 函数已有代码的下面。
+
+#### 情况一: 自身业务在uniCloud，且使用了uni-id-common@payload1
+
+1. 右键 uni-map-co 云对象，管理公共模块或扩展库依赖，打勾 uni-id-common 依赖
+2. 在 `_before` 函数已有代码的下面新增以下代码
+```js
+const uniIdCommon = require('uni-id-common')
+const uniID = uniIdCommon.createInstance({
+	clientInfo: this.getClientInfo()
+});
+// 获取uniIdToken
+const uniIdToken = this.getUniIdToken()
+// 校验uniIdToken
+const checkTokenRes = await uniIDIns.checkToken(uniIdToken)
+if (checkTokenRes.code) {
+	// token校验不通过
+	throw {
+		errCode: checkTokenRes.errCode || checkTokenRes.code,
+		errMsg: checkTokenRes.errMsg || checkTokenRes.msg
+	}
+}
+// 获取payload参数
+let {
+	payload, // payload参数为前端传递的参数，可以在前端调用uni.chooseLocation时传递
+} = this.getParams()[0] || {};
+// 可继续校验payload参数
+// ...
+
+```
+
+以上就已经完成了用户是否登录的判断，不登录不能调用，当然你还能继续优化代码以适应不同的业务需求。
+
+#### 情况二: 自身业务在uniCloud，未使用uni-id-common@payload2
+
+推荐使用uni-id-common，[下载地址](https://ext.dcloud.net.cn/plugin?id=8576)
+
+当然你也可以直接在 `_before` 函数已有代码的下面新增自己的鉴权代码
+
+```js
+// 获取payload参数
+let {
+	payload, // payload参数为前端传递的参数，可以在前端调用uni.chooseLocation时传递
+} = this.getParams()[0] || {};
+if (!payload) {
+	throw {
+		errCode: -1,
+		errMsg: "payload参数不能为空"
+	}
+}
+// 继续校验payload参数
+// ...
+```
+
+#### 情况三: 自身业务不在uniCloud@payload3
+
+如果业务不在uniCloud，你可以在uni-map-co中通过http请求你的后端服务器。
+
+1. 打开文件 `/uni_modules/uni-map-common/uniCloud/cloudfunctions/uni-map-co/index.obj.js`
+2. 在 `_before` 函数已有代码的下面新增以下代码
+
+```js
+// 获取payload参数
+let {
+	payload, // payload参数为前端传递的参数，可以在前端调用uni.chooseLocation时传递
+} = this.getParams()[0] || {};
+if (!payload) {
+	throw {
+		errCode: -1,
+		errMsg: "payload参数不能为空"
+	}
+}
+// 请求后端服务接口
+const requestRes = await uniCloud.request({
+	method: 'POST',
+	url: '你自己的接口地址',
+	data: payload,
+});
+// 与后端约定errCode不为0代表校验失败，errMsg为失败原因
+if (requestRes.data.errCode !== 0) {
+	throw {
+		errCode: requestRes.data.errCode,
+		errMsg: requestRes.data.errMsg
+	}
+}
+```
+
 
 ### 未依赖uniCloud时向下兼容说明
 
