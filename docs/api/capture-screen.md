@@ -26,5 +26,26 @@
 
 <!-- UTSAPIJSON.general_type.param -->
 
+
+## uni.setUserCaptureScreen(options) @setusercapturescreen
+
+<!-- UTSAPIJSON.setUserCaptureScreen.description -->
+
+<!-- UTSAPIJSON.setUserCaptureScreen.compatibility -->
+
+<!-- UTSAPIJSON.setUserCaptureScreen.param -->
+
+<!-- UTSAPIJSON.setUserCaptureScreen.returnValue -->
+
+<!-- UTSAPIJSON.setUserCaptureScreen.example -->
+
+<!-- UTSAPIJSON.setUserCaptureScreen.tutorial -->
+
+<!-- UTSAPIJSON.captureScreen.example -->
+
+<!-- UTSAPIJSON.general_type.name -->
+
+<!-- UTSAPIJSON.general_type.param -->
+
 ## tips
 - 本文的截屏指手机自带的截屏事件的监听和取消监听，由用户操作手机按键触发。App平台如需通过代码对view截屏，另见API [takeSnapshot](../dom/unielement.md#takesnapshot)
