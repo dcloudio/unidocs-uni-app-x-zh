@@ -68,7 +68,22 @@ module.exports = {
 
 如果需要在uniCloud服务器更安全的验证客户端的身份，你可以在云函数中校验客户的token，避免其他人伪造请求访问你的云函数。
 
-[uni-map-common错误码](https://doc.dcloud.net.cn/uniCloud/uni-map-common.html#errorcode)
+### uni-map-common错误码
+
+uni.chooseLocation 获取POI列表的功能依赖uniCloud中的 uni-map-common 插件，该插件在请求地图服务器失败时会抛出错误信息，点击查看[uni-map-common错误码](https://doc.dcloud.net.cn/uniCloud/uni-map-common.html#errorcode)
+
+### 未依赖uniCloud时向下兼容说明
+
+当项目未使用uniCloud时，uni.chooseLocation 功能将调整为全屏地图选点模式。在该模式下，POI列表信息将不再显示，用户无法通过POI进行选点，只能直接在地图上进行位置选择。同时返回值只有latitude和longitude是有值的，name和address为空字符串，如下所示：
+
+```json
+{
+	"name": "",
+	"address": "",
+	"latitude": 39.951028,
+	"longitude": 116.354662
+}
+```
 
 ## 自定义样式@custom
 > HBuilderX 4.33+
