@@ -596,11 +596,21 @@ UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionN
 :::
 
 ```ts
-// 代码包文件
+/**
+ * 代码包文件
+ * 本地调试执行结果：/storage/emulated/0/Android/data/io.dcloud.uniappx/apps/__UNI__XXXXXXX/www/static/logo.png
+ * /
 console.log(UTSAndroid.convert2AbsFullPath('static/logo.png'))
-// 沙盒文件
+/**
+ * 沙盒文件
+ * 本地调试执行结果：/storage/emulated/0/Android/data/io.dcloud.uniappx/static/logo.png
+ * /
 console.log(UTSAndroid.convert2AbsFullPath('unifile://sandbox/static/logo.png'))
-// 沙盒外文件 包含相对路径
+/**
+ * 沙盒外文件 包含相对路径
+ * 本地调试执行结果：/storage/emulated/0/Android/data/io.dcloud.uniappx/apps/__UNI__XXXXXXX/www/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png
+ * 
+ * /
 console.log(UTSAndroid.convert2AbsFullPath('../../../io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
 ```
 
