@@ -191,11 +191,13 @@ uni相关的异步api在web端不传回调时会返回promise（详情参考：[
 - [x] 服务端渲染 新增于HBuilderX 4.18
 - [ ] [接口Promise化](https://uniapp.dcloud.net.cn/api/#api-promise-%E5%8C%96)
 
-## 运行与发行
+## 运行与发行@dev-and-build
 
 运行到web端时，uni-app-x编译器不会对语法进行转化来兼容低版本浏览器。发行时会对代码进行转化，以保证低版本浏览器能正常运行。
 
 发行时支持的最低浏览器版本为：`chrome 64`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`。
+
+未优化开发体验减少运行时页面跳转等待时间，HBuilderX 4.28起，运行到web端浏览器打开后会自动触发剩余页面编译。
 
 ## 其他注意事项
 
