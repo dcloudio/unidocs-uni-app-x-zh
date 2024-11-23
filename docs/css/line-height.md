@@ -16,12 +16,11 @@
 <!-- CSSJSON.line-height.example -->
 
 #### App平台
-App平台仅支持以像素值（px）、相对像素值（rpx）和相对当前元素字体字体单位（em），em单位表示数字值乘以该元素的字体大小，无单位值时使用em，默认值为1.2em。
-line-height 样式不支持继承，仅对 [text](../component/text.md) 组件生效。
-建议设置大于15%字号大小的值，以避免出现渲染异常。
-> 不支持百分比的值
-> 不支持设置关键字 normal 值
-> 不支持ch、rem、ex等单位
+App平台仅支持以像素值（px）、相对像素值（rpx）和相对当前元素字体大小单位（em），em单位表示数字值乘以该元素的字体大小，无单位值时使用em，默认值为1.2em。  
+line-height 样式不支持继承，建议设置大于15%字号大小的值，以避免出现渲染异常。  
+> 不支持百分比的值  
+> 不支持设置关键字 normal 值  
+> 不支持ch、rem、ex等单位  
 
 #### Web规范
 line-height 样式支持继承，默认值为normal（大约为1.2em，取决于 font-family 样式）
