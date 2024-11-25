@@ -12,14 +12,10 @@
 
 ## alpha版
 
-### 4.34.2024112020-alpha
+### 4.35.2024112402-alpha
 
-**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android/Android-uni-app-x-SDK@12629-4.34.zip)**
+**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android/Android-uni-app-x-SDK@12646-4.35.zip)**
 
-* 更新 uni-app x 原生SDK打包支持，需使用HBuilderX（4.34.2024112020-alpha）版本生成本地打包App资源。
-* 修复 API uni.chooseLocation input输入框点击会闪、POI显示不准确等问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12940)
-* 修复 组件 video 云打包后应用static目录下视频无法播放 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12871)
-* 修复 API uni.saveVideoToPhotosAlbum 云打包后保存应用static目录下的视频文件失败 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12867)
-* 修复 API uni.shareWithSystem shareWithSystem 云打包后应用static目录下文件无法分享 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12851)
-* 修复 API uni.downloadFile 部分情况下可能引起应用崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12869)
-* 修复 API uni.createInnerAudioContext 播放倍速仅支持平台专有Double数据类型而不支持number类型的 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=12862)
+* 更新 uni-app x 原生SDK打包支持，需使用HBuilderX（4.35.2024112402-alpha）版本生成本地打包App资源。
+* 优化 API uni.chooseLocation 新增请求参数payload，原样透传给uni-map-co，可用于用户鉴权 [详情](https://doc.dcloud.net.cn/uni-app-x/api/choose-location.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=13108>
+* 修复 4.31版本引发的 vue 无法使用v-show隐藏自定义组件 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=13061)
