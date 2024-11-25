@@ -1,26 +1,26 @@
 * [概述](README.md)
 * [全局属性和事件](common.md)
-* 内置组件```{"collapsable": false}```
+* 内置组件
   * 视图容器
     * [view | 基本视图容器](view.md)
     * [scroll-view | 可滚动视图容器](scroll-view.md)
-    * swiper | 滑块视图组件```{"collapsable": false}```
+    * swiper | 滑块视图组件
       * [swiper | 滑块视图容器](swiper.md)
       * [swiper-item | 滑块视图容器子项](swiper-item.md)
     * [match-media | 匹配检测节点](match-media.md)
-    * movable | 可拖动组件```{"collapsable": false}```
+    * movable | 可拖动组件
       * [movable-area | 可拖动区域](movable-area.md)
       * [movable-view | 可拖动视图容器](movable-view.md)
-    * cover```{"collapsable": false}```
+    * cover
       * [cover-view](cover-view.md)
       * [cover-image](cover-image.md)
-    * list-view | 列表布局组件```{"collapsable": false}```
+    * list-view | 列表布局组件
       * [list-view | 列表容器](list-view.md)
       * [list-item | 列表容器子项](list-item.md)
-    * sticky | 粘性布局组件```{"collapsable": false}```
+    * sticky | 粘性布局组件
       * [sticky-header | 吸顶布局容器](sticky-header.md)
       * [sticky-section | 吸顶布局容器](sticky-section.md)
-    * nested-scroll | 嵌套滚动```{"collapsable": false}```
+    * nested-scroll | 嵌套滚动
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
   * 基础内容
@@ -31,7 +31,7 @@
     * [native-view](native-view.md)
   * 表单组件
     * [button | 按钮](button.md)
-    * checkbox | 多选框```{"collapsable": false}```
+    * checkbox | 多选框
       * [checkbox-group | 多选框组](checkbox-group.md)
       * [checkbox | 多选框](checkbox.md)
     * [form | 表单](form.md)
@@ -39,10 +39,10 @@
     * [editor | 富文本编辑器](editor.md)
     * [label](label.md)
     * [picker | 底部弹出滚动选择器](picker.md)
-    * picker-view | 滚动选择器组件```{"collapsable": false}```
+    * picker-view | 滚动选择器组件
       * [picker-view | 嵌入页面的滚动选择器](picker-view.md)
       * [picker-view-column | 滚动选择器子项](picker-view-column.md)
-    * radio | 单选框```{"collapsable": false}```
+    * radio | 单选框
       * [radio-group | 单选框组](radio-group.md)
       * [radio | 单选框](radio.md)
     * [slider | 滑动选择器](slider.md)
