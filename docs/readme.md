@@ -262,13 +262,13 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 **如果你一定要使用某个js库，还有一个办法是在uni-app x里的[web-view](./api/create-webview-context.md)组件，让其运行js并返回值给uts代码。**
 
 目前插件市场适配uni-app x的插件已有数百款，包括丰富的ui组件库生态：
-- [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：包含了核心的uts插件基类.和uvue组件库
-- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：低代码高性能UI框架
-- [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：一款适配 uni-app x 的轻量、简洁、高效、全面的移动端组件库
-- [t-uvue-ui](https://ext.dcloud.net.cn/plugin?id=15571)：丰富的组件库
+- [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：高品质UI库，插件大赛一等奖
+- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：setup组合式UI库，插件大赛一等奖
+- [TuiPlus ](https://ext.dcloud.net.cn/plugin?id=21111)：简洁高效的组件库，买即赠[xCharts原生图表库](https://ext.dcloud.net.cn/plugin?id=21107)
+- [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：免费、轻量UI库
 - [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceUI作者的免费开源组件库
 - [wx-ui](https://ext.dcloud.net.cn/plugin?id=15579)：基于uni-app x开发的高性能混合UI库
-- [OneUI](https://ext.dcloud.net.cn/plugin?id=17104)
+- [OneUI](https://ext.dcloud.net.cn/plugin?id=17104)：简洁、现代的 UI 组件
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
 
 除了上述整套UI插件，还有很多开发者提供了大量独立组件插件，如[陌生年华](https://ext.dcloud.net.cn/publisher?id=242774)的lime系列插件，即兼容uni-app又兼容uni-app x。
