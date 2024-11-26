@@ -36,6 +36,7 @@ UniElement在小程序端仅支持如下属性/方法：
 **注意**
 
 - 小程序端只有UniElement，不支持UniButtonElement、UniViewElement等类
+- 小程序端各种事件的target、currentTarget并非指向UniElement对象，其中仅含UniElement内的部分数据
 
 ### 事件
 
