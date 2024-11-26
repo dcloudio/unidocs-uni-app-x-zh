@@ -33,6 +33,10 @@ UniElement在小程序端仅支持如下属性/方法：
 - getBoundingClientRectAsync 异步获取元素的布局位置信息
 - getAttribute 获取元素的属性值，目前仅支持id、style
 
+**注意**
+
+- 小程序端只有UniElement，不支持UniButtonElement、UniViewElement等类
+
 ### 事件
 
 click、tap事件上补充了如下属性，使其表现更像PointerEvent：

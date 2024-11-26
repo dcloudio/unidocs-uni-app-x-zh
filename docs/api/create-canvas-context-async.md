@@ -27,3 +27,8 @@ uni.createCanvasContextAsync 方法可以异步获取页面上指定id的canvas�
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+
+### 注意事项 
+
+- CanvasContext的toDataURL方法在 App-Android 平台暂不支持在页面的onLoad和组件的onMount生命周期中调用
