@@ -48,6 +48,15 @@
 
 <!-- UTSAPIJSON.$emit.param -->
 
+
+:::warning
+参数 `args` 为对象字面量时，4.25 前需要通过 `as` 明确类型，例如：
+```js
+uni.$emit('fn', {"a": 1} as UTSJSONObject)
+```
+4.25+ 编译器会自动将对象字面量推断为 `UTSJSONObject` 类型，不再需要通过 `as` 明确类型。如果需要传递其他自定义类型的对象字面量，仍需要通过 `as` 明确类型。
+:::
+
 <!-- UTSAPIJSON.$emit.returnValue -->
 
 <!-- UTSAPIJSON.$emit.example -->
@@ -59,3 +68,6 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+## Tips
+* - `eventName` 应避免使用 `uni` 开头，以免与 uni-app x 内置事件冲突

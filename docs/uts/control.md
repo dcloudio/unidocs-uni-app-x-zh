@@ -276,4 +276,4 @@ try {
 
 ```
 
-- 注意：在 iOS 平台由于 Swift 的特殊语法，无法直接使用 try...catch, 在 iOS 平台上使用 try 的语法[详见](https://uniapp.dcloud.net.cn/plugin/uts-for-ios.html#try)
+- 注意：在 iOS 平台由于 Swift 的特殊语法，无法直接使用 try...catch, 在 iOS 平台上使用 try 的语法[详见](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-ios.html#try)

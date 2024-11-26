@@ -1,4 +1,3 @@
-
 ## list-item
 
 <!-- UTSCOMJSON.list-item.description -->
@@ -9,7 +8,7 @@
 
 ### list-item复用机制
 
-> 仅App平台支持复用。Web平台仅渲染当前屏幕及上下一定高度内的元素，没有对list-item进行复用。
+> 仅App平台支持复用 (iOS 4.25+版本支持)。Web平台仅渲染当前屏幕及上下一定高度内的元素，没有对list-item进行复用。
 
 + type属性定义list-item组件类型。不赋值type属性默认值为0，每一个type类型都会有对应的list-item组件缓存池。
 + list-view组件加载list-item组件时，会优先查询对应type缓存池是否存在可复用的list-item组件。有则复用没有则创建新的list-item组件。
@@ -22,11 +21,11 @@
 	<template>
 	  <view class="content">
 		<list-view ref="listView" class="list" :scroll-y="true">
-		  <list-item v-for="(item,index) in list" :key="index" class="content-item1" type=1>
+		  <list-item v-for="(item,index) in list" :key="item" class="content-item1" type=1>
 			<text class="text">title-{{item}}</text>
 			<text class="text">content-{{item}}</text>
 		  </list-item>
-		  <list-item v-for="(item,index) in list" :key="index" class="content-item2" type=2>
+		  <list-item v-for="(item,index) in list" :key="item" class="content-item2" type=2>
 		  	<image class="image" src ="/static/test-image/logo.png"></image>
 		  </list-item>
 		  <list-item type=3>
@@ -42,6 +41,7 @@
 **注意：**
 
 1. 避免对list-item组件的子元素设置event事件，复用后list-item组件部分子元素可能无法正常响应event，有相关业务需要对子元素设置event事件，可对list-item组件设置独立的type实现不复用。
+2. App-iOS平台：使用 v-for 遍历集合方式创建 list-item 时，需要绑定 :key 并要保证值唯一，最好不要使用 index，否则可能会引起 list-item 显示顺序错乱的问题；
 
 <!-- UTSCOMJSON.list-item.event -->
 

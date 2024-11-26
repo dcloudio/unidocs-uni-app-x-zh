@@ -5,23 +5,26 @@
 uts，全称 uni type script，是一门跨平台的、高性能的、强类型的现代编程语言。
 
 它可以被编译为不同平台的编程语言，如：
-- web平台，编译为JavaScript
+- web平台/小程序，编译为JavaScript
 - Android平台，编译为Kotlin
 - iOS平台，编译Swift
+- 鸿蒙OS平台，编译为ArkTS（HBuilderX 4.22+）
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
 但为了跨端，uts进行了一些约束和特定平台的增补。
 
-过去在js引擎下运行支持的语法，大部分在uts的处理下也可以平滑的在kotlin和swift中使用。但有一些无法抹平，需要使用条件编译。和uni-app的条件编译类似，uts也支持条件编译。写在条件编译里的，可以调用平台特有的扩展语法。
+过去在js引擎下运行支持的语法，大部分在uts的处理下也可以平滑的在kotlin和swift中使用。但有一些无法抹平，需要使用条件编译。
+
+和uni-app的条件编译类似，uts也支持条件编译。写在条件编译里的，可以调用平台特有的扩展语法。
 
 ### 用途和关系
 
 uts是一门语言。也仅是一门语言，不包含ui框架。
 
-uvue是DCloud提供的跨平台的、基于vue语法的ui框架。
+uvue是DCloud提供的跨平台的、基于uts的、使用vue方式的ui框架。
 
-uts相当于js，uvue相当于html和css。它们类似于v8和webkit的关系、类似于dart和flutter的关系。
+uts相当于js，uvue相当于html和css。它们类似于v8和webkit的关系，或者类似于dart和flutter的关系。
 
 uts这门语言，有2个用途：
 
@@ -41,9 +44,69 @@ uts这门语言，有2个用途：
 
 这2个uts插件，一个是api插件，一个是组件插件，它们同时兼容uni-app和uni-app x。
 
+可以通过表格更清晰的了解uts语言在uni-app和uni-app x下的编译关系。
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2">uni-app</th>
+      <th colspan="2">uni-app x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td>普通页面和脚本</td>
+      <td>uts插件</td>
+      <td>普通页面和脚本</td>
+      <td>uts插件</td>
+    </tr>
+    <tr>
+      <td>Web和小程序</td>
+      <td>JS</td>
+      <td>JS</td>
+      <td>JS</td>
+      <td>JS</td>
+    </tr>
+    <tr>
+      <td>Android</td>
+      <td>JS</td>
+      <td>Kotlin</td>
+      <td>Kotlin</td>
+      <td>Kotlin</td>
+    </tr>
+    <tr>
+      <td>iOS</td>
+      <td>JS</td>
+      <td>Swift</td>
+      <td>JS(JS驱动时)</td>
+      <td>Swift</td>
+    </tr>
+    <tr>
+      <td>HarmonyNext</td>
+      <td>JS</td>
+      <td>ArkTS</td>
+      <td>x</td>
+      <td>x</td>
+    </tr>
+  </tbody>
+</table>
+
+这里的概念解释是：
+- uts插件，指`uni_modules`目录下utssdk目录下的代码
+- 除uts插件外，其他都属于 `普通页面和脚本`，包含vue、nvue、uvue等页面及单独的uts文件
+- 在uni-app x的iOS平台，目前`普通页面和脚本`是编译为js的，而不是Swift。
+	这个策略主要是为了解决windows电脑开发uni-app x的问题。它并不影响性能，uni-app x的iOS通过优化解决了js性能问题。同时未来也会提供js驱动和Swift驱动双选
+
+除了查阅表格，也可以简单的记3个原则：
+1. 所有的uts插件，都会编译为原生语言
+2. web和小程序上，原生语言就是js
+3. App上，目前仅uni-app x的Android平台会编译为原生语言，其他都编译为js
+
 本文是 uts 的基本语法介绍。
-- 想了解 uni-app 下如何开发 uts插件，另见文档[https://uniapp.dcloud.net.cn/plugin/uts-plugin.html](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)
-- 想了解 uni-app x，另见文档[https://uniapp.dcloud.net.cn/uni-app-x/](https://uniapp.dcloud.net.cn/uni-app-x/)
+- 想了解 uni-app 下如何开发 uts插件，另见文档[https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin.html](../plugin/uts-plugin.md)
+- 想了解 uni-app x，另见文档[https://doc.dcloud.net.cn/uni-app-x/](../readme.md)
 
 
 ## 类型声明
@@ -91,8 +154,6 @@ str = "hello world"; // 报错，不允许重新赋值
 -   变量名称可以包含数字和字母。
 -   除了下划线 \_ 外，不能包含其他特殊字符，包括空格。
 -   变量名不能以数字开头。
-
-> 注意：与 TypeScript 不同的是，uts 不允许以 $ 开头命名变量
 
 ### 方法参数及返回值类型定义
 
@@ -147,6 +208,8 @@ vue 选项式开发时，冒号被用于赋值，无法通过let、const和冒�
 
 ### 类型自动推导
 
+#### 字面量推导
+
 现代语言（ts、kotlin、swift），都具备自动识别[字面量](literal.md)，进行类型推导的功能。
 
 即：如果开发者声明变量的同时，进行了初始化赋值。那么编译器可以根据赋值的[字面量](literal.md)，自动推导出变量类型，不必开发者显式声明。
@@ -185,6 +248,71 @@ let a1:Array<number> = [1,2,3,4]
 HBuilderX 3.9+， uts 统一了字面量自动类型推导。
 
 建议插件作者，除了boolean和string外，其他包括数字和数组在内的类型，尽量不使用字面量自动类型推导，而是显式声明类型。避免 uts 统一自动类型推导时引发的向下兼容问题。
+
+在 HBuilderX 4.31 以前，对象字面量{}的推导，默认是UTSJSONObject，无论是变量声明，还是传参（除了uni、uniCloud等官方API）等场景，只要没有手动 as，均会推导为 UTSJSONObject 类型。
+
+HBuilderX 4.31+，uts 增强了对象字面量的类型推导，会根据当前上下文，来推断是否是某个type定义的类型（如果type是定义在非当前文件，需要该type对外导出）
+
+```ts
+type User = {
+	name: string
+	age: number
+}
+function printUser(user: User){
+	console.log(user) 
+}
+printUser({ name: 'zhangsan', age: 12 }) // 从 HBuilderX 4.31+ 起，无需手动 as User
+
+function createUser(name : string, age : number) : User {
+    return { name, age } // 从 HBuilderX 4.31+ 起，无需手动 as User
+}
+printUser(createUser({ name: 'zhangsan', age: 12 }))
+
+```
+
+#### 函数返回值类型推导
+
+在 HBuilderX 4.31 以前，所有的函数如果有 return 语句，均需要主动声明返回值类型。
+
+HBuilderX 4.31+，uts 增强了函数返回值类型的推导，会根据当前上下文，来自动推断补充当前函数的返回值类型
+
+```ts
+function test1() { // 自动推导返回值类型为 string
+    return "test1"
+}
+function test2(arg : boolean) { // 自动推导返回值类型为 number | null
+    if (arg) {
+        return 1
+    }
+    return null
+}
+function test3(arg : boolean): any { // 暂不支持多个不同类型的返回值推导，需要主动声明为 any
+    if (arg) {
+        return 1
+    }
+    return "test2"
+}
+```
+
+注意：目前函数返回值仅推导相同类型，或可为空类型，不支持多个类型的推导，比如 test3 函数，可能返回 string | number，此时需要主动声明为 any 类型。
+
+#### 函数参数推导
+
+在 HBuilderX 4.31 以前，函数赋值或作为参数时，当前函数的参数数量必须和目标函数保持一致。
+
+HBuilderX 4.31+，uts 增强了函数参数数量的自动推导
+
+```ts
+type TestFn = (a1: string, a2: string) => void
+function callTestFn(test: TestFn) {
+  test('1', '2')
+}
+// HBuilderX 4.31 以前仅支持传递两个参数的函数
+callTestFn((arg1, arg2) => {})
+// HBuilderX 4.31+支持以下调用方式
+callTestFn(() => {})
+callTestFn((arg1) => {})
+```
 
 ### 类型判断
 
@@ -256,4 +384,3 @@ let a:number = 1 //行尾可以不加分号
 let b:boolean = false; //行尾可以加分号
 let c:number = 3 ; let d:number = 4 // 同行多语句需要用分号分割
 ```
-

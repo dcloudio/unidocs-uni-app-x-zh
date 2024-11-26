@@ -13,8 +13,10 @@
 
 <!-- CSSJSON.position.compatibility -->
 
+<!-- CSSJSON.position.example -->
 
-#### App平台差异  
+
+#### App平台差异
 
 absolute元素相对父组件确定位置，fixed元素位于页面顶层。
 

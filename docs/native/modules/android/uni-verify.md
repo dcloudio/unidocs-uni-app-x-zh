@@ -28,7 +28,7 @@ allprojects {
 
 |名称                   |
 |:--                    |
-|com.getui:gtc:3.2.13.0 |
+|com.getui:gtc-dcloud:3.2.16.7 |
 
 然后将线上依赖库添加到app项目的build.gradle下。
 
@@ -45,4 +45,4 @@ android {
 }
 ```
 
-GETUI_APPID与GY_APP_ID对应[开发者中心](https://dev.dcloud.net.cn/)一键登录->基础配置->一键登录应用ID（离线打包使用），GETUI_APPID与GY_APP_ID取值相同。
+GETUI_APPID与GY_APP_ID对应[开发者中心](https://dev.dcloud.net.cn/)一键登录->基础配置->一键登录应用ID，GETUI_APPID与GY_APP_ID取值相同。

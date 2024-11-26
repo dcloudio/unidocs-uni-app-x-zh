@@ -27,6 +27,8 @@ app端支持的图片格式如下：
 - [svg插件](https://ext.dcloud.net.cn/search?q=svg&orderBy=Relevance&cat1=8&cat2=82)
 - [apng插件](https://ext.dcloud.net.cn/search?q=apng&orderBy=Relevance&cat1=8&cat2=82)
 
+注意：webp在不同小程序平台策略不同，有的需要打开 webp 属性，有的仅支持来自服务器的webp。
+
 ### src路径支持说明
 
 - 本地路径/static方式  
@@ -51,7 +53,9 @@ app端支持的图片格式如下：
 <!-- UTSCOMJSON.image.reference -->
 
 ### tips
+- image组件默认宽度为320px、高度为240px  
 - 在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/image/image-path.uvue)  
 - 图片文件需在static目录（项目下或uni_modules下都支持static目录）下，或者import导入文件，否则文件不会被copy到最终的包中，导致无法访问  
-- app-android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸
-- app-ios平台 iOS14 版本开始系统原生支持 WebP 图片格式，iOS14以下的版本使用三方解码器软解码实现对 WebP 的支持，性能存在一定损耗。如果在iOS14以下同一页面中大量使用WebP图片，会增加性能损耗
+- app-android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸  
+- app-ios平台 iOS14 版本开始系统原生支持 WebP 图片格式，iOS14以下的版本使用三方解码器软解码实现对 WebP 的支持，性能存在一定损耗。如果在iOS14以下同一页面中大量使用WebP图片，会增加性能损耗  
+- app-android平台不支持CMYK色彩的图片，[详见](https://github.com/facebook/fresco/issues/1404)  

@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.padding.compatibility -->
 
+<!-- CSSJSON.padding.example -->
+
 <!-- CSSJSON.padding.reference -->

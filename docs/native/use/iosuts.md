@@ -19,9 +19,9 @@
 
 ## 配置资源文件
 1. 将以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到`插件工程`中，并将依赖库均设置为`Do Not Embed`
-    | 源文件 | 依赖库 | 资源文件 |
-    |---|---|---|
-    | UTSOC.h、UTSOC.mm | DCloudUniappRuntime.xcframework、DCloudUTSExtAPI.xcframework、DCloudUTSFoundation.xcframework| uts-config.json |
+    | uniapp-x源码文件&资源文件 | uniapp-x项目依赖库| uniapp源码文件&资源文件  | uniapp项目依赖库 |
+    |---|---|---|---|
+    | UTSOC.h <br> UTSOC.mm <br> uts-config.json | DCloudUniappRuntime.xcframework <br> DCloudUTSExtAPI.xcframework <br> DCloudUTSFoundation.xcframework | DCloudUTSConfig.h <br> DCloudUTSConfig.m <br> UTSCPP.h <br> UTSCPP.mm <br> config.json | DCUniBase.framework <br> DCloudUTSFoundation.framework  |
 
 > DCloudUTSExtAPI.xcframework的制作详见[集成内置模块](../modules/ios/modules.md)
 

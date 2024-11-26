@@ -1,8 +1,12 @@
+本文档仅为部分API介绍，完整的国际化指南，另见[文档](../i18n.md)
+
 ## uni.getLocale() @getlocale
 
 <!-- UTSAPIJSON.getLocale.description -->
 
 <!-- UTSAPIJSON.getLocale.compatibility -->
+
+App端可以在[uni.getDeviceInfo](./get-device-info.md)中获取os的language。
 
 <!-- UTSAPIJSON.getLocale.param -->
 

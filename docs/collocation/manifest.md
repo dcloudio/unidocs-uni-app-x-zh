@@ -48,6 +48,13 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 
 使用[uni内置模块](./manifest-modules.md#utsmodules)时，云端打包回自动添加模块需要的隐私信息访问的许可描述，但许可描述信息是通用描述，不一定适合应用的实际使用场景描述，需根据应用的实际情况在[Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoPlist)中配置准确的许可描述。
 
+#### 渠道信息  
+
+> HBuilder4.31版本新增支持  
+
+uni-app x 的渠道信息配置，云端需在“App打包”界面配置，详情参考[配置渠道包](../tutorial/app-package.md#channel)。  
+离线打包时需在原生工程中配置，详情参考[Android平台配置应用渠道包](../native/use/android.md#androidmanifest)。  
+
 
 #### DISTRIBUTE配置 @app-distribute
 
@@ -129,6 +136,59 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 - `targetSdkVersion` 一个用于指定应用的目标 API 级别的整数。如果未设置，其默认值与为 minSdkVersion 指定的值相等。该值用于通知系统，您已针对目标版本进行了测试，并且系统不应通过启用任何兼容性行为，以保持您的应用与目标版本的向前兼容性。
 - `minSdkVersion` 和 `targetSdkVersion` 设置的值是 API 级别（API Level），完整API级别信息请参考[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)
 
+###### manifestPlaceholders @manifestplaceholders
+
+manifest.json中不提供配置 `manifestPlaceholders` 数据，如果应用使用的插件或三方SDK需要使用，可在项目的 `nativeResources/android/manifestPlaceholders.json` 文件中配置，详情参考[Android原生应用清单文件和资源](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#manifestplaceholders)。  
+
+###### enableResourceOptimizations @enableresourceoptimizations
+
+> HBuilder4.33版本新增支持 enableResourceOptimizations 配置项  
+
+Android平台云端打包时gradle.properties的android.enableResourceOptimizations配置项，配置是否开启Android原生res资源文件优化，开启后res资源文件名称会被混淆，默认值为 ture，如不希望混淆原生res资源文件名称，可在 app -> distribute -> android 节点下配置以下字段关闭：  
+```json
+"enableResourceOptimizations": false
+```
+
+###### aaptOptions @aaptoptions  
+
+> HBuilder4.31版本新增支持  
+
+Android平台云端打包时build.gradle的aaptOptions配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/AaptOptions?hl=en)，如下示例源码：  
+```json  
+"aaptOptions": [
+    "noCompress 'png', 'jpg', 'jpeg'"  //配置禁止对 png、jpg、jpeg格式的文件进行压缩
+]
+```
+
+云端打包默认包含以下配置：  
+- additionalParameters '--auto-add-overlay'  
+- ignoreAssetsPattern '!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~'  
+
+###### buildFeatures @buildfeatures  
+
+> HBuilder4.31版本新增支持  
+
+Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：  
+```json  
+"buildFeatures": [
+	"viewBinding true",  //开启dataBinding
+	"dataBinding true"   //开启viewBinding
+]
+```
+
+###### packagingOptions @packagingoptions  
+Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions)，如下示例源码：  
+```json  
+"packagingOptions": [
+	"exclude 'META-INF/LICENSE'",    //排除文件META-INF/LICENSE
+	"exclude 'META-INF/LICENSE.txt'" //排除文件META-INF/LICENSE.txt
+]
+```
+
+云端打包默认包含以下配置：  
+- pickFirst 'lib/*/libstlport_shared.so'  
+- pickFirst 'lib/*/libc++_shared.so'  
+
 ##### IOS配置 @distribute-ios
 
 <!-- MANIFESTJSON.distribute_ios.description -->
@@ -137,16 +197,52 @@ uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](htt
 
 <!-- MANIFESTJSON.distribute_ios.compatibility -->
 
+###### CFBundleName @cfbundlename  
+
+>HBuilder4.34版本新增支持  
+
+iOS平台配置应用内部名称，默认值为“UniAppX”，最多支持15个字符，详细说明参考[苹果官方文档](https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundlename)。  
+以下为配置应用内部名称示例：
+```json  
+{
+  "CFBundleName": "MyApp"
+}
+```
+
+###### UIRequiresFullScreen @uirequiresfullscreen  
+
+>HBuilder4.34版本新增支持  
+
+iOS平台配置应用在iPad设置是否能够与其他应用程序共享屏幕（分屏显示），需配置应用支持iPad设备时有效，默认值为true（可与其他应用程序共享屏幕）。更多信息参考[苹果官方文档](https://developer.apple.com/documentation/bundleresources/information-property-list/uirequiresfullscreen)。  
+以下为配置应用不与其他应用共享屏幕示例：
+```json  
+{
+  "UIRequiresFullScreen": false
+}
+```
 
 ## 其它设置  
 
-### url scheme@urlScheme  
+### URL Scheme @urlScheme  
 uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4.18及以上版本支持在 app 原生应用配置文件中进行设置，详情参考：  
 - [Android平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#urlscheme)  
 - [iOS平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#urlscheme)  
 
+**注意**  
+- uni-app x项目标准基座已配置 url scheme 值："uniappx"
+- 配置 url scheme 需提交云端打包才能生效  
 
-> uni-app x项目标准基座已配置 url scheme 值：uniappx
+标准基座可通过此网页体验 Url Scheme 启动 App：[https://uniappx.dcloud.net.cn/scheme.html](https://uniappx.dcloud.net.cn/scheme.html)
+
+
+### Universal Link @ulink  
+
+uni-app x 项目 manifest.json 文件不再提供 iOS 平台的 通用链接（universal link）相关配置，HBuilderX4.18及以上版本支持在 iOS原生应用配置文件中通过 `关联域（Associated Domains）` 配置通用链接，详情参考：
+- [iOS平台通用链接配置教程](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5-universal-link)  
+
+**注意**  
+- uni-app x项目标准基座已配置 universal link 值："https://uniappx.dcloud.net.cn/ulink"，但重签名会使得通用链接配置失效，无法通过通用链接启动标准基座  
+- 配置 universal link 需提交云端打包才能生效
 
 
 ## 示例

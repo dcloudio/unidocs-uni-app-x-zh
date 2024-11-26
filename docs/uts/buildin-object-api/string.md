@@ -20,6 +20,22 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
 "한국어"
 ```
 
+## 静态方法
+
+### fromCharCode(...codes : number[]):string
+
+<!-- UTSJSON.String.fromCharCode.description -->
+
+<!-- UTSJSON.String.fromCharCode.param -->
+
+<!-- UTSJSON.String.fromCharCode.returnValue -->
+
+<!-- UTSJSON.String.fromCharCode.test -->
+
+<!-- UTSJSON.String.fromCharCode.compatibility -->
+
+
+
 ## 实例属性
 
 
@@ -31,21 +47,27 @@ String 全局对象是一个用于字符串或一个字符序列的构造函数�
 
 <!-- UTSJSON.String.length.returnValue -->
 
-```ts
-const x = "Mozilla";
-const empty = "";
-
-console.log("Mozilla is " + x.length + " code units long");
-/* "Mozilla is 7 code units long" */
-
-console.log("The empty string is has a length of " + empty.length);
-/* "The empty string is has a length of 0" */
-```
+<!-- UTSJSON.String.length.test -->
 
 <!-- UTSJSON.String.length.compatibility -->
 
 
 ## 实例方法
+
+
+### toString()
+
+<!-- UTSJSON.String.toString.description -->
+
+<!-- UTSJSON.String.toString.param -->
+
+<!-- UTSJSON.String.toString.returnValue -->
+
+<!-- UTSJSON.String.toString.test -->
+
+<!-- UTSJSON.String.toString.compatibility -->
+
+<!-- UTSJSON.String.toString.tutorial -->
 
 ### includes(searchString, position?)
 
@@ -55,15 +77,7 @@ console.log("The empty string is has a length of " + empty.length);
 
 <!-- UTSJSON.String.includes.returnValue -->
 
-```ts
-const str = 'To be, or not to be, that is the question.';
-
-console.log(str.includes('To be'));       // true
-console.log(str.includes('question'));    // true
-console.log(str.includes('nonexistent')); // false
-console.log(str.includes('To be', 1));    // false
-console.log(str.includes('TO BE'));       // false
-```
+<!-- UTSJSON.String.includes.test -->
 
 <!-- UTSJSON.String.includes.compatibility -->
 
@@ -75,16 +89,7 @@ console.log(str.includes('TO BE'));       // false
 
 <!-- UTSJSON.String.endsWith.returnValue -->
 
-```ts
-const str1 = 'Cats are the best!';
-console.log(str1.endsWith('best!'));
-// expected output: true
-console.log(str1.endsWith('best', 17));
-// expected output: true
-const str2 = 'Is this a question?';
-console.log(str2.endsWith('question'));
-// expected output: false
-```
+<!-- UTSJSON.String.endsWith.test -->
 
 <!-- UTSJSON.String.endsWith.compatibility -->
 
@@ -96,12 +101,7 @@ console.log(str2.endsWith('question'));
 
 <!-- UTSJSON.String.repeat.returnValue -->
 
-```ts
-"abc".repeat(0)      // ""
-"abc".repeat(1)      // "abc"
-"abc".repeat(2)      // "abcabc"
-"abc".repeat(3.5)    // "abcabcabc" 参数 count 将会被自动转换成整数。
-```
+<!-- UTSJSON.String.repeat.test -->
 
 <!-- UTSJSON.String.repeat.compatibility -->
 
@@ -113,6 +113,8 @@ console.log(str2.endsWith('question'));
 
 <!-- UTSJSON.String.startsWith.returnValue -->
 
+<!-- UTSJSON.String.startsWith.test -->
+
 <!-- UTSJSON.String.startsWith.compatibility -->
 
 ### at(index)
@@ -123,15 +125,7 @@ console.log(str2.endsWith('question'));
 
 <!-- UTSJSON.String.at.returnValue -->
 
-```ts
-const sentence = 'The quick brown fox jumps over the lazy dog.';
-let index = 5;
-console.log(`Using an index of ${index} the character returned is ${sentence.at(index)}`);
-// expected output: "Using an index of 5 the character returned is u"
-index = -4;
-console.log(`Using an index of ${index} the character returned is ${sentence.at(index)}`);
-// expected output: "Using an index of -4 the character returned is d"
-```
+<!-- UTSJSON.String.at.test -->
 
 <!-- UTSJSON.String.at.compatibility -->
 
@@ -143,22 +137,7 @@ console.log(`Using an index of ${index} the character returned is ${sentence.at(
 
 <!-- UTSJSON.String.charAt.returnValue -->
 
-```ts
-const anyString = "Brave new world";
-
-console.log("The character at index 0   is '" + anyString.charAt(0)   + "'");
-// The character at index 0 is 'B'
-console.log("The character at index 1   is '" + anyString.charAt(1)   + "'");
-// The character at index 1 is 'r'
-console.log("The character at index 2   is '" + anyString.charAt(2)   + "'");
-// The character at index 2 is 'a'
-console.log("The character at index 3   is '" + anyString.charAt(3)   + "'");
-// The character at index 3 is 'v'
-console.log("The character at index 4   is '" + anyString.charAt(4)   + "'");
-// The character at index 4 is 'e'
-console.log("The character at index 999 is '" + anyString.charAt(999) + "'");
-// The character at index 999 is ''
-```
+<!-- UTSJSON.String.charAt.test -->
 
 <!-- UTSJSON.String.charAt.compatibility -->
 
@@ -170,31 +149,10 @@ console.log("The character at index 999 is '" + anyString.charAt(999) + "'");
 
 <!-- UTSJSON.String.charCodeAt.returnValue -->
 
-```ts
-const sentence = 'The quick brown fox jumps over the lazy dog.';
-const index = 4;
-console.log(`The character code ${sentence.charCodeAt(index)} is equal to ${sentence.charAt(index)}`);
-// expected output: "The character code 113 is equal to q"
-```
+<!-- UTSJSON.String.charCodeAt.test -->
 
 <!-- UTSJSON.String.charCodeAt.compatibility -->
 
-### fromCharCode(...codes : number[]):string
-
-<!-- UTSJSON.String.fromCharCode.description -->
-
-<!-- UTSJSON.String.fromCharCode.param -->
-
-<!-- UTSJSON.String.fromCharCode.returnValue -->
-
-```ts
-console.log(String.fromCharCode(189, 43, 190, 61));
-// expected output: "½+¾="
-console.log(String.fromCharCode(189, 165999, 190, 61));
-// expected output: "½衯¾="
-```
-
-<!-- UTSJSON.String.fromCharCode.compatibility -->
 
 
 ### concat(...strings)
@@ -205,11 +163,7 @@ console.log(String.fromCharCode(189, 165999, 190, 61));
 
 <!-- UTSJSON.String.concat.returnValue -->
 
-```ts
-let hello = 'Hello, '
-console.log(hello.concat('Kevin', '. Have a nice day.'))
-// Hello, Kevin. Have a nice day.
-```
+<!-- UTSJSON.String.concat.test -->
 
 <!-- UTSJSON.String.concat.compatibility -->
 
@@ -221,19 +175,7 @@ console.log(hello.concat('Kevin', '. Have a nice day.'))
 
 <!-- UTSJSON.String.indexOf.returnValue -->
 
-```ts
-const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
-
-const searchTerm = 'dog';
-const indexOfFirst = paragraph.indexOf(searchTerm);
-
-console.log(`The index of the first "${searchTerm}" from the beginning is ${indexOfFirst}`);
-// expected output: "The index of the first "dog" from the beginning is 40"
-
-console.log(`The index of the 2nd "${searchTerm}" is ${paragraph.indexOf(searchTerm, (indexOfFirst + 1))}`);
-// expected output: "The index of the 2nd "dog" is 52"
-
-```
+<!-- UTSJSON.String.indexOf.test -->
 
 <!-- UTSJSON.String.indexOf.compatibility -->
 
@@ -245,7 +187,23 @@ console.log(`The index of the 2nd "${searchTerm}" is ${paragraph.indexOf(searchT
 
 <!-- UTSJSON.String.lastIndexOf.returnValue -->
 
+<!-- UTSJSON.String.lastIndexOf.test -->
+
 <!-- UTSJSON.String.lastIndexOf.compatibility -->
+
+### localeCompare(that)
+
+<!-- UTSJSON.String.localeCompare.description -->
+
+<!-- UTSJSON.String.localeCompare.param -->
+
+<!-- UTSJSON.String.localeCompare.returnValue -->
+
+<!-- UTSJSON.String.localeCompare.test -->
+
+<!-- UTSJSON.String.localeCompare.compatibility -->
+
+<!-- UTSJSON.String.localeCompare.tutorial -->
 
 ### match(regexp : string | RegExp) : RegExpMatchArray | null;
 
@@ -254,6 +212,8 @@ console.log(`The index of the 2nd "${searchTerm}" is ${paragraph.indexOf(searchT
 <!-- UTSJSON.String.match.param -->
 
 <!-- UTSJSON.String.match.returnValue -->
+
+<!-- UTSJSON.String.match.test -->
 
 <!-- UTSJSON.String.match.compatibility -->
 
@@ -265,16 +225,7 @@ console.log(`The index of the 2nd "${searchTerm}" is ${paragraph.indexOf(searchT
 
 <!-- UTSJSON.String.replace.returnValue -->
 
-```ts
-const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
-
-console.log(p.replace('dog', 'monkey'));
-// expected output: "The quick brown fox jumps over the lazy monkey. If the dog reacted, was it really lazy?"
-const regex = /Dog/i;
-console.log(p.replace(regex, 'ferret'));
-// expected output: "The quick brown fox jumps over the lazy ferret. If the dog reacted, was it really lazy?"
-
-```
+<!-- UTSJSON.String.replace.test -->
 
 <!-- UTSJSON.String.replace.compatibility -->
 
@@ -286,32 +237,9 @@ console.log(p.replace(regex, 'ferret'));
 
 <!-- UTSJSON.String.replace_1.returnValue -->
 
+<!-- UTSJSON.String.replace_1.test -->
+
 <!-- UTSJSON.String.replace_1.compatibility -->
-
-
-```ts
-// 不包含捕捉组的示例
-let a = "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?"
-let b = a.replace(RegExp("fox"),function(match: string, offset: number, string: string):string{
-    console.log("match",match)
-    console.log("offset",offset)
-    console.log("string",string)
-    return "cat"
-})
-console.log("b:",b)
-
-// 包含一个捕获组的示例。注意，目前android仅支持最多五个捕获组
-let a1 = "The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?"
-let b1 = a1.replace(RegExp("(fox)"),function(match: string,p1: string, offset: number, string: string):string{
-    console.log("match",match)
-    console.log("p1",p1)
-    console.log("offset",offset)
-    console.log("string",string)
-    return "cat"
-})
-console.log("b1",b1)
-```
-
 
 
 ### search(regexp)
@@ -322,15 +250,7 @@ console.log("b1",b1)
 
 <!-- UTSJSON.String.search.returnValue -->
 
-```ts
-const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
-// any character that is not a word character or whitespace
-const regex = /[^\w\s]/g;
-console.log(paragraph.search(regex));
-// expected output: 43
-console.log(paragraph[paragraph.search(regex)]);
-// expected output: "."
-```
+<!-- UTSJSON.String.search.test -->
 
 <!-- UTSJSON.String.search.compatibility -->
 
@@ -342,13 +262,7 @@ console.log(paragraph[paragraph.search(regex)]);
 
 <!-- UTSJSON.String.slice.returnValue -->
 
-```ts
-const str = 'The quick brown fox jumps over the lazy dog.';
-console.log(str.slice(31));
-// expected output: "the lazy dog."
-console.log(str.slice(4, 19));
-// expected output: "quick brown fox"
-```
+<!-- UTSJSON.String.slice.test -->
 
 <!-- UTSJSON.String.slice.compatibility -->
 
@@ -360,16 +274,7 @@ console.log(str.slice(4, 19));
 
 <!-- UTSJSON.String.split.returnValue -->
 
-```ts
-const str = 'The quick brown fox jumps over the lazy dog.';
-
-const words = str.split(' ');
-console.log(words[3]);
-// expected output: "fox"
-const chars = str.split('');
-console.log(chars[8]);
-// expected output: "k"
-```
+<!-- UTSJSON.String.split.test -->
 
 <!-- UTSJSON.String.split.compatibility -->
 
@@ -406,14 +311,23 @@ let b = 2
 
 <!-- UTSJSON.String.toLowerCase.returnValue -->
 
-```ts
-console.log('中文简体 zh-CN || zh-Hans'.toLowerCase());
-// 中文简体 zh-cn || zh-hans
-​console.log( "ALPHABET".toLowerCase() );
-// "alphabet"
-```
+<!-- UTSJSON.String.toLowerCase.test -->
 
 <!-- UTSJSON.String.toLowerCase.compatibility -->
+
+### toLocaleLowerCase(locales?)
+
+<!-- UTSJSON.String.toLocaleLowerCase.description -->
+
+<!-- UTSJSON.String.toLocaleLowerCase.param -->
+
+<!-- UTSJSON.String.toLocaleLowerCase.returnValue -->
+
+<!-- UTSJSON.String.toLocaleLowerCase.test -->
+
+<!-- UTSJSON.String.toLocaleLowerCase.compatibility -->
+
+<!-- UTSJSON.String.toLocaleLowerCase.tutorial -->
 
 ### toUpperCase()
 
@@ -423,13 +337,23 @@ console.log('中文简体 zh-CN || zh-Hans'.toLowerCase());
 
 <!-- UTSJSON.String.toUpperCase.returnValue -->
 
-```ts
-const sentence = 'The quick brown fox jumps over the lazy dog.';
-console.log(sentence.toUpperCase());
-// expected output: "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG."
-```
+<!-- UTSJSON.String.toUpperCase.test -->
 
 <!-- UTSJSON.String.toUpperCase.compatibility -->
+
+### toLocaleUpperCase(locales?)
+
+<!-- UTSJSON.String.toLocaleUpperCase.description -->
+
+<!-- UTSJSON.String.toLocaleUpperCase.param -->
+
+<!-- UTSJSON.String.toLocaleUpperCase.returnValue -->
+
+<!-- UTSJSON.String.toLocaleUpperCase.test -->
+
+<!-- UTSJSON.String.toLocaleUpperCase.compatibility -->
+
+<!-- UTSJSON.String.toLocaleUpperCase.tutorial -->
 
 ### trim()
 
@@ -439,7 +363,23 @@ console.log(sentence.toUpperCase());
 
 <!-- UTSJSON.String.trim.returnValue -->
 
+<!-- UTSJSON.String.trim.test -->
+
 <!-- UTSJSON.String.trim.compatibility -->
+
+### substr(from, length?)
+
+<!-- UTSJSON.String.substr.description -->
+
+<!-- UTSJSON.String.substr.param -->
+
+<!-- UTSJSON.String.substr.returnValue -->
+
+<!-- UTSJSON.String.substr.test -->
+
+<!-- UTSJSON.String.substr.compatibility -->
+
+<!-- UTSJSON.String.substr.tutorial -->
 
 ### padStart(targetLength, padString?)
 
@@ -449,13 +389,10 @@ console.log(sentence.toUpperCase());
 
 <!-- UTSJSON.String.padStart.returnValue -->
 
+<!-- UTSJSON.String.padStart.test -->
+
 <!-- UTSJSON.String.padStart.compatibility -->
 
-```ts
-const str1 = '5';
-console.log(str1.padStart(2, '0'));
-// expected output: "05"
-```
 
 ### padEnd(targetLength, padString?)
 
@@ -465,65 +402,305 @@ console.log(str1.padStart(2, '0'));
 
 <!-- UTSJSON.String.padEnd.returnValue -->
 
+<!-- UTSJSON.String.padEnd.test -->
+
 <!-- UTSJSON.String.padEnd.compatibility -->
 
-```ts
-const str1 = 'Breaded Mushrooms';
-console.log(str1.padEnd(25, '.'));
-// expected output: "Breaded Mushrooms........"
-const str2 = '200';
-console.log(str2.padEnd(5));
-// expected output: "200  "
-```
 
-### includes(searchString, position?)
+### codePointAt(pos)
 
-<!-- UTSJSON.String.includes.description -->
+<!-- UTSJSON.String.codePointAt.description -->
 
-<!-- UTSJSON.String.includes.param -->
+<!-- UTSJSON.String.codePointAt.param -->
 
-<!-- UTSJSON.String.includes.returnValue -->
+<!-- UTSJSON.String.codePointAt.returnValue -->
 
-<!-- UTSJSON.String.includes.compatibility -->
+<!-- UTSJSON.String.codePointAt.test -->
 
-### endsWith(searchString, endPosition?)
+<!-- UTSJSON.String.codePointAt.compatibility -->
 
-<!-- UTSJSON.String.endsWith.description -->
+<!-- UTSJSON.String.codePointAt.tutorial -->
 
-<!-- UTSJSON.String.endsWith.param -->
+### normalize(form)
 
-<!-- UTSJSON.String.endsWith.returnValue -->
+<!-- UTSJSON.String.normalize.description -->
 
-<!-- UTSJSON.String.endsWith.compatibility -->
+<!-- UTSJSON.String.normalize.param -->
 
-### repeat(count)
+<!-- UTSJSON.String.normalize.returnValue -->
 
-<!-- UTSJSON.String.repeat.description -->
+<!-- UTSJSON.String.normalize.test -->
 
-<!-- UTSJSON.String.repeat.param -->
+<!-- UTSJSON.String.normalize.compatibility -->
 
-<!-- UTSJSON.String.repeat.returnValue -->
+<!-- UTSJSON.String.normalize.tutorial -->
 
-<!-- UTSJSON.String.repeat.compatibility -->
+### normalize(form?)
 
-### startsWith(searchString, position?)
+<!-- UTSJSON.String.normalize_1.description -->
 
-<!-- UTSJSON.String.startsWith.description -->
+<!-- UTSJSON.String.normalize_1.param -->
 
-<!-- UTSJSON.String.startsWith.param -->
+<!-- UTSJSON.String.normalize_1.returnValue -->
 
-<!-- UTSJSON.String.startsWith.returnValue -->
+<!-- UTSJSON.String.normalize_1.test -->
 
-<!-- UTSJSON.String.startsWith.compatibility -->
+<!-- UTSJSON.String.normalize_1.compatibility -->
 
-### at(index)
+<!-- UTSJSON.String.normalize_1.tutorial -->
 
-<!-- UTSJSON.String.at.description -->
+### isWellFormed()
 
-<!-- UTSJSON.String.at.param -->
+<!-- UTSJSON.String.isWellFormed.description -->
 
-<!-- UTSJSON.String.at.returnValue -->
+<!-- UTSJSON.String.isWellFormed.param -->
 
-<!-- UTSJSON.String.at.compatibility -->
+<!-- UTSJSON.String.isWellFormed.returnValue -->
+
+<!-- UTSJSON.String.isWellFormed.test -->
+
+<!-- UTSJSON.String.isWellFormed.compatibility -->
+
+### toWellFormed()
+
+<!-- UTSJSON.String.toWellFormed.description -->
+
+<!-- UTSJSON.String.toWellFormed.param -->
+
+<!-- UTSJSON.String.toWellFormed.returnValue -->
+
+<!-- UTSJSON.String.toWellFormed.test -->
+
+<!-- UTSJSON.String.toWellFormed.compatibility -->
+
+### toCharArray()
+
+<!-- UTSJSON.String.toCharArray.description -->
+
+<!-- UTSJSON.String.toCharArray.param -->
+
+<!-- UTSJSON.String.toCharArray.returnValue -->
+
+<!-- UTSJSON.String.toCharArray.test -->
+
+<!-- UTSJSON.String.toCharArray.compatibility -->
+
+<!-- UTSJSON.String.toCharArray.tutorial -->
+
+### valueOf()
+
+<!-- UTSJSON.String.valueOf.description -->
+
+<!-- UTSJSON.String.valueOf.param -->
+
+<!-- UTSJSON.String.valueOf.returnValue -->
+
+<!-- UTSJSON.String.valueOf.test -->
+
+<!-- UTSJSON.String.valueOf.compatibility -->
+
+<!-- UTSJSON.String.valueOf.tutorial -->
+
+### anchor(name)
+
+<!-- UTSJSON.String.anchor.description -->
+
+<!-- UTSJSON.String.anchor.param -->
+
+<!-- UTSJSON.String.anchor.returnValue -->
+
+<!-- UTSJSON.String.anchor.test -->
+
+<!-- UTSJSON.String.anchor.compatibility -->
+
+<!-- UTSJSON.String.anchor.tutorial -->
+
+### big()
+
+<!-- UTSJSON.String.big.description -->
+
+<!-- UTSJSON.String.big.param -->
+
+<!-- UTSJSON.String.big.returnValue -->
+
+<!-- UTSJSON.String.big.test -->
+
+<!-- UTSJSON.String.big.compatibility -->
+
+<!-- UTSJSON.String.big.tutorial -->
+
+### blink()
+
+<!-- UTSJSON.String.blink.description -->
+
+<!-- UTSJSON.String.blink.param -->
+
+<!-- UTSJSON.String.blink.returnValue -->
+
+<!-- UTSJSON.String.blink.test -->
+
+<!-- UTSJSON.String.blink.compatibility -->
+
+<!-- UTSJSON.String.blink.tutorial -->
+
+### bold()
+
+<!-- UTSJSON.String.bold.description -->
+
+<!-- UTSJSON.String.bold.param -->
+
+<!-- UTSJSON.String.bold.returnValue -->
+
+<!-- UTSJSON.String.bold.test -->
+
+<!-- UTSJSON.String.bold.compatibility -->
+
+<!-- UTSJSON.String.bold.tutorial -->
+
+### fixed()
+
+<!-- UTSJSON.String.fixed.description -->
+
+<!-- UTSJSON.String.fixed.param -->
+
+<!-- UTSJSON.String.fixed.returnValue -->
+
+<!-- UTSJSON.String.fixed.test -->
+
+<!-- UTSJSON.String.fixed.compatibility -->
+
+<!-- UTSJSON.String.fixed.tutorial -->
+
+### fontcolor(color)
+
+<!-- UTSJSON.String.fontcolor.description -->
+
+<!-- UTSJSON.String.fontcolor.param -->
+
+<!-- UTSJSON.String.fontcolor.returnValue -->
+
+<!-- UTSJSON.String.fontcolor.test -->
+
+<!-- UTSJSON.String.fontcolor.compatibility -->
+
+<!-- UTSJSON.String.fontcolor.tutorial -->
+
+### fontsize(size)
+
+<!-- UTSJSON.String.fontsize.description -->
+
+<!-- UTSJSON.String.fontsize.param -->
+
+<!-- UTSJSON.String.fontsize.returnValue -->
+
+<!-- UTSJSON.String.fontsize.test -->
+
+<!-- UTSJSON.String.fontsize.compatibility -->
+
+<!-- UTSJSON.String.fontsize.tutorial -->
+
+### fontsize(size)
+
+<!-- UTSJSON.String.fontsize_1.description -->
+
+<!-- UTSJSON.String.fontsize_1.param -->
+
+<!-- UTSJSON.String.fontsize_1.returnValue -->
+
+<!-- UTSJSON.String.fontsize_1.test -->
+
+<!-- UTSJSON.String.fontsize_1.compatibility -->
+
+<!-- UTSJSON.String.fontsize_1.tutorial -->
+
+### italics()
+
+<!-- UTSJSON.String.italics.description -->
+
+<!-- UTSJSON.String.italics.param -->
+
+<!-- UTSJSON.String.italics.returnValue -->
+
+<!-- UTSJSON.String.italics.test -->
+
+<!-- UTSJSON.String.italics.compatibility -->
+
+<!-- UTSJSON.String.italics.tutorial -->
+
+### link(url)
+
+<!-- UTSJSON.String.link.description -->
+
+<!-- UTSJSON.String.link.param -->
+
+<!-- UTSJSON.String.link.returnValue -->
+
+<!-- UTSJSON.String.link.test -->
+
+<!-- UTSJSON.String.link.compatibility -->
+
+<!-- UTSJSON.String.link.tutorial -->
+
+### small()
+
+<!-- UTSJSON.String.small.description -->
+
+<!-- UTSJSON.String.small.param -->
+
+<!-- UTSJSON.String.small.returnValue -->
+
+<!-- UTSJSON.String.small.test -->
+
+<!-- UTSJSON.String.small.compatibility -->
+
+<!-- UTSJSON.String.small.tutorial -->
+
+### strike()
+
+<!-- UTSJSON.String.strike.description -->
+
+<!-- UTSJSON.String.strike.param -->
+
+<!-- UTSJSON.String.strike.returnValue -->
+
+<!-- UTSJSON.String.strike.test -->
+
+<!-- UTSJSON.String.strike.compatibility -->
+
+<!-- UTSJSON.String.strike.tutorial -->
+
+### sub()
+
+<!-- UTSJSON.String.sub.description -->
+
+<!-- UTSJSON.String.sub.param -->
+
+<!-- UTSJSON.String.sub.returnValue -->
+
+<!-- UTSJSON.String.sub.test -->
+
+<!-- UTSJSON.String.sub.compatibility -->
+
+<!-- UTSJSON.String.sub.tutorial -->
+
+### sup()
+
+<!-- UTSJSON.String.sup.description -->
+
+<!-- UTSJSON.String.sup.param -->
+
+<!-- UTSJSON.String.sup.returnValue -->
+
+<!-- UTSJSON.String.sup.test -->
+
+<!-- UTSJSON.String.sup.compatibility -->
+
+<!-- UTSJSON.String.sup.tutorial -->
+
 
 <!-- UTSJSON.String.tutorial -->
+
+
+## Android 平台实现
+
+* 目前 string 类型编译到 kotlin 为 kotlin.String

@@ -4,9 +4,11 @@ uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
 
 uni-app x 是一个庞大的工程，它包括uts语言、uvue渲染引擎、uni的组件和API、以及扩展机制。
 
-uts是一门类ts的、跨平台的、新语言。uts在iOS端编译为swift、在Android端编译为kotlin、在Web端编译为js。
+uts是一门类ts的、跨平台的、新语言。
 
-在Android平台，uni-app x 的工程被编译为kotlin代码，本质上是换了vue写法的原生kotlin应用，在性能上与原生kotlin一致。
+uts在iOS平台编译为swift、在Android平台编译为kotlin、在Web和小程序平台编译为js、在鸿蒙next平台上编译为ArkTS。
+
+在Android平台，uni-app x 的工程被整体编译为kotlin代码，本质上是换了vue写法的原生kotlin应用，在性能上与原生kotlin一致。
 
 可以体验打包后的[hello uni-app x](https://hellouniappx.dcloud.net.cn)，访问地址或扫描二维码后获取：
 
@@ -51,6 +53,7 @@ uts 全称 uni type script，是一门跨平台的、高性能的、强类型的
 * `web/小程序`平台，编译为JavaScript
 * `Android`平台，编译为Kotlin
 * `iOS`平台，编译Swift
+* `鸿蒙next`平台，编译为arkts
 
 uts和ts很相似，但为了跨端，uts进行了一些约束和特定平台的增补。详见 [uts语言介绍](./uts/README.md)
 
@@ -218,7 +221,6 @@ uni-app js引擎版，支持 plus API 和 weex API。但 uni-app x 中，不再�
 
 ## 5. 全局文件
 - manifest.json [详见](./collocation/manifest.md)
-- AndroidManifest.xml 与原生开发相同。注意Android权限配置在这里配置，而不是在manifest.json中 [详见](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
 - app.uvue [详见](./collocation/app.md)
 - pages.json 不支持app-plus的内容。[详见](./collocation/pagesjson.md)
 - uni.scss 正常支持。但注意app-uvue仅能使用[css子集](./css/README.md)
@@ -260,23 +262,24 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 **如果你一定要使用某个js库，还有一个办法是在uni-app x里的[web-view](./api/create-webview-context.md)组件，让其运行js并返回值给uts代码。**
 
 目前插件市场适配uni-app x的插件已有数百款，包括丰富的ui组件库生态：
-- [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：包含了核心的uts插件基类.和uvue组件库
-- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：低代码高性能UI框架
-- [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：一款适配 uni-app x 的轻量、简洁、高效、全面的移动端组件库
-- [t-uvue-ui](https://ext.dcloud.net.cn/plugin?id=15571)：丰富的组件库
+- [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：高品质UI库，插件大赛一等奖
+- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：setup组合式UI库，插件大赛一等奖
+- [TuiPlus ](https://ext.dcloud.net.cn/plugin?id=21111)：简洁高效的组件库，买即赠[xCharts原生图表库](https://ext.dcloud.net.cn/plugin?id=21107)
+- [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：免费、轻量UI库
 - [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceUI作者的免费开源组件库
 - [wx-ui](https://ext.dcloud.net.cn/plugin?id=15579)：基于uni-app x开发的高性能混合UI库
-- [OneUI](https://ext.dcloud.net.cn/plugin?id=17104)
+- [OneUI](https://ext.dcloud.net.cn/plugin?id=17104)：简洁、现代的 UI 组件
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
 
+除了上述整套UI插件，还有很多开发者提供了大量独立组件插件，如[陌生年华](https://ext.dcloud.net.cn/publisher?id=242774)的lime系列插件，即兼容uni-app又兼容uni-app x。
 
 ## 路线图
 
 除上述文档中声明已经完成的，还有如下需要注意：
 
 - 平台支持：Android、Web、iOS版已发布。小程序、鸿蒙还未支持。虽然uts语言支持swift，可以写原生插件，但uvue的iOS版目前只上线了js逻辑层，还未发布swift逻辑层。
-- 小程序平台：目前也可以通过编译到H5，在小程序的web-view里临时替代使用。24年下半年会正式支持小程序。
-- 鸿蒙next平台：24年7月会发布uni-app编译为鸿蒙hap，采用web-view；下半年内会提供uni-app x编译为鸿蒙hap，采用原生渲染。推荐不熟悉ts的开发者先学习ts，鸿蒙的artTs和uts，都是ts的变种，掌握类型系统是必须的。
+- 小程序平台：目前也可以通过编译到H5，在小程序的web-view里临时替代使用。24年Q4会正式支持小程序。
+- 鸿蒙next平台：uni-app已支持鸿蒙next，采用web-view渲染；24年年底会提供uni-app x编译为鸿蒙，采用原生渲染。目前uni-app的鸿蒙版，所有API实现均使用uts方式，可与uni-app x复用。
 - 目前不支持国际区账户创建和打包uni-app x，仅大陆区开发者账户可用。
 
 ::: info
@@ -284,8 +287,7 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 :::
 
 ## 案例
-- 快亿商城，[App端](https://ext.dcloud.net.cn/plugin?id=15458)、[管理端](https://ext.dcloud.net.cn/plugin?id=15568)
-- [ai(chatGPT)聊天对话，uni-app x(uvue+uts)和uniCloud云端一体完整](https://ext.dcloud.net.cn/plugin?id=17075)
+[另见](./sample.md)
 
 ## 自动化测试
 uni-app x 从源头重视产品质量，第一个版本就支持自动化测试。并为uni-app x产品编写了数十万行自动化测试例代码。
@@ -357,11 +359,13 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 - 未来 uni-app js引擎版还维护吗？\
   维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。不再维护不是下线，而是没有重大问题的话（如新手机不兼容）不会再更新了。
 
-  并非所有应用都需要达到微信、抖音的性能，js引擎版如能满足你的性能需求，那继续使用js引擎版。
+  如果开发小程序和Web，那使用哪个都差不多。
+  
+  如果开发App，那uni-app面向的是对体验不敏感，只了解web技术，对开发成本更敏感的前端开发者。而uni-app x则适用于愿意多付出一些开发成本、以追求更好体验的开发者。当然这个多付出的开发成本也远低于原生开发各端的成本。
 
-  未来vue页面也会支持uts组件。无论js引擎版还是x版，都支持uts插件生态，未来的原生扩展api和插件会是复用的。
+  不管uni-app还是uni-app x，都支持uts插件生态，原生扩展api和插件是复用的。
 
-  包括官方的组件和API也会复用，比如电量API [uni.getbatteryinfo](https://ext.dcloud.net.cn/plugin?id=9295)，和[lottie组件](https://ext.dcloud.net.cn/plugin?id=10674)，它们使用uts开发，在 uni-app js引擎版和x版上，调用的都是一套代码。
+  包括官方的组件和API也是复用的，比如电量API [uni.getbatteryinfo](https://ext.dcloud.net.cn/plugin?id=9295)，和[lottie组件](https://ext.dcloud.net.cn/plugin?id=10674)，它们使用uts开发，在 uni-app和uni-app x上，调用的都是一套代码。
 所以不必担心官方精力不足，顾此失彼。
 
 ::: tip 加群交流

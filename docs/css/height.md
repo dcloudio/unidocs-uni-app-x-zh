@@ -16,4 +16,6 @@
 
 <!-- CSSJSON.height.compatibility -->
 
+<!-- CSSJSON.height.example -->
+
 <!-- CSSJSON.height.reference -->

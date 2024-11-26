@@ -9,10 +9,16 @@
   * [几种组件标记的概念澄清](tutorial/idref.md)
 * web平台专题指南
   * [概述](web/README.md)
+  * [跨域](https://uniapp.dcloud.net.cn/tutorial/CORS.html)
+  * [宽屏适配](https://uniapp.dcloud.net.cn/tutorial/adapt.html)
   * [服务端渲染ssr](web/ssr.md)
+  * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
 * app平台专题指南
-	* [uni-app x 云端打包环境](tutorial/app-env.md)
-	* uni-app x 原生SDK和离线打包
+	* [标准基座信息](tutorial/app-playground.md)
+	* 云端打包
+		* [概述](tutorial/app-package.md)
+		* [云端打包环境](tutorial/app-env.md)
+	* uni-app x 原生SDK
 		* [概述](native/README.md)
 		* Android平台
 			* [原生工程配置](native/use/android.md)
@@ -27,16 +33,25 @@
 			* [启动与通信](native/use/androidcomm.md)
 			* [自定义基座](native/debug/android.md)
 			* [SDK下载](native/download/android.md)
+		* iOS平台
+		   * [原生工程配置](native/use/ios.md)
+		   * [内置模块](native/modules/ios/modules.md)
+		   * [UTS插件](native/use/iosuts.md)
+		   * [启动与通信](native/use/iosapi.md)
+			* [自定义基座](native/debug/ios.md)
+			* [SDK下载](native/download/ios.md)
 	* 应用市场上架注意
 		* [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
   * [Android审查元素](debug/android-inspector.md)
+	* [uts插件Android运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html)
+  * [uts插件iOS运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
   * [uts插件Android Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
   * [uts插件iOS Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
 * [性能优化](performance.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
-* [暗黑模式](api/theme.md)
+* [暗黑模式](api/theme-change.md)
 * [国际化](i18n.md)
 * [源码和示例](sample.md)
 * [跨平台框架及原生对比](select.md)

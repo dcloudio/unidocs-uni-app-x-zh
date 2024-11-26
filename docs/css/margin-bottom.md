@@ -11,10 +11,13 @@
 
 <!-- CSSJSON.margin-bottom.unixTags -->
 
-**注意**  
-app端不支持外边距折叠
-3.98以下版本当position:fixed|absolute时,margin不支持auto
+**注意**
+app端不支持外边距重叠（上下外边距折叠合并为单个边距）
+
+3.98以下版本当position:fixed|absolute时，margin属性值不支持auto
 
 <!-- CSSJSON.margin-bottom.compatibility -->
+
+<!-- CSSJSON.margin-bottom.example -->
 
 <!-- CSSJSON.margin-bottom.reference -->

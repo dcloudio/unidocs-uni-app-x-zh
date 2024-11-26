@@ -2,16 +2,22 @@
 * 全局
   * [获取当前应用实例](get-app.md)
   * [获取当前页面栈](get-current-pages.md)
+  * [动画帧](animation-frame.md)
+  * [Path2D](path2d.md)
+  * [Image](image.md)
 * 基础
   * [环境变量](env.md)
   * [事件总线](event-bus.md)
+  * [Base64](base64.md)
   * [拦截器](interceptor.md)
-  * [获取启动参数](get-launch-options-sync.md)
+  * [启动](launch.md)
   * [退出应用](exit.md)
-  * [获取服务提供商](get-provider.md)
+  * [获取服务提供商](provider.md)
   * [getPerformance](get-performance.md)
+  * [隐私信息授权](privacy.md)
 * 页面和路由
   * [页面跳转](navigator.md)
+  * [dialogPage](dialog-page.md)
   * [设置导航条颜色](set-navigation-bar-color.md)
   * [设置导航条标题](set-navigation-bar-title.md)
   * [设置tabBar](set-tab-bar.md)
@@ -22,6 +28,7 @@
   * [通过 id 获取 element](get-element-by-id.md)
   * [创建 SelectorQuery 实例](create-selector-query.md)
 * 界面
+  * [节点布局相交状态](create-intersection-observer.md)
   * [弹出操作菜单](show-action-sheet.md)
   * [显示模态弹窗](show-modal.md)
   * [显示 loading 提示框](show-loading.md)
@@ -31,6 +38,7 @@
   * [主题切换](theme-change.md)
   * [语言](locale.md)
 * 网络
+  * [概述](network-summarize.md)
   * [发起网络请求](request.md)
   * [上传文件](upload-file.md)
   * [下载文件](download-file.md)
@@ -44,14 +52,15 @@
   * [获取APP授权设置](get-app-authorize-setting.md)
   * [获取系统设置](get-system-setting.md)
   * [安装 APK](install-apk.md)
-  * [推送](push.md)
   * [获取电池电量信息](get-battery-info.md)
   * [打电话](make-phone-call.md)
+  * [剪切板](clipboard.md)
   * [罗盘](compass.md)
   * [wifi](wifi.md)
   * [内存](memory.md)
   * [截屏事件](capture-screen.md)
   * [监听权限申请](create-request-permission-listener.md)
+  * [扫码](scan-code.md)
 * 媒体
   * [拍照或从相册选择图片](choose-image.md)
   * [图片预览](preview-image.md)
@@ -63,6 +72,10 @@
   * [获取视频信息](get-video-info.md)
   * [压缩视频](compress-video.md)
   * [音频](create-inner-audio-context.md)
+* 画布
+  * [canvasToTempFilePath](canvas-to-temp-file-path.md)
+  * [createCanvasContextAsync](create-canvas-context-async.md)
+  * [CanvasRenderingContext2D](canvasrenderingcontext2d.md)
 * 位置
   * [获取当前位置](get-location.md)
   * [使用地图查看位置](open-location.md)
@@ -76,20 +89,23 @@
   * [App一键登录](get-univerify-manager.md)
   * [金融级实人认证](facial-recognition-meta-info.md)
 * 广告
+  * [开屏广告manifest配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-ad)
   * [激励视频广告](create-rewarded-video-ad.md)
+  * [插屏广告](create-interstitial-ad.md)
+* 支付
+  * [支付（requestPayment）](request-payment.md)
+  * [虚拟支付（requestVirtualPayment）](virtual-payment.md)
+* 分享
+  * [shareWithSystem](share-with-system.md)
 * 推送
   * [push](uni-push.md)
-* 支付
-  * [发起支付](request-payment.md)
-* 绘画
-  * [canvasToTempFilePath](canvas-to-temp-file-path.md)
-  * [canvasGetImageData](canvas-get-image-data.md)
-  * [canvasPutImageData](canvas-put-image-data.md)
+* 统计
+  * [统计采集上报](report.md)
 * 组件上下文对象
   * [创建 web-view 组件上下文对象](create-webview-context.md)
   * [创建 video 组件上下文对象](create-video-context.md)
   * [创建 map 组件上下文对象](create-map-context.md)
-  * [创建 canvas 组件上下文对象](create-canvas-context.md)
+  * [创建 canvas 组件上下文对象](create-canvas-context-async.md)
 * uniCloud客户端API
   * [概述](unicloud/README.md)
   * [云函数](unicloud/function.md)

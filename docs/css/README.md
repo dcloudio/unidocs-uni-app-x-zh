@@ -16,7 +16,7 @@ ucss这个子集，是抽取了web和app的共同能力，并通过web的css写�
 
 App端与web常见的区别是：
 1. 仅支持**flex 布局**：这是web、iOS、Android均支持的布局方式
-2. 选择器**只能用 class 选择器**，不能用tag、#id、[attr]等选择器
+2. 选择器**只能用 class 选择器**，不能用tag、#id、[attr]等选择器，目前class选择器不支持除A-Z、a-z、0-9、_、- 之外的字符
 3. **样式不继承**，即父元素样式不影响子元素
 
 > 但以上仅是常见的区别，并非所有，需开发者继续阅读全文。
@@ -229,13 +229,13 @@ app-uvue的css的“样式不继承”规则，虽然与web有差异，其实只
 
 实际上web的样式优先级规则非常非常复杂，可参考[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity)
 
-app中，设置样式只有内联样式即style属性和class属性这两种方式。它们只遵循1个简单规则：`内联样式(即style属性)优先级高于class`
+app中，设置样式只有内联样式即style属性和class属性这两种方式。它们只遵循1个简单规则：`内联样式(即style属性)优先级高于class选择器、class选择器之间的优先级遵循web规范`
 
-因为没有样式优先级冲突，`!important`这种提权方式在app中也没有必要。
+在web中，还存在`!important`例外规则，可参考[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity#!important_%E4%BE%8B%E5%A4%96%E8%A7%84%E5%88%99)
 
-web中因为样式冲突而产生很多样式实际渲染无效，但也需要存在dom里，所以形成了dom属性样式和计算样式的区分。
+在app中，`!important`仅支持在class选择器（可以覆盖内联style中的样式）中书写，style内联属性不支持。
 
-在app中没有这些区分，只有一套样式。
+除了`!important`外，后设的样式总是覆盖先设的样式。如果通过响应式变量绑定或DOM API操作时，要注意这一点。
 
 ## 样式作用范围
 

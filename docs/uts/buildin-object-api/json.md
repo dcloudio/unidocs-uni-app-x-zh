@@ -11,16 +11,7 @@ JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的对�
 > HBuilderX3.9.0统一为以上规范，在HBuilderX3.9.0之前版本 返回值只可能是 UTSJSONObject， 基本数据类型会转换失败
 > JSON.parse 目前仅支持第一个参数
 
-```ts
-const json = `{"result":true, "count":42}`;
-const obj = JSON.parse(json) as UTSJSONObject;
-
-console.log(obj["count"]);
-// expected output: 42
-
-console.log(obj["result"]);
-// expected output: true
-```
+<!-- UTSJSON.JSON.parse_tip.test -->
 
 **注意**
 
@@ -28,8 +19,7 @@ console.log(obj["result"]);
 - 如果输入的字符串不是合法的json格式，则会返回 null
 - JSON.parse 接口内部通过[特殊方式读取了范型类型](../generics.md#使用限制)，不支持传入动态的范型：比如将外层方法的普通范型参数传入 JSON.parse。
 
-
-### parse\<T\>(text: string)
+### parse(text, reviver?)
 
 <!-- UTSJSON.JSON.parse.description -->
 
@@ -37,17 +27,21 @@ console.log(obj["result"]);
 
 <!-- UTSJSON.JSON.parse.returnValue -->
 
- ```ts
-class Person {
-    name:string = ""
-    age:number = 0
-}
+<!-- UTSJSON.JSON.parse.test -->
 
-// 带泛型的parse，这里的personObj 类型是 我们定义的`Persion`类
-let personObj = JSON.parse<Person>('{"name":"zhangsan","age":12}')
-// 不带泛型的parse，这里的jsonObj类型是通用的`UTSJSONObject`
-let jsonObj = JSON.parse('{"name":"zhangsan","age":12}')
-```
+<!-- UTSJSON.JSON.parse.compatibility -->
+
+<!-- UTSJSON.JSON.parse.tutorial -->
+
+### parse\<T\>(text: string)
+
+<!-- UTSJSON.JSON.parse_1.description -->
+
+<!-- UTSJSON.JSON.parse_1.param -->
+
+<!-- UTSJSON.JSON.parse_1.returnValue -->
+
+<!-- UTSJSON.JSON.parse_1.test -->
 
 HBuilderX 3.9+，支持JSON.parse传入[泛型](../generics.md)。
 
@@ -55,8 +49,7 @@ HBuilderX 3.9+，支持JSON.parse传入[泛型](../generics.md)。
 
 相比不带泛型的`parse`函数，带泛型的 `parse`函数，会提高反序列数据的开发效率，明确的结构数据可以提升工程健壮度
 
-
-<!-- UTSJSON.JSON.parse.compatibility -->
+<!-- UTSJSON.JSON.parse_1.compatibility -->
 
 ### stringify(value, replacer?, space?)
 
@@ -68,17 +61,7 @@ HBuilderX 3.9+，支持JSON.parse传入[泛型](../generics.md)。
 
 <!-- UTSJSON.JSON.stringify.returnValue -->
 
-```ts
-console.log(JSON.stringify({ x: 5, y: 6 }));
-// expected output: "{"x":5,"y":6}"
-
-console.log(JSON.stringify([3, 'false', boolean]));
-// expected output: "[3,"false",false]"
-
-console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
-// expected output: ""2006-01-02T15:04:05.000Z""
-
-```
+<!-- UTSJSON.JSON.stringify.test -->
 
 序列化规则说明:
 
@@ -92,14 +75,6 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 |function   |对象内部声明的函数               |被序列化为 `null` |
 
 
-<!-- UTSJSON.JSON.stringify_1.description -->
-
-<!-- UTSJSON.JSON.stringify_1.param -->
-
-<!-- UTSJSON.JSON.stringify_1.returnValue -->
-
-<!-- UTSJSON.JSON.stringify_1.compatibility -->
-
 ### parseObject(text: string)
 
 注意： 此函数需要 HBuilderX 3.9x 以上版本
@@ -109,6 +84,8 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 <!-- UTSJSON.JSON.parseObject.param -->
 
 <!-- UTSJSON.JSON.parseObject.returnValue -->
+
+<!-- UTSJSON.JSON.parseObject.test -->
 
 <!-- UTSJSON.JSON.parseObject.compatibility -->
 
@@ -122,6 +99,8 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 
 <!-- UTSJSON.JSON.parseObject_1.returnValue -->
 
+<!-- UTSJSON.JSON.parseObject_1.test -->
+
 <!-- UTSJSON.JSON.parseObject_1.compatibility -->
 
 ### parseArray(text: string)
@@ -133,6 +112,8 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 <!-- UTSJSON.JSON.parseArray.param -->
 
 <!-- UTSJSON.JSON.parseArray.returnValue -->
+
+<!-- UTSJSON.JSON.parseArray.test -->
 
 <!-- UTSJSON.JSON.parseArray.compatibility -->
 
@@ -146,6 +127,8 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 
 <!-- UTSJSON.JSON.parseArray_1.returnValue -->
 
+<!-- UTSJSON.JSON.parseArray_1.test -->
+
 <!-- UTSJSON.JSON.parseArray_1.compatibility -->
 
 <!-- UTSJSON.JSON.tutorial -->
@@ -155,7 +138,7 @@ console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 
 从 HBuilder X 4.21 版本开始，JSON.parse 未指定类型泛型的情况下解析得到的 number 类型，不再是 `kotlin.Number` 而是 `UTSNumber` 类型。
 
-对开发者影响在于：之前允许 `number` 类型使用 `as` 操作符进行数据类型转换，在4.21 之后版本，此行为会导致编译报错. 
+对开发者影响在于：之前允许 `number` 类型使用 `as` 操作符进行数据类型转换，在4.21 之后版本，此行为会导致编译报错.
 
 ```ts
 let jsonObject = JSON.parseObject('{"a":1}') ;
@@ -176,8 +159,3 @@ let jsonObject = JSON.parseObject('{"a":1}') ;
 let b:Int = (jsonObject!['a'] as Number).toInt()
 console.log(b)
 ```
-
-
-
-
-

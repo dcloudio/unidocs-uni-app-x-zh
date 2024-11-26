@@ -129,10 +129,6 @@ var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 ```
 
-**注意**
-
-目前 Android、iOS 平台不支持`标签函数`的用法
-
 #### 转义特殊字符
 
 |字符	|意思		|
@@ -187,11 +183,19 @@ console.log(userA)
 ```
 
 注意花括号还有一个使用场景，被用于type时，是定义了一个自定义类型。下面的代码通过type关键字定义了一个 User类型，该自定义类型有2个属性，string类型的name和number类型的age。
+
+从 HBuilderX 4.31+ 起，编译器会根据上下文，自动推导对象字面量为type定义的类型。
 ```ts
-type User{
-	name:string = ""
-	age:number = 0
+type User = {
+	name:string
+	age:number
 }
+function printUser(user: User){
+	console.log(user) 
+}
+printUser({name: 'zhangsan',age: 12} as User) // 通过对象字面量 as User 构造一个 type 定义的 User 对象
+printUser({name: 'zhangsan',age: 12}) // 从 HBuilderX 4.31+ 起，无需手动 as User
+
 ```
 
 <!-- 

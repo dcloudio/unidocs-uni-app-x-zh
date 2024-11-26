@@ -2,6 +2,16 @@
 
 <!-- UTSAPIJSON.createSelectorQuery.description -->
 
+createSelectorQuery是小程序的API，因小程序未开放DOM，且视图层和逻辑层分离，于是提供了一个异步的API，可以在逻辑层有限的获取一些DOM能力。
+
+该API返回的类型为NodeRef。它和DOM的Element有区别。
+
+大多数组件的属性和样式操作，是通过绑定vue的响应式变量data来实现的。一般不使用本API。
+
+本API的主要用途是小程序下获取元素计算后的样式。如果您的应用不适配小程序，那么在Web和App上有更强大的[UniElement](../dom/README.md)。
+
+小程序下有时用本API获取部分组件的上下文context，但这个写法不跨平台。跨平台的获取组件context，应该使用uni.createXXContext()。
+
 <!-- UTSAPIJSON.createSelectorQuery.compatibility -->
 
 <!-- UTSAPIJSON.createSelectorQuery.param -->
@@ -89,6 +99,47 @@ uni.createSelectorQuery().select('.rect1').selectAll('.rect2').boundingClientRec
 result = [ {}, [{},{}] ]
 ```
 
+
+通过id查询组件内多节点
+
+和单根节点组件有所不同，有着多个根节点的组件需要透传 attribute
+
+页面
+
+```html
+<template>
+  <view>
+    <custom-component1 id="custom-component1"></custom-component1>
+
+    <button @click="query">query</button>
+  </view>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+      }
+    },
+    methods: {
+      query() {
+        uni.createSelectorQuery().in(this).select('#scustom-component1').boundingClientRect().exec((ret) => {
+          console.log(ret)
+        })
+      }
+    }
+  }
+</script>
+```
+
+组件 custom-component1
+
+```html
+<template>
+  <text>1</text>
+  <text v-bind="$attrs">2</text>
+  <text>3</text>
+</template>
+```
 
 **注意事项：**
 

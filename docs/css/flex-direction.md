@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.flex-direction.compatibility -->
 
+<!-- CSSJSON.flex-direction.example -->
+
 <!-- CSSJSON.flex-direction.reference -->

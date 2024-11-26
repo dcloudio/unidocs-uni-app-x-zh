@@ -30,6 +30,13 @@ const fs = uni.getFileSystemManager()
 	+ 应用内置沙盒目录（`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`）：存放框架的网络缓存（如网络图片、视频、web-view的缓存）、storage。
 	+ 沙盒外目录
 
+**uts插件开发**  
+在uts插件开发中调用系统 API 时可能需要平台相关的绝对路径，可以通过以下方式进行转换：  
+- app-android平台  
+  [UTSAndroid.convert2AbsFullPath](../uts/utsandroid.md#convert2absfullpath)  
+- app-ios平台  
+  [UTSiOS.convert2AbsFullPath](../uts/utsios.md#convert2absfullpath)  
+
 ## 代码包文件@package
 
 代码包文件，是源码工程中的静态资源文件，由编译器打包到发行包（如apk）中。全平台都如此。
@@ -136,6 +143,7 @@ uni-app x的部分内置API会产生临时文件会放置在本cache目录，如
 - uni.chooseImage、uni.chooseVideo拍摄或选择的相册文件
 - uni.compressImage、uni.compressVideo压缩后的文件
 - uni.getImageInfo网络图片下载到本地的文件
+- uni.createInnerAudioContext缓存的audio文件
 <!-- - 录音的文件 -->
 - dom element的截图API
 
@@ -147,6 +155,7 @@ uni-app x的部分内置API会产生临时文件会放置在本cache目录，如
 - uni-download // uni.downloadFile的默认下载地址 （在HBuilderX 3.98时曾使用目录uniDownloads，从3.99起调整为uni-download）
 - uni-media // uni.chooseImage、uni.chooseVideo拍摄或选择的相册文件，uni.compressImage、uni.compressVideo压缩后的文件，uni.getImageInfo网络图片下载到本地的文件
 - uni-snapshot // element takeSnapShot截图APi存储的路径
+- uni-audio //存放音频文件
 - uni-crash //存放崩溃日志
 	* java //java、kotlin层崩溃日志
 	* c //c、so库崩溃日志

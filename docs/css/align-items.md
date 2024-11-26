@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.align-items.compatibility -->
 
+<!-- CSSJSON.align-items.example -->
+
 <!-- CSSJSON.align-items.reference -->

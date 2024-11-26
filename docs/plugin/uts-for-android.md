@@ -120,40 +120,28 @@ class XXX{
 
 ### 2.4 线程环境差异 @thread-environment
 
-UTS环境中，默认是没有线程概念的。
+UTS语言本身没有线程的概念。 但在具体的运行平台上会有线程环境差异：
 
-如果需要执行异步任务，建议通过内置函数`UTSAndroid.getDispatcher("io")`执行
++ uni-app 平台：默认代码执行在 `WeexJSBridgeThread`
 
-[文档地址](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getdispatcher)
++ uni-app x 平台：默认代码执行在 `main`线程
 
 
+`Android`系统对线程操作存在较多的限制， UTS内置了[UTSAndroid.getDispatcher方法](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#getdispatcher)  用来屏蔽大多数底层细节，一般来说开发者只需要关心两种特殊情况：
+
+如果需要执行耗时任务：
+
+```ts
+UTSAndroid.getDispatcher("io").async(function(_){
+	// 执行耗时任务
+},null)
+```
+
+如果需要操作UI：
 
 ```ts
 UTSAndroid.getDispatcher("main").async(function(_){
-	if(Thread.currentThread().name != 'main'){
-		callback(false,"main thread error")
-		return
-	}
-	UTSAndroid.getDispatcher("dom").async(function(_){
-		/**
-		 * dom 参数，只在2.0生效，1.0会自动切换到main线程
-		 */
-		if(Thread.currentThread().name != 'main' && Thread.currentThread().name != 'io_dcloud_uniapp_dom'){
-			callback(false,"dom thread error")
-			return
-		}
-		UTSAndroid.getDispatcher("io").async(function(_){
-			/**
-			 * dom 参数，只在2.0生效，1.0会自动切换到main线程
-			 */
-			if(!Thread.currentThread().name.contains("DefaultDispatcher")){
-				callback(false,"io thread error")
-				return
-			}
-			callback(true,"pass")
-		},null)
-
-	},null)
+	// 执行界面修改，包括view添加移除等
 },null)
 ```
 
@@ -270,6 +258,8 @@ mediaPlayer.start();
 
 ### 3.4 增加libs依赖资源
 
+#### 远程依赖
+
 远端插件可以通过配置 `config.json`添加依赖 ，下面是一个`config.json`示例
 
 ```json
@@ -294,7 +284,7 @@ mediaPlayer.start();
 
 
 
-#### uni-app x
+##### uni-app x
 
 ```gradle
 
@@ -324,7 +314,7 @@ implementation 'androidx.recyclerview:recyclerview:1.0.0'
 
 ```
 
-#### uni-app 
+##### uni-app
 
 ```gradle
 implementation 'com.github.bumptech.glide:glide:4.9.0'
@@ -350,16 +340,48 @@ implementation 'androidx.recyclerview:recyclerview:1.0.0'
 implementation 'androidx.appcompat:appcompat:1.0.0'
 ```
 
+关于 `config.json` 的更多写法，可以参考[文档](https://nativesupport.dcloud.net.cn/NativePlugin/course/package.html#dependencies)
 
-如果是本地依赖, 参考 [hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs) 将jar/aar 添加到 `utssdk/app-android/libs` 目录下即可使用
 
-对于gradle 配置的高级写法，可以参考[文档](https://nativesupport.dcloud.net.cn/NativePlugin/course/package.html#dependencies)
+#### 本地依赖
 
-### 3.5 远程依赖仓库说明
+jar/aar文件:
+
+参考 [hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs) 将jar/aar 添加到 `utssdk/app-android/libs` 目录下即可使用
+
+so文件:
+
+目前暂不支持so文件直接本地调试，所以在HBuilderX 4.26版本支持 [混编](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin-hybrid.html) 之前,推荐开发者将so 封装为AAR，或者分别集成 so和jar文件，自定义基座后再进行调试
+
+HBuilderX 4.26版本之后，开发者可以使用混编kotlin代码的方式，直接集成so文件。参考[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/alpha/uni_modules/uts-nativepage/utssdk/app-android/libs)
+
+### 3.5 其他配置文件
+
+uni-app x / uni-app 均支持打包时手动指定资源位置 [说明文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#nativeresources)
+
+例如 接入`Firebase` 时需要将`google-services.json`文件放在 `app` 目录下，则可以通过如下的配置来实现：
+
+
+<pre v-pre="" data-lang="">
+	<code class="lang-" style="padding:0">
+┌─pages                         //页面目录
+│  └─[具体内容]                   
+├─nativeResources               //配置文件目录
+│  └─android
+│  	└─google-services.json
+├─ // 其他文件
+└─App.vue 
+	</code>
+</pre>
+
+具体的打包示例，参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts) 
+
+### 3.6 远程依赖仓库说明
 
 目前云打包机支持下面的仓库：
 
 ```gradle
+
 
 jcenter()
 google()
@@ -367,6 +389,8 @@ google()
 maven {url 'https://developer.huawei.com/repo/'}
 // jitpack 远程仓库：https://jitpack.io
 maven { url 'https://jitpack.io' }
+// mavenCentral 默认支持
+mavenCentral()
 
 ```
 
@@ -375,7 +399,7 @@ maven { url 'https://jitpack.io' }
 这种情况，推荐开发者上传到 jitpack.io  这也是目前android 原生开发主流的远程仓库。 [使用文档](https://docs.jitpack.io/)
 
 
-### 3.6 Android 编译SDK版本说明
+### 3.7 Android 编译SDK版本说明
 
 截止 HBuilderX 4.15 版本：
 
@@ -387,13 +411,14 @@ maven { url 'https://jitpack.io' }
 
 
 
+
 ## 4 Android内置库@iodcloudutsandroid
 
 **在UTS语言中，所有的Android原生API都可以调用**
 
 对于Android开发中高频使用的`application`/`activity`等系统能力、`uni-app`/`uni-app x` 运行时框架信息等，UTS通过内置对象`UTSAndroid` 进行了封装，以便开发者调用
 
-下面列出了常见API的使用示例，完整的 `UTSAndroid` API文档参考：https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html
+下面列出了常见API的使用示例，完整的 `UTSAndroid` [API文档](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html)
 
 
 #### getAppContext
@@ -444,34 +469,8 @@ let decorView = UTSAndroid.getUniActivity()!.window.decorView;
 let frameContent = decorView.findViewById<FrameLayout>(android.R.id.content)
 ```
 
-#### onAppActivityDestroy
 
-即使在android原生开发中，应用的生命周期管理也是十分重要的。 [android生命周期](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=zh_cn)
-
-UTS环境中对原生的生命周期进行了封装和简化，大多数情况下，开发者只需要了解本章节中列出的 activity相关生命周期即可。
-
-其中最为常见的场景，要数`onAppActivityDestroy`中释放系统资源：
-
-举个例子，以Hello UTS  [用户截屏插件](https://ext.dcloud.net.cn/plugin?id=9897)为例。
-
-在注册监听回调时，添加了下列代码。
-```ts
-UTSAndroid.onAppActivityDestroy(function(){
-	screenOB?.stopWatching()
-	screenOB = null
-})
-```
-
-这段代码的意思是当宿主activity被销毁时，主动回收屏幕监听的FileObserver
-
-这是因为除了正常的用户注册/注册 之外，还存在一种情况：用户没有反注册，便关闭了应用。   此时FileObserver 并没有被反注册回收。就会导致应用关闭后继续持有上一个uni-app js引擎实例的引用，从而导致下一次启动时出现引擎回调找不到的情况。
-
-
-开发者在开发UTS插件时，如果遇到了类似使用系统组件的情况，也需要特别关注资源释放情况。
-
-
-
-#### 4.4 requestSystemPermission
+#### requestSystemPermission
 
 HBuilder X 3.8.2版本之后支持
 
@@ -523,17 +522,27 @@ UTSAndroid.getUniActivity()!.getWindow().getDecorView();
 
 
 
+## 5 隐私协议适配说明@iodcloudprivacy
+
+UTS内置了隐私状态管理API，以支持开发者管理用户隐私协议状态配置的需求：
+
+获取用户当前是否已同意隐私协议[isPrivacyAgree](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#isprivacyagree-boolean)
+
+更新用户对隐私协议的状态[setprivacyagree](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#setprivacyagree-state-boolean-void)
+
+重置隐私协议状态[resetPrivacyAgree](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#resetprivacyagree-void)
 
 
 
-## 5 Kotlin与UTS差异重点介绍 (持续更新)
+
+## 6 Kotlin与UTS差异重点介绍 (持续更新)
 
 通过上面的章节的阅读,至此我们认为你已经掌握了UTS语法，掌握了基本的Kotlin语法，掌握了UTS对于android资源的支持。
 
 但是对于一个熟悉android开发的kotlin语言者来说，有很多常用的习惯发生了改变，我们会在这个章节特别指出，便于开发者加深认识。
 
 
-### 5.1 语法差异
+### 语法差异
 
 -------------------------------
 
@@ -762,19 +771,19 @@ class ScreenReceiver extends BroadcastReceiver{
 
 
 
-## 6  常见问题(持续更新)
+## 7  常见问题(持续更新)
 
-### 6.1 如何在UTS环境中，新建一个`activity`？
-
-参考Hello UTS项目中的uts-nativepage插件
-
-
-### 6.2 如何在UTS环境中，新建一个`service`？
+### 7.1 如何在UTS环境中，新建一个`activity`？
 
 参考Hello UTS项目中的uts-nativepage插件
 
 
-### 6.3 如何在UTS环境中，新建一个`Thread`？
+### 7.2 如何在UTS环境中，新建一个`service`？
+
+参考Hello UTS项目中的uts-nativepage插件
+
+
+### 7.3 如何在UTS环境中，新建一个`Thread`？
 
 简单示例
 ```ts
@@ -838,7 +847,7 @@ import R from 'io.dcloud.uni_modules.uts_nativepage.R';
 ```
 
 
-### 6.4  如何实现一个接口
+### 7.4  如何实现一个接口
 
 以HelloUTS nativepage插件 部分代码为例：
 
@@ -926,7 +935,7 @@ ScancodeConfig.setShowLine(false);
 ScancodeConfig.showLine = false;
 ```
 
-### 6.5 Android原生API过时警告处理
+### 7.5 Android原生API过时警告处理
 
 调用原生过时的API插件编译时产生警告，可以使用`@Suppress("DEPRECATION")`添加注解到使用的方法上忽略警告，例：
 ```js
@@ -944,7 +953,7 @@ function getAppName(context : Context) : string {
 }
 ```
 
-### 6.6 泛型传递丢失的问题
+### 7.6 泛型传递丢失的问题 @lost-generics
 
 如果在UTS中声明一个包含泛型声明的方法，可能会出现泛型丢失，原因是因为普通的kotlin 方法没有实现泛型的传递
 
@@ -977,7 +986,66 @@ export function request<T>(options : RequestOptions<T>) : RequestTask {
 ```
 
 
-## 7  已知待解决问题(持续更新)
+**注意：不要在`inline`方法中创建局部function，比如request的success回调、Promise的回调，原因是kotlin语言的限制（inline方法展开到内联位置，也会把局部方法展开过去，这是不允许的），由此把使用局部function的逻辑封装到非内联的方法中，绕过此限制。**  
+
+下面是可以完整的示例：
+
+```
+@UTSAndroid.keyword("inline")
+@UTSAndroid.keyword("reified")
+export function boxRequest<T>(url : string) : Promise<T> {
+	return innerRequest<T>(url, UTSAndroid.getGenericClassName<T>(), UTSAndroid.getGenericType<T>())
+}
+
+function innerRequest<T>(url : string, clzName : string, type : Type) : Promise<T> {
+	return new Promise<T>((resolve, reject) => {
+		uni.request<string>({
+			url: url,
+			method: "GET",
+			success: (e : RequestSuccess<string>) => {
+				const result = JSON.parse<T>(e.data!, type)
+				if (result != null) {
+					resolve(result)
+				} else if ("java.lang.Object".equals(clzName, true)) {// 解决泛型是any，但后端返回string的情况。
+					resolve(e.data! as T)
+				} else{
+					reject("parsing failure")
+				}
+			},
+			fail(e : RequestFail) {
+				reject(e)
+			},
+		} as RequestOptions<string>)
+	});
+}
+```
+调用代码：
+```
+const respone = await boxRequest<CustomType>("xxxx")
+```
+
+此示例中，网络请求泛型为`string`在4.25版本以下会导致错误，此问题已在4.25进行修复 [issue](https://issues.dcloud.net.cn/pages/issues/detail?id=4010)
+
+
+
+
+### 7.7 获取原生Class 对象
+
+可以使用下面的代码获取指定class对象
+```kotlin
+// 根据 类名 获取 class
+let getClassByName = Class.forName("io.dcloud.uts.UTSJSONObject")
+console.log(getClassByName);
+// 根据 实例 获取 class
+let getClassByInstance = UTSAndroid.getJavaClass(UTSAndroid.getUniActivity()!)
+console.log(getClassByInstance);
+```
+
+### 7.8 推断为XXX，但预期为Unit
+
+`uts`中的 `Void` 对应 `kotlin`语言中的 `Unit`,当报错：预期为 Unit 时，实际上是期望`Void`
+
+## 已知待解决问题(持续更新)
 
 ### 结构入参 boolean 参数默认为true
 
@@ -995,4 +1063,3 @@ export function request<T>(options : RequestOptions<T>) : RequestTask {
 UTS插件本地调试尚不支持直接使用so文件，需要将so文件和调用代码封装为AAR 或者分别集成 so和jar文件
 
 AAR调用示例参考：[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-toast)
-

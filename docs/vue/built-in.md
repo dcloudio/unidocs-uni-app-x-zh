@@ -205,7 +205,7 @@
   - `<input>`
   - `<textarea>`
 
-- 修饰符 <Badge text="仅 Android">
+- 修饰符 <Badge text="仅 Android"/>
   - `.lazy` - 监听 `change` 事件而不是 `input` 事件
   - `.number` - 将输入的合法字符串转为数字
   - `.trim` - 移除输入内容两端空格
@@ -424,6 +424,40 @@
 
 <!-- VUEJSON.template.description -->
 
+`<template>` 有2个用途：
+1. 作为单文件组件规范的模板根节点。在 `<template>` 下面放置页面模板真正的组件内容。
+此时lang属性生效。但vue指令不生效。
+
+2. 在根 `<template>` 下面，继续放置`<template>`虚节点，可以让多个组件遵守相同的vue指令。
+比如下面的示例中，通过`<template v-if="isShow">`包裹了text和button，让2个组件共同遵守同一个`v-if`指令，且不增加层级。
+如果把这个子`<template>`改成`<view>`，会增加一层节点，层级太多会影响性能。
+```vue
+<template>
+  <view>
+    <template v-if="isShow">
+      <text>abc</text>
+      <button>按钮</button>
+    </template>
+		<view></view>
+  </view>
+</template>
+```
+
+此时lang属性不生效。
+
+::: warning 注意
+对非根的 `<template>` 的特殊处理，只有在它与以下任一指令一起使用时才会被触发：
+
+- `v-if`、`v-else-if` 或 `v-else`
+- `v-for`
+- `v-slot`
+
+正常情况下，应该搭配如上vue指令使用。但异常情况下，如果这些指令都不存在，那么容错策略如下：\
+在 `Web` 端将被渲染成一个[原生的 `<template>` 元素](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)；\
+在 `App` 端将被渲染成 `view`。此时会多个层级。
+
+:::
+
 <!-- VUEJSON.template.attribute -->
 
 <!-- VUEJSON.template.event -->
@@ -524,20 +558,37 @@
 
 ```vue
 <script lang="uts">
+  import Foo from '@/components/Foo.uvue'
+
   export default {
+    components: { Foo },
     mounted() {
       // #ifdef APP
-      (this.$refs['input'] as UniInputElement).setAttribute('value', 'input value')
+      (this.$refs['input'] as UniInputElement).setAttribute('value', 'input value');
       // #endif
       // #ifdef WEB
-      (this.$refs['input'] as UniInputElement).value = 'input value'
+      (this.$refs['input'] as UniInputElement).value = 'input value';
       // #endif
+      // 当在 v-for 中使用模板引用时，this.$refs 中对应的值是一个数组
+      (this.$refs['textItems'] as UniTextElement[]).forEach((item : UniTextElement) => {
+        item.style.setProperty('color', 'red')
+      });
+      // 调用自定义组件方法
+      (this.$refs['foo'] as ComponentPublicInstance).$callMethod('updateTitle');
+      // 获取自定义组件响应式数据
+      console.log((this.$refs['foo'] as ComponentPublicInstance).$data['title']); // new title
     }
   }
 </script>
 
 <template>
-  <input ref="input" />
+  <view>
+    <input ref="input" />
+    <text v-for="item in 3" ref="textItems" :key="item">{{
+      item
+    }}</text>
+    <Foo ref="foo" />
+  </view>
 </template>
 ```
 `this.$refs` 也是非响应式的，因此你不应该尝试在模板中使用它来进行数据绑定。
@@ -545,26 +596,71 @@
 使用组合式 API，引用将存储在与名字匹配的 ref 里：
 ```vue
 <script setup lang="uts">
-// 声明一个 ref 来存放该元素的引用
-// 必须和模板里的 ref 同名
-const input = ref<UniInputElement | null>(null)
+  import Foo from '@/components/Foo.uvue'
 
-onMounted(() => {
-  // #ifdef APP
-  input.value!.setAttribute('value', 'input value')
-  // #endif
-  // #ifdef WEB
-  input.value!.value = 'input value'
-  // #endif
-})
+  // 声明一个 ref 来存放该元素的引用, 必须和模板里的 ref 同名
+  const input = ref<UniInputElement | null>(null)
+  // 当在 v-for 中使用模板引用时，对应的 ref 中包含的值是一个数组
+  const textItems = ref<UniTextElement[] | null>(null)
+  // 声明一个 ref 来存放自定义组件的引用, 必须和模板里的 ref 同名
+  const foo = ref<ComponentPublicInstance | null>(null)
+
+  onMounted(() => {
+    // #ifdef APP
+    input.value!.setAttribute('value', 'input value')
+    // #endif
+    // #ifdef WEB
+    input.value!.value = 'input value'
+    // #endif
+    textItems.value!.forEach((item: UniTextElement) => {
+      item.style.setProperty('color', 'red')
+    })
+    // 调用自定义组件方法
+    foo.value!.$callMethod('updateTitle')
+    // 获取自定义组件响应式数据
+    console.log(foo.value!.$data['title']) // new title
+  })
 </script>
 
 <template>
-  <input ref="input" />
+  <view>
+    <input ref="input" />
+    <text v-for="item in 3" ref="textItems" :key="item">{{
+      item
+    }}</text>
+    <Foo ref="foo" />
+  </view>
 </template>
 ```
 
-[详情](./component.md#page-call-component-method)
+```vue
+<!-- components/Foo.uvue -->
+<template>
+  <view>
+    <text>title: {{title}}</text>
+  </view>
+</template>
+
+<script>
+  export default {
+    name:"Foo",
+    data() {
+      return {
+        title: 'default title'
+      }
+    },
+    methods: {
+      updateTitle(){
+        this.title = 'new title'
+      }
+    }
+  }
+</script>
+```
+
+#### 获取内置组件与自定义组件的区别
+- 使用 `ref` 获取内置组件实例时会获取到对应的 `Element`，例如上述代码示例中，`input` 组件获取到的是 `UniInputElement`, `text` 组件获取到的是 `UniTextElement`，可以调用 `Element` 的方法和属性。
+- 使用 `ref` 获取自定义组件实例时会获取到对应的 vue 组件实例，例如上述代码示例中，`Foo` 组件获取到的是 `ComponentPublicInstance`，可以获取自定义组件的属性或调用方法，[详情](./component.md#page-call-component-method)。
 
 
 ### is

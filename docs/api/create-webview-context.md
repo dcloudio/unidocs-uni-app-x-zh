@@ -2,12 +2,7 @@
 
 <!-- UTSAPIJSON.createWebviewContext.description -->
 
-由于本API仅在App端支持。推荐直接使用DOM API操作。UniWebViewElement比webviewContext有更多属性和方法。例如：
-```js
-let wv = uni.getElementById("wv1") as UniWebViewElement
-```
-
-如果您继续使用createWebviewContext，请注意第2个参数问题。
+参考：[web-view组件](../component/web-view.md)
 
 在不传入第2个component参数时，默认从页面栈顶的页面来查找这个webviewContext。
 
@@ -15,12 +10,18 @@ let wv = uni.getElementById("wv1") as UniWebViewElement
 
 - 选项式中，this代表当前vue实例。如果是在页面的export default内、函数外使用this，即代表该页面的组件实例。
 ```js
-let v1 = uni.createWebviewContext("wv1", this)
+let v1 = uni.createWebviewContext("wv1", this) //获取id为wx1的web-view组件的context
 ```
 - 组合式中，通过getCurrentInstance()!.proxy! 获取当前页面的组件实例。
 ```js
-let v1 = uni.createWebviewContext("wv1", getCurrentInstance()!.proxy!)
+let v1 = uni.createWebviewContext("wv1", getCurrentInstance()!.proxy!) //获取id为wx1的web-view组件的context
 ```
+
+由于本API仅在App端支持。也可以直接使用DOM API操作。UniWebViewElement比webviewContext有更多属性和方法。例如：
+```js
+let wv = uni.getElementById("wv1") as UniWebViewElement
+```
+
 
 <!-- UTSAPIJSON.createWebviewContext.compatibility -->
 

@@ -42,9 +42,15 @@ ijkplayer库底层又使用了ffmpeg，这些库的功能较多，官方的video
 
 video组件的源码[详见](https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-video)。下载该uni_modules到工程下，修改源码打包，可覆盖内置的video组件。
 
-另外ijkplayer作为一个开源库，比腾讯视频等商业sdk仍有差距。如无法在开源库上满足需求，可在插件市场寻找腾讯视频等商业sdk插件：[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91&orderBy=Relevance&cat1=5&cat2=51)、[阿里云视频](https://ext.dcloud.net.cn/search?q=%E9%98%BF%E9%87%8C%E4%BA%91%E8%A7%86%E9%A2%91&orderBy=Relevance&cat1=5&cat2=51)
+另外ijkplayer作为一个开源库，比腾讯视频等商业sdk仍有差距。如无法在开源库上满足需求，可在插件市场寻找其他插件：见插件市场[视频播放](https://ext.dcloud.net.cn/search?q=%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE&orderBy=Relevance&uni-appx=1)
 
 <!-- UTSCOMJSON.video.children -->
+
+- App-Android平台需HBuilderX 4.25+
+- App-iOS平台需HBuilderX 4.33+
+
+子组件，可自定义视频全屏时的UI表现。开发者可以通过子组件替换默认的控件样式以及进一步扩展组件能力。hello uni-app x中给出了如何通过子组件实现自定义快进、快退控件的示例。
+
 
 ### 上下文对象API
 
@@ -57,7 +63,7 @@ video的操作api为[uni.createVideoContext()](../api/create-video-context.md)�
 <!-- UTSCOMJSON.video.reference -->
 
 ### Bug & Tips@tips  
-- app平台暂不支持横屏全屏后放置子组件
+- App-iOS平台暂不支持横屏全屏后放置子组件
 - 标准运行基座默认不包含intel x86 cpu的兼容so库，所以video组件在标准基座运行时无法在x86 cpu的设备上运行（常见于模拟器）。如需支持x86 cpu，请在manifest里配置`abiFilters`，打包或自定义基座后生效 [详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest.html#android)
 - App默认拦截触摸事件，目前会导致父组件无法响应触摸事件
 - video 默认宽度为300px，高度为225px。（App平台从 uni-app x 4.0起支持该默认宽高）

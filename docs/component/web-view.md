@@ -10,6 +10,41 @@
 
 <!-- UTSCOMJSON.web-view.component_type -->
 
+#### 获取原生WebView对象@nativeview
+
+为增强uni-app x组件的开放性，从 `HBuilderX 4.25` 起，UniElement对象提供了 [getAndroidView](../dom/unielement.md#getandroidview) 和 [getIOSView](../dom/unielement.md#getiosview) 方法。
+
+该方法可以获取到 web-view 组件对应的原生 `WebView` 对象，从而可以调用原生 API 以扩展当前 web-view 组件和上下文对象未提供的能力。
+
+比如：Android 平台和 iOS 平台的原生 WebView 都提供了 canGoBack 和 canGoForward 两个 API，用来判断当前网页是否可以回退和前进。但 uni-app x 的 web-view 组件上下文对象没有封装上述 API。
+
+下面则举例说明在 Android 平台如何通过获取原生 WebView 对象来实现上述能力（iOS 平台写法类似）。
+
+```js
+import WebView from 'android.webkit.WebView';
+
+function canGoBack() : boolean {
+	// 第一步获取web-view组件的UniElement对象
+	const element = uni.getElementById(elementId); //elementId为页面上web-view组件的id。不过一般建议从uvue页面给uts插件传入指定的UniElement对象，而不是在uts插件中直接获取页面组件的id。
+	// 第二步通过UniElement的getAndroidView方法，通过泛型指定的方式，获取Android原生的WebView对象。泛型参数即为原生对象的类型名称
+  const webview = element?.getAndroidView<WebView>();
+	// 然后就可以调用原生WebView的各种方法，比如 canGoBack 方法
+  return webview == null ? false : webview.canGoBack();
+}
+
+function canGoForward() : boolean {
+  const element = uni.getElementById(elementId); //elementId为页面上web-view组件的id
+  const webview = element?.getAndroidView<WebView>();
+  return webview == null ? false : webview.canGoForward();
+}
+```
+
+详细的示例源码，在 hello uni-app x 的 组件 -> [web-view 示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/web-view/web-view.uvue) 中，
+获取原生WebView对象，然后进一步使用了可否前进后退的方法，封装代码如下：
+- [Android](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
+- [iOS](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+
+
 ### 组件宽高说明  
 - web和小程序平台上，web-view是全屏的，即页面只能显示一个铺满的web-view。  
 - app/web平台的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。  
@@ -70,5 +105,5 @@ uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中�
 ## 注意
 - app平台web-view组件为系统Webview组件，内核版本号不由uni-app x框架控制。  
 - app-android平台，web-view版本不一定是手机默认浏览器的版本。在部分手机上系统web-view的升级需要升级rom，部分手机则可以单独升级Android System Webview包。如需x5等三方webview，需使用uts插件，[见插件市场](https://ext.dcloud.net.cn/search?q=x5)。使用三方webview可减少系统webview的碎片化问题。  
-- iOS上，web-view的版本与iOS的版本绑定，也即是手机Safari浏览器的版本。  
+- iOS上，web-view的版本与iOS的版本绑定，也即是手机Safari浏览器的版本。WKWebview的限制比Android要多一些，比如无法使用跨域cookie，具体见Apple开发者文档。
 - 页面中的web-view组件数量不宜太多，每个web-view都会占用不少内存。  

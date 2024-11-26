@@ -60,6 +60,8 @@ uni-app发明了完善的条件编译，帮助开发者处理平台差异。即�
 
 - HBuilderX 4.02 以下版本，运行到自定义基座时，报错：uts插件[xxx]不存在，请重新打包自定义基座。 [解决方案](https://issues.dcloud.net.cn/pages/issues/detail?id=781)
 
+- 为优化开发体验减少运行时页面跳转等待时间，HBuilderX 4.28起，运行到web端浏览器打开后会自动触发剩余页面编译。
+
 ## 静态资源文件的处理逻辑@static
 
 编译器首先会扫描全局文件和pages.json，根据pages.json扫描每一个页面，再分析每个页面引用的外部资源，比如uts文件、css文件、uvue组件、图片字体等本地静态资源。

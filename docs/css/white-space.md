@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.white-space.compatibility -->
 
+<!-- CSSJSON.white-space.example -->
+
 <!-- CSSJSON.white-space.reference -->

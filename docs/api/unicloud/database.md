@@ -6,6 +6,7 @@ uniCloud.databaseForJQL()是客户端访问云数据库的API，即[clientDB](ht
 - 暂不支持multiSend
 - 暂不支持getOne
 - 暂不支持调用`db.command.aggregate`
+- db.command.xxx不支持链式调用，如`db.command.lte(1726934400000).and(db.command.gte(1726848000000))`需改为`db.command.and([db.command.lte(1726934400000),db.command.gte(1726848000000)])`
 
 **和uni-app项目的差异**
 

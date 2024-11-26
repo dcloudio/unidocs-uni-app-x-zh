@@ -13,11 +13,13 @@
 
 <!-- CSSJSON.min-height.compatibility -->
 
+<!-- CSSJSON.min-height.example -->
 
-#### App平台  
+
+#### App平台
 在App端为了优化文字排版性能，不支持 auto、none、max-content、min-content、fit-content，默认值为0px。
 
-#### Web规范  
+#### Web规范
 默认值为 auto，通过计算选择一个 min-height 值。
 
 <!-- CSSJSON.min-height.reference -->

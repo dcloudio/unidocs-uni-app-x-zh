@@ -23,9 +23,9 @@ uni-ad是DCloud提供的聚合广告平台，激励视频的广告来源主要�
 
 3. 配置广告模块
 
-在manifest中配置添加三方广告SDK。具体配置可参考[文档](../collocation/manifest-modules.md#uni-ad)。
+App平台在manifest中配置添加三方广告SDK。具体配置可参考[文档](../collocation/manifest-modules.md#uni-ad)。
 
-打正式包或自定义基座后可生效。标准基座不生效。
+打正式包或自定义基座后可生效。标准基座包含的是测试广告位，无法为你产生收益。
 
 4. 发放奖励
 
@@ -46,7 +46,8 @@ uni-ad是DCloud提供的聚合广告平台，激励视频的广告来源主要�
 ## Tips
 
 + uni-app x 标准基座激励视频广告测试广告位id为`1507000689`。正式开发需配置自己的广告位id，并且打包自定义基座后生效。
-+ 激励视频广告目前仅支持API形式，暂不支持组件形式
++ 激励视频广告目前仅支持API形式，暂不支持组件形式。
++ 部分广告渠道不支持模拟器，最终效果及服务器回调应以真机为准。
 
 <!-- UTSAPIJSON.createRewardedVideoAd.example -->
 

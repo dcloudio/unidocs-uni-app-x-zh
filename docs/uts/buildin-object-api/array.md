@@ -4,7 +4,7 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 ## 构造函数
 
-### new(arrayLength ?: number) : any[];@Constructor(arrayLength?)_0
+### new \<T>(...items : T\[]) : T[]@Constructor(...items)
 
 <!-- UTSJSON.Array.Constructor.description -->
 
@@ -18,33 +18,26 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.Constructor.tutorial -->
 
-### new \<T>(arrayLength : number) : T[];@Constructor(arrayLength)_1
+::: warning 注意事项
 
-<!-- UTSJSON.Array.Constructor_1.description -->
+与JS中的`Array` 不同，`UTS`不支持的指定长度初始化Array的写法
 
-<!-- UTSJSON.Array.Constructor_1.param -->
+```ts
+let arr = new Array(10)
+```
 
-<!-- UTSJSON.Array.Constructor_1.returnValue -->
+上面的代码在不同的平台的表现有差异:
 
-<!-- UTSJSON.Array.Constructor_1.test -->
+- web平台
 
-<!-- UTSJSON.Array.Constructor_1.compatibility -->
+	一个长度为10的数组，每一个元素都是 undefined
 
-<!-- UTSJSON.Array.Constructor_1.tutorial -->
+- Android/ios平台
 
-### new \<T>(...items : T\[]) : T[]@Constructor(...items)_2
+	一个长度为1的数组，其元素为 数字10
 
-<!-- UTSJSON.Array.Constructor_2.description -->
+:::
 
-<!-- UTSJSON.Array.Constructor_2.param -->
-
-<!-- UTSJSON.Array.Constructor_2.returnValue -->
-
-<!-- UTSJSON.Array.Constructor_2.test -->
-
-<!-- UTSJSON.Array.Constructor_2.compatibility -->
-
-<!-- UTSJSON.Array.Constructor_2.tutorial -->
 
 ## 实例属性
 
@@ -56,11 +49,7 @@ Array 对象是用于构造数组的全局对象，数组是类似于列表的�
 
 <!-- UTSJSON.Array.length.returnValue -->
 
-```ts
-const clothing = ['shoes', 'shirts', 'socks', 'sweaters'];
-console.log(clothing.length);
-// expected output: 4
-```
+<!-- UTSJSON.Array.length.test -->
 
 <!-- UTSJSON.Array.length.compatibility -->
 
@@ -74,6 +63,61 @@ console.log(clothing.length);
 
 ## 实例方法
 
+### toString()
+
+<!-- UTSJSON.Array.toString.description -->
+
+<!-- UTSJSON.Array.toString.param -->
+
+<!-- UTSJSON.Array.toString.returnValue -->
+
+<!-- UTSJSON.Array.toString.test -->
+
+<!-- UTSJSON.Array.toString.compatibility -->
+
+<!-- UTSJSON.Array.toString.tutorial -->
+
+### add(item)
+
+<!-- UTSJSON.Array.add.description -->
+
+<!-- UTSJSON.Array.add.param -->
+
+<!-- UTSJSON.Array.add.returnValue -->
+
+<!-- UTSJSON.Array.add.test -->
+
+<!-- UTSJSON.Array.add.compatibility -->
+
+<!-- UTSJSON.Array.add.tutorial -->
+
+### toLocaleString()
+
+<!-- UTSJSON.Array.toLocaleString.description -->
+
+<!-- UTSJSON.Array.toLocaleString.param -->
+
+<!-- UTSJSON.Array.toLocaleString.returnValue -->
+
+<!-- UTSJSON.Array.toLocaleString.test -->
+
+<!-- UTSJSON.Array.toLocaleString.compatibility -->
+
+<!-- UTSJSON.Array.toLocaleString.tutorial -->
+
+### joinToString(separator)
+
+<!-- UTSJSON.Array.joinToString.description -->
+
+<!-- UTSJSON.Array.joinToString.param -->
+
+<!-- UTSJSON.Array.joinToString.returnValue -->
+
+<!-- UTSJSON.Array.joinToString.test -->
+
+<!-- UTSJSON.Array.joinToString.compatibility -->
+
+<!-- UTSJSON.Array.joinToString.tutorial -->
 
 ### find(predicate, thisArg?)
 
@@ -83,17 +127,37 @@ console.log(clothing.length);
 
 <!-- UTSJSON.Array.find.returnValue -->
 
-```ts
-const array1 = [5, 12, 8, 130, 44];
-
-const found = array1.find((element:number):boolean => element > 10);
-
-console.log(found);
-// expected output: 12
-
-```
+<!-- UTSJSON.Array.find.test -->
 
 <!-- UTSJSON.Array.find.compatibility -->
+
+### find(predicate, thisArg?)
+
+<!-- UTSJSON.Array.find_1.description -->
+
+<!-- UTSJSON.Array.find_1.param -->
+
+<!-- UTSJSON.Array.find_1.returnValue -->
+
+<!-- UTSJSON.Array.find_1.test -->
+
+<!-- UTSJSON.Array.find_1.compatibility -->
+
+<!-- UTSJSON.Array.find_1.tutorial -->
+
+### find(predicate, thisArg?)
+
+<!-- UTSJSON.Array.find_2.description -->
+
+<!-- UTSJSON.Array.find_2.param -->
+
+<!-- UTSJSON.Array.find_2.returnValue -->
+
+<!-- UTSJSON.Array.find_2.test -->
+
+<!-- UTSJSON.Array.find_2.compatibility -->
+
+<!-- UTSJSON.Array.find_2.tutorial -->
 
 ### findIndex(predicate, thisArg?)
 
@@ -103,17 +167,37 @@ console.log(found);
 
 <!-- UTSJSON.Array.findIndex.returnValue -->
 
-```ts
-const array1 = [5, 12, 8, 130, 44];
-
-const isLargeNumber = (element:number):boolean => element > 13;
-
-console.log(array1.findIndex(isLargeNumber));
-// expected output: 3
-
-```
+<!-- UTSJSON.Array.findIndex.test -->
 
 <!-- UTSJSON.Array.findIndex.compatibility -->
+
+### findIndex(predicate, thisArg?)
+
+<!-- UTSJSON.Array.findIndex_1.description -->
+
+<!-- UTSJSON.Array.findIndex_1.param -->
+
+<!-- UTSJSON.Array.findIndex_1.returnValue -->
+
+<!-- UTSJSON.Array.findIndex_1.test -->
+
+<!-- UTSJSON.Array.findIndex_1.compatibility -->
+
+<!-- UTSJSON.Array.findIndex_1.tutorial -->
+
+### findIndex(predicate, thisArg?)
+
+<!-- UTSJSON.Array.findIndex_2.description -->
+
+<!-- UTSJSON.Array.findIndex_2.param -->
+
+<!-- UTSJSON.Array.findIndex_2.returnValue -->
+
+<!-- UTSJSON.Array.findIndex_2.test -->
+
+<!-- UTSJSON.Array.findIndex_2.compatibility -->
+
+<!-- UTSJSON.Array.findIndex_2.tutorial -->
 
 ### fill(value, start?, end?)
 
@@ -123,39 +207,18 @@ console.log(array1.findIndex(isLargeNumber));
 
 <!-- UTSJSON.Array.fill.returnValue -->
 
-```ts
-const array1 = [1, 2, 3, 4];
-
-// fill with 0 from position 2 until position 4
-console.log(array1.fill(0, 2, 4));
-// expected output: [1, 2, 0, 0]
-
-// fill with 5 from position 1
-console.log(array1.fill(5, 1));
-// expected output: [1, 5, 5, 5]
-
-console.log(array1.fill(6));
-// expected output: [6, 6, 6, 6]
-
-```
+<!-- UTSJSON.Array.fill.test -->
 
 需要注意的是，截止HBuilder 4.22  部分平台尚不支持[根据元素个数构造`Array`的写法](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/array.html#constructor)
 
 所以下面的代码在 部分平台可能不符合预期
 
 
-```ts
-new Array(20).fill(0)
-```
+<!-- UTSJSON.Array.sampleFillError.test -->
 
 可以使用下面的代码替代
 
-```ts
-let b = Array<Number>()
-for(let i = 0; i < 20; i++){
-  b.add(0)
-}
-```
+<!-- UTSJSON.Array.sampleFill.test -->
 
 <!-- UTSJSON.Array.fill.compatibility -->
 
@@ -167,15 +230,7 @@ for(let i = 0; i < 20; i++){
 
 <!-- UTSJSON.Array.copyWithin.returnValue -->
 
-```ts
-const array1 = ['a', 'b', 'c', 'd', 'e'];
-// copy to index 0 the element at index 3
-console.log(array1.copyWithin(0, 3, 4));
-// expected output: Array ["d", "b", "c", "d", "e"]
-// copy to index 1 all elements from index 3 to the end
-console.log(array1.copyWithin(1, 3));
-// expected output: Array ["d", "d", "e", "d", "e"]
-```
+<!-- UTSJSON.Array.copyWithin.test -->
 
 <!-- UTSJSON.Array.copyWithin.compatibility -->
 
@@ -187,21 +242,7 @@ console.log(array1.copyWithin(1, 3));
 
 <!-- UTSJSON.Array.pop.returnValue -->
 
-```ts
-const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
-
-console.log(plants.pop());
-// expected output: "tomato"
-
-console.log(plants);
-// expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
-
-plants.pop();
-
-console.log(plants);
-// expected output: Array ["broccoli", "cauliflower", "cabbage"]
-
-```
+<!-- UTSJSON.Array.pop.test -->
 
 <!-- UTSJSON.Array.pop.compatibility -->
 
@@ -213,20 +254,7 @@ console.log(plants);
 
 <!-- UTSJSON.Array.push.returnValue -->
 
-```ts
-const animals = ['pigs', 'goats', 'sheep'];
-
-const count = animals.push('cows');
-console.log(count);
-// expected output: 4
-console.log(animals);
-// expected output: Array ["pigs", "goats", "sheep", "cows"]
-
-animals.push('chickens', 'cats', 'dogs');
-console.log(animals);
-// expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
-
-```
+<!-- UTSJSON.Array.push.test -->
 
 <!-- UTSJSON.Array.push.compatibility -->
 
@@ -238,13 +266,7 @@ console.log(animals);
 
 <!-- UTSJSON.Array.concat.returnValue -->
 
-```ts
-const array1 = ['a', 'b', 'c'];
-const array2 = ['d', 'e', 'f'];
-const array3 = array1.concat(array2);
-console.log(array3);
-// expected output: Array ["a", "b", "c", "d", "e", "f"]
-```
+<!-- UTSJSON.Array.concat.test -->
 
 <!-- UTSJSON.Array.concat.compatibility -->
 
@@ -256,6 +278,8 @@ console.log(array3);
 
 <!-- UTSJSON.Array.concat_1.returnValue -->
 
+<!-- UTSJSON.Array.concat_1.test -->
+
 <!-- UTSJSON.Array.concat_1.compatibility -->
 
 ### join(separator?)
@@ -266,19 +290,7 @@ console.log(array3);
 
 <!-- UTSJSON.Array.join.returnValue -->
 
-```ts
-const elements = ['Fire', 'Air', 'Water'];
-
-console.log(elements.join());
-// expected output: "Fire,Air,Water"
-
-console.log(elements.join(''));
-// expected output: "FireAirWater"
-
-console.log(elements.join('-'));
-// expected output: "Fire-Air-Water"
-
-```
+<!-- UTSJSON.Array.join.test -->
 
 <!-- UTSJSON.Array.join.compatibility -->
 
@@ -300,18 +312,7 @@ console.log(elements.join('-'));
 
 <!-- UTSJSON.Array.shift.returnValue -->
 
-```ts
-const array1 = [1, 2, 3];
-
-const firstElement = array1.shift();
-
-console.log(array1);
-// expected output: Array [2, 3]
-
-console.log(firstElement);
-// expected output: 1
-
-```
+<!-- UTSJSON.Array.shift.test -->
 
 <!-- UTSJSON.Array.shift.compatibility -->
 
@@ -323,27 +324,7 @@ console.log(firstElement);
 
 <!-- UTSJSON.Array.slice.returnValue -->
 
-```ts
-const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
-
-console.log(animals.slice(2));
-// expected output: Array ["camel", "duck", "elephant"]
-
-console.log(animals.slice(2, 4));
-// expected output: Array ["camel", "duck"]
-
-console.log(animals.slice(1, 5));
-// expected output: Array ["bison", "camel", "duck", "elephant"]
-
-console.log(animals.slice(-2));
-// expected output: Array ["duck", "elephant"]
-
-console.log(animals.slice(2, -1));
-// expected output: Array ["camel", "duck"]
-
-console.log(animals.slice());
-// expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
-```
+<!-- UTSJSON.Array.slice.test -->
 
 <!-- UTSJSON.Array.slice.compatibility -->
 
@@ -355,27 +336,14 @@ console.log(animals.slice());
 
 <!-- UTSJSON.Array.sort.returnValue -->
 
-```ts
-const array2 = [5, 1, 4, 2, 3];
-array2.sort((a: number, b: number):number => a - b);
-// expect(array2).toEqual([1, 2, 3, 4, 5]);
-```
+<!-- UTSJSON.Array.sort.test -->
 
 <!-- UTSJSON.Array.sort.compatibility -->
 
 **平台差异性**
 
 在android平台，一定不能忽略两个对比元素相等的场景，否则可能会出现`java.lang.IllegalArgumentException: Comparison method violates its general contract!‌`
-```
-
-a.sort((a, b) : number => {
-  // 这里的判断不能省略
-  if(a.compareTo(b) == 0){
-    return 0
-  }
-  return a - b
-})
-```
+<!-- UTSJSON.Array.sampleSort.test -->
 
 
 
@@ -387,18 +355,7 @@ a.sort((a, b) : number => {
 
 <!-- UTSJSON.Array.splice.returnValue -->
 
-```ts
-const months = ['Jan', 'March', 'April', 'June'];
-months.splice(1, 0, 'Feb');
-// inserts at index 1
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "June"]
-
-months.splice(4, 1, 'May');
-// replaces 1 element at index 4
-console.log(months);
-// expected output: Array ["Jan", "Feb", "March", "April", "May"]
-```
+<!-- UTSJSON.Array.splice.test -->
 
 <!-- UTSJSON.Array.splice.compatibility -->
 
@@ -410,15 +367,7 @@ console.log(months);
 
 <!-- UTSJSON.Array.unshift.returnValue -->
 
-```ts
-const array1 = [1, 2, 3];
-
-console.log(array1.unshift(4, 5));
-// expected output: 5
-
-console.log(array1);
-// expected output: Array [4, 5, 1, 2, 3]
-```
+<!-- UTSJSON.Array.unshift.test -->
 
 <!-- UTSJSON.Array.unshift.compatibility -->
 
@@ -430,20 +379,7 @@ console.log(array1);
 
 <!-- UTSJSON.Array.indexOf.returnValue -->
 
-```ts
-const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
-
-console.log(beasts.indexOf('bison'));
-// expected output: 1
-
-// start from index 2
-console.log(beasts.indexOf('bison', 2));
-// expected output: 4
-
-console.log(beasts.indexOf('giraffe'));
-// expected output: -1
-
-```
+<!-- UTSJSON.Array.indexOf.test -->
 
 <!-- UTSJSON.Array.indexOf.compatibility -->
 
@@ -455,15 +391,7 @@ console.log(beasts.indexOf('giraffe'));
 
 <!-- UTSJSON.Array.lastIndexOf.returnValue -->
 
-```ts
-const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
-
-console.log(animals.lastIndexOf('Dodo'));
-// expected output: 3
-
-console.log(animals.lastIndexOf('Tiger'));
-// expected output: 1
-```
+<!-- UTSJSON.Array.lastIndexOf.test -->
 
 <!-- UTSJSON.Array.lastIndexOf.compatibility -->
 
@@ -475,16 +403,11 @@ console.log(animals.lastIndexOf('Tiger'));
 
 <!-- UTSJSON.Array.every.returnValue -->
 
-```ts
-const isBelowThreshold = (currentValue:number):boolean => currentValue < 40;
-const array1 = [1, 30, 39, 29, 10, 13];
-console.log(array1.every(isBelowThreshold));
-// expected output: true
-```
+<!-- UTSJSON.Array.every.test -->
 
 <!-- UTSJSON.Array.every.compatibility -->
 
-### every(predicate, thisArg?)_1
+### every(predicate, thisArg?)
 
 <!-- UTSJSON.Array.every_1.description -->
 
@@ -498,7 +421,7 @@ console.log(array1.every(isBelowThreshold));
 
 <!-- UTSJSON.Array.every_1.tutorial -->
 
-### every(predicate, thisArg?)_2
+### every(predicate, thisArg?)
 
 <!-- UTSJSON.Array.every_2.description -->
 
@@ -512,7 +435,7 @@ console.log(array1.every(isBelowThreshold));
 
 <!-- UTSJSON.Array.every_2.tutorial -->
 
-### every(predicate, thisArg?)_3
+### every(predicate, thisArg?)
 
 <!-- UTSJSON.Array.every_3.description -->
 
@@ -535,20 +458,11 @@ console.log(array1.every(isBelowThreshold));
 
 <!-- UTSJSON.Array.some.returnValue -->
 
-
-```ts
-const array = [1, 2, 3, 4, 5];
-
-// checks whether an element is even
-const even = (element:number):boolean=> element % 2 == 0;
-
-console.log(array.some(even));
-// expected output: true
-```
+<!-- UTSJSON.Array.some.test -->
 
 <!-- UTSJSON.Array.some.compatibility -->
 
-### some(predicate, thisArg?)_1
+### some(predicate, thisArg?)
 
 <!-- UTSJSON.Array.some_1.description -->
 
@@ -562,7 +476,7 @@ console.log(array.some(even));
 
 <!-- UTSJSON.Array.some_1.tutorial -->
 
-### some(predicate, thisArg?)_2
+### some(predicate, thisArg?)
 
 <!-- UTSJSON.Array.some_2.description -->
 
@@ -584,38 +498,42 @@ console.log(array.some(even));
 
 <!-- UTSJSON.Array.forEach.returnValue -->
 
-```ts
-const array1 = ['a', 'b', 'c'];
-array1.forEach(element => console.log(element));
-// expected output: "a"
-// expected output: "b"
-// expected output: "c"
-```
+<!-- UTSJSON.Array.forEach.test -->
 
 > 特别注意：
 > 不可在 forEach 的 callbackFn 里添加或者删除原数组元素，此行为是危险的，在 Android 平台会造成闪退，在 iOS 平台会造成行为不符合预期。如果想实现该效果，请用 while 循环。
 
-```ts
-
-const array1 = ['a', 'b', 'c'];
-array1.forEach(element => {
-	console.log(element)
-	array1.pop() // 此行为在 Android 平台会造成闪退，在 iOS 平台会输出 'a', 'b', 'c', 而 JS 会输出 'a', 'b'
-});
-
-// 如果想让上述行为正常运行，可以用 while 循环实现：
-
-let array1 = ['a', 'b', 'c'];
-let index = 0;
-while (index < array1.length) {
-  console.log(array1[index]);
-  array1.pop();
-  index += 1;
-}
-
-```
+<!-- UTSJSON.Array.sampleForEachCallback.test -->
 
 <!-- UTSJSON.Array.forEach.compatibility -->
+
+### forEach(callbackfn, thisArg?)
+
+<!-- UTSJSON.Array.forEach_1.description -->
+
+<!-- UTSJSON.Array.forEach_1.param -->
+
+<!-- UTSJSON.Array.forEach_1.returnValue -->
+
+<!-- UTSJSON.Array.forEach_1.test -->
+
+<!-- UTSJSON.Array.forEach_1.compatibility -->
+
+<!-- UTSJSON.Array.forEach_1.tutorial -->
+
+### forEach(callbackfn, thisArg?)
+
+<!-- UTSJSON.Array.forEach_2.description -->
+
+<!-- UTSJSON.Array.forEach_2.param -->
+
+<!-- UTSJSON.Array.forEach_2.returnValue -->
+
+<!-- UTSJSON.Array.forEach_2.test -->
+
+<!-- UTSJSON.Array.forEach_2.compatibility -->
+
+<!-- UTSJSON.Array.forEach_2.tutorial -->
 
 ### map(callbackfn, thisArg?)
 
@@ -625,18 +543,37 @@ while (index < array1.length) {
 
 <!-- UTSJSON.Array.map.returnValue -->
 
-```ts
-const array1 = [1, 4, 9, 16];
-
-// pass a function to map
-const map1 = array1.map((x:number):number => x * 2);
-
-console.log(map1);
-// expected output: Array [2, 8, 18, 32]
-
-```
+<!-- UTSJSON.Array.map.test -->
 
 <!-- UTSJSON.Array.map.compatibility -->
+
+### map(callbackfn, thisArg?)
+
+<!-- UTSJSON.Array.map_1.description -->
+
+<!-- UTSJSON.Array.map_1.param -->
+
+<!-- UTSJSON.Array.map_1.returnValue -->
+
+<!-- UTSJSON.Array.map_1.test -->
+
+<!-- UTSJSON.Array.map_1.compatibility -->
+
+<!-- UTSJSON.Array.map_1.tutorial -->
+
+### map(callbackfn, thisArg?)
+
+<!-- UTSJSON.Array.map_2.description -->
+
+<!-- UTSJSON.Array.map_2.param -->
+
+<!-- UTSJSON.Array.map_2.returnValue -->
+
+<!-- UTSJSON.Array.map_2.test -->
+
+<!-- UTSJSON.Array.map_2.compatibility -->
+
+<!-- UTSJSON.Array.map_2.tutorial -->
 
 ### filter(predicate, thisArg?)
 
@@ -646,17 +583,51 @@ console.log(map1);
 
 <!-- UTSJSON.Array.filter.returnValue -->
 
-```ts
-const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-
-const result = words.filter((word:string):boolean => word.length > 6);
-
-console.log(result);
-// expected output: Array ["exuberant", "destruction", "present"]
-
-```
+<!-- UTSJSON.Array.filter_1.test -->
 
 <!-- UTSJSON.Array.filter.compatibility -->
+
+### filter(predicate, thisArg?)
+
+<!-- UTSJSON.Array.filter_1.description -->
+
+<!-- UTSJSON.Array.filter_1.param -->
+
+<!-- UTSJSON.Array.filter_1.returnValue -->
+
+<!-- UTSJSON.Array.filter_1.test -->
+
+<!-- UTSJSON.Array.filter_1.compatibility -->
+
+<!-- UTSJSON.Array.filter_1.tutorial -->
+
+### filter(predicate, thisArg?)
+
+<!-- UTSJSON.Array.filter_2.description -->
+
+<!-- UTSJSON.Array.filter_2.param -->
+
+<!-- UTSJSON.Array.filter_2.returnValue -->
+
+<!-- UTSJSON.Array.filter_2.test -->
+
+<!-- UTSJSON.Array.filter_2.compatibility -->
+
+<!-- UTSJSON.Array.filter_2.tutorial -->
+
+### filter(predicate, thisArg?)
+
+<!-- UTSJSON.Array.filter_3.description -->
+
+<!-- UTSJSON.Array.filter_3.param -->
+
+<!-- UTSJSON.Array.filter_3.returnValue -->
+
+<!-- UTSJSON.Array.filter_3.test -->
+
+<!-- UTSJSON.Array.filter_3.compatibility -->
+
+<!-- UTSJSON.Array.filter_3.tutorial -->
 
 ### reduce(callbackfn)
 
@@ -666,22 +637,80 @@ console.log(result);
 
 <!-- UTSJSON.Array.reduce.returnValue -->
 
-```ts
-const array1 = [1, 2, 3, 4];
-
-// 0 + 1 + 2 + 3 + 4
-const initialValue = 0;
-const sumWithInitial = array1.reduce(
-  (previousValue:number, currentValue:number):number => previousValue + currentValue,
-  initialValue
-);
-
-console.log(sumWithInitial);
-// expected output: 10
-
-```
+<!-- UTSJSON.Array.reduce.test -->
 
 <!-- UTSJSON.Array.reduce.compatibility -->
+
+
+### reduce(callbackfn)
+
+<!-- UTSJSON.Array.reduce_1.description -->
+
+<!-- UTSJSON.Array.reduce_1.param -->
+
+<!-- UTSJSON.Array.reduce_1.returnValue -->
+
+<!-- UTSJSON.Array.reduce_1.test -->
+
+<!-- UTSJSON.Array.reduce_1.compatibility -->
+
+<!-- UTSJSON.Array.reduce_1.tutorial -->
+
+### reduce(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduce_2.description -->
+
+<!-- UTSJSON.Array.reduce_2.param -->
+
+<!-- UTSJSON.Array.reduce_2.returnValue -->
+
+<!-- UTSJSON.Array.reduce_2.test -->
+
+<!-- UTSJSON.Array.reduce_2.compatibility -->
+
+<!-- UTSJSON.Array.reduce_2.tutorial -->
+
+### reduce(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduce_3.description -->
+
+<!-- UTSJSON.Array.reduce_3.param -->
+
+<!-- UTSJSON.Array.reduce_3.returnValue -->
+
+<!-- UTSJSON.Array.reduce_3.test -->
+
+<!-- UTSJSON.Array.reduce_3.compatibility -->
+
+<!-- UTSJSON.Array.reduce_3.tutorial -->
+
+### reduce(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduce_4.description -->
+
+<!-- UTSJSON.Array.reduce_4.param -->
+
+<!-- UTSJSON.Array.reduce_4.returnValue -->
+
+<!-- UTSJSON.Array.reduce_4.test -->
+
+<!-- UTSJSON.Array.reduce_4.compatibility -->
+
+<!-- UTSJSON.Array.reduce_4.tutorial -->
+
+### reduce(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduce_5.description -->
+
+<!-- UTSJSON.Array.reduce_5.param -->
+
+<!-- UTSJSON.Array.reduce_5.returnValue -->
+
+<!-- UTSJSON.Array.reduce_5.test -->
+
+<!-- UTSJSON.Array.reduce_5.compatibility -->
+
+<!-- UTSJSON.Array.reduce_5.tutorial -->
 
 ### reduceRight(callbackfn)
 
@@ -691,7 +720,93 @@ console.log(sumWithInitial);
 
 <!-- UTSJSON.Array.reduceRight.returnValue -->
 
+<!-- UTSJSON.Array.reduceRight.test -->
+
 <!-- UTSJSON.Array.reduceRight.compatibility -->
+
+### reduceRight(callbackfn)
+
+<!-- UTSJSON.Array.reduceRight_1.description -->
+
+<!-- UTSJSON.Array.reduceRight_1.param -->
+
+<!-- UTSJSON.Array.reduceRight_1.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_1.test -->
+
+<!-- UTSJSON.Array.reduceRight_1.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_1.tutorial -->
+
+### reduceRight(callbackfn)
+
+<!-- UTSJSON.Array.reduceRight_2.description -->
+
+<!-- UTSJSON.Array.reduceRight_2.param -->
+
+<!-- UTSJSON.Array.reduceRight_2.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_2.test -->
+
+<!-- UTSJSON.Array.reduceRight_2.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_2.tutorial -->
+
+### reduceRight(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduceRight_3.description -->
+
+<!-- UTSJSON.Array.reduceRight_3.param -->
+
+<!-- UTSJSON.Array.reduceRight_3.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_3.test -->
+
+<!-- UTSJSON.Array.reduceRight_3.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_3.tutorial -->
+
+### reduceRight(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduceRight_4.description -->
+
+<!-- UTSJSON.Array.reduceRight_4.param -->
+
+<!-- UTSJSON.Array.reduceRight_4.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_4.test -->
+
+<!-- UTSJSON.Array.reduceRight_4.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_4.tutorial -->
+
+### reduceRight(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduceRight_5.description -->
+
+<!-- UTSJSON.Array.reduceRight_5.param -->
+
+<!-- UTSJSON.Array.reduceRight_5.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_5.test -->
+
+<!-- UTSJSON.Array.reduceRight_5.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_5.tutorial -->
+
+### reduceRight(callbackfn, initialValue)
+
+<!-- UTSJSON.Array.reduceRight_6.description -->
+
+<!-- UTSJSON.Array.reduceRight_6.param -->
+
+<!-- UTSJSON.Array.reduceRight_6.returnValue -->
+
+<!-- UTSJSON.Array.reduceRight_6.test -->
+
+<!-- UTSJSON.Array.reduceRight_6.compatibility -->
+
+<!-- UTSJSON.Array.reduceRight_6.tutorial -->
 
 ### isArray(arg)
 
@@ -701,19 +816,7 @@ console.log(sumWithInitial);
 
 <!-- UTSJSON.Array.isArray.returnValue -->
 
-```ts
-console.log(Array.isArray([1, 3, 5]));
-// Expected output: true
-
-console.log(Array.isArray('[]'));
-// Expected output: false
-
-console.log(Array.isArray(new Array(5)));
-// Expected output: true
-
-console.log(Array.isArray(new Int16Array([15, 33])));
-// Expected output: false
-```
+<!-- UTSJSON.Array.isArray.test -->
 
 <!-- UTSJSON.Array.isArray.compatibility -->
 
@@ -724,6 +827,8 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 <!-- UTSJSON.Array.includes.param -->
 
 <!-- UTSJSON.Array.includes.returnValue -->
+
+<!-- UTSJSON.Array.includes.test -->
 
 <!-- UTSJSON.Array.includes.compatibility -->
 
@@ -737,6 +842,8 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 
 <!-- UTSJSON.Array.toKotlinList.compatibility -->
 
+<!-- UTSJSON.Array.toKotlinList.test -->
+
 <!-- UTSJSON.Array.toKotlinList.tutorial -->
 
 <!-- UTSJSON.Array.tutorial -->
@@ -748,82 +855,65 @@ console.log(Array.isArray(new Int16Array([15, 33])));
 * 目前 Array 类型编译到 `kotlin` 为 `io.dcloud.uts.UTSArray`, 该类继承自 `java.util.ArrayList`,所有`java` /`kotlin` 为其提供的扩展函数(如:`toTypedArray` 等)，均可以正常调用。
 
 
+::: preview
+
+> UTS
+
+```ts
+let utsArray = ["1",2,3.0]
+// UTSArray 分别转换为 Java Array / Kotlin Array
+let javaArray = utsArray.toTypedArray();
+let kotlinArray = utsArray.toKotlinList()
+// 从Java Array 转换为 UTSArray
+let convertArrayFromJava = Array.fromNative(javaArray);
+// 从Kotlin Array 转换为 UTSArray
+let convertArrayFromKotlin = Array.fromNative(kotlinArray);
+```
+
+> Kotlin
+
+```kotlin
+val utsArray = utsArrayOf("1",2,3.0)
+// UTSArray 分别转换为 Java Array / Kotlin Array
+val javaArray = utsArray.toTypedArray();
+val kotlinArray = utsArray.toKotlinList()
+// 从Java Array 转换为 UTSArray
+val convertArrayFromJava = UTSArray.fromNative(javaArray);
+// 从Kotlin Array 转换为 UTSArray
+val convertArrayFromKotlin = UTSArray.fromNative(kotlinArray);
+```
+
+:::
+
+
+更多平台专属Array 参考[文档](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#kotlin%E4%B8%93%E6%9C%89%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B)
+
 ## 常见操作
 
 - 创建数组
-```ts
-const fruits = ['Apple', 'Banana']
-console.log(fruits.length)
-```
+<!-- UTSJSON.Array.sampleCreate.test -->
 - 通过索引访问数组元素
-```ts
-const first = fruits[0]
-// Apple
-const last = fruits[fruits.length - 1]
-// Banana
-```
+<!-- UTSJSON.Array.sampleVisit.test -->
 - 遍历数组
-```ts
-fruits.forEach(function(item, index, array) {
-  console.log(item, index)
-})
-// Apple 0
-// Banana 1
-```
+<!-- UTSJSON.Array.sampleForEach.test -->
 - 注意：数组遍历不推荐使用 for in 语句，因为在 ts 中 for in 遍历的是数组的下标，而在 Swift 和 Kottlin 中遍历的是数组的元素，存在行为不一致。
 
 - 添加元素到数组的末尾
-```ts
-const newLength = fruits.push('Orange')
-// ["Apple", "Banana", "Orange"]
-```
+<!-- UTSJSON.Array.sampleAdd.test -->
 - 删除数组末尾的元素
-```ts
-const last = fruits.pop() // remove Orange (from the end)
-// ["Apple", "Banana"]
-```
+<!-- UTSJSON.Array.samplePop.test -->
 - 删除数组头部元素
-```ts
-const first = fruits.shift() // remove Apple from the front
-// ["Banana"]
-```
+<!-- UTSJSON.Array.sampleShift.test -->
 - 添加元素到数组的头部
-```ts
-const newLength = fruits.unshift('Strawberry') // add to the front
-// ["Strawberry", "Banana"]
-```
+<!-- UTSJSON.Array.sampleUnshift.test -->
 - 找出某个元素在数组中的索引
-```ts
-fruits.push('Mango')
-// ["Strawberry", "Banana", "Mango"]
-const pos = fruits.indexOf('Banana')
-// 1
-```
+<!-- UTSJSON.Array.sampleIndexOf.test -->
 - 通过索引删除某个元素
-```ts
-const removedItem = fruits.splice(pos, 1) // this is how to remove an item
-// ["Strawberry", "Mango"]
-```
+<!-- UTSJSON.Array.sampleSplice.test -->
 - 从一个索引位置删除多个元素
-```ts
-const vegetables = ['Cabbage', 'Turnip', 'Radish', 'Carrot']
-console.log(vegetables)
-// ["Cabbage", "Turnip", "Radish", "Carrot"]
-const pos = 1
-const n = 2
-const removedItems = vegetables.splice(pos, n)
-// this is how to remove items, n defines the number of items to be removed,
-// starting at the index position specified by pos and progressing toward the end of array.
-console.log(vegetables)
-// ["Cabbage", "Carrot"] (the original array is changed)
-console.log(removedItems)
-// ["Turnip", "Radish"]
-```
+<!-- UTSJSON.Array.sampleSpliceMul.test -->
 - 复制一个数组
-```ts
-const shallowCopy = fruits.slice() // this is how to make a copy
-// ["Strawberry", "Mango"]
-```
+<!-- UTSJSON.Array.sampleSpliceCopy.test -->
 ### 访问数组元素
 
 数组的索引是从 0 开始的，第一个元素的索引为 0，最后一个元素的索引等于该数组的 长度 减 1。
@@ -831,7 +921,6 @@ const shallowCopy = fruits.slice() // this is how to make a copy
 如果指定的索引是一个无效值，将会抛出 IndexOutOfBoundsException 异常
 
 下面的写法是错误的，运行时会抛出 SyntaxError 异常，而原因则是使用了非法的属性名：
-
 ```ts
 console.log(arr.0) // a syntax error
 ```

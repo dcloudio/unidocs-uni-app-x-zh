@@ -262,11 +262,15 @@ UTSAndroid.offAppActivityBack(() => {
 
 <!-- UTSJSON.UTSAndroid.getAppContext.description -->
 
+> HBuilderX4.31及以上版本推荐使用 [getApp().getAndroidApplication()](../api/get-app.md#getandroidapplication) 获取android原生 [Application](https://developer.android.google.cn/reference/android/app/Application)。
+
 <!-- UTSJSON.UTSAndroid.getAppContext.param -->
 
 <!-- UTSJSON.UTSAndroid.getAppContext.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getAppContext.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getAppContext.tutorial -->
 
 ```uts
 let packageName = UTSAndroid.getAppContext()?.packageName
@@ -277,11 +281,15 @@ console.log("packageName",packageName)
 
 <!-- UTSJSON.UTSAndroid.getUniActivity.description -->
 
+> 在uvue页面中也可先通过 [uni.getElementById](../api/get-element-by-id.md) 获取节点元素对象 [UniElement](../dom/unielement.md)，在调用其 [getAndroidActivity](../dom/unielement.md#getandroidactivity) 获取android原生 [Activity](https://developer.android.google.cn/reference/android/app/Activity)。
+
 <!-- UTSJSON.UTSAndroid.getUniActivity.param -->
 
 <!-- UTSJSON.UTSAndroid.getUniActivity.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getUniActivity.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getUniActivity.tutorial -->
 
 ```uts
 // 获取第一个可以响应图像采集行为组件
@@ -342,21 +350,6 @@ console.log(UTSAndroid.getResourcePath('/storage/emulated/0/Android/data/io.dclo
 
 
 
-### exit()
-
-<!-- UTSJSON.UTSAndroid.exit.description -->
-
-<!-- UTSJSON.UTSAndroid.exit.param -->
-
-<!-- UTSJSON.UTSAndroid.exit.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.exit.compatibility -->
-
-```ts
-// 退出当前应用
-UTSAndroid.exit()
-```
-
 ### getDispatcher
 
 <!-- UTSJSON.UTSAndroid.getDispatcher.description -->
@@ -385,140 +378,6 @@ UTSAndroid.getDispatcher("io").async(function(_){
 },null)
 ```
 
-### getAppId()
-
-<!-- UTSJSON.UTSAndroid.getAppId.description -->
-
-<!-- UTSJSON.UTSAndroid.getAppId.param -->
-
-<!-- UTSJSON.UTSAndroid.getAppId.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.getAppId.compatibility -->
-
-```uts
-let appid = UTSAndroid.getAppId()
-console.log("appid",appid)
-```
-
-### getOsTheme()
-
-<!-- UTSJSON.UTSAndroid.getOsTheme.description -->
-
-<!-- UTSJSON.UTSAndroid.getOsTheme.param -->
-
-<!-- UTSJSON.UTSAndroid.getOsTheme.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.getOsTheme.compatibility -->
-
-```uts
-let theme = UTSAndroid.getOsTheme()
-console.log("OsTheme",theme)
-```
-
-### isUniMp()
-
-<!-- UTSJSON.UTSAndroid.isUniMp.description -->
-
-<!-- UTSJSON.UTSAndroid.isUniMp.param -->
-
-<!-- UTSJSON.UTSAndroid.isUniMp.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.isUniMp.compatibility -->
-
-```uts
-let isUniMp = UTSAndroid.isUniMp()
-console.log("isUniMp",isUniMp)
-```
-
-### getAppName()
-
-<!-- UTSJSON.UTSAndroid.getAppName.description -->
-
-<!-- UTSJSON.UTSAndroid.getAppName.param -->
-
-<!-- UTSJSON.UTSAndroid.getAppName.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.getAppName.compatibility -->
-
-```uts
-let appName = UTSAndroid.getAppName()
-console.log("AppName",appName)
-```
-
-### getAppVersion()
-
-<!-- UTSJSON.UTSAndroid.getAppVersion.description -->
-
-<!-- UTSJSON.UTSAndroid.getAppVersion.param -->
-
-<!-- UTSJSON.UTSAndroid.getAppVersion.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.getAppVersion.compatibility -->
-
-```uts
-let appVersion = UTSAndroid.getAppVersion()
-console.log("AppVersion",appVersion)
-```
-
-### getInnerVersion()
-
-<!-- UTSJSON.UTSAndroid.getInnerVersion.description -->
-
-<!-- UTSJSON.UTSAndroid.getInnerVersion.param -->
-
-<!-- UTSJSON.UTSAndroid.getInnerVersion.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.getInnerVersion.compatibility -->
-
-```uts
-let innerVersion = UTSAndroid.getInnerVersion()
-console.log("InnerVersion",innerVersion)
-```
-
-### isUniAppX()
-
-<!-- UTSJSON.UTSAndroid.isUniAppX.description -->
-
-<!-- UTSJSON.UTSAndroid.isUniAppX.param -->
-
-<!-- UTSJSON.UTSAndroid.isUniAppX.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.isUniAppX.compatibility -->
-
-```uts
-let isUniAppX = UTSAndroid.isUniAppX()
-console.log("isUniAppX",isUniAppX)
-```
-
-### getAppCachePath()
-
-<!-- UTSJSON.UTSAndroid.getAppCachePath.description -->
-
-<!-- UTSJSON.UTSAndroid.getAppCachePath.param -->
-
-<!-- UTSJSON.UTSAndroid.getAppCachePath.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.getAppCachePath.compatibility -->
-
-
-
-```uts
-let appCachePath = UTSAndroid.getAppCachePath()
-console.log("AppCachePath",appCachePath)
-```
-
-
-### rpx2px(rpx:number) : number;
-
-<!-- UTSJSON.UTSAndroid.rpx2px.description -->
-
-<!-- UTSJSON.UTSAndroid.rpx2px.param -->
-
-<!-- UTSJSON.UTSAndroid.rpx2px.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.rpx2px.compatibility -->
-
-推荐使用uni.rpx2px来替代本API，[详见](https://doc.dcloud.net.cn/uni-app-x/api/rpx2px.html)
 
 ### devicePX2px(devicePX:number) : number;
 
@@ -540,6 +399,8 @@ console.log("pagePX",pagePX)
 ### isPrivacyAgree() : boolean;
 
 <!-- UTSJSON.UTSAndroid.isPrivacyAgree.description -->
+
+> HBuilderX4.31及以上版本推荐使用 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 获取用户是否同意隐私协议。
 
 <!-- UTSJSON.UTSAndroid.isPrivacyAgree.param -->
 
@@ -564,6 +425,8 @@ console.log(UTSAndroid.isPrivacyAgree())
 
 <!-- UTSJSON.UTSAndroid.setPrivacyAgree.description -->
 
+> HBuilderX4.31及以上版本推荐使用 [button](../component/button.md) 设置 `open-type` 值为 `agreePrivacyAuthorization` 来实现设置用户同意隐私协议。
+
 <!-- UTSJSON.UTSAndroid.setPrivacyAgree.param -->
 
 <!-- UTSJSON.UTSAndroid.setPrivacyAgree.returnValue -->
@@ -585,6 +448,8 @@ console.log(UTSAndroid.isPrivacyAgree())
 ### resetPrivacyAgree():void;
 
 <!-- UTSJSON.UTSAndroid.resetPrivacyAgree.description -->
+
+> HBuilderX4.31及以上版本推荐使用 [uni.resetPrivacyAuthorization](../api/privacy.md#resetprivacyauthorization) 重置隐私协议状态为未同意。
 
 <!-- UTSJSON.UTSAndroid.resetPrivacyAgree.param -->
 
@@ -731,11 +596,23 @@ UTSAndroid.gotoSystemPermissionActivity(UTSAndroid.getUniActivity()!,permissionN
 :::
 
 ```ts
-// 代码包文件
+/**
+ * 代码包文件
+ * 本地调试执行结果：/storage/emulated/0/Android/data/io.dcloud.uniappx/apps/__UNI__XXXXXXX/www/static/logo.png
+ * 云打包执行结果 ：/android_asset/apps/__UNI__XXXXXXX/www/static/logo.png
+ * /
 console.log(UTSAndroid.convert2AbsFullPath('static/logo.png'))
-// 沙盒文件
+/**
+ * 沙盒文件
+ * 本地调试执行结果：/storage/emulated/0/Android/data/io.dcloud.uniappx/static/logo.png
+ * 云打包执行结果 ：/storage/emulated/0/Android/data/io.dcloud.uniappx/static/logo.png
+ * /
 console.log(UTSAndroid.convert2AbsFullPath('unifile://sandbox/static/logo.png'))
-// 沙盒外文件 包含相对路径
+/**
+ * 沙盒外文件 包含相对路径
+ * 本地调试执行结果：/storage/emulated/0/Android/data/io.dcloud.uniappx/apps/__UNI__XXXXXXX/www/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png
+ * 云打包执行结果 ：/android_asset/apps/__UNI__XXXXXXX/www/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png
+ * /
 console.log(UTSAndroid.convert2AbsFullPath('../../../io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
 ```
 
@@ -828,6 +705,8 @@ console.log(UTSAndroid.getTopPageActivity())
 
 <!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.description -->
 
+> HBuilderX4.31及以上版本推荐使用 [uni.onPrivacyAuthorizationChange](../api/privacy.md#onprivacyauthorizationchange) 监听隐私协议状态的变化。
+
 <!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.param -->
 
 <!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.returnValue -->
@@ -838,10 +717,36 @@ console.log(UTSAndroid.getTopPageActivity())
 
 <!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.description -->
 
+> HBuilderX4.31及以上版本推荐使用 [uni.offPrivacyAuthorizationChange](../api/privacy.md#offprivacyauthorizationchange) 取消监听隐私协议状态的变化。
+
 <!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.param -->
 
 <!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.compatibility -->
+
+
+
+### getGenericType\<T>(): Type
+
+<!-- UTSJSON.UTSAndroid.getGenericType.description -->
+
+<!-- UTSJSON.UTSAndroid.getGenericType.param -->
+
+<!-- UTSJSON.UTSAndroid.getGenericType.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getGenericType.compatibility -->
+
+### getGenericClassName\<T>(): string
+
+<!-- UTSJSON.UTSAndroid.getGenericClassName.description -->
+
+<!-- UTSJSON.UTSAndroid.getGenericClassName.param -->
+
+<!-- UTSJSON.UTSAndroid.getGenericClassName.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getGenericClassName.compatibility -->
+
+
 
 <!-- UTSJSON.UTSAndroid.tutorial -->

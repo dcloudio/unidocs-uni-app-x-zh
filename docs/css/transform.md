@@ -21,4 +21,6 @@ web中经常使用scaleY缩放一个1px的线条变成0.5px的细线。这个方
 
 <!-- CSSJSON.transform.compatibility -->
 
+<!-- CSSJSON.transform.example -->
+
 <!-- CSSJSON.transform.reference -->

@@ -1,8 +1,8 @@
-# 组件的公共属性和事件
+# 组件的全局属性和事件
 
 每个组件都有属性和事件。有些属性和事件，是所有组件都支持的。
 
-## 组件公共属性
+## 组件全局属性
 
 <!-- CUSTOMTYPEJSON.general-attribute.attribute -->
 
@@ -32,7 +32,11 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 
 <!-- CUSTOMTYPEJSON.general-attribute.example -->
 
-## 组件公共事件
+### 参见
+
+- [相关 Bug](https://issues.dcloud.net.cn/?mid=component.global-properties-events.global-properties)
+
+## 组件全局事件
 
 <!-- CUSTOMTYPEJSON.general-event.attribute -->
 
@@ -194,6 +198,10 @@ handleClick (event : UniPointerEvent) {
 ```
 :::
 
+### 参见
+
+- [相关 Bug](https://issues.dcloud.net.cn/?mid=component.global-properties-events.global-events)
+
 ## UniEvent
 
 <!-- CUSTOMTYPEJSON.UniEvent.description -->
@@ -229,7 +237,7 @@ handleClick (event : UniPointerEvent) {
 
 <!-- CUSTOMTYPEJSON.UniEvent.methods.preventDefault.tutorial -->
 
-## UniCustomEvent
+## UniCustomEvent\<T> @unicustomevent
 
 <!-- CUSTOMTYPEJSON.UniCustomEvent.description -->
 
@@ -237,32 +245,6 @@ handleClick (event : UniPointerEvent) {
 
 <!-- CUSTOMTYPEJSON.UniCustomEvent.param -->
 
-
-
-### UniCustomEvent 方法 @customevent-methods
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.name -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.description -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.param -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.stopPropagation.tutorial -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.name -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.description -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.param -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniCustomEvent.methods.preventDefault.tutorial -->
 
 ## UniPointerEvent
 
@@ -274,31 +256,6 @@ handleClick (event : UniPointerEvent) {
 
 <!-- CUSTOMTYPEJSON.UniPointerEvent.example -->
 
-### UniPointerEvent 的方法 @unipointerevent-methods
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.name -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.description -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.param -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.stopPropagation.tutorial -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.name -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.description -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.param -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniPointerEvent.methods.preventDefault.tutorial -->
-
 ## UniTouchEvent
 
 <!-- CUSTOMTYPEJSON.UniTouchEvent.description -->
@@ -308,31 +265,6 @@ handleClick (event : UniPointerEvent) {
 <!-- CUSTOMTYPEJSON.UniTouchEvent.param -->
 
 UniTouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchcancel、longpress。
-
-### UniTouchEvent 方法 @touchevent-methods
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.name -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.description -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.param -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.stopPropagation.tutorial -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.name -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.description -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.param -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.returnValue -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniTouchEvent.methods.preventDefault.tutorial -->
 
 ## UniTouch
 
@@ -354,33 +286,30 @@ UniTouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchc
 
 <!-- CUSTOMTYPEJSON.UniMouseEvent.example -->
 
-### UniMouseEvent 的方法 @unimouseevent-methods
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.name -->
+## UniKeyEvent
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.description -->
+<!-- CUSTOMTYPEJSON.UniKeyEvent.description -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.param -->
+<!-- CUSTOMTYPEJSON.UniKeyEvent.extends -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.returnValue -->
+<!-- CUSTOMTYPEJSON.UniKeyEvent.param -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.compatibility -->
+<!-- CUSTOMTYPEJSON.UniKeyEvent.compatibility -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.stopPropagation.tutorial -->
+<!-- CUSTOMTYPEJSON.UniKeyEvent.example -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.name -->
+## UniNativeViewEvent
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.description -->
+<!-- CUSTOMTYPEJSON.UniNativeViewEvent.description -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.param -->
+<!-- CUSTOMTYPEJSON.UniNativeViewEvent.extends -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.returnValue -->
+<!-- CUSTOMTYPEJSON.UniNativeViewEvent.param -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.compatibility -->
+<!-- CUSTOMTYPEJSON.UniNativeViewEvent.compatibility -->
 
-<!-- CUSTOMTYPEJSON.UniMouseEvent.methods.preventDefault.tutorial -->
-
+<!-- CUSTOMTYPEJSON.UniNativeViewEvent.example -->
 
 ## 参见
 
-- [相关 Bug](https://issues.dcloud.net.cn/?mid=component.common)
-
+- [相关 Bug](https://issues.dcloud.net.cn/?mid=component.global-properties-events)

@@ -112,12 +112,12 @@
 
 一个在渲染函数中以编程方式使用插槽时辅助类型推断的选项。
 
-示例 [详情](<!-- VUEJSON.E_component-instance.slots_slots-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_directive.v-slot_v-slot-options.gitUrl -->)
 
 作用域插槽需在组件中指定插槽数据类型
-::: preview <!-- VUEJSON.E_component-instance.slots_slots-options.webUrl -->
+::: preview <!-- VUEJSON.E_directive.v-slot_v-slot-options.webUrl -->
 
-<!-- VUEJSON.E_component-instance.slots_slots-options.code -->
+<!-- VUEJSON.E_directive.v-slot_v-slot-options.code -->
 
 :::
 
@@ -150,6 +150,16 @@
 目前 mounted、unmounted 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 mounted、unmounted 不能保证 DOM 排版以及渲染完毕。\
 如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/unielement.md) 对象。\
 在修改 DOM 后，立刻使用 [Element](../dom/unielement.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
+
+#### activated、deactivated 使用注意事项 @activated-deactivated-tips
+
+当 A 页面存在 `keepAlive` 组件，A 页面 `navigateTo` B 页面时
+- Web 端 A 页面中 `keepAlive` 的组件会触发 `deactivated` 生命周期
+- App 端 A 页面中 `keepAlive` 的组件不会触发 `deactivated` 生命周期
+
+当 B 页面 back 返回 A 页面时
+- Web 端 A 页面中 `keepAlive` 的组件会触发 `activated` 生命周期
+- App 端 A 页面中 `keepAlive` 的组件不会触发 `activated` 生命周期
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.gitUrl -->)
 

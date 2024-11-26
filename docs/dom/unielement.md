@@ -7,11 +7,11 @@
 <!-- CUSTOMTYPEJSON.UniElement.param -->
 
 #### style@style
-- App端  
-获取的是元素对象计算后的CSS样式集合对象，包括通过样式选择器设置的CSS样式。  
+- App端
+获取的是元素对象计算后的CSS样式集合对象，包括通过样式选择器设置的CSS样式。
 
-- Web端  
-获取的是元素对象style属性设置的CSS样式集合对象，不包括通过样式选择器设置的CSS样式。  
+- Web端
+获取的是元素对象style属性设置的CSS样式集合对象，不包括通过样式选择器设置的CSS样式。
 
 ### 方法
 <!-- CUSTOMTYPEJSON.UniElement.methods.getNodeId.name -->
@@ -50,6 +50,18 @@
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.insertBefore_1.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.description -->
@@ -64,7 +76,7 @@
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.compatibility -->
 
-**App平台**  
+**App平台**
 app平台 setAttribute 不支持设置 class、style 属性，设置了也不会生效，class 属性需在 uvue/vue 页面中设置，style 信息可以通过 [style](#style) 属性设置。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.tutorial -->
@@ -83,7 +95,7 @@ app平台 setAttribute 不支持设置 class、style 属性，设置了也不会
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.compatibility -->
 
-**App平台**  
+**App平台**
 app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面中设置的 class 属性暂不支持通过 UniElement 对象获取，style 信息可以通过 [style](#style) 属性获取。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.tutorial -->
@@ -112,6 +124,94 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.removeAttribute.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView.tutorial -->
+
+**getAndroidView获取原生View：**
+
+```uts
+//通过组件定义的id属性值，获取到UniElement对象
+const element = uni.getElementById(id)
+//getAndroidView不设置泛型，获取到安卓View
+if(element != null) {
+	const view = element.getAndroidView()
+}
+```
+
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+
+**注意事项：**
+
++ 安卓平台页面渲染时元素才会构建View，所以元素刚创建就获取View大概率是null，推荐页面onReady时获取。
++ 安卓平台获取的原生View尽可能的避免设置View的background属性，会导致元素background、border、boxshadow css效果失效或设置的background不生效，与设置background时机有关。
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidView_1.tutorial -->
+
+**getAndroidView通过泛型定义获取原生View：**
+
+```uts
+//导入安卓原生WebView对象
+import WebView from "android.webkit.WebView"
+
+//通过web-view组件定义的id属性值，获取web-view标签的UniElement对象
+const webViewElement = uni.getElementById(id)
+//getAndroidView设置泛型为安卓底层WebView对象, 直接获取WebView 如果泛型不匹配会返回null
+if(webViewElement != null) {
+	const webview = webViewElement.getAndroidView<WebView>()
+}
+```
+
+获取到原生的WebView对象后，可以直接使用其所有属性和方法。原生对象的方法非常多，远多于 uni-app x 封装的API。这些方法都可以直接调用了。
+
+在 hello uni-app x 的 组件 -> web-view 示例中，获取原生WebView对象，然后进一步使用了可否前进后退的方法。
+- [Android](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
+- [iOS](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+
+**可通过getAndroidView泛型明确定义View类型的组件：**
+
+| 组件      | 对应 android 平台原生View         |
+| --------- | -------------------------------- |
+| [view](https://doc.dcloud.net.cn/uni-app-x/component/view.html) | [ViewGroup](https://developer.android.google.cn/reference/android/view/ViewGroup) |
+| [input](https://doc.dcloud.net.cn/uni-app-x/component/input.html) | [AppCompatEditText](https://developer.android.google.cn/reference/kotlin/androidx/appcompat/widget/AppCompatEditText) |
+| [textarea](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) | [AppCompatEditText](https://developer.android.google.cn/reference/kotlin/androidx/appcompat/widget/AppCompatEditText) |
+| [web-view](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) | [WebView](https://developer.android.google.cn/reference/android/webkit/WebView) |
+
+**注意事项：**
+
++ 安卓平台页面渲染时元素才会构建View，所以元素刚创建就获取View大概率是null，推荐页面onReady时获取。
++ 安卓平台获取的原生View尽可能的避免设置View的background属性，会导致元素background、border、boxshadow 失效或设置的background不生效，与设置background时机有关。
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRect.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRect.description -->
@@ -135,6 +235,53 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 <!-- CUSTOMTYPEJSON.UniElement.methods.getDrawableContext.compatibility -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getDrawableContext.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getIOSView.tutorial -->
+
+**getIOSView 获取原生 View：**
+
+```uts
+//通过 webViewElementId 获取 web-view 标签的 UniElement 对象
+const webViewElement = uni.getElementById(webViewElementId)
+//获取原生 view
+const view = webViewElement?.getIOSView();
+//判断 view 是否存在，类型是否为 WKWebView
+if (view != null && view instanceof WKWebView) {
+    //将 view 转换为 WKWebView 类型
+    const webView = view! as WKWebView;
+}
+```
+
+获取到原生的WebView对象后，可以直接使用其所有属性和方法。原生对象的方法非常多，远多于 uni-app x 封装的API。这些方法都可以直接调用了。
+
+在 hello uni-app x 的 组件 -> web-view 示例中，获取原生WebView对象，然后进一步使用了可否前进后退的方法。
+- [Android](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
+- [iOS](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+
+
+**组件对应原生 View 类型：**
+
+| 组件      | 对应 iOS 平台原生 View         |
+| --------- | -------------------------------- |
+| [view](https://doc.dcloud.net.cn/uni-app-x/component/view.html) | [UIView](https://developer.apple.com/documentation/uikit/uiview) |
+| [input](https://doc.dcloud.net.cn/uni-app-x/component/input.html) | [UITextField](https://developer.apple.com/documentation/uikit/uitextfield) |
+| [textarea](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) | [UITextView](https://developer.apple.com/documentation/uikit/uitextview) |
+| [web-view](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) | [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) |
+
+**注意事项：**
+
++ iOS平台 uvue 环境使用 js 驱动无法处理原生类型，getIOSView 方法需要在 uts 插件中使用。
++ iOS平台页面渲染时元素才会构建View，所以元素刚创建就获取 View 大概率是 null，推荐页面 onReady 时获取。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.addEventListener.name -->
 
@@ -220,6 +367,30 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.scrollBy.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelector.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.focus.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.focus.description -->
@@ -255,7 +426,6 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 <!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.compatibility -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.tutorial -->
-
 
 ```ts
 // 找到需要截图节点

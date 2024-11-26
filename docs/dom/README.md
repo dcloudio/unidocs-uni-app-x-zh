@@ -180,6 +180,9 @@ DrawableContext 可通过`view`组件节点对象（UniElement）的`getDrawable
 </script>
 ```
 
+**注意**  
+`DrawableContext` 对象需等元素渲染到页面后才能正常使用，要在页面 `onReady` 生命周期后获取。  
+
 ### 绘制内容
 
 通过 DrawableContext 提供的 Draw API 绘制文本、形状等内容

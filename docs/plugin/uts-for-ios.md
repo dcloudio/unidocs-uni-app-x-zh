@@ -867,6 +867,126 @@ DispatchQueue.main.async(execute=():void => {
 路径:
 > ~/uni_modules/uts-toast/utssdk/app-ios/index.uts
 
+### 6.3 插件中需要显示使用类型，不能省略
+
+由于在uts插件环境，无法默认推断出类型，所以需要显示类型，以`uni.request()`为例：
+
+```
+		uni.request<any>({
+			url: "http://xxx",
+			method: "GET",
+			success: (e : RequestSuccess<any>) => {
+				
+			},
+			fail(e : RequestFail) {
+				
+			},
+		} as RequestOptions<any>)
+```
+
+
+### 6.4 如何销毁原生对象实例
+
+在 uts 插件中通过 `export` 导出给 `js` 用的 `class`, 创建出的 class 实例会被一直保存在内存中，如果不主动销毁，可能会造成
+内存泄漏的问题。我们在 UTSiOS 类型上提供了 `destroyInstance()` 的静态方法来实现销毁原生对象的功能。开发者需要在使用这个对象的页面的
+`unmounted() ` 时机将对象销毁。
+
+> HBuilder X 4.25+ 版本支持 
+
+具体使用示例如下：
+
+在 uts 插件中定义 class Test，并将其 `export`：
+
+
+```ts
+// uts 插件中 export class
+export class Test {
+    id : number;
+    name : string;
+    constructor(id : number, name : string) {
+        this.id = id;
+        this.name = name;
+    }
+	
+	doSomething() {
+		console.log("do something");
+	}
+	
+	// 实现 destory 方法
+    destory() {
+      UTSiOS.destroyInstance(this)
+    }
+}
+
+```
+
+
+在 `uvue` 页面中使用：
+
+
+```ts
+// 创建 test 对象，并调用方法
+let test = new Test("1111", "name_11111");
+test.doSomething();
+this.test = test;
+```
+
+在 `uvue` 页面 `unmounted` 时销毁对象：
+
+
+```ts
+// 
+unmounted() {
+  this.test.destory()
+}
+```
+
+
+
+### 6.5 如何避免闭包可能造成的循环引用
+
+在 uts 插件或者组件中，如果自定义的 `class` 中定义了闭包类型的属性，而闭包内部又使用了 `class` 的其他属性或者 `class` 自身，
+就会造成对象循序引用，导致内存泄漏。为避免产生循环引用我们需要在闭包内使用 `"[weak self]"` 标记。
+
+具体示例如下：
+
+
+```ts
+export class Test {
+	id: number
+	name: string
+	callback: ((res: string) => void) | null = null
+	constructor(id: number, name: string) {
+		this.id = id
+		this.name = name
+	}
+	
+	doSomething() {
+		console.log("do something");
+		if (this.callback == null) {
+			this.callback = (res: string) => {
+				"[weak self]"
+				console.log(this?.name, res)
+			}
+		}   
+		this.callback?.("like basketball")
+
+	}
+	
+	destory() {
+		UTSiOS.destroyInstance(this)
+	}
+}
+```
+
+上述示例中，自定义类 `Test` 中持有一个 `callback` 的闭包属性，而 `callback` 闭包实现中有引用了 `this.name`，这就导致了循环引用。
+因此在 `callback` 闭包体的最开头部分使用了 `"[weak self]"` 标记，避免产生循环引用。
+
+> 特别注意：
+
+> 使用 `"[weak self]"` 标记以后，this 就变成了可为空的值，访问标记后的 `this` 的任何属性和方法都要使用可选链或者做非空断言。
+
+> 判断是否需要加 `"[weak self]"` 标记的标准是：callback 是否被 this 持有，闭包内是否访问了 this，如果满足这两条就需要加。
 
 
 ## 7  已知待解决问题(持续更新)

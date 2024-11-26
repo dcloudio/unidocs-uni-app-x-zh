@@ -16,6 +16,7 @@ uts，全称 uni type script，统一、强类型、脚本语言。
 - web平台，编译为JavaScript
 - Android平台，编译为Kotlin
 - iOS平台，编译为Swift（HX 3.6.7+ 版本支持）
+- harmonyOS平台，编译为ArkTs（HX 4.22+ 版本支持）在现有架构下，ArkTs和JS在同一环境下执行，不涉及通讯等问题。
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
@@ -30,6 +31,8 @@ uts语言，
 uts插件，指利用uts语法，操作原生的API（包括手机os的api或三方sdk），并封装成一个[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)插件，供前端调用。
 
 - uni-app中，是js来调用uts插件。（HBuilderX 3.6支持vue3编译器，3.6.8支持vue2编译器）
+![uts插件结构](https://native-res.dcloud.net.cn/images/uts/UTS%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE1.png)
+
 - uni-app x中，是uts来调用uts插件。（HBuilderX 3.9支持）
 
 也就是一个uts插件，可以同时支持uni-app和uni-app x。
@@ -47,8 +50,6 @@ uts插件分api和组件。这和uni-app的组件、api的概念是一样的。
 api插件也可以操作界面，但更多是独立的全屏窗口或弹出窗口。而不能嵌入在template中。
 
 比如lottie动画的uts插件，就是一个组件插件。[https://ext.dcloud.net.cn/plugin?id=10674](https://ext.dcloud.net.cn/plugin?id=10674)，其源码在[https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view](https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view)
-
-![uts插件结构](https://native-res.dcloud.net.cn/images/uts/UTS%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE1.png)
 
 ### uts插件与uni原生语言插件的区别
 
@@ -72,15 +73,17 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 
 相对原生语言插件，uts插件的优势：
 
-1. 统一了编程语言（uts），一种语言开发所有平台，真正大前端。
+1. 统一了编程语言（uts），一种语言开发所有平台，真正大前端。而且uts插件还支持鸿蒙next。而App原生只支持Android和iOS。
 2. 统一了开发工具（HBuilderX），免除搭建复杂的原生开发环境。
 3. 插件封装中要理解的概念更少。 传统原生语言插件需要在js和原生层处理通信，使用各种特殊转换，使用特殊语法导入，注意事项很多。**uts统一为纯前端概念，简单清晰。**
-4. uts 下前端和原生可以统一在 HBuilderX 中联调。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
+4. uts 下前端和原生可以统一在 HBuilderX 中联调，可以一起联编运行，可以把原生层信息打log到hx的控制台。而传统原生语言插件需要在多个开发工具间切换，联调复杂。
 5. 插件市场的uts插件支持下载后自己固定版本。而付费的原生语言插件只能使用最新版。
 6. 插件市场的uts付费插件支持源码版销售和源码版权保护机制。而付费的原生语言插件不支持源码版销售。
 7. uts插件可同时支持uni-app和uni-app x。
 
 如果您是插件作者，可以了解更多uts插件和uni原生语言插件对插件作者的区别。[详见](https://uniapp.dcloud.net.cn/plugin/publish.html#utsdiff)
+
+更新：**“App原生语言插件”已停止维护**，插件市场不再受理新增App原生插件。请插件开发者都使用uts插件。
 
 ### uts插件和Native.js的区别
 
@@ -142,7 +145,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
-┌─common                          // 可跨端公用的uts代码。推荐，不强制
+┌─common                          // 当前插件内可跨端公用的uts代码。uts文件仅支持放在utssdk目录或common目录。
 ├─static                          // 静态资源
 ├─utssdk
 │	├─app-android                 //Android平台目录
@@ -151,6 +154,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	│	├─res                     //Android原生res资源目录，可选
 │	│	├─AndroidManifest.xml     //Android原生应用清单文件，可选
 │	│	├─config.json             //Android原生配置文件
+│	│	├─hybrid.kt               //Android混编的kt文件
 │	│	└─index.uts               //Android原生插件能力实现
 │	├─app-ios                     //iOS平台目录
 │	│	├─Frameworks              //iOS原生依赖的第三方 framework 依赖库存放目录，可选
@@ -159,6 +163,7 @@ package.json 为 uni_modules 插件配置清单文件，负责描述插件的基
 │	│	├─info.plist              //iOS原生所需要添加到主 info.plist 文件中的配置文件，可选
 │	│	├─UTS.entitlements        //iOS原生所需要添加到主工程 .entitlements 文件中的配置文件，可选
 │	│	├─config.json             //iOS原生配置文件
+│	│	├─hybrid.swift            //ios混编的swift文件
 │	│	└─index.uts               //iOS原生插件能力实现
 │	├─web                         //web平台目录
 │	│	└─index.uts
@@ -229,7 +234,7 @@ Android平台原生三方库目录，支持以下类型文件：
 
 如果封装三方原生sdk为uni-app插件，可以将sdk的jar/aar文件放到此目录，但因为多个uts插件引用相同三方原生sdk时可能会产生冲突，所以如果sdk支持仓储，建议优先使用仓储配置，而不是直接把jar等文件放在libs目录。
 
-仓储配置参考config.json的[dependencies](#dependencies)。
+仓储配置参考config.json的[dependencies](#androidconfigjson)。
 
 关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
 
@@ -452,6 +457,13 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 - dependencies-pods：插件需要依赖的 pod 库,  HBuilderX3.8.5+ 版本新增支持
 	+ 有关 dependencies-pods 配置和 CocoaPods 使用的更多细节[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html)
 
+#### 鸿蒙原生配置
+
+app-harmony文件夹存放uts插件编译到鸿蒙时的代码逻辑，目前仅支持uts文件。
+
+|目录名/文件名	|用途																				|
+|:---					|:---																				|
+|index.uts		|主入口，interface.uts声明的能力在harmony平台下的实现	|
 
 ## 开发uts插件
 
@@ -459,13 +471,14 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 
 #### 创建插件
 
-在HBuilder X 中选中你的项目下 uni_modules目录,右键选择新建uni_modules插件, 例如 `uts-api`
+在HBuilder X 中选中你的项目下`uni_modules`目录，右键选择新建uni_modules插件, 例如 `uts-api`
 
 
 #### 编写interface.uts
 
-插件 `uts-api` 创建完成后，我们需要确定插件对外暴露的 API。为了多端统一规范的定义对外暴露的接口，获得 HBuilder X更好的语法提示，我们建议在 `interface.uts` 文件中统一定义插件要暴露的 API 类型、 API 的参数类型、返回值类型、错误码类型、错误接口等信息，然后在各端的 `index.uts` 中做具体的业务实现。
+插件 `uts-api` 创建完成后，我们需要确定插件对外暴露的 API。
 
+为了多端统一规范的定义对外暴露的接口，获得更好的语法提示和多端一致性约束，标准做法是在 `interface.uts` 文件中统一定义插件要暴露的 API 类型、 API 的参数类型、返回值类型、错误码类型、错误接口等信息，然后在各端的 `index.uts` 中做具体的业务实现。
 
 打开 `interface.uts` 文件，键入下面的源码, 为了方便说明，源码的每个部分的作用都用注释来说明。
 
@@ -525,7 +538,7 @@ export type MyApiSync = (paramA : boolean) => MyApiResult
 ```
 
 > 特别注意
-> `interface.uts` 是我们推荐的做法，不做强制要求，可以根据自己的实际情况决定是否实现。
+> `interface.uts` 是官方推荐的多端一致性的最佳实践，不做强制要求，可以根据自己的实际情况决定是否实现。比如某个插件只有一个平台，不写interface也可以。
 > `interface.uts` 文件中定义并 `export` 的 `interface` 接口例如 `MyApiFail` 只能在插件内部的 `uts` 文件代码中使用，不能在 `.uvue` 文件中使用插件时导入使用。
 
 至此，我们就完成了 `interface` 的定义，如果你遵循规范，定义了错误码的类型和错误码的 `interface` 如 `MyApiFail`, 那么你还需要在 `unierror.uts` 文件中对 `MyApiFail` 这个接口做具体实现。
@@ -569,7 +582,7 @@ export const UTSApiUniErrors : Map<MyApiErrorCode, string> = new Map([
  * 使用时只需要传入特定的错误码即可完成创建。
  */
 export class MyApiFailImpl extends UniError implements MyApiFail {
-
+  override errCode: MyApiErrorCode
   /**
    * 错误对象构造函数
    */
@@ -577,7 +590,7 @@ export class MyApiFailImpl extends UniError implements MyApiFail {
     super();
     this.errSubject = UniErrorSubject;
     this.errCode = errCode;
-    this.errMsg = UTSApiUniErrors[errCode] ?? "";
+    this.errMsg = UTSApiUniErrors.get(errCode) ?? "";
   }
 }
 
@@ -588,7 +601,7 @@ Uni错误规范的更多信息[详见](https://uniapp.dcloud.net.cn/tutorial/err
 
 #### 实现接口定义和业务逻辑
 
-分别在插件的 `app-android` 和 `app-ios` 目录下打开 `index.uts` 文件，键入下面的插件源码:
+分别在插件的 `app-android` 、`app-ios` 等目录下打开 `index.uts` 文件，键入下面的插件源码:
 
 ::: preview
 
@@ -777,10 +790,92 @@ export const myApiSync : MyApiSync = function (paramA : boolean) : MyApiResult {
 }
 ```
 
+> harmonyOS
+
+```ts
+
+/**
+ * 引用鸿蒙系统库，示例如下：
+ * import deviceInfo from "@ohos.deviceInfo";
+ * [可选实现，按需引入]
+ */
+
+/* 引入 interface.uts 文件中定义的变量 */
+import { MyApiOptions, MyApiResult, MyApi, MyApiSync } from '../interface.uts';
+
+/* 引入 unierror.uts 文件中定义的变量 */
+import { MyApiFailImpl } from '../unierror';
+
+export {
+  MyApiOptions
+}
+
+/**
+ * 引入三方库
+ * 暂不支持，请留意后续更新
+ */
+
+/**
+ * 异步方法
+ *
+ * uni-app项目中（vue/nvue）调用示例：
+ * 1、引入方法声明 import { myApi } from "@/uni_modules/uts-api"
+ * 2、方法调用
+ * myApi({
+ *   paramA: false,
+ *   complete: (res) => {
+ *      console.log(res)
+ *   }
+ * });
+ *
+ */
+export const myApi : MyApi = function (options : MyApiOptions) {
+
+  if (options.paramA == true) {
+    // 返回数据
+    const res : MyApiResult = {
+      fieldA: 85,
+      fieldB: true,
+      fieldC: 'some message'
+    };
+    options.success?.(res);
+    options.complete?.(res);
+
+  } else {
+    // 返回错误
+    let failResult = new MyApiFailImpl(9010001);
+    options.fail?.(failResult)
+    options.complete?.(failResult)
+  }
+
+}
+
+/**
+ * 同步方法
+ *
+ * uni-app项目中（vue/nvue）调用示例：
+ * 1、引入方法声明 import { myApiSync } from "@/uni_modules/uts-api"
+ * 2、方法调用
+ * myApiSync(true);
+ *
+ */
+export const myApiSync : MyApiSync = function (paramA : boolean) : MyApiResult {
+  // 返回数据，根据插件功能获取实际的返回值
+  const res : MyApiResult = {
+    fieldA: 85,
+    fieldB: paramA,
+    fieldC: 'some message'
+  };
+  return res;
+}
+```
+
 :::
 
 
 #### 使用插件
+
+> 下面的示例代码为uni-app-x代码
 
 上面的代码，我们完成了一个名为 "uts-api" 的UTS 插件，在 `uvue` 文件中使用该插件的代码示例如下：
 
@@ -809,6 +904,14 @@ methods: {
 
 ```
 
+
+运行和编译uts插件，需要在HBuilderX的设置中配置Android和iOS的环境，见如下文档：
+* [uts插件Android运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html)
+* [uts插件iOS运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
+
+开发uts插件，调试、打断点是重要帮手，参考如下文档
+* [uts插件Android Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
+* [uts插件iOS Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
 
 ### 获取电量插件示例
 
@@ -997,6 +1100,42 @@ export default function getBatteryLevel():number {
 
 至此，我们已经完成一个 iOS 平台上获取电量的原生能力封装。
 
+#### harmonyOS平台
+
+在utssdk目录下创建harmonyOS平台目录app-harmony
+
+在harmonyOS平台目录下，编辑index.uts，键入以下内容，即可完成harmonyOS平台获取电量能力。
+
+```ts
+import batteryInfo from '@ohos.batteryInfo';
+import { GetBatteryInfo, GetBatteryInfoOptions, GetBatteryInfoSuccess, GetBatteryInfoResult, GetBatteryInfoSync } from '../interface.uts';
+
+export const getBatteryInfoSync : GetBatteryInfoSync = function () : GetBatteryInfoResult {
+  return {
+    level: batteryInfo.batterySOC,
+    isCharging: batteryInfo.chargingStatus === batteryInfo.BatteryChargeState.ENABLE || batteryInfo.chargingStatus === batteryInfo.BatteryChargeState.FULL,
+  };
+}
+
+export const getBatteryInfo : GetBatteryInfo = function (options : GetBatteryInfoOptions) {
+  const batteryInfoResult : GetBatteryInfoSuccess = {
+    errMsg: "getBatteryInfo:ok",
+    level: batteryInfo.batterySOC,
+    isCharging: batteryInfo.chargingStatus === batteryInfo.BatteryChargeState.ENABLE || batteryInfo.chargingStatus === batteryInfo.BatteryChargeState.FULL,
+  }
+  try {
+    options.success && options.success(batteryInfoResult)
+  } catch (e) {
+    console.error(e)
+  }
+  try {
+    options.complete && options.complete(batteryInfoResult)
+  } catch (e) {
+    console.error(e)
+  }
+}
+```
+
 
 ### 应用程序生命周期函数监听@hooksClass
 
@@ -1137,10 +1276,14 @@ HelloUTS nativepage 插件增加了UTSAndroidHookProxy [源码示例](https://gi
 + onCreate回调后应尽可能的判断隐私合规是否同意再初始化，否则影响app上架
 + Android平台添加或修改UTSAndroidHookProxy实现代码需要重新提交云端打包才能生效
 
+#### harmonyOS平台
 
+暂不支持此能力
 
 
 ### `uts`与`uni-app`环境数据交互说明
+
+> harmonyOS目前的架构为ets和js在同一环境下运行，不涉及此章节内容
 
 
 UTS向uni-app传值，支持下列类型：
@@ -1288,9 +1431,16 @@ list1.forEach((item : any) => {
 > 在uni-app 环境下，在 index.uts 文件中 `export` 的 `class` 默认会对 `js`暴露，因此要建立起原生 `class` 和 `js`类型的映射关系，只有能正常建立起这种映射关系的类才能导出。除一些基本数据类型外的系统类例如 `Activity`、`UIViewController`等是无法 `export` 的。
 
 
+
+## UTS原生混编@utshybrid
+
+`HBuilder X 4.25`起，UTS插件可以直接使用原生的kt、java、swift代码，即 `UTS原生混编`。
+
+该部分内容较多，另见文档[UTS原生混编](./uts-plugin-hybrid.md)
+
 ## 前端使用插件
 
-虽然uts插件由uts语法开发，但前端引用插件并不要求一定需要ts，普通js即可引用uts插件。
+虽然uts插件由uts语法开发，但前端引用插件并不要求一定需要uts，普通js亦可引用uts插件。这也是uts插件同时支持uni-app和uni-app x的重要原因。
 
 下面介绍两种常见的引入方式
 
@@ -1338,7 +1488,7 @@ getBatteryCapacity()
 ```
 
 
-关于电量这个插件，插件市场已提供现成的插件，除了Android，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
+关于电量这个插件，插件市场已提供现成的插件，除了Android、iOS、鸿蒙，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
 
 更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
 
@@ -1358,6 +1508,11 @@ getBatteryCapacity()
 
 - HBuilderX 3.6.9以下版本，uts插件不支持热刷新，真机需提交云端打包生成[自定义基座](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#customplayground)
 - HBuilderX 3.6.9+，uts插件，支持本地编译和真机运行 [详情](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
+
+#### harmonyOS平台
+
+- uni-app-x项目暂不支持运行到harmonyOS平台
+- 目前运行到真机或者模拟的需要在鸿蒙DevEco-studio内手动操作
 
 ### 自定义基座
 
@@ -1381,6 +1536,7 @@ uts插件支持debug断点调试。可以在uts插件代码中打断点、查看
 
 - [Android debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
 - [iOS debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
+- [ArkTs debug教程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-debug-arkts-breakpoint-0000001807387305-V5)
 
 #### Bug&Tips
 - Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台
@@ -1686,6 +1842,90 @@ utsJsonObj.forEach(function(perField:any){
 ```
 
 
+### `UTS插件`导出方法中的回调函数参数如何支持持续触发@keepalive
+**HBuilderX4.25版本以前**  
+`UTS插件`导出方法的参数中存在回调函数时，在JS环境中调用会将回调函数 callback 一直保存在内存中，这时回调函数可以持续触发回调。这种策略会带来一个致命的问题， 当频繁调用这些导出方法时，每次调用都会创建回调函数 callback 对象，并一直保存在内存中，从而造成内存泄漏，可能引发应用闪退。  
+
+为了解决此问题，回调函数参数策略做了调整：  
+
+**HBuilderX4.25版本及以后**  
+`UTS插件`导出的方法中的回调函数参数触发一次后立即自动回收，避免内存泄漏，也就是默认情况下回调函数 callback 只能触发一次。这次调整可能带来向下兼容的问题，导致方法中的回调函数参数无法持续回调。  
+影响范围： `HBuilderX4.25+版本 iOS 平台的 uni-app 和 uni-app x 项目, Android平台的 uni-app 项目，顶层方法或者自定义 class 中的静态方法或者实例方法`  
+
+如果回调函数参数需支持可持续触发， 按以下方案进行适配：  
+
+将方法名称调整为`以 on 开头，且仅有一个 callback 类型的参数`，如下示例：  
+```ts
+function onTest(callback : (msg : string) => void) {
+    //...
+}
+```
+
+**HBuilderX4.27版本新增适配方案**
+通过装饰器(注解) `@UTSJS.keepAlive` 声明方法中的回调函数参数一直存活（不自动回收），支持回调函数可持续触发回调，如下示例：  
+```ts
+export type Options = {
+    a: string
+    success: (res: string) => void
+}
+
+// 以 on 开头，且仅有一个 callback 类型的参数的函数
+export function onTest(callback : (msg : string) => void) {
+    callback("a")
+    callback("b")
+}
+
+// 使用 @UTSJS.keepAlive 注解方式，不限制参数个数
+@UTSJS.keepAlive
+export function test(callback : (msg : string) => void) {
+    callback("a")
+    callback("b")
+}
+
+// 使用 @UTSJS.keepAlive 注解方式，callback 可以包含在自定义type中
+@UTSJS.keepAlive
+export function testOption(option : Options) {
+    option.success("a")
+    option.success("b")
+}
+
+// 以上规则在自定义class中同样适用
+export class Test {
+    onTest(callback : (msg : string) => void) {
+        callback("a")
+        callback("b")
+    }
+
+    @UTSJS.keepAlive
+    testOption(option : Options) {
+        option.success("a")
+        option.success("b")
+    }
+
+    @UTSJS.keepAlive
+    test(callback : (msg : string) => void) {
+        callback("a")
+        callback("b")
+    }
+
+    @UTSJS.keepAlive
+    static testStatic(callback : (msg : string) => void) {
+        callback("a")
+        callback("b")
+    }
+
+    @UTSJS.keepAlive
+    tatic testOptionStatic(option : Options) {
+        option.success("a")
+        option.success("b")
+    }
+}
+```
+
+> 特别注意：
+> 1. 如果带了该装饰器，则该方法参数里的所有回调都会在内存中持续存在，需提醒使用者避免频繁调用此方法  
+> 2. 目前装饰器不支持 export const test:Test = ()=>{} // 这种导出方式，需要使用export function test(){}  
+> 3. 如果同时存在app-android/app-ios，需要两个平台都同时配置@UTSJS.keepAlive
 
 
 ## Bug & Tips@tips
@@ -1696,6 +1936,7 @@ utsJsonObj.forEach(function(perField:any){
 
 临时解决办法：以不同的函数名称来区分函数
 
+### uts插件只能引入插件目录内部的文件，不能import插件外部的文件。
 
 ## 示例项目
 

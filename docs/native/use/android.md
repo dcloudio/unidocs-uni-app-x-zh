@@ -27,7 +27,7 @@
 **注意**
 - `Language` 一定要选择`Kotlin`。
 - uni-app x最低支持版本为21，`Minimum SDK`需要选择21及以上的版本。
-- `Build configuration language`建议选择`Groovy DSL(build.gradle)`。以下教程均按照此模式进行。。
+- `Build configuration language`建议选择`Groovy DSL(build.gradle)`。以下教程均按照此模式进行。
 
 ## 工程配置
 
@@ -38,11 +38,11 @@ framework-release.aar，uni-exit-release.aar，uni-getAccessibilityInfo-release.
 uni-getSystemSetting-release.aar，uni-openAppAuthorizeSetting-release.aar，uni-prompt-release.aar，uni-storage-release.aar，uni-getDeviceInfo-release.aar，
 uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar共19个aar拷贝到uni-app x模块的libs下，如果没有libs需要手动创建，参考下图：
 
-![](https://web-ext-storage.dcloud.net.cn/native/doc/android/main_libs.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/main_libs_2.jpg)
 
 ### 修改build.gradle
 
-修改uni-app x模块下的build.gradle
+修改uniappx模块下的build.gradle
 
 - 添加依赖
 	
@@ -51,28 +51,29 @@ uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar�
 	```groovy
 	dependencies {
 		implementation fileTree(include: ['*.aar'], dir: './libs')
-		implementation("androidx.core:core-ktx:1.8.0")
-		implementation("androidx.recyclerview:recyclerview:1.0.0")
-		implementation("androidx.appcompat:appcompat:1.0.0")
-		implementation("androidx.exifinterface:exifinterface:1.3.6")
-		implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar")
-		implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-		implementation("com.google.android.material:material:1.4.0")
-		implementation("androidx.viewpager2:viewpager2:1.1.0-beta02")
-		implementation("com.alibaba:fastjson:1.2.83")
-		implementation("com.facebook.fresco:fresco:3.1.3")
-		implementation("com.facebook.fresco:middleware:3.1.3")
-		implementation("com.facebook.fresco:animated-gif:3.1.3")
-		implementation("com.facebook.fresco:webpsupport:3.1.3")
-		implementation("com.facebook.fresco:animated-webp:3.1.3")
-		implementation("com.github.bumptech.glide:glide:4.9.0")
-		implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-		implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-		implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
-		implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.10")
-		implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
-		implementation("com.squareup.okhttp3:okhttp:3.12.12")
-		implementation("com.github.getActivity:XXPermissions:18.0")
+		implementation "androidx.core:core-ktx:1.10.1"
+		implementation "androidx.recyclerview:recyclerview:1.3.2"
+		implementation "androidx.appcompat:appcompat:1.0.0"
+		implementation "androidx.exifinterface:exifinterface:1.3.6"
+		implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar"
+		implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+		implementation "androidx.webkit:webkit:1.6.0"
+		implementation "com.google.android.material:material:1.4.0"
+		implementation "androidx.viewpager2:viewpager2:1.1.0-beta02"
+		implementation "com.alibaba:fastjson:1.2.83"
+		implementation "com.facebook.fresco:fresco:3.1.3"
+		implementation "com.facebook.fresco:middleware:3.1.3"
+		implementation "com.facebook.fresco:animated-gif:3.1.3"
+		implementation "com.facebook.fresco:webpsupport:3.1.3"
+		implementation "com.facebook.fresco:animated-webp:3.1.3"
+		implementation "com.github.bumptech.glide:glide:4.9.0"
+		implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+		implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+		implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.10"
+		implementation "org.jetbrains.kotlin:kotlin-reflect:1.8.10"
+		implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
+		implementation "com.squareup.okhttp3:okhttp:3.12.12"
+		implementation "com.github.getActivity:XXPermissions:18.63"
 	}
 	```
 
@@ -102,7 +103,7 @@ buildscript {
 }
 ```
 
-**注意：文件uts-kotlin-compiler-plugin-0.0.1.jar和uts-kotlin-gradle-plugin-0.0.1.jar位于离线SDK中，示例中放到了项目根目录的`plugin`文件夹下。参考：**
+**注意：文件uts-kotlin-compiler-plugin-0.0.1.jar和uts-kotlin-gradle-plugin-0.0.1.jar位于原生SDK中，示例中放到了项目根目录的`plugin`文件夹下。参考：**
 
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/android/gradle_plugins.png)
 
@@ -141,7 +142,7 @@ android.useAndroidX=true
 android.enableJetifier=true
 ```
 
-### 修改AndroidManifest.xml
+### 修改uniappx模块下的AndroidManifest.xml @androidmanifest  
 
 - 添加activity
 	
@@ -174,6 +175,16 @@ android.enableJetifier=true
 
 	**注意：如果需要自定义application，必须继承自UniApplication**
 	
+- 配置应用分发渠道
+	
+	在application节点下添加`DCLOUD_CHANNEL`节点
+	```xml
+	<meta-data
+		android:name="DCLOUD_CHANNEL" android:value="替换成需要发布的应用分发渠道" />
+	```
+	
+	获取配置的应用分发渠道，可以通过[uni.getAppBaseInfo()](../../api/get-app-base-info.md)。
+
 - 合并AndroidManifest.xml
 
 	如果uni-app x项目根目录下有AndroidManifest.xml文件，你需要按照xml文件的结构将内容拷贝到`uniappx`模块的AndroidManifest.xml中。
@@ -191,7 +202,7 @@ android.enableJetifier=true
 	
 2. 将app-android目录下与appid对应的目录拷贝到主项目的`assets/apps`目录下
 	
-	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/app_assets.png)
+	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/app_assets_2.png)
 	
 	**注意：apps下的appid必须与AndroidManifest.xml的`DCLOUD_UNI_APPID`保持一致。**
 	
@@ -248,7 +259,7 @@ android.enableJetifier=true
 
 #### 添加gradle插件
 
-uni-app可以忽略gradle插件配置。
+**uni-app可以忽略gradle插件配置。**
 
 在build.gradle的plugins节点下添加`io.dcloud.uts.kotlin`的依赖。参考：
 
@@ -457,6 +468,8 @@ dependencies {
 	```
 	
 	**注意：转义符不能删掉，格式一定严格一致。**
+	
+	**注意：暂不支持在build.gradle中设置`applicationIdSuffix`，添加`applicationIdSuffix`会导致组件初始化失败。**
 
 ### 复制资源@copyresources
 

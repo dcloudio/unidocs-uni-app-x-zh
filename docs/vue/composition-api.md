@@ -60,6 +60,16 @@
     return count.value * 2
   })
   ```
+- 目前需要可传参的计算属性时，需要手动指定返回值类型
+  ```ts
+  const stateText = computed(() : (state : number) => string => {
+    return (state : number) : string => {
+      const stateArr = ['未审核', '审核中', '审核通过']
+      return stateArr[state]
+    }
+  })
+  stateText.value(1)
+  ```  
 :::
 
 示例 [详情](<!-- VUEJSON.E_reactivity.core_computed_computed-composition.gitUrl -->)
@@ -413,9 +423,21 @@
 
 #### onMounted、onUnmounted 使用注意事项 @mounted-unmounted-tips
 
-目前 onMounted、onUnmounted 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 onMounted、onUnmounted 不能保证 DOM 排版以及渲染完毕。\
+目前 App平台 onMounted、onUnmounted 可以保证当前数据已经同步到 DOM，但是由于排版和渲染是异步的的，所以 onMounted、onUnmounted 不能保证 DOM 排版以及渲染完毕。\
 如果需要获取排版后的节点信息推荐使用 [uni.createSelectorQuery](../api/nodes-info.md) 不推荐直接使用 [Element](../dom/unielement.md) 对象。\
 在修改 DOM 后，立刻使用 [Element](../dom/unielement.md) 对象的同步接口获取 DOM 状态可能获取到的是排版之前的，而 [uni.createSelectorQuery](../api/nodes-info.md) 可以保障获取到的节点信息是排版之后的。
+
+注：页面的 onReady 生命周期可以获取到排版后的节点信息
+
+#### onActivated、onDeactivated 使用注意事项 @activated-deactivated-tips
+
+当 A 页面存在 `keepAlive` 组件，A 页面 `navigateTo` B 页面时
+- Web 端 A 页面中 `keepAlive` 的组件会触发 `onDeactivated` 生命周期
+- App 端 A 页面中 `keepAlive` 的组件不会触发 `onDeactivated` 生命周期
+
+当 B 页面 back 返回 A 页面时
+- Web 端 A 页面中 `keepAlive` 的组件会触发 `onActivated` 生命周期
+- App 端 A 页面中 `keepAlive` 的组件不会触发 `onActivated` 生命周期
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.gitUrl -->)
 

@@ -13,13 +13,7 @@ Math 是一个内置对象，它拥有一些数学常数属性和数学函数方
 
 <!-- UTSJSON.Math.E.returnValue -->
 
-```ts
-function getNapier():number {
-  return Math.E;
-}
-console.log(getNapier());
-// expected output: 2.718281828459045
-```
+<!-- UTSJSON.Math.E.test -->
 
 <!-- UTSJSON.Math.E.compatibility -->
 
@@ -31,14 +25,7 @@ console.log(getNapier());
 
 <!-- UTSJSON.Math.LN10.returnValue -->
 
-
-```ts
-function getNatLog10():number {
-  return Math.LN10;
-}
-console.log(getNatLog10());
-// expected output: 2.302585092994046
-```
+<!-- UTSJSON.Math.LN10.test -->
 
 <!-- UTSJSON.Math.LN10.compatibility -->
 
@@ -50,13 +37,7 @@ console.log(getNatLog10());
 
 <!-- UTSJSON.Math.LN2.returnValue -->
 
-```ts
-function getNatLog2():number {
-  return Math.LN2;
-}
-console.log(getNatLog2());
-// expected output: 0.6931471805599453
-```
+<!-- UTSJSON.Math.LN2.test -->
 
 <!-- UTSJSON.Math.LN2.compatibility -->
 
@@ -68,13 +49,7 @@ console.log(getNatLog2());
 
 <!-- UTSJSON.Math.LOG2E.returnValue -->
 
-```ts
-function getLog2e():number {
-  return Math.LOG2E;
-}
-console.log(getLog2e());
-// expected output: 1.4426950408889634
-```
+<!-- UTSJSON.Math.LOG2E.test -->
 
 <!-- UTSJSON.Math.LOG2E.compatibility -->
 
@@ -86,13 +61,7 @@ console.log(getLog2e());
 
 <!-- UTSJSON.Math.LOG10E.returnValue -->
 
-```ts
-function getLog10e():number {
-  return Math.LOG10E;
-}
-console.log(getLog10e());
-// expected output: 0.4342944819032518
-```
+<!-- UTSJSON.Math.LOG10E.test -->
 
 <!-- UTSJSON.Math.LOG10E.compatibility -->
 
@@ -104,13 +73,7 @@ console.log(getLog10e());
 
 <!-- UTSJSON.Math.PI.returnValue -->
 
-```ts
-function calculateCircumference (radius:number):number {
-  return 2 * Math.PI * radius;
-}
-console.log(calculateCircumference(1));
-// expected output: 6.283185307179586
-```
+<!-- UTSJSON.Math.PI.test -->
 
 <!-- UTSJSON.Math.PI.compatibility -->
 
@@ -122,13 +85,7 @@ console.log(calculateCircumference(1));
 
 <!-- UTSJSON.Math.SQRT1_2.returnValue -->
 
-```ts
-function getRoot1_2():number {
-  return Math.SQRT1_2;
-}
-console.log(getRoot1_2());
-// expected output: 0.7071067811865476
-```
+<!-- UTSJSON.Math.SQRT1_2.test -->
 
 <!-- UTSJSON.Math.SQRT1_2.compatibility -->
 
@@ -140,13 +97,7 @@ console.log(getRoot1_2());
 
 <!-- UTSJSON.Math.SQRT2.returnValue -->
 
-```ts
-function getRoot2():number {
-  return Math.SQRT2;
-}
-console.log(getRoot2());
-// expected output: 1.4142135623730951
-```
+<!-- UTSJSON.Math.SQRT2.test -->
 
 <!-- UTSJSON.Math.SQRT2.compatibility -->
 
@@ -162,20 +113,7 @@ console.log(getRoot2());
 
 <!-- UTSJSON.Math.clz32.returnValue -->
 
-```ts
-console.log(Math.clz32(1));
-// expected output: 31
-
-console.log(Math.clz32(1000));
-// expected output: 22
-
-console.log(Math.clz32());
-// expected output: 32
-
-console.log(Math.clz32(3.5));
-// expected output: 30
-
-```
+<!-- UTSJSON.Math.clz32.test -->
 
 <!-- UTSJSON.Math.clz32.compatibility -->
 
@@ -187,16 +125,8 @@ console.log(Math.clz32(3.5));
 
 <!-- UTSJSON.Math.sign.returnValue -->
 
-```ts
-console.log(Math.sign(3));
-// expected output: 1
+<!-- UTSJSON.Math.sign.test -->
 
-console.log(Math.sign(-3));
-// expected output: -1
-
-console.log(Math.sign(0));
-// expected output: 0
-```
 <!-- UTSJSON.Math.sign.compatibility -->
 
 ### log10(x)
@@ -207,16 +137,8 @@ console.log(Math.sign(0));
 
 <!-- UTSJSON.Math.log10.returnValue -->
 
-```ts
-console.log(Math.log10(10));
-// expected output: 1
+<!-- UTSJSON.Math.log10.test -->
 
-console.log(Math.log10(100));
-// expected output: 2
-
-console.log(Math.log10(1));
-// expected output: 0
-```
 <!-- UTSJSON.Math.log10.compatibility -->
 
 ### log2(x)
@@ -226,16 +148,9 @@ console.log(Math.log10(1));
 <!-- UTSJSON.Math.log2.param -->
 
 <!-- UTSJSON.Math.log2.returnValue -->
-```ts
-console.log(Math.log2(2));
-// expected output: 1
 
-console.log(Math.log2(1024));
-// expected output: 10
+<!-- UTSJSON.Math.log2.test -->
 
-console.log(Math.log2(1));
-// expected output: 0
-```
 <!-- UTSJSON.Math.log2.compatibility -->
 
 ### log1p(x)
@@ -245,13 +160,9 @@ console.log(Math.log2(1));
 <!-- UTSJSON.Math.log1p.param -->
 
 <!-- UTSJSON.Math.log1p.returnValue -->
-```ts
-console.log(Math.log1p(Math.E-1));
-// expected output: 1
 
-console.log(Math.log1p(0));
-// expected output: 0
-```
+<!-- UTSJSON.Math.log1p.test -->
+
 <!-- UTSJSON.Math.log1p.compatibility -->
 
 ### expm1(x)
@@ -261,13 +172,9 @@ console.log(Math.log1p(0));
 <!-- UTSJSON.Math.expm1.param -->
 
 <!-- UTSJSON.Math.expm1.returnValue -->
-```ts
-console.log(Math.expm1(1));
-// expected output: 1.718281828459045
 
-console.log(Math.expm1(-38));
-// expected output: -1
-```
+<!-- UTSJSON.Math.expm1.test -->
+
 <!-- UTSJSON.Math.expm1.compatibility -->
 
 ### cosh(x)
@@ -277,16 +184,9 @@ console.log(Math.expm1(-38));
 <!-- UTSJSON.Math.cosh.param -->
 
 <!-- UTSJSON.Math.cosh.returnValue -->
-```ts
-console.log(Math.cosh(0));
-// expected output: 1
 
-console.log(Math.cosh(1));
-// expected output: 1.5430806348152437
+<!-- UTSJSON.Math.cosh.test -->
 
-console.log(Math.cosh(-1));
-// expected output: 1.5430806348152437
-```
 <!-- UTSJSON.Math.cosh.compatibility -->
 
 ### sinh(x)
@@ -297,13 +197,8 @@ console.log(Math.cosh(-1));
 
 <!-- UTSJSON.Math.sinh.returnValue -->
 
-```ts
-console.log(Math.sinh(0));
-// expected output: 0
+<!-- UTSJSON.Math.sinh.test -->
 
-console.log(Math.sinh(1));
-// expected output: 1.1752011936438014
-```
 <!-- UTSJSON.Math.sinh.compatibility -->
 
 ### tanh(x)
@@ -313,16 +208,9 @@ console.log(Math.sinh(1));
 <!-- UTSJSON.Math.tanh.param -->
 
 <!-- UTSJSON.Math.tanh.returnValue -->
-```ts
-console.log(Math.tanh(-1));
-// Expected output: -0.7615941559557649
 
-console.log(Math.tanh(0));
-// Expected output: 0
+<!-- UTSJSON.Math.tanh.test -->
 
-console.log(Math.tanh(1));
-// Expected output: 0.7615941559557649
-```
 <!-- UTSJSON.Math.tanh.compatibility -->
 
 ### acosh(x)
@@ -333,16 +221,7 @@ console.log(Math.tanh(1));
 
 <!-- UTSJSON.Math.acosh.returnValue -->
 
-```ts
-console.log(Math.acosh(1));
-// expected output: 0
-
-console.log(Math.acosh(2));
-// expected output: 1.3169578969248166
-
-console.log(Math.acosh(2.5));
-// expected output: 1.566799236972411
-```
+<!-- UTSJSON.Math.acosh.test -->
 
 <!-- UTSJSON.Math.acosh.compatibility -->
 
@@ -354,19 +233,7 @@ console.log(Math.acosh(2.5));
 
 <!-- UTSJSON.Math.asinh.returnValue -->
 
-```ts
-console.log(Math.asinh(1));
-// expected output: 0.881373587019543
-
-console.log(Math.asinh(0));
-// expected output: 0
-
-console.log(Math.asinh(-1));
-// expected output: -0.881373587019543
-
-console.log(Math.asinh(2));
-// expected output: 1.4436354751788103
-```
+<!-- UTSJSON.Math.asinh.test -->
 
 <!-- UTSJSON.Math.asinh.compatibility -->
 
@@ -377,13 +244,9 @@ console.log(Math.asinh(2));
 <!-- UTSJSON.Math.atanh.param -->
 
 <!-- UTSJSON.Math.atanh.returnValue -->
-```ts
-console.log(Math.atanh(0));
-// expected output: 0
 
-console.log(Math.atanh(0.5));
-// expected output: 0.5493061443340548
-```
+<!-- UTSJSON.Math.atanh.test -->
+
 <!-- UTSJSON.Math.atanh.compatibility -->
 
 ### trunc(x)
@@ -393,16 +256,9 @@ console.log(Math.atanh(0.5));
 <!-- UTSJSON.Math.trunc.param -->
 
 <!-- UTSJSON.Math.trunc.returnValue -->
-```ts
-console.log(Math.trunc(13.37));
-// Expected output: 13
 
-console.log(Math.trunc(42.84));
-// Expected output: 42
+<!-- UTSJSON.Math.trunc.test -->
 
-console.log(Math.trunc(0.123));
-// Expected output: 0
-```
 <!-- UTSJSON.Math.trunc.compatibility -->
 
 ### fround(x)
@@ -411,14 +267,10 @@ console.log(Math.trunc(0.123));
 
 <!-- UTSJSON.Math.fround.param -->
 
-<!-- UTSJSON.Math.fround.returnValue -->
-```ts
-console.log(Math.fround(1.5));
-// expected output: 1.5
+<!-- UTSJSON.Math.fround.test -->
 
-console.log(Math.fround(1.337));
-// expected output: 1.3370000123977661
-```
+<!-- UTSJSON.Math.fround.returnValue -->
+
 <!-- UTSJSON.Math.fround.compatibility -->
 
 ### abs(x)
@@ -429,20 +281,7 @@ console.log(Math.fround(1.337));
 
 <!-- UTSJSON.Math.abs.returnValue -->
 
-```ts
-function difference(a:number, b:number):number {
-  return Math.abs(a - b);
-}
-
-console.log(difference(3, 5));
-// expected output: 2
-
-console.log(difference(5, 3));
-// expected output: 2
-
-console.log(difference(1.23456, 7.89012));
-// expected output: 6.6555599999999995
-```
+<!-- UTSJSON.Math.abs.test -->
 
 <!-- UTSJSON.Math.abs.compatibility -->
 
@@ -454,17 +293,7 @@ console.log(difference(1.23456, 7.89012));
 
 <!-- UTSJSON.Math.acos.returnValue -->
 
-```ts
-console.log(Math.acos(-1));
-// expected output: 3.141592653589793
-
-console.log(Math.acos(0));
-// expected output: 1.5707963267948966
-
-console.log(Math.acos(1));
-// expected output: 0
-```
-
+<!-- UTSJSON.Math.acos.test -->
 
 <!-- UTSJSON.Math.acos.compatibility -->
 
@@ -476,19 +305,7 @@ console.log(Math.acos(1));
 
 <!-- UTSJSON.Math.asin.returnValue -->
 
-```ts
-console.log(Math.asin(-1));
-// expected output: -1.5707963267948966 (-pi/2)
-
-console.log(Math.asin(0));
-// expected output: 0
-
-console.log(Math.asin(0.5));
-// expected output: 0.5235987755982989
-
-console.log(Math.asin(1));
-// expected output: 1.5707963267948966
-```
+<!-- UTSJSON.Math.asin.test -->
 
 <!-- UTSJSON.Math.asin.compatibility -->
 
@@ -500,13 +317,8 @@ console.log(Math.asin(1));
 
 <!-- UTSJSON.Math.atan.returnValue -->
 
-```ts
-console.log(Math.atan(1));
-// expected output: 0.7853981633974483
+<!-- UTSJSON.Math.atan.test -->
 
-console.log(Math.atan(0));
-// expected output: 0
-```
 <!-- UTSJSON.Math.atan.compatibility -->
 
 ### atan2(y, x)
@@ -517,13 +329,8 @@ console.log(Math.atan(0));
 
 <!-- UTSJSON.Math.atan2.returnValue -->
 
-```ts
-console.log(Math.atan2(90, 15));
-// expected output: 1.4056476493802699
+<!-- UTSJSON.Math.atan2.test -->
 
-console.log(Math.atan2(15, 90));
-// expected output: 0.16514867741462683
-```
 <!-- UTSJSON.Math.atan2.compatibility -->
 
 ### ceil(x)
@@ -534,20 +341,7 @@ console.log(Math.atan2(15, 90));
 
 <!-- UTSJSON.Math.ceil.returnValue -->
 
-```ts
-console.log(Math.ceil(0.95));
-// expected output: 1
-
-console.log(Math.ceil(4));
-// expected output: 4
-
-console.log(Math.ceil(7.004));
-// expected output: 8
-
-console.log(Math.ceil(-7.004));
-// expected output: -7
-
-```
+<!-- UTSJSON.Math.ceil.test -->
 
 <!-- UTSJSON.Math.ceil.compatibility -->
 
@@ -558,13 +352,9 @@ console.log(Math.ceil(-7.004));
 <!-- UTSJSON.Math.cos.param -->
 
 <!-- UTSJSON.Math.cos.returnValue -->
-```ts
-console.log(Math.cos(0));
-// expected output: 1
 
-console.log(Math.cos(1));
-// expected output: 0.5403023058681398
-```
+<!-- UTSJSON.Math.cos.test -->
+
 <!-- UTSJSON.Math.cos.compatibility -->
 
 ### exp(x)
@@ -575,16 +365,8 @@ console.log(Math.cos(1));
 
 <!-- UTSJSON.Math.exp.returnValue -->
 
-```ts
-console.log(Math.exp(-1));
-// expected output: 0.36787944117144233
+<!-- UTSJSON.Math.exp.test -->
 
-console.log(Math.exp(0));
-// expected output: 1
-
-console.log(Math.exp(1));
-// expected output: 2.718281828459045
-```
 <!-- UTSJSON.Math.exp.compatibility -->
 
 ### floor(x)
@@ -594,19 +376,9 @@ console.log(Math.exp(1));
 <!-- UTSJSON.Math.floor.param -->
 
 <!-- UTSJSON.Math.floor.returnValue -->
-```ts
-console.log(Math.floor(5.95));
-// expected output: 5
 
-console.log(Math.floor(5.05));
-// expected output: 5
+<!-- UTSJSON.Math.floor.test -->
 
-console.log(Math.floor(5));
-// expected output: 5
-
-console.log(Math.floor(-5.05));
-// expected output: -6
-```
 <!-- UTSJSON.Math.floor.compatibility -->
 
 ### log(x)
@@ -617,13 +389,8 @@ console.log(Math.floor(-5.05));
 
 <!-- UTSJSON.Math.log.returnValue -->
 
-```ts
-console.log(Math.log(1));
-// expected output: 0
+<!-- UTSJSON.Math.log.test -->
 
-console.log(Math.log(10));
-// expected output: 2.302585092994046
-```
 <!-- UTSJSON.Math.log.compatibility -->
 
 ### max(...values)
@@ -633,13 +400,9 @@ console.log(Math.log(10));
 <!-- UTSJSON.Math.max.param -->
 
 <!-- UTSJSON.Math.max.returnValue -->
-```ts
-console.log(Math.max(1, 3, 2));
-// expected output: 3
 
-console.log(Math.max(-1, -3, -2));
-// expected output: -1
-```
+<!-- UTSJSON.Math.max.test -->
+
 <!-- UTSJSON.Math.max.compatibility -->
 
 ### min(...values)
@@ -649,13 +412,9 @@ console.log(Math.max(-1, -3, -2));
 <!-- UTSJSON.Math.min.param -->
 
 <!-- UTSJSON.Math.min.returnValue -->
-```ts
-console.log(Math.min(2, 3, 1));
-// expected output: 1
 
-console.log(Math.min(-2, -3, -1));
-// expected output: -3
-```
+<!-- UTSJSON.Math.min.test -->
+
 <!-- UTSJSON.Math.min.compatibility -->
 
 ### pow(x, y)
@@ -665,13 +424,9 @@ console.log(Math.min(-2, -3, -1));
 <!-- UTSJSON.Math.pow.param -->
 
 <!-- UTSJSON.Math.pow.returnValue -->
-```ts
-console.log(Math.pow(7, 3));
-// expected output: 343
 
-console.log(Math.pow(4, 0.5));
-// expected output: 2
-```
+<!-- UTSJSON.Math.pow.test -->
+
 <!-- UTSJSON.Math.pow.compatibility -->
 
 ### random()
@@ -681,20 +436,9 @@ console.log(Math.pow(4, 0.5));
 <!-- UTSJSON.Math.random.param -->
 
 <!-- UTSJSON.Math.random.returnValue -->
-```ts
-function getRandomInt(max:number):number {
-  return Math.floor(Math.random() * max);
-}
 
-console.log(getRandomInt(3));
-// expected output: 0, 1 or 2
+<!-- UTSJSON.Math.random.test -->
 
-console.log(getRandomInt(1));
-// expected output: 0
-
-console.log(Math.random());
-// expected output: a number from 0 to <1
-```
 <!-- UTSJSON.Math.random.compatibility -->
 
 ### round(x)
@@ -704,19 +448,8 @@ console.log(Math.random());
 <!-- UTSJSON.Math.round.param -->
 
 <!-- UTSJSON.Math.round.returnValue -->
-```ts
-console.log(Math.round(20.49));
-// expected output: 20
 
-console.log(Math.round(20.5));
-// expected output: 21
-
-console.log(Math.round(-20.5));
-// expected output: -20
-
-console.log(Math.round(-20.51));
-// expected output: -21
-```
+<!-- UTSJSON.Math.round.test -->
 
 <!-- UTSJSON.Math.round.compatibility -->
 
@@ -728,13 +461,8 @@ console.log(Math.round(-20.51));
 
 <!-- UTSJSON.Math.sin.returnValue -->
 
-```ts
-console.log(Math.sin(0));
-// expected output: 0
+<!-- UTSJSON.Math.sin.test -->
 
-console.log(Math.sin(1));
-// expected output: 0.8414709848078965
-```
 <!-- UTSJSON.Math.sin.compatibility -->
 
 ### sqrt(x)
@@ -744,20 +472,9 @@ console.log(Math.sin(1));
 <!-- UTSJSON.Math.sqrt.param -->
 
 <!-- UTSJSON.Math.sqrt.returnValue -->
-```ts
-function calcHypotenuse(a:number, b:number):number {
-  return (Math.sqrt((a * a) + (b * b)));
-}
 
-console.log(calcHypotenuse(3, 4));
-// expected output: 5
+<!-- UTSJSON.Math.sqrt.test -->
 
-console.log(calcHypotenuse(5, 12));
-// expected output: 13
-
-console.log(calcHypotenuse(0, 0));
-// expected output: 0
-```
 <!-- UTSJSON.Math.sqrt.compatibility -->
 
 ### tan(x)
@@ -767,13 +484,9 @@ console.log(calcHypotenuse(0, 0));
 <!-- UTSJSON.Math.tan.param -->
 
 <!-- UTSJSON.Math.tan.returnValue -->
-```ts
-console.log(Math.tan(0));
-// expected output: 0
 
-console.log(Math.tan(1));
-// expected output: 1.5574077246549023
-```
+<!-- UTSJSON.Math.tan.test -->
+
 <!-- UTSJSON.Math.tan.compatibility -->
 
 <!-- UTSJSON.Math.tutorial -->

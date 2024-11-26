@@ -17,7 +17,7 @@ Cookie: name=value; name2=value2; name3=value3
 
 Cookie共享是指在应用中，请求同一域名地址，Http请求头会携带相同的Cookie。这是因为Cookie是由应用存储在用户设备上的，因此所有支持Cookie共享的API和组件都可以访问到这些Cookie。
 
-uni-app x 中已实现Cookie共享的API和组件有
+uni-app x 实现Cookie共享的API和组件的情况如下
 
 - [uni.request](https://doc.dcloud.net.cn/uni-app-x/api/request.html) ：用于发起网络请求，会自动携带Cookie。
 - [uni.uploadFile](https://doc.dcloud.net.cn/uni-app-x/api/upload-file.html) ：用于上传文件，会自动携带Cookie。
@@ -25,7 +25,7 @@ uni-app x 中已实现Cookie共享的API和组件有
 - [image组件](https://doc.dcloud.net.cn/uni-app-x/component/image.html) ：显示网络图片时，会自动携带Cookie（iOS端未实现Cookie共享）。
 - [video组件](https://doc.dcloud.net.cn/uni-app-x/component/video.html) ：用于播放网络视频，会自动携带Cookie（iOS端未实现Cookie共享）。
 - [web-view组件](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) ：用于显示网页，会自动携带Cookie（iOS端未实现Cookie共享）。
-
+- [websocket](https://doc.dcloud.net.cn/uni-app-x/api/websocket.html)：未实现Cookie共享。
 
 已实现Cookie共享的组件和API，开发者无须关心Cookie的存储、删除、过期等问题，客户端已自动处理。
 

@@ -40,3 +40,4 @@
 
 - HTML String在App端支持常用但不是全部web样式，并且Android和iOS也略有差异。
 - HTML String类型的`<img/>`不支持自定义宽高，默认以rich-text组件宽度为基准等比缩放；节点列表类型的`<img />`支持自定义宽高。
+- App-Android平台，设置`selectable`属性为 true 时，`itemclick`事件不触发。

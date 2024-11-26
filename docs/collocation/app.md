@@ -4,7 +4,11 @@
 
 所有页面都是在`App.uvue`下进行切换的，是应用入口文件。但`App.uvue`本身不是页面，这里不能编写视图元素，也就是没有`<template>`。
 
-这个文件的作用包括：监听应用生命周期、配置全局样式、配置全局的存储globalData
+这个文件的作用包括：
+1. 监听应用生命周期
+2. 配置全局变量globalData
+3. 编写全局可用的method方法
+4. 配置全局样式
 
 应用生命周期仅可在`App.uvue`中监听，在页面监听无效。
 
@@ -14,14 +18,92 @@
 
 `uni-app-x` 支持如下应用生命周期函数：
 
-|函数名|说明|平台兼容|
-|:-|:-|:-|
-|onLaunch|当`uni-app-x` 初始化完成时触发（全局只触发一次），参数为应用启动参数，同 [uni.getLaunchOptionsSync](../api/get-launch-options-sync.md#getlaunchoptionssync) 的返回值||
-|onShow|当 `uni-app-x` 启动，或从后台进入前台显示，参数为应用启动参数||
-|onHide|当 `uni-app-x` 从前台进入后台，包括手机息屏||
-|onLastPageBackPress|最后一个页面按下Android back键，常用于自定义退出|app-uvue-android 3.9+|
-|onExit|监听应用退出|app-uvue-android 3.9+|
-|onError|监听应用发生脚本错误或 API 调用报错|4.21+|
+<!-- VUEJSON.application.onLaunch.name -->
+
+<!-- VUEJSON.application.onLaunch.description -->
+
+<!-- VUEJSON.application.onLaunch.compatibility -->
+
+<!-- VUEJSON.application.onLaunch.param -->
+
+<!-- VUEJSON.application.onLaunch.returnValue -->
+
+- 如果应用通过scheme或applink（通用链接）启动，可在本生命周期获取相应参数。配置scheme或applink需在AndroidManifest.xml或info.plist中配置，打包后生效。
+
+<!-- VUEJSON.application.onLaunch.tutorial -->
+
+<!-- VUEJSON.application.onShow.name -->
+
+<!-- VUEJSON.application.onShow.description -->
+
+<!-- VUEJSON.application.onShow.compatibility -->
+
+<!-- VUEJSON.application.onShow.param -->
+
+<!-- VUEJSON.application.onShow.returnValue -->
+
+- 如果应用通过scheme或applink（通用链接）启动（不管首次启动还是后台激活到前台，均触发本生命周期），可在本生命周期获取。配置scheme或applink需在AndroidManifest.xml或info.plist中配置，打包后生效。
+- 如开发App页面直达功能，在配置scheme或通用链接并打包后，一般在onShow生命周期里解析scheme或applink参数，然后自行写navigatorTo等路由API跳转页面。onShow的好处是不管首页启动还是后台激活到前台，都触发。当然如果是初次启动，仍然会先打开App的首页再执行开发者编写的路由代码。
+- Web的页面直达无需使用scheme或通用链接，所有页面地址都可以直接在地址栏访问。
+
+<!-- VUEJSON.application.onShow.tutorial -->
+
+<!-- VUEJSON.application.onHide.name -->
+
+<!-- VUEJSON.application.onHide.description -->
+
+<!-- VUEJSON.application.onHide.compatibility -->
+
+<!-- VUEJSON.application.onHide.param -->
+
+<!-- VUEJSON.application.onHide.returnValue -->
+
+<!-- VUEJSON.application.onHide.tutorial -->
+
+<!-- VUEJSON.application.onLastPageBackPress.name -->
+
+<!-- VUEJSON.application.onLastPageBackPress.description -->
+
+<!-- VUEJSON.application.onLastPageBackPress.compatibility -->
+
+<!-- VUEJSON.application.onLastPageBackPress.param -->
+
+<!-- VUEJSON.application.onLastPageBackPress.returnValue -->
+
+<!-- VUEJSON.application.onLastPageBackPress.tutorial -->
+
+<!-- VUEJSON.application.onExit.name -->
+
+<!-- VUEJSON.application.onExit.description -->
+
+<!-- VUEJSON.application.onExit.compatibility -->
+
+<!-- VUEJSON.application.onExit.param -->
+
+<!-- VUEJSON.application.onExit.returnValue -->
+
+<!-- VUEJSON.application.onExit.tutorial -->
+
+<!-- VUEJSON.application.onError.name -->
+
+<!-- VUEJSON.application.onError.description -->
+:::warning
+`onError` 可以监听以下来源中的同步错误：
+- 组件渲染器
+- 事件处理器
+- 生命周期钩子
+- setup() 函数
+- 侦听器
+
+无法监听异步逻辑（例如：`setTimeout`）中的错误和应用初始化之前、 App 崩溃等错误。
+:::
+<!-- VUEJSON.application.onError.compatibility -->
+
+<!-- VUEJSON.application.onError.param -->
+
+<!-- VUEJSON.application.onError.returnValue -->
+
+<!-- VUEJSON.application.onError.tutorial -->
 
 **示例代码**
 
@@ -29,14 +111,14 @@
 
 **注意**
 - **应用生命周期仅可在`App.uvue`中监听，在其它页面监听无效**。
-- 应用启动参数，可以在API `uni.getLaunchOptionsSync`获取，[详见](../api/get-launch-options-sync.md#getlaunchoptionssync)
+- 应用启动参数，也可以在API `uni.getLaunchOptionsSync`获取，[详见](../api/launch.md#getlaunchoptionssync)
 - 由于Android的`uni.exit()`是[热退出](../api/exit.md)，此时很多代码逻辑仍然在运行，有些on的事件监听并没有off，需要开发者在onExit生命周期中编写代码处理。比如在app的onLaunch里通过onXX监听了某事件，那么就需要在onExit里调用offXX取消某事件的监听，否则反复热退出、启动，会多次on而不会off，这会引发内存泄露。
 
 ## globalData
 
 > HBuilderX 3.99+
 
-小程序有 globalData，这是一种简单的全局变量机制。这套机制在 uni-app-x 里也可以使用，并且全端通用。
+小程序有 globalData，这是一种简单的全局变量机制。这套机制在 uni-app-x 里也可以使用，仅 `iOS uts 插件` 环境不支持。
 
 **以下是 App.uvue 中定义globalData的相关配置：**
 
@@ -72,6 +154,54 @@
 **注意：** `uni-app x` 中 `globalData` 的数据结构与类型通过 `App.uvue` 中的 `globalData` 初始值定义，后续只能读取或修改，不能新增或删除。
 
 globalData是简单的全局变量，其他状态管理方式，可参考文档[全局变量和状态管理](../tutorial/store.md)。
+
+## 全局方法
+在 `App.uvue methods` 中，可以定义全局方法，这里定义的方法，在项目中可以通过 `getApp().vm?.methodName()` 调用, 例如：
+```vue
+<!-- App.uvue -->
+<script lang="uts">
+  export default {
+    onLaunch: function () {
+      console.log('App Launch')
+    },
+    onShow: function () {
+      console.log('App Show')
+    },
+    onHide: function () {
+      console.log('App Hide')
+    },
+    methods: {
+      globalFn(){
+        console.log('The global fn is triggered')
+      }
+    }
+  }
+</script>
+
+<!-- pages/index/index.uvue -->
+<template>
+  <view>
+    <button @click="triggerGlobalFn">trigger global fn</button>
+  </view>
+</template>
+
+<script lang="uts">
+  export default {
+    onReady() {
+      getApp().globalFn()
+    },
+    methods: {
+      triggerGlobalFn() {
+        const app = getApp()
+        app.vm?.globalFn()
+      }
+    }
+  }
+</script>
+```
+::: warning 注意
+HBuilderX 4.31 `getApp()` 返回值调整为 `UniApp` 类型，调用 `App.uvue` 中定义的全局方法，需要由 `getApp().methodName()` 调整为 `getApp().vm?.methodName()`。
+:::
 
 ## 全局样式
 

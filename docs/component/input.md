@@ -10,6 +10,51 @@
 
 <!-- UTSCOMJSON.input.component_type-->
 
+#### 获取原生view对象
+
+为增强uni-app x组件的开放性，从 `HBuilderX 4.25` 起，UniElement对象提供了 [getAndroidView](../dom/unielement.md#getandroidview) 和 [getIOSView](../dom/unielement.md#getiosview) 方法。
+
+该方法可以获取到 textarea 组件对应的原生对象，即Android的`AppCompatEditText`对象、iOS的`UITextField`对象。
+
+进而可以调用原生对象提供的方法，这极大的扩展了组件的能力。
+
+**Android 平台：**
+
+获取input组件对应的UniElement对象，通过UniElement对象的[getAndroidView](../dom/unielement.md#getandroidview-2)方法获取组件原生AppCompatEditText对象
+
+```uts
+//导入安卓原生AppCompatEditText对象
+import AppCompatEditText from "androidx.appcompat.widget.AppCompatEditText"
+
+//通过input组件定义的id属性值，获取input标签的UniElement对象
+const inputElement = uni.getElementById(id)
+//UniElement.getAndroidView设置泛型为安卓底层AppCompatEditText对象，直接获取AppCompatEditText， 如果泛型不匹配会返回null
+if(inputElement != null) {
+	//editText就是input组件对应的原生view对象
+	const editText = inputElement.getAndroidView<AppCompatEditText>()
+}
+```
+
+**iOS 平台：**
+
+获取input组件对应的UniElement对象，通过UniElement对象的[getIOSView](../dom/unielement.md#getiosview)方法获取组件原生UITextField对象
+
+```uts
+//通过 input 组件定义的 id 属性值，获取 input 标签的 UniElement 对象
+const inputElement = uni.getElementById(id)
+//获取原生 view
+const view = inputElement?.getIOSView();
+//判断 view 是否存在，类型是否为 UITextField
+if (view != null && view instanceof UITextField) {
+    //将 view 转换为 UITextField 类型 
+    const textField = view! as UITextField;
+}
+```
+
++ iOS平台 uvue 环境使用 js 驱动无法处理原生类型，getIOSView 方法需要在 uts 插件中使用。
+
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+
 <!-- UTSCOMJSON.input.children -->
 
 <!-- UTSCOMJSON.input.example -->

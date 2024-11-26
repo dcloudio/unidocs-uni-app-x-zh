@@ -42,7 +42,7 @@ uni-app x项目的uts代码中可以使用很多API。包括：
 
 虽然上述页面可以直接调用原生Android能力，但正规开发时，原生能力应封装为[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)形式的[uts插件](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html)。这样方便共享、方便跨平台。（iOS在js驱动模式时，uvue页面中不支持调用swift API，需封装为uts插件调用原生API）
 
-uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api，一部分在uni-app x中进行了替换增补、一部分提供了uts操作原生的示例代码。[详见](ext.md)
+uni-app x 中不再支持plus和weex的API。过去plus api中一些常用的api，一部分在uni-app x中进行了替换增补、一部分提供了uts操作原生的示例代码。[详见](ext.md)
 
 网上可以找到很多kotlin调用系统api的代码，但如何使用uts来调用这些系统api？
 
@@ -71,6 +71,9 @@ function getDeviceModel(): string {
 - kotlin中定义一个常量是val，而uts是const；kotlin的变量定义是var，而uts推荐使用let。
 
 更复杂的例子可以[参考](ext.md#kt2uts)
+
+## promise
+uni的异步api，均支持callback，但只有部分支持promise。对于支持promise的API，在API文档的返回值描述中会包含`Promise`。
 
 ## 生命周期@liftcycle
 

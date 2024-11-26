@@ -13,4 +13,6 @@
 
 <!-- CSSJSON.opacity.compatibility -->
 
+<!-- CSSJSON.opacity.example -->
+
 <!-- CSSJSON.opacity.reference -->
