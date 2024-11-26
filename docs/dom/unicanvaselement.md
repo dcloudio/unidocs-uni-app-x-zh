@@ -61,26 +61,41 @@
 
 <!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toBlob_2.tutorial -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl.name -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL.name -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl.description -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL.description -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl.compatibility -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL.compatibility -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl.param -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL.param -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl.returnValue -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL.returnValue -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl.tutorial -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL.tutorial -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl_1.name -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_1.name -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl_1.description -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_1.description -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl_1.compatibility -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_1.compatibility -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl_1.param -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_1.param -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl_1.returnValue -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_1.returnValue -->
 
-<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataUrl_1.tutorial -->
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_1.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_2.name -->
+
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_2.description -->
+
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_2.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_2.param -->
+
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_2.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniCanvasElement.methods.toDataURL_2.tutorial -->
+
+**注意事项**
+- toDataURL方法在 App-Android 平台暂不支持在页面的onLoad和组件的onMount生命周期中调用
