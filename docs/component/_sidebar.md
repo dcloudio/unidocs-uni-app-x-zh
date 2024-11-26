@@ -23,6 +23,8 @@
     * nested-scroll | 嵌套滚动
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
+    * [page-container](page-container.md)
+    * [root-portal](root-portal.md)
   * 基础内容
     * [icon | 图标](icon.md)
     * [text | 文本](text.md)
@@ -48,12 +50,19 @@
     * [slider | 滑动选择器](slider.md)
     * [switch | 开关选择器](switch.md)
     * [textarea | 多行输入框](textarea.md)
+    * [keyboard-accessory](keyboard-accessory.md)
   * 导航
     * [navigator | 页面链接](navigator.md)
   * 媒体组件
     * [image | 图片](image.md)
     * [video | 视频](video.md)
     * [animation-view | Lottie动画](animation-view.md)
+    * live
+      * [live-player](live-player.md)
+      * [live-pusher](live-pusher.md)
+    * [channel-live](channel-live.md)
+    * [channel-video](channel-video.md)
+    * [voip-room](voip-room.md)
   * 地图
     * [map | 地图](map.md)
   * 画布
@@ -62,9 +71,38 @@
     * [ad | 信息流广告](ad.md)
   * 网页
     * [web-view](web-view.md)
-  * 页面属性配置节点
+  * page-meta | 页面属性配置节点
+    * [page-meta](page-meta.md)
+    * [navigation-bar](navigation-bar.md)
     * [custom-tab-bar](custom-tab-bar.md)
   * unicloud
     * [unicloud-db](unicloud-db.md)
   * [animation-view](animation-view.md)
+  * Skyline
+    * component.skyline.手势系统
+      * [double-tap-gesture-handler](double-tap-gesture-handler.md)
+      * [force-press-gesture-handler](force-press-gesture-handler.md)
+      * [horizontal-drag-gesture-handler](horizontal-drag-gesture-handler.md)
+      * [long-press-gesture-handler](long-press-gesture-handler.md)
+      * [pan-gesture-handler](pan-gesture-handler.md)
+      * [scale-gesture-handler](scale-gesture-handler.md)
+      * [tap-gesture-handler](tap-gesture-handler.md)
+      * [vertical-drag-gesture-handler](vertical-drag-gesture-handler.md)
+    * [draggable-sheet](draggable-sheet.md)
+    * [grid-builder](grid-builder.md)
+    * [grid-view](grid-view.md)
+    * [list-builder](list-builder.md)
+    * [open-container](open-container.md)
+    * [share-element](share-element.md)
+    * [snapshot](snapshot.md)
+    * [span](span.md)
+  * 开放能力
+    * [ad-custom](ad-custom.md)
+    * [official-account](official-account.md)
+    * [store-home](store-home.md)
+    * [store-product](store-product.md)
+  * 原生组件说明
+    * [native-component](native-component.md)
+  * 无障碍访问
+    * [aria-component](aria-component.md)
 * [其他组件](unsupport.md)
