@@ -18,7 +18,6 @@ uni-app x的web版从uni-app的js引擎版迁移而来，理论上所有uni-app 
 - 文件选择：`uni.chooseFile` [见插件市场](https://ext.dcloud.net.cn/search?q=%E6%96%87%E4%BB%B6%E9%80%89%E6%8B%A9&cat1=8&cat2=81)
 - 蓝牙：Bluetooth。[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%93%9D%E7%89%99&orderBy=Relevance&cat1=8&cat2=81)
 - NFC：[见插件市场](https://ext.dcloud.net.cn/search?q=nfc&orderBy=Relevance&cat1=8&cat2=81)
-- 地图：chooseLocation [见插件市场](https://ext.dcloud.net.cn/search?q=%E5%9C%B0%E5%9B%BE&orderBy=Relevance&uni-appx=1)
 - 陀螺仪：`uni.onGyroscopeChange`、`uni.startGyroscope`、`uni.stopGyroscope` [见插件市场](https://ext.dcloud.net.cn/plugin?id=17540)
 - 加速度传感器：`uni.onAccelerometerChange`、`uni.startAccelerometer` [见插件市场](https://ext.dcloud.net.cn/plugin?id=17540)
 - 生物识别：指纹识别。`uni.startSoterAuthentication` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%94%9F%E7%89%A9%E8%AE%A4%E8%AF%81&uni-appx=1)
