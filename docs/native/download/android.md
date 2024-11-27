@@ -12,10 +12,10 @@
 
 ## alpha版
 
-### 4.35.2024112402-alpha
+### 4.36.2024112612-alpha
 
-**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android/Android-uni-app-x-SDK@12646-4.35.zip)**
+**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android/Android-uni-app-x-SDK@12661-4.36.zip)**
 
-* 更新 uni-app x 原生SDK打包支持，需使用HBuilderX（4.35.2024112402-alpha）版本生成本地打包App资源。
-* 优化 API uni.chooseLocation 新增请求参数payload，原样透传给uni-map-co，可用于用户鉴权 [详情](https://doc.dcloud.net.cn/uni-app-x/api/choose-location.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=13108>
-* 修复 4.31版本引发的 vue 无法使用v-show隐藏自定义组件 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=13061)
+* 更新 uni-app x 原生SDK打包支持，需使用HBuilderX（4.36.2024112612-alpha）版本生成本地打包App资源。
+* 修复 API uni.createCanvasContextAsync 在生命周期 onLoad/onMount 中无法获取width/height [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=13212)
+* 修复 4.35版本引发的 vue keepAlive 组件切换时，触发了 update 生命周期的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=13261)
