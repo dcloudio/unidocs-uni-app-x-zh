@@ -1,6 +1,6 @@
 * [概述](README.md)
 * [全局属性和事件](common.md)
-* 内置组件
+* 内置组件```{"collapsable": false}```
   * 视图容器
     * [view | 基本视图容器](view.md)
     * [scroll-view | 可滚动视图容器](scroll-view.md)
