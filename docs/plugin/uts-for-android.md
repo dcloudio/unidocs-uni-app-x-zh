@@ -1045,6 +1045,12 @@ console.log(getClassByInstance);
 
 `uts`中的 `Void` 对应 `kotlin`语言中的 `Unit`,当报错：预期为 Unit 时，实际上是期望`Void`
 
+
+### 7.9 targetMethod error::java.lang.IllegalArgumentException: Callable expects 2 arguments, but 1 were provided.
+
+目前uts的class实例不支持在vue2的data中定义。发生此类错误时，排查是否在data函数中定义了uts导出的class实例，如果定义了，移除该定义即可。
+
+
 ## 已知待解决问题(持续更新)
 
 ### 结构入参 boolean 参数默认为true

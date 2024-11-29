@@ -310,6 +310,44 @@ UniTouchEvent 的 type 类型包括：touchstart、touchmove、touchend、touchc
 
 <!-- CUSTOMTYPEJSON.UniNativeViewEvent.example -->
 
+## UniVideoEvent
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.description -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.extends -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.param -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.example -->
+
+### UniVideoEvent 的方法 @univideoevent-methods
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.stopPropagation.name -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.stopPropagation.description -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.stopPropagation.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.stopPropagation.param -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.stopPropagation.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.stopPropagation.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.preventDefault.name -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.preventDefault.description -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.preventDefault.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.preventDefault.param -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.preventDefault.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniVideoEvent.methods.preventDefault.tutorial -->
+
+
 ## 参见
 
 - [相关 Bug](https://issues.dcloud.net.cn/?mid=component.global-properties-events)

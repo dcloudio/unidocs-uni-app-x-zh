@@ -301,13 +301,18 @@ uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/
 ## 历史老项目兼容指南
 
 ### uni-app js版老项目迁移指南
-1. 首先检查你的老项目里使用的uni组件、api、三方插件、三方库，在uni-app x上是否支持。
+1. 首先检查你的老项目里使用的uni组件、api、三方插件、三方库，在uni-app x上是否支持。尤其是深度使用的三方ui库，如果该库不支持uni-app x，请推进插件作者支持，否则就要承担换ui库的工作量。
 2. 对于不支持的，需要自己写uni-app x的插件或去插件市场找替代兼容插件。如果写调用原生的uts代码，需要你了解原生的api。
 3. 对于css，如果你之前使用nvue的css，那边迁移到uni-app x在样式上改动很小。如果之前是vue的css，那么需要改为flex布局，以及仅使用uvue支持的css来布局界面。
 4. 对于script，如果你之前使用ts，那么改造成本会很低。如果使用js，那需要改造成uts，差别最大的就是补类型，没法再使用弱类型了。
-5. 组件的写法基本没有差别，只需注意uni-app x初期支持的组件不全
+5. 组件的写法基本没有差别，但组件的事件返回值也是强类型
 
-你还可以把uni-app js版老项目作为uni-app x新项目的一个小程序来使用。在uni-app x里内嵌uni小程序sdk，详见：[uni-unimp](https://ext.dcloud.net.cn/plugin?id=17638)。
+uni-app x 比 uni-app 的变化主要是 js 变 uts，变成强类型了[详见](./uts/data-type.md)；css 变 ucss，只支持flex布局，不支持样式继承[详见](./css/README.md)。
+
+由于uni-app x的web、iOS、小程序，仍然是兼容js的。所以也有一种渐进式方案，先把老项目的web、iOS、小程序版本迁移到x，这样只需要改css。后续再把js改成uts来兼容Android。
+
+在Android上，你还可以把uni-app js版老项目作为uni-app x新项目的一个小程序来使用。在uni-app x里内嵌uni小程序sdk，详见：[uni-unimp](https://ext.dcloud.net.cn/plugin?id=17638)。
+
 
 ### 原生/rn/flutter页面兼容指南
 

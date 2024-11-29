@@ -36,6 +36,8 @@ UniElement在小程序端仅支持如下属性/方法：
 **注意**
 
 - 小程序端只有UniElement，不支持UniButtonElement、UniViewElement等类
+- 小程序端在各种事件在target、currentTarget指向未配置id的组件时，event.target、event.currentTarget会返回一个功能缺失的UniElement，仅能访问dataset、offsetTop、offsetLeft属性。
+- 小程序端在各种事件在target、currentTarget指向配置了id的组件时，event.target、event.currentTarget会返回一个功能和getElementById一致的UniElement，除了能访问getElementById返回的UniElement的各种属性方法之外，还能访问dataset、offsetTop、offsetLeft属性。
 
 ### 事件
 
@@ -57,6 +59,14 @@ event.screenY
 ### 默认样式
 
 为保证多端统一，uni-app-x编译到小程序端时，内置组件根元素带有一些默认样式，详情参考：[uvue css使用](../css/README.md)。
+
+## skyline
+
+对skyline的支持处于实验阶段。
+
+目前编译器暂不支持在同一个项目内区分页面是否为skyline模式来决定是否注入ucss样式覆盖。如果你的项目所有页面都是skyline模式推荐将`manifest.json -> mp-weixin.enableUcssReset`设置为false。
+
+worklet函数暂不支持写在uvue、uts文件内，推荐从js文件内引用。
 
 ## 其他差异
 
