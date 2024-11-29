@@ -6,7 +6,7 @@
 
 **注意：** \
 uni是全局api，本方法获取的元素，是页面栈栈顶（不包括 dialogPage）的页面的元素，而不是执行本方法代码所在的页面的元素。\
-如果A页面被栈顶的B页面盖住，在A页面执行`uni.getElementById`会访问到B页面的元素。\
+如果A页面被栈顶的B页面盖住，在A页面执行`uni.getElementById`会访问到B页面的元素。
 
 如需寻找特定页面上的Element，应使用[UniPage对象的getElementById方法](../api/get-current-pages.md#getelementbyid)
 
