@@ -60,6 +60,14 @@ event.screenY
 
 为保证多端统一，uni-app-x编译到小程序端时，内置组件根元素带有一些默认样式，详情参考：[uvue css使用](../css/README.md)。
 
+## skyline
+
+对skyline的支持处于实验阶段。
+
+目前编译器暂不支持在同一个项目内区分页面是否为skyline模式来决定是否注入ucss样式覆盖。如果你的项目所有页面都是skyline模式推荐将`manifest.json -> mp-weixin.enableUcssReset`设置为false。
+
+worklet函数暂不支持写在uvue、uts文件内，推荐从js文件内引用。
+
 ## 其他差异
 
 ### 实体字符
