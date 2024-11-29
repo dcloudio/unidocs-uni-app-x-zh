@@ -23,8 +23,6 @@
     * nested-scroll | 嵌套滚动
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
-    * [page-container](page-container.md)
-    * [root-portal](root-portal.md)
   * 基础内容
     * [icon | 图标](icon.md)
     * [text | 文本](text.md)
@@ -50,7 +48,6 @@
     * [slider | 滑动选择器](slider.md)
     * [switch | 开关选择器](switch.md)
     * [textarea | 多行输入框](textarea.md)
-    * [keyboard-accessory](keyboard-accessory.md)
   * 导航
     * [navigator | 页面链接](navigator.md)
   * 媒体组件
@@ -60,9 +57,6 @@
     * live
       * [live-player](live-player.md)
       * [live-pusher](live-pusher.md)
-    * [channel-live](channel-live.md)
-    * [channel-video](channel-video.md)
-    * [voip-room](voip-room.md)
   * 地图
     * [map | 地图](map.md)
   * 画布
@@ -79,7 +73,7 @@
     * [unicloud-db](unicloud-db.md)
   * [animation-view](animation-view.md)
   * Skyline
-    * component.skyline.手势系统
+    * 手势系统
       * [double-tap-gesture-handler](double-tap-gesture-handler.md)
       * [force-press-gesture-handler](force-press-gesture-handler.md)
       * [horizontal-drag-gesture-handler](horizontal-drag-gesture-handler.md)
@@ -101,8 +95,12 @@
     * [official-account](official-account.md)
     * [store-home](store-home.md)
     * [store-product](store-product.md)
-  * 原生组件说明
-    * [native-component](native-component.md)
-  * 无障碍访问
-    * [aria-component](aria-component.md)
 * [其他组件](unsupport.md)
+  * [page-container](page-container.md)
+  * [root-portal](root-portal.md)
+  * [keyboard-accessory](keyboard-accessory.md)
+  * [channel-live](channel-live.md)
+  * [channel-video](channel-video.md)
+  * [voip-room](voip-room.md)
+  * [native-component](native-component.md)
+  * [aria-component](aria-component.md)
