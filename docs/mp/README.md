@@ -64,7 +64,7 @@ event.screenY
 
 对skyline的支持处于实验阶段。
 
-目前编译器暂不支持在同一个项目内区分页面是否为skyline模式来决定是否注入ucss样式覆盖。如果你的项目所有页面都是skyline模式推荐将`manifest.json -> mp-weixin.enableUcssReset`设置为false。
+目前编译器会根据页面是否为skyline来决定是否注入ucss样式覆盖，仅webview渲染的页面才会进行ucss样式覆盖。
 
 worklet函数暂不支持写在uvue、uts文件内，推荐从js文件内引用。
 
