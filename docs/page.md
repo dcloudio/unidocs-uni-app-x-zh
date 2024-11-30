@@ -129,7 +129,7 @@ uvue页面基于 vue 单文件组件规范。一个页面内，有3个根节点�
 
 ### 页面 onLoad 生命周期@onload
 
-页面初始化时，会触发onLoad生命周期。此时Dom还未构建渲染完毕，ref和getElementById都拿不到Dom（需要等onReady）。
+页面初始化时，会触发onLoad生命周期。此时Dom还未构建渲染完毕，ref和getElementById使用同步方式的话拿不到Dom（需要等onReady或使用异步获取）。
 
 所以onLoad页面常见的用途是：
 1. 开始联网取数，由于联网是异步的，在onLoad发起联网，等到获取到服务器数据后，也就可以更新到data或响应式变量上了
@@ -177,6 +177,22 @@ onShow和onHide是成对出现的。
 
 在组合式API中，组件可以监听应用和页面的生命周期。但由于应用和页面都有onShow和onHide，导致重名。所以在组合式的组件中监听页面的显示隐藏，改为了onPageShow和onPageHide。
 
+在微信小程序下，关闭弹出的原生窗体也会触发页面的onShow。比如关闭chooseImage、chooseVideo、chooseMedia、previewImage、chooseLocation、openLocation、scanCode等弹出的窗体。
+
+### 页面 onHide 生命周期@onhide
+
+页面被隐藏/遮挡时会触发页面隐藏生命周期。
+
+比如跳转到下一个页面，会触发之前页面的隐藏。
+
+在微信小程序下，打开全屏原生窗体也会触发页面的onHide。比如chooseImage、chooseVideo、chooseMedia、previewImage、chooseLocation、openLocation、scanCode。可以简单理解为弹出的这些原生窗体盖住了js写的小程序。
+
+### 页面 onResize 生命周期 @onresize
+
+<!-- PAGEINSTANCE.onResize.param -->
+
+<!-- PAGEINSTANCE.onResize.returnValue -->
+
 ### onReachBottom
 
 可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pagesjson#pages-globalstyle)，
@@ -187,12 +203,6 @@ onShow和onHide是成对出现的。
 <!-- PAGEINSTANCE.onPageScroll.param -->
 
 <!-- PAGEINSTANCE.onPageScroll.returnValue -->
-
-### 页面 onResize 生命周期 @onresize
-
-<!-- PAGEINSTANCE.onResize.param -->
-
-<!-- PAGEINSTANCE.onResize.returnValue -->
 
 ### 页面 onBackPress 生命周期 @onbackpress
 

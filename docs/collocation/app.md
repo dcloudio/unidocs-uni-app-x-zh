@@ -46,6 +46,8 @@
 - 如开发App页面直达功能，在配置scheme或通用链接并打包后，一般在onShow生命周期里解析scheme或applink参数，然后自行写navigatorTo等路由API跳转页面。onShow的好处是不管首页启动还是后台激活到前台，都触发。当然如果是初次启动，仍然会先打开App的首页再执行开发者编写的路由代码。
 - Web的页面直达无需使用scheme或通用链接，所有页面地址都可以直接在地址栏访问。
 
+在微信小程序下，关闭弹出的原生窗体也会触发应用的onShow。比如关闭chooseImage、chooseVideo、chooseMedia、previewImage、chooseLocation、openLocation、scanCode等弹出的窗体。
+
 <!-- VUEJSON.application.onShow.tutorial -->
 
 <!-- VUEJSON.application.onHide.name -->
@@ -57,6 +59,8 @@
 <!-- VUEJSON.application.onHide.param -->
 
 <!-- VUEJSON.application.onHide.returnValue -->
+
+在微信小程序下，打开全屏原生窗体也会触发应用的onHide。比如chooseImage、chooseVideo、chooseMedia、previewImage、chooseLocation、openLocation、scanCode。可以简单理解为弹出的这些原生窗体盖住了js写的小程序。
 
 <!-- VUEJSON.application.onHide.tutorial -->
 
