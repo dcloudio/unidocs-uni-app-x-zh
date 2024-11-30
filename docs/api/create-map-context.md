@@ -1,4 +1,4 @@
-## uni.createMapContext(options) @createmapcontext
+## uni.createMapContext(mapId, component?) @createmapcontext
 
 <!-- UTSAPIJSON.createMapContext.description -->
 
