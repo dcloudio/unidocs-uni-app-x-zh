@@ -115,6 +115,8 @@ str2 = str1 // 报错 Type 'String' is not assignable to type 'string'
 
 ### import type@import-type
 
+> HBuilderX 4.41及之后版本已无此章节描述的限制，import type在uni-app-x项目中可以正常使用。
+
 由于uts会为as为某些类型的对象字面量创建这个类型对应的实例，所以经常会存在一些类型引入后是作为值使用而不是作为类型使用。应尽量不要使用`import type`用法，避免编译结果出错。
 
 ```ts
