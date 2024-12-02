@@ -13,6 +13,7 @@
  `Target -> Build Settings -> Mach-O Type` 设置为`Dynamic Library`
  `Target -> Build Settings -> Other Linker Flags` 中添加`-ObjC`, 字母o和c大写
  `Target -> Build Settings -> Build Libraries for Distribution` 设置为`YES`
+ `Target -> Build Settings -> Enable Module Verifier` 设置为`NO`
  `Target -> Build Settings -> Framework Search Paths` 中添加SDK的Libs目录（操作方法：双击展开`Framework Search Paths`将`SDK/Libs`文件夹拖入即可）
 
 `插件工程`中新建`uts-config.json`文件，然后将SDK中`SDK/ExtApiSrc/UTSOC.h`以及`SDK/ExtApiSrc/UTSOC.mm`添加到`插件工程`中
