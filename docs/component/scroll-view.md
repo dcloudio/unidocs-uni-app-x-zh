@@ -76,7 +76,7 @@
 + `nested-scroll-header` 和 `nested-scroll-body` 只能有一个子节点
 + `nested-scroll-header` 只能渲染在 `nested-scroll-body` 上面
 + 与nested-scroll嵌套滚动协商互不兼容，`nested-scroll-header` 和 `nested-scroll-body`优先级高于nested-scroll嵌套滚动协商
-+ 内层滚动视图支持 scroll-view 和 list-view
++ 内层滚动视图支持 scroll-view、list-view、waterflow
 
 **具体代码请参考：**[嵌套模式示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-nested/long-list-nested.uvue)
 
@@ -86,7 +86,7 @@
 
 它是指父子2个滚动容器嵌套，在滚动时可以互相协商，控制父容器怎么滚、子容器怎么滚。
 
-1. 通过在子滚动容器设置`custom-nested-scroll = true`，开启与父组件实现嵌套滚动协商。仅list-view、scroll-view组件支持与父组件嵌套滚动协商。
+1. 通过在子滚动容器设置`custom-nested-scroll = true`，开启与父组件实现嵌套滚动协商。仅list-view、waterflow、scroll-view组件支持与父组件嵌套滚动协商。
 
 下面的示例代码，在一个scroll-view中嵌套了一个list-view。在list-view上设置了custom-nested-scroll="true"。
 
