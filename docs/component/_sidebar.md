@@ -23,6 +23,7 @@
     * nested-scroll | 嵌套滚动
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
+    * [block](block.md)
   * 基础内容
     * [icon | 图标](icon.md)
     * [text | 文本](text.md)
