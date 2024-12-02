@@ -2,11 +2,12 @@
 
 <!-- UTSCOMJSON.waterflow.description -->
 
-<!-- UTSCOMJSON.waterflow.compatibility -->、
+<!-- UTSCOMJSON.waterflow.compatibility -->
 
 在App中，waterflow 底层实现与list-view底层实现方式基本一致，仅子组件排列方式存在差异，适用于多元素瀑布流长列表场景，子组件滑动出屏幕会及时回收复用。性能优于 scroll-view 
 
 > waterflow 暂时只支持 flow-item 组件为子组件，其他组件不可见
+
 > waterflow 只支持竖向滚动，暂时不支持横向滚动
 
 <!-- UTSCOMJSON.waterflow.attribute -->
