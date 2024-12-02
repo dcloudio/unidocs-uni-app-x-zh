@@ -60,6 +60,8 @@ event.screenY
 
 为保证多端统一，uni-app-x编译到小程序端时，内置组件根元素带有一些默认样式，详情参考：[uvue css使用](../css/README.md)。
 
+如果确实不需要ucss的样式覆盖来帮助对齐不同端的显示效果，可以在pages.json的globalStyle或对应的页面style内配置`enableUcssReset`为false来关闭ucss样式重置。参考：[page.json文档](../collocation/pagesjson.md)
+
 ## skyline
 
 对skyline的支持处于实验阶段。
