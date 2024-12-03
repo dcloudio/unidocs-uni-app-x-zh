@@ -86,7 +86,7 @@ const page = pages[pages.length-1]
 // 获取当前页面的 `dialogPage` 集合
 const dialogPages = page.getDialogPages()
 
-// 2. 在 dialogPage 中通过 this.$page 获取 dialogPage 实例
+// 2. 在 dialogPage 中通过 this.$page 获取 dialogPage 实例 (组件中不支持)
 // 选项式 API
 const dialogPage = this.$page
 // 组合式 API
