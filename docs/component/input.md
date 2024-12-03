@@ -97,6 +97,11 @@ web平台的inputmode的浏览器兼容性如下： Chrome >= 66、Edge >= 79、
 
 同时使用 inputmode 和 comfirm-type 时，若设值冲突，键盘右下角按键类型由 comfirm-type 决定。type 属性和 inputmode 属性并不冲突
 
+## placeholder-style和placeholder-class说明
+- uni-app x 4.41前，App平台仅支持`color`、`font-size`、`font-weight`。
+- uni-app x 4.41后，App平台新增支持`font-family`、`font-style`、`text-align`，其中`text-align`仅App-Android平台支持，App-iOS平台的placeholder位置取决于input的`text-align`。
+
+
 ## Tips
 - html规范中input不仅是输入框，还有radio、checkbox、时间、日期、文件选择功能。但在uni-app规范中，input仅仅是输入框，其type属性代表不同的输入框。其他功能有单独的组件或API：[radio组件](radio-group.md)、[checkbox组件](checkbox-group.md)、[图片选择](../api/choose-image.md)等。
 - 从uni-app x 4.0起，App-Android平台 input 点击输入框外的屏幕会自动收起软键盘。
