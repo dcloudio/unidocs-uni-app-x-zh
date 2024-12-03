@@ -221,6 +221,14 @@ iOS平台配置应用在iPad设置是否能够与其他应用程序共享屏幕�
 }
 ```
 
+### mp-weixin 配置项列表 @manifest-mp-weixin
+
+<!-- MANIFESTJSON.manifest_mp-weixin.description -->
+
+<!-- MANIFESTJSON.manifest_mp-weixin.table -->
+
+<!-- MANIFESTJSON.manifest_mp-weixin.compatibility -->
+
 ## 其它设置
 
 ### URL Scheme @urlScheme
@@ -234,14 +242,15 @@ uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4
 
 标准基座可通过此网页体验 Url Scheme 启动 App：[https://uniappx.dcloud.net.cn/scheme.html](https://uniappx.dcloud.net.cn/scheme.html)
 
+### HBuilderX配置 @manifest-__hbuilderx
 
-### manifestmp-weixin 配置项列表 @manifest-mp-weixin
+<!-- MANIFESTJSON.manifest___hbuilderx.description -->
 
-<!-- MANIFESTJSON.manifest_mp-weixin.description -->
+<!-- MANIFESTJSON.manifest___hbuilderx.table -->
 
-<!-- MANIFESTJSON.manifest_mp-weixin.table -->
+<!-- MANIFESTJSON.manifest___hbuilderx.compatibility -->
 
-<!-- MANIFESTJSON.manifest_mp-weixin.compatibility -->
+<!-- MANIFESTJSON.tutorial -->
 
 ### Universal Link @ulink
 
@@ -280,13 +289,3 @@ uni-app x 项目 manifest.json 文件不再提供 iOS 平台的 通用链接（u
 	}
 }
 ```
-
-### HBuilderX配置 @manifest-__hbuilderx
-
-<!-- MANIFESTJSON.manifest___hbuilderx.description -->
-
-<!-- MANIFESTJSON.manifest___hbuilderx.table -->
-
-<!-- MANIFESTJSON.manifest___hbuilderx.compatibility -->
-
-<!-- MANIFESTJSON.tutorial -->
