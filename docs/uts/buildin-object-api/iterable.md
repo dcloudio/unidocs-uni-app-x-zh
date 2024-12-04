@@ -66,7 +66,7 @@ Web 执行结果是
 
 
 
-## UTS开发
+## 概述
 
 
 在HBuilderX 4.41版本之前，UTS并未对 for..in / for ..of 做特殊处理：
@@ -111,14 +111,14 @@ for(perItem of a1){
 下面的章节我们会具体介绍UTS对 for..of 的支持情况
 
 
-## 可迭代和 for..of
+## for..of
 
 可迭代协议最直接的应用场景就是 for..of 运算符,原则上来说在 4.41之后的HX版本：，android/ios/web 的for..of运算符执行效果以web为基准是一致的。
 
 下面列出具体的UTS内置对象对for..of的支持情况
 
 
-+ Set / Array
+#### Set / Array
 
 类似Set/Array 这样的一维数据容器，会遍历内部属性值
 
@@ -138,7 +138,7 @@ for (item of u1) {
 > item 222
 ```
 
-+ Map
+#### Map
 
 Map 的遍历会将其key,value 封装为一个新的Array 数组
 
@@ -158,7 +158,7 @@ for (item of u1) {
 > [Array]‍ [ "bbb", "222" ]
 ```
 
-+ string
+#### string
 
 会遍历string 的每一个字符
 
@@ -182,7 +182,7 @@ let a = "123456"
 ```
 
 
-+ number / Date / RegExp / Error / UTSJSONObject / 自定义的type类型 / 自定义class
+#### number / Date / RegExp / Error / UTSJSONObject / 自定义的type类型 / 自定义class
 
 不支持，编译报错
 
@@ -197,7 +197,7 @@ For-loop range must have an 'iterator()' method‌
 这是下一个章节要介绍的内容
 
 
-#### 进阶： 定制可迭代对象
+## 进阶： 定制可迭代对象
 
 在web开发中，可迭代和可枚举并不仅仅是简单的对应了 for..in 和 for..of 语法。 还是对遍历对象内部元素的一种约定。UTS同样支持了这种能力。
 
@@ -308,7 +308,7 @@ item ‍[number]‍ 44
 
 
 
-#### 可枚举
+## 可枚举
 
 暂不支持
 
