@@ -221,6 +221,158 @@ iOS平台配置应用在iPad设置是否能够与其他应用程序共享屏幕�
 }
 ```
 
+##### distribute modules 配置项列表 @distribute-modules
+
+<!-- MANIFESTJSON.distribute_modules.description -->
+
+<!-- MANIFESTJSON.distribute_modules.table -->
+
+<!-- MANIFESTJSON.distribute_modules.compatibility -->
+
+
+###### uni-ad 配置项列表 @modules-uni-ad
+
+<!-- MANIFESTJSON.modules_uni-ad.description -->
+
+<!-- MANIFESTJSON.modules_uni-ad.table -->
+
+<!-- MANIFESTJSON.modules_uni-ad.compatibility -->
+
+
+###### uni-getLocation 配置项列表 @modules-uni-getlocation
+
+<!-- MANIFESTJSON.modules_uni-getLocation.description -->
+
+<!-- MANIFESTJSON.modules_uni-getLocation.table -->
+
+<!-- MANIFESTJSON.modules_uni-getLocation.compatibility -->
+
+
+###### uni-payment 配置项列表 @modules-uni-payment
+
+<!-- MANIFESTJSON.modules_uni-payment.description -->
+
+<!-- MANIFESTJSON.modules_uni-payment.table -->
+
+<!-- MANIFESTJSON.modules_uni-payment.compatibility -->
+
+
+###### uni-payment-wxpay 配置项列表 @uni-payment-wxpay
+
+<!-- MANIFESTJSON.uni-payment_wxpay.description -->
+
+<!-- MANIFESTJSON.uni-payment_wxpay.table -->
+
+<!-- MANIFESTJSON.uni-payment_wxpay.compatibility -->
+
+
+###### wxpay ios 配置项列表 @wxpay-ios
+
+<!-- MANIFESTJSON.wxpay_ios.description -->
+
+<!-- MANIFESTJSON.wxpay_ios.table -->
+
+<!-- MANIFESTJSON.wxpay_ios.compatibility -->
+
+
+### Web配置 @manifest-web
+
+<!-- MANIFESTJSON.manifest_web.description -->
+
+<!-- MANIFESTJSON.manifest_web.table -->
+
+<!-- MANIFESTJSON.manifest_web.compatibility -->
+
+
+#### web router 配置项列表 @web-router
+
+<!-- MANIFESTJSON.web_router.description -->
+
+<!-- MANIFESTJSON.web_router.table -->
+
+<!-- MANIFESTJSON.web_router.compatibility -->
+
+
+#### web devServer 配置项列表 @web-devserver
+
+<!-- MANIFESTJSON.web_devServer.description -->
+
+<!-- MANIFESTJSON.web_devServer.table -->
+
+<!-- MANIFESTJSON.web_devServer.compatibility -->
+
+
+#### web optimization 配置项列表 @web-optimization
+
+<!-- MANIFESTJSON.web_optimization.description -->
+
+<!-- MANIFESTJSON.web_optimization.table -->
+
+<!-- MANIFESTJSON.web_optimization.compatibility -->
+
+
+##### treeShaking 配置项列表 @optimization-treeshaking
+
+<!-- MANIFESTJSON.optimization_treeShaking.description -->
+
+<!-- MANIFESTJSON.optimization_treeShaking.table -->
+
+<!-- MANIFESTJSON.optimization_treeShaking.compatibility -->
+
+
+#### web unipush 配置项列表 @web-unipush
+
+<!-- MANIFESTJSON.web_unipush.description -->
+
+<!-- MANIFESTJSON.web_unipush.table -->
+
+<!-- MANIFESTJSON.web_unipush.compatibility -->
+
+
+#### web sdkConfigs 配置项列表 @web-sdkconfigs
+
+<!-- MANIFESTJSON.web_sdkConfigs.description -->
+
+<!-- MANIFESTJSON.web_sdkConfigs.table -->
+
+<!-- MANIFESTJSON.web_sdkConfigs.compatibility -->
+
+
+##### 定位和地图（只能选一个） @sdkconfigs-maps
+
+<!-- MANIFESTJSON.sdkConfigs_maps.description -->
+
+<!-- MANIFESTJSON.sdkConfigs_maps.table -->
+
+<!-- MANIFESTJSON.sdkConfigs_maps.compatibility -->
+
+
+###### 腾讯地图，旧配置项为qqmap @maps-tencent
+
+<!-- MANIFESTJSON.maps_tencent.description -->
+
+<!-- MANIFESTJSON.maps_tencent.table -->
+
+<!-- MANIFESTJSON.maps_tencent.compatibility -->
+
+
+###### 谷歌地图 @maps-google
+
+<!-- MANIFESTJSON.maps_google.description -->
+
+<!-- MANIFESTJSON.maps_google.table -->
+
+<!-- MANIFESTJSON.maps_google.compatibility -->
+
+
+###### samap 配置项列表 @maps-amap
+
+<!-- MANIFESTJSON.maps_amap.description -->
+
+<!-- MANIFESTJSON.maps_amap.table -->
+
+<!-- MANIFESTJSON.maps_amap.compatibility -->
+
 ### mp-weixin 配置项列表 @manifest-mp-weixin
 
 <!-- MANIFESTJSON.manifest_mp-weixin.description -->
