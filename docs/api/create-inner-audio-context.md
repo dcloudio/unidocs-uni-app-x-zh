@@ -24,14 +24,13 @@
 
 **缓存说明**
 
-App平台播放的网络音频，默认会缓存到应用cache目录的uni-audio文件夹下，默认大小为100M，超过后会根据最近最少使用的缓存算法自动进行清除
+- App-Android 平台播放的网络音频，默认会缓存到应用cache目录的uni-audio文件夹下，默认大小为100M，超过后会根据最近最少使用的缓存算法自动进行清除；
+- App-iOS 平台暂不支持Cache功能；
 
 
 <!-- UTSAPIJSON.createInnerAudioContext.description -->
 
 <!-- UTSAPIJSON.createInnerAudioContext.compatibility -->
-
-iOS App音频播放：[见插件市场](https://ext.dcloud.net.cn/search?q=%E9%9F%B3%E9%A2%91%E6%92%AD%E6%94%BE&orderBy=Relevance&uni-appx=1)
 
 <!-- UTSAPIJSON.createInnerAudioContext.param -->
 
