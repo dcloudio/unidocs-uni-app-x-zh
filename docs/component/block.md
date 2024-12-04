@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.block.description -->
 
+推荐使用 `<template>` ，更跨端。`<block>` 仅为向下兼容而保留
+
 <!-- UTSCOMJSON.block.compatibility -->
 
 <!-- UTSCOMJSON.block.attribute -->
