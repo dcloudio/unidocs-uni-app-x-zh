@@ -1374,7 +1374,8 @@ let rect = {
 即 `rect.x`、`rect.size.width`。
 
 这种写法比较简单，和js习惯一致，但在 UTS 存在以下限制：
-- 仅限于web，在iOS/Android不支持`.`操作符。
+- web可以正常使用
+- HBuilderX 4.41+ iOS/Android 也支持`.`操作符，但返回的数据，类型是any | null，想继续使用需要`as`为具体类型，比如：`(rect.size as UTSJSONObject).width`。
 ```
 
 #### 2. `[""]` 下标
