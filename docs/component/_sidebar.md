@@ -67,7 +67,6 @@
     * [custom-tab-bar](custom-tab-bar.md)
   * unicloud
     * [unicloud-db](unicloud-db.md)
-  * [animation-view](animation-view.md)
   * Skyline
     * 手势系统
       * [double-tap-gesture-handler](double-tap-gesture-handler.md)
