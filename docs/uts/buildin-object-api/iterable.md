@@ -164,21 +164,20 @@ for (item of u1) {
 
 ```typescript
 let a = "123456"
-	for(item of a ){
-	  console.log(item)
-	}
-},
+for(item of a ){
+  console.log(item)
+}
 ```
 
 执行结果
 
 ```typescript
-> "0"
 > "1"
 > "2"
 > "3"
 > "4"
 > "5"
+> "6"
 ```
 
 
