@@ -235,10 +235,11 @@ class TestClass implements UTSValueIterable<any | null> {
 		let obj: UTSIterator<any | null> = {
 
 			next: () : UTSIteratorResult<any | null> => {
-          return {
-            done: holderIndex == this.holderArray.length - 1,
-            value: this.holderArray[holderIndex++],
-          } as UTSIteratorResult<any | null>
+				const done = holderIndex == this.holderArray.length
+				return {
+					done,
+					value: done ? null : this.holderArray[holderIndex++],
+				} as UTSIteratorResult<any | null>
 			}
 		}
 		return obj
@@ -268,27 +269,23 @@ item null
 
 
 ```typescript
-class TestClass implements UTSValueIterable<any | null> {
+class TestClass implements UTSValueIterable<any> {
 	
 	holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
   
-	valueIterator(): UTSIterator<any | null> {
+	valueIterator(): UTSIterator<any> {
 		let holderIndex = 0;
-		let obj: UTSIterator<any | null> = {
-
-			next: () : UTSIteratorResult<any | null> => {
-				
-				let currentVal = this.holderArray[holderIndex++]
-				while(currentVal == null ){
-					if(holderIndex == this.holderArray.length - 1){
-						break;
-					}
-					currentVal = this.holderArray[holderIndex++]
-				}
-        return {
-          done: holderIndex == this.holderArray.length - 1,
-          value: currentVal,
-        } as UTSIteratorResult<any | null>
+		let arr = this.holderArray.filter((value) => { 
+		  return value != null
+		})
+	
+		let obj: UTSIterator<any> = {
+			next: () : UTSIteratorResult<any> => {
+				const done = holderIndex == arr.length
+				return {
+				  done,
+				  value: done ? null : arr[holderIndex++],
+				} as UTSIteratorResult<any>
 			}
 		}
 		return obj
