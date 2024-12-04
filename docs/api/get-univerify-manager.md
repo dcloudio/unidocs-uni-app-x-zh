@@ -25,6 +25,31 @@ uni-id-pages插件，已经内置一键登录，从云端到客户端均已开�
 
 <!-- UTSAPIJSON.getUniverifyManager.param -->
 
+### 类型调整注意@typechange
+:::warning
+从HBuilderX 4.41+，UniverifyManager的方法的`参数类型`进行了调整。
+
+比如之前类型叫`LoginOptions`，改名为了`UniverifyLoginOptions`，加上了`Univerify`前缀。
+
+本调整是因为未来会增加更多登录方式，一键登陆的参数类型占用通用的名称`LoginOptions`不合适。
+
+涉及名单如下：
+- PreLoginOptions 变更为 UniverifyPreLoginOptions
+- LoginOptions 变更为 UniverifyLoginOptions
+- CustomLoginOptions 变更为 UniverifyCustomLoginOptions
+- PreLoginSuccess 变更为 UniverifyPreLoginSuccess
+- PreLoginFail 变更为 UniverifyPreLoginFail
+- PreLoginComplete 变更为 UniverifyPreLoginComplete
+- LoginSuccess 变更为 UniverifyLoginSuccess
+- LoginFail 变更为 UniverifyLoginFail
+- LoginComplete 变更为 UniverifyLoginComplete
+
+注意在4.4以前的版本，仍需使用无前缀的老类型名称。
+
+一般情况下，开发者无需手动 as 返回值类型，uni-app x 会自动推导类型。早期的示例代码有 as ，新版示例已经去掉。
+
+:::
+
 <!-- UTSAPIJSON.getUniverifyManager.returnValue -->
 
 <!-- UTSAPIJSON.getUniverifyManager.tutorial -->
