@@ -42,6 +42,8 @@
 			* [SDK下载](native/download/ios.md)
 	* 应用市场上架注意
 		* [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
+* 小程序平台专题指南
+  * [概述](mp/README.md)
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
   * [Android审查元素](debug/android-inspector.md)
