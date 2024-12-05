@@ -56,6 +56,7 @@
   * [打电话](make-phone-call.md)
   * [剪切板](clipboard.md)
   * [罗盘](compass.md)
+  * [加速度计](accelerometer.md)
   * [wifi](wifi.md)
   * [内存](memory.md)
   * [截屏事件](capture-screen.md)
@@ -72,6 +73,7 @@
   * [获取视频信息](get-video-info.md)
   * [压缩视频](compress-video.md)
   * [音频](create-inner-audio-context.md)
+  * [背景音频](get-background-audio-manager.md)
 * 画布
   * [canvasToTempFilePath](canvas-to-temp-file-path.md)
   * [createCanvasContextAsync](create-canvas-context-async.md)
