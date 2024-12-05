@@ -200,7 +200,7 @@ For-loop range must have an 'iterator()' method‌
 
 在web开发中，可迭代和可枚举并不仅仅是简单的对应了 for..in 和 for..of 语法。 还是对遍历对象内部元素的一种约定。UTS同样支持了这种能力。
 
-在HBuilder X 4.42 之后版本，UTS语言内置了：  `UTSValueIterable` 接口，用来支持自定义对象的可迭代规则。
+在HBuilder X 4.41 之后版本，UTS语言内置了：  `UTSValueIterable` 接口，用来支持自定义对象的可迭代规则。
 
 当开发者手动实现 `UTSValueIterable` 接口时，就可以实现定制其实例对象在 for..of 的规则
 
