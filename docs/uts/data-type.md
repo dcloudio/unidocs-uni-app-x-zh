@@ -281,18 +281,18 @@ test((1.0 as Double)/10) //表达式中任意一个数字as一下，都不会走
 
 对number类型的数字，使用to方法转换为平台专有类型。
 
-而Number.from()方法传入一个平台专有类型的数字，则可以转换为number。
+而[Number.from()](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html#from) 方法传入一个平台专有类型的数字，则可以转换为number。
 
 #### kotlin
 
 所有的 number 都支持下列方法进行转换（部分类库API使用java编写，其要求的java类型与下列kotlin类型完全一致，可以直接使用
 
-* toByte(): Byte
-* toShort(): Short
-* toInt(): Int
-* toLong(): Long
-* toFloat(): Float
-* toDouble(): Double
+* [toByte(): Byte](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html#tobyte)
+* [toShort(): Short](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html#toshort)
+* [toInt(): Int](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html#toint)
+* [toLong(): Long](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html#tolong)
+* [toFloat(): Float](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html#tofloat)
+* [toDouble(): Double](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/number.html#todouble)
 
 另外 number 还具备下列函数进行整型的无符号转换，这部分API 在jvm上没有对应的原始数据类型，主要的使用场景是 色值处理等专业计算场景的`多平台拉齐`
 
