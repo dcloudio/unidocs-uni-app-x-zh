@@ -202,7 +202,7 @@ For-loop range must have an 'iterator()' method‌
 
 在HBuilder X 4.41 之后版本，UTS语言内置了：  `UTSValueIterable` 接口，用来支持自定义对象的可迭代规则。
 
-当开发者手动实现 `UTSValueIterable` 接口时，就可以实现定制其实例对象在 for..of 的规则
+当开发者手动实现 `UTSValueIterable` 接口时，就可以实现定制其实例对象在 for..of 运算下的规则
 
 举例：
 
