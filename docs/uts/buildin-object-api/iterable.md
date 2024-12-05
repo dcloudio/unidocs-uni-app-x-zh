@@ -1,122 +1,37 @@
-## 背景
+## 可迭代的多平台差异
 
-#### Web开发
+参考[可迭代与可枚举的平台差异](./enumerability_iterable.md)
 
-web开发场景下，存在以下两种访问对象内部变量的方式：
+## 可迭代
 
-+ 可枚举
+在HBuilderX 4.41版本之前，UTS并未对 for ..of 做特殊处理：开发者调用 for..of 会编译报错，无法使用
 
-ECMAScript 1999：开始支持 for...in 主要用于遍历对象的属性，迭代的是对象的所有可枚举属性（包括原型链中的属性）。
-
-+ 可迭代
-
-ECMAScript 2015：开始支持 for...of 主要用于遍历可迭代的数据结构（如数组、字符串、Set、Map 等），迭代的是集合中的每一个元素的值。它不会遍历对象的属性。
-
-
-
-#### 原生开发
-
-在原生开发场景下 `Kotlin`和`swift` 均仅支持了 for..in 语法，不支持 for..of 语法
-
-但原生的 for..in 的用法，与web 存在一定的差异。实际上对应的是web中的可迭代概念
-
-
-各平台支持信息：
-
-|平台   |可迭代|可枚举|
-|---   |------|-----|
-|web   |支持（ECMAScript-2015）|支持(ECMAScript-1999)|
-|kotlin|支持|不支持|
-|swift |支持|不支持|
-
-各平台实现关键字：
-
-|平台   |可迭代|可枚举|
-|---   |------|-----|
-|web   |for..of|for..in|
-|kotlin|for..in|不支持|
-|swift |for..in|不支持|
-
-
-比如下面的代码
-
-```typescript
-let a1 = [111,"222",false]
-
-for(perItem in a1){
-	console.log("perItem",perItem)
-}
-
-```
-Android 执行结果是
-```typescript
-perItem ‍[number]‍ 111
-perItem 222
-perItem [boolean] false
-```
-
-Web 执行结果是
-```typescript
-"perItem" "0"
-"perItem" "1"
-"perItem" "2"
-```
-
-
-
-
-
-## 概述
-
-
-在HBuilderX 4.41版本之前，UTS并未对 for..in / for ..of 做特殊处理：
-
-
-+ 开发者调用 for..in 会触发 kotlin / swift 原生语言内置的规则，可以运行，但执行效果与web 存在一定的差异
-
-+ 开发者调用 for..of 会编译报错，无法使用
-
-
-
-从HBuilderX 4.41开始，UTS语言 支持了[可迭代协议](https://issues.dcloud.net.cn/pages/issues/detail?id=6511)
-
-[可迭代](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols) 是标准web中存在的概念，UTS以web为标准，保证了可迭代协议行为(即for..of)的的全端一致，并开放了可迭代协议的扩展能力。
-
+从HBuilderX 4.41开始，UTS语言支持了[可迭代协议](https://issues.dcloud.net.cn/pages/issues/detail?id=6511). 以 [web的可迭代](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols)为标准，保证了可迭代协议行为(即for..of)的的全端一致，并开放了可迭代协议的扩展能力。
 
 也就是说，在HBuilderX 4.41之后版本，UTS内置的for..of 语法执行效果与web标准一致。
-
 
 ```ts
 let a1 = [111,"222",false]
 
 for(perItem of a1){
-	console.log("perItem",perItem)
+	console.log(perItem)
 }
 ```
 
 上面的代码在 HBuilderX 4.41 之前版本在 android /ios 会编译报错，在HBuilderX 4.41 之后，全端执行效果如下：
 
 ```ts
-"perItem" 111
-"perItem" "222"
-"perItem" false
+111
+"222"
+false
 ```
 
-
-对于可枚举协议（for..in） 出于历史代码的兼容性原因，HBuilderX 4.41之后与之前版本保持一致，即 各平台的运行依然存在差异。
-
-
-单从访问对象内部属性的角度。我们认为，可迭代是一种更现代化语法，建议开发者通过 for..of 来实现对对象内部属性的遍历。
-
-下面的章节我们会具体介绍UTS对 for..of 的支持情况
+可迭代协议最直接的应用场景就是 for..of 运算符，下面的章节我们会具体介绍UTS中 for..of 的支持情况
 
 
 ## for..of
 
-可迭代协议最直接的应用场景就是 for..of 运算符,原则上来说在 4.41之后的HX版本：，android/ios/web 的for..of运算符执行效果以web为基准是一致的。
-
-下面列出具体的UTS内置对象对for..of的支持情况
-
+在HBuilderX 4.41之后，for..of 全端的执行效果与web标准一致，下面列出具体的内置对象的支持情况：
 
 #### Set / Array
 
@@ -189,16 +104,14 @@ for(item of a ){
 For-loop range must have an 'iterator()' method‌
 ```
 
-
-
-需要特别说明的是  自定义的type类型 / 自定义class  如果直接使用 for of 会运行报错，但是有些场景我们需要赋予自定义class 循环访问自身的能力。
+需要特别说明的是一般情况下  自定义的type类型 / 自定义class  如果直接使用 for of 会运行报错，但有些场景我们需要赋予自定义class 循环访问自身的能力，甚至要定制迭代访问的内容。
 
 这是下一个章节要介绍的内容
 
 
 ## 进阶： 定制可迭代对象
 
-在web开发中，可迭代和可枚举并不仅仅是简单的对应了 for..in 和 for..of 语法。 还是对遍历对象内部元素的一种约定。UTS同样支持了这种能力。
+在web开发中，可迭代协议并不仅仅是简单的对应了 for..of 语法。 还是对遍历对象内部元素的一种约定。UTS同样支持了这种能力。
 
 在HBuilder X 4.41 之后版本，UTS语言内置了：  `UTSValueIterable` 接口，用来支持自定义对象的可迭代规则。
 
@@ -222,7 +135,7 @@ for (item of test) {
  
 >  ‌error: For-loop range must have an 'iterator()' method‌
 
-在HBuilder X 4.41之后版本，如果我们想让这个对象的示例，支持for..of 语法，可以修改为如下代码:
+如果我们想让这个对象的示例，支持for..of 语法，可以修改为如下代码:
 
 ```typescript
 class TestClass implements UTSValueIterable<any | null> {
@@ -273,26 +186,25 @@ item null
 		holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
     
 		valueIterator(): UTSIterator<any | null> {
-			let holderIndex = 0;
-      let arr = this.holderArray.filter((value) => { 
-        return value != null
-      })
-      
+				let holderIndex = 0;
+			let arr = this.holderArray.filter((value) => { 
+				return value != null
+			})
+	
 			let obj: UTSIterator<any | null> = {
         
 				next: () : UTSIteratorResult<any | null> => {
-          const done = holderIndex == arr.length
-          return {
-            done,
-            value: done ? null : arr[holderIndex++],
-          } as UTSIteratorResult<any | null>
+					const done = holderIndex == arr.length
+					return {
+						done,
+						value: done ? null : arr[holderIndex++],
+					} as UTSIteratorResult<any | null>
 				}
 			}
 			return obj
 		}
 		
 	}
-
 ```
 
 执行结果:
@@ -304,11 +216,11 @@ item ‍[number]‍ 44
 ```
 
 
+## 可迭代和可枚举的关系
 
+关于可枚举和for..in的相关内容 参考[可枚举协议](./enumerability.md)
 
-## 可枚举
-
-暂不支持
+单从访问对象内部属性的角度。我们认为，可迭代是一种更现代化语法，建议开发者通过 for..of 来实现对对象内部属性的遍历。
 
 
 
