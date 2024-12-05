@@ -29,22 +29,22 @@ uni-id-pages插件，已经内置一键登录，从云端到客户端均已开�
 :::warning
 从HBuilderX 4.41+，UniverifyManager的方法的`参数类型`进行了调整。
 
-比如之前类型叫`LoginOptions`，改名为了`UniverifyLoginOptions`，加上了`Univerify`前缀。
+比如之前类型叫`LoginOptions`，改名为了`UniVerifyManagerLoginOptions`，加上了`UniVerifyManager`前缀。
 
 本调整是因为未来会增加更多登录方式，一键登陆的参数类型占用通用的名称`LoginOptions`不合适。
 
 涉及名单如下：
-- PreLoginOptions 变更为 UniverifyPreLoginOptions
-- LoginOptions 变更为 UniverifyLoginOptions
-- CustomLoginOptions 变更为 UniverifyCustomLoginOptions
-- PreLoginSuccess 变更为 UniverifyPreLoginSuccess
-- PreLoginFail 变更为 UniverifyPreLoginFail
-- PreLoginComplete 变更为 UniverifyPreLoginComplete
-- LoginSuccess 变更为 UniverifyLoginSuccess
-- LoginFail 变更为 UniverifyLoginFail
-- LoginComplete 变更为 UniverifyLoginComplete
+- PreLoginOptions 变更为 UniVerifyManagerPreLoginOptions
+- LoginOptions 变更为 UniVerifyManagerLoginOptions
+- CustomLoginOptions 变更为 UniVerifyManagerCustomLoginOptions
+- PreLoginSuccess 变更为 UniVerifyManagerPreLoginSuccess
+- PreLoginFail 变更为 UniVerifyManagerPreLoginFail
+- PreLoginComplete 变更为 UniVerifyManagerPreLoginComplete
+- LoginSuccess 变更为 UniVerifyManagerLoginSuccess
+- LoginFail 变更为 UniVerifyManagerLoginFail
+- LoginComplete 变更为 UniVerifyManagerLoginComplete
 
-注意在4.4以前的版本，仍需使用无前缀的老类型名称。
+注意在4.41以前的版本，仍需使用无前缀的老类型名称。
 
 一般情况下，开发者无需手动 as 返回值类型，uni-app x 会自动推导类型。早期的示例代码有 as ，新版示例已经去掉。
 
@@ -234,13 +234,18 @@ uni-id-pages插件，已经内置一键登录，从云端到客户端均已开�
 | 80800 | WIFI切换异常 |
 | 80801 | WIFI切换超时 |
 
+## 关于login(标准登录)与customLogin(自定义页面登录)
+- 标准登录：预登录成功后，调用`login`方法拉起授权页面，登录成功后通过`close`方法关闭页面。此方式的优点是方便快捷无需开发界面UI，缺点是无法定制授权页面。
+- 自定义页面登录(4.41+支持)：根据预登录成功后返回的内容(包括脱敏手机号、运营商slogan、运营商隐私协议名称、运营商隐私协议地址)，开发者自行实现符合[规范要求](#custom-specification-requirement)的授权页面，在页面的登录按钮点击事件内调用`customLogin`传入五要素完成登录。登录成功后通过`uni.navigateBack()`或`uni.closeDialogPage()`等方式关闭授权页。
 
-## Tips
-- 页面必要元素有：号码栏(NumberText)，品牌露出(SloganText)，登录按钮(LoginButton)，隐私确认(PrivacyCheckbox)，隐私标题(PrivacyText)。
+## 自定义页面规范要求 @custom-specification-requirement
+- 页面必要元素有：号码栏(NumberText)，品牌露出(SloganText)，登录按钮(LoginButton)，隐私确认(PrivacyCheckbox)，隐私标题(PrivacyText)，其中号码栏、品牌露出、隐私标题必须使用[text组件](https://doc.dcloud.net.cn/uni-app-x/component/text.html)实现，登录按钮必须使用[button组件](https://doc.dcloud.net.cn/uni-app-x/component/button.html)实现，隐私确认必须使用[checkbox组件](https://doc.dcloud.net.cn/uni-app-x/component/checkbox.html)实现。
 - 开发者不得通过任何技术手段将上述授权页面的必要元素内容隐藏、覆盖、或者动态变更。
 - 登录按钮文字描述必须包含“登录”或“注册”等文字，不得诱导用户授权。
-- 不得默认勾选同意、需要用户手动点击按钮获取手机号不能自动获取手机号。
 - 对于接入一键登录并上线的应用，运营商会对上线的应用授权页面做审查，如果有出现未按要求弹出或设计授权页面的，将关闭应用的认证取号服务。
+
+## Tips
+- 不得默认勾选同意、需要用户手动点击按钮获取手机号不能自动获取手机号。
 - 一键登录并非100%成功，手机没有sim卡、蜂窝网络未开启、当时手机没有蜂窝网信号是最常见的原因，更多错误见上方的错误码列表。在一键登录无法使用时，可转为短信验证码登录。在uni-id-pages里已经集成了相关逻辑，无需自己开发。[详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
 - 一键登录支持标准基座真机运行，涉及费用扣除开发者的费用。无需自定义基座。
 
