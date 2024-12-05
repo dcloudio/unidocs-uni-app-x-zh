@@ -656,12 +656,19 @@ context.startActivity(intent);
 export function getJavaClassTest() : boolean {
 	let dispatcherClass = UTSAndroid.getJavaClass(UTSAndroid.getDispatcher())
 	if("io.dcloud.uts.task.UTSTaskDispatcher" == dispatcherClass.name){
-    	return true
+		return true
 	}
-  	let applicationClass = UTSAndroid.getJavaClass(UTSAndroid.getAppContext()!)
-  	if("io.dcloud.uniapp.UniApplication" == applicationClass.name){
-    	return true
-  	}
+	let applicationClass = UTSAndroid.getJavaClass(UTSAndroid.getAppContext()!)
+	if("io.dcloud.uniapp.UniApplication" == applicationClass.name){
+		return true
+	}
+	/**
+	* 特殊用法：UTSAndroid.getJavaClass(XXX) 可以传入类而不是实例，这样会被编译成 XXX::class.java
+	*/
+	let utsAndroidClass = UTSAndroid.getJavaClass(UTSAndroid)
+	if("io.dcloud.uts.UTSAndroid" == utsAndroidClass.name){
+		return true
+	}
 	return false
 }
 ```
