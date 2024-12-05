@@ -226,25 +226,25 @@ for (item of test) {
 
 ```typescript
 class TestClass implements UTSValueIterable<any | null> {
-	
-	holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
-	
-	valueIterator(): UTSIterator<any | null> {
-		let holderIndex = 0;
-		let obj: UTSIterator<any | null> = {
+		
+		holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
+		
+		valueIterator(): UTSIterator<any | null> {
+			let holderIndex = 0;
+			let obj: UTSIterator<any | null> = {
 
-			next: () : UTSIteratorResult<any | null> => {
-				const done = holderIndex == this.holderArray.length
-				return {
-					done,
-					value: done ? null : this.holderArray[holderIndex++],
-				} as UTSIteratorResult<any | null>
+				next: () : UTSIteratorResult<any | null> => {
+          const done = holderIndex == this.holderArray.length
+            return {
+              done,
+              value: done ? null : this.holderArray[holderIndex++],
+            } as UTSIteratorResult<any | null>
+				}
 			}
+			return obj
 		}
-		return obj
+		
 	}
-	
-}
 ```
 执行结果:
 
@@ -268,28 +268,30 @@ item null
 
 
 ```typescript
-class TestClass implements UTSValueIterable<any> {
-	
-	holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
-  
-	valueIterator(): UTSIterator<any> {
-		let holderIndex = 0;
-		let arr = this.holderArray.filter((value) => { 
-		  return value != null
-		})
-	
-		let obj: UTSIterator<any> = {
-			next: () : UTSIteratorResult<any> => {
-				const done = holderIndex == arr.length
-				return {
-				  done,
-				  value: done ? null : arr[holderIndex++],
-				} as UTSIteratorResult<any>
+	class TestClass implements UTSValueIterable<any | null> {
+		
+		holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
+    
+		valueIterator(): UTSIterator<any | null> {
+			let holderIndex = 0;
+      let arr = this.holderArray.filter((value) => { 
+        return value != null
+      })
+      
+			let obj: UTSIterator<any | null> = {
+        
+				next: () : UTSIteratorResult<any | null> => {
+          const done = holderIndex == arr.length
+          return {
+            done,
+            value: done ? null : arr[holderIndex++],
+          } as UTSIteratorResult<any | null>
+				}
 			}
+			return obj
 		}
-		return obj
+		
 	}
-}
 
 ```
 
