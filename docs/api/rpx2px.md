@@ -8,6 +8,8 @@
 
 <!-- UTSAPIJSON.rpx2px.returnValue -->
 
+<!-- UTSAPIJSON.rpx2px.example -->
+
 <!-- UTSAPIJSON.rpx2px.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->
