@@ -13,6 +13,9 @@
 - Web端
 获取的是元素对象style属性设置的CSS样式集合对象，不包括通过样式选择器设置的CSS样式。
 
+- 小程序端
+获取的是元素对象style属性设置的CSS样式集合对象（仅限通过 UniElement.style 的API设置的），不包括通过样式选择器设置的CSS样式，也不包含在模板上绑定的style属性。
+
 ### 方法
 <!-- CUSTOMTYPEJSON.UniElement.methods.getNodeId.name -->
 
