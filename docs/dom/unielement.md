@@ -227,6 +227,18 @@ if(webViewElement != null) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRect.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.getDrawableContext.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getDrawableContext.description -->
