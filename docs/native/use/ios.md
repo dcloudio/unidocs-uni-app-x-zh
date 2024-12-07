@@ -75,7 +75,7 @@
 
 | 依赖库 | 系统依赖库 |
 | ---   | ---|
-| DCloudDebugServe.xcframework `（Do Not Embed）Debug环境下集成）` <br> DCloudUTSFoundation.xcframework `（Embed & Sign）` <br> DCloudUniappRuntime.xcframework `（Embed & Sign）` <br> SDWebImage.xcframework `（Embed & Sign）` <br> DCloudUTSExtAPI.xcframework `（Embed & Sign）`   |   JavaScriptCore.framework <br> c++ |
+| DCloudDebugServe.xcframework `（Do Not Embed）Debug环境下集成）` <br> DCloudUTSFoundation.xcframework `（Embed & Sign）` <br> DCloudUniappRuntime.xcframework `（Embed & Sign）` <br> SDWebImage.xcframework `（Embed & Sign）` <br> DCloudUTSExtAPI.xcframework `（Embed & Sign）` <br> KSCrash.xcframework `（Embed & Sign）`   |   JavaScriptCore.framework <br> c++ |
 
 > `Target -> Build Phases -> Link Binary With Libraries` 下添加依赖库
 > `Target -> General -> Frameworks,Libraries,and Embedded Content` 下设置`Embed & Sign`
