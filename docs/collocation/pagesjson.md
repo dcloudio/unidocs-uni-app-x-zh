@@ -89,6 +89,16 @@ globalStyle节点里是所有页面都生效的全局样式配置。它的配置
 
 <!-- PAGESJSON.pullToRefresh_contentrefresh.compatibility -->
 
+
+#### mp-weixin 配置项列表 @globalstyle-mp-weixin
+
+<!-- PAGESJSON.globalStyle_mp-weixin.description -->
+
+<!-- PAGESJSON.globalStyle_mp-weixin.table -->
+
+<!-- PAGESJSON.globalStyle_mp-weixin.compatibility -->
+
+
 ### pages 配置项列表 @pagesoptionspage
 
 pages节点里注册页面，数据格式是数组，数组每个项都是一个对象，通过path属性指定页面路径，通过style指定该页面的样式配置。
@@ -172,10 +182,10 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 - 下拉刷新
 	* pages.json中下拉刷新是页面级配置，方便使用但灵活度有限。
 	* 如需自定义下拉刷新，请使用[scroll-view](../component/scroll-view.md)或[list-view](../component/list-view.md)的下拉刷新。
-- Android系统导航栏 (通常指手机底部按钮或手势指示条区域)  
-	* 系统导航栏的背景颜色与backgroundColorContent颜色一致，导航栏的前景色会根据backgroundColorContent颜色自动适配 (4.21版本开始支持)  
-	* tabBar页面的系统导航栏背景颜色取值策略[参考](#tabbar-tips)  
-	* 系统导航栏为全面屏手势时，HBuilderX4.31版本调整页面内容可以渲染到手势指示条区域（低版本页面内容会自动避开手势指示条区域），如需适配可以通过[uni.getWindowInfo](../api/get-window-info.md)获取安全区域底部插入位置信息进行适配  
+- Android系统导航栏 (通常指手机底部按钮或手势指示条区域)
+	* 系统导航栏的背景颜色与backgroundColorContent颜色一致，导航栏的前景色会根据backgroundColorContent颜色自动适配 (4.21版本开始支持)
+	* tabBar页面的系统导航栏背景颜色取值策略[参考](#tabbar-tips)
+	* 系统导航栏为全面屏手势时，HBuilderX4.31版本调整页面内容可以渲染到手势指示条区域（低版本页面内容会自动避开手势指示条区域），如需适配可以通过[uni.getWindowInfo](../api/get-window-info.md)获取安全区域底部插入位置信息进行适配
 
 **style示例**
 ```javascript
@@ -212,6 +222,16 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 
 <!-- PAGESJSON.style_h5.compatibility -->
 
+
+##### mp-weixin 配置项列表 @style-mp-weixin
+
+<!-- PAGESJSON.style_mp-weixin.description -->
+
+<!-- PAGESJSON.style_mp-weixin.table -->
+
+<!-- PAGESJSON.style_mp-weixin.compatibility -->
+
+
 ### tabBar 配置项列表 @pages-tabbar
 
 tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更多页面配置tabbar，见下面的自定义tabbar。
@@ -229,10 +249,10 @@ tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更�
 
 <a id="tabbar-tips"></a>
 
-**Tips**  
-- backgroundColor  
-	- app-android平台：系统导航（System navigation）栏的背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar 页面导航栏背景颜色取值策略[参考](#pagesoptionspage-tips) 
-	- app-ios平台：tabBar 会自动适配安全区域，底部安全区域背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar，则不会自动适配底部安全区域，开发者需根据应用实际情况自行处理。  
+**Tips**
+- backgroundColor
+	- app-android平台：系统导航（System navigation）栏的背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar 页面导航栏背景颜色取值策略[参考](#pagesoptionspage-tips)
+	- app-ios平台：tabBar 会自动适配安全区域，底部安全区域背景色会与 tabBar 背景色保持一致。如果应用没有配置 tabBar，则不会自动适配底部安全区域，开发者需根据应用实际情况自行处理。
 
 
 #### PagesOptionsTabbarList 配置项列表 @pagesoptionstabbarlist
