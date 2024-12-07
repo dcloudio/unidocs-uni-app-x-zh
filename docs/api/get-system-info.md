@@ -18,6 +18,8 @@ uni-app 提供了异步(`uni.getSystemInfo`)和同步(`uni.getSystemInfoSync`)�
 
 因本API涉及的信息越来越多，查询速度会逐渐变慢。由此拆解分出3个新API，[uni.getDeviceInfo](get-device-info.md)、[uni.getAppBaseInfo](get-app-base-info.md)、[uni.getWindowInfo](get-window-info.md)。新API包含的信息更多。
 
+微信小程序已经不推荐使用getSystemInfo，建议使用上述分拆的3个API。
+
 <!-- UTSAPIJSON.getSystemInfo.param -->
 
 <!-- UTSAPIJSON.getSystemInfo.returnValue -->

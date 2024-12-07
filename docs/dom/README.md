@@ -1,14 +1,16 @@
 # UVUE DOM
 
-App-uvue的每个页面，在内存中都有一个 DOM（文档对象模型）。它和浏览器的 [DOM规范](https://www.w3.org/DOM/?spm=a2c7j.-zh-docs-api-weex-variable.0.0.2a5537c6FrgbYp) 类似。
+每个uvue页面，在内存中都有一个 DOM（文档对象模型）。它和浏览器的 [DOM规范](https://www.w3.org/DOM/?spm=a2c7j.-zh-docs-api-weex-variable.0.0.2a5537c6FrgbYp) 类似。
 
 DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示一个页面文档，树的每个分支的终点都是一个节点，每个节点都对应一个节点对象（UniElement）。
 
-实际上 app-uvue 的template、数据绑定，在底层调用的也是 DOM API。
+实际上 uvue 的template、数据绑定，在底层调用的也是 DOM API。
 
 在浏览器中，开发者一旦跳过vue框架直接操作dom，vue框架将无法管理相应dom，开发者需要注意两端的冲突。
 
-在 App 端，为了减少冲突，目前不支持通过 DOM API 创建和删除 DOM 树中的元素。只支持获取元素UniElement。
+为了减少冲突，目前不支持通过 DOM API 创建和删除 DOM 树中的元素。只支持获取元素UniElement。
+
+DOM在Web、Android、iOS、微信小程序均存在。微信小程序受微信限制，只实现了部分DOM API，请注意兼容性表格。
 
 > HBuilderX4.0 开始DOM元素的类型统一调整为 UniElement 对象。废弃之前 HBuilderX 3.91 的 Element对象 和 HBuilderX 3.91以前的 INode 对象。
 
@@ -66,7 +68,7 @@ export default {
 ```
 
 ### 通过this.$refs获取DOM元素@refs
-app-uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。
+uvue页面中可以通过 vue 框架中的组件实例对象 [this.$refs](https://uniapp.dcloud.net.cn/tutorial/vue3-api.html#%E5%AE%9E%E4%BE%8B-property) 获取 DOM 元素对象。
 
 首先需要为组件设置 ref 属性值，它类似于id：
 ```vue

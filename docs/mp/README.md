@@ -1,8 +1,12 @@
 # 编译到小程序端
 
-> 编译到微信小程序端新增于4.41版本
+> 新增于 HBuilderX 4.41+
 
 uni-app x 项目在编译到小程序平台时，将部分特性对齐了web与app端，因此和非uni-app x项目编译到小程序端略有差异。
+
+## uts
+
+推荐使用uts跨端开发，但微信小程序上也支持js/ts。
 
 ## vue
 
@@ -56,11 +60,11 @@ event.screenY
 
 ## css
 
-### 默认样式
+### 样式重置
 
-为保证多端统一，uni-app-x编译到小程序端时，内置组件根元素带有一些默认样式，详情参考：[uvue css使用](../css/README.md)。
+App平台的ucss和webview的标准css略有差异。为保证多端统一，uni-app-x编译到小程序端时，会进行浏览器样式重置，内置组件根元素带有一些默认样式，详情参考：[uvue css使用](../css/README.md)。
 
-如果确实不需要ucss的样式覆盖来帮助对齐不同端的显示效果，可以在pages.json的globalStyle或对应的页面style内配置`enableUcssReset`为false来关闭ucss样式重置。参考：[page.json文档](../collocation/pagesjson.md)
+如果你不开发App，且不需要样式重置，想使用原始的小程序样式，那么可以在pages.json的globalStyle或对应的页面style内配置`enableUcssReset`为false来关闭ucss样式重置。参考：[page.json文档](../collocation/pagesjson.md)
 
 ## skyline
 
@@ -75,3 +79,7 @@ worklet函数暂不支持写在uvue、uts文件内，推荐从js文件内引用�
 ### 实体字符
 
 uni-app x项目在编译到小程序端时，如果页面内静态的使用了实体字符`&gt;、&lt;、&thinsp;、&nbsp;、&ensp;、&emsp;`则会在最终输出的小程序页面文件中保留这些实体字符，例如`&nbsp;`在微信小程序的wxml文件中仍为`&nbsp;`不会被转为空格， 而非uni-app-x项目`&nbsp;`会转为空格。
+
+## 开发和调试
+
+在HBuilderX底部状态栏选择语法平台，确保有微信小程序平台，否则代码提示不会有微信专有API。如果选择其他平台，但代码里在非MP-WEIXIN的条件编译里写了微信专有代码，ide会告警。
