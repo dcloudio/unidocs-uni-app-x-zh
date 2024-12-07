@@ -1,11 +1,12 @@
 ## dialogPage概述
-HBuilderX 4.31+新增了dialogPage，适用于制作弹框。
+HBuilderX 4.31+新增了dialogPage，适用于制作弹框和内置界面。
 
 ### 需求背景
 - uni.showModal、actionsheet，自定义性不足
 - 通过前端组件实现的弹框，无法覆盖pages.json的导航栏和tabbar
 - 前端实现的弹框，无法拦截back按键，一点back整页关了
 - 组件方式实现弹框，需要每个页面都引入组件，写法较麻烦
+- 部分内置API涉及界面但没有统一管理，比如chooseLocation、previewImage等。
 
 ### dialogPage方案
 dialogPage是一种背景透明的页面，可以覆盖pages.json中的导航栏和tabbar。之前的page被称为主page或parentPage。dialogPage需要挂在主page上。
@@ -22,10 +23,10 @@ dialogPage和主page的区别：
 - dialogPage不影响页面栈和路由地址，在getCurrentPages里不能直接得到dialogPage（需在UniPage对象通过getDialogPages获取）
 - dialogPage在Android上并不是一个activity，而是一个全屏view，它和主page所属同一个activity。
 - dialogPage不响应iOS侧滑返回，即disableSwipeBack默认值为true。响应Android的back键和back手势，可通过dialogPage onBackPress生命周期控制是否阻止Android的back键和back手势关闭dialogPage。
-- dialogPage不影响调用页面或其parentPage的show、hide生命周期。
+- dialogPage默认不影响调用页面或其parentPage的show、hide生命周期。如需影响，比如弹出全屏界面时，需手动设置triggerParentHide
 - dialogPage中可以调用普通路由api，比如uni.navigateTo、navigateBack，但并不作用于dialogPage，而是作用于其parentPage。即，之前的路由API均只作用于主Page。
 - 在web平台，dialogPage显示时，不影响URL的变化。
-- dialogPage默认没有窗体动画，建议在页面内通过css或uts操作页面元素进行动画。
+- dialogPage默认没有窗体动画。如果是半屏内容，建议在页面内通过css或uts操作页面元素进行动画，灵活度更高。如果是全屏界面，可以使用窗体动画，但没有popin这种与上一个页面的联动动画。
 
 dialogPage的绑定：
 - dialogPage需绑定在某个主页面上，即parentPage。parentPage页面关闭时，自动销毁相关dialogPage。
