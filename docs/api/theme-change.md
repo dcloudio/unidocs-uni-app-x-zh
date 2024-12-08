@@ -121,6 +121,62 @@ uni.offOsThemeChange(callbackId)
 
 <!-- UTSAPIJSON.offOsThemeChange.example -->
 
+## uni.onHostThemeChange(callback) @onhostthemechange
+
+<!-- UTSAPIJSON.onHostThemeChange.description -->
+
+<!-- UTSAPIJSON.onHostThemeChange.compatibility -->
+
+<!-- UTSAPIJSON.onHostThemeChange.param -->
+
+<!-- UTSAPIJSON.onHostThemeChange.returnValue -->
+
+<!-- UTSAPIJSON.onHostThemeChange.tutorial -->
+
+<!-- UTSAPIJSON.onHostThemeChange.example -->
+
+## uni.offHostThemeChange(id) @offhostthemechange
+
+<!-- UTSAPIJSON.offHostThemeChange.description -->
+
+<!-- UTSAPIJSON.offHostThemeChange.compatibility -->
+
+<!-- UTSAPIJSON.offHostThemeChange.param -->
+
+<!-- UTSAPIJSON.offHostThemeChange.returnValue -->
+
+<!-- UTSAPIJSON.offHostThemeChange.tutorial -->
+
+<!-- UTSAPIJSON.offHostThemeChange.example -->
+
+<!-- UTSAPIJSON.onThemeChange.name -->
+
+<!-- UTSAPIJSON.onThemeChange.description -->
+
+<!-- UTSAPIJSON.onThemeChange.compatibility -->
+
+<!-- UTSAPIJSON.onThemeChange.param -->
+
+<!-- UTSAPIJSON.onThemeChange.returnValue -->
+
+<!-- UTSAPIJSON.onThemeChange.tutorial -->
+
+<!-- UTSAPIJSON.onThemeChange.example -->
+
+<!-- UTSAPIJSON.offThemeChange.name -->
+
+<!-- UTSAPIJSON.offThemeChange.description -->
+
+<!-- UTSAPIJSON.offThemeChange.compatibility -->
+
+<!-- UTSAPIJSON.offThemeChange.param -->
+
+<!-- UTSAPIJSON.offThemeChange.returnValue -->
+
+<!-- UTSAPIJSON.offThemeChange.tutorial -->
+
+<!-- UTSAPIJSON.offThemeChange.example -->
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
