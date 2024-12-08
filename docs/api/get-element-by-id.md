@@ -10,8 +10,9 @@ uni是全局api，本方法获取的元素，是页面栈栈顶（不包括 dial
 
 如需寻找特定页面上的Element，应使用[UniPage对象的getElementById方法](../api/get-current-pages.md#getelementbyid)
 
-如果不确定当前页面是不是在页面栈顶，则推荐使用ref方式，`this.$refs`可以和当前代码调用的页面绑定。\
-与页面绑定的获取元素的方式是`this.$refs`获取的对象再进一步as为element。[详见](../tutorial/idref.md#ref方式)
+而获取当前页面对象的方法，则是`this.$page`，这个方式可以获取到dialogPage页面，那么通用的、在当前页面获取UniElement的方式是：`this.$page.getElementById`
+
+另一种与页面绑定的获取元素的方式是`this.$refs`获取的组件对象再进一步as为element。[详见](../tutorial/idref.md#ref方式)
 
 <!-- UTSAPIJSON.getElementById.param -->
 

@@ -83,9 +83,10 @@ uni-app x提供了[uni.getElementById](../api/get-element.md)等多种方法获�
 
 通用的元素操作方法，比如getAttribute、setStyle，在Element上就可以操作。
 
-获取Element有很多方法，全局方法[uni.getElementById](../api/get-element.md)、[UniPage的getElementById](../api/get-current-pages.md#getelementbyid)
-
-还可以通过this.refs获取到vue实例然后as为Element。[见下](#ref方式)
+获取Element有很多方法，
+1. [uni.getElementById](../api/get-element.md)获取栈顶页面的元素（注意无法获取dialogPage页面的元素）
+2. [UniPage的getElementById](../api/get-current-pages.md#getelementbyid)获取指定页面的元素。通过`this.$page.getElementById`可以获取当前页面的元素。
+3. 还可以通过this.refs获取到vue实例然后as为Element。[见下](#ref方式)
 
 UniVideoElement 继承自 UniElement，拥有video专用的一批方法。
 

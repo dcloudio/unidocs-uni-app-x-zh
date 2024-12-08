@@ -282,7 +282,7 @@ uvue页面放置好上述5个UniElement后，在页面的登录按钮点击事�
 登录成功后通过`uni.navigateBack()`或`uni.closeDialogPage()`等方式关闭授权页。
 
 hello uni-app x里有完整的自定义登录的示例代码，该示例中：
-1. 首先在[预登陆页面](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/get-univerify-manager/get-univerify-manager.uvue)获取运营商返回的4项内容。点击自定义一键登陆后弹出dialogPage，并通过页面地址传参方式，将4项内容传给自定义登录页面。
+1. 首先在[预登陆页面](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/get-univerify-manager/get-univerify-manager.uvue)获取运营商返回的4项内容。点击自定义一键登陆后弹出[dialogPage](./dialog-page.md)，并通过页面地址传参方式，将4项内容传给自定义登录页面。实际开发中，你可以使用dialogPage，也可以使用一个普通页面。
 2. 在[自定义一键登陆页面](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/get-univerify-manager/univerify-custom-page.uvue)，按规范放置合适的UniElement，点击登录后调用`customLogin`方法。登录成功后调用`uni.closeDialogPage()`关闭。
 
 ## Tips

@@ -21,6 +21,7 @@ dialogPage和主page的区别：
 - dialogPage的背景固定为透明、大小为铺满应用。蒙层由页面内部实现，蒙层颜色、是否响应点击，均由页面内部处理。如果是模态，蒙层不应该允许点击；非模态，则点击蒙层应关闭dialogPage
 - dialogPage不使用uni.navigatorTo等路由API，而是单独提供了`openDialogPage`和`closeDialogPage`
 - dialogPage不影响页面栈和路由地址，在getCurrentPages里不能直接得到dialogPage（需在UniPage对象通过getDialogPages获取）
+- 因为dialogPage不进入主页面栈，那么`uni.getElementById`是无法获取到dialogPage内的元素的。因为uni这个全局API是获取栈顶元素。如果想获取指定页面的元素，需获取到指定页面的UniPage对象，在这个对象上使用.getElementById方法。如果想获取当前dialogPage页面的元素，应该使用`this.$page.getElementById()`。
 - dialogPage在Android上并不是一个activity，而是一个全屏view，它和主page所属同一个activity。
 - dialogPage不响应iOS侧滑返回，即disableSwipeBack默认值为true。响应Android的back键和back手势，可通过dialogPage onBackPress生命周期控制是否阻止Android的back键和back手势关闭dialogPage。
 - dialogPage默认不影响调用页面或其parentPage的show、hide生命周期。如需影响，比如弹出全屏界面时，需手动设置triggerParentHide
