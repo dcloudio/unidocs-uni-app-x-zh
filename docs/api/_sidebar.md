@@ -16,6 +16,7 @@
   * [getPerformance](get-performance.md)
   * [隐私信息授权](privacy.md)
 * 页面和路由
+  * [UniPage](unipage.md)
   * [页面跳转](navigator.md)
   * [dialogPage](dialog-page.md)
   * [设置导航条颜色](set-navigation-bar-color.md)
