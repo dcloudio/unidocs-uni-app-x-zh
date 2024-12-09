@@ -11,11 +11,11 @@ App一键登录，封装了个推的一键登录sdk，其内部再次封装了�
 App一键登录的优势：
 1. 对比短信验证码登录
 - 对开发者而言
-	* 每条短信费用更贵，一键登陆便宜
+	* 每条短信费用更贵，一键登录便宜
 	* 短信模板审核慢，通过率低
 	* 短信发送成功耗时久，可能几十秒，容易被拒收，如果用户收不到短信验证码就流失了
-	* 短信验证码无法规避打码平台，容易被黑产攻击，一键登陆更安全。
-- 对用户而言，输入手机号耗时、等待短信验证码耗时、输入验证码耗时，等待体验比一键登陆差很多。
+	* 短信验证码无法规避打码平台，容易被黑产攻击，一键登录更安全。
+- 对用户而言，输入手机号耗时、等待短信验证码耗时、输入验证码耗时，等待体验比一键登录差很多。
 2. 对比微信登录
 - 中国法律要求开发者在提供互联网服务时备案其用户的手机号。与其微信登录后再次要求用户输入短信验证码来绑定手机号，不如直接一键登录。
 - 在iOS上，一旦使用微信登录，就必须同时加入Apple登录。Apple登录的用户无法再次有效触达，只能再次要求用户输入短信验证码绑定手机号，体验非常差。不如直接一键登录。使用一键登录时Appstore不会要求必须同时使用Apple登录。
@@ -27,7 +27,7 @@ App一键登录的优势：
 
 uni-id-pages插件，已经内置一键登录，从云端到客户端均已开发好并开源，推荐使用。[详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
 
-一键登陆有标准登录模式(login方法)和自定义登录模式(customLogin方法)。标准模式是uni-app封装好的UI界面，自定义模式是开发者自己布局界面。[见下](#custom-specification-requirement)
+一键登录有标准登录模式(login方法)和自定义登录模式(customLogin方法)。标准模式是uni-app封装好的UI界面，自定义模式是开发者自己布局界面。[见下](#custom-specification-requirement)
 
 <!-- UTSAPIJSON.getUniverifyManager.param -->
 
@@ -38,7 +38,7 @@ uni-id-pages插件，已经内置一键登录，从云端到客户端均已开�
 
 比如之前类型叫`LoginOptions`，改名为了`UniVerifyManagerLoginOptions`，加上了`UniVerifyManager`前缀。
 
-本调整是因为未来会增加更多登录方式，一键登陆的参数类型占用通用的名称`LoginOptions`不合适。
+本调整是因为未来会增加更多登录方式，一键登录的参数类型占用通用的名称`LoginOptions`不合适。
 
 涉及名单如下：
 - PreLoginOptions 变更为 UniVerifyManagerPreLoginOptions
@@ -242,21 +242,21 @@ uni-id-pages插件，已经内置一键登录，从云端到客户端均已开�
 | 80801 | WIFI切换超时 |
 
 ## 关于login(标准登录)与customLogin(自定义页面登录)
-三大电信运营商对一键登陆在App端如何使用有一套规范，开发者必须遵守这套规范，否则会被停止服务。
+三大电信运营商对一键登录在App端如何使用有一套规范，开发者必须遵守这套规范，否则会被停止服务。
 
-uni-app x为开发者提供了两种使用方式来合规的使用一键登陆：
+uni-app x为开发者提供了两种使用方式来合规的使用一键登录：
 
 ### 标准登录
 uni-app框架预置了一个全屏和半屏的界面模板，该页面已经遵守了运营商的规范。
 
-开发者的代码首先调用预登陆，预登录成功后，调用`login`方法拉起授权页面，登录成功后通过`close`方法关闭页面。
+开发者的代码首先调用预登录，预登录成功后，调用`login`方法拉起授权页面，登录成功后通过`close`方法关闭页面。
 
 此方式的优点是方便快捷、无需开发界面UI，缺点是预置页面无法自定义。
 
 ### 自定义页面登录@custom-specification-requirement
 > HBuilderX 4.41+
 
-调用预登陆接口如果成功，会返回4项内容：
+调用预登录接口如果成功，会返回4项内容：
 1. number：带掩码的手机号
 2. slogan：运营商品牌（中国移动|中国联通|中国电信）
 3. privacyName：运营商协议名称
@@ -264,11 +264,11 @@ uni-app框架预置了一个全屏和半屏的界面模板，该页面已经遵�
 
 开发者需要根据运营商的规范要求在自己的登录页面上呈现上述信息。
 
-运营商对一键登陆界面的规范要求是，页面必须有5个UI要素，包括：
-1. 含掩码的手机号码(numberTextElement)：从预登陆接口获取。必须使用[text组件](https://doc.dcloud.net.cn/uni-app-x/component/text.html)呈现在界面上。
-2. 运营商品牌(sloganTextElement)：从预登陆接口获取。必须使用[text组件](https://doc.dcloud.net.cn/uni-app-x/component/text.html)呈现在界面上。
+运营商对一键登录界面的规范要求是，页面必须有5个UI要素，包括：
+1. 含掩码的手机号码(numberTextElement)：从预登录接口获取。必须使用[text组件](https://doc.dcloud.net.cn/uni-app-x/component/text.html)呈现在界面上。
+2. 运营商品牌(sloganTextElement)：从预登录接口获取。必须使用[text组件](https://doc.dcloud.net.cn/uni-app-x/component/text.html)呈现在界面上。
 3. 同意协议的checkbox(privacyCheckBoxElement)：自行使用[checkbox组件](https://doc.dcloud.net.cn/uni-app-x/component/checkbox.html)构造在界面上。不可默认勾选，必须让终端用户手动勾选。
-4. 协议名称(privacyTextElement)：从预登陆接口获取。必须使用[text组件](https://doc.dcloud.net.cn/uni-app-x/component/text.html)呈现在界面上，放置在privacyCheckBoxElement后面，text的样式需有可点击效果，点击后需要通过webview打开运营商的在线协议地址(privacyUrl)
+4. 协议名称(privacyTextElement)：从预登录接口获取。必须使用[text组件](https://doc.dcloud.net.cn/uni-app-x/component/text.html)呈现在界面上，放置在privacyCheckBoxElement后面，text的样式需有可点击效果，点击后需要通过webview打开运营商的在线协议地址(privacyUrl)
 5. 登录按钮(LoginButton)：自行使用[button组件](https://doc.dcloud.net.cn/uni-app-x/component/button.html)实现。必须包含“登录”或“注册”等文字，不得诱导用户授权，必须让终端用户手动点击，不可自动发起。
 
 - 开发者不得通过任何技术手段将上述授权页面的五个必要元素内容隐藏、覆盖、或者动态变更。
@@ -282,8 +282,8 @@ uvue页面放置好上述5个UniElement后，在页面的登录按钮点击事�
 登录成功后通过`uni.navigateBack()`或`uni.closeDialogPage()`等方式关闭授权页。
 
 hello uni-app x里有完整的自定义登录的示例代码，该示例中：
-1. 首先在[预登陆页面](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/get-univerify-manager/get-univerify-manager.uvue)获取运营商返回的4项内容。点击自定义一键登陆后弹出[dialogPage](./dialog-page.md)，并通过页面地址传参方式，将4项内容传给自定义登录页面。实际开发中，你可以使用dialogPage，也可以使用一个普通页面。
-2. 在[自定义一键登陆页面](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/get-univerify-manager/univerify-custom-page.uvue)，按规范放置合适的UniElement，点击登录后调用`customLogin`方法。登录成功后调用`uni.closeDialogPage()`关闭。
+1. 首先在[预登录页面](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/get-univerify-manager/get-univerify-manager.uvue)获取运营商返回的4项内容。点击自定义一键登录后弹出[dialogPage](./dialog-page.md)，并通过页面地址传参方式，将4项内容传给自定义登录页面。实际开发中，你可以使用dialogPage，也可以使用一个普通页面。
+2. 在[自定义一键登录页面](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/get-univerify-manager/univerify-custom-page.uvue)，按规范放置合适的UniElement，点击登录后调用`customLogin`方法。登录成功后调用`uni.closeDialogPage()`关闭。
 
 ## Tips
 - 一键登录并非100%成功，手机没有sim卡、蜂窝网络未开启、当时手机没有蜂窝网信号是最常见的原因，更多错误见上方的错误码列表。在一键登录无法使用时，可转为短信验证码登录。在[uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)里已经集成了相关逻辑，无需自己开发。[详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
