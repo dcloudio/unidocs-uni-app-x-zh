@@ -32,3 +32,4 @@
 
 * 目前仅以下接口支持拦截器：navigateTo、redirectTo、reLaunch、switchTab、navigateBack、loadFontFace、pageScrollTo、startPullDownRefresh、setNavigationBarColor、setNavigationBarTitle、setTabBarBadge、removeTabBarBadge、setTabBarItem、setTabBarStyle、hideTabBar、showTabBar、showTabBarRedDot、hideTabBarRedDot
 * 如需拦截request，可在插件市场搜索[拦截器插件](https://ext.dcloud.net.cn/search?q=%E6%8B%A6%E6%88%AA%E5%99%A8&uni-appx=1)
+* 小程序端拦截器无法拦截navigator组件
