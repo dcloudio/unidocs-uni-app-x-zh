@@ -107,4 +107,4 @@ web平台的inputmode的浏览器兼容性如下： Chrome >= 66、Edge >= 79、
 - 从uni-app x 4.0起，App-Android平台 input 点击输入框外的屏幕会自动收起软键盘。
 - 从uni-app x 4.0起，App-Android平台 input 的 font-size 默认值统一为 16px。
 - `Web` 平台，iOS 自带键盘的智能标点功能会导致：在 type 为 `number`、`digit` 时，连续输入两次 `.` 后，在第三次输入 `.` 时，会触发两次 deleteContentBackward（删除） 的输入外加一次 insertText 为 `…`（三个点） 的输入。会导致表现异常，关闭智能标点功能后正常。
-- `微信小程序` 平台，在一些复杂布局的情况下会可能会出现高度不正确的问题，暂时通过手动设置样式 height 解决，示例: height: 28px;
+- `微信小程序` 平台，如果不设置高度，在一些复杂布局的情况下会可能会出现placeholder高度不正确的问题，暂时通过手动设置样式 height 解决，示例: height: 28px
