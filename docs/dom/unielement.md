@@ -239,6 +239,8 @@ if(webViewElement != null) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.example -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.getDrawableContext.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getDrawableContext.description -->
@@ -442,28 +444,7 @@ if (view != null && view instanceof WKWebView) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.tutorial -->
 
-```ts
-// 找到需要截图节点
-const view = uni.getElementById('snapshot-content')!
-// 进行截图
-view.takeSnapshot({
-    success: function (res) {
-        // 打印截图文件临时路径
-        console.log(res.tempFilePath)
-        uni.showToast({
-            title: '截图成功，路径：' + res.tempFilePath,
-            icon: "none"
-        })
-    },
-    fail: function (res) {
-        console.log(res)
-        uni.showToast({
-            icon: 'error',
-            title: '截图失败'
-        })
-    }
-})
-```
+<!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.example -->
 
 完整示例代码参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/element-takesnapshot/element-takesnapshot.uvue)
 
