@@ -66,6 +66,7 @@
     * [custom-tab-bar](custom-tab-bar.md)
   * unicloud
     * [unicloud-db](unicloud-db.md)
+* 微信专用组件
   * Skyline
     * 手势系统
       * [double-tap-gesture-handler](double-tap-gesture-handler.md)
@@ -89,13 +90,14 @@
     * [official-account](official-account.md)
     * [store-home](store-home.md)
     * [store-product](store-product.md)
+  * 其他
+    * [aria-component](aria-component.md)
+    * [native-component](native-component.md)
+    * [channel-live](channel-live.md)
+    * [channel-video](channel-video.md)
+    * [voip-room](voip-room.md)
+    * [keyboard-accessory](keyboard-accessory.md)
+    * [page-container](page-container.md)
+    * [root-portal](root-portal.md)
+    * [block](block.md)
 * [其他组件](unsupport.md)
-  * [aria-component](aria-component.md)
-  * [native-component](native-component.md)
-  * [channel-live](channel-live.md)
-  * [channel-video](channel-video.md)
-  * [voip-room](voip-room.md)
-  * [keyboard-accessory](keyboard-accessory.md)
-  * [page-container](page-container.md)
-  * [root-portal](root-portal.md)
-  * [block](block.md)
