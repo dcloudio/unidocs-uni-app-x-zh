@@ -13,8 +13,8 @@
 
 **注意**
 
-- app端不支持外边距重叠（上下外边距折叠合并为单个边距）
-- 3.98以下版本当position:fixed|absolute时，margin属性值不支持auto
+- app平台不支持外边距重叠（上下外边距折叠合并为单个边距）  
+- HBuilderX3.98以下版本当 position 设置为 fixed 或 absolute 时， margin不支持 auto  
 
 <!-- CSSJSON.margin.compatibility -->
 
