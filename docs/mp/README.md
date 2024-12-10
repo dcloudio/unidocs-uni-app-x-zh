@@ -26,7 +26,7 @@ mergeVirtualHostAttributes特性会将组件的 style、class 属性合并到根
 
 ### UniElement
 
-小程序端逻辑层与是图层分离，导致大多数同步的dom api都不可用。
+小程序端逻辑层与视图层分离，导致大多数同步的dom api都不可用。
 
 UniElement在小程序端仅支持如下属性/方法：
 
