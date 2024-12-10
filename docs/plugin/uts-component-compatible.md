@@ -1924,6 +1924,10 @@ Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 
 ## 常见问题
 
+### 兼容模式不支持部分标准事件
+
+uts兼容模式组件 不支持touch click tap等事件
+
 ### 使用者需要指定 组件宽高
 
 ```
