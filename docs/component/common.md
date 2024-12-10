@@ -93,7 +93,7 @@ App端手指按下后在组件区域内移动不会取消tap/click事件的触�
 
   <style>
     .transition-transform {
-      transition-duration: 2000;
+      transition-duration: 2000ms;
       transition-property: transform;
       transform: rotate(0deg);
     }
