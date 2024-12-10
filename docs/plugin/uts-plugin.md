@@ -1915,7 +1915,7 @@ export class Test {
     }
 
     @UTSJS.keepAlive
-    tatic testOptionStatic(option : Options) {
+    static testOptionStatic(option : Options) {
         option.success("a")
         option.success("b")
     }
