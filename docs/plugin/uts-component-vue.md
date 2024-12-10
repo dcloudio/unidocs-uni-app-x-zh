@@ -502,6 +502,7 @@ export class NativeButton {
 
 **注意:**
 + UTS插件-标准模式组件的 components 目录下的代码中不应该含有原生平台任何引用对象，这会导致vue原生组件无法跨平台，推荐与原生平台关联的代码都放在utssdk中
++ 绑定原生 view 方法（bindAndroidView、bindIOSView）仅支持调用一次，原生 view 一旦绑定后不支持再次绑定其他 view
 + ios平台需要vue组件主动释放 uts 实例，所以页面触发 unmounted 生命周期时需要调用 this.button?.destroy() 避免内存泄露
 + android平台 native-view 组件不支持border、background、box-shadow属性，可以使用view标签包裹native-view,在view标签设置以上属性
 
