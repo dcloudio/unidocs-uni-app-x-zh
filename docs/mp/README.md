@@ -80,9 +80,18 @@ worklet函数暂不支持写在uvue、uts文件内，推荐从js文件内引用�
 
 uni-app x项目在编译到小程序端时，如果页面内静态的使用了实体字符`&gt;、&lt;、&thinsp;、&nbsp;、&ensp;、&emsp;`则会在最终输出的小程序页面文件中保留这些实体字符，例如`&nbsp;`在微信小程序的wxml文件中仍为`&nbsp;`不会被转为空格， 而非uni-app-x项目`&nbsp;`会转为空格。
 
-### 节点选择
+### radio、checkbox组件使用justify-content等属性对齐插槽内容与选择框时与app、web表现不一致
 
-启用虚拟
+> 此表现后续可能会调整，请勿依赖此特性进行布局
+
+由于小程序端radio、checkbox组件内部有一层额外节点，如下属性设置在根节点上不能按预期方式布局插槽内容与选择框
+
+```
+flex-direction
+align-content
+justify-content
+align-items
+```
 
 ## 开发和调试
 
