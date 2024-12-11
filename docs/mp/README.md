@@ -14,7 +14,7 @@ uni-app x 项目在编译到小程序平台时，将部分特性对齐了web与a
 
 uni-app x 项目在编译到小程序端时，启用了virtualHost，同时默认启用了[mergeVirtualHostAttributes特性](https://uniapp.dcloud.net.cn/collocation/manifest.html#mp-weixin)。
 
-启用virtualHost会让组件在实际渲染时不会额外包裹一层dom节点。
+启用virtualHost会让组件在实际渲染时不会额外包裹一层dom节点。在组件外层无法通过 SelectorQuery 获取到自定义组件的位置信息。
 
 mergeVirtualHostAttributes特性会将组件的 style、class、hidden（仅限 v-show 指令生成的）属性合并到根节点上。
 
@@ -79,6 +79,10 @@ worklet函数暂不支持写在uvue、uts文件内，推荐从js文件内引用�
 ### 实体字符
 
 uni-app x项目在编译到小程序端时，如果页面内静态的使用了实体字符`&gt;、&lt;、&thinsp;、&nbsp;、&ensp;、&emsp;`则会在最终输出的小程序页面文件中保留这些实体字符，例如`&nbsp;`在微信小程序的wxml文件中仍为`&nbsp;`不会被转为空格， 而非uni-app-x项目`&nbsp;`会转为空格。
+
+### 节点选择
+
+启用虚拟
 
 ## 开发和调试
 
