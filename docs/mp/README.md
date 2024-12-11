@@ -16,7 +16,7 @@ uni-app x 项目在编译到小程序端时，启用了virtualHost，同时默�
 
 启用virtualHost会让组件在实际渲染时不会额外包裹一层dom节点。
 
-mergeVirtualHostAttributes特性会将组件的 style、class 属性合并到根节点上。
+mergeVirtualHostAttributes特性会将组件的 style、class、hidden（仅限 v-show 指令生成的）属性合并到根节点上。
 
 ### refs@refs
 
