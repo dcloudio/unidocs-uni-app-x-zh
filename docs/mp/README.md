@@ -12,11 +12,23 @@ uni-app x 项目在编译到小程序平台时，将部分特性对齐了web与a
 
 ### 组件启用virtualHost
 
-uni-app x 项目在编译到小程序端时，启用了virtualHost，同时默认启用了[mergeVirtualHostAttributes特性](https://uniapp.dcloud.net.cn/collocation/manifest.html#mp-weixin)。
+uni-app x 项目在编译到小程序端时，为了避免自定义组件多一层dom嵌套影响flex等样式而默认启用了virtualHost，同时默认启用了[mergeVirtualHostAttributes特性](https://uniapp.dcloud.net.cn/collocation/manifest.html#mp-weixin)。
 
-启用virtualHost会让组件在实际渲染时不会额外包裹一层dom节点。在组件外层无法通过 SelectorQuery 获取到自定义组件的位置信息。
+启用virtualHost会让组件在实际渲染时不会额外包裹一层dom节点。这会对组件外使用选择器选择组件产生影响。
 
-mergeVirtualHostAttributes特性会将组件的 style、class、hidden（仅限 v-show 指令生成的）属性合并到根节点上。
+* 无法在组件外层通过 getElementById 获取到自定义组件 UniElement 对象。
+* 无法在组件外层通过 SelectorQuery 获取到自定义组件的信息。但可以通过将自定义组件的实例传入 in 参数来获取。
+
+```js
+uni.createSelectorQuery().in(this.$refs.xx).select('.xx').boundingClientRect((data) => {
+    console.log('boundingClientRect:', data)
+}).exec()
+```
+
+mergeVirtualHostAttributes合并策略
+* 会将组件外层设置的 style、class 以及 v-show 指令生成的 hidden 属性合并到组件根节点上。比如外层设置了一个 id，是不会自动合并到组件根节点上的，此时通过uni.createSelectorQuery()是无法使用id选择器获取到根节点的。但因为class会合并，所以通过class选择器可以获取到根节点。
+* 仅对组件是单个根节点才会合并，组件内多个根节点的时候不会合并。
+
 
 ### refs@refs
 
