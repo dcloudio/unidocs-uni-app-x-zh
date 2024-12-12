@@ -24,7 +24,7 @@
 - iOS SDK：17.5  
 - pod仓库：https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git
 
-### HBuilderX4.41设计云端打包环境
+### HBuilderX4.41升级云端打包环境
 - XCode: 16.1  
 - iOS SDK: 18.1  
 - pod仓库：https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git  
