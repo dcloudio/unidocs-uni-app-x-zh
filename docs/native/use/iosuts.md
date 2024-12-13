@@ -69,3 +69,20 @@ xcodebuild -create-xcframework -framework 真机路径/unimoduleUniGetbatteryinf
 
 > 编译模拟器注意事项
 > `Apple芯片`的设备编译模拟器需要在菜单栏中点击 `Product -> Destination -> Show All Run Destinations` ，然后选择 `Rosetta模拟器` 编译
+  
+## 原生项目中调试UTS插件
+首先，你需要创建一个`Xcode Workspace`，它允许你同时打开多个项目（包括你的主工程和UTS插件工程）。
+1. 创建Xcode Workspace  
+* 打开Xcode，选择`File > New > Workspace`。
+* 给你的Workspace命名，例如`MyProject.xcworkspace`。
+* 保存Workspace文件。
+2. 将`主工程`和`UTS插件工程`添加到Workspace  
+* 在Workspace中，选择`File > Add Files to <YourWorkspaceName>`。
+* 找到并选择你的`主工程`和`UTS插件工程`，将它们添加到Workspace中。
+3. 配置`主工程`依赖`UTS插件工程`
+* 在Workspace中，打开主工程的项目设置。
+* 选择`General`标签页，滚动到`Frameworks, Libraries, and Embedded Content`部分。
+* 点击`+`按钮，添加你的`UTS插件工程`生成的framework文件。
+* 确保`Embed & Sign`选项被勾选。
+4. 设置断点和调试 
+* 在`UTS插件工程`工程中设置断点，然后在主工程中触发相关功能来调试UTS插件

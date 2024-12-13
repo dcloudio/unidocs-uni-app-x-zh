@@ -52,6 +52,8 @@
 | uni-map-tencent | uni-map-tencent-animation-AnimationLocation.swift <br> uni-map-tencent-circle-DCCircle.swift <br> uni-map-tencent-circle-DCCircleModel.swift <br> uni-map-tencent-control-DCControl.swift <br> uni-map-tencent-control-DCControlModel.swift <br> uni-map-tencent-DCLatLng.swift <br> uni-map-tencent-ground-DCGroundOverlayModel.swift <br> uni-map-tencent-IInternalMap.swift <br> uni-map-tencent-index.swift <br> uni-map-tencent-marker-DCMakerModel.swift <br> uni-map-tencent-marker-DCMarker.swift <br> uni-map-tencent-polygon-DCPolygon.swift <br> uni-map-tencent-polygon-DCPolygonModel.swift <br> uni-map-tencent-polyline-DCPolyline.swift <br> uni-map-tencent-polyline-DCPolylineModel.swift <br> uni-map-tencent-TencentMapImpl.swift | QMapFoundationKit.framework <br> QMapKit.framework <br> QMapSDKUtils.framework <br> QMapVisualPlugin.framework | sqlite3 <br> c++|
 | uni-chooseLocation | uni-chooseLocation-index.swift| | |
 | uni-shareWithSystem | uni-shareWithSystem-index.swift| | |
+| uni-createInnerAudioContext | uni-createInnerAudioContext-index.swift <br> uni-createInnerAudioContext-UniAudioPlayer.swift| | MediaPlayer.framework |
+| uni-getBackgroundAudioManager | uni-getBackgroundAudioManager-index.swift | | MediaPlayer.framework |
 
 ### 配置uts-config.json(可选)
 
@@ -175,7 +177,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ### 添加依赖库以及资源文件
 | 资源文件 |
 |---|
-|  uni_uts_toast_error.png <br> uni_uts_toast_success.png  |
+|  uni-prompt.bundle |
 
 ## uni-canvas
 ### 添加依赖库以及资源文件
@@ -267,7 +269,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ### 添加依赖库以及资源文件
 | 依赖库 |  资源文件 |
 |---|---|
-| DCloudPermissionLocation.xcframework | dcloud_map_marker_ic.png <br> dcloud_traffic_texture_blue.png | 
+| DCloudPermissionLocation.xcframework | uni-map-tencent.bundle | 
 
 ### Info.plist
 1. 添加`仅运行期间使用定位权限描述(NSLocationWhenInUseUsageDescription)`  
