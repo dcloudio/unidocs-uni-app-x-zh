@@ -17,6 +17,9 @@
     * list-view | 列表布局组件
       * [list-view | 列表容器](list-view.md)
       * [list-item | 列表容器子项](list-item.md)
+    * waterflow | 瀑布流布局组件
+      * [waterflow | 瀑布流容器](waterflow.md)
+      * [flow-item | 瀑布流容器子项](flow-item.md)
     * sticky | 粘性布局组件
       * [sticky-header | 吸顶布局容器](sticky-header.md)
       * [sticky-section | 吸顶布局容器](sticky-section.md)
