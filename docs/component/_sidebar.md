@@ -94,6 +94,7 @@
     * [store-home](store-home.md)
     * [store-product](store-product.md)
   * 其他
+    * [block](block.md)
     * [aria-component](aria-component.md)
     * [native-component](native-component.md)
     * [channel-live](channel-live.md)
@@ -102,5 +103,5 @@
     * [keyboard-accessory](keyboard-accessory.md)
     * [page-container](page-container.md)
     * [root-portal](root-portal.md)
-    * [block](block.md)
+    * [functional-page-navigator](functional-page-navigator.md)
 * [其他组件](unsupport.md)
