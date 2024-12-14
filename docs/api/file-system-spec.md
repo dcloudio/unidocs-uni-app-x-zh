@@ -26,6 +26,7 @@ const fs = uni.getFileSystemManager()
 			- uni-media ：拍照、相册选择
 			- uni-snapshot ：App dom截图
 			- uni-crash ：App崩溃日志
+			- uni-audio ：App 线上音频缓存
 		* 用户文件目录（`uni.env.USER_DATA_PATH`）：提供给开发者操作的本地文件目录（files）
 	+ 应用内置沙盒目录（`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`）：存放框架的网络缓存（如网络图片、视频、web-view的缓存）、storage。
 	+ 沙盒外目录
