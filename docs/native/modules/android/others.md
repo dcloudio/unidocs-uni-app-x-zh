@@ -15,7 +15,8 @@
 |uni-privacy						|uni-privacy-release.aar								|-																																										|-				|-																									|
 |uni-getProvider					|uni-getProvider-release.aar							|-																																										|-				|-																									|
 |uni-shareWithSystem				|uni-shareWithSystem-release.arr						|-																																										|-				|-																									|
-|uni-createInnerAudioContext		|uni-createInnerAudioContext-release.aar				|com.google.android.exoplayer:exoplayer-core:2.18.0																														|-				|-																									|
+|uni-createInnerAudioContext		|uni-createInnerAudioContext-release.aar				|com.google.android.exoplayer:exoplayer-core:2.18.0																														|-				|uni-network																									|
+|uni-getBackgroundAudioManager		|uni-getBackgroundAudioManager-release.aar				|com.google.android.exoplayer:exoplayer-core:2.18.0																														|-				|uni-network																									|
 |uni-chooseLocation					|uni-chooseLocation-release.aar							|-																																										|-				|uni-theme<br/>uni-getSystemInfo<br/>uni-getLocation<br/>uni-cloud-client<br/>uni-getLocation<br/>uni-map-tencent		|
 
 各模块对应的API可参考文档[App端支持的内置模块列表](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#utsmodules)
