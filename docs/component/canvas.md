@@ -19,6 +19,7 @@ App平台4.25之前没有完整的canvas组件，但提供了`DrawableContext`�
 6. canvas是一个独立模块，占用几百K体积，不使用时会被摇树摇掉
 
 <!-- UTSCOMJSON.canvas.attribute -->
+Android平台默认会开启硬件加速无需额外设置
 
 <!-- UTSCOMJSON.canvas.event -->
 
