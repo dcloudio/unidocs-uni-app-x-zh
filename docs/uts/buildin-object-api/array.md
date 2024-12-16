@@ -38,6 +38,60 @@ let arr = new Array(10)
 
 :::
 
+## 静态方法
+
+### from<T>(arrayLike: ArrayLike<T>): T[];
+
+<!-- UTSJSON.Array.from.description -->
+
+<!-- UTSJSON.Array.from.param -->
+
+<!-- UTSJSON.Array.from.returnValue -->
+
+<!-- UTSJSON.Array.from.test -->
+
+<!-- UTSJSON.Array.from.compatibility -->
+
+
+### of<T>(...items: T[]) : T[]
+
+<!-- UTSJSON.Array.of.description -->
+
+<!-- UTSJSON.Array.of.param -->
+
+<!-- UTSJSON.Array.of.returnValue -->
+
+<!-- UTSJSON.Array.of.test -->
+
+<!-- UTSJSON.Array.of.compatibility -->
+
+
+### isArray(arg : any) : arg is any[]
+
+<!-- UTSJSON.Array.isArray.description -->
+
+<!-- UTSJSON.Array.isArray.param -->
+
+<!-- UTSJSON.Array.isArray.returnValue -->
+
+<!-- UTSJSON.Array.isArray.test -->
+
+<!-- UTSJSON.Array.isArray.compatibility -->
+
+
+### fromAsync<T>(arrayLike: ArrayLike<T>): T[];
+
+<!-- UTSJSON.Array.fromAsync.description -->
+
+<!-- UTSJSON.Array.fromAsync.param -->
+
+<!-- UTSJSON.Array.fromAsync.returnValue -->
+
+<!-- UTSJSON.Array.fromAsync.test -->
+
+<!-- UTSJSON.Array.fromAsync.compatibility -->
+
+
 
 ## 实例属性
 
