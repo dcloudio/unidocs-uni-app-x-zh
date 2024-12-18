@@ -35,22 +35,18 @@ c1组件的代码如下：
 ```
 
 然后看下mergeVirtualHostAttributes属性合并策略：
-1. 仅将组件外层设置的 style、class 以及 v-show 指令生成的 hidden 属性，这3个属性合并到组件根节点上，其他外层设置的属性都丢弃了。
+1. 仅将组件外层设置的 id、style、class 以及 v-show 指令生成的 hidden 属性，这4个属性合并到 vue 组件编译成的小程序组件根节点上，其他外层设置的属性都丢弃了。
 2. 仅对组件是单个根节点才会合并，组件内多个根节点的时候不会合并。父层全部丢弃。
 
 根据策略看，上述代码在运行时合并后，父层的id丢掉了，class属性合并，所以`class1parent` 和 `classchild` 同时生效。
 
-那么父层通过`uni.getElementById("c1parent")`是拿不到UniElement的。
+父层通过`uni.createSelectorQuery().in(this.$page).select('#c1parent')`拿不到NodesRef。
 
-同样父层通过`uni.createSelectorQuery().in(this.$page).select('#c1parent')`也拿不到NodesRef。
+但createSelectorQuery是支持设定查找范围的，上面的代码是在页面里查找，如果在父层代码里通过in方法指定查找组件，例如：`uni.createSelectorQuery().in(this.$refs['c1ref'] as ComponentPublicInstance).select('#c1parent') `，可以拿到c1组件的NodesRef 
 
-但createSelectorQuery是支持设定查找范围的，上面的代码是在页面里查找，如果在父层代码里通过in方法指定查找组件，例如：`uni.createSelectorQuery().in(this.$refs['c1ref'] as ComponentPublicInstance).select('.class1parent') `，可以拿到c1组件的NodesRef 
+父层通过`uni.getElementById("c1parent")`也可以拿到UniElement。
 
 实际上，不管是通过`.class1parent` 还是 `.classchild`，都可以拿到。因为样式合并后，这2个class在运行时同时存在。
-
-假使在c1组件内部的根节点上设置了id属性`c1child`，通过`uni.createSelectorQuery().in(this.$refs['c1ref'] as ComponentPublicInstance).select('#c1child')`也可以获取。只是很少有组件会这么做。
-
-获取组件的NodesRef，主要的用途是获取boundingClientRect，受小程序限制，这个使用场景目前有点复杂。DCloud会继续寻找优化方案。
 
 vue组件的方法调用不受影响。
 
