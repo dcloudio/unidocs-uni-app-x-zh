@@ -19,6 +19,10 @@
 
 这个插件是[ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，下载到项目下会覆盖uni.previewImage的实现。
 
+单独下载开源插件后，调用uni.previewImage，会在栈顶页面打开一个dialogPage，在父页面的getDialogPages中可以看到。使用内置的uni.previewImage看不到。
+
+该开源插件目前仅支持Android。后续会补充其他平台。
+
 ## uni.closePreviewImage(options) @closepreviewimage
 
 <!-- UTSAPIJSON.closePreviewImage.description -->
