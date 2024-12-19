@@ -20,6 +20,7 @@
 * 本API会自动申请摄像头和相册权限，如需手动获取app是否拥有摄像头和相册权限，参考 [uni.getAppAuthorizeSetting](get-app-authorize-setting.md)
 * app端拍摄和相册选择会在应用沙盒目录的cache目录产生临时文件，位置[详见](file-system-spec.md#cache)。
 * app端如需主动删除临时文件，使用[uni.getFileSystemManager](get-file-system-manager.md)。
+* android端由于系统或ROM的限制，`maxDuration`和`camera`属性在部分手机上不生效。
 * 从HBuilderX4.41版起，uni.chooseVideo在`sourceType`为`['album']`、`albumMode`为`system`、`compressed`为`true`时，支持返回Uri地址。
 * `albumMode`的`system`属性打开的是系统的视频选择器；`custom`属性打开的是uni-app x提供的视频选择器。
 * 当设置`albumMode`为`system`时，可以正常上架google play。同时需要在manifest.json中将`<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />`和`<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />`权限移除。配置方式参考[移除Android权限](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#removepermissions).
