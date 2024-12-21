@@ -39,7 +39,7 @@ uni-app x的App平台也不支持微信小程序wxml组件。
 ┌─uniCloud              云空间目录，支付宝小程序云为uniCloud-alipay，阿里云为uniCloud-aliyun，腾讯云为uniCloud-tcb（详见<a href="https://doc.dcloud.net.cn/uniCloud/quickstart?structure&id=structure">uniCloud</a>）
 │─components            符合vue组件规范的uni-app x组件目录
 │  └─comp-a.vue         可复用的a组件
-├─utssdk                存放uts文件
+├─utssdk                存放uts文件（已废弃）
 ├─pages                 业务页面文件存放的目录
 │  ├─index
 │  │  └─index.uvue      index页面
