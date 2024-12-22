@@ -37,11 +37,11 @@ c1组件的代码如下：
 </template>
 ```
 
-然后看下mergeVirtualHostAttributes属性合并策略：
+然后看下mergeVirtualHostAttributes属性合并策略（HBuilderX 4.42+）：
 1. 仅将组件外层设置的 id、style、class 以及 v-show 指令生成的 hidden 属性，这4个属性合并到 vue 组件编译成的小程序组件根节点上，其他外层设置的属性都丢弃了。
 2. 仅对组件是单个根节点才会合并，组件内多个根节点的时候不会合并。父层全部丢弃。
 
-根据策略看，上述代码在运行时合并后，父层的id丢掉了，class属性合并，所以`class1parent` 和 `classchild` 同时生效。
+根据策略看，上述代码在运行时合并后，父层的id、class属性合并到组件根节点上，所以`class1parent` 和 `classchild` 同时生效。
 
 父层通过`uni.createSelectorQuery().in(this.$page).select('#c1parent')`拿不到NodesRef。
 
@@ -51,7 +51,7 @@ c1组件的代码如下：
 
 实际上，不管是通过`.class1parent` 还是 `.classchild`，都可以拿到。因为样式合并后，这2个class在运行时同时存在。
 
-vue组件的方法调用不受影响。
+vue组件的方法调用不受影响，ref取到组件后，可以直接调用组件的方法。
 
 ### refs@refs
 
