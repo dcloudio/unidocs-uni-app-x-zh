@@ -99,6 +99,14 @@ globalStyle节点里是所有页面都生效的全局样式配置。它的配置
 <!-- PAGESJSON.globalStyle_mp-weixin.compatibility -->
 
 
+### PagesSubPackages 配置项列表 @pagessubpackages
+
+<!-- PAGESJSON.PagesSubPackages.description -->
+
+<!-- PAGESJSON.PagesSubPackages.table -->
+
+<!-- PAGESJSON.PagesSubPackages.compatibility -->
+
 ### pages 配置项列表 @pagesoptionspage
 
 pages节点里注册页面，数据格式是数组，数组每个项都是一个对象，通过path属性指定页面路径，通过style指定该页面的样式配置。
@@ -366,6 +374,14 @@ tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更�
 <!-- PAGESJSON.PagesConditionItem.table -->
 
 <!-- PAGESJSON.PagesConditionItem.compatibility -->
+
+### preloadRule 配置项列表 @pages-preloadrule
+
+<!-- PAGESJSON.pages_preloadRule.description -->
+
+<!-- PAGESJSON.pages_preloadRule.table -->
+
+<!-- PAGESJSON.pages_preloadRule.compatibility -->
 
 
 ### easycom 配置项列表 @pages-easycom
