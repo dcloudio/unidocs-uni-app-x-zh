@@ -99,13 +99,7 @@ globalStyle节点里是所有页面都生效的全局样式配置。它的配置
 <!-- PAGESJSON.globalStyle_mp-weixin.compatibility -->
 
 
-### PagesSubPackages 配置项列表 @pagessubpackages
 
-<!-- PAGESJSON.PagesSubPackages.description -->
-
-<!-- PAGESJSON.PagesSubPackages.table -->
-
-<!-- PAGESJSON.PagesSubPackages.compatibility -->
 
 ### pages 配置项列表 @pagesoptionspage
 
@@ -375,13 +369,6 @@ tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更�
 
 <!-- PAGESJSON.PagesConditionItem.compatibility -->
 
-### preloadRule 配置项列表 @pages-preloadrule
-
-<!-- PAGESJSON.pages_preloadRule.description -->
-
-<!-- PAGESJSON.pages_preloadRule.table -->
-
-<!-- PAGESJSON.pages_preloadRule.compatibility -->
 
 
 ### easycom 配置项列表 @pages-easycom
@@ -407,3 +394,29 @@ easycom是uni-app提供的一种简化组件使用的方式。一般情况下组
 <!-- PAGESJSON.pages_uniIdRouter.compatibility -->
 
 <!-- PAGESJSON.tutorial -->
+
+### PagesSubPackages 配置项列表 @pagessubpackages
+
+分包加载配置，此配置为小程序的分包加载机制。详细教程[详见](https://uniapp.dcloud.net.cn/collocation/pages.html#subpackages)
+
+subPackages 节点接收一个数组，数组每一项都是应用的子包，其属性值如下：
+
+<!-- PAGESJSON.PagesSubPackages.description -->
+
+<!-- PAGESJSON.PagesSubPackages.table -->
+
+<!-- PAGESJSON.PagesSubPackages.compatibility -->
+
+### preloadRule 配置项列表 @pages-preloadrule
+
+分包预载配置。
+
+配置preloadRule后，在进入小程序某个页面时，由框架自动预下载可能需要的分包，提升进入后续分包页面时的启动速度
+
+preloadRule 中，key 是页面路径，value 是进入此页面的预下载配置，每个配置有以下几项：
+
+<!-- PAGESJSON.pages_preloadRule.description -->
+
+<!-- PAGESJSON.pages_preloadRule.table -->
+
+<!-- PAGESJSON.pages_preloadRule.compatibility -->
