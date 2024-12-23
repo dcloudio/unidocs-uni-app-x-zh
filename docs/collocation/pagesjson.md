@@ -393,7 +393,6 @@ easycom是uni-app提供的一种简化组件使用的方式。一般情况下组
 
 <!-- PAGESJSON.pages_uniIdRouter.compatibility -->
 
-<!-- PAGESJSON.tutorial -->
 
 ### PagesSubPackages 配置项列表 @pagessubpackages
 
@@ -420,3 +419,5 @@ preloadRule 中，key 是页面路径，value 是进入此页面的预下载配�
 <!-- PAGESJSON.pages_preloadRule.table -->
 
 <!-- PAGESJSON.pages_preloadRule.compatibility -->
+
+<!-- PAGESJSON.tutorial -->
