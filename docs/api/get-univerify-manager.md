@@ -287,7 +287,7 @@ hello uni-app x里有完整的自定义登录的示例代码，该示例中：
 
 ## Tips
 - 一键登录并非100%成功，手机没有sim卡、蜂窝网络未开启、当时手机没有蜂窝网信号是最常见的原因，更多错误见上方的错误码列表。在一键登录无法使用时，可转为短信验证码登录。在[uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)里已经集成了相关逻辑，无需自己开发。[详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
-- 一键登录支持标准基座真机运行，涉及费用扣除开发者的费用。无需自定义基座。
+- 一键登录支持标准基座真机运行，涉及费用扣除开发者的费用。无需自定义基座。(APP-iOS平台标准基座仅支持使用默认的Bundle ID测试，若使用其他Bundle ID需要自定义基座)
 
 <!-- UTSAPIJSON.getUniverifyManager.example -->
 
