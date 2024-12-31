@@ -562,8 +562,6 @@ export class NativeButton {
 
 在 `uni_modules\utssdk\interface.uts` 文件中添加如下代码：
 
-上面的代码中， 我们声明了一个`INativeButtonContext`接口，提供了更新文本内容的方法 `updateText`
-
 ```vue
 /**
  * 原生组件的上下文对象
@@ -581,8 +579,9 @@ export type CreateNativeButtonContext = (
 ) => INativeButtonContext | null;
 ```
 
+上面的代码中， 我们声明了一个`INativeButtonContext`接口，提供了更新文本内容的方法 `updateText`
 
-在 `uni_modules/utssdk/app-android/index.uts` 文件中添加如下代码：
+接下来，在 `uni_modules/utssdk/app-android/index.uts` 文件中添加如下代码：
 
 ```uts
 import { INativeButtonContext } from "../interface.uts"
