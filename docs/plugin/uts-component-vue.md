@@ -539,6 +539,328 @@ export class NativeButton {
 
 在hello uni-app x中，有native-button的完整示例。集成native-button的页面在pages/component/native-view/native-view.uvue，native-button组件在uni_modules/native-button/components/native-button/中。
 
+
+### 组件上下文对象
+
+#### 组件上下文简介
+
+某些情况下，我们的组件需要对外提供能力，比如：
+
+ + Video组件需要提供控制视频播放状态的能力
+
+ + Map组件需要提供添加/查询标记点的能力
+
+
+这类场景下，我们建议开发者以上下文对象（Context）形式对外提供能力，方便调用者使用和管理
+
+下面我们以 `Native-Button` 为例，进行说明：
+
+我们会给 `Native-Button` 组件创建一个 `NativeButtonContext`类型，组件的使用者可以通过使用`createNativeButtonContext` 得每个组件实例对应的上下文对象。后续开发者可以通过操作`NativeButtonContext`实现对 `Native-Button` 原生组件的操作和管理
+
+
+#### 创建组件上下文
+
+在 `uni_modules\utssdk\interface.uts` 文件中添加如下代码：
+
+上面的代码中， 我们声明了一个`INativeButtonContext`接口，提供了更新文本内容的方法 `updateText`
+
+```vue
+/**
+ * 原生组件的上下文对象
+ */
+export interface INativeButtonContext {
+	/**
+	 * 更新文本示例
+	 */
+	updateText(text : string) : void
+}
+
+export type CreateNativeButtonContext = (
+	id : string,
+	component ?: ComponentPublicInstance | null
+) => INativeButtonContext | null;
+```
+
+
+在 `uni_modules/utssdk/app-android/index.uts` 文件中添加如下代码：
+
+```uts
+import { INativeButtonContext } from "../interface.uts"
+
+class NativeButtonContext implements INativeButtonContext {
+
+	private button : Button | null = null
+	constructor(button : Button) {
+		this.button = button
+	}
+	updateText(text : string) {
+		this.button?.setText(text)
+	}
+}
+```
+
+在 `uni_modules/utssdk/app-ios/index.uts` 文件中添加如下代码：
+
+```uts
+import { INativeButtonContext, CreateNativeButtonContext } from "../interface.uts"
+
+class NativeButtonContext implements INativeButtonContext {
+	btn: UIButton | null 
+	constructor(element : UniNativeViewElement) {
+		let view = element.getIOSView()
+		if (view != null) {
+			this.btn = view as UIButton
+		}
+	}
+	updateText(title: string) : void {
+		this.btn?.setTitle(title, for = UIControl.State.normal)   
+	}	  
+}
+```
+
+
+上面的代码创建了对应的实现类 `NativeButtonContext`，实现了更新文本内容的功能,需要注意在构建上下文对象时，要将具体待操作的原生对象作为入参传入。
+
+#### 组件布局注意事项
+
+需要特别注意： `native-button.uvue`文件的 <template> 节点下，仅建议存在一个节点：即 如果你的native-view 不存在兄弟节点，则直接以native-view为根节点
+
+```vue
+<template>
+	<native-view  style="height: 100px;" @init="onviewinit" @customClick="ontap"></native-view>
+</template>
+```
+
+如果 native-view 存在兄弟节点，则需要在外层包裹一个view 作为根节点
+
+```vue
+<template>
+	<view >
+		<native-view  style="height: 100px;" @init="onviewinit" @customClick="ontap"></native-view>
+		<view style="width: 50%;height: 100px;">
+			<button>测试按钮</button>
+		</view>
+	</view>
+	
+</template>
+```
+
+
+如果一定需要 native-view 存在兄弟节点 且不能包裹父容器，即 多个根节点的情况。 这种情况建议使用[v-bind 标签](https://vuejs.org/api/built-in-directives.html#v-bind) 解决
+
+
+#### 对外提供上下文创建函数
+
+在 `uni_modules\utssdk\app-android\index.uts` 文件中添加如下代码：
+
+```uts
+
+export function createNativeButtonContext(id : string, ins : ComponentPublicInstance | null = null) : INativeButtonContext | null {
+	if (ins == null) {
+		const pages = getCurrentPages()
+		if (pages.length > 0) {
+			const page = pages[pages.length - 1]
+			const rootViewElement = page.getElementById(id)
+			if (rootViewElement != null) {
+				/**
+				 * 找到了root节点，递归检索目标 native-view
+				 */
+				const nativeViewElement = iterateElement(rootViewElement)
+				if (nativeViewElement != null) {
+					return new NativeButtonContext(nativeViewElement.getAndroidView()! as Button)
+				}
+			}
+		}
+	} else {
+		/**
+		 * 尝试迭代遍历
+		 */
+		if (ins.$el != null) {
+			const nativeViewElement = iterateElement(ins.$el as UniElement)
+			if (nativeViewElement != null) {
+				return new NativeButtonContext(nativeViewElement.getAndroidView()! as Button)
+			}
+		}
+	}
+
+	return null
+}
+
+/**
+ * 递归查询
+ */
+function iterateElement(homeElement:UniElement):UniElement | null{
+	if("NATIVE-VIEW" == homeElement.nodeName){
+		return homeElement
+	}
+	for(perChildEle of homeElement.children){
+		let findEle = iterateElement(perChildEle)
+		if(findEle != null){
+			return findEle
+		}
+	}
+	
+	return null
+}
+
+```
+
+在 `uni_modules\utssdk\app-ios\index.uts` 文件中添加如下代码：
+
+```uts
+export const createNativeButtonContext: CreateNativeButtonContext =  function (id : string, component ?: ComponentPublicInstance | null) : INativeButtonContext | null {
+	let element : UniNativeViewElement | null = null;
+	let e: UniElement | null = null;
+	if (component == null) {  
+		e = uni.getElementById(id)  
+	} else { 
+		e = component?.$el as UniElement | null;
+	}
+	if (e instanceof UniNativeViewElement) {   
+		element = e as UniNativeViewElement | null
+	}else {
+		element = getNativeViewElemet(e)
+	}
+
+	if (element == null) return null;  
+	return new NativeButtonContext(element!);
+}  
+
+/**
+ * 递归查询
+ */
+function getNativeViewElemet(element: UniElement | null): UniNativeViewElement | null {
+	if (element == null) {
+		return null;
+	}
+	if (element instanceof UniNativeViewElement) {
+		return element as UniNativeViewElement
+	}
+	for (item in element!.children) {
+		let tmp = getNativeViewElemet(item)
+		if (tmp != null) {
+			return tmp
+		}
+	} 
+	return null
+}
+
+```
+
+上面的代码中需要两个入参：
+
++ 组件id 也就是 native-button 设置的id属性，用来实现在 页面中定位当前组件，必填
+
++ ComponentPublicInstance 可选，在自定义组件中使用标准组件能力时需要传入此对象
+
+> 特别注意：
+
+> 上述 iOS 平台代码中 `component?.$el` 的用法需要 HBuilder X 4.44及以上版本才能使用。
+
+#### 使用
+
+在uvue页面中使用组件上下文
+
+```vue
+<template>
+    <view>
+        <page-head :title="title"></page-head>
+		
+        <view class="uni-btn-v uni-common-mt">
+            <button type="primary" @tap="testCallMethod">调用组件方法</button>
+			<native-button id="helloView" class="native-button" text="buttonText" @buttonTap="ontap"></native-button>
+			<Login></Login>
+        </view>
+		
+    </view>
+	
+</template>
+<script>
+<template>
+	<view>
+		<page-head :title="title"></page-head>
+
+		<view class="uni-btn-v uni-common-mt">
+			<button type="primary" @tap="testCallMethod">调用组件方法</button>
+			<native-button id="helloView" class="native-button" text="buttonText" @buttonTap="ontap"></native-button>
+		</view>
+
+	</view>
+
+</template>
+<script>
+	import { createNativeButtonContext } from "../../uni_modules/native-button";
+
+	export default {
+		data() {
+			return {
+				title: '组件能力封装示例',
+			}
+		},
+		methods: {
+			ontap(e : UniNativeViewEvent) {
+				console.log("ontap----------" + e.type)
+			},
+
+			testCallMethod: function () {
+				let context = createNativeButtonContext("helloView")
+				context?.updateText("test code")
+			}
+		}
+	}
+</script>
+
+<style>
+	.native-button {
+		height: 100px;
+		width: 200px;
+		margin: 25px auto 25px auto;
+	}
+</style>
+```
+
+在自定义组件中使用组件上下文:
+
+```vue
+<template>
+	<view>
+		<button type="primary" @tap="testCallMethod">调用组件方法</button>
+		<native-button id="helloView" class="native-button" text="自定义组件"></native-button>
+	</view>
+</template>
+
+<script>
+	import { createNativeButtonContext } from "../../uni_modules/native-button";
+
+	export default {
+		data() {
+			return {
+				title: '组件能力封装示例',
+			}
+		},
+
+		methods: {
+			ontap(e : UniNativeViewEvent) {
+				console.log("ontap----------" + e.type)
+			},
+
+			testCallMethod: function () {
+				let context = createNativeButtonContext("helloView", this)
+				context?.updateText("test code")
+			}
+
+		}
+	}
+</script>
+
+```
+
+以上便是组件上下文相关的内容介绍
+
+
+
+
+
 ## 总结@sum
 
 通过vue方式开发组件非常直观。它分为几个核心步骤：
