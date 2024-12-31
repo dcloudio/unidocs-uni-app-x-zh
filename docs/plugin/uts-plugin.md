@@ -278,6 +278,9 @@ uts插件在Android平台的原生层配置文件，可以在其中配置依赖�
 		],
 		"dependencies": [
 			"com.huawei.agconnect:agcp:1.6.0.300"
+		],
+		"repositories": [
+			"maven { url 'https://artifact.bytedance.com/repository/Volcengine/' }"
 		]
 	}
 }
@@ -328,7 +331,7 @@ dependencies {
 
 	+ dependencies
 
-		此配置将会添加到云端打包工程项目级build.gradle文件的“buildscript > dependencies”中：
+		此配置将会添加到云端打包工程项目级build.gradle文件的 "buildscript" -> "dependencies" 中：  
 
 		```gradle
 		buildscript {
@@ -340,6 +343,18 @@ dependencies {
 		}
 		```
 
+	+ repositories（HBuilderX4.36+版本支持）  
+
+		添加自定义仓储服务器地址。  
+		此配置将会添加到云端打包工程项目级别 settings.gradle 文件的 "dependencyResolutionManagement" -> "repositories" 中：
+		```gradle
+		dependencyResolutionManagement {
+			repositories {
+				// 前面 config.json 示例配置将会添加如下配置  
+				maven { url 'https://artifact.bytedance.com/repository/Volcengine/' }
+			}
+		}
+		``` 
 
 **注意：**
 
