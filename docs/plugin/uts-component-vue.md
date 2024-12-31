@@ -540,7 +540,7 @@ export class NativeButton {
 在hello uni-app x中，有native-button的完整示例。集成native-button的页面在pages/component/native-view/native-view.uvue，native-button组件在uni_modules/native-button/components/native-button/中。
 
 
-### 组件上下文对象
+### 组件上下文
 
 #### 组件上下文简介
 
@@ -551,7 +551,7 @@ export class NativeButton {
  + Map组件需要提供添加/查询标记点的能力
 
 
-这类场景下，我们建议开发者以上下文对象（Context）形式对外提供能力，方便调用者使用和管理
+这类场景下，我们建议开发者以上下文（Context）的形式对外提供能力，方便调用者使用和管理
 
 下面我们以 `Native-Button` 为例，进行说明：
 
