@@ -26,3 +26,6 @@
 * 当设置`albumMode`为`system`时，可以正常上架google play。同时需要在manifest.json中将`<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />`和`<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />`权限移除。配置方式参考[移除Android权限](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#removepermissions).
 * 系统视频选择器的`sizeType`仅支持设置`['original']`或`['compressed']`。在Android 11及以上的系统中，设置`system`调用的是系统的视频选择器，低于android 11的系统中会调用系统的文件选择器。
 * 由于受[google play 照片和视频权限](https://support.google.com/googleplay/android-developer/answer/14115180)政策的影响，使用uni.chooseVideo在上架google play时需要提交一份声明以获得试用的资格，谷歌允许延长声明的提交时间到2025年1月22日。遇到此问题可以使用插件[uni-chooseSystemMedia](https://ext.dcloud.net.cn/plugin?id=20744)。
+* 使用系统选择器时，好处是不需要申请额外权限，它的模式类似于web浏览器中的input type=file，应用其实不具有本机文件访问能力。但是有一些注意事项，
+1. 界面ui无法自定义，比如想加一个“原图”选项，加不上去
+2. 界面ui的主题和国际化，跟随手机rom，而不是跟随app（假使App和Rom不一致）
