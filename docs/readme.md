@@ -263,7 +263,7 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 
 目前插件市场适配uni-app x的插件已有数百款，包括丰富的ui组件库生态：
 - [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：高品质UI库，插件大赛一等奖
-- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：setup组合式UI库，插件大赛一等奖
+- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：setup组合式UI库，插件大赛一等奖。已兼容微信小程序。
 - [TuiPlus ](https://ext.dcloud.net.cn/plugin?id=21111)：简洁高效的组件库，买即赠[xCharts原生图表库](https://ext.dcloud.net.cn/plugin?id=21107)
 - [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：免费、轻量UI库
 - [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceUI作者的免费开源组件库
