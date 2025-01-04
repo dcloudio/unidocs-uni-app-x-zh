@@ -18,8 +18,8 @@
 - 无论在哪个平台，hover-class消失后松开手指，都不会触发点击事件。
 - button 设置hover-class属性时需注意，app平台HBuilderX4.04及以下版本与web平台有差异，HBuilderX4.05版本统一为以下规则：
   + 如果hover-class属性值设置为none，在style样式里面设置了同名的none样式，none样式将不起作用，没有点击态效果
-	+ 如果hover-class属性值设置为button-hover或者不设置hover-class属性值，在style样式里面设置了同名的button-hover样式，点击效果将使用button-hover样式
-	+ 如果hover-class属性值设置为无效值（或非法值），没有点击态效果
+  + 如果hover-class属性值设置为button-hover或者不设置hover-class属性值，在style样式里面设置了同名的button-hover样式，点击效果将使用button-hover样式
+  + 如果hover-class属性值设置为无效值（或非法值），没有点击态效果
 - `open-type="agreePrivacyAuthorization"`，用于开发者在让用户同意隐私协议时，放置“同意”按钮。它并非强制性的，它只是开发者和插件作者之间的一种通信方式。并不是没有点下这个按钮，技术上就拦截了涉及隐私的API的调用。[详见](../api/privacy.md)
 <!-- UTSCOMJSON.button.children -->
 
