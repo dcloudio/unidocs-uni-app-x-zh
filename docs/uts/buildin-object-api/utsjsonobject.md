@@ -2,7 +2,7 @@
 
 UTSJSONObject 是 UTS 语言的内置类型，主要用来操作[匿名对象](../object.md#anonymous-object)
 
-注意：UTSJSONObject类型的数据暂不支持响应式
+注意：3.97+ 开始 uni-app x 中的 UTSJSONObject 支持 vue 的响应式变更
 
 ## 创建实例
 
