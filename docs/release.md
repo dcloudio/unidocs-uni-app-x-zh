@@ -1,3 +1,8 @@
+#### 4.45.2025010502
+##### uts插件
+* Web平台、App-iOS平台、微信小程序平台 修复 getString等方法第二个参数（默认值）不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14224)
+* App-Android平台 修复 4.41版本引发的 String.split 使用了 Kotlin 的 removeFirst/removeLast 扩展函数与 Android15 中的 Java 函数冲突 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14804)
+
 #### 4.44.2024123110
 ##### uni-app x
 * 【重要】uni-app-x 项目支持发布到微信小程序 [详情](https://doc.dcloud.net.cn/uni-app-x/mp/)
