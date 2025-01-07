@@ -11,9 +11,9 @@
 
 ## alpha版
 
-### 4.43.2024122419-alpha
+### 4.45.2025010702-alpha
 
-[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/iOS/UniAppX-iOS%404.43.zip)
+[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/iOS/UniAppX-iOS%404.45.zip)
 
 无
 
