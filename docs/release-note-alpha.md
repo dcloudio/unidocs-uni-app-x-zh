@@ -1,3 +1,7 @@
+#### 4.45.2025010702-alpha
+##### uts插件
+* App-Android平台 修复 4.41版本引发的 String.split 使用了 Kotlin 的 removeFirst/removeLast 扩展函数与 Android15 中的 Java 函数冲突 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14804)
+
 #### 4.43.2024122419-alpha
 ##### uni-app x
 * 微信小程序平台 修复 4.42版本引发的 vue 无 id 属性的组件根节点 ref 无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=14513)
