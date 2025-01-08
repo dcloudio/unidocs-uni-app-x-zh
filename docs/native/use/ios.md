@@ -12,19 +12,15 @@
 5. 在原生工程中，通过API启动uni原生SDK，详见[API文档](iosapi.md)
 
 ## 导出资源文件
-1. 在原生工程中新建文件目录`uni-app-x/apps`   
-
-    ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/create_resources_document.png)
-
-2. 打开 `HBuilder X -> 发行 -> 原生App-本地打包 -> 生成本地打包App资源` 勾选iOS点击生成  
+1. 打开 `HBuilder X -> 发行 -> 原生App-本地打包 -> 生成本地打包App资源` 勾选iOS点击生成  
     ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/export.png)
 
 
-3. 导出成功之后会在项目的`unpackage/resources`目录下生成资源文件   
+2. 导出成功之后会在项目的`unpackage/resources`目录下生成资源文件   
 
     ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/resources.png)
 
-4. 将 `app-ios` 目录下与`appid`对应的目录拷贝到原生工程的 `uni-app-x/apps` 目录下    
+3. 在原生工程根目录创建文件夹`uni-app-x/apps`,将 `app-ios` 目录下与`appid`对应的目录拷贝到该目录下，然后打开工程将`uni-app-x`文件夹拖入到`Target -> Build Phases -> Copy Bundle Resources`下, 勾选`Copy Items if needed`以及`Create folder references`
 
     ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/copy_resources.png)
 
