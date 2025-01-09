@@ -17,6 +17,8 @@ uts在iOS平台编译为swift、在Android平台编译为kotlin、在Web和小�
 - `iOS` 获取 ABM（Apple 商务管理）包
   - 使用 iPhone 扫码后会跳转页面需要使用 DCloud 账号登录，登录过后自动分发兑换码在 AppStore 获取安装包，此过程不需要您支付费用。ABM包在Appstore中无法公开搜索到，但安装后可在 AppStore 更新页面进行更新。
 - [web 预览地址](https://hellouniappx.dcloud.net.cn/web)
+- 微信小程序
+ - 微信中搜索`HelloUniAppX`，或者扫描下方二维码
 
 <div class="quick">
   <div style="margin-top: 20px;justify-content: space-around;">
