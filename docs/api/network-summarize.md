@@ -1,3 +1,9 @@
+## 网络概述
+
+uni-app x中有较多网络API，包括request请求、上传下载、socket等。
+
+uni-app x也有很多组件带有联网功能，比如image、video、web-view都支持加载联网资源。
+
 ## Cookie
 
 ### Cookie概念
