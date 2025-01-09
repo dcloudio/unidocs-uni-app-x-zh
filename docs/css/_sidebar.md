@@ -4,6 +4,7 @@
 * [颜色](common/color.md)
 * [At-rules](common/at-rules.md)
 * [CSS 变量](common/variable.md)
+* [CSS 函数](common/function.md)
 * CSS 属性```{"collapsable": false}```
   * [align-content](align-content.md)
   * [align-items](align-items.md)
