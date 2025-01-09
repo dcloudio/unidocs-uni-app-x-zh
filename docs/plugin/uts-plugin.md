@@ -1507,6 +1507,48 @@ getBatteryCapacity()
 
 更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
 
+
+## 使用uni_modules目录下的其他插件
+
+UTS插件除了允许在页面中使用之外，还支持被`uni_modules`目录下的其他插件使用。
+
+举例：
+
+`uni_modules` 下同时存在 `uts-plugin-a` 和 `uts-plugin-b` 两个插件，我们可以使用下面的代码在 `uts-plugin-a`中使用 `uts-plugin-b`中的方法
+
+
+```ts
+import {sthFromPluginB} from '@/uni_modules/uts-plugin-b'
+
+export function sthFromPluginA():string {
+	return sthFromPluginB()
+}
+```
+
+插件中的调用代码和在页面中调用代码没有什么差异，只有两处需要特别注意：
+
+1 开发者需要在 `uts-plugin-a` 的`package.json`文件中生声明对`uts-plugin-b`的依赖
+
+```json
+"uni_modules": {
+  "dependencies": ["uts-plugin-b"],
+}
+```
+
+关于 `package.json`更多信息，参考 [文档](https://uniapp.dcloud.net.cn/plugin/uni_modules.html#package-json)
+
+2 UTS插件相互调用时，必须使用绝对路径，不能使用相对路径
+
+```ts
+// 正确的
+import {sthFromPluginB} from '@/uni_modules/uts-plugin-b'
+// 错误的
+import {sthFromPluginB} from '../../uni_modules/uts-plugin-b'
+```
+
+
+
+
 ## 真机运行
 
 ### UTS支持真机运行
