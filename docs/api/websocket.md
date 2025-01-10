@@ -1,3 +1,11 @@
+::: warning 注意事项
+
+[uni.onSocketOpen](#onsocketopen)、[uni.onSocketError](#onsocketerror)、[uni.sendSocketMessage](#sendsocketmessage)、[uni.onSocketMessage](#onsocketmessage)、[uni.closeSocket](#closesocket)、[uni.onSocketClose](#onsocketclose) 操作的是应用全局范围创建的第一个 WebSocket 连接，当应用中存在多个 WebSocket 连接时，不能通过以上方法进行操作管理。这时需要通过 [uni.connectSocket](#connectsocket) 返回的 SocketTask 对象的 onOpen、onError、send、onMessage、close、onClose 方法进行操作。
+
+为了有更好的兼容性，不要使用 uni 上已废弃的 [uni.onSocketOpen](#onsocketopen)、[uni.onSocketError](#onsocketerror)、[uni.sendSocketMessage](#sendsocketmessage)、[uni.onSocketMessage](#onsocketmessage)、[uni.closeSocket](#closesocket)、[uni.onSocketClose](#onsocketclose) 等方法。  
+
+:::
+
 ## uni.connectSocket(options) @connectsocket
 
 <!-- UTSAPIJSON.connectSocket.description -->
