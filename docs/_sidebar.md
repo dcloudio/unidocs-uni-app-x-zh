@@ -40,7 +40,8 @@
 		   * [启动与通信](native/use/iosapi.md)
 			* [自定义基座](native/debug/ios.md)
 			* [SDK下载](native/download/ios.md)
-	* 应用市场上架注意
+	* 应用市场上架
+		* [概述](tutorial/app-market.md)
 		* [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
 * 小程序平台专题指南
   * [概述](mp/README.md)
