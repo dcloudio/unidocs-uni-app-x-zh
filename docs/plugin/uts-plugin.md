@@ -354,7 +354,8 @@ dependencies {
 				maven { url 'https://artifact.bytedance.com/repository/Volcengine/' }
 			}
 		}
-		``` 
+		```  
+    默认的仓储服务器地址请参考：[Android平台云端打包环境](../tutorial/app-env.md#repositories)  
 
 **注意：**
 

@@ -10,6 +10,27 @@
 - Android Gradle 插件（com.android.tools.build:gradle）：8.2.2  
 - JDK：17 （[Amazon corretto 17.0.12.7.1](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html)）  
 
+### 默认仓储服务器地址@repositories  
+云端打包环境默认使用以下仓储服务器：  
+```groovy
+  repositories {
+    maven { url 'https://maven.aliyun.com/repository/google' }
+    maven { url 'https://maven.aliyun.com/repository/public' }
+
+    google()
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://developer.huawei.com/repo/' }
+    maven { url 'https://developer.hihonor.com/repo/' }
+    maven { url 'https://mvn.getui.com/nexus/content/repositories/releases/' }
+  }
+
+```
+
+**注意**  
+HBuilderX4.36+版本开始uts插件支持添加自定义仓储服务器，详情参考：uts插件开发中的[Android原生配置](../plugin/uts-plugin.md#androidconfigjson)。  
+
+
 ## iOS平台云端打包环境  
 
 > 使用 XCode 的 xcodebuild 命令编译  
