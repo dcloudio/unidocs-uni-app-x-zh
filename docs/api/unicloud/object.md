@@ -18,7 +18,7 @@
 - 如由于云函数加密等因素导致`index.obj.js`无法被正确解析，请在云对象目录创建`index.obj.d.ts`声明云对象内包含的方法。`index.obj.d.ts`示例代码如下：
 
 ```ts
-// interface.d.ts
+// index.obj.d.ts
 type AnyFunction = (...args: any[]) => any;
 
 declare const add: AnyFunction
