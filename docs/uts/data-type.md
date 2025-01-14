@@ -1958,7 +1958,7 @@ HBuilder支持给变量定义特殊值域string类型，这些类型在HBuilder�
 ## 联合类型@union-type
 
 联合类型(Union Types) 表示取值可以为多种类型中的一种。联合类型使用 `|` 操作符来分隔每个类型。
-> HBuilderX 4.51 以前仅支持 [|null](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#null)（即可为空）及 [字面量联合类型](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#literal-union-type)
+> HBuilderX 4.51 以前仅支持 [|null](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#null)（即可为空）及 [字面量联合类型](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#literal-union-type)。4.51起支持更多联合类型。
 
 ### 基本语法
 
@@ -2034,7 +2034,7 @@ function handleEvent(event: UserEvent) {
 ### 最佳实践
 
 - 使用精确的联合类型而不是过于宽泛的类型
-- 配合[类型收窄](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#narrowing)来确保类型安全
+- 配合[类型收窄](#narrowing)来确保类型安全
 - 使用可辨识联合来处理复杂的类型判断
 - 合理使用类型别名（type）来提高代码可读性
 
