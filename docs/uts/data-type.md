@@ -2034,7 +2034,7 @@ function handleEvent(event: UserEvent) {
 ### 最佳实践
 
 - 使用精确的联合类型而不是过于宽泛的类型
-- 配合类型收窄来确保类型安全
+- 配合[类型收窄](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#narrowing)来确保类型安全
 - 使用可辨识联合来处理复杂的类型判断
 - 合理使用类型别名（type）来提高代码可读性
 
