@@ -1957,16 +1957,251 @@ HBuilder支持给变量定义特殊值域string类型，这些类型在HBuilder�
 
 ## 联合类型@union-type
 
-由于kotlin和swift限制，uts在App平台支持的联合类型有限：
+联合类型(Union Types) 表示取值可以为多种类型中的一种。联合类型使用 `|` 操作符来分隔每个类型。
+> HBuilderX 4.51 以前仅支持 [|null](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#null)（即可为空）及 [字面量联合类型](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#literal-union-type)
 
-- 支持 [|null](#null) （即可为空）
-- [字面量联合类型](#literal-union-type)
+### 基本语法
 
-编译为非js时，不支持其他方式的联合类型。
+```ts
+// 可为空的 string 类型
+type NullableString = string | null;
+// 基本类型的联合
+type StringOrNumber = string | number;
+// 字面量类型的联合
+type Alignment = "left" | "right" | "center";
+// 对象类型的联合
+type Shape = Circle | Square | Triangle;
+```
+### 使用场景
 
-在编译为js时开发者可以使用其他联合类型。但考虑到多端兼容，应尽量避免。
+- 可为空
+```ts
+let b: string | null = "abc" // 可以设置为空
+b = null // ok
+```
 
-很多时候库作者希望调用库的人传入数字或字符串都可以，比如传入`1`或`"1px"`都支持，此时设置类型为string就行，传入的数字也以字符串的方式接收，然后再使用parseInt等方法转换为数字即可。
+- 值域约束，如字面量联合类型
+```ts
+// 限定具体值范围
+type Direction = 'up' | 'down' | 'left' | 'right';
+type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
+type Status = 200 | 400 | 401 | 403 | 404 | 500;
+```
+
+- 多类型变量，如函数参数或返回值可以有多种可能类型。
+```ts
+function formatValue(value: string | number): string {
+    if (typeof value == "string") {
+        return `String: ${value}`;
+    } else {
+        return `Number: ${value}`;
+    }
+}
+console.log(formatValue("Hello")); // String: Hello
+console.log(formatValue(123)); // Number: 123
+```
+
+- 可辨识联合：创建互斥的类型组合
+```ts
+// 事件定义
+type MouseEvent = {
+    type: "click" | "mouseover";
+    x: number;
+    y: number;
+}
+
+type KeyboardEvent = {
+    type: "keydown" | "keyup";
+    key: string;
+}
+
+type UserEvent = MouseEvent | KeyboardEvent;
+
+// 类型安全的事件处理
+function handleEvent(event: UserEvent) {
+  switch (event.type) {
+    case 'click':
+    case 'mouseover':
+      return `点击位置：${event.x}, ${event.y}`
+    case 'keydown':
+    case 'keyup':
+      return `按下按键：${event.key}`
+    default:
+      return '未知事件'
+  }
+}
+```
+### 最佳实践
+
+- 使用精确的联合类型而不是过于宽泛的类型
+- 配合类型收窄来确保类型安全
+- 使用可辨识联合来处理复杂的类型判断
+- 合理使用类型别名（type）来提高代码可读性
+
+### 常见问题
+
+- 不支持访问联合类型的共有属性和方法，必须使用类型收窄或手动强转类型来调用
+- 不支持对象字面量类型的联合，可以声明为type定义，再联合
+```ts
+type User = { size: number } | { width: number; height: number } // 不支持
+type Square = {
+    size: number;
+}
+type  Rectangle= {
+    width: number;
+    height: number;
+}
+type Shape = Square | Rectangle // 支持
+```
+- 在uts插件中，对 js 环境（即：uni-app、uni-app x iOS 平台）导出时，暂不支持联合类型
+- 仅函数声明、类方法会对联合类型生成重载，不符合该联合类型的会在编译阶段报错，其他场景下，联合类型均会编译为 any 类型，此时仅支持HBuilderX的语法校验，并不会在编译阶段做强校验。
+- 可辨识联合仅支持string、number字面量或字面量联合
+
+## 类型收窄@narrowing
+
+在使用联合类型或any类型时，我们经常需要确定具体的类型。uts 提供了多种方式来实现这一点:
+
+### typeof 类型保护
+> 目前[typeof](https://doc.dcloud.net.cn/uni-app-x/uts/operator.html#typeof)类型保护仅支持跨平台的基础类型，不支持平台专有类型。
+```ts
+function padLeft(padding: number | string, input: string): string {
+  if (typeof padding == "number") {
+    // 这里 padding 被收窄为 number 类型
+    return " ".repeat(padding) + input;
+  }
+  // 这里 padding 被收窄为 string 类型
+  return padding + input;
+}
+```
+
+### 等值收窄
+```ts
+type Direction = "north" | "south" | "east" | "west";
+
+function move(direction: Direction) {
+    if (direction == "north") {
+        // 这里 direction 被收窄为 "north"
+        return "向北移动";
+    }
+    // 这里 direction 被收窄为 "south" | "east" | "west"
+    return "向其他方向移动";
+}
+move("north")
+move("south")
+```
+
+### in 操作符
+> 注意：目前 in 操作符仅用于判断 type 定义的对象类型是否包含指定属性
+```ts
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+function move(animal: Fish | Bird) {
+    if ("swim" in animal) {
+        // 这里 animal 被收窄为 Fish
+        animal.swim();
+    } else {
+        // 这里 animal 被收窄为 Bird
+        animal.fly();
+    }
+}
+move({
+    swim() {
+        console.log('swim')
+    }
+})
+move({
+    fly() {
+        console.log('fly')
+    }
+})
+```
+
+### 赋值语句
+```ts
+let x: string | number;
+x = "hello";    // x 被收窄为 string 类型
+console.log(x.toUpperCase());  // OK
+x = 42;         // x 被收窄为 number 类型
+console.log(x.toFixed(2));      // OK
+```
+
+### 控制流分析
+```ts
+function test(x: string | number | boolean) {
+    if (typeof x == "string") {
+        // x 是 string
+        console.log(x.toUpperCase());
+    } else if (typeof x == "number") {
+        // x 是 number
+        console.log(x.toFixed(2));
+    } else {
+        // x 是 boolean
+        console.log(x == true ? "是" : "否");
+    }
+}
+
+```
+
+### instanceof 操作符
+
+```ts
+class Dog {
+    bark() { }
+}
+
+class Cat {
+    meow() { }
+}
+
+function makeSound(animal: Dog | Cat) {
+    if (animal instanceof Dog) {
+        animal.bark();  // OK
+    } else {
+        animal.meow();  // OK
+    }
+}
+```
+
+### 可辨识联合
+
+可辨识联合是一种特殊的联合类型，它具有一个公共的字面量属性作为判别标记。
+
+```ts
+type Square = {
+    kind: "square";
+    size: number;
+}
+
+type Rectangle= {
+    kind: "rectangle";
+    width: number;
+    height: number;
+}
+
+type Circle = {
+    kind: "circle";
+    radius: number;
+}
+
+type Shape = Square | Rectangle | Circle;
+
+function getArea(shape: Shape): number {
+    switch (shape.kind) {
+        case "square":
+            return shape.size * shape.size;
+        case "rectangle":
+            return shape.width * shape.height;
+        case "circle":
+            return Math.PI * Math.pow(shape.radius, 2);
+        default:
+           return -1
+    }
+}
+getArea({ kind: "square", size: 10 })
+getArea({ kind: "rectangle", width: 5, height: 5 })
+getArea({ kind: "circle", radius: 10 })
+```
+
 
 ## 类型保留和擦除@type-erasure
 
