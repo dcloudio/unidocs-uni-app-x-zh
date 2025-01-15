@@ -23,7 +23,7 @@
 **缓存说明**
 
 - App-Android 平台播放的网络音频，默认会缓存到应用cache目录的uni-audio/background文件夹下，默认大小为100M，超过后会根据最近最少使用的缓存算法自动进行清除；
-- App-iOS 平台暂不支持Cache功能；
+- 4.51 版本以上 App-iOS 平台支持Cache功能，缓存路径、默认大小和自动清理机制和 Android 一样；
 
 **关于Cookie与UA**
 
