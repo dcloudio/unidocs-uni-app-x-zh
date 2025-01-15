@@ -162,3 +162,5 @@
 <!-- CUSTOMTYPEJSON.UniPage.methods.$getPageStyle.returnValue -->
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.$getPageStyle.tutorial -->
+
+<!-- UTSAPIJSON.getCurrentPages.example -->
