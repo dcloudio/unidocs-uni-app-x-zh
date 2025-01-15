@@ -63,6 +63,7 @@
   * [截屏事件](capture-screen.md)
   * [监听权限申请](create-request-permission-listener.md)
   * [扫码](scan-code.md)
+  * [判断是否为模拟器](is-simulator.md)
 * 媒体
   * [拍照或从相册选择图片](choose-image.md)
   * [图片预览](preview-image.md)
@@ -75,6 +76,8 @@
   * [压缩视频](compress-video.md)
   * [音频](create-inner-audio-context.md)
   * [背景音频](get-background-audio-manager.md)
+  * [选择文件](choose-file.md)
+  * [拍摄或从相册选择图片或视频](choose-media.md)
 * 画布
   * [canvasToTempFilePath](canvas-to-temp-file-path.md)
   * [createCanvasContextAsync](create-canvas-context-async.md)
