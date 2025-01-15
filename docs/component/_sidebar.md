@@ -26,6 +26,7 @@
     * nested-scroll | 嵌套滚动
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
+    * [share-element | 共享元素视图容器](share-element.md)
   * 基础内容
     * [icon | 图标](icon.md)
     * [text | 文本](text.md)
@@ -85,7 +86,6 @@
     * [grid-view](grid-view.md)
     * [list-builder](list-builder.md)
     * [open-container](open-container.md)
-    * [share-element](share-element.md)
     * [snapshot](snapshot.md)
     * [span](span.md)
   * 开放能力
