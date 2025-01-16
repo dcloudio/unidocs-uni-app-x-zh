@@ -1547,8 +1547,32 @@ import {sthFromPluginB} from '@/uni_modules/uts-plugin-b'
 import {sthFromPluginB} from '../../uni_modules/uts-plugin-b'
 ```
 
+> 特别注意：
+> iOS 平台下该使用该功能需要 HBuilder X 4.51+ 版本；
+> 该功能在 uni-app 和 uni-app x 环境下均支持。
 
+### iOS 平台下 uts 插件 被别的插件引用时开发规范
 
+在 iOS 平台下，如果你的 uts 插件 需要被别的插件引用，但你的插件内`没有依赖其他三方库`，那么插件的开发和普通 uts 插件相同，没有特别的注意事项。
+`但是`，如果你的 uts 插件要`被别的 uts 插件依赖使用`, 并且你的插件内`依赖了其他三方库`, 那么此时该插件的开发就要遵循特别的开发规范，该规范如下：
+
+- 所有要导入的三方库，在导入时需要增加 `assert { type: "implementationOnly" }` 标记。
+
+导入示例如下：
+
+```ts
+// 正确的
+import {QMapView, QMapServices} from 'QMapKit' assert { type: "implementationOnly" };
+// 错误的
+import {QMapView, QMapServices} from 'QMapKit';
+```
+- 被导入的`三方库`中的`所有符号`（包含类、函数、协议、typealise、枚举、全局变量等）不能对外暴露, 即不能出现在 `swift 中` 被标记成 `public` 的地方。
+
+由于写在 uts 中的代码（函数，class, 自定义type，interface，全局变量等），被编译成 swift 时都会被默认标记成 `public`，所以如果你所使用的三方库中的符号
+必须要出现在上述场景中时(诸如 函数的参数或者返回值中，class 的属性中，或者继承自三方库中类的class, 实现三方库协议的class等等)，需要将相应的函数、class的属性、
+或者 class `标记成 private`, 或者 `fileprivate`。
+
+具体的标记方式详见[swift特有修饰符](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-ios.html#keyword)。
 
 ## 真机运行
 
