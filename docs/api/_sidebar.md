@@ -52,6 +52,7 @@
   * [获取APP基础信息](get-app-base-info.md)
   * [获取APP授权设置](get-app-authorize-setting.md)
   * [获取系统设置](get-system-setting.md)
+  * [跳转系统授权管理页](open-app-authorize-setting.md)
   * [安装 APK](install-apk.md)
   * [获取电池电量信息](get-battery-info.md)
   * [打电话](make-phone-call.md)
