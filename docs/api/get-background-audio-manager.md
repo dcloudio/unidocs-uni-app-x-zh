@@ -1,5 +1,7 @@
 ## uni.getBackgroundAudioManager() @getbackgroundaudiomanager
 
+<!-- UTSAPIJSON.getBackgroundAudioManager.description -->
+
 **支持格式**
 
 |格式	|Android|iOS|
@@ -28,9 +30,6 @@
 **关于Cookie与UA**
 
 - App-Android 平台会将应用的Cookie与UA信息自动带入到请求链接
-
-
-<!-- UTSAPIJSON.getBackgroundAudioManager.description -->
 
 <!-- UTSAPIJSON.getBackgroundAudioManager.compatibility -->
 
