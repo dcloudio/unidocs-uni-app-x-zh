@@ -1688,16 +1688,71 @@ export class Test {
 }
 ```
 
+### 函数作为参数的使用限制
 
-### Float类型传参
+截至HBuilder 4.45, UTS支持将函数作为参数传递给UTS环境使用，但仅支持下面列出的使用方式：
+
+
++ 函数作为独立参数
+
+```ts
+/**
+ * 导出无参的UTS函数
+ * @param opts
+ */
+export function callWithoutParam(success: () => void) {
+	success();
+	return { name: "doSthWithCallback" };
+}
+
+```
+
++ 函数作为参数对象的属性
+
+```ts
+/**
+ * json入参格式
+ */
+export type JsonParamOptions = {
+	input: inputJSON;
+	success: (res: inputJSON) => void;
+	fail?: (res: string) => void;
+	complete?: (res: string) => void;
+};
+
+/**
+ * 导出一个JSON入参的UTS函数
+ */
+export function callWithJSONParam(opts: JsonParamOptions) {
+	opts.input.errCode = 10;
+	opts.success(opts.input);
+	return { name: "doSthWithCallback" };
+}
+
+```
+
+除此之外，UTS不支持其他函数参数的使用方式，比如：将函数作为 数组/集合/字典的成员进行传递
+
+```
+// 下面的使用方式是不支持的
+export type Callable = () => void;
+
+export type Options2 = {
+  worker: Array<Callable>
+}
+```
+
+
+
+### 原生类型传参
 
 android很多布局参数强制要求Float，但是ts中没有内置这种类型。可以使用下面的代码实现转换
 
 ```ts
 let textSize =  30.0.toFloat();
 ```
-### Long类型传参
 
+long类型传参：
 
 ```ts
 let longVal =  1000.0.toLong()
