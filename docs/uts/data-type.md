@@ -2061,6 +2061,8 @@ type Shape = Square | Rectangle // 支持
 
 在使用联合类型或any类型时，我们经常需要确定具体的类型。uts 提供了多种方式来实现这一点:
 
+> HBuilderX 4.51+
+
 ### typeof 类型保护
 > 目前[typeof](https://doc.dcloud.net.cn/uni-app-x/uts/operator.html#typeof)类型保护仅支持跨平台的基础类型，不支持平台专有类型。
 ```ts
