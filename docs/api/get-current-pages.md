@@ -26,7 +26,7 @@ UniPage对象上有较多方法，比如获取/修改pageStyle，[详见](./unip
 
 <!-- UTSAPIJSON.general_type.param -->
 
-## Tips
+## 直接获取当前页面的UniPage@currentpage
 * `4.32` 新增选项式通过 `this.$page` 获取当前 `UniPage` 实例, 组合式通过`getCurrentInstance`，代码示例：
 ```js
 // 选项式 API
