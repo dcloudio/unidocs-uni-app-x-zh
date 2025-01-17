@@ -7,7 +7,7 @@
 * [UniTextElement](unitextelement.md)
 * [UniVideoElement](univideoelement.md)
 * [UniWebViewElement](uniwebviewelement.md)
-<!-- * [UniNativeViewElement](uninativeviewelement.md) -->
+* [UniNativeViewElement](uninativeviewelement.md)
 * [DOMRect](domrect.md)
 * [CSSStyleDeclaration](cssstyledeclaration.md)
 * [DrawableContext](drawablecontext.md)
