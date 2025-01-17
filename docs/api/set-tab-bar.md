@@ -94,6 +94,8 @@
 
 <!-- UTSAPIJSON.setTabBarItem.tutorial -->
 
+注意：小程序上无法通过本API动态添加和删除tabbar的item。
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
