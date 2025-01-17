@@ -52,7 +52,7 @@ UniPage在App和Web平台较完善，在小程序端受小程序未开放，很�
 
 **PageStyle**
 
-支持当前页面 `style` 节点属性
+支持当前页面 `style` 节点属性（注意并非所有pages.json的pageStyle都可以动态修改）
 
 |属性													|类型		|Android|iOS	|web	|默认值	|
 |:-:													|:-:		|:-:		|:-:	|:-:	|:-:		|
