@@ -18,3 +18,4 @@
 
 
 ## Tips
+- chooseMedia的相册选择在App平台是系统UI，其风格不同rom可能有差异。多选时有的是长按、有的是checkbox。系统UI的暗黑模式、国际化跟随系统，而不跟随App。
