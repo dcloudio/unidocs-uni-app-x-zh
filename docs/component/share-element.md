@@ -29,14 +29,14 @@
 + 通过 uni.navigateTo 由 `A` 进入 `B`，称 `A` 为源页面（from 页)，`B` 为目标页（to 页)
 + 默认采用 `B` 页的 `share-element` 组件进行飞跃，设置属性 shuttle-on-push=from 可切换成 A 页的 `share-element` 组件
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app-x/component/share-element/share-element-01.png)
+<img src="https://web-ext-storage.dcloud.net.cn/uni-app-x/component/share-element/share-element-01.png" width="600" height="378">
 
 #### pop 阶段
 
 + 通过 uni.navigateBack 由 `B` 返回 `A`，此时 `B` 为源页面 (from 页)， `A` 为目标页（to 页）
 + 默认采用 `A `页的 `share-element` 组件，设置属性 shuttle-on-pop=from 可切换成 `B` 页的 `share-element` 组件
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app-x/component/share-element/share-element-02.png)
+<img src="https://web-ext-storage.dcloud.net.cn/uni-app-x/component/share-element/share-element-02.png" width="600" height="378">
 
 **注意：** android平台不支持设定shuttle-on-push、shuttle-on-pop，push阶段飞跃物是 `B` 页面（to 页)的 `share-element` 组件，pop阶段飞跃物也是 `B` 页面(from 页)的 `share-element` 组件
 
