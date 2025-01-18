@@ -65,6 +65,7 @@
   * [监听权限申请](create-request-permission-listener.md)
   * [扫码](scan-code.md)
   * [判断是否为模拟器](is-simulator.md)
+  * [获取无障碍服务信息](get-accessibility-info.md)
 * 媒体
   * [拍照或从相册选择图片](choose-image.md)
   * [图片预览](preview-image.md)

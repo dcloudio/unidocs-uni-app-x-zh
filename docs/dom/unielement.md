@@ -453,3 +453,27 @@ if (view != null && view instanceof WKWebView) {
 * app端list-view、web-view组件性能优化仅渲染屏幕显示的内容，所以截图仅能截取到当前屏幕展示的内容。
 * app端scroll-view组件设置padding后，截图内容不会包含padding区域。
 * app端由于组件背景默认透明，所以截图图片默认底色为白色。
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getPage.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getPage.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getPage.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getPage.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getPage.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getPage.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.animate.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.animate.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.animate.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.animate.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.animate.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.animate.tutorial -->
