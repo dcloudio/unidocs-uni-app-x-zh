@@ -17,6 +17,57 @@
 
 <!-- UTSCOMJSON.share-element.attribute -->
 
+
+### 指定飞跃物
+
+开发者可以指定选定源页面或目标页的 `share-element` 作为飞跃物
+
+假定 `A` 页和 `B` 页存在对应的 `share-element` 组件
+
+#### push 阶段
+
++ 通过 uni.navigateTo 由 `A` 进入 `B`，称 `A` 为源页面（from 页)，`B` 为目标页（to 页)
++ 默认采用 `B` 页的 `share-element` 组件进行飞跃，设置属性 shuttle-on-push=from 可切换成 A 页的 `share-element` 组件
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/component/share-element/share-element-01.png)
+
+#### pop 阶段
+
++ 通过 uni.navigateBack 由 `B` 返回 `A`，此时 `B` 为源页面 (from 页)， `A` 为目标页（to 页）
++ 默认采用 `A `页的 `share-element` 组件，设置属性 shuttle-on-pop=from 可切换成 `B` 页的 `share-element` 组件
+
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/component/share-element/share-element-02.png)
+
+**注意：** android平台不支持设定shuttle-on-push、shuttle-on-pop，push阶段飞跃物是 `B` 页面（to 页)的 `share-element` 组件，pop阶段飞跃物也是 `B` 页面(from 页)的 `share-element` 组件
+
+### 用法
+
+`A` 页面
+
+```
+<template>
+	<view style="flex: 1;">
+		<share-element style="width: 200px;height: 200px;" share-key="box" >
+			<view style="width: 200px;height: 200px; background-color: red;"></view>
+		</share-element>
+	</view>
+</template>
+```
+
+`B` 页面
+
+```
+<template>
+	<view style="flex: 1;">
+		<share-element style="width: 400px;height: 400px;" share-key="box" >
+			<view style="width: 400px;height: 400px; background-color: red;"></view>
+		</share-element>
+	</view>
+</template>
+```
+
+`A` 和 `B` 页面分别设置 `share-element` 的 share-key 属性值，需要一致并且唯一，这样两个共享元素则会建立共享关系，切页动画时则会触发共享元素过度动画效果。
+
 <!-- UTSCOMJSON.share-element.event -->
 
 <!-- UTSCOMJSON.share-element.component_type -->
