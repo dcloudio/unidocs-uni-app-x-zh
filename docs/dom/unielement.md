@@ -472,6 +472,48 @@ if (view != null && view instanceof WKWebView) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.animate.param -->
 
+- keyframes 支持的属性值
+
+|名称				|描述																				|
+|:--				|:--																				|
+|width				|控制宽度属性的过渡效果																|
+|height				|控制高度属性的过渡效果																|
+|margin				|控制外边距属性的过渡效果																|
+|margin-top			|控制上外边距属性的过渡效果															|
+|margin-bottom		|控制下外边距属性的过渡效果															|
+|margin-left		|控制左外边距属性的过渡效果															|
+|margin-right		|控制右外边距属性的过渡效果															|
+|left				|控制左侧位置属性的过渡效果															|
+|right				|控制右侧位置属性的过渡效果															|
+|top				|控制顶部位置属性的过渡效果															|
+|bottom				|控制底部位置属性的过渡效果															|
+|padding			|控制内边距属性的过渡效果																|
+|padding-left		|控制左内边距属性的过渡效果															|
+|padding-right		|控制右内边距属性的过渡效果															|
+|padding-top		|控制上内边距属性的过渡效果															|
+|padding-bottom		|控制下内边距属性的过渡效果															|
+|opacity			|控制透明度属性的过渡效果																|
+|background-color	|控制背景颜色属性的过渡效果															|
+|border-color		|控制边框颜色属性的过渡效果															|
+|border-top-color	|控制上边框颜色属性的过渡效果															|
+|border-bottom-color|控制下边框颜色属性的过渡效果															|
+|border-left-color	|控制左边框颜色属性的过渡效果															|
+|border-right-color	|控制右边框颜色属性的过渡效果															|
+|transform			|控制变换属性的过渡效果																|
+|transform-origin	|控制元素变形的原点阿德过渡效果														|
+|offset				|关键帧的偏移量。为0.0和1.0之间的数字。如果此值为缺失，则关键帧将在相邻关键帧之间均匀分布。	|
+
+- options 支持的属性
+
+|名称		|描述																				|
+|:--		|:--																				|
+|delay		|动画延迟的毫秒数	。默认值为0															|
+|direction	|动画运行方向。Android仅支持alternate和normal，默认为normal							|
+|duration	|动画时长。默认值为0																	|
+|easing		|动画曲线。支持ease、ease-in、ease-out、ease-in-out、linear和贝塞尔函数。默认值为linear	|
+|fill		|决定动画效果是否应在播放前反映在元素中（Android仅支持forwards）							|
+|iterations	|动画应重复的次数。默认值为1。	当设置为`Infinity`时，动画将一直重复执行。					|
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.animate.returnValue -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.animate.compatibility -->
