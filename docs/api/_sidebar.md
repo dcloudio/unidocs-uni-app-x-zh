@@ -45,6 +45,7 @@
   * [下载文件](download-file.md)
   * [获取网络类型](get-network-type.md)
   * [websocket](websocket.md)
+  * [SSE](connect-event-source.md)
 * 设备
   * [获取系统信息](get-system-info.md)
   * [获取设备信息](get-device-info.md)
@@ -76,10 +77,10 @@
   * [保存视频到相册](save-video-to-photos-album.md)
   * [获取视频信息](get-video-info.md)
   * [压缩视频](compress-video.md)
+  * [拍摄或从相册选择图片或视频](choose-media.md)
+  * [选择文件](choose-file.md)
   * [音频](create-inner-audio-context.md)
   * [背景音频](get-background-audio-manager.md)
-  * [选择文件](choose-file.md)
-  * [拍摄或从相册选择图片或视频](choose-media.md)
 * 画布
   * [canvasToTempFilePath](canvas-to-temp-file-path.md)
   * [createCanvasContextAsync](create-canvas-context-async.md)
@@ -88,6 +89,7 @@
   * [获取当前位置](get-location.md)
   * [使用地图查看位置](open-location.md)
   * [使用地图选择位置](choose-location.md)
+  * [位置更新](location-change.md)
 * 数据存储
   * [key-value本地数据存储](storage.md)
 * 文件

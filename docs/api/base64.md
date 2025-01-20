@@ -22,6 +22,8 @@
 
 <!-- UTSAPIJSON.arrayBufferToBase64.tutorial -->
 
+<!-- UTSAPIJSON.base64.example -->
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
