@@ -500,8 +500,8 @@ if (view != null && view instanceof WKWebView) {
 |border-left-color	|控制左边框颜色属性的过渡效果															|
 |border-right-color	|控制右边框颜色属性的过渡效果															|
 |transform			|控制变换属性的过渡效果																|
-|transform-origin	|控制元素变形的原点阿德过渡效果														|
-|offset				|关键帧的偏移量。为0.0和1.0之间的数字。如果此值为缺失，则关键帧将在相邻关键帧之间均匀分布。	|
+|transform-origin	|控制元素变形的原点的过渡效果															|
+|offset				|关键帧的偏移量。为0.0和1.0之间的数字。如果此值缺失，则关键帧将在相邻关键帧之间均匀分布。	|
 
 - options 支持的属性
 
