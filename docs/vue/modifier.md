@@ -14,6 +14,8 @@
 
 <!-- VUEJSON.eventModifiers.prevent.compatibility -->
 
+`ios 4.51 +` 支持 `touch` 事件通过 `preventDefault` 阻止滚动与点击事件
+
 ### capture
 
 
