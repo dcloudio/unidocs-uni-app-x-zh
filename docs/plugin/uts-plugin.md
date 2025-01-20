@@ -1509,7 +1509,7 @@ getBatteryCapacity()
 更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
 
 
-## 使用uni_modules目录下的其他插件
+## 使用uni_modules目录下的其他插件@utsplugindependent
 
 UTS插件除了允许在页面中使用之外，还支持被`uni_modules`目录下的其他插件使用。
 
