@@ -6,6 +6,10 @@
 
 本API可以根据传感器的信息更准确的识别是否为模拟器。但本API在Android平台上线应用商店时，务必注意需要在隐私协议中声明，并确保在隐私协议被用户同意后再调用。
 
+有些模拟器会故意伪装真机，此时可能识别不准确。
+
+iOS平台请暂时继续使用[uni.getDeviceInfo](./get-device-info.md)
+
 <!-- UTSAPIJSON.isSimulator.compatibility -->
 
 <!-- UTSAPIJSON.isSimulator.param -->
