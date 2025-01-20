@@ -38,13 +38,16 @@
 
 <img src="https://web-ext-storage.dcloud.net.cn/uni-app-x/component/share-element/share-element-02.png" width="600" height="378">
 
-**注意：** android平台不支持设定shuttle-on-push、shuttle-on-pop，push阶段飞跃物是 `B` 页面（to 页)的 `share-element` 组件，pop阶段飞跃物也是 `B` 页面(from 页)的 `share-element` 组件
+#### 注意事项
+
++ android平台不支持设定shuttle-on-push、shuttle-on-pop，push阶段飞跃物是 `B` 页面（to 页)的 `share-element` 组件，pop阶段飞跃物也是 `B` 页面(from 页)的 `share-element` 组件
++ `share-element` 组件执行共享元素动画过程中会将 `share-element` 的`飞跃物`显示在页面最顶层，这会导致部分场景原本被其他元素遮挡的 `share-element` 会显示完整内容，这是为了更好的过度穿越效果并非Bug
 
 ### 用法
 
 `A` 页面
 
-```
+```html
 <template>
 	<view style="flex: 1;">
 		<share-element style="width: 200px;height: 200px;" share-key="box" >
@@ -56,7 +59,7 @@
 
 `B` 页面
 
-```
+```html
 <template>
 	<view style="flex: 1;">
 		<share-element style="width: 400px;height: 400px;" share-key="box" >
