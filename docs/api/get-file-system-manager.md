@@ -22,8 +22,13 @@
 <!-- UTSAPIJSON.getFileSystemManager.returnValue -->
 
 ### 特殊说明
-app-ios平台暂时仅支持在uvue文件中使用文件管理器对象，uts插件中暂不支持
-app-android平台API不支持代码包文件目录
+
+- app-ios平台暂时仅支持在uvue文件中使用文件管理器对象，uts插件中暂不支持
+
+- app-android平台API不支持代码包文件目录
+
+- app-android平台content:/\/ 路径文件是只读的
+
 <!-- UTSAPIJSON.getFileSystemManager.tutorial -->
 
 <!-- UTSAPIJSON.getFileSystemManager.example -->
