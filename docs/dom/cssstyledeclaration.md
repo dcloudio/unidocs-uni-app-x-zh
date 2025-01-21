@@ -31,6 +31,8 @@
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.tutorial -->
 
+**注意** 4.51版本开始 `getPropertyValue` 开始仅返回string类型
+
 ## 示例
 ```html
 <template>
