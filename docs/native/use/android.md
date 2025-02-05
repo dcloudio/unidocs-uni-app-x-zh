@@ -431,21 +431,41 @@ dependencies {
 	
 - components
 	
-	components 为uts组件的注册信息。需要将components对应的内容添加到主模块的build.gradle。参考配置：
+	+ **uni-app x**
+
+		components 为uts组件的注册信息。需要将components对应的内容添加到主模块的build.gradle。参考配置：
 	
-	```groovy
-	defaultConfig {
-		buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"zl-text\\\",\\\"class\\\":\\\"uts.sdk.modules.zlText.ZlTextComponent\\\"}]\""
-	}
-	```
+		```groovy
+		defaultConfig {
+			buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"zl-text\\\",\\\"class\\\":\\\"uts.sdk.modules.zlText.ZlTextComponent\\\"}]\""
+		}
+		```
 	
-	如果主模块的build.gradle已经存在UTSRegisterComponents，需要将现有配置与原有配置合并。参考：
+		如果主模块的build.gradle已经存在UTSRegisterComponents，需要将现有配置与原有配置合并。参考：
 	
-	```groovy
-	buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"zl-a\\\",\\\"class\\\":\\\"zlA.ZlAComponent\\\"},{\\\"name\\\":\\\"zl-text\\\",\\\"class\\\":\\\"uts.sdk.modules.zlText.ZlTextComponent\\\"}]\""
-	```
+		```groovy
+		buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"zl-a\\\",\\\"class\\\":\\\"zlA.ZlAComponent\\\"},{\\\"name\\\":\\\"zl-text\\\",\\\"class\\\":\\\"uts.sdk.modules.zlText.ZlTextComponent\\\"}]\""
+		```
 	
-	**注意：转义符不能删掉，格式一定严格一致。**
+		**注意：转义符不能删掉，格式一定严格一致。**
+	
+	+ **uni-app**
+		
+		uni-app 中注册uts组件，需要将components对应的内容添加到主模块的dcloud_uniplugins.json。参考配置：
+		
+		```json
+		{
+			"nativePlugins": [{
+				"plugins": [{
+					"type": "component",
+					"name": "zl-text",
+					"class": "uts.sdk.modules.zlText.ZlTextComponent"
+				}]
+			}]
+		}
+		```
+		
+		**注意：dcloud_uniplugins.json位于项目的assets目录下。如果没有需要手动创建。**
 	
 - hooksClass
 	
