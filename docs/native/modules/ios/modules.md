@@ -25,7 +25,7 @@
 
 | 源文件 | 依赖库 | 资源文件 |
 | ---   | ---| ---|
-| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift <br> uni-crash-index.swift <br> uni-crash-UniCrashManager.swift <br> uni-privacy-index.swift <br> uni-dialogPage-index.swift <br> uni-dialogPage-native.swift <br> uni-event-index.swift <br> uni-event-native.swift <br> uni-exit-index.swift| DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> KSCrash.xcframework <br> storage.framework| uts-config.json |
+| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift <br> uni-crash-index.swift <br> uni-crash-UniCrashManager.swift <br> uni-privacy-index.swift <br> uni-dialogPage-index.swift <br> uni-dialogPage-native.swift <br> uni-event-index.swift <br> uni-event-native.swift <br> uni-exit-index.swift <br> uni-actionSheet-index.swift| DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> KSCrash.xcframework <br> storage.framework| uts-config.json |
 
 ### 配置其他模块(可选)
 根据资源文件中的`manifest.json`文件包含的模块名称，选择以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到DCloudUTSExtAPI工程中，依赖库均设置为`Do Not Embed`
@@ -53,7 +53,9 @@
 | uni-chooseLocation | uni-chooseLocation-index.swift| | |
 | uni-shareWithSystem | uni-shareWithSystem-index.swift| | |
 | uni-createInnerAudioContext | uni-createInnerAudioContext-index.swift <br> uni-createInnerAudioContext-UniAudioPlayer.swift| | MediaPlayer.framework |
-| uni-getBackgroundAudioManager | uni-getBackgroundAudioManager-index.swift | | MediaPlayer.framework |
+| uni-getBackgroundAudioManager | uni-getBackgroundAudioManager-index.swift <br> uni-getBackgroundAudioManager-UniBackgroundAudioManager.swift|  CocoaAsyncSocket.xcframework <br> KTVHTTPCache.xcframework | MediaPlayer.framework |
+| uni-previewImage | uni-previewImage-index.swift | | |
+| uni-chooseMedia | uni-chooseMedia-index.swift | | |
 
 ### 配置uts-config.json(可选)
 
@@ -187,6 +189,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 
 
 ## uni-media
+
 ### 添加依赖库以及资源文件
 | 依赖库 | 资源文件 |
 |---|---|
@@ -208,7 +211,18 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ```
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/unimedia_permission.png)
 
+## uni-chooseMedia
 
+### Info.plist
+添加`相机权限描述(NSCameraUsageDescription)`、`麦克风权限描述(NSMicrophoneUsageDescription)`
+```  
+<dict>
+	<key>NSCameraUsageDescription</key>
+	<string>需要您的同意，才能使用摄像头，以便于相机拍摄</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>需要您的同意，才能使用麦克风，以便于录制音频</string>
+</dict>
+```
 
 ## uni-getLocation-system
 ### 添加依赖库以及资源文件
@@ -447,8 +461,21 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 </dict>
 ```
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/camera_permission.png)
+  
+  
+## uni-getBackgroundAudioManager
 
+### 添加依赖库以及资源文件
+| 依赖库 |
+|---|
+| CocoaAsyncSocket.xcframework`（Embed & Sign）` <br> KTVHTTPCache.xcframework`（Embed & Sign）` |
 
+### Capability
+`Target -> Signing & Capabilities` 点击 左上角`+ Capability `，
+添加`Background Modes`后勾选`Audio,ApiPlay,and Picture in Picture`选项，如图
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/backgroundmodes_audio.jpg)
+  
+  
 ## uni-ad
 ### 基础广告(必须)
 #### 添加依赖库以及资源文件
