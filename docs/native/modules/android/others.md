@@ -21,6 +21,9 @@
 |uni-actionSheet					|uni-actionSheet-release.aar							|-																																									|-				|-																										|
 |uni-previewImage					|uni-previewImage-release.aar							|-																																									|-				|uni-media<br/>uni-network<br/>uni-fileSystemManager<br/>uni-storage<br/>uni-prompt<br/>uni-actionSheet	|
 |uni-chooseMedia					|uni-chooseMedia-release.aar							|androidx.appcompat:appcompat:1.6.1<br/>androidx.activity:activity-ktx:1.9.2																						|-				|uni-actionSheet																						|
+|uni-arrayBufferToBase64					|uni-arrayBufferToBase64-release.aar							|-																						|-				|-																						|
+|uni-base64ToArrayBuffer					|uni-base64ToArrayBuffer-release.aar							|-																						|-				|-																						|
+|uni-sse					|uni-sse-release.aar							|com.squareup.okhttp3:okhttp-sse:3.12.12																						|-				|-																						|
 
 各模块对应的API可参考文档[App端支持的内置模块列表](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#utsmodules)
 
