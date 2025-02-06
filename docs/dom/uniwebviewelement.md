@@ -2,17 +2,14 @@
 
 <!-- CUSTOMTYPEJSON.UniWebViewElement.description -->
 
+<!-- CUSTOMTYPEJSON.UniWebViewElement.compatibility -->
+
 <!-- CUSTOMTYPEJSON.UniWebViewElement.extends -->
 
 <!-- CUSTOMTYPEJSON.UniWebViewElement.param -->
 
-
-
-<!-- CUSTOMTYPEJSON.UniWebViewElement.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniWebViewElement.example -->
-
 ### UniWebViewElement 的方法 @uniwebviewelement-methods
+
 <!-- CUSTOMTYPEJSON.UniWebViewElement.methods.back.name -->
 
 <!-- CUSTOMTYPEJSON.UniWebViewElement.methods.back.description -->
@@ -73,3 +70,4 @@
 
 <!-- CUSTOMTYPEJSON.UniWebViewElement.methods.evalJS.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniWebViewElement.example -->

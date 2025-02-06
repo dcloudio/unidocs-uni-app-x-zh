@@ -2,15 +2,11 @@
 
 <!-- CUSTOMTYPEJSON.UniVideoElement.description -->
 
+<!-- CUSTOMTYPEJSON.UniVideoElement.compatibility -->
+
 <!-- CUSTOMTYPEJSON.UniVideoElement.extends -->
 
 <!-- CUSTOMTYPEJSON.UniVideoElement.param -->
-
-
-
-<!-- CUSTOMTYPEJSON.UniVideoElement.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniVideoElement.example -->
 
 ### UniVideoElement 的方法 @univideoelement-methods
 <!-- CUSTOMTYPEJSON.UniVideoElement.methods.play.name -->
@@ -109,3 +105,4 @@
 
 <!-- CUSTOMTYPEJSON.UniVideoElement.methods.exitFullScreen.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniVideoElement.example -->

@@ -2,15 +2,12 @@
 
 <!-- CUSTOMTYPEJSON.UniNativeViewElement.description -->
 
+<!-- CUSTOMTYPEJSON.UniNativeViewElement.compatibility -->
+
 <!-- CUSTOMTYPEJSON.UniNativeViewElement.extends -->
 
 <!-- CUSTOMTYPEJSON.UniNativeViewElement.param -->
 
-
-
-<!-- CUSTOMTYPEJSON.UniNativeViewElement.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniNativeViewElement.example -->
 
 ### UniNativeViewElement 的方法 @uninativeviewelement-methods
 <!-- CUSTOMTYPEJSON.UniNativeViewElement.methods.bindAndroidView.name -->
@@ -37,3 +34,4 @@
 
 <!-- CUSTOMTYPEJSON.UniNativeViewElement.methods.bindIOSView.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniNativeViewElement.example -->

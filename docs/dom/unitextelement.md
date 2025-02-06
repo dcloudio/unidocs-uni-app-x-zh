@@ -2,15 +2,12 @@
 
 <!-- CUSTOMTYPEJSON.UniTextElement.description -->
 
+<!-- CUSTOMTYPEJSON.UniTextElement.compatibility -->
+
 <!-- CUSTOMTYPEJSON.UniTextElement.extends -->
 
 <!-- CUSTOMTYPEJSON.UniTextElement.param -->
 
-
-
-<!-- CUSTOMTYPEJSON.UniTextElement.compatibility -->
-
-<!-- CUSTOMTYPEJSON.UniTextElement.example -->
 
 ### UniTextElement 的方法 @unitextelement-methods
 <!-- CUSTOMTYPEJSON.UniTextElement.methods.getTextExtra.name -->
@@ -25,3 +22,4 @@
 
 <!-- CUSTOMTYPEJSON.UniTextElement.methods.getTextExtra.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniTextElement.example -->

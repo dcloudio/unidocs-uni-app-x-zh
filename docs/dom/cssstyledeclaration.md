@@ -11,11 +11,12 @@
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.description -->
 
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.compatibility -->
+
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.param -->
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.returnValue -->
 
-<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.compatibility -->
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.tutorial -->
 
@@ -23,11 +24,11 @@
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.description -->
 
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.compatibility -->
+
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.param -->
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.returnValue -->
-
-<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.compatibility -->
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.tutorial -->
 
