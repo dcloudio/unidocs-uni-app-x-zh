@@ -108,10 +108,6 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 ## uni.setAppBadgeNumber(num, options?) @setappbadgenumber
 
-### 注意事项
-
-* 在小米系统上设置角标有个默认的行为，即：app处于前台状态会清空角标数（可以理解为已读），所以建议在`onHide`中设置角标。
-
 <!-- UTSAPIJSON.setAppBadgeNumber.description -->
 
 <!-- UTSAPIJSON.setAppBadgeNumber.compatibility -->
@@ -140,6 +136,7 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 - Android原生的系统其实是不支持设置角标的，在原生系统中应用有通知时，会在图标右上角出现圆点，所以原生系统并不适用 `setAppBadgeNumber`。
 - 支持的手机品牌为：小米、华为、荣耀、OPPO、vivo、三星、索尼。
+- 在小米系统上设置角标有个默认的行为，即：app处于前台状态会清空角标数（可以理解为已读），所以小米平台建议在`onHide`中设置角标。
 
 
 <!-- UTSAPIJSON.uni-push.example -->
