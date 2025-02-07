@@ -99,6 +99,11 @@ error: Unresolved reference: errCode‌
 	+ [uni.showModal(OBJECT)](https://uniapp.dcloud.net.cn/api/ui/prompt.html#showmodal)  
 	+ [uni.showActionSheet(OBJECT)](https://uniapp.dcloud.net.cn/api/ui/prompt.html#showactionsheet)  
 
+### 媒体  
+> HBuilderX4.52起新增支持  
+- 拍摄或从相册中选择图片或视频
+  + [uni.chooseMedia](https://uniapp.dcloud.net.cn/api/media/video.html#choosemedia)  
+
 **目前仅支持以上列出的部分uni api的调用，[uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)实现的api（如[uni.getBatteryInfo](https://ext.dcloud.net.cn/plugin?id=9295)）暂时还不支持在uts插件中调用**  
 
 ## 特别说明  
