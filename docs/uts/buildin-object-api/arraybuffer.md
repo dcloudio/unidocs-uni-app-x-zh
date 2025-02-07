@@ -156,6 +156,8 @@ ArrayBuffer 对象用来表示通用的原始二进制数据缓冲区。
 
 - iOS的uvue页面编译成js时，可以使用ArrayBuffer，iOS 的 uts 插件对 ArrayBuffer 支持 从 HBuilder X 4.51 版本开始。
 
+- Android平台，在uni-app上不支持将Arraybuffer当作参数从vue传到插件里面，但是可以在vue或者插件里面使用
+
 
 ## js 和 swift 基于 ArrayBuffer 的内存共享
 
