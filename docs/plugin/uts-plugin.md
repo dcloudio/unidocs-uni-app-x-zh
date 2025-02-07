@@ -1468,7 +1468,7 @@ list1.forEach((item : any) => {
 
 ```js
 // 先引用，全部导入，对象起名为UTSHello
-import * as UTSHello from "../../../uni_modules/uts-osapi";
+import * as UTSHello from "@/uni_modules/uts-osapi";
 
 // 然后使用UTSHello的方法
 UTSHello.getBatteryCapacity()
@@ -1480,12 +1480,12 @@ UTSHello.getBatteryCapacity()
 
 ```ts
 // 正确的写法
-import * as UTSHello from "../../../uni_modules/uts-osapi";
+import * as UTSHello from "@/uni_modules/uts-osapi";
 ```
 
 ```ts
 // 错误的写法
-import * as UTSHello from "../../../uni_modules/uts-osapi/index.uts";
+import * as UTSHello from "@/uni_modules/uts-osapi/index.uts";
 ```
 
 
@@ -1497,7 +1497,7 @@ import * as UTSHello from "../../../uni_modules/uts-osapi/index.uts";
 //先引用，导入指定方法或属性
 import {
   getBatteryCapacity
-} from "../../../uni_modules/uts-osapi";
+} from "@/uni_modules/uts-osapi";
 
 // 然后使用导入的方法
 getBatteryCapacity()
