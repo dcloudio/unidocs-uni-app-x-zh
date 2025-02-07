@@ -2,17 +2,17 @@
 ## CSS 变量 <Badge text="4.0（仅 Web 平台）">
 
 > HBuilderX4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。  
-> HBuilderX4.51起 提供安全区域相关 CSS 变量 --uni-safe-area-inset-* 。  
+> HBuilderX4.51起 app平台提供安全区域相关 CSS 变量 --uni-safe-area-inset-* 。  
 
 | CSS 变量| 描述| App| web|
 | :- | :- | :- | :- |
 | --status-bar-height | 系统状态栏高度| [系统状态栏高度](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getStatusbarHeight)| 0|
 | --window-top| 内容区域距离顶部的距离 | 0| NavigationBar 的高度 |
 | --window-bottom| 内容区域距离底部的距离 | 0| TabBar 的高度|
-| --uni-safe-area-inset-top| 页面安全区域距离顶部边界距离，单位为px | 安全区域距离顶部边界| 安全区域距离顶部边界|
-| --uni-safe-area-inset-right| 页面安全区域距离右边边界距离，单位为px | 安全区域距离右边边界| 安全区域距离右边边界|
-| --uni-safe-area-inset-bottom| 页面安全区域距离底部边界距离，单位为px | 安全区域距离底部边界| 安全区域距离底部边界|
-| --uni-safe-area-inset-left| 页面安全区域距离左边边界距离，单位为px | 安全区域距离左边边界| 安全区域距离左边边界|
+| --uni-safe-area-inset-top| 页面安全区域距离顶部边界距离，单位为px | 安全区域距离顶部边界|-|
+| --uni-safe-area-inset-right| 页面安全区域距离右边边界距离，单位为px | 安全区域距离右边边界| -|
+| --uni-safe-area-inset-bottom| 页面安全区域距离底部边界距离，单位为px | 安全区域距离底部边界| -|
+| --uni-safe-area-inset-left| 页面安全区域距离左边边界距离，单位为px | 安全区域距离左边边界| -|
 
 ::: warning 注意
 
