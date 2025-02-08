@@ -14,12 +14,13 @@
 | --uni-safe-area-inset-bottom| 页面安全区域距离底部边界距离，单位为px | 安全区域距离底部边界| -|
 | --uni-safe-area-inset-left| 页面安全区域距离左边边界距离，单位为px | 安全区域距离左边边界| -|
 
+
 ::: warning 注意
 
 - 当设置 `"navigationStyle":"custom"` 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 `var(--status-bar-height)` 的 view 放在页面顶部，避免页面内容出现在状态栏。
 - 在 Web 端，由于不存在原生导航栏和 tabBar（是前端 div 模拟的），如果设置了一个固定位置的居底 view，在小程序和 App 端是在 tabBar 上方，但在 H5 端会与 tabBar 重叠。此时可使用`--window-bottom`，不管在哪个端，都是固定在 tabBar 上方。
 - app-android、app-ios平台目前不支持自定义css变量
-
+- --uni-safe-area-inset-xxx为安全区域边界到`position: fixed;`定位相对的区域边界距离。其中安全区域已规避LeftWindow、TopWindow、RightWindow、NavigationBar、TabBar。
 :::
 
 ### 代码块
