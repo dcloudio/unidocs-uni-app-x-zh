@@ -729,6 +729,52 @@ func getKeyWindow() -> UIWindow {
 - 目前仅支持 Swift 源码混编，OC 源码即使添加也不会参与编译
 - Swift 源码文件中定义的函数、全局变量、类 等符号名称不要和 uts 文件中的符号名相同，否则会因为符号冲突导致编译不过
 
+## harmonyos平台
+
+如下示例使用的目录uni_module目录结构如下
+
+```text
+└── demo-mem
+    ├── changelog.md
+    ├── package.json
+    ├── readme.md
+    └── utssdk
+        ├── app-android
+        ├── app-harmony
+        │   ├── config.json
+        │   ├── index.uts
+        │   ├── libs
+        │   └── mem.ets
+        └── app-ios
+```
+
+### 第一步 获取、编写原生代码
+
+鸿蒙平台使用uts插件时，uts文件可以依赖ets文件、本地har包以及ohpm上的包
+
+### 第二步 集成原生代码
+
+```ts
+// mem.ets
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+
+export function getAppVMMemoryInfo() {
+  return hidebug.getAppVMMemoryInfo();
+}
+```
+
+### 第三步 UTS调用原生代码
+
+```ts
+import {
+  getAppVMMemoryInfo as getAppVMMemoryInfoOrigin
+} from './mem.ets'
+
+export function getAppVMMemoryInfo() {
+  return getAppVMMemoryInfoOrigin()
+}
+```
+
 ## 目标语言为js的情况
 
 在uts编译为js时，uts和js可以任意混编，就像ts和js可以互相引用一样。
