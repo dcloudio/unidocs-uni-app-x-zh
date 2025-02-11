@@ -160,7 +160,7 @@ console.log("Hello World") // kt或java代码
 |uts 内置对象		|编译成的原生类名		 
 |:----		|:---						
 |Array		|io.dcloud.uts.UTSArray		
-|Number		|io.dcloud.uts.UTSNumber 	
+|Number		|kotlin.Number	
 |String		|kotlin.String				
 |Set		|io.dcloud.uts.Set			
 |Map		|io.dcloud.uts.Map			
