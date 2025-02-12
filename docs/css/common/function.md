@@ -1,33 +1,31 @@
-
-## CSS 变量 <Badge text="4.0（仅 Web 平台）">
+## CSS 变量
 
 > HBuilderX4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。
-> HBuilderX4.51起 app平台提供安全区域相关 CSS 变量 --uni-safe-area-inset-* 。
+> HBuilderX4.52起 全平台提供了安全区域相关 CSS 变量 --uni-safe-area-inset-* 。
 
 <!-- CSSJSON.variables_values.compatibility -->
 
-| CSS 变量| App| web|
-| :- | :- | :- |
-| --status-bar-height | [系统状态栏高度](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getStatusbarHeight)| 0|
-| --window-top| 0| NavigationBar 的高度 |
-| --window-bottom| 0| TabBar 的高度|
-| --uni-safe-area-inset-top| 安全区域距离顶部边界|-|
-| --uni-safe-area-inset-right| 安全区域距离右边边界| -|
-| --uni-safe-area-inset-bottom| 安全区域距离底部边界| -|
-| --uni-safe-area-inset-left| 安全区域距离左边边界| -|
 
+- `--status-bar-height`的使用场景：当设置pages.json中的 `"navigationStyle":"custom"` 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 `var(--status-bar-height)` 的 view 放在页面顶部，避免页面内容出现在状态栏上。
+- `--uni-safe-area-inset-xxx` 的使用场景：
+  * `--uni-safe-area-inset-xxx`为安全区域边界到`position: fixed;`定位相对的区域边界距离。其中安全区域已规避LeftWindow、TopWindow、RightWindow、NavigationBar、TabBar。
+  * 在 App 和 小程序 平台，pages.json中配置的导航栏和tabbar是原生的，页面内容只能在这个区域中间。而在 Web 端，不存在原生导航栏和 tabBar，由前端 view 模拟，所以页面内容如果使用绝对定位的话，就会和 Web 平台的导航栏、tabbar重叠。为了避免重叠，可以使用`--uni-safe-area-inset-xxx`系列css变量来设置位置。例如，在有tabbar页面的需要设置了一个固定位置的居底 view，如果单纯的在css中设置 bottom 为 0 ，那么在小程序和 App 端是在 tabBar 上方，但在 Web 端会与 tabBar 重叠。此时可设置 bottom 为 css变量 `--uni-safe-area-inset-bottom`，不管在哪个端，都是固定在 tabBar 上方。因为该值在 Web 平台，会自动避让导航栏高度。
+  * Web 平台有 LeftWindow 、TopWindow、RightWindow 等宽屏适配时的页面，绝对定位时也需要避让，避免把内容显示在其他页面上。`--uni-safe-area-inset-xxx` 系列css变量也已经内部自动处理各种Window。
+  * 除了兼容处理导航栏和tabbar、兼容LeftWindow等宽屏Window之外，`--uni-safe-area-inset-xxx` 系列css变量，还兼容了手机屏幕的安全区，避让了底部手势横条、摄像头挖孔区等。确保使用了本系列变量的内容不会和屏幕上这些内容重叠。
 
-::: warning 注意
+- `--window-top` 和 `--window-bottom` 已经废弃，推荐使用 `--uni-safe-area-inset-top` 和 `--uni-safe-area-inset-bottom` 替代。废弃原因是：
+  * 这2个css变量仅处理了导航栏和tabbar，未处理LeftWindow等Window、未处理手机屏幕的底部手势横条和摄像头挖孔区等内容。
+  * 这2个css变量未包含left、right，宽屏适配和横屏时无法友好兼容
+  * 这2个css变量的命名未包含 `uni` 前缀，容易和开发者的代码中的自定义css变量命名冲突。
 
-- 当设置 `"navigationStyle":"custom"` 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 `var(--status-bar-height)` 的 view 放在页面顶部，避免页面内容出现在状态栏。
-- 在 Web 端，由于不存在原生导航栏和 tabBar（是前端 div 模拟的），如果设置了一个固定位置的居底 view，在小程序和 App 端是在 tabBar 上方，但在 H5 端会与 tabBar 重叠。此时可使用`--window-bottom`，不管在哪个端，都是固定在 tabBar 上方。
+注意：
 - app-android、app-ios平台目前不支持自定义css变量
-- --uni-safe-area-inset-xxx为安全区域边界到`position: fixed;`定位相对的区域边界距离。其中安全区域已规避LeftWindow、TopWindow、RightWindow、NavigationBar、TabBar。
-:::
+
+
 
 ### 代码块
 
-快速书写 css 变量的方法是：在 css 中敲 `hei`，在候选助手中即可看到 3 个 css 变量。
+快速书写 css 变量的方法是：在 css 中敲 `hei`，在候选助手中即可看到 css 变量。
 
 ### 示例
 
@@ -67,7 +65,11 @@
 
 ## CSS 环境变量@env
 
-> HBuilderX4.51起 提供内置 CSS 环境变量，app平台支持使用env()函数处理页面安全区域, 之前版本如有获取栈顶页面安全区域的需求可使用[uni.getWindowInfo()](../../api/get-window-info.md#safearea)。
+> HBuilderX4.51+
+
+内置 CSS 环境变量，app平台支持使用env()函数处理页面安全区域, 之前版本如有获取栈顶页面安全区域的需求可使用[uni.getWindowInfo()](../../api/get-window-info.md#safearea)。
+
+**注意：此内置环境变量，主要用于兼容 web 的写法。实际开发中，推荐使用本文档上方的 `--uni-safe-area-inset-xxx` 系列css变量。**
 
 ### 语法
 ```vue
@@ -101,7 +103,9 @@ app平台仅以下CSS属性支持使用环境变量
 
 #### web平台
 
-> web平台的 CSS 环境变量是应用全局值，由浏览器自动计算，与 uvue 页面无关，参考[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/env)
+web平台的 CSS环境变量是应用全局值，由浏览器自动计算，与 uvue 页面无关，无法干预处理对 导航栏、tabbar、leftWindow、TopWindow的兼容支持。所以不推荐使用。建议使用跨端的`--uni-safe-area-inset-xxx` 系列css变量。
+
+web平台的 CSS环境变量规范参考[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/env)
 
 
 ### 示例
