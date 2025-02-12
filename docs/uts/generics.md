@@ -20,6 +20,10 @@ const str: string = test<string>('a')
 const num: number = test<number>(1)
 ```
 
+**注意**
+
+编译为 Kotlin、Swift 时，箭头函数不支持泛型。
+
 ## 泛型类
 
 泛型类的泛型参数定义在类名之后。
