@@ -1,18 +1,20 @@
 
 ## CSS 变量 <Badge text="4.0（仅 Web 平台）">
 
-> HBuilderX4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。  
-> HBuilderX4.51起 app平台提供安全区域相关 CSS 变量 --uni-safe-area-inset-* 。  
+> HBuilderX4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。
+> HBuilderX4.51起 app平台提供安全区域相关 CSS 变量 --uni-safe-area-inset-* 。
 
-| CSS 变量| 描述| App| web|
-| :- | :- | :- | :- |
-| --status-bar-height | 系统状态栏高度| [系统状态栏高度](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getStatusbarHeight)| 0|
-| --window-top| 内容区域距离顶部的距离 | 0| NavigationBar 的高度 |
-| --window-bottom| 内容区域距离底部的距离 | 0| TabBar 的高度|
-| --uni-safe-area-inset-top| 页面安全区域距离顶部边界距离，单位为px | 安全区域距离顶部边界|-|
-| --uni-safe-area-inset-right| 页面安全区域距离右边边界距离，单位为px | 安全区域距离右边边界| -|
-| --uni-safe-area-inset-bottom| 页面安全区域距离底部边界距离，单位为px | 安全区域距离底部边界| -|
-| --uni-safe-area-inset-left| 页面安全区域距离左边边界距离，单位为px | 安全区域距离左边边界| -|
+<!-- CSSJSON.variables_values.compatibility -->
+
+| CSS 变量| App| web|
+| :- | :- | :- |
+| --status-bar-height | [系统状态栏高度](http://www.html5plus.org/doc/zh_cn/navigator.html#plus.navigator.getStatusbarHeight)| 0|
+| --window-top| 0| NavigationBar 的高度 |
+| --window-bottom| 0| TabBar 的高度|
+| --uni-safe-area-inset-top| 安全区域距离顶部边界|-|
+| --uni-safe-area-inset-right| 安全区域距离右边边界| -|
+| --uni-safe-area-inset-bottom| 安全区域距离底部边界| -|
+| --uni-safe-area-inset-left| 安全区域距离左边边界| -|
 
 
 ::: warning 注意
@@ -63,11 +65,11 @@
 
 
 
-## CSS 环境变量@env  
+## CSS 环境变量@env
 
 > HBuilderX4.51起 提供内置 CSS 环境变量，app平台支持使用env()函数处理页面安全区域, 之前版本如有获取栈顶页面安全区域的需求可使用[uni.getWindowInfo()](../../api/get-window-info.md#safearea)。
 
-### 语法  
+### 语法
 ```vue
 /* Using the four safe area inset values with no fallback values */
 env(safe-area-inset-top);
@@ -83,23 +85,23 @@ env(safe-area-inset-left, 20px);
 ```
 
 ### uni-app x 兼容性
-#### app平台  
+#### app平台
 
 > app平台的 CSS 环境变量是页面相关的，即根据 uvue 页面原生导航栏和tabBar的配置自动计算。
 
-app平台仅以下CSS属性支持使用环境变量  
-- padding  
-- margin  
-- width  
-- height  
-- top  
-- right  
-- bottom  
-- left  
+app平台仅以下CSS属性支持使用环境变量
+- padding
+- margin
+- width
+- height
+- top
+- right
+- bottom
+- left
 
 #### web平台
 
-> web平台的 CSS 环境变量是应用全局值，由浏览器自动计算，与 uvue 页面无关，参考[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/env)  
+> web平台的 CSS 环境变量是应用全局值，由浏览器自动计算，与 uvue 页面无关，参考[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/env)
 
 
 ### 示例
@@ -125,4 +127,3 @@ app平台仅以下CSS属性支持使用环境变量
 </style>
 
 ```
-
