@@ -1,6 +1,6 @@
 # uts插件 - uni-app兼容模式组件（原“组件插件”）开发
 
-> HBuilderX3.6.18 及以上版本支持  
+> HBuilderX3.6.18 及以上版本支持，app-harmony平台不支持此类型插件
 
 本文重点在于讲述如何在app-android和app-ios上，将一个原生UI封装为兼容uni-app项目的UTS组件，供使用者在nvue/uvue页面template中以组件的方式调用。
 
