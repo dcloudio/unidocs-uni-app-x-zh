@@ -154,11 +154,11 @@ App端与web常见的区别是：
 
 > 如果根节点使用了list-view，它也有自己的滚动相关的API和监听事件。详见[list-view](../component/list-view.md)的文档。
 
-## 页面滚动引起的差异
+#### 页面滚动引起的差异
 
 `uni-app-x` App端无页面滚动，且其根节点高度为从导航栏底部到tabBar顶部。如果在页面根节点的子元素使用`position: absolute;`，页面内部scroll-view滚动时不会改变此元素位置。其他端有页面滚动，如果在页面根节点的子元素使用`position: absolute;`页面滚动会改变此元素的位置。如果有不随页面滚动变化位置的需求建议使用`position: fixed`。
 
-注意：web端需要使用[css变量](common/variable.md)使元素不覆盖在navigationBar和tabBar上。
+注意：web端需要使用[css变量](common/function.md)使元素不覆盖在navigationBar和tabBar上。
 
 ## 样式不继承@stylenoextends
 
@@ -268,7 +268,7 @@ App仅对`同层的兄弟节点`之间支持`z-index`来调节层级。不支持
 
 ## css方法 @css-function
 
-目前仅支持url()、rgb()、rgba()、var()。
+目前支持url()、rgb()、rgba()、var()、env()。[详见](./common/function.md)
 
 <!-- CSSJSON.readmeTable.name -->
 
