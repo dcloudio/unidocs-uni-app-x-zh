@@ -20,10 +20,11 @@
 
 text组件在web浏览器渲染（含浏览器、小程序webview渲染模式、app-vue）和uvue中，可以并只能嵌套text组件。
 
-app平台 text 组件虽然支持嵌套，但其实只是提供一个简单的样式变化方案，其实限制较多：
+app平台 text 组件虽然支持嵌套，但注意限制：
 1. 子组件不继承父组件样式。这样使用会在编译到web渲染的平台时产生差异。
 2. 子组件设置的排版相关样式（如position、display、width、height、margin、padding等）以及部分text独有样式（如text-align、lines、white-space、text-overflow）不生效
-3. HBuilderX4.51版本起 子组件支持点击事件响应。之前版本如有这方面需求，请改用 [rich-text](./rich-text.md)
+
+HBuilderX4.51版本起 text组件嵌套时，子组件支持点击事件响应。之前版本如有这方面需求，请改用 [rich-text](./rich-text.md)
 
 <!-- UTSCOMJSON.text.example -->
 
@@ -94,5 +95,5 @@ App 端不支持 `text` 组件中渲染多段文本，如果 `text` 组件中的
 
 ## Bug & Tips@tips
 - app平台不支持[HTML字符实体](https://developer.mozilla.org/zh-CN/docs/Glossary/Entity)。
-- app平台 selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。web平台默认就是可复制文字的，selectable无效。
+- app-Android和app-iOS平台 selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。web平台默认就是可复制文字的，selectable无效。
 - app-android平台，部分自定义字体不支持设置font-weight。
