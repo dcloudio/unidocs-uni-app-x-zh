@@ -375,10 +375,11 @@ app-ios 文件夹下存在iOS平台原生配置，包括以下目录或文件
 |Frameworks			|iOS平台插件需要引用的三方 framework/xcframework 依赖库存放目录			|
 |Libs				|iOS平台插件需要引用的三方 .a 依赖库存放目录			    |
 |Resources			|iOS平台插件需要引用的资源文件存放目录						|
-|Info.plist			|iOS平台插件需要添加到原生工程Info.plist中的配置文件			|
-|UTS.entitlements	|iOS平台插件需要添加到原生工程 entitlements 文件中的配置文件		|
 |config.json		|iOS平台原生工程的配置文件									|
 |index.uts			|主入口，interface.uts/index.d.ts声明的能力在iOS平台下的实现				|
+|Info.plist			|iOS平台插件需要添加到原生工程Info.plist中的配置文件			|
+|PrivacyInfo.xcprivacy	|iOS平台插件隐私清单文件			|
+|UTS.entitlements	|iOS平台插件需要添加到原生工程 entitlements 文件中的配置文件		|
 
 ##### Frameworks
 iOS平台插件依赖的三方framework存放目录，支持以下类型文件：
@@ -424,6 +425,9 @@ iOS平台原生 Info.plist 文件配置，云端打包时会将配置信息合�
   </dict>
 </plist>
 ```
+
+##### PrivacyInfo.xcprivacy
+iOS平台隐私清单文件，配置方法参考[uts插件如何配置隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html#%E5%8E%9F%E7%94%9F%E8%AF%AD%E8%A8%80%E6%8F%92%E4%BB%B6%E5%8F%8Auts%E6%8F%92%E4%BB%B6%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%9A%90%E7%A7%81%E6%B8%85%E5%8D%95)  
 
 ##### UTS.entitlements
 iOS平台原生 entitlements 文件配置，云端打包时会将配置信息合并到原生工程的 entitlements 配置文件中
