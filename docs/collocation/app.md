@@ -64,18 +64,6 @@
 
 <!-- VUEJSON.application.onHide.tutorial -->
 
-<!-- VUEJSON.application.onLastPageBackPress.name -->
-
-<!-- VUEJSON.application.onLastPageBackPress.description -->
-
-<!-- VUEJSON.application.onLastPageBackPress.compatibility -->
-
-<!-- VUEJSON.application.onLastPageBackPress.param -->
-
-<!-- VUEJSON.application.onLastPageBackPress.returnValue -->
-
-<!-- VUEJSON.application.onLastPageBackPress.tutorial -->
-
 <!-- VUEJSON.application.onExit.name -->
 
 <!-- VUEJSON.application.onExit.description -->
@@ -108,6 +96,58 @@
 <!-- VUEJSON.application.onError.returnValue -->
 
 <!-- VUEJSON.application.onError.tutorial -->
+
+
+<!-- VUEJSON.application.onLastPageBackPress.name -->
+
+<!-- VUEJSON.application.onLastPageBackPress.description -->
+
+<!-- VUEJSON.application.onLastPageBackPress.compatibility -->
+
+<!-- VUEJSON.application.onLastPageBackPress.param -->
+
+<!-- VUEJSON.application.onLastPageBackPress.returnValue -->
+
+<!-- VUEJSON.application.onLastPageBackPress.tutorial -->
+
+
+<!-- VUEJSON.application.onPageNotFound.name -->
+
+<!-- VUEJSON.application.onPageNotFound.description -->
+
+<!-- VUEJSON.application.onPageNotFound.compatibility -->
+
+<!-- VUEJSON.application.onPageNotFound.param -->
+
+<!-- VUEJSON.application.onPageNotFound.returnValue -->
+
+<!-- VUEJSON.application.onPageNotFound.tutorial -->
+
+
+<!-- VUEJSON.application.onUnhandledRejection.name -->
+
+<!-- VUEJSON.application.onUnhandledRejection.description -->
+
+<!-- VUEJSON.application.onUnhandledRejection.compatibility -->
+
+<!-- VUEJSON.application.onUnhandledRejection.param -->
+
+<!-- VUEJSON.application.onUnhandledRejection.returnValue -->
+
+<!-- VUEJSON.application.onUnhandledRejection.tutorial -->
+
+
+<!-- VUEJSON.application.onThemeChange.name -->
+
+<!-- VUEJSON.application.onThemeChange.description -->
+
+<!-- VUEJSON.application.onThemeChange.compatibility -->
+
+<!-- VUEJSON.application.onThemeChange.param -->
+
+<!-- VUEJSON.application.onThemeChange.returnValue -->
+
+<!-- VUEJSON.application.onThemeChange.tutorial -->
 
 **示例代码**
 
