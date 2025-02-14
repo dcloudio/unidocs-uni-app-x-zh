@@ -143,6 +143,8 @@
 
 <!-- VUEJSON.application.onThemeChange.compatibility -->
 
+App平台监听主题变化可以使用[uni.onAppThemeChange](../api/theme-change.md)
+
 <!-- VUEJSON.application.onThemeChange.param -->
 
 <!-- VUEJSON.application.onThemeChange.returnValue -->
