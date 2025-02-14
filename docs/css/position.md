@@ -34,7 +34,7 @@ position: fixed定位时，web端为相对于整个浏览器页面进行定位�
   background-color: #FF0000;
   left: 10px;
   /* #ifdef WEB */
-  top: calc(--window-top + 10px);
+  top: calc(--window-top + 10px); //从HBuilderX 4.52起，推荐使用 --uni-safe-area-inset-top 来替代 --window-top
   /* #endif */
   /* #ifdef APP */
   top: 10px;  /* App端暂不支持calc */

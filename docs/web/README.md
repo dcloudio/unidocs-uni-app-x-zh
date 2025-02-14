@@ -159,7 +159,7 @@ element.style.color === 'rgb(255, 0, 0)' // true
 
 ### fixed定位
 
-position: fixed定位时，web端为相对于整个浏览器页面进行定位，app端为相对于页面（除导航栏、tabbar）定位。可以使用[css变量](../css/README.md#variable)使两端表现一致
+position: fixed定位时，web端为相对于整个浏览器页面进行定位，app端为相对于页面（除导航栏、tabbar）定位。可以使用[css变量](../css/common/function.md)使两端表现一致
 
 ```css
 .fixed {
@@ -169,7 +169,7 @@ position: fixed定位时，web端为相对于整个浏览器页面进行定位�
   background-color: #FF0000;
   left: 10px;
   /* #ifdef WEB */
-  top: calc(--window-top + 10px);
+  top: calc(--window-top + 10px); // HBuilderX 4.52起推荐使用 --uni-safe-area-inset-top 替代 --window-top
   /* #endif */
   /* #ifdef APP */
   top: 10px;  /* App端暂不支持calc */

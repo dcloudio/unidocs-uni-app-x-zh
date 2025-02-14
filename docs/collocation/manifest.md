@@ -33,6 +33,14 @@ uni-app x 不再提供内置模块选择，而是提供了摇树机制自动选�
 
 但uni-app x是原生的，开发者的代码执行非常快，无需再提供隐私政策弹框配置。自行弹框即可。
 
+但开发者需注意在用户同意隐私政策前，不要采集涉及隐私的数据。如果违反当地法律或应用商店的要求，会无法上架应用商店甚至被处罚。
+
+hello uni-app x中提供了基于dialogPage的隐私政策弹框示例代码，在app.uvue的代码中搜索`uni.getPrivacySetting`可见，[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/App.uvue)
+
+该示例代码在应用启动的onLauch中，判断隐私协议是否已经被同意，未同意的话通过dialogPage弹出一个页面，该页面有隐私协议的内容及同意、取消按钮。
+其中同意按钮为[button组件](../component/button.md)的`open-type=agreePrivacyAuthorization`
+
+
 #### Android权限配置@permissions
 
 uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中。

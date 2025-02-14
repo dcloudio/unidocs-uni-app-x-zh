@@ -39,7 +39,7 @@ const options: RequestOptions<Person> = ...
 uni.request<Person>(options)
 ```
 * app-android、app-ios平台 uni.request()暂未支持Promise，返回值是RequestTask。
-* app平台 request 暂不支持sse。可以使用web-view组件的网络来接受sse数据，也可以下载三方插件[插件市场](https://ext.dcloud.net.cn/search?q=sse&orderBy=Relevance&uni-appx=1)
+* sse另见[文档](./connect-event-source.md)
 * web平台 request接口目前不支持创建传入的泛型的实例
 * web平台 request接口在 4.01版本之前返回数据是一个普通对象，4.01起调整为UTSJSONObject类型
 

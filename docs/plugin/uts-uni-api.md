@@ -70,7 +70,6 @@ error: Unresolved reference: errCode‌
 ## 支持的API列表  
 ### 网络  
 - [uni.request(OBJECT)](https://uniapp.dcloud.net.cn/api/request/request.html#request)  
-	传输数据暂不支持ArrayBuffer类型  
 
 ### 数据缓存  
 - [uni.setStorage(OBJECT)](https://uniapp.dcloud.net.cn/api/storage/storage.html#setstorage)  

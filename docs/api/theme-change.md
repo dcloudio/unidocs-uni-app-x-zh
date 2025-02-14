@@ -1,3 +1,42 @@
+## 主题light和dark
+
+`iOS 13+`、`Android 10+` 提供了暗黑模式/深色模式，之前的模式称为light，暗黑称为dark。
+
+同时也要注意，低于上述版本的手机，系统层没有暗黑模式概念。
+
+在uni-app x中，有3种主题概念：OSTheme、hostTheme、appTheme。每种主题在不同平台支持度不同，获取、设置和监听变化的方式也不同。
+
+|主题概念	|描述												|App|Web|小程序	|获取方式																			|设置方式												|监听变化							|
+|--				|--													|--	|--	|--			|--																						|--															|--										|
+|osTheme	|手机OS的当前主题							|√	|x	|x			|[uni.getDeviceInfo](./get-device-info.md)		|-															|[uni.onOsThemeChange](#onosthemechange)|
+|hostTheme|浏览器或小程序宿主的当前主题	|x	|√	|√			|[uni.getDeviceInfo](./get-device-info.md)		|-															|[uni.onHostThemeChange](#onhostthemechange)|
+|appTheme	|App当前主题									|√	|X	|x			|[uni.getAppBaseInfo](./get-app-base-info.md)	|[uni.setAppTheme](#setapptheme)|[uni.onAppThemeChange](#onappthemechange)|
+
+Web和小程序注意：
+1. 没有能力获取os的主题。只能获取浏览器或小程序宿主的主题，即hostTheme。
+2. 可以选择不响应hostTheme，也可以根据hostTheme调整自身的表现。
+3. 某些浏览器或小程序自带API会涉及UI，其主题是跟随hostTheme来的，开发者的应用无法控制这些ui的主题。比如浏览器的alert()、小程序的showModal。
+
+应用适配暗黑主题，可以选择：
+1. 跟随上家，比如app平台跟随OSTheme，web和小程序跟随hostTheme。
+2. 不跟随上家，应用自己独立设置主题。比如有的应用只有暗黑模式，有的应用给用户提供了主题选择列表，允许用户选择和osTheme不一样的主题。
+
+一般情况下，独立设置主题的场景常见于App平台，所以App平台新增了appTheme的概念。appTheme有几个用途：
+1. 独立于osTheme设置主题
+2. 方便开发者和插件作者协作。推荐各个插件作者在涉及UI时，支持主题适配，响应App的主题变化
+3. uni-app x框架自带的一些UI页面，比如showActionSheet、比如pages.json的页面设置，会响应appTheme的变化
+
+开发者做主题适配时需考虑的内容范围：
+1. 开发者自己的uvue代码
+	大部分主题通过css设置，web和小程序平台可以使用媒体查询来设置。有部分ui需要通过组件的属性或内置API的参数来设置。
+2. [pages.json](../collocation/pagesjson.md)的页面设置，推荐通过[theme.json](../collocation/themejson.md)设置
+3. uni-app x的App和Web平台框架中自带的界面（小程序平台由小程序宿主自行适配，与uni-app x框架无关)
+	- uni.showActionSheet (从HBuilderX 4.51起适配暗黑模式）
+	- uni.showModal （暂未适配暗黑模式）
+	- uni.chooseLocation （从HBuilderX 4.33起适配暗黑模式）
+	- uni.openLocation （从HBuilderX 4.41起适配暗黑模式）
+	- uni.chooseImage/chooseVideo/chooseMedia/chooseFile，当调用系统的选择界面时，该界面的主题跟随osTheme，应用层无法干预
+
 ## uni.setAppTheme(options) @setapptheme
 
 <!-- UTSAPIJSON.setAppTheme.description -->

@@ -2,7 +2,9 @@
 
 > HBuilder X 4.18+ 支持
 
-`iOS 13+`、`Android 10+` 提供了暗黑模式/深色模式，之前的模式称为light，暗黑称为dark。
+完整的主题适配教程 [另见](../api/theme-change.md)。
+
+本文仅讲解theme.json的用法，用于解决pages.json的主题适配问题。
 
 当app需要暗黑主题时，开发者虽然可以自行决定自己的界面样式，但缺少合适的设置pages.json中样式的时机。
 
@@ -19,11 +21,12 @@
 但需要注意：**theme.json，仅负责pages.json的页面样式、tabbar样式的控制。不负责开发者自己的页面css样式控制。**
 
 适配暗黑模式，除通过theme.json控制pages.json的样式外，还需要了解更多API：
-- 获取OS主题：[uni.getSystemInfo](../api/get-system-info.md)、[uni.getDevideInfo](../api/get-device-info.md)，返回的osTheme属性
-- 监听OS主题切换：[uni.onOsThemeChange](../api/theme.md#onosthemechange)、[uni.offOsThemeChange](../api/theme.md#offosthemechange)、
+- 获取OS/Host主题：[uni.getSystemInfo](../api/get-system-info.md)、[uni.getDevideInfo](../api/get-device-info.md)，返回的osTheme、hostTheme属性
+- 监听OS主题切换：[uni.onOsThemeChange](../api/theme-change.md#onosthemechange)、[uni.offOsThemeChange](../api/theme-change.md#offosthemechange)、
+- 监听host主题切换：[uni.onHostThemeChange](../api/theme-change.md#onhostthemechange)、[uni.offOsThemeChange](../api/theme-change.md#offosthemechange)、
 - 获取App主题：[uni.getSystemInfo](../api/get-system-info.md)、[uni.getAppBaseInfo](../api/get-app-base-info.md)，返回的appTheme属性
-- 设置App主题：[uni.setAppTheme](../api/theme.md#setapptheme)
-- 监听App主题切换：[uni.onAppThemeChange](../api/theme.md#onappthemechange)、[uni.offAppThemeChange](../api/theme.md#offappthemechange)、
+- 设置App主题：[uni.setAppTheme](../api/theme-change.md#setapptheme)
+- 监听App主题切换：[uni.onAppThemeChange](../api/theme-change.md#onappthemechange)、[uni.offAppThemeChange](../api/theme-change.md#offappthemechange)、
 - manifest.json中设置App默认主题：[defaultAppTheme](../collocation/manifest.md#manifest-app)
 
 ## theme.json使用步骤

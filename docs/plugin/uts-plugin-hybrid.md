@@ -807,7 +807,7 @@ export function testJs() {
 
 + `index`是保留文件名，原生代码不能命名为 index.kt/index.java/index.swift
  
-+ HBuilder X 目前不支持原生代码的语法提示、转到定义、debug断点。仅支持高亮和格式化。
++ HBuilder X 暂不支持原生代码的语法提示、转到定义、debug断点。仅支持高亮和格式化。
 
 + 插件市场暂不支持原生代码的加密
 

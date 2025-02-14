@@ -143,7 +143,7 @@
 
 <!-- VUEJSON.application.onThemeChange.compatibility -->
 
-App平台监听主题变化可以使用[uni.onAppThemeChange](../api/theme-change.md)
+监听主题变化一般不推荐这个生命周期。而是使用uni api方式。详见：[uni-app x主题适配](../api/theme-change.md)
 
 <!-- VUEJSON.application.onThemeChange.param -->
 

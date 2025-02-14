@@ -16,6 +16,8 @@ socket在跨端、双向传输、二进制传输上有更多优势。
 
 Web端暂未兼容uni.connectEventSource API，请使用标准的Web API。
 
+小程序可以使用web-view组件，调用浏览器的SSE能力。
+
 <!-- UTSAPIJSON.connectEventSource.param -->
 
 <!-- UTSAPIJSON.connectEventSource.returnValue -->
