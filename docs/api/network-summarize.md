@@ -33,7 +33,7 @@ uni-app x 实现Cookie共享的API和组件的情况如下
 - [web-view组件](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) ：用于显示网页，会自动携带Cookie（iOS端未实现Cookie共享）。
 - [websocket](https://doc.dcloud.net.cn/uni-app-x/api/websocket.html)：未实现Cookie共享。
 
-已实现Cookie共享的组件和API，开发者无须关心Cookie的存储、删除、过期等问题，客户端已自动处理。
+已实现Cookie共享的组件和API，开发者无须关心Cookie的存储、删除、过期等问题，uni-app x框架已自动处理。
 
 #### Cookie共享使用场景
 
