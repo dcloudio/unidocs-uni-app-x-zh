@@ -37,6 +37,8 @@ Web和小程序注意：
 	- uni.openLocation （从HBuilderX 4.41起适配暗黑模式）
 	- uni.chooseImage/chooseVideo/chooseMedia/chooseFile，当调用系统的选择界面时，该界面的主题跟随osTheme，应用层无法干预
 
+注意：有些平台，os主题变化时会重启App，有些小程序宿主主题变化时会重启小程序，有些则不会。在会重启的场景下，监听主题变化其实没有意义。
+
 ## uni.setAppTheme(options) @setapptheme
 
 <!-- UTSAPIJSON.setAppTheme.description -->
