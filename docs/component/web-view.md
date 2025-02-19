@@ -90,7 +90,7 @@ web-view的操作api为[uni.createWebviewContext()](../api/create-webview-contex
 |uni.webView.navigateBack|[navigateBack](../api/navigator#navigateback)|Web平台暂不支持|
 |uni.webView.postMessage|向应用发送消息|Web平台暂不支持|
 
-在网页中使用`uni.postMessage()`即可向uts发送消息。
+在网页中使用`uni.webview.postMessage()`即可向uts发送消息。
 
 uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中接收消息。
 
