@@ -484,6 +484,10 @@ if (view != null && view instanceof WKWebView) {
 |transform-origin	|控制元素变形的原点的过渡效果															|
 |offset				|关键帧的偏移量。为0.0和1.0之间的数字。如果此值缺失，则关键帧将在相邻关键帧之间均匀分布。	|
 
+:::tip Tips
+- Android平台keyframes支持的属性值不支持设置百分比。
+:::
+
 - options 支持的属性
 
 |名称		|描述																				|
