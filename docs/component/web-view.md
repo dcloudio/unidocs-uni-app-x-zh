@@ -107,3 +107,4 @@ uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中�
 - app-android平台，web-view版本不一定是手机默认浏览器的版本。在部分手机上系统web-view的升级需要升级rom，部分手机则可以单独升级Android System Webview包。如需x5等三方webview，需使用uts插件，[见插件市场](https://ext.dcloud.net.cn/search?q=x5)。使用三方webview可减少系统webview的碎片化问题。  
 - app-ios平台，web-view的版本与iOS的版本绑定，也即是手机Safari浏览器的版本。WKWebview的限制比Android要多一些，比如无法使用跨域cookie，具体见Apple开发者文档。
 - 页面中的web-view组件数量不宜太多，每个web-view都会占用不少内存。  
+- uni.postMessage已不推荐使用（将废弃），功能与uni.webView.posMessage一致，推荐使用uni.webView.posMessage。
