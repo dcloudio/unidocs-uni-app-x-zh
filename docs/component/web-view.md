@@ -88,6 +88,7 @@ web-view的操作api为[uni.createWebviewContext()](../api/create-webview-contex
 |uni.webView.reLaunch|[reLaunch](../api/navigator#relaunch)|Web平台暂不支持|
 |uni.webView.switchTab|[switchTab](../api/navigator#switchtab)|Web平台暂不支持|
 |uni.webView.navigateBack|[navigateBack](../api/navigator#navigateback)|Web平台暂不支持|
+|uni.webView.getEnv|获取当前webView环境|uvue/nvue/plus/h5|
 |uni.webView.postMessage|向应用发送消息|Web平台暂不支持|
 
 在网页中使用`uni.webView.postMessage()`即可向uts发送消息。
