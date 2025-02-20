@@ -18,7 +18,7 @@
 
 **平台差异**
 
-- web端swiper默认高度为150px。app端swiper默认会以内容高度作为其高度。
+- web、小程序端swiper默认高度为150px。app端swiper默认会以内容高度作为其高度。如果要多端拉齐应自行设置swiper高度。
 
 ## swiper-item
 
