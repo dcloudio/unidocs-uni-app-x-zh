@@ -486,6 +486,7 @@ if (view != null && view instanceof WKWebView) {
 
 :::tip Tips
 - Android平台keyframes支持的属性值不支持设置百分比。
+- 微信小程序平台 keyframes 使用 wxs + transition 方案实现，不支持多个 keyframes 之间使用缺省属性。微信内置的 `this.animate` 方案支持 [css 属性有限](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html#%E5%85%B3%E9%94%AE%E5%B8%A7%E5%8A%A8%E7%94%BB)，可以配合使用。
 :::
 
 - options 支持的属性
@@ -493,9 +494,9 @@ if (view != null && view instanceof WKWebView) {
 |名称		|描述																				|
 |:--		|:--																				|
 |delay		|动画延迟的毫秒数	。默认值为0															|
-|direction	|动画运行方向。Android仅支持alternate和normal，默认为normal							|
+|direction	|动画运行方向。Android/微信小程序平台仅支持alternate和normal，默认为normal							|
 |duration	|动画时长。默认值为0																	|
-|easing		|动画曲线。支持ease、ease-in、ease-out、ease-in-out、linear和贝塞尔函数。默认值为linear	|
+|easing		|动画曲线。支持ease、ease-in、ease-out、ease-in-out、linear和贝塞尔函数。默认值为linear（微信小程序平台支持 linear）	|
 |fill		|决定动画效果是否应在播放前反映在元素中（Android仅支持forwards）							|
 |iterations	|动画应重复的次数。默认值为1。	当设置为`Infinity`时，动画将一直重复执行。					|
 
