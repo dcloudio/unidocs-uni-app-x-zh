@@ -1,4 +1,4 @@
-## cover-view
+## ~~cover-view~~
 
 <!-- UTSCOMJSON.cover-view.description -->
 
@@ -17,4 +17,3 @@ cover-view 仅在webview渲染、且不支持同层渲染的小程序上有用�
 <!-- UTSCOMJSON.cover-view.example -->
 
 <!-- UTSCOMJSON.cover-view.reference -->
-

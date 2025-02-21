@@ -12,8 +12,8 @@
       * [movable-area | 可拖动区域](movable-area.md)
       * [movable-view | 可拖动视图容器](movable-view.md)
     * cover
-      * [cover-view](cover-view.md)
-      * [cover-image](cover-image.md)
+      * [~~cover-view~~](cover-view.md)
+      * [~~cover-image~~](cover-image.md)
     * list-view | 列表布局组件
       * [list-view | 列表容器](list-view.md)
       * [list-item | 列表容器子项](list-item.md)

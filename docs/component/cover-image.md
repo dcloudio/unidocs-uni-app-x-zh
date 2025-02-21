@@ -1,4 +1,4 @@
-## cover-image
+## ~~cover-image~~
 
 <!-- UTSCOMJSON.cover-image.description -->
 
@@ -15,4 +15,3 @@
 <!-- UTSCOMJSON.cover-image.example -->
 
 <!-- UTSCOMJSON.cover-image.reference -->
-
