@@ -90,8 +90,8 @@ env(safe-area-inset-left, 20px);
 > app平台的 CSS 环境变量是页面相关的，即根据 uvue 页面原生导航栏和tabBar的配置自动计算。
 
 app平台仅以下CSS属性支持使用环境变量
-- padding
-- margin
+- padding （不支持缩写，只支持展开值，明确到具体方向，比如 padding-left）
+- margin（不支持缩写，只支持展开值，明确到具体方向，比如 padding-left）
 - width
 - height
 - top
