@@ -17,6 +17,6 @@
 
 #### App平台差异
 + text-decoration-color 样式不支持继承
-+ App平台默认颜色为黑色，暂不支持设置
++ App平台默认颜色为文字颜色，暂不支持设置
 
 <!-- CSSJSON.text-decoration-color.reference -->
