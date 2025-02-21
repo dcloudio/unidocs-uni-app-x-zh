@@ -39,6 +39,9 @@ dialogPage的绑定：
 - 多个dialogPage层叠时，可以通过close api任意关闭某个dialogPage。
 - 当前 dialogPage 关闭会触发前一个 dialogPage onShow 生命周期
 
+调用时机注意事项：
+- 最早的调用时机是在app的onLaunch里调用openDialogPage，不支持在main.uts中调用openDialogPage。
+
 app-android平台注意事项：  
 - dialogPage不会创建Android原生Activity，复用parentPage的Android原生Activity。
 
