@@ -231,10 +231,6 @@ number 和平台专有类型的 + - * / % 规则：
 - number 在左侧，平台专有类型在右侧，可以进行 + - * / % 操作，其结果是 number. (安卓平台支持所有的专有类型，iOS平台目前支持 Int Double Float Float64 Float32 类型)
 - 平台专有类型在左侧，number在右侧，可以进行  + - * / % 操作，其结果是 number. (安卓平台支持所有的专有类型，iOS平台需要将左侧的专有类型变量 as 成 number)
 
-**已知Bug**
-- Android平台 uni-app项目的uts插件中，字面量整数相除时真机运行返回类型为number，云端打包返回类型为Int。如let a = 1/10，真机运行时为值为0.1，云端打包后值为0。此问题在uni-app x项目中不存在。
-- iOS平台 number 和专有类型的 + - * / 操作目前只支持 Int Double Float Float64 Float32 类型，其余专有类型将在后续版本补齐。
-- iOS平台 number 和专有类型的 % 操作目前只支持 Int 类型，其余专有类型的支持将在后续版本补齐。
 
 
 ## 比较运算符的跨数字类型注意@comparisondifftype
