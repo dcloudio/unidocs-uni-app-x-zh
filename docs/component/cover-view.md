@@ -6,6 +6,10 @@ cover-view 仅在webview渲染、且不支持同层渲染的小程序上有用�
 
 <!-- UTSCOMJSON.cover-view.compatibility -->
 
+::: warning 注意
+app 端通过将 `cover-view` 转为 `view` 实现兼容支持。
+:::
+
 <!-- UTSCOMJSON.cover-view.attribute -->
 
 <!-- UTSCOMJSON.cover-view.event -->
