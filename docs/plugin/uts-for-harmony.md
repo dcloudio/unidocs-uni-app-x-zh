@@ -100,6 +100,17 @@ uts插件的`utssdk/app-harmony/config.json`文件内可以配置依赖，配置
 
 uts 插件内包含了一个resources目录，用于存放插件的资源文件，如图片、字体等，关于resources的更多信息请参考：[鸿蒙资源分类与访问](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5)。此目录位于`utssdk/app-harmony/resources`。
 
+## 特殊文件拷贝
+
+uts插件编译到鸿蒙时会将整个插件编译为一个鸿蒙的module。如下文件会拷贝到鸿蒙module内的对应位置。其中module.json5文件可以配置依赖的权限等信息。
+
+```text
+utssdk/app-harmony/module.json5  -->  src/main/module.json5
+utssdk/app-harmony/resources  -->  src/main/resources
+utssdk/app-harmony/*.ets  -->  utssdk/app-harmony/*.ets
+utssdk/app-harmony/*.har  -->  utssdk/app-harmony/*.har
+```
+
 ## 常见问题
 
 ### context的获取
