@@ -1,13 +1,15 @@
-## ~~cover-view~~
+## cover-view
 
 <!-- UTSCOMJSON.cover-view.description -->
 
-cover-view 仅在webview渲染、且不支持同层渲染的小程序上有用，用于覆盖video、map等原生组件。在uni-app x的app、web上，以及支持同层渲染的微信小程序上，没有实际意义。
+cover-view 在uni-app x的app、web、微信小程序上，已废弃，使用view即可。
+
+在其他小程序平台，某些原生组件（如map、canvas、video）不支持同层渲染，仍需要cover-view来覆盖。
 
 <!-- UTSCOMJSON.cover-view.compatibility -->
 
 ::: warning 注意
-app 端通过将 `cover-view` 转为 `view` 实现兼容支持。
+app 端并不是在运行时实现了cover-view组件，仅仅是编译器把cover-view编译为了view。
 :::
 
 <!-- UTSCOMJSON.cover-view.attribute -->
