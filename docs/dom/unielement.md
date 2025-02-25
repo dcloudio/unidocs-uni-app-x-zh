@@ -460,28 +460,28 @@ if (view != null && view instanceof WKWebView) {
 |width				|控制宽度属性的过渡效果																|
 |height				|控制高度属性的过渡效果																|
 |margin				|控制外边距属性的过渡效果																|
-|margin-top			|控制上外边距属性的过渡效果															|
-|margin-bottom		|控制下外边距属性的过渡效果															|
-|margin-left		|控制左外边距属性的过渡效果															|
-|margin-right		|控制右外边距属性的过渡效果															|
+|marginTop			|控制上外边距属性的过渡效果															|
+|marginBottom		|控制下外边距属性的过渡效果															|
+|marginLeft		|控制左外边距属性的过渡效果															|
+|marginRight		|控制右外边距属性的过渡效果															|
 |left				|控制左侧位置属性的过渡效果															|
 |right				|控制右侧位置属性的过渡效果															|
 |top				|控制顶部位置属性的过渡效果															|
 |bottom				|控制底部位置属性的过渡效果															|
 |padding			|控制内边距属性的过渡效果																|
-|padding-left		|控制左内边距属性的过渡效果															|
-|padding-right		|控制右内边距属性的过渡效果															|
-|padding-top		|控制上内边距属性的过渡效果															|
-|padding-bottom		|控制下内边距属性的过渡效果															|
+|paddingLeft		|控制左内边距属性的过渡效果															|
+|paddingRight		|控制右内边距属性的过渡效果															|
+|paddingTop		|控制上内边距属性的过渡效果															|
+|paddingBottom		|控制下内边距属性的过渡效果															|
 |opacity			|控制透明度属性的过渡效果																|
-|background-color	|控制背景颜色属性的过渡效果															|
-|border-color		|控制边框颜色属性的过渡效果															|
-|border-top-color	|控制上边框颜色属性的过渡效果															|
-|border-bottom-color|控制下边框颜色属性的过渡效果															|
-|border-left-color	|控制左边框颜色属性的过渡效果															|
-|border-right-color	|控制右边框颜色属性的过渡效果															|
+|backgroundColor	|控制背景颜色属性的过渡效果															|
+|borderColor		|控制边框颜色属性的过渡效果															|
+|borderTopColor	|控制上边框颜色属性的过渡效果															|
+|borderBottomColor|控制下边框颜色属性的过渡效果															|
+|borderLeftColor	|控制左边框颜色属性的过渡效果															|
+|borderRightColor	|控制右边框颜色属性的过渡效果															|
 |transform			|控制变换属性的过渡效果																|
-|transform-origin	|控制元素变形的原点的过渡效果															|
+|transformOrigin	|控制元素变形的原点的过渡效果															|
 |offset				|关键帧的偏移量。为0.0和1.0之间的数字。如果此值缺失，则关键帧将在相邻关键帧之间均匀分布。	|
 
 :::tip Tips
