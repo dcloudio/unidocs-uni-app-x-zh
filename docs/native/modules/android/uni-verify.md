@@ -46,3 +46,13 @@ android {
 ```
 
 GETUI_APPID与GY_APP_ID对应[开发者中心](https://dev.dcloud.net.cn/)一键登录->基础配置->一键登录应用ID，GETUI_APPID与GY_APP_ID取值相同。
+
+### 插件注册
+
+将以下内容添加到主模块的build.gradle。
+
+```groovy
+defaultConfig {
+    buildConfigField 'String', 'UTSEasyCom', '\"[{\\\"class\\\":\\\"uts.sdk.modules.DCloudUniVerify.UniVerifyExtApiPagesRegister\\\",\\\"method\\\":\\\"register\\\"}]\"'
+}
+```

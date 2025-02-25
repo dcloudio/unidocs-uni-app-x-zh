@@ -1,29 +1,28 @@
 ## API与对应的库参照表
 
-|模块名称							|本地依赖库												|线上依赖库																																							|最低支持安卓版本	|依赖的模块																								|
-|:--								|:--													|:--																																								|:--			|:--																									|
-|uni-createRequestPermissionListener|uni-createRequestPermissionListener-release.aar		|-																																									|-				|-																										|
-|uni-createWebviewContext			|uni-createWebviewContext-release.aar					|androidx.webkit:webkit:1.6.0																																		|-				|-																										|
-|uni-fileSystemManager				|uni-fileSystemManager-release.aar						|org.brotli:dec:0.1.2																																				|-				|-																										|
-|uni-getLocation-system				|uni-getLocation-system-release.aar						|-																																									|-				|-																										|
-|uni-getNetworkType					|uni-getNetworkType-release.aar							|-																																									|-				|-																										|
-|uni-installApk						|uni-installApk-release.aar								|-																																									|-				|-																										|
-|uni-network						|uni-network-release.aar								|com.squareup.okhttp3:okhttp:3.12.12																																|-				|-																										|
-|uni-websocket						|uni-websocket-release.aar								|com.squareup.okhttp3:okhttp:3.12.12																																|-				|-																										|
-|uni-cloud-client					|uni-cloud-client-release.aar							|-																																									|-				|uni-network<br/>uni-storage<br/>uni-prompt<br/>uni-media<br/>uni-websocket								|
-|uni-media							|uni-media-release.aar<br/>nativeobj-preview-release.aar|com.github.bumptech.glide:glide:4.9.0<br/>androidx.recyclerview:recyclerview:1.0.0<br/>androidx.appcompat:appcompat:1.6.1<br/>androidx.activity:activity-ktx:1.9.2	|-				|uni-prompt																								|
-|uni-privacy						|uni-privacy-release.aar								|-																																									|-				|-																										|
-|uni-getProvider					|uni-getProvider-release.aar							|-																																									|-				|-																										|
-|uni-shareWithSystem				|uni-shareWithSystem-release.arr						|-																																									|-				|-																										|
-|uni-createInnerAudioContext		|uni-createInnerAudioContext-release.aar				|com.google.android.exoplayer:exoplayer-core:2.18.0																													|-				|uni-network																							|
-|uni-getBackgroundAudioManager		|uni-getBackgroundAudioManager-release.aar				|com.google.android.exoplayer:exoplayer-core:2.18.0																													|-				|uni-network																							|
-|uni-chooseLocation					|uni-chooseLocation-release.aar							|-																																									|-				|uni-theme<br/>uni-getLocation<br/>uni-cloud-client<br/>uni-getLocation<br/>uni-map-tencent				|
-|uni-actionSheet					|uni-actionSheet-release.aar							|-																																									|-				|-																										|
-|uni-previewImage					|uni-previewImage-release.aar							|-																																									|-				|uni-media<br/>uni-network<br/>uni-fileSystemManager<br/>uni-storage<br/>uni-prompt<br/>uni-actionSheet	|
-|uni-chooseMedia					|uni-chooseMedia-release.aar							|androidx.appcompat:appcompat:1.6.1<br/>androidx.activity:activity-ktx:1.9.2																						|-				|uni-actionSheet																						|
-|uni-arrayBufferToBase64					|uni-arrayBufferToBase64-release.aar							|-																						|-				|-																						|
-|uni-base64ToArrayBuffer					|uni-base64ToArrayBuffer-release.aar							|-																						|-				|-																						|
-|uni-sse					|uni-sse-release.aar							|com.squareup.okhttp3:okhttp-sse:3.12.12																						|-				|-																						|
+|模块名称								|本地依赖库												|线上依赖库																																							|依赖的模块																								|插件注册信息																																														|
+|:--								|:--													|:--																																								|:--																									|:--																																														|
+|uni-createRequestPermissionListener|uni-createRequestPermissionListener-release.aar		|-																																									|-																										|-																																															|
+|uni-createWebviewContext			|uni-createWebviewContext-release.aar					|androidx.webkit:webkit:1.6.0																																		|-																										|-																																															|
+|uni-fileSystemManager				|uni-fileSystemManager-release.aar						|org.brotli:dec:0.1.2																																				|-																										|-																																															|
+|uni-getNetworkType					|uni-getNetworkType-release.aar							|-																																									|-																										|-																																															|
+|uni-installApk						|uni-installApk-release.aar								|-																																									|-																										|-																																															|
+|uni-network						|uni-network-release.aar								|com.squareup.okhttp3:okhttp:3.12.12																																|-																										|-																																															|
+|uni-websocket						|uni-websocket-release.aar								|com.squareup.okhttp3:okhttp:3.12.12																																|-																										|-																																															|
+|uni-cloud-client					|uni-cloud-client-release.aar							|-																																									|uni-network<br/>uni-storage<br/>uni-prompt<br/>uni-media<br/>uni-websocket								|-																																															|
+|uni-media							|uni-media-release.aar<br/>nativeobj-preview-release.aar|com.github.bumptech.glide:glide:4.9.0<br/>androidx.recyclerview:recyclerview:1.0.0<br/>androidx.appcompat:appcompat:1.6.1<br/>androidx.activity:activity-ktx:1.9.2	|uni-prompt																								|-																																															|
+|uni-privacy						|uni-privacy-release.aar								|-																																									|-																										|-																																															|
+|uni-getProvider					|uni-getProvider-release.aar							|-																																									|-																										|-																																															|
+|uni-shareWithSystem				|uni-shareWithSystem-release.arr						|-																																									|-																										|```buildConfigField 'String[]', 'UTSHooksClassArray', '{\"uts.sdk.modules.uniShareWithSystem.ShareWithSystemHook\"}'```																	|
+|uni-createInnerAudioContext		|uni-createInnerAudioContext-release.aar				|com.google.android.exoplayer:exoplayer-core:2.18.0																													|uni-network																							|-																																															|
+|uni-getBackgroundAudioManager		|uni-getBackgroundAudioManager-release.aar				|com.google.android.exoplayer:exoplayer-core:2.18.0																													|uni-network																							|-																																															|
+|uni-chooseLocation					|uni-chooseLocation-release.aar							|-																																									|uni-theme<br/>uni-getLocation<br/>uni-cloud-client<br/>uni-getLocation<br/>uni-map-tencent				|```buildConfigField 'String', 'UTSEasyCom', '\"[{\\\"class\\\":\\\"uts.sdk.modules.DCloudUniChooseLocation.UniChooseLocationExtApiPagesRegister\\\",\\\"method\\\":\\\"register\\\"}]\"'```|
+|uni-actionSheet					|uni-actionSheet-release.aar							|-																																									|-																										|```buildConfigField 'String', 'UTSEasyCom', '\"[{\\\"class\\\":\\\"uts.sdk.modules.DCloudUniActionSheet.UniActionSheetExtApiPagesRegister\\\",\\\"method\\\":\\\"register\\\"}]\"'```		|
+|uni-previewImage					|uni-previewImage-release.aar							|-																																									|uni-media<br/>uni-network<br/>uni-fileSystemManager<br/>uni-storage<br/>uni-prompt<br/>uni-actionSheet	|```buildConfigField 'String', 'UTSEasyCom', '\"[{\\\"class\\\":\\\"uts.sdk.modules.DCloudUniPreviewImage.UniPreviewImageExtApiPagesRegister\\\",\\\"method\\\":\\\"register\\\"}]\"'```	|
+|uni-chooseMedia					|uni-chooseMedia-release.aar							|androidx.appcompat:appcompat:1.6.1<br/>androidx.activity:activity-ktx:1.9.2																						|uni-actionSheet																						|-																																															|
+|uni-arrayBufferToBase64			|uni-arrayBufferToBase64-release.aar					|-																																									|-																										|-																																															|
+|uni-base64ToArrayBuffer			|uni-base64ToArrayBuffer-release.aar					|-																																									|-																										|-																																															|
+|uni-sse							|uni-sse-release.aar									|com.squareup.okhttp3:okhttp-sse:3.12.12																															|-																										|-																																															|
 
 各模块对应的API可参考文档[App端支持的内置模块列表](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#utsmodules)
 
@@ -39,10 +38,20 @@
 
 将上表中的线上依赖库添加到app模块的build.gradle中。以`uni-network`为例，参考：
 
-```
+```groovy
 	dependencies {
 		implementation 'com.squareup.okhttp3:okhttp:3.12.12'
 	}
+```
+
+### 插件注册
+
+将上表中的`插件注册信息`拷贝到build.gradle的defaultConfig节点下。以`uni-previewImage`为例，参考
+
+```groovy
+defaultConfig {
+    buildConfigField 'String', 'UTSEasyCom', '\"[{\\\"class\\\":\\\"uts.sdk.modules.DCloudUniPreviewImage.UniPreviewImageExtApiPagesRegister\\\",\\\"method\\\":\\\"register\\\"}]\"'
+}
 ```
 
 ## 其他模块
@@ -79,3 +88,5 @@ defaultConfig {
 [uni-payment](/native/modules/android/uni-payment.md)
 
 [uni-map-tencent](/native/modules/android/uni-map-tencent.md)
+
+[uni-getLocation](/native/modules/android/uni-getLocation.md)

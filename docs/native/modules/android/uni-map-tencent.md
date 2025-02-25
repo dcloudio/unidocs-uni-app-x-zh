@@ -62,3 +62,13 @@ dependencies {
 ```
 
 
+### 插件注册
+
+将以下内容添加到主模块的build.gradle。
+
+```groovy
+defaultConfig {
+    buildConfigField 'String', 'UTSEasyCom', '\"[{\\\"class\\\":\\\"uts.sdk.modules.DCloudUniMapTencent.UniMapTencentExtApiComponentsRegister\\\",\\\"method\\\":\\\"register\\\"}]\"'
+}
+```
+
