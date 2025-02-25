@@ -491,10 +491,30 @@ list[1] = 100;
 - 4.41版本起：app-android平台将kotlin专有数字类型赋值给 any 类型变量后，typeof 此变量将返回为 number 类型，4.41版本之前 typeof 此变量可能会返回kotlin专有数字类型。
 
 ## null类型 @null
+一个表明 null 值的特殊关键字，作为字面量赋值使用时用于表示“空值”或“不存在的值”。
 
-一个表明 null 值的特殊关键字。
+null类型是一种特殊类型，在 app-android/app-ios 平台不能作为变量独立的类型，需与其他类型联合使用，表示变量可为“空值”。
 
-uts 的类型系统可以消除来自代码空引用的危险。
+```ts
+let t1:null = null; // app-android/app-ios不支持将变量声明为null类型
+let t2 = null;  // app-ios不支持将变量自动推导为null类型，app-android平台虽然支持但类型不可预期
+function t3(t:null) { // app-android/app-ios不支持将函数参数申明为null类型
+}
+function t4(): null {  // app-android/app-ios不支持将函数返回值申明为null类型
+	return null;
+}
+
+// 正确写法 
+let t1:any|null = null;
+let t2:any|null = null;
+function t3(t:any|null) {
+}
+function t4(): any|null {
+	return null;
+}
+```
+
+null类型可以用于消除来自代码空引用的危险。
 
 许多编程语言中最常见的陷阱之一，就是访问空引用的成员会导致空引用异常。在 Java 中，这等同于 NullPointerException 或简称 NPE。
 
@@ -557,7 +577,7 @@ if (b != null) {
 
 编译器会跟踪所执行检测的信息，并允许你在 if 内部调用 length。
 
-### 2. 不判空，使用`?.`进行安全调用
+#### 2. 不判空，使用`?.`进行安全调用
 
 访问可空变量的属性的第二种选择是使用安全调用操作符 `?.`
 
