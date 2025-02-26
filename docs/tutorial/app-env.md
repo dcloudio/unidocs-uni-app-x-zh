@@ -1,5 +1,7 @@
 # app平台 uni-app x 项目云端打包环境  
 
+> uni-app 项目云端打包环境参考[这里](https://uniapp.dcloud.net.cn/tutorial/app-env.html)
+
 ## Android平台云端打包环境  
 
 > 使用 gradle 脚本编译  
