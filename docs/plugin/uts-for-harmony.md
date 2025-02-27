@@ -100,6 +100,43 @@ uts插件的`utssdk/app-harmony/config.json`文件内可以配置依赖，配置
 
 uts 插件内包含了一个resources目录，用于存放插件的资源文件，如图片、字体等，关于resources的更多信息请参考：[鸿蒙资源分类与访问](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/resource-categories-and-access-V5)。此目录位于`utssdk/app-harmony/resources`。
 
+## module.json5
+
+开发者可以在uts插件内配置module.json5文件，用于配置插件的一些信息，如模块名、支持的设备类型、请求的权限等。module.json5内配置权限请参考鸿蒙官方文档：[声明权限](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/declare-permissions-V5)
+
+module.json5文件内容示例
+
+```json
+{
+  "module": { // 模块信息 name、type、deviceTypes可以省略，编译时会自动生成默认值
+    "name": "uni_modules__test_mylocation", // 鸿蒙模块名，默认值生成规则见下文
+    "type": "har", // 固定为har
+    "deviceTypes": [ // 支持的设备类型
+      "default",
+      "tablet",
+      "2in1"
+    ],
+    "requestPermissions": [ // 配置需要请求的权限
+      {
+        "name": "ohos.permission.LOCATION",
+        "usedScene": {
+          "when": "inuse"
+        },
+        "reason": "$string:permission_location_reason" // 本地resources内的字符串
+      }
+    ]
+  }
+}
+```
+
+鸿蒙模块名生成规则：
+
+对于一个名称为 uni-getBatteryInfo 的 uni_module，它的 moduleName 为uni_modules__uni_getbatteryinfo，packageName 为@uni_modules/uni-getbatteryinfo。
+
+packageName（引用模块名）规则较为简单，给 uni_module 名称前加上@uni_modules前缀然后转为全小写。
+
+moduleName（鸿蒙模块名）是在 packageName 的基础上生成的，移除@符号，将/替换为两个下划线，将-替换为一个下划线
+
 ## 特殊文件拷贝
 
 uts插件编译到鸿蒙时会将整个插件编译为一个鸿蒙的module。如下文件会拷贝到鸿蒙module内的对应位置。其中module.json5文件可以配置依赖的权限等信息。
