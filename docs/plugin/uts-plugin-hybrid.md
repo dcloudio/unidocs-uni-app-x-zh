@@ -137,8 +137,6 @@ object NativeCode {
 
 UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象](../uts/utsandroid.md)均可以在原生环境使用，下面以kotlin中打印日志到HBuilder X 控制台为例说明：
 
-下面以kotlin中打印日志到HBuilder X 控制台为例说明：
-
 第一步：手动导入对应的包名，包名规则为： `io.dcloud.uts.xxx` 。这里的 xxx 是具体的对象的类名 ：
 
 ```kotlin
