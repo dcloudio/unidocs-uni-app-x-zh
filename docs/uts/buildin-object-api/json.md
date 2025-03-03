@@ -133,29 +133,3 @@ HBuilderX 3.9+，支持JSON.parse传入[泛型](../generics.md)。
 
 <!-- UTSJSON.JSON.tutorial -->
 
-## 兼容性说明
-
-
-从 HBuilder X 4.21 版本开始，JSON.parse 未指定类型泛型的情况下解析得到的 number 类型，不再是 `kotlin.Number` 而是 `UTSNumber` 类型。
-
-对开发者影响在于：之前允许 `number` 类型使用 `as` 操作符进行数据类型转换，在4.21 之后版本，此行为会导致编译报错.
-
-```ts
-let jsonObject = JSON.parseObject('{"a":1}') ;
-let b:Int = jsonObject!['a'] as Int
-console.log(b)
-```
-
-上面这段代码，在HBuilder X 4.21之前版本是可以运行的，但是在 HBuilder X 4.21 之后版本会在编译阶段触发下面的报错:
-
-```
-‌error: java.lang.ClassCastException: io.dcloud.uts.UTSNumber cannot be cast to java.lang.Integer‌
-```
-
-如果需要数据类型转换，请使用  [toXXX](https://doc.dcloud.net.cn/uni-app-x/uts/data-type.html#kotlin ) 替代，上面的代码可以替换为:
-
-```ts
-let jsonObject = JSON.parseObject('{"a":1}') ;
-let b:Int = (jsonObject!['a'] as Number).toInt()
-console.log(b)
-```
