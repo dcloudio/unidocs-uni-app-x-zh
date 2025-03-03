@@ -90,6 +90,10 @@
 
   若要避免深层响应式转换，只想保留对这个对象顶层次访问的响应性，请使用 [shallowReactive()](#shallowreactive) 作替代。
 
+::: warning 注意
+- `reactive` 在 app-android 平台目前不支持对 class 做响应式，推荐使用 type 定义存储数据的对象类型。
+:::
+
 - 示例 [详情](<!-- VUEJSON.E_reactivity.core_reactive_reactive.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_reactivity.core_reactive_reactive.webUrl -->
