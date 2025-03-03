@@ -184,7 +184,9 @@ uni.setStorageSync('obj', {"a": 1} as UTSJSONObject)
 也就是当我们使用setStorage/setStorageSync 储存一个带类型的数据时，插件内部会自动将其序列化为字符串后进行储存。当我们调用 getStorage/getStorageSync 插件内部也会尝试对字符串进行类型还原，分为以下几种情况：
 
 
-+ 如果是UTSJSONObject 类型，不会有类型的丢失。
+#### UTSJSONObject
+
+如果是`UTSJSONObject` 类型，不会有类型的丢失
 
 ```ts
 let json1 = {
@@ -198,7 +200,10 @@ let json2 = uni.getStorageSync("test-json")
 console.log("json2",json2)
 ```
 
-+ 如果是type类型，可以正常写入，但是当读取时得到是是UTSJSONObject类型，需要进行类型转换。
+#### type类型
+
+如果是type类型，可以正常写入，但是当读取时得到是是UTSJSONObject类型，需要进行类型转换。
+
 
 ```ts
 type User = {
@@ -225,7 +230,12 @@ uni.getStorage({
 })
 ```
 
-+ 还有一种情况，如果开发者使用class而非type定义类型，默认情况下无法读写的。
+#### 自定义class
+
+还有一种情况，如果开发者使用class而非type定义类型，默认情况下无法读写的。
+
+> 大多数情况下，我们更推荐使用type,而不是自定义class。 因为自定义class的行为在不同终端可能表现不一致。
+
 
 ```ts
 class Person {
@@ -235,13 +245,13 @@ class Person {
 
 	// 构造函数
 	constructor(name: string, age: number) {
-	this.name = name;
-	this.age = age;
+		this.name = name;
+		this.age = age;
 	}
 
 	// 方法
 	greet(): string {
-	return `Hello, I'm ${this.name} and I'm ${this.age} years old.`;
+		return `Hello, I'm ${this.name} and I'm ${this.age} years old.`;
 	}
 }
 
@@ -265,8 +275,8 @@ class Person implements IJSONStringify {
 
 	// 构造函数
 	constructor(name: string, age: number) {
-	this.name = name;
-	this.age = age;
+		this.name = name;
+		this.age = age;
 	}
 	// 自定义序列化规则
 	toJSON():any{
