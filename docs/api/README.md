@@ -9,7 +9,7 @@ uni-app x项目的uts代码中可以使用很多API。包括：
 5. dom的api [详见](../dom/README.md)
 6. vue的api [详见](../vue/README.md)
 7. os原生api
-	
+
 ## os原生api的使用
 由于uts可以直接调用Android和iOS的api，所以os和三方sdk的能力都可以在uts中调用。如下：
 
@@ -50,17 +50,17 @@ uni-app x 中不再支持plus和weex的API。过去plus api中一些常用的api
 
 1. 打开一个靠谱的ai，询问："kotlin中获取手机型号的代码，需包含导入的类"，得到如下代码：
 ```kotlin
-import android.os.Build  
-  
-fun getDeviceModel(): String {  
-    return Build.MODEL  
+import android.os.Build
+
+fun getDeviceModel(): String {
+    return Build.MODEL
 }
 ```
 
 2. 再问ai："把上述代码转为ts代码"
 ```ts
-function getDeviceModel(): string {  
-  return Build.MODEL;  
+function getDeviceModel(): string {
+  return Build.MODEL;
 }
 ```
 

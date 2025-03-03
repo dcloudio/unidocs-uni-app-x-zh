@@ -7,7 +7,7 @@
 
 ## 1 了解UTS插件是什么
 
-`UTS插件`是`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点。[详情](/plugin/uts-plugin)
+`UTS插件`是`uni-app`新型插件形式，拥有跨平台，高效率，易调试等优点。[详情](./uts-plugin.md)
 
 对于Android开发者来说，我们需要了解的是：
 
@@ -367,16 +367,16 @@ uni-app x / uni-app 均支持打包时手动指定资源位置 [说明文档](ht
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
 ┌─pages                         //页面目录
-│  └─[具体内容]                   
+│  └─[具体内容]
 ├─nativeResources               //配置文件目录
 │  └─android
 │  	└─google-services.json
 ├─ // 其他文件
-└─App.vue 
+└─App.vue
 	</code>
 </pre>
 
-具体的打包示例，参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts) 
+具体的打包示例，参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts)
 
 ### 3.6 远程依赖仓库说明
 
@@ -988,7 +988,7 @@ export function request<T>(options : RequestOptions<T>) : RequestTask {
 ```
 
 
-**注意：不要在`inline`方法中创建局部function，比如request的success回调、Promise的回调，原因是kotlin语言的限制（inline方法展开到内联位置，也会把局部方法展开过去，这是不允许的），由此把使用局部function的逻辑封装到非内联的方法中，绕过此限制。**  
+**注意：不要在`inline`方法中创建局部function，比如request的success回调、Promise的回调，原因是kotlin语言的限制（inline方法展开到内联位置，也会把局部方法展开过去，这是不允许的），由此把使用局部function的逻辑封装到非内联的方法中，绕过此限制。**
 
 下面是可以完整的示例：
 

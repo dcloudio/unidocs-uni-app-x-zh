@@ -98,6 +98,9 @@ const config = {
         .end()
         .plugin('inject-json-to-md')
         .use(require('./markdown/inject-json-to-md'))
+        .end()
+        .plugin('add-base-to-md')
+        .use(require('./markdown/add-base-to-md'), [{ base }])
     }
   },
   chainWebpack (config, isServer) {
