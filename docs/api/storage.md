@@ -181,7 +181,7 @@ uni.setStorageSync('obj', {"a": 1} as UTSJSONObject)
 
 首先明确一个原则，Storage实际储存到各终端文件系统的是**序列化后的数据**。 
 
-也就是当我们使用setStorage/setStorageSync 储存一个带类型的数据时，插件内部会自动将序列化后进行储存（字符串格式）。当我们使用 getStorage/getStorageSync 获取对应的数据时，插件内部会尝试将其进行类型还原，分为以下几种情况：
+也就是当我们使用setStorage/setStorageSync 储存一个带类型的数据时，插件内部会自动将其序列化为字符串后进行储存。当我们调用 getStorage/getStorageSync 插件内部也会尝试对字符串进行类型还原，分为以下几种情况：
 
 
 + 如果是UTSJSONObject 类型，不会有类型的丢失。
@@ -225,7 +225,7 @@ uni.getStorage({
 })
 ```
 
-还有一个更少见的情况，如果开发者使用class而非type定义类型，默认情况下无法读写的。
++ 还有一种情况，如果开发者使用class而非type定义类型，默认情况下无法读写的。
 
 ```ts
 class Person {
