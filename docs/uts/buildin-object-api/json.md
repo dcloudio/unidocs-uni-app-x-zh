@@ -196,6 +196,30 @@ console.log("data",JSON.stringify(alice))
 
 ```
 
+`IJSONStringify` 接口内部仅包含一个待实现方法 ` toJSON():any|null` 
+
+该方法的返回值会成为当前class序列化后的值。该方法声明的返回值类型为any|null
+
+实际支持下面的几种类型
+
++ [JSON协议](https://www.json.org/json-en.html)中支持的基本数据类型
+
+string,number,boolean,null
+
++ [JSON协议](https://www.json.org/json-en.html)中支持的容器数据类型
+
+Array 对应 Array
+
+UTSJSONObject 对应 object 
+
++ IJSONStringify
+
+如果toJSON函数的返回值是另外一个 `IJSONStringify`对象，则序列化逻辑会继续调用该对象的 `toJSON`方法，直到一个不为 `IJSONStringify`的值。换句话说就是toJSON函数支持嵌套。
+
+
+
+
+
 
 
 
