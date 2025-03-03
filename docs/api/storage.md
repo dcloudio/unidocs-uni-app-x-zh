@@ -65,6 +65,9 @@ uni.setStorageSync('obj', {"a": 1} as UTSJSONObject)
 
 <!-- UTSAPIJSON.getStorage.tutorial -->
 
+
+
+
 > 注意：获取一个不存在的 key 会触发 fail 回调，返回错误信息为 "getStorage:fail data not found" 的错误。
 
 ## uni.getStorageSync(key) @getstoragesync
@@ -172,3 +175,127 @@ uni.setStorageSync('obj', {"a": 1} as UTSJSONObject)
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+
+## 类型数据的存取说明
+
+首先明确一个原则，Storage实际储存到各终端文件系统的是**序列化后的数据**。 
+
+也就是当我们使用setStorage/setStorageSync 储存一个带类型的数据时，插件内部会自动将序列化后进行储存（字符串格式）。当我们使用 getStorage/getStorageSync 获取对应的数据时，插件内部会尝试将其进行类型还原，分为以下几种情况：
+
+
++ 如果是UTSJSONObject 类型，不会有类型的丢失。
+
+```ts
+let json1 = {
+	id:1001,
+	name:"jack"
+}
+
+uni.setStorageSync("test-json",json1)
+let json2 = uni.getStorageSync("test-json")
+// json2 ‍[⁠UTSJSONObject⁠]‍ {id: 1001, name: "jack"}
+console.log("json2",json2)
+```
+
++ 如果是type类型，可以正常写入，但是当读取时得到是是UTSJSONObject类型，需要进行类型转换。
+
+```ts
+type User = {
+	name:string,
+	age:number
+}
+let u1 = {
+	name : "张三",
+	age:123
+}
+uni.setStorageSync("test-a",u1)
+uni.getStorage({
+	key:'test-a',
+	success:function(res:GetStorageSuccess){
+		// 此时只能得到的UTSJSONObject类型
+		let jsonObject = res.data
+		// 再次进行类型转换
+		let userObject = JSON.parse<User>(JSON.stringify(jsonObject))
+		// jsonObject ‍[⁠UTSJSONObject⁠]‍ {age: 123, name: "张三"}
+		console.log("jsonObject",jsonObject)
+		// userObject ‍[⁠User⁠]‍ {age: 123, name: "张三"}
+		console.log("userObject",userObject)
+	}
+})
+```
+
+还有一个更少见的情况，如果开发者使用class而非type定义类型，默认情况下无法读写的。
+
+```ts
+class Person {
+	// 声明属性类型（必须显式初始化或在构造函数中赋值）
+	name: string;
+	age: number;
+
+	// 构造函数
+	constructor(name: string, age: number) {
+	this.name = name;
+	this.age = age;
+	}
+
+	// 方法
+	greet(): string {
+	return `Hello, I'm ${this.name} and I'm ${this.age} years old.`;
+	}
+}
+
+// 使用类
+const alice = new Person("Alice", 30);
+console.log(alice.greet()); // "Hello, I'm Alice and I'm 30 years old."
+
+uni.setStorageSync("test-class-0",alice)
+let dataObj = uni.getStorageSync("test-class-0")
+// 此时只能得到空的UTSJSONObject {}
+console.log("data",dataObj)
+```
+
+如果要支持读写，开发者需要实现 `IJSONStringify`接口。关于IJSONStringify的[更多介绍](https://doc.dcloud.net.cn/uni-app-x/uts/buildin-object-api/json.html)
+
+```ts
+class Person implements IJSONStringify {
+	// 声明属性类型（必须显式初始化或在构造函数中赋值）
+	name: string;
+	age: number;	  
+
+	// 构造函数
+	constructor(name: string, age: number) {
+	this.name = name;
+	this.age = age;
+	}
+	// 自定义序列化规则
+	toJSON():any{
+		let jsonRet = UTSJSONObject()
+		jsonRet["name"] = this.name
+		jsonRet["age"] = this.age
+		return jsonRet
+	}
+	
+	// 方法
+	greet(): string {
+		return `Hello, I'm ${this.name} and I'm ${this.age} years old.`;
+	}
+}
+
+// 使用类
+const alice = new Person("Alice", 30);
+console.log(alice.greet()); // "Hello, I'm Alice and I'm 30 years old."
+
+uni.setStorageSync("test-class-0",alice)
+let dataObj = uni.getStorageSync("test-class-0")
+// [⁠UTSJSONObject⁠]‍ {name: "Alice", age: 30}
+console.log("dataObj",dataObj)
+//  ‍[⁠Person⁠]‍ {age: 30, name: "Alice"}
+let personObj = JSON.parse<Person>(JSON.stringify(dataObj))
+console.log("personObj",personObj)
+
+```
+
+此时，我们就可以让自定义class实现类似自定义type的效果了。
+
+
