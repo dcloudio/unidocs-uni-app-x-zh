@@ -93,7 +93,7 @@ uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 
 
 ## 创建uts插件
 
->> 注意： 目前仅支持通过HBuilder X 创建和使用UTS插件，不支持通过cli的方式使用UTS插件
+> 注意： 目前仅支持通过HBuilder X 创建和使用UTS插件，不支持通过cli的方式使用UTS插件
 
 ### HBuilderX项目中uts插件目录结构
 
@@ -310,13 +310,13 @@ dependencies {
 - minSdkVersion
 插件支持的Android最低版本，整数类型，取值范围为Android API Level
 
-  + uni-app 项目支持最低版本为19，即Android 4.4.2  
-  + uni-app x 项目支持最低版本为21，即Android 5.0  
+  + uni-app 项目支持最低版本为19，即Android 4.4.2
+  + uni-app x 项目支持最低版本为21，即Android 5.0
 
 
 - project
 	云端打包项目相关配置，当使用的三方SDK需要配置gradle插件时可配置此项：
-	
+
 	+ plugins
 		此配置将会添加到云端打包工程app及build.gradle文件的“plugins”中：
 
@@ -330,7 +330,7 @@ dependencies {
 
 	+ dependencies
 
-		此配置将会添加到云端打包工程项目级build.gradle文件的 "buildscript" -> "dependencies" 中：  
+		此配置将会添加到云端打包工程项目级build.gradle文件的 "buildscript" -> "dependencies" 中：
 
 		```gradle
 		buildscript {
@@ -342,19 +342,19 @@ dependencies {
 		}
 		```
 
-	+ repositories（HBuilderX4.36+版本支持）  
+	+ repositories（HBuilderX4.36+版本支持）
 
-		添加自定义仓储服务器地址。  
+		添加自定义仓储服务器地址。
 		此配置将会添加到云端打包工程项目级别 settings.gradle 文件的 "dependencyResolutionManagement" -> "repositories" 中：
 		```gradle
 		dependencyResolutionManagement {
 			repositories {
-				// 前面 config.json 示例配置将会添加如下配置  
+				// 前面 config.json 示例配置将会添加如下配置
 				maven { url 'https://artifact.bytedance.com/repository/Volcengine/' }
 			}
 		}
-		```  
-    默认的仓储服务器地址请参考：[Android平台云端打包环境](../tutorial/app-env.md#repositories)  
+		```
+    默认的仓储服务器地址请参考：[Android平台云端打包环境](../tutorial/app-env.md#repositories)
 
 **注意：**
 
@@ -427,7 +427,7 @@ iOS平台原生 Info.plist 文件配置，云端打包时会将配置信息合�
 ```
 
 ##### PrivacyInfo.xcprivacy
-iOS平台隐私清单文件，配置方法参考[uts插件如何配置隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html#%E5%8E%9F%E7%94%9F%E8%AF%AD%E8%A8%80%E6%8F%92%E4%BB%B6%E5%8F%8Auts%E6%8F%92%E4%BB%B6%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%9A%90%E7%A7%81%E6%B8%85%E5%8D%95)  
+iOS平台隐私清单文件，配置方法参考[uts插件如何配置隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html#%E5%8E%9F%E7%94%9F%E8%AF%AD%E8%A8%80%E6%8F%92%E4%BB%B6%E5%8F%8Auts%E6%8F%92%E4%BB%B6%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E9%9A%90%E7%A7%81%E6%B8%85%E5%8D%95)
 
 ##### UTS.entitlements
 iOS平台原生 entitlements 文件配置，云端打包时会将配置信息合并到原生工程的 entitlements 配置文件中
@@ -899,11 +899,11 @@ export const myApiSync : MyApiSync = function (paramA : boolean) : MyApiResult {
 上面的代码，我们完成了一个名为 "uts-api" 的UTS 插件，在 `uvue` 文件中使用该插件的代码示例如下：
 
 ```ts
-// 导入要使用的插件  
-import { myApi, myApiSync, MyApiOptions } from "@/uni_modules/uts-api";	
+// 导入要使用的插件
+import { myApi, myApiSync, MyApiOptions } from "@/uni_modules/uts-api";
 
 methods: {
-	
+
 	testMyApi() {
 		// 调用异步方法示例
 		let options = {
@@ -914,7 +914,7 @@ methods: {
 		} as MyApiOptions;
 		myApi(options);
 	},
-		
+
 	testMyApiSync() {
 		// 调用同步方法示例
 		console.log(myApiSync(true))
@@ -1651,7 +1651,7 @@ uts插件支持debug断点调试。可以在uts插件代码中打断点、查看
 	如果您使用的是插件市场三方uts插件，可以检查更新插件最新版本
 
 - iOS 平台异步 Api 的回调函数不支持返回值
-	
+
 ```uts
 // iOS 平台不支持带返回值的回调
 export type TestCallback = {
@@ -1770,7 +1770,7 @@ let longVal =  1000.0.toLong()
 ```js
 const runnable = new (class implements Runnable {
 	override run() {
-		
+
 	}
 })
 getUniActivity()!.runOnUiThread(runnable)
@@ -1983,18 +1983,18 @@ utsJsonObj.forEach(function(perField:any){
 
 
 ### `UTS插件`导出方法中的回调函数参数如何支持持续触发@keepalive
-**HBuilderX4.25版本以前**  
-`UTS插件`导出方法的参数中存在回调函数时，在JS环境中调用会将回调函数 callback 一直保存在内存中，这时回调函数可以持续触发回调。这种策略会带来一个致命的问题， 当频繁调用这些导出方法时，每次调用都会创建回调函数 callback 对象，并一直保存在内存中，从而造成内存泄漏，可能引发应用闪退。  
+**HBuilderX4.25版本以前**
+`UTS插件`导出方法的参数中存在回调函数时，在JS环境中调用会将回调函数 callback 一直保存在内存中，这时回调函数可以持续触发回调。这种策略会带来一个致命的问题， 当频繁调用这些导出方法时，每次调用都会创建回调函数 callback 对象，并一直保存在内存中，从而造成内存泄漏，可能引发应用闪退。
 
-为了解决此问题，回调函数参数策略做了调整：  
+为了解决此问题，回调函数参数策略做了调整：
 
-**HBuilderX4.25版本及以后**  
-`UTS插件`导出的方法中的回调函数参数触发一次后立即自动回收，避免内存泄漏，也就是默认情况下回调函数 callback 只能触发一次。这次调整可能带来向下兼容的问题，导致方法中的回调函数参数无法持续回调。  
-影响范围： `HBuilderX4.25+版本 iOS 平台的 uni-app 和 uni-app x 项目, Android平台的 uni-app 项目，顶层方法或者自定义 class 中的静态方法或者实例方法`  
+**HBuilderX4.25版本及以后**
+`UTS插件`导出的方法中的回调函数参数触发一次后立即自动回收，避免内存泄漏，也就是默认情况下回调函数 callback 只能触发一次。这次调整可能带来向下兼容的问题，导致方法中的回调函数参数无法持续回调。
+影响范围： `HBuilderX4.25+版本 iOS 平台的 uni-app 和 uni-app x 项目, Android平台的 uni-app 项目，顶层方法或者自定义 class 中的静态方法或者实例方法`
 
-如果回调函数参数需支持可持续触发， 按以下方案进行适配：  
+如果回调函数参数需支持可持续触发， 按以下方案进行适配：
 
-将方法名称调整为`以 on 开头，且仅有一个 callback 类型的参数`，如下示例：  
+将方法名称调整为`以 on 开头，且仅有一个 callback 类型的参数`，如下示例：
 ```ts
 function onTest(callback : (msg : string) => void) {
     //...
@@ -2002,7 +2002,7 @@ function onTest(callback : (msg : string) => void) {
 ```
 
 **HBuilderX4.27版本新增适配方案**
-通过装饰器(注解) `@UTSJS.keepAlive` 声明方法中的回调函数参数一直存活（不自动回收），支持回调函数可持续触发回调，如下示例：  
+通过装饰器(注解) `@UTSJS.keepAlive` 声明方法中的回调函数参数一直存活（不自动回收），支持回调函数可持续触发回调，如下示例：
 ```ts
 export type Options = {
     a: string
@@ -2063,8 +2063,8 @@ export class Test {
 ```
 
 > 特别注意：
-> 1. 如果带了该装饰器，则该方法参数里的所有回调都会在内存中持续存在，需提醒使用者避免频繁调用此方法  
-> 2. 目前装饰器不支持 export const test:Test = ()=>{} // 这种导出方式，需要使用export function test(){}  
+> 1. 如果带了该装饰器，则该方法参数里的所有回调都会在内存中持续存在，需提醒使用者避免频繁调用此方法
+> 2. 目前装饰器不支持 export const test:Test = ()=>{} // 这种导出方式，需要使用export function test(){}
 > 3. 如果同时存在app-android/app-ios，需要两个平台都同时配置@UTSJS.keepAlive
 
 
