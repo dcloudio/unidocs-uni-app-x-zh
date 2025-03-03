@@ -134,7 +134,21 @@ HBuilderX 3.9+，支持JSON.parse传入[泛型](../generics.md)。
 <!-- UTSJSON.JSON.tutorial -->
 
 
-## 自定义序列化规则说明
+### IJSONStringify
+
+<!-- UTSJSON.IJSONStringify.toJSON.description -->
+
+<!-- UTSJSON.IJSONStringify.toJSON.param -->
+
+<!-- UTSJSON.IJSONStringify.toJSON.returnValue -->
+
+<!-- UTSJSON.IJSONStringify.toJSON.test -->
+
+<!--UTSJSON.IJSONStringify.toJSON.compatibility -->
+
+<!-- UTSJSON.IJSONStringify.toJSON.tutorial -->
+
+#### 自定义序列化规则说明
 
 默认的情况下，类型的序列化规则是固定的。如上表所列，JSON.stringify的序列化行为由UTS内部实现。
 
