@@ -133,3 +133,69 @@ HBuilderX 3.9+，支持JSON.parse传入[泛型](../generics.md)。
 
 <!-- UTSJSON.JSON.tutorial -->
 
+
+## 自定义序列化规则说明
+
+默认的情况下，类型的序列化规则是固定的。如上表所列，JSON.stringify的序列化行为由UTS内部实现。
+
+```ts
+class Person {
+    // 声明属性类型（必须显式初始化或在构造函数中赋值）
+    name: string;
+    age: number;
+
+    // 构造函数
+    constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+    }
+
+    // 方法
+    greet(): string {
+    return `Hello, I'm ${this.name} and I'm ${this.age} years old.`;
+    }
+}
+
+// 使用类
+const alice = new Person("Alice", 30);
+// 此时只能得到 '{}'
+console.log("data",JSON.stringify(alice))
+```
+
+但有些场景下开发者需要自定义class的序列化规则，所以从HBuilder X 4.53开始，新增了一个接口`IJSONStringify`，用于支持开发者实现自定义序列化
+
+```ts
+class Person implements IJSONStringify {
+    // 声明属性类型（必须显式初始化或在构造函数中赋值）
+    name: string;
+    age: number;
+
+    // 构造函数
+    constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+    }
+    
+    // 自定义序列化规则
+    toJSON():any{
+        let jsonRet = UTSJSONObject()
+        jsonRet["name"] = this.name
+        jsonRet["age"] = this.age
+        return jsonRet
+    }
+    // 方法
+    greet(): string {
+        return `Hello, I'm ${this.name} and I'm ${this.age} years old.`;
+    }
+}
+
+// 使用类
+const alice = new Person("Alice", 30);
+// {"name":"Alice","age":30}
+console.log("data",JSON.stringify(alice))
+
+```
+
+
+
+
