@@ -1,3 +1,9 @@
+::: warning 注意事项
+
+app-android 平台使用liblamemp3.so 编码mp3，地址：https://github.com/VankaIn/mp3lame
+
+:::
+
 ## uni.getRecorderManager() @getrecordermanager
 
 <!-- UTSAPIJSON.getRecorderManager.description -->
