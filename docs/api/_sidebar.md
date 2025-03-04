@@ -105,6 +105,7 @@
 * 支付
   * [支付（requestPayment）](request-payment.md)
   * [虚拟支付（requestVirtualPayment）](virtual-payment.md)
+  * [转账确认收款（requestMerchantTransfer）](request-merchant-transfer.md)
 * 分享
   * [shareWithSystem](share-with-system.md)
 * 推送
