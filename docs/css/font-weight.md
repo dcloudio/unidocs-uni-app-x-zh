@@ -17,6 +17,7 @@
 
 #### App平台差异
 - font-weight 样式不支持继承
-- App-Android平台，部分自定义字体不支持设置font-weight。
+- app-android平台不支持任意数字粗细，大于等于500时加粗显示，小于500时为正常粗细。
+- app-android平台，部分自定义字体不支持设置font-weight。
 
 <!-- CSSJSON.font-weight.reference -->
