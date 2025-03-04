@@ -196,6 +196,7 @@ ruby -v
 
 ```
  echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+ echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.bash_profile
 ```
 - 配置完成后重启终端，再次查看 Ruby 版本号，校验是否为安装的 Ruby版本
 
