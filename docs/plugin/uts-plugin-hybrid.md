@@ -89,38 +89,38 @@ import KotlinObject from 'xxx.xxx.KotlinObject';
 回到我们的示例，现在整理完的`Kotlin`代码是这样的：
 
 ```kotlin
-package uts.sdk.modules.utsDemoMem
+package uts.sdk.modules.demoMem;
 
-// 这里是原生的包名引用
 import android.app.ActivityManager
 import android.content.Context.ACTIVITY_SERVICE
-// UTS内置对象的包名引用
 import io.dcloud.uts.UTSAndroid
-import io.dcloud.uts.setInterval
-import io.dcloud.uts.clearInterval
-import io.dcloud.uts.UTSArray
 import io.dcloud.uts.console
 
-object NativeCode {
+object MemoryInfoNative {
 
-    fun getMemInfo():Array<Number>{
-    
-    	val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
-    	val memoryInfo = ActivityManager.MemoryInfo()
-    	activityManager.getMemoryInfo(memoryInfo)
-    	val availMem = memoryInfo.availMem / 1024 / 1024
-    	val totalMem = memoryInfo.totalMem / 1024 / 1024
-      
-    	// availMem 可用内存，单位MB
-    	// totalMem 设备内存，单位MB
-    	console.log(availMem,totalMem)
-    	return arrayOf(availMem,totalMem)
+	/**
+	 * 同步获取内存信息
+	 */
+	fun getMemInfoKotlin():Array<Number>{
+
+		val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
+		val memoryInfo = ActivityManager.MemoryInfo()
+		activityManager.getMemoryInfo(memoryInfo)
+		val availMem = memoryInfo.availMem / 1024 / 1024
+		val totalMem = memoryInfo.totalMem / 1024 / 1024
+	  
+		// availMem 可用内存，单位MB
+		// totalMem 设备内存，单位MB
+		console.log(availMem,totalMem)
+		return arrayOf(availMem,totalMem)
     }
 
 }
+
+
 ```
 
-上面的代码中，我们将获取内存的信息的功能以`Kotlin`静态方法`NativeCode.getMemInfo()` 的形式对外暴露
+上面的代码中，我们将获取内存的信息的功能以`Kotlin`静态方法`MemoryInfoNative.getMemInfoKotlin()` 的形式对外暴露
 
 接下来，我们将整理好的原生代码添加到 在`app-android` 目录
 
@@ -202,12 +202,12 @@ import io.dcloud.uts.setInterval
 import io.dcloud.uts.clearInterval
 import io.dcloud.uts.console
 
-object NativeCode {
+object MemoryInfoNative {
 
 	/**
 	 * 同步获取内存信息
 	 */
-	fun getMemInfo():Array<Number>{
+	fun getMemInfoKotlin():Array<Number>{
 
 		val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
 		val memoryInfo = ActivityManager.MemoryInfo()
@@ -224,12 +224,12 @@ object NativeCode {
      /**
      * 记录上一次的任务id
      */
-    private var lastTaskId = -1
+    private var lastTaskId:Number = -1
 
 	/**
 	 * 开启内存监控
 	 */
-    fun startMemMonitor(callback: (Array<Number>) -> Unit){
+    fun onMemoryInfoChangeKotlin(callback: (Array<Number>) -> Unit){
 
         if(lastTaskId != -1){
             // 避免重复开启
@@ -257,7 +257,7 @@ object NativeCode {
 	/**
 	 * 关闭内存监控
 	 */
-    fun stopMemMonitor(){
+    fun offMemoryInfoChangeKotlin(){
         if(lastTaskId != -1){
             // 避免重复开启
             clearInterval(lastTaskId)
@@ -265,6 +265,7 @@ object NativeCode {
     }
 
 }
+
 ```
 
 上面的代码中，我们将获取内存的信息的功能以`Kotlin`静态方法`NativeCode.startMemMonitor(callback)` 的形式对外暴露。 
@@ -285,25 +286,26 @@ object NativeCode {
 但`UTS`从未保证过编译`Kotlin`的具体规则。所以虽然开发者可以通过一些取巧的方式实现 在`Kotlin`中调用`UTS`代码，但这是不安全的，`HBuilderX`升级后，类似的代码可能会失效/异常。
 
 
-在我们的示例里，UTS的调用的代码是这样的：
+在我们的示例里`~/demo-mem/utssdk/app-android/index.uts`文件中，UTS的调用的代码是这样的：
 
 ```ts
 // 开启内存监听
-export function callKotlinCallbackUTS(callback: (res: Array<number>) => void) {
-	NativeCode.startMemMonitor(function(res:kotlin.Array<number>){
+export function onMemoryInfoChange(callback: (res: Array<number>) => void) {
+	MemoryInfoNative.onMemoryInfoChangeKotlin(function(res:kotlin.Array<number>){
 		callback(Array.fromNative(res))
 	})
 }
 // 结束内存监听
-export function callKotlinStopCallbackUTS() {
-	NativeCode.stopMemMonitor()
+export function offMemoryInfoChange() {
+	MemoryInfoNative.offMemoryInfoChangeKotlin()
 }
 
 // 同步获取内存信息
-export function callKotlinMemGet():Array<number> {
-	let kotlinArray = NativeCode.getMemInfo()
+export function getMemoryInfo():Array<number> {
+	let kotlinArray = MemoryInfoNative.getMemInfoKotlin()
 	return UTSArray.fromNative(kotlinArray)
 }
+
 ```
 
 上面的代码，我们在`UTS`中使用一个 入参为`Array<number>`类型的`function`对象就完成了对`kotlin`原生代码的调用。
@@ -327,7 +329,7 @@ export function callKotlinMemGet():Array<number> {
 
 <script>
 	
-	import { callKotlinCallbackUTS,callKotlinStopCallbackUTS,callKotlinMemGet} from "../../uni_modules/demo-mem";
+	import { offMemoryInfoChange,onMemoryInfoChange,getMemoryInfo} from "../../uni_modules/demo-mem";
 	 
 	export default {
 		data() {
@@ -341,22 +343,24 @@ export function callKotlinMemGet():Array<number> {
 		methods: {
 			
 			kotlinMemGetTest:function () {
-			    let array = callKotlinMemGet()
+			    let array = getMemoryInfo()
 				this.memInfo = "可用内存:" + array[0] + "MB--整体内存:" + array[1] + "MB"
 			},
 			kotlinMemListenTest: function () {
-			    callKotlinCallbackUTS(function(ret:Array<number>){
+			    onMemoryInfoChange(function(ret:Array<number>){
 				  this.memInfo = "可用内存:" + ret[0] + "MB--整体内存:" + ret[1] + "MB"
 			    })
 			},
 			
 			kotlinStopMemListenTest:function () {
-			    callKotlinStopCallbackUTS()
+			    offMemoryInfoChange()
 				this.memInfo = "已暂停"
 			},
 		}
 	}
 </script>
+
+
 
 ```
 
