@@ -827,4 +827,6 @@ export function callJavaMethodGetInfo():String {
 // #endif
 ```
 
-完整的混编示例可以在[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/dev/uni_modules/uts-syntaxcase/utssdk)中找到
+
+
+[完整的混编示例](https://ext.dcloud.net.cn/plugin?name=uni-MemoryInfo)
