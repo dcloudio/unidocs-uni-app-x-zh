@@ -1,7 +1,3 @@
-```
-
-```
-
 # 类型@data-type
 
 强类型语言的特点，是数据类型要求严格。它带来2个好处：
@@ -504,7 +500,7 @@ function t4(): null {  // app-android/app-ios不支持将函数返回值申明�
 	return null;
 }
 
-// 正确写法 
+// 正确写法
 let t1:any|null = null;
 let t2:any|null = null;
 function t3(t:any|null) {
@@ -672,12 +668,12 @@ HBuilderX 4.31之前的版本，在编译为kotlin或swift时，uts不会自动�
 const arr: number[] = [1,2,3]
 
 // 错误写法
-const arr1: number[] = arr.map((item: number) => { 
+const arr1: number[] = arr.map((item: number) => {
 	return item + 1;‌
 });
 
 // 正确写法
-const arr2: number[] = arr.map((item: number): number => { 
+const arr2: number[] = arr.map((item: number): number => {
   return item + 1;‌
 });
 ```
@@ -881,7 +877,7 @@ array1.forEach((element:string, index:number) => {
 #### kotlin专有数组类型
 
 - 专有数组类型清单
-  
+
   * kotlin.collections.List
   * kotlin.Array
   * kotlin.IntArray
@@ -1004,36 +1000,36 @@ const bytes: ByteArray = str.toByteArray(Charsets.UTF_8)
 #### iOS 平台专有数组类型
 
 > UTS 中的 Array 对应到 Swift 中就是 Array, 方法是通用的，无需转换。一般情况下，使用 Array 即可。
-> 
+>
 > 但是，某些系统或者三方库 API 可能会要求 OC 的 NSArray、NSMutableArray 类型的数组，这个时候就需要进行转换。
 
 - 专有数组类型清单
-  
+
   * NSArray
   * NSMutableArray
 - 专有数组类型定义方式
 
 1. 创建 NSArray
-   
+
    > NSArray 是 OC 中的不可变数组，顾名思义，数组创建完成之后就不可以再添加或者删除元素。因此，创建 NSArray 对象时就应该完成数组的初始化。可以通过以下方式创建 NSArray:
-   
+
    ```ts
    // 方式一： 创建一个空数组，注意数组创建后就不可改变，不能再添加或者删除元素，应避免使用该方式。
    	let a: NSArray = NSArray()
-   
+
    	// 方式二： 用一个数组创建一个 NSArray, 推荐使用。同样，创建完成后数组不可变。
    	let b: NSArray = NSArray(array=[1, 2, 3, 4]) // 等价于 any[]，注意：不是等价于 number[]
-   
+
    	// 方式三: 用一个元素定义 NSArray, 不推荐使用
    	let c: NSArray = NSArray(object=1)
-   
+
    	// 方式四：用不定长元素定义 NSArray, 可以使用
    	let d: NSArray = NSArray(objects=1, "2", false, "ok")
    ```
 2. 创建 NSMutableArray
-   
+
    - NSMutableArray 是 OC 中的可变数组，其是 NSArray 的子类，可变数组创建后可以增加或者删除元素。NSArray 的所有创建方式也都适用于 NSMutableArray
-     
+
      ```ts
      // 方式一： 创建一个空数组，其类型等价于 any[]
      let a: NSMutableArray = NSMutableArray()
@@ -1044,13 +1040,13 @@ const bytes: ByteArray = str.toByteArray(Charsets.UTF_8)
      a.removeObject(at=2) //移除一个指定下标的元素
      a.removeAllObjects() //移除全部元素
      a.removeLastObject() //移除最后一个元素
-     
+
      // 方式二： 用一个数组创建一个 NSMutableArray, 推荐使用。
      let b: NSMutableArray = NSMutableArray(array=[1, 2, 3, 4]) // 等价于 any[]，注意：不是等价于 number[]
-     
+
      // 方式三: 用一个元素定义 NSMutableArray
      let c: NSMutableArray = NSMutableArray(object=1)
-     
+
      // 方式四：用不定长元素定义 NSMutableArray
      let d: NSMutableArray = NSMutableArray(objects=1, "2", false, "ok")
      ```
@@ -2234,4 +2230,3 @@ uts内置的类型，包括浏览器、Android、iOS内置的类型，在编译�
 **注意**
 
 - 编译到js时联合类型等复杂类型在编译后会被擦除
-
