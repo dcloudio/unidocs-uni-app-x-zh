@@ -2106,8 +2106,14 @@ move("north")
 move("south")
 ```
 
-### in 操作符
-> 注意：目前 in 操作符仅用于判断 type 定义的对象类型是否包含指定属性
+### in 操作符 @in
+> in 操作符仅支持 type 定义的对象 和 UTSJSONObject 对象：
+> - HBuilderX4.51及以上版本 in 操作符支持 type 定义的对象是否包含指定属性
+> - HBuilderX4.54及以上版本 in 操作符支持 UTSJSONObject 对象是否包含指定属性
+> 
+> 注意：HBuilderX4.51以下版本 app-android 平台虽然可以使用 in 操作符，但其它平台可能不兼容  
+
+以下示例演示 type 定义的对象如何使用 in 操作符：  
 ```ts
 type Fish = { swim: () => void };
 type Bird = { fly: () => void };
