@@ -32,6 +32,7 @@
 				* [uni-verify](native/modules/android/uni-verify.md)
 				* [uni-getLocation](native/modules/android/uni-getLocation.md)
 				* [uni-map-tencent](native/modules/android/uni-map-tencent.md)
+			* [uts插件配置](native/use/androiduts.md)
 			* [启动与通信](native/use/androidcomm.md)
 			* [自定义基座](native/debug/android.md)
 			* [SDK下载](native/download/android.md)

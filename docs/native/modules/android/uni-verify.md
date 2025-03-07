@@ -11,28 +11,31 @@
 
 ### 线上依赖库
 
-首先在项目根目录下的build.gradle增加个推仓库源。
+1. 在项目根目录下的settings.gradle中增加个推仓库源。
 
 ```groovy
-allprojects {
-	repositories {
-		jcenter()
-		google()
-        // 个推的Maven仓库地址
-        maven { 
-            url 'https://mvn.getui.com/nexus/content/repositories/releases' 
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+		...
+        maven {
+            url 'https://mvn.getui.com/nexus/content/repositories/releases'
         }
-	}
+    }
 }
 ```
 
-|名称                   |
-|:--                    |
-|com.getui:gtc-dcloud:3.2.16.7 |
+2. 将线上依赖库添加到app项目的build.gradle下。
 
-然后将线上依赖库添加到app项目的build.gradle下。
+```groovy
+dependencies {
+    implementation "com.getui:gtc-dcloud:3.2.16.7"
+}
+```
 
 ### 配置应用ID
+
+在app项目下的build.gradle配置一键登录的应用ID。
 
 ```groovy
 android {
