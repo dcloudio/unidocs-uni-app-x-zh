@@ -4,8 +4,8 @@
 
 uni-app x项目使用[uni内置模块](./manifest-modules.md#utsmodules)时，云端打包会自动添加模块、插件声明需要的Android权限，也可以额外添加或强制移除某些权限。
 
-> HBuilderX4.54以前的版本，需在项目的[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中手动编辑添加Android权限
-> HBuilderX4.54及以上版本，支持在项目的 manifest.json 中配置  
+> HBuilderX4.54以前的版本，需在项目的[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中手动编辑添加Android权限  
+> HBuilderX4.54及以上版本，支持在项目的 manifest.json 中配置额外添加或强制移除Android权限  
 
 #### 额外添加的权限 @incloudpermissions
 
@@ -27,8 +27,6 @@ uni-app x项目使用[uni内置模块](./manifest-modules.md#utsmodules)时，�
 
 **注意**  
 - android:name字段值使用的双引号前面需要加转义斜线“\”  
-
-> 也可在  
 
 
 #### 强制移除的权限 @excludepermissions
