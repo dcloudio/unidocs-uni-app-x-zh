@@ -103,8 +103,6 @@ uni-app x 的渠道信息配置，云端需在“App打包”界面配置，详�
 
 <!-- MANIFESTJSON.distribute_splashScreens.description -->
 
-详情参考[启动界面](./manifest-splashscreen.md)。
-
 
 ###### Android平台启动界面配置 @splashScreens-android
 
@@ -314,7 +312,15 @@ manifest.json中不提供配置 `manifestPlaceholders` 数据，如果应用使�
 
 <!-- MANIFESTJSON.manifest_mp-weixin.compatibility -->
 
-## 其它设置
+### HBuilderX配置 @manifest-__hbuilderx
+
+<!-- MANIFESTJSON.manifest___hbuilderx.description -->
+
+<!-- MANIFESTJSON.manifest___hbuilderx.table -->
+
+<!-- MANIFESTJSON.manifest___hbuilderx.compatibility -->
+
+## App其它设置
 
 ### URL Scheme @urlScheme
 uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4.18及以上版本支持在 app 原生应用配置文件中进行设置，详情参考：
@@ -326,16 +332,6 @@ uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4
 - 配置 url scheme 需提交云端打包才能生效
 
 标准基座可通过此网页体验 Url Scheme 启动 App：[https://uniappx.dcloud.net.cn/scheme.html](https://uniappx.dcloud.net.cn/scheme.html)
-
-### HBuilderX配置 @manifest-__hbuilderx
-
-<!-- MANIFESTJSON.manifest___hbuilderx.description -->
-
-<!-- MANIFESTJSON.manifest___hbuilderx.table -->
-
-<!-- MANIFESTJSON.manifest___hbuilderx.compatibility -->
-
-<!-- MANIFESTJSON.tutorial -->
 
 ### Universal Link @ulink
 
@@ -374,3 +370,6 @@ uni-app x 项目 manifest.json 文件不再提供 iOS 平台的 通用链接（u
 	}
 }
 ```
+
+
+<!-- MANIFESTJSON.tutorial -->
