@@ -4,8 +4,8 @@
 * [app.uvue](app.md)
 * manifest.json
   * [概述](manifest.md)
-  * [模块配置](manifest-modules.md)
-  * [启动界面](manifest-splashscreen.md)
+  * [安卓/iOS启动界面配置](manifest-splashscreen.md)
+  * [App模块配置](manifest-modules.md)
 * [AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
 * [Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html)
 * [uni.scss](https://uniapp.dcloud.net.cn/collocation/uni-scss.html)
