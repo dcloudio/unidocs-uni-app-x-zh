@@ -14,7 +14,7 @@
 
 点击File->New->New Module...
 
-![](https://web-ext-storage.dcloud.net.cn/native/doc/android/new_modules.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/new_uniappx.png)
 
 点击左侧`Templates`的`Android Library`。
 
