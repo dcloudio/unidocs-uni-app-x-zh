@@ -43,7 +43,7 @@ hello uni-app x中提供了基于dialogPage的隐私政策弹框示例代码，�
 
 #### Android权限配置@permissions
 
-uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中。
+uni-app x 的权限配置，需要在项目下的[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中配置。
 
 使用[uni内置模块](./manifest-modules.md#utsmodules)时，云端打包会自动添加模块需要的Android权限，不需要在[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中配置。
 
@@ -52,7 +52,7 @@ uni-app x 的权限配置，移入了[AndroidManifest.xml](https://uniapp.dcloud
 
 #### iOS隐私信息访问的许可描述@usageDescription
 
-uni-app x 的隐私信息访问的许可描述配置，移入了[Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoPlist)中。
+uni-app x 的隐私信息访问的许可描述配置，需要在项目下的[Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoPlist)中配置。
 
 使用[uni内置模块](./manifest-modules.md#utsmodules)时，云端打包回自动添加模块需要的隐私信息访问的许可描述，但许可描述信息是通用描述，不一定适合应用的实际使用场景描述，需根据应用的实际情况在[Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoPlist)中配置准确的许可描述。
 
@@ -103,6 +103,8 @@ uni-app x 的渠道信息配置，云端需在“App打包”界面配置，详�
 
 <!-- MANIFESTJSON.distribute_splashScreens.description -->
 
+详情参考[启动界面](./manifest-splashscreen.md)。
+
 
 ###### Android平台启动界面配置 @splashScreens-android
 
@@ -138,64 +140,10 @@ uni-app x 的渠道信息配置，云端需在“App打包”界面配置，详�
 
 <!-- MANIFESTJSON.distribute_android.table -->
 
-**注意**
-- `abiFilters` 用于指定应用需要支持的CPU类型，字符串数组类型，字符串可取值"armeabi-v7a"、"arm64-v8a"、"x86"、"x86_64"，默认值为["arm64-v8a"]。
-- `minSdkVersion` 用于指定应用运行所需最低 API 级别的整数。如果系统的 API 级别低于该属性中指定的值，Android 系统将阻止用户安装应用。
-- `targetSdkVersion` 一个用于指定应用的目标 API 级别的整数。如果未设置，其默认值与为 minSdkVersion 指定的值相等。该值用于通知系统，您已针对目标版本进行了测试，并且系统不应通过启用任何兼容性行为，以保持您的应用与目标版本的向前兼容性。
-- `minSdkVersion` 和 `targetSdkVersion` 设置的值是 API 级别（API Level），完整API级别信息请参考[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)
-
 ###### manifestPlaceholders @manifestplaceholders
 
 manifest.json中不提供配置 `manifestPlaceholders` 数据，如果应用使用的插件或三方SDK需要使用，可在项目的 `nativeResources/android/manifestPlaceholders.json` 文件中配置，详情参考[Android原生应用清单文件和资源](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#manifestplaceholders)。
 
-###### enableResourceOptimizations @enableresourceoptimizations
-
-> HBuilder4.33版本新增支持 enableResourceOptimizations 配置项
-
-Android平台云端打包时gradle.properties的android.enableResourceOptimizations配置项，配置是否开启Android原生res资源文件优化，开启后res资源文件名称会被混淆，默认值为 ture，如不希望混淆原生res资源文件名称，可在 app -> distribute -> android 节点下配置以下字段关闭：
-```json
-"enableResourceOptimizations": false
-```
-
-###### aaptOptions @aaptoptions
-
-> HBuilder4.31版本新增支持
-
-Android平台云端打包时build.gradle的aaptOptions配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/AaptOptions?hl=en)，如下示例源码：
-```json
-"aaptOptions": [
-    "noCompress 'png', 'jpg', 'jpeg'"  //配置禁止对 png、jpg、jpeg格式的文件进行压缩
-]
-```
-
-云端打包默认包含以下配置：
-- additionalParameters '--auto-add-overlay'
-- ignoreAssetsPattern '!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~'
-
-###### buildFeatures @buildfeatures
-
-> HBuilder4.31版本新增支持
-
-Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)，如下示例源码：
-```json
-"buildFeatures": [
-	"viewBinding true",  //开启dataBinding
-	"dataBinding true"   //开启viewBinding
-]
-```
-
-###### packagingOptions @packagingoptions
-Android平台云端打包时build.gradle的buildFeatures配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions)，如下示例源码：
-```json
-"packagingOptions": [
-	"exclude 'META-INF/LICENSE'",    //排除文件META-INF/LICENSE
-	"exclude 'META-INF/LICENSE.txt'" //排除文件META-INF/LICENSE.txt
-]
-```
-
-云端打包默认包含以下配置：
-- pickFirst 'lib/*/libstlport_shared.so'
-- pickFirst 'lib/*/libc++_shared.so'
 
 ##### IOS配置 @distribute-ios
 
@@ -205,29 +153,6 @@ Android平台云端打包时build.gradle的buildFeatures配置项，支持的属
 
 <!-- MANIFESTJSON.distribute_ios.compatibility -->
 
-###### CFBundleName @cfbundlename
-
->HBuilder4.34版本新增支持
-
-iOS平台配置应用内部名称，默认值为“UniAppX”，最多支持15个字符，详细说明参考[苹果官方文档](https://developer.apple.com/documentation/bundleresources/information-property-list/cfbundlename)。
-以下为配置应用内部名称示例：
-```json
-{
-  "CFBundleName": "MyApp"
-}
-```
-
-###### UIRequiresFullScreen @uirequiresfullscreen
-
->HBuilder4.34版本新增支持
-
-iOS平台配置应用在iPad设置是否能够与其他应用程序共享屏幕（分屏显示），需配置应用支持iPad设备时有效，默认值为true（可与其他应用程序共享屏幕）。更多信息参考[苹果官方文档](https://developer.apple.com/documentation/bundleresources/information-property-list/uirequiresfullscreen)。
-以下为配置应用不与其他应用共享屏幕示例：
-```json
-{
-  "UIRequiresFullScreen": false
-}
-```
 
 ##### distribute modules 配置项列表 @distribute-modules
 
@@ -425,15 +350,15 @@ uni-app x 项目 manifest.json 文件不再提供 iOS 平台的 通用链接（u
 ## 示例
 ```json
 {
-    "name" : "uni-app x",
-    "appid" : "__UNI__XXXXXXX",
-    "description" : "描述信息",
-    "versionName" : "1.0.0",
-    "versionCode" : "100",
-    "uni-app-x":{
-      "flex-direction": "column"
-    },
-    "vueVersion" : "3",
+  "name" : "uni-app x",
+  "appid" : "__UNI__XXXXXXX",
+  "description" : "描述信息",
+  "versionName" : "1.0.0",
+  "versionCode" : "100",
+  "uni-app-x":{
+    "flex-direction": "column"
+  },
+  "vueVersion" : "3",
 	"app": {
 		"distribute": {
 			"syncDebug": true,
