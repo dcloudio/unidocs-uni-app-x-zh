@@ -65,10 +65,9 @@ uni.setStorageSync('obj', {"a": 1} as UTSJSONObject)
 
 <!-- UTSAPIJSON.getStorage.tutorial -->
 
-
-
-
 > 注意：获取一个不存在的 key 会触发 fail 回调，返回错误信息为 "getStorage:fail data not found" 的错误。
+
+获取带复杂类型的数据，[见下](#gettypedata)
 
 ## uni.getStorageSync(key) @getstoragesync
 
@@ -85,6 +84,8 @@ uni.setStorageSync('obj', {"a": 1} as UTSJSONObject)
 <!-- UTSAPIJSON.getStorageSync.tutorial -->
 
 > 注意：同步方法获取一个不存在的 key 会返回空字符串，而不是 null
+
+获取带复杂类型的数据，[见下](#gettypedata)
 
 ## uni.getStorageInfo(options) @getstorageinfo
 
@@ -177,7 +178,7 @@ uni.setStorageSync('obj', {"a": 1} as UTSJSONObject)
 <!-- UTSAPIJSON.general_type.param -->
 
 
-## 类型数据的存取说明
+## 类型数据的存取说明@gettypedata
 
 首先明确一个原则，Storage实际储存到各终端文件系统的是**序列化后的数据**。 
 
