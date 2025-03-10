@@ -235,7 +235,7 @@ Android平台云端打包时原生工程应用 build.gradle 的 packagingOptions
 - pickFirst 'lib/*/libc++_shared.so'
 
 
-#### Android版本列表 @apilevellist  
+### Android版本列表 @apilevellist  
 API等级与Android版本对应列表如下：
 | API等级 | Android版本号 | Android版本名称 |  
 | :-- | :-- | :-- |  

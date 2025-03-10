@@ -319,7 +319,7 @@ uni-app x 项目 manifest.json 文件不再提供 url scheme 配置，HBuilderX4
 标准基座可通过此网页体验 Url Scheme 启动 App：[https://uniappx.dcloud.net.cn/scheme.html](https://uniappx.dcloud.net.cn/scheme.html)
 
 
-#### Android权限配置@permissions
+### Android权限配置@permissions
 
 uni-app x 的权限配置，需要在项目下的[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中配置。
 
@@ -329,7 +329,7 @@ uni-app x 的权限配置，需要在项目下的[AndroidManifest.xml](https://u
 - 使用自定义基座则需要在项目的[AndroidManifest.xml](https://uniapp.dcloud.io/tutorial/app-nativeresource-android.html#permissions)中配置要使用的权限，重新提交云端打包。
 
 
-#### iOS隐私信息访问的许可描述@usageDescription
+### iOS隐私信息访问的许可描述@usageDescription
 
 uni-app x 的隐私信息访问的许可描述配置，需要在项目下的[Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoPlist)中配置。
 
@@ -358,19 +358,21 @@ uni-app x 项目 manifest.json 文件不再提供 iOS 平台的 通用链接（u
     "flex-direction": "column"
   },
   "vueVersion" : "3",
-	"app": {
-		"distribute": {
-			"syncDebug": true,
-			"android": {
-				"packagename": "Android包名",
-				"abiFilters": [
-					"armeabi-v7a","arm64-v8a"
-				],
-				"minSdkVersion": "21",
-				"targetSdkVersion": "32"
-			}
-		}
-	}
+  "app": {
+    "distribute": {
+      "syncDebug": true,
+      "android": {
+        "abiFilters": [
+          "armeabi-v7a","arm64-v8a"
+        ],
+        "minSdkVersion": "21",
+        "targetSdkVersion": "32"
+      },
+      "ios": {
+        "UIRequiresFullScreen": false
+      }
+    }
+  }
 }
 ```
 
