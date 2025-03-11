@@ -150,6 +150,33 @@ for (let i = 0; i < 10; i++) {
 
 - 注意：数组遍历不推荐使用 for in 语句，因为在 ts 中 for in 遍历的是数组的下标，而在 Swift 和 Kottlin 中遍历的是数组的元素，存在行为不一致。
 
+### for of
+
+for...of 语句执行一个循环，该循环处理来自可迭代对象的值序列。可迭代对象包括内置对象的实例，例如 Array、String、Map、Set，还包括用户定义的[可迭代对象](buildin-object-api/iterable.md)
+
+```ts
+for (variable of iterable)
+  statement
+```
+
+for...of 循环按顺序逐个处理从可迭代对象获取的值。循环对值的每次操作被称为一次迭代，而循环本身被称为迭代可迭代对象。每次迭代都会执行可能引用当前序列值的语句。
+
+举例：
+
+```ts
+const iterable = [10, 20, 30];
+
+for (let value of iterable) {
+  value += 1;
+  console.log(value);
+}
+// 11
+// 21
+// 31
+```
+
+
+
 ### while
 
 一个 while 语句只要指定的条件求值为真（true）就会一直执行它的语句块。一个 while 语句看起来像这样：

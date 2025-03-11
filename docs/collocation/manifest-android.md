@@ -196,10 +196,18 @@ Android平台云端打包时原生工程应用 build.gradle 的 aaptOptions配�
 Android平台云端打包时原生工程应用 build.gradle 的 buildFeatures 配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)。  
 可在项目 manifest.json 文件的 "app" -> "distribute" -> "android" 节点配置 buildFeatures，如下示例：  
 ```json
-"buildFeatures": [
-	"viewBinding true",  //开启dataBinding
-	"dataBinding true"   //开启viewBinding
-]
+{
+  "app": {
+    "distribute": {
+      "android": {
+        "buildFeatures": [
+          "viewBinding true",  //开启dataBinding
+          "dataBinding true"   //开启viewBinding
+        ]
+      }
+    }
+  }
+}
 ```
 
 
@@ -208,10 +216,18 @@ Android平台云端打包时原生工程应用 build.gradle 的 buildFeatures �
 Android平台云端打包时原生工程应用 build.gradle 的 packagingOptions 配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions)。  
 可在项目 manifest.json 文件的 "app" -> "distribute" -> "android" 节点配置 packagingOptions，如下示例源码：
 ```json
-"packagingOptions": [
-	"exclude 'META-INF/LICENSE'",    //排除文件META-INF/LICENSE
-	"exclude 'META-INF/LICENSE.txt'" //排除文件META-INF/LICENSE.txt
-]
+{
+  "app": {
+    "distribute": {
+      "android": {
+        "packagingOptions": [
+          "exclude 'META-INF/LICENSE'",    //排除文件META-INF/LICENSE
+          "exclude 'META-INF/LICENSE.txt'" //排除文件META-INF/LICENSE.txt
+        ]
+      }
+    }
+  }
+}
 ```
 
 云端打包默认包含以下配置：
@@ -219,7 +235,7 @@ Android平台云端打包时原生工程应用 build.gradle 的 packagingOptions
 - pickFirst 'lib/*/libc++_shared.so'
 
 
-#### Android版本列表 @apilevellist  
+### Android版本列表 @apilevellist  
 API等级与Android版本对应列表如下：
 | API等级 | Android版本号 | Android版本名称 |  
 | :-- | :-- | :-- |  

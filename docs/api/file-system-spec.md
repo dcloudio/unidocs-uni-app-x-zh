@@ -27,6 +27,7 @@ const fs = uni.getFileSystemManager()
 			- uni-snapshot ：App dom截图
 			- uni-crash ：App崩溃日志
 			- uni-audio ：App 线上音频缓存
+			- uni-recorder ：App 录音存储
 		* 用户文件目录（`uni.env.USER_DATA_PATH`）：提供给开发者操作的本地文件目录（files）
 	+ 应用内置沙盒目录（`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`）：存放框架的网络缓存（如网络图片、视频、web-view的缓存）、storage。
 	+ 沙盒外目录
@@ -146,7 +147,7 @@ uni-app x的部分内置API会产生临时文件会放置在本cache目录，如
 - uni.getImageInfo网络图片下载到本地的文件
 - uni.createInnerAudioContext缓存的audio文件
 - uni.getBackgroundAudioManager缓存的audio文件
-<!-- - 录音的文件 -->
+- uni.getRecorderManager录音存储的audio文件
 - dom element的截图API
 
 推荐：在调用上述API使用完毕临时文件后，就调用 `uni.getFileSystemManager` 的API把临时文件删掉。
@@ -159,6 +160,7 @@ uni-app x的部分内置API会产生临时文件会放置在本cache目录，如
 - uni-snapshot // element takeSnapShot截图APi存储的路径
 - uni-audio //存放音频文件
 - uni-crash //存放崩溃日志
+- uni-recorder //存放录音文件
 	* java //java、kotlin层崩溃日志
 	* c //c、so库崩溃日志
 
