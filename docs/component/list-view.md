@@ -2,17 +2,25 @@
 
 <!-- UTSCOMJSON.list-view.description -->
 
-<!-- UTSCOMJSON.list-view.compatibility -->
+list-view和scroll-view都是滚动组件，list适用于长列表场景，其他场景适用于scroll-view。
 
-目前微信小程序下，list-view被编译为scroll-view。目前uni-app x还未优化skyline的配置，未来会把list-view编译为skyline的list-view。
+在App中，基于recycle-view的list，才能实现长列表的渲染资源复用，以保障列表加载很多项目时，不会一直增加渲染内容。list-view就是基于recycle-view的list组件。
 
-在App中，基于recycle-view的list，才能实现长列表的资源自动回收，以保障列表加载很多项目时，屏幕外的资源被有效回收。list-view就是基于recycle-view的list组件。
+但需要注意，view复用，不代表dom和vue node复用。不管是浏览器还是app，长列表一直加载，即便使用list组件，dom和vue node都会不停增加内存占用，导致最终崩溃。
+
+所以浏览器上，开发者大多已习惯自己处理dom和vnode的复用。
+
+为了在全端解决这个问题：官方提供的扩展组件[uni-recycle-view](https://ext.dcloud.net.cn/plugin?id=17385)。该组件跨全端，内部会分批创建节点，自动实现列表item复用，包括dom、vnode、view均复用。
+
+另外，一次性初始化太多列表项，因为创建大量dom和vnode耗时，会导致列表初始化变慢，影响页面加载速度。此时同样可通过[uni-recycle-view](https://ext.dcloud.net.cn/plugin?id=17385)来解决初始化慢的问题。
+
+但如果您的列表不复杂，list-view组件足以满足需求，也不需要专门替换为[uni-recycle-view](https://ext.dcloud.net.cn/plugin?id=17385)。这个组件使用起来要更为复杂和有一些约束。
 
 每个list由1个父组件list-view及若干子组件list-item构成。仅有有限子组件可识别，[见下](#children-tags)
 
-list-view和scroll-view都是滚动组件，list适用于长列表场景，其他场景适用于scroll-view。
+<!-- UTSCOMJSON.list-view.compatibility -->
 
-list-view支持通过子组件sticky-header处理吸顶的场景。
+目前微信小程序下，list-view被编译为scroll-view。目前uni-app x还未优化skyline的配置，未来会把list-view编译为skyline的list-view。
 
 <!-- UTSCOMJSON.list-view.attribute -->
 
@@ -57,6 +65,8 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 
 <!-- UTSCOMJSON.list-view.children -->
 
+子组件sticky-header/section用于处理吸顶的场景。
+
 <!-- UTSCOMJSON.list-view.example -->
 
 <!-- UTSCOMJSON.list-view.reference -->
@@ -70,6 +80,5 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 ### Bug & Tips@tips
 
 - 如需im那样的倒序列表，App端可给组件style配置 `transform: rotate(180deg)` 来实现。注意与下拉刷新有冲突，此时应避免启用下拉刷新。
-- 多列瀑布流是另外的组件，后续会提供。目前[插件市场](https://ext.dcloud.net.cn/plugin?id=16148)也有相关插件。
 - list-view组件的overflow属性不支持配置visible
-- 一次性初始化太多列表项，因为创建大量vnode耗时，会导致列表初始化变慢。此时推荐使用扩展组件[uni-recycle-view](https://ext.dcloud.net.cn/plugin?id=17385)来解决初始化慢的问题，该组件内部会分批创建节点，自动实现节点复用。
+- list-view组件不适合做瀑布流，多列瀑布流另见 [waterflow组件](./waterflow.md)

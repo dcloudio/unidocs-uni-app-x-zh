@@ -5,16 +5,17 @@ app、小程序、web，均提供了方便的key-value模式的本地数据存�
 uni-app的Storage在不同端的实现不同：
 - H5端为localStorage，浏览器限制5M大小，是缓存概念，可能会被清理
 - App端为原生storage，无大小限制，不是缓存，是持久化的
+	* `Android` 端采用应用内SQLite数据库储存，储存位置为：/data/data/io.dcloud.uniappx(基座包名)/databases/DCStorage。
+	* 真机运行基座下多个应用之间的storage是隔离的，同基座内的不同应用，对应一个数据库文件，但以表名区分。
 - 各个小程序端为其自带的storage api，数据存储生命周期跟小程序本身一致，即除用户主动删除或超过一定时间被自动清理，否则数据都一直可用。
 	* 微信小程序单个 key 允许存储的最大数据长度为 1MB，所有数据存储上限为 10MB。
 	* 支付宝小程序单条数据转换成字符串后，字符串长度最大200*1024。同一个支付宝用户，同一个小程序缓存总上限为10MB。
 	* 百度小程序策略[详见](https://smartprogram.baidu.com/docs/develop/api/storage/save_process/)
 	* 抖音小程序策略[详见](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/data-caching/tt-get-storage)
-	* `Android` 端采用应用内SQLIte数据库储存，每个基座对应一个数据库文件，储存位置为：/data/data/io.dcloud.uniappx(基座包名)/databases/DCStorage,同基座内的不同应用，以表名区分。
 
 **注意**
 - `uni-`、`uni_`、`dcloud-`、`dcloud_`为前缀的key，为系统保留关键前缀。如`uni_deviceId`、`uni_id_token`，请开发者为key命名时避开这些前缀。
-- 非App平台清空Storage会导致uni.getSystemInfo获取到的deviceId改变
+- 非App平台清空Storage会导致 uni.getSystemInfo/getDeviceInfo 获取到的deviceId改变
 
 ## uni.setStorage(options) @setstorage
 
@@ -61,13 +62,19 @@ uni.setStorageSync('obj', {"a": 1} as UTSJSONObject)
 
 <!-- UTSAPIJSON.getStorage.returnValue -->
 
-<!-- UTSAPIJSON.getStorage.example -->
+**注意：**
 
-<!-- UTSAPIJSON.getStorage.tutorial -->
+getStorageSync的返回值类型为any。因为set的时候任意类型都可以set进去。
+
+使用any类型的数据需要as为正确的类型，才能调用类型上的方法。
+
+对于简单类型，如string，只需要 as string。但对于复杂类型，比如 UTSJSONObject、type、class，需要参考获取复杂类型的数据章节，[见下](#gettypedata)
 
 > 注意：获取一个不存在的 key 会触发 fail 回调，返回错误信息为 "getStorage:fail data not found" 的错误。
 
-获取带复杂类型的数据，[见下](#gettypedata)
+<!-- UTSAPIJSON.getStorage.example -->
+
+<!-- UTSAPIJSON.getStorage.tutorial -->
 
 ## uni.getStorageSync(key) @getstoragesync
 
@@ -79,13 +86,21 @@ uni.setStorageSync('obj', {"a": 1} as UTSJSONObject)
 
 <!-- UTSAPIJSON.getStorageSync.returnValue -->
 
+**注意：**
+
+getStorageSync的返回值类型为any。因为set的时候任意类型都可以set进去。
+
+使用any类型的数据需要as为正确的类型，才能调用类型上的方法。
+
+对于简单类型，如string，只需要 as string。但对于复杂类型，比如 UTSJSONObject、type、class，需要参考获取复杂类型的数据章节，[见下](#gettypedata)
+
+另注意，同步方法获取一个不存在的 key 会返回空字符串，而不是 null。如需准确判断是空字符串还是null，应该使用异步方法`uni.getStorage`。
+
+获取较大量的数据时，也推荐使用异步方法`uni.getStorage`，避免同步阻塞。
+
 <!-- UTSAPIJSON.getStorageSync.example -->
 
 <!-- UTSAPIJSON.getStorageSync.tutorial -->
-
-> 注意：同步方法获取一个不存在的 key 会返回空字符串，而不是 null
-
-获取带复杂类型的数据，[见下](#gettypedata)
 
 ## uni.getStorageInfo(options) @getstorageinfo
 
