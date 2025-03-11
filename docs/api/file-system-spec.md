@@ -147,7 +147,7 @@ uni-app x的部分内置API会产生临时文件会放置在本cache目录，如
 - uni.getImageInfo网络图片下载到本地的文件
 - uni.createInnerAudioContext缓存的audio文件
 - uni.getBackgroundAudioManager缓存的audio文件
-<!-- - 录音的文件 -->
+- uni.getRecorderManager录音存储的audio文件
 - dom element的截图API
 
 推荐：在调用上述API使用完毕临时文件后，就调用 `uni.getFileSystemManager` 的API把临时文件删掉。
