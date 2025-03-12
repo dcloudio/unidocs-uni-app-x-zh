@@ -23,7 +23,7 @@ const fs = uni.getFileSystemManager()
 	+ 应用外置沙盒目录（`uni.env.SANDBOX_PATH`）：手机应用的沙盒目录，其中包括缓存文件目录和用户文件目录。在文件管理器中可看到。
 		* 缓存文件目录（`uni.env.CACHE_PATH`）：手机运行过程中框架保存缓存文件的目录（cache），系统空间不足时会被自动清理掉
 			- uni-download ：下载
-			- uni-media ：拍照、相册选择
+			- uni-media ：拍照、相册选择（相册选择仅在custom且压缩时产生临时文件）
 			- uni-snapshot ：App dom截图
 			- uni-crash ：App崩溃日志
 			- uni-audio ：App 线上音频缓存
