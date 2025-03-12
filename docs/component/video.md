@@ -46,6 +46,7 @@ video组件的源码[详见](https://gitcode.net/dcloud/uni-component/-/tree/mas
 
 <!-- UTSCOMJSON.video.children -->
 
+- 小程序平台、web平台均支持子组件
 - App-Android平台需HBuilderX 4.25+
 - App-iOS平台需HBuilderX 4.33+
 
