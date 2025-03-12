@@ -6,7 +6,7 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 
 在App中，基于recycle-view的list，才能实现长列表的渲染资源复用，以保障列表加载很多项目时，不会一直增加渲染内容。list-view就是基于recycle-view的list组件。
 
-但需要注意，view复用，不代表dom和vue node复用。不管是浏览器还是app，长列表一直加载，即便使用list组件，dom和vue node都会不停增加内存占用，导致最终崩溃。
+但需要注意，view复用，不代表dom和vue node复用。在app端dom和vue node均不复用，web端dom会被复用，但是vue node不会被复用。长列表一直加载，即便使用list组件，dom和vue node都会不停增加内存占用，导致最终崩溃。
 
 所以浏览器上，开发者大多已习惯自己处理dom和vnode的复用。
 
