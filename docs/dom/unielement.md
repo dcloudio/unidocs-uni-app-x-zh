@@ -64,7 +64,7 @@
 
 **注意**
 - setAttribute从HBuilderX 3.93起，调整为只能保存string类型属性值，需要保存其它类型数据请使用dataset属性。
-- 为保证多端一致setAttribute不应用于修改本文档中的UniElement属性，如有此类需求应使用element.xxx设置，如element.scrollTop。其余绑定到内置组件的属性也尽量使用数据驱动而不是绕过vue去设置。
+- 为保证多端一致setAttribute不推荐用于修改本文档中的UniElement属性，如有此类需求应使用element.xxx设置，如element.scrollTop。其余绑定到内置组件的属性也尽量使用数据驱动而不是绕过vue去设置。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.param -->
 
