@@ -678,6 +678,18 @@ const arr2: number[] = arr.map((item: number): number => {
 });
 ```
 
+## void @void
+
+- 作为类型时，通常用于表示一个[函数不需要返回值](function.html#%E6%97%A0%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E5%87%BD%E6%95%B0-void)
+
+  * 编译为Kotlin时，对应：Unit
+  * 编译为Swift时，对应：Void
+  * 编译为ArkTS时，对应：void
+
+- 作为操作符时，用于返回 undefined
+
+  > 仅在目标语言为js时支持
+
 ## 日期（Date）@date
 
 日期对象表示日期，包括年月日时分秒等各种日期。
