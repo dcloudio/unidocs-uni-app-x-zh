@@ -174,7 +174,7 @@ console.log(map.get('key1')) // 跨端用法
 
 ## Bug & Tips@tips
 
-* 目前 `Map` 类型编译到 kotlin 为 io.dcloud.uts.Map
+* 目前 `Map` 类型编译到 kotlin 为 io.dcloud.uts.Map 其直接父类为：[LinkedHashMap](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-linked-hash-map/)
 
 ```ts
 // kotlin map 转换为 uts map
