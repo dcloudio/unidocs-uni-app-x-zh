@@ -10,7 +10,33 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 
 * 通过[对象字面量](../literal.md#object-literal)
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.UTSJSONObject.sample_create.test -->
+
+> Android
+
+```kotlin
+
+val person: UTSJSONObject = object : UTSJSONObject() {
+	var name = "Tom"
+	var printName = fun(){
+		console.log(name)
+	}
+}
+//返回指定键对应的值，如果对象中不存在此键则返回 null。
+var name: String = person["name"] as String
+//get 方法可以简化为使用下标运算符 `[]` 访问
+name = person["name"] as String
+// 增加或更新指定键对应的值。
+person["name"] = "Tom1"
+person["name"] = "Tom2"
+
+```
+
+
 
 * 通过 JSON 字符串
 
