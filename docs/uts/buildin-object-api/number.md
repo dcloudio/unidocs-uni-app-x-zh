@@ -106,7 +106,25 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 <!-- UTSJSON.Number.from.compatibility -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.Number.from.test -->
+
+> kotlin
+
+```kotlin
+run {
+	var a: Int = 12
+	var b = UTSNumber.from(a)
+	// expected output: 12
+	console.log(b)
+}
+```
+
+:::
+
 
 <!-- UTSJSON.Number.tutorial -->
 
@@ -122,7 +140,26 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 <!-- UTSJSON.Number.toFixed.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.Number.toFixed.test -->
+
+> kotlin
+
+```kotlin
+fun financial(x: Number): String {
+	return x.toFixed(2)
+}
+// expected output: "123.46"
+console.log(financial(123.456))
+// expected output: "0.00"
+console.log(financial(0.004))
+```
+
+:::
+
 
 <!-- UTSJSON.Number.toFixed.compatibility -->
 
@@ -134,7 +171,21 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 <!-- UTSJSON.Number.toString.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.Number.toString.test -->
+
+> kotlin
+
+```kotlin
+// '10'
+console.log(10.toString(10))
+```
+
+:::
+
 
 <!-- UTSJSON.Number.toString.compatibility -->
 
@@ -162,7 +213,20 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 <!-- UTSJSON.Number.toPrecision.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.Number.toPrecision.test -->
+
+> kotlin
+
+```kotlin
+// 123.5
+console.log(123.456.toPrecision(4))
+```
+
+:::
 
 <!-- UTSJSON.Number.toPrecision.compatibility -->
 
@@ -176,7 +240,20 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 <!-- UTSJSON.Number.valueOf.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.Number.valueOf.test -->
+
+> kotlin
+
+```kotlin
+// 10
+console.log(10.valueOf())
+```
+
+:::
 
 <!-- UTSJSON.Number.valueOf.compatibility -->
 
@@ -188,7 +265,27 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 <!-- UTSJSON.Number.toInt.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.Number.toInt.test -->
+
+> kotlin
+
+```kotlin
+run {
+	var a: Number = 12
+    // expected output: 12
+	console.log(a.toInt())
+	// Int最大值2147483647,溢出了
+	var b: Number = 2147483648
+	// expected output: -2147483648
+	console.log(b.toInt())
+}
+```
+
+:::
 
 <!-- UTSJSON.Number.toInt.compatibility -->
 
@@ -359,4 +456,4 @@ Number 对象是经过封装的能让你处理数字值的对象。
 
 ## Android 平台方法
 
-Number 类型编译到 `kotlin` 为 `kotlin.Number`
+Number 类型编译到 `kotlin` 为 [kotlin.Number](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-number/)
