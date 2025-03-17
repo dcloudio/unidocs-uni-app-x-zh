@@ -403,10 +403,6 @@ run {
 	var cars: UTSArray<UTSJSONObject>? = obj.getArray<UTSJSONObject>("cars")
 	cars!![0].set("value", 20)
 	var firstCar = obj.getJSON("cars[0]")
-
-	if(firstCar!!["value"] != 20){
-		DoLog.fail()
-	}
 }
 ```
 
@@ -445,20 +441,17 @@ run {
 
 ```kotlin
 run {
-	var obj = JSON.parseObject("{\"name\":\"tom\",\"tag\":[\"student\",\"user\"]}")
-	var noGenericArray = obj!!.getArray("tag")
-	console.log(noGenericArray)
-	var genericArray = obj!!.getArray<String>("tag")
-	console.log(genericArray)
-
-	if("[\"student\",\"user\"]" != JSON.stringify(genericArray)){
-		DoLog.fail()
+	var obj: UTSJSONObject = object : UTSJSONObject() {
+		var cars = utsArrayOf(
+			object : UTSJSONObject() {
+				var name = "car1"
+				var value: Number = 100
+			}
+		)
 	}
-
-	if("[\"student\",\"user\"]" != JSON.stringify(noGenericArray)){
-		DoLog.fail()
-	}
-
+	var cars: UTSArray<UTSJSONObject>? = obj.getArray<UTSJSONObject>("cars")
+	cars!![0].set("value", 20)
+	var firstCar = obj.getJSON("cars[0]")
 }
 ```
 
@@ -475,7 +468,27 @@ run {
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.UTSJSONObject.getArray_1.test -->
+
+> kotlin
+
+```kotlin
+run {
+	var obj = JSON.parseObject("{\"name\":\"tom\",\"tag\":[\"student\",\"user\"]}")
+	var noGenericArray = obj!!.getArray("tag")
+	console.log(noGenericArray)
+	var genericArray = obj!!.getArray<String>("tag")
+	console.log(genericArray)
+}
+```
+
+:::
+
+
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.compatibility -->
 
@@ -512,7 +525,28 @@ run {
 
 <!-- UTSJSON.UTSJSONObject.toMap.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.UTSJSONObject.toMap.test -->
+
+> kotlin
+
+```kotlin
+run {
+	val person1 = JSON.parseObject("{\"name\":\"Tom\"}")!!
+	person1.toMap().forEach(fun(value, key){
+		console.log(key)
+		console.log(value)
+	})
+}
+```
+
+:::
+
+
+
 
 <!-- UTSJSON.UTSJSONObject.toMap.compatibility -->
 
