@@ -40,7 +40,29 @@ person["name"] = "Tom2"
 
 * 通过 JSON 字符串
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.UTSJSONObject.sample_create1.test -->
+
+> Android
+
+```kotlin
+// 写法1 推荐
+var person1: UTSJSONObject = JSON.parseObject("{\"name\":\"Tom\"}")!!
+// 写法2 推荐
+val person2: UTSJSONObject = JSON.parse<UTSJSONObject>("{\"name\":\"Tom\"}")!!
+// 写法3  如果 as 转换的实际类型不匹配 会导致 crash，建议先通过 `is` 判断类型再进行as转换。
+val parseRet3 = JSON.parse("{\"name\":\"Tom\"}")
+if (parseRet3 is UTSJSONObject) {
+	val person = parseRet3 as UTSJSONObject
+}
+```
+
+:::
+
+
 
 ## 静态方法
 
