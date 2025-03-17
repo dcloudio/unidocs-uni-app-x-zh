@@ -16,7 +16,7 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 
 <!-- UTSJSON.UTSJSONObject.sample_create.test -->
 
-> Android
+> kotlin
 
 ```kotlin
 
@@ -46,7 +46,7 @@ person["name"] = "Tom2"
 
 <!-- UTSJSON.UTSJSONObject.sample_create1.test -->
 
-> Android
+> kotlin
 
 ```kotlin
 // 写法1 推荐
@@ -74,7 +74,24 @@ if (parseRet3 is UTSJSONObject) {
 
 <!-- UTSJSON.UTSJSONObject.keys.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.UTSJSONObject.keys.test -->
+
+> kotlin
+
+```kotlin
+var obj: UTSJSONObject = object : UTSJSONObject() {
+	var name = "zhangsan"
+	var age: Number = 11
+}
+// 2
+var ret1 = UTSJSONObject.keys(obj).length
+```
+
+:::
 
 <!-- UTSJSON.UTSJSONObject.keys.compatibility -->
 
@@ -87,7 +104,29 @@ if (parseRet3 is UTSJSONObject) {
 
 <!-- UTSJSON.UTSJSONObject.assign.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.UTSJSONObject.assign.test -->
+
+> kotlin
+
+```kotlin
+var target: UTSJSONObject = object : UTSJSONObject() {
+	var a: Number = 1
+	var b: Number = 2
+}
+var source: UTSJSONObject = object : UTSJSONObject() {
+	var b: Number = 4
+	var c: Number = 5
+}
+// 得到一个UTSJSONObject对象 {"a":1,"b":4,"c":5}
+var returnedTarget = UTSJSONObject.assign(target, source)
+```
+
+:::
+
 
 <!-- UTSJSON.UTSJSONObject.assign.compatibility -->
 
@@ -101,7 +140,29 @@ if (parseRet3 is UTSJSONObject) {
 
 <!-- UTSJSON.UTSJSONObject.assign_1.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.UTSJSONObject.assign_1.test -->
+
+> kotlin
+
+```kotlin
+var target1: UTSJSONObject = object : UTSJSONObject() {
+	var a: Number = 1
+	var b: Number = 2
+}
+var source1: UTSJSONObject = object : UTSJSONObject() {
+	var b: Number = 4
+	var c: Number = 5
+}
+// 得到一个UTSJSONObject对象 {"a":1,"b":4,"c":5}
+var returned = UTSJSONObject.assign<UTSJSONObject>(target1, source1)
+```
+
+:::
+
 
 <!-- UTSJSON.UTSJSONObject.assign_1.compatibility -->
 
