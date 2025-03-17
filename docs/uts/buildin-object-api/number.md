@@ -327,7 +327,21 @@ run {
 
 <!-- UTSJSON.Number.toByte.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.Number.toByte.test -->
+
+> kotlin
+
+```kotlin
+var a: Number = 12
+console.log(a.toByte())
+```
+
+:::
+
 
 <!-- UTSJSON.Number.toByte.compatibility -->
 
@@ -339,7 +353,21 @@ run {
 
 <!-- UTSJSON.Number.toLong.returnValue -->
 
+::: preview
+
+>UTS
+
 <!-- UTSJSON.Number.toLong.test -->
+
+> kotlin
+
+```kotlin
+var a: Number = 12
+console.log(a.toLong())
+```
+
+:::
+
 
 <!-- UTSJSON.Number.toLong.compatibility -->
 
