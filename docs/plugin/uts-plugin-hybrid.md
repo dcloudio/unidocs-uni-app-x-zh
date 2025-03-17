@@ -733,6 +733,53 @@ func getKeyWindow() -> UIWindow {
 
 ## harmonyos平台
 
+### uts内置对象与arkts原生映射关系
+
+|uts 内置对象		|编译成的原生对象名																						|
+|---					|---																												|
+|Array				|	Array																											|
+|Number				|	Number																										|
+|String				|	String																										|
+|Set					|	Set																												|
+|Map					|	Map																												|
+|UTSJSONObject|	import {UTSJSONObject} from '@dcloudio/uni-app-x-runtime'	|
+|JSON					|	JSON																											|
+|Date					|	Date																											|
+|Math					|	Math																											|
+|Promise			|	Promise																										|
+|RegExp				|	RegExp																										|
+|Error				|	Error																											|
+|console			|	console																										|
+
+### ets内使用uts特有对象
+
+#### UTSJSONObject
+
+示例：
+
+```ts
+import {UTSJSONObject} from '@dcloudio/uni-app-x-runtime'
+const obj = new UTSJSONObject({
+  a: 1
+})
+obj.get('a') as number // 1
+obj.getNumber('a') // 1
+```
+
+UTSJSONObject不会对对象字面量进行深层转换
+
+```ts
+import {UTSJSONObject} from '@dcloudio/uni-app-x-runtime'
+const obj = new UTSJSONObject({
+  a: {
+    b: 1
+  }
+})
+obj.get('a') // 返回一个ESObject类型对象，并非UTSJSONObject
+```
+
+## harmonyos平台示例
+
 如下示例使用的目录uni_module目录结构如下
 
 ```text
