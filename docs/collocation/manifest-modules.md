@@ -436,3 +436,60 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 </manifest>
 ```
+
+#### Harmony平台配置腾讯地图Key @uni-map-tencent-harmony-key
+
+在项目根目录下添加 `/harmony-configs/entry/src/main/module.json5` 文件（目录没有就新建），将申请的 key 配置到 metadata 属性中，文件内容如下：
+
+```json5
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ]
+      }
+    ],
+		"metadata": [
+			{
+				"name": "TENCENT_MAP_KEY",
+				"value": "你的腾讯地图Key"
+			}
+		],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ]
+  }
+}
+```
+
