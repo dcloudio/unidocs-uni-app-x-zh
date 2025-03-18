@@ -2080,7 +2080,7 @@ type  Rectangle= {
 type Shape = Square | Rectangle // 支持
 ```
 - 在uts插件中，对 js 环境（即：uni-app、uni-app x iOS 平台）导出时，暂不支持联合类型
-- 联合类型编译到目标平台为 any 类型，此时仅支持HBuilderX的语法校验，并不会在编译阶段做强校验，请确保使用了类型收窄来确保类型的准确性，否则可能运行时异常。
+- 不同类的联合类型编译到目标平台为 any 类型，此时仅支持HBuilderX的语法校验，并不会在编译阶段做强校验，请确保使用了类型收窄来确保类型的准确性，否则可能运行时异常。
 - 可辨识联合仅支持string、number字面量或字面量联合
 
 ## 类型收窄@narrowing
