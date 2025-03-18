@@ -478,12 +478,12 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
         ]
       }
     ],
-		"metadata": [
-			{
-				"name": "TENCENT_MAP_KEY",
-				"value": "你的腾讯地图Key"
-			}
-		],
+    "metadata": [
+      {
+        "name": "TENCENT_MAP_KEY",
+        "value": "你的腾讯地图Key"
+      }
+    ],
     "requestPermissions": [
       {
         "name": "ohos.permission.INTERNET"
