@@ -494,8 +494,16 @@ export class NativeButton {
 }
 ```
 
+:::
 
-> harmonyOS
+HarmonyOS 平台，需要通过 ets 文件混编 build 构建函数来包装鸿蒙内置或三方原生组件：
+
+- [@Builder装饰器：自定义构建函数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-builder-V5)
+- [build()函数的语法限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-create-custom-components-V5#build函数)
+
+::: preview
+
+> index.uts
 
 ```uts
 import { BuilderNode } from "@kit.ArkUI"
@@ -599,6 +607,21 @@ export function createNativeButtonContext(id : string, ins : ComponentPublicInst
 
 ```
 
+> builder.ets
+
+```uts
+@Builder
+export function buildButton(params: ESObject) {
+  Button(params.text, { type: ButtonType.Normal, stateEffect: true })
+    .borderRadius(8)
+    .backgroundColor(0x317aff)
+    .onClick(() => {
+        params.onClick()
+    })
+    .attributeModifier(params.attributeUpdater)
+}
+```
+
 :::
 
 更多实现可参考 标准模式组件 [native-button](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/dev/uni_modules/native-button)
@@ -610,10 +633,6 @@ export function createNativeButtonContext(id : string, ins : ComponentPublicInst
 + 绑定原生 view 方法（bindAndroidView、bindIOSView）仅支持调用一次，原生 view 一旦绑定后不支持再次绑定其他 view
 + ios平台需要vue组件主动释放 uts 实例，所以页面触发 unmounted 生命周期时需要调用 this.button?.destroy() 避免内存泄露
 + android平台 native-view 组件不支持border、background、box-shadow属性，可以使用view标签包裹native-view,在view标签设置以上属性
-+ harmonyOS平台 创建原生组件（鸿蒙内置或三方SDK提供），需要通过 ets 文件混编来导出声明式UI的 build 构建函数：
-	* [@Builder装饰器：自定义构建函数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-builder-V5)
-	* [build()函数的语法限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-create-custom-components-V5#build函数)
-
 
 
 ### 页面引用UTS插件-标准模式组件@pagecode
