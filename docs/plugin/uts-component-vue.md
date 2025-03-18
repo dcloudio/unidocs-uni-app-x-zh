@@ -1,6 +1,6 @@
 # uts插件 - 标准模式组件开发
 
-> HBuilderX4.31 及以上版本支持app-android、app-ios，HBuilderX4.61 及以上版本支持app-harmony。
+> HBuilderX4.31+ 支持app-android、app-ios，HBuilderX4.61+ 支持app-harmony。
 
 本文重点在于讲述如何在app-android、app-ios、app-harmony上，使用vue组件开发规范封装原生UI封装为 uni-app x 项目使用的UTS组件，供使用者在uvue页面template中以组件的方式调用。  
 主要思路是将app平台的原生view关联内置 [native-view](../component/native-view.md) 组件，实现UTS组件的特定功能及UI展示。  
@@ -503,7 +503,7 @@ HarmonyOS 平台，需要通过 ets 文件混编 build 构建函数来包装鸿�
 
 ::: preview
 
-> index.uts
+> HarmonyOS - index.uts
 
 ```uts
 import { BuilderNode } from "@kit.ArkUI"
@@ -607,7 +607,7 @@ export function createNativeButtonContext(id : string, ins : ComponentPublicInst
 
 ```
 
-> builder.ets
+> HarmonyOS - builder.ets
 
 ```uts
 @Builder
