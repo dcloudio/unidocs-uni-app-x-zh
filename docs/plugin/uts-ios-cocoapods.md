@@ -10,10 +10,14 @@
 ```json
 {
 	"deploymentTarget": "9.0",   // 可选，插件支持的最低 iOS 版本  默认：9.0"
+	"dependencies-pod-sources": [ //可选, 指定source 源, 可指定多个。HBuilderX 4.61+ 版本支持
+	  "https://github.com/test/test-specs.git"
+	],
 	"dependencies-pods": [ // 可选, 需要依赖的 CocoaPods 库, HBuilderX 3.8.5+ 版本支持
 	{
 		"name": "WechatOpenSDK",
-		"version": "2.0.2"
+		"version": "2.0.2",
+		"source": "https://github.com/test/test-specs.git" //可选，直接指定某个库的spec源地址，HBuilderX 4.61+ 版本支持
 	}, {
 		"name": "Alamofire",
 		"version": "5.7.3", //配置 repo 时可不指定 version
@@ -35,11 +39,16 @@
 	+ 插件支持的最低版本号应该设置为所有依赖的三方库（包含 framework .a pod ）中最低支持版本号中的最高的一个。
 	+ pod 库的最低支持系统版本号可在 pod 库的 spec 文件或者 readme 中查看。
 - dependencies-pods：插件需要依赖的 pod 库,  HBuilderX3.8.5+ 版本新增支持
-	+ 把需要依赖的 pod 库相关信息配置在 dependencies-pods 节点下，需要明确指定每个 pod 库的名字 (name)。 按需指定版本号 version 或者 repo （至少应配置 version 或 repo 中的一个，repo 优先级高于 version， 配置 repo 时 version 不再生效），可同时配置多个 pod 依赖库。目前不支持通过 podfile 文件直接设置，也不支持 podfile 文件中除了 name 、 version 、pod 特定仓库之外的其他配置项。
+	+ 把需要依赖的 pod 库相关信息配置在 dependencies-pods 节点下，需要明确指定每个 pod 库的名字 (name)。 按需指定版本号 version 或者 source 或者 repo （至少应配置 version 或 repo 中的一个，repo 优先级高于 version， 配置 repo 时 version 不再生效），可同时配置多个 pod 依赖库。目前不支持通过 podfile 文件直接设置，也不支持 podfile 文件中除了 name 、 version 、source 、pod 特定仓库之外的其他配置项。
 	+ 为了保证插件的稳定性，避免因未指定 pod 库版本，执行 pod install 之后 pod 库最新版本造成的代码不兼容问题，在未配置 repo 时需要明确指定 pod 库的具体版本。此时 version 字段不可省略，不可为空字符串。 建议将 version 配置为 `"9.7.0"` 这种明确的数字版本号，不建议使用 `~>, >, >=, <, <=` 等带符号的配置。
 	+ repo: 自定义 pod 库仓库地址信息, HBuilderX3.8.10+ 版本新增支持
 		+ 如果你需要自己指定 pod 库的仓库地址: git, tag, branch, commit 等信息，可以通过repo字段配置。请注意： repo 是一个对象，其中至少应包含 git 字段（用来指定 pod 库的仓库地址）。当你同时指定 tag、 branch、 commit 时，CocoaPods 会默认使用 commit，通常可以根据需要指定 tag / branch / commit 中的一个。当正确配置 repo 时 version 不再生效，此时可以省略 version 的配置。
-	+ 使用 CocoaPods 官方默认地址 (source 'https://cdn.cocoapods.org/'), 暂不接受 source 配置。
+	+ source: 自定义 pod 库的 specs 索引文件地址，HBuilderX 4.61+ 版本新增支持。
+		+ 如果同时指定了 source 和 repo， 则以 repo 为准，source 将不再生效。
+- dependencies-pod-sources： 插件依赖的 pod 库的 specs source 地址，HBuilderX 4.61+ 版本新增支持。
+	+ 本地真机运行默认使用  CocoaPods 官方默认地址 (source 'https://cdn.cocoapods.org/')
+	+ 开发者配置的 source 会排在默认 source 之后，按照 dependencies-pod-sources 数组中的 source 顺序，依次排列；
+	+ 注意：根据 cocoaPods 的默认行为，如果两个 source 中有相同的 pod 库如 frameworkA， 且指定了相同的版本，那么 cocoaPods 会从排在前面的 source 中查找 pod 库，而官方的源排列在最前面。如果你有这样的需求，请直接在某个 pod 库的配置中指定 source.
 
 
 ## CocoaPods 环境配置@config
