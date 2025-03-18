@@ -55,6 +55,7 @@
   * [uts插件iOS运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
   * [uts插件Android Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
   * [uts插件iOS Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
+  * [uts插件Harmony Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)
 * [性能优化](performance.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
 * [暗黑模式](api/theme-change.md)

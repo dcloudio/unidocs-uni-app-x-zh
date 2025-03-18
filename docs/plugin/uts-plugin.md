@@ -931,6 +931,7 @@ methods: {
 开发uts插件，调试、打断点是重要帮手，参考如下文档
 * [uts插件Android Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
 * [uts插件iOS Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
+* [uts插件Harmony Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)
 
 ### 获取电量插件示例
 
