@@ -81,6 +81,7 @@
   * [选择文件](choose-file.md)
   * [音频](create-inner-audio-context.md)
   * [背景音频](get-background-audio-manager.md)
+  * [录音](get-recorder-manager.md)
 * 画布
   * [canvasToTempFilePath](canvas-to-temp-file-path.md)
   * [createCanvasContextAsync](create-canvas-context-async.md)
@@ -117,6 +118,7 @@
   * [创建 video 组件上下文对象](create-video-context.md)
   * [创建 map 组件上下文对象](create-map-context.md)
   * [创建 canvas 组件上下文对象](create-canvas-context-async.md)
+  <!-- * [创建 camera 组件上下文对象](create-camera-context.md) -->
 * uniCloud客户端API
   * [概述](unicloud/README.md)
   * [云函数](unicloud/function.md)

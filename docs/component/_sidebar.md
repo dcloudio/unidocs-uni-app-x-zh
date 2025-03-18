@@ -58,6 +58,7 @@
     * [image | 图片](image.md)
     * [video | 视频](video.md)
     * [animation-view | Lottie动画](animation-view.md)
+    <!-- * [camera | 相机](camera.md) -->
   * 地图
     * [map | 地图](map.md)
   * 画布

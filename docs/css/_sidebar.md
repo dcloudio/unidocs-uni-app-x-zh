@@ -85,6 +85,7 @@
   * [text-decoration-style](text-decoration-style.md)
   * [text-decoration-thickness](text-decoration-thickness.md)
   * [text-overflow](text-overflow.md)
+  <!-- * [text-shadow](text-shadow.md) -->
   * [top](top.md)
   * [transform](transform.md)
   * [transform-origin](transform-origin.md)
