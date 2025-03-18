@@ -1,8 +1,8 @@
 # uts插件 - 标准模式组件开发
 
-> HBuilderX4.31 及以上版本支持  
+> HBuilderX4.31 及以上版本支持app-android、app-ios，HBuilderX4.61 及以上版本支持app-harmony。
 
-本文重点在于讲述如何在app-android和app-ios上，使用vue组件开发规范封装原生UI封装为 uni-app x 项目使用的UTS组件，供使用者在uvue页面template中以组件的方式调用。  
+本文重点在于讲述如何在app-android、app-ios、app-harmony上，使用vue组件开发规范封装原生UI封装为 uni-app x 项目使用的UTS组件，供使用者在uvue页面template中以组件的方式调用。  
 主要思路是将app平台的原生view关联内置 [native-view](../component/native-view.md) 组件，实现UTS组件的特定功能及UI展示。  
 
 
@@ -58,7 +58,7 @@
 
 下面我们以一个例子来讲解标准模式组件的开发。
 
-我们开发一个`native-button`组件，目标是把Android和iOS的原生button封装成uvue组件。
+我们开发一个`native-button`组件，目标是把Android、iOS、harmonyOS 的原生button封装成uvue组件。
 
 Android的原生button会带有水波纹效果。uni-app自带的button组件并没有这个效果。
 
@@ -96,7 +96,7 @@ native-view 组件的用途就是提供一个占位view，并且可以和原生�
 
 native-view 组件初始化会触发 @init 事件，如下代码在init时创建原生NativeButton对象，在其内部实现了view的绑定。
 
-[NativeButton](#utscode)是在utssdk目录的app-android和app-ios目录下的index.uts中定义的原生对象。NativeButton对象内部处理原生view与native-view绑定关联业务。
+[NativeButton](#utscode)是在utssdk目录的app-android、app-ios、app-harmony目录下的index.uts中定义的原生对象。NativeButton对象内部处理原生view与native-view绑定关联业务。
 
 native-button.uvue代码中用NativeButton对象调用插件相关的API。
 
@@ -494,6 +494,111 @@ export class NativeButton {
 }
 ```
 
+
+> harmonyOS
+
+```uts
+import { BuilderNode } from "@kit.ArkUI"
+// 导入混编实现的声明式UI构建函数
+import { buildButton } from "./builder.ets"
+
+import { INativeButtonContext } from "../interface.uts"
+// 定义 buildButton 的参数类型
+interface NativeButtonOptions {
+    text : string
+    onClick : () => void
+}
+
+export class NativeButton {
+    private $element : UniNativeViewElement;
+    private builder : BuilderNode<[NativeButtonOptions]> | null = null
+    // 初始化 buildButton 默认参数
+    private params : NativeButtonOptions = {
+        text: '',
+        onClick: () => {
+            this.$element.dispatchEvent(new UniNativeViewEvent("customClick", {}))
+        }
+    }
+
+    constructor(element : UniNativeViewElement) {
+        // 绑定 wrapBuilder 函数
+        this.builder = element.bindHarmonyWrappedBuilder(wrapBuilder<[NativeButtonOptions]>(buildButton), this.params)
+        this.$element = element
+        // 绑定当前实例为自定义的controller，方便其他地方通过 element 获取使用
+        this.$element.bindHarmonyController(this)
+    }
+
+    updateText(text : string) {
+        this.params.text = text
+        // 调用 builder update 函数来更新 UI
+        this.builder?.update(this.params)
+    }
+}
+
+
+class NativeButtonContext implements INativeButtonContext {
+    private controller : NativeButton
+    constructor(element : UniNativeViewElement) {
+        // 获取自定义的 controller
+        this.controller = element.getHarmonyController<NativeButton>()!
+    }
+    updateText(text : string) {
+        // 调用 controller 来更新文字
+        this.controller?.updateText(text)
+    }
+}
+/**
+ * 递归查询
+ */
+function iterateElement(homeElement : UniElement) : UniNativeViewElement | null {
+    if ("NATIVE-VIEW" == homeElement.nodeName) {
+        return homeElement as UniNativeViewElement
+    }
+    for (const perChildEle of homeElement.children) {
+        let findEle = iterateElement(perChildEle)
+        if (findEle != null) {
+            return findEle
+        }
+    }
+
+    return null
+}
+
+
+
+export function createNativeButtonContext(id : string, ins : ComponentPublicInstance | null = null) : INativeButtonContext | null {
+    if (ins == null) {
+        const pages = getCurrentPages()
+        if (pages.length > 0) {
+            const page = pages[pages.length - 1]
+            const rootViewElement = page.getElementById(id)
+            if (rootViewElement != null) {
+                /**
+                 * 找到了root节点，递归检索目标 native-view
+                 */
+                const nativeViewElement = iterateElement(rootViewElement)
+                if (nativeViewElement != null) {
+                    return new NativeButtonContext(nativeViewElement)
+                }
+            }
+        }
+    } else {
+        /**
+         * 尝试迭代遍历
+         */
+        if (ins.$el != null) {
+            const nativeViewElement = iterateElement(ins.$el as UniElement)
+            if (nativeViewElement != null) {
+                return new NativeButtonContext(nativeViewElement)
+            }
+        }
+    }
+
+    return null
+}
+
+```
+
 :::
 
 更多实现可参考 标准模式组件 [native-button](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/dev/uni_modules/native-button)
@@ -505,6 +610,10 @@ export class NativeButton {
 + 绑定原生 view 方法（bindAndroidView、bindIOSView）仅支持调用一次，原生 view 一旦绑定后不支持再次绑定其他 view
 + ios平台需要vue组件主动释放 uts 实例，所以页面触发 unmounted 生命周期时需要调用 this.button?.destroy() 避免内存泄露
 + android平台 native-view 组件不支持border、background、box-shadow属性，可以使用view标签包裹native-view,在view标签设置以上属性
++ harmonyOS平台 创建原生组件（鸿蒙内置或三方SDK提供），需要通过 ets 文件混编来导出声明式UI的 build 构建函数：
+	* [@Builder装饰器：自定义构建函数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-builder-V5)
+	* [build()函数的语法限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-create-custom-components-V5#build函数)
+
 
 
 ### 页面引用UTS插件-标准模式组件@pagecode
