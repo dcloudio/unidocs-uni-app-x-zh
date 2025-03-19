@@ -493,3 +493,62 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 }
 ```
 
+同时还需要在 manifest.json 内配置 app.distribute.modules.uni-map，如下所示
+
+```json
+"app" : {
+	"distribute" : {
+		"modules" : {
+			"uni-map" : {
+				"tencent" : {}
+			}
+		}
+	}
+}
+```
+
+如果你用到了地图的定位功能，比如显示定位坐标，那么还需要配置定位，如下所示
+
+```json
+"app" : {
+	"distribute" : {
+		"modules" : {
+			"uni-getLocation" : {
+				"system" : {}
+			},
+			"uni-map" : {
+				"tencent" : {}
+			}
+		}
+	}
+}
+```
+
+同时定位需要申请鸿蒙权限，修改 `/harmony-configs/entry/src/main/module.json5` 文件（如果没有这需要从鸿蒙基座复制）
+
+注意：请修改reason内的字符串变量为你自己的值
+
+```json5
+{
+	"module": {
+		// ...其他配置
+		// 权限配置
+		"requestPermissions": [
+			{
+				"name": "ohos.permission.INTERNET"
+			},
+			{
+				"name": "ohos.permission.LOCATION",
+				"usedScene": {},
+				"reason": "$string:EntryAbility_label"
+			},
+			{
+				"name": "ohos.permission.APPROXIMATELY_LOCATION",
+				"usedScene": {},
+				"reason": "$string:EntryAbility_label"
+			}
+		]
+	}
+}
+```
+
