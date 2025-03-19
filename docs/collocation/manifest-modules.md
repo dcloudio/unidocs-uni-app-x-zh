@@ -2,6 +2,8 @@
 
 ## 模块的摇树@treeShaking
 
+> 鸿蒙平台暂不支持根据使用情况自动添加模块，且鸿蒙平台需自行添加的模块列表和安卓iOS不一致，如下文档不适用于鸿蒙平台，详情参考：[鸿蒙平台模块配置](./manifest-harmony.md#modules)
+
 uni-app x的Android基础库体积是7M，打包后的apk体积是基础库的体积加上开发者的代码及代码引用的模块的体积。有些模块涉及so库，覆盖的cpu指令越多，包体积越大。
 
 在uni-app js引擎版中，内置模块如video，是开发者在manifest.json中手动勾选配置的。
