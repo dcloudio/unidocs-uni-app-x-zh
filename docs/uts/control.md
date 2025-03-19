@@ -152,7 +152,7 @@ for (let i = 0; i < 10; i++) {
 
 ### for of
 
-for...of 语句执行一个循环，该循环处理来自可迭代对象的值序列。可迭代对象包括内置对象的实例，例如 Array、String、Map、Set，还包括用户定义的[可迭代对象](buildin-object-api/iterable.md)
+for...of 语句执行一个循环，该循环处理来自可迭代对象的值序列。可迭代对象包括内置对象的实例，例如 Array、String、Map、Set，还包括用户定义的[可迭代对象](iterable.md)
 
 ```ts
 for (variable of iterable)
@@ -161,20 +161,97 @@ for (variable of iterable)
 
 for...of 循环按顺序逐个处理从可迭代对象获取的值。循环对值的每次操作被称为一次迭代，而循环本身被称为迭代可迭代对象。每次迭代都会执行可能引用当前序列值的语句。
 
-举例：
+在 `HBuilderX 4.41` 之后，for..of `全端的执行效果与 web 标准一致`，下面列出具体的内置对象的支持情况：
 
-```ts
-const iterable = [10, 20, 30];
+#### Set / Array
 
-for (let value of iterable) {
-  value += 1;
-  console.log(value);
+类似Set/Array 这样的一维数据容器，会遍历内部属性值
+
+```typescript
+let u1 = new Set<any>()
+u1.add("111")
+u1.add("222")
+for (item of u1) {
+	console.log("item",item)
 }
-// 11
-// 21
-// 31
 ```
 
+执行结果
+
+```typescript
+> item 111
+> item 222
+```
+
+#### Map
+
+Map 的遍历会将其key,value 封装为一个新的Array 数组
+
+```typescript
+let u1 = new Map<string,any>()
+u1.put("aaa","111")
+u1.put("bbb","222")
+for (item of u1) {
+	console.log("item",item)
+}
+```
+
+执行结果
+
+```typescript
+> ‍[Array]‍ [ "aaa", "111" ]
+> [Array]‍ [ "bbb", "222" ]
+```
+
+#### string
+
+会遍历string 的每一个字符
+
+```typescript
+let a = "123456"
+for(item of a ){
+  console.log(item)
+}
+```
+
+执行结果
+
+```typescript
+> "1"
+> "2"
+> "3"
+> "4"
+> "5"
+> "6"
+```
+
+
+#### number / Date / RegExp / Error / UTSJSONObject / 自定义的type类型 / 自定义class
+
+不支持，编译报错
+
+```typescript
+For-loop range must have an 'iterator()' method‌
+```
+
+需要特别说明的是一般情况下  自定义的type类型 / 自定义class  如果直接使用 for of 会运行报错，但有些场景我们需要赋予自定义class 循环访问自身的能力，甚至要定制迭代访问的内容，实现方式[详见](iterable.md).
+
+
+### for in
+
+UTS 语言目前并没有对 for..in 进行特殊处理，所以开发者在 UTS 中使用 for..in 语法时，会触发各个平台具体内置规则。可以运行，但执行效果与 web 存在一定的差异。
+为了保持与 web 行为的一致性，针对 Array/Set/Map 等集合类型以及 String 的遍历建议使用 for...of， 不建议使用 for...in。
+
+下面我们列出了UTS内置对象对for..in的支持情况
+
+|类型			|Web	|Android	|ios		|
+|:--			|:--	|:--		|:--		|
+|Array			|返回索引|返回数值	|返回数值	|
+|Set			|不可枚举|返回数值	|返回数值	|
+|Map			|不可枚举|返回键值对	|返回键值对	|
+|String			|返回索引|返回字符	|返回字符	|
+|自定义type		|返回属性名|返回属性名|返回属性名	|
+|UTSJSONObject	|返回属性名|返回属性名|返回属性名	|
 
 
 ### while
