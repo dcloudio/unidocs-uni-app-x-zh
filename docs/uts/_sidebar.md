@@ -50,4 +50,7 @@
   * [UTSHarmony](utsharmony.md)
 * [关键字](keywords.md)
 * [UTS App插件开发](../plugin/uts-plugin.md)
+* 其他
+  * [可迭代协议](iterable.md)
+  * [可枚举协议](enumerability.md)
 <!-- * [学习资料](learning.md) -->
