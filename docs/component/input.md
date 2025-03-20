@@ -66,7 +66,7 @@ if (view != null && view instanceof UITextField) {
 在App平台，input和textarea组件都一个属性`adjust-position`，默认为true，即软键盘弹出时，默认上推页面以显示出输入框，避免输入框被软键盘遮挡。
 
 软键盘弹出后会挡住输入框，此时启动上推逻辑。默认的上推策略是：
-- 如果输入框在scroll-view里，会优先滚动scroll-view，以保证显示出输入框(App-HarmonyOS 不支持)。
+- 如果输入框在scroll-view里，会优先滚动scroll-view，以保证显示出输入框(App-HarmonyOS 暂不支持)。
 - 如果没有可滚动区域，会transform上移页面，以保证显示出输入框。
 
 但是默认的上推策略无法适配所有场景，有些场景需要关闭默认上推策略，即把属性`adjust-position`设为false，然后在输入框的focus或keyboardheightchange事件中获取键盘高度，手动调整界面。
