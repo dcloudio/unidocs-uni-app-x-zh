@@ -13,7 +13,7 @@
   * [宽屏适配](https://uniapp.dcloud.net.cn/tutorial/adapt.html)
   * [服务端渲染ssr](web/ssr.md)
   * [前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)
-* app平台专题指南
+* Android/iOS平台专题指南
 	* [标准基座信息](tutorial/app-playground.md)
 	* 云端打包
 		* [概述](tutorial/app-package.md)
@@ -46,10 +46,13 @@
 	* 应用市场上架
 		* [概述](tutorial/app-market.md)
 		* [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
+* 鸿蒙next平台专题指南
+  * [概述](app-harmony/README.md)
 * 小程序平台专题指南
   * [概述](mp/README.md)
 * 运行和调试
-  * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
+  * [Android/iOS运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
+	* [Harmony运行](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html)
   * [Android审查元素](debug/android-inspector.md)
 	* [uts插件Android运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html)
   * [uts插件iOS运行配置](https://uniapp.dcloud.net.cn/tutorial/run/uts-development-ios.html)
