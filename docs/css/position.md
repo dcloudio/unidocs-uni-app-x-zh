@@ -43,3 +43,7 @@ position: fixed定位时，web端为相对于整个浏览器页面进行定位�
 ```
 
 <!-- CSSJSON.position.reference -->
+
+### Bug & Tips@tips
+
+- App-HarmonyOS 平台，position: fixed 的元素会始终高于其他元素，无法通过 z-index 降低层级。
