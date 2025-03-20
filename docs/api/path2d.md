@@ -121,3 +121,40 @@
 
 <!-- CUSTOMTYPEJSON.Path2D.methods.rect.tutorial -->
 
+**注意事项**
+
+## uni-app-x harmony
+
+draw(path2D) 不受 context 的 moveTo 影响，如果需要指定位置需要调用 path2D的moveTo方法，示例如下：
+
+```
+uni.createCanvasContextAsync({
+  id: 'canvas',
+  component: this, // setup 模式使用 getCurrentInstance()
+  success: (canvasContext : CanvasContext) => {
+    const context = canvasContext.getContext('2d')!;
+    const canvas = context.canvas;
+
+    const dpr = uni.getWindowInfo().pixelRatio;
+    context.scale(dpr, dpr);
+
+    context.beginPath()
+    const path2D = canvasContext!.createPath2D();
+    const amplitude = 64;
+    const wavelength = 64;
+    for (let i = 0; i < 5; i++) {
+      const x1 = 0 + (i * wavelength);
+      const y1 = 128;
+      const x2 = x1 + wavelength / 4;
+      const y2 = y1 - amplitude;
+      const x3 = x1 + 3 * wavelength / 4;
+      const y3 = y1 + amplitude;
+      const x4 = x1 + wavelength;
+      const y4 = y1;
+      // context.moveTo(x1, y1); 这里调用moveTo无效，需要使用path2D.moveTo(x1, y1);
+      path2D.bezierCurveTo(x2, y2, x3, y3, x4, y4);
+    }
+    context.stroke(path2D);
+  }
+})
+```
