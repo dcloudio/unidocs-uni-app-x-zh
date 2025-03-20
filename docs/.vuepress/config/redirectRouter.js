@@ -19,13 +19,6 @@ export default ({ fullPath, path, hash }) => {
     }
   }
 
-  if (path.indexOf('/app-') === 0 || path.indexOf('/android-') === 0 || path.indexOf('/ios-') === 0) {
-    return {
-      path: `/tutorial${path}`,
-      hash,
-      replace: true
-    }
-  }
 
   const routerMapKeys = Object.keys(routerMap)
   let returnPathConfig = null
