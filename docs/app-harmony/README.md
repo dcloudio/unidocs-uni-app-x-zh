@@ -42,6 +42,7 @@ HBuilderX自身提供了运行、日志、debug、发行、调试证书申请等
 ## 开发注意
 - 鸿蒙平台暂不支持摇树，不能根据使用情况自动添加模块。需要在manifest中手动配置需要的模块。且鸿蒙平台需自行添加的模块列表和安卓iOS不一致。鸿蒙平台需要自行添加才可使用的模块列表详见[manifest文档](../collocation/manifest-harmony.md#modules)
 - 鸿蒙平台 uts 插件内使用 UTSJSONObject、JSON 对象目前有限制，UTSJSONObject 仅能作为类型使用，JSON 为 arkts 内置对象，并未替换为 UTS 的 JSON 对象。
+- 鸿蒙平台 uts 插件内暂不支持使用uniCloud
 - 鸿蒙平台目前不支持横屏、不支持 rpx 根据窗口尺寸变化自动变化、不支持主题变化监听
 - 鸿蒙自身的Bug还有不少，开发时需注意相关的组件、API文档说明。比如目前不支持 sticky-header组件（但可通过嵌套滚动或持续修改位置实现吸顶）、rich-text的可用性较低（建议使用web-view替代）。
 - 鸿蒙在 transform 变形后，层叠顺序和 iOS 不同。如果前一个元素 transform rotate，iOS 下一个元素会被 transform 的元素遮挡，而鸿蒙下一个元素会遮挡 transform 的元素。
