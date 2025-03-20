@@ -44,3 +44,5 @@ HBuilderX自身提供了运行、日志、debug、发行、调试证书申请等
 - 鸿蒙平台 uts 插件内使用 UTSJSONObject、JSON 对象目前有限制，UTSJSONObject 仅能作为类型使用，JSON 为 arkts 内置对象，并未替换为 UTS 的 JSON 对象。
 - 鸿蒙平台目前不支持横屏、不支持 rpx 根据窗口尺寸变化自动变化、不支持主题变化监听
 - 鸿蒙自身的Bug还有不少，开发时需注意相关的组件、API文档说明。比如目前不支持 sticky-header组件（但可通过嵌套滚动或持续修改位置实现吸顶）、rich-text的可用性较低（建议使用web-view替代）。
+- 鸿蒙在 transform 变形后，层叠顺序和 iOS 不同。如果前一个元素 transform rotate，iOS 下一个元素会被 transform 的元素遮挡，而鸿蒙下一个元素会遮挡 transform 的元素。
+- 使用 uni.loadFontFace 后需要更新设置字体内容才能使字体生效
