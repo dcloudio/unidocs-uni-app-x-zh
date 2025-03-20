@@ -1,12 +1,13 @@
 # UTS原生混编介绍
 
-`HBuilder X 4.25`起，UTS插件可以直接使用原生的`kotlin`、`java`、`swift`代码，和`uts`代码混合使用，即 `UTS原生混编`(下文简称：原生混编)
+UTS插件中（具体是uni_modules下的utssdk目录），支持app-Android、app-iOS、app-harmony、web、mp-weixin等平台专用目录。
+这些专用目录，可以直接放置原生的`kotlin`、`java`、`swift`、`arkTs`代码，和`uts`代码混合使用，即 `UTS原生混编`(下文简称：原生混编)
 
 UTS插件的入口仍然是uts代码，但在uts代码里，可以直接调用插件下的kotlin、swift代码中的函数、对象。
 
-在[UTS插件](./uts-plugin.md)的编译流程中，`UTS`本身就会被编译为`Kotlin`/`swift` 源码。所以 `UTS` 调用原生代码的过程，**本质是同一语言内部，不同函数/对象之间的调用过程，无缝且不会有任何性能损耗**
+在[UTS插件](./uts-plugin.md)的编译流程中，`UTS`本身就会被编译为`Kotlin`/`swift`/`arkTs` 源码。所以 `UTS` 调用原生代码的过程，**本质是同一语言内部，不同函数/对象之间的调用过程，无缝且不会有任何序列化等性能损耗**
 
-同时在HBuilderX的真机运行中，可以直接改动uts或kotlin、swift代码、整体联编、差量热刷，无需打包自定义基座。（java代码仍需打包自定义基座）
+同时在HBuilderX的真机运行中，可以直接改动uts或kotlin、swift、arkTs代码、整体联编、直接运行，无需打包自定义基座。（java代码仍需打包自定义基座）
 
 甚至在原生代码中，也可以使用console.log，把日志打印在HBuilderX的控制台中。
 
@@ -14,7 +15,7 @@ UTS插件的入口仍然是uts代码，但在uts代码里，可以直接调用�
 
 `原生混编`出现之前，开发者只能使用[UTS语言](../uts/README.md) 来开发[UTS插件](./uts-plugin.md) 
 
-不管是网上搜的还是历史存留的，当涉及到原生的kotlin、java、swift代码时，开发者要不把这些代码自行翻译成uts代码，要不把这些代码封装成aar、framework等包，再被uts引用。
+不管是网上搜的还是历史存留的，当涉及到原生的kotlin、java、swift、arkTs代码时，开发者要不把这些代码自行翻译成uts代码，要不把这些代码封装成aar、framework等包，再被uts引用。
 
 有时会遇到uts还不支持的语法，只能使用原生语言，就必须封装库了。
 
@@ -22,9 +23,9 @@ UTS插件的入口仍然是uts代码，但在uts代码里，可以直接调用�
 
 `UTS原生混编`的解决了上述问题：
 
-开发者只需要把 `Kotlin`/`swift`/`java` 代码放在`UTS插件`目录中，就可以通过 `UTS`直接使用这些代码。
+开发者只需要把 `Kotlin`/`swift`/`java`/`arkTs` 代码放在`UTS插件`目录中，就可以通过 `UTS`直接使用这些代码。
 
-并且和`uts代码`一样，混编的原生代码（除java）可以直接真机运行，省去了手动集成`AAR`三方库后打包自定义基座的环节，提升了开发效率。
+并且和`uts代码`一样，混编的原生代码（除java）可以直接真机运行，省去了手动集成`AAR`等三方库后打包自定义基座的环节，提升了开发效率。
 
 
 下面我们以`内存监控`功能为例，分别拆解 `UTS原生混编`技术在`Android`和`ios`平台上的使用步骤
@@ -154,6 +155,8 @@ console.log("Hello World") // kt或java代码
 不过这个导入和使用过程将没有代码提示，输出的变量信息也不会包含变量所在的文件和代码行号等信息。
 
 下面列出内置对象对应的类名，如果需要在原生环境和UTS环境/uvue环境中互传数据，建议转换为标准内置对象实现后再进行传递。
+
+#### uts和kotlin对象映射表
 
 |uts 内置对象		|编译成的原生类名		 
 |:----		|:---						
@@ -472,6 +475,7 @@ extension NativeCode {
 UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象](../uts/utsios.md)均可以在原生环境使用，
 但是在使用前需要导入基础库 `DCloudUTSFoundation`。
 
+#### uts和Swift对象映射表
 我们知道在 uts 中使用的 uts 内置对象会被编成原生类型，那么在混编的 swift 文件中要想使用 uts 内置对象，就要直接使用其编译后的原生类型。
 下面列出 uts 内置对象对应的 swift 原生类名
 
@@ -733,9 +737,9 @@ func getKeyWindow() -> UIWindow {
 
 ## harmonyos平台
 
-### uts内置对象与arkts原生映射关系
+### uts与arkts对象映射表
 
-|uts 内置对象		|编译成的原生对象名																						|
+|uts 内置对象	|编译成的原生对象名																						|
 |---					|---																												|
 |Array				|	Array																											|
 |Number				|	Number																										|
@@ -778,9 +782,9 @@ const obj = new UTSJSONObject({
 obj.get('a') // 返回一个ESObject类型对象，并非UTSJSONObject
 ```
 
-## harmonyos平台示例
+### harmony平台示例
 
-如下示例使用的目录uni_module目录结构如下
+如下示例使用的uni_module目录结构如下
 
 ```text
 └── demo-mem
@@ -824,7 +828,7 @@ export function getAppVMMemoryInfo() {
 }
 ```
 
-## 目标语言为js的情况
+## Web和小程序平台js混编
 
 在uts编译为js时，uts和js可以任意混编，就像ts和js可以互相引用一样。
 
@@ -856,7 +860,7 @@ export function testJs() {
 
 + `index`是保留文件名，原生代码不能命名为 index.kt/index.java/index.swift
  
-+ HBuilder X 暂不支持原生代码的语法提示、转到定义、debug断点。仅支持高亮和格式化。
++ HBuilder X 暂不支持原生代码的语法提示、转到定义。仅支持高亮和格式化。
 
 + 插件市场暂不支持原生代码的加密
 

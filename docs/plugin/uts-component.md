@@ -4,13 +4,15 @@ uts插件的组件开发，简称`uts组件`，是uts插件的一个分支。uts
 
 组件是一种独立、可复用的UI单元，用于单独封装和承担一定的代码逻辑。
 
-组件与插件的区别在于：前者以标签的形式，对外提供UI封装；后者则只提供API，虽然API可能涉及UI，但仍然是API，无法以标签方式在页面模板中引用。
+组件与API的区别在于：
+- 组件：以标签的形式，对外提供UI封装，可以在页面template中使用，内嵌在页面中成为一个区域；
+- API：有的不涉及UI，也有涉及UI的。但涉及UI时，也是全屏的UI，不内嵌在文档流中。调用相关API后弹出全屏界面，无法以标签方式在页面模板中引用。
 
-比如`<video>`是组件；`uni.showModal` 或 `uni.chooseVideo` 虽然有UI，但属于API。
+比如`<video>`是组件；`uni.showModal` 或 `uni.createRewardedVideoAd` 虽然有UI，但属于API。
 
-组件一般适用于封装非全屏的场景，即在页面中内嵌一个区域。如果需要你需要封装的UI是全屏界面，那没必要使用组件，通过uts开发原生页面更简单。 [uts开发原生页面示例](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage)
+组件一般适用于封装非全屏的场景，即在页面中内嵌一个区域。如果需要你需要封装的UI是全屏界面，也可以通过API来弹出全屏的activity或view controller，但弹出这种原生窗体后，需要注意和UniPage的页面栈的关系。uts通过API方式开发原生页面的示例：[uts开发原生页面示例](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage)
 
-当然uts组件是多端的，一个uts组件作为一个`uni_modules`，可同时支持app-Android、app-iOS、web、以及各家小程序组件。
+当然uts组件是多端的，一个uts组件作为一个`uni_modules`，可同时支持app-Android、app-iOS、app-Harmony、web、以及各家小程序组件。
 
 ## uts组件开发模式
 
@@ -22,14 +24,14 @@ app平台如何将原生UI扩展成一个组件，嵌入在页面中？有以下
 
 |								|uni-app兼容模式													|标准模式																		|
 |--							|--																			|--																				|
-|支持平台				|uni-app的app-nvue和uni-app x的app-uvue	|仅支持uni-app x，但uni-app x中app、web、小程序全平台支持	|
+|支持平台				|uni-app的app-nvue和uni-app x的app-uvue。不支持鸿蒙	|仅支持uni-app x，但uni-app x中app、web、小程序全平台支持	|
 |组件规范				|参考vue的模仿，是子集、也有扩充定制，不支持组合式API	|完全vue组件规范，标准easycom	|
 |使用native-view|否																			|是																				|
 |学习成本				|低																			|无																				|
 
 一般来讲，我们推荐开发者使用`标准模式`。这种模式就是写一个标准的vue组件，没有学习和认知门槛。
 
-因为uni-app下只有nvue页面才能放置原生扩展的组件，而nvue已经不再维护，我们推荐开发者在uni-app上使用web组件。除非你的组件无法使用web实现，可以接受在uni-app的app-nvue中使用，才需要使用`uni-app兼容模式`。
+因为uni-app下只有nvue页面才能放置原生扩展的组件，而nvue已经不再维护，我们推荐开发者在uni-app上使用web组件。除非你的组件无法使用web实现，可以接受在uni-app的app-nvue中使用，且不需要鸿蒙支持，才使用`uni-app兼容模式`。
 
 
 
@@ -50,7 +52,7 @@ app平台如何将原生UI扩展成一个组件，嵌入在页面中？有以下
 
 ## uni-app兼容模式组件介绍  
 
-uni-app x x项目是HBuilderX4.31起才新增了 [native-view](../component/native-view.md) 组件，且 uni-app 项目不支持 native-view 组件。
+uni-app x项目是HBuilderX4.31起才新增了 [native-view](../component/native-view.md) 组件，且 uni-app 项目不支持 native-view 组件。
 
 在没有 native-view 组件的情况下，uts提供了另一种uts组件的开发模式，即`uni-app兼容模式`。
 

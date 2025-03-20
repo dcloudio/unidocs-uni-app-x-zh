@@ -2,10 +2,9 @@
 
 > HBuilderX4.31+ 支持app-android、app-ios，HBuilderX4.61+ 支持app-harmony。
 
-本文重点在于讲述如何在app-android、app-ios、app-harmony上，使用vue组件开发规范封装原生UI封装为 uni-app x 项目使用的UTS组件，供使用者在uvue页面template中以组件的方式调用。  
+本文重点在于讲述如何在app-android、app-ios、app-harmony上，使用vue组件开发规范封装原生UI封装为 uni-app x 项目使用的UTS组件，供使用者在uvue页面template中以组件的方式调用。
+
 主要思路是将app平台的原生view关联内置 [native-view](../component/native-view.md) 组件，实现UTS组件的特定功能及UI展示。  
-
-
 
 ## 前置条件
 
@@ -15,8 +14,6 @@
 - 了解 [uts语法](/uts/) 和 [uts原生插件](uts-plugin.md)
 - 了解 [vue组件](https://uniapp.dcloud.net.cn/tutorial/vue3-components.html)
 - 了解 [native-view组件](../component/native-view.md)
-
-
 
 ## UTS插件-标准模式组件目录结构@dir
 
@@ -999,5 +996,5 @@ function getNativeViewElemet(element: UniElement | null): UniNativeViewElement |
 通过vue方式开发组件非常直观。它分为几个核心步骤：
 1. 在uni_modules/xxx/components/xxx/xxx.uvue文件中，通过标准vue方式定义组件的属性、方式、事件
 2. 在uni_modules/xxx/components/xxx/xxx.uvue文件中，提供native-view组件，用于和原生的view绑定。在native-view组件的init事件中，调用utssdk下封装的原生对象的new初始化，将native-view对应的UniNativeViewElement传入
-3. 在uni_modules/xxx/utssdk/app-android 和 app-ios 下的/index.uts文件中，通过uts的方式，定义原生对象，在构造时接收components/xxx/xxx.uvue组件传来的UniNativeViewElement，并创建一个真正的原生view，和UniNativeViewElement绑定。
-4. 在uni_modules/xxx/utssdk/app-android 和 app-ios 下的/index.uts文件中，定义原生对象的各种方法，供components/xxx/xxx.uvue组件在其属性变化和方法调用时调用。
+3. 在uni_modules/xxx/utssdk/app-android等目录下的/index.uts文件中，通过uts的方式，定义原生对象，在构造时接收components/xxx/xxx.uvue组件传来的UniNativeViewElement，并创建一个真正的原生view，和UniNativeViewElement绑定。
+4. 在uni_modules/xxx/utssdk/app-android等目录下的/index.uts文件中，定义原生对象的各种方法，供components/xxx/xxx.uvue组件在其属性变化和方法调用时调用。

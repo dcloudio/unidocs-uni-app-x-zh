@@ -1,3 +1,7 @@
+uni-app x 从4.61+起支持纯血鸿蒙，即Harmony next。
+
+把uvue和uts代码编译为ArkTs代码，生成鸿蒙原生应用。
+
 ## 开发环境要求
 
 - HBuilderX 4.61+ （该版本处于群测版状态，需要在uni-app x的im群或vip群获取）
@@ -13,15 +17,17 @@
 在[uni.getDeviceInfo](../api/get-device-info.md)中也可以通过属性`osHarmonySDKAPIVersion`获取API版本。
 
 ## 运行和发行注意
-uni-app x编译到鸿蒙是arkts语言，arkts在鸿蒙的ide deveco中没有热刷新。每次改动代码，需要重新build包、签名、安装新包到手机。
+uni-app x编译到鸿蒙是ArkTs语言，ArkTs在鸿蒙的ide deveco中没有热刷新。**每次改动代码，需要重新build包、签名、安装新包到手机**。
 
-这与uni-app不同，uni-app基于js，可以热刷新。（uni-app中的uts插件中的uts代码仍是编译为arkts，也无法热刷新）
+这与uni-app不同，uni-app基于js，可以热刷新。
 
 所以uts的运行，需要在本地安装鸿蒙deveco，本地直接编译出包。既然本地可以出包，那么鸿蒙就没有做云打包。这也是和Android和iOS的云打包的区别。
 
 uni-app 因使用jsvm，而鸿蒙模拟器自身在某些CPU上还未适配好jsvm，导致开发者使用模拟器受限。但uni-app x在鸿蒙模拟器运行不受限制。
 
 HBuilderX自身提供了运行、日志、debug、发行、调试证书申请等全套功能，开发者安装deveco后，可以做到不启动deveco，在HBuilderX中完成所有开发。
+
+详细的运行教程[另见](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html)
 
 ### 证书和权限
 
@@ -37,13 +43,33 @@ HBuilderX自身提供了运行、日志、debug、发行、调试证书申请等
 
 鸿蒙的权限配置在harmony-config目录下，需要自行参考鸿蒙文档配置。且不支持根据使用的模块自动打包权限。比如使用了定位API，打包时并不会自动带上定位权限。需要自行配置好权限后再打包。
 
-详细的运行教程[另见](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html#run-mode)
+### 调试
+
+鸿蒙平台支持断点调试，不管是uvue、uts，还是混编的ets，都可以断点，详见[鸿蒙Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)
+
+uni-app x项目的unpackage目录下的app-harmony下有编译后的鸿蒙原生工程。将该工程拖入鸿蒙的deveco中，可使用deveco的一些能力。比如内存泄漏分析工具。
+
+arkTs的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可以通过deveco提供的工具来分析泄漏点。
 
 ## 开发注意
 - 鸿蒙平台暂不支持摇树，不能根据使用情况自动添加模块。需要在manifest中手动配置需要的模块。且鸿蒙平台需自行添加的模块列表和安卓iOS不一致。鸿蒙平台需要自行添加才可使用的模块列表详见[manifest文档](../collocation/manifest-harmony.md#modules)
-- 鸿蒙平台 uts 插件内使用 UTSJSONObject、JSON 对象目前有限制，UTSJSONObject 仅能作为类型使用，JSON 为 arkts 内置对象，并未替换为 UTS 的 JSON 对象。
-- 鸿蒙平台 uts 插件内暂不支持使用uniCloud
-- 鸿蒙平台目前不支持横屏、不支持 rpx 根据窗口尺寸变化自动变化、不支持主题变化监听
-- 鸿蒙自身的Bug还有不少，开发时需注意相关的组件、API文档说明。比如目前不支持 sticky-header组件（但可通过嵌套滚动或持续修改位置实现吸顶）、rich-text的可用性较低（建议使用web-view替代）。
+- 暂未发布小程序SDK
+- 鸿蒙平台目前不支持横屏、不支持 rpx 根据窗口尺寸变化自动变化
+- 鸿蒙自身的Bug还有不少，开发时需注意相关的组件、API文档说明。比如：
+	* sticky-header组件实际无法吸顶，[issues](https://issuereporter.developer.huawei.com/detail/250220195912059/comment)。临时规避方案是通过嵌套滚动或持续修改位置实现吸顶。在hello uni-app x的模板里有示例。
+	* rich-text的无法自动根据内容撑开高度，[issues](https://issuereporter.developer.huawei.com/detail/250224172323045/comment)，导致加载联网内容时滚动表现难以控制。[详见rich-text注意事项](../component/rich-text.md#tips)
+	* animateTo 设置 transform rotate有较多问题，[issues](https://issuereporter.developer.huawei.com/detail/250317210619077/comment)
 - 鸿蒙在 transform 变形后，层叠顺序和 iOS 不同。如果前一个元素 transform rotate，iOS 下一个元素会被 transform 的元素遮挡，而鸿蒙下一个元素会遮挡 transform 的元素。
 - 使用 uni.loadFontFace 后需要更新设置字体内容才能使字体生效
+
+
+## 插件扩展
+自带API不满足需求时，可在uts插件中自由调用ArkTs的原生API或SDK，可以在uts里调用，也可以使用ets混编。
+- [uts插件综述文档](../plugin/uts-plugin.md)
+- [鸿蒙uts插件文档](../plugin/uts-for-harmony.md)
+- [uts插件混编文档](../plugin/uts-plugin-hybrid.md#harmonyos平台)
+- [uts标准模式组件文档](../plugin/uts-component-vue.md)
+
+注意：
+- 鸿蒙平台 uts 插件内使用 UTSJSONObject、JSON 对象目前有限制，UTSJSONObject 仅能作为类型使用，JSON 为 ArkTs 内置对象，并未替换为 UTS 的 JSON 对象。
+- 鸿蒙平台 uts 插件内暂不支持使用uniCloud

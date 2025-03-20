@@ -8,9 +8,11 @@
 
 这些uts插件，是同时兼容uni-app和uni-app x的。
 
-但目前仅uni-app支持鸿蒙next，uni-app x还需过段时间。
+uni-app的普通页面代码是编译为js，js无法直接调用鸿蒙原生API。而uts插件是编译为ets文件，所以可以调用鸿蒙原生API。（ArkTS的文件后缀为.ets）
 
-uni-app中开发者的逻辑是编译为js，js无法直接调用鸿蒙原生API。而uts插件是编译为ets文件，所以可以调用鸿蒙原生API。（ArkTS的文件后缀为.ets）
+uni-app x是编译为ArkTs，不管在普通页面还是在uts插件中均可调用鸿蒙原生API。
+
+只有uts插件才支持混编ets。
 
 ## 了解 UTS 插件是什么
 
@@ -80,7 +82,11 @@ const obj = {
 
 ## 配置uts插件依赖
 
-uts插件的`utssdk/app-harmony/config.json`文件内可以配置依赖，配置方式如下：
+鸿蒙的库管理工具是ohpm。类似于js的npm，Android的仓储。
+
+鸿蒙的三方sdk封装文件为`.har`，类似于Android的`.aar`
+
+uts插件的`utssdk/app-harmony/config.json`文件内可以配置依赖使用鸿蒙的三方库，配置方式如下：
 
 ```json
 {
