@@ -102,3 +102,4 @@
 
 ## Bug & Tips @tips
 - 自 4.23 起，在非 tabbar 页面调用以上 API 会报错：hideTabBar:fail not TabBar page
+- uni-app-x harmony 暂不支持隐藏TabBarItem
