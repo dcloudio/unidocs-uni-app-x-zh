@@ -716,7 +716,7 @@ export type CreateNativeButtonContext = (
 
 ::: preview
 
-> uni_modules/utssdk/app-android/index.uts
+> app-android/index.uts
 
 ```uts
 import { INativeButtonContext } from "../interface.uts"
@@ -733,7 +733,7 @@ class NativeButtonContext implements INativeButtonContext {
 }
 ```
 
-> uni_modules/utssdk/app-ios/index.uts
+> app-ios/index.uts
 
 ```uts
 import { INativeButtonContext, CreateNativeButtonContext } from "../interface.uts"
@@ -752,7 +752,7 @@ class NativeButtonContext implements INativeButtonContext {
 }
 ```
 
-> uni_modules/utssdk/app-harmony/index.uts
+> app-harmony/index.uts
 
 ```uts
 import { INativeButtonContext } from "../interface.uts"
@@ -808,7 +808,7 @@ class NativeButtonContext implements INativeButtonContext {
 
 ::: preview
 
-> uni_modules\utssdk\app-android\index.uts
+> app-android\index.uts
 
 ```uts
 
@@ -862,7 +862,7 @@ function iterateElement(homeElement:UniElement):UniElement | null{
 
 ```
 
-> uni_modules\utssdk\app-ios\index.uts
+> app-ios\index.uts
 
 ```uts
 export const createNativeButtonContext: CreateNativeButtonContext =  function (id : string, component ?: ComponentPublicInstance | null) : INativeButtonContext | null {
@@ -904,7 +904,7 @@ function getNativeViewElemet(element: UniElement | null): UniNativeViewElement |
 
 ```
 
-> uni_modules\utssdk\app-harmony\index.uts
+> app-harmony\index.uts
 
 ```uts
 
