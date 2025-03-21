@@ -693,7 +693,7 @@ export function buildButton(params: ESObject) {
 
 在 `uni_modules\utssdk\interface.uts` 文件中添加如下代码：
 
-```vue
+```uts
 /**
  * 原生组件的上下文对象
  */
@@ -712,7 +712,11 @@ export type CreateNativeButtonContext = (
 
 上面的代码中， 我们声明了一个`INativeButtonContext`接口，提供了更新文本内容的方法 `updateText`
 
-接下来，在 `uni_modules/utssdk/app-android/index.uts` 文件中添加如下代码：
+接下来，我们在不同平台目录实现该接口定义
+
+::: preview
+
+> uni_modules/utssdk/app-android/index.uts
 
 ```uts
 import { INativeButtonContext } from "../interface.uts"
@@ -729,7 +733,7 @@ class NativeButtonContext implements INativeButtonContext {
 }
 ```
 
-在 `uni_modules/utssdk/app-ios/index.uts` 文件中添加如下代码：
+> uni_modules/utssdk/app-ios/index.uts
 
 ```uts
 import { INativeButtonContext, CreateNativeButtonContext } from "../interface.uts"
@@ -748,6 +752,27 @@ class NativeButtonContext implements INativeButtonContext {
 }
 ```
 
+> uni_modules/utssdk/app-harmony/index.uts
+
+```uts
+import { INativeButtonContext } from "../interface.uts"
+
+
+class NativeButtonContext implements INativeButtonContext {
+    private controller : NativeButton
+    constructor(element : UniNativeViewElement) {
+        // 获取自定义的 controller
+        this.controller = element.getHarmonyController<NativeButton>()!
+    }
+    updateText(text : string) {
+        // 调用 controller 来更新文字
+        this.controller?.updateText(text)
+    }
+}
+
+```
+
+:::
 
 上面的代码创建了对应的实现类 `NativeButtonContext`，实现了更新文本内容的功能,需要注意在构建上下文对象时，要将具体待操作的原生对象作为入参传入。
 
@@ -781,7 +806,9 @@ class NativeButtonContext implements INativeButtonContext {
 
 #### 对外提供上下文创建函数
 
-在 `uni_modules\utssdk\app-android\index.uts` 文件中添加如下代码：
+::: preview
+
+> uni_modules\utssdk\app-android\index.uts
 
 ```uts
 
@@ -835,7 +862,7 @@ function iterateElement(homeElement:UniElement):UniElement | null{
 
 ```
 
-在 `uni_modules\utssdk\app-ios\index.uts` 文件中添加如下代码：
+> uni_modules\utssdk\app-ios\index.uts
 
 ```uts
 export const createNativeButtonContext: CreateNativeButtonContext =  function (id : string, component ?: ComponentPublicInstance | null) : INativeButtonContext | null {
@@ -876,6 +903,62 @@ function getNativeViewElemet(element: UniElement | null): UniNativeViewElement |
 }
 
 ```
+
+> uni_modules\utssdk\app-harmony\index.uts
+
+```uts
+
+export function createNativeButtonContext(id : string, ins : ComponentPublicInstance | null = null) : INativeButtonContext | null {
+    if (ins == null) {
+        const pages = getCurrentPages()
+        if (pages.length > 0) {
+            const page = pages[pages.length - 1]
+            const rootViewElement = page.getElementById(id)
+            if (rootViewElement != null) {
+                /**
+                 * 找到了root节点，递归检索目标 native-view
+                 */
+                const nativeViewElement = iterateElement(rootViewElement)
+                if (nativeViewElement != null) {
+                    return new NativeButtonContext(nativeViewElement)
+                }
+            }
+        }
+    } else {
+        /**
+         * 尝试迭代遍历
+         */
+        if (ins.$el != null) {
+            const nativeViewElement = iterateElement(ins.$el as UniElement)
+            if (nativeViewElement != null) {
+                return new NativeButtonContext(nativeViewElement)
+            }
+        }
+    }
+
+    return null
+}
+
+/**
+ * 递归查询
+ */
+function iterateElement(homeElement : UniElement) : UniNativeViewElement | null {
+    if ("NATIVE-VIEW" == homeElement.nodeName) {
+        return homeElement as UniNativeViewElement
+    }
+    for (const perChildEle of homeElement.children) {
+        let findEle = iterateElement(perChildEle)
+        if (findEle != null) {
+            return findEle
+        }
+    }
+
+    return null
+}
+
+```
+
+:::
 
 上面的代码中需要两个入参：
 
