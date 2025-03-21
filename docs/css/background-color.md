@@ -19,4 +19,4 @@
 
 ### Bug & Tips@tips
 
-- App-HarmonyOS 平台，背景不支持绘制到 border 区域。
+- App-Harmony 平台，背景不支持绘制到 border 区域。
