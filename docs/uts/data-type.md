@@ -1173,13 +1173,15 @@ json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、sw
 1. json对象里的每个属性，都需要定义类型
 2. 每个可为空的属性，都需要加`?.`，才能安全读写
 
-一般其他强类型语言的用法，是把json数据内容，转为class、interface或type。然后就可以使用`.`来访问了。
+一般其他强类型语言中使用json，是把json数据内容，转为class、interface或type。然后就可以使用`.`来访问了。
 
 在 uts 中使用 JSON，有3种方式：
 
 1. 把 json数据转 type，变成一个自定义类型。这不是本章节的内容，详见 [type](#type)
 2. uts 新增了 UTSJSONObject 对象，可以把 json数据通过字面量赋值 或 JSON.parse()方式，赋值给 uts 内置的 UTSJSONObject 对象。
 3. 由于 UTSJSONObject有toMap()方法，所以也可以转为Map后使用json数据。
+
+UTSJSONObject比较适合初学者入门，也方便兼容js生态的代码。但代码提示和运行性能不及type。
 
 UTSJSONObject，是一个类型，可以在变量的冒号后面使用，本节的重点就是介绍UTSJSONObject。
 
@@ -1274,16 +1276,11 @@ console.log(rect)
 
 uts 内置了大写的 `JSON` 对象，有parse()、stringify()等方法。注意`JSON`和`UTSJSONObject`不是一个对象。大写 `JSON` 内置对象，web端也是存在的。而 UTSJSONObject 是 uts 新增的。
 
-```ts
-let s = `{"result":true, "count":42}` // 常见场景中，这个字符串更多来自于网络或其他应用传输。注意属性名称必须使用引号包围
-let jo = JSON.parse(s) // 这个代码适用于HBuilderX 3.9以前
-```
-
 在 HBuilderX 3.9以前，`JSON.parse()`返回的`UTSJSONObject`。但因为有时网络或其他应用传入的 JSON 数据根节点是数组，而不是对象，会导致崩溃。
 
 所以从 HBuilderX 3.9起，`JSON.parse()`返回的类型改为`any`，即可能返回对象、也可能返回数组。这样就需要开发者自行再`as`一下来指定具体类型了。
 
-新的写法是这样：
+3.9后的写法是这样：
 
 ```ts
 let s = `{"result":true, "count":42}` // 常见场景中，这个字符串更多来自于网络或其他应用传输。
@@ -1436,7 +1433,7 @@ let rect = {
 }
 
 console.log(rect.x) //20 但iOS无法使用.操作符
-console.log(rect["x"]) //20 但类型其实未知，如果继续操作则需要as
+console.log(rect["x"]) //20 但类型为any，如果继续操作则需要as为number
 
 console.log(rect.size.width) //80 但iOS无法使用.操作符
 console.log((rect["size"] as UTSJSONObject)["width"]) //80 使用as后需要整体用()括起来再继续使用下标[]
@@ -1927,7 +1924,7 @@ js中的 undefined类型表示变量被定义，但是未赋值或初始化。
 
 uts 仅在编译为js时支持 undefined，在编译为kotlin和swift时不支持 undefined。即Android平台不允许变量未赋值。每个有类型的变量都需要初始化或赋值。
 
-考虑多端，应避免使用undefined。
+考虑多端，应避免使用 undefined。尽量使用 null 来替代。
 
 ## 开发时类型@devtype
 
@@ -2080,7 +2077,7 @@ type  Rectangle= {
 type Shape = Square | Rectangle // 支持
 ```
 - 在uts插件中，对 js 环境（即：uni-app、uni-app x iOS 平台）导出时，暂不支持联合类型
-- 不同类的联合类型编译到目标平台为 any 类型，此时仅支持HBuilderX的语法校验，并不会在编译阶段做强校验，请确保使用了类型收窄来确保类型的准确性，否则可能运行时异常。
+- 不同类（比如number和string）的联合类型编译到目标平台的运行时类型实际是 any。此时仅支持HBuilderX的语法校验，并不会在编译阶段做强校验，请确保使用了类型收窄来确保类型的准确性，否则可能运行时异常。
 - 可辨识联合仅支持string、number字面量或字面量联合
 
 ## 类型收窄@narrowing

@@ -21,8 +21,14 @@ uni.request({
 1. 使用[UTSJSONObject](../uts/data-type.md#utsjsonobject)，不需要提前为json数据定义类型，在使用中通过下标访问并动态转换类型
 2. 使用[type](../uts/data-type.md#type)，提前定义json数据类型，在request时通过泛型传入类型，拿到的就是一个有类型的对象，之后的用法和js一样
 
+其实在原生或标准的ts里，都是type（ts也有用interface的）。强类型里不能存在json对象这种可以用`.操作符`操作但又不提前定义属性的行为。
+
+UTSJSONObject是uni-app x为了照顾js开发者、兼容部分js生态代码而提供的一个兼容方案，但达不到js中json对象的灵活度。在kt和Swift环境中，它通过反射技术实现了部分未提前定义就可以。所以在代码提示上、运行性能上，也弱于type方式。但对于初学者，UTSJSONObject更容易入门。
+
+type方式就麻烦在于需要提前定义数据类型上，但由于HBuilderX自带根据json生成type的工具，所以整体使用体验，比UTSJSONObject方式好一点。
+
 ## 方式1：UTSJSONObject
-UTSJSONObject是uts的内置对象，它无法使用`.操作符`，但可以用下标和keypath来访问json数据。
+UTSJSONObject是uts的内置对象，可以用下标和keypath来访问json数据。uni-app x 4.41起也支持`.操作符`，其实是把`.操作符`转成了下标。返回值类型为any。再次使用时需 as 为具体的类型。
 ### UTSJSONObject下标方式
 ```ts
 // uts写法

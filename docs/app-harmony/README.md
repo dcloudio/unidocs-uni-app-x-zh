@@ -2,6 +2,8 @@ uni-app x 从4.61+起支持纯血鸿蒙，即Harmony next。
 
 把uvue和uts代码编译为ArkTs代码，生成鸿蒙原生应用。
 
+uni-app x的鸿蒙版虽然是刚发布，但组件、API、CSS基本拉齐了Android和iOS。甚至还有扫码、拨打电话、剪贴板等超出Android/iOS的功能。
+
 ## 开发环境要求
 
 - HBuilderX 4.61+ （该版本处于群测版状态，需要在uni-app x的im群或vip群获取）
@@ -52,18 +54,21 @@ uni-app x项目的unpackage目录下的app-harmony下有编译后的鸿蒙原生
 arkTs的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可以通过deveco提供的工具来分析泄漏点。
 
 ## 开发注意
-- 鸿蒙平台暂不支持摇树，不能根据使用情况自动添加模块。需要在manifest中手动配置需要的模块。且鸿蒙平台需自行添加的模块列表和安卓iOS不一致。鸿蒙平台需要自行添加才可使用的模块列表详见[manifest文档](../collocation/manifest-harmony.md#modules)
+- 鸿蒙编译工具会在编译本地库时给编译产物的目录加上一串hash值，但windows上最长的文件路径不能超过255个字符。如果开发者的项目路径字符串较长、uni_modules的目录名称较长，再加上鸿蒙deveco编译器加上的hash，就会触发windows文件路径长度限制，导致编译失败。所以windows上的uni-app x项目路径尽量要短，比如`c:\dev\app1`，`uni_modules`的目录名称也要短一些。
+- 鸿蒙平台暂不支持摇树，不能根据使用情况自动添加模块。需要在manifest中手动配置需要的模块。且鸿蒙平台需自行添加的模块列表要比安卓iOS少，仅三方SDK涉及。鸿蒙平台需要自行添加才可使用的模块列表详见[manifest文档](../collocation/manifest-harmony.md#modules)
 - 暂未发布小程序SDK
 - 鸿蒙平台目前不支持横屏、不支持 rpx 根据窗口尺寸变化自动变化
 - 鸿蒙自身的Bug还有不少，开发时需注意相关的组件、API文档说明。比如：
-	* sticky-header组件实际无法吸顶，[issues](https://issuereporter.developer.huawei.com/detail/250220195912059/comment)。临时规避方案是通过嵌套滚动或持续修改位置实现吸顶。在hello uni-app x的模板里有示例。
-	* rich-text的无法自动根据内容撑开高度，[issues](https://issuereporter.developer.huawei.com/detail/250224172323045/comment)，导致加载联网内容时滚动表现难以控制。[详见rich-text注意事项](../component/rich-text.md#tips)
-	* animateTo 设置 transform rotate 有较多问题，[issues](https://issuereporter.developer.huawei.com/detail/250317210619077/comment)
+	* sticky-header组件实际无法吸顶，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250220195912059/comment)。临时规避方案是通过嵌套滚动或持续修改位置实现吸顶。在hello uni-app x的模板里有示例。
+	* rich-text的无法自动根据内容撑开高度、内部会自滚动且滚动条位置不对，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250224172323045/comment)，导致加载联网内容时滚动表现难以控制。[详见rich-text注意事项](../component/rich-text.md#tips)
+	* animateTo 设置 transform rotate 有较多问题，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250317210619077/comment)
+	
+	鸿蒙整体处于发展初期，能用，有坑，大部分坑有规避方案。但开发者应建议其领导、客户、质量部门降低期望，不能严格比照Android和iOS的验收标准要求鸿蒙。即便微信的鸿蒙版，功能、质量也比不过Android/iOS版。
 - 使用 uni.loadFontFace 后需要更新设置字体内容才能使字体生效
 
-
 ## 插件扩展
-自带API不满足需求时，可在uts插件中自由调用ArkTs的原生API或SDK，可以在uts里调用，也可以使用ets混编。
+
+对于uni自带API不满足需求时，可在uts插件中自由调用ArkTs的原生API或SDK，可以在uts里调用，也可以使用ets混编。
 - [uts插件综述文档](../plugin/uts-plugin.md)
 - [鸿蒙uts插件文档](../plugin/uts-for-harmony.md)
 - [uts插件混编文档](../plugin/uts-plugin-hybrid.md#harmonyos平台)
@@ -72,3 +77,5 @@ arkTs的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可�
 注意：
 - 鸿蒙平台 uts 插件内使用 UTSJSONObject、JSON 对象目前有限制，UTSJSONObject 仅能作为类型使用，JSON 为 ArkTs 内置对象，并未替换为 UTS 的 JSON 对象。
 - 鸿蒙平台 uts 插件内暂不支持使用uniCloud
+
+以上限制仅针对uts插件，页面里的代码没有限制
