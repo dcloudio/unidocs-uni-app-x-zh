@@ -13,7 +13,7 @@ module.exports = function (md, { base = '/' } = {}) {
                      * /abc/ => /abc/
                      * /abc/def => ${base}/abc/def
                      */
-                    if (attr[1].indexOf('/') === 0 && attr[1].indexOf(base) !== 0 && !attr[1].endsWith('.md') && !attr[1].endsWith('.html') && !attr[1].endsWith('/')) {
+                    if (attr[1].indexOf('/') === 0 && attr[1].indexOf(base) !== 0 && !attr[1].endsWith('.md') && attr[1].includes('.md#') && !attr[1].endsWith('.html') && !attr[1].endsWith('/')) {
                       attr[1] = base + attr[1].slice(1)
                     }
                     // abc/def.md => ./abc/def.md
