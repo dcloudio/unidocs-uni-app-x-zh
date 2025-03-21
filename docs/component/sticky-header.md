@@ -34,6 +34,7 @@
 
 + sticky-header组件不支持css。仅支持padding属性控制子元素位置。其他排版需求要交给子元素实现
 + 同时存在多sticky-header组件请使用sticky-section组件充当父容器控制吸顶业务
++ 鸿蒙平台暂不支持sticky-header，需要等鸿蒙修复ListItemGroup组件frameNode不能添加header的Bug后方可支持
 
 <!-- UTSCOMJSON.sticky-header.children -->
 
