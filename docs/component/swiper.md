@@ -18,7 +18,7 @@
 
 **平台差异**
 
-- web、小程序、App-HarmonyOS 端swiper默认高度为150px。app端swiper默认会以内容高度作为其高度。如果要多端拉齐应自行设置swiper高度。
+- web、小程序、App-Harmony 端swiper默认高度为150px。app端swiper默认会以内容高度作为其高度。如果要多端拉齐应自行设置swiper高度。
 
 ## swiper-item
 

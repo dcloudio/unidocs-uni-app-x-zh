@@ -24,4 +24,4 @@ transition暂不支持结束属性值为百分比。
 
 ### Bug & Tips@tips
 
-- App-HarmonyOS 平台， 需要在更新属性值前设置 `transition-property`, 更新属性值的同时设置 `transition-property` 会导致动画不生效。
+- App-Harmony 平台， 需要在更新属性值前设置 `transition-property`, 更新属性值的同时设置 `transition-property` 会导致动画不生效。
