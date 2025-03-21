@@ -58,8 +58,7 @@ arkTs的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可�
 - 鸿蒙自身的Bug还有不少，开发时需注意相关的组件、API文档说明。比如：
 	* sticky-header组件实际无法吸顶，[issues](https://issuereporter.developer.huawei.com/detail/250220195912059/comment)。临时规避方案是通过嵌套滚动或持续修改位置实现吸顶。在hello uni-app x的模板里有示例。
 	* rich-text的无法自动根据内容撑开高度，[issues](https://issuereporter.developer.huawei.com/detail/250224172323045/comment)，导致加载联网内容时滚动表现难以控制。[详见rich-text注意事项](../component/rich-text.md#tips)
-	* animateTo 设置 transform rotate有较多问题，[issues](https://issuereporter.developer.huawei.com/detail/250317210619077/comment)
-- 鸿蒙在 transform 变形后，层叠顺序和 iOS 不同。如果前一个元素 transform rotate，iOS 下一个元素会被 transform 的元素遮挡，而鸿蒙下一个元素会遮挡 transform 的元素。
+	* animateTo 设置 transform rotate 有较多问题，[issues](https://issuereporter.developer.huawei.com/detail/250317210619077/comment)
 - 使用 uni.loadFontFace 后需要更新设置字体内容才能使字体生效
 
 
