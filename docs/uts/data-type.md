@@ -1432,37 +1432,16 @@ let rect = {
 	]
 }
 
-console.log(rect.x) //20 但iOS无法使用.操作符
+console.log(rect.x) //20 但类型为any，如果继续操作则需要as为number
 console.log(rect["x"]) //20 但类型为any，如果继续操作则需要as为number
 
-console.log(rect.size.width) //80 但iOS无法使用.操作符
+console.log(rect.size.width) //80 嵌套的UTSJSONObjectl类型仅 web 支持.操作符
 console.log((rect["size"] as UTSJSONObject)["width"]) //80 使用as后需要整体用()括起来再继续使用下标[]
 
-// 如果存在嵌套，那么需要先把第一层转成 UTSJSONObject 或数组，之后再用下标访问下一层
+// 如果存在嵌套，那么需要先转成 UTSJSONObject，之后再用下标访问下一层
 
 console.log(rect.border[0].color); //报错，一旦使用了下标访问数组，后面就无法使用.操作符了
-console.log(rect.border[0]["color"]); // red 但iOS无法使用.操作符
-console.log((rect["border"] as UTSJSONObject[])[0]["color"]); // red
-```
-
-如果是 `JSON.parse` 解析的数据，只能通过下标访问，无法使用`.`操作符。因为`.`操作符的成立建立在编译器可确定类型的前提，字面量直接赋值可识别类型，`JSON.parse`无法识别类型。
-
-```ts
-let listData = JSON.parse(`{"result":true, "count":42}`) as UTSJSONObject
-let listArr = JSON.parse(`[{ id: 1, title: "第一组" },{ id: 2, title: "第二组" }]`) as UTSJSONObject[]
-console.log(listData["count"]); //42
-console.log(listArr[0]["title"]); //第一组
-```
-
-多层级下标访问时需要使用 as 转换为 UTSJSONObject 或 `UTSJSONObject[]`
-
-```ts
-var j = {
-	"subobj":{
-		"abc": 1
-	}
-}
-console.log((j['subobj'] as UTSJSONObject)['abc']);
+console.log(((rect["border"] as UTSJSONObject[])[0] as UTSJSONObject)["color"]); // red
 ```
 
 #### 3. 通过 keyPath 访问 UTSJSONObject 数据@keypath
