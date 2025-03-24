@@ -4,7 +4,7 @@
 
 <!-- UTSAPIJSON.makePhoneCall.compatibility -->
 
-App平台见[插件市场](https://ext.dcloud.net.cn/search?q=%E7%94%B5%E8%AF%9D&orderBy=Relevance&uni-appx=1)
+App平台暂未内置，[见插件市场](https://ext.dcloud.net.cn/search?q=%E7%94%B5%E8%AF%9D&orderBy=Relevance&uni-appx=1)
 
 <!-- UTSAPIJSON.makePhoneCall.param -->
 

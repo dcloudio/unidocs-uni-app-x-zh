@@ -4,6 +4,8 @@
 
 <!-- UTSAPIJSON.scanCode.compatibility -->
 
+App平台暂未内置，[见插件市场](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&cat1=8&type=UpdatedDate)
+
 <!-- UTSAPIJSON.scanCode.param -->
 
 <!-- UTSAPIJSON.scanCode.returnValue -->
