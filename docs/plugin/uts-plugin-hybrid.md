@@ -737,6 +737,8 @@ func getKeyWindow() -> UIWindow {
 
 ## harmonyos平台
 
+> uts、ets文件依赖js新增于HBuilderX 4.61版本
+
 ### uts与arkts对象映射表
 
 |uts 内置对象	|编译成的原生对象名																						|
@@ -797,13 +799,14 @@ obj.get('a') // 返回一个ESObject类型对象，并非UTSJSONObject
         │   ├── config.json
         │   ├── index.uts
         │   ├── libs
+        │   ├── deps.js
         │   └── mem.ets
         └── app-ios
 ```
 
 ### 第一步 获取、编写原生代码
 
-鸿蒙平台使用uts插件时，uts文件可以依赖ets文件、本地har包以及ohpm上的包
+鸿蒙平台使用uts插件时，uts文件可以依赖ets文件、js文件、本地har包以及ohpm上的包。
 
 ### 第二步 集成原生代码
 
@@ -819,6 +822,7 @@ export function getAppVMMemoryInfo() {
 ### 第三步 UTS调用原生代码
 
 ```ts
+// index.uts
 import {
   getAppVMMemoryInfo as getAppVMMemoryInfoOrigin
 } from './mem.ets'
@@ -827,6 +831,44 @@ export function getAppVMMemoryInfo() {
   return getAppVMMemoryInfoOrigin()
 }
 ```
+
+### 注意事项
+
+需要注意的是ets文件不能引用uts文件，js文件不能引用ets文件及uts文件。如果有ets引用uts内的对象的需求，可以通过一个js文件进行中转。示例如下：
+
+```ts
+// deps.js
+export const utsExports = {}
+```
+
+```ts
+// index.uts
+import {
+  getAppVMMemoryInfo as getAppVMMemoryInfoOrigin
+} from './mem.ets'
+import { utsExports } from './deps.js'
+
+function hello() {
+  return 'hello from uts'
+}
+utsExports.hello = hello
+
+export function getAppVMMemoryInfo() {
+  return getAppVMMemoryInfoOrigin()
+}
+```
+
+```ts
+// mem.ets
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { utsExports } from './deps.js'
+
+export function getAppVMMemoryInfo() {
+  console.log(utsExports.hello())
+  return hidebug.getAppVMMemoryInfo();
+}
+```
+
 
 ## Web和小程序平台js混编
 
