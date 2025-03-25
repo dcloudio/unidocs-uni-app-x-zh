@@ -131,14 +131,14 @@ uni-push 2.0。对应manifest.json内的模块配置如下：
 }
 ```
 
-#### uni-facialRecognitionVerify
+#### uni-facialVerify
 
 uni实人认证。对应manifest.json内的模块配置如下：
 
 ```json
 {
   "modules": {
-    "uni-facialRecognitionVerify": {}
+    "uni-facialVerify": {}
     // ...
   }
 }
