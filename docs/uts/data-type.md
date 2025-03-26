@@ -1897,14 +1897,6 @@ console.log(obj["age"]) //25
 console.log(obj.age) //25
 ```
 
-## undefined
-
-js中的 undefined类型表示变量被定义，但是未赋值或初始化。
-
-uts 仅在编译为js时支持 undefined，在编译为kotlin和swift时不支持 undefined。即Android平台不允许变量未赋值。每个有类型的变量都需要初始化或赋值。
-
-考虑多端，应避免使用 undefined。尽量使用 null 来替代。
-
 ## 开发时类型@devtype
 
 uts有`运行时类型`和`开发时类型`的概念区别。
