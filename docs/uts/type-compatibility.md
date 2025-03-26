@@ -73,9 +73,11 @@ console.log(result instanceof Obj) // true
 
 ### any类型
 
-> 4.18版本起，uts在编译到js时，any类型会包含null类型。
+4.18版本起，uts在编译到js时，any类型会包含null类型。编译为kotlin或swift时any类型包含null
 
-不同于ts，uts中any类型不包含null类型。
+4.18之前的版本uts中any类型不包含null类型。
+
+开发者在定义包含null的any类型时如需同时兼容js产物和kotlin、swift产物需要注意定义为any|null
 
 例如定义可选参数时应使用下面的写法：
 
