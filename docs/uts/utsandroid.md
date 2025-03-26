@@ -396,77 +396,6 @@ let pagePX = UTSAndroid.devicePX2px(100)
 console.log("pagePX",pagePX)
 ```
 
-### isPrivacyAgree() : boolean;
-
-<!-- UTSJSON.UTSAndroid.isPrivacyAgree.description -->
-
-> HBuilderX4.31及以上版本推荐使用 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 获取用户是否同意隐私协议。
-
-<!-- UTSJSON.UTSAndroid.isPrivacyAgree.param -->
-
-<!-- UTSJSON.UTSAndroid.isPrivacyAgree.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.isPrivacyAgree.compatibility -->
-
-```ts
-// 手动标记用户已同意隐私协议
-UTSAndroid.setPrivacyAgree(true)
-// 此时为 true
-console.log(UTSAndroid.isPrivacyAgree())
-// 重置用户隐私协议状态
-UTSAndroid.resetPrivacyAgree()
-// 此时为 false
-console.log(UTSAndroid.isPrivacyAgree())
-```
-
-
-
-### setPrivacyAgree(state:boolean):void;
-
-<!-- UTSJSON.UTSAndroid.setPrivacyAgree.description -->
-
-> HBuilderX4.31及以上版本推荐使用 [button](../component/button.md) 设置 `open-type` 值为 `agreePrivacyAuthorization` 来实现设置用户同意隐私协议。
-
-<!-- UTSJSON.UTSAndroid.setPrivacyAgree.param -->
-
-<!-- UTSJSON.UTSAndroid.setPrivacyAgree.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.setPrivacyAgree.compatibility -->
-
-```ts
-// 手动标记用户已同意隐私协议
-UTSAndroid.setPrivacyAgree(true)
-// 此时为 true
-console.log(UTSAndroid.isPrivacyAgree())
-// 重置用户隐私协议状态
-UTSAndroid.resetPrivacyAgree()
-// 此时为 false
-console.log(UTSAndroid.isPrivacyAgree())
-```
-
-
-### resetPrivacyAgree():void;
-
-<!-- UTSJSON.UTSAndroid.resetPrivacyAgree.description -->
-
-> HBuilderX4.31及以上版本推荐使用 [uni.resetPrivacyAuthorization](../api/privacy.md#resetprivacyauthorization) 重置隐私协议状态为未同意。
-
-<!-- UTSJSON.UTSAndroid.resetPrivacyAgree.param -->
-
-<!-- UTSJSON.UTSAndroid.resetPrivacyAgree.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.resetPrivacyAgree.compatibility -->
-
-```ts
-// 手动标记用户已同意隐私协议
-UTSAndroid.setPrivacyAgree(true)
-// 此时为 true
-console.log(UTSAndroid.isPrivacyAgree())
-// 重置用户隐私协议状态
-UTSAndroid.resetPrivacyAgree()
-// 此时为 false
-console.log(UTSAndroid.isPrivacyAgree())
-```
 
 ### requestSystemPermission
 
@@ -673,6 +602,7 @@ export function getJavaClassTest() : boolean {
 }
 ```
 
+
 ### getTopPageActivity()
 
 <!-- UTSJSON.UTSAndroid.getTopPageActivity.description -->
@@ -688,6 +618,7 @@ export function getJavaClassTest() : boolean {
 console.log(UTSAndroid.getTopPageActivity())
 ```
 
+
 ### onActivityCallback(callback, pageRoute?)
 
 <!-- UTSJSON.UTSAndroid.onActivityCallback.description -->
@@ -697,6 +628,7 @@ console.log(UTSAndroid.getTopPageActivity())
 <!-- UTSJSON.UTSAndroid.onActivityCallback.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.onActivityCallback.compatibility -->
+
 
 ### offActivityCallback(callback)
 
@@ -708,31 +640,6 @@ console.log(UTSAndroid.getTopPageActivity())
 
 <!-- UTSJSON.UTSAndroid.offActivityCallback.compatibility -->
 
-### onPrivacyAgreeChange(callback)
-
-<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.description -->
-
-> HBuilderX4.31及以上版本推荐使用 [uni.onPrivacyAuthorizationChange](../api/privacy.md#onprivacyauthorizationchange) 监听隐私协议状态的变化。
-
-<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.param -->
-
-<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.onPrivacyAgreeChange.compatibility -->
-
-### offPrivacyAgreeChange(callback)
-
-<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.description -->
-
-> HBuilderX4.31及以上版本推荐使用 [uni.offPrivacyAuthorizationChange](../api/privacy.md#offprivacyauthorizationchange) 取消监听隐私协议状态的变化。
-
-<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.param -->
-
-<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.returnValue -->
-
-<!-- UTSJSON.UTSAndroid.offPrivacyAgreeChange.compatibility -->
-
-
 
 ### getGenericType\<T>(): Type
 
@@ -743,6 +650,7 @@ console.log(UTSAndroid.getTopPageActivity())
 <!-- UTSJSON.UTSAndroid.getGenericType.returnValue -->
 
 <!-- UTSJSON.UTSAndroid.getGenericType.compatibility -->
+
 
 ### getGenericClassName\<T>(): string
 
