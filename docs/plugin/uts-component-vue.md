@@ -975,20 +975,7 @@ function iterateElement(homeElement : UniElement) : UniNativeViewElement | null 
 在uvue页面中使用组件上下文
 
 ```vue
-<template>
-    <view>
-        <page-head :title="title"></page-head>
-		
-        <view class="uni-btn-v uni-common-mt">
-            <button type="primary" @tap="testCallMethod">调用组件方法</button>
-			<native-button id="helloView" class="native-button" text="buttonText" @buttonTap="ontap"></native-button>
-			<Login></Login>
-        </view>
-		
-    </view>
-	
-</template>
-<script>
+
 <template>
 	<view>
 		<page-head :title="title"></page-head>
