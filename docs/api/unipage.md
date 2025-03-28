@@ -123,6 +123,18 @@ UniPage在App和Web平台较完善，在小程序端受小程序未开放，很�
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.getAndroidView.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniPage.methods.getAndroidActivity.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.getAndroidActivity.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.getAndroidActivity.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.getAndroidActivity.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.getAndroidActivity.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.getAndroidActivity.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniPage.methods.getIOSView.name -->
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.getIOSView.description -->
