@@ -9,7 +9,7 @@ uni-app x并不需要这套机制，开发者的代码就是原生代码，执�
 - `uni.resetPrivacyAuthorization`：重置隐私协议状态。适用于隐私协议变更，需要重新同意的场景
 - `uni.onPrivacyAuthorizationChange`、`uni.offPrivacyAuthorizationChange`：监听和取消监听用户是否同意隐私协议
 - 在 [button组件](../component/button.md)中，提供了属性open-type="agreePrivacyAuthorization"。之所以同意隐私协议是按钮，而不是API，是因为需要用户真实的同意。避免插件作者通过API非正常设置隐私协议为同意。所以开发者务必在隐私协议的同意按钮处使用 open-type="agreePrivacyAuthorization" 的 button组件。
-- `manifest.json`中， `app` 节点下`initPrivacyAuthorization` 为 `auto` 时，安卓平台隐私状态初始值为 `disagree`，iOS平台隐私状态初始值为 `agree`
+- `manifest.json`中， `app` 节点下`initPrivacyAuthorization` 为 `auto` 时，安卓、鸿蒙平台隐私状态初始值为 `disagree`，iOS平台隐私状态初始值为 `agree`
 
 ## uni.getPrivacySetting(options) @getprivacysetting
 
