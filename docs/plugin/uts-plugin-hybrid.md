@@ -754,11 +754,8 @@ obj.get('a') // 返回一个ESObject类型对象，并非UTSJSONObject
     └── utssdk
         ├── app-android
         ├── app-harmony
-        │   ├── config.json
         │   ├── index.uts
-        │   ├── libs
-        │   ├── deps.js
-        │   └── mem.ets
+        │   └── MemoryInfoNative.ets
         ├── app-ios
         └── interface.uts
 ```
@@ -770,11 +767,36 @@ obj.get('a') // 返回一个ESObject类型对象，并非UTSJSONObject
 ### 第二步 集成原生代码
 
 ```ts
-// mem.ets
+// MemoryInfoNative.ets
 import { hidebug } from '@kit.PerformanceAnalysisKit';
 
-export function getAppVMMemoryInfo() {
-  return hidebug.getAppVMMemoryInfo();
+let systemMemInfo: hidebug.SystemMemInfo = hidebug.getSystemMemInfo();
+
+type MemoryInfoChangeCallback = (memInfo: number[]) => void
+
+export class MemoryInfoNative {
+  private static _memoryInfoChangeCallbacks: MemoryInfoChangeCallback[] = []
+  private static _interval: number = -1
+  static onMemoryInfoChangeArkts(callback: MemoryInfoChangeCallback) {
+    MemoryInfoNative._memoryInfoChangeCallbacks.push(callback)
+    if(MemoryInfoNative._interval = -1) {
+      MemoryInfoNative._interval = setInterval(() => {
+        const memInfo = MemoryInfoNative.getMemInfoArkts()
+        MemoryInfoNative._memoryInfoChangeCallbacks.forEach(callback => {
+          callback(memInfo)
+        })
+      }, 2000)
+    }
+  }
+  static offMemoryInfoChangeArkts() {
+    MemoryInfoNative._memoryInfoChangeCallbacks = []
+    clearInterval(MemoryInfoNative._interval)
+    MemoryInfoNative._interval = -1
+  }
+  static getMemInfoArkts(): number[] {
+    let systemMemInfo: hidebug.SystemMemInfo = hidebug.getSystemMemInfo();
+    return [Number(systemMemInfo.freeMem / 1024n), Number(systemMemInfo.totalMem / 1024n)]
+  }
 }
 ```
 
@@ -782,12 +804,24 @@ export function getAppVMMemoryInfo() {
 
 ```ts
 // index.uts
-import {
-  getAppVMMemoryInfo as getAppVMMemoryInfoOrigin
-} from './mem.ets'
+import { OnMemoryInfoChange, OffMemoryInfoChange, GetMemoryInfo } from '../interface.uts'
+import { MemoryInfoNative } from "./MemoryInfoNative.ets"
 
-export function getAppVMMemoryInfo() {
-  return getAppVMMemoryInfoOrigin()
+type MemoryInfoChangeCallback = (memInfo : number[]) => void
+
+// 开启内存监听
+export const onMemoryInfoChange : OnMemoryInfoChange = function (callback : MemoryInfoChangeCallback) {
+  MemoryInfoNative.onMemoryInfoChangeArkts(callback)
+}
+
+// 结束内存监听
+export const offMemoryInfoChange : OffMemoryInfoChange = function () {
+  MemoryInfoNative.offMemoryInfoChangeArkts()
+}
+
+// 同步获取内存信息
+export const getMemoryInfo : GetMemoryInfo = function () : Array<number> {
+  return MemoryInfoNative.getMemInfoArkts();
 }
 ```
 
