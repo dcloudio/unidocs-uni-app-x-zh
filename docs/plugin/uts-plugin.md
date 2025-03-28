@@ -649,7 +649,7 @@ import { MyApiFailImpl } from '../unierror';
  * 2、直接引入，将 三方库的aar或jar文件 放到libs目录下。更多信息[详见](https://uniapp.dcloud.net.cn/plugin/uts-plugin.html#android%E5%B9%B3%E5%8F%B0%E5%8E%9F%E7%94%9F%E9%85%8D%E7%BD%AE)
  *
  * 在通过上述任意方式依赖三方库后，使用时需要在文件中 import，如下示例：
- * import { LottieAnimationView } from 'com.airbnb.lottie.LottieAnimationView'
+ * import { LottieAnimationView } from 'com.airbnb.lottie'
  */
 
 /**
