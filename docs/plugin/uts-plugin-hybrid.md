@@ -69,6 +69,7 @@ AI工具或官方文档得到的代码并不总是准确的，我们需要去验
 
 这里我们选择直接集成`UTS插件`, 使用`HBuilderX`来验证
 
+
 #### 第二步 集成原生代码
 
 `Kotlin`/`Java`语言中，存在[包名](https://kotlinlang.org/docs/packages.html) 的概念，类似`swift`的命名空间。为了让我们的原生代码可以被`UTS`使用，我们需要确保原生代码的包名是正确的:
@@ -76,56 +77,76 @@ AI工具或官方文档得到的代码并不总是准确的，我们需要去验
 大多数情况下，我们建议混编代码的包名与[UTS插件默认包名](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#_3-1-%E9%85%8D%E7%BD%AEandroidmanifest-xml)保持一致，这样在UTS调用原生代码时，可以省去手动引入包名的步骤。
 
 ```kotlin
-// 混编示例中的包名
-package uts.sdk.modules.utsDemoMem
+// 如 uts 插件目录为 uni-MemoryInfo 时默认混编代码的包名为
+package uts.sdk.modules.uniMemoryInfo
 ```
 
 如果混编代码的包名与`UTS插件默认包名`不一致，则需要像使用原生对象一样手动引入
 
 ```ts
-import KotlinObject from 'xxx.xxx.KotlinObject';
+// 如 kotlin 源码中指定包名为 uts.memoryinf.android，则按以下方式引用
+import { MemoryInfoNative } from 'uts.memoryinf.android'
+// 或使用以下方式引用
+//import MemoryInfoNative from 'uts.memoryinf.android.MemoryInfoNative'
 ```
 
 
 回到我们的示例，现在整理完的`Kotlin`代码是这样的：
 
 ```kotlin
-package uts.sdk.modules.demoMem;
+// 设置原生包名  
+package uts.memoryinf.android;
 
+
+// 引用系统类  
 import android.app.ActivityManager
 import android.content.Context.ACTIVITY_SERVICE
+// 引用 uts 基础库相关类
 import io.dcloud.uts.UTSAndroid
+import io.dcloud.uts.setInterval
+import io.dcloud.uts.clearInterval
 import io.dcloud.uts.console
 
+
+/**
+ * 原生 Kotlin 语言实现封装类  
+ */
 object MemoryInfoNative {
 
-	/**
-	 * 同步获取内存信息
-	 */
-	fun getMemInfoKotlin():Array<Number>{
-
-		val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
-		val memoryInfo = ActivityManager.MemoryInfo()
-		activityManager.getMemoryInfo(memoryInfo)
-		val availMem = memoryInfo.availMem / 1024 / 1024
-		val totalMem = memoryInfo.totalMem / 1024 / 1024
-	  
-		// availMem 可用内存，单位MB
-		// totalMem 设备内存，单位MB
-		console.log(availMem,totalMem)
-		return arrayOf(availMem,totalMem)
-    }
+  /**
+   * 获取内存信息
+   */
+  fun getMemInfoKotlin():Array<Number>{
+    val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
+    val memoryInfo = ActivityManager.MemoryInfo()
+    activityManager.getMemoryInfo(memoryInfo)
+    val availMem = memoryInfo.availMem / 1024 / 1024
+    val totalMem = memoryInfo.totalMem / 1024 / 1024
+    // availMem 可用内存，单位MB
+    // totalMem 设备内存，单位MB
+    // console.log(availMem,totalMem)
+    return arrayOf(availMem,totalMem)
+  }
 
 }
-
 
 ```
 
 上面的代码中，我们将获取内存的信息的功能以`Kotlin`静态方法`MemoryInfoNative.getMemInfoKotlin()` 的形式对外暴露
 
-接下来，我们将整理好的原生代码添加到 在`app-android` 目录
+接下来，我们将整理好的原生代码添加到 在 `app-android` 目录下的 `MemoryInfoNative.kt` 中：  
 
-![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_hybrid_plugin/bybrid_android_add.png)
+```text
+└── uni-MemoryInfo
+    ├── package.json
+    └── utssdk
+        ├── app-android
+        │   ├── config.json
+        │   ├── index.uts
+        │   └── MemoryInfoNative.kt
+        ├── app-ios
+        └── interface.uts
+```
 
 > 注意：java代码需要云打包自定义基座后生效，kotlin代码不需要打包，标准基座即可生效
 
@@ -156,7 +177,8 @@ console.log("Hello World") // kt或java代码
 
 下面列出内置对象对应的类名，如果需要在原生环境和UTS环境/uvue环境中互传数据，建议转换为标准内置对象实现后再进行传递。
 
-#### uts和kotlin对象映射表
+
+##### uts和kotlin对象映射表
 
 |uts 内置对象		|编译成的原生类名		 
 |:----		|:---						
@@ -175,19 +197,19 @@ console.log("Hello World") // kt或java代码
 |console	|io.dcloud.uts.console		
 
 
-回到内存监控的例子，在上面的示例中，我们已经实现了获取当前系统内存的功能，但我们还想更进一步持续监控内存，并且回调信息到`uvue`页面
+在上面的示例中，已经实现了获取当前系统内存的功能，如果还想更进一步持续监控内存变化，并通过回调返回数据。
 
 实现持续调用的方法有很多，这里我们为了演示在`Kotlin`代码中调用`UTS内置对象`的情况，选择采用[setInterval](../uts/buildin-object-api/timers.md#setinterval-handler-timeout-arguments)来实现这个功能:
 
 使用 [UTS内置对象](../uts/buildin-object-api/number.md) 需要注意两点：
 
-+  正确引入类名：
++ 正确引入类名：
 
-	`UTS内置对象`在具体的平台会有一个对应的类名，举例： UTS内置的[Array](../uts/buildin-object-api/array.md) 对应 `Kotlin`中的`io.dcloud.uts.UTSArray`
+  `UTS内置对象`在具体的平台会有一个对应的类名，举例： UTS内置的[Array](../uts/buildin-object-api/array.md) 对应 `Kotlin`中的`io.dcloud.uts.UTSArray`
 
-+  正确的处理原生对象和内置对象直接的转换
++ 正确的处理原生对象和内置对象直接的转换
 
-	当前示例中不涉及，但如果开发者可能遇到类似 kotlin.Array 转换 UTS内置Array的情况，这种情况可以通过查阅[内置对象文档](../uts/buildin-object-api/number.md)来解决。
+  当前示例中不涉及，但如果开发者可能遇到类似 kotlin.Array 转换 UTS内置Array的情况，这种情况可以通过查阅[内置对象文档](../uts/buildin-object-api/number.md)来解决。
 
 
 > 完整的内置对象实现清单和与原生对象转换代码示例，大家都可以在内置对象文档的具体章节找到
@@ -196,176 +218,136 @@ console.log("Hello World") // kt或java代码
 原生`kotlin`代码的最终形态:
 
 ```kotlin
-package uts.sdk.modules.demoMem;
+// 设置原生包名  
+package uts.memoryinf.android;
 
+
+// 引用系统类  
 import android.app.ActivityManager
 import android.content.Context.ACTIVITY_SERVICE
+// 引用 uts 基础库相关类
 import io.dcloud.uts.UTSAndroid
 import io.dcloud.uts.setInterval
 import io.dcloud.uts.clearInterval
 import io.dcloud.uts.console
 
+
+/**
+ * 原生 Kotlin 语言实现封装类  
+ */
 object MemoryInfoNative {
+  /**
+   * 记录上一次的任务id
+   */
+  private var lastTaskId:Number = -1
 
-	/**
-	 * 同步获取内存信息
-	 */
-	fun getMemInfoKotlin():Array<Number>{
+  /**
+   * 获取内存信息
+   */
+  fun getMemInfoKotlin():Array<Number>{
+    val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
+    val memoryInfo = ActivityManager.MemoryInfo()
+    activityManager.getMemoryInfo(memoryInfo)
+    val availMem = memoryInfo.availMem / 1024 / 1024
+    val totalMem = memoryInfo.totalMem / 1024 / 1024
+    // availMem 可用内存，单位MB
+    // totalMem 设备内存，单位MB
+    // console.log(availMem,totalMem)
+    return arrayOf(availMem,totalMem)
+  }
 
-		val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
-		val memoryInfo = ActivityManager.MemoryInfo()
-		activityManager.getMemoryInfo(memoryInfo)
-		val availMem = memoryInfo.availMem / 1024 / 1024
-		val totalMem = memoryInfo.totalMem / 1024 / 1024
-	  
-		// availMem 可用内存，单位MB
-		// totalMem 设备内存，单位MB
-		console.log(availMem,totalMem)
-		return arrayOf(availMem,totalMem)
+  /**
+   * 开始监听内存信息变化
+   */
+  fun onMemoryInfoChangeKotlin(callback: (Array<Number>) -> Unit){
+    if(lastTaskId != -1){
+      // 避免重复开启
+      clearInterval(lastTaskId)
     }
 
-     /**
-     * 记录上一次的任务id
-     */
-    private var lastTaskId:Number = -1
+    // 延迟1000ms，每2000ms 获取一次内存
+    lastTaskId = setInterval({
+      val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
+      val memoryInfo = ActivityManager.MemoryInfo()
+      activityManager.getMemoryInfo(memoryInfo)
+      val availMem = memoryInfo.availMem / 1024 / 1024
+      val totalMem = memoryInfo.totalMem / 1024 / 1024
+      // availMem 可用内存，单位MB
+      // totalMem 设备内存，单位MB
+      // console.log(availMem,totalMem)
+      callback(arrayOf(availMem,totalMem))
+    },1000,2000)
+  }
 
-	/**
-	 * 开启内存监控
-	 */
-    fun onMemoryInfoChangeKotlin(callback: (Array<Number>) -> Unit){
-
-        if(lastTaskId != -1){
-            // 避免重复开启
-            clearInterval(lastTaskId)
-        }
-
-		// 延迟1000ms，每2000ms 获取一次内存
-        lastTaskId = setInterval({
-
-          val activityManager = UTSAndroid.getUniActivity()?.getSystemService(ACTIVITY_SERVICE) as ActivityManager
-          val memoryInfo = ActivityManager.MemoryInfo()
-          activityManager.getMemoryInfo(memoryInfo)
-          val availMem = memoryInfo.availMem / 1024 / 1024
-          val totalMem = memoryInfo.totalMem / 1024 / 1024
-          
-		  console.log(availMem,totalMem)
-		  // 将得到的内存信息，封装为kotlin.Array 单位是MB
-          callback(arrayOf(availMem,totalMem))
-          
-        },1000,2000)
-		
-
+  /**
+   * 停止监听内存信息变化
+   */
+  fun offMemoryInfoChangeKotlin(){
+    if(lastTaskId != -1){
+      // 避免重复开启
+      clearInterval(lastTaskId)
     }
-    
-	/**
-	 * 关闭内存监控
-	 */
-    fun offMemoryInfoChangeKotlin(){
-        if(lastTaskId != -1){
-            // 避免重复开启
-            clearInterval(lastTaskId)
-        }
-    }
+  }
 
 }
-
 ```
 
-上面的代码中，我们将获取内存的信息的功能以`Kotlin`静态方法`NativeCode.startMemMonitor(callback)` 的形式对外暴露。 
+上面的代码中，我们将监听内存变化的功能以`Kotlin`静态方法`MemoryInfoNative.onMemoryInfoChangeKotlin(callback)` 的形式对外暴露。 
 
-这里的 `callback`参数是一个 参数为`UTSArray`类型的`Kotlin`函数，对应`UTS`中一个参数为`Array`的`function`对象
+注意：这里的 `callback` 类型为 `(Array<Number>) -> Unit`, 其中参数为 Number 数组类型（注：这里的数组为`kotlin.Array`，与 uts 中的数组有区别），无返回值（类型为`Unit`）。
 
 至此，内存监控功能的原生代码部分已经完全开发完毕。接下来，我们编写UTS代码来使用它。
 
 
-#### 第四步 编写`UTS`调用代码
+#### 第四步 编写`UTS`调用原生代码
 
 如我们在前文所讲，`UTS`是`Kotlin`语言的上游语言。所有`Kotlin`代码中的：`类`、`对象`、`函数`、`变量`，均可以在uts中直接使用。 
 
-**但是反之，则不行**。
+**但是反之则不行**。
 
 因为`UTS`的编译器兼容了`Kotlin`的语法规则，所以`UTS`中调用`Kotlin`代码可以被很好的支持，即使升级HBuilderX版本也不会有什么问题。
 
 但`UTS`从未保证过编译`Kotlin`的具体规则。所以虽然开发者可以通过一些取巧的方式实现 在`Kotlin`中调用`UTS`代码，但这是不安全的，`HBuilderX`升级后，类似的代码可能会失效/异常。
 
 
-在我们的示例里`~/demo-mem/utssdk/app-android/index.uts`文件中，UTS的调用的代码是这样的：
+在示例里 `uni-MemoryInfo/utssdk/app-android/index.uts` 文件中，使用 uts 代码封装为插件导出 API：
 
 ```ts
-// 开启内存监听
-export function onMemoryInfoChange(callback: (res: Array<number>) => void) {
-	MemoryInfoNative.onMemoryInfoChangeKotlin(function(res:kotlin.Array<number>){
-		callback(Array.fromNative(res))
-	})
-}
-// 结束内存监听
-export function offMemoryInfoChange() {
-	MemoryInfoNative.offMemoryInfoChangeKotlin()
+import { GetMemoryInfo, OnMemoryInfoChange, OffMemoryInfoChange } from '../interface.uts'
+import { MemoryInfoNative } from 'uts.memoryinf.android'
+
+
+/**
+ * 获取内存信息
+ */
+export const getMemoryInfo : GetMemoryInfo = function () : Array<number> {
+  let kotlinArray = MemoryInfoNative.getMemInfoKotlin()
+  // 将原生 Kotlin 语言的数组转换成 uts 语言中的数组
+  return Array.fromNative(kotlinArray)
 }
 
-// 同步获取内存信息
-export function getMemoryInfo():Array<number> {
-	let kotlinArray = MemoryInfoNative.getMemInfoKotlin()
-	return UTSArray.fromNative(kotlinArray)
+
+/**
+ * 开始监听内存信息变化
+ */
+export const onMemoryInfoChange : OnMemoryInfoChange = function (callback : (res : Array<number>) => void) {
+  //避免原生语言与uts语言的Array类型，这里需使用kotlin.Array
+  MemoryInfoNative.onMemoryInfoChangeKotlin(function (res : kotlin.Array<number>) {
+    // 将原生 Kotlin 语言的数组转换成 uts 语言中的数组
+    callback(Array.fromNative(res))
+  })
 }
 
+
+/**
+ * 停止监听内存信息变化
+ */
+export const offMemoryInfoChange : OffMemoryInfoChange = function () {
+  MemoryInfoNative.offMemoryInfoChangeKotlin()
+}
 ```
 
-上面的代码，我们在`UTS`中使用一个 入参为`Array<number>`类型的`function`对象就完成了对`kotlin`原生代码的调用。
-
-
-#### 第五步 回调参数到uvue页面
-
-`UTS`与`uvue`之间的相互调用，属于[UTS插件开发](../plugin/uts-plugin.md)的相关内容，这里不展开叙述，开发者可以查阅相关文档掌握这部分知识。
-
-下面仅列出了uvue示例代码，用于完整示例：
-
-```vue
-<template>
-	<view>
-		<button @tap="kotlinMemGetTest">通过kotlin获取内存(同步)</button>
-		<button @tap="kotlinMemListenTest">kotlin监听内存并持续回调UTS</button>
-		<button @tap="kotlinStopMemListenTest">停止监听</button>
-		<text>{{memInfo}}</text>
-	</view>
-</template>
-
-<script>
-	
-	import { offMemoryInfoChange,onMemoryInfoChange,getMemoryInfo} from "../../uni_modules/demo-mem";
-	 
-	export default {
-		data() {
-			return {
-				memInfo: '-'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-			
-			kotlinMemGetTest:function () {
-			    let array = getMemoryInfo()
-				this.memInfo = "可用内存:" + array[0] + "MB--整体内存:" + array[1] + "MB"
-			},
-			kotlinMemListenTest: function () {
-			    onMemoryInfoChange(function(ret:Array<number>){
-				  this.memInfo = "可用内存:" + ret[0] + "MB--整体内存:" + ret[1] + "MB"
-			    })
-			},
-			
-			kotlinStopMemListenTest:function () {
-			    offMemoryInfoChange()
-				this.memInfo = "已暂停"
-			},
-		}
-	}
-</script>
-
-
-
-```
+上面的代码，我们在`UTS`中使用 `Array.fromNative(kotlinArray)` 将 kotlin 数组转换为 uts 数组。
 
 
 
@@ -407,64 +389,74 @@ swift 文件默认会引入原生系统库 `Foundation`, 如果需要调用 UI �
 回到我们的示例，现在整理完的`swift`代码是这样的：
 
 ```swift
-
-// 这里是原生库的引用
+// 引用原生系统库  
 import Foundation
-// UTS内置对象的引用
+// 引用 uts 基础库  
 import DCloudUTSFoundation
 
-public class NativeCode {
-  
-    /// 同步获取内存信息
-    static func getMemInfo() -> [Int] {
-        let freeMem = NativeCode.getFreeMemory()
-        let totalMem = NativeCode.getTotalMemory()
-        
-        // freeMem 可用内存，单位MB
-        // totalMem 设备内存，单位MB
-        console.log(freeMem, totalMem)
-        return [freeMem, totalMem]
+
+/**
+ * 原生 Swift 语言实现封装类  
+ */
+public class MemoryInfoNative {
+  /**
+   * 获取内测信息
+   */
+  static func getMemInfoSwift() -> [Int] {
+    let freeMem = MemoryInfoNative.getFreeMemory()
+    let totalMem = MemoryInfoNative.getTotalMemory()
+    // console.log(freeMem, totalMem)
+    return [freeMem, totalMem]
+  }
+
+  /**
+   * 获取总内存大小（以MB为单位）
+   * Returns: 设备总内存
+   */
+  static private func getTotalMemory() -> Int {
+    return Int(ProcessInfo.processInfo.physicalMemory / 1024 / 1024)
+  }
+
+  /**
+   * 获取可用内存大小（以MB为单位）
+   * Returns: 设备可用内存
+   */
+  static private func getFreeMemory() -> Int {
+    var vmStats = vm_statistics_data_t()
+    var infoCount = mach_msg_type_number_t(MemoryLayout<vm_statistics_data_t>.size / MemoryLayout<integer_t>.size)
+    let kernReturn = withUnsafeMutablePointer(to: &vmStats) {
+      $0.withMemoryRebound(to: integer_t.self, capacity: Int(infoCount)) {
+        host_statistics(mach_host_self(), HOST_VM_INFO, $0, &infoCount)
+      }
     }
+
+    if kernReturn != KERN_SUCCESS {
+      return 0
+    }
+
+    let vmPageSize = vm_page_size
+    let freeMemorySize = Int(vmPageSize) * Int(vmStats.free_count + vmStats.inactive_count)
+    return freeMemorySize / 1024 / 1024
+  }
+
 }
-
-// MARK: - 获取内存工具函数
-extension NativeCode {
-    
-    /// 获取总内存大小（以MB为单位）
-    /// - Returns: 设备总内存
-    static func getTotalMemory() -> Int {
-        return Int(ProcessInfo.processInfo.physicalMemory / 1024 / 1024)
-    }
-
-    
-    /// 获取可用内存大小（以MB为单位）
-    /// - Returns: 设备可用内存
-    static func getFreeMemory() -> Int {
-        var vmStats = vm_statistics_data_t()
-        var infoCount = mach_msg_type_number_t(MemoryLayout<vm_statistics_data_t>.size / MemoryLayout<integer_t>.size)
-        let kernReturn = withUnsafeMutablePointer(to: &vmStats) {
-            $0.withMemoryRebound(to: integer_t.self, capacity: Int(infoCount)) {
-                host_statistics(mach_host_self(), HOST_VM_INFO, $0, &infoCount)
-            }
-        }
-        
-        if kernReturn != KERN_SUCCESS {
-            return 0
-        }
-        
-        let vmPageSize = vm_page_size
-        let freeMemorySize = Int(vmPageSize) * Int(vmStats.free_count + vmStats.inactive_count)
-        return freeMemorySize / 1024 / 1024
-    }
-}
-
 ```
 
-上面的代码中，我们将获取内存的信息的功能以`swift`静态方法`NativeCode.getMemInfo()` 的形式对外暴露。 而获取内存信息具体功能的实现，则是由 `NativeCode` 的两个拓展方法实现。
+上面的代码中，我们将获取内存的信息的功能以`swift`静态方法`MemoryInfoNative.getMemInfoSwift()` 的形式对外暴露。 而获取内存信息具体功能的实现，则是由两个原生方法`getTotalMemory`、`getFreeMemory`实现。
 
-接下来，我们将整理好的原生代码添加到 在`app-ios` 目录
+接下来，我们将整理好的原生代码添加到 在 `app-ios` 目录下的 `MemoryInfoNative.swift` 中：  
 
-![](https://web-ext-storage.dcloud.net.cn/doc/uts/uts_hybrid_plugin/bybrid_ios_add.png)
+```text
+└── uni-MemoryInfo
+    ├── package.json
+    └── utssdk
+        ├── app-android
+        ├── app-ios
+        │   ├── config.json
+        │   ├── index.uts
+        │   └── MemoryInfoNative.swift
+        └── interface.uts
+```
 
 
 是的，就是这样简单。如图所示，我们已经完成了对原生代码的集成。
@@ -475,7 +467,39 @@ extension NativeCode {
 UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象](../uts/utsios.md)均可以在原生环境使用，
 但是在使用前需要导入基础库 `DCloudUTSFoundation`。
 
-#### uts和Swift对象映射表
+##### 原生代码使用 console 向 HX 控制台输出打印日志			
+
+首先将基础库 `DCloudUTSFoundation` 导入到 swift 源码文件中，不过这个导入和使用过程将没有代码提示，输出的变量信息也不会包含变量所在的文件和代码行号等信息。
+
+示例如下：
+
+```swift
+
+import DCloudUTSFoundation;
+
+func test1() -> String {
+    console.log("this is in swift file")
+    return "123"
+}
+```
+
+##### 原生代码使用 UTSiOS 对象
+
+如果你想在 swift 代码中使用 `UTSiOS` 对象提供的能力，你需要先导入基础库 `DCloudUniappRuntime`.
+
+示例如下：
+
+```swift
+
+import DCloudUniappRuntime;
+
+func getKeyWindow() -> UIWindow {
+    return UTSiOS.getKeyWindow()
+}
+```
+
+
+##### uts和Swift对象映射表
 我们知道在 uts 中使用的 uts 内置对象会被编成原生类型，那么在混编的 swift 文件中要想使用 uts 内置对象，就要直接使用其编译后的原生类型。
 下面列出 uts 内置对象对应的 swift 原生类名
 
@@ -494,7 +518,7 @@ UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象]
 |Error			|UTSError					
 |console		|console					
 
-回到内存监控的例子。在上面的示例中，我们已经实现了获取当前设备内存信息的功能，但是我们还想更进一步持续监控内存，并且回调信息到uvue页面
+在上面的示例中，已经实现了获取当前系统内存的功能，如果还想更进一步持续监控内存变化，并通过回调返回数据。
 
 实现持续调用的方法有很多,这里我们为了演示在`swift`代码中调用`UTS内置对象`的情况，选择采用[setInterval](../uts/buildin-object-api/timers.md#setinterval-handler-timeout-arguments)来实现这个功能:
 
@@ -516,84 +540,88 @@ UTS的[内置对象](../uts/buildin-object-api/number.md)和[平台专用对象]
 原生`swift`代码的最终形态:
 
 ```swift
-
-// 这里是原生库的引用
+// 引用原生系统库  
 import Foundation
-// UTS内置对象的引用
+// 引用 uts 基础库  
 import DCloudUTSFoundation
 
-public class NativeCode {
-  
-    /// 同步获取内存信息
-    static func getMemInfo() -> [Int] {
-        let freeMem = NativeCode.getFreeMemory()
-        let totalMem = NativeCode.getTotalMemory()
-        
-        // freeMem 可用内存，单位MB
-        // totalMem 设备内存，单位MB
-        console.log(freeMem, totalMem)
-        return [freeMem, totalMem]
+
+/**
+ * 原生 Swift 语言实现封装类  
+ */
+public class MemoryInfoNative {
+  // 记录上一次的任务id
+  static private var lastTaskId = -1
+
+  /**
+   * 获取内测信息
+   */
+  static func getMemInfoSwift() -> [Int] {
+    let freeMem = MemoryInfoNative.getFreeMemory()
+    let totalMem = MemoryInfoNative.getTotalMemory()
+    // console.log(freeMem, totalMem)
+    return [freeMem, totalMem]
+  }
+
+
+  /**
+   * 开始监听内存信息变化
+   */
+  static func onMemoryInfoChangeSwift(_ callback: @escaping (_ res: [Int]) -> Void) {
+    if lastTaskId != -1 {
+      // 避免重复开启
+      clearInterval(NSNumber.from(lastTaskId))
     }
-    
-    /// 记录上一次的任务id
-   static private var lastTaskId = -1
-    
-    /// 开启内存监控
-   static func startMemMonitor(_ callback: @escaping (_ res: [Int]) -> Void) {
         
-        if lastTaskId != -1 {
-            // 避免重复开启
-            clearInterval(NSNumber.from(lastTaskId))
-        }
-        
-        lastTaskId = setInterval({ 
-            let freeMem = NativeCode.getFreeMemory()
-            let totalMem = NativeCode.getTotalMemory()
-            console.log(freeMem, totalMem)
-            callback([freeMem, totalMem])
-        }, 2000).toInt()
+    lastTaskId = setInterval({ 
+      let freeMem = MemoryInfoNative.getFreeMemory()
+      let totalMem = MemoryInfoNative.getTotalMemory()
+      // console.log(freeMem, totalMem)
+      callback([freeMem, totalMem])
+    }, 2000).toInt()
+  }
+
+  /**
+   * 停止监听内存信息变化
+   */
+  static func offMemoryInfoChangeSwift() {
+    if lastTaskId != -1 {
+      clearInterval(NSNumber.from(lastTaskId))
+      lastTaskId = -1
     }
-    
-    /// 关闭内存监控
-    static func stopMemMonitor() {
-        if lastTaskId != -1 {
-            clearInterval(NSNumber.from(lastTaskId))
-			lastTaskId = -1
-        }
+  }
+
+  /**
+   * 获取总内存大小（以MB为单位）
+   * Returns: 设备总内存
+   */
+  static private func getTotalMemory() -> Int {
+    return Int(ProcessInfo.processInfo.physicalMemory / 1024 / 1024)
+  }
+
+  /**
+   * 获取可用内存大小（以MB为单位）
+   * Returns: 设备可用内存
+   */
+  static private func getFreeMemory() -> Int {
+    var vmStats = vm_statistics_data_t()
+    var infoCount = mach_msg_type_number_t(MemoryLayout<vm_statistics_data_t>.size / MemoryLayout<integer_t>.size)
+    let kernReturn = withUnsafeMutablePointer(to: &vmStats) {
+      $0.withMemoryRebound(to: integer_t.self, capacity: Int(infoCount)) {
+        host_statistics(mach_host_self(), HOST_VM_INFO, $0, &infoCount)
+      }
     }
+
+    if kernReturn != KERN_SUCCESS {
+      return 0
+    }
+
+    let vmPageSize = vm_page_size
+    let freeMemorySize = Int(vmPageSize) * Int(vmStats.free_count + vmStats.inactive_count)
+    return freeMemorySize / 1024 / 1024
+  }
+
 }
-
-// MARK: - 获取内存工具函数
-extension NativeCode {
-    
-    /// 获取总内存大小（以MB为单位）
-    /// - Returns: 设备总内存
-    static func getTotalMemory() -> Int {
-        return Int(ProcessInfo.processInfo.physicalMemory / 1024 / 1024)
-    }
-
-    
-    /// 获取可用内存大小（以MB为单位）
-    /// - Returns: 设备可用内存
-    static func getFreeMemory() -> Int {
-        var vmStats = vm_statistics_data_t()
-        var infoCount = mach_msg_type_number_t(MemoryLayout<vm_statistics_data_t>.size / MemoryLayout<integer_t>.size)
-        let kernReturn = withUnsafeMutablePointer(to: &vmStats) {
-            $0.withMemoryRebound(to: integer_t.self, capacity: Int(infoCount)) {
-                host_statistics(mach_host_self(), HOST_VM_INFO, $0, &infoCount)
-            }
-        }
-        
-        if kernReturn != KERN_SUCCESS {
-            return 0
-        }
-        
-        let vmPageSize = vm_page_size
-        let freeMemorySize = Int(vmPageSize) * Int(vmStats.free_count + vmStats.inactive_count)
-        return freeMemorySize / 1024 / 1024
-    }
-}
-
 ```
 
 上面的代码中，我们将获取内存的信息的功能以`swift`静态方法`NativeCode.startMemMonitor(callback)` 的形式对外暴露。 
@@ -603,11 +631,11 @@ extension NativeCode {
 至此，内存监控功能的原生代码部分已经完全开发完毕。接下来，我们编写UTS代码来使用它。
 
 
-#### 第四步 编写`UTS`调用代码
+#### 第四步 编写`UTS`调用原生代码
 
 如我们在前文所讲，`UTS`是`swift`语言的上游语言。所有`swift`代码中的：`类`、`对象`、`函数`、`变量`，均可以在uts中直接使用。 
 
-**但是反之，则不行**。
+**但是反之则不行**。
 
 因为`UTS`的编译器兼容了`swift`的语法规则，所以`UTS`中调用`swift`代码可以被很好的支持，即使升级 HBuilderX 版本也不会有什么问题。
 
@@ -617,123 +645,55 @@ extension NativeCode {
 在我们的示例中, UTS 中的调用的代码是这样的：
 
 ```ts
+import { GetMemoryInfo, OnMemoryInfoChange, OffMemoryInfoChange } from '../interface.uts'
 
-export function onCallNativeCallbackUTS(callback: (res: Array<number>) => void) {
-	NativeCode.startMemMonitor((res: Int[]) => {
-		// 将 Int 数组转换成 number数组
-		let numberArray = res.map((value: Int, index: number): number => {
-			// 将 Int 转换成 number
-			return Number.from(value);
-		})
-		callback(numberArray)   
-	})
+
+/**
+ * 获取内存信息
+ */
+export const getMemoryInfo : GetMemoryInfo = function () : Array<number> {
+  // 将原生 swift 语言的 Int 数组转换成 uts 语言中的 number数组
+  let numberArray = MemoryInfoNative.getMemInfoSwift().map((value : Int, index : number) : number => {
+    // 将 Int 数据类型转换成 number
+    return Number.from(value);
+  })
+  return numberArray;
 }
 
-export function callNativeStopCallbackUTS() {
-	NativeCode.stopMemMonitor()
+
+/**
+ * 开始监听内存信息变化
+ */
+export const onMemoryInfoChange : OnMemoryInfoChange = function (callback : (res : Array<number>) => void) {
+  MemoryInfoNative.onMemoryInfoChangeSwift((res : Array<Int>) => {
+    // 将原生 swift 语言的 Int 数组转换成 uts 语言中的 number数组
+    let numberArray = res.map((value : Int, index : number) : number => {
+      // 将 Int 数据类型转换成 number
+      return Number.from(value);
+    })
+    callback(numberArray)
+  })
 }
 
-export function callNativeMemGet():Array<number> {
-	// 将 Int 数组转换成 number数组
-	let numberArray = NativeCode.getMemInfo().map((value: Int, index: number): number => {
-		// 将 Int 转换成 number
-		return Number.from(value);
-	}) 
-	return numberArray;
-}
 
-```
-
-上面的代码，我们在UTS中使用一个 入参为`Array<number>`类型的`function`对象就完成了对`swift`原生代码的调用。
-
-
-#### 第五步 回调参数到uvue页面
-
-uts文件与uvue 之间的相互调用，属于[UTS插件开发](../plugin/uts-plugin.md)的相关内容，这里不展开叙述。开发者可以查阅相关文档掌握这部分知识。
-
-下面仅列出了uvue示例代码。用于完整展示内存监控示例：
-
-```vue
-<template>
-	<view>
-		<button @tap="nativeMemGetTest">通过原生代码获取内存(同步)</button>
-		<button @tap="nativeMemListenTest">原生代码监听内存并持续回调UTS</button>
-		<button @tap="nativeStopMemListenTest">停止监听</button>
-		<text>{{memInfo}}</text>
-	</view>
-</template>
-
-<script>
-	
-	import { onCallNativeCallbackUTS,callNativeStopCallbackUTS,callNativeMemGet} from "../../uni_modules/demo-mem";
-	 
-	export default {
-		data() {
-			return {
-				memInfo: '-'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-			
-			nativeMemGetTest() {
-			    let array = callNativeMemGet()
-				this.memInfo = "可用内存:" + array[0] + "MB--整体内存:" + array[1] + "MB"
-			},   
-			nativeMemListenTest() {
-				onCallNativeCallbackUTS((ret: number[]) => {
-					this.memInfo = "可用内存:" + ret[0] + "MB--整体内存:" + ret[1] + "MB"
-				});
-			},
-			
-			nativeStopMemListenTest() {
-			    callNativeStopCallbackUTS()
-				this.memInfo = "已暂停"
-			},
-		}
-	}
-</script>
-
-```
-
-#### 原生代码使用 console 向 HX 控制台输出打印日志			
-
-首先将基础库 `DCloudUTSFoundation` 导入到 swift 源码文件中，不过这个导入和使用过程将没有代码提示，输出的变量信息也不会包含变量所在的文件和代码行号等信息。
-
-示例如下：
-
-```swift
-
-import DCloudUTSFoundation;
-
-func test1() -> String {
-    console.log("this is in swift file")
-    return "123"
+/**
+ * 停止监听内存信息变化
+ */
+export const offMemoryInfoChange : OffMemoryInfoChange = function () {
+  MemoryInfoNative.offMemoryInfoChangeSwift()
 }
 ```
 
-#### 原生代码使用 UTSiOS 对象
+上面的代码，我们在`UTS`中使用 `Number.from(value)` 将 swift 中 Int 转换为 uts 中的 number 类型。
 
-如果你想在 swift 代码中使用 `UTSiOS` 对象提供的能力，你需要先导入基础库 `DCloudUniappRuntime`.
 
-示例如下：
-
-```swift
-
-import DCloudUniappRuntime;
-
-func getKeyWindow() -> UIWindow {
-    return UTSiOS.getKeyWindow()
-}
-```
-
-**注意：**
+#### 注意事项
 
 - UTSiOSHookProxy 因为涉及到自动注册的问题，在 swift 代码中直接使用将不生效。
 - 目前仅支持 Swift 源码混编，OC 源码即使添加也不会参与编译
 - Swift 源码文件中定义的函数、全局变量、类 等符号名称不要和 uts 文件中的符号名相同，否则会因为符号冲突导致编译不过
+
+
 
 ## harmonyos平台
 
@@ -789,10 +749,8 @@ obj.get('a') // 返回一个ESObject类型对象，并非UTSJSONObject
 如下示例使用的uni_module目录结构如下
 
 ```text
-└── demo-mem
-    ├── changelog.md
+└── uni-MemoryInfo
     ├── package.json
-    ├── readme.md
     └── utssdk
         ├── app-android
         ├── app-harmony
@@ -801,7 +759,8 @@ obj.get('a') // 返回一个ESObject类型对象，并非UTSJSONObject
         │   ├── libs
         │   ├── deps.js
         │   └── mem.ets
-        └── app-ios
+        ├── app-ios
+        └── interface.uts
 ```
 
 ### 第一步 获取、编写原生代码
@@ -870,6 +829,67 @@ export function getAppVMMemoryInfo() {
 ```
 
 
+## uvue页面使用uts插件
+
+`UTS`与`uvue`之间的相互调用，属于[UTS插件开发](../plugin/uts-plugin.md)的相关内容，这里不展开叙述，开发者可以查阅相关文档掌握这部分知识。
+
+下面列出了uvue调用的示例代码：
+
+```vue
+<template>
+	<view class="content">
+		<button @tap="utsGetMemory">获取内存(同步)</button>
+		<button @tap="utsStartMemoryWatch">开始监听内存变化</button>
+		<button @tap="utsStopMemoryWatch">停止监听内存变化</button>
+	</view>
+  <view class="content">
+		<text style="color: red;">{{memInfo}}</text>
+  </view>
+</template>
+
+
+<script>
+import {getMemoryInfo,onMemoryInfoChange,offMemoryInfoChange} from "@/uni_modules/uni-MemoryInfo";
+ 
+export default {
+  data() {
+    return {
+      memInfo: '-'
+    }
+  },
+  onLoad() {
+  },
+  methods: {
+    utsGetMemory(){
+      let array = getMemoryInfo()
+      this.memInfo = "可用内存:" + array[0] + "MB \n整体内存:" + array[1] + "MB"
+      console.log('getMemoryInfo', array)
+    },
+    utsStartMemoryWatch(){
+      onMemoryInfoChange((res: Array<number>) => {
+        this.memInfo = "可用内存:" + res[0] + "MB \n整体内存:" + res[1] + "MB"
+        console.log('onMemoryInfoChange', res)
+      })
+    },
+    utsStopMemoryWatch(){
+      offMemoryInfoChange()
+      this.memInfo = "已停止监听"
+      console.log('offMemoryInfoChange')
+    },
+  }
+}
+</script>
+
+
+<style>
+.content {
+  margin: 12px;
+}
+</style>
+```
+
+
+
 ## Web和小程序平台js混编
 
 在uts编译为js时，uts和js可以任意混编，就像ts和js可以互相引用一样。
@@ -922,4 +942,5 @@ export function callJavaMethodGetInfo():String {
 
 
 
-[完整的混编示例](https://ext.dcloud.net.cn/plugin?name=uni-MemoryInfo)
+[完整的uts混编插件示例](https://ext.dcloud.net.cn/plugin?name=uni-MemoryInfo)
+
