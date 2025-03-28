@@ -9,7 +9,7 @@
 |主题概念	|描述												|App|Web|小程序	|获取方式																			|设置方式												|监听变化							|
 |--				|--													|--	|--	|--			|--																						|--															|--										|
 |osTheme	|手机OS的当前主题							|√	|x	|x			|[uni.getDeviceInfo](./get-device-info.md)		|-															|[uni.onOsThemeChange](#onosthemechange)|
-|hostTheme|浏览器或小程序宿主的当前主题	|x	|√	|√			|[uni.getDeviceInfo](./get-device-info.md)		|-															|[uni.onHostThemeChange](#onhostthemechange)|
+|hostTheme|浏览器或小程序宿主的当前主题	|x	|√	|√			|[uni.getAppBaseInfo](./get-app-base-info.md)		|-															|[uni.onHostThemeChange](#onhostthemechange)|
 |appTheme	|App当前主题									|√	|X	|x			|[uni.getAppBaseInfo](./get-app-base-info.md)	|[uni.setAppTheme](#setapptheme)|[uni.onAppThemeChange](#onappthemechange)|
 
 Web和小程序注意：
