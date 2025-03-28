@@ -19,7 +19,6 @@
   * [Map](buildin-object-api/map.md)
   * [UTSJSONObject](buildin-object-api/utsjsonobject.md)
   * [JSON](buildin-object-api/json.md)
-  * [JSON.stringify](buildin-object-api/ijsonstringify.md)
   * [Date](buildin-object-api/date.md)
   * [Math](buildin-object-api/math.md)
   * [Promise](buildin-object-api/promise.md)

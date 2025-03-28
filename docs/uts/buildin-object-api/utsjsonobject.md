@@ -10,57 +10,15 @@ UTSJSONObject 对象的实例目前主要通过两种方式来创建：
 
 * 通过[对象字面量](../literal.md#object-literal)
 
-::: preview
-
->UTS
 
 <!-- UTSJSON.UTSJSONObject.sample_create.test -->
-
-> kotlin
-
-```kotlin
-
-val person: UTSJSONObject = object : UTSJSONObject() {
-	var name = "Tom"
-	var printName = fun(){
-		console.log(name)
-	}
-}
-//返回指定键对应的值，如果对象中不存在此键则返回 null。
-var name: String = person["name"] as String
-//get 方法可以简化为使用下标运算符 `[]` 访问
-name = person["name"] as String
-// 增加或更新指定键对应的值。
-person["name"] = "Tom1"
-person["name"] = "Tom2"
-
-```
-:::
 
 
 * 通过 JSON 字符串
 
-::: preview
 
->UTS
 
 <!-- UTSJSON.UTSJSONObject.sample_create1.test -->
-
-> kotlin
-
-```kotlin
-// 写法1 推荐
-var person1: UTSJSONObject = JSON.parseObject("{\"name\":\"Tom\"}")!!
-// 写法2 推荐
-val person2: UTSJSONObject = JSON.parse<UTSJSONObject>("{\"name\":\"Tom\"}")!!
-// 写法3  如果 as 转换的实际类型不匹配 会导致 crash，建议先通过 `is` 判断类型再进行as转换。
-val parseRet3 = JSON.parse("{\"name\":\"Tom\"}")
-if (parseRet3 is UTSJSONObject) {
-	val person = parseRet3 as UTSJSONObject
-}
-```
-
-:::
 
 
 
@@ -74,24 +32,8 @@ if (parseRet3 is UTSJSONObject) {
 
 <!-- UTSJSON.UTSJSONObject.keys.returnValue -->
 
-::: preview
-
->UTS
 
 <!-- UTSJSON.UTSJSONObject.keys.test -->
-
-> kotlin
-
-```kotlin
-var obj: UTSJSONObject = object : UTSJSONObject() {
-	var name = "zhangsan"
-	var age: Number = 11
-}
-// 2
-var ret1 = UTSJSONObject.keys(obj).length
-```
-
-:::
 
 <!-- UTSJSON.UTSJSONObject.keys.compatibility -->
 
@@ -104,29 +46,8 @@ var ret1 = UTSJSONObject.keys(obj).length
 
 <!-- UTSJSON.UTSJSONObject.assign.returnValue -->
 
-::: preview
-
->UTS
 
 <!-- UTSJSON.UTSJSONObject.assign.test -->
-
-> kotlin
-
-```kotlin
-var target: UTSJSONObject = object : UTSJSONObject() {
-	var a: Number = 1
-	var b: Number = 2
-}
-var source: UTSJSONObject = object : UTSJSONObject() {
-	var b: Number = 4
-	var c: Number = 5
-}
-// 得到一个UTSJSONObject对象 {"a":1,"b":4,"c":5}
-var returnedTarget = UTSJSONObject.assign(target, source)
-```
-
-:::
-
 
 <!-- UTSJSON.UTSJSONObject.assign.compatibility -->
 
@@ -140,28 +61,9 @@ var returnedTarget = UTSJSONObject.assign(target, source)
 
 <!-- UTSJSON.UTSJSONObject.assign_1.returnValue -->
 
-::: preview
 
->UTS
 
 <!-- UTSJSON.UTSJSONObject.assign_1.test -->
-
-> kotlin
-
-```kotlin
-var target1: UTSJSONObject = object : UTSJSONObject() {
-	var a: Number = 1
-	var b: Number = 2
-}
-var source1: UTSJSONObject = object : UTSJSONObject() {
-	var b: Number = 4
-	var c: Number = 5
-}
-// 得到一个UTSJSONObject对象 {"a":1,"b":4,"c":5}
-var returned = UTSJSONObject.assign<UTSJSONObject>(target1, source1)
-```
-
-:::
 
 
 <!-- UTSJSON.UTSJSONObject.assign_1.compatibility -->
@@ -192,29 +94,8 @@ var returned = UTSJSONObject.assign<UTSJSONObject>(target1, source1)
 
 <!-- UTSJSON.UTSJSONObject.get.returnValue -->
 
-::: preview
-
->UTS
 
 <!-- UTSJSON.UTSJSONObject.get.test -->
-
-> kotlin
-
-```kotlin
-val person: UTSJSONObject = object : UTSJSONObject() {
-	var name = "Tom"
-	var printName = fun(){
-		console.log(name)
-	}
-}
-//返回指定键对应的值，如果对象中不存在此键则返回 null。
-var name: String = person["name"] as String
-//get 方法可以简化为使用下标运算符 `[]` 访问
-name = person["name"] as String
-
-```
-
-:::
 
 
 <!-- UTSJSON.UTSJSONObject.get.compatibility -->
@@ -227,32 +108,8 @@ name = person["name"] as String
 
 <!-- UTSJSON.UTSJSONObject.set.returnValue -->
 
-::: preview
-
->UTS
 
 <!-- UTSJSON.UTSJSONObject.set.test -->
-
-> kotlin
-
-```kotlin
-val person: UTSJSONObject = object : UTSJSONObject() {
-	var name = "Tom"
-	var printName = fun(){
-		console.log(name)
-	}
-}
-//返回指定键对应的值，如果对象中不存在此键则返回 null。
-var name: String = person["name"] as String
-//get 方法可以简化为使用下标运算符 `[]` 访问
-name = person["name"] as String
-// 增加或更新指定键对应的值。
-person["name"] = "Tom1"
-person["name"] = "Tom2"
-```
-
-:::
-
 
 <!-- UTSJSON.UTSJSONObject.set.compatibility -->
 
@@ -325,38 +182,7 @@ person["name"] = "Tom2"
 <!-- UTSJSON.UTSJSONObject.getString.returnValue -->
 
 
-::: preview
-
->UTS
-
 <!-- UTSJSON.UTSJSONObject.getString.test -->
-
-> kotlin
-
-```kotlin
-val utsObj: UTSJSONObject = UTSJSONObject() as Any as UTSJSONObject
-run {
-	var i: Number = 0
-	while(i < 100){
-		utsObj.set("" + i, "" + i)
-		i++
-	}
-}
-console.log("--start--")
-var startTime = Date.now()
-run {
-	var i: Number = 0
-	while(i < 10000){
-		utsObj.getString("0")
-		i++
-	}
-}
-```
-
-:::
-
-
-
 
 <!-- UTSJSON.UTSJSONObject.getString.compatibility -->
 
@@ -382,32 +208,7 @@ run {
 <!-- UTSJSON.UTSJSONObject.getJSON.returnValue -->
 
 
-::: preview
-
->UTS
-
 <!-- UTSJSON.UTSJSONObject.getJSON.test -->
-
-> kotlin
-
-```kotlin
-run {
-	var obj: UTSJSONObject = object : UTSJSONObject() {
-		var cars = utsArrayOf(
-			object : UTSJSONObject() {
-				var name = "car1"
-				var value: Number = 100
-			}
-		)
-	}
-	var cars: UTSArray<UTSJSONObject>? = obj.getArray<UTSJSONObject>("cars")
-	cars!![0].set("value", 20)
-	var firstCar = obj.getJSON("cars[0]")
-}
-```
-
-:::
-
 
 <!-- UTSJSON.UTSJSONObject.getJSON.compatibility -->
 
@@ -431,32 +232,8 @@ run {
 
 <!-- UTSJSON.UTSJSONObject.getArray.returnValue -->
 
-::: preview
-
->UTS
 
 <!-- UTSJSON.UTSJSONObject.getArray.test -->
-
-> kotlin
-
-```kotlin
-run {
-	var obj: UTSJSONObject = object : UTSJSONObject() {
-		var cars = utsArrayOf(
-			object : UTSJSONObject() {
-				var name = "car1"
-				var value: Number = 100
-			}
-		)
-	}
-	var cars: UTSArray<UTSJSONObject>? = obj.getArray<UTSJSONObject>("cars")
-	cars!![0].set("value", 20)
-	var firstCar = obj.getJSON("cars[0]")
-}
-```
-
-:::
-
 
 <!-- UTSJSON.UTSJSONObject.getArray.compatibility -->
 
@@ -468,27 +245,8 @@ run {
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.returnValue -->
 
-::: preview
-
->UTS
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.test -->
-
-> kotlin
-
-```kotlin
-run {
-	var obj = JSON.parseObject("{\"name\":\"tom\",\"tag\":[\"student\",\"user\"]}")
-	var noGenericArray = obj!!.getArray("tag")
-	console.log(noGenericArray)
-	var genericArray = obj!!.getArray<String>("tag")
-	console.log(genericArray)
-}
-```
-
-:::
-
-
 
 <!-- UTSJSON.UTSJSONObject.getArray_1.compatibility -->
 
@@ -525,27 +283,8 @@ run {
 
 <!-- UTSJSON.UTSJSONObject.toMap.returnValue -->
 
-::: preview
-
->UTS
 
 <!-- UTSJSON.UTSJSONObject.toMap.test -->
-
-> kotlin
-
-```kotlin
-run {
-	val person1 = JSON.parseObject("{\"name\":\"Tom\"}")!!
-	person1.toMap().forEach(fun(value, key){
-		console.log(key)
-		console.log(value)
-	})
-}
-```
-
-:::
-
-
 
 
 <!-- UTSJSON.UTSJSONObject.toMap.compatibility -->
