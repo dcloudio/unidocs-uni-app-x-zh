@@ -47,6 +47,7 @@
 		+ 如果同时指定了 source 和 repo， 则以 repo 为准，source 将不再生效。
 - dependencies-pod-sources： 插件依赖的 pod 库的 specs source 地址，HBuilderX 4.61+ 版本新增支持。
 	+ 本地真机运行默认使用  CocoaPods 官方默认地址 (source 'https://cdn.cocoapods.org/')
+	+ 云打包默认使用 source 是清华镜像 (source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git')
 	+ 开发者配置的 source 会排在默认 source 之后，按照 dependencies-pod-sources 数组中的 source 顺序，依次排列；
 	+ 注意：根据 cocoaPods 的默认行为，如果两个 source 中有相同的 pod 库如 frameworkA， 且指定了相同的版本，那么 cocoaPods 会从排在前面的 source 中查找 pod 库，而官方的源排列在最前面。如果你有这样的需求，请直接在某个 pod 库的配置中指定 source.
 
