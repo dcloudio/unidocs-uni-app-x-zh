@@ -2,6 +2,8 @@
 
 <!-- CSSJSON.at_rules_values.compatibility -->
 
+- `@keyframes关键帧动画`，在App平台，可以使用API方式实现，暂不支持通过css方式实现。详见[UniElement的animate方法](../../dom/unielement.md#animate)
+
 ## 字体 @font
 
 @font-face自定义字体示例：
@@ -153,7 +155,7 @@ app-android、app-ios内部框架在开发时用到了一些字体，同时共�
 
 
 
-## Tips
+### Tips
 - `字体路径`支持**网络**和**本地**，本地字体请注意放在项目或uni_modules的static目录下。
 
 <style type="text/css">
