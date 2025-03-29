@@ -92,6 +92,8 @@ app平台 setAttribute 不支持设置 class、style 属性，设置了也不会
 **App平台**
 app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面中设置的 class 属性暂不支持通过 UniElement 对象获取，style 信息可以通过 [style](#style) 属性获取。
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.example -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.tutorial -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.hasAttribute.name -->
@@ -228,9 +230,9 @@ if(webViewElement != null) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.returnValue -->
 
-<!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.tutorial -->
-
 <!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.example -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getBoundingClientRectAsync.tutorial -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getDrawableContext.name -->
 
@@ -421,9 +423,9 @@ if (view != null && view instanceof WKWebView) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.returnValue -->
 
-<!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.tutorial -->
-
 <!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.example -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.tutorial -->
 
 完整示例代码参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/element-takesnapshot/element-takesnapshot.uvue)
 
@@ -503,3 +505,48 @@ if (view != null && view instanceof WKWebView) {
 <!-- CUSTOMTYPEJSON.UniElement.methods.animate.returnValue -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.animate.tutorial -->
+
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController.example -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController.tutorial -->
+
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController_1.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController_1.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController_1.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController_1.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController_1.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController_1.example -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController_1.tutorial -->
+
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.requestFullscreen.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.requestFullscreen.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.requestFullscreen.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.requestFullscreen.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.requestFullscreen.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.requestFullscreen.example -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.requestFullscreen.tutorial -->
