@@ -5,18 +5,17 @@
 <!-- UTSCOMJSON.canvas.compatibility -->
 
 App平台4.25之前没有完整的canvas组件，但提供了`DrawableContext`。
-* 每个view，都可以通过[draw API](../dom/drawablecontext.md)，高性能的画各种形状、写字。这组API与web的canvas api接近但不同。
 * 截图或海报需求，无需像webview那样通过canvas中转，app平台view直接提供截图API，[takesnapshot](../dom/unielement.html#takesnapshot)。
 
-从4.25起，App平台也补充了canvas组件。
+在绘制形状、文字、图片方面，uni-app x有2种解决方案：`canvas组件`和 [DOM的DrawableContext API](../dom/drawablecontext.md)
 
-`canvas组件`和`DrawableContext`的区别是：
-1. canvas组件的语法是W3C标准语法
+它们的区别是：
+1. canvas组件的语法是W3C标准语法；DrawableContext是对原生view的绘制API的封装，语法尽可能靠齐W3C规范，但不相同。
 2. canvas组件全平台支持，而DrawableContext仅app支持
 3. canvas组件是一个独立组件，而DrawableContext是对现有的view组件进行绘制
 4. DrawableContext在iOS上绘制文字的性能略低，其原生系统如此
-5. 对于复杂绘制场景，比如游戏，canvas组件的性能优于DrawableContext
-6. canvas是一个独立模块，占用几百K体积，不使用时会被摇树摇掉
+5. 对于复杂绘制场景，比如游戏，canvas组件的绘制速度优于DrawableContext；对于简单场景，canvas组件的内存占用高于普通view。
+6. canvas是一个独立模块，在Android和iOS平台占用几百K体积，鸿蒙平台封装自鸿蒙自身的canvas。canvas模块不使用时会被摇树摇掉
 
 <!-- UTSCOMJSON.canvas.attribute -->
 
@@ -38,7 +37,7 @@ uni-app x 中废弃了老版方案，使用了 W3C 规范和微信小程序的�
 
 注意：新版规范需要开发者根据自己的场景手动处理高清屏问题。
 
-canvas相关的API非常多，参考如下：
+canvas相关的API较多，参考如下：
 
 - [W3C 规范](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/canvas)
 - canvas.toDataURL()  [W3C](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL)

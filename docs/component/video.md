@@ -12,16 +12,19 @@
 
 
 ### 视频格式  
-web端支持的视频格式，不同浏览器有差异，可查询caniuse。
+- web端支持的视频格式，不同浏览器有差异，可查询caniuse。
+- 小程序平台支持的视频格式，需要具体查阅小程序平台的video组件文档。
+- 鸿蒙next平台的video组件使用arkUI的video组件，视频格式[另见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-components-video)
+- Android和iOS平台支持的视频格式如下：
+	* [x] mp4
+	* [x] m4v
+	* [x] mov
+	* [x] 3gp
+	* [x] flv
+	* [x] webm (安卓端支持，iOS端不支持)
+	* [x] m3u8 (本地m3u8文件安卓端需3.99+，iOS端需4.11+)
 
-app端支持的视频格式如下：
-- [x] mp4
-- [x] m4v
-- [x] mov
-- [x] webm (安卓端支持，iOS端不支持)
-- [x] 3gp
-- [x] flv
-- [x] m3u8 (本地m3u8文件安卓端需3.99+，iOS端需4.11+)
+如需其他视频格式，可自行开发uts组件插件或搜索插件市场。
 
 ### src路径支持说明  
 - 本地路径/static方式  
@@ -29,12 +32,12 @@ app端支持的视频格式如下：
 	其他目录的视频文件由于不会被打包进去，所以无法访问。  
 	app平台文件路径会存在大小写敏感问题，为了有更好的兼容性，建议统一按大小写敏感原则处理 [详情](../api/file-system-spec.md#casesensitive)  
 
-- 支持网络路径  
-	网络媒体 http、https协议  
-	流媒体 rtmp/hls/rtsp 协议  
+- iOS/Android支持的网络路径  
+	* 网络媒体 http、https协议  
+	* 流媒体 rtmp/hls/rtsp 协议  
 
 ### app平台组件实现  
-App-Android平台video组件使用ijkplayer库实现：[https://github.com/bilibili/ijkplayer](https://github.com/bilibili/ijkplayer)；
+App-Android/iOS平台video组件使用ijkplayer库实现：[https://github.com/bilibili/ijkplayer](https://github.com/bilibili/ijkplayer)；
 
 弹幕功能使用DanmakuFlameMaster库实现：[https://github.com/bilibili/DanmakuFlameMaster](https://github.com/bilibili/DanmakuFlameMaster)
 

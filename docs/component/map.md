@@ -7,11 +7,11 @@
 <!-- UTSCOMJSON.map.compatibility -->
 
 不同图商在不同平台的兼容性
-|图商|App|Web|
-|:-:|:-:|:-:|
-|腾讯|4.31+|√|
-|高德|x|√|
-|Google|x|√|
+|图商		|Web|Android|iOS	|harmony|
+|:-:		|:-:|:-:		|:-:	|:-:		|
+|腾讯		|√	|4.31+	|4.31+|4.61+	|
+|高德		|√	|x			|x		|x			|
+|Google	|√	|x			|x		|x			|
 
 除了内置支持的图商，还可以在插件市场寻找更多地图解决方案：
 1. [插件市场的三方地图插件](https://ext.dcloud.net.cn/search?q=%E5%9C%B0%E5%9B%BE&orderBy=Relevance&uni-appx=1)

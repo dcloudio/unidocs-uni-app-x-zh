@@ -105,4 +105,3 @@
     * [page-container](page-container.md)
     * [root-portal](root-portal.md)
     * [functional-page-navigator](functional-page-navigator.md)
-* [其他组件](unsupport.md)
