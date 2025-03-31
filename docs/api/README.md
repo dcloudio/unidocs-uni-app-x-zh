@@ -8,10 +8,17 @@ uni-app x项目的uts代码中可以使用很多API。包括：
 4. uniCloud.xxx的内置api [详见](./unicloud/README.md)
 5. dom的api [详见](../dom/README.md)
 6. vue的api [详见](../vue/README.md)
-7. os原生api
+7. 平台原生api
+	* Android 所有原生API
+	* iOS 所有原生API
+	* harmony 所有原生API
+	* Web浏览器所有API
+	* 小程序所有API
+
+uni-app x中，不会限制任何平台原来的API无法调用。常用的跨平台API，都已经封装在uni的API中，但所有的平台API均可以在uni-app x中调用。
 
 ## os原生api的使用
-由于uts可以直接调用Android和iOS的api，所以os和三方sdk的能力都可以在uts中调用。如下：
+由于uts可以直接调用Android、iOS、鸿蒙的api，所以os和三方sdk的能力都可以在uts中调用。如下是一个Android的例子：
 
 ```vue
 <script>
@@ -36,7 +43,7 @@ uni-app x项目的uts代码中可以使用很多API。包括：
 
 其实，[uni.getSystemInfoSync](https://gitcode.net/dcloud/uni-api/-/blob/master/uni_modules/uni-getSystemInfo/utssdk/app-android/index.uts) 的内部实现就是一个uts模块，底层使用了一样的代码，也是import了android.os.Build。
 
-大多数uni.的api，都是uts开发的，它们陆续开源在[uni-api](https://gitcode.net/dcloud/uni-api)。
+大多数uni.的api，都是uts开发的，它们开源在[uni-api](https://gitcode.net/dcloud/uni-api)。
 
 插件市场也有很多做好的uts插件，方便开发者拿来即用。[uts插件](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 

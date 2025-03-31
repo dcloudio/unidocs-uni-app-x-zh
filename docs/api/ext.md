@@ -56,6 +56,8 @@ uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api
 </script>
 ```
 
+插件市场有一些抹平plus写法的插件，自定义了一个plus对象，方法内部再调用uni或uts的api，以兼容历史的plus写法，[详见](https://ext.dcloud.net.cn/search?q=plus&orderBy=Relevance&uni-appx=1)
+
 ## kotlin代码转uts简易指南@kt2uts
 
 扩展原生API在uni-app x中很简单，把kotlin代码简单的转换为uts代码，以上面的打开schema代码为例。
