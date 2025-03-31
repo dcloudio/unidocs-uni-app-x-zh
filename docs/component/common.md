@@ -30,6 +30,10 @@ App-Android平台设置组件视图渲染模型，字符串类型，可取值：
 - 由于安卓原生限制，当设置`android-layer-type`为`hardware`或`software`时，`overflow: visible`不生效。
 :::
 
+::: warning 注意
+- App-Android 平台，`4.61+` `style` 支持 `UTSJSONObject` 类型。
+:::
+
 <!-- CUSTOMTYPEJSON.general-attribute.example -->
 
 ### 参见
