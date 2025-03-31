@@ -1,8 +1,8 @@
-## uni.getUniverifyManager() @getuniverifymanager
+## uni.getUniVerifyManager() @getuniverifymanager
 
-<!-- UTSAPIJSON.getUniverifyManager.description -->
+<!-- UTSAPIJSON.getUniVerifyManager.description -->
 
-<!-- UTSAPIJSON.getUniverifyManager.compatibility -->
+<!-- UTSAPIJSON.getUniVerifyManager.compatibility -->
 
 App一键登录，封装了个推的一键登录sdk，其内部再次封装了中国三大电信运营商提供的sdk。通过运营商提供的服务，可以在手机sim卡信号正常的情况下，通过云端接口获取到当前用户的手机号。
 
@@ -16,7 +16,7 @@ App一键登录的优势：
 	* 短信发送成功耗时久，可能几十秒，容易被拒收，如果用户收不到短信验证码就流失了
 	* 短信验证码无法规避打码平台，容易被黑产攻击，一键登录更安全。
 - 对用户而言，输入手机号耗时、等待短信验证码耗时、输入验证码耗时，等待体验比一键登录差很多。
-2. 对比微信登录
+1. 对比微信登录
 - 中国法律要求开发者在提供互联网服务时备案其用户的手机号。与其微信登录后再次要求用户输入短信验证码来绑定手机号，不如直接一键登录。
 - 在iOS上，一旦使用微信登录，就必须同时加入Apple登录。Apple登录的用户无法再次有效触达，只能再次要求用户输入短信验证码绑定手机号，体验非常差。不如直接一键登录。使用一键登录时Appstore不会要求必须同时使用Apple登录。
 
@@ -29,12 +29,14 @@ uni-id-pages插件，已经内置一键登录，从云端到客户端均已开�
 
 一键登录有标准登录模式(login方法)和自定义登录模式(customLogin方法)。标准模式是uni-app封装好的UI界面，自定义模式是开发者自己布局界面。[见下](#custom-specification-requirement)
 
-<!-- UTSAPIJSON.getUniverifyManager.param -->
+<!-- UTSAPIJSON.getUniVerifyManager.param -->
 
-### 类型调整注意@typechange
+### 调整注意 @typechange
 
 :::warning
-从HBuilderX 4.41+，UniverifyManager的方法的`参数类型`进行了调整。
+从HBuilderX `4.41+`
+- `uni.getUniverifyManager()` 废弃，请使用 `uni.getUniVerifyManager()`
+- UniverifyManager的方法的`参数类型`进行了调整
 
 比如之前类型叫`LoginOptions`，改名为了`UniVerifyManagerLoginOptions`，加上了`UniVerifyManager`前缀。
 
@@ -57,9 +59,9 @@ uni-id-pages插件，已经内置一键登录，从云端到客户端均已开�
 
 :::
 
-<!-- UTSAPIJSON.getUniverifyManager.returnValue -->
+<!-- UTSAPIJSON.getUniVerifyManager.returnValue -->
 
-<!-- UTSAPIJSON.getUniverifyManager.tutorial -->
+<!-- UTSAPIJSON.getUniVerifyManager.tutorial -->
 
 ## cause个推sdk错误码及运营商错误码汇总
 
@@ -289,7 +291,7 @@ hello uni-app x里有完整的自定义登录的示例代码，该示例中：
 - 一键登录并非100%成功，手机没有sim卡、蜂窝网络未开启、当时手机没有蜂窝网信号是最常见的原因，更多错误见上方的错误码列表。在一键登录无法使用时，可转为短信验证码登录。在[uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)里已经集成了相关逻辑，无需自己开发。[详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
 - 一键登录支持标准基座真机运行，涉及费用扣除开发者的费用。无需自定义基座。(APP-iOS平台标准基座仅支持使用默认的Bundle ID测试，若使用其他Bundle ID需要自定义基座)
 
-<!-- UTSAPIJSON.getUniverifyManager.example -->
+<!-- UTSAPIJSON.getUniVerifyManager.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 
