@@ -32,7 +32,7 @@
 - uni-createWebviewContext：[创建 web-view 组件的上下文对象](../api/create-webview-context.md)
 - uni-facialRecognitionVerify：[uni实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
 - uni-fileSystemManager：[文件管理](../api/get-file-system-manager.md)
-- uni-getLocation：[获取位置信息](../api/get-location.md)
+- uni-location：[获取位置信息](../api/get-location.md) `HBuilderX 4.61-`之前是 `uni-getLocation` 模块名
     + system: 系统定位
     + tencent：腾讯定位
 - uni-getNetworkType：[获取网络类型](../api/get-network-type.md)
