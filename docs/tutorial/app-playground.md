@@ -33,6 +33,8 @@
 - uni-facialRecognitionVerify：[uni实人认证](https://doc.dcloud.net.cn/uniCloud/frv/intro.html)
 - uni-fileSystemManager：[文件管理](../api/get-file-system-manager.md)
 - uni-getLocation：[获取位置信息](../api/get-location.md)
+    + system: 系统定位
+    + tencent：腾讯定位
 - uni-getNetworkType：[获取网络类型](../api/get-network-type.md)
 - uni-getProvider: [获取服务供应商](../api/get-provider.md#getprovider)
 - uni-installApk：[Android平台安装apk](../api/install-apk.md)
