@@ -550,3 +550,7 @@ if (view != null && view instanceof WKWebView) {
 <!-- CUSTOMTYPEJSON.UniElement.methods.requestFullscreen.example -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.requestFullscreen.tutorial -->
+
+:::tip Tips
+- requestFullscreen仅支持`view`组件。其他组件调用会触发失败回调。
+:::
