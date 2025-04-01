@@ -455,7 +455,7 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 	"frameworks": [
 		"可选，依赖的系统库(系统库有.framework和.tbd和.dylib类型)"
 	],
-	"deploymentTarget": "9.0",   // 可选，插件支持的最低 iOS 版本  默认：9.0"
+	"deploymentTarget": "12.0",   // 可选，插件支持的最低 iOS 版本  默认：12.0"
 	"validArchitectures": [    // 可选，支持的 CPU 架构类型 默认：arm64
 		"arm64"
 	],
@@ -469,12 +469,51 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 
 **配置说明：**
 - frameworks：插件需要依赖的系统库(系统库有 .framework 和 .tbd 和 .dylib 类型)，此节点为可选项。
-- deploymentTarget：插件支持的最低 iOS 版本号，此节点为可选项，默认设置为 9.0.
+- deploymentTarget：插件支持的最低 iOS 版本号，此节点为可选项，默认设置为 12.0.
 	+ 插件支持的最低版本号应该设置为所有依赖的三方库（包含 framework .a pod ）中最低支持版本号中的最高的一个。
 	+ pod 库的最低支持系统版本号可在 pod 库的 spec 文件或者 readme 中查看。
 - validArchitectures：插件支持的 CPU 架构类型，此节点为可选项，默认值为：arm64。
 - dependencies-pods：插件需要依赖的 pod 库,  HBuilderX3.8.5+ 版本新增支持
 	+ 有关 dependencies-pods 配置和 CocoaPods 使用的更多细节[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html)
+
+
+##### iOS Extension@iosextension
+> HBuilderX 4.61+版本 云端打包 uts插件支持原生iOS Extension（扩展）
+
+**插件作者配置**  
+需在原生XCode环境中开发iOS Extension，编译出包含此扩展的ipa包，将ipa解压后在Payload/XXX.app/PlugIns/ 下可以找到.appex文件 将.appex添加到 uts 插件下的 app-ios/Plugins/ 目录中
+
+**插件使用者配置**  
+默认情况下云端打包不会包含 uts 插件中的iOS Extension，需在 uni-app/uni-app x 项目的 nativeResources/ios 目录下添加 ios-extension.json 文件，结构如下：
+```
+└── uni-app/uni-app x项目根目录
+  ├── manifest.json
+  └── nativeResources
+    └── ios
+      ├── ios-extension.json
+      └── ios-XXXExt.mobileprovision (实际名称自行配置)
+```
+
+其中 ios-extension.json 文件格式如下：
+```json
+{
+  "XXX.appex": {    //iOS Extension的文件名称，必填，多个扩展使用多个节点
+    "identifier": "uni.XXX.ext",    //必填，扩展的Bundle identifier
+    "profile": "ios-XXXExt.mobileprovision",    //必填，扩展使用的 Provisioning Profile，相对于ios-extension.json文件所在目录的路径
+    "plists": {      //可选，合并到iOS Extension的Info.plist中的数据（json格式）
+      
+    },
+    "entitlements": { //可选，覆盖iOS Extension的entitlements.plist中的数据（json格式）
+      
+    }
+  }
+}
+```
+
+**注意事项**  
+- 插件作者在 uts 插件使用说明中详细描述告诉插件使用者如何配置 ios-extension.json 文件  
+- 如果不配置 ios-extension.json，uts插件中的扩展会被忽略
+
 
 #### 鸿蒙原生配置
 
