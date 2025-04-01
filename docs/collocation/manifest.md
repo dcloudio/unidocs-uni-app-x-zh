@@ -147,7 +147,7 @@ manifest.json中不提供配置 `manifestPlaceholders` 数据，如果应用使�
 <!-- MANIFESTJSON.modules_uni-ad.compatibility -->
 
 
-###### uni-getLocation 配置项列表 @modules-uni-getlocation
+###### uni-location 配置项列表 @modules-uni-location
 
 <!-- MANIFESTJSON.modules_uni-getLocation.description -->
 
