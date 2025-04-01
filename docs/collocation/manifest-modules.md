@@ -20,7 +20,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 您在工程中下载的ext api、三方uts插件也同理，没有引用就不会打进去。
 
-摇树不支持 `provider` 机制，定位（[uni-location](#uni-location)） 和 支付（[uni-payment](#uni-payment)） 模块需要手动配置使用 Provider 依赖的三方SDK模块。
+摇树不支持 `provider` 机制，定位（[uni-location](#uni-location), `HBuilderX4.61-`之前模块名字是 `uni-getLocation`） 和 支付（[uni-payment](#uni-payment)） 模块需要手动配置使用 Provider 依赖的三方SDK模块。
 
 ### app平台支持摇树的内置模块列表@utsmodules
 
@@ -40,7 +40,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 - uni-chooseLocation
   [使用地图选择位置](../api/choose-location.md)模块（`HBuilderX4.33+`）
     + 包括API：[uni.chooseLocation](../api/choose-location.md)
-    + 依赖的模块：uni-location、uni-cloud-client、
+    + 依赖的模块：uni-location(`HBuilderX4.61-`之前模块名字是 `uni-getLocation`)、uni-cloud-client、
 
 - uni-cloud-client
   调用uniCloud[云函数/云对象](https://doc.dcloud.net.cn/uniCloud/cf-functions.html)模块
@@ -74,8 +74,8 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
     + 包括API：[uni.getFileSystemManager](../api/get-file-system-manager.md)
     + 依赖的模块：无
 
-- uni-location(`HBuilderX4.61+`之前模块名字是 uni-getLocation)
-  定位模块（`HBuilderX4.61+`, ）
+- uni-location(`HBuilderX4.61-`之前模块名字是 `uni-getLocation`)
+  定位模块
     + 包括API：[uni.getLocation](../api/get-location.md)
     + 依赖的模块：无
 
@@ -328,6 +328,8 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 ### 配置定位SDK
 在 app -> distribute -> modules 下添加 uni-location 节点：
+`HBuilderX4.61-`之前模块名字是 `uni-getLocation`
+
 ```json
 	modules:{
 		"uni-location":{
@@ -511,6 +513,7 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 ```
 
 如果你用到了地图的定位功能，比如显示定位坐标，那么还需要配置定位模块，如下所示
+`HBuilderX4.61-`之前模块名字是 `uni-getLocation`
 
 ```json
 "app" : {
