@@ -58,7 +58,7 @@ web平台有可视化界面，在manifest的Web配置中寻找定位和地图。
 
 app平台目前还没有可视化界面，需要在manifest的源码视图中配置。
 
-- app需要在manifest.json文件中配置`uni-getLocation`节点，[详见](../collocation/manifest-modules.md#uni-getLocation)
+- app需要在manifest.json文件中配置`uni-location`节点, `HXBuilderX 4.61-`之前为`uni-getLocation`节点，[详见](../collocation/manifest-modules.md#uni-location)
 - iOS平台：如果应用需要后台定位能力，需要在 info.plist 中配置 UIBackgroundModes 的 location，注意需Xcode工程中添加相对应 Capabilities 中的 Background Modes，并且勾选 Location updates。
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -173,7 +173,7 @@ export class UniLocationAMapProviderImpl implements UniLocationAMapProvider{
     "distribute": {
       /* android打包配置 */
       "modules": {
-        "uni-getLocation":{
+        "uni-location":{
           "amap":{}
         }
       }
