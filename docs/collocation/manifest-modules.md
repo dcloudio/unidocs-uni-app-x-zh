@@ -20,7 +20,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 您在工程中下载的ext api、三方uts插件也同理，没有引用就不会打进去。
 
-摇树不支持 `provider` 机制，定位（[uni-getLocation](#uni-getlocation)） 和 支付（[uni-payment](#uni-payment)） 模块需要手动配置使用 Provider 依赖的三方SDK模块。
+摇树不支持 `provider` 机制，定位（[uni-location](#uni-location)） 和 支付（[uni-payment](#uni-payment)） 模块需要手动配置使用 Provider 依赖的三方SDK模块。
 
 ### app平台支持摇树的内置模块列表@utsmodules
 
@@ -40,7 +40,7 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 - uni-chooseLocation
   [使用地图选择位置](../api/choose-location.md)模块（`HBuilderX4.33+`）
     + 包括API：[uni.chooseLocation](../api/choose-location.md)
-    + 依赖的模块：uni-getLocation、uni-cloud-client、
+    + 依赖的模块：uni-location、uni-cloud-client、
 
 - uni-cloud-client
   调用uniCloud[云函数/云对象](https://doc.dcloud.net.cn/uniCloud/cf-functions.html)模块
@@ -74,12 +74,12 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
     + 包括API：[uni.getFileSystemManager](../api/get-file-system-manager.md)
     + 依赖的模块：无
 
-- uni-getLocation
-  定位模块
+- uni-location(`HBuilderX4.61+`之前模块名字是 uni-getLocation)
+  定位模块（`HBuilderX4.61+`, ）
     + 包括API：[uni.getLocation](../api/get-location.md)
     + 依赖的模块：无
 
-  注意：此模块仅包含定位provider管理功能，需手动配置使用的定位实现模块，详情参考[uni-getlocation](#uni-getlocation)章节
+  注意：此模块仅包含定位provider管理功能，需手动配置使用的定位实现模块，详情参考[uni-location](#uni-location)章节
 
 - uni-getNetworkType
   获取网络类型模块
@@ -309,14 +309,15 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 > app-ios平台支付模块需HBuilderX4.18及以上版本
 
-## uni-getLocation@uni-getlocation
+## uni-location@uni-location
+> HBuilderX 4.61- 之前模块名是 `uni-getLocation`
 > HBuilderX 4.25+ 新增支持 provider 机制的获取定位API（支持system、tencent定位）
 
-在uni-app x客户端，uni-getLocation是一个独立模块。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
+在uni-app x客户端，uni-location是一个独立模块。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
 
-使用 uni-getLocation 模块需在 manifest.json 文件中添加如下配置：
+使用 uni-location 模块需在 manifest.json 文件中添加如下配置：
 
-其中 uni-getLocation 下的节点表示要聚合的定位方式：
+其中 uni-location 下的节点表示要聚合的定位方式：
 | 标识 | 定位方式 |
 | :-  | :- |
 | system | 系统定位 |
@@ -326,10 +327,10 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 
 ### 配置定位SDK
-在 app -> distribute -> modules 下添加 uni-getLocation 节点：
+在 app -> distribute -> modules 下添加 uni-location 节点：
 ```json
 	modules:{
-		"uni-getLocation":{
+		"uni-location":{
 			"system":{},
 			"tencent":{}
 		}
@@ -515,7 +516,7 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 "app" : {
 	"distribute" : {
 		"modules" : {
-			"uni-getLocation" : {
+			"uni-location" : {
 				"system" : {},
 				"tencent": {}
 			},
