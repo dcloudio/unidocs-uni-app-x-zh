@@ -84,4 +84,5 @@ scroll-view开启嵌套模式后，waterflow 可作为内层滚动视图与外�
 + waterflow 组件在排版完毕UI展示后，如果子组件高度放生变化，则会重新排版，flow-item 组件的UI会出现短暂的错乱和位置位移，建议控制子元素高度固定避免动态修改高度
 	+ 场景一 image组件设置mode=widthFix，加载的网络图片会出现异步图片下载动态修改高度的情况，容易出现上述问题
 	+ 场景二 rich-text组件nodes节点内容存在网络图片，出现异步加载情况，会出现动态修改高度导致出现上述问题
++ waterflow 组件的 overflow 属性不支持配置 visible
 
