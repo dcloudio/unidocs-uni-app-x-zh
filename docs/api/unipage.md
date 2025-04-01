@@ -159,6 +159,20 @@ UniPage在App和Web平台较完善，在小程序端受小程序未开放，很�
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.getHTMLElement.tutorial -->
 
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.tutorial -->
+
+
 <!-- CUSTOMTYPEJSON.UniPage.methods.$setPageStyle.name -->
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.$setPageStyle.description -->
