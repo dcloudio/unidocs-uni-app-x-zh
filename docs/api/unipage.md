@@ -164,6 +164,8 @@ UniPage在App和Web平台较完善，在小程序端受小程序未开放，很�
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.description -->
 
+用于逆转先前调用 [UniElement.requestFullscreen](/dom/unielement.md#requestfullscreen) 的效果。
+
 <!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.compatibility -->
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.param -->
