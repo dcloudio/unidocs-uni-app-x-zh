@@ -11,6 +11,8 @@
 
 <!-- CSSJSON.text-shadow.defaultValue -->
 
+阴影颜色默认值为文本颜色，模糊半径默认值为0。
+
 <!-- CSSJSON.text-shadow.unixTags -->
 
 <!-- CSSJSON.text-shadow.example -->
