@@ -12,6 +12,9 @@
 
 <!-- UTSAPIJSON.showActionSheet.tutorial -->
 
+注意：
+- App和Web平台，actionSheet从4.52起重构为使用dialogPage实现。重构后的版本支持暗黑主题、国际化、横屏宽屏适配。
+
 ## uni.hideActionSheet() @hideactionsheet
 
 <!-- UTSAPIJSON.hideActionSheet.description -->
