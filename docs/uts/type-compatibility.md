@@ -70,6 +70,7 @@ console.log(result instanceof Obj) // true
 
 - 目前 web端`uni.request`传入泛型时不会创建对应类型的实例，会直接抹除类型信息，后续可能会调整为创建泛型类型对应的实例，请勿利用此特性。
 - web端仅项目内定义的类型可以被实例化，uni-app-x内部定义的类型无法被实例化，例如`const options = { url: 'xxx' } as RequestOptions`，并不会将此对象转化为RequestOptions的实例，运行时也没有`RequestOptions`对应的类型信息。
+- 鸿蒙uts编译为arkts时，type仅可作为类型使用，不会将此type作为class实例化，包括变量声明时的类型、JSON.parse泛型参数等等。
 
 ### any类型
 
@@ -86,6 +87,11 @@ function test(anything?: any | null) { // 注意带上问号
   console.log(anything)
 }
 ```
+
+**注意**
+- uts编译为arkts时any类型存在如下两种情况，如果开发者希望使用arkts的any类型可以使用ESObject替代any
+  + uts插件内开发者自行指定的any类型，会被编译为Object类型，此类型不含null、undefined
+  + arkts编译器推断出的any类型（arkts内为ESObject），此类型包含所有类型，且其使用较为受限。详情参考arkts文档：[限制使用esobject类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typescript-to-arkts-migration-guide#限制使用esobject类型)
 
 ### 可选属性
 
