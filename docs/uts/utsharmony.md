@@ -129,3 +129,31 @@
 <!-- UTSJSON.UTSHarmony.requestSystemPermission.compatibility -->
 
 <!-- UTSJSON.UTSHarmony.requestSystemPermission.tutorial -->
+
+### convert2AbsFullPath(filePath)
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.description -->
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.param -->
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.returnValue -->
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.test -->
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.compatibility -->
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.tutorial -->
+
+### getResourcePath(filePath)
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.description -->
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.param -->
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.returnValue -->
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.test -->
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.compatibility -->
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.tutorial -->
