@@ -127,7 +127,7 @@
 
 draw(path2D) 不受 context 的 moveTo 影响，如果需要指定位置需要调用 path2D的moveTo方法，示例如下：
 
-```
+```js
 uni.createCanvasContextAsync({
   id: 'canvas',
   component: this, // setup 模式使用 getCurrentInstance()

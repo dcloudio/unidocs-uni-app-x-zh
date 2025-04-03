@@ -14,7 +14,7 @@
 
 **提示**
 
-微信小程序不支持 `new Image()` 方式创建，需要通过跨平台写法 `CanvasContext.createImage()`, 示例如下:
+鸿蒙平台、微信小程序不支持 `new Image()` 方式创建，需要通过跨平台写法 `CanvasContext.createImage()`, 示例如下:
 
 ```js
 uni.createCanvasContextAsync({
