@@ -512,7 +512,8 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 
 **注意事项**  
 - 插件作者在 uts 插件使用说明中详细描述告诉插件使用者如何配置 ios-extension.json 文件  
-- 如果不配置 ios-extension.json，uts插件中的扩展会被忽略
+- 如果不配置 ios-extension.json，uts插件中的扩展会被忽略  
+- identifier 为扩展的 Bundle ID，要求嵌套在主应用的 Bundle ID 下，如主应用的 Bundle ID 为“com.company.myapp”，扩展的 Bundle ID 可以为“com.company.myapp.myextension”  
 
 
 #### 鸿蒙原生配置
