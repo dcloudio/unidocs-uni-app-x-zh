@@ -553,5 +553,5 @@ if (view != null && view instanceof WKWebView) {
 
 :::tip Tips
 - requestFullscreen仅支持`view`组件。其他组件调用会触发失败回调。
-- app-ios平台，横屏时系统会自动隐藏状态栏，navigationUI 属性仅竖屏全屏时生效。
+- app-ios平台，横屏时系统会自动隐藏状态栏。
 :::
