@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.compressVideo.description -->
 
+<!-- UTSAPIJSON.compressVideo.compatibility -->
+
 <!-- UTSAPIJSON.compressVideo.param -->
 
 <!-- UTSAPIJSON.compressVideo.returnValue -->
-
-<!-- UTSAPIJSON.compressVideo.compatibility -->
 
 <!-- UTSAPIJSON.compressVideo.tutorial -->
 
