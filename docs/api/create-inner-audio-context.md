@@ -8,23 +8,24 @@
 
 **支持格式**
 
-|格式	|Android|iOS|
-|:-		|:-			|:-	|
-|mp3	|√			|√	|
-|mp4	|√			|√	|
-|m4a	|√			|√	|
-|wav	|√			|√	|
-|aac	|√			|√	|
-|flac	|√			|√	|
-|aiff	|x			|√	|
-|amr	|√			|x	|
-|ape	|√			|x	|
-|caf	|x			|√	|
-|ogg	|√			|x	|
-|wma	|√			|x	|
+|格式	|Android|iOS|HarmonyOS|
+|:-		|:-			|:-	|:-	|
+|mp3	|√			|√	|√|
+|mp4	|√			|√	|x|
+|m4a	|√			|√	|√|
+|wav	|√			|√	|√|
+|aac	|√			|√	|√|
+|flac	|√			|√	|x|
+|aiff	|x			|√	|x|
+|amr	|√			|x	|√|
+|ape	|√			|x	|x|
+|caf	|x			|√	|x|
+|ogg	|√			|x	|√|
+|wma	|√			|x	|x|
 
 - web平台的支持取决于浏览器的实现，一般浏览器上述音频格式均支持
 - 小程序平台支持的格式见各家小程序的文档
+- HarmonyOS 平台使用 [AudioPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-media#audioplayerdeprecated) 实现
 
 **缓存说明**
 

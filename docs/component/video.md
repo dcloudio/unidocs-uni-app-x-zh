@@ -11,10 +11,16 @@
 <!-- UTSCOMJSON.video.component_type -->
 
 
-### 视频格式  
+### 视频格式
 - web端支持的视频格式，不同浏览器有差异，可查询caniuse。
 - 小程序平台支持的视频格式，需要具体查阅小程序平台的video组件文档。
 - 鸿蒙next平台的video组件使用arkUI的video组件，视频格式[另见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-components-video)
+	* [x] mp4
+	* [x] m4v
+	* [x] mov
+	* [x] 3gp
+	* [x] flv
+	* [x] m3u8 (本地 m3u8 文件不支持)
 - Android和iOS平台支持的视频格式如下：
 	* [x] mp4
 	* [x] m4v
@@ -26,17 +32,17 @@
 
 如需其他视频格式，可自行开发uts组件插件或搜索插件市场。
 
-### src路径支持说明  
-- 本地路径/static方式  
-	由于uni-app/uni-app x编译时，只把/static目录下的静态资源copy到app中，所以src均需指向/static目录下。  
-	其他目录的视频文件由于不会被打包进去，所以无法访问。  
-	app平台文件路径会存在大小写敏感问题，为了有更好的兼容性，建议统一按大小写敏感原则处理 [详情](../api/file-system-spec.md#casesensitive)  
+### src路径支持说明
+- 本地路径/static方式
+	由于uni-app/uni-app x编译时，只把/static目录下的静态资源copy到app中，所以src均需指向/static目录下。
+	其他目录的视频文件由于不会被打包进去，所以无法访问。
+	app平台文件路径会存在大小写敏感问题，为了有更好的兼容性，建议统一按大小写敏感原则处理 [详情](../api/file-system-spec.md#casesensitive)
 
-- iOS/Android支持的网络路径  
-	* 网络媒体 http、https协议  
-	* 流媒体 rtmp/hls/rtsp 协议  
+- iOS/Android支持的网络路径
+	* 网络媒体 http、https协议
+	* 流媒体 rtmp/hls/rtsp 协议
 
-### app平台组件实现  
+### app平台组件实现
 App-Android/iOS平台video组件使用ijkplayer库实现：[https://github.com/bilibili/ijkplayer](https://github.com/bilibili/ijkplayer)；
 
 弹幕功能使用DanmakuFlameMaster库实现：[https://github.com/bilibili/DanmakuFlameMaster](https://github.com/bilibili/DanmakuFlameMaster)
@@ -66,7 +72,7 @@ video的操作api为[uni.createVideoContext()](../api/create-video-context.md)�
 
 <!-- UTSCOMJSON.video.reference -->
 
-### Bug & Tips@tips  
+### Bug & Tips@tips
 - 标准运行基座默认不包含intel x86 cpu的兼容so库，所以video组件在标准基座运行时无法在x86 cpu的设备上运行（常见于模拟器）。如需支持x86 cpu，请在manifest里配置`abiFilters`，打包或自定义基座后生效 [详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest.html#android)
 - App的video默认拦截触摸事件，目前会导致父组件无法响应触摸事件
 - video 默认宽度为300px，高度为225px。（App平台从 uni-app x 4.0起支持该默认宽高）
