@@ -481,7 +481,7 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 > HBuilderX 4.61+版本 云端打包 uts插件支持原生iOS Extension（扩展）
 
 **插件作者配置**  
-需在原生XCode环境中开发iOS Extension，编译出包含此扩展的ipa包，将ipa解压后在Payload/XXX.app/PlugIns/ 下可以找到.appex文件 将.appex添加到 uts 插件下的 app-ios/Plugins/ 目录中
+需在原生XCode环境中开发iOS Extension，编译并以发布方式导出包含此扩展的ipa包，将ipa解压后在Payload/XXX.app/PlugIns/ 下可以找到.appex文件 将.appex添加到 uts 插件下的 app-ios/Plugins/ 目录中
 
 **插件使用者配置**  
 默认情况下云端打包不会包含 uts 插件中的iOS Extension，需在 uni-app/uni-app x 项目的 nativeResources/ios 目录下添加 ios-extension.json 文件，结构如下：
