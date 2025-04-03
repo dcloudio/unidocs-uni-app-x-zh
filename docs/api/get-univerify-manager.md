@@ -4,6 +4,8 @@
 
 <!-- UTSAPIJSON.getUniVerifyManager.compatibility -->
 
+::: info
+
 App一键登录，封装了个推的一键登录sdk，其内部再次封装了中国三大电信运营商提供的sdk。通过运营商提供的服务，可以在手机sim卡信号正常的情况下，通过云端接口获取到当前用户的手机号。
 
 使用一键登录可以点一下直接以当前手机号登录。不再需要短信验证码，而且费用比短信验证码便宜。
@@ -29,14 +31,15 @@ uni-id-pages插件，已经内置一键登录，从云端到客户端均已开�
 
 一键登录有标准登录模式(login方法)和自定义登录模式(customLogin方法)。标准模式是uni-app封装好的UI界面，自定义模式是开发者自己布局界面。[见下](#custom-specification-requirement)
 
-<!-- UTSAPIJSON.getUniVerifyManager.param -->
+:::
 
 ### 调整注意 @typechange
 
 :::warning
 从HBuilderX `4.41+`
-- `uni.getUniverifyManager()` 废弃，请使用 `uni.getUniVerifyManager()`
-- UniverifyManager的方法的`参数类型`进行了调整
+
+1. `uni.getUniverifyManager()` 废弃，请使用 `uni.getUniVerifyManager()`
+2. getUniVerifyManager 的方法的`参数类型`进行了调整
 
 比如之前类型叫`LoginOptions`，改名为了`UniVerifyManagerLoginOptions`，加上了`UniVerifyManager`前缀。
 
@@ -58,6 +61,8 @@ uni-id-pages插件，已经内置一键登录，从云端到客户端均已开�
 一般情况下，开发者无需手动 as 返回值类型，uni-app x 会自动推导类型。早期的示例代码有 as ，新版示例已经去掉。
 
 :::
+
+<!-- UTSAPIJSON.getUniVerifyManager.param -->
 
 <!-- UTSAPIJSON.getUniVerifyManager.returnValue -->
 

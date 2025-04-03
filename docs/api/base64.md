@@ -2,11 +2,11 @@
 
 <!-- UTSAPIJSON.base64ToArrayBuffer.description -->
 
+<!-- UTSAPIJSON.base64ToArrayBuffer.compatibility -->
+
 <!-- UTSAPIJSON.base64ToArrayBuffer.param -->
 
 <!-- UTSAPIJSON.base64ToArrayBuffer.returnValue -->
-
-<!-- UTSAPIJSON.base64ToArrayBuffer.compatibility -->
 
 <!-- UTSAPIJSON.base64ToArrayBuffer.tutorial -->
 
@@ -14,11 +14,11 @@
 
 <!-- UTSAPIJSON.arrayBufferToBase64.description -->
 
+<!-- UTSAPIJSON.arrayBufferToBase64.compatibility -->
+
 <!-- UTSAPIJSON.arrayBufferToBase64.param -->
 
 <!-- UTSAPIJSON.arrayBufferToBase64.returnValue -->
-
-<!-- UTSAPIJSON.arrayBufferToBase64.compatibility -->
 
 <!-- UTSAPIJSON.arrayBufferToBase64.tutorial -->
 

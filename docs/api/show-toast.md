@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.showToast.description -->
 
+> Android 11 及以上版本，应用进入后台后，调用系统toast (设置了position的情况) 不弹出。 [文档地址](https://developer.android.google.cn/about/versions/11/behavior-changes-11?hl=nb#toasts)
+
 <!-- UTSAPIJSON.showToast.compatibility -->
 
 <!-- UTSAPIJSON.showToast.param -->
@@ -11,9 +13,6 @@
 <!-- UTSAPIJSON.showToast.example -->
 
 <!-- UTSAPIJSON.showToast.tutorial -->
-
-
-> Android 11 及以上版本，应用进入后台后，调用系统toast (设置了position的情况) 会不弹出。 [文档地址]（https://developer.android.google.cn/about/versions/11/behavior-changes-11?hl=nb#toasts）
 
 ## uni.hideToast() @hidetoast
 

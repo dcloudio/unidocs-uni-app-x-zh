@@ -3,7 +3,7 @@
 <!-- UTSAPIJSON.getLocation.description -->
 
 ::: warning 注意
-Web平台本API调用了腾讯地图的免费gcj02坐标转换接口，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 `uni-app 4.24版`。
+- Web平台本API调用了腾讯地图的免费gcj02坐标转换接口，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 `uni-app 4.24版`。
 
 升级后注意：
 1. manifest中配置好自己的地图厂商key
@@ -13,7 +13,10 @@ Web平台本API调用了腾讯地图的免费gcj02坐标转换接口，该接口
 
 如果运行在微信浏览器中，可以使用微信的jssdk的定位能力。这个是微信向腾讯地图申请的key，开发者无需配置自己的key。
 
+- `HarmonyOS平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。
+
 地图厂商的商业授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。
+
 :::
 
 <!-- UTSAPIJSON.getLocation.compatibility -->
