@@ -13,7 +13,7 @@
   * [启动](launch.md)
   * [退出应用](exit.md)
   * [获取服务提供商](provider.md)
-  * [getPerformance](get-performance.md)
+  * [uni.getPerformance](get-performance.md)
   * [隐私信息授权](privacy.md)
 * 页面和路由
   * [UniPage](unipage.md)
@@ -67,6 +67,7 @@
   * [扫码](scan-code.md)
   * [判断是否为模拟器](is-simulator.md)
   * [获取无障碍服务信息](get-accessibility-info.md)
+  * [生物认证](bio-auth.md)
 * 媒体
   * [拍照或从相册选择图片](choose-image.md)
   * [图片预览](preview-image.md)
@@ -96,6 +97,7 @@
 * 文件
   * [文件系统规范](file-system-spec.md)
   * [获取文件管理器](get-file-system-manager.md)
+  * [打开文档](open-document.md)
 * 登录与认证
   * [App一键登录](get-univerify-manager.md)
   * [金融级实人认证](facial-recognition-meta-info.md)
