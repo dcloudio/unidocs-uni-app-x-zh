@@ -661,6 +661,7 @@
 #### 获取内置组件与自定义组件的区别
 - 使用 `ref` 获取内置组件实例时会获取到对应的 `Element`，例如上述代码示例中，`input` 组件获取到的是 `UniInputElement`, `text` 组件获取到的是 `UniTextElement`，可以调用 `Element` 的方法和属性。
 - 使用 `ref` 获取自定义组件实例时会获取到对应的 vue 组件实例，例如上述代码示例中，`Foo` 组件获取到的是 `ComponentPublicInstance`，可以获取自定义组件的属性或调用方法，[详情](./component.md#page-call-component-method)。
+- 小程序平台如果期望使用`ref`获取到`UniElement`需要在此`UniElement`上设置id，此外小程序平台的`UniElement`使用是受限的，详情参考：[UniElement](../mp/README.md#unielement)
 
 
 ### is
