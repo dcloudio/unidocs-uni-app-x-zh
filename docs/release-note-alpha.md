@@ -1,3 +1,11 @@
+#### 4.61.2025040322-alpha
+##### uni-app x
+* 【重要】新增 编译App到HarmonyOS平台 [详见](https://doc.dcloud.net.cn/uni-app-x/app-harmony/)
+* App-Android平台 修复 4.53版本引发的 组件 text 触摸事件可能不响应 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16132)
+##### uts
+* Web平台、App-iOS平台、微信小程序平台 修复 getString/getNumber 等get方法默认值参数部分情况不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16094)
+* App-Harmony平台 新增 convert2AbsFullPath、getResourcePath 方法 [详情](https://doc.dcloud.net.cn/uni-app-x/uts/utsharmony.html)
+
 #### 4.57.2025032014-alpha
 ##### uni-app-x
 * Web平台、微信小程序平台 修复 4.55版本引发的 编译器 运行时会提交云端编译仅App端支持的uts加密插件的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16242)
