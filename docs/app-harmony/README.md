@@ -6,7 +6,7 @@ uni-app x的鸿蒙版虽然是刚发布，但组件、API、CSS基本拉齐了An
 
 ## 开发环境要求
 
-- HBuilderX 4.61+ （该版本处于群测版状态，需要在uni-app x的im群或vip群获取）
+- HBuilderX 4.61+
 - 鸿蒙电脑端开发工具DevEco Studio BuildVersion 5.0.7.210+
 - 鸿蒙手机系统 API版本 14+
 
