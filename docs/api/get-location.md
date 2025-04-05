@@ -2,23 +2,6 @@
 
 <!-- UTSAPIJSON.getLocation.description -->
 
-::: warning 注意
-- Web平台本API调用了腾讯地图的免费gcj02坐标转换接口，该接口从2024年7月18日起被腾讯逐步下线，导致老版本中本API无法使用。请立即升级到 `uni-app 4.24版`。
-
-升级后注意：
-1. manifest中配置好自己的地图厂商key
-2. 确保在地图厂商那里配额足够
-3. 确保在地图厂商那里有周边服务的权限。否则无法获取周围地址
-4. 确保自己的域名在地图厂商那里正确配置了域名白名单
-
-如果运行在微信浏览器中，可以使用微信的jssdk的定位能力。这个是微信向腾讯地图申请的key，开发者无需配置自己的key。
-
-- `HarmonyOS平台`调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。
-
-地图厂商的商业授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。
-
-:::
-
 <!-- UTSAPIJSON.getLocation.compatibility -->
 
 <!-- UTSAPIJSON.getLocation.param -->
@@ -31,17 +14,33 @@
 
 wgs84坐标是国际GPS坐标系，gcj02是中国国内坐标系。同一个位置，2种坐标系数值不同。
 
-中国的地图厂商（如高德、腾讯），仅能使用gcj02坐标。如果将wgs84坐标显示在中国地图上，就会发现偏移。
+中国的地图厂商（如高德、腾讯、百度），仅能使用gcj02坐标。如果将wgs84坐标显示在中国地图上，就会发现偏移。
 
 同理，将gcj02坐标显示在google地图上，也会偏移。
 
-手机厂商默认预置的都是wgs84坐标，也即入参type设为system或不填时，只能返回wgs84坐标。
+|						|Web					|Android			|iOS					|harmonyOS|微信小程序		|支付宝小程序	|抖音小程序						|
+|--					|--						|--						|--						|--				|--						|--						|--										|
+|wgs84			|系统定位			|系统定位			|系统定位			|系统定位	|内置定位			|内置定位			|内置定位							|
+|gcj02			|需三方SDK定位	|需三方SDK定位	|需三方SDK定位	|系统定位	|内置定位			|内置定位			|内置定位							|
+|逆地址解析	|需三方SDK定位	|需三方SDK定位	|系统定位			|系统定位	|需三方SDK定位	|内置定位			|内置定位iOS上有限支持	|
 
-iOS设备的系统定位还会返回逆地址解析，即geocode，将坐标转换为城市街道信息。Android设备的系统定位不支持逆地址解析。
+逆地址解析：指传入坐标、返回地址信息（城市、街道等）。
+
+三方SDK定位是需要商业授权的，需要在地图厂商注册开发者账户、创建应用、申请key或secret信息，并且在发行时要把三方SDK打包进去。
+
+地图厂商的商业授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。
+
+如果运行在微信浏览器中的Web应用，可以使用微信的jssdk的定位能力。此时开发者无需配置自己的key，不涉及商业授权。
+
+Android/iOS手机厂商默认都是wgs84坐标，也即入参type设为system或不填时，只能返回wgs84坐标。
+
+iOS设备的系统定位会返回逆地址解析，即geocode，将坐标转换为城市街道信息。Android设备的系统定位不支持逆地址解析。
 
 某些老型号国产Android Rom（常见于Android6以下）因gms阉割问题不支持系统定位，另部分国产Rom可能不支持高度信息。
 
-如不使用系统定位，而使用专业地图厂商provider，则可以使用gcj02坐标、逆地址解析geocode功能、以及稳定的所有设备均支持的定位服务。
+纯血鸿蒙手机的系统定位功能较全面，wgs84、gcj02坐标、逆地址解析都支持。
+
+在Android/iOS上，如不使用系统定位，而使用专业地图厂商provider，则可以使用gcj02坐标、逆地址解析geocode功能、以及稳定的所有设备均支持的定位服务。
 
 获取gcj02坐标，有2种方式：
 1. 使用国内地图厂商的SDK，也即使用provider，打包时需包含相应模块，并配置向地图厂商申请的key信息。
@@ -49,17 +48,9 @@ iOS设备的系统定位还会返回逆地址解析，即geocode，将坐标转�
 
 不管通过哪种方式获取gcj02坐标，都需要向地图厂商缴纳商业授权费用。DCloud提供了优惠获取地图商业授权的方案，[详见](https://uniapp.dcloud.net.cn/tutorial/app-geolocation.html#lic)
 
-uni-app x的App标准基座定位在4.25前仅支持系统定位，4.25起集成了腾讯定位。
-
-4.25及以下低版本单独可下载[腾讯定位插件](https://ext.dcloud.net.cn/plugin?id=14569)，在插件中配置key打包后生效。
-
-上述腾讯定位插件属于[ext api插件](https://uniapp.dcloud.net.cn/api/extapi.html)，引用到工程后，会覆盖uni.getLocation的实现，替换掉系统定位。
-
 使用三方定位，需要在地图厂商注册账户、创建应用、获取key。然后将key填写到manifest.json中。
 
-web平台有可视化界面，在manifest的Web配置中寻找定位和地图。填入key后需注意校验，如果在地图厂商后台开启了域名、ip校验，那么如果Web运行或发行后的域名与地图厂商后台配置的不符，就无法获取定位。
-
-app平台目前还没有可视化界面，需要在manifest的源码视图中配置。
+Android/iOS平台目前还没有可视化界面，需要在manifest的源码视图中配置。
 
 - app需要在manifest.json文件中配置`uni-location`节点, `HXBuilderX 4.61-`之前为`uni-getLocation`节点，[详见](../collocation/manifest-modules.md#uni-location)
 - iOS平台：如果应用需要后台定位能力，需要在 info.plist 中配置 UIBackgroundModes 的 location，注意需Xcode工程中添加相对应 Capabilities 中的 Background Modes，并且勾选 Location updates。
@@ -78,16 +69,23 @@ app平台目前还没有可视化界面，需要在manifest的源码视图中配
 - iOS平台：使用内置腾讯定位和iOS14以上高精度定位时，需要在info.plist中配置对应的Key，参考[iOS平台在info.plist配置定位相关的Key](../collocation/manifest-modules.md#uni-getlocation-key)
 - Android平台：使用内置腾讯定位时，配置 Key 参考[Andoird平台配置腾讯定位key](../collocation/manifest-modules.md#uni-getlocation-android-key)
 
-
 地图厂商在App端大多会校验包名和证书，请务必保证在地图厂商后台创建的应用，填写的包名、证书摘要，和实际运行的应用匹配，否则无法使用三方定位。
+
+web平台也分系统定位的SDK定位。系统定位只有wgs84坐标。三方SDK定位，在manifest的Web配置中寻找定位和地图。填入key后需注意校验，如果在地图厂商后台开启了域名、ip校验，那么如果Web运行或发行后的域名与地图厂商后台配置的不符，就无法获取定位。
+
+小程序平台的定位，是小程序引擎自身集成的定位SDK。比如微信小程序使用的是腾讯定位、支付宝小程序使用的是高德定位。由小程序平台免费给开发者提供。
 
 ### 权限@permission
 
 定位属于隐私权限，不管在浏览器、App还是小程序，都需要用户同意授权才可以获取。
 
+并且普通精度定位和高精度定位的权限也不同。
+
 获取手机端app是否拥有定位权限，请使用API [uni.getAppAuthorizeSetting](get-app-authorize-setting.md)
 
-除了用户未给app赋予定位权限，有的设备可能直接关闭了定位功能。此时可通过 [uni.getSystemSetting](get-system-setting.md) 来获取定位开关。
+除了用户未给app赋予定位权限，有的设备可能直接关闭了定位功能。此时可通过 [uni.getSystemSetting](get-system-setting.md) 来获取系统定位开关。
+
+HarmonyOS平台调用此 API 需要申请定位权限`ohos.permission.APPROXIMATELY_LOCATION`、`ohos.permission.LOCATION`，需自行在项目中配置权限。
 
 ### 定位的原理和精度
 
@@ -191,3 +189,12 @@ export class UniLocationAMapProviderImpl implements UniLocationAMapProvider{
 由于uni-app x自带的腾讯定位，也是基于provider注册机制开发的，可参考[腾讯定位插件的实现源码](https://gitcode.net/dcloud/uni-api/-/tree/alpha/uni_modules/uni-getLocation-tencent)
 
 App平台，腾讯定位SDK，除了本API封装的功能，还有一些其他功能。如开发者需要调用这些SDK的其他API，可以使用uts直接调用，同样参考上述源码。
+
+## 历史变更
+- Web平台本API调用了腾讯地图的免费gcj02坐标转换接口，该接口从2024年7月18日起被腾讯下线，导致老版本中本API无法使用。请立即升级到 `uni-app 4.24版`。
+
+升级后注意：
+1. manifest中配置好自己的地图厂商key
+2. 确保在地图厂商那里配额足够
+3. 确保在地图厂商那里有周边服务的权限。否则无法获取周围地址
+4. 确保自己的域名在地图厂商那里正确配置了域名白名单

@@ -5,7 +5,8 @@
 * manifest.json
   * [概述](manifest.md)
   * [安卓/iOS启动界面配置](manifest-splashscreen.md)
-  * [App模块配置](manifest-modules.md)
+  * [安卓/iOS模块配置](manifest-modules.md)
+	* [鸿蒙模块配置](manifest-harmony.md)
   * [安卓App配置](manifest-android.md)
   * [iOS App配置](manifest-ios.md)
 * [AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)

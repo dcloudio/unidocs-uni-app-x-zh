@@ -1,6 +1,8 @@
+# harmony开发指南
+
 uni-app x 从4.61+起支持纯血鸿蒙，即Harmony next。
 
-把uvue和uts代码编译为ArkTs代码，生成鸿蒙原生应用。
+将uni-app x代码编译为运行在ArkTs引擎上代码，生成鸿蒙原生应用。
 
 uni-app x的鸿蒙版虽然是刚发布，但组件、API、CSS基本拉齐了Android和iOS。甚至还有扫码、拨打电话、剪贴板等超出Android/iOS的功能。
 
