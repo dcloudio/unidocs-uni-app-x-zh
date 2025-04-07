@@ -17,6 +17,6 @@
 
 #### App平台差异
 + text-decoration-line 样式不支持继承
-+ App平台仅支持underline和line-through属性
++ App平台仅支持 underline 和 line-through 样式修饰线
 
 <!-- CSSJSON.text-decoration-line.reference -->
