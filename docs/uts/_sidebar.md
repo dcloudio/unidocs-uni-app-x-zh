@@ -2,7 +2,11 @@
 * [数据类型](data-type.md)
 * [字面量](literal.md)
 * [操作符](operator.md)
-* [控制流程](control.md)
+* 控制流程
+  * [条件语句](conditional.md)
+  * [循环](loops.md)
+  * [异常处理](exception.md)
+  * [迭代与枚举](enumerability_iterable.md)
 * [函数function](function.md)
 <!-- * [类型别名type](type-aliases.md) -->
 <!-- * [对象类型object](object.md) -->
@@ -49,7 +53,4 @@
   * [UTSHarmony](utsharmony.md)
 * [关键字](keywords.md)
 * [UTS App插件开发](../plugin/uts-plugin.md)
-* 其他
-  * [可迭代协议](iterable.md)
-  * [可枚举协议](enumerability.md)
 <!-- * [学习资料](learning.md) -->
