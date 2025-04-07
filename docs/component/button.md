@@ -33,11 +33,16 @@
 
 button在元素的text区域直接写文字，和text组件一样。可以这么理解，button是一个特殊的text组件，文字样式可以直接写在button组件的style或class上。
 
-button组件属性中的size和type，属于预置样式，方便开发者使用。开发者也可以通过style和class来自定义样式。
+button组件属性中的size和type，属于预置样式，方便开发者使用。开发者也可以通过style和class来自定义样式。但它们在不同平台，覆盖方式需要注意：
 
+	- App和Web平台style和class的优先级，高于size和type属性
+	- 小程序平台，取决于不同小程序平台的button的实现方式。在微信小程序上，type和size属性的样式通过属性选择器设置，开发者设置的class，想要覆盖这2个属性的样式，需要加`!important`。而通过style设置样式，则优先级高于属性选择器，所以可以覆盖2个属性设置的样式。
+	
+	如果开发者要自定义button样式，最好不要使用type和size。包括type的颜色在不同小程序平台不一样，甚至在微信小程序的v1和v2的样式中也不一样。如果一定要用type，那么用style而不是class覆盖属性样式，也可以跨端兼容。
+	
 button虽然可以内嵌text组件，但不建议通过text组件来修改button样式，因为会导致hove-class不生效。尤其是uvue中样式不继承。建议button组件text区域直接写文字，然后在button组件的style或class属性编写样式。
 
-style和class的优先级，高于size和type属性。
+
 
 ```html
 <template>
