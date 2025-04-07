@@ -204,47 +204,9 @@ globalData是简单的全局变量，其他状态管理方式，可参考文档[
 ## 全局方法
 在 `App.uvue methods` 中，可以定义全局方法，这里定义的方法，在项目中可以通过 `getApp().vm?.methodName()` 调用, 例如：
 ```vue
-<!-- App.uvue -->
-<script lang="uts">
-  export default {
-    onLaunch: function () {
-      console.log('App Launch')
-    },
-    onShow: function () {
-      console.log('App Show')
-    },
-    onHide: function () {
-      console.log('App Hide')
-    },
-    methods: {
-      globalFn(){
-        console.log('The global fn is triggered')
-      }
-    }
-  }
-</script>
 
-<!-- pages/index/index.uvue -->
-<template>
-  <view>
-    <button @click="triggerGlobalFn">trigger global fn</button>
-  </view>
-</template>
+<!-- UTSAPIJSON.getApp.example -->
 
-<script lang="uts">
-  export default {
-    onReady() {
-      getApp().vm!.globalFn()
-    },
-    methods: {
-      triggerGlobalFn() {
-        const app = getApp()
-        app.vm!.globalFn()
-      }
-    }
-  }
-</script>
-```
 ::: warning 注意
 HBuilderX 4.31 `getApp()` 返回值调整为 `UniApp` 类型，调用 `App.uvue` 中定义的全局方法，需要由 `getApp().methodName()` 调整为 `getApp().vm?.methodName()`。
 :::
