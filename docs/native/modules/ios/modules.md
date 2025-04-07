@@ -25,7 +25,7 @@
 
 | 源文件 | 依赖库 | 资源文件 |
 | ---   | ---| ---|
-| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift <br> uni-crash-index.swift <br> uni-crash-UniCrashManager.swift <br> uni-privacy-index.swift <br> uni-dialogPage-index.swift <br> uni-dialogPage-native.swift <br> uni-event-index.swift <br> uni-event-native.swift <br> uni-exit-index.swift <br> uni-actionSheet-index.swift| DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> KSCrash.xcframework <br> storage.framework| uts-config.json |
+| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift <br> uni-crash-index.swift <br> uni-crash-UniCrashManager.swift <br> uni-privacy-index.swift <br> uni-dialogPage-index.swift <br> uni-dialogPage-native.swift <br> uni-event-index.swift <br> uni-event-native.swift <br> uni-exit-index.swift <br> uni-actionSheet-index.swift <br> uni-prompt-UniAlert-DCActionSheetActionCell.swift(4.61+) <br> uni-prompt-UniAlert-DCActionSheetController.swift(4.61+) <br> uni-prompt-UniAlert-DCActionSheetHeader.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertContentView.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertControllerUtil.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertView.Blocks.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertViewController.swift(4.61+) <br> uni-prompt-UniAlert-DCBottomMenuController.swift(4.61+) <br> uni-prompt-UniAlert-DCloudAlertControllerComponents.swift(4.61+) <br> uni-prompt-UniAlert-DCloudTextView.swift(4.61+) <br> uni-prompt-UniAlert-DCRIButtonItem.swift(4.61+) <br> uni-prompt-UniAlert-UIView.Layout.swift(4.61+) <br> uni-prompt-UniToast-MCToast.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Loading.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Remove.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Status.swift(4.61+) <br> uni-prompt-UniToast-MCToast+StatusBar.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Text.swift(4.61+) <br> uni-prompt-UniToast-MCToastConfig.swift(4.61+) <br> uni-prompt-UniToast-MCToastHelper.swift(4.61+) <br>| DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> KSCrash.xcframework <br> storage.framework| uts-config.json |
 
 ### 配置其他模块(可选)
 根据资源文件中的`manifest.json`文件包含的模块名称，选择以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到DCloudUTSExtAPI工程中，依赖库均设置为`Do Not Embed`
@@ -37,25 +37,29 @@
 | uni-getNetworkType | uni-getNetworkType-index.swift | | |
 | uni-websocket | uni-websocket-index.swift | websocket.xcframework <br> Starscream.xcframework | |
 | uni-canvas |  | DCloudUniCanvas.xcframework | |
-| uni-media | uni-media-index.swift | DCloudMediaPicker.xcframework |  AssetsLibrary <br> Photos <br> AVFoundation <br> CoreServices <br> CoreFoundation <br> CoreGraphics <br> CoreImage <br> GLKit <br> MetalKit <br> MobileCoreServices <br> QuartzCore <br> ImageIO <br> MediaPlayer <br> CoreText  |
+| uni-media | uni-media-index.swift <br>uni-media-utils-UniChooseFileManager.swift(4.61+)| DCloudMediaPicker.xcframework |  AssetsLibrary <br> Photos <br> AVFoundation <br> CoreServices <br> CoreFoundation <br> CoreGraphics <br> CoreImage <br> GLKit <br> MetalKit <br> MobileCoreServices <br> QuartzCore <br> ImageIO <br> MediaPlayer <br> CoreText  |
 | uni-payment-alipay | uni-payment-alipay-index.swift <br> uni-payment-index.swift | AlipaySDK.xcframework |c++ <br> z <br> SystemConfiguration <br> CoreTelephony <br> QuartzCore <br> CoreText <br> CoreGraphics <br> CFNetwork <br> CoreMotion |
 | uni-payment-wxpay | uni-payment-wxpay-index.swift <br> uni-payment-index.swift | libWeChatSDK.a | CoreGraphics <br> WebKit <br> Security |
 | uni-virtualPayment | uni-virtualPayment-index.swift <br> uni-virtualPayment-ProductService.swift <br> uni-virtualPayment-PurchaseService.swift <br> uni-virtualPayment-Types.swift <br> uni-virtualPayment-UniProduct.swift <br> uni-virtualPayment-UniPurchase.swift <br> uni-virtualPayment-UniStoreKit+Closure.swift <br> uni-virtualPayment-UniStoreKit.swift | | StoreKit |
-| uni-getLocation-system | uni-getLocation-system-index.swift <br> uni-getLocation-index.swift | | |
-| uni-getLocation-tencent | uni-getLocation-tencent-index.swift <br> uni-getLocation-index.swift | TencentLBS.framework | libz.1.2.5.tbd |
+| uni-getLocation-system | ~~uni-getLocation-system-index.swift~~ <br> ~~uni-getLocation-index.swift~~ <br>(4.61+使用) <br> uni-location-index.swift <br> uni-location-system-index <br> | | |
+| uni-getLocation-tencent | ~~uni-getLocation-tencent-index.swift~~ <br> ~~uni-getLocation-index.swift~~ <br> (4.61+使用) <br> uni-location-tencent-index.swift <br> uni-location-index.swift | TencentLBS.framework | libz.1.2.5.tbd |
 | uni-video | uni-video-index.swift | DCUniVideo.xcframework、IJKMediaFrameworkWithSSL.xcframework、UniDCSVProgressHUD.xcframework | |
 | uni-push | uni-push-index.swift | GTCommonSDK.xcframework <br> GTSDK.xcframework <br> ZXSDK.framework | c++ <br> resolv <br> z <br> sqlite3 <br> MobileCoreServices <br> Security <br> SystemConfiguration <br> CoreTelephony <br> AVFoundation <br> UserNotifications <br> AdSupport |
 | uni-verify | uni-verify-index.swift <br> uni-network-index.swift | GTCommonSDK.xcframework <br> GeYanSdk.xcframework | resolv.9 <br> c++ <br> z <br> sqlite3.0、WebKit <br> CoreFoundation <br> Network <br> AdSupport |
 | uni-ad | uni-ad-index.swift | DCUniAdFoundation.xcframework | |
-| uni-facialRecognitionVerify | uni-facialRecognitionVerify-index.swift | AliyunFaceAuthFacade.framework <br> AliyunMobileRPC.framework <br> AliyunOSSiOS.framework <br> APBToygerFacade.framework <br> APPSecuritySDK.framework <br> BioAuthAPI.framework <br> BioAuthEngine.framework <br> deviceiOS.framework <br> DTFIdentityManager.framework <br> DTFSensorServices.framework <br> DTFUIModule.framework <br> DTFUtility.framework <br> MPRemoteLogging.framework <br> ToygerNative.framework <br> ToygerService.framework | c++ <br> z <br> resolv <br> c++.1 <br> c++abi <br> z.1.2.8 <br> Accelerate <br> AssetsLibrary <br> QuartzCore <br> CoreFoundation <br> CoreLocation <br> ImageIO <br> CoreMedia <br> CoreMotion <br> AVFoundation <br> WebKit <br> AudioToolbox <br> CFNetwork <br> MobileCoreServices <br> SystemConfiguration <br> CoreTelephony <br> QuartzCore <br> CoreGraphics、AdSupport |
+| uni-facialRecognitionVerify | ~~uni-facialRecognitionVerify-index.swift~~ <br>(4.61+使用)uni-facialVerify-index.swift| AliyunFaceAuthFacade.framework <br> AliyunMobileRPC.framework <br> AliyunOSSiOS.framework <br> APBToygerFacade.framework <br> APPSecuritySDK.framework <br> BioAuthAPI.framework <br> BioAuthEngine.framework <br> deviceiOS.framework <br> DTFIdentityManager.framework <br> DTFSensorServices.framework <br> DTFUIModule.framework <br> DTFUtility.framework <br> MPRemoteLogging.framework <br> ToygerNative.framework <br> ToygerService.framework | c++ <br> z <br> resolv <br> c++.1 <br> c++abi <br> z.1.2.8 <br> Accelerate <br> AssetsLibrary <br> QuartzCore <br> CoreFoundation <br> CoreLocation <br> ImageIO <br> CoreMedia <br> CoreMotion <br> AVFoundation <br> WebKit <br> AudioToolbox <br> CFNetwork <br> MobileCoreServices <br> SystemConfiguration <br> CoreTelephony <br> QuartzCore <br> CoreGraphics、AdSupport |
 | uni-cloud-client | uni-websocket-index.swift <br> uni-network-index.swift <br> uni-media-index.swift| DCloudMediaPicker.xcframework |AssetsLibrary <br> Photos <br> AVFoundation <br> CoreServices <br> CoreFoundation <br> CoreGraphics <br> CoreImage <br> GLKit <br> MetalKit <br> MobileCoreServices <br> QuartzCore <br> ImageIO <br> MediaPlayer <br> CoreText|
 | uni-map-tencent | uni-map-tencent-animation-AnimationLocation.swift <br> uni-map-tencent-circle-DCCircle.swift <br> uni-map-tencent-circle-DCCircleModel.swift <br> uni-map-tencent-control-DCControl.swift <br> uni-map-tencent-control-DCControlModel.swift <br> uni-map-tencent-DCLatLng.swift <br> uni-map-tencent-ground-DCGroundOverlayModel.swift <br> uni-map-tencent-IInternalMap.swift <br> uni-map-tencent-index.swift <br> uni-map-tencent-marker-DCMakerModel.swift <br> uni-map-tencent-marker-DCMarker.swift <br> uni-map-tencent-polygon-DCPolygon.swift <br> uni-map-tencent-polygon-DCPolygonModel.swift <br> uni-map-tencent-polyline-DCPolyline.swift <br> uni-map-tencent-polyline-DCPolylineModel.swift <br> uni-map-tencent-TencentMapImpl.swift | QMapFoundationKit.framework <br> QMapKit.framework <br> QMapSDKUtils.framework <br> QMapVisualPlugin.framework | sqlite3 <br> c++|
 | uni-chooseLocation | uni-chooseLocation-index.swift| | |
 | uni-shareWithSystem | uni-shareWithSystem-index.swift| | |
-| uni-createInnerAudioContext | uni-createInnerAudioContext-index.swift <br> uni-createInnerAudioContext-UniAudioPlayer.swift| | MediaPlayer.framework |
-| uni-getBackgroundAudioManager | uni-getBackgroundAudioManager-index.swift <br> uni-getBackgroundAudioManager-UniBackgroundAudioManager.swift|  CocoaAsyncSocket.xcframework <br> KTVHTTPCache.xcframework | MediaPlayer.framework |
+| uni-createInnerAudioContext | uni-createInnerAudioContext-index.swift <br> uni-createInnerAudioContext-UniAudioPlayer.swift| | MediaPlayer |
+| uni-getBackgroundAudioManager | uni-getBackgroundAudioManager-index.swift <br> uni-getBackgroundAudioManager-UniBackgroundAudioManager.swift|  CocoaAsyncSocket.xcframework <br> KTVHTTPCache.xcframework | MediaPlayer |
 | uni-previewImage | uni-previewImage-index.swift | | |
 | uni-chooseMedia | uni-chooseMedia-index.swift | | |
+| uni-requestMerchantTransfer(4.61+) | uni-requestMerchantTransfer-index.swift | libWeChatSDK.a | CoreGraphics <br> WebKit <br> Security <br> |
+| uni-recorder(4.61+) | uni-recorder-index.swift <br> uni-recorder-UniAudioRecorderManager.swift| | |
+| uni-camera(4.61+) (依赖uni-media) | uni-camera-index.swift <br> uni-camera-Scanner.swift <br> uni-camera-CameraImpl.swift <br> uni-camera-CameraManager.swift |||
+| uni-fileSystemManager(4.61+) | uni-fileSystemManager-index.swift <br> uni-fileSystemManager-InnerFileSystemManager.swift <br> uni-fileSystemManager-UniFileSystemManager.swift <br> uni-fileSystemManager-UniFileSystemManagerStats.swift| libZIPFoundation.a | AVFoundation<br> CoreImage|
 
 ### 配置uts-config.json(可选)
 
@@ -141,6 +145,26 @@
 	}]
 }
 ``` 
+
+`uni-requestMerchantTransfer`模块需要添加如下配置
+  ```
+{
+    "hooksClasses": [
+		"UTSSDKModulesDCloudUniRequestMerchantTransferWxpayManagerHookProxy"
+	]
+}
+```
+
+`uni-camera`模块需要添加如下配置
+  ```
+{
+   "components": [{
+		"name": "camera",
+		"class": "UTSSDKModulesDCloudUniCameraComponent",
+		"delegateClass": "UniCameraComponentRegister"
+	}]
+}
+```  
   
 
 `uts-config.json`配置示例图     
@@ -475,7 +499,23 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 添加`Background Modes`后勾选`Audio,ApiPlay,and Picture in Picture`选项，如图
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/backgroundmodes_audio.jpg)
   
-  
+## uni-recorder
+### 添加依赖库以及资源文件
+| 依赖库 |
+|---|
+| DCloudPermissionCamera.xcframework <br> DCloudPermissionMicrophone.xcframework |
+### Info.plist
+添加`相机权限描述(NSCameraUsageDescription)`、`麦克风权限描述(NSMicrophoneUsageDescription)`
+```  
+<dict>
+	<key>NSCameraUsageDescription</key>
+	<string>需要您的同意，才能使用摄像头，以便于相机拍摄</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>需要您的同意，才能使用麦克风，以便于录制音频</string>
+</dict>
+```
+
+
 ## uni-ad
 ### 基础广告(必须)
 #### 添加依赖库以及资源文件
@@ -505,6 +545,8 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 | 百度 | DCUniAdBd.xcframework <br> DCloudPermissionIDFA.xcframework <br> BaiduMobAdSDK.framework | baidumobadsdk.bundle | AppTrackingTransparency <br> AdSupport <br> StoreKit <br> SafariServices <br> MessageUI <br> CoreMedia <br> CoreMotion <br> SystemConfiguration <br> CoreLocation <br> CoreTelephony <br> AVFoundation <br> Webkit <br> c++ |
 | Sigmob | DCUniAdSgm.xcframework <br> DCloudPermissionIDFA.xcframework <br> WindSDK.xcframework <br> WindFoundation.xcframework |  | AppTrackingTransparency <br> AdSupport <br> StoreKit <br> CFNetwork <br> CoreMedia <br> CoreGraphics <br> AVFoundation <br> CoreLocation <br> CoreTelephony <br> SafariServices <br> MobileCoreServices <br> WebKit <br> SystemConfiguration <br> ImageIO <br> z <br> sqlite3 |
 | 章鱼 | OctUniAdSDK.xcframework <br> DCloudPermissionIDFA.xcframework <br> OctCore.xcframework <br> OctAdSDK.xcframework | OctAdSDK.bundle <br> OctCore.bundle | AppTrackingTransparency <br> AdSupport <br> c++|
+| 泛连(4.61+) | FLAdSaas.xcframework <br> FLAdUniAdapter.xcframework <br> DCloudPermissionIDFA.xcframework |  | AppTrackingTransparency <br> AdSupport|
+| 华夏乐游(4.61+) | DCUniAdYT.xcframework <br> YouTuiAdSDK.xcframework <br> DCloudPermissionIDFA.xcframework | YouTuiAdSDK.bundle | AppTrackingTransparency <br> AdSupport|
 
 
 ### 增强广告-国际(可选)
