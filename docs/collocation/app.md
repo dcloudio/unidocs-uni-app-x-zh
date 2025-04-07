@@ -234,12 +234,12 @@ globalData是简单的全局变量，其他状态管理方式，可参考文档[
 <script lang="uts">
   export default {
     onReady() {
-      getApp().globalFn()
+      getApp().vm!.globalFn()
     },
     methods: {
       triggerGlobalFn() {
         const app = getApp()
-        app.vm?.globalFn()
+        app.vm!.globalFn()
       }
     }
   }
