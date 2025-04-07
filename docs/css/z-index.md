@@ -76,7 +76,7 @@ export default {}
 
 2. app端`position: fixed;`定位的元素会移至根节点下渲染，web端`position: fixed;`无特殊处理。
 
-app端对`position: fixed;`的元素设置z-index，此元素可以与根节点的其他子节点进行层级比较。
+app端对`position: fixed;`的元素设置z-index，此元素可以与根节点（template 的一级子节点）进行层级比较。
 
 web端对`position: fixed;`的元素设置z-index，此元素仍会在所属的层叠上下文下和其他元素比较层级。
 
