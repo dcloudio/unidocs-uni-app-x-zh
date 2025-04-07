@@ -1,3 +1,4 @@
+
 ## 可迭代的多平台差异
 
 参考[可迭代与可枚举的平台差异](./enumerability_iterable.md)
@@ -26,10 +27,10 @@ for(perItem of a1){
 false
 ```
 
-可迭代协议最直接的应用场景就是 for..of 运算符，UTS 中对 for..of 支持情况的具体介绍[详见](https://doc.dcloud.net.cn/uni-app-x/uts/control.html#for-of)
+可迭代协议最直接的应用场景就是 for..of 运算符，UTS 中对 for..of 支持情况的具体介绍[详见](./loops.md#forof)
 
 
-## 进阶： 定制可迭代对象
+### 定制可迭代对象
 
 在web开发中，可迭代协议并不仅仅是简单的对应了 for..of 语法。 还是对遍历对象内部元素的一种约定。UTS同样支持了这种能力。
 
@@ -41,7 +42,7 @@ false
 
 ```typescript
 class TestClass  {
-	holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
+  holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
 }
 
 let test = new TestClass()
@@ -59,25 +60,24 @@ for (item of test) {
 
 ```typescript
 class TestClass implements UTSValueIterable<any | null> {
-		
-		holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
-		
-		valueIterator(): UTSIterator<any | null> {
-			let holderIndex = 0;
-			let obj: UTSIterator<any | null> = {
 
-				next: () : UTSIteratorResult<any | null> => {
-          const done = holderIndex == this.holderArray.length
-            return {
-              done,
-              value: done ? null : this.holderArray[holderIndex++],
-            } as UTSIteratorResult<any | null>
-				}
-			}
-			return obj
-		}
-		
-	}
+  holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
+
+  valueIterator(): UTSIterator<any | null> {
+    let holderIndex = 0;
+    let obj: UTSIterator<any | null> = {
+      next: () : UTSIteratorResult<any | null> => {
+        const done = holderIndex == this.holderArray.length
+          return {
+            done,
+            value: done ? null : this.holderArray[holderIndex++],
+          } as UTSIteratorResult<any | null>
+      }
+    }
+    return obj
+  }
+  
+}
 ```
 执行结果:
 
@@ -101,30 +101,29 @@ item null
 
 
 ```typescript
-	class TestClass implements UTSValueIterable<any | null> {
-		
-		holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
-    
-		valueIterator(): UTSIterator<any | null> {
-				let holderIndex = 0;
-			let arr = this.holderArray.filter((value) => { 
-				return value != null
-			})
-	
-			let obj: UTSIterator<any | null> = {
-        
-				next: () : UTSIteratorResult<any | null> => {
-					const done = holderIndex == arr.length
-					return {
-						done,
-						value: done ? null : arr[holderIndex++],
-					} as UTSIteratorResult<any | null>
-				}
-			}
-			return obj
-		}
-		
-	}
+class TestClass implements UTSValueIterable<any | null> {
+
+  holderArray: (any | null)[] = [11, 22, null, 33, 44, null]
+
+  valueIterator(): UTSIterator<any | null> {
+    let holderIndex = 0;
+    let arr = this.holderArray.filter((value) => { 
+      return value != null
+    })
+
+    let obj: UTSIterator<any | null> = {
+      next: () : UTSIteratorResult<any | null> => {
+        const done = holderIndex == arr.length
+        return {
+          done,
+          value: done ? null : arr[holderIndex++],
+        } as UTSIteratorResult<any | null>
+      }
+    }
+    return obj
+  }
+  
+}
 ```
 
 执行结果:

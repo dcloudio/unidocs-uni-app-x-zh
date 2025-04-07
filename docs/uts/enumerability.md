@@ -4,7 +4,7 @@
 
 ## 可枚举现状
 
-UTS 语言对 for...in 的支持[详见](https://doc.dcloud.net.cn/uni-app-x/uts/control.html#for-in)
+UTS 语言对 for...in 的支持[详见](./loops.md#forin)
 
 与[可迭代](./iterable.md)不同，UTS语言尚不支持对可枚举协议进行自定义。
 
