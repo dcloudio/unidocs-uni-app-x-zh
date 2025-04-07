@@ -2,7 +2,7 @@
 
 uni-app x 从4.61+起支持纯血鸿蒙，即Harmony next。
 
-将uni-app x代码编译为运行在ArkTs引擎上代码，生成鸿蒙原生应用。
+将uni-app x代码编译为运行在ArkTS引擎上代码，生成鸿蒙原生应用。
 
 uni-app x的鸿蒙版虽然是刚发布，但组件、API、CSS基本拉齐了Android和iOS。甚至还有扫码、拨打电话、剪贴板等超出Android/iOS的功能。
 
@@ -21,7 +21,7 @@ uni-app x的鸿蒙版虽然是刚发布，但组件、API、CSS基本拉齐了An
 在[uni.getDeviceInfo](../api/get-device-info.md)中也可以通过属性`osHarmonySDKAPIVersion`获取API版本。
 
 ## 运行和发行注意
-uni-app x编译到鸿蒙是ArkTs语言，ArkTs在鸿蒙的ide deveco中没有热刷新。**每次改动代码，需要重新build包、签名、安装新包到手机**。
+uni-app x编译到鸿蒙是ArkTS语言，ArkTS在鸿蒙的ide deveco中没有热刷新。**每次改动代码，需要重新build包、签名、安装新包到手机**。
 
 这与uni-app不同，uni-app基于js，可以热刷新。
 
@@ -53,7 +53,7 @@ HBuilderX自身提供了运行、日志、debug、发行、调试证书申请等
 
 uni-app x项目的unpackage目录下的app-harmony下有编译后的鸿蒙原生工程。将该工程拖入鸿蒙的deveco中，可使用deveco的一些能力。比如内存泄漏分析工具。
 
-arkTs的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可以通过deveco提供的工具来分析泄漏点。
+ArkTS的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可以通过deveco提供的工具来分析泄漏点。
 
 ## 开发注意
 - 鸿蒙编译工具会在编译本地库时给编译产物的目录加上一串hash值，但windows上最长的文件路径不能超过255个字符。如果开发者的项目路径字符串较长、uni_modules的目录名称较长，再加上鸿蒙deveco编译器加上的hash，就会触发windows文件路径长度限制，导致编译失败。所以windows上的uni-app x项目路径尽量要短，比如`c:\dev\app1`，`uni_modules`的目录名称也要短一些。
@@ -70,14 +70,14 @@ arkTs的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可�
 
 ## 插件扩展
 
-对于uni自带API不满足需求时，可在uts插件中自由调用ArkTs的原生API或SDK，可以在uts里调用，也可以使用ets混编。
+对于uni自带API不满足需求时，可在uts插件中自由调用ArkTS的原生API或SDK，可以在uts里调用，也可以使用ets混编。
 - [uts插件综述文档](../plugin/uts-plugin.md)
 - [鸿蒙uts插件文档](../plugin/uts-for-harmony.md)
 - [uts插件混编文档](../plugin/uts-plugin-hybrid.md#harmonyos平台)
 - [uts标准模式组件文档](../plugin/uts-component-vue.md)
 
 注意：
-- 鸿蒙平台 uts 插件内使用 UTSJSONObject、JSON 对象目前有限制，UTSJSONObject 仅能作为类型使用，JSON 为 ArkTs 内置对象，并未替换为 UTS 的 JSON 对象。
+- 鸿蒙平台 uts 插件内使用 UTSJSONObject、JSON 对象目前有限制，UTSJSONObject 仅能作为类型使用，JSON 为 ArkTS 内置对象，并未替换为 UTS 的 JSON 对象。
 - 鸿蒙平台 uts 插件内暂不支持使用uniCloud
 
 以上限制仅针对uts插件，页面里的代码没有限制

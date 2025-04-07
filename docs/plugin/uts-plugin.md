@@ -16,7 +16,7 @@ uts，全称 uni type script，统一、强类型、脚本语言。
 - web平台，编译为JavaScript
 - Android平台，编译为Kotlin
 - iOS平台，编译为Swift（HX 3.6.7+ 版本支持）
-- harmonyOS平台，编译为ArkTs（HX 4.22+ 版本支持）在现有架构下，ArkTs和JS在同一环境下执行，不涉及通讯等问题。
+- harmonyOS平台，编译为ArkTS（HX 4.22+ 版本支持）在现有架构下，ArkTS和JS在同一环境下执行，不涉及通讯等问题。
 
 uts 采用了与 ts 基本一致的语法规范，支持绝大部分 ES6 API。
 
@@ -1662,7 +1662,7 @@ uts插件支持debug断点调试。可以在uts插件代码中打断点、查看
 
 - [Android debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
 - [iOS debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
-- [ArkTs debug教程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-debug-arkts-breakpoint-0000001807387305-V5)
+- [ArkTS debug教程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-debug-arkts-breakpoint-0000001807387305-V5)
 
 #### Bug&Tips
 - Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台

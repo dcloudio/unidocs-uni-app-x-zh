@@ -21,7 +21,7 @@ uni-app需要兼容多个平台，在统一和个性化之间，uni-app的设计
 	可调用iOS的所有api，可混合使用swift（object-c需封装为库后使用，不能直接使用oc源码），可使用所有适配iOS的sdk，包括cocoaPods。
 
 - 编译到Harmony时
-	可调用鸿蒙的所有api，可混合使用arkTs，可使用所有适配鸿蒙的sdk，包括ohpm。
+	可调用鸿蒙的所有api，可混合使用ArkTS，可使用所有适配鸿蒙的sdk，包括ohpm。
 
 uni-app设计了[uni_modules](https://uniapp.dcloud.net.cn/plugin/uni_modules.html)，在`uni_modules`下，可以同时放置npm、gradle、cocoaPods、ohpm等库。方便封装跨平台的插件，统一给插件使用者的输出。
 
