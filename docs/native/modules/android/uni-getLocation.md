@@ -18,7 +18,7 @@ defaultConfig {
 }
 ```
 
-##### 5.61之前配置
+##### 4.61之前配置
 
 ```groovy
 defaultConfig {
