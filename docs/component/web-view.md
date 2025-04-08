@@ -49,6 +49,11 @@ function canGoForward() : boolean {
 - web和小程序平台上，web-view是全屏的，即页面只能显示一个铺满的web-view。  
 - app/web平台的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。  
 
+### 嵌套滚动说明  
+App平台 web-view 组件可在 scroll-view、list-view/list-item 等可滚动容器中使用，如果 web-view 中的内容可以滚动，则会出现嵌套滚动的问题，细节如下：    
+- app-android平台，默认开启嵌套滚动，在web-view区域操作时，会优先滚动web页面内容（web页面的body内容），web页面内容无法滚动了再滚动外层嵌套滚动容器。如果web页面使用了区域滚动，嵌套滚动逻辑不会受页面中touch事件的默认行为（[Event：preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)）影响，仅判断web页面内容是否可滚动，web页面内容无法滚动则触发外层嵌套滚动容器，如需配置外层嵌套容器不处理滚动需配置 android-nested-scroll 属性为 none。   
+- app-ios平台，在web-view区域操作时，会优先滚动web-view内容（web页面的body内容），web页面内容无法滚动并且滚动条消失后才能操作滚动外层嵌套滚动容器。如果web页面使用了区域滚动，则受页面中touch事件的默认行为（[Event：preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)）逻辑控制，即阻止了默认行为则不滚动外层嵌套滚动容器，不阻止默认行为则滚动外层嵌套滚动容器。  
+
 ### src路径支持说明  
 
 - 本地路径/static方式  
