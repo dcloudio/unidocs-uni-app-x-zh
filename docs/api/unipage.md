@@ -52,23 +52,23 @@ UniPage在App和Web平台较完善，在小程序端受小程序未开放，很�
 
 **PageStyle**
 
-支持当前页面 `style` 节点属性（注意并非所有pages.json的pageStyle都可以动态修改）
+支持当前页面 `style` 节点属性（注意并非所有 pages.json 的 pageStyle 都可以动态修改）
 
-|属性													|类型		|Android|iOS	|web	|默认值	|
-|:-:													|:-:		|:-:		|:-:	|:-:	|:-:		|
-|enablePullDownRefresh				|Boolean|4.13		|4.13	|4.13	|false	|
-|backgroundColorContent				|String	|4.15		|4.15	|4.18	|#ffffff|
-|navigationBarBackgroundColor	|String	|4.18		|4.18	|4.18	|#007AFF|
-|navigationBarTextStyle				|String	|4.18		|4.18	|4.18	|white  |
-|navigationBarTitleText				|String	|4.18		|4.18	|4.18	|				|
-|navigationStyle							|String	|x   		|x  	|4.18	|default|
-|backgroundColor							|String	|4.18   |4.18 |x		|#ffffff|
-|backgroundTextStyle					|String	|4.31      |4.31    |x		|dark	|
-|onReachBottomDistance				|Number	|x			|x		|4.18	|50			|
-|pageOrientation							|String	|4.18		|4.25		|x		|auto		|
-|disableSwipeBack							|Boolean|x		|4.18		|x		|false	|
-|hideStatusBar                  |Boolean    |4.31   |x  |x  |false
-|hideBottomNavigationIndicator  |Boolean    |4.31   |x  |x  |false
+|属性                          |类型    |Android|iOS   |HarmonyOS|web  |默认值  |
+|:-:                          |:-:    |:-:    |:-:  |:-:  |:-:  |:-:    |
+|enablePullDownRefresh        |Boolean|4.13    |4.13  |4.61 |4.13  |false  |
+|backgroundColorContent        |String  |4.15  |4.15  |4.61 |4.18  |#ffffff|
+|navigationBarBackgroundColor  |String  |4.18  |4.18  |4.61 |4.18  |#007AFF|
+|navigationBarTextStyle        |String  |4.18  |4.18  |4.61 |4.18  |white  |
+|navigationBarTitleText        |String  |4.18  |4.18  |4.61 |4.18  |""    |
+|navigationStyle              |String  |x      |x     |4.61 |4.18  |default|
+|backgroundColor              |String  |4.18   |4.18  |4.61 |x     |#ffffff|
+|backgroundTextStyle          |String  |4.31   |4.31  |x    |x     |dark  |
+|onReachBottomDistance        |Number  |x      |x     |4.61 |4.18  |50      |
+|pageOrientation              |String  |4.18   |4.25  |x    |x     |auto    |
+|disableSwipeBack              |Boolean|x      |4.18  |x    |x     |false |
+|hideStatusBar                  |Boolean|4.31  |x     |x    |x     |false|
+|hideBottomNavigationIndicator  |Boolean|4.31  |x     |x    |x     |false|
 
 **注意事项**
 - web端由于会自动摇树优化未使用的特性，如果整个项目中都没有使用到下拉刷新`enablePullDownRefresh`，那么下拉刷新功能会被摇掉，此时设置打开下拉刷新将无效。
