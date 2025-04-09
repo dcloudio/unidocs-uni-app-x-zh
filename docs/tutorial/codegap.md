@@ -1,6 +1,6 @@
 # uni-app x 开发注意
 
-与web开发相比，uni-app x最大的变化有2个：
+与web开发相比，uni-app x在App平台最大的变化有2个：
 - 弱类型的js改为了强类型的uts
 - 不再使用webview渲染，导致css有变化
 
