@@ -18,7 +18,7 @@ uts在iOS平台编译为swift、在Android平台编译为kotlin、在Web和小�
   - 使用 iPhone 扫码后会跳转页面需要使用 DCloud 账号登录，登录过后自动分发兑换码在 AppStore 获取安装包，此过程不需要您支付费用。ABM包在Appstore中无法公开搜索到，但安装后可在 AppStore 更新页面进行更新。
 - [web 预览地址](https://hellouniappx.dcloud.net.cn/web)
 - 微信小程序
- - 微信中搜索`HelloUniAppX`，或者扫描下方二维码
+  - 微信中搜索`HelloUniAppX`，或者扫描下方二维码
 
 <div class="quick">
   <div style="margin-top: 20px;justify-content: space-around;">
@@ -46,7 +46,7 @@ hello uni-app x的源码见：[https://gitcode.net/dcloud/hello-uni-app-x](https
 
 ## 1. uts语言
 
-> 该语言在2022年9月推出，起初用于原生插件扩展开发。
+> 该语言在2022年9月推出，初期用于原生插件扩展开发。
 
 开发者在 uni-app x 中，需使用 uts 而不是js。尤其是 Android端不自带js引擎，无法运行js代码。
 
@@ -67,6 +67,7 @@ uvue是一套基于uts的、兼容vue语法的、跨平台的、原生渲染引�
 - Android版于3.99上线
 - Web版于4.0上线
 - iOS版于4.11上线
+- harmonyOS版于4.61上线
 
 uvue渲染引擎包括uts版的vue框架（组件、数据绑定...）、跨平台基础ui、css引擎。
 
@@ -263,7 +264,7 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 
 **如果你一定要使用某个js库，还有一个办法是在uni-app x里的[web-view](./api/create-webview-context.md)组件，让其运行js并返回值给uts代码。**
 
-目前插件市场适配uni-app x的插件已有数百款，包括丰富的ui组件库生态：
+目前插件市场适配uni-app x的插件已有数千款，包括丰富的ui组件库生态：
 - [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：高品质UI库，插件大赛一等奖。
 - [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：setup组合式UI库，插件大赛一等奖。
 - [lime-UI](https://ext.dcloud.net.cn/plugin?id=22372)：即兼容uni-app又兼容uni-app x。
@@ -282,7 +283,7 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 - 平台支持：Android、Web、iOS版已发布。虽然uts语言支持swift，可以写原生插件，但uvue的iOS版目前只上线了js逻辑层，还未发布swift逻辑层。
 - 小程序平台：4.41起支持微信小程序。其他小程序还在陆续适配中。
 - 鸿蒙next平台：4.61起支持鸿蒙next。
-- 目前不支持国际区账户创建和打包uni-app x，仅大陆区开发者账户可用。
+- 目前不支持国际区账户，仅大陆区开发者账户可用。
 
 ::: info
 欢迎去[需求墙](https://vote.dcloud.net.cn/#/?name=uni-app%20x)投票，告诉我们你的需求优先级。
@@ -335,7 +336,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   可以。[详见](./native/README.md)
 
 - uni-app x 的App能热更新吗？\
-  开发期间可以热刷，但打包后不能热更新。\
+  Android和iOS开发期间可以热刷，但打包后不能热更新。\
   Android作为原生应用，可以使用[uni小程序sdk](https://ext.dcloud.net.cn/plugin?id=17638)，热更新小程序。当然开发者也可自行封装原生的插件动态加载方案。\
   iOS平台的js逻辑层模式，未来会推出wgt更新。
 
@@ -350,16 +351,17 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 	iOS平台如果是js逻辑层模式，只能在独立`uni_modules`中才能调用原生。
 
 - uni-app x 的开发只能用HBuilderX吗？\
-  是的。为三方ide做插件是一个投资大且充满不确定性的事情，官方有限精力会聚焦在自身产品优化上。但DCloud是开放的，不会限制三方ide的插件支持。欢迎社区投入支持。
+  官方正在开发vscode、cursor插件。尽请期待。
 
 - uni-app x 支持最低的Android版本多少？浏览器版本多少？\
   * Android App最低支持`Android 5`；
   * iOS版最低支持`iOS12`
+  * harmonyOS版最低支持`API14`
   * Web版发行模式最低支持`chrome 64`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；
   * Web版运行模式最低支持`chrome 66`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；另外由于运行时不会对语法进行转化来兼容低版本浏览器，如果使用了一些比较新的语法可能会无法在低版本浏览器上运行。
 
 - uni-app x开源吗？
-  * Web版开源地址：[https://github.com/dcloudio/uni-app](https://github.com/dcloudio/uni-app)
+  * Web版、小程序版开源地址：[https://github.com/dcloudio/uni-app](https://github.com/dcloudio/uni-app)
   * App版的组件和API实现大都开源，持续更新在项目[uni-api](https://gitcode.net/dcloud/uni-api)和[uni-component](https://gitcode.net/dcloud/uni-component)下。\
   开发者可以了解组件和API的实现，直接修改或优化源码，修改后的代码以[ext api](https://uniapp.dcloud.net.cn/api/extapi.html)或组件的方式下载到项目中，即可实现在本项目中替换掉官方组件和API。
 
