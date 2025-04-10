@@ -29,15 +29,16 @@ Web和小程序注意：
 开发者做主题适配时需考虑的内容范围：
 1. 开发者自己的uvue代码
 	大部分主题通过css设置，有部分ui需要通过组件的属性或内置API的参数来设置。
-	
+
 	web和小程序平台可以使用媒体查询来设置，但App平台暂不支持媒体查询。所以跨端的写法是，通过`uni.getAppBaseInfo`获取主题设置，保存到vue的响应式变量中，模板的class绑定响应式变量实现动态切换class。
-	
+
 	在hello uni-app x有示例，其在`app.uvue`的onLaunch中调用了`checkSystemTheme()`，该方法来自于`/store/index.uts`，获取当前的主题设置存放在响应式`state.isDarkMode`中。
 	然后在组件`components/boolean-data/boolean-data.vue`中，设置computed()的`isDarkMode`，在template中通过响应式变量isDarkMode动态切换class。
-	
+
 2. [pages.json](../collocation/pagesjson.md)的页面设置，推荐通过[theme.json](../collocation/themejson.md)设置
-3. uni-app x的App和Web平台框架中自带的界面（小程序平台由小程序宿主自行适配，与uni-app x框架无关)
-	- uni.showActionSheet (从HBuilderX 4.51起适配暗黑模式）
+3. web 端、小程序需要配置 [manifest.json](../collocation/manifest.md) 中 `web`、`mp-weixin` 根节点的 `"darkmode": true`。配置后如果不生效请重新编译运行
+4. uni-app x的App和Web平台框架中自带的界面（小程序平台由小程序宿主自行适配，与uni-app x框架无关）
+	- uni.showActionSheet（从HBuilderX 4.51起适配暗黑模式）
 	- uni.showModal （暂未适配暗黑模式）
 	- uni.chooseLocation （从HBuilderX 4.33起适配暗黑模式）
 	- uni.openLocation （从HBuilderX 4.41起适配暗黑模式）
