@@ -98,6 +98,7 @@
   * [文件系统规范](file-system-spec.md)
   * [获取文件管理器](get-file-system-manager.md)
   * [打开文档](open-document.md)
+	* [选择文件](choose-file.md)
 * 登录与认证
   * [App一键登录](get-univerify-manager.md)
   * [金融级实人认证](facial-recognition-meta-info.md)

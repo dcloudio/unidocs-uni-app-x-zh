@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.getBackgroundAudioManager.description -->
 
+背景音频，常见于音乐播放、听书等场景。在页面关闭、应用切换到后台时，仍然可以继续播放，并且可以在手机的通知栏里进行播放、暂停、拖进度等操作。
+
 **支持格式**
 
 |格式	|Android|iOS|HarmonyOS|

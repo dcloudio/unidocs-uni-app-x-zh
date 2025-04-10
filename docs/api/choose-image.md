@@ -26,7 +26,7 @@ App平台的相册选择，有custom自定义方式和system系统方式。这2�
 - system方式
 1. 使用系统选择器时，好处是不需要申请额外权限，它的模式类似于web浏览器中的input type=file，应用其实不具有本机文件访问能力，用户通过系统选择器把图片传给应用。
 2. system方式无需特殊向google申明选择权限的必要性，即可正常上架google play。但注意同时需要在manifest.json中将`<uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />`和`<uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />`权限移除。配置方式参考[移除Android权限](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#removepermissions)。
-3. 界面ui无法自定义，比如想加一个“原图”选项，加不上去
+3. 界面ui无法自定义，比如Android、iOS上无法添加“原图”选项。鸿蒙上系统UI自带原图选项。
 4. 界面ui的主题和国际化，跟随手机rom，而不是跟随app（假使App和Rom不一致）
 5. 因为不涉及压缩，所以也没有临时文件，不会在cache目录下生成临时文件。
 

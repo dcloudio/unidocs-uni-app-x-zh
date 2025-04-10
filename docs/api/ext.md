@@ -14,7 +14,7 @@
 - 生物识别：指纹识别。`uni.startSoterAuthentication` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%94%9F%E7%89%A9%E8%AE%A4%E8%AF%81&uni-appx=1)
 - 震动：`uni.vibrate` [见插件市场](https://ext.dcloud.net.cn/search?q=%E9%9C%87%E5%8A%A8&uni-appx=1)
 - 亮度：`uni.setScreenBrightness`、`uni.getScreenBrightness`、`uni.setKeepScreenOn` [见插件市场](https://ext.dcloud.net.cn/search?q=%E4%BA%AE%E5%BA%A6&uni-appx=1)
-- 自定义相机：`uni.createCameraContext` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%9B%B8%E6%9C%BA&uni-appx=1)
+- 直播推流拉流：`uni.createLivePusherContext` [见插件市场](https://ext.dcloud.net.cn/search?q=%E7%9B%B4%E6%92%AD&uni-appx=1)
 
 
 ## plus api替代@plus

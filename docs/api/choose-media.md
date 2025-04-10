@@ -8,6 +8,8 @@
 
 <!-- UTSAPIJSON.chooseMedia.returnValue -->
 
+Android端返回的路径是content协议。
+
 <!-- UTSAPIJSON.chooseMedia.tutorial -->
 
 <!-- UTSAPIJSON.chooseMedia.example -->
