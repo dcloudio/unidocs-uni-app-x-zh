@@ -67,7 +67,6 @@
   * [扫码](scan-code.md)
   * [判断是否为模拟器](is-simulator.md)
   * [获取无障碍服务信息](get-accessibility-info.md)
-  * [生物认证](bio-auth.md)
 * 媒体
   * [拍照或从相册选择图片](choose-image.md)
   * [图片预览](preview-image.md)
@@ -80,9 +79,16 @@
   * [压缩视频](compress-video.md)
   * [拍摄或从相册选择图片或视频](choose-media.md)
   * [选择文件](choose-file.md)
-  * [音频](create-inner-audio-context.md)
+  * [音频播放](create-inner-audio-context.md)
   * [背景音频](get-background-audio-manager.md)
   * [录音](get-recorder-manager.md)
+* 文件
+  * [文件系统规范](file-system-spec.md)
+  * [获取文件管理器](get-file-system-manager.md)
+  * [打开文档](open-document.md)
+	* [选择文件](choose-file.md)
+* 数据存储
+  * [key-value本地数据存储](storage.md)
 * 画布
   * [canvasToTempFilePath](canvas-to-temp-file-path.md)
   * [createCanvasContextAsync](create-canvas-context-async.md)
@@ -92,16 +98,10 @@
   * [使用地图查看位置](open-location.md)
   * [使用地图选择位置](choose-location.md)
   * [位置更新](location-change.md)
-* 数据存储
-  * [key-value本地数据存储](storage.md)
-* 文件
-  * [文件系统规范](file-system-spec.md)
-  * [获取文件管理器](get-file-system-manager.md)
-  * [打开文档](open-document.md)
-	* [选择文件](choose-file.md)
 * 登录与认证
   * [App一键登录](get-univerify-manager.md)
   * [金融级实人认证](facial-recognition-meta-info.md)
+  * [生物认证](bio-auth.md)
 * 广告
   * [开屏广告manifest配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-ad)
   * [激励视频广告](create-rewarded-video-ad.md)
