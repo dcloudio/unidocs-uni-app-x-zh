@@ -82,21 +82,44 @@ createSelectorQuery是小程序的API，因小程序未开放DOM，且视图层�
 示例：
 
 ```js
-uni.createSelectorQuery().select('.rect1').boundingClientRect().exec()
-// 共返回 1 条结果，第一项数据类型为 NodeInfo
-result = [ {} ]
+uni.createSelectorQuery().select('.rect1').boundingClientRect((res) => {
+  // 共返回 1 条结果，第一项数据类型为 NodeInfo
+  // res = [ {} ]
+
+  const nodeInfoArray = res as NodeInfo[]
+  const nodeInfoArrayItem = nodeInfoArray[0]
+  console.log('info', nodeInfoArrayItem.width, nodeInfoArrayItem.height)
+}).exec()
 ```
 
 ```js
-uni.createSelectorQuery().selectAll('.rect1').boundingClientRect().exec()
-// 共返回 1 条结果，第一项数据类型为 NodeInfo[]
-result = [ [{},{}] ]
+uni.createSelectorQuery().selectAll('.rect1').boundingClientRect((res) => {
+  // 共返回 1 条结果，第一项数据类型为 NodeInfo[]
+  // res = [ [{},{}] ]
+
+  const nodeInfoArray = res as NodeInfo[]
+  const nodeInfoArrayItem = nodeInfoArray[0]
+  nodeInfoArrayItem.foreach((item: NodeInfo) => {
+    console.log('item', item.width, item.height)
+  })
+}).exec()
 ```
 
 ```js
-uni.createSelectorQuery().select('.rect1').selectAll('.rect2').boundingClientRect().exec()
-// 共返回 2 条结果，第一项数据类型为 NodeInfo，第二项数据类型类型为 NodeInfo[]
-result = [ {}, [{},{}] ]
+uni.createSelectorQuery().select('.rect1').selectAll('.rect2').boundingClientRect((res) => {
+  // 共返回 2 条结果，第一项数据类型为 NodeInfo，第二项数据类型类型为 NodeInfo[]
+  // res = [ {}, [{},{}] ]
+
+  const nodeInfoArray = res as NodeInfo[]
+
+  const nodeInfoItem0 = nodeInfoArray[0]
+  console.log('nodeInfoItem0', nodeInfoItem0.width, nodeInfoItem0.height)
+
+  const nodeInfoItem1 = nodeInfoArray[1]
+  nodeInfoItem1.foreach((item: NodeInfo) => {
+    console.log('item', item.width, item.height)
+  })
+}).exec()
 ```
 
 
