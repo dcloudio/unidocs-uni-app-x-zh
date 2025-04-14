@@ -45,7 +45,7 @@
 + app平台`native-view`组件绑定原生view后自动适配[组件全局属性](common.md#组件全局属性)
 + app平台`native-view`组件绑定原生view后自动适配[组件全局事件](common.md#组件全局事件)
 	- android平台如果绑定的view设置了`setOnTouchListener`会导致touch部分全局事件失效
-+ app平台`native-view`组件不支持自定义属性，使用[uts插件-标准模式组件-声明属性props](../plugin/uts-component-vue.md##组件声明属性props)实现自定义属性目的
++ app平台`native-view`组件不支持自定义属性，使用[uts插件-标准模式组件-声明属性props](../plugin/uts-component-vue.md#组件声明属性props)实现自定义属性目的
 + app平台`native-view`组件不支持子组件
 + android平台`native-view`组件不支持[list-item复用机制](list-item.md#list-item复用机制)，list-item其他子组件不受影响正常启动复用业务。
 + android平台`native-view`组件不支持background、border、boxshadow属性

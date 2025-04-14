@@ -680,7 +680,7 @@ const arr2: number[] = arr.map((item: number): number => {
 
 ## void @void
 
-- 作为类型时，通常用于表示一个[函数不需要返回值](function.html#%E6%97%A0%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E5%87%BD%E6%95%B0-void)
+- 作为类型时，通常用于表示一个[函数不需要返回值](function.md#无返回值的函数-void)
 
   * 编译为Kotlin时，对应：Unit
   * 编译为Swift时，对应：Void
@@ -2090,10 +2090,10 @@ move("south")
 > in 操作符仅支持 type 定义的对象 和 UTSJSONObject 对象：
 > - HBuilderX4.51及以上版本 in 操作符支持 type 定义的对象是否包含指定属性
 > - HBuilderX4.54及以上版本 in 操作符支持 UTSJSONObject 对象是否包含指定属性
-> 
-> 注意：HBuilderX4.51以下版本 app-android 平台虽然 UTSJSONObject 对象可以使用 in 操作符，但其它平台可能不兼容  
+>
+> 注意：HBuilderX4.51以下版本 app-android 平台虽然 UTSJSONObject 对象可以使用 in 操作符，但其它平台可能不兼容
 
-以下示例演示 type 定义的对象如何使用 in 操作符：  
+以下示例演示 type 定义的对象如何使用 in 操作符：
 ```ts
 type Fish = { swim: () => void };
 type Bird = { fly: () => void };

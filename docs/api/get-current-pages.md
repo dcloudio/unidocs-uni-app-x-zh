@@ -18,7 +18,7 @@ UniPage对象强化了开发者对页面的管理功能，并且支持在uts插�
 
 <!-- UTSAPIJSON.getCurrentPages.example -->
 
-UniPage对象上有较多方法，比如获取/修改pageStyle，[详见](./unipage/md)
+UniPage对象上有较多方法，比如获取/修改pageStyle，[详见](./unipage.md)
 
 <!-- UTSAPIJSON.getCurrentPages.tutorial -->
 
