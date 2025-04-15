@@ -8,13 +8,19 @@
 
 <!-- UTSAPIJSON.getWindowInfo.returnValue -->
 
+`uni.getWindowInfo`是全局API，沿袭自小程序。但小程序并未考虑丰富的场景，其实手机屏幕尺寸、应用所占区域尺寸、页面所占区域尺寸是3个概念。
+
+在小屏模式、分屏模式、特殊页面（tabbar和dialogPage）等特殊场景下，这3个概念的数值不相同。但uni的全局API无法表达差异，需要在页面对象上补充区域尺寸信息。
+
+其实大多数情况下开发者需要获取的是当前页面的尺寸，此时在UniPage对象上获取高宽、四边位置更精准。[详见](./unipage.md)
+
 下图标注了各区域信息
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/API/getWindowInfo/size.png)
 
 ### 安全区域说明 @safearea  
 
-由于部分手机屏幕有顶部的“刘海”和底部导航的存在，为了确保内容区域不被遮挡，提出了安全区域，以便于在安全区域内布局。
+由于全面屏手机屏幕有顶部的摄像头挖空区和底部导航的存在，为了确保内容区域不被遮挡，提出了安全区域概念，以便于在安全区域内布局。
 
 app-android平台全屏模式下分安全区域字段说明：  
 - safeArea.top : statusBarHeight  
