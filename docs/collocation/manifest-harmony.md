@@ -6,7 +6,7 @@
 
 可以在manifest可视化界面的鸿蒙App配置进行，其对应的源码视图在manifest.json的`app-harmony -> distribute -> modules`节点下。示例如下
 
-注意：`HBuilderX 4.61-`之前节点为 `uni-getLocation`
+注意：`HBuilderX 4.61`及之前版本节点为 `uni-getLocation`
 
 ```json
 {
