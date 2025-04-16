@@ -203,7 +203,6 @@ globalData是简单的全局变量，其他状态管理方式，可参考文档[
 
 ## 全局方法
 在 `App.uvue methods` 中，可以定义全局方法，这里定义的方法，在项目中可以通过 `getApp().vm?.methodName()` 调用, 例如：
-```vue
 
 <!-- UTSAPIJSON.getApp.example -->
 
