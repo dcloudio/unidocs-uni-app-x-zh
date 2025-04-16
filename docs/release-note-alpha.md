@@ -1,3 +1,19 @@
+#### 4.62.2025041603-alpha
+##### uni-app x
+* App-Android平台 修复 API dialogPage 在android5.0系统设备内容显示不全 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16939)
+* App-Android平台 修复 4.61版本引发的 组件 ad 打包勾选章鱼广告模块广告加载失败 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16948)
+* App-iOS平台 修复 4.25版本引发的 组件 list-view scroll-into-view 属性可能无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16934)
+* App-iOS平台 修复 组件 waterflow scroll-into-view 属性可能无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16443)
+* App-iOS平台 修复 组件 input 某些场景下 hold-keyboard 设置为 true 滑动 scroll-view 依然隐藏软键盘 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17060)
+* App-iOS平台 修复 组件 web-view web页面中 a 标签 target 属性值为 _blank 时点击无法跳转 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16740)
+* App-iOS平台 修复 4.61版本引发的 API uni.showModal showCancel字段默认值不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16943)
+* App-iOS平台 修复 CSS text-decoration-line 属性运行在 iOS18 及以上设备无效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16838)
+* Web平台 修复 4.61版本引发的 组件 video 播放图标不显示 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17035)
+* 微信小程序平台 修复 编译器 $vm找不到 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16723)
+* App-Harmony平台 新增 运行调试 支持运行到 x64 平台的鸿蒙模拟器 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17036)
+##### uts插件
+* App-Harmony平台 修复 UTSHarmony 在较早时机无法调用 getUIAbilityContext 的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17019)
+
 #### 4.61.2025040322-alpha
 ##### uni-app x
 * 【重要】新增 编译App到HarmonyOS平台 [详见](https://doc.dcloud.net.cn/uni-app-x/app-harmony/)
