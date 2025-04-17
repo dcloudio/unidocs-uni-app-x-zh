@@ -1,4 +1,4 @@
-# uni-app x 是什么？<Badge text="HBuilderX 3.9+">
+# uni-app x 是什么？<Badge text="HBuilderX 3.9+"/>
 
 uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
 
@@ -369,7 +369,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。不再维护不是下线，而是没有重大问题的话（如新手机不兼容）不会再更新了。
 
   如果开发小程序和Web，那使用哪个都差不多。
-  
+
   如果开发App，那uni-app面向的是对体验不敏感，只了解web技术，对开发成本更敏感的前端开发者。而uni-app x则适用于愿意多付出一些开发成本、以追求更好体验的开发者。当然这个多付出的开发成本也远低于原生开发各端的成本。
 
   不管uni-app还是uni-app x，都支持uts插件生态，原生扩展api和插件是复用的。

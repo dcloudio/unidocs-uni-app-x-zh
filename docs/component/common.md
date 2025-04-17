@@ -12,7 +12,7 @@
 
 > android-开头的属性名称为App-Android平台专有属性
 
-#### android-layer-type <Badge text="HBuilderX 4.01+">
+#### android-layer-type <Badge text="HBuilderX 4.01+"/>
 
 > 不支持动态修改此属性
 >

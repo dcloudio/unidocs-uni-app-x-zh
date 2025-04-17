@@ -262,7 +262,7 @@ easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取�
 
 :::
 
-##### 调用 `uni_modules easycom` 组件方法 <Badge text="HBuilderX 3.97+"> @call-uni-modules-easycom-component-method
+##### 调用 `uni_modules easycom` 组件方法 <Badge text="HBuilderX 3.97+"/> @call-uni-modules-easycom-component-method
 
 使用 `ref` 属性拿到组件实例，调用 `easycom` 组件方法时不需要使用 `$callMethod` 方法，直接使用点操作符即可 `.`
 
@@ -318,7 +318,7 @@ ComponentPublicInstance
 - 小程序 平台 支持 `$callMethod` 调用 `defineExpose` 导出的方法
 
 
-#### 内置组件的方法调用或设置属性 <Badge text="HBuilderX 3.93+"> @call-builtin-component-method
+#### 内置组件的方法调用或设置属性 <Badge text="HBuilderX 3.93+"/> @call-builtin-component-method
 
 使用 `this.$refs` 获取组件并as转换为组件对应的element类型，通过 `.`操作符 调用组件方法或设置属性。
 
