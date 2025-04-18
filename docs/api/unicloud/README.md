@@ -6,6 +6,7 @@ uniCloud是基于serverless的云开发服务，它大幅降低开发者的开�
 
 - 暂不支持schema2code
 - 暂不支持安全网络
+- uts插件编译为swift、arkts时插件内不可调用uniCloud
 
 **兼容说明**
 
