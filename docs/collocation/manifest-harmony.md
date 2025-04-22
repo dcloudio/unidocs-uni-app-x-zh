@@ -2,7 +2,7 @@
 
 ### modules@modules
 
-鸿蒙平台目前有如下需要自行配置方可使用的模块。
+HBuilderX 4.63之前的版本鸿蒙平台不支持根据使用情况自动添加模块，HBuilderX 4.63及之后的版本鸿蒙平台支持根据使用情况自动添加模块。注意provider机制的模块，如支付、定位仍需自行添加使用到的provider对应的模块。
 
 可以在manifest可视化界面的鸿蒙App配置进行，其对应的源码视图在manifest.json的`app-harmony -> distribute -> modules`节点下。示例如下
 
