@@ -325,7 +325,7 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
 
 插件市场已经有uts版本的[内嵌flutter插件](https://ext.dcloud.net.cn/search?q=flutter&orderBy=Relevance&cat1=8)、[内嵌compose ui插件](https://ext.dcloud.net.cn/search?q=compose+ui&orderBy=Relevance&cat1=8)
 
-至于把 uni-app x 作为一个sdk内嵌到其他原生应用中，后续提供离线打包方案时会提供。
+至于把 uni-app x 作为一个sdk内嵌到其他原生应用中，请参考[uni-app x原生SDK](native/README.md)。
 
 
 ## FAQ
