@@ -347,8 +347,33 @@ console.log(UTSAndroid.getResourcePath('unifile://sandbox/static/logo.png'))
 console.log(UTSAndroid.getResourcePath('/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/HBuilder/www/static/logo.png'))
 ```
 
+### getAppCachePath()
 
+<!-- UTSJSON.UTSAndroid.getAppCachePath.description -->
 
+<!-- UTSJSON.UTSAndroid.getAppCachePath.param -->
+
+<!-- UTSJSON.UTSAndroid.getAppCachePath.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getAppCachePath.test -->
+
+<!-- UTSJSON.UTSAndroid.getAppCachePath.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getAppCachePath.tutorial -->
+
+### exit()
+
+<!-- UTSJSON.UTSAndroid.exit.description -->
+
+<!-- UTSJSON.UTSAndroid.exit.param -->
+
+<!-- UTSJSON.UTSAndroid.exit.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.exit.test -->
+
+<!-- UTSJSON.UTSAndroid.exit.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.exit.tutorial -->
 
 ### getDispatcher
 
@@ -378,6 +403,104 @@ UTSAndroid.getDispatcher("io").async(function(_){
 },null)
 ```
 
+
+### getAppId()
+
+<!-- UTSJSON.UTSAndroid.getAppId.description -->
+
+<!-- UTSJSON.UTSAndroid.getAppId.param -->
+
+<!-- UTSJSON.UTSAndroid.getAppId.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getAppId.test -->
+
+<!-- UTSJSON.UTSAndroid.getAppId.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getAppId.tutorial -->
+
+### getOsTheme()
+
+<!-- UTSJSON.UTSAndroid.getOsTheme.description -->
+
+<!-- UTSJSON.UTSAndroid.getOsTheme.param -->
+
+<!-- UTSJSON.UTSAndroid.getOsTheme.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getOsTheme.test -->
+
+<!-- UTSJSON.UTSAndroid.getOsTheme.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getOsTheme.tutorial -->
+
+### isUniMp()
+
+<!-- UTSJSON.UTSAndroid.isUniMp.description -->
+
+<!-- UTSJSON.UTSAndroid.isUniMp.param -->
+
+<!-- UTSJSON.UTSAndroid.isUniMp.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.isUniMp.test -->
+
+<!-- UTSJSON.UTSAndroid.isUniMp.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.isUniMp.tutorial -->
+
+### getAppName()
+
+<!-- UTSJSON.UTSAndroid.getAppName.description -->
+
+<!-- UTSJSON.UTSAndroid.getAppName.param -->
+
+<!-- UTSJSON.UTSAndroid.getAppName.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getAppName.test -->
+
+<!-- UTSJSON.UTSAndroid.getAppName.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getAppName.tutorial -->
+
+### getAppVersion()
+
+<!-- UTSJSON.UTSAndroid.getAppVersion.description -->
+
+<!-- UTSJSON.UTSAndroid.getAppVersion.param -->
+
+<!-- UTSJSON.UTSAndroid.getAppVersion.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getAppVersion.test -->
+
+<!-- UTSJSON.UTSAndroid.getAppVersion.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getAppVersion.tutorial -->
+
+### getInnerVersion()
+
+<!-- UTSJSON.UTSAndroid.getInnerVersion.description -->
+
+<!-- UTSJSON.UTSAndroid.getInnerVersion.param -->
+
+<!-- UTSJSON.UTSAndroid.getInnerVersion.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getInnerVersion.test -->
+
+<!-- UTSJSON.UTSAndroid.getInnerVersion.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getInnerVersion.tutorial -->
+
+### isUniAppX()
+
+<!-- UTSJSON.UTSAndroid.isUniAppX.description -->
+
+<!-- UTSJSON.UTSAndroid.isUniAppX.param -->
+
+<!-- UTSJSON.UTSAndroid.isUniAppX.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.isUniAppX.test -->
+
+<!-- UTSJSON.UTSAndroid.isUniAppX.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.isUniAppX.tutorial -->
 
 ### devicePX2px(devicePX:number) : number;
 
@@ -569,7 +692,19 @@ context.startActivity(intent);
 
 ```
 
+### getExtApiProvider(service, providerName)
 
+<!-- UTSJSON.UTSAndroid.getExtApiProvider.description -->
+
+<!-- UTSJSON.UTSAndroid.getExtApiProvider.param -->
+
+<!-- UTSJSON.UTSAndroid.getExtApiProvider.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getExtApiProvider.test -->
+
+<!-- UTSJSON.UTSAndroid.getExtApiProvider.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getExtApiProvider.tutorial -->
 
 ### getJavaClass(input:any)
 
@@ -640,6 +775,20 @@ console.log(UTSAndroid.getTopPageActivity())
 
 <!-- UTSJSON.UTSAndroid.offActivityCallback.compatibility -->
 
+
+### getAppTheme()
+
+<!-- UTSJSON.UTSAndroid.getAppTheme.description -->
+
+<!-- UTSJSON.UTSAndroid.getAppTheme.param -->
+
+<!-- UTSJSON.UTSAndroid.getAppTheme.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getAppTheme.test -->
+
+<!-- UTSJSON.UTSAndroid.getAppTheme.compatibility -->
+
+<!-- UTSJSON.UTSAndroid.getAppTheme.tutorial -->
 
 ### getGenericType\<T>(): Type
 
