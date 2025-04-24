@@ -94,6 +94,5 @@ App 端不支持 `text` 组件中渲染多段文本，如果 `text` 组件中的
 <!-- UTSCOMJSON.text.reference -->
 
 ## Bug & Tips@tips
-- app平台不支持[HTML字符实体](https://developer.mozilla.org/zh-CN/docs/Glossary/Entity)。
 - app-Android和app-iOS平台 selectable开启后，仅支持全部文字复制，不支持自由调整光标选择文字。如需自由选择文字，请使用[rich-text组件](rich-text.md)。web平台默认就是可复制文字的，selectable无效。
 - app-android平台，部分自定义字体不支持设置font-weight。
