@@ -27,6 +27,7 @@
 |uni-camera							|uni-camera-release.aar									|androidx.camera:camera-core:1.4.1<br/>androidx.camera:camera-camera2:1.4.1<br/>androidx.camera:camera-lifecycle:1.4.1<br/>androidx.camera:camera-view:1.4.1<br/>androidx.appcompat:appcompat:1.7.0	|uni-media																								|```buildConfigField 'String', 'UTSEasyCom', '\"[{\\\"class\\\":\\\"uts.sdk.modules.DCloudUniCamera.UniCameraExtApiComponentsRegister\\\",\\\"method\\\":\\\"register\\\"}]\"'```			|
 |uni-requestMerchantTransfer		|uni-requestMerchantTransfer-release.aar				|com.tencent.mm.opensdk:wechat-sdk-android:6.8.0																																					|-																										|-																																															|
 |uni-recorder						|uni-recorder-release.aar<br/>audio-mp3aac-release.aar	|com.google.android.exoplayer:exoplayer-core:2.18.0																																					|-																										|-																																															|
+|uni-makePhoneCall					|uni-makePhoneCall-release.aar							|-																																																	|-																										|-																																															|
 
 各模块对应的API可参考文档[App端支持的内置模块列表](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#utsmodules)
 
