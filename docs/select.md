@@ -322,14 +322,14 @@ DCloud做了很多年跨平台开发，uni-app在web和小程序平台取得了�
 |						|包体积（单位:M）	|内存占用（单位:Kb）|
 |--					|--								|--									|
 |flutter		|18								|141324.8						|
-|ArtUI-x		|45.7							|133091.2						|
+|ArkUI-x		|45.7							|133091.2						|
 |uni-app x	|8.5							|105451.2						|
 |compose ui	|4.4							|98575.2						|
 
 包体积数据说明：
 - 包含3个CPU架构：arm64、arm32、x86_64。
 - flutter的代码都是编译为so文件，支持的cpu类型和包体积是等比关系，1个cpu最小需要6M体积，业务代码越多，cpu翻倍起来越多。
-- ArtUI-x的业务代码虽然写在js里，但除了引用了flutter外还引用了js引擎，这些so库体积都不小且按cpu分类型翻倍。
+- ArkUI-x的业务代码虽然写在js里，但除了引用了flutter外还引用了js引擎，这些so库体积都不小且按cpu分类型翻倍。
 - uni-app x里主业务都在kotlin里，kotlin和Android x的兼容库占据了不少体积。局部如图片引用了so库，1个cpu最小需要7M体积。但由于so库小，增加了2个cpu类型只增加了不到1M。
 - compose ui没有使用so库，体积裁剪也更彻底。
 - uni-app x的常用模块并没有裁剪出去，比如slider100的例子其实没有用到图片，但图片使用的fesco的so库还是被打进去了。实际业务中不可能不用图片，所以实际业务中uni-app x并不会比compose ui体积大多少。
