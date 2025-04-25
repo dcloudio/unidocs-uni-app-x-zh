@@ -456,7 +456,7 @@ const theme = {
 </template>
 
 <style scoped>
-.text {
+.view {
   color: v-bind('theme.color');
 }
 </style>
