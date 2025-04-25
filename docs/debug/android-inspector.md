@@ -1,5 +1,6 @@
-HBuilderX暂时不支持 uni-app x 项目 uvue 页面的元素审查，无法查看页面中元素的排版布局情况。  
-在开发中如果 uvue 页面中的元素无法显示或显示位置不符合预期，可以利用 Android Studio 自带的 Layout Inpector 工具查看元素布局相关信息。
+## Android审查界面元素
+
+HBuilderX暂时不支持 uni-app x 项目 uvue 页面的元素审查。相关需求可以利用 Android Studio 自带的 Layout Inpector 工具查看元素布局。
 
 ![LayoutInspector效果](https://native-res.dcloud.net.cn/images/uni-app-x/android/inspector/inspector-sample.jpg)
 
