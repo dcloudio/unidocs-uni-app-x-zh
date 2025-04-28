@@ -18,5 +18,5 @@
 
 ## Tips
 
-* quality属性仅对JPG格式生效。
+* quality属性仅对JPG格式图片生效，非JPG格式图片quality属性始终为100。
 * Android平台仅支持对JPG格式图片进行压缩。iOS平台支持对JPG和PNG格式进行压缩。
