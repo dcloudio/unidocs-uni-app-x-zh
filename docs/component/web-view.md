@@ -10,6 +10,39 @@
 
 <!-- UTSCOMJSON.web-view.component_type -->
 
+
+### 组件宽高说明  
+- web和小程序平台上，web-view是全屏的，即页面只能显示一个铺满的web-view。  
+- app/web平台的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。  
+
+### 嵌套滚动说明  
+App平台 web-view 组件可在 scroll-view、list-view/list-item 等可滚动容器中使用，如果 web-view 中的内容可以滚动，则会出现嵌套滚动的问题，细节如下：    
+- app-android平台，默认开启嵌套滚动，在web-view区域操作时，会优先滚动web页面内容（web页面的body内容），web页面内容无法滚动了再滚动外层嵌套滚动容器。如果web页面使用了区域滚动，嵌套滚动逻辑不会受页面中touch事件的默认行为（[Event：preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)）影响，仅判断web页面内容是否可滚动，web页面内容无法滚动则触发外层嵌套滚动容器，如需配置外层嵌套容器不处理滚动需配置 android-nested-scroll 属性为 none。   
+- app-ios平台，在web-view区域操作时，会优先滚动web-view内容（web页面的body内容），web页面内容无法滚动并且滚动条消失后才能操作滚动外层嵌套滚动容器。如果web页面使用了区域滚动，则受页面中touch事件的默认行为（[Event：preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)）逻辑控制，即阻止了默认行为则不滚动外层嵌套滚动容器，不阻止默认行为则滚动外层嵌套滚动容器。  
+
+### src路径支持说明  
+
+- 本地路径/static方式  
+	由于uni-app/uni-app x编译时，只把/static目录下的静态资源copy到app中，所以src均需指向/static目录下。  
+	其他目录的html文件由于不会被打包进去，所以无法访问。  
+	app平台文件路径会存在大小写敏感问题，为了有更好的兼容性，建议统一按大小写敏感原则处理 [详情](../api/file-system-spec.md#casesensitive)  
+
+- 支持网络路径  
+	支持http、https。  
+	app平台使用系统Webview组件，由系统Webview管理缓存。  
+
+<!-- UTSCOMJSON.web-view.children -->
+
+<!-- UTSCOMJSON.web-view.example -->
+
+<!-- UTSCOMJSON.web-view.reference -->
+
+### 上下文对象API
+
+web-view的操作api为[uni.createWebviewContext()](../api/create-webview-context.md)。
+
+给web-view组件设一个id属性，将id的值传入uni.createWebviewContext()，即可得到web-view组件的上下文对象，进一步可使用`.evalJS()`、`.reload()`等封装好的跨平台方法。
+
 #### 获取原生WebView对象@nativeview
 
 为增强uni-app x组件的开放性，从 `HBuilderX 4.25` 起，UniElement对象提供了 [getAndroidView](../dom/unielement.md#getandroidview) 和 [getIOSView](../dom/unielement.md#getiosview) 方法。
@@ -44,38 +77,6 @@ function canGoForward() : boolean {
 - [Android](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
 - [iOS](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
 
-
-### 组件宽高说明  
-- web和小程序平台上，web-view是全屏的，即页面只能显示一个铺满的web-view。  
-- app/web平台的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。  
-
-### 嵌套滚动说明  
-App平台 web-view 组件可在 scroll-view、list-view/list-item 等可滚动容器中使用，如果 web-view 中的内容可以滚动，则会出现嵌套滚动的问题，细节如下：    
-- app-android平台，默认开启嵌套滚动，在web-view区域操作时，会优先滚动web页面内容（web页面的body内容），web页面内容无法滚动了再滚动外层嵌套滚动容器。如果web页面使用了区域滚动，嵌套滚动逻辑不会受页面中touch事件的默认行为（[Event：preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)）影响，仅判断web页面内容是否可滚动，web页面内容无法滚动则触发外层嵌套滚动容器，如需配置外层嵌套容器不处理滚动需配置 android-nested-scroll 属性为 none。   
-- app-ios平台，在web-view区域操作时，会优先滚动web-view内容（web页面的body内容），web页面内容无法滚动并且滚动条消失后才能操作滚动外层嵌套滚动容器。如果web页面使用了区域滚动，则受页面中touch事件的默认行为（[Event：preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)）逻辑控制，即阻止了默认行为则不滚动外层嵌套滚动容器，不阻止默认行为则滚动外层嵌套滚动容器。  
-
-### src路径支持说明  
-
-- 本地路径/static方式  
-	由于uni-app/uni-app x编译时，只把/static目录下的静态资源copy到app中，所以src均需指向/static目录下。  
-	其他目录的html文件由于不会被打包进去，所以无法访问。  
-	app平台文件路径会存在大小写敏感问题，为了有更好的兼容性，建议统一按大小写敏感原则处理 [详情](../api/file-system-spec.md#casesensitive)  
-
-- 支持网络路径  
-	支持http、https。  
-	app平台使用系统Webview组件，由系统Webview管理缓存。  
-
-<!-- UTSCOMJSON.web-view.children -->
-
-<!-- UTSCOMJSON.web-view.example -->
-
-<!-- UTSCOMJSON.web-view.reference -->
-
-### 上下文对象API
-
-web-view的操作api为[uni.createWebviewContext()](../api/create-webview-context.md)。
-
-给web-view组件设一个id属性，将id的值传入uni.createWebviewContext()，即可得到web-view组件的上下文对象，进一步可使用`.evalJS()`、`.reload()`等方法。
 
 ### web-view组件的内外通信
 - uts向web-view的网页发消息
