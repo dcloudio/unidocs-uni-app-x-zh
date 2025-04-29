@@ -6,6 +6,14 @@
 
 > 使用 gradle 脚本编译  
 
+### HBuilderX4.61及以上版本云端打包环境
+- Android 编译 SDK（compileSdk）： 35  
+- Android 构建工具（buildToolsVersion）：35.0.0  
+- Gradle：8.11.1  
+- Android Gradle 插件（com.android.tools.build:gradle）：8.7.3  
+- JDK：17 （[Amazon corretto 17.0.12.7.1](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html)）  
+
+### HBuilderX4.57及以下版本云端打包环境
 - Android 编译 SDK（compileSdk）： 34  
 - Android 构建工具（buildToolsVersion）：34.0.0  
 - Gradle：8.5  
