@@ -357,8 +357,8 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   * Android App最低支持`Android 5`；
   * iOS版最低支持`iOS12`
   * harmonyOS版最低支持`API14`
-  * Web版发行模式最低支持`chrome 64`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；
-  * Web版运行模式最低支持`chrome 66`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；另外由于运行时不会对语法进行转化来兼容低版本浏览器，如果使用了一些比较新的语法可能会无法在低版本浏览器上运行。
+  * Web版`发行模式`最低支持`chrome 64`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；
+  * Web版`运行模式`最低支持`chrome 66`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；另外由于运行时不会对语法进行转化来兼容低版本浏览器，如果使用了一些比较新的语法可能会无法在低版本浏览器上运行。
 
 - uni-app x开源吗？
   * Web版、小程序版开源地址：[https://github.com/dcloudio/uni-app](https://github.com/dcloudio/uni-app)
