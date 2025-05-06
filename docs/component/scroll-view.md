@@ -136,7 +136,8 @@ onNestedPreScroll(event: NestedPreScrollEvent) {
 
 #### App平台
 
-+ App平台scroll-x、scroll-y属性不支持同时设置为true, 同时设置true时仅scroll-y生效，4.0版本开始scroll-x、scroll-y已废弃，请使用direction属性。
++ App-Android、App-iOS平台scroll-x、scroll-y属性不支持同时设置为true, 同时设置true时仅scroll-y生效，4.0版本开始scroll-x、scroll-y已废弃，请使用direction属性。
+如需同时水平和垂直滚动，可以套2层，一个横一个竖，来实现2个方向能滚动。
 + App平台scroll-view组件不支持动态切换横竖滚动方向
 + App平台scroll-view组件的overflow属性不支持配置visible
 + App平台scroll-view组件默认高度取值：
