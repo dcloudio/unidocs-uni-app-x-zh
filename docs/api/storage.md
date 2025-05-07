@@ -199,6 +199,11 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 
 也就是当我们使用setStorage/setStorageSync 储存一个带类型的数据时，插件内部会自动将其序列化为字符串后进行储存。当我们调用 getStorage/getStorageSync 插件内部也会尝试对字符串进行类型还原，分为以下几种情况：
 
+不同平台支持的数据类型略有差异。
+
+- web端支持类型：String、Number、Boolean、Object、Array、null。
+- 鸿蒙app端支持类型：String、Number、Boolean、Object、Array、null。
+- 微信小程序支持类型：String、Number、Boolean、Object、Array、null、Date（取出时会重新序列化为Date实例）。
 
 #### UTSJSONObject
 
