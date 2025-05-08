@@ -204,6 +204,9 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 - web端支持类型：String、Number、Boolean、Object、Array、null。
 - 鸿蒙app端支持类型：String、Number、Boolean、Object、Array、null。
 - 微信小程序支持类型：String、Number、Boolean、Object、Array、null、Date（取出时会重新序列化为Date实例）。
+- Android app端支持类型：String、Number、Boolean、Object(UTSJSONObject/Type)、Array。
+
+
 
 #### UTSJSONObject
 
@@ -223,7 +226,7 @@ console.log("json2",json2)
 
 #### type类型
 
-如果是type类型，可以正常写入，但是当读取时得到是是UTSJSONObject类型，需要进行类型转换。
+如果是type类型，可以正常写入，但是当读取时得到是UTSJSONObject类型，需要进行类型转换。
 
 
 ```ts
