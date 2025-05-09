@@ -56,18 +56,18 @@ uni-app x项目的unpackage目录下的app-harmony下有编译后的鸿蒙原生
 ArkTS的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可以通过deveco提供的工具来分析泄漏点。
 
 ## 开发注意
+	鸿蒙整体处于发展初期，能用，有坑，大部分坑有规避方案。但开发者应建议其领导、客户、质量部门降低期望，不能严格比照Android和iOS的验收标准要求鸿蒙。
+	
 - 鸿蒙编译工具会在编译本地库时给编译产物的目录加上一串hash值，但windows上最长的文件路径不能超过255个字符。如果开发者的项目路径字符串较长、uni_modules的目录名称较长，再加上鸿蒙deveco编译器加上的hash，就会触发windows文件路径长度限制，导致编译失败。所以windows上的uni-app x项目路径尽量要短，比如`c:\dev\app1`，`uni_modules`的目录名称也要短一些。
 - 鸿蒙平台从4.63起支持摇树，可以根据代码使用情况来决定打包的模块。但仍然部分sdk需要在manifest的可视化界面配置sdk信息。模块列表详见[manifest文档](../collocation/manifest-harmony.md#modules)
 - 暂未发布小程序SDK
 - 鸿蒙平台目前不支持横屏、不支持 rpx 根据窗口尺寸变化自动变化
 - 鸿蒙自身的Bug还有不少，开发时需注意相关的组件、API文档说明。比如：
-	* sticky-header组件实际无法吸顶，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250220195912059/comment)。临时规避方案是通过嵌套滚动或持续修改位置实现吸顶。在hello uni-app x的模板里有示例。
 	* rich-text的无法自动根据内容撑开高度、内部会自滚动且滚动条位置不对，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250224172323045/comment)，导致加载联网内容时滚动表现难以控制。[详见rich-text注意事项](../component/rich-text.md#tips)
 	* animateTo 设置 transform rotate 有较多问题，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250317210619077/comment)
-	
-	鸿蒙整体处于发展初期，能用，有坑，大部分坑有规避方案。但开发者应建议其领导、客户、质量部门降低期望，不能严格比照Android和iOS的验收标准要求鸿蒙。即便微信的鸿蒙版，功能、质量也比不过Android/iOS版。
 - 使用 uni.loadFontFace 后需要更新设置字体内容才能使字体生效
 - 鸿蒙官方文档中px是指物理像素，而在使用uni-app时px是指逻辑像素，这点在阅读鸿蒙官方文档时需要注意
+- 鸿蒙平台 uts 插件内暂不支持使用uniCloud
 - 在运行 HBuilderX 内置的 hello uni-app x 项目运行报错 `运行所需的权限没有签名授权`，是因为演示项目使用到了需要审批的 ACL 权限。解决方案：搜索 `ohos.permission.READ_PASTEBOARD` 将其注释掉，此时项目可以正常运行，同时剪切板的 api 测试页面将不生效。
 
 ## 插件扩展
@@ -77,8 +77,3 @@ ArkTS的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可�
 - [鸿蒙uts插件文档](../plugin/uts-for-harmony.md)
 - [uts插件混编文档](../plugin/uts-plugin-hybrid.md#harmonyos平台)
 - [uts标准模式组件文档](../plugin/uts-component-vue.md)
-
-注意：
-- 鸿蒙平台 uts 插件内暂不支持使用uniCloud
-
-以上限制仅针对uts插件，页面里的代码没有限制

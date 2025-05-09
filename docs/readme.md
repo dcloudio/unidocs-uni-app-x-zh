@@ -6,7 +6,7 @@ uni-app x 是一个庞大的工程，它包括uts语言、uvue渲染引擎、uni
 
 uts是一门类ts的、跨平台的、新语言。
 
-uts在iOS平台编译为swift、在Android平台编译为kotlin、在Web和小程序平台编译为js、在鸿蒙next平台上编译为ArkTS。
+uts在Android平台编译为kotlin、在iOS平台编译为swift、在鸿蒙next平台上编译为ArkTS、在Web和小程序平台编译为js。
 
 在Android平台，uni-app x 的工程被整体编译为kotlin代码，本质上是换了vue写法的原生kotlin应用，在性能上与原生kotlin一致。
 
@@ -67,6 +67,7 @@ uvue是一套基于uts的、兼容vue语法的、跨平台的、原生渲染引�
 - Android版于3.99上线
 - Web版于4.0上线
 - iOS版于4.11上线
+- 微信小程序版于4.41上线
 - harmonyOS版于4.61上线
 
 uvue渲染引擎包括uts版的vue框架（组件、数据绑定...）、跨平台基础ui、css引擎。
@@ -155,15 +156,17 @@ uvue在App端支持的css语法，是web的子集，类似于但优于nvue的css
 
 也就是uts原生插件作者必须得有mac电脑，普通的App开发者可以没有mac电脑。
 
-- js逻辑层已于4.11版上线
-- swift逻辑层还未上线
+- swift逻辑层还未发布
 
 虽然理论上swift逻辑层的性能要高于js逻辑层，但开发者可以放心使用js逻辑层。
 
 uni-app x在iphone上的js逻辑层和原生渲染层的通信经过特殊处理，大幅提升通信效率问题，不再需要bindingX这类技术。也不存在flutter那种混合渲染问题。\
 可以体验hello uni-app x的iOS版本，在slider-100、滚动时动态调整view的top值以维持吸顶等极端场景，均如Android一样的丝滑流畅。
 
-使用js逻辑层除了能在windows下开发，还有一个好处是大幅降低插件生态的建设难度。
+使用js逻辑层有若干好处：
+- 可以在windows下开发（纯Swift只能在mac下开发）
+- 支持开发期间热刷新（纯Swift修改代码只能重新编译打包安装）
+- 大幅降低插件生态的建设难度
 插件作者只需要特殊适配Android版本，在iOS和Web端仍使用ts/js库，即可快速把uni-app/web的生态迁移到uni-app x中。
 例如这个[request拦截库](https://ext.dcloud.net.cn/plugin?id=16177)
 
@@ -280,9 +283,8 @@ uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些�
 
 除上述文档中声明已经完成的，还有如下需要注意：
 
-- 平台支持：Android、Web、iOS版已发布。虽然uts语言支持swift，可以写原生插件，但uvue的iOS版目前只上线了js逻辑层，还未发布swift逻辑层。
+- 平台支持：Android、Web、iOS、鸿蒙版已发布。
 - 小程序平台：4.41起支持微信小程序。其他小程序还在陆续适配中。
-- 鸿蒙next平台：4.61起支持鸿蒙next。
 - 目前不支持国际区账户，仅大陆区开发者账户可用。
 
 ::: info

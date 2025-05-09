@@ -11,7 +11,7 @@
 
 所以在原生应用中集成uni-app x原生SDK，更像是集成一个小程序SDK。
 
-当然uni-app x的性能是最好的，它不会像小程序那样缓慢，也比react native/weex/flutter等性能和兼容性更好（评测[另见](../select.md)）
+当然uni-app x的性能足够好，它不会像小程序那样启动缓慢，也比react native/flutter等性能和原生UI兼容性更好（评测[另见](../select.md)）
 
 uni-app x原生SDK，给原生开发者提供了更多可能性：
 1. 一个最高性能的跨平台框架，让开发效率、运行性能、开发成本这个原来的不可能三角变成可以兼得

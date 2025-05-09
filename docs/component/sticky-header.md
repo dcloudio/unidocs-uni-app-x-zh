@@ -34,7 +34,8 @@
 
 + sticky-header组件不支持css。仅支持padding属性控制子元素位置。其他排版需求要交给子元素实现
 + 同时存在多sticky-header组件请使用sticky-section组件充当父容器控制吸顶业务
-+ 鸿蒙平台暂不支持sticky-header，需要等鸿蒙修复ListItemGroup组件frameNode不能添加header的Bug后方可支持
++ 在API版本低于17的鸿蒙平台上，若想使用吸顶，不能使用本组件。可在滚动容器里自行监听滚动，设置某个区域的top为固定值来实现吸顶。可参考hello uni-app x的模板->[scroll-view自定义滚动吸顶示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/scroll-sticky/scroll-sticky.uvue)
+
 
 <!-- UTSCOMJSON.sticky-header.children -->
 
