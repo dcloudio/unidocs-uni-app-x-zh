@@ -636,6 +636,7 @@ export function buildButton(params: ESObject) {
 + 绑定原生 view 方法（bindAndroidView、bindIOSView）仅支持调用一次，原生 view 一旦绑定后不支持再次绑定其他 view
 + ios平台需要vue组件主动释放 uts 实例，所以页面触发 unmounted 生命周期时需要调用 this.button?.destroy() 避免内存泄露
 + android平台 native-view 组件不支持border、background、box-shadow属性，可以使用view标签包裹native-view,在view标签设置以上属性
++ 鸿蒙原生应用中px是指物理像素，而在uni-app的css样式中px是指逻辑像素。上述@Builder内纯数值尺寸对应的是鸿蒙的vp单位（逻辑像素）等同于css样式中的px。鸿蒙原生单位文档[详见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)
 
 
 ### 页面引用UTS插件-标准模式组件@pagecode

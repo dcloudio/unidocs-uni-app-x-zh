@@ -66,7 +66,7 @@ ArkTS的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可�
 	* rich-text的无法自动根据内容撑开高度、内部会自滚动且滚动条位置不对，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250224172323045/comment)，导致加载联网内容时滚动表现难以控制。[详见rich-text注意事项](../component/rich-text.md#tips)
 	* animateTo 设置 transform rotate 有较多问题，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250317210619077/comment)
 - 使用 uni.loadFontFace 后需要更新设置字体内容才能使字体生效
-- 鸿蒙官方文档中px是指物理像素，而在使用uni-app时px是指逻辑像素，这点在阅读鸿蒙官方文档时需要注意
+- 鸿蒙原生应用中px是指物理像素，而在uni-app的css样式中px是指逻辑像素。鸿蒙原生单位文档[详见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)
 - 鸿蒙平台 uts 插件内暂不支持使用uniCloud
 - 在运行 HBuilderX 内置的 hello uni-app x 项目运行报错 `运行所需的权限没有签名授权`，是因为演示项目使用到了需要审批的 ACL 权限。解决方案：搜索 `ohos.permission.READ_PASTEBOARD` 将其注释掉，此时项目可以正常运行，同时剪切板的 api 测试页面将不生效。
 
