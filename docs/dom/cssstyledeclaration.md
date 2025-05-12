@@ -17,8 +17,8 @@
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.returnValue -->
 
-
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.setProperty.tutorial -->
+
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.name -->
 
@@ -33,6 +33,20 @@
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.tutorial -->
 
 **注意** 4.51版本开始 `getPropertyValue` 开始仅返回string类型
+
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.removeProperty.name -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.removeProperty.description -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.removeProperty.compatibility -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.removeProperty.param -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.removeProperty.returnValue -->
+
+<!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.removeProperty.tutorial -->
+
 
 ## 示例
 ```html
