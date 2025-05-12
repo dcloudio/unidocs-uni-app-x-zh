@@ -46,6 +46,7 @@
 	* 应用市场上架
 		* [概述](tutorial/app-market.md)
 		* [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
+	* [iOS逻辑层使用注意](native/iosReadme.md)
 * 鸿蒙next平台专题指南
   * [概述](app-harmony/README.md)
 * 小程序平台专题指南

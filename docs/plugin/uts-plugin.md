@@ -51,7 +51,9 @@ api插件也可以操作界面，但更多是独立的全屏窗口或弹出窗�
 
 比如lottie动画的uts插件，就是一个组件插件。[https://ext.dcloud.net.cn/plugin?id=10674](https://ext.dcloud.net.cn/plugin?id=10674)，其源码在[https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view](https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view)
 
-### uts插件与uni原生语言插件的区别
+### uts插件与老版uni原生语言插件的区别
+
+> 本章节适用于老插件作者，了解uts插件比老版uni原生语言插件的好处。新插件作者可以跳过本章节。
 
 uts 插件编译到 app 平台时，在功能上相当于 uni-app 之前的 app 原生插件。都是给app扩展原生能力。
 

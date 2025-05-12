@@ -16,9 +16,12 @@ uts在Android平台编译为kotlin、在iOS平台编译为swift、在鸿蒙next�
   - Android 端通过开发者工具显示界面元素边界可知界面都是原生UI，解包后也不会看到js引擎，里面的html文件是示例中演示web-view组件所用
 - `iOS` 获取 ABM（Apple 商务管理）包
   - 使用 iPhone 扫码后会跳转页面需要使用 DCloud 账号登录，登录过后自动分发兑换码在 AppStore 获取安装包，此过程不需要您支付费用。ABM包在Appstore中无法公开搜索到，但安装后可在 AppStore 更新页面进行更新。
-- [web 预览地址](https://hellouniappx.dcloud.net.cn/web)
-- 微信小程序
-  - 微信中搜索`HelloUniAppX`，或者扫描下方二维码
+- `鸿蒙next`
+  - 使用鸿蒙next手机的应用商店，搜索“DCloud开发者中心系统”，或者扫描下方二维码
+- `Web`
+  - 访问如下地址，[https://hellouniappx.dcloud.net.cn/web](https://hellouniappx.dcloud.net.cn/web)，或者扫描下方二维码
+- `微信小程序`
+  - 微信中搜索小程序`HelloUniAppX`，或者扫描下方二维码
 
 <div class="quick">
   <div style="margin-top: 20px;justify-content: space-around;">
@@ -132,43 +135,19 @@ uvue在App端支持的css语法，是web的子集，类似于但优于nvue的css
 
 但这些补丁技术都不治根。过去只有flutter解决了dart和ui层的通信问题。可是这套方案又带来2个问题：
 1. dart和原生层通信也还是有延时，对象传递需要序列化，造成性能问题；
-2. 自渲染而不是原生渲染，无可避免会引发混合渲染，比如原生的信息流广告内嵌、原生输入法适配，造成内存高和输入障碍。
+2. 自渲染而不是原生渲染，无可避免会引发混合渲染，比如原生的信息流广告内嵌、原生输入法适配，造成内存高、滚动不同步和输入障碍。
 
 [详见评测](select.md)
 
-所以一个好的UI层，仍然应该是原生渲染而不是自渲染。只不过需要解决逻辑层和原生（不管是原生UI还是原生能力）的通信问题。
+所以一个好的UI层，仍然应该是原生渲染而不是自渲染。
 
-其实不管是js还是dart，和原生都有通信桥，功能上没有限制，可以调用各种原生能力，但问题就出在Android上这个通信性能上不去。
+其实不管是js还是dart，和原生都有跨语言通信桥，功能上没有限制，可以调用各种原生能力，但问题就出在Android上这个通信性能上不去。
 
 既然通信性能不行，那就干脆不通信。
 
 由于uts在Android上被编译为kotlin，它的逻辑层和UI层都是纯原生的，没有通信问题，所以它的性能真正达到了原生水平。因为本质上它就是换了vue写法的原生kotlin应用。
 
-在iOS上，情况要复杂些。由于swift编译iOS应用必须依赖xcode，而DCloud的开发者中windows占比更高。且iOS上js和原生通信有解，所以uni-app x在iOS上提供js和swift双选逻辑层。
-
-|								|js逻辑层																								|swift逻辑层														|
-|--							|--																											|--																			|
-|主应用开发平台	|windows或mac																						|只能mac																|
-|uvue页面代码		|可使用js但不能直接调用swift API。swift调用需封装在uts插件中|只能调用swift不能使用js								|
-|uts原生插件开发|只能mac																								|只能mac																|
-|uts原生插件使用|windows下打包后使用，mac下本地直接编译									|windows下打包后使用，mac下本地直接编译	|
-|性能						|丝滑流畅																								|丝滑流畅															|
-
-也就是uts原生插件作者必须得有mac电脑，普通的App开发者可以没有mac电脑。
-
-- swift逻辑层还未发布
-
-虽然理论上swift逻辑层的性能要高于js逻辑层，但开发者可以放心使用js逻辑层。
-
-uni-app x在iphone上的js逻辑层和原生渲染层的通信经过特殊处理，大幅提升通信效率问题，不再需要bindingX这类技术。也不存在flutter那种混合渲染问题。\
-可以体验hello uni-app x的iOS版本，在slider-100、滚动时动态调整view的top值以维持吸顶等极端场景，均如Android一样的丝滑流畅。
-
-使用js逻辑层有若干好处：
-- 可以在windows下开发（纯Swift只能在mac下开发）
-- 支持开发期间热刷新（纯Swift修改代码只能重新编译打包安装）
-- 大幅降低插件生态的建设难度
-插件作者只需要特殊适配Android版本，在iOS和Web端仍使用ts/js库，即可快速把uni-app/web的生态迁移到uni-app x中。
-例如这个[request拦截库](https://ext.dcloud.net.cn/plugin?id=16177)
+鸿蒙上也类似。但iOS上，情况要复杂些。详见[iOS的swift驱动和js驱动](./native/iosReadme.md) 
 
 ## 3. uni的组件 @uni-components
 
@@ -192,7 +171,14 @@ uni-app x支持的API包括：
 5. dom的API [详见](./dom/README.md)
 6. 原生API
 
-由于 uts 可以直接调用 Android 和 iOS 的 api，所以 OS 和三方sdk的能力都可以在uts中调用。如下：
+uni-app x不会限制任何原生API的调用，在每个平台都可以调用其平台所有原生能力：
+- web平台：可调用浏览器的所有api，可混合使用js，可使用web生态的各种库，包括npm。
+- 小程序平台：可调用小程序的所有api，可混合使用js，小程序的自定义组件生态（如wxml组件），包括支持小程序的npm库。
+- Android平台：可调用Android os的所有api，可混合使用kotlin、java源码，可使用所有适配Android的sdk，包括so库，可使用gradle等仓储。
+- iOS平台：可调用iOS的所有api，可混合使用swift，可使用所有适配iOS的sdk，包括动态库静态库，可使用cocoaPods库管理
+- Harmony平台：可调用鸿蒙的所有api，可混合使用ArkTS，可使用所有适配鸿蒙的sdk，包括so库，可使用ohpm库管理。
+
+以下示例，在 Android 上调用了 OS 的能力获取手机型号。如下：
 
 ```vue
 <script>
@@ -219,77 +205,88 @@ uni-app x支持的API包括：
 
 其实，[uni.getSystemInfoSync](https://gitcode.net/dcloud/uni-api/-/blob/master/uni_modules/uni-getSystemInfo/utssdk/app-android/index.uts) 的内部实现就是一个uts模块，底层使用了一样的代码，也是import了android.os.Build。
 
-uni.的api，大多是uts开发的，它们会陆续开源在[uni-api](https://gitcode.net/dcloud/uni-api)。
+uni.的api，大多是uts开发的，它们开源在[uni-api](https://gitcode.net/dcloud/uni-api)。
 
 插件市场也有很多做好的uts插件，方便开发者拿来即用。[uts插件](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 
 uni-app js引擎版，支持 plus API 和 weex API。但 uni-app x 中，不再支持这些API。
 
-## 5. 全局文件
-- manifest.json [详见](./collocation/manifest.md)
-- app.uvue [详见](./collocation/app.md)
-- pages.json 不支持app-plus的内容。[详见](./collocation/pagesjson.md)
-- uni.scss 正常支持。但注意app-uvue仅能使用[css子集](./css/README.md)
+## 5. 插件生态
 
-## 6. 插件生态
+uni-app x不使用插件，也可以直接调用各平台原生API。但把各平台API统一封装后，会让调用者更加方便。
 
-uni-app x编译到web、小程序、以及iOS的js逻辑层模式时，所有js库仍然可用。但在Android平台或iOS的swift逻辑层模式时，由于没有js引擎，所以无法使用js生态（除非使用web-view组件或自己集成一个js引擎）。
+uni-app x的插件生态，基于[uts插件](./plugin/uts-plugin.md)。这是一种面向全端的、统一的插件管理方案。
 
-uni-app x App平台的插件生态来源于：
-1. `原生生态`。比如上述示例代码中获取手机型号。以及各种原生sdk的直接调用。
-2. `ts生态的迁移`。很多js库是ts编写的，如果没有使用uts不支持的语法，ts代码就可以使用。如果略有不同，也可以稍加改造ts以适配uts。
+目前已经有上千款uts插件，它们发布在[uni插件市场](https://ext.dcloud.net.cn/?uni-appx=1)
 
-::: tip
-uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些库只能在uni-app x编译为web时使用。当然如果有兼容uni-app x的全端库，可以使用，比如这些库[z-paging-x](https://www.npmjs.com/package/z-paging-x)、[lwu-css](https://www.npmjs.com/package/lwu-css)。
+uts插件通过统一的interface，约束了所有平台的API的输入输出，甚至错误码，保障了跨平台调用的一致性。
 
-[uni插件市场](https://ext.dcloud.net.cn/)是跨端插件的聚集地，更推荐在这里找插件而不是去npm。插件市场有2种插件适用于uni-app x。
-:::
+uts插件有多种开发方式：
+1. 可以使用uts语言直接调用系统API来封装插件
+比如[电量插件](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getbatteryinfo/utssdk)，在每个平台都是uts代码，但统一了interface。
+2. 可以原生混编
+在不同平台，直接用uts调用平台原生代码，比如Android的kt文件、iOS的swift文件、鸿蒙的ets文件。同样使用一套interface约束。\
+比如[音频播放插件](https://gitcode.net/dcloud/uni-api/-/tree/dev/uni_modules/uni-createInnerAudioContext)，在Android上使用了kt混编，iOS使用了swift混编，复用现成的原生代码，快速封装插件。
+3. 调用三方sdk并引入库管理
+uts插件是一个大一统的插件模型，其中在不同的子平台可以包含不同平台的库管理方案，不管是aar、so、framework、har都可以使用
+	- web平台和小程序平台支持npm
+	- Android平台支持gradle等仓储
+	- iOS平台支持cocoaPods
+	- Harmony平台支持ohpm
 
-1. uts插件（原生插件）
+如果你只是使用插件，那么访问插件市场，勾选`uni-app x`的checkbox就能找到所需插件。
 
-	uts插件封装原生能力，包括os能力或三方sdk。可以做API插件，也可以做组件插件。
+如果你想开发uts插件，[参考插件开发教程](./plugin/uts-plugin.md)
 
-	uts插件可同时在 uni-app js引擎版 和 uni-app x 的app平台上运行。
-
-	uts插件分类直达：[https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
-
-	之前uni-app js版的“App原生语言插件”，因依赖js引擎和weex，所以无法在 uni-app x 中运行。
-
-2. 前端插件
-
-	uvue组件、uts sdk、uni-app x前端页面/项目模板。这些前端代码仍然使用uni-app x的vue、uts、css来开发。
-
-	在插件市场搜索框下方有uni-app x的checkbox，勾选可见到所有适配uni-app x的插件：[https://ext.dcloud.net.cn/?uni-appx=1](https://ext.dcloud.net.cn/?uni-appx=1)
-
-	一般情况下，原生库的能力是大于js库的。不太可能有一个功能必须使用js库才能使用。比如md5，js有库，原生也有库，调用一个jar也很方便。
-
-	常见的[加密、md5、sha](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&orderBy=Relevance&cat1=8&cat2=81)、[dayjs](https://ext.dcloud.net.cn/search?q=dayjs&orderBy=Relevance&cat1=8&cat2=81)等库，插件市场已经有uts版本。
-
-**如果你一定要使用某个js库，还有一个办法是在uni-app x里的[web-view](./api/create-webview-context.md)组件，让其运行js并返回值给uts代码。**
-
-目前插件市场适配uni-app x的插件已有数千款，包括丰富的ui组件库生态：
+除了uts插件封装原生能力，也支持基于uni-app x的纯前端组件，比如ui库，这里推荐一些：
 - [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：高品质UI库，插件大赛一等奖。
+- [lime-UI](https://ext.dcloud.net.cn/plugin?id=22372)：即兼容uni-app又兼容uni-app x，高频维护的优秀插件。
 - [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：setup组合式UI库，插件大赛一等奖。
-- [lime-UI](https://ext.dcloud.net.cn/plugin?id=22372)：即兼容uni-app又兼容uni-app x。
 - [TuiPlus ](https://ext.dcloud.net.cn/plugin?id=21111)：简洁高效的组件库，买即赠[xCharts原生图表库](https://ext.dcloud.net.cn/plugin?id=21107)
 - [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：免费、轻量UI库
 - [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceUI作者的免费开源组件库
-- [wx-ui](https://ext.dcloud.net.cn/plugin?id=15579)：基于uni-app x开发的高性能混合UI库
-- [OneUI](https://ext.dcloud.net.cn/plugin?id=17104)：简洁、现代的 UI 组件
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
 
 
+如果想复用web生态的内容，可以使用
+1. web-view组件承载：并利用组件提供的postMessage和原生通信。
+2. ts生态的迁移：很多js库是ts编写的，如果没有使用uts不支持的语法，ts代码就可以使用。如果略有不同，也可以稍加改造ts以适配uts。
+
+uni-app x支持npm，但npm的大多数库是for web的，无法跨端，这些库只能在uni-app x编译为web时使用，有的也支持小程序。当然如果有兼容uni-app x的全端库，可以使用，比如这些库[z-paging-x](https://www.npmjs.com/package/z-paging-x)、[lwu-css](https://www.npmjs.com/package/lwu-css)。
+
+[uni插件市场](https://ext.dcloud.net.cn/)是跨端插件的聚集地，更推荐在这里找插件而不是去npm。
+
+## 开放性
+
+uni-app x的组件和API基本都开源，个别未开源部分也会在接下来陆续完成开源。
+
+在uni-app x的每个组件和API的文档中，都有该API具体实现的源码github和gitcode链接（文档右侧）。比如[uni.showModal](https://doc.dcloud.net.cn/uni-app-x/api/modal.html)
+
+开发者可以审查这些源码的合理性，也可以在遇到官方bug时，自行拉源码修复。\
+uni-app x支持单独的组件和API替换，将源码的`uni_modules`下载到工程下，修改源码后打包即可将官方实现自动替换为你修改的实现。
+
+uni-app x的Web版、小程序版的主引擎有单独开源地址：[https://github.com/dcloudio/uni-app](https://github.com/dcloudio/uni-app)
+
+uni-app x的所有可视元素，都没有写死样式和文字，开发者可以自己定制风格和国际化。
+
+开发者编写的代码，不管是uvue还是uts，编译后的产物代码都在项目的unpackage目录下。\
+开发者可以看到实际生成的kt、swift、ets、js代码是什么样的，无需担心埋入不合适的代码。\
+开发者可以自行把这些kt等文件引入自己的原生工程中，自行打包。这些都是开放的。
+
+uni-app x引擎仅在引擎崩溃时有数据收集以用于产品改进，且不采集任何《个人信息保护法》涉及的个人隐私数据。详见[隐私协议](https://dcloud.io/license/appprivacy.html)
+
 ## 路线图
 
-除上述文档中声明已经完成的，还有如下需要注意：
+2025年将推出：
+- vue蒸气模式，免除vnode，更高性能
+- 暴露完整的DOM API，可不使用vue开发
+- 提供vscode、cursor插件，支持更多ide开发uni-app x
+- 提供AI能力，帮助开发者自动修复强类型要求造成的类型错误
 
-- 平台支持：Android、Web、iOS、鸿蒙版已发布。
-- 小程序平台：4.41起支持微信小程序。其他小程序还在陆续适配中。
-- 目前不支持国际区账户，仅大陆区开发者账户可用。
+其他计划，将根据社区的反馈意见来排优先级。
 
-::: info
-欢迎去[需求墙](https://vote.dcloud.net.cn/#/?name=uni-app%20x)投票，告诉我们你的需求优先级。
-:::
+欢迎去[需求墙](https://vote.dcloud.net.cn/#/?name=uni-app%20x)投票。
+
 
 ## 案例
 [另见](./sample.md)
@@ -301,7 +298,7 @@ uni-app x 的自动化测试方案和 uni-app js版相同，自动化测试脚�
 
 开发者可以为自己的app编写好自动化测试，以提升自己的产品质量。
 
-uni-app 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html](https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html)
+uni-app (x) 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html](https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html)
 
 ## 历史老项目兼容指南
 
@@ -361,11 +358,6 @@ uni-app x 毕竟是原生应用，内嵌flutter、rn这些没有任何问题，�
   * harmonyOS版最低支持`API14`
   * Web版`发行模式`最低支持`chrome 64`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；
   * Web版`运行模式`最低支持`chrome 66`、`safari 11.1`、`firefox 62`、`edge 79`、`safari on iOS 12`；另外由于运行时不会对语法进行转化来兼容低版本浏览器，如果使用了一些比较新的语法可能会无法在低版本浏览器上运行。
-
-- uni-app x开源吗？
-  * Web版、小程序版开源地址：[https://github.com/dcloudio/uni-app](https://github.com/dcloudio/uni-app)
-  * App版的组件和API实现大都开源，持续更新在项目[uni-api](https://gitcode.net/dcloud/uni-api)和[uni-component](https://gitcode.net/dcloud/uni-component)下。\
-  开发者可以了解组件和API的实现，直接修改或优化源码，修改后的代码以[ext api](https://uniapp.dcloud.net.cn/api/extapi.html)或组件的方式下载到项目中，即可实现在本项目中替换掉官方组件和API。
 
 - 未来 uni-app js引擎版还维护吗？\
   维护。服务js开发者仍然是DCloud的重点。但nvue和5+将不再维护。不再维护不是下线，而是没有重大问题的话（如新手机不兼容）不会再更新了。
