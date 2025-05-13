@@ -1,3 +1,7 @@
+#### 4.65.2025051206
+##### uni-app x
+* Android平台 修复 组件 web-view 网页iframe中输入框获取焦点后可能被软键盘遮挡 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17365)
+
 #### 4.64.2025042916
 ##### uni-app x
 * 【重要】新增 编译App到鸿蒙平台，实现跨平台开发鸿蒙原生应用 [详见](https://doc.dcloud.net.cn/uni-app-x/app-harmony/)
