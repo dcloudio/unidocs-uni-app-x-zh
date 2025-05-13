@@ -635,7 +635,7 @@ NVRecycler() {
 |:-------		|:--------	|:--------			|:---		|:---			|
 |$el			|对象		|当前View实例对象	|全部平台	|开发者在NVLoad返回的对象类型|
 |$androidContext|对象		|当前组件上下文(可为空)		|仅android	|android平台对应Context对象|
-|$emit("event",Any)|函数		|发送已注册的事件	|全部平台	|$emit(事件名称-必选,事件参数可选)  事件参数仅支持String|number|boolean|Map类型 |
+|$emit("event",Map<string,any>)|函数		|发送已注册的事件	|全部平台	|$emit(事件名称-必选,事件参数可选)  事件参数仅支持Map类型 |
 
 **注意**
 
