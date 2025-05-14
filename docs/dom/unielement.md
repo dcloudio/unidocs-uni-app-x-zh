@@ -75,6 +75,18 @@ app平台 setAttribute 不支持设置 class、style 属性，设置了也不会
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.setAttribute.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.setAnyAttribute.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.setAnyAttribute.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.setAnyAttribute.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.setAnyAttribute.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.setAnyAttribute.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.setAnyAttribute.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.description -->
@@ -95,6 +107,18 @@ app平台 getAttribute 不支持获取 class、style 属性， uvue/vue 页面�
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.example -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAttribute.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAnyAttribute.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAnyAttribute.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAnyAttribute.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAnyAttribute.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAnyAttribute.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.getAnyAttribute.tutorial -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.hasAttribute.name -->
 
@@ -340,6 +364,18 @@ if (view != null && view instanceof WKWebView) {
 <!-- CUSTOMTYPEJSON.UniElement.methods.remove.returnValue -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.remove.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.dispatchEvent.name -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.dispatchEvent.description -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.dispatchEvent.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.dispatchEvent.param -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.dispatchEvent.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniElement.methods.dispatchEvent.tutorial -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.scrollTo.name -->
 
