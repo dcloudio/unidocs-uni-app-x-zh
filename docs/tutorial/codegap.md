@@ -79,6 +79,17 @@ data里`:`的用途是赋值，无法通过`:`定义类型，所以data的数据
 </style>
 ```
 
+## 不同类型不能赋值、比较、运算
+在js里，可以字符串与数字相加，if() 里比较一个非bool值，这些在uts里都不行。
+```js
+//js
+let a = "abc"
+a=1 //a的类型从字符串变成了数字。但uts里不能这样
+if(a){ //a在js里作为数字，被隐式转换为了true。但uts里不能这样，如果要判断这个变量是否为null，uts里只能写 if (a!=null)
+
+}
+```
+
 ## 全局属性
 
 `uni-app x` 中，`uni` 对象不支持动态绑定自定义属性，[app.config.globalProperties](../vue/README.md#app-instance) 暂时不支持。\
