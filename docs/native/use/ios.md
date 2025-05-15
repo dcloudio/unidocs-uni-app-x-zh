@@ -2,7 +2,8 @@
 
 ## 准备环境
 * HBuilder X (4.26及以上版本）
-* Xcode 15.2及以上版本
+* Xcode版本建议与[iOS平台云端打包环境](https://doc.dcloud.net.cn/uni-app-x/tutorial/app-env.html#ios%E5%B9%B3%E5%8F%B0%E4%BA%91%E7%AB%AF%E6%89%93%E5%8C%85%E7%8E%AF%E5%A2%83)保持一致
+
 
 ## 接入流程
 1. 在 `HBuilder X` 中导出资源文件，根据资源内容，配置`原生主工程`环境，添加基础模块需要的依赖库以及资源文件
