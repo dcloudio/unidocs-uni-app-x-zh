@@ -24,8 +24,8 @@ App一键登录的优势：
 
 一键登录涉及业务开通和付费，因为安全问题又涉及客户端和服务器交互，有较多文档：
 1. 业务介绍：介绍业务流程、开通和付费。[详见](https://uniapp.dcloud.net.cn/univerify.html)
-2. 客户端API，即本文
-3. 服务器API，[详见](https://doc.dcloud.net.cn/uniCloud/uni-login/dev.html)
+2. 客户端API，在手机端获取openId、accessToken，详情参考下文
+3. 服务器API，使用openId、accessToken换取手机号码，完成登录业务流程，[详见](https://doc.dcloud.net.cn/uniCloud/uni-login/dev.html)
 
 uni-id-pages插件，已经内置一键登录，从云端到客户端均已开发好并开源，推荐使用。[详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
 
