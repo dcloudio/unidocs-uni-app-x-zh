@@ -403,6 +403,7 @@ UTSAndroid.getDispatcher("io").async(function(_){
 },null)
 ```
 
+** 注意，修改UI或者响应式数据（会触发ui更新） 只能可以在`main`任务队列进行
 
 ### getAppId()
 
