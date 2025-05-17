@@ -278,9 +278,9 @@ uni-app x引擎仅在引擎崩溃时有数据收集以用于产品改进，且�
 ## 路线图
 
 2025年将推出：
-- vue蒸气模式，免除vnode，更高性能
-- 暴露完整的DOM API，可不使用vue开发
-- 提供vscode、cursor插件，支持更多ide开发uni-app x
+- vue蒸气模式（Vapor），免除vnode，更高性能
+- 暴露完整的DOM API，可不使用vue开发。社区可自行在上层封装react、声明式等其他dsl写法
+- 提供vscode、cursor插件，支持更多ide开发 uni-app x
 - 提供AI能力，帮助开发者自动修复强类型要求造成的类型错误
 
 其他计划，将根据社区的反馈意见来排优先级。
