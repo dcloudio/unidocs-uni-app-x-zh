@@ -71,7 +71,7 @@ uni-app x的项目结构与[uni-app老版的项目结构](https://uniapp.dcloud.
 	</code>
 </pre>
 
-> 目前许多AI工具都已支持自定义规则来让AI更好的理解项目背景、编码风格和具体需求，从而生成更符合预期的代码。以下是uni-app-x内部使用的一些规则[链接](https://github.com/dcloudio-hbuilder/uni-app-x-ai-rules)(以Cursor Rules为例，其中的内容也适用于其他工具)
+> 目前许多AI工具都已支持自定义规则来让AI更好的理解项目背景、编码风格和具体需求，从而生成更符合预期的代码。以下是uni-app-x内部使用的一些规则[链接](https://github.com/dcloudio/uni-app-x-ai-rules)(以Cursor Rules为例，其中的内容也适用于其他工具)
 
 ## 运行时的UniApp实例
 
