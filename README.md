@@ -1,36 +1,4 @@
-# uni-app x 是什么？
-
-> HBuilderX3.9+
-
-uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。
-
-uni-app x 没有使用js和webview，它基于 uts 语言。在App端，uts在iOS编译为swift、在Android编译为kotlin，完全达到了原生应用的功能、性能。
-
-可以下载打包后的[hello uni-app x](https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk)的apk来体验。（通过显示界面元素边界可知界面都是原生UI，解包后也不会看到js引擎，里面的html文件是示例中演示web-view组件所用）
-
-<div class="quick">
-  <div style="margin-top: 20px;justify-content: space-around;">
-    <a
-      href="https://web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx.apk"
-      target="_blank"
-      style="display: flex; align-items: center;flex-direction: column;margin: 0 5px 20px;width:160px;"
-      one-link-mark="yes"
-    >
-      <div class="barcode-img-box">
-        <img
-          src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/hello-uniappx-apkqrcode.png"
-          width="160"
-          loading="lazy"
-        />
-      </div>
-      <b>hello uni-app x</b>
-    </a>
-  </div>
-</div>
-
-hello uni-app x的源码见：[https://gitcode.net/dcloud/hello-uni-app-x](https://gitcode.net/dcloud/hello-uni-app-x)
-
-uni-app x 是一个庞大的工程，它包括uts语言、uvue渲染引擎、uni的组件和API、以及扩展机制。
+# uni-app x 官方文档
 
 ## 如何在本地运行查看文档
 
