@@ -28,6 +28,7 @@ uni-app x框架因为需要也会产生一些文件在CACHE目录中，比如拍
 			- uni-crash ：App崩溃日志
 			- uni-audio ：App 线上音频缓存
 			- uni-recorder ：App 录音存储
+			- uni-store ： uni.getFileSystemManager().saveFile/saveFileSync 默认保存路径
 		* 用户文件目录（`uni.env.USER_DATA_PATH`）：提供给开发者操作的本地文件目录（files）
 	+ 应用内置沙盒目录（`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`）：存放框架的网络缓存（如网络图片、视频、web-view的缓存）、storage。
 	+ 沙盒外目录
@@ -178,6 +179,7 @@ uni-app x的部分内置API，在App平台会产生临时文件会放置在本ca
 - uni-audio //存放网络缓存音频文件
 - uni-recorder //存放录音文件
 - uni-crash //存放崩溃日志
+- uni-store // uni.getFileSystemManager().saveFile/saveFileSync 默认保存路径
 	* java //java、kotlin层崩溃日志
 	* c //c、so库崩溃日志
 
