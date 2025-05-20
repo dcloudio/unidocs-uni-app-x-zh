@@ -2,16 +2,15 @@
 
 ## 正式版
 
-### 4.65.2025051206
+### 4.66.2025051912
 
-**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android/Android-uni-app-x-SDK@13475-4.65.zip)**
+**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android/Android-uni-app-x-SDK@13516-4.66.zip)**
 
-* 更新 uni-app x 原生SDK打包支持，需使用HBuilderX（4.65.2025051206）版本生成本地打包App资源。
-* 修复 组件 web-view 网页iframe中输入框获取焦点后可能被软键盘遮挡 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17365)
+* 更新 uni-app x 原生SDK打包支持，需使用HBuilderX（4.66.2025051912）版本生成本地打包App资源。
 
 **[历史版本](https://pan.baidu.com/s/1M6XHzokpQYJqfICTzjuQ_g?pwd=93yh)**
  
-**[历史版本更新日志](https://download1.dcloud.net.cn/hbuilderx/changelog/4.65.2025051206.html)**
+**[历史版本更新日志](https://download1.dcloud.net.cn/hbuilderx/changelog/4.66.2025051912.html)**
 
 ## alpha版
 
