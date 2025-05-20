@@ -1,5 +1,23 @@
 ## ANDROID配置
 
+### 渠道信息 @channel
+
+> HBuilder4.31版本新增支持
+
+uni-app x 的渠道信息配置，云端需在“App打包”界面配置，详情参考[配置渠道包](../tutorial/app-package.md#channel)。
+离线打包时需在原生工程中配置，详情参考[Android平台配置应用渠道包](../native/use/android.md#androidmanifest)。
+
+
+### URL Scheme @urlScheme
+uni-app x 项目 manifest.json 文件暂未提供 url scheme 配置，HBuilderX4.18及以上版本支持在 app 原生应用配置文件中进行设置，详情参考：[Android平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#urlscheme)
+
+**注意**
+- uni-app x项目标准基座已配置 url scheme 值："uniappx"
+- 配置 url scheme 需提交云端打包才能生效
+
+标准基座可通过此网页体验 Url Scheme 启动 App：[https://uniappx.dcloud.net.cn/scheme.html](https://uniappx.dcloud.net.cn/scheme.html)
+
+
 ### 权限配置 @permissions
 
 uni-app x项目使用[uni内置模块](./manifest-modules.md#utsmodules)时，云端打包会自动添加模块、插件声明需要的Android权限，也可以额外添加或强制移除某些权限。
@@ -51,6 +69,7 @@ uni-app x项目使用[uni内置模块](./manifest-modules.md#utsmodules)时，�
 **注意**  
 - android:name字段值使用的双引号前面需要加转义斜线“\”  
 - 强制移除的权限优先级高于额外添加的权限，也就是某个权限如果同时配置了额外添加和强制移除，最终打包结果是移除此权限  
+- 配置或修改权限后需提交云端打包才能生效  
 
 
 ### minSdkVersion @minsdkversion
