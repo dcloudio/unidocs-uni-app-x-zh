@@ -1,9 +1,17 @@
 const path = require('path');
 const { slugify } = require('@vuepress/shared-utils')
 const highlight = require('@vuepress/markdown/lib/highlight')
-const createSidebar = require('./markdown/createSidebar')
 const { simplifySlugText } = require('./utils')
 const copyOptions = require('./config/copy');
+const {
+  translate,
+  header,
+  enhanceMd,
+  createSidebar,
+  normalizeLink,
+  injectJsonToMd,
+  createLLMSText,
+} = require('@dcloudio/docs-utils')
 
 const base = '/uni-app-x/'
 
@@ -37,7 +45,7 @@ const config = {
   themeConfig: {
     titleLogo: 'https://web-ext-storage.dcloud.net.cn/uni-app-x/logo.ico',
     logo: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/logo.png',
-    sidebar: createSidebar(),
+    sidebar: createSidebar(path.resolve(__dirname, '../'), __dirname, 'https://doc.dcloud.net.cn/uni-app-x'),
     sidebarDepth: 0,
     nextLinks: false,
     prevLinks: false,
@@ -85,22 +93,19 @@ const config = {
 
       config
         .plugin('translate')
-        .use(require('./markdown/translate'))
+        .use(translate)
         .end()
         .plugin('convert-header')
-        .use( require('./markdown/header'))
+        .use(header)
         .end()
         .plugin('normalize-link')
-        .use(require('./markdown/normalizeLink'))
+        .use(normalizeLink, [{ base }])
         .end()
-				.plugin('img-add-attrs')
-				.use(require('./markdown/img-add-attrs'))
+				.plugin('enhance-md')
+				.use(enhanceMd)
         .end()
         .plugin('inject-json-to-md')
-        .use(require('./markdown/inject-json-to-md'))
-        .end()
-        .plugin('add-base-to-md')
-        .use(require('./markdown/add-base-to-md'), [{ base }])
+        .use(injectJsonToMd, [{ jsonDirPath: path.resolve(__dirname, './utils') }])
     }
   },
   chainWebpack (config, isServer) {
@@ -110,7 +115,8 @@ const config = {
     )
   },
   plugins: [
-    ["vuepress-plugin-juejin-style-copy", copyOptions]
+    ["vuepress-plugin-juejin-style-copy", copyOptions],
+    [createLLMSText]
   ]
 }
 
