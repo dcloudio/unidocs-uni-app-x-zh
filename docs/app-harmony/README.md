@@ -4,17 +4,12 @@ uni-app x 从4.61+起支持纯血鸿蒙，即Harmony next。
 
 将uni-app x代码编译为运行在ArkTS引擎上代码，生成鸿蒙原生应用。
 
-uni-app x的鸿蒙版虽然是刚发布，但组件、API、CSS基本拉齐了Android和iOS。甚至还有扫码、拨打电话、剪贴板等超出Android/iOS的功能。
 
 ## 开发环境要求
 
 - HBuilderX 4.61+
 - 鸿蒙电脑端开发工具DevEco Studio BuildVersion 5.0.7.210+
 - 鸿蒙手机系统 API版本 14+
-
-低于API 14的版本，DCloud未仔细测试。虽然也可以运行，已知更低版本的鸿蒙上list-view组件有bug无法正常显示。
-
-因鸿蒙发展初期，低版本bug较多，不建议开发者关注低版本适配。
 
 鸿蒙的API版本类似于Android的API Level。鸿蒙的API版本在手机设置 - 关于本机 中，可找到`API版本`，比如`5.0.2（14）`，这个14即是API版本。
 
@@ -69,6 +64,7 @@ ArkTS的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可�
 - 鸿蒙原生应用的单位有逻辑像素和物理像素之分，分别是vp和px。这里的px是物理像素，而web的px是逻辑像素。同名但不同义。不过在uni-app x的css样式中，仍然使用习惯的px即可，它是逻辑像素，css里写的px编译到鸿蒙会自动变成vp（鸿蒙里的逻辑像素）。鸿蒙开发默认也是vp逻辑像素。鸿蒙原生单位文档[详见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)
 - 鸿蒙平台 uts 插件内暂不支持使用uniCloud
 - 在运行 HBuilderX 内置的 hello uni-app x 项目运行报错 `运行所需的权限没有签名授权`，是因为演示项目使用到了需要审批的 ACL 权限。解决方案：搜索 `ohos.permission.READ_PASTEBOARD` 将其注释掉，此时项目可以正常运行，同时剪切板的 api 测试页面将不生效。
+- 虽然uni-app编译为js，uni-app x编译为arkts，但不代表uni-app x的性能高于uni-app。uni-app使用的js引擎是jsvm（即v8），arkts引擎还在进步中，目前部分密集运算的性能还不如v8。
 
 ## 插件扩展
 
