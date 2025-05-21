@@ -21,13 +21,17 @@ uts 是一门采用 TypeScript（简称 ts） 基本一致的语法规范，跨�
 #### 不支持 undefined
 
 级别：错误
+
 错误码：UTS110111119
+
 不支持 undefined，请使用 null。
 
 #### 条件语句必须使用布尔类型
 
 级别：错误
+
 错误码：UTS110111120
+
 所有条件语句(if、while、do-while、三元运算符、for 循环的条件部分)必须使用布尔类型作为条件。不支持 ts 中的隐式类型转换和 truthy/falsy 值。
 
 TypeScript:
@@ -57,6 +61,7 @@ const value = arr != null ? arr : []; // 显式的布尔判断
 #### 对象字面量默认为 UTSJSONObject 类型
 
 级别：提示
+
 在 UTS 中,所有没有明确类型标注或上下文推断不出具体类型的对象字面量都会被推导为 UTSJSONObject 类型。这与 ts 中对象字面量会根据属性推导出具体结构类型的行为不同。
 
 TypeScript:
@@ -91,6 +96,7 @@ const person: Person = {
 #### 不支持变量和函数的声明提升 (hoisting)
 
 级别：错误
+
 不支持变量和函数的声明提升 (hoisting)。所有变量和函数必须先声明后使用，不能访问未声明的变量或函数(包括函数自身)。这与 ts 中允许函数和 var 声明提升的行为不同。
 
 TypeScript:
@@ -136,7 +142,9 @@ factorial = (n: number): number => {
 #### 使用 let 而非 var
 
 级别：警告
+
 错误码：UTS110111121
+
 请使用 let 或 const 声明变量。除非你知道你在做什么，否则不要轻易使用它，因为有不同平台差异：
 
 - 编译至 JavaScript 平台时，等同于 JavaScript 平台的 var 。存在变量提升现象，具体参考 var 和 let 的区别
@@ -147,7 +155,9 @@ factorial = (n: number): number => {
 #### 对象字面量不能用于类型声明
 
 级别：错误
+
 错误码：UTS110111101
+
 不支持直接使用对象字面量声明类型，可以使用 type 别名、类或者接口声明类型。
 
 TypeScript:
@@ -177,7 +187,9 @@ type S = Set<O>;
 #### 使用具体的类型而非 unknown
 
 级别：错误
+
 错误码：UTS110111122
+
 不支持声明类型为 unknown，unknown 仅支持在泛型中使用。
 
 TypeScript:
@@ -204,7 +216,9 @@ console.log(a instanceof A<unknown>);
 #### 不支持条件类型
 
 级别：错误
+
 错误码：UTS110111123
+
 不支持条件类型别名，引入带显式约束的新类型。
 
 不支持 infer 关键字。
@@ -219,7 +233,9 @@ type Y<T> = T extends Array<infer Item> ? Item : never;
 #### 不支持映射类型
 
 级别：错误
+
 错误码：UTS110111124
+
 不支持映射类型，请使用其他语法来表示相同的语义。
 
 TypeScript:
@@ -247,13 +263,17 @@ class CFlags {
 #### 不支持 utility 类型
 
 级别：错误
+
 错误码：UTS110111125
+
 不支持 TypeScript 中的 Utility Types，如 Partial、Required、Readonly 和 Record...
 
 #### 不支持 as const 断言
 
 级别：错误
+
 错误码：UTS110111126
+
 不支持 as const 断言。
 
 TypeScript:
@@ -291,7 +311,9 @@ let z: Label = {
 #### 不支持确定赋值断言
 
 级别：错误
+
 错误码：UTS110111127
+
 不支持确定赋值断言，例如：let v!: T。改为在声明变量的同时为变量赋值。
 
 TypeScript:
@@ -325,7 +347,9 @@ console.log("x = " + x);
 #### 不支持以#开头的私有字段
 
 级别：错误
+
 错误码：UTS110111128
+
 不支持使用 # 符号开头声明的私有字段。改用 private 关键字。
 
 TypeScript:
@@ -347,7 +371,9 @@ class C {
 #### class 不支持通过索引访问字段
 
 级别：错误
+
 错误码：UTS110111129
+
 class 不支持动态声明字段，不支持动态访问字段。只能访问已在类中声明或者继承可见的字段，访问其他字段将会造成编译时错误。
 
 使用点操作符访问 class 字段，例如（obj.field），不支持索引访问（obj[field]）。
@@ -408,7 +434,9 @@ console.log(person.unknownProperty); // 编译时错误
 #### 不支持静态块
 
 级别：错误
+
 错误码：UTS110111130
+
 不同平台对类中静态块支持有差异。使用其他方式实现静态初始化，如构造函数中。
 
 #### class 不能被用作对象
@@ -419,7 +447,9 @@ class 声明的是一个新的类型，不是一个值。因此，不支持将 c
 #### 类继承时必须显示声明构造器
 
 级别：错误
+
 错误码：UTS110111131
+
 继承类时必须显式声明构造器。这是因为在不同目标平台 (Kotlin/Swift) 中，继承类时都需要显式调用父类构造器。
 
 TypeScript:
@@ -452,7 +482,9 @@ class Child extends Parent {
 #### 类不允许 implements
 
 级别：错误
+
 错误码：UTS110111132
+
 不允许类被 implements，只有接口可以被 implements。
 
 TypeScript:
@@ -482,7 +514,9 @@ class C1 implements C {
 #### 接口不能继承类
 
 级别：错误
+
 错误码：UTS110111133
+
 不支持接口继承类，接口只能继承接口。
 
 TypeScript:
@@ -512,7 +546,9 @@ interface SelectableControl extends Control {
 #### 不支持修改对象的方法
 
 级别：错误
+
 错误码：UTS110111134
+
 不支持修改对象的方法。在静态语言中，对象的布局是确定的。一个类的所有对象实例享有同一个方法。
 
 如果需要为某个特定的对象增加方法，可以封装函数或者使用继承的机制。
@@ -571,7 +607,9 @@ c3.foo(); // Extra foo
 #### 使用 class 而非具有 call signature 的类型
 
 级别：错误
+
 错误码：UTS110111135
+
 不支持对象类型中包含 call signature。
 
 TypeScript:
@@ -610,7 +648,9 @@ doSomething(new DescribableFunction());
 #### 使用 class 而非具有构造签名的类型
 
 级别：错误
+
 错误码：UTS110111136
+
 不支持对象类型中的构造签名。改用类。
 
 TypeScript：
@@ -645,7 +685,9 @@ function fn(s: string): SomeObject {
 #### 不支持构造函数类型
 
 级别：错误
+
 错误码：UTS110111137
+
 不支持使用构造函数类型，改用 lambda 函数。
 
 TypeScript:
@@ -685,6 +727,7 @@ const person = createPerson(Impersonizer, "John", 30);
 #### 函数声明不能作为值使用
 
 级别：错误
+
 在 UTS 中,通过 function 关键字声明的函数不能作为值传递。如果需要将函数作为值使用，请使用函数表达式。
 
 TypeScript:
@@ -712,19 +755,25 @@ setTimeout(foo, 1000);
 #### 不支持对函数声明属性
 
 级别：错误
+
 错误码：UTS110111138
+
 不支持对函数声明属性。
 
 #### 不支持 Function.apply 和 Function.call
 
 级别：错误
+
 错误码：UTS110111139
+
 不支持 Function.apply 和 Function.call。this 的语义仅限于在 class 中使用的传统 OOP 风格。
 
 #### 不支持 Function.bind
 
 级别：错误
+
 错误码：UTS110111139
+
 不支持 Function.bind。this 的语义仅限于在 class 中使用的传统 OOP 风格。
 
 ## 5. 模块和命名空间
@@ -732,7 +781,9 @@ setTimeout(foo, 1000);
 #### 不支持命名空间
 
 级别：错误
+
 错误码：UTS110111140
+
 不支持将命名空间用作对象，可以使用类或模块。
 
 TypeScript:
@@ -746,7 +797,9 @@ namespace MyNamespace {
 #### 不支持 require 和 import 赋值表达式
 
 级别：错误
+
 错误码：UTS110111141
+
 不支持通过 require 导入，也不支持 import 赋值表达式，改用 import。
 
 TypeScript:
@@ -764,7 +817,9 @@ import * as m from "mod";
 #### 不支持 export = ...语法
 
 级别：错误
+
 错误码：UTS110111142
+
 不支持 export = ...语法，改用常规的 export 或 import。
 
 TypeScript:
@@ -804,7 +859,9 @@ let p = Pt.Point.origin;
 #### 使用 instanceof 和 as 进行类型保护
 
 级别：错误
+
 错误码：UTS110111143
+
 不支持 is 运算符，必须用 instanceof 运算符替代。在使用之前，必须使用 as 运算符将对象转换为需要的类型。
 
 TypeScript:
@@ -876,6 +933,7 @@ function main(): void {
 #### 类型转换仅支持 as T 语法
 
 级别：错误
+
 as 关键字是类型转换的唯一语法，错误的类型转换会导致编译时错误或者运行时抛出异常。不支持使用<type>语法进行类型转换。
 
 TypeScript:
@@ -940,12 +998,15 @@ let c3 = createShape() as Square;
 #### 不支持 Symbol()
 
 级别：错误
+
 ts 中的 Symbol() 用于在运行时生成唯一的属性名称。由于该 API 的常见使用场景在静态类型语言中没有意义。
 
 #### 不支持 index signature
 
 级别：错误
+
 错误码：UTS110111144
+
 不支持 index signature，改用数组或其他集合类型。
 
 TypeScript:
@@ -978,7 +1039,9 @@ const secondItem = myArray.f[1];
 #### 不支持声明合并
 
 级别：错误
+
 错误码：UTS110111145
+
 不支持类、接口的声明合并。
 
 TypeScript:
@@ -1014,7 +1077,9 @@ interface Document {
 #### 不支持生成器函数
 
 级别：错误
+
 错误码：UTS110111146
+
 不支持生成器函数，使用 async 或 await 机制进行并行任务处理。
 
 TypeScript:
@@ -1051,11 +1116,13 @@ foo();
 #### 不支持 JSX 表达式
 
 级别：错误
+
 不支持使用 JSX。
 
 #### 不支持 with 语句
 
 级别：错误
+
 不支持 with 语句，使用其他语法来表示相同的语义。
 
 TypeScript:
@@ -1078,7 +1145,9 @@ let area: number = Math.PI * r * r;
 #### 不支持 globalThis
 
 级别：错误
+
 错误码：UTS110111147
+
 不支持全局作用域和 globalThis。
 
 TypeScript:
@@ -1108,7 +1177,9 @@ let x = M.abc;
 #### 一元运算符+、-和~仅适用于数值类型
 
 级别：错误
+
 错误码：UTS110111148
+
 仅允许一元运算符用于数值类型，否则会发生编译时错误。不支持隐式将字符串转换成数值，必须进行显式转换。
 
 TypeScript:
@@ -1160,7 +1231,9 @@ let y = +returnString(); // 编译时错误
 #### 不支持 delete 运算符
 
 级别：错误
+
 错误码：UTS110111149
+
 在 uts 中，对象布局在编译时就确定了，且不能在运行时被更改。因此，删除属性的操作没有意义。
 
 #### 逗号运算符仅用在 for 循环语句中
@@ -1194,6 +1267,7 @@ x = x++;
 #### 限制 throw 语句中表达式的类型
 
 级别：错误
+
 只支持抛出 Error 类或其派生类的实例。禁止抛出其他类型（例如 number 或 string）的数据。
 
 TypeScript:
@@ -1215,6 +1289,7 @@ throw new Error();
 #### 不支持在原型上赋值
 
 级别：错误
+
 uts 没有原型的概念，因此不支持在原型上赋值。此特性不符合静态类型的原则。
 
 TypeScript:
