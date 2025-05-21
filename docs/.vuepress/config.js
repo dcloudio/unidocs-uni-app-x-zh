@@ -9,7 +9,6 @@ const {
   enhanceMd,
   createSidebar,
   normalizeLink,
-  injectJsonToMd,
   createLLMSText,
 } = require('@dcloudio/docs-utils')
 
@@ -105,7 +104,7 @@ const config = {
 				.use(enhanceMd)
         .end()
         .plugin('inject-json-to-md')
-        .use(injectJsonToMd, [{ jsonDirPath: path.resolve(__dirname, './utils') }])
+        .use(require('./markdown/inject-json-to-md'))
     }
   },
   chainWebpack (config, isServer) {
