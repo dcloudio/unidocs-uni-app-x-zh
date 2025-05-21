@@ -2,9 +2,9 @@
 
 ## 正式版
 
-### 4.65.2025051206
+### 4.66.2025051912
 
-**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/iOS/UniAppX-iOS%404.65.zip)**
+**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/iOS/UniAppX-iOS%404.66.zip)**
 
 无
 
