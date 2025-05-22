@@ -53,4 +53,5 @@
   * [UTSHarmony](utsharmony.md)
 * [关键字](keywords.md)
 * [UTS App插件开发](../plugin/uts-plugin.md)
+* [UTS与TS的差异](uts_diff_ts.md)
 <!-- * [学习资料](learning.md) -->
