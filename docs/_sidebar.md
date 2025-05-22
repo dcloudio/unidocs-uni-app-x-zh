@@ -68,7 +68,7 @@
 * [跨平台框架及原生对比](select.md)
 * cursor/vscode插件
   * [语言服务插件](tutorial/ls-plugin.md)
-  * [Rules/MCP](tutorial/rules_mcp.md)
+  * [AI Rules/MCP](tutorial/rules_mcp.md)
 * 更新日志
   * [正式版](release.md)
   * [Alpha 版](release-note-alpha.md)
