@@ -66,6 +66,8 @@
 * [国际化](i18n.md)
 * [源码和示例](sample.md)
 * [跨平台框架及原生对比](select.md)
+* [cursor/vscode插件](tutorial/rules_mcp.md)
+  * [Rules/MCP](tutorial/rules_mcp.md)
 * 更新日志
   * [正式版](release.md)
   * [Alpha 版](release-note-alpha.md)
