@@ -1286,6 +1286,58 @@ let x = +returnTen(); // 编译时错误
 let y = +returnString(); // 编译时错误
 ```
 
+#### 不支持赋值语句返回值
+
+级别：错误
+
+在 uts 中，赋值语句不会返回值，不能将赋值操作用在表达式中。
+
+TypeScript:
+
+```ts
+let x, y;
+y = (x = 5); // x和y都被赋值为5
+
+// 在条件中使用赋值
+let arr = [1, 2, 3];
+let item;
+while (item = arr.pop()) {
+  console.log(item);
+}
+
+// 在正则匹配中常用的模式
+let regex = /\w+/g;
+let text = "hello world";
+let match;
+while (match = regex.exec(text)) {
+  console.log(match[0]);
+}
+```
+
+UTS:
+
+```ts
+let x = 5;
+let y = x; // 必须分开赋值
+
+// 正确的循环写法
+let arr = [1, 2, 3];
+let item = arr.pop();
+while (item != null) {
+  console.log(item);
+  item = arr.pop();
+}
+
+// 正确的正则匹配写法
+let regex = /\w+/g;
+let text = "hello world";
+let match = regex.exec(text);
+while (match != null) {
+  console.log(match[0]);
+  match = regex.exec(text);
+}
+```
+
 #### 不支持 delete 运算符 @UTS110111149
 
 级别：错误
