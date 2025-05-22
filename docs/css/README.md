@@ -266,6 +266,8 @@ App仅对`同层的兄弟节点`之间支持`z-index`来调节层级。不支持
 |CSS Variable		|×			|										|
 |媒体查询			|×			|										|
 
+不支持的css功能，并不影响业务开发。因为css本质是一种编写元素的样式属性的一种描述性写法。元素的所有样式设置，都可以脱离css这种写法，由API完成。
+
 ## css方法 @css-function
 
 目前支持url()、rgb()、rgba()、var()、env()。[详见](./common/function.md)
