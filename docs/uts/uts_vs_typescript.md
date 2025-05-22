@@ -18,7 +18,7 @@ uts 是一门采用 TypeScript（简称 ts） 基本一致的语法规范，跨�
 
 ## 1. 核心语言特性
 
-#### 不支持 undefined
+#### 不支持 undefined @UTS110111119
 
 级别：错误
 
@@ -26,7 +26,7 @@ uts 是一门采用 TypeScript（简称 ts） 基本一致的语法规范，跨�
 
 不支持 undefined，请使用 null。
 
-#### 条件语句必须使用布尔类型
+#### 条件语句必须使用布尔类型 @UTS110111120
 
 级别：错误
 
@@ -93,7 +93,7 @@ const person: Person = {
 };
 ```
 
-#### 不支持变量和函数的声明提升 (hoisting)
+#### 不支持变量和函数的声明提升 (hoisting) @UTS110111150
 
 级别：错误
 
@@ -141,7 +141,7 @@ factorial = (n: number): number => {
 };
 ```
 
-#### 使用 let 而非 var
+#### 使用 let 而非 var @UTS110111121
 
 级别：警告
 
@@ -154,7 +154,7 @@ factorial = (n: number): number => {
 
 ## 2. 类型系统相关
 
-#### 对象字面量不能用于类型声明
+#### 对象字面量不能用于类型声明 @UTS110111101
 
 级别：错误
 
@@ -186,7 +186,7 @@ let o: O = { x: 2, y: 3 };
 type S = Set<O>;
 ```
 
-#### 使用具体的类型而非 unknown
+#### 使用具体的类型而非 unknown @UTS110111122
 
 级别：错误
 
@@ -215,7 +215,7 @@ const a = new A<string>();
 console.log(a instanceof A<unknown>);
 ```
 
-#### 不支持条件类型
+#### 不支持条件类型 @UTS110111123
 
 级别：错误
 
@@ -232,7 +232,7 @@ type X<T> = T extends number ? T : never;
 type Y<T> = T extends Array<infer Item> ? Item : never;
 ```
 
-#### 不支持映射类型
+#### 不支持映射类型 @UTS110111124
 
 级别：错误
 
@@ -262,7 +262,7 @@ class CFlags {
 }
 ```
 
-#### 不支持 utility 类型
+#### 不支持 utility 类型 @UTS110111125
 
 级别：错误
 
@@ -270,7 +270,7 @@ class CFlags {
 
 不支持 TypeScript 中的 Utility Types，如 Partial、Required、Readonly 和 Record...
 
-#### 不支持 as const 断言
+#### 不支持 as const 断言 @UTS110111126
 
 级别：错误
 
@@ -310,7 +310,7 @@ let z: Label = {
 };
 ```
 
-#### 不支持确定赋值断言
+#### 不支持确定赋值断言 @UTS110111127
 
 级别：错误
 
@@ -346,7 +346,7 @@ console.log("x = " + x);
 
 ## 3. 类和对象相关
 
-#### 不支持以#开头的私有字段
+#### 不支持以#开头的私有字段 @UTS110111128
 
 级别：错误
 
@@ -370,7 +370,7 @@ class C {
 }
 ```
 
-#### class 不支持通过索引访问字段
+#### class 不支持通过索引访问字段 @UTS110111129
 
 级别：错误
 
@@ -433,7 +433,7 @@ console.log(person["name"]); // 编译时错误
 console.log(person.unknownProperty); // 编译时错误
 ```
 
-#### 不支持静态块
+#### 不支持静态块 @UTS110111130
 
 级别：错误
 
@@ -441,7 +441,7 @@ console.log(person.unknownProperty); // 编译时错误
 
 不同平台对类中静态块支持有差异。使用其他方式实现静态初始化，如构造函数中。
 
-#### class 不能被用作对象
+#### class 不能被用作对象 @UTS110111151
 
 级别：错误
 
@@ -449,7 +449,7 @@ console.log(person.unknownProperty); // 编译时错误
 
 class 声明的是一个新的类型，不是一个值。因此，不支持将 class 用作对象 (例如将 class 赋值给一个对象)。
 
-#### 类继承时必须显示声明构造器
+#### 类继承时必须显示声明构造器 @UTS110111131
 
 级别：错误
 
@@ -484,7 +484,7 @@ class Child extends Parent {
 }
 ```
 
-#### 类不允许 implements
+#### 类不允许 implements @UTS110111132
 
 级别：错误
 
@@ -516,7 +516,7 @@ class C1 implements C {
 }
 ```
 
-#### 接口不能继承类
+#### 接口不能继承类 @UTS110111133
 
 级别：错误
 
@@ -548,7 +548,7 @@ interface SelectableControl extends Control {
 }
 ```
 
-#### 不支持修改对象的方法
+#### 不支持修改对象的方法 @UTS110111134
 
 级别：错误
 
@@ -609,7 +609,7 @@ c3.foo(); // Extra foo
 
 ## 4. 函数相关
 
-#### 使用 class 而非具有 call signature 的类型
+#### 使用 class 而非具有 call signature 的类型 @UTS110111135
 
 级别：错误
 
@@ -650,7 +650,7 @@ function doSomething(fn: DescribableFunction): void {
 doSomething(new DescribableFunction());
 ```
 
-#### 使用 class 而非具有构造签名的类型
+#### 使用 class 而非具有构造签名的类型 @UTS110111136
 
 级别：错误
 
@@ -687,7 +687,7 @@ function fn(s: string): SomeObject {
 }
 ```
 
-#### 不支持构造函数类型
+#### 不支持构造函数类型 @UTS110111137
 
 级别：错误
 
@@ -729,7 +729,7 @@ let Impersonizer: PersonCtor = (n: string, a: number): Person => {
 const person = createPerson(Impersonizer, "John", 30);
 ```
 
-#### 函数声明不能作为值使用
+#### 函数声明不能作为值使用 @UTS110111152
 
 级别：错误
 
@@ -759,7 +759,7 @@ const foo = () => {
 setTimeout(foo, 1000);
 ```
 
-#### 不支持对函数声明属性
+#### 不支持对函数声明属性 @UTS110111138
 
 级别：错误
 
@@ -767,7 +767,7 @@ setTimeout(foo, 1000);
 
 不支持对函数声明属性。
 
-#### 不支持 Function.apply 和 Function.call
+#### 不支持 Function.apply 和 Function.call @UTS110111139
 
 级别：错误
 
@@ -775,7 +775,7 @@ setTimeout(foo, 1000);
 
 不支持 Function.apply 和 Function.call。this 的语义仅限于在 class 中使用的传统 OOP 风格。
 
-#### 不支持 Function.bind
+#### 不支持 Function.bind @UTS110111139
 
 级别：错误
 
@@ -785,7 +785,7 @@ setTimeout(foo, 1000);
 
 ## 5. 模块和命名空间
 
-#### 不支持命名空间
+#### 不支持命名空间 @UTS110111140
 
 级别：错误
 
@@ -801,7 +801,7 @@ namespace MyNamespace {
 }
 ```
 
-#### 不支持 require 和 import 赋值表达式
+#### 不支持 require 和 import 赋值表达式 @UTS110111141
 
 级别：错误
 
@@ -821,7 +821,7 @@ UTS:
 import * as m from "mod";
 ```
 
-#### 不支持 export = ...语法
+#### 不支持 export = ...语法 @UTS110111142
 
 级别：错误
 
@@ -863,7 +863,7 @@ let p = Pt.Point.origin;
 
 ## 6. 类型检查和转换
 
-#### 使用 instanceof 和 as 进行类型保护
+#### 使用 instanceof 和 as 进行类型保护 @UTS110111143
 
 级别：错误
 
@@ -937,7 +937,7 @@ function main(): void {
 }
 ```
 
-#### 类型转换仅支持 as T 语法
+#### 类型转换仅支持 as T 语法 @UTS110111153
 
 级别：错误
 
@@ -1004,7 +1004,7 @@ let c3 = createShape() as Square;
 
 ## 7. 特殊语言特性
 
-#### 不支持 Symbol()
+#### 不支持 Symbol() @UTS110111154
 
 错误码：UTS110111154
 
@@ -1012,7 +1012,7 @@ let c3 = createShape() as Square;
 
 ts 中的 Symbol() 用于在运行时生成唯一的属性名称。由于该 API 的常见使用场景在静态类型语言中没有意义。
 
-#### 不支持 index signature
+#### 不支持 index signature @UTS110111144
 
 级别：错误
 
@@ -1047,7 +1047,7 @@ let myArray: X = new X();
 const secondItem = myArray.f[1];
 ```
 
-#### 不支持声明合并
+#### 不支持声明合并 @UTS110111145
 
 级别：错误
 
@@ -1085,7 +1085,7 @@ interface Document {
 }
 ```
 
-#### 不支持生成器函数
+#### 不支持生成器函数 @UTS110111146
 
 级别：错误
 
@@ -1124,7 +1124,7 @@ async function foo() {
 foo();
 ```
 
-#### 不支持 JSX 表达式
+#### 不支持 JSX 表达式 @UTS110111155
 
 级别：错误
 
@@ -1132,7 +1132,7 @@ foo();
 
 不支持使用 JSX。
 
-#### 不支持 with 语句
+#### 不支持 with 语句 @UTS110111156
 
 级别：错误
 
@@ -1157,7 +1157,7 @@ let r: number = 42;
 let area: number = Math.PI * r * r;
 ```
 
-#### 不支持 globalThis
+#### 不支持 globalThis @UTS110111147
 
 级别：错误
 
@@ -1189,7 +1189,7 @@ let x = M.abc;
 
 ## 8. 运算符和表达式
 
-#### 一元运算符+、-和~仅适用于数值类型
+#### 一元运算符+、-和~仅适用于数值类型 @UTS110111148
 
 级别：错误
 
@@ -1243,7 +1243,7 @@ let x = +returnTen(); // 编译时错误
 let y = +returnString(); // 编译时错误
 ```
 
-#### 不支持 delete 运算符
+#### 不支持 delete 运算符 @UTS110111149
 
 级别：错误
 
@@ -1251,7 +1251,7 @@ let y = +returnString(); // 编译时错误
 
 在 uts 中，对象布局在编译时就确定了，且不能在运行时被更改。因此，删除属性的操作没有意义。
 
-#### 逗号运算符仅用在 for 循环语句中
+#### 逗号运算符仅用在 for 循环语句中 @UTS110111157
 
 级别：错误
 
@@ -1282,7 +1282,7 @@ let x = 0;
 x = x++;
 ```
 
-#### 限制 throw 语句中表达式的类型
+#### 限制 throw 语句中表达式的类型 @UTS110111158
 
 级别：错误
 
@@ -1306,7 +1306,7 @@ throw new Error();
 
 ## 9. 原型和对象操作
 
-#### 不支持在原型上赋值
+#### 不支持在原型上赋值 @UTS110111159
 
 级别：错误
 
