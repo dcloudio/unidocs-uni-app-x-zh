@@ -93,6 +93,49 @@ const person: Person = {
 };
 ```
 
+#### 对象字面量仅支持构造 type 定义的对象类型，不支持 interface
+
+级别：提示
+
+在 UTS 中，可以将对象字面量赋值给一个 type 关键词定义的对象类型。
+
+注意：不能赋值给 interface 定义的类型
+
+TypeScript:
+
+```ts
+interface Person {
+  name: string;
+  age: number;
+}
+// 对象字面量可以赋值 interface 类型
+const person: Person = {
+  name: "John",
+  age: 30,
+};
+```
+
+UTS:
+
+```ts
+// 只有 type 定义的对象类型，才可以用对象字面量赋值
+type Person = {
+  name: string;
+  age: number;
+};
+
+// 声明时直接指定类型
+const person1: Person = {
+  name: "John",
+  age: 30,
+};
+// 使用对象字面量 as 语法
+const person2 = {
+  name: "John",
+  age: 30,
+} as Person;
+```
+
 #### 不支持变量和函数的声明提升 (hoisting) @UTS110111150
 
 级别：错误
