@@ -102,10 +102,5 @@
 * 实时校验错误, 在多平台设置的场景下效果较为明显
 <br/> ![validation](https://web-ext-storage.dcloud.net.cn/doc/tutorial/lsp-plugin/validation.png)
 
-
-### ai和语言服务结合的使用
-* 主要用于校验功能, 校验的错误可以通过ai进行修复, 极大的提高了开发效率
-
-
 ## 问题反馈
 * [点击加入im官方交流群](https://im.dcloud.net.cn/#/?joinGroup=682c303383abe400024d38ba)
