@@ -70,4 +70,28 @@
 
 <!-- CUSTOMTYPEJSON.UniWebViewElement.methods.evalJS.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.getContentHeight.name -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.getContentHeight.description -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.getContentHeight.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.getContentHeight.param -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.getContentHeight.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.getContentHeight.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.loadData.name -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.loadData.description -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.loadData.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.loadData.param -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.loadData.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniWebViewElement.methods.loadData.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniWebViewElement.example -->
