@@ -60,12 +60,12 @@ uni-app x预置的css变量：
 -->
 
 ## CSS 自定义变量 var@customvar
-> HBuilderX4.68起 APP平台支持自定义变量
+> HBuilderX4.71起 App平台支持自定义变量
 
 CSS自定义变量规范参考[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/--*)
 
 **注意：**
-APP平台和web有以下差异:
+App平台和web有以下差异:
 - 定义变量时不支持值为var(--*) ex: --color: var(--color)
 - 回退值不支持var(--*) ex: --height: var(--height1 , var(--height2))
 - transtion暂不支持使用var
