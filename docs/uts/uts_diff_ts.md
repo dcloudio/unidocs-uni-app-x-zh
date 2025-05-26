@@ -35,6 +35,38 @@ ts 虽然有类型，但类型要求不严格。而 uts 为了编译为原生语
 
 不支持 undefined，请使用 null。
 
+TypeScript:
+
+```ts
+// TypeScript 可以使用 undefined
+let value: string | undefined;
+if (value == undefined) {
+  console.log("未定义");
+}
+
+function test(param?: string) {
+  if (param == undefined) {
+    console.log("参数未传");
+  }
+}
+```
+
+UTS:
+
+```ts
+// UTS 使用 null 替代 undefined
+let value: string | null = null;
+if (value == null) {
+  console.log("未定义");
+}
+
+function test(param: string | null) {
+  if (param == null) {
+    console.log("参数未传");
+  }
+}
+```
+
 #### 条件语句必须使用布尔类型 @UTS110111120
 
 级别：错误
@@ -323,6 +355,51 @@ class CFlags {
 
 不支持 TypeScript 中的 Utility Types，如 Partial、Required、Readonly 和 Record...
 
+TypeScript:
+
+```ts
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+// Partial - 所有属性变为可选
+type UserUpdate = Partial<User>;
+let update: UserUpdate = { name: "John" };
+
+// Readonly - 所有属性变为只读
+type ReadUser = Readonly<User>;
+let user: ReadUser = { id: 1, name: "John", email: "j@example.com" };
+```
+
+UTS:
+
+```ts
+// 使用 type 定义对象类型，而非 interface
+type User = {
+  id: number;
+  name: string;
+  email: string;
+};
+
+// 手动定义等效类型
+type UserUpdate = {
+  id?: number;
+  name?: string;
+  email?: string;
+};
+let update: UserUpdate = { name: "John" };
+
+// 手动定义只读类型
+type ReadUser = {
+  readonly id: number;
+  readonly name: string;
+  readonly email: string;
+};
+let user: ReadUser = { id: 1, name: "John", email: "j@example.com" };
+```
+
 #### 不支持 as const 断言 @UTS110111126
 
 级别：错误
@@ -494,6 +571,36 @@ console.log(person.unknownProperty); // 编译时错误
 
 不同平台对类中静态块支持有差异。使用其他方式实现静态初始化，如构造函数中。
 
+TypeScript:
+
+```ts
+class MyClass {
+  static data: Map<string, string> = new Map<string, string>();
+
+  // 静态块初始化
+  static {
+    this.data.set("key1", "value1");
+    this.data.set("key2", "value2");
+  }
+}
+```
+
+UTS:
+
+```ts
+class MyClass {
+  static data: Map<string, string> = MyClass.initData();
+
+  // 使用静态方法替代静态块
+  private static initData(): Map<string, string> {
+    let map: Map<string, string> = new Map<string, string>();
+    map.set("key1", "value1");
+    map.set("key2", "value2");
+    return map;
+  }
+}
+```
+
 #### class 不能被用作对象 @UTS110111151
 
 级别：错误
@@ -501,6 +608,40 @@ console.log(person.unknownProperty); // 编译时错误
 错误码：UTS110111151
 
 class 声明的是一个新的类型，不是一个值。因此，不支持将 class 用作对象 (例如将 class 赋值给一个对象)。
+
+TypeScript:
+
+```ts
+class Person {
+  static type: string = "human";
+}
+
+// 在 TypeScript 中可以将类作为对象使用
+console.log(Person.type);
+
+// 可以将类赋值给变量
+let PersonClass: typeof Person = Person;
+let p: Person = new PersonClass();
+```
+
+UTS:
+
+```ts
+class Person {
+  static type: string = "human";
+}
+
+// 在 UTS 中可以访问静态成员
+console.log(Person.type);
+
+// 但不能将类本身赋值给变量
+// let PersonClass = Person; // 错误
+
+// 正确做法是使用工厂函数
+function createPerson(): Person {
+  return new Person();
+}
+```
 
 #### 类继承时必须显示声明构造器 @UTS110111131
 
@@ -820,6 +961,46 @@ setTimeout(foo, 1000);
 
 不支持对函数声明属性。
 
+TypeScript:
+
+```ts
+function greet(name: string): void {
+  console.log("Hello, " + name);
+}
+
+// 在 TypeScript 中可以给函数添加属性
+greet.count = 0;
+greet.increment = function (): void {
+  this.count++;
+};
+
+greet("John");
+greet.increment();
+console.log(greet.count); // 1
+```
+
+UTS:
+
+```ts
+// 在 UTS 中使用类替代函数属性
+class Greeter {
+  count: number = 0;
+
+  greet(name: string): void {
+    console.log("Hello, " + name);
+  }
+
+  increment(): void {
+    this.count++;
+  }
+}
+
+let g: Greeter = new Greeter();
+g.greet("John");
+g.increment();
+console.log(g.count); // 1
+```
+
 #### 不支持 Function.apply 和 Function.call @UTS110111139
 
 级别：错误
@@ -828,6 +1009,46 @@ setTimeout(foo, 1000);
 
 不支持 Function.apply 和 Function.call。this 的语义仅限于在 class 中使用的传统 OOP 风格。
 
+TypeScript:
+
+```ts
+function greet(greeting: string): void {
+  console.log(greeting + ", " + this.name);
+}
+
+interface PersonType {
+  name: string;
+}
+
+let person: PersonType = { name: "John" };
+
+// 使用 call 指定 this
+greet.call(person, "Hello");
+
+// 使用 apply 指定 this 和参数数组
+greet.apply(person, ["Hi"]);
+```
+
+UTS:
+
+```ts
+// 在 UTS 中使用类和方法
+class Person {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  greet(greeting: string): void {
+    console.log(greeting + ", " + this.name);
+  }
+}
+
+let person: Person = new Person("John");
+person.greet("Hello");
+```
+
 #### 不支持 Function.bind @UTS110111139
 
 级别：错误
@@ -835,6 +1056,52 @@ setTimeout(foo, 1000);
 错误码：UTS110111139
 
 不支持 Function.bind。this 的语义仅限于在 class 中使用的传统 OOP 风格。
+
+TypeScript:
+
+```ts
+class Counter {
+  count: number = 0;
+
+  increment(): void {
+    this.count++;
+    console.log(this.count);
+  }
+}
+
+let counter: Counter = new Counter();
+
+// 使用 bind 绑定 this
+let inc: () => void = counter.increment.bind(counter);
+inc(); // 1
+inc(); // 2
+```
+
+UTS:
+
+```ts
+class Counter {
+  count: number = 0;
+
+  increment(): void {
+    this.count++;
+    console.log(this.count);
+  }
+
+  // 在 UTS 中使用方法返回闭包
+  getIncrement(): () => void {
+    return () => {
+      this.count++;
+      console.log(this.count);
+    };
+  }
+}
+
+let counter: Counter = new Counter();
+let inc: () => void = counter.getIncrement();
+inc(); // 1
+inc(); // 2
+```
 
 ## 5. 模块和命名空间
 
@@ -852,6 +1119,18 @@ TypeScript:
 namespace MyNamespace {
   export let x: number;
 }
+```
+
+UTS:
+
+```ts
+// UTS 不支持命名空间，使用模块替代
+// file: utils.uts
+export let x: number = 10;
+
+// 在其他文件中导入
+import { x } from "./utils.uts";
+console.log(x);
 ```
 
 #### 不支持 require 和 import 赋值表达式 @UTS110111141
@@ -1065,6 +1344,36 @@ let c3 = createShape() as Square;
 
 ts 中的 Symbol() 用于在运行时生成唯一的属性名称。由于该 API 的常见使用场景在静态类型语言中没有意义。
 
+TypeScript:
+
+```ts
+// Symbol 用于创建唯一标识符
+let sym1: symbol = Symbol("key");
+let sym2: symbol = Symbol("key");
+console.log(sym1 == sym2); // false
+
+// 作为对象属性
+let obj: any = {};
+obj[sym1] = "value1";
+console.log(obj[sym1]); // "value1"
+```
+
+UTS:
+
+```ts
+// 使用具体的唯一字符串字面量定义类型
+type MyObj = {
+  key1: string;
+  key2: string;
+};
+
+let obj: MyObj = {
+  key1: "value1",
+  key2: "value2",
+};
+console.log(obj.key1); // "value1"
+```
+
 #### 不支持 index signature @UTS110111144
 
 级别：错误
@@ -1184,6 +1493,31 @@ foo();
 错误码：UTS110111155
 
 不支持使用 JSX。
+
+TypeScript:
+
+```ts
+// React TSX 示例
+function Welcome(props: { name: string }) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+UTS:
+
+```vue
+<template>
+  <text>Hello, {{ name }}</text>
+</template>
+<script setup>
+defineProps({
+  name: {
+    type: String,
+    default: "",
+  },
+});
+</script>
+```
 
 #### 不支持 with 语句 @UTS110111156
 
@@ -1308,12 +1642,12 @@ TypeScript:
 
 ```ts
 let x, y;
-y = (x = 5); // x和y都被赋值为5
+y = x = 5; // x和y都被赋值为5
 
 // 在条件中使用赋值
 let arr = [1, 2, 3];
 let item;
-while (item = arr.pop()) {
+while ((item = arr.pop())) {
   console.log(item);
 }
 
@@ -1321,7 +1655,7 @@ while (item = arr.pop()) {
 let regex = /\w+/g;
 let text = "hello world";
 let match;
-while (match = regex.exec(text)) {
+while ((match = regex.exec(text))) {
   console.log(match[0]);
 }
 ```
@@ -1357,6 +1691,48 @@ while (match != null) {
 错误码：UTS110111149
 
 在 uts 中，对象布局在编译时就确定了，且不能在运行时被更改。因此，删除属性的操作没有意义。
+
+TypeScript:
+
+```ts
+interface Person {
+  name: string;
+  age?: number;
+}
+
+let person: Person = { name: "John", age: 30 };
+
+// 删除可选属性
+delete person.age;
+console.log(person.age); // undefined
+
+// 删除对象属性
+let obj: any = { x: 1, y: 2 };
+delete obj.x;
+console.log(obj.x); // undefined
+```
+
+UTS:
+
+```ts
+type Person = {
+  name: string;
+  age: number | null;
+};
+
+let person: Person = { name: "John", age: 30 };
+
+// 使用 null 替代删除
+person.age = null;
+console.log(person.age); // null
+
+// 使用新对象替代删除属性
+type Point = { x: number; y: number };
+let obj: Point = { x: 1, y: 2 };
+type PartialPoint = { y: number };
+let newObj: PartialPoint = { y: obj.y };
+console.log(newObj.y); // 2
+```
 
 #### 逗号运算符仅用在 for 循环语句中 @UTS110111157
 
