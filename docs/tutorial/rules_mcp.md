@@ -1,18 +1,24 @@
-> 因为AI变化很快，下面文档中的使用方式可能会发生变化，具体使用方式最好还是以Vscode、Cursor的官方文档为准
+# AI Rules 和 MCP
 
-## 使用规则
-> 在 AI 辅助编程中，开发者通常需要根据项目特点调整 AI 的行为。自定义规则就是控制 AI 在代码生成、自动补全等场景中的行为。这些规则类似于团队的代码规范，旨在确保 AI 生成的代码更符合开发者的风格和项目需求。
+AI工具大都支持自定义规则来让AI更好的理解项目背景、编码风格、语言和框架的规范要求，从而生成更符合预期的代码。
 
-> 目前许多AI工具都已支持自定义规则来让AI更好的理解项目背景、编码风格和具体需求，从而生成更符合预期的代码。以下是uni-app-x内部使用的一些规则[链接](https://github.com/dcloudio/uni-app-x-ai-rules)(以Cursor Rules为例，其中的内容也适用于其他工具)
+uni-app x使用的uts语言、ucsss样式，和ts、css有差异。我们已经将这些差异和使用注意事项列在AI Rules中，让AI工具可以更好的生成uni-app x代码。
 
-### Cursor
-复制[.cursor](https://github.com/dcloudio/uni-app-x-ai-rules)目录到uni-app-x项目根目录下
+打开[Git地址](https://gitcode.com/dcloud/uni-app-x-ai-rules)，其中有各种AI工具的配置。
 
-### Vscode-Copilot
+## Cursor
+复制上述项目中的[.cursor](https://gitcode.com/dcloud/uni-app-x-ai-rules)目录到uni-app-x项目根目录下。则cursor在该项目下生成代码时会遵守这些规则。
+
+这些规范在若干mdc文件中，里面描述了uni-app x的各种使用规则。开发者也可以自定义调整规则。
+
+## Vscode-Copilot
 复制[.github](https://github.com/dcloudio/uni-app-x-ai-rules)目录到uni-app-x项目根目录下[参考](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot?tool=vscode)
 
 ## 使用mcp
-> uni-app-x-mcp可以让你和ai交互的过程中自动把项目中的组件信息提供给ai，从而让ai在生成代码、修复bug时更加准确
+
+uni-app-x-mcp可以让你和AI交互的过程中自动把项目中的组件信息提供给AI，从而让AI在生成代码、修复bug时更加准确。
+
+目前MCP的功能是告知 AI，当前项目下有哪些easycom组件。当开发者需要让AI按照项目下已经可用的组件来生成代码时，AI需要知道项目下有哪些可用组件，本MCP就会告诉AI可用组件清单。
 
 #### 1、下载mcp包
 ```bash
@@ -62,13 +68,13 @@ $ npm i uni-app-x-mcp -g
 }
 ```
 
-#### 3、默认启动mcp服务
-- 点击cursor setting -> 点击mcp
-- 会出现一个mcp列表，选择自己需要启动mcp就行(默认是关闭状态)
+#### 3、默认启动MCP服务
+- 点击cursor setting -> 点击MCP
+- 会出现一个MCP列表，选择自己需要启动MCP就行(默认是关闭状态)
 ![](https://web-ext-storage.dcloud.net.cn/hx/doc/D52E7A18-70BA-4C0F-A8AC-24AE8B8AB5DB.png)
 - vscode的设置可以[参考](https://docs.github.com/en/copilot/customizing-copilot/extending-copilot-chat-with-mcp)
 
-ps: 默认需要自己点击是否使用mcp服务，也可以设置为自动代理的方式[文档](https://docs.cursor.com/chat/agent#yolo-mode)
+ps: 默认需要自己点击是否使用MCP服务，也可以设置为自动代理的方式[文档](https://docs.cursor.com/chat/agent#yolo-mode)
 
 #### 4、使用方式
 
