@@ -4,33 +4,38 @@
 
 [点击加入im官方交流群](https://im.dcloud.net.cn/#/?joinGroup=682c303383abe400024d38ba)
 
-适用于cursor/vscode等支持vscode插件规范的编辑器。
+适用于 cursor/vscode 等兼容vscode插件规范的IDE。
+
+开发者使用其他 AI IDE 时，也可以获得 uni-app x 的良好的语言服务支持。如需要AI Rules，另见[文档](./rules_mcp.md)
 
 ## 如何安装插件@install
 插件目前在两个平台发布, vscode官方市场和open-vsx市场
 * 打开扩展界面搜索`uni-app x语言服务`，找到插件进行安装。
 * 通过第三方网站下载VSIX进行安装 [open vsx插件下载](https://open-vsx.org/extension/dcloud-ide/hbuilderx-language-services)
 
+注意: `插件安装完成后, 会提示重启编辑器, 如果没有提示, 需要手动重启编辑器`
+
 ## 语言服务功能说明@ability
-* 注意: `插件安装完成后, 会提示重启编辑器, 如果没有提示, 需要手动重启编辑器`
-* 注意: 插件`不支持[发行]/[发布]`等功能, 只支持语言服务功能
-* 目前插件只支持`uni-app x`项目，其他项目暂不支持
+* 插件仅支持语言服务，即代码高亮、代码提示、校验、格式化、转到定义。不支持运行、Debug、发行等功能, 需要同时打开HBuilderX，协同工作。
+* 插件只支持`uni-app x`项目。
 
 ### 关联文件类型和高亮支持@language
 支持uvue和uts文件的高亮
 * 打开uni-app x项目，打开一个.uvue/.uts文件，会自动关联对应的语言。
-* 如果没有自动关联，需要手动关联文件为uvue/uts。
-
+* 如果第一次没有自动关联，请手动关联文件为uvue/uts。
 
 ### 平台设置说明@targets
+uni-app x 项目有很多平台，每个平台都有大量的语法和API。如果开启太多平台，会导致代码提示和语法校验变慢。
+
+所以uni-app x提供了平台语言服务配置。在底部状态栏可以选择使用的平台（默认是APP-ANDROID）。
+
 #### 平台信息注意事项特别说明
 * 平台设置一般和条件编译共同使用
   * [条件编译详情](https://uniapp.dcloud.net.cn/tutorial/platform.html#preprocessor)
   * [pages.json的条件编译支持](https://uniapp.dcloud.net.cn/tutorial/platform.html#pages-json-%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)
-  * 目前不支持条件编译置灰功能(此功能在HBuilderX中支持)
-* uni-app x 项目按不同平台切换语言服务，在不同平台条件编译下，将会使用各自平台的代码提示和语法校验等语言服务功能
+  * 目前不支持非选中平台的条件编译块置灰功能(此功能在HBuilderX中支持)
+
 *注意：选择多个平台，会导致加载多套语言服务，影响内存占用和运行速度。如果只开发一个平台，应去掉其他平台的设置。*
-- 默认开启平台：APP-ANDROID
 
 #### 语言服务平台设置@setting
 * 在uni-app x项目中，打开任意文件，即可在`状态栏`看到**语言服务平台信息**
