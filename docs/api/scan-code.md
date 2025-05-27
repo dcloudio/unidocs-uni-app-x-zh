@@ -4,7 +4,7 @@
 
 <!-- UTSAPIJSON.scanCode.compatibility -->
 
-App平台暂未内置，[见插件市场](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&cat1=8&type=UpdatedDate)
+Android/iOS平台暂未内置，[见插件市场](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&cat1=8&type=UpdatedDate)
 
 <!-- UTSAPIJSON.scanCode.param -->
 
@@ -13,8 +13,6 @@ App平台暂未内置，[见插件市场](https://ext.dcloud.net.cn/search?q=%E6
 <!-- UTSAPIJSON.scanCode.example -->
 
 <!-- UTSAPIJSON.scanCode.tutorial -->
-
-<!-- UTSAPIJSON.scanCode.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 
