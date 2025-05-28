@@ -1,13 +1,13 @@
 # 安卓App配置
 
-## 图标配置 @icon  
+## 图标配置 @icon
 
-### 圆形图标配置 @iconround  
+### 圆形图标配置 @iconround
 Android8及以上系统在Google Pixel手机中应用图标在某些地方是圆形的，仅配置普通图标会导致显示较小，可通过以下方法配置适配：
 
-- 在项目的AndroidManifest.xml中的application节点添加android:roundIcon属性配置应用使用圆形图标  
+- 在项目的AndroidManifest.xml中的application节点添加android:roundIcon属性配置应用使用圆形图标
   ```xml
-  <?xml version="1.0" encoding="utf-8"?>  
+  <?xml version="1.0" encoding="utf-8"?>
   <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
     <application
       android:roundIcon="@drawable/icon_round" >
@@ -17,10 +17,10 @@ Android8及以上系统在Google Pixel手机中应用图标在某些地方是圆
 
 - 在项目的nativeResources\android\res\drawable-xxhdpi目录下添加圆形图标文件icon_round.png
 
-> 注意：需提交云端打包后才能生效  
+> 注意：需提交云端打包后才能生效
 
 
-## 启动界面 @splashscreen  
+## 启动界面 @splashscreen
 App启动时，系统加载应用渲染首页需要一定的时间，为了避免用户等待，手机操作系统提供了特殊的启动界面设计，让用户先看到一个简单的界面，等应用加载完成后正式进入应用首页。
 
 这个界面，即被称为启动封面，也成称为 splash。
@@ -31,7 +31,7 @@ uni-app x中，如不配置splash，则与计算器等应用一致，启动时�
 
 如需配置splash，注意避免splash图与首页风格差异太大。因为uni-app x启动速度非常快，splash只是一闪而过，如果颜色差异太大，会让用户视觉不舒服。
 
-> HBuilderX 3.99+ 版本支持配置启动界面  
+> HBuilderX 3.99+ 版本支持配置启动界面
 > HBuilderX 4.71 及以上版本Andrid平台可视化界面设置调整到`安卓App配置`项中
 
 uni-app x 的 app-android 平台，启动界面有以下策略：
@@ -39,21 +39,21 @@ uni-app x 的 app-android 平台，启动界面有以下策略：
 - 启动图片
 - Google SplashScreen
 
-### 启动图配置 @splascreenDefault  
+### 启动图配置 @splascreenDefault
 
-打开项目的manifest.json文件，在可视化界面中配置各分辨率启动图：  
+打开项目的manifest.json文件，在可视化界面中配置各分辨率启动图：
 
-- HBuilderX 4.71 及以上版本  
-  在 “安卓App配置” 的 “启动界面配置” -> “启动图配置” 中设置  
-  ![](../static/splash_screen_android_2.png)#{width="800px"}  
+- HBuilderX 4.71 及以上版本
+  在 “安卓App配置” 的 “启动界面配置” -> “启动图配置” 中设置
+  <!-- ![](../static/splash_screen_android_2.png)#{width="800px"}   -->
 
-- HBuilderX 4.71 以下版本  
-  在 “App启动界面配置” 的 “Android启动图设置” 中设置  
-  ![](../static/splash_screen_android_1.png)#{width="800px"}  
+- HBuilderX 4.71 以下版本
+  在 “App启动界面配置” 的 “Android启动图设置” 中设置
+  ![](../static/splash_screen_android_1.png)#{width="800px"}
 
 > 推荐使用`.9.png`来适配不同分辨率。
 
-#### .9.png图 @9png  
+#### .9.png图 @9png
 
 manifest虽然可以定义3种标准分辨率的启动图配置，而实际上存在很多不同分辨率的手机，导致启动图在一些不常见的设备会进行拉伸或压缩引起变形。
 
@@ -68,15 +68,15 @@ manifest虽然可以定义3种标准分辨率的启动图配置，而实际上�
 2. 使用.9.png图片后，整个图片应该是包裹着你想要显示的内容的，而没有使用的话整个图片将会被拉伸
 
 **制作.9.png图片**
-Android Studio 已经集成 .9.png 图片编辑工具，使用详情可参考 Android 官方文档：[Create resizable bitmaps (9-patch files)](https://developer.android.google.cn/studio/write/draw9patch)  
+Android Studio 已经集成 .9.png 图片编辑工具，使用详情可参考 Android 官方文档：[Create resizable bitmaps (9-patch files)](https://developer.android.google.cn/studio/write/draw9patch)
 
 详细制作步骤可参考链接：[Android中.9图片的含义及制作教程](https://www.jianshu.com/p/3fd048644e3f)
 
 也可以使用在线.9.png生成工具：[http://inloop.github.io/shadow4android/](http://inloop.github.io/shadow4android/)
 
->.9.png作为启动图使用时注意以下事项：  
-> 不要使用圆角图，图片内容区域不要包含透明信息（4条黑边可以有透明信息）  
-> 为了有更好的兼容性，右侧和底部黑边应该拉满完整区域，不拉满可能在部分设备会显示灰色区域  
+>.9.png作为启动图使用时注意以下事项：
+> 不要使用圆角图，图片内容区域不要包含透明信息（4条黑边可以有透明信息）
+> 为了有更好的兼容性，右侧和底部黑边应该拉满完整区域，不拉满可能在部分设备会显示灰色区域
 
 **.9.png配置使用**
 打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下，在各分辨率启动图设置框选择需要使用的.9.png图片（图片尺寸请按照提示尺寸对应上传），保存后提交云端打包即可。
@@ -102,19 +102,19 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 项目的manifest.json文件中，在“App启动界面配置”中的“Google SplashScreen配置”项下，可以配置背景颜色及各设备分辨率的居中logo图标、底部品牌图标。
 
-#### 配置启动界面背景颜色：  
+#### 配置启动界面背景颜色：
 
 可选配置，默认白色
 
 ![](../static/splash_screen_android_picture2.png)
 
-#### 配置启动界面中部logo图标：  
+#### 配置启动界面中部logo图标：
 
 可选配置，默认应用启动图标
 
 ![](../static/splash_screen_android_picture3.png)
 
-#### 配置启动界面底部品牌图标：  
+#### 配置启动界面底部品牌图标：
 
 可选配置，默认底部不显示品牌图标
 
@@ -126,7 +126,7 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 + 配置Android 12应用启动界面后仅影响Android 12及以上版本应用启动界面，Android 12以下版本依然使用启动图展示splash
 + Android 12启动界面中部logo图标在部分系统设备会被裁剪成圆形，部分设备不会裁剪，需要注意圆形logo适配
 
-### 不同Splash方式的选择参考 @splashscreenSelect  
+### 不同Splash方式的选择参考 @splashscreenSelect
 
 Splash是因为主界面渲染慢，给用户一个等待过渡。但注意复杂的Splash，也一样会影响启动速度。
 
@@ -153,7 +153,7 @@ Splash是因为主界面渲染慢，给用户一个等待过渡。但注意复�
 
 uni-app js引擎版的Android App启动时那个默认的logo转圈效果，其实不是splash，是应用启动后原生view绘制的一个动画。所以点击桌面应用图标后界面不会立即有反应。这个设计影响启动速度，在uni-app x上被废弃了。
 
-### Android平台splash关闭时机 @splashscreenClose  
+### Android平台splash关闭时机 @splashscreenClose
 
 splash默认是在首页onShow时关闭。但可配置，打开项目的manifest.json文件，选择源码视图，在app->splashScreen节点下设置autoClose值域，控制splash关闭时机，默认onShow。
 
@@ -170,7 +170,7 @@ onReady触发时机要比onShow晚一些。
 
 配置示例：
 
-- HBuilderX 4.71 及以上版本  
+- HBuilderX 4.71 及以上版本
   ```json
   {
     "app-android" : {
@@ -181,7 +181,7 @@ onReady触发时机要比onShow晚一些。
   }
   ```
 
-- HBuilderX 4.71 以下版本  
+- HBuilderX 4.71 以下版本
   ```json
   {
     "app" : {
@@ -197,7 +197,7 @@ onReady触发时机要比onShow晚一些。
 如果是在页面A的onShow或更晚的生命周期关闭在跳转或直接跳转，则页面A是`首页`，因为页面A已经显示符合第一个真正显示的页面。
 - splash关闭后才显示开屏广告
 :::
-### 不同启动方式对splash的影响 @splashscreenStart  
+### 不同启动方式对splash的影响 @splashscreenStart
 
 应用的启动有冷启动、温启动、切换到前台，这三种方式splash展示时间是有区别的。
 
@@ -215,49 +215,49 @@ onReady触发时机要比onShow晚一些。
 当然App如何退出是开发者自己定义的。很多Android App直接单击back隐藏在后台，不弹toast询问用户是否退出。此时也可以避免温启动的splash快闪。这种方式的开发详见[切换应用到后台](../api/exit.md#back)。
 
 
-## 可选模块配置 @modules  
+## 可选模块配置 @modules
 
-> HBuilderX 4.71 及以上版本支持可视化界面配置  
+> HBuilderX 4.71 及以上版本支持可视化界面配置
 
-### uni-location（定位） @modulesLocation  
+### uni-location（定位） @modulesLocation
 
 位置服务（定位）使用 [provider机制](../api/provider.md) 实现，包括：[uni.getLocation](../api/get-location.md)，[uni.onLocationChange](../api/location-change.md#onlocationchange)，[uni.offLocationChange](../api/location-change.md#offlocationchange) 等API。
 
 支持以下定位 provider ：
 
-#### 系统定位 @locationSystem  
+#### 系统定位 @locationSystem
 使用系统自带定位功能，由ROM系统实现
 
-#### 腾讯定位 @locationTencent  
+#### 腾讯定位 @locationTencent
 使用 [腾讯位置服务](https://lbs.qq.com/) 的 “Android定位SDK” 实现，使用前需申请Key
 
 
-### uni-map（地图） @modulesMap  
+### uni-map（地图） @modulesMap
 
-#### 腾讯地图 @mapTencent  
+#### 腾讯地图 @mapTencent
 使用 [腾讯位置服务](https://lbs.qq.com/) 的 “Android地图SDK” 实现，使用前需申请Key
 
 
-### uni-payment（支付） @modulesPayment  
+### uni-payment（支付） @modulesPayment
 
 请求支付使用 [provider机制](../api/provider.md) 实现，包括：[uni.requestPayment](../api/request-payment.md) API。
 
 支持以下支付 provider ：
 
-#### 支付宝支付 @paymentAlipay  
+#### 支付宝支付 @paymentAlipay
 使用 “App支付宝客户端SDK” 实现。
 
-#### 微信支付 @paymentWeixin  
+#### 微信支付 @paymentWeixin
 使用 “微信 Open SDK for Android” 实现。
 
-## 权限配置 @permissions  
+## 权限配置 @permissions
 
 uni-app x项目使用[uni内置模块](./manifest-modules.md#utsmodules)时，云端打包会自动添加模块、插件声明需要的Android权限，也可以额外添加或强制移除某些权限。
 
-> HBuilderX4.54以前的版本，需在项目的[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中手动编辑添加Android权限  
-> HBuilderX4.54及以上版本，支持在项目的 manifest.json 中配置额外添加或强制移除Android权限  
+> HBuilderX4.54以前的版本，需在项目的[AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions)中手动编辑添加Android权限
+> HBuilderX4.54及以上版本，支持在项目的 manifest.json 中配置额外添加或强制移除Android权限
 
-### 额外添加的权限 @incloudpermissions  
+### 额外添加的权限 @incloudpermissions
 
 应用云端打包时，如果希望额外添加Android权限，可在项目 manifest.json 文件的 "app" -> "distribute" -> "android" 节点配置 permissions。
 如下示例配置应用额外添加 android.permission.REQUEST_INSTALL_PACKAGES 权限：
@@ -275,13 +275,13 @@ uni-app x项目使用[uni内置模块](./manifest-modules.md#utsmodules)时，�
 }
 ```
 
-**注意**  
-- android:name字段值使用的双引号前面需要加转义斜线“\”  
+**注意**
+- android:name字段值使用的双引号前面需要加转义斜线“\”
 
 
-### 强制移除的权限 @excludepermissions  
+### 强制移除的权限 @excludepermissions
 
-应用云端打包时，如果希望不包含内置模块、插件声明需要的Android权限，可在项目 manifest.json 文件的 "app" -> "distribute" -> "android" 节点配置 excludePermissions。  
+应用云端打包时，如果希望不包含内置模块、插件声明需要的Android权限，可在项目 manifest.json 文件的 "app" -> "distribute" -> "android" 节点配置 excludePermissions。
 如下示例配置应用强制移除 android.permission.READ_MEDIA_IMAGES、android.permission.READ_MEDIA_VIDEO 权限：
 ```json
 {
@@ -298,26 +298,26 @@ uni-app x项目使用[uni内置模块](./manifest-modules.md#utsmodules)时，�
 }
 ```
 
-**注意**  
-- android:name字段值使用的双引号前面需要加转义斜线“\”  
-- 强制移除的权限优先级高于额外添加的权限，也就是某个权限如果同时配置了额外添加和强制移除，最终打包结果是移除此权限  
-- 配置或修改权限后需提交云端打包才能生效  
+**注意**
+- android:name字段值使用的双引号前面需要加转义斜线“\”
+- 强制移除的权限优先级高于额外添加的权限，也就是某个权限如果同时配置了额外添加和强制移除，最终打包结果是移除此权限
+- 配置或修改权限后需提交云端打包才能生效
 
 
-## minSdkVersion @minsdkversion  
+## minSdkVersion @minsdkversion
 minSdkVersion用于指定应用兼容的最低Android版本（API等级），uni-app x 项目默认值为21（即最低支持Android5）。 如果APP某些功能无法支持低版本Android系统的设备，可以配置minSdkVersion确保APP只能安装到指定Android版本及以上的设备。
 
 minSdkVersion值为Number类型，且必须为正整数，取值范围参考[Android版本列表](#apilevellist)中的API等级。
 
 > App升级时 minSdkVersion 只能增加不能降低，也就是说 minSdkVersion 高的App无法被 minSdkVersion 低的App覆盖安装，开发者需要注意！
 
-如需更改此值，可在项目 manifest.json 文件中配置： 
+如需更改此值，可在项目 manifest.json 文件中配置：
 
-- HBuilderX 4.71 及以上版本  
-  可视化界面操作在 “安卓App配置” 的 “miniSdkVersion” 中设置，如下示例配置 miniSdkVersion 值为 26（Android 8）：  
-  ![](../static/android_minisdkversion.png)
+- HBuilderX 4.71 及以上版本
+  可视化界面操作在 “安卓App配置” 的 “miniSdkVersion” 中设置，如下示例配置 miniSdkVersion 值为 26（Android 8）：
+  <!-- ![](../static/android_minisdkversion.png) -->
 
-  `源码视图`在 "app-android" -> "distribute" 节点配置 miniSdkVersion  
+  `源码视图`在 "app-android" -> "distribute" 节点配置 miniSdkVersion
   ```json
   {
     "app-android": {
@@ -328,8 +328,8 @@ minSdkVersion值为Number类型，且必须为正整数，取值范围参考[And
   }
   ```
 
-- HBuilderX 4.71 以下版本  
-  在 manifest.json 的`源码视图`的 "app" -> "distribute" -> "android" 节点配置 minSdkVersion，如下示例：    
+- HBuilderX 4.71 以下版本
+  在 manifest.json 的`源码视图`的 "app" -> "distribute" -> "android" 节点配置 minSdkVersion，如下示例：
   ```json
   {
     "app": {
@@ -343,9 +343,9 @@ minSdkVersion值为Number类型，且必须为正整数，取值范围参考[And
   ```
 
 
-## targetSdkVersion @targetsdkversion  
+## targetSdkVersion @targetsdkversion
 
-> HBuilderX 4.71 及以上版本支持可视化配置启动界面。  
+> HBuilderX 4.71 及以上版本支持可视化配置启动界面。
 
 targetSdkVersion用于指定应用的目标Android版本（API等级），uni-app x 项目默认值为32（即Android12L）。
 
@@ -356,13 +356,13 @@ targetSdkVersion值为Number类型，且必须为正整数，取值范围参考[
 > App升级时 targetSdkVersion 只能增加不能降低，也就是说 targetSdkVersion 高的App无法被 targetSdkVersion 低的App覆盖安装，开发者需要注意！
 > Android 15 设备对 targetSdkVersion 版本有要求，低于24无法正常在android 15设备上正常安装，开发者需要注意！
 
-如需更改此值，可在项目 manifest.json 文件中配置：  
+如需更改此值，可在项目 manifest.json 文件中配置：
 
-- HBuilderX 4.71 及以上版本  
-  打开项目的manifest.json文件，在 “安卓App配置” 的 “targetSdkVersion” 中设置，如下示例配置 targetSdkVersion 值为 35（Android 15）：  
-  ![](../static/android_targetsdkversion.png)
+- HBuilderX 4.71 及以上版本
+  打开项目的manifest.json文件，在 “安卓App配置” 的 “targetSdkVersion” 中设置，如下示例配置 targetSdkVersion 值为 35（Android 15）：
+  <!-- ![](../static/android_targetsdkversion.png) -->
 
-  `源码视图`在 "app-android" -> "distribute" 节点配置 targetSdkVersion  
+  `源码视图`在 "app-android" -> "distribute" 节点配置 targetSdkVersion
   ```json
   {
     "app-android": {
@@ -373,8 +373,8 @@ targetSdkVersion值为Number类型，且必须为正整数，取值范围参考[
   }
   ```
 
-- HBuilderX 4.71 以下版本  
-  在 manifest.json 的`源码视图`的 "app" -> "distribute" -> "android" 节点配置 targetSdkVersion，如下示例配置 targetSdkVersion 值为 35（Android 15）：  
+- HBuilderX 4.71 以下版本
+  在 manifest.json 的`源码视图`的 "app" -> "distribute" -> "android" 节点配置 targetSdkVersion，如下示例配置 targetSdkVersion 值为 35（Android 15）：
   ```json
   {
     "app": {
@@ -388,13 +388,13 @@ targetSdkVersion值为Number类型，且必须为正整数，取值范围参考[
   ```
 
 
-## URL Schemes @urlSchemes  
+## URL Schemes @urlSchemes
 
-> HBuilderX 4.71 及以上版本支持可视化配置启动界面。  
+> HBuilderX 4.71 及以上版本支持可视化配置启动界面。
 > HBuilderX 4.71 以下版本未提供 url scheme 配置，需在 app 原生应用配置文件中进行设置，详情参考：[Android平台 url scheme 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#urlscheme)。
 
-打开项目的manifest.json文件，在 “安卓App配置” 的 “URL Schemes” 中设置：  
-![](../static/android_urlschemes.png)
+打开项目的manifest.json文件，在 “安卓App配置” 的 “URL Schemes” 中设置：
+<!-- ![](../static/android_urlschemes.png) -->
 
 **注意**
 - uni-app x项目标准基座已配置 url scheme 值："uniappx"
@@ -403,30 +403,30 @@ targetSdkVersion值为Number类型，且必须为正整数，取值范围参考[
 标准基座可通过此网页体验 Url Scheme 启动 App：[https://uniappx.dcloud.net.cn/scheme.html](https://uniappx.dcloud.net.cn/scheme.html)
 
 
-## 应用支持CPU类型（abiFilters） @abifilters  
+## 应用支持CPU类型（abiFilters） @abifilters
 
-> HBuilderX 4.71 及以上版本支持可视化配置启动界面。  
+> HBuilderX 4.71 及以上版本支持可视化配置启动界面。
 
 Android平台配置CPU类型针对的是为了提高运行效率使用C/C++语言开发生成的so库，需要为各cpu类型平台单独编译生成对应指令的so库。Java语言开发的代码运行在虚拟机中，由虚拟机适配CPU类型，不涉及到此问题。
 
-uni-app x 项目已适配支持以下主流CPU类型：  
-- armeabi-v7a  
+uni-app x 项目已适配支持以下主流CPU类型：
+- armeabi-v7a
   第7代及以上的ARM处理器（ARM32位），大多数老手机使用此CPU类型
-- arm64-v8a  
-  第8代、64位ARM处理器（ARM64位），2017年后发布的设备使用此CPU类型，可以兼容使用armeabi-v7a的so库  
-  2022年8月国内应用商店要求新上架的应用必须兼容64为ARM硬件  
-- x86  
+- arm64-v8a
+  第8代、64位ARM处理器（ARM64位），2017年后发布的设备使用此CPU类型，可以兼容使用armeabi-v7a的so库
+  2022年8月国内应用商店要求新上架的应用必须兼容64为ARM硬件
+- x86
   少部分平板使用x86，AS模拟器中选了intel x86时使用x86处理器，以及其它常用三方模拟器通常使用x86
 - x86_64
   部分平板使用，大多数模拟器使用64为的x86处理器
 
-uni-app x 项目云端打包默认仅包含“arm64-v8a”，如需支持其它CPU类型，可在项目 manifest.json 文件中配置。  
+uni-app x 项目云端打包默认仅包含“arm64-v8a”，如需支持其它CPU类型，可在项目 manifest.json 文件中配置。
 
-- HBuilderX 4.71 及以上版本  
+- HBuilderX 4.71 及以上版本
   打开项目的manifest.json文件，在 “安卓App配置” 的 “应用支持CPU类型（abiFilters）” 中设置：
-  ![](../static/android_abifilters.png)
+  <!-- ![](../static/android_abifilters.png) -->
 
-  `源码视图`在 "app-android" -> "distribute" 节点配置 abiFilters，如下示例配置支持 armeabi-v7a、arm64-v8a、x86、x86_64 CPU类型：  
+  `源码视图`在 "app-android" -> "distribute" 节点配置 abiFilters，如下示例配置支持 armeabi-v7a、arm64-v8a、x86、x86_64 CPU类型：
   ```json
   {
     "app-android": {
@@ -442,8 +442,8 @@ uni-app x 项目云端打包默认仅包含“arm64-v8a”，如需支持其它C
   }
   ```
 
-- HBuilderX 4.71 以下版本  
-  在 manifest.json 的`源码视图`的 "app" -> "distribute" -> "android" 节点配置 abiFilters，如下示例配置支持 armeabi-v7a、arm64-v8a、x86、x86_64 CPU类型：  
+- HBuilderX 4.71 以下版本
+  在 manifest.json 的`源码视图`的 "app" -> "distribute" -> "android" 节点配置 abiFilters，如下示例配置支持 armeabi-v7a、arm64-v8a、x86、x86_64 CPU类型：
   ```json
   {
     "app": {
@@ -462,11 +462,11 @@ uni-app x 项目云端打包默认仅包含“arm64-v8a”，如需支持其它C
   ```
 
 **注意**
-- 支持的CPU类型越多，安装包会越大  
-- 使用uts插件时，如果插件也包含或依赖使用了so库，需确认插件是否支持配置CPU类型，如果插件不支持可能会导致应用运行异常  
+- 支持的CPU类型越多，安装包会越大
+- 使用uts插件时，如果插件也包含或依赖使用了so库，需确认插件是否支持配置CPU类型，如果插件不支持可能会导致应用运行异常
 
 
-## 渠道信息配置 @channel  
+## 渠道信息配置 @channel
 
 > HBuilder4.31版本新增支持
 
@@ -475,19 +475,19 @@ uni-app x 的渠道信息配置，云端需在“App打包”界面配置，详�
 离线打包时需在原生工程中配置，详情参考[Android平台配置应用渠道包](../native/use/android.md#androidmanifest)。
 
 
-## manifestPlaceholders @manifestplaceholders  
+## manifestPlaceholders @manifestplaceholders
 
 manifest.json中不提供配置 `manifestPlaceholders` 数据，如果应用使用的插件或三方SDK需要使用，可在项目的 `nativeResources/android/manifestPlaceholders.json` 文件中配置，详情参考[Android原生应用清单文件和资源](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#manifestplaceholders)。
 
 
-## enableResourceOptimizations @enableresourceoptimizations  
+## enableResourceOptimizations @enableresourceoptimizations
 
 > HBuilder4.33版本新增支持 enableResourceOptimizations 配置项
 
 Android平台云端打包时原生工程 gradle.properties 的 android.enableResourceOptimizations 配置项，配置是否开启Android原生res资源文件优化，开启后res资源文件名称会被混淆，默认值为 ture，如不希望混淆原生res资源文件名称，可在项目 manifest.json 文件的`源码视图`配置：
 
-- HBuilderX 4.71 及以上版本  
-  在 "app-android" -> "distribute" -> "android" 节点配置 enableResourceOptimizations，如下示例：  
+- HBuilderX 4.71 及以上版本
+  在 "app-android" -> "distribute" -> "android" 节点配置 enableResourceOptimizations，如下示例：
   ```json
   {
     "app-android": {
@@ -498,8 +498,8 @@ Android平台云端打包时原生工程 gradle.properties 的 android.enableRes
   }
   ```
 
-- HBuilderX 4.71 以下版本  
-  在 "app" -> "distribute" -> "android" 节点配置 enableResourceOptimizations，如下示例：  
+- HBuilderX 4.71 以下版本
+  在 "app" -> "distribute" -> "android" 节点配置 enableResourceOptimizations，如下示例：
   ```json
   {
     "app": {
@@ -513,16 +513,16 @@ Android平台云端打包时原生工程 gradle.properties 的 android.enableRes
   ```
 
 
-## aaptOptions @aaptoptions  
+## aaptOptions @aaptoptions
 
 > HBuilder4.31版本新增支持
 
-Android平台云端打包时原生工程应用 build.gradle 的 aaptOptions配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/AaptOptions?hl=en)。  
+Android平台云端打包时原生工程应用 build.gradle 的 aaptOptions配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/AaptOptions?hl=en)。
 
-需在项目 manifest.json 文件的`源码视图`配置：  
+需在项目 manifest.json 文件的`源码视图`配置：
 
-- HBuilderX 4.71 及以上版本  
-  在 "app-android" -> "distribute" -> "android" 节点配置 aaptOptions，如下示例：  
+- HBuilderX 4.71 及以上版本
+  在 "app-android" -> "distribute" -> "android" 节点配置 aaptOptions，如下示例：
   ```json
   {
     "app-android": {
@@ -535,8 +535,8 @@ Android平台云端打包时原生工程应用 build.gradle 的 aaptOptions配�
   }
   ```
 
-- HBuilderX 4.71 以下版本  
-  在 "app" -> "distribute" -> "android" 节点配置 aaptOptions，如下示例：  
+- HBuilderX 4.71 以下版本
+  在 "app" -> "distribute" -> "android" 节点配置 aaptOptions，如下示例：
   ```json
   {
     "app": {
@@ -551,22 +551,22 @@ Android平台云端打包时原生工程应用 build.gradle 的 aaptOptions配�
   }
   ```
 
-**注意**  
-云端打包默认包含以下配置：  
+**注意**
+云端打包默认包含以下配置：
 - additionalParameters '--auto-add-overlay'
 - ignoreAssetsPattern '!.svn:!.git:.*:!CVS:!thumbs.db:!picasa.ini:!*.scc:*~'
 
 
-## buildFeatures @buildfeatures  
+## buildFeatures @buildfeatures
 
 > HBuilder4.31版本新增支持
 
-Android平台云端打包时原生工程应用 build.gradle 的 buildFeatures 配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)。  
+Android平台云端打包时原生工程应用 build.gradle 的 buildFeatures 配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.1/com/android/build/api/dsl/BuildFeatures?hl=en)。
 
-需在项目 manifest.json 文件的`源码视图`配置：  
+需在项目 manifest.json 文件的`源码视图`配置：
 
-- HBuilderX 4.71 及以上版本  
-  在 "app-android" -> "distribute" 节点配置 buildFeatures，如下示例：  
+- HBuilderX 4.71 及以上版本
+  在 "app-android" -> "distribute" 节点配置 buildFeatures，如下示例：
   ```json
   {
     "app-android": {
@@ -580,8 +580,8 @@ Android平台云端打包时原生工程应用 build.gradle 的 buildFeatures �
   }
   ```
 
-- HBuilderX 4.71 以下版本  
-  在 "app" -> "distribute" -> "android" 节点配置 buildFeatures，如下示例：  
+- HBuilderX 4.71 以下版本
+  在 "app" -> "distribute" -> "android" 节点配置 buildFeatures，如下示例：
   ```json
   {
     "app": {
@@ -598,14 +598,14 @@ Android平台云端打包时原生工程应用 build.gradle 的 buildFeatures �
   ```
 
 
-## packagingOptions @packagingoptions  
+## packagingOptions @packagingoptions
 
-Android平台云端打包时原生工程应用 build.gradle 的 packagingOptions 配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions)。  
+Android平台云端打包时原生工程应用 build.gradle 的 packagingOptions 配置项，支持的属性参考：[Android官方文档](https://developer.android.google.cn/reference/tools/gradle-api/7.4/com/android/build/api/dsl/PackagingOptions)。
 
-需在项目 manifest.json 文件的`源码视图`配置：  
+需在项目 manifest.json 文件的`源码视图`配置：
 
-- HBuilderX 4.71 及以上版本  
-  在 "app-android" -> "distribute" 节点配置 packagingOptions，如下示例：  
+- HBuilderX 4.71 及以上版本
+  在 "app-android" -> "distribute" 节点配置 packagingOptions，如下示例：
   ```json
   {
     "app-android": {
@@ -619,8 +619,8 @@ Android平台云端打包时原生工程应用 build.gradle 的 packagingOptions
   }
   ```
 
-- HBuilderX 4.71 以下版本  
-  在 "app" -> "distribute" -> "android" 节点配置 packagingOptions，如下示例：  
+- HBuilderX 4.71 以下版本
+  在 "app" -> "distribute" -> "android" 节点配置 packagingOptions，如下示例：
   ```json
   {
     "app": {
@@ -641,26 +641,26 @@ Android平台云端打包时原生工程应用 build.gradle 的 packagingOptions
 - pickFirst 'lib/*/libc++_shared.so'
 
 
-## Android版本列表 @apilevellist  
+## Android版本列表 @apilevellist
 API等级与Android版本对应列表如下：
-| API等级 | Android版本号 | Android版本名称 |  
-| :-- | :-- | :-- |  
-| 36 | Android16 | Android W |  
-| 35 | Android15 | Android V, Vanilla Ice Cream |  
-| 34 | Android14 | Android U, Upside Down Cake |  
-| 33 | Android13 | Android T, Tiramisu |  
-| 32 | Android12L | Android Sv2 |  
-| 31 | Android12 | Android S, Snow Cone |  
-| 30 | Android11 | Android R, Red Velvet Cake |  
-| 29 | Android10 | Android Q, Quince Tart |  
-| 28 | Android9 | Android P, Pie |  
-| 27 | Android8.1 | Android O_MR1 |  
-| 26 | Android8.0 | Android O, Oreo |  
-| 25 | Android7.1 | Android N_MR1 |  
-| 24 | Android7.0 | Android N, Nougat |  
-| 23 | Android6.0 | Android M, Marshmallow |  
-| 22 | Android5.1 | Android L_MR1 |  
-| 21 | Android5.0 | Android L, Lollipop |  
+| API等级 | Android版本号 | Android版本名称 |
+| :-- | :-- | :-- |
+| 36 | Android16 | Android W |
+| 35 | Android15 | Android V, Vanilla Ice Cream |
+| 34 | Android14 | Android U, Upside Down Cake |
+| 33 | Android13 | Android T, Tiramisu |
+| 32 | Android12L | Android Sv2 |
+| 31 | Android12 | Android S, Snow Cone |
+| 30 | Android11 | Android R, Red Velvet Cake |
+| 29 | Android10 | Android Q, Quince Tart |
+| 28 | Android9 | Android P, Pie |
+| 27 | Android8.1 | Android O_MR1 |
+| 26 | Android8.0 | Android O, Oreo |
+| 25 | Android7.1 | Android N_MR1 |
+| 24 | Android7.0 | Android N, Nougat |
+| 23 | Android6.0 | Android M, Marshmallow |
+| 22 | Android5.1 | Android L_MR1 |
+| 21 | Android5.0 | Android L, Lollipop |
 
 
-以上仅列出uni-app x支持的版本信息，完整API级别信息请参考Google官方文档[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)。  
+以上仅列出uni-app x支持的版本信息，完整API级别信息请参考Google官方文档[Android API级别说明](https://developer.android.com/guide/topics/manifest/uses-sdk-element?hl=zh-cn#ApiLevels)。
