@@ -12,7 +12,7 @@ uni-app x使用的uts语言、ucsss样式，和ts、css有差异。我们已经�
 这些规范在若干mdc文件中，里面描述了uni-app x的各种使用规则。开发者也可以自定义调整规则。
 
 ## Vscode-Copilot
-复制[.github](https://github.com/dcloudio/uni-app-x-ai-rules)目录到uni-app-x项目根目录下[参考](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot?tool=vscode)
+复制[.github](https://gitcode.com/dcloud/uni-app-x-ai-rules)目录到uni-app-x项目根目录下[参考](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot?tool=vscode)
 
 ## 使用mcp
 
