@@ -1118,10 +1118,10 @@
   resolved "https://registry.npmmirror.com/@braintree/sanitize-url/-/sanitize-url-3.1.0.tgz#8ff71d51053cd5ee4981e5a501d80a536244f7fd"
   integrity sha512-GcIY79elgB+azP74j8vqkiXz8xLFfIzbQJdlwOPisgbKT00tviJQuEghOXSMVxJ00HoYJbGswr4kcllUc4xCcg==
 
-"@dcloudio/docs-utils@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.npmmirror.com/@dcloudio/docs-utils/-/docs-utils-1.0.4.tgz#997581fea92c8d6dfabc75dc02fd4b76d6b8c647"
-  integrity sha512-rh0g26uTKg0lsFokymqgINtRAc14bh6IQOHeY4r1/ckmWeYBziqv6BQNIbbxQlKJ8FNClhJ7BUwgmU6f6bs/gQ==
+"@dcloudio/docs-utils@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.npmmirror.com/@dcloudio/docs-utils/-/docs-utils-1.0.5.tgz#52644acfce12445759d20b66bf91e82e11af5d07"
+  integrity sha512-nR3/wOIOa/0Hhf0BzKxf5+e/7qci5WnhiOp+9mO0nwmqN8Ucx2PkaE2jEBP84ympVHzvZz0Wd01WUhz4YQEsVw==
   dependencies:
     glob "10.4.5"
     gray-matter "^4.0.3"
