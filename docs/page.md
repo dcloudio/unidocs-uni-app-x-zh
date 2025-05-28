@@ -326,6 +326,40 @@ onReady后，页面元素就可以自由操作了，比如ref获取节点。同�
 
 再次强调，5和6的先后顺序不一定，取决于首批dom渲染的速度。
 
+## 通过props接收页面参数
+
+HBuilderX 4.71+ 全平台支持通过 props 接收页面参数
+
+
+::: preview
+
+> 组合式
+
+```vue
+<script setup>
+const props = defineProps(["title"])
+onLoad((options)=>{
+  console.log(options['title'] == props.title) // true
+})
+</script>
+```
+
+> 选项式
+
+```vue
+<script>
+export default {
+  props:["title"],
+  onLoad(options){
+     console.log(options['title'] == this.title) // true
+  }
+}
+</script>
+```
+
+:::
+
+
 ## 页面作为组件 @page-as-component
 
 HBuilderX 4.71+ 全平台支持页面作为组件来渲染，通常用于宽屏适配等场景，比如一个新闻网站，在新闻列表页面，宽屏模式下，左侧显示列表，右侧用组件来显示详情页面。
