@@ -128,5 +128,6 @@
   * [云对象](unicloud/object.md)
   * [数据库](unicloud/database.md)
   * [云存储](unicloud/storage.md)
+  * [云函数请求中的中间状态通知通道](unicloud/sse-channel.md)
   * [其他API](unicloud/utils.md)
 * [其他API](ext.md)
