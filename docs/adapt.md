@@ -4,7 +4,7 @@ uni-app-x 提供了两种宽屏适配方案，用于在不同屏幕尺寸下提�
 
 ## 一、页面窗体级适配
 
-页面窗体级适配（leftWindow、rightWindow、topWindow）方案通过在现有页面基础上扩展额外的窗体区域，实现复杂的宽屏布局。这些区域可以独立运行、相互通信，并根据屏幕宽度自动显示或隐藏。
+页面窗体级适配（leftWindow、rightWindow、topWindow）方案通过在现有页面基础上扩展额外的窗体区域，实现复杂的宽屏布局。这些区域可以独立运行、相互通信，并根据屏幕宽度自动显示或隐藏。leftWindow、rightWindow、topWindow 只支持web端。
 
 
 ### 实现思路
@@ -101,7 +101,7 @@ hello uni-app使用了topWindow和leftWindow，分为上左右3栏，[详见](ht
 #### 屏幕尺寸检测
 ```js
 // 方式一：基于屏幕宽度
-const { windowWidth } = uni.getSystemInfoSync()
+const { windowWidth } = uni.getWindowInfo()
 this.isWideScreen = windowWidth > 768
 
 // 方式二：基于设备类型
@@ -119,8 +119,8 @@ this.isWideScreen = deviceType === 'pad' || deviceType === 'pc'
 		</view>
 		<!-- 宽屏时显示详情 -->
 		<view v-if="isWideScreen" class="detail-container">
-			<!-- 把页面当组件使用，使用动态组件component加载 或直接写组件 -->
-			<component :is="currentDetail" :articleId="currentArticleId" />
+			<!-- 把详情detail页面当组件使用 -->
+			<detail :articleId="currentArticleId" />
 		</view>
 	</view>
 </template>
@@ -145,5 +145,3 @@ this.isWideScreen = deviceType === 'pad' || deviceType === 'pc'
 #### 完整示例
 
 完整的示例代码请参考插件：[宽屏适配示例](https://ext.dcloud.net.cn/plugin?name=uni-wide-screen)
-
-
