@@ -326,7 +326,7 @@ onReady后，页面元素就可以自由操作了，比如ref获取节点。同�
 
 再次强调，5和6的先后顺序不一定，取决于首批dom渲染的速度。
 
-## 通过props接收页面参数
+## 通过props接收页面参数 @page-with-props
 
 HBuilderX 4.71+ 全平台支持通过 props 接收页面参数
 
