@@ -4,7 +4,9 @@ uni-app-x 提供了两种宽屏适配方案，用于在不同屏幕尺寸下提�
 
 ## 一、页面窗体级适配
 
-页面窗体级适配（leftWindow、rightWindow、topWindow）方案通过在现有页面基础上扩展额外的窗体区域，实现复杂的宽屏布局。这些区域可以独立运行、相互通信，并根据屏幕宽度自动显示或隐藏。leftWindow、rightWindow、topWindow 只支持web端。
+> 只支持web端
+
+页面窗体级适配（leftWindow、rightWindow、topWindow）方案通过在现有页面基础上扩展额外的窗体区域，实现复杂的宽屏布局。这些区域可以独立运行、相互通信，并根据屏幕宽度自动显示或隐藏。
 
 
 ### 实现思路
@@ -70,7 +72,9 @@ uni.$on('updateData', (data) => {
 hello uni-app使用了topWindow和leftWindow，分为上左右3栏，[详见](https://hellouniappx.dcloud.net.cn/web#/)
 
 
-## 二、组件级适配
+## 二、组件级适配 @page-props
+
+> HBuilderX 4.71+ 全平台支持
 
 组件级适配方案通过将页面作为组件使用[详见](https://doc.dcloud.net.cn/uni-app-x/page.html#page-as-component)，结合响应式布局实现宽屏适配。该方案更灵活，适合大多数应用场景。
 
@@ -79,7 +83,7 @@ hello uni-app使用了topWindow和leftWindow，分为上左右3栏，[详见](ht
 1. **响应式布局**
    - 通过屏幕宽度或设备类型判断是否为宽屏
    - 根据判断结果动态调整布局
-   - 使用条件渲染控制组件显示
+   - 使用条件渲染控制组件显示，宽屏分栏展示，窄屏列表展示
 
 2. **动态组件**
    - 将页面作为组件复用
@@ -99,6 +103,7 @@ hello uni-app使用了topWindow和leftWindow，分为上左右3栏，[详见](ht
 ### 示例代码
 
 #### 屏幕尺寸检测
+通过`uni.getWindowInfo().windowWidth`监听屏幕尺寸变化或通过获取`uni.getDeviceInfo().deviceType`设备类型phone、pad、pc来实现响应式布局
 ```js
 // 方式一：基于屏幕宽度
 const { windowWidth } = uni.getWindowInfo()
@@ -110,6 +115,22 @@ this.isWideScreen = deviceType === 'pad' || deviceType === 'pc'
 ```
 
 #### 布局实现
+宽屏窄屏模式，通过 CSS 类名动态控制布局，响应式设计适配不同屏幕尺寸
+
+- **宽屏模式**：
+  - 采用分栏布局
+  - 左侧列表占30%宽度
+  - 右侧详情占70%宽度
+  - 列表和详情同时显示
+![](https://web-ext-storage.dcloud.net.cn/ext/wide-screen/pc.png)
+
+- **窄屏模式**：
+  - 采用列表布局
+  - 列表项占满宽度
+  - 点击列表项跳转到详情页
+![](https://web-ext-storage.dcloud.net.cn/ext/wide-screen/phone.png)
+![](https://web-ext-storage.dcloud.net.cn/ext/wide-screen/phone-detail.png)
+
 ```vue
 <template>
 	<view class="container" :class="{'flex-row': isWideScreen}">
@@ -124,10 +145,7 @@ this.isWideScreen = deviceType === 'pad' || deviceType === 'pc'
 		</view>
 	</view>
 </template>
-```
-
-#### 样式定义
-```css
+<style>
 .flex-row {
 	flex-direction: row;
 }
@@ -139,6 +157,8 @@ this.isWideScreen = deviceType === 'pad' || deviceType === 'pc'
 .detail-container {
 	width: 70%;
 }
+</style>
+
 ```
 
 
