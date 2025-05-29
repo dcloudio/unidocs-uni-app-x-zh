@@ -232,7 +232,7 @@ onReady触发时机要比onShow晚一些。
 
 ### uni-location（定位） @modulesLocation  
 
-位置服务（定位）使用 [provider机制](../api/provider.md) 实现，包括：[uni.getLocation](../api/get-location.md)，[uni.onLocationChange](../api/location-change.md#onlocationchange)，[uni.offLocationChange](../api/location-change.md#offlocationchange) 等API。
+定位相关功能使用 [provider机制](../api/provider.md) 实现，uni-app x 项目中使用 [uni.getLocation](../api/get-location.md)，[uni.onLocationChange](../api/location-change.md#onlocationchange)，[uni.offLocationChange](../api/location-change.md#offlocationchange) 等API时依赖此模块。
 
 支持以下定位 provider ：
 
@@ -282,8 +282,12 @@ onReady触发时机要比onShow晚一些。
 使用此模块，需在manifest.json中配置：  
 
 - HBuilderX 4.71 及以上版本  
-  可视化界面操作在 “安卓App配置” 的 “可选模块配置” -> “uni-location（定位）” 中勾选 “腾讯定位”：  
+  可视化界面操作在 “安卓App配置” 的 “可选模块配置” -> “uni-location（定位）” 中勾选 “腾讯定位” 并配置 Key：  
   ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/android_location_tencent.png)
+
+  **配置参数**  
+  + Key  
+    [腾讯位置服务](https://lbs.qq.com/)后台申请的Key  
 
   也可通过`源码视图`在 "app-android" -> "distribute" -> "modules" -> "uni-location" 下添加 "tencent" 节点，如下示例：  
   ```json
@@ -337,16 +341,25 @@ onReady触发时机要比onShow晚一些。
 
 ### uni-map（地图） @modulesMap  
 
+uni-app x 项目中使用 [map](../component/map.md) 组件，[uni.chooseLocation](../api/choose-location.md) API时依赖此模块。  
+
+地图是商业服务，授权较贵，如需购买，请点击[获取优惠](https://ask.dcloud.net.cn/explore/map/)。  
+
 #### 腾讯地图 @mapTencent  
-使用 [腾讯位置服务](https://lbs.qq.com/) 的 “Android地图SDK” 实现，使用前需申请Key，并在腾讯后台勾选“SDK”。  
+
+使用 [腾讯位置服务](https://lbs.qq.com/) 的 “Android地图SDK” 实现，使用前需申请Key，并在腾讯后台申请 Key 界面勾选“SDK”。  
 
 > 同时使用 [腾讯定位](#locationTencent) 时，要求使用相同的Key  
 
 使用此模块，需在manifest.json中配置：  
 
 - HBuilderX 4.71 及以上版本  
-  可视化界面操作在 “安卓App配置” 的 “可选模块配置” -> “uni-map（地图）” 中勾选 “腾讯地图”：  
+  可视化界面操作在 “安卓App配置” 的 “可选模块配置” -> “uni-map（地图）” 中勾选 “腾讯地图” 并配置 Key：  
   ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/android_map_tencent.png)
+
+  **配置参数**  
+  + Key  
+    [腾讯位置服务](https://lbs.qq.com/)后台申请的Key  
 
   也可通过`源码视图`在 "app-android" -> "distribute" -> "modules" -> "uni-map" 下添加 "tencent" 节点配置，如下示例：  
   ```json
@@ -400,7 +413,7 @@ onReady触发时机要比onShow晚一些。
 
 ### uni-payment（支付） @modulesPayment  
 
-请求支付使用 [provider机制](../api/provider.md) 实现，包括：[uni.requestPayment](../api/request-payment.md) API。
+请求支付功能使用 [provider机制](../api/provider.md) 实现，uni-app x 项目中使用 [uni.requestPayment](../api/request-payment.md) API时依赖此模块。
 
 支持以下支付 provider ：
 
@@ -444,13 +457,15 @@ onReady触发时机要比onShow晚一些。
 
 
 #### 微信支付 @paymentWeixin  
-使用 “微信 Open SDK for Android” 实现。使用此模块，需在manifest.json中配置：  
+使用 “微信 Open SDK for Android” 实现，使用前需到[微信开放平台](https://open.weixin.qq.com/)创建移动应用并在开发配置中正确配置`Android应用`的包名和签名。
+
+在uni-app x项目中使用此模块，需在manifest.json中配置：  
 
 - HBuilderX 4.71 及以上版本  
   可视化界面操作在 “安卓App配置” 的 “可选模块配置” -> “uni-payment（支付）” 中勾选 “微信支付”：  
   ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/android_payment_wxpay.png)
 
-  也可通过`源码视图`在 "app-android" -> "distribute" -> "modules" -> "uni-payment" 下添加 "wxpay" 节点配置，如下示例：  
+  也可通过`源码视图`在 "app-android" -> "distribute" -> "modules" -> "uni-payment" 下添加 "wxpay" 节点，如下示例：  
   ```json
   {
     "app-android": {
@@ -676,7 +691,7 @@ targetSdkVersion值为Number类型，且必须为正整数，取值范围参考[
 > HBuilderX 4.71 及以上版本支持可视化配置 URL Schemes  
 > HBuilderX 4.71 以下版本未提供 URL Schemes 配置，需在 app 原生应用配置文件中进行设置，详情参考：[Android平台 URL Schemes 配置](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#urlscheme)。
 
-打开项目的manifest.json文件，在 “安卓App配置” 的 “URL Schemes” 中设置：  
+打开项目的manifest.json文件，在 “安卓App配置” 的 “URL Schemes” 中设置，如下示例配置 myapp 和 helloapp 两个值：  
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/android_urlschemes.png)
 
 **注意**
