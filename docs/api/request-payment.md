@@ -130,9 +130,9 @@ UniPaymentWxpayProvider(微信支付)继承自 [UniProvider](./provider.md#unipr
 
 - **app需要在根目录manifest.json文件中配置`uni-payment`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-payment)**
 - app 在`HBuilderX 4.71+`支持可视化界面配置，各平台配置请参考：
-  [app-ios平台](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-ios.html#modulespayment)
-  [app-android平台](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-android.html#modulespayment)
-  [app-harmony平台](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-harmony.html#modulespayment)
+  [app-ios平台](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-ios.html#modulespayment)、
+  [app-android平台](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-android.html#modulespayment)、
+  [app-harmony平台](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-harmony.html#modulespayment)、
 - app-android平台微信支付需要4.11及以上版本
 - app-ios平台微信支付需要4.18及以上版本
 - 关于支付宝支付，当传入orderinfo参数后，app-android平台可以成功调用支付宝，但app-ios平台有时会出现奔溃&卡顿，这时候需要检测后端 ‘out_trade_no’ 参数是否设置为string类型，参考[支付宝文档：业务请求参数](https://opendocs.alipay.com/open/cd12c885_alipay.trade.app.pay)
