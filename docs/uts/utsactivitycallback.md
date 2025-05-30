@@ -19,6 +19,7 @@
 
 ## UniActivityCallback
 
+> HBuilder X  4.62 之后版本 UniActivityParams 新增 activity 参数
 
 ### 实例方法
 
