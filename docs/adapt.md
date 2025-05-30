@@ -72,7 +72,7 @@ uni.$on('updateData', (data) => {
 hello uni-app使用了topWindow和leftWindow，分为上左右3栏，[详见](https://hellouniappx.dcloud.net.cn/web#/)
 
 
-## 二、组件级适配 @page-props
+## 二、组件级适配 @component-adapt
 
 > HBuilderX 4.71+ 全平台支持
 
