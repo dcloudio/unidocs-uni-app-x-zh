@@ -44,15 +44,15 @@ manifest虽然可以定义3种标准分辨率的启动图配置，而实际上�
 2. 使用.9.png图片后，整个图片应该是包裹着你想要显示的内容的，而没有使用的话整个图片将会被拉伸
 
 **制作.9.png图片**
-Android Studio 已经集成 .9.png 图片编辑工具，使用详情可参考 Android 官方文档：[Create resizable bitmaps (9-patch files)](https://developer.android.google.cn/studio/write/draw9patch)  
+Android Studio 已经集成 .9.png 图片编辑工具，使用详情可参考 Android 官方文档：[Create resizable bitmaps (9-patch files)](https://developer.android.google.cn/studio/write/draw9patch)
 
 详细制作步骤可参考链接：[Android中.9图片的含义及制作教程](https://www.jianshu.com/p/3fd048644e3f)
 
 也可以使用在线.9.png生成工具：[http://inloop.github.io/shadow4android/](http://inloop.github.io/shadow4android/)
 
->.9.png作为启动图使用时注意以下事项：  
-> 不要使用圆角图，图片内容区域不要包含透明信息（4条黑边可以有透明信息）  
-> 为了有更好的兼容性，右侧和底部黑边应该拉满完整区域，不拉满可能在部分设备会显示灰色区域  
+>.9.png作为启动图使用时注意以下事项：
+> 不要使用圆角图，图片内容区域不要包含透明信息（4条黑边可以有透明信息）
+> 为了有更好的兼容性，右侧和底部黑边应该拉满完整区域，不拉满可能在部分设备会显示灰色区域
 
 **.9.png配置使用**
 打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下，在各分辨率启动图设置框选择需要使用的.9.png图片（图片尺寸请按照提示尺寸对应上传），保存后提交云端打包即可。
@@ -225,4 +225,4 @@ HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求�
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动图设置”项下选择自己制作的storyboard文件：
 
-![](../static/splash_screen_ios_storyboard.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_ios_storyboard.png)
