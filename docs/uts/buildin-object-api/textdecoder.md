@@ -4,7 +4,7 @@ TextDecoder 接口表示一个文本解码器，一个解码器只支持一种�
 
 当解码器在解码时遇到格式错误的数据时，解码器将使用替换字符 U+FFFD（�）替换无效的数据。
 
-[MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoder)
+[TextDecoder MDN Reference](https://developer.mozilla.org/docs/Web/API/TextDecoder)
 
 ## 实例属性
 
