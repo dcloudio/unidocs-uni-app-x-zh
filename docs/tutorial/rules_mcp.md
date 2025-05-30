@@ -14,6 +14,9 @@ uni-app x使用的uts语言、ucsss样式，和ts、css有差异。我们已经�
 ## Vscode-Copilot
 复制[.github](https://gitcode.com/dcloud/uni-app-x-ai-rules)目录到uni-app-x项目根目录下[参考](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot?tool=vscode)
 
+## Trae
+复制[.trae](https://gitcode.com/dcloud/uni-app-x-ai-rules)目录到uni-app-x项目根目录下
+
 ## 使用mcp
 
 uni-app-x-mcp可以让你和AI交互的过程中自动把项目中的组件信息提供给AI，从而让AI在生成代码、修复bug时更加准确。
@@ -68,7 +71,12 @@ $ npm i uni-app-x-mcp -g
 }
 ```
 
-#### 3、默认启动MCP服务
+- 在Trae中使用
+
+目前trae官方并没有支持在.trae目录中配置mcp.json，官方提供了手动配置方式，是配置在全局的， 但[mcp.json](https://gitcode.com/dcloud/uni-app-x-ai-rules/blob/main/.trae/mcp.json)的内容是一样的，可以直接使用。[trae中如何使用mcp](https://docs.trae.com.cn/ide/model-context-protocol)
+
+
+#### 3、Cursor默认启动MCP服务
 - 点击cursor setting -> 点击MCP
 - 会出现一个MCP列表，选择自己需要启动MCP就行(默认是关闭状态)
 ![](https://web-ext-storage.dcloud.net.cn/hx/doc/D52E7A18-70BA-4C0F-A8AC-24AE8B8AB5DB.png)
