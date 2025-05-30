@@ -739,6 +739,17 @@ export function getJavaClassTest() : boolean {
 ```
 
 
+### getKotlinClass(input:any)
+
+<!-- UTSJSON.UTSAndroid.getKotlinClass.description -->
+
+<!-- UTSJSON.UTSAndroid.getKotlinClass.param -->
+
+<!-- UTSJSON.UTSAndroid.getKotlinClass.returnValue -->
+
+<!-- UTSJSON.UTSAndroid.getKotlinClass.compatibility -->
+
+
 ### getTopPageActivity()
 
 <!-- UTSJSON.UTSAndroid.getTopPageActivity.description -->
