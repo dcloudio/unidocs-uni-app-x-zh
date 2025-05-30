@@ -25,7 +25,7 @@ uni-app x 的 app-android 平台，启动界面有以下策略：
 
 项目的manifest.json文件中，在“App启动界面配置”中的“Android启动界面设置”项下配置各设备分辨率启动图：
 
-![](../static/splash_screen_android_1.png)#{width="800px"}
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_old.png)#{width="800px"}
 
 推荐使用`.9.png`来适配不同分辨率。
 
@@ -50,9 +50,9 @@ Android Studio 已经集成 .9.png 图片编辑工具，使用详情可参考 An
 
 也可以使用在线.9.png生成工具：[http://inloop.github.io/shadow4android/](http://inloop.github.io/shadow4android/)
 
->.9.png作为启动图使用时注意以下事项：
-> 不要使用圆角图，图片内容区域不要包含透明信息（4条黑边可以有透明信息）
-> 为了有更好的兼容性，右侧和底部黑边应该拉满完整区域，不拉满可能在部分设备会显示灰色区域
+>.9.png作为启动图使用时注意以下事项：  
+> 不要使用圆角图，图片内容区域不要包含透明信息（4条黑边可以有透明信息）  
+> 为了有更好的兼容性，右侧和底部黑边应该拉满完整区域，不拉满可能在部分设备会显示灰色区域  
 
 **.9.png配置使用**
 打开项目的manifest.json文件，在“App启动界面配置”中的“Android启动界面设置”项下，在各分辨率启动图设置框选择需要使用的.9.png图片（图片尺寸请按照提示尺寸对应上传），保存后提交云端打包即可。
@@ -75,7 +75,7 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 在支持的Rom上表现形式如下图，启动后会看到下面的界面，然后直接进入应用主页。
 
-![](../static/splash_screen_android_example.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_example.png)
 
 项目的manifest.json文件中，在“App启动界面配置”中的“Google SplashScreen配置”项下，可以配置背景颜色及各设备分辨率的居中logo图标、底部品牌图标。
 
@@ -83,19 +83,19 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 可选配置，默认白色
 
-![](../static/splash_screen_android_picture2.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_bg.png)
 
 #### 配置启动界面中部logo图标：
 
 可选配置，默认应用启动图标
 
-![](../static/splash_screen_android_picture3.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_logo.png)
 
 #### 配置启动界面底部品牌图标：
 
 可选配置，默认底部不显示品牌图标
 
-![](../static/splash_screen_android_picture4.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_brand.png)
 
 **Tips**
 
@@ -225,4 +225,4 @@ HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求�
 
 打开项目的manifest.json文件，在“App启动界面配置”中的“iOS启动图设置”项下选择自己制作的storyboard文件：
 
-![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_ios_storyboard.png)
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_ios_storyboard_old.png)
