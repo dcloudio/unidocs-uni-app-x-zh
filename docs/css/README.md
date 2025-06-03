@@ -15,7 +15,7 @@ ucss这个子集，是抽取了web和app的共同能力，并通过web的css写�
 原生App的组件样式都是通过组件的属性设置的。父子组件的属性隔离，样式不会继承。
 
 App端与web常见的区别是：
-1. 仅支持**flex 布局**：这是web、iOS、Android均支持的布局方式
+1. 仅支持**flex 布局**和绝对定位：这是web、iOS、Android均支持的布局方式
 2. 选择器**只能用 class 选择器**，不能用tag、#id、[attr]等选择器，目前class选择器不支持除A-Z、a-z、0-9、_、- 之外的字符
 3. **样式不继承**，即父元素样式不影响子元素
 
@@ -23,17 +23,21 @@ App端与web常见的区别是：
 
 ## 页面布局
 
-> uni-app x 使用flex布局。\
-> 这是一种清晰易用、全平台支持的布局。不管web、Android、iOS、微信skyline、快应用，均支持flex布局。\
-> 页面布局有2个注意事项，[flex方向](#flex-direction) 和 [页面级滚动](#pagescroll)。
+uni-app x 使用flex布局，即弹性盒布局。
+
+flex是一种清晰易用、全平台支持的布局。不管web、Android、iOS、微信skyline、快应用，均支持flex布局。
+
+如果不了解flex可以参考：[MDN的flex教程](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
+
+uni-app x中页面布局有2个注意事项，[flex方向](#flex-direction) 和 [页面级滚动](#pagescroll)。
 
 ### flex方向 @flex-direction
 
 在W3C规范中，flex 默认是`横向`的，但uni-app x里全平台的flex方向默认值都是`纵向`的。
 
-因为W3C规范中，默认布局是block，当使用flex时更高频率是用它的横排能力。而在flex是第一布局模型的手机端，大量布局都是竖排的，此时要求开发者大量编写`style="flex-direction:column"`很不友好。
+因为W3C规范中，起初布局是block，后来推出flex时更高频率是用它的横排能力。而在flex是第一布局模型的手机端，大量布局都是竖排的，此时要求开发者大量编写`style="flex-direction:column"`很不友好。
 
-所以在uni-app x中默认是竖排（之前nvue也默认是竖排）。同时在[manifest.json](../collocation/manifest.md)中提供了配置项，可以修改flex方向为横排。
+所以在uni-app x中默认是竖排（之前nvue也默认是竖排）。同时在[manifest.json](../collocation/manifest.md)中提供了配置项，可以修改flex方向默认值为横排。
 
 ```html
 <view style="flex-direction:row">
@@ -248,25 +252,6 @@ app中，设置样式只有内联样式即style属性和class属性这两种方�
 ## 层级
 
 App仅对`同层的兄弟节点`之间支持`z-index`来调节层级。不支持脱离dom树任意调节层级。
-
-## css模块
-
-|模块				|App支持情况	|备注									|
-|:-:				|:-:		|:-:									|
-|背景与边框			|√			|不支持背景图							|
-|盒子模型			|√			|										|
-|Flex 布局			|√			|										|
-|Inline 布局			|×			|										|
-|Inline-Block 布局	|×			|										|
-|Block 布局			|×			|										|
-|字体				|√			|[详见](font-family.md)	|
-|Positioned 布局		|√			|										|
-|CSS Animation		|x			|										|
-|CSS Transition		|√			|										|
-|CSS Variable		|×			|										|
-|媒体查询			|×			|										|
-
-不支持的css功能，并不影响业务开发。因为css本质是一种编写元素的样式属性的一种描述性写法。元素的所有样式设置，都可以脱离css这种写法，由API完成。
 
 ## css方法 @css-function
 
