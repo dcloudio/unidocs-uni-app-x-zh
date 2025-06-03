@@ -1,6 +1,7 @@
 # CSS 变量 var@var
 
 > HBuilderX4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。
+>
 > HBuilderX4.52起 全平台提供了安全区域相关 CSS 变量 --uni-safe-area-inset-* 。
 
 ## uni-app x预置的css变量：
@@ -38,7 +39,7 @@
 </style>
 ```
 
-<!-- 
+<!--
 ```vue
 <template>
 	<view>
