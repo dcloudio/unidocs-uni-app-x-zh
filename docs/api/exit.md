@@ -18,6 +18,9 @@ Android平台的应用退出分热退出和冷退出。
 ##### app-ios平台  
 iOS系统自身并没有退出应用的API。仅[uni-app x SDK](../native)模式中支持通过本API关闭uni-app x应用。
 
+##### app-harmony平台
+在鸿蒙平台退出时会结束当前Ability，即默认情况下仅存在一个Ability相当于整个应用关闭。当使用[uni-app x SDK](../native)模式时通过本API关闭uni-app x应用仅会关闭uni-app x实例，不会销毁所在的Ability。
+
 
 <!-- UTSAPIJSON.exit.param -->
 
