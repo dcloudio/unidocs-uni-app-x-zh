@@ -1,13 +1,9 @@
-## CSS 变量 var@var
+# CSS 变量 var@var
 
 > HBuilderX4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。
 > HBuilderX4.52起 全平台提供了安全区域相关 CSS 变量 --uni-safe-area-inset-* 。
 
-**注意：**
-- app平台不支持自定义css变量，仅支持预置的css变量。
-- 鸿蒙平台目前支持的css变量仅在页面初始化时计算一次，不会随相关区域变化而变化
-
-uni-app x预置的css变量：
+## uni-app x预置的css变量：
 
 <!-- CSSJSON.variables_values.compatibility -->
 
