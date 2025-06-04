@@ -58,6 +58,7 @@ uni-app x的项目结构与[uni-app老版的项目结构](https://uniapp.dcloud.
 ├─nativeResources       App端原生资源目录
 │  ├─android            Android原生资源目录 <a href="https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android">详见</a>
 |  └─ios                iOS原生资源目录 <a href="https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6-bundle-resources">详见</a>
+├─harmonyConfig         HarmonyOS 端原生资源目录 <a href="https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html#config-dir">详见</a>
 ├─hybrid                App端存放web-view组件使用的本地html文件的目录，<a href="./component/web-view">详见</a>
 ├─wxcomponents          微信小程序平台wxml组件专用目录
 ├─unpackage             非工程代码，一般存放运行或发行的编译结果、App自定义基座。默认应配置git忽略
@@ -96,9 +97,9 @@ UniApp上有应用级的方法和属性。[详见](./api/get-app.md)
 	toolbar的运行按钮点击后会展开一个菜单。这个菜单可配置，通过`自定义菜单`将不常用的运行项目折叠起来。
 
 3. 快捷键
-	
+
 	运行快捷键是【Ctrl+r】
-	
+
 	弹出的菜单还支持键盘快捷选择：按回车可以选中菜单的第一项；windows下按数字可以快捷选中菜单项开头数字对应的菜单项。
 
 如果不能看到相关菜单，那么HBuilder当前打开的文件可能不是uni-app x项目下的文件。
