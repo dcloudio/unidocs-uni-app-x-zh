@@ -18,11 +18,18 @@ uni-app x的组件和API，大多是uts语言开发的。和开发者做的uts�
 
 如果这些改动有助于其他开发者，欢迎给开源项目回提pr。
 
+在uni-app x的组件和API文档页面的右上角，也有每个组件和API的源码，都是链接到[uni-api](https://gitcode.net/dcloud/uni-api)和[uni-component](https://gitcode.net/dcloud/uni-component)项目。
+
 除此之外，插件市场还有众多插件，[详见](https://ext.dcloud.net.cn/?uni-appx=1)
 
 目前插件市场已经有近千款适配uni-app x的插件，不管是uts还是uvue，已有大量开发者在使用。
 
 上线的App案例：
+由于uni-app x没有运行时数据采集，所以DCloud并不知道哪些开发者在真实使用uni-app x。\n
+希望大型开发者，能主动给本文档提交pr，贡献案例，帮助uni-app x生态发展。
+
+以下列出部分使用云打包的开发案例：
+
 - 鲨推AI（工具）：[Android](https://sj.qq.com/appdetail/com.shatui.ai)
 - 智能PPT生成器（工具）：[Android](https://app.mi.com/details?id=com.pptgen.Intelligent)
 - 格式作坊（工具）：[Android](https://sj.qq.com/appdetail/com.gszf.app)、[iOS](https://apps.apple.com/cn/app/%E6%A0%BC%E5%BC%8F%E4%BD%9C%E5%9D%8A-%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%99%A8/id6472780051)
