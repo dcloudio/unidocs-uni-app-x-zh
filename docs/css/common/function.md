@@ -2,9 +2,9 @@
 
 ## var
 
-> HBuilderX4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。
->
-> HBuilderX4.52起 全平台提供了安全区域相关 CSS 变量 --uni-safe-area-inset-* 。
+> uni-app x 4.0+ 提供内置 CSS 变量。
+> uni-app x 4.52+ 全平台提供了安全区域相关 CSS 变量 --uni-safe-area-inset-* 。
+> uni-app x 4.71+ App平台补充了自定义css变量
 
 ### 预置的 CSS 变量 @preset-var
 
@@ -41,9 +41,9 @@ App平台和web有以下差异:
 
 内置 CSS 环境变量，即`env()`。
 
-app平台支持使用env()函数处理页面安全区域, 之前版本如有获取栈顶页面安全区域的需求可使用[uni.getWindowInfo()](../../api/get-window-info.md#safearea)。
-
-**注意：此内置环境变量，主要用于兼容 web 的写法。但实际开发中，推荐使用本文档上方的 [--uni-safe-area-inset-xxx 系列css变量](#var)。**
+**注意：**\
+env()主要用于在App平台补齐 web 规范。但浏览器的env不会考虑uni-app x的pages.json中配置的顶部导航栏和底部tabbar。\
+所以实际开发中处理安全区时，更推荐使用本文档上方的 [--uni-safe-area-inset-xxx 系列css变量](#var)。
 
 ### 语法
 ```css
