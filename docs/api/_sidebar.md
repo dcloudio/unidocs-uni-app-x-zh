@@ -21,6 +21,7 @@
   * [dialogPage](dialog-page.md)
   * [设置导航条颜色](set-navigation-bar-color.md)
   * [设置导航条标题](set-navigation-bar-title.md)
+  * [设置导航条loading](navigator-bar-loading.md)
   * [设置tabBar](set-tab-bar.md)
   * [页面下拉刷新](pull-down-refresh.md)
   * [将页面滚动到指定位置](page-scroll-to.md)
@@ -44,6 +45,7 @@
   * [上传文件](upload-file.md)
   * [下载文件](download-file.md)
   * [获取网络类型](get-network-type.md)
+  * [监听网络状态变化](network-status-change.md)
   * [websocket](websocket.md)
   * [SSE](connect-event-source.md)
 * 设备
@@ -57,6 +59,7 @@
   * [安装 APK](install-apk.md)
   * [获取电池电量信息](get-battery-info.md)
   * [打电话](make-phone-call.md)
+  * [添加手机联系人](add-phone-contact.md)
   * [剪切板](clipboard.md)
   * [罗盘](compass.md)
   * [加速度计](accelerometer.md)
@@ -67,6 +70,7 @@
   * [扫码](scan-code.md)
   * [判断是否为模拟器](is-simulator.md)
   * [获取无障碍服务信息](get-accessibility-info.md)
+  <!-- * [键盘](keyboard.md) -->
 * 媒体
   * [拍照或从相册选择图片](choose-image.md)
   * [图片预览](preview-image.md)
@@ -99,6 +103,7 @@
   * [使用地图选择位置](choose-location.md)
   * [位置更新](location-change.md)
 * 登录与认证
+  * [登录](sign-in.md)
   * [App一键登录](get-univerify-manager.md)
   * [金融级实人认证](facial-recognition-meta-info.md)
   * [生物认证](bio-auth.md)
