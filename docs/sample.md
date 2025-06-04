@@ -51,3 +51,8 @@ uni-app x的组件和API，大多是uts语言开发的。和开发者做的uts�
 插件市场的云端一体项目模板，这些项目的客户端和服务器的源码都是现成的，可直接购买：
 - 快亿商城：[App端插件](https://ext.dcloud.net.cn/plugin?id=15458)、[管理端插件](https://ext.dcloud.net.cn/plugin?id=15568)
 - [ai(chatGPT)聊天对话，uni-app x(uvue+uts)和uniCloud云端一体完整项目模板](https://ext.dcloud.net.cn/plugin?id=17075)
+
+其实uni-app x最大的案例就是uni-app x自身，
+1. uni-app x有几十个组件（form类、video）、以及界面有关的API（showModel、showActionSheet、previewImage、chooseLocation、scanCode等）都是用uvue实现的。
+2. uni-app x的几百个API，都是用uts实现的。
+这些组件和API的文档上都列有源码链接。
