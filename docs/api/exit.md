@@ -15,6 +15,8 @@ Android平台的应用退出分热退出和冷退出。
 
 热退出，即通知了os：这个App用户不用了，在os需要时可以回收。如果在os回收之前，用户又启动这个App，会感觉启动速度更快一些。
 
+[uni-app x 原生SDK](../native)下使用调用本API仅会关闭uni-app x应用。
+
 ##### app-ios平台  
 iOS系统自身并没有退出应用的API。仅[uni-app x SDK](../native)模式中支持通过本API关闭uni-app x应用。
 
