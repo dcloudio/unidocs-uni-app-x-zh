@@ -1,10 +1,12 @@
-# CSS 变量 var@var
+# CSS 方法
+
+## var
 
 > HBuilderX4.0起 提供内置 CSS 变量。之前版本如有获取状态栏高度等需求可使用[uni.getWindowInfo()](../../api/get-window-info.md)方式获取。
 >
 > HBuilderX4.52起 全平台提供了安全区域相关 CSS 变量 --uni-safe-area-inset-* 。
 
-## uni-app x预置的css变量：
+### 预置的 CSS 变量 @preset-var
 
 <!-- CSSJSON.variables_values.compatibility -->
 
@@ -20,43 +22,7 @@
   2. 这2个css变量未包含left、right，宽屏适配和横屏时无法友好兼容
   3. 这2个css变量的命名未包含 `uni` 前缀，容易和开发者的代码中的自定义css变量命名冲突。
 
-### 示例
-
-```vue
-<template>
-	<view>
-		<view class="status_bar">
-			<!-- 这里是状态栏 -->
-		</view>
-		<view>状态栏下的文字</view>
-	</view>
-</template>
-<style>
-	.status_bar {
-		height: var(--status-bar-height);  <!-- 敲 hei，在HBuilderX的语法提示中可选择本代码块，快速生成本行代码-->
-		width: 100%;
-	}
-</style>
-```
-
-<!--
-```vue
-<template>
-	<view>
-		<view class="toTop">
-			这里可以放一个向上箭头，它距离底部tabBar上浮10px
-		</view>
-	</view>
-</template>
-<style>
-	.toTop {
-		bottom: calc(var(--window-bottom) + 10px);
-	}
-</style>
-```
--->
-
-## CSS 自定义变量 var@customvar
+### 自定义 CSS 变量 @customvar
 > HBuilderX4.71起 App平台支持自定义变量
 
 CSS自定义变量规范参考[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/--*)
@@ -67,29 +33,9 @@ App平台和web有以下差异:
 - 回退值不支持var(--*) ex: --height: var(--height1 , var(--height2))
 - transtion暂不支持使用var
 
-### 示例
+<!-- CSSJSON.variables_values.example -->
 
-```vue
-<template>
-	<view class="var_define">
-		<view class="var_apply">
-			使用自定义变量设置背景为红色
-		</view>
-	</view>
-</template>
-<style>
-	.var_define {
-		--custom_background_color:red;
-		width: 100%;
-	}
-	.var_apply {
-		background-color: var(--custom_background_color);
-		height: 100px;
-	}
-</style>
-```
-
-## CSS 环境变量 env@env
+## env @env
 
 > HBuilderX4.51+
 
@@ -135,27 +81,4 @@ web平台的 CSS环境变量是应用全局值，由浏览器自动计算，与 
 
 web平台的 CSS环境变量规范参考[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/env)
 
-
-### 示例
-
-```vue
-<template>
-  <view class="padding-safe-area-inset">
-    <view style="background-color: blue;">我在状态栏遮住</view>
-    <view style="background-color: blue;">我在导航栏上边</view>
-  </view>
-</template>
-<style>
-  .padding-safe-area-inset {
-    flex: 1;
-    justify-content: space-between;
-/* #ifdef APP */
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-left: env(safe-area-inset-left, 0px);
-    padding-right: env(safe-area-inset-right, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-/* #endif */
-  }
-</style>
-
-```
+<!-- CSSJSON.function_values.example -->
