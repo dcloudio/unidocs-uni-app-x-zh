@@ -22,13 +22,6 @@ uni-app x框架因为需要也会产生一些文件在CACHE目录中，比如拍
 - 本地磁盘文件：指应用在手机端运行时可访问的磁盘文件。又分以下目录：
 	+ 应用外置沙盒目录（`uni.env.SANDBOX_PATH`）：手机应用的沙盒目录，其中包括缓存文件目录和用户文件目录。在文件管理器中可看到。
 		* 缓存文件目录（`uni.env.CACHE_PATH`）：手机运行过程中框架保存缓存文件的目录（cache），系统空间不足时会被自动清理掉
-			- uni-download ：下载
-			- uni-media ：拍照、相册选择（相册选择仅在custom且压缩时产生临时文件）
-			- uni-snapshot ：App dom截图
-			- uni-crash ：App崩溃日志
-			- uni-audio ：App 线上音频缓存
-			- uni-recorder ：App 录音存储
-			- uni-store ： uni.getFileSystemManager().saveFile/saveFileSync 默认保存路径
 		* 用户文件目录（`uni.env.USER_DATA_PATH`）：提供给开发者操作的本地文件目录（files）
 	+ 应用内置沙盒目录（`uni.env.ANDROID_INTERNAL_SANDBOX_PATH`）：存放框架的网络缓存（如网络图片、视频、web-view的缓存）、storage。
 	+ 沙盒外目录
@@ -162,7 +155,7 @@ App和小程序上都给应用提供了文件沙盒系统（SANDBOX）。即App�
 
 uni-app x的部分内置API，在App平台会产生临时文件会放置在本cache目录，如：
 - uni.downloadFile下载的文件
-- uni.chooseImage、uni.chooseVideo拍摄或选择的相册文件
+- uni.chooseImage、uni.chooseVideo、uni.chooseMedia(iOS平台)拍摄或选择的相册文件
 - uni.compressImage、uni.compressVideo压缩后的文件
 - uni.getImageInfo网络图片下载到本地的文件
 - uni.createInnerAudioContext缓存的网络audio文件
@@ -175,6 +168,7 @@ uni-app x的部分内置API，在App平台会产生临时文件会放置在本ca
 在`uni.env.CACHE_PATH`目录下，uni官方使用了如下目录，请开发者避免使用uni-开头的目录：
 - uni-download // uni.downloadFile的默认下载地址 （在HBuilderX 3.98时曾使用目录uniDownloads，从3.99起调整为uni-download）
 - uni-media // uni.chooseImage、uni.chooseVideo拍摄或选择的相册文件，uni.compressImage、uni.compressVideo压缩后的文件，uni.getImageInfo网络图片下载到本地的文件
+  * iOS平台uni.chooseMedia拍摄或选择的相册文件
 - uni-snapshot // element takeSnapShot截图APi存储的路径
 - uni-audio //存放网络缓存音频文件
 - uni-recorder //存放录音文件
