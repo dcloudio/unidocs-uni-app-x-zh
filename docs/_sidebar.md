@@ -43,10 +43,6 @@
 		   * [启动与通信](native/use/iosapi.md)
 			* [自定义基座](native/debug/ios.md)
 			* [SDK下载](native/download/ios.md)
-		* HarmonyOS平台
-		   * [原生工程配置](native/use/harmony.md)
-		   * [内置模块](native/modules/harmony/modules.md)
-		   * [UTS插件](native/use/harmonyuts.md)
 	* 应用市场上架
 		* [概述](tutorial/app-market.md)
 		* [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
@@ -55,6 +51,9 @@
   * [概述](app-harmony/README.md)
   * uni-app x 原生SDK
     * [原生工程配置](native/use/harmony.md)
+    * [内置模块](native/modules/harmony/modules.md)
+		* [UTS插件](native/use/harmonyuts.md)
+    * [启动与通信](native/use/harmonyapi.md)
 * 小程序平台专题指南
   * [概述](mp/README.md)
 * 运行和调试
