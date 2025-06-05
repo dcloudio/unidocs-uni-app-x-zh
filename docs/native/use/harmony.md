@@ -134,3 +134,9 @@ struct Index {
 ## 退出
 
 退出应用可以在 uni-app x 中调用 uni.exit()，整体退出 uni-app x。
+
+## 集成内置模块
+根据[集成内置模块](../modules/harmony/modules.md)进行配置
+
+## 集成UTS插件
+根据[集成UTS插件](harmonyuts.md)制作插件库以及向主工程添加相关配置
