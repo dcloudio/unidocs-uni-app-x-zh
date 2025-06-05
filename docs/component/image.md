@@ -14,7 +14,7 @@
 - web平台支持的图片格式，不同浏览器有差异，可查询caniuse
 - 小程序平台支持的图片格式与浏览器类似。但由于不同小程序平台的webview版本不一样，需要具体查阅小程序平台的图片组件介绍。
 	注意：webp在不同小程序平台策略不同，有的需要打开 webp 属性，有的仅支持来自服务器的webp。
-- 鸿蒙next平台的图片格式[参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)
+- 鸿蒙next平台的图片格式[参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image?ha_source=Dcloud&ha_sourceId=89000448)
 - Android和iOS平台支持的图片格式如下：
 	* [x] bmp
 	* [x] gif
@@ -46,7 +46,7 @@
 	* 支持http、https。  
 	* 安卓端image组件内部使用facebook的[fresco](https://github.com/facebook/fresco)库(2.5.0)，自带缓存策略，也会自动清理缓存。  
 	* iOS端image组件内部使用[SDWebImage](https://github.com/SDWebImage/SDWebImage)库(5.10.0)，自带缓存策略，默认7天缓存，缓存过期后会自动清理。
-	* 鸿蒙平台image组件使用arkUI的image组件，缓存策略[另见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image)
+	* 鸿蒙平台image组件使用arkUI的image组件，缓存策略[另见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image?ha_source=Dcloud&ha_sourceId=89000448)
 
 <!-- UTSCOMJSON.image.children -->
 

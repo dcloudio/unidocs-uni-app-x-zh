@@ -58,10 +58,10 @@ ArkTS的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可�
 - 暂未发布小程序SDK
 - 鸿蒙平台目前不支持横屏、不支持 rpx 根据窗口尺寸变化自动变化
 - 鸿蒙自身的Bug还有不少，开发时需注意相关的组件、API文档说明。比如：
-	* rich-text的无法自动根据内容撑开高度、内部会自滚动且滚动条位置不对，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250224172323045/comment)，导致加载联网内容时滚动表现难以控制。[详见rich-text注意事项](../component/rich-text.md#tips)
-	* animateTo 设置 transform rotate 有较多问题，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250317210619077/comment)
+	* rich-text的无法自动根据内容撑开高度、内部会自滚动且滚动条位置不对，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250224172323045/comment?ha_source=Dcloud&ha_sourceId=89000448)，导致加载联网内容时滚动表现难以控制。[详见rich-text注意事项](../component/rich-text.md#tips)
+	* animateTo 设置 transform rotate 有较多问题，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250317210619077/comment?ha_source=Dcloud&ha_sourceId=89000448)
 - 使用 uni.loadFontFace 后需要更新设置字体内容才能使字体生效
-- 鸿蒙原生应用的单位有逻辑像素和物理像素之分，分别是vp和px。这里的px是物理像素，而web的px是逻辑像素。同名但不同义。不过在uni-app x的css样式中，仍然使用习惯的px即可，它是逻辑像素，css里写的px编译到鸿蒙会自动变成vp（鸿蒙里的逻辑像素）。鸿蒙开发默认也是vp逻辑像素。鸿蒙原生单位文档[详见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)
+- 鸿蒙原生应用的单位有逻辑像素和物理像素之分，分别是vp和px。这里的px是物理像素，而web的px是逻辑像素。同名但不同义。不过在uni-app x的css样式中，仍然使用习惯的px即可，它是逻辑像素，css里写的px编译到鸿蒙会自动变成vp（鸿蒙里的逻辑像素）。鸿蒙开发默认也是vp逻辑像素。鸿蒙原生单位文档[详见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units?ha_source=Dcloud&ha_sourceId=89000448)
 - 鸿蒙平台 uts 插件内暂不支持使用uniCloud
 - 在运行 HBuilderX 内置的 hello uni-app x 项目运行报错 `运行所需的权限没有签名授权`，是因为演示项目使用到了需要审批的 ACL 权限。解决方案：搜索 `ohos.permission.READ_PASTEBOARD` 将其注释掉，此时项目可以正常运行，同时剪切板的 api 测试页面将不生效。
 - 虽然uni-app编译为js，uni-app x编译为arkts，但不代表uni-app x的性能高于uni-app。uni-app使用的js引擎是jsvm（即v8），arkts引擎还在进步中，目前部分密集运算的性能还不如v8。

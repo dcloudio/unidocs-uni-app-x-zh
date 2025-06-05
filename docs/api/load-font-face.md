@@ -25,7 +25,7 @@
   })
   ```
 - `HarmonyOS 注意事项`
-  1. 使用 [@ohos.font](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V13/js-apis-font-V13) 实现
+  1. 使用 [@ohos.font](https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V13/js-apis-font-V13?ha_source=Dcloud&ha_sourceId=89000448) 实现
     - [x] ttf
     - [x] otf
   2. base64 格式字体是通过转换成 buffer 保存在磁盘上并引入实现的，因此页面上过多的使用 base64 可能会有性能问题

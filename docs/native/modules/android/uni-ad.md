@@ -10,7 +10,7 @@
 |快手			|uniad-ks-release.aar<br/>ks_adsdk-ad.aar														|-																																																			|-																									|可选，国内广告				|
 |百度			|uniad-bd-release.aar<br/>Baidu_MobAds_SDK.aar													|-																																																			|-																									|可选，国内广告				|
 |sigmob			|uniad-sgm-release.aar<br/>windAd.aar<br/>wind-common.aar										|-																																																			|-																									|可选，国内广告				|
-|华为			|uniad-hw-release.aar																			|com.huawei.hms:ads-lite:13.4.66.300																																										|maven {url 'https://developer.huawei.com/repo/'}													|可选，国内广告				|
+|华为			|uniad-hw-release.aar																			|com.huawei.hms:ads-lite:13.4.66.300																																										|maven {url 'https://developer.huawei.com/repo/?ha_source=Dcloud&ha_sourceId=89000448'}													|可选，国内广告				|
 |章鱼			|octopus_ad_sdk_1.6.1.6.aar<br/>uniad-zy-release.aar											|-																																																			|-																									|可选，国内广告				|
 |倍孜			|beizi_ad_sdk_3.5.0.11.aar<br/>beizi_fusion_sdk_4.90.4.11.aar<br/>uniad_bz_adapter_4.90.4.0.aar	|-																																																			|-																									|可选，国内广告				|
 |泛连			|Funlink_2.7.9_release.aar<br/>Funlink_adapter_uniad_2.7.9.aar									|-																																																			|-																									|可选，国内广告				|

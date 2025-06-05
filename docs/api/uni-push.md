@@ -60,7 +60,7 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 ### 注意事项
 
 * 由于各大厂商限制推送频次，当使用厂商离线推送的时，需要在不同品牌手机后台开通自分类权益，[限制数量说明](https://docs.getui.com/getui/mobile/vendor/qps/)
-  - [华为](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/message-classification-0000001149358835)
+  - [华为](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/message-classification-0000001149358835?ha_source=Dcloud&ha_sourceId=89000448)
   - [小米](https://dev.mi.com/console/doc/detail?pId=2422)
   - [oppo](https://open.oppomobile.com/new/developmentDoc/info?id=11227)
   - [vivo](https://dev.vivo.com.cn/documentCenter/doc/359)

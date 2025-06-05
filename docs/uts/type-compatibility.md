@@ -91,7 +91,7 @@ function test(anything?: any | null) { // 注意带上问号
 **注意**
 - uts编译为ArkTS时any类型存在如下两种情况，如果开发者希望使用ArkTS的any类型可以使用ESObject替代any
   + uts插件内开发者自行指定的any类型，会被编译为Object类型，此类型不含null、undefined
-  + ArkTS编译器推断出的any类型（ArkTS内为ESObject），此类型包含所有类型，且其使用较为受限。详情参考ArkTS文档：[限制使用esobject类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typescript-to-arkts-migration-guide#限制使用esobject类型)
+  + ArkTS编译器推断出的any类型（ArkTS内为ESObject），此类型包含所有类型，且其使用较为受限。详情参考ArkTS文档：[限制使用esobject类型](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typescript-to-arkts-migration-guide#限制使用esobject类型?ha_source=Dcloud&ha_sourceId=89000448)
 
 ### 可选属性
 

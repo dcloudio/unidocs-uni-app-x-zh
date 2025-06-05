@@ -14,7 +14,7 @@
 ### 视频格式
 - web端支持的视频格式，不同浏览器有差异，可查询caniuse。
 - 小程序平台支持的视频格式，需要具体查阅小程序平台的video组件文档。
-- 鸿蒙next平台的video组件使用arkUI的video组件，视频格式[另见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-components-video)
+- 鸿蒙next平台的video组件使用arkUI的video组件，视频格式[另见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-components-video?ha_source=Dcloud&ha_sourceId=89000448)
 	* [x] mp4
 	* [x] m4v
 	* [x] mov
@@ -76,7 +76,7 @@ video的操作api为[uni.createVideoContext()](../api/create-video-context.md)�
 - 标准运行基座默认不包含intel x86 cpu的兼容so库，所以video组件在标准基座运行时无法在x86 cpu的设备上运行（常见于模拟器）。如需支持x86 cpu，请在manifest里配置`abiFilters`，打包或自定义基座后生效 [详见](https://uniapp.dcloud.net.cn/uni-app-x/manifest.html#android)
 - App的video默认拦截触摸事件，目前会导致父组件无法响应触摸事件
 - video 默认宽度为300px，高度为225px。（App平台从 uni-app x 4.0起支持该默认宽高）
-- `HarmonyOS` 平台适配小窗需要在 `modules.json5` 中配置 `"preferMultiWindowOrientation": "landscape_auto"` [详情](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V13/module-configuration-file-V13#abilities%E6%A0%87%E7%AD%BE)
+- `HarmonyOS` 平台适配小窗需要在 `modules.json5` 中配置 `"preferMultiWindowOrientation": "landscape_auto"` [详情](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V13/module-configuration-file-V13#abilities%E6%A0%87%E7%AD%BE?ha_source=Dcloud&ha_sourceId=89000448)
 
 #### 本地文件播放
 本地视频文件，有2种方式：

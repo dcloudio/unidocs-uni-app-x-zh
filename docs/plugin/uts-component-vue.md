@@ -501,8 +501,8 @@ export class NativeButton {
 
 HarmonyOS 平台，需要通过 ets 文件混编 build 构建函数来包装鸿蒙内置或三方原生组件：
 
-- [@Builder装饰器：自定义构建函数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-builder-V5)
-- [build()函数的语法限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-create-custom-components-V5#build函数)
+- [@Builder装饰器：自定义构建函数](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-builder-V5?ha_source=Dcloud&ha_sourceId=89000448)
+- [build()函数的语法限制](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-create-custom-components-V5#build函数?ha_source=Dcloud&ha_sourceId=89000448)
 
 ::: preview
 
@@ -636,7 +636,7 @@ export function buildButton(params: ESObject) {
 + 绑定原生 view 方法（bindAndroidView、bindIOSView）仅支持调用一次，原生 view 一旦绑定后不支持再次绑定其他 view
 + ios平台需要vue组件主动释放 uts 实例，所以页面触发 unmounted 生命周期时需要调用 this.button?.destroy() 避免内存泄露
 + android平台 native-view 组件不支持border、background、box-shadow属性，可以使用view标签包裹native-view,在view标签设置以上属性
-+ 鸿蒙原生应用中px是指物理像素，而在uni-app的css样式中px是指逻辑像素。上述@Builder内纯数值尺寸对应的是鸿蒙的vp单位（逻辑像素）等同于css样式中的px。鸿蒙原生单位文档[详见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units)
++ 鸿蒙原生应用中px是指物理像素，而在uni-app的css样式中px是指逻辑像素。上述@Builder内纯数值尺寸对应的是鸿蒙的vp单位（逻辑像素）等同于css样式中的px。鸿蒙原生单位文档[详见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units?ha_source=Dcloud&ha_sourceId=89000448)
 
 
 ### 页面引用UTS插件-标准模式组件@pagecode

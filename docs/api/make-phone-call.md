@@ -6,7 +6,7 @@
 
 ::: warning 注意
 
-- `HarmonyOS` 平台使用时需要添加受限开放权限 [ohos.permission.WRITE_CONTACTS](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5#section31629267196)
+- `HarmonyOS` 平台使用时需要添加受限开放权限 [ohos.permission.WRITE_CONTACTS](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/restricted-permissions-V5#section31629267196?ha_source=Dcloud&ha_sourceId=89000448)
 
 :::
 

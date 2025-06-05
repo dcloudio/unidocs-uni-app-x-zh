@@ -1664,7 +1664,7 @@ uts插件支持debug断点调试。可以在uts插件代码中打断点、查看
 
 - [Android debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)
 - [iOS debug教程](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
-- [ArkTS debug教程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-debug-arkts-breakpoint-0000001807387305-V5)
+- [ArkTS debug教程](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/ide-debug-arkts-breakpoint-0000001807387305-V5?ha_source=Dcloud&ha_sourceId=89000448)
 
 #### Bug&Tips
 - Android平台不支持跨进程调试/日志打印，即 console.log 目前只能在当前进程生效，开发多进程应用时，暂时无法打印日志到控制台

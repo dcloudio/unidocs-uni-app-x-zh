@@ -23,7 +23,7 @@
 
 - web平台的支持取决于浏览器的实现，一般浏览器上述音频格式均支持
 - 小程序平台支持的格式见各家小程序的文档
-- HarmonyOS 平台使用 [AudioPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-media#audioplayerdeprecated) 实现
+- HarmonyOS 平台使用 [AudioPlayer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-media#audioplayerdeprecated?ha_source=Dcloud&ha_sourceId=89000448) 实现
 
 **缓存说明**
 
