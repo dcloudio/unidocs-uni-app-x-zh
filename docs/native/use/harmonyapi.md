@@ -76,3 +76,41 @@ struct Index {
 ## 退出
 
 退出应用可以在 uni-app x 中调用 uni.exit()，整体退出 uni-app x。
+
+## 通信
+
+可以使用 [Emitter 模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-emitter)进行消息通信。
+
+### 原生 APP 监听消息以及向 uni-app x 发送消息
+
+```
+// Index.ets
+import emitter from '@ohos.events.emitter'
+
+emitter.on('launch', (data) => {
+  console.log('launch:', data.data)
+
+  emitter.emit('message', {
+    data: 'hello'
+  })
+})
+```
+
+### uni-app x 监听消息以及向原生 APP 发送消息
+
+```
+// App.uvue
+import emitter from '@ohos.events.emitter'
+
+emitter.on('message', (data) => {
+  console.log('message:', data.data)
+})
+
+export default {
+    onLaunch: function (options) {
+        emitter.emit('launch', {
+          data: 'launch'
+        })
+    }
+}
+```
