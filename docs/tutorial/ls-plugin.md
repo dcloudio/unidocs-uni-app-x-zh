@@ -9,14 +9,14 @@
 开发者使用其他 AI IDE 时，也可以获得 uni-app x 的良好的语言服务支持。如需要AI Rules，另见[文档](./rules_mcp.md)
 
 ## 如何安装插件@install
-插件目前在两个平台发布, vscode官方市场和open-vsx市场
+插件目前在两个平台发布，vscode官方市场和open-vsx市场。
 * 打开扩展界面搜索`uni-app x语言服务`，找到插件进行安装。
-* 通过第三方网站下载VSIX进行安装 [open vsx插件下载](https://open-vsx.org/extension/dcloud-ide/hbuilderx-language-services)
+* 通过第三方网站下载VSIX进行安装 [open vsx插件下载](https://open-vsx.org/extension/dcloud-ide/hbuilderx-language-services)。
 
-注意: `插件安装完成后, 会提示重启编辑器, 如果没有提示, 需要手动重启编辑器`
+注意: `插件安装完成后，会提示重启编辑器，如果没有提示，需要手动重启编辑器`
 
 ## 语言服务功能说明@ability
-* 插件仅支持语言服务，即代码高亮、代码提示、校验、格式化、转到定义。不支持运行、Debug、发行等功能, 需要同时打开HBuilderX，协同工作。
+* 插件仅支持语言服务，即代码高亮、代码提示、校验、格式化、转到定义。不支持运行、Debug、发行等功能，需要同时打开HBuilderX，协同工作。
 * 插件只支持`uni-app x`项目。
 
 ### 关联文件类型和高亮支持@language
@@ -74,37 +74,37 @@ uni-app x 项目有很多平台，每个平台都有大量的语法和API。如�
 在上述各条件编译的作用域中，各区域内只能提示各条件编译对应平台的专有提示项和各平台通用的提示项
 
 *例如：*
-在 `APP-ANDROID` 条件编译中可以提示`Android系统API`和`UNI API`
-在 `WEB` 条件编译中可以提示`DOM API`和`UNI API`
+在 `APP-ANDROID` 条件编译中可以提示`Android系统API`和`UNI API`。
+在 `WEB` 条件编译中可以提示`DOM API`和`UNI API`。
 *注意：如果取消了某平台的勾选，在此平台对应的条件编译代码区域中将没有任何代码提示*
 
 ##### 非条件编译代码区域
-在非条件编译代码区域里，代码提示、语法校验则会以选择的平台为准（默认选择：APP-ANDROID）
+在非条件编译代码区域里，代码提示、语法校验则会以选择的平台为准（默认选择：APP-ANDROID）。
 
 #### 代码提示
-* 目前暂不支持`条件编译`的相关代码提示
-* 可以提示uni相关的API和组件, 并有详细的参数提示
+* 目前暂不支持`条件编译`的相关代码提示。
+* 可以提示uni相关的API和组件，并有详细的参数提示。
 <br/> ![completion](https://web-ext-storage.dcloud.net.cn/doc/tutorial/lsp-plugin/completion.png)
 
 
 #### 悬浮
-* 悬浮到uni相关的API和组件时, 显示详细信息
+* 悬浮到uni相关的API和组件时，显示详细信息。
 <br/> ![hover](https://web-ext-storage.dcloud.net.cn/doc/tutorial/lsp-plugin/hover.png)
 
 
 #### 转到定义
-* 可以跳转到uni相关的API和组件的定义位置
+* 可以跳转到uni相关的API和组件的定义位置。
 
 #### 查找引用
-* 可以查找uni相关的API和组件的引用位置
+* 可以查找uni相关的API和组件的引用位置。
 <br/> ![ref](https://web-ext-storage.dcloud.net.cn/doc/tutorial/lsp-plugin/ref.png)
 
 #### 大纲
-* 可以在大纲中查看uni相关的API和组件的定义位置
+* 可以在大纲中查看uni相关的API和组件的定义位置。
 <br/> ![outline](https://web-ext-storage.dcloud.net.cn/doc/tutorial/lsp-plugin/outline.png)
 
 #### 校验
-* 实时校验错误, 在多平台设置的场景下效果较为明显
+* 实时校验错误，在多平台设置的场景下效果较为明显。
 <br/> ![validation](https://web-ext-storage.dcloud.net.cn/doc/tutorial/lsp-plugin/validation.png)
 
 
@@ -114,12 +114,12 @@ uni-app x 项目有很多平台，每个平台都有大量的语法和API。如�
 #### 使用方法说明
 ##### 必要条件
 * 安装`Prettier`插件
-  * 打开扩展管理界面
-  * 搜索`Prettier - Code formatter`安装
+  * 打开扩展管理界面。
+  * 搜索`Prettier - Code formatter`安装。
 
 * 在项目中安装`prettier`第三方库
-  * **由于vscode插件库中的`prettier`插件版本较低，无法使用`plugin`能力，所以还需要自行手动在项目中安装**
-  * 进入项目根目录, 运行`npm i prettier --save-dev`安装至开发环境中
+  * **由于vscode插件库中的`prettier`插件版本较低，无法使用`plugin`能力，所以还需要自行手动在项目中安装。**
+  * 进入项目根目录，运行`npm i prettier --save-dev`安装至开发环境中。
 
 ##### 配置格式化设置项
 * 使用快捷键 Ctrl + Shift + P（Windows/Linux）或 Cmd + Shift + P（macOS）打开命令面板。
