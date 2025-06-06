@@ -12,6 +12,13 @@
 
 移动`/resource/uni_modules/index.generated.ets`文件到鸿蒙项目`/entry/src/main/ets/uni_modules/index.generated.ets`
 
+并在鸿蒙项目的`entry/src/main/ets/entryability/EntryAbility.ets`文件中添加如下代码。
+
+```ts
+import { initUniModules } from '../uni_modules/index.generated'
+initUniModules()
+```
+
 ![](https://web-ext-storage.dcloud.net.cn/uni-app/harmony/dev/20240904152004.jpg)
 
 2. 将 uts api 对应的 uni_modules 文件部署到鸿蒙工程内
