@@ -19,6 +19,8 @@ uni-app x使用的uts语言、ucsss样式，和ts、css有差异。我们已经�
 
 ## 使用mcp
 
+> uni-app-x-mcp兼容uni-app项目，在uni-app项目中同样可以使用
+
 uni-app-x-mcp可以让你和AI交互的过程中自动把项目中的组件信息提供给AI，从而让AI在生成代码、修复bug时更加准确。
 
 目前MCP的功能是告知 AI，当前项目下有哪些easycom组件。当开发者需要让AI按照项目下已经可用的组件来生成代码时，AI需要知道项目下有哪些可用组件，本MCP就会告诉AI可用组件清单。
