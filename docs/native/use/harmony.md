@@ -14,13 +14,16 @@
 
 ## 安装 SDK 依赖模块
 
-修改鸿蒙项目根目录文件 oh-package.json5 的依赖 "@dcloudio/uni-app-x-runtime": "版本号"，点击右上角 Sync Now，并等待 Sync 结束。
+修改鸿蒙项目根目录文件 oh-package.json5，添加 ohpm 依赖 "@dcloudio/uni-app-x-runtime": "版本号"，点击右上角 Sync Now，并等待 Sync 结束。
+
+> 注意：请使用与导出资源所使用的 HBuilderX 版本对应的 SDK 版本，最低版本为 4.71。
 
 ```json
 {
   "modelVersion": "5.0.4",
   "description": "Please describe the basic information.",
   "dependencies": {
+    // 指定 4.71 版本
     "@dcloudio/uni-app-x-runtime": "4.71.*"
   },
   "devDependencies": {
@@ -57,7 +60,9 @@
 ```
 
 ## 集成内置模块
+
 根据[集成内置模块](../modules/harmony/modules.md)进行配置
 
-## 集成UTS插件
-根据[集成UTS插件](harmonyuts.md)制作插件库以及向主工程添加相关配置
+## 集成 UTS 插件
+
+根据[集成 UTS 插件](harmonyuts.md)制作插件库以及向主工程添加相关配置
