@@ -52,7 +52,7 @@ export declare function openUniApp(
 
 示例代码
 
-```
+```ts
 import { openUniApp } from '@dcloudio/uni-app-x-runtime'
 
 @Entry
@@ -83,7 +83,7 @@ struct Index {
 
 ### 原生 APP 监听消息以及向 uni-app x 发送消息
 
-```
+```ts
 // Index.ets
 import emitter from '@ohos.events.emitter'
 
@@ -98,7 +98,7 @@ emitter.on('launch', (data) => {
 
 ### uni-app x 监听消息以及向原生 APP 发送消息
 
-```
+```ts
 // App.uvue
 import emitter from '@ohos.events.emitter'
 

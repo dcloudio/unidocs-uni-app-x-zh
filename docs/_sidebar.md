@@ -50,6 +50,7 @@
 * 鸿蒙next平台专题指南
   * [概述](app-harmony/README.md)
   * uni-app x 原生SDK
+    * [概述](native/README.md)
     * [原生工程配置](native/use/harmony.md)
     * [内置模块](native/modules/harmony/modules.md)
 		* [UTS插件](native/use/harmonyuts.md)
