@@ -33,7 +33,7 @@ uni-app x 项目有很多平台，每个平台都有大量的语法和API。如�
 * 平台设置一般和条件编译共同使用
   * [条件编译详情](https://uniapp.dcloud.net.cn/tutorial/platform.html#preprocessor)
   * [pages.json的条件编译支持](https://uniapp.dcloud.net.cn/tutorial/platform.html#pages-json-%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91)
-  * 目前不支持非选中平台的条件编译块置灰功能(此功能在HBuilderX中支持)
+  * 支持非选中平台的条件编译块置灰功能
 
 *注意：选择多个平台，会导致加载多套语言服务，影响内存占用和运行速度。如果只开发一个平台，应去掉其他平台的设置。*
 
@@ -106,6 +106,72 @@ uni-app x 项目有很多平台，每个平台都有大量的语法和API。如�
 #### 校验
 * 实时校验错误, 在多平台设置的场景下效果较为明显
 <br/> ![validation](https://web-ext-storage.dcloud.net.cn/doc/tutorial/lsp-plugin/validation.png)
+
+
+### 代码格式化
+目前语言服务插件没有内置格式化功能，推荐使用`prettier`进行代码格式化。
+
+#### 使用方法说明
+##### 必要条件
+* 安装`Prettier`插件
+  * 打开扩展管理界面
+  * 搜索`Prettier - Code formatter`安装
+
+* 在项目中安装`prettier`第三方库
+  * **由于vscode插件库中的`prettier`插件版本较低，无法使用`plugin`能力，所以还需要自行手动在项目中安装**
+  * 进入项目根目录, 运行`npm i prettier --save-dev`安装至开发环境中
+
+##### 配置格式化设置项
+* 使用快捷键 Ctrl + Shift + P（Windows/Linux）或 Cmd + Shift + P（macOS）打开命令面板。
+* 输入 `Preferences: Open Settings (JSON)` 或 打开设置（JSON），然后回车。
+* 在打开的`settings.json`中，加入如下配置：
+```json
+{
+  "[uvue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.documentSelectors": ["**/*.uvue", "**/*.uts"],
+  "prettier.requireConfig": true
+}
+```
+
+##### 添加prettier配置文件
+* 在项目根目录下新建`prettier-plugin-uts.js`文件，添加如下代码：
+```javascript
+const languages = [
+  {
+    name: "uts",
+    parsers: ["typescript"],
+    vscodeLanguageIds: ["uts"],
+  }
+];
+module.exports = { languages};
+
+```
+
+* 新建`.prettierrc`文件，添加如下配置：
+```json
+{
+  "plugins": [
+    "./prettier-plugin-uts.js"
+  ],
+  "overrides": [
+    {
+      "files": "*.uvue",
+      "options": {
+        "parser": "vue"
+      }
+    },
+    {
+      "files": "*.uts",
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
+}
+```
+保存后即可使用格式化功能。
 
 ## 问题反馈
 * [点击加入im官方交流群](https://im.dcloud.net.cn/#/?joinGroup=682c303383abe400024d38ba)
