@@ -2,13 +2,13 @@
 
 ## var
 
+<!-- CSSJSON.variables_values.compatibility -->
+
 > uni-app x 4.0+ 提供内置 CSS 变量。
 > uni-app x 4.52+ 全平台提供了安全区域相关 CSS 变量 --uni-safe-area-inset-* 。
 > uni-app x 4.71+ App平台补充了自定义css变量
 
 ### 预置的 CSS 变量 @preset-var
-
-<!-- CSSJSON.variables_values.compatibility -->
 
 - `--status-bar-height`的使用场景：当设置pages.json中的 `"navigationStyle":"custom"` 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置。此时可以使用一个高度为 `var(--status-bar-height)` 的 view 放在页面顶部，避免页面内容出现在状态栏上。App平台自4.61版本开始自动响应状态栏高度的变化动态调整页面布局
 - `--uni-safe-area-inset-xxx` 的使用场景：
@@ -37,7 +37,7 @@ App平台和web有以下差异:
 
 ## env @env
 
-> HBuilderX4.51+
+<!-- CSSJSON.function-env_values.compatibility -->
 
 内置 CSS 环境变量，即`env()`。
 
@@ -81,4 +81,28 @@ web平台的 CSS环境变量是应用全局值，由浏览器自动计算，与 
 
 web平台的 CSS环境变量规范参考[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/env)
 
-<!-- CSSJSON.function_values.example -->
+<!-- CSSJSON.function-env_values.example -->
+
+## rgb
+
+<!-- CSSJSON.function-rgb_values.description -->
+
+<!-- CSSJSON.function-rgb_values.compatibility -->
+
+<!-- CSSJSON.function-rgb_values.example -->
+
+## rgba
+
+<!-- CSSJSON.function-rgba_values.description -->
+
+<!-- CSSJSON.function-rgba_values.compatibility -->
+
+<!-- CSSJSON.function-rgba_values.example -->
+
+## url
+
+<!-- CSSJSON.function-url_values.description -->
+
+<!-- CSSJSON.function-url_values.compatibility -->
+
+<!-- CSSJSON.function-url_values.example -->
