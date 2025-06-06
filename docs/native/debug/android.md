@@ -75,3 +75,8 @@ versionName为应用的版本名称（字符串），在系统应用管理程序
 调试的包名与`build.gradle`中的`applicationId`一致。
 
 关联项目为原生项目的完整路径，如果仅调试uni-app x的代码，则可以不用配置。
+
+
+### 代码调试
+
+自定义基座同样支持代码调试，具体步骤可以参考文档：[uts Android调试](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)。
