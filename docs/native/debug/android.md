@@ -1,5 +1,9 @@
-# uni-app x 自定义基座
-## 配置项目
+# 制作自定义基座在HBuilderX中使用  
+
+生成自定义基座后，可以在HBuilderX中直接真机运行查看 uni-app x 运行效果，通过 HBuilderX 中的调试工具直接断点调试 uni-app x 项目中的uts代码，及原生工程中的kotlin/java代码。
+
+## Android Studio 项目配置  
+
 1. 在app模块的build.gradle下添加如下依赖
 	```groovy
 	dependencies {
@@ -27,13 +31,13 @@
 - 如果android原生项目的drawable目录下不存在名称为icon的图片，需要临时先补充一个命名为icon的文件。
 - 当build.gradle中的`targetSdk`为34时，在安卓14设备上资源同步会失败。建议将`targetSdk`调整到30至33之间。
 
-## 使用自定义基座
+## HBuilderX中使用自定义基座运行  
 
 从HBuilderX 4.71版本开始，支持通过Android studio运行项目安装的包作为自定义基座。
 
-### 本地基座
+### 使用`本地基座`真机运行  
 
-#### 导出自定义基座
+#### 导出自定义基座  
 
 打开build.gradle文件，修改versionCode和versionName字段，如下图：
 	
@@ -49,16 +53,18 @@ versionName为应用的版本名称（字符串），在系统应用管理程序
 
 **注意：自定义基座不支持aab包。**
 
-#### 导入HBuilderX
+#### 将自定义基座添加到uni-app x 项目  
 1. 将生成的apk文件重命名为`android_debug.apk`
 2. 将`android_debug.apk`拷贝到uni-app x项目的unpackage/debug目录下
 3. 点击 运行按钮->运行到Android App基座，勾选`使用自定义基座运行`
 
 	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/debug_hx.png)
 	
-### 已安装基座@installedapk
+### 使用`已安装基座`真机运行 @installedapk  
 
-从HBuilderX4.71版开始，支持了使用已有基座作为自定义基座。**注意：需要将HBuilderX和原生SDK都升级到4.71版本或以上。**
+从HBuilderX4.71版开始，支持了使用已有基座作为自定义基座。
+
+**注意：需要将 HBuilderX 和 uni-app x SDK 都升级到4.71或以上版本**
 
 首先需要将基座安装的手机上。可以通过android studio直接运行到手机上或者安装已经导出的自定义基座包。
 
