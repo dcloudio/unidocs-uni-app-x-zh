@@ -14,7 +14,7 @@ rpx的性能和精度不如px，但优于百分比。**如果px可满足需求�
 
 字体大小，即font-size，不应该使用rpx，[详见](../font-size.md#App平台差异)
 
-height、padding、margin，默认不使用rpx。除非你的需求真的要根据屏幕宽度动态调整这些值。一般没有这种需求。
+height、padding、margin、边框、阴影，都不应该使用rpx。除非你的需求真的要根据屏幕宽度动态调整这些值。一般没有这种需求。
 
 所以rpx比较适合的场景是view的宽度width设置。
 
