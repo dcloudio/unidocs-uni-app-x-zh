@@ -26,7 +26,7 @@
 
 <!-- UTSJSON.Global.cancelAnimationFrame.tutorial -->
 
-<!-- UTSJSON.animation-frame.example -->
+<!-- CUSTOMTYPEJSON.animation-frame.example -->
 
 **提示**
 - requestAnimationFrame/cancelAnimationFrame 为全局 API，如果需要跨平台处理 canvas 动画应使用 [uni.createCanvasContextAsync](./create-canvas-context-async.md)
