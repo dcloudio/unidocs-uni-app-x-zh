@@ -33,7 +33,9 @@ ts 虽然有类型，但类型要求不严格。而 uts 为了编译为原生语
 
 错误码：UTS110111119
 
-不支持 undefined，请使用 null。
+不支持 undefined。所有变量必须赋值初始化后才能使用。如果需要使用空，请使用 null。
+
+undefined在ts中有很多场景，一个未初始化赋值的变量、一个未传入的方法参数、对象上不存在的属性，都会返回undefined。
 
 TypeScript:
 
@@ -55,7 +57,7 @@ UTS:
 
 ```ts
 // UTS 使用 null 替代 undefined
-let value: string | null = null;
+let value: string | null = null; //必须先赋值后使用，哪怕赋值为null。否则Android平台会报编译错误：error: Variable 'value' must be initialized‌
 if (value == null) {
   console.log("未定义");
 }
@@ -126,20 +128,34 @@ UTS:
 const person = {
   name: "John",
   age: 30,
-};
+}; //对象字面量默认推导为UTSJSONObject
+console.log(person["name"] as string); //UTSJSONObject类型不能直接用.运算符，并且下标访问后的每个值都是any类型，想正确使用时需要as为正确的类型
+console.log(person["age"] as number); //UTS提供了有限的隐式转换能力，UTSJSONObject第一层对象如果可以被编译器识别推导类型，也可以使用.运算符。但第二层起无法使用.运算符，需要使用下标
 
+// 在UTS中推荐使用type替代UTSJSONObject
+type Person = {
+  name: string,
+  age: number,
+};
 // 声明时直接指定类型
-const person: Person = {
+const person2: Person = {
   name: "John",
   age: 30,
 };
+console.log(person2.name);
 ```
+
+在JSON.parse的场景中，如果不通过泛型指定type，那么返回值也是UTSJSONObject。
+
+TS开发者一般都熟悉使用interface来声明类型，UTS中改为type即可。但不熟悉TS的开发者，务必需要详细了解[UTSJSONObject](./data-type.md#UTSJSONObject)和[type](./data-type.md#type自定义类型)
 
 #### 对象字面量仅支持构造 type 定义的对象类型，不支持 interface
 
 级别：提示
 
-在 UTS 中，可以将对象字面量赋值给一个 type 关键词定义的对象类型。
+ts中可以通过 interface 或 type 声明对象字面量的类型。
+
+在 UTS 中，interface 有其他使用场景，所以对象字面量赋值只能给 type 关键词定义的对象类型。
 
 注意：不能赋值给 interface 定义的类型
 
