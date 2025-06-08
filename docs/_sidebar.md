@@ -34,7 +34,7 @@
 				* [uni-map-tencent](native/modules/android/uni-map-tencent.md)
 			* [uts插件配置](native/use/androiduts.md)
 			* [启动与通信](native/use/androidcomm.md)
-			* [自定义基座](native/debug/android.md)
+			* [原生联调](native/debug/android.md)
 			* [SDK下载](native/download/android.md)
 		* iOS平台
 		   * [原生工程配置](native/use/ios.md)
