@@ -48,6 +48,8 @@
 - `debugWithNativeHarmony` 用于开启联编调试功能，缺省为 `false` 不开启。
 - `nativeHarmonyProjectPath` 用于指定调试运行的时候使用的鸿蒙工程目录（即导入 HbuilderX 的那个宿主应用项目的根目录），无缺省值，如果开启了联编调试则此项必填，且指向的目录必须已存在。
 
+![](https://web-ext-storage.dcloud.net.cn/hx/debug/harmony-native-debug-prepare.png)#{.zooming style="max-height:400px"}
+
 ## 调试开发
 
 在 HBuilderX 中，打开 uni-app x 项目中的任何一个文件，然后通过主菜单或工具条执行【运行到鸿蒙】操作，HBuilderX 会在对 uni-app x 项目进行编译之后自动执行类似于【本地打包 App 资源】的操作，
@@ -57,6 +59,8 @@
 
 具体的调试操作可以参考 [Harmony uts 调试](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)，
 只不过此时的调试操作不仅适用于 uni-app x 项目，也适用于宿主原生应用项目。
+
+<video id="video" preload="none" controls="controls" width="100%" poster="https://web-ext-storage.dcloud.net.cn/hx/debug/harmony-compilation-debug.png" src="https://web-ext-storage.dcloud.net.cn/hx/debug/harmony-compilation-debug.mp4"></video>
 
 _注意 1：如果修改了宿主原生应用的代码，则需要保存之后手动再次【运行到鸿蒙】（或者点击控制台工具条的【重新运行】按钮）重新开始调试运行。_
 
