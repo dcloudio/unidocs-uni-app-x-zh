@@ -9,7 +9,7 @@
 第三类:window窗体的相关方法[UniActivityWindowCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityWindowCallback)\
 比如onCreatePanelMenu，onWindowDismissed等\
 第四类:activity本身自带的相关方法，不继承自其他类[UniActivityCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityCallback)\
-比如onProvideAssistData等\
+比如onProvideAssistData等
 
 > 因为uni-app x 暂不支持launchMode配置，所以 UniActivityCallback暂时不支持onNewIntent
 
