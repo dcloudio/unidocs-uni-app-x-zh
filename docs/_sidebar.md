@@ -41,7 +41,7 @@
 		   * [内置模块](native/modules/ios/modules.md)
 		   * [UTS插件](native/use/iosuts.md)
 		   * [启动与通信](native/use/iosapi.md)
-			* [自定义基座](native/debug/ios.md)
+			* [原生联调](native/debug/ios.md)
 			* [SDK下载](native/download/ios.md)
 	* 应用市场上架
 		* [概述](tutorial/app-market.md)
