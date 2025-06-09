@@ -58,4 +58,6 @@
 具体的调试操作可以参考 [Harmony uts 调试](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)，
 只不过此时的调试操作不仅适用于 uni-app x 项目，也适用于宿主原生应用项目。
 
-_注意：如果修改了宿主原生应用的代码，则需要保存之后再【运行到鸿蒙】重新开始调试运行。_
+_注意 1：如果修改了宿主原生应用的代码，则需要保存之后手动再次【运行到鸿蒙】（或者点击控制台工具条的【重新运行】按钮）重新开始调试运行。_
+
+_注意 2：HBuilderX 的联编调试功能不能跟 DevEco Studio 的调试功能同时运行，也不能 Attach 到 DevEco Studio 已经运行的应用实例上。_
