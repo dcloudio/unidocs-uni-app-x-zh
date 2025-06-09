@@ -48,8 +48,6 @@
 
 如果您不了解什么是运行基座、标准基座、自定义基座，这些概念，请参考[文档](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html#playground)
 
-<!-- 从HBuilderX 4.71版本开始，支持通过Android studio运行项目安装的包作为自定义基座。 -->
-
 ### 1. 原生工程生成自定义基座  
 
 - 打开原生工程build.gradle文件，修改versionCode和versionName字段，如下图：
@@ -87,9 +85,9 @@ versionName为应用的版本名称（字符串），在系统应用管理程序
 
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/android/debug_installed.jpg)
 
-调试的包名与原生`build.gradle`中的`applicationId`一致。
+调试的包名与原生工程的`build.gradle`中`applicationId`字段一致。
 
-选择正确的包名后，点击运行即可。
+选择正确的包名，点击运行即可。
 
 uni-app x项目将开始编译，并热重载到手机的原生应用中。
 
@@ -98,11 +96,18 @@ uni-app x项目将开始编译，并热重载到手机的原生应用中。
 
 此时也可以在控制台右上角开启debug，进行uni-app x应用的断点调试。
 
-在上述截图中，即运行界面，还可以设置关联项目为原生项目的完整路径。
+如果需要调试原生工程，需要配置上图中的`关联项目`，关联项目的路径为原生工程的根目录。并将原生工程拖入到HBuilderX中。
 
-设置后，在HBuilderX中可以同时打开原生工程和uni-app x项目，各自打断点。
-可以在原生的kt/java和uni-app x代码的断点之间来回单步跟踪，方便排查联调问题。
+配置成功后，重新运行uni-app x项目。
+
+在HBuilderX中可以同时打开原生工程和uni-app x项目，各自打断点。在原生的kt/java和uni-app x代码的断点之间来回单步跟踪，方便排查联调问题。
 
 ![](https://web-ext-storage.dcloud.net.cn/hx/debug/compilation-debug-example-1.png)
 
-注：HBuilderX对kt/java代码只有基本的高亮和格式化，没有语言服务。编写原生代码仍然应该在Android Studio中进行。两个IDE同时打开协作使用。
+:::tip Tips
+- 如果在HBuilderX中改动了原生工程的kt/java文件，需要在android studio中重新运行项目才会生效。
+- 关联项目的路径应为原生工程的根目录。否则HBuilderX设置在kt/java文件上的断点可能不会生效。
+- 不要在Android studio和HBuilderX中同时开启调试服务，否则会导致Android studio/HBuilderX的调试服务无法正常启动。
+- 调试原生工程时，在Android studio中重新运行项目，需要在HBuilderX中重新开启调试服务。
+- HBuilderX对kt/java代码只有基本的高亮和格式化，没有语言服务。编写原生代码仍然应该在Android Studio中进行。两个IDE同时打开协作使用。
+:::
