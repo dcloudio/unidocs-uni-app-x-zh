@@ -78,9 +78,10 @@ uni-app x 中，没有通信阻塞，可以直接监听touch和滚动事件。�
 
 ## 长列表
 
-关于长列表，uni-app x提供了2种方案
+关于长列表，uni-app x提供了3种方案
 1. 内置的[list-view组件](./component/list-view.md)
 2. 自定义的虚拟列表组件uni-recycle-view。
+3. 分批加载
 
 uni-app x 的 list-view组件，是基于原生的recycle-view的。无论多长的列表，系统也会自动回收和复用渲染资源，和原生应用一样的体验，但开发更简单。
 
@@ -88,7 +89,17 @@ uni-app x 的 list-view组件，是基于原生的recycle-view的。无论多长
 
 但在vue环境下，装载长列表会对列表所有数据都创建VNode，不管渲染层这些列表是否显示。创建大量VNode会影响初始化速度和内存占用。
 
-虚拟列表组件uni-recycle-view，只创建了有限的VNode，循环复用这些VNode。uni-recycle-view组件内部通过计算决定哪些数据需要在界面展示，默认展示当前滚动位置的所在屏及上下各5屏的数据。
+### 分批加载
+
+分批加载没有具体的组件，hello uni-app-x内提供了一个示例[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue)
+
+分批加载适用于初始要加载一大批数据的场景，针对这一大批数据延迟将数据分批渲染，进而优化页面初始化速度，防止页面跳转卡顿。
+
+如果仅仅是分批加载，在数据加载过程中仍然会导致卡住用户操作。为了解决此问题，上述示例在用户滚动、下拉刷新期间会暂停分批加载。
+
+### uni-recycle-view
+
+虚拟列表组件uni-recycle-view，只创建了有限的VNode，可以减小长列表的内存占用。uni-recycle-view组件内部通过计算决定哪些数据需要在界面展示，默认展示当前滚动位置的所在屏及上下各5屏的数据。
 
 同时它也有一些限制和注意事项：
 1. uni-recycle-view 组件适用于仅使用一个for循环创建所有列表项的场景。
