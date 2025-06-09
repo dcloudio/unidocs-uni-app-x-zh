@@ -97,6 +97,11 @@ uni-app x 的 list-view组件，是基于原生的recycle-view的。无论多长
 
 如果仅仅是分批加载，在数据加载过程中仍然会导致卡住用户操作。为了解决此问题，上述示例在用户滚动、下拉刷新期间会暂停分批加载。
 
+和uni-recycle-view相比，有以下特点
+
+- 由于最终加载完成时要对所有条目创建VNode和Element，内存占用会比使用uni-recycle-view更大。
+- 加载完成后，滚动期间不会额外计算、切换显示的数据，滚动更流畅
+
 ### uni-recycle-view
 
 虚拟列表组件uni-recycle-view，只创建了有限的VNode，可以减小长列表的内存占用。uni-recycle-view组件内部通过计算决定哪些数据需要在界面展示，默认展示当前滚动位置的所在屏及上下各5屏的数据。
