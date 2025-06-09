@@ -100,9 +100,9 @@ uni-app x项目将开始编译，并热重载到手机的原生应用中。
 
 配置成功后，重新运行uni-app x项目。
 
-在HBuilderX中可以同时打开原生工程和uni-app x项目，各自打断点。在原生的kt/java和uni-app x代码的断点之间来回单步跟踪，方便排查联调问题。
+在HBuilderX中可以同时打开原生工程和uni-app x项目，各自打断点。在原生的kt/java和uni-app x代码的断点之间来回单步跟踪，方便排查联调问题。具体效果可以参考如下视频：
 
-![](https://web-ext-storage.dcloud.net.cn/hx/debug/compilation-debug-example-1.png)
+<video id="video" preload="none" controls="controls" width="900px" height="580px" src="https://web-ext-storage.dcloud.net.cn/native/doc/android/debug-native-video.mov" poster="https://web-ext-storage.dcloud.net.cn/native/doc/android/debug-native-video-poster.png"></video>
 
 :::tip Tips
 - 如果在HBuilderX中改动了原生工程的kt/java文件，需要在android studio中重新运行项目才会生效。
