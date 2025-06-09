@@ -10,7 +10,8 @@
 2. 将原生工程中`Target`的名称改为`UniAppX`。如图：
    ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_update_target_name.jpg)
          
-3. 在工程`Info.plist`下添加`UIFileSharingEnabled`节点，值设置为`true`。如图：
+3. 在工程`Info.plist`下添加`UIFileSharingEnabled`节点，值设置为`true`。如图：   
+      
     ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_info_filesharingenabled.jpg)
 
 4. 填写`Display Name(建议与manifest.json中name值一致)`、`Build(建议与manifest.json中versionCode一致)`、`Version(建议与manifest.json中versionName值一致)`字段。如图：
