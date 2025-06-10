@@ -17,12 +17,12 @@
 
 1. 下载uni-app x原生SDK后，将debug-server-release.aar拷贝到原生项目的libs目录下
 2. 在app模块的build.gradle下添加如下依赖
-	```groovy
+```groovy
 	dependencies {
 		implementation "com.squareup.okhttp3:okhttp:3.12.12"
 		implementation "net.lingala.zip4j:zip4j:2.11.5"
 	}
-	```
+```
 3. 修改AndroidManifest.xml
 
 	在application节点下添加如下内容
@@ -94,9 +94,9 @@ uni-app x项目将开始编译，并热重载到手机的原生应用中。
 运行成功后，将可以在HBuilderX的控制台中看到uni-app x应用的日志，点击后可以到uvue/uts的源码中。
 修改uni-app x代码后，手机端将热重载更新。
 
-此时也可以在控制台右上角开启debug，进行uni-app x应用的断点调试。
+此时也可以在控制台右上角点击红色虫子按钮开启debug，进行uni-app x应用的断点调试。
 
-如果您不了解如何在HBuilderX中如何调试-app x，可以参考[文档](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)。
+如果您不了解如何在HBuilderX中如何调试uni-app x，可以参考[文档](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)。
 
 如果需要调试原生工程，需要配置上图中的`关联项目`，关联项目的路径为原生工程的根目录。并将原生工程拖入到HBuilderX中。参考下图：
 
@@ -104,7 +104,7 @@ uni-app x项目将开始编译，并热重载到手机的原生应用中。
 
 配置成功后，重新运行uni-app x项目。
 
-在需要调试的kt/java代码上设置断点，开启`uts调试`。如下图：
+在需要调试的kt/java代码行号上点右键设置断点，开启`uts调试`。如下图：
 
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/android/kt_debug.png)
 

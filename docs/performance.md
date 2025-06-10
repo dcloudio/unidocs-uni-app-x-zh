@@ -56,6 +56,8 @@ uni-app x 中，没有通信阻塞，可以直接监听touch和滚动事件。�
 
 源码参考hello uni-app x中的吸顶示例，这充分体现了 uni-app x 引擎底层的通信性能多么优秀。[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/scroll-sticky/scroll-sticky.uvue)
 
+当然uni-app x已经封装了吸顶组件，使用更加便利。[详见](./component/sticky-header.md)
+
 还有一个注意事项，当通过动画修改一个元素的高度或top值时，注意元素下部其他元素的联动反应。
 
 比如上元素通过transform变高，虽然上元素的变化是平滑的，但下面的元素数量如果很多，且因为自动排版的原因，在不停的根据上元素变化而移动每个下面元素的top，这也会导致ui卡顿。
@@ -64,7 +66,7 @@ uni-app x 中，没有通信阻塞，可以直接监听touch和滚动事件。�
 
 ## 避免复杂逻辑卡UI
 
-开发者的代码默认是在ui主线程运行的。除非单独写代码调用子进程或协程。
+与小程序和uni-app不同，uni-app x下开发者的代码默认是在ui主线程运行的。除非单独写代码调用子进程或协程。
 
 如果在ui繁忙时，比如页面进入动画时，开发者的代码做了很多耗时操作，会卡动画。原生开发也如此。
 
@@ -78,51 +80,55 @@ uni-app x 中，没有通信阻塞，可以直接监听touch和滚动事件。�
 
 ## 长列表
 
-关于长列表，uni-app x提供了3种方案
-1. 内置的[list-view组件](./component/list-view.md)
-2. 自定义的虚拟列表组件uni-recycle-view。
-3. 分批加载
+长列表，之所以成为性能关注点，是因为当列表item加载特别多时，持续增高的内存占用会导致越来越卡、应用崩溃。
 
-uni-app x 的 list-view组件，是基于原生的recycle-view的。无论多长的列表，系统也会自动回收和复用渲染资源，和原生应用一样的体验，但开发更简单。
+原生开发一般使用recycle-view做复用，只保留有限的原生view，数屏以外的原生view做复用，即把列表中的数据只装载到部分的原生view中，并根据在屏状态，给原生view装载不同你发的列表数据。
 
-一般联网加载的分页式列表，使用list-view组件即可。
+uni-app x中，[list-view组件](./component/list-view.md)和[waterflow组件](./component/waterflow.md)，内部就是复用的。他们分别对应普通长列表和瀑布流长列表。
 
-但在vue环境下，装载长列表会对列表所有数据都创建VNode，不管渲染层这些列表是否显示。创建大量VNode会影响初始化速度和内存占用。
+使用这2个组件，无论多长的列表，系统也会自动回收和复用渲染资源，和原生应用一样的体验，但开发更简单。
+
 
 ### 分批加载
 
-分批加载没有具体的组件，hello uni-app-x内提供了一个示例[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue)
+一般联网加载的分页式列表，常规使用list-view组件或waterflow组件即可。
+
+但如果需要一次性加载非常多的列表项，比如从本地一次性读取数千条记录，都想显示到界面上，那会非常卡。
+
+一些开发者只是简单的把数千条数据赋值给vue的响应式变量，然后就会触发整体更新。这并不合理。
+
+这种场景，应该使用分批加载。
+
+分批加载没有封装具体的组件，hello uni-app-x内提供了一个示例[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue)
 
 分批加载适用于初始要加载一大批数据的场景，针对这一大批数据延迟将数据分批渲染，进而优化页面初始化速度，防止页面跳转卡顿。
 
-如果仅仅是分批加载，在数据加载过程中仍然会导致卡住用户操作。为了解决此问题，上述示例在用户滚动、下拉刷新期间会暂停分批加载。
+分批加载时需注意，用户在操作已经渲染的部分数据时，如果后台在持续加载数据，会导致卡住用户操作。
+所以还需要做到闲时加载，避免卡UI。上述示例在用户滚动、下拉刷新期间会暂停分批加载。
 
-和uni-recycle-view相比，有以下特点
+### uni-recycle-view组件
 
-- 由于最终加载完成时要对所有条目创建VNode和Element，内存占用会比使用uni-recycle-view更大。
-- 加载完成后，滚动期间不会额外计算、切换显示的数据，滚动更流畅
+初始化大量列表项目，除了分批加载，还有一种方案是对VNode虚拟化，即只创建有限的VNode，进而实现DOM和原生View数量的整体控制。
 
-### uni-recycle-view
+插件市场已经封装了一个组件：[uni-recycle-view组件](https://ext.dcloud.net.cn/plugin?id=17385)
 
-虚拟列表组件uni-recycle-view，只创建了有限的VNode，可以减小长列表的内存占用。uni-recycle-view组件内部通过计算决定哪些数据需要在界面展示，默认展示当前滚动位置的所在屏及上下各5屏的数据。
+uni-recycle-view组件内部通过计算决定哪些数据需要在界面展示，默认展示当前滚动位置的所在屏及上下各5屏的数据。
 
 同时它也有一些限制和注意事项：
 1. uni-recycle-view 组件适用于仅使用一个for循环创建所有列表项的场景。
-2. 由于滚动过程中会计算哪些数据需要渲染，因此滚动流畅度略低于list-view组件。
+2. 由于该组件使用了scroll-view而不是list-view，滚动过程中自行计算哪些数据需要渲染和复用，并直接用原生recycle-View的效率要低，因此滚动流畅度低于list-view组件。
+3. 该组件无法支持瀑布流
 
-所以uni-recycle-view 组件是对list-view组件的一个补充方案。如果list-view的初始化速度和内存占用满足你的需求，那么继续使用list-view即可。
-
-一般联网的分页加载列表，仍然可以使用list-view。uni-recycle-view 组件常见的场景是本地一次性遍历了大量数据并需要立即渲染在界面上。
-
-在[Hello uni-app x的模板->自定义虚拟长列表示例](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/dev/pages/template/custom-long-list)中可以看到演示。
+uni-recycle-view 组件相比分批加载，内存占用低一些。但在低端机上流畅度低一些。可酌情使用。
 
 
-另外**注意列表项目里的组件数量**，它是dom元素的放大器。每个list-item里的dom数量多一点，乘以item数量，就会产生非常多dom，页面性能就很容易被拖垮。
+无论如何，**注意列表项目里的组件数量**，它是dom元素的放大器。每个list-item里的dom数量多一点，乘以item数量，就会产生非常多dom，页面性能就很容易被拖垮。
 
 比如很多列表有评星，如果使用一个5个view的评星组件，那每个list-item都会多5个view，列表一长dom数量会惊人。
 
 在hello uni-app x的复杂长列表示例中，评星没有使用任何自定义组件，只是一个text组件里面使用字体图标放了5个字符，极大减少组件数量。[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/long-list/long-list-page.uvue)
 
+所以在列表中，尽量不使用层层封装的组件，直接使用内置组件更高效。
 
 ## 优化排版效率
 
@@ -153,6 +159,8 @@ vue的data更新时，会自动触发页面渲染更新。
 有些时候我们会去创建组件来实现更好的抽象或代码组织。虽然这并没有什么问题，但请记住，创建太多组件实例将会导致性能损失。
 
 需要提醒的是，只减少几个组件实例对于性能不会有明显的改善，所以如果一个用于抽象的组件在应用中只会渲染几次，就不用操心去优化它了。考虑这种优化的最佳场景还是在大型列表中。想象一下一个有 100 项的列表，每项的组件都包含许多子组件。在这里去掉一个不必要的组件抽象，可能会减少数百个组件实例的无谓性能消耗。
+
+但无论如何，不应该对view、text这种大量使用的基础组件进行封装，大量使用封装的自定义组件很容易引发性能问题。
 
 ## 引擎体积
 

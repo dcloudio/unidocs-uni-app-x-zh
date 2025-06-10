@@ -6,16 +6,6 @@ list-view和scroll-view都是滚动组件，list适用于长列表场景，其�
 
 在App中，基于recycle-view的list，才能实现长列表的渲染资源复用，以保障列表加载很多项目时，不会一直增加渲染内容。list-view就是基于recycle-view的list组件。
 
-但需要注意，view复用，不代表dom和vue node复用。在app端dom和vue node均不复用，web端dom会被复用，但是vue node不会被复用。长列表一直加载，即便使用list组件，dom和vue node都会不停增加内存占用，导致最终崩溃。
-
-所以浏览器上，开发者大多已习惯自己处理dom和vnode的复用。
-
-为了在全端解决这个问题：官方提供的扩展组件[uni-recycle-view](https://ext.dcloud.net.cn/plugin?id=17385)。该组件跨全端，内部会分批创建节点，自动实现列表item复用，包括dom、vnode、view均复用。
-
-另外，一次性初始化太多列表项，因为创建大量dom和vnode耗时，会导致列表初始化变慢，影响页面加载速度。此时同样可通过[uni-recycle-view](https://ext.dcloud.net.cn/plugin?id=17385)来解决初始化慢的问题。
-
-但如果您的列表不复杂，list-view组件足以满足需求，也不需要专门替换为[uni-recycle-view](https://ext.dcloud.net.cn/plugin?id=17385)。这个组件使用起来要更为复杂和有一些约束。
-
 每个list由1个父组件list-view及若干子组件list-item构成。仅有有限子组件可识别，[见下](#children-tags)
 
 <!-- UTSCOMJSON.list-view.compatibility -->
@@ -71,11 +61,23 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 
 <!-- UTSCOMJSON.list-view.reference -->
 
+## 性能优化
+长列表是非常需要注意性能优化的。
+当你的长列表卡顿时，请注意：
+
+1. 尽可能减少列表item中的组件数量。
+2. 排查代码的内存泄漏，尤其是on后没有off。
+3. 不要一次性加载太多数据，而是分批加载。
+4. 对VNode、DOM进行虚拟化
+
+这些技巧另有专门[教程](../performance.md#长列表)
+
+
 ## 示例代码
 
 - 联网联表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue)
 - 可左右滑动的多个列表：[https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list)
-
+- 分批加载列表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue)
 
 ### Bug & Tips@tips
 
