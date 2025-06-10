@@ -2,30 +2,15 @@
 
 > 本文档描述的内容适用于 HBuilderX 4.71+ 版本，针对 uni-app x 项目有效。
 
-一般来说，鸿蒙的原生应用开发要在 DevEco Studio 中进行。
+原生工程和其他跨平台框架的功能之间混合开发，是很麻烦的。两个项目来回修改、编译、同步到原生工程中，发现有问题，再重来。
 
-如果要把 uni-app x 项目实现的应用功能以“小程序”的方式嵌入到既有的原生应用中，需要借助 [uni-app x 原生 SDK 鸿蒙版](https://doc.dcloud.net.cn/uni-app-x/native/use/harmony.html)。
+得益于uni-app x编译为原生语言的能力，在鸿蒙原生工程中嵌入 [uni-app x 原生 SDK 鸿蒙版](https://doc.dcloud.net.cn/uni-app-x/native/use/harmony.html)，进行混合开发时，可以方便的联调。
 
-要实现这个目标，最基本的开发模式是：
+这是其他跨平台工具无法提供的，但有对开发效率、问题排查极其重要。能切实提供混合开发效率。
 
-1. 准备好宿主应用的开发环境，能够在 DevEco Studio 里面进行原生应用的调试开发。
+由于HBuilderX支持调试uts，且uts在鸿蒙上编译为ets，所以HBuilderX也具备调试ets的能力。
 
-2. 在宿主应用中安装 SDK 依赖模块。
-
-3. 在 HBuilderX 中打开 uni-app x 项目，生成本地打包 App 资源。
-
-4. 把生成的本地打包 App 资源复制到宿主应用的工程目录中，再通过 DevEco Studio 进行调试开发。
-
-其中前两步是一次性的准备工作，后两步则是需要在开发过程中反复进行的。
-
-这里需要反复操作的两步，不仅繁琐，而且在 DevEco Studio 中进行调试开发的时候，并不能对打包的 App 资源进行断点调试，使得调试工作比较吃力，
-所以多数情况下都是在 HBuilderX 中把 uni-app x 项目作为独立应用进行开发，待基本完成后再打包 App 资源移植到 SDK 模式。
-这样做虽然提高了 uni-app x 项目中业务功能的开发效率，但由于目标平台的差异也会导致移植的过程中遇到一些麻烦，
-而且也不方便对宿主应用和嵌入的 uni-app x 应用进行联调。
-
-**从 HBuilderX 4.71 开始，提供了【联编调试】功能**，也就是说，uni-app x 项目和宿主原生应用项目都在 HBuilderX 中打开，
-直接以【联编调试】的方式在 HBuilderX 中对宿主应用和 uni-app x 项目进行联调，可以随时对 uni-app x 项目中的源代码做修改，
-并在两个项目同时进行断点调试，就像调试一个普通的 uni-app x 项目那样方便。
+把 uni-app x 项目和宿主原生应用项目都在 HBuilderX 中打开，直接以【联编调试】的方式在 HBuilderX 中对宿主应用和 uni-app x 项目进行联调，可以随时对 uni-app x 项目中的源代码做修改，并在两个项目同时进行断点调试，就像调试一个普通的 uni-app x 项目那样方便。
 
 
 ## 准备工作@prepare
@@ -68,8 +53,6 @@
 通过【运行到鸿蒙】把 uni-app x 项目启动运行之后，可以在控制台里面点击调试按钮开启。
 
 ![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b7c69c0e-0447-41f1-b974-35eb8d076cc8.png)#{.zooming style="max-height:60px;border:1px solid silver"}
-
-该功能依赖于鸿蒙调试插件，如果弹窗提示安装依赖插件，请点击安装，否则无法开启调试。
 
 点击【开启调试】按钮的时候如果还在编译阶段，则会等到后续应用运行起来的时候进入调试状态。
 
@@ -127,6 +110,6 @@
 
 2. HBuilderX 的联编调试功能不能跟 DevEco Studio 的调试功能同时运行，也不能 Attach 到 DevEco Studio 已经运行的应用实例上。
 
-3. HBuilderX 对 ets 代码只有基本的高亮功能，没有语言服务。
+3. HBuilderX 对鸿蒙原生工程的支持有限，大段代码开发仍然应该在 DevEco 中进行。
 
 4. 宿主原生项目的路径应为原生鸿蒙工程的根目录，否则 HBuilderX 设置在 ets 文件上的断点可能不会生效。
