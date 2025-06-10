@@ -523,7 +523,7 @@ if (view != null && view instanceof WKWebView) {
 |offset				|关键帧的偏移量。为0.0和1.0之间的数字。如果此值缺失，则关键帧将在相邻关键帧之间均匀分布。	|
 
 :::tip Tips
-- Android平台keyframes支持的属性值不支持设置百分比。
+- App平台keyframes支持的属性值不支持设置百分比。
 - 微信小程序平台 keyframes 使用 wxs + transition 方案实现，不支持多个 keyframes 之间使用缺省属性。微信内置的 `this.animate` 方案支持 [css 属性有限](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html#%E5%85%B3%E9%94%AE%E5%B8%A7%E5%8A%A8%E7%94%BB)，可以配合使用。
 :::
 
