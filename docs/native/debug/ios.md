@@ -17,7 +17,7 @@
 4. 填写`Display Name(建议与manifest.json中name值一致)`、`Build(建议与manifest.json中versionCode一致)`、`Version(建议与manifest.json中versionName值一致)`字段。如图：
     ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_update_name_version.jpg)
 
-5. 在工程`Info.plist`下添加`uniapp-x`节点，在节点中配置`appid(必须与manifest.json中appid值一致)`,如图：  
+5. 在工程`Info.plist`下添加`uniapp-x`节点，在节点中配置`appid(必须与manifest.json中appid值一致)`以及`ipatype(在HBuilderX中调试需要设置为1)`,如图：  
    ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniappx_app_info.png)
   
 ## 把宿主应用打包为HBuilderX的自定义基座。

@@ -49,9 +49,7 @@
 		<key>appid</key>
 		<string>应用的appid</string>
 		<key>ipatype</key>
-		<integer>1</integer>
-		<key>singleThread</key>
-		<true/>
+		<integer>2</integer> //1自定义基座 2正式包
 		<key>uniRuntimeVersion</key>
 		<string>SDK版本号</string>
 		<key>unionid</key>
@@ -63,7 +61,18 @@
 	</dict>
 </dict>
 ```
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniappx_app_info.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniappx_app_info_new.jpg)
+
+
+### uniapp-x节点参数描述
+| 参数 | 描述 |
+|-----|------|
+|  appid   |  应用的appid，必须与manifest.json中appid值一致   | 
+|  ipatype   | 1-自定义基座(在HBuilderX调试时设置该值)，2-正式包(打release包时设置该值)   | 
+|  uniRuntimeVersion   | SDK版本号(必须与HBuilderX版本一致)   | 
+|  unionid   | 广告联盟id，如未开通uniad可不配置此key   | 
+|  channel   | 打包渠道，可根据需求自行更改  | 
+|  initPrivacyAuthorization   | 是否启动默认同意隐私政策  | 
 
 
 
