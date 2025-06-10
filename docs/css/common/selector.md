@@ -2,6 +2,7 @@
 
 - web和小程序支持page元素选择器，以替代body元素选择器。
 - web端可以使用`html`、`body`、`:root`等选择器。由于页面的css样式隔离，且html节点并未添加data-xxx属性，`html`、`:root`写在页面style内无效，只能写在App.uvue内。
+- App 端可以使用 `::v-deep` / `:deep()` 深度选择器，HBuilderX 4.71 起编译期间不再告警
 
 <!-- CSSJSON.selector_values.compatibility -->
 
