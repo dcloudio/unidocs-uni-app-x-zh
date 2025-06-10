@@ -96,11 +96,21 @@ uni-app x项目将开始编译，并热重载到手机的原生应用中。
 
 此时也可以在控制台右上角开启debug，进行uni-app x应用的断点调试。
 
-如果需要调试原生工程，需要配置上图中的`关联项目`，关联项目的路径为原生工程的根目录。并将原生工程拖入到HBuilderX中。
+如果您不了解如何在HBuilderX中如何调试-app x，可以参考[文档](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug.html)。
+
+如果需要调试原生工程，需要配置上图中的`关联项目`，关联项目的路径为原生工程的根目录。并将原生工程拖入到HBuilderX中。参考下图：
+
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/drop_project.gif)
 
 配置成功后，重新运行uni-app x项目。
 
-在HBuilderX中可以同时打开原生工程和uni-app x项目，各自打断点。在原生的kt/java和uni-app x代码的断点之间来回单步跟踪，方便排查联调问题。具体效果可以参考如下视频：
+在需要调试的kt/java代码上设置断点，开启`uts调试`。如下图：
+
+![](https://web-ext-storage.dcloud.net.cn/native/doc/android/kt_debug.png)
+
+断点设置成功之后，可以触发相应的逻辑进入调试模式。
+
+在HBuilderX中还可以在原生工程和uni-app x项目中各自打断点。在原生的kt/java和uni-app x代码的断点之间来回单步跟踪，方便排查联调问题。具体效果可以参考如下视频：
 
 <video id="video" preload="none" controls="controls" width="900px" height="580px" src="https://web-ext-storage.dcloud.net.cn/native/doc/android/debug-native-video.mov" poster="https://web-ext-storage.dcloud.net.cn/native/doc/android/debug-native-video-poster.png"></video>
 
