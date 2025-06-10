@@ -1,8 +1,10 @@
-# 原生联调
+# 原生联调@joint-debugging
+
+> 本文档描述的内容适用于 HBuilderX 4.71+ 版本，针对 uni-app x 项目有效。
 
 一般来说，鸿蒙的原生应用开发要在 DevEco Studio 中进行。
 
-如果要把 uni-app x 项目实现的应用功能嵌入到既有的原生应用中，需要借助 [uni-app x 原生 SDK 鸿蒙版](https://doc.dcloud.net.cn/uni-app-x/native/use/harmony.html)。
+如果要把 uni-app x 项目实现的应用功能以“小程序”的方式嵌入到既有的原生应用中，需要借助 [uni-app x 原生 SDK 鸿蒙版](https://doc.dcloud.net.cn/uni-app-x/native/use/harmony.html)。
 
 要实现这个目标，最基本的开发模式是：
 
@@ -25,7 +27,10 @@
 直接以【联编调试】的方式在 HBuilderX 中对宿主应用和 uni-app x 项目进行联调，可以随时对 uni-app x 项目中的源代码做修改，
 并在两个项目同时进行断点调试，就像调试一个普通的 uni-app x 项目那样方便。
 
-## 准备工作
+
+## 准备工作@prepare
+
+![](https://web-ext-storage.dcloud.net.cn/hx/debug/harmony-native-debug-prepare.png)#{.zooming style="max-height:400px"}
 
 首先，在 HBuilderX 中导入 uni-app x 项目目录和宿主应用的原生鸿蒙工程目录。
 
@@ -48,24 +53,80 @@
 - `debugWithNativeHarmony` 用于开启联编调试功能，缺省为 `false` 不开启。
 - `nativeHarmonyProjectPath` 用于指定调试运行的时候使用的鸿蒙工程目录（即导入 HbuilderX 的那个宿主应用项目的根目录），无缺省值，如果开启了联编调试则此项必填，且指向的目录必须已存在。
 
-![](https://web-ext-storage.dcloud.net.cn/hx/debug/harmony-native-debug-prepare.png)#{.zooming style="max-height:400px"}
 
-## 调试开发
+## 调试开发@debugging
 
 在 HBuilderX 中，打开 uni-app x 项目中的任何一个文件，然后通过主菜单或工具条执行【运行到鸿蒙】操作，HBuilderX 会在对 uni-app x 项目进行编译之后自动执行类似于【本地打包 App 资源】的操作，
 只不过生成的 App 资源会自动组装到宿主原生应用的鸿蒙工程目录中去。
 
-然后就可以像调试普通 uni-app x 项目一样来进行调试开发了。参考 [启动调试的方式](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html#debug-mode)
+然后就可以像调试普通 uni-app x 项目一样来进行调试开发了。
 
-具体的调试操作可以参考 [Harmony uts 调试](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)，
-只不过此时的调试操作不仅适用于 uni-app x 项目，也适用于宿主原生应用项目。
+**此时的调试操作不仅适用于 uni-app x 项目，也适用于宿主原生应用项目。**
 
-<video id="video" preload="none" controls="controls" width="100%" poster="https://web-ext-storage.dcloud.net.cn/hx/debug/harmony-compilation-debug.png" src="https://web-ext-storage.dcloud.net.cn/hx/debug/harmony-compilation-debug.mp4"></video>
+### 开启/关闭调试@enable-debugger
 
-_注意 1：如果修改了宿主原生应用的代码，则需要保存之后手动再次【运行到鸿蒙】（或者点击控制台工具条的【重新运行】按钮）重新开始调试运行。_
+通过【运行到鸿蒙】把 uni-app x 项目启动运行之后，可以在控制台里面点击调试按钮开启。
 
-_注意 2：HBuilderX 的联编调试功能不能跟 DevEco Studio 的调试功能同时运行，也不能 Attach 到 DevEco Studio 已经运行的应用实例上。_
+![](https://web-ext-storage.dcloud.net.cn/doc/tutorial/harmony/b7c69c0e-0447-41f1-b974-35eb8d076cc8.png)#{.zooming style="max-height:60px;border:1px solid silver"}
 
-_注意 3：HBuilderX对ets代码只有基本的高亮功能，没有语言服务。
+该功能依赖于鸿蒙调试插件，如果弹窗提示安装依赖插件，请点击安装，否则无法开启调试。
 
-_注意 4：关联项目的路径应为原生应用项目的根目录，否则HBuilderX设置在ets文件上的断点可能不会生效。
+点击【开启调试】按钮的时候如果还在编译阶段，则会等到后续应用运行起来的时候进入调试状态。
+
+如果点击时应用已经运行起来，则直接进入调试状态，此后代码运行遇到断点就会停下来，但应用启动阶段的代码断点因为已经错过了时机而不会停下来，此时要想让那些断点起作用的话可以点击旁边的【重启应用】按钮。
+
+如果要退出调试状态，再次点击该按钮即可。
+
+### 打断点@add-breakpoint
+
+打开要调试的uts、uvue、ets文件，在代码行号上，鼠标右击或双击添加断点。
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-add-breakpoint.png)#{.zooming style="max-height:200px"}
+
+### 调试视图@debug-view
+
+开启调试后，即可在HBuilderX左侧视图，看到调试视图，具体如下：
+
+下图中包含了uvue、uts、ets的调试步骤
+
+![](https://web-ext-storage.dcloud.net.cn/hx/debug/harmony-debug.gif)#{.zooming style="max-width:100%"}
+
+调试视图分为5部分:
+
+- 调试工具栏
+- 变量窗口 (`复制值`、`复制表达式`、`添加到监视`)
+- 监视窗口（包含`添加`/`编辑`/`删除`表达式，以及`复制值`）
+- 调用堆栈窗口
+- 断点窗口（包含`删除`/`启用`/`禁用`断点）
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-debug-action.jpg)#{.zooming style="max-height:200px"}
+
+### 跟踪调试操作@debug-actions
+
+- 继续 `F8`
+- 下一步 `F10`
+- 进入 `F11`
+- 返回 `Shift+F11`
+
+### 数据检查：添加到监视@add-to-watch
+
+在【变量窗口】，选中变量，右键菜单，即可将变量添加到监视窗口。
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-add_to_monitor.png)#{.zooming style="max-height:240px"}
+
+### 数据检查：悬停显示@hover-preview
+
+断点调试过程中，将鼠标悬停在要查看的变量上，即可打开悬停窗口。
+
+![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uts-hovering_window.jpg)#{.zooming style="max-height:250px"}
+
+
+## 注意事项@notes
+
+1. 如果修改了宿主原生应用的代码，则需要保存之后手动再次【运行到鸿蒙】（或者点击控制台工具条的【重新运行】按钮）重新开始调试运行。
+
+2. HBuilderX 的联编调试功能不能跟 DevEco Studio 的调试功能同时运行，也不能 Attach 到 DevEco Studio 已经运行的应用实例上。
+
+3. HBuilderX 对 ets 代码只有基本的高亮功能，没有语言服务。
+
+4. 宿主原生项目的路径应为原生鸿蒙工程的根目录，否则 HBuilderX 设置在 ets 文件上的断点可能不会生效。
