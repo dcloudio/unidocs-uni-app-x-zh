@@ -12,12 +12,12 @@ uni-ad是DCloud提供的聚合广告平台，激励视频的广告来源主要�
 
 开通时需要进行开发者认证和应用资质审核。
 
-- uni-ad的业务介绍：[详见](https://uniapp.dcloud.net.cn/uni-ad/intro.html)
+- uni-ad的业务介绍：[详见](https://uniapp.dcloud.net.cn/uni-ad/)
 - 激励视频的业务：[详见](https://uniapp.dcloud.net.cn/uni-ad/ad-rewarded-video.html)
 
 上述文档是uni-app和uni-app x的通用文档，如遇到uni-app x不一致的文档，需以uni-app x文档为准。
 
-2. 获取和使用广告位id
+1. 获取和使用广告位id
 
 开通uni-ad后，在[uni-ad后台](https://uniad.dcloud.net.cn/)给App创建激励视频广告位后，需要拿到广告位id（adpid），传入下面的api `createRewardedVideoAd `中。
 
