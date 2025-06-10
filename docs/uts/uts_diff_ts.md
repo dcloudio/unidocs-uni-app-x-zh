@@ -1803,6 +1803,45 @@ UTS:
 throw new Error();
 ```
 
+#### 数组越界访问 @UTS110111161
+
+级别：错误
+
+错误码：UTS110111161
+
+在 uts 中，数组越界访问在不同平台表现有差异：
+
+- 编译为 Kotlin、Swift 时数组越界会抛出运行时异常。
+- 编译为 JavaScript、ArkTS 时数组越界依旧返回的是 undefined。
+
+TypeScript:
+
+```ts
+let arr: number[] = [1, 2, 3];
+
+// TypeScript/JavaScript 中越界访问返回 undefined
+console.log(arr[5]); // undefined
+console.log(arr[-1]); // undefined
+```
+
+UTS:
+
+```ts
+const arr: number[] = [1, 2, 3];
+
+// Kotlin、Swift 中越界访问会抛出运行时异常
+console.log(arr[5]); // 抛出 IndexOutOfBoundsException
+console.log(arr[-1]); // 抛出 IndexOutOfBoundsException
+
+// 正确的做法：在访问前检查边界
+let index = 5;
+if (index >= 0 && index < arr.length) {
+  console.log(arr[index]);
+} else {
+  console.log("索引越界");
+}
+```
+
 ## 9. 原型和对象操作
 
 #### 不支持在原型上赋值 @UTS110111159
