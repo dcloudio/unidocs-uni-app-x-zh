@@ -116,4 +116,4 @@
 
 5. 如果主应用 Ability 的 constructor 无法打断点，可以在里面加一个 setInterval 定时器来辅助调试。（此问题后续会解决。）
 
-6. 在 uni-app x 与鸿蒙原生工程联调时，项目中的 uni_modules 会被编译到鸿蒙工程的根目录，并生成 ets 代码。因此，直接调试 uni-app x 项目里 uni_modules 的源文件目前不可行，但鸿蒙工程根目录/uni_modules下对应的编译后文件可以正常调试。（此问题后续会解决。）
+6. 在 uni-app x 与鸿蒙原生工程联调时，会优先ets的调试。因此，直接调试 uni-app x 项目里 uts 目前不可行(uvue可以正常调试)，但鸿蒙工程根目录下的ets文件可以正常调试。比如uni-app x 项目下uni_modules目录会被编译到鸿蒙工程根目录下，这种场景下可以直接调试鸿蒙工程/uni_modules目录中的ets文件（此问题后续会解决。）
