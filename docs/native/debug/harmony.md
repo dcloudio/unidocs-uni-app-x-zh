@@ -4,11 +4,11 @@
 
 原生工程和其他跨平台框架的功能之间混合开发，是很麻烦的。两个项目来回修改、编译、同步到原生工程中，发现有问题，再重来。
 
-得益于uni-app x编译为原生语言的能力，在鸿蒙原生工程中嵌入 [uni-app x 原生 SDK 鸿蒙版](https://doc.dcloud.net.cn/uni-app-x/native/use/harmony.html)，进行混合开发时，可以方便的联调。
+得益于 uni-app x 编译为原生语言的能力，在鸿蒙原生工程中嵌入 [uni-app x 原生 SDK 鸿蒙版](https://doc.dcloud.net.cn/uni-app-x/native/use/harmony.html) 进行混合开发时，可以方便地联调。
 
-这是其他跨平台工具无法提供的，但有对开发效率、问题排查极其重要。能切实提供混合开发效率。
+这是其他跨平台工具无法提供的，但又对开发效率、问题排查极其重要，能切实提高混合开发效率。
 
-由于HBuilderX支持调试uts，且uts在鸿蒙上编译为ets，所以HBuilderX也具备调试ets的能力。
+由于 HBuilderX 支持调试 uts，且 uts 在鸿蒙上编译为 ets，所以 HBuilderX 也具备调试 ets 的能力。
 
 把 uni-app x 项目和宿主原生应用项目都在 HBuilderX 中打开，直接以【联编调试】的方式在 HBuilderX 中对宿主应用和 uni-app x 项目进行联调，可以随时对 uni-app x 项目中的源代码做修改，并在两个项目同时进行断点调试，就像调试一个普通的 uni-app x 项目那样方便。
 
@@ -110,6 +110,6 @@
 
 2. HBuilderX 的联编调试功能不能跟 DevEco Studio 的调试功能同时运行，也不能 Attach 到 DevEco Studio 已经运行的应用实例上。
 
-3. HBuilderX 对鸿蒙原生工程的支持有限，大段代码开发仍然应该在 DevEco 中进行。
+3. HBuilderX 对鸿蒙原生工程的支持有限，大段代码开发仍然应该在 DevEco Studio 中进行。
 
 4. 宿主原生项目的路径应为原生鸿蒙工程的根目录，否则 HBuilderX 设置在 ets 文件上的断点可能不会生效。
