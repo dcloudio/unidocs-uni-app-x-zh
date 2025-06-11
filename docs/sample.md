@@ -31,6 +31,7 @@ uni-app x的组件和API，大多是uts语言开发的。和开发者做的uts�
 以下列出部分使用云打包的开发案例：
 
 - e线签（天津数字认证有限公司）：[Android](https://sj.qq.com/appdetail/com.tjca.elinesign)、[iOS](https://apps.apple.com/cn/app/e%E7%BA%BF%E7%AD%BE/id6743433163)
+- Tevau 海外应用：[Google Play](https://play.google.com/store/apps/details?id=uni.UNI2317D55&hl=zh&pli=1)、[iOS](https://apps.apple.com/cn/app/tevau/id6504911110)
 - 鲨推AI（工具）：[Android](https://sj.qq.com/appdetail/com.shatui.ai)
 - 智能PPT生成器（工具）：[Android](https://app.mi.com/details?id=com.pptgen.Intelligent)
 - 格式作坊（工具）：[Android](https://sj.qq.com/appdetail/com.gszf.app)、[iOS](https://apps.apple.com/cn/app/%E6%A0%BC%E5%BC%8F%E4%BD%9C%E5%9D%8A-%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%99%A8/id6472780051)
