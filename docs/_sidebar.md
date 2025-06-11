@@ -53,8 +53,9 @@
     * [概述](native/README.md)
     * [原生工程配置](native/use/harmony.md)
     * [内置模块](native/modules/harmony/modules.md)
-		* [UTS插件](native/use/harmonyuts.md)
+    * [UTS插件](native/use/harmonyuts.md)
     * [启动与通信](native/use/harmonyapi.md)
+    * [原生联调](native/debug/harmony.md)
 * 小程序平台专题指南
   * [概述](mp/README.md)
 * 运行和调试
