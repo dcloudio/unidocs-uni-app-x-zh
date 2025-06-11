@@ -25,6 +25,7 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/hx/debug/repair-diff-replace.png)
 
+我们正在提供新的UI，在原编辑器中更方便的接受修订，敬请期待。
 
 4、如果存在多个文件的错误时，修复页面的最下方会出现一个按钮`点击修复下一个文件的问题`, 点击该按钮开始修复下一个错误
 
