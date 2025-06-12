@@ -144,6 +144,7 @@ val callbackId = uni.onOsThemeChange((res: OsThemeChangeResult)=> {
 
 **注意：**
 + android 10、iOS 13 才开始支持深色模式主题 `dark`，更低版本无法获取、监听OS的主题。
++ iOS平台应用在进入后台时，会分别截取 app 在 light 和 dark 模式下的截图，用于系统主题切换的同时对后台 app 预览视图进行切换，所以会切换多次 light/dark 模式，程序正常响应 change 事件即可，否则系统截取的图片可能会出现异常，如果确实有必要忽略这种情况下的 change 事件可以在 onHide 后自行忽略。
 
 ## uni.offOsThemeChange(id) @offosthemechange
 
