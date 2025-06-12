@@ -32,6 +32,7 @@ App平台和web有以下差异:
 - 定义变量时不支持值为var(--*) ex: --color: var(--color)
 - 回退值不支持var(--*) ex: --height: var(--height1 , var(--height2))
 - transtion暂不支持使用var
+- 部分组件的属性不支持CSS变量：input、textarea 的 placeholder-style、placeholder-class，picker-view 的 indicator-style、indicator-class、mask-style、mask-class
 
 <!-- CSSJSON.variables_values.example -->
 
