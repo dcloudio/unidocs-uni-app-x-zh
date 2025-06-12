@@ -67,6 +67,7 @@
   * [uts插件iOS Debug](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html)
 	* [鸿蒙运行](https://uniapp.dcloud.net.cn/tutorial/harmony/runbuild.html)
   * [鸿蒙Debug断点](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)
+	* [AI纠错](tutorial/bug_repair.md)
 * [性能优化](performance.md)
 * [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
 * [暗黑模式](api/theme-change.md)

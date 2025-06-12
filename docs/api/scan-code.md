@@ -4,8 +4,6 @@
 
 <!-- UTSAPIJSON.scanCode.compatibility -->
 
-Android/iOS平台暂未内置，[见插件市场](https://ext.dcloud.net.cn/search?q=%E6%89%AB%E7%A0%81&cat1=8&type=UpdatedDate)
-
 <!-- UTSAPIJSON.scanCode.param -->
 
 <!-- UTSAPIJSON.scanCode.returnValue -->
@@ -17,3 +15,9 @@ Android/iOS平台暂未内置，[见插件市场](https://ext.dcloud.net.cn/sear
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+### 平台实现说明
+- uni-app x的Android/iOS平台的扫码基于Google的机器学习库，对各自一维二维码都有较好的识别效果。超过了uni-app的扫码。
+	扫码API，其实是一个开源的uvue页面，页面中内嵌了[camera组件](../component/camera.md)，camera组件提供扫码模式。源码在文档上方点击右侧gitcode或github。\
+	如需连续扫码，推荐使用[camera组件](../component/camera.md)
+- 鸿蒙、小程序直接调用了系统提供的扫码API，不可自定义。
