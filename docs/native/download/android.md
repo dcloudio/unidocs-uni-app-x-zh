@@ -76,4 +76,4 @@
 
 **[历史版本](https://pan.baidu.com/s/1OXvFjfGW6zDAyzTZGpY7hQ?pwd=aa2c)**
  
-**[历史版本更新日志](https://download1.dcloud.net.cn/hbuilderx/changelog/4.63.2025042307-alpha.html)**
+**[历史版本更新日志](https://download1.dcloud.net.cn/hbuilderx/changelog/4.71.2025061206-alpha.html)**
