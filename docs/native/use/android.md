@@ -74,6 +74,7 @@ uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar�
 		implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
 		implementation "com.squareup.okhttp3:okhttp:3.12.12"
 		implementation "com.github.getActivity:XXPermissions:18.63"
+		implementation "net.lingala.zip4j:zip4j:2.11.5"
 	}
 	```
 
