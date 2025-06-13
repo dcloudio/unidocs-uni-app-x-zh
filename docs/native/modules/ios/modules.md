@@ -62,6 +62,12 @@
 | uni-fileSystemManager(4.61+) | uni-fileSystemManager-index.swift <br> uni-fileSystemManager-InnerFileSystemManager.swift <br> uni-fileSystemManager-UniFileSystemManager.swift <br> uni-fileSystemManager-UniFileSystemManagerStats.swift| libZIPFoundation.a | AVFoundation<br> CoreImage|
 | uni-sse(4.63+) | uni-sse-index.swift <br> uni-sse-EventSource-Event.swift <br> uni-sse-EventSource-EventSource.swift <br> uni-sse-EventSource-EventStreamParser.swift| | |
 | uni-makePhoneCall(4.63+) | uni-makePhoneCall-index.swift | | |
+| uni-barcode-scanning(4.71+)(依赖uni-camera) | uni-barcode-scanning-index.swift <br> uni-barcode-scanning-Scanner.swift| pod 'GoogleMLKit/BarcodeScanning', '~> 6.0.0' | |
+| uni-scanCode(4.71+)(依赖uni-barcode-scanning) | uni-scanCode-index.swift| | |
+| uni-clipboard(4.71+) | uni-clipboard-index.swift | | |
+| uni-keyboard(4.71+) | uni-keyboard-index.swift | | |
+| uni-rich-text(4.71+) | uni-rich-text-index.swift | | |
+| uni-openDocument(4.71+)(依赖uni-fileSystemManager) | uni-openDocument-index.swift | | |
 
 ### 配置uts-config.json(可选)
 
@@ -167,6 +173,27 @@
 	}]
 }
 ```  
+
+`uni-barcode-scanning`模块需要添加如下配置
+  ```
+{
+   "hooksClasses": [
+		"UTSSDKModulesDCloudUniBarcodeScanningAppHookProxy"
+	]
+}
+```  
+
+`uni-rich-text`模块需要添加如下配置
+  ```
+{
+    "components": [{
+      "type": "customElement",
+		"name": "rich-text",
+		"class": "UTSSDKModulesDCloudUniRichTextUniRichTextElement",
+		"delegateClass": "UniRichTextElementRegister"
+	}]
+}
+```
   
 
 `uts-config.json`配置示例图     
