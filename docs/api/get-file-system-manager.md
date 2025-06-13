@@ -19,7 +19,7 @@
 
 :::warning 注意
 
-为了和微信小程序保持一致，`HBuilderX 4.71+` 涉及如下API调整
+##### 为了和微信小程序保持一致，`HBuilderX 4.71+` 涉及如下API调整
 
 | 相关 API                | 升级前                                                                                                                                                          | 升级后                                                                                                                                                                                                                                                                                                                                                 |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -28,7 +28,15 @@
 | `getSavedFileList`     | 返回 `uni.env.USER_DATA_PATH` 目录中的文件列表, 均绝对路径                                                                                                                            | 返回 `unifile://cache/uni-store/`(uni.env.CACHE_PATH/uni-store/) 目录中的文件列表                                                                                                                                                                                                                                                            |
 | `rmdir` / `rmdirSync`  | iOS 无法删除空的 `uni.env.USER_DATA_PATH`、`uni.env.CACHE_PATH` 目录（系统限制）<br>Android/Harmony 可删除任意目录                                                         | **删除特殊目录，只删除子，保留本身**  <br>  - `uni.env.SANDBOX_PATH` <br> - `uni.env.CACHE_PATH` <br>  - `uni.env.USER_DATA_PATH` <br> - `uni.env.ANDROID_INTERNAL_SANDBOX_PATH` <br> <br> **其他创建的目录可以删除子和本身**  <br>                                                                                                                                                                                   |
 | `copyFile` / `copyFileSync` | **参数 `destPath`**  <br> - 传入文件路径：如果上一级目录存在，保存到传入的路径，如存在则覆盖；如果上一级目录不存在，上上级目录也不存在，则先递归创建再保存  <br> - 传入目录路径：如果存在，保存到destPath/截取tempFilePath的文件名；如果不存在，先创建再保存  <br> - 传入错误路径：比如无权限的路径，返回 error <br>  | **参数 `destPath`** <br>  <br> - 传入错误路径：比如无权限的路径，返回 error  <br> - 传入文件路径：如果上一级目录存在，保存到传入的路径，如存在则覆盖；如果上一级目录不存在，上上级目录也不存在，则先递归创建再保存 <br> -传入destPath是目录路径且已存在，则返回错误码`1300021`   <br>  -传入destPath是文件路径且已存在，则覆盖写入  <br>- 判断传入路径尾部是否带斜线，如xxx/path、 xxx/path/，直接视为写入到path文件，如xxx/path/sub.txt 具体的是写入到具体的文件，path是目录 <br> <br> |
+
+
+##### iOS 无返回值同步api说明：
+1. 在vue中不能依赖无返回值的同步api，因为iOS目前无法在vue层面捕获失败，只有成功才有效；
+2. 无返回值的同步api可以通过控制台看到具体的失败或成功console log；
+3. 相关api：writeFileSync、unlinkSync、truncateSync、removeSavedFile、renameSync、rmdirSync、mkdirSync、ftruncateSync、copyFileSync、closeSync、appendFileSync、accessSync
+
 :::
+
 
 
 <!-- UTSAPIJSON.getFileSystemManager.param -->
