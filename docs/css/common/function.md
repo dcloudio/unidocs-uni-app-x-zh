@@ -7,6 +7,7 @@
 > uni-app x 4.0+ 提供内置 CSS 变量。
 > uni-app x 4.52+ 全平台提供了安全区域相关 CSS 变量 --uni-safe-area-inset-* 。
 > uni-app x 4.71+ App平台补充了自定义css变量
+> 部分内置组件的特殊样式属性暂不支持CSS变量：input、textarea 的 placeholder-style、placeholder-class，picker-view 的 indicator-style、indicator-class、mask-style、mask-class
 
 ### 预置的 CSS 变量 @preset-var
 
@@ -32,7 +33,8 @@ App平台和web有以下差异:
 - 定义变量时不支持值为var(--*) ex: --color: var(--color)
 - 回退值不支持var(--*) ex: --height: var(--height1 , var(--height2))
 - transtion暂不支持使用var
-- 部分组件的属性不支持CSS变量：input、textarea 的 placeholder-style、placeholder-class，picker-view 的 indicator-style、indicator-class、mask-style、mask-class
+- 部分组件的属性不支持CSS变量：input、textarea 的 placeholder-style、placeholder-class
+- 由于App平台不支持:root伪类，需要自行在页面根元素或合适的父级元素的class中定义css变量，以便在子元素生效
 
 <!-- CSSJSON.variables_values.example -->
 
