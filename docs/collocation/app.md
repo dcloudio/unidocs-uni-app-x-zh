@@ -75,6 +75,7 @@
 <!-- VUEJSON.application.onExit.returnValue -->
 
 <!-- VUEJSON.application.onExit.tutorial -->
+* 参见 [uni.exit](https://doc.dcloud.net.cn/uni-app-x/api/exit.html#exit) 相关文档
 
 <!-- VUEJSON.application.onError.name -->
 
