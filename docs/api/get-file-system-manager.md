@@ -31,7 +31,7 @@
 
 
 ##### iOS 无返回值同步api说明：
-1. 在uvue中不能依赖无返回值的同步api，因为iOS目前无法在uvue层面捕获失败，仅可用于调试，不能用于运行；
+1. 在uvue中不能依赖无返回值的同步api，因为iOS目前无法在uvue层面捕获失败，仅可用于调试，不能用于运行，try···catch无效，不会进入catch回调；
 2. 用于调试时：无返回值的同步api可以通过控制台看到具体的失败或成功console log；
 3. 相关api：writeFileSync、unlinkSync、truncateSync、removeSavedFile、renameSync、rmdirSync、mkdirSync、ftruncateSync、copyFileSync、closeSync、appendFileSync、accessSync
 
