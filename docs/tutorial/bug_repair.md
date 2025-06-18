@@ -16,9 +16,20 @@
 
 3、修复结束之后，在右边会出现一个diff的效果
 
+##### HBuilderX 4.71的效果
+![](https://web-ext-storage.dcloud.net.cn/hx/debug/repair-diff-view.png)
+
+##### HBuilderX 4.72+的效果
 ![](https://web-ext-storage.dcloud.net.cn/hx/doc/diff_replace_pre.png)
 
 ### 如何同意AI的修复
+
+##### HBuilderX 4.71的效果
+首先点击需要替换的行（左侧列显示了哪些被修改），
+然后如下图，点击箭头指向的地方，点击之后就将右侧的新内容替换到原本的文件中，然后保存即可。
+![](https://web-ext-storage.dcloud.net.cn/hx/debug/repair-diff-replace.png)
+
+##### HBuilderX 4.72+的效果
 在文本区域点击`同意`或者`拒绝`时，只会替换对应区域的内容
 
 在底部点击`同意`或者`拒绝`时，会替换全部需要修改的内容
@@ -32,6 +43,7 @@
 <img src="https://web-ext-storage.dcloud.net.cn/hx/debug/bug_fix_next.png" style="zoom: 50%;" />
 
 ### 如何取消AI修复
+> HBuilderX 4.72之后才有该功能
 
 如果需要终止修复，可以点击右上角的取消按钮。
 
