@@ -4,11 +4,35 @@ RegExp 对象用于将文本与一个模式匹配。
 
 #### 重要提示 
 
-HBuilder X 4.72之前版本 Android端正则引擎部分细节与web存在[差异](https://issues.dcloud.net.cn/pages/issues/detail?id=16951) 
+HBuilder X 4.72之前版本 Android端正则引擎使用 ​​`PCRE`(Perl Compatible Regular Expressions) 标准，部分细节与web存在[差异](https://issues.dcloud.net.cn/pages/issues/detail?id=16951) 
 
-HBuilder X 4.72及之后版本 Android端正则引擎完全遵循ES2015标准（与web完全保持一致）。
+HBuilder X 4.72及之后版本 Android端正则引擎完全遵循`ECMAScript`标准(与web完全保持一致)。
 
-因此开发者在4.72版本之后可能正则表现上与历史版本不一致，需要统一修改为web的写法。
+
+对开发者的影响：
+
+绝大多数场景下`PCRE`正则引擎与`ECMAScript`引擎表现是一致的，这部分场景不会对开发者不会产生任何影响。
+
+少部分语法执行结果存在差异，以issue 16951 为例:
+
+开发者不可以继续使用​​`PCRE`风格的语法:
+
+```
+'10px 20px'.replace(FLOAT_REGEX, '\\${0}')  
+```
+
+这会导致不符合预期的结果:
+
+```
+\${0}px \${0}px
+```
+
+应该修改为与web一致的语法:
+
+```
+'10px 20px'.replace(FLOAT_REGEX, '${0}') 
+```
+
 
 ### new(pattern : RegExp \| string) : RegExp;@Constructor(pattern)
 
