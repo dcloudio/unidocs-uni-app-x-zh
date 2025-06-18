@@ -22,7 +22,7 @@ camera组件的操作api为[uni.createCameraContext()](../api/create-camera-cont
 
 ### 依赖库版本
 
-Android端
+Android端实现相机组件所使用的依赖库
 
 ```
 "androidx.camera:camera-core:1.4.1",
