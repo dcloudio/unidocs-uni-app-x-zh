@@ -21,3 +21,17 @@
 	扫码API，其实是一个开源的uvue页面，页面中内嵌了[camera组件](../component/camera.md)，camera组件提供扫码模式。源码在文档上方点击右侧gitcode或github。\
 	如需连续扫码，推荐使用[camera组件](../component/camera.md)
 - 鸿蒙、小程序直接调用了系统提供的扫码API，不可自定义。
+
+### 依赖库版本
+
+Android端实现扫码所使用的依赖库
+```
+"androidx.camera:camera-core:1.4.1",
+"com.google.mlkit:barcode-scanning:17.2.0",
+"com.github.albfernandez:juniversalchardet:2.0.4"
+```
+iOS端实现扫码所使用的依赖库
+```
+pod 'GoogleMLKit/BarcodeScanning', '6.0.0'
+```
+
