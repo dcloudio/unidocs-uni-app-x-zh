@@ -2,6 +2,14 @@
 
 RegExp 对象用于将文本与一个模式匹配。
 
+#### 重要提示 
+
+HBuilder X 4.72之前版本 Android端正则引擎部分细节与web存在[差异](https://issues.dcloud.net.cn/pages/issues/detail?id=16951) 
+
+HBuilder X 4.72及之后版本 Android端正则引擎完全遵循ES2015标准（与web完全保持一致）。
+
+因此开发者在4.72版本之后可能正则表现上与历史版本不一致，需要统一修改为web的写法。
+
 ### new(pattern : RegExp \| string) : RegExp;@Constructor(pattern)
 
 <!-- UTSJSON.RegExp.Constructor.description -->
