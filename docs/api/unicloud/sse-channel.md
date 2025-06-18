@@ -8,6 +8,8 @@
 
 使用此功能前需要先开通uni-push 2.0，参考文档：[uni-push 2.0](https://uniapp.dcloud.net.cn/unipush-v2.html)。uni-app-x项目使用SSEChannel需要自行配置uni-push模块到manifest.json内，且开发期间需要打包自定义基座进行测试。
 
+但是，在uni-app x中使用AI大模型流式返回数据时，持续保持云函数活跃会产生更多的费用。为此 uni-ai x，支持了云端返回临时token，由客户端直连LLM。除了节省费用，uni-ai x还提供了完整的客户端开源代码。[详见](https://ext.dcloud.net.cn/plugin?name=uni-ai-x)
+
 ## 客户端api
 
 ### SSEChannel(options) @ssechannel

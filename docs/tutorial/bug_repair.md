@@ -4,7 +4,7 @@
 
 > 目前不收费，但每人每天只能使用一百次
 
-> HBuilderX 4.71+开始支持AI修复功能
+> HBuilderX 4.71+开始支持AI修复功能，但推荐从4.72起开始使用
 
 ## 使用方式
 
@@ -16,10 +16,7 @@
 
 3、修复结束之后，在右边会出现一个diff的效果
 
-##### HBuilderX 4.71的效果
-![](https://web-ext-storage.dcloud.net.cn/hx/debug/repair-diff-view.png)
-
-##### HBuilderX 4.72+的效果
+HBuilderX 4.72+的效果图：
 ![](https://web-ext-storage.dcloud.net.cn/hx/doc/diff_replace_pre.png)
 
 ### 如何同意AI的修复
@@ -36,14 +33,14 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/hx/doc/diff_new_replace.png)
 
-4、如果存在多个文件的错误时，修复页面的最下方会出现一个按钮`点击修复下一个文件的问题`, 点击该按钮开始修复下一个错误
+4、如果编译报错包含多个文件的错误，修复视图的最下方会出现一个按钮`点击修复下一个文件的问题`，点击该按钮开始修复下一个错误
 
 > 按钮中包含了有多少文件需要修复，当前正在修复第几个文件
 
 <img src="https://web-ext-storage.dcloud.net.cn/hx/debug/bug_fix_next.png" style="zoom: 50%;" />
 
 ### 如何取消AI修复
-> HBuilderX 4.72之后才有该功能
+> HBuilderX 4.72+
 
 如果需要终止修复，可以点击右上角的取消按钮。
 
@@ -55,7 +52,7 @@
 
 ![](https://web-ext-storage.dcloud.net.cn/hx/doc/info_link.png)
 
-## 获取提示词
+## 获取提示词@getprompt
 
 如果希望在其他IDE中使用AI修复功能，可以在编译输出的控制台中鼠标右键，会出现一个生成AI提示词的菜单项，点击之后可以获取提示词信息，然后贴到cursor等其他IDE中让AI帮忙修复。
 
