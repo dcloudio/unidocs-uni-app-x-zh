@@ -20,5 +20,17 @@ camera组件的操作api为[uni.createCameraContext()](../api/create-camera-cont
 
 <!-- UTSCOMJSON.camera.example -->
 
+### 依赖库版本
+
+Android端
+
+```
+"androidx.camera:camera-core:1.4.1",
+"androidx.camera:camera-camera2:1.4.1",
+"androidx.camera:camera-lifecycle:1.4.1",
+"androidx.camera:camera-view:1.4.1",
+"androidx.appcompat:appcompat:1.7.0"
+```
+
 <!-- UTSCOMJSON.camera.reference -->
 
