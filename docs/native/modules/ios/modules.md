@@ -58,7 +58,7 @@
 | uni-chooseMedia | uni-chooseMedia-index.swift | | |
 | uni-requestMerchantTransfer(4.61+) | uni-requestMerchantTransfer-index.swift | libWeChatSDK.a | CoreGraphics <br> WebKit <br> Security <br> |
 | uni-recorder(4.61+) | uni-recorder-index.swift <br> uni-recorder-UniAudioRecorderManager.swift| | |
-| uni-camera(4.61+) (依赖uni-media) | uni-camera-index.swift <br> uni-camera-Scanner.swift <br> uni-camera-CameraImpl.swift <br> uni-camera-CameraManager.swift |||
+| uni-camera(4.61+) (依赖uni-media) | uni-camera-index.swift <br>  uni-camera-CameraImpl.swift <br> uni-camera-CameraManager.swift |||
 | uni-fileSystemManager(4.61+) | uni-fileSystemManager-index.swift <br> uni-fileSystemManager-InnerFileSystemManager.swift <br> uni-fileSystemManager-UniFileSystemManager.swift <br> uni-fileSystemManager-UniFileSystemManagerStats.swift| libZIPFoundation.a | AVFoundation<br> CoreImage|
 | uni-sse(4.63+) | uni-sse-index.swift <br> uni-sse-EventSource-Event.swift <br> uni-sse-EventSource-EventSource.swift <br> uni-sse-EventSource-EventStreamParser.swift| | |
 | uni-makePhoneCall(4.63+) | uni-makePhoneCall-index.swift | | |
