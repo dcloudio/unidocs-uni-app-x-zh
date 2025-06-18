@@ -36,9 +36,26 @@
 
 <!-- UTSCOMJSON.rich-text.reference -->
 
+## 富文本显示的可选方案
+
+rich-text组件是一个比较重的组件，需要注意适用场景。
+
+- rich-text组件适合cms系统编排的、大量使用html能力的富文本文章显示
+- rich-text不支持video组件，如果涉及video，需拆分文本内容，在video前后各放置一个rich-text组件
+
+其他替代方案：
+- 简单的、不同风格文字排布，应该仅使用text组件，必要时也可以使用text组件嵌套text组件
+- 简单的图文混拍，用image组件+text组件拼接可以实现的，没必要使用rich-text组件
+- 自行解析node节点，动态拼接text、image、video等原生组件，也是一种方案，类似小程序领域的mp-html插件。可自行在插件市场搜索是否有这类插件
+- 原生markdown渲染：官方提供了markdown解析，动态拼接原生组件的方案，在[uni-ai x开源项目](https://ext.dcloud.net.cn/plugin?id=23902)中可以体验
+
+## 调整历史@change
+在4.7版以前，Android是原生实现rich-text，但与web规范拉齐度较低；iOS使用的是web-view；鸿蒙使用的是系统的rich-text，但该rich-text也是基于web-view实现且有细节问题。
+
+从uni-app x4.7+，3个App平台统一使用web-view实现。鸿蒙平台直接替换了之前的实现，而Android平台则新增了mode属性配置，默认是web-view实现，但也可以通过mode=native继续使用之前的原生方式。
+
 ## Bug & Tips@tips
 
-- HTML String 在 App 端支持常用但不是全部 web 样式，并且 Android 和 iOS 也略有差异。
 - HTML String 类型的`<img/>`不支持自定义宽高，默认以 rich-text 组件宽度为基准等比缩放；节点列表类型的`<img />`支持自定义宽高。
 - App-Android 平台，设置`selectable`属性为 true 时，`itemclick`事件不触发。
-- App-Harmony 平台的 rich-text 组件问题较多，它自身是基于web-view渲染的，不支持根据内容自适应高度，但内部支持滚动。需手动设置合适的高度。所以从服务器加载未知高度的rich-text会很麻烦，只能固定一个高度。还在等待鸿蒙官方完善。所以uni-app x目前 nodes 也仅支持 string 类型，暂未花精力处理节点列表。
+
