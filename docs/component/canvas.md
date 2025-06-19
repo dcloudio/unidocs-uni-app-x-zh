@@ -58,22 +58,24 @@ canvas相关的API较多，参考如下：
   <canvas id="canvas"></canvas>
 </template>
 <script setup>
-// HBuilderX 4.25+
-// 异步调用方式, 跨平台写法
-uni.createCanvasContextAsync({
-  id: 'canvas',
-  component: getCurrentInstance().proxy,
-  success: (context : CanvasContext) => {
-    const canvasContext = context.getContext('2d')!;
-    const canvas = canvasContext.canvas;
+  onReady(() => {
+    // HBuilderX 4.25+
+    // 异步调用方式, 跨平台写法
+    uni.createCanvasContextAsync({
+      id: 'canvas',
+      component: getCurrentInstance().proxy,
+      success: (context : CanvasContext) => {
+        const canvasContext = context.getContext('2d')!;
+        const canvas = canvasContext.canvas;
 
-    // 处理高清屏逻辑
-    const dpr = uni.getDeviceInfo().devicePixelRatio ?? 1;
-    canvas.width = canvas.offsetWidth * dpr;
-    canvas.height = canvas.offsetHeight * dpr;
-    canvasContext.scale(dpr, dpr); // 仅需调用一次，当调用 reset 方法后需要再次 scale
-  }
-})
+        // 处理高清屏逻辑
+        const dpr = uni.getDeviceInfo().devicePixelRatio ?? 1;
+        canvas.width = canvas.offsetWidth * dpr;
+        canvas.height = canvas.offsetHeight * dpr;
+        canvasContext.scale(dpr, dpr); // 仅需调用一次，当调用 reset 方法后需要再次 scale
+      }
+    })
+  })
 </script>
 ```
 
@@ -126,17 +128,18 @@ uni.createCanvasContextAsync({
   <canvas id="canvas"></canvas>
 </template>
 <script setup>
-// 同步调用方式，仅支持 app/web
-const canvas = uni.getElementById("canvas") as UniCanvasElement
-const context = canvas.getContext("2d")!;
+  onReady(() => {
+    // 同步调用方式，仅支持 app/web
+    const canvas = uni.getElementById("canvas") as UniCanvasElement
+    const context = canvas.getContext("2d")!;
 
-// 处理高清屏逻辑
-const dpr = uni.getDeviceInfo().devicePixelRatio ?? 1;
-canvas.width = canvas.offsetWidth * dpr;
-canvas.height = canvas.offsetHeight * dpr;
-context.scale(dpr, dpr); // 仅需调用一次，当调用 reset 方法后需要再次 scale
-
-// 省略绘制代码，和 w3c 规范保持一致
+    // 处理高清屏逻辑
+    const dpr = uni.getDeviceInfo().devicePixelRatio ?? 1;
+    canvas.width = canvas.offsetWidth * dpr;
+    canvas.height = canvas.offsetHeight * dpr;
+    context.scale(dpr, dpr); // 仅需调用一次，当调用 reset 方法后需要再次 scale
+    // 省略绘制代码，和 w3c 规范保持一致
+  })
 </script>
 ```
 
