@@ -60,4 +60,4 @@ flutter的自渲染引擎，和原生渲染引擎也无法无缝融合。
 + [集成harmonyOS平台原生SDK](./use/harmony.md)
 
 ## 说明
-- 集成 uni-app x 原生SDK 到原生工程中，Android端安装包预计增加8.1M，iOS端安装包预计增加8.7M。
+- 集成 uni-app x 原生SDK 到原生工程中，Android端安装包预计增加8.1M，iOS端安装包预计增加8.7M， HarmonyOs端安装包预计增加 1MB。
