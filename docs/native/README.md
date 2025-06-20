@@ -60,4 +60,4 @@ flutter的自渲染引擎，和原生渲染引擎也无法无缝融合。
 + [集成harmonyOS平台原生SDK](./use/harmony.md)
 
 ## 说明
-- 集成 uni-app x 原生SDK 到原生工程中，Android端安装包预计增加8.1M，iOS端安装包预计增加8.7M， HarmonyOs端安装包预计增加 1MB。
+- 集成 uni-app x 原生SDK 到原生工程中，iOS端安装包预计增加8.7M；HarmonyOs端安装包预计增加 1MB；Android端默认只包含arm64-v8a的情况下，安装包预计增加8.1M。支持的CPU类型的新增大小分别是：armeabi-v7a约增加679KB，arm64-v8a约增加858KB，x86约增加965KB，x86_64约增加970KB。
