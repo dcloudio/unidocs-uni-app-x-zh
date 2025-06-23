@@ -25,8 +25,15 @@ uni-app x的组件和API，大多是uts语言开发的。和开发者做的uts�
 目前插件市场已经有近千款适配uni-app x的插件，不管是uts还是uvue，已有大量开发者在使用。
 
 上线的App案例：
-由于uni-app x没有运行时数据采集，所以DCloud并不知道哪些开发者在真实使用uni-app x。\n
+由于uni-app x没有运行时数据采集，所以DCloud并不知道哪些开发者在真实使用uni-app x。
 希望大型开发者，能主动给本文档提交pr，贡献案例，帮助uni-app x生态发展。
+
+> 鸿蒙App的商店地址，仅支持 HarmonyOS NEXT 以上的设备查看；
+
+**舆情秘书专业版：** 提供互联网舆情监测的大数据平台，鸿蒙应用市场搜索“舆情秘书专业版”，[鸿蒙](https://appgallery.huawei.com/app/detail?id=com.istarshine.yqms4harmonyos)
+
+**我要查快递：** 查天气、查快递、查生肖，鸿蒙应用市场搜索“我要查快递”，[鸿蒙](https://appgallery.huawei.com/app/detail?id=com.youjuda.woyaochakuaidi)
+
 
 以下列出部分使用云打包的开发案例：
 
