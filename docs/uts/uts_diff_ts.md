@@ -817,6 +817,74 @@ let c3 = new Derived();
 c3.foo(); // Extra foo
 ```
 
+#### type、class 或 interface 的属性方法不支持定义泛型信息 @UTS110111161
+
+级别：错误
+
+错误码：UTS110111161
+
+type、class 或 interface 的属性类型为方法时，不支持在属性方法上定义泛型信息。
+
+TypeScript:
+
+```ts
+type ApiService = {
+  request: <T>(url: string) => Promise<T>; // 属性方法支持泛型
+};
+
+interface DataHandler {
+  process: <T>(data: T) => T; // 属性方法支持泛型
+}
+
+class DataProcessor {
+  handler: <T>(data: T) => T; // 属性方法支持泛型
+}
+```
+
+UTS:
+
+```ts
+// type
+// 方案1：指定具体类型
+type ApiService = {
+  request: (url: string) => Promise<any>;
+};
+// 方案2：提升到type级别
+type ApiService<T> = {
+  request: (url: string) => Promise<T>;
+};
+
+// interface
+// 方案1：指定具体类型
+interface DataHandler {
+  process: (data: any) => any;
+}
+// 方案2：提升到interface级别
+interface DataHandler<T> {
+  process: (data: T) => T;
+}
+// 方案3：定义为方法
+interface DataHandler {
+  process<T>(data: T): T;
+}
+
+// class
+// 方案1：指定具体类型
+class DataProcessor {
+  handler: (data: any) => any;
+}
+// 方案2：提升到class级别
+class DataProcessor<T> {
+  handler: (data: T) => T;
+}
+// 方案3：定义为方法
+class DataProcessor {
+  process<T>(data: T): T {
+    return data;
+  }
+}
+```
+
 ## 4. 函数相关
 
 #### 使用 class 而非具有 call signature 的类型 @UTS110111135
