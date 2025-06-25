@@ -48,6 +48,10 @@ export function createApp() {
 <!-- VUEJSON.E_app-instance.use_use-composition.code -->
 :::
 
+### app.mixin
+
+`app.mixin` 在 app-android 平台，不支持运行时动态判断条件来调用`app.mixin`方法，比如不支持把`app.mixin`放到`if`条件中执行。
+
 ### app.config.globalProperties
 
 请注意，`globalProperties` 是一个保留关键字，因此在项目中请勿声明名为 `globalProperties` 的变量。
