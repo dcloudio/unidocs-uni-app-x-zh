@@ -47,7 +47,7 @@
   * [获取网络类型](get-network-type.md)
   * [监听网络状态变化](network-status-change.md)
   * [websocket](websocket.md)
-  * [SSE](connect-event-source.md)
+  * [connectEventSource](connect-event-source.md)
 * 设备
   * [获取系统信息](get-system-info.md)
   * [获取设备信息](get-device-info.md)
