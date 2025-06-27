@@ -11,25 +11,25 @@
 <!-- UTSCOMJSON.web-view.component_type -->
 
 
-### 组件宽高说明  
-- web和小程序平台上，web-view是全屏的，即页面只能显示一个铺满的web-view。  
-- app平台的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。  
+### 组件宽高说明
+- web和小程序平台上，web-view是全屏的，即页面只能显示一个铺满的web-view。
+- app平台的web-view组件可以自由调整大小和位置。在uni-app x 4.0以前，默认宽、高为0px，页面中使用时需设置相应的 css 属性控制组件宽高才能正常显示。从4.0起改为默认宽高100%。
 
-### 嵌套滚动说明  
-App平台 web-view 组件可在 scroll-view、list-view/list-item 等可滚动容器中使用，如果 web-view 中的内容可以滚动，则会出现嵌套滚动的问题，细节如下：    
-- app-android平台，默认开启嵌套滚动，在web-view区域操作时，会优先滚动web页面内容（web页面的body内容），web页面内容无法滚动了再滚动外层嵌套滚动容器。如果web页面使用了区域滚动，嵌套滚动逻辑不会受页面中touch事件的默认行为（[Event：preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)）影响，仅判断web页面内容是否可滚动，web页面内容无法滚动则触发外层嵌套滚动容器，如需配置外层嵌套容器不处理滚动需配置 android-nested-scroll 属性为 none。   
-- app-ios平台，在web-view区域操作时，会优先滚动web-view内容（web页面的body内容），web页面内容无法滚动并且滚动条消失后才能操作滚动外层嵌套滚动容器。如果web页面使用了区域滚动，则受页面中touch事件的默认行为（[Event：preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)）逻辑控制，即阻止了默认行为则不滚动外层嵌套滚动容器，不阻止默认行为则滚动外层嵌套滚动容器。  
+### 嵌套滚动说明
+App平台 web-view 组件可在 scroll-view、list-view/list-item 等可滚动容器中使用，如果 web-view 中的内容可以滚动，则会出现嵌套滚动的问题，细节如下：
+- app-android平台，默认开启嵌套滚动，在web-view区域操作时，会优先滚动web页面内容（web页面的body内容），web页面内容无法滚动了再滚动外层嵌套滚动容器。如果web页面使用了区域滚动，嵌套滚动逻辑不会受页面中touch事件的默认行为（[Event：preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)）影响，仅判断web页面内容是否可滚动，web页面内容无法滚动则触发外层嵌套滚动容器，如需配置外层嵌套容器不处理滚动需配置 android-nested-scroll 属性为 none。
+- app-ios平台，在web-view区域操作时，会优先滚动web-view内容（web页面的body内容），web页面内容无法滚动并且滚动条消失后才能操作滚动外层嵌套滚动容器。如果web页面使用了区域滚动，则受页面中touch事件的默认行为（[Event：preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)）逻辑控制，即阻止了默认行为则不滚动外层嵌套滚动容器，不阻止默认行为则滚动外层嵌套滚动容器。
 
-### src路径支持说明  
+### src路径支持说明
 
-- 本地路径/static方式  
-	由于uni-app/uni-app x编译时，只把/static目录下的静态资源copy到app中，所以src均需指向/static目录下。  
-	其他目录的html文件由于不会被打包进去，所以无法访问。  
-	app平台文件路径会存在大小写敏感问题，为了有更好的兼容性，建议统一按大小写敏感原则处理 [详情](../api/file-system-spec.md#casesensitive)  
+- 本地路径/static方式
+	由于uni-app/uni-app x编译时，只把/static目录下的静态资源copy到app中，所以src均需指向/static目录下。
+	其他目录的html文件由于不会被打包进去，所以无法访问。
+	app平台文件路径会存在大小写敏感问题，为了有更好的兼容性，建议统一按大小写敏感原则处理 [详情](../api/file-system-spec.md#casesensitive)
 
-- 支持网络路径  
-	支持http、https。  
-	app平台使用系统Webview组件，由系统Webview管理缓存。  
+- 支持网络路径
+	支持http、https。
+	app平台使用系统Webview组件，由系统Webview管理缓存。
 
 <!-- UTSCOMJSON.web-view.children -->
 
@@ -105,13 +105,31 @@ uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中�
 
 **Tips**
 
-- 传递的消息信息，必须写在 data 对象中。  
-- `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）  
-- web平台web-view组件底层使用iframe实现，会有浏览器安全策略限制。一般不推荐在web平台使用web-view组件，如确需使用，且需要通信，请自行根据iframe的浏览器规范进行通信。  
+- 传递的消息信息，必须写在 data 对象中。
+- `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）
+- web平台web-view组件底层使用iframe实现，会有浏览器安全策略限制。一般不推荐在web平台使用web-view组件，如确需使用，且需要通信，请自行根据iframe的浏览器规范进行通信。
 
 ## 注意
-- app平台web-view组件为系统Webview组件，内核版本号不由uni-app x框架控制。  
-- app-android平台，web-view版本不一定是手机默认浏览器的版本。在部分手机上系统web-view的升级需要升级rom，部分手机则可以单独升级Android System Webview包。如需x5等三方webview，需使用uts插件，[见插件市场](https://ext.dcloud.net.cn/search?q=x5)。使用三方webview可减少系统webview的碎片化问题。  
+- app平台web-view组件为系统Webview组件，内核版本号不由uni-app x框架控制。
+- app-android平台，web-view版本不一定是手机默认浏览器的版本。在部分手机上系统web-view的升级需要升级rom，部分手机则可以单独升级Android System Webview包。如需x5等三方webview，需使用uts插件，[见插件市场](https://ext.dcloud.net.cn/search?q=x5)。使用三方webview可减少系统webview的碎片化问题。
 - app-ios平台，web-view的版本与iOS的版本绑定，也即是手机Safari浏览器的版本。WKWebview的限制比Android要多一些，比如无法使用跨域cookie，具体见Apple开发者文档。
-- 页面中的web-view组件数量不宜太多，每个web-view都会占用不少内存。  
+- 页面中的web-view组件数量不宜太多，每个web-view都会占用不少内存。
 - uni.postMessage已不推荐使用（将废弃），功能与uni.webView.postMessage一致，推荐使用uni.webView.postMessage。
+- `HarmonyOS 平台`上，web-view 加载的 html 中引用应用沙箱资源和 App 资源（如项目 static 文件夹内容）在配置是否跨域上冲突，只能访问其中一种，默认为访问 App 资源文件不跨域。如果需要访问其他资源，则需要进行以下操作：
+  - 访问应用沙箱资源跨域时，需要先调用：
+	```ts
+	const webviewController = uni.getElementById(elementId)?.getHarmonyController() as webview.WebviewController | null
+
+	webviewController?.setPathAllowingUniversalAccess([])
+	```
+  - 访问 App 资源资源跨域时，需要先调用：
+	```ts
+	const webviewController = uni.getElementById(elementId)?.getHarmonyController() as webview.WebviewController | null
+
+	webviewController?.setPathAllowingUniversalAccess([
+		getContext()!.filesDir,
+		getContext()!.getApplicationContext().filesDir,
+		getContext()!.resourceDir,
+		getContext()!.getApplicationContext().resourceDir
+	].filter(item => !!item).map(item => item + '/uni-app-x/apps'))
+	```
