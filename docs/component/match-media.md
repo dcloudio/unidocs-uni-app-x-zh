@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.match-media.description -->
 
+宽屏适配指南另见：[详情](../../docs/adapt.md)
+
 <!-- UTSCOMJSON.match-media.compatibility -->
 
 <!-- UTSCOMJSON.match-media.attribute -->
