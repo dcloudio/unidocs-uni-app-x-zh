@@ -115,14 +115,14 @@ uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中�
 - app-ios平台，web-view的版本与iOS的版本绑定，也即是手机Safari浏览器的版本。WKWebview的限制比Android要多一些，比如无法使用跨域cookie，具体见Apple开发者文档。
 - 页面中的web-view组件数量不宜太多，每个web-view都会占用不少内存。
 - uni.postMessage已不推荐使用（将废弃），功能与uni.webView.postMessage一致，推荐使用uni.webView.postMessage。
-- `HarmonyOS 平台`上，web-view 加载的 html 中引用应用沙箱资源和 App 资源（如项目 static 文件夹内容）在配置是否跨域上冲突，只能访问其中一种，默认为访问 App 资源文件不跨域。如果需要访问其他资源，则需要进行以下操作：
-  - 访问应用沙箱资源跨域时，需要先调用：
+- `HarmonyOS 平台`上，使用 web-view 组件加载的 html 中引用本地资源文件：应用沙箱资源（如使用 uni.downloadFile 下载的图片等）和 App 资源（如项目 static 文件夹内容）跨域配置冲突，不能同时配置访问不跨域。默认为访问 App 资源文件不跨域。
+  - 访问应用沙箱资源（如使用 uni.downloadFile 下载到本地的图片等资源）跨域时，需要先调用：
 	```ts
 	const webviewController = uni.getElementById(elementId)?.getHarmonyController() as webview.WebviewController | null
 
 	webviewController?.setPathAllowingUniversalAccess([])
 	```
-  - 访问 App 资源资源跨域时，需要先调用：
+  - 访问 App 资源（如项目 static 文件夹内容）跨域时，需要先调用：
 	```ts
 	const webviewController = uni.getElementById(elementId)?.getHarmonyController() as webview.WebviewController | null
 
