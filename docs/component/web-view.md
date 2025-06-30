@@ -109,27 +109,47 @@ uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中�
 - `event.detail.data` 中的数据，以数组的形式接收每次 post 的消息。（注：支付宝小程序除外，支付宝小程序中以对象形式接受）
 - web平台web-view组件底层使用iframe实现，会有浏览器安全策略限制。一般不推荐在web平台使用web-view组件，如确需使用，且需要通信，请自行根据iframe的浏览器规范进行通信。
 
+### 本地网页跨域@cors
+web-view组件有跨域问题，服务器网页的跨域问题属于常规web开发范畴，请自行查阅文档。\
+但当App平台加载本地磁盘的html文件时，跨域问题需要单独说明。
+
+各App平台的webview对本地网页跨域的策略不同，Android、iOS、鸿蒙，要求依次严格。
+
+#### 鸿蒙
+鸿蒙其自身有设计问题，在同一时间，web-view只能配置允许访问下列2种本地目录中的一种。
+1. App 包资源（如项目 static 文件夹内容）
+2. 沙盒文件（如使用 uni.downloadFile 下载的文件等，[详见](../api/file-system-spec.md)）
+
+uni-app x中，web-view组件在鸿蒙上**默认**配置为允许跨域访问 App包资源。
+
+所以，默认情况下，**web-view访问应用沙盒文件会报跨域错误**。
+
+如果开发者需要访问应用沙盒，需要用如下代码对web-view切换设置：
+
+```ts
+// 获取web-view组件对应的鸿蒙原生Controller
+const webviewController = uni.getElementById(elementId)?.getHarmonyController() as webview.WebviewController | null
+// 修改跨域设置
+webviewController?.setPathAllowingUniversalAccess([])
+```
+
+上述修改将允许该web-view访问应用沙箱目录，但会造成该web-view无法再访问 App包资源。如需再访问 App 资源（如项目 static 文件夹内容），需要再调用如下代码切换：
+```ts
+const webviewController = uni.getElementById(elementId)?.getHarmonyController() as webview.WebviewController | null
+
+webviewController?.setPathAllowingUniversalAccess([
+	getContext()!.filesDir,
+	getContext()!.getApplicationContext().filesDir,
+	getContext()!.resourceDir,
+	getContext()!.getApplicationContext().resourceDir
+].filter(item => !!item).map(item => item + '/uni-app-x/apps'))
+```
+
+鸿蒙的安全团队认为过多开放目录访问会造成安全漏洞，但同时也限制了开发者需求的实现。DCloud正在与华为交涉，[详见](https://issuereporter.developer.huawei.com/detail/250515172631027/comment)
+
 ## 注意
 - app平台web-view组件为系统Webview组件，内核版本号不由uni-app x框架控制。
 - app-android平台，web-view版本不一定是手机默认浏览器的版本。在部分手机上系统web-view的升级需要升级rom，部分手机则可以单独升级Android System Webview包。如需x5等三方webview，需使用uts插件，[见插件市场](https://ext.dcloud.net.cn/search?q=x5)。使用三方webview可减少系统webview的碎片化问题。
 - app-ios平台，web-view的版本与iOS的版本绑定，也即是手机Safari浏览器的版本。WKWebview的限制比Android要多一些，比如无法使用跨域cookie，具体见Apple开发者文档。
 - 页面中的web-view组件数量不宜太多，每个web-view都会占用不少内存。
 - uni.postMessage已不推荐使用（将废弃），功能与uni.webView.postMessage一致，推荐使用uni.webView.postMessage。
-- `HarmonyOS 平台`上，使用 web-view 组件加载的 html 中引用本地资源文件：应用沙箱资源（如使用 uni.downloadFile 下载的图片等）和 App 资源（如项目 static 文件夹内容）跨域配置冲突，不能同时配置访问不跨域。默认为访问 App 资源文件不跨域。
-  - 访问应用沙箱资源（如使用 uni.downloadFile 下载到本地的图片等资源）跨域时，需要先调用：
-	```ts
-	const webviewController = uni.getElementById(elementId)?.getHarmonyController() as webview.WebviewController | null
-
-	webviewController?.setPathAllowingUniversalAccess([])
-	```
-  - 访问 App 资源（如项目 static 文件夹内容）跨域时，需要先调用：
-	```ts
-	const webviewController = uni.getElementById(elementId)?.getHarmonyController() as webview.WebviewController | null
-
-	webviewController?.setPathAllowingUniversalAccess([
-		getContext()!.filesDir,
-		getContext()!.getApplicationContext().filesDir,
-		getContext()!.resourceDir,
-		getContext()!.getApplicationContext().resourceDir
-	].filter(item => !!item).map(item => item + '/uni-app-x/apps'))
-	```
