@@ -201,7 +201,7 @@
 `mixins` 选项接受一个 mixin 对象数组。这些 mixin 对象可以像普通的实例对象一样包含实例选项，它们将使用一定的选项合并逻辑与最终的选项进行合并。举例来说，如果你的 mixin 包含了一个 `created` 钩子，而组件自身也有一个，那么这两个函数都会被调用。
 
 - `mixins` 仅支持通过字面量对象方式和 `defineMixin` 函数方式定义。
-- 在 app-Android 平台, `App.uvue` 不支持 `mixins`, 全局 mixins 也不会对 `App.uvue` 生效。
+- 在 app-android 平台, `App.uvue` 不支持 `mixins`，全局 mixins 也不会对 `App.uvue` 生效，另外也不支持运行时根据条件动态构造mixins。
   ```ts
   const mixin1 = defineMixin({
     onLoad() {

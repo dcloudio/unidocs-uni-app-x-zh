@@ -25,21 +25,23 @@ uni-app x的组件和API，大多是uts语言开发的。和开发者做的uts�
 目前插件市场已经有近千款适配uni-app x的插件，不管是uts还是uvue，已有大量开发者在使用。
 
 上线的App案例：
-由于uni-app x没有运行时数据采集，所以DCloud并不知道哪些开发者在真实使用uni-app x。\n
+由于uni-app x没有运行时数据采集，所以DCloud并不知道哪些开发者在真实使用uni-app x。\
 希望大型开发者，能主动给本文档提交pr，贡献案例，帮助uni-app x生态发展。
 
-以下列出部分使用云打包的开发案例：
+以下列出部分案例：
 
 - e线签（天津数字认证有限公司）：[Android](https://sj.qq.com/appdetail/com.tjca.elinesign)、[iOS](https://apps.apple.com/cn/app/e%E7%BA%BF%E7%AD%BE/id6743433163)
 - Tevau 海外应用：[Google Play](https://play.google.com/store/apps/details?id=uni.UNI2317D55&hl=zh&pli=1)、[iOS](https://apps.apple.com/cn/app/tevau/id6504911110)
+- 舆情秘书专业版：[鸿蒙](https://appgallery.huawei.com/app/detail?id=com.istarshine.yqms4harmonyos)
+- 我要查快递（工具）：[鸿蒙](https://appgallery.huawei.com/app/detail?id=com.youjuda.woyaochakuaidi)
+- W Life（租房）：[Android](https://appgallery.huawei.com/app/C114037237)、[iOS](https://apps.apple.com/cn/app/w-life/id6742771365?uo=4)
 - 鲨推AI（工具）：[Android](https://sj.qq.com/appdetail/com.shatui.ai)
 - 智能PPT生成器（工具）：[Android](https://app.mi.com/details?id=com.pptgen.Intelligent)
 - 格式作坊（工具）：[Android](https://sj.qq.com/appdetail/com.gszf.app)、[iOS](https://apps.apple.com/cn/app/%E6%A0%BC%E5%BC%8F%E4%BD%9C%E5%9D%8A-%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%99%A8/id6472780051)
-- W Life（租房）：[Android](https://appgallery.huawei.com/app/C114037237)、[iOS](https://apps.apple.com/cn/app/w-life/id6742771365?uo=4)
 - 金股讯（金融）：[Android](https://sj.qq.com/appdetail/com.jinguxun.app)、[iOS](https://apps.apple.com/cn/app/%E9%87%91%E8%82%A1%E8%AE%AF/id1615272585)
 - 应安联（政务）：[Android](https://sj.qq.com/appdetail/com.aky.yal)、[iOS](https://apps.apple.com/cn/app/%E5%BA%94%E5%AE%89%E8%81%94/id1566809671)
 - 智慧强安（政务）：[Android](https://sj.qq.com/appdetail/com.demlution.aatianfangyetan)、[iOS](https://apps.apple.com/cn/app/%E6%99%BA%E6%85%A7%E5%BC%BA%E5%AE%89/id6476082028)
-- 脱单吧：[Android](https://sj.qq.com/appdetail/com.liewu.desingle)、[iOS](https://apps.apple.com/cn/app/%E8%84%B1%E5%8D%95%E5%90%A7/id1560465075)
+- 脱单吧（社交）：[Android](https://sj.qq.com/appdetail/com.liewu.desingle)、[iOS](https://apps.apple.com/cn/app/%E8%84%B1%E5%8D%95%E5%90%A7/id1560465075)
 - 萤科物联（物联网）：[Android](https://sj.qq.com/appdetail/iot.ykwl.vip)、[iOS](https://apps.apple.com/cn/app/%E8%90%A4%E7%A7%91%E7%89%A9%E8%81%94/id6741841541)
 - 牛轻松（物联网）：[Android](https://sj.qq.com/appdetail/com.wuitu.nqs)
 - 小溪相册（物联网）：[Android](https://app.mi.com/details?id=com.yanxi.xiaoxizaijia)、[iOS](https://apps.apple.com/vn/app/%E5%B0%8F%E6%BA%AA%E7%9B%B8%E5%86%8C/id6593673873)

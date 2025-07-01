@@ -1,3 +1,44 @@
+#### 4.74.2025063012-alpha
+##### uni-app x
+* Android平台 修复 4.72版本引发的 vue getCurrentInstance().proxy.$page获取当前页面，某些时机报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17704)
+* Android平台 修复 4.71版本引发的 组件 rich-text mode 为 web 时暗黑模式下可能显示异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19239)
+* Android平台 修复 4.73版本引发的 组件 input 遮挡时上推高度异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19211)
+* Android平台 修复 API dialogPage tabBar 页面 showDialogPage，切换 tabBar 后 dialogPage 无法关闭 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16059)
+* Android平台 修复 4.73版本引发的 API uni.loadFontFace loadFontFace 失败问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19214)
+
+#### 4.73.2025062714-alpha
+##### uni-app x
+* Web平台、Android平台 修复 API dialogPage .route 路径格式错误问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18727)
+* Web平台、iOS平台、鸿蒙平台 修复 API uni.openDialogPage url 参数使用相对路径时报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18736)
+* Web平台、小程序平台 修复 编译器 main.uts文件最后一行是单行注释时应用启动白屏 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18520)
+* App平台 新增 组件 input type 属性支持 none/search/email/url 等类型 [文档](https://doc.dcloud.net.cn/uni-app-x/component/input.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=16245>
+* App平台 新增 组件 textarea change 事件 [文档](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=16614>
+* Android平台、iOS平台 新增 组件 textarea 组件支持@confirm [文档](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=16642>
+* Android平台、iOS平台 修复 API uni.createInnerAudioContext 与微信小程序平台 音频、背景音频 播放细节存在的差异 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18479)
+* Android平台 新增 组件 textarea confirm-type 属性支持send/search/next/go/done类型 [文档](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=18616>
+* Android平台 新增 API uni.createInnerAudioContext uni.setInnerAudioOption 支持配置音频能否与其他音频混播 [文档](https://doc.dcloud.net.cn/uni-app-x/api/set-inner-audio-option.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=15042>
+* Android平台 修复 组件 text 文本中存在换行符“\n”时 white-space 设置为 nowrap 效果与web平台不一致 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18612)
+* Android平台 修复 组件 button 组件 设置居中可能不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=1957)
+* Android平台 修复 组件 input keyboardheightchange 事件回调中返回的软键盘高度不准确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18750)
+* Android平台 修复 组件 input 点击收起键盘时，被点击的组件点击事件无法响应 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18795)
+* Android平台 修复 组件 textarea focus 事件返回的键盘高度异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16996)
+* Android平台 修复 组件 video 组件竖屏全屏时自定义子组件无法正确显示 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18076)
+* Android平台 修复 组件 video 竖屏方向进入全屏时 fullscreenchange 事件返回的 direction 属性值仍为 horizontal [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18561)
+* Android平台 修复 API dialogPage 中 textarea 组件 keyboardheightchange 事件返回的键盘弹出高度错误 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16513)
+* Android平台 修复 API uni.showToast 自定义 image 正式打包模式下无法展示 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18597)
+* Android平台 修复 4.72版本引发的 API uni.loadFontFace 加载 base64 格式字体失败 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19017)
+* Android平台 修复 API uni.scanCode 部分设备闪退 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18488)
+* Android平台 修复 API uni.saveVideoToPhotosAlbum 在部分设备上保存同一个文件几十次可能会失败 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18861)
+* Android平台 修复 API uni.getBackgroundAudioManager 在Android 13 设备上播放结束再次调用 play 报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18804)
+* Android平台 修复 CSS width 父级设置横向居中，子text定位absolute时宽度受限 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=11847)
+* Android平台 修复 CSS overflow 设置为 visible 同时设置 box-shadow 后子元素可能被裁剪 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18136)
+* Android平台 修复 CSS box-shadow 多次触发渲染导致显示尺寸不正确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18383)
+* Android平台 修复 DOM API UniElement requestFullscreen 在fixed定位时异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18539)
+* iOS平台 修复 4.72版本引发的 组件 picker 动态赋值会不准确 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18923)
+* iOS平台 修复 4.18版本引发的 API pullDownRefresh 页面级下拉刷新雪花状指示器颜色没有适配 app 主题色 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18637)
+* iOS平台 修复 API uni.getSystemSetting 在系统开启了蓝牙的情况获取 bluetoothEnabled 值为 false [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18063)
+* iOS平台 修复 CSS border-color 某些情况下 borderColor 传入特殊字符会导致边框变成白色 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18877)
+
 #### 4.72.2025061803-alpha
 ##### uni-app x
 * Android平台 修复 组件 text 嵌套text可能出现闪退 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18770)

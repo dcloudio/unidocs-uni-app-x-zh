@@ -1052,6 +1052,14 @@ console.log(getClassByInstance);
 
 目前uts的class实例不支持在vue2的data中定义。发生此类错误时，排查是否在data函数中定义了uts导出的class实例，如果定义了，移除该定义即可。
 
+### 7.10 Qualified name must be a '.'-separated identifier list
+
+排查导入的三方库包名中是否包含了kotlin的关键字，比如:
+```ts
+import GetObjectRequest from "com.tencent.cos.xml.model.object.GetObjectRequest" // 编译报错：Qualified name must be a '.'-separated identifier list
+// 其中`object`是kotlin的关键字，需要使用`进行转义：
+import GetObjectRequest from "com.tencent.cos.xml.model.`object`.GetObjectRequest" // 编译正常
+```
 
 ## 已知待解决问题(持续更新)
 

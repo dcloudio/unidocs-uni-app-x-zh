@@ -316,7 +316,7 @@ ComponentPublicInstance
 - App-Android 平台 `4.0` 版本开始支持 `$callMethod` 调用 `defineExpose` 导出的方法
 - Web 平台、App-iOS 平台 `4.13` 版本开始支持 `$callMethod` 调用 `defineExpose` 导出的方法
 - 小程序 平台 支持 `$callMethod` 调用 `defineExpose` 导出的方法
-
+- `<script setup>`下的变量名不能和 easycom 组件的驼峰写法重复，比如：组件名为`test-canvas`，那么不能在`<script setup>`中定义`const testCanvas`变量名。
 
 #### 内置组件的方法调用或设置属性 <Badge text="HBuilderX 3.93+"/> @call-builtin-component-method
 

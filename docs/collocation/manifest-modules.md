@@ -267,47 +267,15 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 |泛连								|/data/data/应用包名/cache/																|
 
 ## uni-payment@uni-payment
-> HBuilderX 4.11+ 新增支持 uni-payment 请求支付
+> HBuilderX 4.11+ 新增支持 uni-payment 请求支付 
+> app-ios平台支付模块需HBuilderX4.18及以上版本
 
 在uni-app x客户端，uni-payment是一个独立模块。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
 
-使用 uni-payment 模块需在 manifest.json 文件中添加如下配置：
+使用 uni-payment 模块需在 manifest.json 文件中配置Provider：  
+- [Android平台](manifest-android.md#modulesPayment)  
+- [iOS平台](manifest-ios.md#modulesPayment)  
 
-### 配置支付SDK
-在 app -> distribute -> modules 下添加 uni-payment 节点：
-```json
-  	modules:{
-	     	"uni-payment": {
-              "alipay": {},//支付宝支付
-              "wxpay": {//微信支付
-                "android": {},
-                "ios": {
-                    "appid": "wxd569c7238830733b",
-                    "universalLink": "https://uniappx.dcloud.net.cn/ulink/"
-                }
-              }
-          }
-	}
-```
-
-其中 uni-payment 下的节点表示要聚合的支付方式：
-| 标识 | 支付方式 |
-| :-  | :- |
-| alipay | 支付宝支付 |
-| wxpay | 微信支付 |
-
-添加相应的节点，云端打包就会将对应的支付 SDK 打包到最终安装包中。
-
-- 支付宝支付
-  app平台无需配置参数，配置`alipay`节点表示应用云端打包包含支付宝SDK
-- 微信支付
-  app-android平台无需配置参数，app-ios平台需配置以下参数：
-  + `appid`：微信开放平台申请的应用ID（AppID）
-  + `universalLink`：iOS平台的通用链接（Universal Link），通用链接配置参考：[https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#通用链接-universal-link](https://uniapp.dcloud.net.cn/tutorial/app-ios-capabilities.html#%E9%80%9A%E7%94%A8%E9%93%BE%E6%8E%A5-universal-link)
-    注意：通用链接必须与微信开放平台 “管理中心” > “应用详情” > “开发信息” 中的“Universal Links”项中配置一致
-
-
-> app-ios平台支付模块需HBuilderX4.18及以上版本
 
 ## uni-location@uni-location
 > HBuilderX 4.61- 之前模块名是 `uni-getLocation`
@@ -315,88 +283,9 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 在uni-app x客户端，uni-location是一个独立模块。需要开发者在 manifest.json 中手动配置，并提交云端打包后才能生效。
 
-使用 uni-location 模块需在 manifest.json 文件中添加如下配置：
-
-其中 uni-location 下的节点表示要聚合的定位方式：
-| 标识 | 定位方式 |
-| :-  | :- |
-| system | 系统定位 |
-| tencent | 腾讯定位 |
-
-添加相应的节点，云端打包就会将对应的定位 SDK 打包到最终安装包中。
-
-
-### 配置定位SDK
-在 app -> distribute -> modules 下添加 uni-location 节点：
-`HBuilderX4.61-`之前模块名字是 `uni-getLocation`
-
-```json
-	modules:{
-		"uni-location":{
-			"system":{},
-			"tencent":{}
-		}
-	}
-```
-
-### 配置腾讯定位SDK的参数
-
-使用腾讯定位SDK需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请TencentLBSAPIKey，并配置到应用中。 
-
-#### iOS平台配置腾讯定位相关参数 @uni-getLocation-key
-
-需在项目根目录下的 Info.plist 中配置，包括以下内容：
-- 腾讯定位的 TencentLBSAPIKey，配置好TencentLBSAPIKey后，iOS 需要打自定义基座才可以生效
-- 使用定位权限弹出的授权提示信息：NSLocationAlwaysAndWhenInUseUsageDescription、NSLocationWhenInUseUsageDescription  
-- 应用需要使用高精度定位时还需配置 NSLocationTemporaryUsageDescriptionDictionary 的 PurposeKey，说明高精度定位的原因 
-- 如果应用需要后台定位能力，配置 UIBackgroundModes 的 location，注意需Xcode工程中添加相对应 Capabilities 中的 Background Modes，并且勾选 Location updates
-
-配置教程参考： [iOS原生配置文件Info.plist文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)
-
-以下为配置示例：  
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-	<dict>
-		<key>TencentLBSAPIKey</key>
-		<string>腾讯位置服务官网申请的Key</string>
-
-		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-		<string>允许使用定位权限吗</string>
-		<key>NSLocationWhenInUseUsageDescription</key>
-		<string>允许仅在app运行期间使用定位权限</string>
-		<key>NSLocationTemporaryUsageDescriptionDictionary</key>
-		<dict>
-			<key>PurposeKey</key>
-			<string>这里需要您临时授权高精度定位权限,一次临时授权时效仅app一个周期内, 每次硬启动都需要临时授权</string>
-		</dict>
-
-  	<key>UIBackgroundModes</key>
-		<array>
-			<string>location</string>
-		</array>
-
-	</dict>
-</plist>
-```
-
-#### Android平台配置腾讯定位key到项目 @uni-getLocation-android-key
-
-在项目根目录下添加 AndroidManifest.xml 文件，详情参考：[Android原生应用清单文件](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6-androidmanifest-xml)。将申请的 key 配置到项目 AndroidManifest.xml 的 application 节点中，如下：
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
->
-  <application>
-
-    <!-- 将申请到的 key 配置在 android:value 属性中 -->
-    <meta-data android:name="TencentMapSDK" android:value="您申请的Key" />
-
-  </application>
-
-</manifest>
-```
+使用 uni-location 模块需在 manifest.json 文件中配置Provider：  
+- [Android平台](manifest-android.md#modulesLocation)  
+- [iOS平台](manifest-ios.md#modulesLocation)  
 
 
 ## uni-map-tencent@uni-map-tencent
@@ -405,42 +294,8 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 
 使用腾讯地图需到 [腾讯位置服务](https://lbs.qq.com/) 官网申请TencentLBSAPIKey，并配置到应用中。 
 
-#### iOS平台配置腾讯地图Key @uni-map-tencent-ios-key
-
-
-需在项目根目录下的 Info.plist配置腾讯地图的 TencentLBSAPIKey，然后 iOS 需要打自定义基座才可以生效。
-
-配置教程参考： [iOS原生配置文件Info.plist文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#infoplist)
-
-以下为配置示例：  
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-	<dict>
-		<key>TencentLBSAPIKey</key>
-		<string>腾讯位置服务官网申请的Key</string>
-	</dict>
-</plist>
-```
-
-#### Andoird平台配置腾讯地图Key @uni-map-tencent-android-key
-
-
-在项目根目录下添加 AndroidManifest.xml 文件，详情参考：[Android原生应用清单文件](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#%E5%BA%94%E7%94%A8%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6-androidmanifest-xml)。将申请的 key 配置到项目 AndroidManifest.xml 的 application 节点中，如下：
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
->
-  <application>
-
-    <!-- 将申请到的 key 配置在 android:value 属性中 -->
-    <meta-data android:name="TencentMapSDK" android:value="您申请的Key" />
-
-  </application>
-
-</manifest>
-```
+- [Android平台](manifest-android.md#mapTencent)  
+- [iOS平台](manifest-ios.md#mapTencent)  
 
 #### Harmony平台配置腾讯地图Key @uni-map-tencent-harmony-key
 

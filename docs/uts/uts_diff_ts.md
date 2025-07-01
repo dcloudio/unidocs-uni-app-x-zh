@@ -35,7 +35,7 @@ ts 虽然有类型，但类型要求不严格。而 uts 为了编译为原生语
 
 不支持 undefined。所有变量必须赋值初始化后才能使用。如果需要使用空，请使用 null。
 
-undefined在ts中有很多场景，一个未初始化赋值的变量、一个未传入的方法参数、对象上不存在的属性，都会返回undefined。
+undefined 在 ts 中有很多场景，一个未初始化赋值的变量、一个未传入的方法参数、对象上不存在的属性，都会返回 undefined。
 
 TypeScript:
 
@@ -134,8 +134,8 @@ console.log(person["age"] as number); //UTS提供了有限的隐式转换能力�
 
 // 在UTS中推荐使用type替代UTSJSONObject
 type Person = {
-  name: string,
-  age: number,
+  name: string;
+  age: number;
 };
 // 声明时直接指定类型
 const person2: Person = {
@@ -145,15 +145,15 @@ const person2: Person = {
 console.log(person2.name);
 ```
 
-在JSON.parse的场景中，如果不通过泛型指定type，那么返回值也是UTSJSONObject。
+在 JSON.parse 的场景中，如果不通过泛型指定 type，那么返回值也是 UTSJSONObject。
 
-TS开发者一般都熟悉使用interface来声明类型，UTS中改为type即可。但不熟悉TS的开发者，务必需要详细了解[UTSJSONObject](./data-type.md#UTSJSONObject)和[type](./data-type.md#type自定义类型)
+TS 开发者一般都熟悉使用 interface 来声明类型，UTS 中改为 type 即可。但不熟悉 TS 的开发者，务必需要详细了解[UTSJSONObject](./data-type.md#UTSJSONObject)和[type](./data-type.md#type自定义类型)
 
 #### 对象字面量仅支持构造 type 定义的对象类型，不支持 interface
 
 级别：提示
 
-ts中可以通过 interface 或 type 声明对象字面量的类型。
+ts 中可以通过 interface 或 type 声明对象字面量的类型。
 
 在 UTS 中，interface 有其他使用场景，所以对象字面量赋值只能给 type 关键词定义的对象类型。
 
@@ -815,6 +815,74 @@ c2.foo(); // foo
 
 let c3 = new Derived();
 c3.foo(); // Extra foo
+```
+
+#### type、class 或 interface 的属性方法不支持定义泛型信息 @UTS110111161
+
+级别：错误
+
+错误码：UTS110111161
+
+type、class 或 interface 的属性类型为方法时，不支持在属性方法上定义泛型信息。
+
+TypeScript:
+
+```ts
+type ApiService = {
+  request: <T>(url: string) => Promise<T>; // 属性方法支持泛型
+};
+
+interface DataHandler {
+  process: <T>(data: T) => T; // 属性方法支持泛型
+}
+
+class DataProcessor {
+  handler: <T>(data: T) => T; // 属性方法支持泛型
+}
+```
+
+UTS:
+
+```ts
+// type
+// 方案1：指定具体类型
+type ApiService = {
+  request: (url: string) => Promise<any>;
+};
+// 方案2：提升到type级别
+type ApiService<T> = {
+  request: (url: string) => Promise<T>;
+};
+
+// interface
+// 方案1：指定具体类型
+interface DataHandler {
+  process: (data: any) => any;
+}
+// 方案2：提升到interface级别
+interface DataHandler<T> {
+  process: (data: T) => T;
+}
+// 方案3：定义为方法
+interface DataHandler {
+  process<T>(data: T): T;
+}
+
+// class
+// 方案1：指定具体类型
+class DataProcessor {
+  handler: (data: any) => any;
+}
+// 方案2：提升到class级别
+class DataProcessor<T> {
+  handler: (data: T) => T;
+}
+// 方案3：定义为方法
+class DataProcessor {
+  process<T>(data: T): T {
+    return data;
+  }
+}
 ```
 
 ## 4. 函数相关

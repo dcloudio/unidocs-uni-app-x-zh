@@ -1,5 +1,9 @@
 # splash启动界面@splash
 
+> HBuilderX4.71及以上版本调整manifest.json可视化配置界面。 此文档已废弃（不再维护），Android平台和iOS平台分别参考以下文档: 
+> - [安卓App配置 启动界面](manifest-android.md#@splashscreen)  
+> - [iOS App配置 启动界面](manifest-ios.md#splashscreen)  
+
 App启动时，系统加载应用渲染首页需要一定的时间，为了避免用户等待，手机操作系统提供了特殊的启动界面设计，让用户先看到一个简单的界面，等应用加载完成后正式进入应用首页。
 
 这个界面，即被称为启动封面，也成称为 splash。
