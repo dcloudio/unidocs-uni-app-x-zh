@@ -1,3 +1,11 @@
+#### 4.74.2025063012-alpha
+##### uni-app x
+* Android平台 修复 4.72版本引发的 vue getCurrentInstance().proxy.$page获取当前页面，某些时机报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17704)
+* Android平台 修复 4.71版本引发的 组件 rich-text mode 为 web 时暗黑模式下可能显示异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19239)
+* Android平台 修复 4.73版本引发的 组件 input 遮挡时上推高度异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19211)
+* Android平台 修复 API dialogPage tabBar 页面 showDialogPage，切换 tabBar 后 dialogPage 无法关闭 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16059)
+* Android平台 修复 4.73版本引发的 API uni.loadFontFace loadFontFace 失败问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19214)
+
 #### 4.73.2025062714-alpha
 ##### uni-app x
 * Web平台、Android平台 修复 API dialogPage .route 路径格式错误问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18727)
