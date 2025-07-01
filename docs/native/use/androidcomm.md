@@ -161,4 +161,4 @@ class MainActivity : AppCompatActivity() {
 
 ## 退出
 
-退出应用可以在uni-app x中调用`uni.exit()`，整体退出uni-app x。
+退出 uni-app x 应用可以在uni-app x中调用`uni.exit()`，整体退出uni-app x。

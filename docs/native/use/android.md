@@ -104,7 +104,7 @@ buildscript {
 }
 ```
 
-**注意：文件uts-kotlin-compiler-plugin-0.0.1.jar和uts-kotlin-gradle-plugin-0.0.1.jar位于原生SDK中，示例中放到了项目根目录的`plugin`文件夹下。参考：**
+**注意：文件uts-kotlin-compiler-plugin-0.0.1.jar和uts-kotlin-gradle-plugin-0.0.1.jar位于原生SDK中，示例中放到了项目根目录的`plugins`文件夹下。参考：**
 
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/android/gradle_plugins.png)
 
@@ -201,14 +201,14 @@ android.enableJetifier=true
 
 	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/resources.png)
 	
-2. 将app-android目录下与appid对应的目录拷贝到主项目的`assets/apps`目录下
+2. 将app-android目录下与appid对应的目录拷贝到uniappx项目的`assets/apps`目录下
 	
 	![](https://web-ext-storage.dcloud.net.cn/native/doc/android/app_assets_2.png)
 	
 	**注意：apps下的appid必须与AndroidManifest.xml的`DCLOUD_UNI_APPID`保持一致。**
 	
 ### 拷贝kt文件
-需要将`unkackage/resource/app-android/uniappx/app-android/src/`目录下的所有文件拷贝到项目的`src/main/java`下
+需要将`unkackage/resource/app-android/uniappx/app-android/src/`目录下的所有文件拷贝到uniappx项目的`src/main/java`下
 
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/android/copykt.png)
 
