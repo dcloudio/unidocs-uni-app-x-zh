@@ -77,6 +77,59 @@ HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求�
   在 “安卓/iOS启动界面配置” 的 “iOS启动图设置” -> “自定义storyboard启动界面” 中设置  
   ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_ios_storyboard_old.png)
 
+### 启动界面方向 @orientation  
+
+启动界面方向由项目 `pages.json` 中配置的 globalStyle -> pageOrientation 属性决定：  
+- portrait  
+  + iPhone设备，UISupportedInterfaceOrientations~iphone 值使用 UIInterfaceOrientationPortrait。即固定为竖屏正方向显示  
+  + iPad设备，UISupportedInterfaceOrientations~ipad 值使用 UIInterfaceOrientationPortrait、UIInterfaceOrientationPortraitUpsideDown。即竖屏显示，根据感应自动决定竖屏正反方向  
+- landscape  
+  + iPhone设备，UISupportedInterfaceOrientations~iphone 值使用 UIInterfaceOrientationLandscapeLeft、UIInterfaceOrientationLandscapeRight。即横屏显示，根据感应自动决定横屏正反方向  
+  + iPad设备，UISupportedInterfaceOrientations~ipad 值使用 UIInterfaceOrientationLandscapeLeft、UIInterfaceOrientationLandscapeRight。即横屏显示，根据感应自动决定横屏正反方向  
+- auto  
+  + iPhone设备，UISupportedInterfaceOrientations~iphone 值使用 UIInterfaceOrientationPortrait、UIInterfaceOrientationLandscapeLeft、UIInterfaceOrientationLandscapeRight。即自适应显示，根据感应自动决定竖屏正方向或横屏正反方向  
+  + iPad设备，UISupportedInterfaceOrientations~ipad 值使用 UIInterfaceOrientationPortrait、UIInterfaceOrientationPortraitUpsideDown。即自适应显示，根据感应自动决定竖屏正反方向或横屏正反方向  
+
+以上UISupportedInterfaceOrientations~iphone、UISupportedInterfaceOrientations~ipad 值云端打包时设置到应用的Info.plist中。
+
+如果同时在项目根目录下 `Info.plist` 配置了 UISupportedInterfaceOrientations~iphone、UISupportedInterfaceOrientations~ipad 值，云端打包会自动合并到应用的Info.plist中。
+
+如果`pages.json` 中没有配置 pageOrientation 属性，也没有在项目根目录下 `Info.plist` 配置 UISupportedInterfaceOrientations~iphone 或 UISupportedInterfaceOrientations~ipad 值，不同设备默认值如下：  
+
+- iPhone  
+  默认值为竖屏（HBuilderX4.71及以上版本，HBuilderX4.71以下版本为横竖屏自适应显示），对应原生工程的Info.plist值如下  
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+  <plist version="1.0">
+    <dict>
+      <key>UISupportedInterfaceOrientations~iphone</key>
+      <array>
+        <string>UIInterfaceOrientationPortrait</string>
+      </array>
+    </dict>
+  </plist>
+  ```
+
+- iPad  
+  默认值为横竖屏自适应，对应原生工程的Info.plist值如下
+  ```xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+  <plist version="1.0">
+    <dict>
+      <key>UISupportedInterfaceOrientations~ipad</key>
+      <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+      </array>
+    </dict>
+  </plist>
+  ```
+
+
 
 ## 可选模块配置 @modules
 
