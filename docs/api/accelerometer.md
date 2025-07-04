@@ -4,6 +4,8 @@
 
 <!-- UTSAPIJSON.onAccelerometerChange.compatibility -->
 
+App平台请搜索[插件市场](https://ext.dcloud.net.cn/search?q=%E9%99%80%E8%9E%BA%E4%BB%AA&orderBy=Relevance&uni-appx=1&uni-app-platforms=&uni-app-x-platforms=)
+
 <!-- UTSAPIJSON.onAccelerometerChange.param -->
 
 <!-- UTSAPIJSON.onAccelerometerChange.returnValue -->
