@@ -1134,6 +1134,7 @@ uvue代码
   export default {
     data() {
       return {
+        cbText: "" as string,  
         text: '',
         callback: [] as Any[]
       }
@@ -1212,6 +1213,15 @@ uvue代码
 uts代码
 
 ```ts
+import Bundle from "android.os.Bundle"  
+import KeyEvent from "android.view.KeyEvent"  
+import WindowManager from "android.view.WindowManager"   
+import Menu from "android.view.Menu"  
+import ActionMode from "android.view.ActionMode"  
+import Configuration from "android.content.res.Configuration"  
+import KeyboardShortcutGroup from "android.view.KeyboardShortcutGroup";  
+
+
 let callback : (eventLog : string) => void = (res) => { };
 
 export function onCallbackChange(fn : (eventLog : string) => void) {
