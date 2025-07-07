@@ -1,3 +1,11 @@
+#### 4.75.2025070414-alpha
+##### uni-app x
+* Android平台 修复 组件 text 优化部分text嵌套时行高不正确的情况 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=7529)
+* Android平台 修复 API uni.getBackgroundAudioManager 可能会重复下载音乐封面图 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19233)
+* iOS平台 修复 组件 video 播放 m3u8 大部分情况没有声音 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17292)
+* 鸿蒙平台 修复 组件 web-view 没有给定默认高度的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19014)
+* 鸿蒙平台 修复 组件 rich-text 当内容包含 "#" 时，"#" 后内容不解析的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19320)
+
 #### 4.74.2025063012-alpha
 ##### uni-app x
 * Android平台 修复 4.72版本引发的 vue getCurrentInstance().proxy.$page获取当前页面，某些时机报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17704)
