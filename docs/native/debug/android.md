@@ -41,6 +41,8 @@
 注意：
 - 如果android原生项目的drawable目录下不存在名称为icon的图片，需要临时先补充一个命名为icon的文件。
 - 当build.gradle中的`targetSdk`为34时，在安卓14设备上资源同步会失败。建议将`targetSdk`调整到30至33之间。
+- 当前模块仅为调试使用，发行版本请删除上面的配置。
+- 如果发行版本显示`正在加载调试框架...`或`Loading debugging framework...`，请删除上面的调试模块配置。
 
 ## 方案1：把宿主应用打包为HBuilderX的自定义基座。
 

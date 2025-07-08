@@ -1,3 +1,19 @@
+#### 4.75.2025070414-alpha
+##### uni-app x
+* Android平台 修复 组件 text 优化部分text嵌套时行高不正确的情况 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=7529)
+* Android平台 修复 API uni.getBackgroundAudioManager 可能会重复下载音乐封面图 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19233)
+* iOS平台 修复 组件 video 播放 m3u8 大部分情况没有声音 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17292)
+* 鸿蒙平台 修复 组件 web-view 没有给定默认高度的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19014)
+* 鸿蒙平台 修复 组件 rich-text 当内容包含 "#" 时，"#" 后内容不解析的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19320)
+
+#### 4.74.2025063012-alpha
+##### uni-app x
+* Android平台 修复 4.72版本引发的 vue getCurrentInstance().proxy.$page获取当前页面，某些时机报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=17704)
+* Android平台 修复 4.71版本引发的 组件 rich-text mode 为 web 时暗黑模式下可能显示异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19239)
+* Android平台 修复 4.73版本引发的 组件 input 遮挡时上推高度异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19211)
+* Android平台 修复 API dialogPage tabBar 页面 showDialogPage，切换 tabBar 后 dialogPage 无法关闭 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=16059)
+* Android平台 修复 4.73版本引发的 API uni.loadFontFace loadFontFace 失败问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=19214)
+
 #### 4.73.2025062714-alpha
 ##### uni-app x
 * Web平台、Android平台 修复 API dialogPage .route 路径格式错误问题 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=18727)
