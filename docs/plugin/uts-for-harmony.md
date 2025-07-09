@@ -10,7 +10,7 @@
 
 uni-app的普通页面代码是编译为js，js无法直接调用鸿蒙原生API。而uts插件是编译为ets文件，所以可以调用鸿蒙原生API。（ArkTS的文件后缀为.ets）
 
-uni-app x是编译为ArkTS，不管在普通页面还是在uts插件中均可调用鸿蒙原生API。
+uni-app x的页面和uts插件，都运行在ArkTS引擎下，不管在普通页面还是在uts插件中均可调用鸿蒙原生API。但普通页面目前会编译js文件，运行在arkts引擎下的js不能调用@kit的库，不能使用多线程能力。完善的ets能力，需要在uts插件中才能使用。
 
 只有uts插件才支持混编ets。
 
