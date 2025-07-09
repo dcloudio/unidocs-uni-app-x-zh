@@ -114,21 +114,48 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 #### 配置启动界面背景颜色：  
 
-可选配置，默认白色
+可选配置，默认白色。系统设置为暗黑模式时默认为黑色。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_bg.png)
 
-#### 配置启动界面中部logo图标：  
+#### 配置启动界面中部Logo图标：  
 
-可选配置，默认应用启动图标
+可选配置，默认为应用启动图标。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_logo.png)
 
+- 带有图标背景的Logo图标  
+  Logo图标尺寸必须为 240×240 dp，并且位于直径 160 dp 的圆圈内  
+  ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_logo_dim.png)  
+  对应以下密度屏幕的分辨率：
+  + xhdpi（320dpi）  
+    Logo图标分辨率为 480x480 px，并且位于直径 320 px 的圆圈内  
+  + xxhdpi（480dpi）  
+    Logo图标分辨率为 720x720 px，并且位于直径 480 px 的圆圈内  
+  + xxxhdpi（640dpi）  
+    Logo图标分辨率为 920x920 px，并且位于直径 640 px 的圆圈内  
+
+- 无图标背景的Logo图标  
+  Logo图标尺寸必须为 288×288 dp，并且位于直径 192 dp 的圆圈内  
+  ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_logo_trandim.png)  
+  对应以下密度屏幕的分辨率：
+  + xhdpi（320dpi）  
+    Logo图标分辨率为 576x576 px，并且位于直径 384 px 的圆圈内  
+  + xxhdpi（480dpi）  
+    Logo图标分辨率为 864x864 px，并且位于直径 576 px 的圆圈内  
+  + xxxhdpi（640dpi）  
+    Logo图标分辨率为 1152x1152 px，并且位于直径 768 px 的圆圈内  
+
+> 如需适配使用分辨率的设备，可在项目 nativeResources -> android -> res 目录下添加对应 drawable 目录，放置名称为 `uniappx_splashscreen_icon.png` 的Logo图标  
+
 #### 配置启动界面底部品牌图标：  
 
-可选配置，默认底部不显示品牌图标
+可选配置，默认底部不显示品牌图标。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_brand.png)
+
+> 如需适配使用分辨率的设备，可在项目 nativeResources -> android -> res 目录下添加对应 drawable 目录，放置名称为 `uniappx_splashscreen_brand.png` 的品牌图标  
+
 
 **Tips**
 
@@ -149,11 +176,11 @@ Splash是因为主界面渲染慢，给用户一个等待过渡。但注意复�
 2. 如需要splash
 
 那么首先需要配置启动图，确保不支持SplashScreen的手机上显示这个启动图。\
-然后Google SplashScreen配置中配置背景色、居中图标和底图，在支持SplashScreen的手机上，启动封面会变成这个效果。
+然后Google SplashScreen配置中配置背景色、居中Logo图标和底部品牌图标，在支持SplashScreen的手机上，启动封面会变成这个效果。
 
 3. 如只配启动图会怎么样？
 
-在不支持SplashScreen的手机上，会显示启动图；在支持SplashScreen的手机上，不会显示启动图，而是会显示白底背景+居中应用图标。
+在不支持SplashScreen的手机上，会显示启动图；在支持SplashScreen的手机上，不会显示启动图，而是会显示白底（暗黑模式显示黑底）背景+居中应用图标。
 
 4. 如只配置SplashScreen会怎么样？
 
