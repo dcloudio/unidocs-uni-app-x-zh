@@ -16,6 +16,8 @@
 
 <!-- UTSAPIJSON.onKeyboardHeightChange.description -->
 
+在input和textarea组件上也有事件用于监听键盘高度变化。本API为全局API，可以全局监听键盘弹出收起和高度变化，尤其是App内嵌web-view中的键盘变化，无法在组件上监听，只能使用本API全局监听。
+
 <!-- UTSAPIJSON.onKeyboardHeightChange.compatibility -->
 
 <!-- UTSAPIJSON.onKeyboardHeightChange.param -->
