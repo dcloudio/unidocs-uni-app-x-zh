@@ -122,9 +122,9 @@ web-view组件有跨域问题，服务器网页的跨域问题属于常规web开
 
 uni-app x中，web-view组件在鸿蒙上**默认**配置为允许跨域访问 App包资源。
 
-所以，默认情况下，**web-view访问应用沙盒文件会报跨域错误**。
+所以，默认情况下，**web-view访问应用沙盒文件会报不允许访问**。
 
-如果开发者需要访问应用沙盒，需要用如下代码对web-view切换设置：
+- 如果开发者需要访问应用沙盒，需要用如下代码对web-view切换设置：
 
 ```ts
 // 获取web-view组件对应的鸿蒙原生Controller
@@ -133,7 +133,7 @@ const webviewController = uni.getElementById(elementId)?.getHarmonyController() 
 webviewController?.setPathAllowingUniversalAccess([])
 ```
 
-上述修改将允许该web-view访问应用沙箱目录，但会造成该web-view无法再访问 App包资源。如需再访问 App 资源（如项目 static 文件夹内容），需要再调用如下代码切换：
+- 上述修改将允许该web-view访问应用沙箱目录，但会造成该web-view无法再访问 App包资源。如需再访问 App 资源（如项目 static 文件夹内容），需要再调用如下代码切换：
 ```ts
 const webviewController = uni.getElementById(elementId)?.getHarmonyController() as webview.WebviewController | null
 
