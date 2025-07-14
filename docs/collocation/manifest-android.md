@@ -118,6 +118,9 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_bg.png)
 
+**注意**  
+HBuilderX4.75及以上版本，如果没有配置启动图，配置启动界面背景颜色在Android12以下设备生效；如果配置启动图则背景颜色仅在Android12及以上设备生效。  
+
 #### 配置启动界面中部Logo图标：  
 
 可选配置，默认为应用启动图标。
@@ -146,7 +149,7 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
   + xxxhdpi（640dpi）  
     Logo图标分辨率为 1152x1152 px，并且位于直径 768 px 的圆圈内  
 
-> 如需适配使用分辨率的设备，可在项目 nativeResources -> android -> res 目录下添加对应 drawable 目录，放置名称为 `uniappx_splashscreen_icon.png` 的Logo图标  
+> 如需适配其它分辨率设备，可在项目 nativeResources -> android -> res 目录下添加对应 drawable 目录，放置名称为 `uniappx_splashscreen_icon.png` 的Logo图标  
 
 #### 配置启动界面底部品牌图标：  
 
@@ -154,7 +157,7 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_brand.png)
 
-> 如需适配使用分辨率的设备，可在项目 nativeResources -> android -> res 目录下添加对应 drawable 目录，放置名称为 `uniappx_splashscreen_brand.png` 的品牌图标  
+> 如需适配其它分辨率设备，可在项目 nativeResources -> android -> res 目录下添加对应 drawable 目录，放置名称为 `uniappx_splashscreen_brand.png` 的品牌图标  
 
 
 **Tips**
