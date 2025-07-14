@@ -394,7 +394,7 @@ easycom是uni-app提供的一种简化组件使用的方式。一般情况下组
 <!-- PAGESJSON.pages_uniIdRouter.compatibility -->
 
 
-### PagesSubPackages 配置项列表 @pagessubpackages
+### subPackages 配置项列表 @pagessubpackages
 
 分包加载配置，此配置为小程序的分包加载机制。详细教程[详见](https://uniapp.dcloud.net.cn/collocation/pages.html#subpackages)
 
