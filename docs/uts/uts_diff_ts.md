@@ -287,6 +287,41 @@ let o: O = { x: 2, y: 3 };
 type S = Set<O>;
 ```
 
+#### type 定义对象类型时不支持嵌套对象字面量 @UTS110111162
+
+级别：错误
+
+错误码：UTS110111162
+
+当使用 type 定义对象字面量类型时，不支持对象字面量嵌套。如果有嵌套需求，需要提取出来定义一个新的 type。
+
+TypeScript:
+
+```ts
+type News = {
+  id: number;
+  author: {
+    id: number;
+    name: string;
+  };
+};
+```
+
+UTS:
+
+```ts
+// 需要将嵌套的对象提取出来定义新的 type
+type Author = {
+  id: number;
+  name: string;
+};
+
+type News = {
+  id: number;
+  author: Author;
+};
+```
+
 #### 使用具体的类型而非 unknown @UTS110111122
 
 级别：错误
