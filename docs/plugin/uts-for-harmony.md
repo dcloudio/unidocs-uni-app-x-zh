@@ -154,6 +154,10 @@ utssdk/app-harmony/*.ets  -->  utssdk/app-harmony/*.ets
 utssdk/app-harmony/*.har  -->  utssdk/app-harmony/*.har
 ```
 
+## 使用ets文件
+
+uts插件内的ets文件会原样拷贝到产物内，如果需要开发arkui声明式界面可以在ets文件内编写，uts文件内引用。用法可参考文档：[uts插件-实现NativeButton对象](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-component-vue.html#utscode)
+
 ## 常见问题
 
 ### context的获取
