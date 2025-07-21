@@ -491,7 +491,7 @@ const theme = {
 3. 在组合式 API 中，必须保证所有函数和变量在调用前已定义，如顺序不对，要根据依赖关系调整函数定义顺序，避免未定义前调用。
 4. 在组合式 API 中，不需要 import 所有 vue 的 API 和 uni-app-x 的生命周期函数（如 `ref、computed、watch、onLoad、onMounted` 等），uni-app x 会自动引入。
 5. 在选项式 API 中的 `onShow、onHide` 页面生命周期，改为组合式 API 时，分别改成 `onPageShow、onPageHide`。
-6. 在组件生命周期兼容性方面，选项式 API 的 `beforeUnmount、mounted、unmounted`，改为组合式 API 时，分别改成 `onBeforeUnmount、onMounted、onUnmounted`，避免生命周期名称不一致；选项式的 created，改为 onMounted。
+6. 在组件生命周期兼容性方面，选项式 API 的 `beforeUnmount、mounted、unmounted`，改为组合式 API 时，分别改成 `onBeforeUnmount、onMounted、onUnmounted`，避免生命周期名称不一致；选项式 API 的 created 改为组合式的 `<script setup>` 顶层代码直接执行。
 7. 在使用 ref 时
 - 如果引用内置组件（例如：scroll-view、swiper、slider等），类型应为：Uni组件名(驼峰)Element，例如 `<slider>` 组件类型为 `UniSliderElement`，声明为 `const sliderRef = ref<UniSliderElement | null>(null)`；避免类型错误，错误示例：swiper上的ref写成了`const swiper = ref<UniElement|null>(null)`。
 - 如果引用内置 DOM 元素（例如：view、text），类型为 `ref<UniElement|null>(null)` 或 `ref<UniElement[]|null>(null)`；
