@@ -114,12 +114,32 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 #### 配置启动界面背景颜色：  
 
-可选配置，默认白色。系统设置为暗黑模式时默认为黑色。
+可选配置，默认白色。系统设置为暗色模式时默认为黑色。
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_bg.png)
 
-**注意**  
+**适配暗色模式**  
+可单独设置暗色模式下的启动界面背景色。如果仅设置了默认背景色，则暗黑模式下也使用默认背景色。  
+
+- HBuilderX 4.75 及以上版本  
+  可通过`源码视图`在 "app-android" -> "distribute" -> "splashScreens" 下添加 "background@night" 节点，如下示例：  
+  ```json
+  {
+    "app-android": {
+      "distribute": {
+        "splashScreens": {
+          "background@night": "#000000"
+        }
+      }
+    }
+  }
+  ```
+
+
+::: warning 注意事项
+
 HBuilderX4.75及以上版本，如果没有配置启动图，配置启动界面背景颜色在Android12以下设备生效；如果配置启动图则背景颜色仅在Android12及以上设备生效。  
+:::
 
 #### 配置启动界面中部Logo图标：  
 
