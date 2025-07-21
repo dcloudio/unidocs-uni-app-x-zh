@@ -19,3 +19,6 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+## Bug & Tips @tips
+- app-android平台，受系统限制，通过frontColor修改状态栏前景色仅在Android6.0及以上版本生效。
