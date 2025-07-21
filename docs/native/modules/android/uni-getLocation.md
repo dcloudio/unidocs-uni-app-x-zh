@@ -32,7 +32,7 @@ defaultConfig {
 
 ```groovy
 dependencies {
-    "com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.5.4.8"
+    implementation "com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.5.4.8"
 }
 ```
 

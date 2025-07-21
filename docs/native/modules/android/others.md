@@ -50,21 +50,49 @@
 
 将上表中的线上依赖库添加到app模块的build.gradle中。以`uni-network`为例，参考：
 
+::: preview
+
+> build.gradle
+
 ```groovy
 	dependencies {
 		implementation 'com.squareup.okhttp3:okhttp:3.12.12'
 	}
 ```
 
+> build.gradle.kts
+
+```groovy
+	dependencies {
+		implementation("com.squareup.okhttp3:okhttp:3.12.12")
+	}
+```
+
+:::
+
 ### 插件注册
 
 将上表中的`插件注册信息`拷贝到build.gradle的defaultConfig节点下。以`uni-previewImage`为例，参考
+
+::: preview
+
+> build.gradle
 
 ```groovy
 defaultConfig {
     buildConfigField 'String', 'UTSEasyCom', '\"[{\\\"class\\\":\\\"uts.sdk.modules.DCloudUniPreviewImage.UniPreviewImageExtApiPagesRegister\\\",\\\"method\\\":\\\"register\\\"}]\"'
 }
 ```
+
+> build.gradle.kts
+
+```groovy
+defaultConfig {
+    buildConfigField("String", "UTSEasyCom", "\"[{\\\"class\\\":\\\"uts.sdk.modules.DCloudUniPreviewImage.UniPreviewImageExtApiPagesRegister\\\",\\\"method\\\":\\\"register\\\"}]\"")
+}
+```
+
+:::
 
 ## 其他模块
 
@@ -81,11 +109,25 @@ defaultConfig {
 
 将以下内容添加到主模块的build.gradle，详见[根据configjson配置应用](../../use/androiduts.md#utscomponents)。
 
+::: preview
+
+> build.gradle
+
 ```groovy
 defaultConfig {
     buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"canvas\\\",\\\"class\\\":\\\"io.dcloud.canvas.CanvasComponent\\\",\\\"node\\\":\\\"io.dcloud.canvas.UniCanvasElementImpl\\\"}]\""
 }
 ```
+
+> build.gradle.kts
+
+```groovy
+defaultConfig {
+    buildConfigField("String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"canvas\\\",\\\"class\\\":\\\"io.dcloud.canvas.CanvasComponent\\\",\\\"node\\\":\\\"io.dcloud.canvas.UniCanvasElementImpl\\\"}]\"")
+}
+```
+
+:::
 
 [uni-ad](/native/modules/android/uni-ad.md)
 

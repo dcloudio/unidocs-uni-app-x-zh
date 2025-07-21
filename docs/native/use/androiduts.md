@@ -206,18 +206,45 @@ dependencies {
 	+ **uni-app x**
 
 		components 为uts组件的注册信息。需要将components对应的内容添加到主模块的build.gradle。参考配置：
+		
+		::: preview
+		
+		> build.gradle
 	
 		```groovy
 		defaultConfig {
 			buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"zl-text\\\",\\\"class\\\":\\\"uts.sdk.modules.zlText.ZlTextComponent\\\"}]\""
 		}
 		```
+		
+		> build.gradle.kts
+
+		```groovy
+		defaultConfig {
+			buildConfigField("String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"zl-text\\\",\\\"class\\\":\\\"uts.sdk.modules.zlText.ZlTextComponent\\\"}]\"")
+		}
+		```
+		
+		:::
 	
 		如果主模块的build.gradle已经存在UTSRegisterComponents，需要将现有配置与原有配置合并。参考：
+		
+		::: preview
+		
+		> build.gradle
 	
 		```groovy
 		buildConfigField "String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"zl-a\\\",\\\"class\\\":\\\"zlA.ZlAComponent\\\"},{\\\"name\\\":\\\"zl-text\\\",\\\"class\\\":\\\"uts.sdk.modules.zlText.ZlTextComponent\\\"}]\""
 		```
+		
+		> build.gradle.kts
+
+		```groovy
+		buildConfigField("String", "UTSRegisterComponents", "\"[{\\\"name\\\":\\\"zl-a\\\",\\\"class\\\":\\\"zlA.ZlAComponent\\\"},{\\\"name\\\":\\\"zl-text\\\",\\\"class\\\":\\\"uts.sdk.modules.zlText.ZlTextComponent\\\"}]\"")
+		```
+		
+		:::
+		
 	
 		**注意：转义符不能删掉，格式一定严格一致。**
 	
@@ -245,19 +272,47 @@ dependencies {
 	
 	需要将hooksClass对应的内容添加到主模块的build.gradle中。参考配置
 	
+	::: preview
+	
+	> build.gradle
+	
 	```groovy
 	defaultConfig {
 		buildConfigField 'String[]', 'UTSHooksClassArray', '{\"uts.sdk.modules.zlText.ZlTextHook\"}'
 	}
 	```
 	
+	> build.gradle.kts
+	
+	```groovy
+	defaultConfig {
+		buildConfigField("String[]", "UTSHooksClassArray", "\"{\\\"uts.sdk.modules.zlText.ZlTextHook\\\"}\"")
+	}
+	```
+	
+	:::
+	
 	如果主模块的build.gradle已经存在UTSHooksClassArray，需要将现有配置与原有配置合并。参考：
+	
+	::: preview
+	
+	> build.gradle
 	
 	```groovy
 	defaultConfig {
 		buildConfigField 'String[]', 'UTSHooksClassArray', '{\"uts.sdk.modules.zlText.ZlTextHook\",\"uts.sdk.modules.zla.ZLAHook\"}'
 	}
 	```
+	
+	> build.gradle.kts
+
+	```groovy
+	defaultConfig {
+		buildConfigField("String[]", "UTSHooksClassArray", "{\"uts.sdk.modules.zlText.ZlTextHook\",\"uts.sdk.modules.zla.ZLAHook\"}")
+	}
+	```
+	
+	:::
 	
 	**注意：转义符不能删掉，格式一定严格一致。**
 	
@@ -303,6 +358,11 @@ dependencies {
 ### 添加到主项目
 
 将android uts插件模块的依赖添加到主模块和`uniappx`模块的build.gradle的依赖中
+
+::: preview
+
+> build.gradle
+
 ```groovy
 dependencies {
     ...
@@ -311,4 +371,12 @@ dependencies {
 }
 ```
 
+> build.gradle.kts
 
+```groovy
+dependencies {
+    ...
+	// uts-progressNotification为示例，实际中你需要将uts-progressNotification替换成自己的模块名称
+	implementation(project(":uts-progressNotification"))
+}
+```
