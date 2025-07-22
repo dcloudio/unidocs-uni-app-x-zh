@@ -1,11 +1,9 @@
 ## 集成/制作DCloudUTSExtAPI
-> 参考demo中的DCloudUTSExtAPI工程
 
 ### 新建原生工程
 1. 启动`Xcode`，点击`File->New->Project`，选择`Framework`点击`Next`
-2. `Product Name`中填写`DCloudUTSExtAPI`，`Language`选择为`Objective-C`，点击`Next`即可完成创建
+2. `Product Name`中填写`DCloudUTSExtAPI`，点击`Next`即可完成创建
 
-> 你可以选择新建工程或直接使用demo中的`DCloudUTSExtAPI`工程
 
 ### 工程环境设置
 `Target -> General -> Minimum Deployments` 选择 `12.0`  
