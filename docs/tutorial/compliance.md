@@ -1,6 +1,6 @@
 # uni-app x 开发者应用合规指南  
 
-> 更新日期：2025年7月9日  
+> 更新日期：2025年7月23日  
 
 感谢开发者（以下简称“您”）选择使用 uni-app x 产品及相关服务开发跨平台应用（以下简称"App"或"应用"）。
 
@@ -9,8 +9,9 @@
 数字天堂（北京）网络技术有限公司（以下简称"DCloud"或"我们"）高度重视个人信息安全和保护，将适时升级迭代 uni-app x 相关开发工具以提升产品的安全性和稳定性，确保符合相关法律法规及、监管及标准的最新合规要求。强烈建议您升级使用最新版本 uni-app x 开发工具，以便保障您正常使用最新功能、避免因您更新不及时产生的不利影响。为帮助您更好地理解监管要求，规范使用 uni-app x 开发应用的个人信息收集与使用行为，避免因违规操作导致法律风险，特制定本《开发者应用合规指南》（以下简称“指南”）。本指南结合现行法律法规及行业实践，针对应用开发、集成第三方SDK、数据存储与传输等场景提供合规建议，供参考。
 
 
+
 ## App个人信息保护的合规要求  
-首先需制定一份《隐私政策》，并确保在应用界面中显著位置展示。
+首先需制定一份《隐私政策》，并确保在应用界面中显著位置展示。  
 
 ### 基本要求  
 您需根据法律要求以自身名义发布《隐私政策》，并就个人信息的处理行为获取用户同意或取得其他合法性基础。《隐私政策》的要求包括不限于如下：  
@@ -353,16 +354,33 @@ App一键登录为了支持“中国移动”运行商，要用到“移动账�
 >   + 第三方主体： 杭州阿里云智能科技有限公司  
 >   + 隐私政策链接： [金融级实人认证SDK隐私权政策](https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202107281509_18386.html)  
 
+::: warning 注意事项
+
+如果项目中包含的 [uts插件](../plugin/uts-plugin.md) 中使用了三方SDK涉及到采集数据，也需要添加到隐私政策中。  
+:::
+
 
 ### 《隐私政策》示例
 
 hello uni-app x 模板应用已有完整的示例《隐私政策》，可参考[hello uni-app x隐私政策](https://dcloud.io/license/hello-uni-app-x.html)。
 
 
-## 展示《隐私政策》  
-制定《隐私政策》后，应用首次启动或用户注册时，必须通过​​弹窗​​等显著方式提示用户阅读《隐私政策》，并提供“同意”与“拒绝”两个明确选项（拒绝按钮不可隐藏或弱化），通常可以在应用的“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框中与“用户协议”一起进行展示。
 
-### uvue页面实现提示框  
+## 展示《隐私政策》提示框  
+制定《隐私政策》后，应用首次启动或使用涉及采集个人信息的功能时，必须通过​​弹窗​​等显著方式提示用户阅读《隐私政策》，并提供“同意”与“拒绝”两个明确选项（拒绝按钮不可隐藏或弱化），通常可以在应用的“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框中与“用户协议”一起进行展示。  
+
+- 上架国内应用市场  
+  建议在应用启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）。用户“同意”才允许使用应用完整的功能；“不同意”则运行在`游客模式`下，用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）引导用户“同意”后才能继续使用。如果应用的基础功能必须要求用户“同意”《隐私政策》，则在用户点击“不同意”时弹出提示说明，用户确认后调用 [uni.exit](../api/exit.md) 退出应用。  
+
+- 上架Google Play 
+  Google Play应用市场并不强制要求应用在启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），只要求用户使用涉及采集个人信息的功能前弹出说明征求用户同意即可。如果应用要同时上架国内和Google Play应用市场，则建议在应用启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），使用统一逻辑减少维护成本；如果应用只上架到Google Play应用市场则建议在用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），用户“同意”后则继续使用相关功能，“不同意”则不能使用此功能。
+
+- 上架 App Store  
+  提交到中国区的应用与`上架国内应用市场`一致；上架到非中国区的应用建议在用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），用户“同意”后则继续使用相关功能，“不同意”则不能使用此功能。  
+  注意：用户“不同意”时不能使用 [uni.exit](../api/exit.md) 退出应用，只能提示用自己关闭应用。  
+
+
+### uvue页面实现《隐私政策》提示框  
 
 可通过uvue页面来实现“个人信息保护指引”，注意以下事项：
 - 页面根 view 背景为透明色来实现弹框遮罩效果，参考示例中的"dialog-container"样式  
@@ -501,10 +519,10 @@ hello uni-app x 模板应用已有完整的示例《隐私政策》，可参考[
 </style>
 ```
 
-### 应用中展示隐私政策  
+### 应用中展示《隐私政策》提示框  
 
 #### App首次启动时展示  
-在应用的 [onLaunch](../collocation/app.md#onlaunch) 生命周期中通过[uni.getPrivacySetting](../api/privacy.md#getprivacysetting)判断用户是否已经同意隐私政策，如果没有同意则通过[uni.openDialogPage](../api/dialog-page.md#opendialogpage)弹出提示框，否则跳过。
+在应用的 [onLaunch](../collocation/app.md#onlaunch) 生命周期中调用 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 判断用户是否已经同意隐私政策，如果没有同意则通过 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框，否则跳过。
 
 示例代码如下：
 ```uts
@@ -531,14 +549,74 @@ hello uni-app x 模板应用已有完整的示例《隐私政策》，可参考[
 
 ```
 
-**注意**  
-展示《隐私政策》页面并不会阻塞应用打开首页，在页面逻辑中需要通过[uni.getPrivacySetting](../api/privacy.md#getprivacysetting)判断用户是否同意隐私政策，如果没有同意则不要调用采集个人信息相关的API或插件。
+::: warning 注意事项
 
+展示《隐私政策》页面并不会阻塞应用打开首页，页面中需要通过 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 判断用户是否同意隐私政策，如果没有同意则不要调用采集个人信息相关的API、组件及uts插件，详情参考 [同意《隐私政策》前不能调用的API](#unprivacyapi) 及 [同意《隐私政策》前不能使用的组件](#unprivacycomponent)。  
+:::
 
 #### 进入App主界面后展示  
-用户进入App主界面后，​​不超过4次点击​​即可访问隐私政策，且路径固定（如“设置-隐私政策”）。
+用户进入App主界面后，​​需提供入口查看《隐私政策》，不超过4次点击​​即可访问，且路径固定（如“设置-隐私政策”）。
 
 可使用uts插件 [uts-openSchema](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/alpha/uni_modules/uts-openSchema) 的 openSchema 方法实现点击《隐私政策》打开链接。
+
+
+## 应用首页合规要求  
+
+App首次启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框时，不会阻塞应用加载 [page.json](../collocation/pagesjson.md) 页面，因此需要在首页调用 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 判断用户是否已经“同意”《隐私政策》，如果用户没有同意，不能使用涉及个人信息的 API 及 组件，也不能使用涉及个人信息的[uts插件](../plugin/uts-plugin.md)。  
+
+### 同意《隐私政策》前不能调用的API @unprivacyapi  
+以下 API 会实际使用个人信息，不应该在“同意”《隐私政策》前调用以下API：  
+- 设备  
+  + 获取系统信息：[uni.getSystemInfo](../api/get-system-info.md#getsysteminfo)、[uni.getSystemInfoSync](../api/get-system-info.md#getsysteminfosync)  
+  + 获取设备信息：[uni.getDeviceInfo](../api/get-device-info.md#getdeviceinfo)  
+  + 剪切板：[uni.getClipboardData](../api/clipboard.md#getclipboarddata)、[uni.setClipboardData](../api/clipboard.md#setclipboarddata)  
+  + Wifi：[uni.startWifi](../api/wifi.md#startwifi)、[uni.stopWifi](../api/wifi.md#stopwifi)、[uni.connectWifi](../api/wifi.md#connectwifi)、[uni.getWifiList](../api/wifi.md#getwifilist)、[uni.onGetWifiList](../api/wifi.md#ongetwifilist)、[uni.offGetWifiList](../api/wifi.md#offgetwifilist)、[uni.getConnectedWifi](../api/wifi.md#getconnectedwifi)、[uni.onWifiConnected](../api/wifi.md#onwificonnected)、[uni.onWifiConnectedWithPartialInfo](../api/wifi.md#onwificonnectedwithpartialinfo)、[uni.offWifiConnected](../api/wifi.md#offwificonnected)  
+  + 扫码：[uni.scanCode](../api/scan-code.md#scancode)  
+- 网络  
+  + 获取网络类型：[uni.getNetworkType](../api/get-network-type.md#getnetworktype)  
+  + 监听网络状态变化：[uni.onNetworkStatusChange](../api/network-status-change.md#onnetworkstatuschange)、[uni.offNetworkStatusChange](../api/network-status-change.md#offnetworkstatuschange)  
+- 媒体
+  + 拍照或从相册选择图片：[uni.chooseImage](../api/choose-image.md#chooseimage)  
+  + 保存图片到相册：[uni.saveImageToPhotosAlbum](../api/save-image-to-photos-album.md#saveimagetophotosalbum)  
+  + 拍摄视频或从相册中选视频：[uni.chooseVideo](../api/choose-video.md#choosevideo)  
+  + 保存视频到相册：[uni.saveVideoToPhotosAlbum](../api/save-video-to-photos-album.md#saveVideoToPhotosAlbum)  
+  + 拍摄或从相册中选择图片或视频：[uni.chooseMedia](../api/choose-media.md#choosemedia)  
+  + 录音：[uni.getRecorderManager](../api/get-recorder-manager.md)  
+- 位置  
+  + 获取当前位置：[uni.getLocation](../api/get-location.md#getlocation)  
+  + 使用地图查看位置：[uni.openLocation](../api/open-location.md#openlocation)  
+  + 使用地图选择位置：[uni.chooseLocation](../api/choose-location.md#chooselocation)  
+  + 位置更新：[uni.onLocationChange](../api/location-change.md#onlocationchange)、[uni.offLocationChange](../api/location-change.md#offlocationchange)、[uni.onLocationChangeError](../api/location-change.md#onlocationchange)、[uni.offLocationChangeError](../api/location-change.md#offlocationchange)、[uni.startLocationUpdate](../api/location-change.md#startlocationupdate)、[uni.stopLocationUpdate](../api/location-change.md#stoplocationupdate)、[uni.startLocationUpdateBackground](../api/location-change.md#startlocationupdatebackground)  
+- 登录与认证  
+  + App一键登录：[uni.getUniVerifyManager](../api/get-univerify-manager.md#getuniverifymanager)  
+  + 金融级实人认证：[uni.getFacialRecognitionMetaInfo](../api/facial-recognition-meta-info.md#getfacialrecognitionmetainfo)、[uni.startFacialRecognitionVerify](../api/facial-recognition-meta-info.md#startfacialrecognitionverify)  
+- 广告  
+  + 开屏广告：不涉及API使用，用户同意《隐私政策》后才会显示  
+  + 激励视频广告：[uni.createRewardedVideoAd](../api/create-rewarded-video-ad.md#createrewardedvideoad)  
+  + 插屏广告：[uni.createInterstitialAd](../api/create-interstitial-ad.md#createinterstitialad)  
+- 支付  
+  + 请求支付：[uni.requestPayment](../api/request-payment.md#requestpayment)  
+  + 转账确认收款：[uni.requestMerchantTransfer](../api/request-merchant-transfer.md#requestmerchanttransfer)  
+- 推送  
+  + push：[uni.getPushClientId](../api/uni-push.md#getpushclientid)、[uni.onPushMessage](../api/uni-push.md#onpushmessage)、[uni.offPushMessage](../api/uni-push.md#offpushmessage)、[uni.createPushMessage](../api/uni-push.md#createpushmessage)、[uni.getPushChannelManager](../api/uni-push.md#getpushchannelmanager)、[uni.setAppBadgeNumber](../api/uni-push.md#setappbadgenumber)、[uni.getChannelManager](../api/uni-push.md#getchannelmanager)  
+
+### 同意《隐私政策》前不能使用的组件 @unprivacycomponent  
+- 媒体  
+  + camera|相机：[camera](../component/camera.md#camera)  
+- 地图  
+  + map|地图：[map](../component/map.md#map)  
+- 广告  
+  + ad|信息流广告：[ad](../component/ad.md#ad)  
+- 网页  
+  + web-view：[web-view](../component/web-view.md#web-view)  
+
+
+## 实现`游客模式`合规要求  
+
+如果用户启动应用后“不同意”《隐私政策》也允许继续使用，则需要实现`游客模式`。
+
+`游客模式`需明确应用功能边界，​​仅限基础浏览或试用，不应提供需用户注册、登录或涉及用户敏感信息的核心功能。若涉及访问个人信息数据（如位置、设备信息等），需明确说明并弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框，引导用户“同意”《隐私政策》后才能继续使用。  
+
 
 
 ## 合规文件指引  
