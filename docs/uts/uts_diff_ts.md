@@ -149,9 +149,11 @@ console.log(person2.name);
 
 TS 开发者一般都熟悉使用 interface 来声明类型，UTS 中改为 type 即可。但不熟悉 TS 的开发者，务必需要详细了解[UTSJSONObject](./data-type.md#UTSJSONObject)和[type](./data-type.md#type自定义类型)
 
-#### 对象字面量仅支持构造 type 定义的对象类型，不支持 interface
+#### 对象字面量仅支持构造 type 定义的对象类型，不支持 interface @UTS110111163
 
-级别：提示
+级别：错误
+
+错误码：UTS110111163
 
 ts 中可以通过 interface 或 type 声明对象字面量的类型。
 
