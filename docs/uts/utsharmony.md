@@ -1,8 +1,22 @@
 # UTSHarmony
 
 
-## 静态方法
+## 实例方法
 
+
+### convert2AbsFullPath(filePath)
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.description -->
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.param -->
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.returnValue -->
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.test -->
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.compatibility -->
+
+<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.tutorial -->
 
 ### devicePX2px(px)
 
@@ -32,6 +46,20 @@
 
 <!-- UTSJSON.UTSHarmony.exit.tutorial -->
 
+### getAppTheme()
+
+<!-- UTSJSON.UTSHarmony.getAppTheme.description -->
+
+<!-- UTSJSON.UTSHarmony.getAppTheme.param -->
+
+<!-- UTSJSON.UTSHarmony.getAppTheme.returnValue -->
+
+<!-- UTSJSON.UTSHarmony.getAppTheme.test -->
+
+<!-- UTSJSON.UTSHarmony.getAppTheme.compatibility -->
+
+<!-- UTSJSON.UTSHarmony.getAppTheme.tutorial -->
+
 ### getCurrentWindow()
 
 <!-- UTSJSON.UTSHarmony.getCurrentWindow.description -->
@@ -46,6 +74,34 @@
 
 <!-- UTSJSON.UTSHarmony.getCurrentWindow.tutorial -->
 
+### getOsTheme()
+
+<!-- UTSJSON.UTSHarmony.getOsTheme.description -->
+
+<!-- UTSJSON.UTSHarmony.getOsTheme.param -->
+
+<!-- UTSJSON.UTSHarmony.getOsTheme.returnValue -->
+
+<!-- UTSJSON.UTSHarmony.getOsTheme.test -->
+
+<!-- UTSJSON.UTSHarmony.getOsTheme.compatibility -->
+
+<!-- UTSJSON.UTSHarmony.getOsTheme.tutorial -->
+
+### getResourcePath(filePath)
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.description -->
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.param -->
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.returnValue -->
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.test -->
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.compatibility -->
+
+<!-- UTSJSON.UTSHarmony.getResourcePath.tutorial -->
+
 ### getUIAbilityContext()
 
 <!-- UTSJSON.UTSHarmony.getUIAbilityContext.description -->
@@ -59,6 +115,34 @@
 <!-- UTSJSON.UTSHarmony.getUIAbilityContext.compatibility -->
 
 <!-- UTSJSON.UTSHarmony.getUIAbilityContext.tutorial -->
+
+### offAppThemeChange(id)
+
+<!-- UTSJSON.UTSHarmony.offAppThemeChange.description -->
+
+<!-- UTSJSON.UTSHarmony.offAppThemeChange.param -->
+
+<!-- UTSJSON.UTSHarmony.offAppThemeChange.returnValue -->
+
+<!-- UTSJSON.UTSHarmony.offAppThemeChange.test -->
+
+<!-- UTSJSON.UTSHarmony.offAppThemeChange.compatibility -->
+
+<!-- UTSJSON.UTSHarmony.offAppThemeChange.tutorial -->
+
+### offOsThemeChange(id)
+
+<!-- UTSJSON.UTSHarmony.offOsThemeChange.description -->
+
+<!-- UTSJSON.UTSHarmony.offOsThemeChange.param -->
+
+<!-- UTSJSON.UTSHarmony.offOsThemeChange.returnValue -->
+
+<!-- UTSJSON.UTSHarmony.offOsThemeChange.test -->
+
+<!-- UTSJSON.UTSHarmony.offOsThemeChange.compatibility -->
+
+<!-- UTSJSON.UTSHarmony.offOsThemeChange.tutorial -->
 
 ### onAppAbilityCreate(callback)
 
@@ -116,6 +200,34 @@
 
 <!-- UTSJSON.UTSHarmony.onAppAbilityWindowStageCreate.tutorial -->
 
+### onAppThemeChange(callback)
+
+<!-- UTSJSON.UTSHarmony.onAppThemeChange.description -->
+
+<!-- UTSJSON.UTSHarmony.onAppThemeChange.param -->
+
+<!-- UTSJSON.UTSHarmony.onAppThemeChange.returnValue -->
+
+<!-- UTSJSON.UTSHarmony.onAppThemeChange.test -->
+
+<!-- UTSJSON.UTSHarmony.onAppThemeChange.compatibility -->
+
+<!-- UTSJSON.UTSHarmony.onAppThemeChange.tutorial -->
+
+### onOsThemeChange(callback)
+
+<!-- UTSJSON.UTSHarmony.onOsThemeChange.description -->
+
+<!-- UTSJSON.UTSHarmony.onOsThemeChange.param -->
+
+<!-- UTSJSON.UTSHarmony.onOsThemeChange.returnValue -->
+
+<!-- UTSJSON.UTSHarmony.onOsThemeChange.test -->
+
+<!-- UTSJSON.UTSHarmony.onOsThemeChange.compatibility -->
+
+<!-- UTSJSON.UTSHarmony.onOsThemeChange.tutorial -->
+
 ### requestSystemPermission(permissions, success?, fail?)
 
 <!-- UTSJSON.UTSHarmony.requestSystemPermission.description -->
@@ -130,30 +242,16 @@
 
 <!-- UTSJSON.UTSHarmony.requestSystemPermission.tutorial -->
 
-### convert2AbsFullPath(filePath)
+### setAppTheme(appTheme)
 
-<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.description -->
+<!-- UTSJSON.UTSHarmony.setAppTheme.description -->
 
-<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.param -->
+<!-- UTSJSON.UTSHarmony.setAppTheme.param -->
 
-<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.returnValue -->
+<!-- UTSJSON.UTSHarmony.setAppTheme.returnValue -->
 
-<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.test -->
+<!-- UTSJSON.UTSHarmony.setAppTheme.test -->
 
-<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.compatibility -->
+<!-- UTSJSON.UTSHarmony.setAppTheme.compatibility -->
 
-<!-- UTSJSON.UTSHarmony.convert2AbsFullPath.tutorial -->
-
-### getResourcePath(filePath)
-
-<!-- UTSJSON.UTSHarmony.getResourcePath.description -->
-
-<!-- UTSJSON.UTSHarmony.getResourcePath.param -->
-
-<!-- UTSJSON.UTSHarmony.getResourcePath.returnValue -->
-
-<!-- UTSJSON.UTSHarmony.getResourcePath.test -->
-
-<!-- UTSJSON.UTSHarmony.getResourcePath.compatibility -->
-
-<!-- UTSJSON.UTSHarmony.getResourcePath.tutorial -->
+<!-- UTSJSON.UTSHarmony.setAppTheme.tutorial -->
