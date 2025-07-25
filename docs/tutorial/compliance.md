@@ -1,6 +1,6 @@
 # uni-app x 开发者应用合规指南  
 
-> 更新日期：2025年7月23日  
+> 更新日期：2025年7月25日  
 
 感谢开发者（以下简称“您”）选择使用 uni-app x 产品及相关服务开发跨平台应用（以下简称"App"或"应用"）。
 
@@ -10,7 +10,7 @@
 
 
 
-## App个人信息保护的合规要求  
+## 个人信息保护的合规要求  
 首先需制定一份《隐私政策》，并确保在应用界面中显著位置展示。  
 
 ### 基本要求  
@@ -48,7 +48,7 @@ App在《隐私政策》中将收集个人信息的业务功能以及每个业�
 >   + 第三方主体： 数字天堂(北京)网络技术有限公司  
 >   + 隐私政策链接： [DCloud App引擎隐私政策](https://dcloud.io/license/appprivacy.html)
 
-如果应用使用了涉及其它三方SDK的功能模块时，也需要添加三方SDK采集数据说明，请根据应用实际使用情况参考以下说明添加三方SDK信息。
+如果应用使用了涉及其它三方SDK的功能模块时，也需要添加三方SDK采集数据说明，请根据应用实际使用情况参考以下列表添加对应的三方SDK信息。
 
 #### uni-AD原生广告 SDK  
 uni-ad相关业务要用到“uni-AD原生广告 SDK”。需在三方SDK采集数据说明中添加“uni-AD原生广告SDK”信息告知用户，参考以下示例：  
@@ -356,7 +356,7 @@ App一键登录为了支持“中国移动”运行商，要用到“移动账�
 
 ::: warning 注意事项
 
-如果项目中包含的 [uts插件](../plugin/uts-plugin.md) 中使用了三方SDK涉及到采集数据，也需要添加到隐私政策中。  
+如果项目中包含的 [uts插件](../plugin/uts-plugin.md) 中使用了三方SDK涉及到采集个人信息数据，也需要添加到隐私政策中。  
 :::
 
 
@@ -370,20 +370,23 @@ hello uni-app x 模板应用已有完整的示例《隐私政策》，可参考[
 制定《隐私政策》后，应用首次启动或使用涉及采集个人信息的功能时，必须通过​​弹窗​​等显著方式提示用户阅读《隐私政策》，并提供“同意”与“拒绝”两个明确选项（拒绝按钮不可隐藏或弱化），通常可以在应用的“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框中与“用户协议”一起进行展示。  
 
 - 上架国内应用市场  
-  建议在应用启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）。用户“同意”才允许使用应用完整的功能；“不同意”则运行在`游客模式`下，用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）引导用户“同意”后才能继续使用。如果应用的基础功能必须要求用户“同意”《隐私政策》，则在用户点击“不同意”时弹出提示说明，用户确认后调用 [uni.exit](../api/exit.md) 退出应用。  
+  建议在应用启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》。用户“同意”才允许使用应用完整的功能；“不同意”则运行在[游客模式](#tourist)下，用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）引导用户“同意”后才能继续使用。  
+  如果应用的基础功能必须要求用户“同意”《隐私政策》才能使用，则在用户点击“不同意”时弹出提示说明，用户确认后调用 [uni.exit](../api/exit.md) 退出应用。  
 
 - 上架Google Play 
-  Google Play应用市场并不强制要求应用在启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），只要求用户使用涉及采集个人信息的功能前弹出说明征求用户同意即可。如果应用要同时上架国内和Google Play应用市场，则建议在应用启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），使用统一逻辑减少维护成本；如果应用只上架到Google Play应用市场则建议在用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），用户“同意”后则继续使用相关功能，“不同意”则不能使用此功能。
+  Google Play应用市场并不强制要求应用在启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》，只要求用户使用涉及采集个人信息的功能前弹出说明征求用户同意即可。如果应用要同时上架国内和Google Play应用市场，则建议在应用启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），使用统一逻辑处理隐私政策减少维护成本；如果应用只上架到Google Play应用市场则建议在用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》，用户“同意”后则继续使用相关功能，“不同意”则不能使用此功能。
 
 - 上架 App Store  
-  提交到中国区的应用与`上架国内应用市场`一致；上架到非中国区的应用建议在用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），用户“同意”后则继续使用相关功能，“不同意”则不能使用此功能。  
+  提交到中国区的应用与`上架国内应用市场`一致；上架到非中国区的应用建议在用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》，用户“同意”后则继续使用相关功能，“不同意”则不能使用此功能。  
   注意：用户“不同意”时不能使用 [uni.exit](../api/exit.md) 退出应用，只能提示用自己关闭应用。  
 
 
 ### uvue页面实现《隐私政策》提示框  
 
-可通过uvue页面来实现“个人信息保护指引”，注意以下事项：
-- 页面根 view 背景为透明色来实现弹框遮罩效果，参考示例中的"dialog-container"样式  
+uni-app x 项目中可通过 uvue 页面来实现“个人信息保护指引”（或“用户协议和隐私政策概要”）界面，调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) API 弹框显示。  
+
+注意以下事项：
+- 页面根 view 的背景颜色设置为透明色来实现弹框遮罩效果，参考示例中的"dialog-container"样式  
 - 内容 view 使用圆角及不透明背景色来实现弹框效果，参考示例中的"dialog-content"样式  
 - 在 scroll-view 中使用 text 嵌套子 text 来显示《隐私政策》链接样式，参考示例中的"privacy-href"样式  
 - 在页面中使用uts插件 [uts-openSchema](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/alpha/uni_modules/uts-openSchema) 的 openSchema 方法实现点击《隐私政策》打开链接  
@@ -530,12 +533,13 @@ hello uni-app x 模板应用已有完整的示例《隐私政策》，可参考[
   export default {
     onLaunch: function (res : OnLaunchOptions) {
       // #ifdef APP
-      // App平台获取是否同意隐私政策，未同意则弹出提示框
+      // 获取是否同意隐私政策
       uni.getPrivacySetting({
         success(res){
            if(res.needAuthorization){
+             // 用户未同意隐私政策则弹出“个人信息保护指引”提示框
              uni.openDialogPage({
-               url: '/pages/privacy',  // 修改为隐私政策页面地址
+               url: '/pages/privacy',  // 修改为应用中定义的页面地址
              })
            }
         }
@@ -551,18 +555,74 @@ hello uni-app x 模板应用已有完整的示例《隐私政策》，可参考[
 
 ::: warning 注意事项
 
-展示《隐私政策》页面并不会阻塞应用打开首页，页面中需要通过 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 判断用户是否同意隐私政策，如果没有同意则不要调用采集个人信息相关的API、组件及uts插件，详情参考 [同意《隐私政策》前不能调用的API](#unprivacyapi) 及 [同意《隐私政策》前不能使用的组件](#unprivacycomponent)。  
+通过 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框不会阻塞应用打开首页，首页中需要通过 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 判断用户是否同意隐私政策，如果没有同意则不要调用采集个人信息相关的API、组件及uts插件，详情参考 [同意《隐私政策》前不能调用的API](#unprivacyapi) 及 [同意《隐私政策》前不能使用的组件](#unprivacycomponent)。  
 :::
 
 #### 进入App主界面后展示  
-用户进入App主界面后，​​需提供入口查看《隐私政策》，不超过4次点击​​即可访问，且路径固定（如“设置-隐私政策”）。
+用户“同意”《隐私政策》进入App主界面后，也​​需提供入口可查看《隐私政策》，建议不要超过4次点击​​即可访问，且路径固定（如“设置-隐私政策”）。
 
 可使用uts插件 [uts-openSchema](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/alpha/uni_modules/uts-openSchema) 的 openSchema 方法实现点击《隐私政策》打开链接。
 
 
 ## 应用首页合规要求  
 
-App首次启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框时，不会阻塞应用加载 [page.json](../collocation/pagesjson.md) 页面，因此需要在首页调用 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 判断用户是否已经“同意”《隐私政策》，如果用户没有同意，不能使用涉及个人信息的 API 及 组件，也不能使用涉及个人信息的[uts插件](../plugin/uts-plugin.md)。  
+App首次启动调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框时，不会阻塞应用加载 [page.json](../collocation/pagesjson.md) 中配置的首页，因此需要在首页通过 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 判断用户是否已经“同意”《隐私政策》，如果用户没有同意，不能使用涉及个人信息的 API 及 组件，也不能使用涉及个人信息的[uts插件](../plugin/uts-plugin.md)。  
+
+可以在 `app.uvue` 页面 [globalData](../collocation/app.md#globalData) 中保存用户是否同意《隐私政策》状态，在 `uvue` 页面中使用此状态。  
+
+以下是 `app.uvue` 页面添加 `isAgreePrivacy` 保存状态的示例：  
+```vue
+<script lang="uts">
+  export default {
+    globalData: {
+      isAgreePrivacy: false
+    }
+  },
+  onLaunch: function (res : OnLaunchOptions) {
+    // #ifdef APP
+    // 监听同意隐私政策状态变化
+    uni.onPrivacyAuthorizationChange((res)=>{
+      //更新同意隐私政策状态
+      this.globalData.isAgreePrivacy = !res.needAuthorization
+    })
+    // 获取是否同意隐私政策
+    uni.getPrivacySetting({
+      success(res){
+        if(res.needAuthorization){
+          // 用户未同意隐私政策
+          this.globalData.isAgreePrivacy = false
+          // 用户未同意隐私政策则弹出“个人信息保护指引”提示框
+          uni.openDialogPage({
+            url: '/pages/privacy',  // 修改为应用中定义的页面地址
+          })
+        }else{
+          // 用户已同意隐私政策
+          this.globalData.isAgreePrivacy = true
+        }
+      }
+    })
+    // #endif
+  }
+</script>
+```
+
+在页面或组件中通过 `getApp().globalData` 访问 `isAgreePrivacy`：  
+```vue
+<script lang="uts">
+  export default {
+  },
+  methods: {
+    myTestPrivacyAPI() {
+      if(getApp().globalData.isAgreePrivacy){
+        //用户已经同意隐私政策，这时可以使用涉及个人信息的功能  
+      }else{
+        //用户未同意隐私政策，需弹出“个人信息保护指引”提示框并引导用户同意  
+      }
+    }
+  }
+</script>
+```
+
 
 ### 同意《隐私政策》前不能调用的API @unprivacyapi  
 以下 API 会实际使用个人信息，不应该在“同意”《隐私政策》前调用以下API：  
@@ -610,8 +670,13 @@ App首次启动时弹出“个人信息保护指引”（或“用户协议和�
 - 网页  
   + web-view：[web-view](../component/web-view.md#web-view)  
 
+::: warning 注意事项
 
-## 实现`游客模式`合规要求  
+同意《隐私政策》前也不能调用涉及访问个人信息的 [uts插件](../plugin/uts-plugin.md) 实现的 API 或 组件，具体情况需联系插件作者进行确认。  
+:::
+
+
+## 应用`游客模式`合规要求 @tourist  
 
 如果用户启动应用后“不同意”《隐私政策》也允许继续使用，则需要实现`游客模式`。
 
