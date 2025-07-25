@@ -1,4 +1,6 @@
-## uni.showToast(options) @showtoast
+<!-- ## uni.showToast(options) @showtoast -->
+
+<!-- UTSAPIJSON.showToast.name -->
 
 <!-- UTSAPIJSON.showToast.description -->
 
@@ -14,7 +16,9 @@
 
 <!-- UTSAPIJSON.showToast.tutorial -->
 
-## uni.hideToast() @hidetoast
+<!-- ## uni.hideToast() @hidetoast -->
+
+<!-- UTSAPIJSON.hideToast.name -->
 
 <!-- UTSAPIJSON.hideToast.description -->
 

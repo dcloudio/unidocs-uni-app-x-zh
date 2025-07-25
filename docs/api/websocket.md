@@ -6,7 +6,9 @@
 
 :::
 
-## uni.connectSocket(options) @connectsocket
+<!-- ## uni.connectSocket(options) @connectsocket -->
+
+<!-- UTSAPIJSON.connectSocket.name -->
 
 <!-- UTSAPIJSON.connectSocket.description -->
 
@@ -18,7 +20,9 @@
 
 <!-- UTSAPIJSON.connectSocket.tutorial -->
 
-## uni.~~onSocketOpen(options)~~ @onsocketopen
+<!-- ## uni.~~onSocketOpen(options)~~ @onsocketopen -->
+
+<!-- UTSAPIJSON.onSocketOpen.name -->
 
 <!-- UTSAPIJSON.onSocketOpen.description -->
 
@@ -30,7 +34,9 @@
 
 <!-- UTSAPIJSON.onSocketOpen.tutorial -->
 
-## uni.~~onSocketError(callback)~~ @onsocketerror
+<!-- ## uni.~~onSocketError(callback)~~ @onsocketerror -->
+
+<!-- UTSAPIJSON.onSocketError.name -->
 
 <!-- UTSAPIJSON.onSocketError.description -->
 
@@ -42,7 +48,9 @@
 
 <!-- UTSAPIJSON.onSocketError.tutorial -->
 
-## uni.~~sendSocketMessage(options)~~ @sendsocketmessage
+<!-- ## uni.~~sendSocketMessage(options)~~ @sendsocketmessage -->
+
+<!-- UTSAPIJSON.sendSocketMessage.name -->
 
 <!-- UTSAPIJSON.sendSocketMessage.description -->
 
@@ -58,7 +66,9 @@
 
 * 出于性能的权衡，在底层实现上发送队列占用的内存不能超过16M，一旦超过将导致连接被关闭。
 
-## uni.~~onSocketMessage(callback)~~ @onsocketmessage
+<!-- ## uni.~~onSocketMessage(callback)~~ @onsocketmessage -->
+
+<!-- UTSAPIJSON.onSocketMessage.name -->
 
 <!-- UTSAPIJSON.onSocketMessage.description -->
 
@@ -70,7 +80,9 @@
 
 <!-- UTSAPIJSON.onSocketMessage.tutorial -->
 
-## uni.~~closeSocket(options)~~ @closesocket
+<!-- ## uni.~~closeSocket(options)~~ @closesocket -->
+
+<!-- UTSAPIJSON.closeSocket.name -->
 
 <!-- UTSAPIJSON.closeSocket.description -->
 
@@ -82,7 +94,9 @@
 
 <!-- UTSAPIJSON.closeSocket.tutorial -->
 
-## uni.~~onSocketClose(callback)~~ @onsocketclose
+<!-- ## uni.~~onSocketClose(callback)~~ @onsocketclose -->
+
+<!-- UTSAPIJSON.onSocketClose.name -->
 
 <!-- UTSAPIJSON.onSocketClose.description -->
 

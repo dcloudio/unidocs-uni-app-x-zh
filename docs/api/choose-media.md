@@ -1,4 +1,6 @@
-## uni.chooseMedia(options) @choosemedia
+<!-- ## uni.chooseMedia(options) @choosemedia -->
+
+<!-- UTSAPIJSON.chooseMedia.name -->
 
 <!-- UTSAPIJSON.chooseMedia.description -->
 

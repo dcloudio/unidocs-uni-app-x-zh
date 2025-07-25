@@ -1,4 +1,6 @@
-## uni.getNetworkType(options) @getnetworktype
+<!-- ## uni.getNetworkType(options) @getnetworktype -->
+
+<!-- UTSAPIJSON.getNetworkType.name -->
 
 <!-- UTSAPIJSON.getNetworkType.description -->
 

@@ -1,4 +1,6 @@
-## uni.saveImageToPhotosAlbum(options) @saveimagetophotosalbum
+<!-- ## uni.saveImageToPhotosAlbum(options) @saveimagetophotosalbum -->
+
+<!-- UTSAPIJSON.saveImageToPhotosAlbum.name -->
 
 <!-- UTSAPIJSON.saveImageToPhotosAlbum.description -->
 

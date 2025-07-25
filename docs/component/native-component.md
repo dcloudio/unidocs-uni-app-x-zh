@@ -1,4 +1,6 @@
-## native-component
+<!-- ## native-component -->
+
+<!-- UTSCOMJSON.native-component.name -->
 
 <!-- UTSCOMJSON.native-component.description -->
 

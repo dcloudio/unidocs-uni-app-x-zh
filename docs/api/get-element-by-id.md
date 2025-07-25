@@ -1,4 +1,6 @@
-## uni.getElementById(id) @getelementbyid
+<!-- ## uni.getElementById(id) @getelementbyid -->
+
+<!-- UTSAPIJSON.getElementById.name -->
 
 <!-- UTSAPIJSON.getElementById.description -->
 

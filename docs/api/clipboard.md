@@ -1,4 +1,6 @@
-## uni.getClipboardData(options) @getclipboarddata
+<!-- ## uni.getClipboardData(options) @getclipboarddata -->
+
+<!-- UTSAPIJSON.getClipboardData.name -->
 
 <!-- UTSAPIJSON.getClipboardData.description -->
 
@@ -18,7 +20,9 @@
 
 <!-- UTSAPIJSON.getClipboardData.tutorial -->
 
-## uni.setClipboardData(options) @setclipboarddata
+<!-- ## uni.setClipboardData(options) @setclipboarddata -->
+
+<!-- UTSAPIJSON.setClipboardData.name -->
 
 <!-- UTSAPIJSON.setClipboardData.description -->
 

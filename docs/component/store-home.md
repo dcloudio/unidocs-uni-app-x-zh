@@ -1,4 +1,6 @@
-## store-home
+<!-- ## store-home -->
+
+<!-- UTSCOMJSON.store-home.name -->
 
 <!-- UTSCOMJSON.store-home.description -->
 

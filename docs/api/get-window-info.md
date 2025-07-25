@@ -1,4 +1,6 @@
-## uni.getWindowInfo() @getwindowinfo
+<!-- ## uni.getWindowInfo() @getwindowinfo -->
+
+<!-- UTSAPIJSON.getWindowInfo.name -->
 
 <!-- UTSAPIJSON.getWindowInfo.description -->
 

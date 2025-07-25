@@ -1,4 +1,6 @@
-## uni.exit(options?) @exit
+<!-- ## uni.exit(options?) @exit -->
+
+<!-- UTSAPIJSON.exit.name -->
 
 <!-- UTSAPIJSON.exit.description -->
 

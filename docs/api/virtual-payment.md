@@ -26,7 +26,9 @@
 支付不仅需要客户端开发，也需要服务器开发。
 [uni-pay](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app-x.html#appleiap)是一个云端一体的开源组件，下载这个插件，客户端和服务器代码都已封装好，开发者填入参数即可使用。[详见](https://doc.dcloud.net.cn/uniCloud/uni-pay/uni-app-x.html)
 
-## uni.requestVirtualPayment(options) @requestvirtualpayment
+<!-- ## uni.requestVirtualPayment(options) @requestvirtualpayment -->
+
+<!-- UTSAPIJSON.requestVirtualPayment.name -->
 
 <!-- UTSAPIJSON.requestVirtualPayment.description -->
 

@@ -1,4 +1,6 @@
-## horizontal-drag-gesture-handler
+<!-- ## horizontal-drag-gesture-handler -->
+
+<!-- UTSCOMJSON.horizontal-drag-gesture-handler.name -->
 
 <!-- UTSCOMJSON.horizontal-drag-gesture-handler.description -->
 

@@ -1,4 +1,6 @@
-## uni.getBackgroundAudioManager() @getbackgroundaudiomanager
+<!-- ## uni.getBackgroundAudioManager() @getbackgroundaudiomanager -->
+
+<!-- UTSAPIJSON.getBackgroundAudioManager.name -->
 
 <!-- UTSAPIJSON.getBackgroundAudioManager.description -->
 

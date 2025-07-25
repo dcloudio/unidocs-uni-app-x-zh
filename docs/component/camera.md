@@ -1,4 +1,6 @@
-## camera
+<!-- ## camera -->
+
+<!-- UTSCOMJSON.camera.name -->
 
 <!-- UTSCOMJSON.camera.description -->
 

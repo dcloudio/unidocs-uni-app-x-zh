@@ -1,4 +1,6 @@
-## uni.getLaunchOptionsSync() @getlaunchoptionssync
+<!-- ## uni.getLaunchOptionsSync() @getlaunchoptionssync -->
+
+<!-- UTSAPIJSON.getLaunchOptionsSync.name -->
 
 <!-- UTSAPIJSON.getLaunchOptionsSync.description -->
 
@@ -14,7 +16,9 @@
 
 <!-- UTSAPIJSON.getLaunchOptionsSync.tutorial -->
 
-## uni.getEnterOptionsSync() @getenteroptionssync
+<!-- ## uni.getEnterOptionsSync() @getenteroptionssync -->
+
+<!-- UTSAPIJSON.getEnterOptionsSync.name -->
 
 <!-- UTSAPIJSON.getEnterOptionsSync.description -->
 

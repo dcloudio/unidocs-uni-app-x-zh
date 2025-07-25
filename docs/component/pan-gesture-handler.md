@@ -1,4 +1,6 @@
-## pan-gesture-handler
+<!-- ## pan-gesture-handler -->
+
+<!-- UTSCOMJSON.pan-gesture-handler.name -->
 
 <!-- UTSCOMJSON.pan-gesture-handler.description -->
 

@@ -1,4 +1,6 @@
-## checkbox-group
+<!-- ## checkbox-group -->
+
+<!-- UTSCOMJSON.checkbox-group.name -->
 
 <!-- UTSCOMJSON.checkbox-group.description -->
 

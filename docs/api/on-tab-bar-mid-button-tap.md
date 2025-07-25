@@ -1,4 +1,6 @@
-## uni.onTabBarMidButtonTap(options) @ontabbarmidbuttontap
+<!-- ## uni.onTabBarMidButtonTap(options) @ontabbarmidbuttontap -->
+
+<!-- UTSAPIJSON.onTabBarMidButtonTap.name -->
 
 <!-- UTSAPIJSON.onTabBarMidButtonTap.description -->
 

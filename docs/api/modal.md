@@ -1,4 +1,6 @@
-## uni.showModal(options) @showmodal
+<!-- ## uni.showModal(options) @showmodal -->
+
+<!-- UTSAPIJSON.showModal.name -->
 
 <!-- UTSAPIJSON.showModal.description -->
 
@@ -15,7 +17,9 @@
 注意：
 - App和Web平台，showModal从4.61起重构为使用dialogPage实现。重构后的版本支持暗黑主题、国际化、横屏宽屏适配。
 
-## uni.hideModal(options?) @hidemodal
+<!-- ## uni.hideModal(options?) @hidemodal -->
+
+<!-- UTSAPIJSON.hideModal.name -->
 
 <!-- UTSAPIJSON.hideModal.description -->
 

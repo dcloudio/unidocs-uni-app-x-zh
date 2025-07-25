@@ -1,4 +1,6 @@
-## uni.onNetworkStatusChange(callback) @onnetworkstatuschange
+<!-- ## uni.onNetworkStatusChange(callback) @onnetworkstatuschange -->
+
+<!-- UTSAPIJSON.onNetworkStatusChange.name -->
 
 <!-- UTSAPIJSON.onNetworkStatusChange.description -->
 
@@ -12,7 +14,9 @@
 
 <!-- UTSAPIJSON.onNetworkStatusChange.tutorial -->
 
-## uni.offNetworkStatusChange(callback) @offnetworkstatuschange
+<!-- ## uni.offNetworkStatusChange(callback) @offnetworkstatuschange -->
+
+<!-- UTSAPIJSON.offNetworkStatusChange.name -->
 
 <!-- UTSAPIJSON.offNetworkStatusChange.description -->
 

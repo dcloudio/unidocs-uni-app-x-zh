@@ -1,4 +1,6 @@
-## uni.$on(eventName, callback) @$on
+<!-- ## uni.$on(eventName, callback) @$on -->
+
+<!-- UTSAPIJSON.$on.name -->
 
 <!-- UTSAPIJSON.$on.description -->
 
@@ -12,7 +14,9 @@
 
 <!-- UTSAPIJSON.$on.tutorial -->
 
-## uni.$off(eventName, callback) @$off
+<!-- ## uni.$off(eventName, callback) @$off -->
+
+<!-- UTSAPIJSON.$off.name -->
 
 <!-- UTSAPIJSON.$off.description -->
 
@@ -26,7 +30,9 @@
 
 <!-- UTSAPIJSON.$off.tutorial -->
 
-## uni.$once(eventName, callback) @$once
+<!-- ## uni.$once(eventName, callback) @$once -->
+
+<!-- UTSAPIJSON.$once.name -->
 
 <!-- UTSAPIJSON.$once.description -->
 
@@ -40,7 +46,9 @@
 
 <!-- UTSAPIJSON.$once.tutorial -->
 
-## uni.$emit(eventName, args?) @$emit
+<!-- ## uni.$emit(eventName, args?) @$emit -->
+
+<!-- UTSAPIJSON.$emit.name -->
 
 <!-- UTSAPIJSON.$emit.description -->
 

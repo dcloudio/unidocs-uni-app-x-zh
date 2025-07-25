@@ -1,4 +1,6 @@
-## uni.hideKeyboard(options) @hidekeyboard
+<!-- ## uni.hideKeyboard(options) @hidekeyboard -->
+
+<!-- UTSAPIJSON.hideKeyboard.name -->
 
 <!-- UTSAPIJSON.hideKeyboard.description -->
 
@@ -12,7 +14,9 @@
 
 <!-- UTSAPIJSON.hideKeyboard.tutorial -->
 
-## uni.onKeyboardHeightChange(callback) @onkeyboardheightchange
+<!-- ## uni.onKeyboardHeightChange(callback) @onkeyboardheightchange -->
+
+<!-- UTSAPIJSON.onKeyboardHeightChange.name -->
 
 <!-- UTSAPIJSON.onKeyboardHeightChange.description -->
 
@@ -28,7 +32,9 @@
 
 <!-- UTSAPIJSON.onKeyboardHeightChange.tutorial -->
 
-## uni.offKeyboardHeightChange(id) @offkeyboardheightchange
+<!-- ## uni.offKeyboardHeightChange(id) @offkeyboardheightchange -->
+
+<!-- UTSAPIJSON.offKeyboardHeightChange.name -->
 
 <!-- UTSAPIJSON.offKeyboardHeightChange.description -->
 

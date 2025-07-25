@@ -17,7 +17,9 @@ uni-app的Storage在不同端的实现不同：
 - `uni-`、`uni_`、`dcloud-`、`dcloud_`为前缀的key，为系统保留关键前缀。如`uni_deviceId`、`uni_id_token`，请开发者为key命名时避开这些前缀。
 - 非App平台清空Storage会导致 uni.getSystemInfo/getDeviceInfo 获取到的deviceId改变
 
-## uni.setStorage(options) @setstorage
+<!-- ## uni.setStorage(options) @setstorage -->
+
+<!-- UTSAPIJSON.setStorage.name -->
 
 <!-- UTSAPIJSON.setStorage.description -->
 
@@ -31,7 +33,9 @@ uni-app的Storage在不同端的实现不同：
 
 <!-- UTSAPIJSON.setStorage.tutorial -->
 
-## uni.setStorageSync(key, data) @setstoragesync
+<!-- ## uni.setStorageSync(key, data) @setstoragesync -->
+
+<!-- UTSAPIJSON.setStorageSync.name -->
 
 <!-- UTSAPIJSON.setStorageSync.description -->
 
@@ -52,7 +56,9 @@ uni.setStorageSync('obj', {"a": 1} as UTSJSONObject)
 
 <!-- UTSAPIJSON.setStorageSync.tutorial -->
 
-## uni.getStorage(options) @getstorage
+<!-- ## uni.getStorage(options) @getstorage -->
+
+<!-- UTSAPIJSON.getStorage.name -->
 
 <!-- UTSAPIJSON.getStorage.description -->
 
@@ -76,7 +82,9 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 
 <!-- UTSAPIJSON.getStorage.tutorial -->
 
-## uni.getStorageSync(key) @getstoragesync
+<!-- ## uni.getStorageSync(key) @getstoragesync -->
+
+<!-- UTSAPIJSON.getStorageSync.name -->
 
 <!-- UTSAPIJSON.getStorageSync.description -->
 
@@ -102,7 +110,9 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 
 <!-- UTSAPIJSON.getStorageSync.tutorial -->
 
-## uni.getStorageInfo(options) @getstorageinfo
+<!-- ## uni.getStorageInfo(options) @getstorageinfo -->
+
+<!-- UTSAPIJSON.getStorageInfo.name -->
 
 <!-- UTSAPIJSON.getStorageInfo.description -->
 
@@ -116,7 +126,9 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 
 <!-- UTSAPIJSON.getStorageInfo.tutorial -->
 
-## uni.getStorageInfoSync() @getstorageinfosync
+<!-- ## uni.getStorageInfoSync() @getstorageinfosync -->
+
+<!-- UTSAPIJSON.getStorageInfoSync.name -->
 
 <!-- UTSAPIJSON.getStorageInfoSync.description -->
 
@@ -130,7 +142,9 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 
 <!-- UTSAPIJSON.getStorageInfoSync.tutorial -->
 
-## uni.removeStorage(options) @removestorage
+<!-- ## uni.removeStorage(options) @removestorage -->
+
+<!-- UTSAPIJSON.removeStorage.name -->
 
 <!-- UTSAPIJSON.removeStorage.description -->
 
@@ -144,7 +158,9 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 
 <!-- UTSAPIJSON.removeStorage.tutorial -->
 
-## uni.removeStorageSync(key) @removestoragesync
+<!-- ## uni.removeStorageSync(key) @removestoragesync -->
+
+<!-- UTSAPIJSON.removeStorageSync.name -->
 
 <!-- UTSAPIJSON.removeStorageSync.description -->
 
@@ -158,7 +174,9 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 
 <!-- UTSAPIJSON.removeStorageSync.tutorial -->
 
-## uni.clearStorage(option?) @clearstorage
+<!-- ## uni.clearStorage(option?) @clearstorage -->
+
+<!-- UTSAPIJSON.clearStorage.name -->
 
 <!-- UTSAPIJSON.clearStorage.description -->
 
@@ -172,7 +190,9 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 
 <!-- UTSAPIJSON.clearStorage.tutorial -->
 
-## uni.clearStorageSync() @clearstoragesync
+<!-- ## uni.clearStorageSync() @clearstoragesync -->
+
+<!-- UTSAPIJSON.clearStorageSync.name -->
 
 <!-- UTSAPIJSON.clearStorageSync.description -->
 

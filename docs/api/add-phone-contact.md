@@ -1,4 +1,6 @@
-## uni.addPhoneContact(options) @addphonecontact
+<!-- ## uni.addPhoneContact(options) @addphonecontact -->
+
+<!-- UTSAPIJSON.addPhoneContact.name -->
 
 <!-- UTSAPIJSON.addPhoneContact.description -->
 

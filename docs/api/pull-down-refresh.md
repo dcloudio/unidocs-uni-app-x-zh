@@ -1,4 +1,6 @@
-## uni.startPullDownRefresh(options?) @startpulldownrefresh
+<!-- ## uni.startPullDownRefresh(options?) @startpulldownrefresh -->
+
+<!-- UTSAPIJSON.startPullDownRefresh.name -->
 
 <!-- UTSAPIJSON.startPullDownRefresh.description -->
 
@@ -10,7 +12,9 @@
 
 <!-- UTSAPIJSON.startPullDownRefresh.tutorial -->
 
-## uni.stopPullDownRefresh() @stoppulldownrefresh
+<!-- ## uni.stopPullDownRefresh() @stoppulldownrefresh -->
+
+<!-- UTSAPIJSON.stopPullDownRefresh.name -->
 
 <!-- UTSAPIJSON.stopPullDownRefresh.description -->
 

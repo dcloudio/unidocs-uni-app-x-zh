@@ -1,4 +1,6 @@
-## channel-video
+<!-- ## channel-video -->
+
+<!-- UTSCOMJSON.channel-video.name -->
 
 <!-- UTSCOMJSON.channel-video.description -->
 

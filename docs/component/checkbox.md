@@ -1,4 +1,6 @@
-## checkbox
+<!-- ## checkbox -->
+
+<!-- UTSCOMJSON.checkbox.name -->
 
 <!-- UTSCOMJSON.checkbox.description -->
 

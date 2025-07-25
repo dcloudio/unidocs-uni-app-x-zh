@@ -45,7 +45,9 @@ dialogPage的绑定：
 app-android平台注意事项：  
 - dialogPage不会创建Android原生Activity，复用parentPage的Android原生Activity。
 
-## uni.openDialogPage(options) @opendialogpage
+<!-- ## uni.openDialogPage(options) @opendialogpage -->
+
+<!-- UTSAPIJSON.openDialogPage.name -->
 
 <!-- UTSAPIJSON.openDialogPage.description -->
 
@@ -59,7 +61,9 @@ app-android平台注意事项：
 
 <!-- UTSAPIJSON.openDialogPage.tutorial -->
 
-## uni.closeDialogPage(options?) @closedialogpage
+<!-- ## uni.closeDialogPage(options?) @closedialogpage -->
+
+<!-- UTSAPIJSON.closeDialogPage.name -->
 
 <!-- UTSAPIJSON.closeDialogPage.description -->
 

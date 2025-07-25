@@ -1,4 +1,6 @@
-## aria-component
+<!-- ## aria-component -->
+
+<!-- UTSCOMJSON.aria-component.name -->
 
 <!-- UTSCOMJSON.aria-component.description -->
 

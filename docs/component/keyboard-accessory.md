@@ -1,4 +1,6 @@
-## keyboard-accessory
+<!-- ## keyboard-accessory -->
+
+<!-- UTSCOMJSON.keyboard-accessory.name -->
 
 <!-- UTSCOMJSON.keyboard-accessory.description -->
 

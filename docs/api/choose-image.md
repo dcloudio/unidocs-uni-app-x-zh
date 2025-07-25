@@ -1,4 +1,6 @@
-## uni.chooseImage(options) @chooseimage
+<!-- ## uni.chooseImage(options) @chooseimage -->
+
+<!-- UTSAPIJSON.chooseImage.name -->
 
 <!-- UTSAPIJSON.chooseImage.description -->
 

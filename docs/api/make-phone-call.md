@@ -1,4 +1,6 @@
-## uni.makePhoneCall(options) @makephonecall
+<!-- ## uni.makePhoneCall(options) @makephonecall -->
+
+<!-- UTSAPIJSON.makePhoneCall.name -->
 
 <!-- UTSAPIJSON.makePhoneCall.description -->
 

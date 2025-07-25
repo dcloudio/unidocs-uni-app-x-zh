@@ -1,4 +1,6 @@
-## uni.showLoading(options) @showloading
+<!-- ## uni.showLoading(options) @showloading -->
+
+<!-- UTSAPIJSON.showLoading.name -->
 
 <!-- UTSAPIJSON.showLoading.description -->
 
@@ -12,7 +14,9 @@
 
 <!-- UTSAPIJSON.showLoading.tutorial -->
 
-## uni.hideLoading() @hideloading
+<!-- ## uni.hideLoading() @hideloading -->
+
+<!-- UTSAPIJSON.hideLoading.name -->
 
 <!-- UTSAPIJSON.hideLoading.description -->
 

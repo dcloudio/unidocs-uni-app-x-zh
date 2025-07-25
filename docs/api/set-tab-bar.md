@@ -1,4 +1,6 @@
-## uni.showTabBar(options?) @showtabbar
+<!-- ## uni.showTabBar(options?) @showtabbar -->
+
+<!-- UTSAPIJSON.showTabBar.name -->
 
 <!-- UTSAPIJSON.showTabBar.description -->
 
@@ -10,7 +12,9 @@
 
 <!-- UTSAPIJSON.showTabBar.tutorial -->
 
-## uni.hideTabBar(options?) @hidetabbar
+<!-- ## uni.hideTabBar(options?) @hidetabbar -->
+
+<!-- UTSAPIJSON.hideTabBar.name -->
 
 <!-- UTSAPIJSON.hideTabBar.description -->
 
@@ -22,7 +26,9 @@
 
 <!-- UTSAPIJSON.hideTabBar.tutorial -->
 
-## uni.showTabBarRedDot(options) @showtabbarreddot
+<!-- ## uni.showTabBarRedDot(options) @showtabbarreddot -->
+
+<!-- UTSAPIJSON.showTabBarRedDot.name -->
 
 <!-- UTSAPIJSON.showTabBarRedDot.description -->
 
@@ -34,7 +40,9 @@
 
 <!-- UTSAPIJSON.showTabBarRedDot.tutorial -->
 
-## uni.hideTabBarRedDot(options) @hidetabbarreddot
+<!-- ## uni.hideTabBarRedDot(options) @hidetabbarreddot -->
+
+<!-- UTSAPIJSON.hideTabBarRedDot.name -->
 
 <!-- UTSAPIJSON.hideTabBarRedDot.description -->
 
@@ -46,7 +54,9 @@
 
 <!-- UTSAPIJSON.hideTabBarRedDot.tutorial -->
 
-## uni.setTabBarBadge(options) @settabbarbadge
+<!-- ## uni.setTabBarBadge(options) @settabbarbadge -->
+
+<!-- UTSAPIJSON.setTabBarBadge.name -->
 
 <!-- UTSAPIJSON.setTabBarBadge.description -->
 
@@ -58,7 +68,9 @@
 
 <!-- UTSAPIJSON.setTabBarBadge.tutorial -->
 
-## uni.removeTabBarBadge(options) @removetabbarbadge
+<!-- ## uni.removeTabBarBadge(options) @removetabbarbadge -->
+
+<!-- UTSAPIJSON.removeTabBarBadge.name -->
 
 <!-- UTSAPIJSON.removeTabBarBadge.description -->
 
@@ -70,7 +82,9 @@
 
 <!-- UTSAPIJSON.removeTabBarBadge.tutorial -->
 
-## uni.setTabBarStyle(options) @settabbarstyle
+<!-- ## uni.setTabBarStyle(options) @settabbarstyle -->
+
+<!-- UTSAPIJSON.setTabBarStyle.name -->
 
 <!-- UTSAPIJSON.setTabBarStyle.description -->
 
@@ -82,7 +96,9 @@
 
 <!-- UTSAPIJSON.setTabBarStyle.tutorial -->
 
-## uni.setTabBarItem(options) @settabbaritem
+<!-- ## uni.setTabBarItem(options) @settabbaritem -->
+
+<!-- UTSAPIJSON.setTabBarItem.name -->
 
 <!-- UTSAPIJSON.setTabBarItem.description -->
 

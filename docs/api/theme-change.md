@@ -46,7 +46,9 @@ Web和小程序注意：
 
 注意：有些平台，os主题变化时会重启App，有些小程序宿主主题变化时会重启小程序，有些则不会。在会重启的场景下，监听主题变化其实没有意义。
 
-## uni.setAppTheme(options) @setapptheme
+<!-- ## uni.setAppTheme(options) @setapptheme -->
+
+<!-- UTSAPIJSON.setAppTheme.name -->
 
 <!-- UTSAPIJSON.setAppTheme.description -->
 
@@ -78,7 +80,9 @@ uni.setAppTheme({
 
 <!-- UTSAPIJSON.setAppTheme.tutorial -->
 
-## uni.onAppThemeChange(callback) @onappthemechange
+<!-- ## uni.onAppThemeChange(callback) @onappthemechange -->
+
+<!-- UTSAPIJSON.onAppThemeChange.name -->
 
 <!-- UTSAPIJSON.onAppThemeChange.description -->
 
@@ -101,7 +105,9 @@ val callbackId = uni.onAppThemeChange((res: AppThemeChangeResult) => {
 
 <!-- UTSAPIJSON.onAppThemeChange.tutorial -->
 
-## uni.offAppThemeChange(id) @offappthemechange
+<!-- ## uni.offAppThemeChange(id) @offappthemechange -->
+
+<!-- UTSAPIJSON.offAppThemeChange.name -->
 
 <!-- UTSAPIJSON.offAppThemeChange.description -->
 
@@ -123,7 +129,9 @@ uni.offAppThemeChange(this.appThemeChangeId)
 
 <!-- UTSAPIJSON.offAppThemeChange.tutorial -->
 
-## uni.onOsThemeChange(callback) @onosthemechange
+<!-- ## uni.onOsThemeChange(callback) @onosthemechange -->
+
+<!-- UTSAPIJSON.onOsThemeChange.name -->
 
 <!-- UTSAPIJSON.onOsThemeChange.description -->
 
@@ -146,7 +154,9 @@ val callbackId = uni.onOsThemeChange((res: OsThemeChangeResult)=> {
 + android 10、iOS 13 才开始支持深色模式主题 `dark`，更低版本无法获取、监听OS的主题。
 + iOS平台应用在进入后台时，会分别截取 app 在 light 和 dark 模式下的截图，用于系统主题切换的同时对后台 app 预览视图进行切换，所以会切换多次 light/dark 模式，程序正常响应 change 事件即可，否则系统截取的图片可能会出现异常，如果确实有必要忽略这种情况下的 change 事件可以在 onHide 后自行忽略。
 
-## uni.offOsThemeChange(id) @offosthemechange
+<!-- ## uni.offOsThemeChange(id) @offosthemechange -->
+
+<!-- UTSAPIJSON.offOsThemeChange.name -->
 
 <!-- UTSAPIJSON.offOsThemeChange.description -->
 
@@ -170,7 +180,9 @@ uni.offOsThemeChange(callbackId)
 
 <!-- UTSAPIJSON.offOsThemeChange.example -->
 
-## uni.onHostThemeChange(callback) @onhostthemechange
+<!-- ## uni.onHostThemeChange(callback) @onhostthemechange -->
+
+<!-- UTSAPIJSON.onHostThemeChange.name -->
 
 <!-- UTSAPIJSON.onHostThemeChange.description -->
 
@@ -184,7 +196,9 @@ uni.offOsThemeChange(callbackId)
 
 <!-- UTSAPIJSON.onHostThemeChange.example -->
 
-## uni.offHostThemeChange(id) @offhostthemechange
+<!-- ## uni.offHostThemeChange(id) @offhostthemechange -->
+
+<!-- UTSAPIJSON.offHostThemeChange.name -->
 
 <!-- UTSAPIJSON.offHostThemeChange.description -->
 

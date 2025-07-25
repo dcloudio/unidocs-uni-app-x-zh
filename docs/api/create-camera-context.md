@@ -1,4 +1,6 @@
-## uni.createCameraContext() @createcameracontext
+<!-- ## uni.createCameraContext() @createcameracontext -->
+
+<!-- UTSAPIJSON.createCameraContext.name -->
 
 <!-- UTSAPIJSON.createCameraContext.description -->
 

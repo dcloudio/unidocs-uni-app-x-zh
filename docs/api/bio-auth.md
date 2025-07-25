@@ -1,4 +1,6 @@
-## uni.startSoterAuthentication(options) @startsoterauthentication
+<!-- ## uni.startSoterAuthentication(options) @startsoterauthentication -->
+
+<!-- UTSAPIJSON.startSoterAuthentication.name -->
 
 <!-- UTSAPIJSON.startSoterAuthentication.description -->
 
@@ -12,7 +14,9 @@
 
 <!-- UTSAPIJSON.startSoterAuthentication.tutorial -->
 
-## uni.checkIsSupportSoterAuthentication(options) @checkissupportsoterauthentication
+<!-- ## uni.checkIsSupportSoterAuthentication(options) @checkissupportsoterauthentication -->
+
+<!-- UTSAPIJSON.checkIsSupportSoterAuthentication.name -->
 
 <!-- UTSAPIJSON.checkIsSupportSoterAuthentication.description -->
 
@@ -26,7 +30,9 @@
 
 <!-- UTSAPIJSON.checkIsSupportSoterAuthentication.tutorial -->
 
-## uni.checkIsSoterEnrolledInDevice(options) @checkissoterenrolledindevice
+<!-- ## uni.checkIsSoterEnrolledInDevice(options) @checkissoterenrolledindevice -->
+
+<!-- UTSAPIJSON.checkIsSoterEnrolledInDevice.name -->
 
 <!-- UTSAPIJSON.checkIsSoterEnrolledInDevice.description -->
 

@@ -1,4 +1,6 @@
-## uni.rpx2px(number) @rpx2px
+<!-- ## uni.rpx2px(number) @rpx2px -->
+
+<!-- UTSAPIJSON.rpx2px.name -->
 
 <!-- UTSAPIJSON.rpx2px.description -->
 

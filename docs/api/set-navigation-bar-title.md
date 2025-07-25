@@ -1,4 +1,6 @@
-## uni.setNavigationBarTitle(options) @setnavigationbartitle
+<!-- ## uni.setNavigationBarTitle(options) @setnavigationbartitle -->
+
+<!-- UTSAPIJSON.setNavigationBarTitle.name -->
 
 <!-- UTSAPIJSON.setNavigationBarTitle.description -->
 

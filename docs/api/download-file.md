@@ -1,4 +1,6 @@
-## uni.downloadFile(options) @downloadfile
+<!-- ## uni.downloadFile(options) @downloadfile -->
+
+<!-- UTSAPIJSON.downloadFile.name -->
 
 <!-- UTSAPIJSON.downloadFile.description -->
 

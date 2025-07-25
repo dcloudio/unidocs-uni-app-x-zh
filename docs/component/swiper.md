@@ -1,4 +1,6 @@
-## swiper
+<!-- ## swiper -->
+
+<!-- UTSCOMJSON.swiper.name -->
 
 <!-- UTSCOMJSON.swiper.description -->
 

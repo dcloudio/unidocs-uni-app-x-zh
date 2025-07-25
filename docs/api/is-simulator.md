@@ -1,4 +1,6 @@
-## uni.isSimulator() @issimulator
+<!-- ## uni.isSimulator() @issimulator -->
+
+<!-- UTSAPIJSON.isSimulator.name -->
 
 <!-- UTSAPIJSON.isSimulator.description -->
 

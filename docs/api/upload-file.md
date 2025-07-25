@@ -1,4 +1,6 @@
-## uni.uploadFile(options) @uploadfile
+<!-- ## uni.uploadFile(options) @uploadfile -->
+
+<!-- UTSAPIJSON.uploadFile.name -->
 
 <!-- UTSAPIJSON.uploadFile.description -->
 

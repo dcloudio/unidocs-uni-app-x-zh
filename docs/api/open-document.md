@@ -1,4 +1,6 @@
-## uni.openDocument(options?) @opendocument
+<!-- ## uni.openDocument(options?) @opendocument -->
+
+<!-- UTSAPIJSON.openDocument.name -->
 
 <!-- UTSAPIJSON.openDocument.description -->
 

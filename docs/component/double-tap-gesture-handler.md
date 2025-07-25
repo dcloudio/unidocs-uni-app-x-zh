@@ -1,4 +1,6 @@
-## double-tap-gesture-handler
+<!-- ## double-tap-gesture-handler -->
+
+<!-- UTSCOMJSON.double-tap-gesture-handler.name -->
 
 <!-- UTSCOMJSON.double-tap-gesture-handler.description -->
 

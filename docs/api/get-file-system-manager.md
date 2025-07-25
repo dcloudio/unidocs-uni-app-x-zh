@@ -1,4 +1,6 @@
-## uni.getFileSystemManager() @getfilesystemmanager
+<!-- ## uni.getFileSystemManager() @getfilesystemmanager -->
+
+<!-- UTSAPIJSON.getFileSystemManager.name -->
 
 <!-- UTSAPIJSON.getFileSystemManager.description -->
 

@@ -1,4 +1,6 @@
-## uni.previewImage(options) @previewimage
+<!-- ## uni.previewImage(options) @previewimage -->
+
+<!-- UTSAPIJSON.previewImage.name -->
 
 <!-- UTSAPIJSON.previewImage.description -->
 
@@ -23,7 +25,9 @@
 
 该开源插件目前仅支持Android。后续会补充其他平台。
 
-## uni.closePreviewImage(options) @closepreviewimage
+<!-- ## uni.closePreviewImage(options) @closepreviewimage -->
+
+<!-- UTSAPIJSON.closePreviewImage.name -->
 
 <!-- UTSAPIJSON.closePreviewImage.description -->
 

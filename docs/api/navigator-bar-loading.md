@@ -1,4 +1,6 @@
-## uni.showNavigationBarLoading(options?) @shownavigationbarloading
+<!-- ## uni.showNavigationBarLoading(options?) @shownavigationbarloading -->
+
+<!-- UTSAPIJSON.showNavigationBarLoading.name -->
 
 <!-- UTSAPIJSON.showNavigationBarLoading.description -->
 
@@ -12,7 +14,9 @@
 
 <!-- UTSAPIJSON.showNavigationBarLoading.tutorial -->
 
-## uni.hideNavigationBarLoading(options?) @hidenavigationbarloading
+<!-- ## uni.hideNavigationBarLoading(options?) @hidenavigationbarloading -->
+
+<!-- UTSAPIJSON.hideNavigationBarLoading.name -->
 
 <!-- UTSAPIJSON.hideNavigationBarLoading.description -->
 

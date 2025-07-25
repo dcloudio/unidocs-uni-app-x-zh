@@ -1,4 +1,6 @@
-## store-product
+<!-- ## store-product -->
+
+<!-- UTSCOMJSON.store-product.name -->
 
 <!-- UTSCOMJSON.store-product.description -->
 

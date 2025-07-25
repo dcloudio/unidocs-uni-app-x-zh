@@ -1,4 +1,6 @@
-## uni.getSystemSetting() @getsystemsetting
+<!-- ## uni.getSystemSetting() @getsystemsetting -->
+
+<!-- UTSAPIJSON.getSystemSetting.name -->
 
 <!-- UTSAPIJSON.getSystemSetting.description -->
 

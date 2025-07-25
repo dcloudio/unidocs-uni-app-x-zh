@@ -1,4 +1,6 @@
-## uni.base64ToArrayBuffer(base64) @base64toarraybuffer
+<!-- ## uni.base64ToArrayBuffer(base64) @base64toarraybuffer -->
+
+<!-- UTSAPIJSON.base64ToArrayBuffer.name -->
 
 <!-- UTSAPIJSON.base64ToArrayBuffer.description -->
 
@@ -10,7 +12,9 @@
 
 <!-- UTSAPIJSON.base64ToArrayBuffer.tutorial -->
 
-## uni.arrayBufferToBase64(arrayBuffer) @arraybuffertobase64
+<!-- ## uni.arrayBufferToBase64(arrayBuffer) @arraybuffertobase64 -->
+
+<!-- UTSAPIJSON.arrayBufferToBase64.name -->
 
 <!-- UTSAPIJSON.arrayBufferToBase64.description -->
 

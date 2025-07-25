@@ -1,4 +1,6 @@
-## picker-view-column
+<!-- ## picker-view-column -->
+
+<!-- UTSCOMJSON.picker-view-column.name -->
 
 <!-- UTSCOMJSON.picker-view-column.description -->
 

@@ -1,4 +1,6 @@
-## uni.pageScrollTo(options) @pagescrollto
+<!-- ## uni.pageScrollTo(options) @pagescrollto -->
+
+<!-- UTSAPIJSON.pageScrollTo.name -->
 
 <!-- UTSAPIJSON.pageScrollTo.description -->
 
