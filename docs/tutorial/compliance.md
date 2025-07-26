@@ -1,36 +1,67 @@
 # uni-app x 开发者应用合规指南  
 
-> 更新日期：2025年7月25日  
+应用合规，需要了解都有什么“规”。
 
-数字天堂（北京）网络技术有限公司高度重视个人信息安全和保护，将适时升级迭代 uni-app x 相关开发工具以提升产品的安全性和稳定性，确保符合相关法律、法规、监管及最新合规要求。强烈建议您升级使用最新版本开发工具，以便保障您正常使用最新功能、避免因您更新不及时产生的不利影响。
+每个国家都有对合规的定义，在中国，除了显而易见的黄赌毒等问题外，还有很多法律和规定，包括《[个人信息保护法](https://baike.baidu.com/item/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E4%BF%9D%E6%8A%A4%E6%B3%95/24220563)》，以及很多行政令和指南。[详见](#reference)
 
-::: warning 特别说明
+中国的应用商店，对于上架的应用都要进行合规审核。
 
-uni-app x 项目没有提供原生隐私政策模板提示框机制，而是使用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 打开 uvue 页面来展示《隐私政策》提示框引导用户授权，详情参考[展示《隐私政策》提示框](#display)章节。显示提示框时并不会阻塞应用打开首页，需要应用首页调整业务逻辑适配支持，避免在用户未同意《隐私政策》前调用涉及个人信息的相关功能，详情参考[应用首页合规要求](#home)。  
+对于某些被关注的应用，工信部还会提出更高的合规要求。
 
-uni-app 项目 Android 平台原生提供隐私政策模板提示框机制，参考：[uni-app 项目Android平台使用模块隐私政策提示框](https://uniapp.dcloud.net.cn/tutorial/app-privacy-android.html)  
+因iOS的权限相对于Android，收的更紧，开发者侵犯用户隐私的概率较低。所以Appstore上架要求一般没有国内Android商店严格。
+
+::: warning 开发者注意
+1. 需要在App启动时，就弹框明示隐私协议。在协议中告知终端用户，你的App会采集什么隐私协议，会如何处理这些信息。如果你使用的三方sdk涉及隐私协议，要一并列举在你的隐私协议中
+2. 在终端用户同意你的隐私协议之前，不能调用任何涉及隐私的API和SDK
 :::
 
+如果您之前使用过uni-app，需注意，uni-app x 项目没有提供原生隐私政策模板提示框机制。在uni-app中，开发者的js代码启动较晚，很多原生SDK会先触发，所以提供了原生隐私政策模板（[androidPrivacy.json](https://uniapp.dcloud.net.cn/tutorial/app-privacy-android.html)）。
 
-## 制定《隐私政策》  
-首先需为您的应用制定一份《隐私政策》，并确保在应用界面中显著位置展示。《隐私政策》的具体内容可参考 [合规文件指引](#reference) 章节中列出的法律、法规、政策文件。  
+而uni-app x中开发者的代码启动时间足够早，可以自己先弹框，在弹框前，**开发者的代码不能调用任何涉及隐私的API和SDK**
 
-《隐私政策》内容可以作为网页展示，也可以作为应用中的uvue页面展示。推荐作为网页展示，使用uts插件 [uts-openSchema](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/alpha/uni_modules/uts-openSchema) 的 `openSchema` 方法调用设备默认浏览器打开《隐私政策》链接地址。  
+一般推荐使用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 打开 uvue 页面来展示《隐私政策》提示框引导用户授权，详情参考[展示《隐私政策》提示框](#display)章节。
 
-### 声明SDK处理的个人信息  
+注意显示提示框时并不会阻塞应用打开首页，如果你的应用首页代码里调用了涉及隐私的API和SDK，那么需要注意在用户同意隐私政策之后才能调用。详情参考[应用首页合规要求](#home)。
+
+除了你自己的代码外，还要注意uni-app x内置组件、API、以及三方SDK涉及的隐私问题。
+- uni-app x基础引擎不会触发任何隐私权限弹框
+- 部分uni-app x的组件和API涉及隐私权限，在用户同意隐私协议前不能调用，详见 [涉及隐私的组件](#unprivacycomponent)、[涉及隐私的API](#unprivacyapi)
+- 部分uni-app x的组件和API涉及三方SDK，如广告、推送、支付、定位地图、一键登陆、实人认证等模块（详见下方[SDK列表](#sdk)），当你使用这些功能时注意：
+	* 这些功能模块都是可选的，不选择不会打包到应用中
+	* 这些SDK的隐私协议需要包括到你的隐私协议中
+	* 在用户同意你的隐私协议之前，不要调用相关API
+- 如你使用了插件市场的三方插件，或自己开发uts插件涉及了三方原生SDK，同样主要注意：
+	* 这些SDK的隐私协议需要包括到你的隐私协议中
+	* 在用户同意你的隐私协议之前，不要调用相关API
+
+因应用商店合规要求经常变化，**强烈建议您及时升级使用最新版本开发工具**。
+
+
+## 确定《隐私政策》内容
+首先您需为您的应用制定一份《隐私政策》，至少在调用涉及隐私的API/组件之前弹出该协议。但Android应用一般要求应用刚启动就弹出。
+
+《隐私政策》需符合 [合规文件指引](#reference) 章节中列出的法律、法规、政策文件。
+
+hello uni-app x 应用也有《隐私政策》，可参考[hello uni-app x隐私政策](https://dcloud.io/license/hello-uni-app-x.html)。但注意该协议范本仅供参考，请勿照搬，需根据您的实际情况调整。
+
+在隐私政策中，除了向用户明示您如何处理用户隐私数据，还需要列举本应用包含的三方SDK相关的隐私政策。见下
+
+### 内置组件和API涉及的三方SDK@sdk
 使用 uni-app x 开发的应用包含了 DCloud 的 uni-app x 引擎，会涉及向 DCloud 共享个人信息，我们要求您在《隐私政策》中向用户进行披露和说明，获取用户的授权或同意。
 
 建议在您制定的《隐私政策》中的 “共享、转让、公开披露您的个人信息” 章节添加三方SDK采集数据说明，参考以下示例：
 
 > 本应用集成了三方SDK，这些SDK也会采集数据，具体见下:  
-> - 本应用基于DCloud App引擎（uni-app x）开发，应用运行期间需要收集设备信息、应用信息，报错时的堆栈信息，引擎启动时间和内存消耗，用于排查在不同情况下的性能和故障，为用户提供更好的服务
->   + 涉及的个人信息类型：设备信息（设备品牌及型号、CPU类型、屏幕参数、操作系统名称及版本、网络类型、IP地址、User Agent信息、设备语言、时区、设备是否为模拟器或已经被root、匿名设备标识符），应用信息（应用名、应用包名、版本、AppId、包含的SDK信息）
->   + 使用目的：排查在不同情况下的性能和故障，为用户提供更好的服务  
+> - 本应用基于DCloud App引擎（uni-app x）开发，为了优化引擎的质量，需要收集报错堆栈信息，这些信息会包含：
+>   + 设备信息（设备品牌及型号、CPU类型、屏幕参数、操作系统名称及版本、网络类型、IP地址、User Agent信息、设备语言、时区、设备是否为模拟器或已经被root、匿名设备标识符），应用信息（应用名、应用包名、版本、AppId、包含的SDK信息、报错堆栈）
+>   + 使用目的：排查在不同情况下的故障，提升引擎质量 
 >   + 收集方式：SDK自行采集，不涉及数据共享
 >   + 第三方主体： 数字天堂(北京)网络技术有限公司  
 >   + 隐私政策链接： [DCloud App引擎隐私政策](https://dcloud.io/license/appprivacy.html)
 
-如果应用使用了涉及其它三方SDK的功能模块时，也需要添加三方SDK采集数据说明，请根据应用实际使用情况参考以下列表添加对应的三方SDK信息。
+除上之外，如应用使用了涉及三方SDK的功能模块时，也需要添加三方SDK采集数据说明。不管是uni-app x内置组件/API、插件市场的插件，以及您自己开发的插件，都可能涉及。
+
+以下是uni-app x内置组件和API涉及到的三方SDK，请根据您的实际使用情况参考以下列表，添加对应的三方SDK信息和隐私政策。
 
 #### uni-AD原生广告 SDK  
 uni-ad相关业务要用到“uni-AD原生广告 SDK”。需在三方SDK采集数据说明中添加“uni-AD原生广告SDK”信息告知用户，参考以下示例：  
@@ -43,14 +74,14 @@ uni-ad相关业务要用到“uni-AD原生广告 SDK”。需在三方SDK采集�
 >   + 第三方主体： 数字天堂(北京)网络技术有限公司  
 >   + 隐私政策链接： [uni-AD原生广告SDK隐私政策](https://dcloud.io/license/uni-ad.html)
 
-uni-ad聚合了其它广告渠道SDK，根据应用实际使用情况添加对应广告渠道的三方SDK信息：
+uni-ad聚合了其它广告渠道SDK，您需要根据应用实际使用情况，添加对应广告SDK信息，见下：
 
 ##### 优量汇 SDK  
 打包时勾选了uni-ad中的“腾讯优量汇”广告渠道时，会用到“优量汇 SDK”。需在三方SDK采集数据说明中添加“优量汇 SDK”信息告知用户，参考以下示例：  
 
 > - 优量汇 SDK  
 >   + 涉及的个人信息类型：粗略位置信息、设备信息（如设备制造商、设备型号、操作系统版本等）、设备标识符（如IMEI、AndroidID、OAID、IDFA等）、应用信息（宿主应用的包名、版本号）、广告数据（如曝光、点击数据等）  
->   + 使用场景：向最终用户投放增强广告时使用  
+>   + 使用场景：向最终用户投放广告时使用  
 >   + 使用目的：广告投放、广告归因、广告反作弊和广告效果优化  
 >   + 收集方式：SDK自行采集，不涉及数据共享  
 >   + 第三方主体： 深圳市腾讯计算机系统有限公司  
@@ -156,7 +187,7 @@ uni-ad聚合了其它广告渠道SDK，根据应用实际使用情况添加对�
 >   + 第三方主体： 杭州聚力阅盟科技有限公司  
 >   + 隐私政策链接： [聚力阅盟隐私政策](https://idbj.juliyuemeng.com/privacy)  
 
-##### 优推广告 SD  
+##### 优推广告 SDK
 打包时勾选了uni-ad中的“华夏乐游”广告渠道时，会用到“优推广告 SD”。需在三方SDK采集数据说明中添加“优推广告 SD”信息告知用户，参考以下示例：  
 
 > - 优推广告 SDK  
@@ -292,6 +323,19 @@ uni-ad聚合了其它广告渠道SDK，根据应用实际使用情况添加对�
 >   + 第三方主体： 每日互动股份有限公司  
 >   + 隐私政策链接： [个推用户隐私政策](https://docs.getui.com/privacy/)  
 
+个验SDK聚合了中国移动、联通、电信的SDK，还需要按下方列表添加隐私政策。
+
+##### 移动账号认证 SDK  
+App一键登录为了支持“中国移动”运行商，要用到“移动账号认证 SDK”。需在三方SDK采集数据说明中添加“移动账号认证 SDK”信息告知用户，参考以下示例：  
+
+> - 移动账号认证 SDK  
+>   + 涉及的个人信息类型：网络类型、网络地址（ip地址）、运营商类型、本机号码信息、SIM卡状态；手机设备类型、手机操作系统、硬件厂商；H5场景下同时同时收集浏览器指纹，浏览器指纹具体包括：操作系统、用户代理（浏览器类型）、浏览器版本号、浏览器是否启动cookie、cpu等级、cpu虚拟核心数、系统语言、浏览器插件、屏幕可用宽度、屏幕可用高度、颜色质量、时差区  
+>   + 使用场景：向最终用户提供一键登录认证服务时使用  
+>   + 使用目的： 为App提供风控和认证服务  
+>   + 收集方式：SDK自行采集  
+>   + 第三方主体： 中移互联网有限公司  
+>   + 隐私政策链接： [中国移动认证服务协议&隐私政策](https://wap.cmpassport.com/resources/html/contract.html)  
+
 ##### 联通账号认证 SDK  
 App一键登录为了支持“中国联通”运行商，要用到“联通账号认证 SDK”。需在三方SDK采集数据说明中添加“联通账号认证 SDK”信息告知用户，参考以下示例：  
 
@@ -314,17 +358,6 @@ App一键登录为了支持“中国电信”运行商，要用到“电信（�
 >   + 第三方主体： 天翼数字生活科技有限公司  
 >   + 隐私政策链接： [天翼认证 隐私协议](https://e.189.cn/sdk/agreement/detail.do?hidetop=true)  
 
-##### 移动账号认证 SDK  
-App一键登录为了支持“中国移动”运行商，要用到“移动账号认证 SDK”。需在三方SDK采集数据说明中添加“移动账号认证 SDK”信息告知用户，参考以下示例：  
-
-> - 移动账号认证 SDK  
->   + 涉及的个人信息类型：网络类型、网络地址（ip地址）、运营商类型、本机号码信息、SIM卡状态；手机设备类型、手机操作系统、硬件厂商；H5场景下同时同时收集浏览器指纹，浏览器指纹具体包括：操作系统、用户代理（浏览器类型）、浏览器版本号、浏览器是否启动cookie、cpu等级、cpu虚拟核心数、系统语言、浏览器插件、屏幕可用宽度、屏幕可用高度、颜色质量、时差区  
->   + 使用场景：向最终用户提供一键登录认证服务时使用  
->   + 使用目的： 为App提供风控和认证服务  
->   + 收集方式：SDK自行采集  
->   + 第三方主体： 中移互联网有限公司  
->   + 隐私政策链接： [中国移动认证服务协议&隐私政策](https://wap.cmpassport.com/resources/html/contract.html)  
-
 #### 金融级实人认证 SDK  
 应用中使用“uni实人认证”功能（[uni.getFacialRecognitionMetaInfo](../api/facial-recognition-meta-info.md)），要用到“金融级实人认证 SDK”。需在三方SDK采集数据说明中添加“金融级实人认证 SDK”信息告知用户，参考以下示例：  
 
@@ -338,26 +371,22 @@ App一键登录为了支持“中国移动”运行商，要用到“移动账�
 
 
 ::: warning 注意事项
-
-如果项目中包含的 [uts插件](../plugin/uts-plugin.md) 中使用了三方SDK涉及到采集个人信息数据，也需要添加到隐私政策中。  
+再次提醒：如果项目中包含的 [uts插件](../plugin/uts-plugin.md) 中使用了三方SDK涉及到采集个人信息数据，也需要添加到隐私政策中。  
 :::
 
 
-### 《隐私政策》示例
+## 显示《隐私政策》提示框的时机 @display  
 
-hello uni-app x 模板应用已有完整的示例《隐私政策》，可参考[hello uni-app x隐私政策](https://dcloud.io/license/hello-uni-app-x.html)。
-
-
-
-## 展示《隐私政策》提示框 @display  
 制定《隐私政策》后，应用首次启动或使用涉及采集个人信息的功能时，必须通过​​弹窗​​等显著方式提示用户阅读《隐私政策》，并提供“同意”与“拒绝”两个明确选项（拒绝按钮不可隐藏或弱化），通常可以在应用的“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框中与“用户协议”一起进行展示。  
 
 - 上架国内应用市场  
-  建议在应用启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》。用户“同意”才允许使用应用完整的功能；“不同意”则运行在[游客模式](#tourist)下，用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）引导用户“同意”后才能继续使用。  
+  在应用启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》。用户“同意”才允许使用应用完整的功能；“不同意”则运行在[游客模式](#tourist)下，用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）引导用户“同意”后才能继续使用。  
   如果应用的基础功能必须要求用户“同意”《隐私政策》才能使用，则在用户点击“不同意”时弹出提示说明，用户确认后调用 [uni.exit](../api/exit.md) 退出应用。  
 
 - 上架Google Play 
-  Google Play应用市场并不强制要求应用在启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》，只要求用户使用涉及采集个人信息的功能前弹出说明征求用户同意即可。如果应用要同时上架国内和Google Play应用市场，则建议在应用启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），使用统一逻辑处理隐私政策减少维护成本；如果应用只上架到Google Play应用市场则建议在用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》，用户“同意”后则继续使用相关功能，“不同意”则不能使用此功能。
+  Google Play应用市场并不强制要求应用在启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》，只要求用户使用涉及采集个人信息的功能前弹出说明征求用户同意即可。
+	* 如果应用要同时上架国内和Google Play应用市场，则建议在应用启动时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”），使用统一逻辑处理隐私政策减少维护成本；
+	* 如果应用只上架到Google Play应用市场则建议在用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》，用户“同意”后则继续使用相关功能，“不同意”则不能使用此功能。
 
 - 上架 App Store  
   提交到中国区的应用与`上架国内应用市场`一致；上架到非中国区的应用建议在用户使用涉及采集个人信息的功能时弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示用户阅读《隐私政策》，用户“同意”后则继续使用相关功能，“不同意”则不能使用此功能。  
@@ -366,18 +395,29 @@ hello uni-app x 模板应用已有完整的示例《隐私政策》，可参考[
 
 ### uvue页面实现《隐私政策》提示框  
 
-uni-app x 项目中可通过 uvue 页面来实现“个人信息保护指引”（或“用户协议和隐私政策概要”）界面，调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) API 弹框显示。  
+编写一个 uvue 页面来显示“个人信息保护指引”（或“用户协议和隐私政策概要”）界面。
+
+该页面内需要有请求用户同意用户协议和隐私政策的基本描述，其中用户协议和隐私政策是可以点击的链接。
+
+这些链接点击后可以打开一个uvue页面内嵌一个web-view来展示；也可以打开外部浏览器展示。使用外部浏览器时，推荐使用uts插件 [uts-openSchema](https://ext.dcloud.net.cn/plugin?id=17828) 的 `openSchema` 方法调用设备默认浏览器打开这些链接。下方示例代码使用了外部浏览器方式。
+
+[uniCloud的前端网页托管](https://doc.dcloud.net.cn/uniCloud/hosting.html)很适合部署用户协议和隐私政策这些网页。
+
+该页面底部需要有`同意`和`拒绝`按钮。\
+同意按钮需使用[button](../component/button.md) 组件设置 open-type 属性值为 agreePrivacyAuthorization 来实现。\
+这个同意按钮有隐私政策同意或拒绝的状态变化监听事件，在其他需要等待隐私政策同意的页面中可以监听这个同意事件。详见[uni.onPrivacyAuthorizationChange](../api/privacy.md)
+
+应用启动时，通过 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 弹框显示该页面。下一章节会详述。
 
 注意以下事项：
 - 页面根 view 的背景颜色设置为透明色来实现弹框遮罩效果，参考示例中的"dialog-container"样式  
 - 内容 view 使用圆角及不透明背景色来实现弹框效果，参考示例中的"dialog-content"样式  
 - 在 scroll-view 中使用 text 嵌套子 text 来显示《隐私政策》链接样式，参考示例中的"privacy-href"样式  
-- 在页面中使用uts插件 [uts-openSchema](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/alpha/uni_modules/uts-openSchema) 的 openSchema 方法实现点击《隐私政策》打开链接  
-- 在页面使用 [button](../component/button.md) 组件设置 open-type 属性值为 agreePrivacyAuthorization 来实现用户`同意`《隐私政策》按钮  
+- 在页面中使用uts插件 [uts-openSchema](https://ext.dcloud.net.cn/plugin?id=17828) 的 openSchema 方法实现点击《隐私政策》打开链接  
 
 完整页面示例如下：
 
-```uvue
+```vue
 <template>
   <view class="dialog-container">
     <view class="dialog-content">
@@ -390,13 +430,8 @@ uni-app x 项目中可通过 uvue 页面来实现“个人信息保护指引”�
         style="flex: 1;align-content: center;padding-top: 10px;padding-left: 25px;padding-right: 25px;background-color: #fff;"
         show-scrollbar="false">
         <text>
-          <!-- #ifdef APP-HARMONY -->
-          <text class="privacy-text">欢迎使用DCloud开发者中心系统，我们将通过</text>
-          <!-- #endif -->
-          <!-- #ifndef APP-HARMONY -->
           <text class="privacy-text">欢迎使用Hello uni-app x，我们将通过</text>
           <text class="privacy-href" @click="hrefClick(hrefLicense)">《用户服务协议》及</text>
-          <!-- #endif -->
           <text
             class="privacy-text">相关个人信息处理规则帮助你了解我们如何收集、处理个人信息。根据《常见类型移动互联网应用程序必要个人信息范围规定》。同意《基本功能数据处理规则》仅代表你同意使用浏览、搜索、下载等主要功能收集、处理相关必要个人信息及数据。我们通过</text>
           <text class="privacy-href" @click="hrefClick(hrefPrivacy)">《隐私政策》</text>
@@ -410,15 +445,15 @@ uni-app x 项目中可通过 uvue 页面来实现“个人信息保护指引”�
 </template>
 
 <script>
-  // #ifdef APP-ANDROID || APP-IOS || APP-HARMONY
+  // #ifdef APP
   import { openSchema } from '@/uni_modules/uts-openSchema'
   // #endif
   export default {
     data() {
       return {
         number: 0,
-        hrefLicense: 'https://dcloud.io/license/DCloud.html',
-        hrefPrivacy: 'https://dcloud.io/license/hello-uni-app-x.html'
+        hrefLicense: 'https://dcloud.io/license/DCloud.html', //请自行修改为自己的链接
+        hrefPrivacy: 'https://dcloud.io/license/hello-uni-app-x.html' //请自行修改为自己的链接
       }
     },
     unmounted() {
@@ -542,7 +577,7 @@ uni-app x 项目中可通过 uvue 页面来实现“个人信息保护指引”�
 :::
 
 #### 进入App主界面后展示  
-用户“同意”《隐私政策》进入App主界面后，也​​需提供入口可查看《隐私政策》，建议不要超过4次点击​​即可访问，且路径固定（如“设置-隐私政策”）。
+用户“同意”《隐私政策》进入App主界面后，也​​需提供入口可查看《隐私政策》，建议不要超过4次点击​​即可访问，且路径固定（如 设置->隐私政策，或 关于->隐私政策）。
 
 可使用uts插件 [uts-openSchema](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/alpha/uni_modules/uts-openSchema) 的 openSchema 方法实现点击《隐私政策》打开链接。
 
@@ -554,7 +589,7 @@ uni-app x 项目中可通过 uvue 页面来实现“个人信息保护指引”�
 
 ## 应用首页合规要求 @home  
 
-App首次启动调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框时，不会阻塞应用加载 [page.json](../collocation/pagesjson.md) 中配置的首页，因此需要在首页通过 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 判断用户是否已经“同意”《隐私政策》，如果用户没有同意，不能使用涉及个人信息的 API 及 组件，也不能使用涉及个人信息的[uts插件](../plugin/uts-plugin.md)。  
+App首次启动调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 弹出“个人信息保护指引”（或“用户协议和隐私政策概要”）提示框时，不会阻塞应用加载 [page.json](../collocation/pagesjson.md) 中配置的首页，因此需要在首页通过 [uni.getPrivacySetting](../api/privacy.md#getprivacysetting) 判断用户是否已经“同意”《隐私政策》，或者通过[uni.onPrivacyAuthorizationChange](../api/privacy.md)监听用户同意状态。如果用户没有同意，不能采集用户隐私信息、不能使用涉及个人信息的 API 及 组件，也不能使用涉及个人信息的[uts插件](../plugin/uts-plugin.md)。
 
 可以在 `app.uvue` 页面 [globalData](../collocation/app.md#globalData) 中保存用户是否同意《隐私政策》状态，在 `uvue` 页面中使用此状态。  
 
@@ -611,9 +646,25 @@ App首次启动调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage)
 </script>
 ```
 
+### 同意《隐私政策》前不能使用的内置组件 @unprivacycomponent
+首页的组件如果涉及用户隐私，在用户同意隐私协议之前应该用v-if设为false。
 
-### 同意《隐私政策》前不能调用的API @unprivacyapi  
-以下 API 会实际使用个人信息，不应该在“同意”《隐私政策》前调用以下API：  
+以下是内置组件中涉及隐私的组件，uts插件的组件同理处理。
+
+- 媒体  
+  + camera|相机：[camera](../component/camera.md#camera)  
+- 地图  
+  + map|地图：[map](../component/map.md#map)  
+- 广告  
+  + ad|信息流广告：[ad](../component/ad.md#ad)  
+- 网页  
+  + web-view：[web-view](../component/web-view.md#web-view)  
+
+### 同意《隐私政策》前不能调用的API @unprivacyapi
+以下 API 会实际使用个人信息，不应该在“同意”《隐私政策》前调用以下API。
+
+不管是在app.uvue里，还是在首页中，都需要先判断隐私政策同意后才能调用。尤其注意很多开发者在 app.uvue 里监听uni.onPushMessage之前没有判断，会导致上架失败。
+
 - 设备  
   + 获取系统信息：[uni.getSystemInfo](../api/get-system-info.md#getsysteminfo)、[uni.getSystemInfoSync](../api/get-system-info.md#getsysteminfosync)  
   + 获取设备信息：[uni.getDeviceInfo](../api/get-device-info.md#getdeviceinfo)  
@@ -648,15 +699,6 @@ App首次启动调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage)
 - 推送  
   + push：[uni.getPushClientId](../api/uni-push.md#getpushclientid)、[uni.onPushMessage](../api/uni-push.md#onpushmessage)、[uni.offPushMessage](../api/uni-push.md#offpushmessage)、[uni.createPushMessage](../api/uni-push.md#createpushmessage)、[uni.getPushChannelManager](../api/uni-push.md#getpushchannelmanager)、[uni.setAppBadgeNumber](../api/uni-push.md#setappbadgenumber)、[uni.getChannelManager](../api/uni-push.md#getchannelmanager)  
 
-### 同意《隐私政策》前不能使用的组件 @unprivacycomponent  
-- 媒体  
-  + camera|相机：[camera](../component/camera.md#camera)  
-- 地图  
-  + map|地图：[map](../component/map.md#map)  
-- 广告  
-  + ad|信息流广告：[ad](../component/ad.md#ad)  
-- 网页  
-  + web-view：[web-view](../component/web-view.md#web-view)  
 
 ::: warning 注意事项
 
@@ -683,8 +725,5 @@ App首次启动调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage)
 - [《网络安全标准实践指南—移动互联网应用程序（App）个人信息保护常见问题及处置指南》](https://www.tc260.org.cn/front/postDetail.html?id=20200918162332)  
 - [《网络安全标准实践指南—移动互联网应用程序（App）收集使用个人信息自评估指南》](https://www.tc260.org.cn/front/postDetail.html?id=20200722134829)  
 - [《网络安全实践指南—移动互联网应用基本业务功能必要信息规范》](https://www.tc260.org.cn/front/postDetail.html?id=20190531230315)  
-
-
-
 
 

@@ -32,10 +32,10 @@ uni-app x的组件和API，大多是uts语言开发的。和开发者做的uts�
 
 - e线签（天津数字认证有限公司）：[Android](https://sj.qq.com/appdetail/com.tjca.elinesign)、[iOS](https://apps.apple.com/cn/app/e%E7%BA%BF%E7%AD%BE/id6743433163)
 - Tevau 海外应用：[Google Play](https://play.google.com/store/apps/details?id=uni.UNI2317D55&hl=zh&pli=1)、[iOS](https://apps.apple.com/cn/app/tevau/id6504911110)
+- 农商云办公（OA）：[鸿蒙](https://appgallery.huawei.com/app/detail?id=com.cdrcb.oa)
 - 舆情秘书专业版：[鸿蒙](https://appgallery.huawei.com/app/detail?id=com.istarshine.yqms4harmonyos)
 - 我要查快递（工具）：[鸿蒙](https://appgallery.huawei.com/app/detail?id=com.youjuda.woyaochakuaidi)
 - 账王业财（工具）：[鸿蒙](https://appgallery.huawei.com/app/detail?id=cn.cash360.lionhm)
-- 农商云办公（OA）：[鸿蒙](https://appgallery.huawei.com/app/detail?id=com.cdrcb.oa)
 - W Life（租房）：[Android](https://appgallery.huawei.com/app/C114037237)、[iOS](https://apps.apple.com/cn/app/w-life/id6742771365?uo=4)
 - 维度新闻（黑龙江官媒）：[Android](https://sj.qq.com/appdetail/uni.UNIDB3060D)
 - 鲨推AI（工具）：[Android](https://sj.qq.com/appdetail/com.shatui.ai)
