@@ -40,7 +40,7 @@ let arr = new Array(10)
 
 ## 静态方法
 
-### from<T>(arrayLike: ArrayLike<T>): T[];
+### from\<T>(arrayLike: ArrayLike\<T>): T[];
 
 <!-- UTSJSON.Array.from.description -->
 
@@ -53,7 +53,7 @@ let arr = new Array(10)
 <!-- UTSJSON.Array.from.compatibility -->
 
 
-### of<T>(...items: T[]) : T[]
+### of\<T>(...items: T[]) : T[]
 
 <!-- UTSJSON.Array.of.description -->
 
@@ -79,7 +79,7 @@ let arr = new Array(10)
 <!-- UTSJSON.Array.isArray.compatibility -->
 
 
-### fromAsync<T>(arrayLike: ArrayLike<T>): T[];
+### fromAsync\<T>(arrayLike: ArrayLike\<T>): T[];
 
 <!-- UTSJSON.Array.fromAsync.description -->
 
@@ -861,18 +861,6 @@ let arr = new Array(10)
 <!-- UTSJSON.Array.reduceRight_6.compatibility -->
 
 <!-- UTSJSON.Array.reduceRight_6.tutorial -->
-
-### isArray(arg)
-
-<!-- UTSJSON.Array.isArray.description -->
-
-<!-- UTSJSON.Array.isArray.param -->
-
-<!-- UTSJSON.Array.isArray.returnValue -->
-
-<!-- UTSJSON.Array.isArray.test -->
-
-<!-- UTSJSON.Array.isArray.compatibility -->
 
 ### includes(searchElement, fromIndex?)
 
