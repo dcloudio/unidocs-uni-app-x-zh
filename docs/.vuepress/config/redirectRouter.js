@@ -1,17 +1,19 @@
+const PREFIX = '/uni-app-x'
+
 const routerMap = {
-  '/api/show-modal.html': '/uni-app-x/api/modal.html',
-  '/api/show-action-sheet.html': '/uni-app-x/api/action-sheet.html',
-  '/api/show-loading.html': '/uni-app-x/api/loading.html',
-  '/api/show-toast.html': '/uni-app-x/api/toast.html',
-  '/api/capturescreen.html': '/uni-app-x/api/capture-screen.html',
-  '/api/facial-recognition-verify.html': '/uni-app-x/api/facial-recognition-meta-info.html',
-  '/api/get-element.html': '/uni-app-x/api/get-element-by-id.html',
-  '/api/get-launch-options-sync.html': '/uni-app-x/api/launch.html',
-  '/api/get-provider.html': '/uni-app-x/api/provider.html',
-  '/api/nodes-info.html': '/uni-app-x/api/create-selector-query.html',
-  '/api/set-tabbar.html': '/uni-app-x/api/set-tab-bar.html',
-  '/api/theme.html': '/uni-app-x/api/theme-change.html',
-  '/api/websocket-global.html': '/uni-app-x/api/websocket.html',
+  '/api/show-modal.html': `${PREFIX}/api/modal.html`,
+  '/api/show-action-sheet.html': `${PREFIX}/api/action-sheet.html`,
+  '/api/show-loading.html': `${PREFIX}/api/loading.html`,
+  '/api/show-toast.html': `${PREFIX}/api/toast.html`,
+  '/api/capturescreen.html': `${PREFIX}/api/capture-screen.html`,
+  '/api/facial-recognition-verify.html': `${PREFIX}/api/facial-recognition-meta-info.html`,
+  '/api/get-element.html': `${PREFIX}/api/get-element-by-id.html`,
+  '/api/get-launch-options-sync.html': `${PREFIX}/api/launch.html`,
+  '/api/get-provider.html': `${PREFIX}/api/provider.html`,
+  '/api/nodes-info.html': `${PREFIX}/api/create-selector-query.html`,
+  '/api/set-tabbar.html': `${PREFIX}/api/set-tab-bar.html`,
+  '/api/theme.html': `${PREFIX}/api/theme-change.html`,
+  '/api/websocket-global.html': `${PREFIX}/api/websocket.html`,
 }
 
 export default ({ fullPath, path, hash }) => {

@@ -1,3 +1,7 @@
+---
+layout: SimpleLayout
+---
+
 文档已迁移至：
 
 - [nested-scroll-header](nested-scroll-header.md)
