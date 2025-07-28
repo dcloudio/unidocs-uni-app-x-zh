@@ -431,9 +431,9 @@ App一键登录为了支持“中国电信”运行商，要用到“电信（�
         show-scrollbar="false">
         <text>
           <text class="privacy-text">欢迎使用Hello uni-app x，我们将通过</text>
-          <text class="privacy-href" @click="hrefClick(hrefLicense)">《用户服务协议》及</text>
+          <text class="privacy-href" @click="hrefClick(hrefLicense)">《用户服务协议》</text>
           <text
-            class="privacy-text">相关个人信息处理规则帮助你了解我们如何收集、处理个人信息。根据《常见类型移动互联网应用程序必要个人信息范围规定》。同意《基本功能数据处理规则》仅代表你同意使用浏览、搜索、下载等主要功能收集、处理相关必要个人信息及数据。我们通过</text>
+            class="privacy-text">及相关个人信息处理规则帮助你了解应用如何收集、处理个人信息。根据《常见类型移动互联网应用程序必要个人信息范围规定》，应用在演示 uni-app x 能力时仅收集、处理相关必要个人信息及数据。我们通过</text>
           <text class="privacy-href" @click="hrefClick(hrefPrivacy)">《隐私政策》</text>
           <text class="privacy-text">帮助你全面了解我们的服务及收集、处理个人信息的详细情况。</text>
         </text>
@@ -479,12 +479,7 @@ App一键登录为了支持“中国电信”运行商，要用到“电信（�
         })
       },
       hrefClick(href : string) {
-        // #ifdef APP-HARMONY
-        uni.navigateTo({
-          url: '/pages/component/button/privacy-web-view?url=/hybrid/html/privacy.html&title=隐私政策'
-        })
-        // #endif
-        // #ifdef APP-ANDROID || APP-IOS
+        // #ifdef APP
         openSchema(href)
         // #endif
       },
