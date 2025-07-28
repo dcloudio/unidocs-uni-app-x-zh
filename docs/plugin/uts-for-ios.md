@@ -6,7 +6,7 @@
 
 ## 1 了解 UTS 插件是什么
 
-UTS 插件是 uni-app 新型插件形式 [详情](/plugin/uts-plugin)
+UTS 插件是 uni-app 新型插件形式 [详情](/plugin/uts-plugin/)
 
 对于 iOS 开发者来说，我们需要了解的是：
 
