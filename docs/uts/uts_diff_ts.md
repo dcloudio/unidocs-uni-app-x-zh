@@ -527,6 +527,30 @@ let x: number = initialize();
 console.log("x = " + x);
 ```
 
+#### 类型别名不能出现在局部作用域中 @UTS100006
+
+级别：错误
+
+错误码：UTS100006
+
+使用 type 关键字定义的类型别名（Type Alias），例如 type MyError = Error，不能在局部进行声明，只能在顶层作用域中。
+
+TypeScript:
+
+```ts
+function main() {
+  type MyError = Error
+}
+```
+
+UTS:
+
+```ts
+type MyError = Error
+function main() {
+}
+```
+
 ## 3. 类和对象相关
 
 #### 不支持以#开头的私有字段 @UTS110111128
