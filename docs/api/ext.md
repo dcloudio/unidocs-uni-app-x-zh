@@ -16,7 +16,7 @@
 
 
 ## plus api替代@plus
-uni-app x 中不再支持plus和weex的API。过于plus api中一些常用的api，在uni-app x中进行了替换增补。
+uni-app x 中不再支持plus和weex的API。对于plus api中一些常用的api，在uni-app x中进行了替换增补。
 - plus.runtime.quit => [uni.exit](./exit.md)
 - plus.runtime.install => [uni.installApk](./install-apk.md)
 
