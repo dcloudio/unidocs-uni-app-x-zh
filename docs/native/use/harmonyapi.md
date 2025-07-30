@@ -79,7 +79,7 @@ struct Index {
 
 ## 通信
 
-可以使用 [Emitter 模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-emitter)进行消息通信。
+可以使用 [Emitter 模块](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-emitter?ha_source=Dcloud&ha_sourceId=89000448)进行消息通信。
 
 ### 原生 APP 监听消息以及向 uni-app x 发送消息
 
