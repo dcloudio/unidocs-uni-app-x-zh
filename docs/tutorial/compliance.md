@@ -130,7 +130,7 @@ uni-ad聚合了其它广告渠道SDK，您需要根据应用实际使用情况�
 >   + 使用目的：程序化广告投放、广告监测归因、广告防欺诈与运营维护  
 >   + 收集方式：SDK自行采集，不涉及数据共享  
 >   + 第三方主体： 华为软件技术有限公司  
->   + 隐私政策链接： [鲸鸿动能SDK隐私声明](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/whale-hong-kinetic-energy-sdk-privacy-statement-0000001658283582)  
+>   + 隐私政策链接： [鲸鸿动能SDK隐私声明](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/whale-hong-kinetic-energy-sdk-privacy-statement-0000001658283582?ha_source=Dcloud&ha_sourceId=89000448)  
 
 ##### Sigmob广告 SDK  
 打包时勾选了uni-ad中的“Sigmob广告联盟”广告渠道时，会用到“Sigmob广告 SDK”。需在三方SDK采集数据说明中添加“Sigmob广告 SDK”信息告知用户，参考以下示例：  
@@ -255,7 +255,7 @@ uni-ad聚合了其它广告渠道SDK，您需要根据应用实际使用情况�
 >   + 使用目的： 用于华为手机的消息推送  
 >   + 收集方式：SDK自行采集  
 >   + 第三方主体： 华为软件技术有限公司  
->   + 隐私政策链接： [华为推送SDK隐私声明](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/sdk-data-security-0000001050042177)  
+>   + 隐私政策链接： [华为推送SDK隐私声明](https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/sdk-data-security-0000001050042177?ha_source=Dcloud&ha_sourceId=89000448)  
 
 ##### 荣耀推送 SDK  
 打包时勾选了uni-push中的“荣耀推送”离线推送通道时，会用到“荣耀推送 SDK”。需在三方SDK采集数据说明中添加“荣耀推送 SDK”信息告知用户，参考以下示例：  

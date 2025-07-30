@@ -147,7 +147,7 @@ webviewController?.setPathAllowingUniversalAccess([
 ].filter(item => !!item).map(item => item + '/uni-app-x/apps'))
 ```
 
-鸿蒙的安全团队认为过多开放目录访问会造成安全漏洞，但同时也限制了开发者需求的实现。DCloud正在与华为交涉，[详见](https://issuereporter.developer.huawei.com/detail/250515172631027/comment)
+鸿蒙的安全团队认为过多开放目录访问会造成安全漏洞，但同时也限制了开发者需求的实现。DCloud正在与华为交涉，[详见](https://issuereporter.developer.huawei.com/detail/250515172631027/comment?ha_source=Dcloud&ha_sourceId=89000448)
 
 ## 注意
 - app平台web-view组件为系统Webview组件，内核版本号不由uni-app x框架控制。
