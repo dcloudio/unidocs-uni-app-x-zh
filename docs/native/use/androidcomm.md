@@ -129,8 +129,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         findViewById<View>(R.id.btn_goto).setOnClickListener {
             startActivity(Intent(this@MainActivity, UniAppActivity::class.java))
-            ContextCompat.registerReceiver(this,broadcast, IntentFilter("ACTION_TO_NATIVE"),
-                ContextCompat.RECEIVER_EXPORTED)
+            if (VERSION.SDK_INT >= 33) {
+                registerReceiver(broadcast, IntentFilter("ACTION_TO_NATIVE"), null, null, RECEIVER_EXPORTED)
+            } else {
+                registerReceiver(broadcast, IntentFilter("ACTION_TO_NATIVE"))
+            }
         }
     }
 
@@ -142,7 +145,7 @@ class MainActivity : AppCompatActivity() {
                 handler.postDelayed({
                     val inte = Intent("ACTION_FROM_NATIVE")
                     inte.putExtra("key", "接受来自原生的广播")
-                    sendBroadcast(inte)
+                    context.sendBroadcast(inte)
                 }, 3000)
             }
         }
