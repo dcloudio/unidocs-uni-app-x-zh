@@ -50,6 +50,7 @@
 	* [iOS逻辑层使用注意](native/iosReadme.md)
 * 鸿蒙next平台专题指南
   * [概述](app-harmony/README.md)
+	* [应用合规指南](tutorial/compliance.md)
   * uni-app x 原生SDK
     * [概述](native/README.md)
     * [原生工程配置](native/use/harmony.md)
