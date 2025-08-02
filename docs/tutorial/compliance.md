@@ -576,6 +576,8 @@ App一键登录为了支持“中国电信”运行商，要用到“电信（�
 
 可使用uts插件 [uts-openSchema](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/alpha/uni_modules/uts-openSchema) 的 openSchema 方法实现点击《隐私政策》打开链接。
 
+Hello uni-app x 项目中的“关于”页面演示了此功能，参考源码：[/pages/template/about/about.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/about/about.uvue)
+
 
 ### 《隐私政策》更新  
 
@@ -700,6 +702,84 @@ App首次启动调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage)
 同意《隐私政策》前也不能调用涉及访问个人信息的 [uts插件](../plugin/uts-plugin.md) 实现的 API 或 组件，具体情况需联系插件作者进行确认。  
 :::
 
+
+### 示例代码  
+以下示例演示了在同意隐私政策前不显示地图组件、不能调用获取设备信息的功能：
+
+```vue
+<template>
+  <scroll-view style="flex:1;">
+    <text class="title">{{title}}</text>
+    <button open-type="agreePrivacyAuthorization">同意隐私政策</button>
+    <button @click="resetPrivacy">不同意隐私政策</button>
+    <!-- 使用 v-if 来绑定 isAgreePrivacy 状态决定是否显示地图组件 -->
+    <view class="content" v-if="isAgreePrivacy">
+      <map class="map" :longitude="116.397590" :latitude="39.908776"></map>
+    </view>
+    <button @click="getDeviceInof">获取设备信息</button>
+  </scroll-view>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        title: '用户“同意”《隐私政策》前不能使用涉及采集个人信息的组件（如map、camera、ad等）及API，此页面演示“同意”/“不同意”《隐私政策》后显示/隐藏相关组件、使用相关API进行提示的示例',
+        isAgreePrivacy: false,  //保存同意隐私政策状态
+      }
+    },
+    onLoad() {
+      //监听同意隐私政策状态的变化
+      uni.onPrivacyAuthorizationChange((res)=>{
+        this.isAgreePrivacy = !res.needAuthorization
+      })
+      //获取当前同意隐私正常状态
+      uni.getPrivacySetting({
+        success: (res) => {
+          this.isAgreePrivacy = !res.needAuthorization
+        }
+      })
+    },
+    methods: {
+      resetPrivacy() {
+        //不同意隐私政策
+        uni.resetPrivacyAuthorization()
+      },
+      getDeviceInof() {
+        if(!this.isAgreePrivacy){
+          uni.showModal({
+            content: '您没有同意《隐私政策》，不能使用此功能！',
+            showCancel: false
+          })
+          return
+        }
+        let info = uni.getDeviceInfo()
+        uni.showModal({
+          title: '设备信息',
+          content: JSON.stringify(info),
+          showCancel: false
+        })
+        console.log('getDeviceInfo', info)
+      }
+    }
+  }
+</script>
+
+<style>
+.title {
+  font-size: 12px;
+  color: #8f8f94;
+  margin: 16px;
+}
+.content {
+  margin: 16px;
+}
+.map {
+  width: 100%;
+  height: 300px;
+}
+</style>
+```
 
 
 ## 应用`游客模式`合规要求 @tourist  
