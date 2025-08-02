@@ -6,9 +6,6 @@
 
 :::
 
----
-title : uni.connectSocket(options)
----
 
 <!-- ## uni.connectSocket(options) @connectsocket -->
 

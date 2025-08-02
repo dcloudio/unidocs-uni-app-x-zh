@@ -17,10 +17,6 @@ uni-app的Storage在不同端的实现不同：
 - `uni-`、`uni_`、`dcloud-`、`dcloud_`为前缀的key，为系统保留关键前缀。如`uni_deviceId`、`uni_id_token`，请开发者为key命名时避开这些前缀。
 - 非App平台清空Storage会导致 uni.getSystemInfo/getDeviceInfo 获取到的deviceId改变
 
----
-title : uni.setStorage(options)
----
-
 <!-- ## uni.setStorage(options) @setstorage -->
 
 <!-- UTSAPIJSON.setStorage.name -->
