@@ -1,3 +1,7 @@
+---
+title : editor
+---
+
 <!-- ## editor -->
 
 <!-- UTSCOMJSON.editor.name -->
@@ -19,4 +23,3 @@ App平台推荐使用web-view来加载网页版的富文本编辑器。不限于
 <!-- UTSCOMJSON.editor.example -->
 
 <!-- UTSCOMJSON.editor.reference -->
-

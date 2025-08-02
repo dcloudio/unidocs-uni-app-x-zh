@@ -1,3 +1,7 @@
+---
+title : uni.downloadFile(options)
+---
+
 <!-- ## uni.downloadFile(options) @downloadfile -->
 
 <!-- UTSAPIJSON.downloadFile.name -->
@@ -31,7 +35,7 @@ complete: () => {
 如不释放，在调用Task对象的方法将导致控制台报错：
 `error: instance object does not exist: id:15`
 
-::: 
+:::
 
 <!-- UTSAPIJSON.downloadFile.example -->
 

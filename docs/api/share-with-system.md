@@ -1,3 +1,7 @@
+---
+title : uni.shareWithSystem(options)
+---
+
 <!-- ## uni.shareWithSystem(options) @sharewithsystem -->
 
 <!-- UTSAPIJSON.shareWithSystem.name -->
@@ -26,4 +30,3 @@
 2. Android的系统分享，分享链接到微信只能以文本方式分享，如需方条链接需使用微信SDK。iOS的系统分享可以分享方条链接。
 3. Android的系统分享同时分享链接和图片到微信最终只能分享图片。而iOS的系统分享同时分享链接和图片，会把图片作为链接的题图。
 插件市场有[微信分享](https://ext.dcloud.net.cn/search?q=%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB&orderBy=Relevance&uni-appx=1)插件。
-

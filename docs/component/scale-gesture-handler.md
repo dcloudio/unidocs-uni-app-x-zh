@@ -1,3 +1,7 @@
+---
+title : scale-gesture-handler
+---
+
 <!-- ## scale-gesture-handler -->
 
 <!-- UTSCOMJSON.scale-gesture-handler.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.scale-gesture-handler.example -->
 
 <!-- UTSCOMJSON.scale-gesture-handler.reference -->
-

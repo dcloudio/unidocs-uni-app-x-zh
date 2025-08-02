@@ -1,3 +1,7 @@
+---
+title : aria-component
+---
+
 <!-- ## aria-component -->
 
 <!-- UTSCOMJSON.aria-component.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.aria-component.example -->
 
 <!-- UTSCOMJSON.aria-component.reference -->
-

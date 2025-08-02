@@ -1,3 +1,7 @@
+---
+title : swiper
+---
+
 <!-- ## swiper -->
 
 <!-- UTSCOMJSON.swiper.name -->

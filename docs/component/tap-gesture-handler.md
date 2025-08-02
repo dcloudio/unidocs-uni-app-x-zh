@@ -1,3 +1,7 @@
+---
+title : tap-gesture-handler
+---
+
 <!-- ## tap-gesture-handler -->
 
 <!-- UTSCOMJSON.tap-gesture-handler.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.tap-gesture-handler.example -->
 
 <!-- UTSCOMJSON.tap-gesture-handler.reference -->
-

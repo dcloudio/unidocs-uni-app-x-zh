@@ -1,3 +1,7 @@
+---
+title : uni.connectEventSource(options)
+---
+
 <!-- ## uni.connectEventSource(options) @connecteventsource -->
 
 <!-- UTSAPIJSON.connectEventSource.name -->

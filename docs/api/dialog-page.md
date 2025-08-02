@@ -42,8 +42,12 @@ dialogPage的绑定：
 调用时机注意事项：
 - 最早的调用时机是在app的onLaunch里调用openDialogPage，不支持在main.uts中调用openDialogPage。
 
-app-android平台注意事项：  
+app-android平台注意事项：
 - dialogPage不会创建Android原生Activity，复用parentPage的Android原生Activity。
+
+---
+title : uni.openDialogPage(options)
+---
 
 <!-- ## uni.openDialogPage(options) @opendialogpage -->
 

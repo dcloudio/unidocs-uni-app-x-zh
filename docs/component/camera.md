@@ -1,3 +1,7 @@
+---
+title : camera
+---
+
 <!-- ## camera -->
 
 <!-- UTSCOMJSON.camera.name -->
@@ -42,14 +46,13 @@ Android端实现相机组件所使用的依赖库
     在manfiest.json中的 "app-android" -> "distribute" -> "modules" 节点下手动添加 "uni-barcode-scanning"，如下示例：
 
 ```
-"app-android" : {  
-    "distribute" : {  
-        "modules" : {  
-            "uni-barcode-scanning" : {}  
-        }  
-    }  
+"app-android" : {
+    "distribute" : {
+        "modules" : {
+            "uni-barcode-scanning" : {}
+        }
+    }
 }
 ```
 
 <!-- UTSCOMJSON.camera.reference -->
-

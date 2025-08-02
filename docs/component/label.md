@@ -1,3 +1,7 @@
+---
+title : label
+---
+
 <!-- ## label -->
 
 <!-- UTSCOMJSON.label.name -->
@@ -19,4 +23,3 @@ App平台可以用view加事件来替代label。
 <!-- UTSCOMJSON.label.example -->
 
 <!-- UTSCOMJSON.label.reference -->
-

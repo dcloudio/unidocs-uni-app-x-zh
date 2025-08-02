@@ -1,3 +1,7 @@
+---
+title : draggable-sheet
+---
+
 <!-- ## draggable-sheet -->
 
 <!-- UTSCOMJSON.draggable-sheet.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.draggable-sheet.example -->
 
 <!-- UTSCOMJSON.draggable-sheet.reference -->
-

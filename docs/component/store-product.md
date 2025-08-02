@@ -1,3 +1,7 @@
+---
+title : store-product
+---
+
 <!-- ## store-product -->
 
 <!-- UTSCOMJSON.store-product.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.store-product.example -->
 
 <!-- UTSCOMJSON.store-product.reference -->
-

@@ -1,3 +1,7 @@
+---
+title : waterflow
+---
+
 <!-- ## waterflow -->
 
 <!-- UTSCOMJSON.waterflow.name -->
@@ -6,7 +10,7 @@
 
 <!-- UTSCOMJSON.waterflow.compatibility -->
 
-在App中，waterflow 底层实现与list-view底层实现方式基本一致，仅子组件排列方式存在差异，适用于多元素瀑布流长列表场景，子组件滑动出屏幕会及时回收复用。性能优于 scroll-view 
+在App中，waterflow 底层实现与list-view底层实现方式基本一致，仅子组件排列方式存在差异，适用于多元素瀑布流长列表场景，子组件滑动出屏幕会及时回收复用。性能优于 scroll-view
 
 > waterflow 暂时只支持 flow-item 组件为子组件，其他组件不可见
 
@@ -87,4 +91,3 @@ scroll-view开启嵌套模式后，waterflow 可作为内层滚动视图与外�
 	+ 场景一 image组件设置mode=widthFix，加载的网络图片会出现异步图片下载动态修改高度的情况，容易出现上述问题
 	+ 场景二 rich-text组件nodes节点内容存在网络图片，出现异步加载情况，会出现动态修改高度导致出现上述问题
 + waterflow 组件的 overflow 属性不支持配置 visible
-

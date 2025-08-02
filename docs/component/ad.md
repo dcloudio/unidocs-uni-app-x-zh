@@ -1,3 +1,7 @@
+---
+title : ad
+---
+
 <!-- ## ad -->
 
 <!-- UTSCOMJSON.ad.name -->
@@ -43,4 +47,3 @@ App平台在manifest中配置添加三方广告SDK。具体配置可参考[文�
 <!-- UTSCOMJSON.ad.example -->
 
 <!-- UTSCOMJSON.ad.reference -->
-

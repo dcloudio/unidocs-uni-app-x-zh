@@ -1,3 +1,7 @@
+---
+title : uni.requestMerchantTransfer(options)
+---
+
 <!-- ## uni.requestMerchantTransfer(options) @requestmerchanttransfer -->
 
 <!-- UTSAPIJSON.requestMerchantTransfer.name -->

@@ -6,6 +6,10 @@
 
 :::
 
+---
+title : uni.connectSocket(options)
+---
+
 <!-- ## uni.connectSocket(options) @connectsocket -->
 
 <!-- UTSAPIJSON.connectSocket.name -->

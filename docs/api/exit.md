@@ -1,3 +1,7 @@
+---
+title : uni.exit(options?)
+---
+
 <!-- ## uni.exit(options?) @exit -->
 
 <!-- UTSAPIJSON.exit.name -->
@@ -6,9 +10,9 @@
 
 <!-- UTSAPIJSON.exit.compatibility -->
 
-#### app平台差异  
+#### app平台差异
 
-##### app-android平台  
+##### app-android平台
 Android平台的应用退出分热退出和冷退出。
 - 冷退出是彻底杀掉
 - 热退出是关闭可见的activity，后台进程不退出（比如push）
@@ -19,7 +23,7 @@ Android平台的应用退出分热退出和冷退出。
 
 [uni-app x 原生SDK](../native/README.md)模式中调用本API仅会关闭uni-app x应用。不会关闭宿主应用。
 
-##### app-ios平台  
+##### app-ios平台
 iOS系统自身并没有退出应用的API。
 
 [uni-app x 原生SDK](../native/README.md)模式中支持通过本API关闭uni-app x应用。

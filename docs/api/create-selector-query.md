@@ -1,3 +1,7 @@
+---
+title : uni.createSelectorQuery()
+---
+
 <!-- ## uni.createSelectorQuery() @createselectorquery -->
 
 <!-- UTSAPIJSON.createSelectorQuery.name -->

@@ -1,3 +1,7 @@
+---
+title : uni.getLaunchOptionsSync()
+---
+
 <!-- ## uni.getLaunchOptionsSync() @getlaunchoptionssync -->
 
 <!-- UTSAPIJSON.getLaunchOptionsSync.name -->

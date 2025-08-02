@@ -1,3 +1,7 @@
+---
+title : swiper-item
+---
+
 <!-- ## swiper-item -->
 
 <!-- UTSCOMJSON.swiper-item.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.swiper-item.example -->
 
 <!-- UTSCOMJSON.swiper-item.reference -->
-

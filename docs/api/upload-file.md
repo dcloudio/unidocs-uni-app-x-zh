@@ -1,3 +1,7 @@
+---
+title : uni.uploadFile(options)
+---
+
 <!-- ## uni.uploadFile(options) @uploadfile -->
 
 <!-- UTSAPIJSON.uploadFile.name -->

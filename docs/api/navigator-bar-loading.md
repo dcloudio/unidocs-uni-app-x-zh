@@ -1,3 +1,7 @@
+---
+title : uni.showNavigationBarLoading(options?)
+---
+
 <!-- ## uni.showNavigationBarLoading(options?) @shownavigationbarloading -->
 
 <!-- UTSAPIJSON.showNavigationBarLoading.name -->

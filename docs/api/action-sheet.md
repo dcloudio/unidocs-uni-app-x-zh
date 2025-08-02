@@ -1,3 +1,7 @@
+---
+title : uni.showActionSheet(options)
+---
+
 <!-- ## uni.showActionSheet(options) @showactionsheet -->
 
 <!-- UTSAPIJSON.showActionSheet.name -->

@@ -1,3 +1,7 @@
+---
+title : uni.chooseVideo(options)
+---
+
 <!-- ## uni.chooseVideo(options) @choosevideo -->
 
 <!-- UTSAPIJSON.chooseVideo.name -->
@@ -29,4 +33,3 @@
 * android端由于系统或ROM的限制，拍照的`maxDuration`和`camera`属性在部分手机上不生效。
 * 从HBuilderX4.41版起，uni.chooseVideo在`sourceType`为`['album']`、`albumMode`为`system`、`compressed`为`true`时，支持返回Uri地址。
 * 系统视频选择器的`sizeType`仅支持设置`['original']`或`['compressed']`。在Android 11及以上的系统中，设置`system`调用的是系统的视频选择器，低于android 11的系统中会调用系统的文件选择器。
-

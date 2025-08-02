@@ -1,3 +1,7 @@
+---
+title : functional-page-navigator
+---
+
 <!-- ## functional-page-navigator -->
 
 <!-- UTSCOMJSON.functional-page-navigator.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.functional-page-navigator.example -->
 
 <!-- UTSCOMJSON.functional-page-navigator.reference -->
-

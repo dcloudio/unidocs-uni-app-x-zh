@@ -1,3 +1,7 @@
+---
+title : uni.chooseLocation(options)
+---
+
 <!-- ## uni.chooseLocation(options) @chooselocation -->
 
 <!-- UTSAPIJSON.chooseLocation.name -->
@@ -23,7 +27,7 @@
 
 <!-- UTSAPIJSON.chooseLocation.example -->
 
-## 三方地图SDK  
+## 三方地图SDK
 
 uni.chooseLocation 依赖三方地图SDK，点击[查看详情](../component/map.md#mapsdk)
 
@@ -48,7 +52,7 @@ DCloud的所有服务器API，都是基于uniCloud的。并且uniCloud早已经�
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/API/chooseLocation/aa35d5a6-9b13-4fea-8a0c-1b3534584659.png)
 
-关联服务空间后，将 uni-map-common 插件导入项目，插件地址：[https://ext.dcloud.net.cn/plugin?id=13872](https://ext.dcloud.net.cn/plugin?id=13872) 
+关联服务空间后，将 uni-map-common 插件导入项目，插件地址：[https://ext.dcloud.net.cn/plugin?id=13872](https://ext.dcloud.net.cn/plugin?id=13872)
 
 安装完 uni-map-common 插件后，需要将你的地图key配置在 `/uni_modules/uni-config-center/uniCloud/cloudfunctions/common/uni-config-center/uni-map/config.js` 如果你的项目没有此配置文件，则直接根据目录创建对应的目录和 `config.js` 文件，文件内容如下：
 
@@ -264,10 +268,10 @@ uni.chooseLocation 虽然是一个框架内置的页面。但提供了丰富的�
 ```css
 .uni-choose-location-light .uni-choose-location-poi-item-selected-icon {
 	color: red !important;
-} 
+}
 .uni-choose-location-dark .uni-choose-location-poi-item-selected-icon {
 	color: red !important;
-} 
+}
 ```
 
 POI标题

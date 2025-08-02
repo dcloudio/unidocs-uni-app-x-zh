@@ -1,3 +1,7 @@
+---
+title : uni.getElementById(id)
+---
+
 <!-- ## uni.getElementById(id) @getelementbyid -->
 
 <!-- UTSAPIJSON.getElementById.name -->

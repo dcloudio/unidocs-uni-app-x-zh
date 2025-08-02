@@ -1,3 +1,7 @@
+---
+title : uni.base64ToArrayBuffer(base64)
+---
+
 <!-- ## uni.base64ToArrayBuffer(base64) @base64toarraybuffer -->
 
 <!-- UTSAPIJSON.base64ToArrayBuffer.name -->

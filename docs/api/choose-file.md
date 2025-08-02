@@ -1,3 +1,7 @@
+---
+title : uni.chooseFile(options)
+---
+
 <!-- ## uni.chooseFile(options) @choosefile -->
 
 <!-- UTSAPIJSON.chooseFile.name -->

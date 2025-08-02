@@ -1,3 +1,7 @@
+---
+title : pan-gesture-handler
+---
+
 <!-- ## pan-gesture-handler -->
 
 <!-- UTSCOMJSON.pan-gesture-handler.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.pan-gesture-handler.example -->
 
 <!-- UTSCOMJSON.pan-gesture-handler.reference -->
-

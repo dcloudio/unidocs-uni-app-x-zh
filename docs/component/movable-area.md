@@ -1,3 +1,7 @@
+---
+title : movable-area
+---
+
 <!-- ## movable-area -->
 
 <!-- UTSCOMJSON.movable-area.name -->
@@ -25,4 +29,3 @@
 <!-- UTSCOMJSON.movable-area.example -->
 
 <!-- UTSCOMJSON.movable-area.reference -->
-

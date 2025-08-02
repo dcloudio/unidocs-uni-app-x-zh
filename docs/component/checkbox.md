@@ -1,3 +1,7 @@
+---
+title : checkbox
+---
+
 <!-- ## checkbox -->
 
 <!-- UTSCOMJSON.checkbox.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.checkbox.example -->
 
 <!-- UTSCOMJSON.checkbox.reference -->
-

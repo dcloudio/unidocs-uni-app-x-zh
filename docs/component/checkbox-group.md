@@ -1,3 +1,7 @@
+---
+title : checkbox-group
+---
+
 <!-- ## checkbox-group -->
 
 <!-- UTSCOMJSON.checkbox-group.name -->

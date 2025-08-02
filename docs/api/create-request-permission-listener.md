@@ -1,3 +1,7 @@
+---
+title : uni.createRequestPermissionListener()
+---
+
 <!-- ## uni.createRequestPermissionListener() @createrequestpermissionlistener -->
 
 <!-- UTSAPIJSON.createRequestPermissionListener.name -->

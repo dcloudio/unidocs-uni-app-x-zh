@@ -1,3 +1,7 @@
+---
+title : uni.showLoading(options)
+---
+
 <!-- ## uni.showLoading(options) @showloading -->
 
 <!-- UTSAPIJSON.showLoading.name -->

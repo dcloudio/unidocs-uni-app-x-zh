@@ -1,3 +1,7 @@
+---
+title : text
+---
+
 <!-- ## text -->
 
 <!-- UTSCOMJSON.text.name -->
@@ -57,7 +61,7 @@ App 端不支持 `text` 组件中渲染多段文本，如果 `text` 组件中的
       text: 'c'
     }
   ])
-  
+
 </script>
 ```
 上述代码应调整为：

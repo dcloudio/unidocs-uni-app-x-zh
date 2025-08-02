@@ -1,3 +1,7 @@
+---
+title : store-home
+---
+
 <!-- ## store-home -->
 
 <!-- UTSCOMJSON.store-home.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.store-home.example -->
 
 <!-- UTSCOMJSON.store-home.reference -->
-

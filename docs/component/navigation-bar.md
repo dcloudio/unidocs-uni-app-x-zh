@@ -1,3 +1,7 @@
+---
+title : navigation-bar
+---
+
 <!-- ## navigation-bar -->
 
 <!-- UTSCOMJSON.navigation-bar.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.navigation-bar.example -->
 
 <!-- UTSCOMJSON.navigation-bar.reference -->
-

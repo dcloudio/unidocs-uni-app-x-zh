@@ -17,6 +17,10 @@ uni-app的Storage在不同端的实现不同：
 - `uni-`、`uni_`、`dcloud-`、`dcloud_`为前缀的key，为系统保留关键前缀。如`uni_deviceId`、`uni_id_token`，请开发者为key命名时避开这些前缀。
 - 非App平台清空Storage会导致 uni.getSystemInfo/getDeviceInfo 获取到的deviceId改变
 
+---
+title : uni.setStorage(options)
+---
+
 <!-- ## uni.setStorage(options) @setstorage -->
 
 <!-- UTSAPIJSON.setStorage.name -->
@@ -215,7 +219,7 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 
 ## 类型数据的存取说明@gettypedata
 
-首先明确一个原则，Storage实际储存到各终端文件系统的是**序列化后的数据**。 
+首先明确一个原则，Storage实际储存到各终端文件系统的是**序列化后的数据**。
 
 也就是当我们使用setStorage/setStorageSync 储存一个带类型的数据时，插件内部会自动将其序列化为字符串后进行储存。当我们调用 getStorage/getStorageSync 插件内部也会尝试对字符串进行类型还原，分为以下几种情况：
 
@@ -315,7 +319,7 @@ console.log("data",dataObj)
 class Person implements IJSONStringify {
 	// 声明属性类型（必须显式初始化或在构造函数中赋值）
 	name: string;
-	age: number;	  
+	age: number;
 
 	// 构造函数
 	constructor(name: string, age: number) {
@@ -329,7 +333,7 @@ class Person implements IJSONStringify {
 		jsonRet["age"] = this.age
 		return jsonRet
 	}
-	
+
 	// 方法
 	greet(): string {
 		return `Hello, I'm ${this.name} and I'm ${this.age} years old.`;
@@ -351,5 +355,3 @@ console.log("personObj",personObj)
 ```
 
 此时，我们就可以让自定义class实现类似自定义type的效果了。
-
-

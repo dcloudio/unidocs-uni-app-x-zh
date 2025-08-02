@@ -1,3 +1,7 @@
+---
+title : uni.getRecorderManager()
+---
+
 <!-- ## uni.getRecorderManager() @getrecordermanager -->
 
 <!-- UTSAPIJSON.getRecorderManager.name -->

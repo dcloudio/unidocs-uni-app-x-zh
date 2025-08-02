@@ -1,3 +1,7 @@
+---
+title : keyboard-accessory
+---
+
 <!-- ## keyboard-accessory -->
 
 <!-- UTSCOMJSON.keyboard-accessory.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.keyboard-accessory.example -->
 
 <!-- UTSCOMJSON.keyboard-accessory.reference -->
-

@@ -1,3 +1,7 @@
+---
+title : movable-view
+---
+
 <!-- ## movable-view -->
 
 <!-- UTSCOMJSON.movable-view.name -->
@@ -25,4 +29,3 @@
 <!-- UTSCOMJSON.movable-view.example -->
 
 <!-- UTSCOMJSON.movable-view.reference -->
-

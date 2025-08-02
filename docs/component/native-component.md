@@ -1,3 +1,7 @@
+---
+title : native-component
+---
+
 <!-- ## native-component -->
 
 <!-- UTSCOMJSON.native-component.name -->
@@ -17,4 +21,3 @@
 <!-- UTSCOMJSON.native-component.example -->
 
 <!-- UTSCOMJSON.native-component.reference -->
-

@@ -1,3 +1,7 @@
+---
+title : input
+---
+
 <!-- ## input -->
 
 <!-- UTSCOMJSON.input.name -->
@@ -48,7 +52,7 @@ const inputElement = uni.getElementById(id)
 const view = inputElement?.getIOSView();
 //判断 view 是否存在，类型是否为 UITextField
 if (view != null && view instanceof UITextField) {
-    //将 view 转换为 UITextField 类型 
+    //将 view 转换为 UITextField 类型
     const textField = view! as UITextField;
 }
 ```

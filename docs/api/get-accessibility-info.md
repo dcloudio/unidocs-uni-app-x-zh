@@ -1,3 +1,7 @@
+---
+title : uni.getAccessibilityInfo()
+---
+
 <!-- ## uni.getAccessibilityInfo() @getaccessibilityinfo -->
 
 <!-- UTSAPIJSON.getAccessibilityInfo.name -->

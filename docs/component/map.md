@@ -1,3 +1,7 @@
+---
+title : map
+---
+
 <!-- ## map -->
 
 <!-- UTSCOMJSON.map.name -->
@@ -40,7 +44,7 @@ map组件的操作api为[uni.createMapContext()](../api/create-map-context.md)�
 
 <!-- UTSCOMJSON.map.example -->
 
-## 三方地图SDK@mapsdk  
+## 三方地图SDK@mapsdk
 
 ### 腾讯地图
 
@@ -72,7 +76,7 @@ app平台目前还没有可视化界面，采用摇树机制，即调用地图�
 
 所谓地图扩展就是可以通过获取map组件的形式扩展地图功能，暂时只有Android支持，步骤如下：
 
-1. 新建一个uts插件，配置依赖腾讯地图SDK 
+1. 新建一个uts插件，配置依赖腾讯地图SDK
 2. 在uvue页面调用`uni.getElementById()`获取组件对象`UniElement`，将`UniElement`对象传入uts插件
 3. 在uts插件中通过`UniElement`的`getAndroidView`获取原生地图View，使用原生地图view与地图SDK提供的API开发扩展功能,例：
 
@@ -91,4 +95,3 @@ export function setScale(element : UniElement, scale : number) : void {
 - 地图是商业服务，需购买商业地图授权（5万/年）。如果没有授权，不但使用会被限频，还会被某些应用商店拒绝上架。DCloud与地图厂商谈判，给开发者提供了优惠，点此详询 [地图商业授权咨询](https://ask.dcloud.net.cn/explore/map/)。
 
 <!-- UTSCOMJSON.map.reference -->
-

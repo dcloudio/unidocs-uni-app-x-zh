@@ -1,3 +1,7 @@
+---
+title : slider
+---
+
 <!-- ## slider -->
 
 <!-- UTSCOMJSON.slider.name -->

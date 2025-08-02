@@ -1,3 +1,7 @@
+---
+title : uni.startSoterAuthentication(options)
+---
+
 <!-- ## uni.startSoterAuthentication(options) @startsoterauthentication -->
 
 <!-- UTSAPIJSON.startSoterAuthentication.name -->

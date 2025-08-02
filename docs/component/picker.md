@@ -1,3 +1,7 @@
+---
+title : picker
+---
+
 <!-- ## picker -->
 
 <!-- UTSCOMJSON.picker.name -->
@@ -23,4 +27,3 @@ Android/iOS平台可改用[picker-view组件](picker-view.md)、或[uni.showActi
 <!-- UTSCOMJSON.picker.example -->
 
 <!-- UTSCOMJSON.picker.reference -->
-

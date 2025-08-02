@@ -1,3 +1,7 @@
+---
+title : flow-item
+---
+
 <!-- ## flow-item -->
 
 <!-- UTSCOMJSON.flow-item.name -->
@@ -25,4 +29,3 @@ waterflow 与 list-view 实现机制几乎一致，所以 flow-item 与 list-ite
 <!-- UTSCOMJSON.flow-item.example -->
 
 <!-- UTSCOMJSON.flow-item.reference -->
-

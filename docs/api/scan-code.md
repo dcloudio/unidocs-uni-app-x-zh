@@ -1,3 +1,7 @@
+---
+title : uni.scanCode(options?)
+---
+
 <!-- ## uni.scanCode(options?) @scancode -->
 
 <!-- UTSAPIJSON.scanCode.name -->
@@ -36,4 +40,3 @@ iOS端实现扫码所使用的依赖库
 ```
 pod 'GoogleMLKit/BarcodeScanning', '6.0.0'
 ```
-
