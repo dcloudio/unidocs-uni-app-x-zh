@@ -957,39 +957,38 @@ class DataProcessor {
 TypeScript:
 
 ```ts
-	type Msg = {
-		obj: any | null
-	}
+type Msg = {
+	obj: any | null
+}
 	
-	class Abc {
-		
-	}
-	let test : Msg = {
-		obj: Abc
-	}
+class Abc {
+}
+let test : Msg = {
+	obj: Abc
+}
 	
-	test.obj = Abc;
+test.obj = Abc;
 	
-	console.log(test);
+console.log(test);
 ```
 
 UTS:
 
 ```ts
-	type Msg = {
-		obj: any | null
-	}
+type Msg = {
+	obj: any | null
+}
 	
-	class Abc {
+class Abc {
 		
-	}
-	let test : Msg = {
-		obj: null
-	}
+}
+let test : Msg = {
+	obj: null
+}
 	
-	test.obj = new Abc();
+test.obj = new Abc();
 	
-	console.log(test);
+console.log(test);
 ```
 
 ## 4. 函数相关
