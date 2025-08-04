@@ -36,13 +36,19 @@
 
 因应用商店合规要求经常变化，**强烈建议您及时升级使用最新版本开发工具**。
 
+Hello uni-app x 模板应用已做合规处理，涉及以下内容供开发者参考：  
+- Hello uni-app x 制定了应用的《隐私政策》，内容详见 [hello uni-app x隐私政策](https://dcloud.io/license/hello-uni-app-x.html)  
+- 使用 uvue 页面实现 “个人信息保护指引” 提示框，详细内容参考 [privacy.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/component/button/privacy.uvue)，此页面中包含链接打开《隐私政策》  
+- 在 `app.uvue` 页面的 onLaunch 中判断用户是否已经同意《隐私政策》，没有同意则调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 弹出“个人信息保护指引” 提示框引导用户授权，详情内容参考 [App.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/App.uvue)  
+- 应用 `关于` 页面中实现《隐私政策》页面链接，提供入口给用户同意后查看协议，详情参考 [about.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/about/about.uvue)  
+
 
 ## 确定《隐私政策》内容
 首先您需为您的应用制定一份《隐私政策》，至少在调用涉及隐私的API/组件之前弹出该协议。但Android应用一般要求应用刚启动就弹出。
 
 《隐私政策》需符合 [合规文件指引](#reference) 章节中列出的法律、法规、政策文件。
 
-hello uni-app x 应用也有《隐私政策》，可参考[hello uni-app x隐私政策](https://dcloud.io/license/hello-uni-app-x.html)。但注意该协议范本仅供参考，请勿照搬，需根据您的实际情况调整。
+Hello uni-app x 应用也有《隐私政策》，可参考[hello uni-app x隐私政策](https://dcloud.io/license/hello-uni-app-x.html)。但注意该协议范本仅供参考，请勿照搬，需根据您的实际情况调整。
 
 在隐私政策中，除了向用户明示您如何处理用户隐私数据，还需要列举本应用包含的三方SDK相关的隐私政策。见下
 
