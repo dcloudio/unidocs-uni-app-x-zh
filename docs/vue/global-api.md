@@ -61,6 +61,19 @@ export function createApp() {
 `globalProperties` 在编译时处理，因此确保你的操作在编译时是可知的。例如，将变量赋值给 `globalProperties` 时，这个变量在编译时必须是已知的，而不能是在运行时才能确定的变量。
 当传递插件参数时，`app` 的类型需要指定为 `VueApp`。
 
+注意：app-android 平台给 `globalProperties` 赋值变量时，该变量需要定义在顶层，不支持使用局部变量赋值
+```ts
+const data = {}
+export function createApp() {
+  const app = createSSRApp(App)
+  // const data = {} // 不正确，应该定义在顶层
+  app.config.globalProperties.mydata = data
+  return {
+    app
+  }
+}
+```
+
 示例 [详情](<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.gitUrl -->)
 
 [设置 app.config.globalProperties](https://gitcode.net/dcloud/hello-uvue/-/blob/alpha/main.uts)
