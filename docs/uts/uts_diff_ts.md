@@ -946,6 +946,52 @@ class DataProcessor {
 }
 ```
 
+#### 类不能作为值使用 @UTS110111164
+
+级别：错误
+
+错误码：UTS110111164
+
+类不能作为值使用
+
+TypeScript:
+
+```ts
+	type Msg = {
+		obj: any | null
+	}
+	
+	class Abc {
+		
+	}
+	let test : Msg = {
+		obj: Abc
+	}
+	
+	test.obj = Abc;
+	
+	console.log(test);
+```
+
+UTS:
+
+```ts
+	type Msg = {
+		obj: any | null
+	}
+	
+	class Abc {
+		
+	}
+	let test : Msg = {
+		obj: null
+	}
+	
+	test.obj = new Abc();
+	
+	console.log(test);
+```
+
 ## 4. 函数相关
 
 #### 使用 class 而非具有 call signature 的类型 @UTS110111135
