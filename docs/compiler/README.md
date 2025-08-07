@@ -42,6 +42,13 @@ uni-app发明了完善的条件编译，帮助开发者处理平台差异。即�
 
 ![](https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/clean-up-the-build-cache.jpg)#{.zooming width="400px"}
 
+## 强类型校验@type_validation
+
+![](https://web-ext-storage.dcloud.net.cn/hx/type_validation.png)#{.zooming width="400px"}
+
+
+开启强类型校验后，编译器将执行更严格的静态类型检查。此前可能通过编译的、存在类型隐式转换的代码，将无法通过编译并报错。请根据编译器提供的错误信息，定位并修正相关代码。
+
 ### 注意@tips
 
 - `uni-app x`编译器编译Android平台时会在磁盘很多产生kt、class等临时文件。安全软件（如360、微软）会对其进行木马扫描，消耗电脑性能。建议将项目的unpackage目录设置为信任，以提升编译性能。
