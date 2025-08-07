@@ -449,6 +449,110 @@ export default {
 ```
 
 
+### 案例4：全局监听回调持有页面`this`引用
+
+#### 问题代码
+```javascript
+//uvue中
+export default {
+    data() {
+        return {}
+    },
+    onReady() {
+        // 注册一个全局应用主题变化监听器
+        // 回调函数隐式地捕获了当前页面的`this`实例
+        uni.onAppThemeChange(()=>{
+            console.log("Theme changed, page this:", this);
+        })
+    },
+    methods: {}
+}
+```
+
+#### 泄漏日志分析
+```
+┬───
+│ GC Root: Thread object
+│
+├─ android.os.HandlerThread instance
+│    Leaking: NO (PathClassLoader↓ is not leaking)
+│    Thread name: 'LeakCanary-Heap-Dump'
+│    ↓ Thread.contextClassLoader
+├─ dalvik.system.PathClassLoader instance
+│    Leaking: NO (UniAppThemeManager↓ is not leaking and A ClassLoader is never leaking)
+│    ↓ ClassLoader.runtimeInternalObjects
+├─ java.lang.Object[] array
+│    Leaking: NO (UniAppThemeManager↓ is not leaking)
+│    ↓ Object[753]
+├─ io.dcloud.uniapp.appframe.UniAppThemeManager class
+│    Leaking: NO (a class is never leaking)
+│    ↓ static UniAppThemeManager.appThemeChangeListeners  // 问题根源：静态的监听器集合
+│                                ~~~~~~~~~~~~~~~~~~~~~~~
+├─ java.util.concurrent.ConcurrentHashMap instance
+│    Leaking: UNKNOWN
+│    Retaining 333.6 kB in 5195 objects
+│    ↓ ConcurrentHashMap[instance @322967640 of java.lang.Integer]
+│                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+├─ uts.sdk.modules.DCloudUniTheme.IndexKt$onAppThemeChange$1$1 instance
+│    Leaking: UNKNOWN
+│    Retaining 111.0 kB in 1727 objects
+│    Anonymous subclass of kotlin.jvm.internal.Lambda
+│    ↓ IndexKt$onAppThemeChange$1$1.$callback
+│                                   ~~~~~~~~~
+├─ uni.UNI511CEBA.GenPagesFourthFourth$1$1 instance // 页面生成的回调函数实例
+│    Leaking: UNKNOWN
+│    Retaining 111.0 kB in 1726 objects
+│    Anonymous subclass of kotlin.jvm.internal.Lambda
+│    ↓ GenPagesFourthFourth$1$1.this$0  // 关键：回调函数持有页面的`this`引用
+│                               ~~~~~~
+├─ uni.UNI511CEBA.GenPagesFourthFourth instance // 页面实例
+│    Leaking: UNKNOWN
+│    Retaining 111.0 kB in 1725 objects
+│    ↓ Page.$nativePage
+│           ~~~~~~~~~~~
+├─ io.dcloud.uniapp.appframe.UniNativePageImpl instance
+│    Leaking: UNKNOWN
+│    Retaining 764 B in 23 objects
+│    ↓ UniNativePageImpl.container
+│                        ~~~~~~~~~
+├─ io.dcloud.uniapp.appframe.ui.PageFrameView instance
+│    Leaking: YES (View.mContext references a destroyed activity)
+│    ↓ View.mContext
+╰→ io.dcloud.uniapp.appframe.activity.UniPortraitPageActivity instance
+​     Leaking: YES (ObjectWatcher was watching this because io.dcloud.uniapp.appframe.activity.UniPortraitPageActivity received Activity#onDestroy() callback and Activity#mDestroyed is true)
+```
+
+#### 泄漏原因分析
+1.  **静态监听器集合**：`uni.onAppThemeChange` 将回调函数存储在一个静态的、全局的 `UniAppThemeManager.appThemeChangeListeners` 集合中。这个集合的生命周期与整个应用相同。
+2.  **回调函数捕获`this`**：日志中的 `GenPagesFourthFourth$1$1.this$0` 字段明确指出，传递给监听器的回调函数（Lambda）捕获了其所在的页面实例的 `this` 引用。
+3.  **形成强引用链**：一条无法被打破的强引用链形成：`静态管理器` → `静态监听器集合` → `回调函数实例` → `页面实例(this)` → `Activity`。
+4.  **页面无法释放**：当页面关闭并销毁时，由于这个全局的引用链依然存在，垃圾回收器无法回收页面实例及其关联的Activity，导致内存泄漏。
+
+#### 解决方案
+对于这种基于回调的监听器，必须在页面销毁时手动注销监听，切断引用链。
+
+```javascript
+export default {
+    data() {
+        return {
+            callbackId: -1
+        }
+    },
+    onReady() {
+        // 注册监听
+        this.callbackId = uni.onAppThemeChange(() => {
+            console.log("Theme changed, page this:", this);
+        })
+    },
+    onUnload() {
+        // 页面销毁时，必须注销监听
+        uni.offAppThemeChange(this.callbackId)
+    },
+    methods: {}
+}
+```
+
+
 
 ## 内存泄漏问题实践总结
 
