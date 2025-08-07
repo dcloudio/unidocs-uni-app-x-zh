@@ -92,7 +92,7 @@ LeakCanary输出的内存泄漏日志包含以下关键信息：
 //UTS插件中
 import Activity from "android.app.Activity";
 
-const leakActivitys: Activity[] = []
+const leakActivitys: Activity[] = []  // 应用级全局变量
 
 export function leakActivity() {
     const topActivity = UTSAndroid.getTopPageActivity()
@@ -160,7 +160,7 @@ export default {
 ```js
 import Activity from "android.app.Activity";
 
-const leakActivitys: Activity[] = []
+const leakActivitys: Activity[] = [] // 应用级全局变量
 
 export function leakActivity() {
     const topActivity = UTSAndroid.getTopPageActivity()
@@ -211,7 +211,7 @@ export default {
 #### 问题代码
 ```js
 //uvue中
-let globalElement: UniElement[] = []
+let globalElement: UniElement[] = [] // 应用级全局变量
 export default {
     data() {
         return {
@@ -286,7 +286,7 @@ export default {
 
 #### 解决方案
 ```js
-let globalElement: UniElement[] = []
+let globalElement: UniElement[] = [] // 应用级全局变量
 export default {
     data() {
         return {
@@ -319,7 +319,7 @@ export default {
 
 #### 问题代码
 ```js
-let globalElement: UniElement[][] = []
+let globalElement: UniElement[][] = [] // 应用级全局变量
 export default {
     data() {
         return {
@@ -415,7 +415,7 @@ export default {
 
 #### 解决方案
 ```js
-let globalElement: UniElement[][] = []
+let globalElement: UniElement[][] = [] // 应用级全局变量
 export default {
     data() {
         return {
