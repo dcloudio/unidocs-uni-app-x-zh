@@ -139,7 +139,7 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 
 则需要在 pages.json 中填写
 
-```javascript
+```json
 {
     "pages": [
         {
