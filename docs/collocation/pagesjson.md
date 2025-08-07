@@ -98,9 +98,6 @@ globalStyle节点里是所有页面都生效的全局样式配置。它的配置
 
 <!-- PAGESJSON.globalStyle_mp-weixin.compatibility -->
 
-
-
-
 ### pages 配置项列表 @pagesoptionspage
 
 pages节点里注册页面，数据格式是数组，数组每个项都是一个对象，通过path属性指定页面路径，通过style指定该页面的样式配置。
