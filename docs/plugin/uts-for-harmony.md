@@ -151,7 +151,7 @@ uts插件编译到鸿蒙时会将整个插件编译为一个鸿蒙的module。�
 utssdk/app-harmony/module.json5  -->  src/main/module.json5
 utssdk/app-harmony/resources  -->  src/main/resources
 utssdk/app-harmony/*.ets  -->  utssdk/app-harmony/*.ets
-utssdk/app-harmony/*.har  -->  utssdk/app-harmony/*.har
+utssdk/app-harmony/libs/*.har  -->  utssdk/app-harmony/libs/*.har
 ```
 
 ## 使用ets文件
