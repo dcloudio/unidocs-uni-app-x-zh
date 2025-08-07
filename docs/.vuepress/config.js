@@ -83,6 +83,7 @@ const config = {
     chainMarkdown (config) {
       const extensionMap = {
         uts: 'ts',
+        ets: 'ts',
         uvue: 'vue'
       }
       config.options.highlight((str, lang) => {
