@@ -91,6 +91,19 @@ let arr = new Array(10)
 
 <!-- UTSJSON.Array.fromAsync.compatibility -->
 
+### fromNative(input)
+
+<!-- UTSJSON.Array.fromNative.description -->
+
+<!-- UTSJSON.Array.fromNative.param -->
+
+<!-- UTSJSON.Array.fromNative.returnValue -->
+
+<!-- UTSJSON.Array.fromNative.test -->
+
+<!-- UTSJSON.Array.fromNative.compatibility -->
+
+<!-- UTSJSON.Array.fromNative.tutorial -->
 
 
 ## 实例属性
