@@ -145,11 +145,6 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。用于
 
 <!-- UTSAPIJSON.general_type.param -->
 
-## 示例代码
-
-hello uni-push是可跑通、同时包含客户端和服务器完整流程的代码。[https://gitcode.net/dcloud/hello-uni-push](https://gitcode.net/dcloud/hello-uni-push)
-
-在业务开通、配置正确的情况下，执行项目下的云函数，即可给客户端发送消息。
 
 ## app-android平台高级场景用途
 

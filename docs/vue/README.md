@@ -20,7 +20,7 @@ uni-app x 中，web平台内置了vue.js，其他平台为 DCloud 参考vue规�
 hello uvue 是非常重要的vue示例，演示了各种vue功能的应用。
 
 - 插件地址：[https://ext.dcloud.net.cn/plugin?id=15021](https://ext.dcloud.net.cn/plugin?id=15021)
-- 源码地址：[https://gitcode.net/dcloud/hello-uvue](https://gitcode.net/dcloud/hello-uvue)，注意有master和alpha分支，对应HBuilderX最新的正式版和alpha版。
+- 源码地址：[https://gitcode.com/dcloud/hello-uvue](https://gitcode.com/dcloud/hello-uvue)，注意有master和alpha分支，对应HBuilderX最新的正式版和alpha版。
 
 # 版本对应@ver
 HBuilderX/uni-app x，会跟踪vue版本的升级，版本映射表如下

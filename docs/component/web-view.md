@@ -78,10 +78,10 @@ function canGoForward() : boolean {
 }
 ```
 
-详细的示例源码，在 hello uni-app x 的 组件 -> [web-view 示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/web-view/web-view.uvue) 中，
+详细的示例源码，在 hello uni-app x 的 组件 -> [web-view 示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/component/web-view/web-view.uvue) 中，
 获取原生WebView对象，然后进一步使用了可否前进后退的方法，封装代码如下：
-- [Android](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
-- [iOS](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+- [Android](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
+- [iOS](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
 
 
 ### web-view组件的内外通信
@@ -91,7 +91,7 @@ function canGoForward() : boolean {
 
 - web-view里的网页向uts发消息
 
-	在网页中引入[uni.webview.1.5.5.js](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/hybrid/html/uni.webview.1.5.5.js)。即可在网页中调用一批uni的api，包括：
+	在网页中引入[uni.webview.1.5.5.js](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/hybrid/html/uni.webview.1.5.5.js)。即可在网页中调用一批uni的api，包括：
 
 |方法名|说明|平台差异说明|
 |:-|:-|:-|
@@ -107,7 +107,7 @@ function canGoForward() : boolean {
 
 uts端在 `<web-view>` 组件的 `message` 事件回调 `event.detail.data` 中接收消息。
 
-示例代码详见[hello-uni-app-x/hybrid/html/local.html](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/hybrid/html/local.html)
+示例代码详见[hello uni-app x 的 /hybrid/html/local.html](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/hybrid/html/local.html)
 
 **Tips**
 

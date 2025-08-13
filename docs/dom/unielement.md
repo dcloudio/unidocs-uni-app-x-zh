@@ -167,7 +167,7 @@ if(element != null) {
 }
 ```
 
-更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
 
 **注意事项：**
 
@@ -203,8 +203,8 @@ if(webViewElement != null) {
 获取到原生的WebView对象后，可以直接使用其所有属性和方法。原生对象的方法非常多，远多于 uni-app x 封装的API。这些方法都可以直接调用了。
 
 在 hello uni-app x 的 组件 -> web-view 示例中，获取原生WebView对象，然后进一步使用了可否前进后退的方法。
-- [Android](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
-- [iOS](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+- [Android](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
+- [iOS](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
 
 **可通过getAndroidView泛型明确定义View类型的组件：**
 
@@ -299,8 +299,8 @@ if (view != null && view instanceof WKWebView) {
 获取到原生的WebView对象后，可以直接使用其所有属性和方法。原生对象的方法非常多，远多于 uni-app x 封装的API。这些方法都可以直接调用了。
 
 在 hello uni-app x 的 组件 -> web-view 示例中，获取原生WebView对象，然后进一步使用了可否前进后退的方法。
-- [Android](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
-- [iOS](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+- [Android](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
+- [iOS](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
 
 
 **组件对应原生 View 类型：**
@@ -463,7 +463,7 @@ if (view != null && view instanceof WKWebView) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.takeSnapshot.tutorial -->
 
-完整示例代码参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/element-takesnapshot/element-takesnapshot.uvue)
+完整示例代码参考[hello uni-app x](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/API/element-takesnapshot/element-takesnapshot.uvue)
 
 * 截图会在应用沙盒目录的cache目录产生临时文件，位置[详见](../api/file-system-spec.md#cache)。
 * app端如需主动删除临时文件，使用[uni.getFileSystemManager](../api/get-file-system-manager.md)。

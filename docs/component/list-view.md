@@ -81,9 +81,9 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 
 ## 示例代码
 
-- 联网联表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/list-news/list-news.uvue)
-- 可左右滑动的多个列表：[https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/master/pages/template/long-list)
-- 分批加载列表：[https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue)
+- 联网联表：[hello uni-app x 的 /pages/template/list-news/list-news.uvue](https://gitcode.com/dcloud/hello-uni-app-x/blob/master/pages/template/list-news/list-news.uvue)
+- 可左右滑动的多个列表：[hello uni-app x 的 /pages/template/long-list](https://gitcode.com/dcloud/hello-uni-app-x/tree/master/pages/template/long-list)
+- 分批加载列表：[hello uni-app x 的 /pages/template/long-list-batch/long-list-batch.uvue](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue)
 
 ### Bug & Tips@tips
 

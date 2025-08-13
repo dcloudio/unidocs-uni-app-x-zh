@@ -10,7 +10,7 @@ uts插件的组件开发，简称`uts组件`，是uts插件的一个分支。uts
 
 比如`<video>`是组件；`uni.showModal` 或 `uni.createRewardedVideoAd` 虽然有UI，但属于API。
 
-组件一般适用于封装非全屏的场景，即在页面中内嵌一个区域。如果需要你需要封装的UI是全屏界面，也可以通过API来弹出全屏的activity或view controller，但弹出这种原生窗体后，需要注意和UniPage的页面栈的关系。uts通过API方式开发原生页面的示例：[uts开发原生页面示例](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage)
+组件一般适用于封装非全屏的场景，即在页面中内嵌一个区域。如果需要你需要封装的UI是全屏界面，也可以通过API来弹出全屏的activity或view controller，但弹出这种原生窗体后，需要注意和UniPage的页面栈的关系。uts通过API方式开发原生页面的示例：[uts开发原生页面示例](https://gitcode.com/dcloud/hello-uts/tree/alpha/uni_modules/uts-nativepage)
 
 当然uts组件是多端的，一个uts组件作为一个`uni_modules`，可同时支持app-Android、app-iOS、app-Harmony、web、以及各家小程序组件。
 

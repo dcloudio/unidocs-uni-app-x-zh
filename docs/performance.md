@@ -20,7 +20,7 @@ Android上为了避免view数量过多，提供了原始的draw api，把线条�
 
 在 uni-app x 中，也提供了同样的方法，允许开发者调用绘制API。
 
-hello uni-app x 示例中，有一个日历的模板页面，就是通过draw api来绘制的，性能非常高。[源码详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/calendar/calendar.uvue)
+hello uni-app x 示例中，有一个日历的模板页面，就是通过draw api来绘制的，性能非常高。[源码详见](https://gitcode.com/dcloud/hello-uni-app-x/blob/master/pages/template/calendar/calendar.uvue)
 
 尤其是组件作者，更需要关注dom数量的问题。
 
@@ -54,7 +54,7 @@ uni-app x 中，没有通信阻塞，可以直接监听touch和滚动事件。�
 
 在大多数开发框架中，因为通信性能问题，吸顶这个行为需要底层特殊封装。而 uni-app x 无需特别封装，直接监听滚动事件，通过dom的api以transform方式修改top值，就能自己编写逻辑控制在指定条件下实现固顶。
 
-源码参考hello uni-app x中的吸顶示例，这充分体现了 uni-app x 引擎底层的通信性能多么优秀。[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/scroll-sticky/scroll-sticky.uvue)
+源码参考hello uni-app x中的吸顶示例，这充分体现了 uni-app x 引擎底层的通信性能多么优秀。[详见](https://gitcode.com/dcloud/hello-uni-app-x/blob/master/pages/template/scroll-sticky/scroll-sticky.uvue)
 
 当然uni-app x已经封装了吸顶组件，使用更加便利。[详见](./component/sticky-header.md)
 
@@ -99,7 +99,7 @@ uni-app x中，[list-view组件](./component/list-view.md)和[waterflow组件](.
 
 这种场景，应该使用分批加载。
 
-分批加载没有封装具体的组件，hello uni-app-x内提供了一个示例[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue)
+分批加载没有封装具体的组件，hello uni-app-x内提供了一个示例[详见](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue)
 
 分批加载适用于初始要加载一大批数据的场景，针对这一大批数据延迟将数据分批渲染，进而优化页面初始化速度，防止页面跳转卡顿。
 
@@ -128,7 +128,7 @@ uni-recycle-view 组件相比分批加载，内存占用低一些。但在低端
 
 比如很多列表有评星，如果使用一个5个view的评星组件，那每个list-item都会多5个view，列表一长dom数量会惊人。
 
-在hello uni-app x的复杂长列表示例中，评星没有使用任何自定义组件，只是一个text组件里面使用字体图标放了5个字符，极大减少组件数量。[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/template/long-list/long-list-page.uvue)
+在hello uni-app x的复杂长列表示例中，评星没有使用任何自定义组件，只是一个text组件里面使用字体图标放了5个字符，极大减少组件数量。[详见](https://gitcode.com/dcloud/hello-uni-app-x/blob/master/pages/template/long-list/long-list-page.uvue)
 
 所以在列表中，尽量不使用层层封装的组件，直接使用内置组件更高效。
 

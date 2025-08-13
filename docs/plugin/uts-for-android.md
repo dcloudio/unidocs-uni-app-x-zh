@@ -154,7 +154,7 @@ UTSAndroid.getDispatcher("main").async(function(_){
 
 **注意**：
 
-+ 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
++ 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.com/dcloud/hello-uts)
 + 2 本章节涉及的配置，均需自定义基座后才能生效
 
 ### 3.1 配置AndroidManifest.xml
@@ -347,7 +347,7 @@ implementation 'androidx.appcompat:appcompat:1.0.0'
 
 jar/aar文件:
 
-参考 [hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs) 将jar/aar 添加到 `utssdk/app-android/libs` 目录下即可使用
+参考 [hello uts](https://gitcode.com/dcloud/hello-uts/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs) 将jar/aar 添加到 `utssdk/app-android/libs` 目录下即可使用
 
 so文件:
 
@@ -355,7 +355,7 @@ so文件:
 
 HBuilderX 4.26版本之前, 推荐开发者将so封装为AAR，或者分别集成so和jar文件，自定义基座后再进行调试
 
-HBuilderX 4.26版本之后，开发者可以使用[混编](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin-hybrid.html)kotlin代码的方式，只需要集成so文件后打包自定义基座就可以让so文件参与本地调试，省去了封装AAR和jar的环节。参考[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/alpha/uni_modules/uts-nativepage/utssdk/app-android/libs)
+HBuilderX 4.26版本之后，开发者可以使用[混编](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin-hybrid.html)kotlin代码的方式，只需要集成so文件后打包自定义基座就可以让so文件参与本地调试，省去了封装AAR和jar的环节。参考[hello uts](https://gitcode.com/dcloud/hello-uts/tree/master/uni_modules/uts-nativepage/utssdk/app-android/libs)
 
 ### 3.5 其他配置文件
 
@@ -376,7 +376,7 @@ uni-app x / uni-app 均支持打包时手动指定资源位置 [说明文档](ht
 	</code>
 </pre>
 
-具体的打包示例，参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts)
+具体的打包示例，参考 [Hello UTS](https://gitcode.com/dcloud/hello-uts)
 
 ### 3.6 远程依赖仓库说明
 
@@ -1078,4 +1078,4 @@ import GetObjectRequest from "com.tencent.cos.xml.model.`object`.GetObjectReques
 
 UTS插件本地调试尚不支持直接使用so文件，需要将so文件和调用代码封装为AAR 或者分别集成 so和jar文件
 
-AAR调用示例参考：[hello uts](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules/uts-toast)
+AAR调用示例参考：[hello uts](https://gitcode.com/dcloud/hello-uts/tree/master/uni_modules/uts-toast)

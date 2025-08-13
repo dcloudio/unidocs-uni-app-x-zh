@@ -41,9 +41,9 @@ uni-app x中，不会限制任何平台原来的API无法调用。常用的跨�
 
 使用`uni.getSystemInfoSync`则比较简单，看uni的文档即可，且可跨平台。
 
-其实，[uni.getSystemInfoSync](https://gitcode.net/dcloud/uni-api/-/blob/master/uni_modules/uni-getSystemInfo/utssdk/app-android/index.uts) 的内部实现就是一个uts模块，底层使用了一样的代码，也是import了android.os.Build。
+其实，[uni.getSystemInfoSync](https://gitcode.com/dcloud/uni-api/blob/master/uni_modules/uni-getSystemInfo/utssdk/app-android/index.uts) 的内部实现就是一个uts模块，底层使用了一样的代码，也是import了android.os.Build。
 
-大多数uni.的api，都是uts开发的，它们开源在[uni-api](https://gitcode.net/dcloud/uni-api)。
+大多数uni.的api，都是uts开发的，它们开源在[uni-api](https://gitcode.com/dcloud/uni-api)。
 
 插件市场也有很多做好的uts插件，方便开发者拿来即用。[uts插件](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 

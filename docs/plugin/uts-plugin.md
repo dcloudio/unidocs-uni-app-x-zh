@@ -39,7 +39,7 @@ uts插件，指利用uts语法，操作原生的API（包括手机os的api或三
 
 为了兼容全端，uts插件可以分目录写所有平台代码，也就是一个uts插件除了支持App的扩展，还可以支持web、小程序。
 
-比如这个uts插件，[电量](https://ext.dcloud.net.cn/plugin?id=9295)，其源码在[https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getbatteryinfo](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getbatteryinfo)，内部有多个目录（app-android、app-ios、web、mp-weixin、mp-alipay...），在非App目录也可以写js。
+比如这个uts插件，[电量](https://ext.dcloud.net.cn/plugin?id=9295)，其源码在[uni-getbatteryinfo](https://gitcode.com/dcloud/uni-api/tree/master/uni_modules/uni-getbatteryinfo)，内部有多个目录（app-android、app-ios、web、mp-weixin、mp-alipay...），在非App目录也可以写js。
 
 这个电量插件在uni-app和uni-app x中均可以使用。
 
@@ -49,7 +49,7 @@ uts插件分api和组件。这和uni-app的组件、api的概念是一样的。
 
 api插件也可以操作界面，但更多是独立的全屏窗口或弹出窗口。而不能嵌入在template中。
 
-比如lottie动画的uts插件，就是一个组件插件。[https://ext.dcloud.net.cn/plugin?id=10674](https://ext.dcloud.net.cn/plugin?id=10674)，其源码在[https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view](https://gitcode.net/dcloud/uni-component/-/tree/master/uni_modules/uni-animation-view)
+比如lottie动画的uts插件，就是一个组件插件。[https://ext.dcloud.net.cn/plugin?id=10674](https://ext.dcloud.net.cn/plugin?id=10674)，其源码在[uni-animation-view](https://gitcode.com/dcloud/uni-component/tree/master/uni_modules/uni-animation-view)
 
 ### uts插件与老版uni原生语言插件的区别
 
@@ -237,7 +237,7 @@ Android平台原生三方库目录，支持以下类型文件：
 
 仓储配置参考config.json的[dependencies](#androidconfigjson)。
 
-关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.net/dcloud/hello-uts/-/tree/master/uni_modules)
+关于libs目录的使用，可以参考 [Hello UTS](https://gitcode.com/dcloud/hello-uts/tree/master/uni_modules)
 
 
 
@@ -1327,7 +1327,7 @@ export class AppHookProxy implements UTSAndroidHookProxy {
 
 以上代码，将会在`Application` 的`OnCreate`函数中被调用
 
-HelloUTS nativepage 插件增加了UTSAndroidHookProxy [源码示例](https://gitcode.net/dcloud/hello-uts/-/blob/dev/uni_modules/uts-nativepage/utssdk/app-android/index.uts)
+HelloUTS nativepage 插件增加了UTSAndroidHookProxy [源码示例](https://gitcode.com/dcloud/hello-uts/blob/master/uni_modules/uts-nativepage/utssdk/app-android/index.uts)
 
 开发者使用HBuilder X 3.96 之后版本，提交云端打包自定义基座后，观察日志即可体验
 
@@ -1552,7 +1552,7 @@ getBatteryCapacity()
 
 关于电量这个插件，插件市场已提供现成的插件，除了Android、iOS、鸿蒙，还同时支持了web和小程序，可以去下载体验。[详见](https://ext.dcloud.net.cn/plugin?id=9295)
 
-更多开发示例，可以参考 [HelloUTS](https://gitcode.net/dcloud/hello-uts)。
+更多开发示例，可以参考 [Hello UTS](https://gitcode.com/dcloud/hello-uts)。
 
 
 ## 使用uni_modules目录下的其他插件@utsplugindependent
@@ -2123,7 +2123,7 @@ export class Test {
 
 ## 示例项目
 
-DCloud提供了 Hello UTS示例，[详见](https://gitcode.net/dcloud/hello-uts)。
+DCloud提供了 Hello UTS示例，[详见](https://gitcode.com/dcloud/hello-uts)。
 
 插件市场提供了很多uts项目：
 - API示例，调用os api，电量插件，[详见](https://ext.dcloud.net.cn/plugin?id=9295)

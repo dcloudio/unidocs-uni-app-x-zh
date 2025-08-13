@@ -91,7 +91,7 @@ function openSystemBrowser(url: string): void {
 
 有时你得到的kotlin代码可能是简写，或者ai转ts时搞错了，需要自己推理一下缺什么，简单补补改改。
 
-官方的uni api，都是uts代码调用系统api，这里面很多例子可以参考：[https://gitcode.net/dcloud/uni-api](https://gitcode.net/dcloud/uni-api)
+官方的uni api，都是uts代码调用系统api，这里面很多例子可以参考：[https://gitcode.com/dcloud/uni-api](https://gitcode.com/dcloud/uni-api)
 
 当然如果你不想转换代码，也可以把kotlin、java、swift、ets直接放入utssdk下，和入口的uts文件混编。
 

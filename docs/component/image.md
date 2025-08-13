@@ -62,7 +62,7 @@ title : image
 
 ### tips
 - image组件默认宽度为320px、高度为240px
-- 在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/component/image/image-path.uvue)
+- 在error事件里监听报错，并重新设置image组件的src，可实现自定义错误图。[详见示例代码](https://gitcode.com/dcloud/hello-uni-app-x/blob/master/pages/component/image/image-path.uvue)
 - 图片文件需在static目录（项目下或uni_modules下都支持static目录）下，或者import导入文件，否则文件不会被copy到最终的包中，导致无法访问
 - app-android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸
 - app-android平台不支持CMYK色彩的图片，[详见](https://github.com/facebook/fresco/issues/1404)

@@ -38,9 +38,9 @@
 
 Hello uni-app x 模板应用已做合规处理，涉及以下内容供开发者参考：  
 - Hello uni-app x 制定了应用的《隐私政策》，内容详见 [hello uni-app x隐私政策](https://dcloud.io/license/hello-uni-app-x.html)  
-- 使用 uvue 页面实现 “个人信息保护指引” 提示框，详细内容参考 [privacy.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/component/button/privacy.uvue)，此页面中包含链接打开《隐私政策》  
-- 在 `app.uvue` 页面的 onLaunch 中判断用户是否已经同意《隐私政策》，没有同意则调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 弹出“个人信息保护指引” 提示框引导用户授权，详情内容参考 [App.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/App.uvue)  
-- 应用 `关于` 页面中实现《隐私政策》页面链接，提供入口给用户同意后查看协议，详情参考 [about.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/about/about.uvue)  
+- 使用 uvue 页面实现 “个人信息保护指引” 提示框，详细内容参考 [privacy.uvue](https://gitcode.com/dcloud/hello-uni-app-x/blob/dev/pages/component/button/privacy.uvue)，此页面中包含链接打开《隐私政策》  
+- 在 `app.uvue` 页面的 onLaunch 中判断用户是否已经同意《隐私政策》，没有同意则调用 [uni.openDialogPage](../api/dialog-page.md#opendialogpage) 弹出“个人信息保护指引” 提示框引导用户授权，详情内容参考 [App.uvue](https://gitcode.com/dcloud/hello-uni-app-x/blob/dev/App.uvue)  
+- 应用 `关于` 页面中实现《隐私政策》页面链接，提供入口给用户同意后查看协议，详情参考 [about.uvue](https://gitcode.com/dcloud/hello-uni-app-x/blob/dev/pages/template/about/about.uvue)  
 
 
 ## 确定《隐私政策》内容
@@ -580,9 +580,9 @@ App一键登录为了支持“中国电信”运行商，要用到“电信（�
 #### 进入App主界面后展示  
 用户“同意”《隐私政策》进入App主界面后，也​​需提供入口可查看《隐私政策》，建议不要超过4次点击​​即可访问，且路径固定（如 设置->隐私政策，或 关于->隐私政策）。
 
-可使用uts插件 [uts-openSchema](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/alpha/uni_modules/uts-openSchema) 的 openSchema 方法实现点击《隐私政策》打开链接。
+可使用uts插件 [uts-openSchema](https://gitcode.com/dcloud/hello-uni-app-x/tree/alpha/uni_modules/uts-openSchema) 的 openSchema 方法实现点击《隐私政策》打开链接。
 
-Hello uni-app x 项目中的“关于”页面演示了此功能，参考源码：[/pages/template/about/about.uvue](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/about/about.uvue)
+Hello uni-app x 项目中的“关于”页面演示了此功能，参考源码：[/pages/template/about/about.uvue](https://gitcode.com/dcloud/hello-uni-app-x/blob/dev/pages/template/about/about.uvue)
 
 
 ### 《隐私政策》更新  

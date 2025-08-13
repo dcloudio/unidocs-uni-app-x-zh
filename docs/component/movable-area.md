@@ -16,7 +16,7 @@ title : movable-area
 
 在uni-app和小程序上确实存在这个问题，但在uni-app x的web和app上其实都不存在通信损耗。
 
-在hello uni-app x里有示例，可以自由的监听view的拖动并移动其位置。[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/general-event/touch-event.uvue)
+在hello uni-app x里有示例，可以自由的监听view的拖动并移动其位置。[详见](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/component/general-event/touch-event.uvue)
 
 <!-- UTSCOMJSON.movable-area.attribute -->
 

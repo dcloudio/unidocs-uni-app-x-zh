@@ -18,7 +18,7 @@ uni-app x的app平台，页面不再由webview渲染，其实不需要原生提�
 如pages.json中配置的导航栏和tabbar功能无法满足你的需求，可以不在pages.json中配置，自己用view做导航栏和tabbar。\
 hello uni-app x有相关示例，参考：
 - 自定义导航栏：[插件地址](https://ext.dcloud.net.cn/plugin?id=14618)
-- 自定义tabbar：[源码参考](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/custom-tab-bar/custom-tab-bar.uvue)；注意事项[见下](#pages-tabbar)
+- 自定义tabbar：[源码参考](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/custom-tab-bar/custom-tab-bar.uvue)；注意事项[见下](#pages-tabbar)
 插件市场也有其他封装好的插件，请自行搜索。
 
 ## 配置项列表
@@ -236,7 +236,7 @@ pages节点里注册页面，数据格式是数组，数组每个项都是一个
 
 tabbar节点用于配置应用的tabbar，仅支持配置一个。如需在更多页面配置tabbar，见下面的自定义tabbar。
 
-- 自定义tabbar：[源码参考](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/custom-tab-bar/custom-tab-bar.uvue)
+- 自定义tabbar：[源码参考](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/custom-tab-bar/custom-tab-bar.uvue)
 自定义tabbar的逻辑较多，这里写出pages.json的tabbar的逻辑，供自定义tabbar参考：
 1. tabbar页面刚开始只载入第一个子tab组件，其他tab组件是在点击相应的选项卡时v-if设为true来创建
 2. 一个子tab一旦被v-if加载后，不要再v-if设为false去掉，也不通过v-show控制，而是通过css的visibility来控制显示和隐藏。这样可以保留每个子tab的状态，比如滚动位置、输入框内容。切换tab也会更快速。
