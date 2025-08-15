@@ -33,9 +33,10 @@ ts 虽然有类型，但类型要求不严格。而 uts 为了编译为原生语
 
 错误码：UTS110111119
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持 undefined。所有变量必须赋值初始化后才能使用。如果需要使用空，请使用 null。
 
@@ -79,9 +80,10 @@ function test(param: string | null) {
 
 错误码：UTS110111120
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 所有条件语句(if、while、do-while、三元运算符、for 循环的条件部分)必须使用布尔类型作为条件。不支持 ts 中的隐式类型转换和 truthy/falsy 值。
 
@@ -113,9 +115,10 @@ const value = arr != null ? arr : []; // 显式的布尔判断
 
 级别：提示
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 在 UTS 中，所有没有明确类型标注或上下文推断不出具体类型的对象字面量都会被推导为 UTSJSONObject 类型。
 这与 ts 中对象字面量会根据属性推导出具体结构类型的行为不同。
@@ -167,9 +170,10 @@ TS 开发者一般都熟悉使用 interface 来声明类型，UTS 中改为 type
 
 错误码：UTS110111163
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 ts 中可以通过 interface 或 type 声明对象字面量的类型。
 
@@ -218,9 +222,10 @@ const person2 = {
 
 错误码：UTS110111150
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 js/ts 在某些情况写可以忽视代码顺序，实现变量和函数的声明提升 (hoisting)。但 uts 编译为强类型语言时不行，所有变量和函数必须先声明后使用，严格注意顺序，不能访问未声明的变量或函数(包括函数自身)。
 
@@ -270,9 +275,10 @@ factorial = (n: number): number => {
 
 错误码：UTS110111121
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 请使用 let 或 const 声明变量。除非你知道你在做什么，否则不要轻易使用它，因为有不同平台差异：
 
@@ -287,9 +293,10 @@ factorial = (n: number): number => {
 
 错误码：UTS110111101
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持直接使用对象字面量声明类型，可以使用 type 别名、类或者接口声明类型。
 
@@ -323,9 +330,10 @@ type S = Set<O>;
 
 错误码：UTS110111162
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 当使用 type 定义对象字面量类型时，不支持对象字面量嵌套。如果有嵌套需求，需要提取出来定义一个新的 type。
 
@@ -362,9 +370,10 @@ type News = {
 
 错误码：UTS110111122
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持声明类型为 unknown，unknown 仅支持在泛型中使用。
 
@@ -395,9 +404,10 @@ console.log(a instanceof A<unknown>);
 
 错误码：UTS110111123
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持条件类型别名，引入带显式约束的新类型。
 
@@ -416,9 +426,10 @@ type Y<T> = T extends Array<infer Item> ? Item : never;
 
 错误码：UTS110111124
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持映射类型，请使用其他语法来表示相同的语义。
 
@@ -450,9 +461,10 @@ class CFlags {
 
 错误码：UTS110111125
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持 TypeScript 中的 Utility Types，如 Partial、Required、Readonly 和 Record...
 
@@ -507,9 +519,10 @@ let user: ReadUser = { id: 1, name: "John", email: "j@example.com" };
 
 错误码：UTS110111126
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持 as const 断言。
 
@@ -551,9 +564,10 @@ let z: Label = {
 
 错误码：UTS110111127
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持确定赋值断言，例如：let v!: T。改为在声明变量的同时为变量赋值。
 
@@ -589,9 +603,10 @@ console.log("x = " + x);
 
 错误码：UTS100006
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 否 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | X |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 使用 type 关键字定义的类型别名（Type Alias），例如 type MyError = Error，不能在局部进行声明，只能在顶层作用域中。
 
@@ -619,9 +634,10 @@ function main() {
 
 错误码：UTS110111128
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持使用 # 符号开头声明的私有字段。改用 private 关键字。
 
@@ -647,9 +663,10 @@ class C {
 
 错误码：UTS110111129
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 class 不支持动态声明字段，不支持动态访问字段。只能访问已在类中声明或者继承可见的字段，访问其他字段将会造成编译时错误。
 
@@ -714,9 +731,10 @@ console.log(person.unknownProperty); // 编译时错误
 
 错误码：UTS110111130
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不同平台对类中静态块支持有差异。使用其他方式实现静态初始化，如构造函数中。
 
@@ -756,9 +774,10 @@ class MyClass {
 
 错误码：UTS110111151
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 class 声明的是一个新的类型，不是一个值。因此，不支持将 class 用作对象 (例如将 class 赋值给一个对象)。
 
@@ -802,9 +821,10 @@ function createPerson(): Person {
 
 错误码：UTS110111131
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 否 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | X |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 继承类时必须显式声明构造器。这是因为在不同目标平台 (Kotlin/Swift) 中，继承类时都需要显式调用父类构造器。
 
@@ -841,9 +861,10 @@ class Child extends Parent {
 
 错误码：UTS110111132
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不允许类被 implements，只有接口可以被 implements。
 
@@ -877,9 +898,10 @@ class C1 implements C {
 
 错误码：UTS110111133
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持接口继承类，接口只能继承接口。
 
@@ -913,9 +935,10 @@ interface SelectableControl extends Control {
 
 错误码：UTS110111134
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持修改对象的方法。在静态语言中，对象的布局是确定的。一个类的所有对象实例享有同一个方法。
 
@@ -976,9 +999,10 @@ c3.foo(); // Extra foo
 
 错误码：UTS110111161
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 type、class 或 interface 的属性类型为方法时，不支持在属性方法上定义泛型信息。
 
@@ -1048,9 +1072,10 @@ class DataProcessor {
 
 错误码：UTS110111164
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 类不能作为值使用
 
@@ -1099,9 +1124,10 @@ console.log(test);
 
 错误码：UTS110111135
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持对象类型中包含 call signature。
 
@@ -1144,9 +1170,10 @@ doSomething(new DescribableFunction());
 
 错误码：UTS110111136
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持对象类型中的构造签名。改用类。
 
@@ -1185,9 +1212,10 @@ function fn(s: string): SomeObject {
 
 错误码：UTS110111137
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持使用构造函数类型，改用 lambda 函数。
 
@@ -1231,9 +1259,11 @@ const person = createPerson(Impersonizer, "John", 30);
 
 错误码：UTS110111152
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 否 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | X |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
+
 
 在 UTS 中,通过 function 关键字声明的函数不能作为值传递。如果需要将函数作为值使用，请使用函数表达式。
 
@@ -1265,9 +1295,10 @@ setTimeout(foo, 1000);
 
 错误码：UTS110111138
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持对函数声明属性。
 
@@ -1317,9 +1348,10 @@ console.log(g.count); // 1
 
 错误码：UTS110111139
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持 Function.apply 和 Function.call。this 的语义仅限于在 class 中使用的传统 OOP 风格。
 
@@ -1369,9 +1401,10 @@ person.greet("Hello");
 
 错误码：UTS110111139
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持 Function.bind。this 的语义仅限于在 class 中使用的传统 OOP 风格。
 
@@ -1429,9 +1462,10 @@ inc(); // 2
 
 错误码：UTS110111140
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持将命名空间用作对象，可以使用类或模块。
 
@@ -1461,9 +1495,10 @@ console.log(x);
 
 错误码：UTS110111141
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持通过 require 导入，也不支持 import 赋值表达式，改用 import。
 
@@ -1485,9 +1520,10 @@ import * as m from "mod";
 
 错误码：UTS110111142
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持 export = ...语法，改用常规的 export 或 import。
 
@@ -1531,9 +1567,10 @@ let p = Pt.Point.origin;
 
 错误码：UTS110111143
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持 is 运算符，必须用 instanceof 运算符替代。在使用之前，必须使用 as 运算符将对象转换为需要的类型。
 
@@ -1609,9 +1646,10 @@ function main(): void {
 
 错误码：UTS110111153
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 as 关键字是类型转换的唯一语法，错误的类型转换会导致编译时错误或者运行时抛出异常。不支持使用<type>语法进行类型转换。
 
@@ -1678,9 +1716,10 @@ let c3 = createShape() as Square;
 
 错误码：UTS110111154
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 级别：错误
 
@@ -1722,9 +1761,10 @@ console.log(obj.key1); // "value1"
 
 错误码：UTS110111144
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持 index signature，改用数组或其他集合类型。
 
@@ -1761,9 +1801,10 @@ const secondItem = myArray.f[1];
 
 错误码：UTS110111145
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持类、接口的声明合并。
 
@@ -1803,9 +1844,10 @@ interface Document {
 
 错误码：UTS110111146
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持生成器函数，使用 async 或 await 机制进行并行任务处理。
 
@@ -1846,9 +1888,10 @@ foo();
 
 错误码：UTS110111155
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持使用 JSX。
 
@@ -1883,9 +1926,10 @@ defineProps({
 
 错误码：UTS110111156
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持 with 语句，使用其他语法来表示相同的语义。
 
@@ -1912,9 +1956,10 @@ let area: number = Math.PI * r * r;
 
 错误码：UTS110111147
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 不支持全局作用域和 globalThis。
 
@@ -1948,9 +1993,10 @@ let x = M.abc;
 
 错误码：UTS110111148
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 仅允许一元运算符用于数值类型，否则会发生编译时错误。不支持隐式将字符串转换成数值，必须进行显式转换。
 
@@ -2006,9 +2052,10 @@ let y = +returnString(); // 编译时错误
 
 错误码：UTS110111160
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 在 uts 中，赋值语句不会返回值，不能将赋值操作用在表达式中。
 
@@ -2064,9 +2111,10 @@ while (match != null) {
 
 错误码：UTS110111149
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 在 uts 中，对象布局在编译时就确定了，且不能在运行时被更改。因此，删除属性的操作没有意义。
 
@@ -2118,9 +2166,10 @@ console.log(newObj.y); // 2
 
 错误码：UTS110111157
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 在 uts 中，逗号运算符仅适用于 for 循环语句中。注意与声明变量、函数参数传递时的逗号分隔符不同。
 
@@ -2153,9 +2202,10 @@ x = x++;
 
 错误码：UTS110111158
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 只支持抛出 Error 类或其派生类的实例。禁止抛出其他类型（例如 number 或 string）的数据。
 
@@ -2179,9 +2229,10 @@ throw new Error();
 
 错误码：UTS210111100
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 否 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | X | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 在 uts 中，数组越界访问在不同平台表现有差异：
 
@@ -2224,9 +2275,10 @@ if (index >= 0 && index < arr.length) {
 
 错误码：UTS110111159
 
-| TS | ETS | Kotlin | Swift |
-| --- | --- | --- | --- |
-| 否 | 是 | 是 | 是 |
+| 描述 | UTS-TS | UTS-ETS | UTS-Kotlin | UTS-Swift |
+| --- | --- | --- | --- | --- |
+| 约束状态 | X | V | V | V |
+| 适用版本 | 4.75 | 4.75 | 4.75 | 4.75 |
 
 uts 没有原型的概念，因此不支持在原型上赋值。此特性不符合静态类型的原则。
 
