@@ -11,6 +11,7 @@
 - Android 构建工具（buildToolsVersion）：35.0.0  
 - Gradle：8.11.1  
 - Android Gradle 插件（com.android.tools.build:gradle）：8.7.3  
+- Kotlin Android 插件（org.jetbrains.kotlin:kotlin-gradle-plugin）：1.9.10  
 - JDK：17 （[Amazon corretto 17.0.12.7.1](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html)）  
 
 ### HBuilderX4.57及以下版本云端打包环境
@@ -18,6 +19,7 @@
 - Android 构建工具（buildToolsVersion）：34.0.0  
 - Gradle：8.5  
 - Android Gradle 插件（com.android.tools.build:gradle）：8.2.2  
+- Kotlin Android 插件（org.jetbrains.kotlin:kotlin-gradle-plugin）：1.9.10  
 - JDK：17 （[Amazon corretto 17.0.12.7.1](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html)）  
 
 ### 默认仓储服务器地址@repositories  
