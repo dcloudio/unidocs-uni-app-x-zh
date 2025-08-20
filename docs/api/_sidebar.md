@@ -116,6 +116,7 @@
   * [虚拟支付（requestVirtualPayment）](virtual-payment.md)
   * [转账确认收款（requestMerchantTransfer）](request-merchant-transfer.md)
 * 分享
+  * [share](share.md)
   * [shareWithSystem](share-with-system.md)
 * 推送
   * [push](uni-push.md)
@@ -127,6 +128,8 @@
   * [创建 map 组件上下文对象](create-map-context.md)
   * [创建 canvas 组件上下文对象](create-canvas-context-async.md)
   * [创建 camera 组件上下文对象](create-camera-context.md)
+* Worker
+  * [创建 worker 对象](create-worker.md)
 * uniCloud客户端API
   * [概述](unicloud/README.md)
   * [云函数](unicloud/function.md)
