@@ -41,7 +41,7 @@ title : sticky-header
 + 安卓平台、iOS平台sticky-header组件不支持css。仅支持padding属性控制子元素位置。其他排版需求要交给子元素实现
 + 鸿蒙平台赞不支持padding属性，但是sticky-header可以设置样式
 + 同时存在多sticky-header组件请使用sticky-section组件充当父容器控制吸顶业务
-+ 在API版本低于17的鸿蒙平台上，若想使用吸顶，不能使用本组件。可在滚动容器里自行监听滚动，设置某个区域的top为固定值来实现吸顶。可参考hello uni-app x的模板->[scroll-view自定义滚动吸顶示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/scroll-sticky/scroll-sticky.uvue)
++ 在API版本低于17的鸿蒙平台上，若想使用吸顶，不能使用本组件。可在滚动容器里自行监听滚动，设置某个区域的top为固定值来实现吸顶。可参考hello uni-app x的模板->[scroll-view自定义滚动吸顶示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/scroll-sticky/scroll-sticky.uvue)
 + 鸿蒙App平台 sticky-header组件只能作为sticky-section的子元素使用
 
 

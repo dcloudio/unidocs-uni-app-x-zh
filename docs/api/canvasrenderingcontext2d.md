@@ -669,5 +669,5 @@
 
 当使用自定义字体时，需先通过 [uni.loadFontFace](load-font-face.md) 加载字体，字体加载成功之后在设置 `font` 属性指定字体名称。
 
-完整示例代码参考[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/canvas/canvas-context.uvue)
+完整示例代码参考[hello uni-app x](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/component/canvas/canvas-context.uvue)
 

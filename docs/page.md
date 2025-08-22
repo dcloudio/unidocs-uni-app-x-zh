@@ -1,7 +1,5 @@
 # 页面简介
 
-## 页面简介
-
 uni-app x 项目中，页面文件的后缀名`.uvue`文件。
 
 每个uvue文件，都是一个符合`Vue SFC规范`的 vue 文件。
@@ -191,6 +189,8 @@ onShow和onHide是成对出现的。
 
 ### 页面 onResize 生命周期 @onresize
 
+<!-- PAGEINSTANCE.onResize.compatibility -->
+
 <!-- PAGEINSTANCE.onResize.param -->
 
 <!-- PAGEINSTANCE.onResize.returnValue -->
@@ -202,11 +202,15 @@ onShow和onHide是成对出现的。
 
 ### 页面 onPageScroll 生命周期 @onpagescroll
 
+<!-- PAGEINSTANCE.onPageScroll.compatibility -->
+
 <!-- PAGEINSTANCE.onPageScroll.param -->
 
 <!-- PAGEINSTANCE.onPageScroll.returnValue -->
 
 ### 页面 onBackPress 生命周期 @onbackpress
+
+<!-- PAGEINSTANCE.onBackPress.compatibility -->
 
 <!-- PAGEINSTANCE.onBackPress.param -->
 
@@ -235,6 +239,8 @@ onShow和onHide是成对出现的。
 
 ### 页面 onTabItemTap 生命周期 @ontabitemtap
 
+<!-- PAGEINSTANCE.onTabItemTap.compatibility -->
+
 <!-- PAGEINSTANCE.onTabItemTap.param -->
 
 <!-- PAGEINSTANCE.onTabItemTap.returnValue -->
@@ -245,17 +251,23 @@ onShow和onHide是成对出现的。
 
 ### 页面 onNavigationBarButtonTap 生命周期 @onnavigationbarbuttontap
 
+<!-- PAGEINSTANCE.onNavigationBarButtonTap.compatibility -->
+
 <!-- PAGEINSTANCE.onNavigationBarButtonTap.param -->
 
 <!-- PAGEINSTANCE.onNavigationBarButtonTap.returnValue -->
 
 ### 页面 onNavigationBarSearchInputChanged 生命周期 @onnavigationbarsearchinputchanged
 
+<!-- PAGEINSTANCE.onNavigationBarSearchInputChanged.compatibility -->
+
 <!-- PAGEINSTANCE.onNavigationBarSearchInputChanged.param -->
 
 <!-- PAGEINSTANCE.onNavigationBarSearchInputChanged.returnValue -->
 
 ### 页面 onNavigationBarSearchInputConfirmed 生命周期 @onnavigationbarsearchinputconfirmed
+
+<!-- PAGEINSTANCE.onNavigationBarSearchInputConfirmed.compatibility -->
 
 <!-- PAGEINSTANCE.onNavigationBarSearchInputConfirmed.param -->
 

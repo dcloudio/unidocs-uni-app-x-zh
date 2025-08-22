@@ -71,7 +71,7 @@ flutter2018年发布，第一次统一了逻辑层和渲染层，而且使用了
 
 并且dart作为强类型，编译优化很好做，启动速度和运行速度都胜过js。
 
-在这个开源项目下[https://gitcode.net/dcloud/test-cross/-/tree/master/test_flutter_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_flutter_slider_100)，提供了一个flutter编写的100个slider同时滑动的示例，
+在这个开源项目下[https://gitcode.com/dcloud/test-cross/tree/master/test_flutter_slider_100](https://gitcode.com/dcloud/test-cross/tree/master/test_flutter_slider_100)，提供了一个flutter编写的100个slider同时滑动的示例，
 项目下有源码也有打包好apk，可以直接安装体验。
 
 100个slider同时滑动，非常考验逻辑和UI的通信。如果在webview内部，html和js写100个这样的slider，在新的手机上表现也还ok。但在小程序和react native这种逻辑和UI分离的模式下，100个slider是灾难。
@@ -87,7 +87,7 @@ flutter看起来很完美。但为什么也没有成为主流呢？很多大厂�
 
 操作系统和三方SDK的API是原生的，让dart调用需要做一层封装，又落到了跨语言通信的坑里。
 
-[https://gitcode.net/dcloud/test_flutter_message_channel](https://gitcode.net/dcloud/test_flutter_message_channel)这是一个开源测试项目，来测试原生的claas数据与dart的通信耗时。
+[https://gitcode.com/dcloud/test_flutter_message_channel](https://gitcode.com/dcloud/test_flutter_message_channel)这是一个开源测试项目，来测试原生的claas数据与dart的通信耗时。
 
 项目里面有源码，大家可自行编译；根目录有打包好的apk，可直接安装体验。
 
@@ -186,7 +186,7 @@ flutter最大的优势是dart操作UI不需要通信，以及强类型。而改�
 
 为了解决js和flutter渲染层的通信问题，微信的skyline又推出了补丁技术worklet动画，让这部分代码运行在UI层。（当然微信的通信，除了跨语言，还有跨进程通信，会更明显）
 
-这个项目[https://gitcode.net/dcloud/test-cross/-/tree/master/test_arkuix_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_arkuix_slider_100)，
+这个项目[https://gitcode.com/dcloud/test-cross/tree/master/test_arkuix_slider_100](https://gitcode.com/dcloud/test-cross/tree/master/test_arkuix_slider_100)，
 使用ArkUI-x做了100个slider，大家可以看源码，下载apk体验，明显能看到由于逻辑层和UI层通信导致的卡顿。
 
 <video id="video" preload="none" controls="controls" width="185px" height="400px" poster="https://web-ext-storage.dcloud.net.cn/doc/arkui-x-slider-poster.png" src="https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/uni-app-x/test-cross/arkui-x-slider.mp4"></video>
@@ -267,7 +267,7 @@ uts语言是基于typescript修改而来的强类型语言，编译到不同平�
 
 了解了uni-app x的基本原理，我们来看下uni-app x下的100个slider效果怎么样。
 
-项目[https://gitcode.net/dcloud/test-cross/-/tree/master/test_uniappx_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_uniappx_slider_100)下有源码工程和编译好的apk。
+项目[https://gitcode.com/dcloud/test-cross/tree/master/test_uniappx_slider_100](https://gitcode.com/dcloud/test-cross/tree/master/test_uniappx_slider_100)下有源码工程和编译好的apk。
 
 如下视频，打开了GPU呈现模式，可以看到没有一条竖线突破那条红色的掉帧安全横线，也就是没有一帧掉帧。
 
@@ -311,7 +311,7 @@ DCloud做了很多年跨平台开发，uni-app在web和小程序平台取得了�
 
 不过遗憾的是这个方案引入了性能问题。我们专门测试使用compose UI做100个slider滑动的例子，流畅度也掉帧。
 
-源码见：[https://gitcode.net/dcloud/test-cross/-/tree/master/test_compose_ui_slider_100](https://gitcode.net/dcloud/test-cross/-/tree/master/test_compose_ui_slider_100)，
+源码见：[https://gitcode.com/dcloud/test-cross/tree/master/test_compose_ui_slider_100](https://gitcode.com/dcloud/test-cross/tree/master/test_compose_ui_slider_100)，
 项目下有打包后的apk可以直接安装体验。
 
 打开GPU呈现模式，可以看到compose ui的100个slider拖动时，大多数竖线都突破那条红色的掉帧安全横线，也就是掉帧严重。
@@ -386,7 +386,7 @@ uni-app x这个技术路线是产业真正需要的东西，随着产品的迭�
   </div>
 </div>
 
-源码在：[https://gitcode.net/dcloud/hello-uni-app-x/](https://gitcode.net/dcloud/hello-uni-app-x/)
+源码在：[https://gitcode.com/dcloud/hello-uni-app-x/](https://gitcode.com/dcloud/hello-uni-app-x/)
 
 这个示例里有几个例子非常考验通信性能，除了也内置了slider-100外，另一个是“模版-scroll-view自定义滚动吸顶”，在滚动时实时修改元素top值始终为一个固定值，一点都不抖动。
 

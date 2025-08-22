@@ -44,7 +44,7 @@ uts在Android平台编译为kotlin、在iOS平台编译为swift、在鸿蒙next�
 </div>
 
 ::: tip
-hello uni-app x的源码见：[https://gitcode.net/dcloud/hello-uni-app-x](https://gitcode.net/dcloud/hello-uni-app-x)
+hello uni-app x的源码见：[https://gitcode.com/dcloud/hello-uni-app-x](https://gitcode.com/dcloud/hello-uni-app-x)
 :::
 
 ## 1. uts语言
@@ -125,7 +125,7 @@ uvue在App端支持的css语法，是web的子集，类似于但优于nvue的css
 
 使用该css子集，可保证跨端。如果把uvue页面编译到web平台，则web的其他css也都可以使用。
 
-更多示例代码参考：[hello uni-app x](https://gitcode.net/dcloud/hello-uni-app-x)
+更多示例代码参考：[hello uni-app x](https://gitcode.com/dcloud/hello-uni-app-x)
 
 在过去的跨平台方案中，逻辑层和ui层的通信始终是痛点。
 
@@ -203,9 +203,9 @@ uni-app x不会限制任何原生API的调用，在每个平台都可以调用�
 
 使用`uni.getSystemInfoSync`则比较简单，看uni的文档即可，且可跨平台。
 
-其实，[uni.getSystemInfoSync](https://gitcode.net/dcloud/uni-api/-/blob/master/uni_modules/uni-getSystemInfo/utssdk/app-android/index.uts) 的内部实现就是一个uts模块，底层使用了一样的代码，也是import了android.os.Build。
+其实，[uni.getSystemInfoSync](https://gitcode.com/dcloud/uni-api/blob/master/uni_modules/uni-getSystemInfo/utssdk/app-android/index.uts) 的内部实现就是一个uts模块，底层使用了一样的代码，也是import了android.os.Build。
 
-uni.的api，大多是uts开发的，它们开源在[uni-api](https://gitcode.net/dcloud/uni-api)。
+uni.的api，大多是uts开发的，它们开源在[uni-api](https://gitcode.com/dcloud/uni-api)。
 
 插件市场也有很多做好的uts插件，方便开发者拿来即用。[uts插件](https://ext.dcloud.net.cn/?cat1=8&type=UpdatedDate)
 
@@ -223,10 +223,10 @@ uts插件通过统一的interface，约束了所有平台的API的输入输出�
 
 uts插件有多种开发方式：
 1. 可以使用uts语言直接调用系统API来封装插件
-比如[电量插件](https://gitcode.net/dcloud/uni-api/-/tree/master/uni_modules/uni-getbatteryinfo/utssdk)，在每个平台都是uts代码，但统一了interface。
+比如[电量插件](https://gitcode.com/dcloud/uni-api/tree/master/uni_modules/uni-getbatteryinfo/utssdk)，在每个平台都是uts代码，但统一了interface。
 2. 可以原生混编
 在不同平台，直接用uts调用平台原生代码，比如Android的kt文件、iOS的swift文件、鸿蒙的ets文件。同样使用一套interface约束。\
-比如[音频播放插件](https://gitcode.net/dcloud/uni-api/-/tree/dev/uni_modules/uni-createInnerAudioContext)，在Android上使用了kt混编，iOS使用了swift混编，复用现成的原生代码，快速封装插件。
+比如[音频播放插件](https://gitcode.com/dcloud/uni-api/tree/dev/uni_modules/uni-createInnerAudioContext)，在Android上使用了kt混编，iOS使用了swift混编，复用现成的原生代码，快速封装插件。
 3. 调用三方sdk并引入库管理
 uts插件是一个大一统的插件模型，其中在不同的子平台可以包含不同平台的库管理方案，不管是aar、so、framework、har都可以使用
 	- web平台和小程序平台支持npm
@@ -278,10 +278,8 @@ uni-app x引擎仅在引擎崩溃时有数据收集以用于产品改进，且�
 ## 路线图
 
 2025年将推出：
-- 提供vscode、cursor插件，支持更多ide开发 uni-app x （内测中，[入群链接](https://im.dcloud.net.cn/#/?joinGroup=682c303383abe400024d38ba)）
-- vue蒸气模式（Vapor），免除vnode，更高性能
-- 暴露完整的DOM API，可不使用vue开发。社区可自行在上层封装react、声明式等其他dsl写法
-- 提供AI能力，帮助开发者自动修复强类型要求造成的类型错误
+- vue蒸气模式（Vapor），免除vnode的创建耗时，渲染速度更快
+- App平台推出新版渲染系统，依然是基于原生渲染管线，但渲染速度会超过普通原生写法
 
 其他计划，将根据社区的反馈意见来排优先级。
 

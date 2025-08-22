@@ -41,4 +41,4 @@
 
 <!-- CSSJSON.font-family.reference -->
 
-[示例代码](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/master/pages/CSS/text/font-family.uvue)
+[示例代码](https://gitcode.com/dcloud/hello-uni-app-x/blob/master/pages/CSS/text/font-family.uvue)

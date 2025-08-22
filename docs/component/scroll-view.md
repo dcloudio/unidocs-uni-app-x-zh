@@ -41,7 +41,7 @@ title : scroll-view
 </scroll-view>
 ```
 
-**具体代码请参考：**[自定义下拉刷新样式示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/component/scroll-view/scroll-view-custom-refresher-props.uvue)
+**具体代码请参考：**[自定义下拉刷新样式示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/component/scroll-view/scroll-view-custom-refresher-props.uvue)
 
 ### 嵌套模式@nested-scroll-view
 
@@ -84,7 +84,7 @@ title : scroll-view
 + 与nested-scroll嵌套滚动协商互不兼容，`nested-scroll-header` 和 `nested-scroll-body`优先级高于nested-scroll嵌套滚动协商
 + 内层滚动视图支持 scroll-view、list-view、waterflow
 
-**具体代码请参考：**[嵌套模式示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list-nested/long-list-nested.uvue)
+**具体代码请参考：**[嵌套模式示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/long-list-nested/long-list-nested.uvue)
 
 ### nested-scroll嵌套滚动协商@nested
 
@@ -138,7 +138,7 @@ onNestedPreScroll(event: NestedPreScrollEvent) {
 + nested-scroll-child设置的元素必须配置custom-nested-scroll = true，否则配置无效
 + 与`nested-scroll-header` 和 `nested-scroll-body`不兼容，scroll-view 设置嵌套模式后，嵌套滚动手势协商相关事件将不会触发
 
-**具体代码请参考：**[nested-scroll嵌套滚动示例](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/long-list/long-list.uvue)
+**具体代码请参考：**[nested-scroll嵌套滚动示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/long-list/long-list.uvue)
 
 #### App平台
 

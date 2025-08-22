@@ -76,7 +76,7 @@ export function createApp() {
 
 示例 [详情](<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.gitUrl -->)
 
-[设置 app.config.globalProperties](https://gitcode.net/dcloud/hello-uvue/-/blob/alpha/main.uts)
+[设置 app.config.globalProperties](https://gitcode.com/dcloud/hello-uvue/blob/alpha/main.uts)
 
 ::: preview <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.webUrl -->
 

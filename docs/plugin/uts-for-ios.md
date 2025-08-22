@@ -78,7 +78,7 @@ class TestClass implements TestProtocol {
 
 注意：
 
-+ 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.net/dcloud/hello-uts)
++ 1 本章节内的实例代码均取自Hello UTS [项目地址](https://gitcode.com/dcloud/hello-uts)
 + 2 本章节设计的配置，均需自定义基座后才能生效
 
 ### 3.1 配置 Info.plist

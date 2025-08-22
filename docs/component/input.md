@@ -59,7 +59,7 @@ if (view != null && view instanceof UITextField) {
 
 + iOS平台 uvue 环境使用 js 驱动无法处理原生类型，getIOSView 方法需要在 uts 插件中使用。
 
-更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
 
 <!-- UTSCOMJSON.input.children -->
 
@@ -84,7 +84,7 @@ if (view != null && view instanceof UITextField) {
 在web端平台，输入框上推逻辑是由浏览器自动完成的，属性`adjust-position`无效。
 但iOS safari软键盘弹出时，整个页面会上推而不是挤压，导致pages.json配置的导航栏会上移到屏幕之外。
 
-推荐参考代码：[hello uni-app x -> 模板 -> 自定义导航栏](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/template/navbar-lite/navbar-lite.uvue)。为了避免自定义导航栏被顶飞，有的可以自动上推，有的需手动控制，这里均有示例。
+推荐参考代码：[hello uni-app x -> 模板 -> 自定义导航栏](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/navbar-lite/navbar-lite.uvue)。为了避免自定义导航栏被顶飞，有的可以自动上推，有的需手动控制，这里均有示例。
 
 ## comfirm-type和inputmode说明
 

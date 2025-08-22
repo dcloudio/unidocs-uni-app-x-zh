@@ -155,8 +155,8 @@ UniPaymentWxpayProvider(微信支付)继承自 [UniProvider](./provider.md#unipr
 App平台，微信和支付宝的SDK，除了requestPayment API封装的功能，还有一些其他功能。如开发者需要调用这些SDK的其他API，可以使用uts直接调用（注意打包时勾选相应的模块）
 
 可以参考uni.requestPayment的源码，也是通过uts调用这2个原生SDK：
-- [支付宝](https://gitcode.net/dcloud/uni-api/-/tree/alpha/uni_modules/uni-payment-alipay)
-- [微信](https://gitcode.net/dcloud/uni-api/-/tree/alpha/uni_modules/uni-payment-wxpay)
+- [支付宝](https://gitcode.com/dcloud/uni-api/tree/alpha/uni_modules/uni-payment-alipay)
+- [微信](https://gitcode.com/dcloud/uni-api/tree/alpha/uni_modules/uni-payment-wxpay)
 
 ## 自定义支付provider接入到uni API @customprovider
 
@@ -213,4 +213,4 @@ export class UniPaymentAlipayProviderImpl implements UniPaymentAlipayProvider{
 第四步，打包自定义基座然后运行
 
 由于uni-app x内置的支付API也是基于这套规范实现的，所以推荐参考
-[uni-app x支付宝支付插件的实现源码](https://gitcode.net/dcloud/uni-api/-/tree/alpha/uni_modules/uni-payment-alipay)
+[uni-app x支付宝支付插件的实现源码](https://gitcode.com/dcloud/uni-api/tree/alpha/uni_modules/uni-payment-alipay)

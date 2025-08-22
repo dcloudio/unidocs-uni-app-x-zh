@@ -48,7 +48,7 @@ title : native-view
 
 [UniNativeViewElement](../dom/uninativeviewelement.md) 提供了dispatchEvent分发event事件API，注意：事件数据类型暂时只支持[UniNativeViewEvent](./common.md#uninativeviewevent)。
 
-具体示例请参考：[native-button](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/native-button/components/native-button/native-button.uvue)插件，该插件使用`native-view`封装原生button实现的native-button。
+具体示例请参考：[native-button](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/native-button/components/native-button/native-button.uvue)插件，该插件使用`native-view`封装原生button实现的native-button。
 
 ### 注意事项
 
@@ -169,7 +169,7 @@ export class NativeButton {
 ```uts
 import { BuilderNode } from "@kit.ArkUI"
 // 导入混编实现的声明式UI构建函数
-// 完整代码可参考 https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/native-button/utssdk/app-harmony/builder.ets
+// 完整代码可参考 https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/native-button/utssdk/app-harmony
 import { buildButton } from "./builder.ets"
 
 import { INativeButtonContext } from "../interface.uts"
@@ -206,7 +206,7 @@ export class NativeButton {
 
 :::
 
-具体示例请参考：[native-button](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/uni_modules/native-button/components/native-button/native-button.uvue)插件
+具体示例请参考：[native-button](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/native-button/components/native-button/native-button.uvue)插件
 
 
 <!-- UTSCOMJSON.native-view.reference -->

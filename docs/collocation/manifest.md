@@ -35,7 +35,7 @@ uni-app 项目可配置原生的隐私弹框。这是因为开发者的js执行�
 
 但开发者需注意在用户同意隐私政策前，不要采集涉及隐私的数据。如果违反当地法律或应用商店的要求，会无法上架应用商店甚至被处罚。
 
-hello uni-app x中提供了基于dialogPage的隐私政策弹框示例代码，在app.uvue的代码中搜索`uni.getPrivacySetting`可见，[详见](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/App.uvue)
+hello uni-app x中提供了基于dialogPage的隐私政策弹框示例代码，在app.uvue的代码中搜索`uni.getPrivacySetting`可见，[详见](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/App.uvue)
 
 该示例代码在应用启动的onLauch中，判断隐私协议是否已经被同意，未同意的话通过dialogPage弹出一个页面，该页面有隐私协议的内容及同意、取消按钮。
 其中同意按钮为[button组件](../component/button.md)的`open-type=agreePrivacyAuthorization`

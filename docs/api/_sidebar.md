@@ -33,8 +33,8 @@
   * [节点布局相交状态](create-intersection-observer.md)
   * [操作菜单](action-sheet.md)
   * [模态弹窗](modal.md)
-  * [loading 提示框](loading.md)
-  * [消息提示框](toast.md)
+  * [loading 加载框](loading.md)
+  * [toast 轻提示](toast.md)
   * [动态加载字体](load-font-face.md)
   * [将rpx单位值转换成px](rpx2px.md)
   * [主题切换](theme-change.md)
@@ -116,6 +116,7 @@
   * [虚拟支付（requestVirtualPayment）](virtual-payment.md)
   * [转账确认收款（requestMerchantTransfer）](request-merchant-transfer.md)
 * 分享
+  * [share](share.md)
   * [shareWithSystem](share-with-system.md)
 * 推送
   * [push](uni-push.md)
@@ -127,6 +128,8 @@
   * [创建 map 组件上下文对象](create-map-context.md)
   * [创建 canvas 组件上下文对象](create-canvas-context-async.md)
   * [创建 camera 组件上下文对象](create-camera-context.md)
+* Worker
+  * [创建 worker 对象](create-worker.md)
 * uniCloud客户端API
   * [概述](unicloud/README.md)
   * [云函数](unicloud/function.md)

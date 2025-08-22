@@ -627,7 +627,7 @@ export function buildButton(params: ESObject) {
 
 :::
 
-更多实现可参考 标准模式组件 [native-button](https://gitcode.net/dcloud/hello-uni-app-x/-/tree/dev/uni_modules/native-button)
+更多实现可参考 标准模式组件 [native-button](https://gitcode.com/dcloud/hello-uni-app-x/tree/alpha/uni_modules/native-button)
 
 此时一个简单的UTS插件-标准模式组件就完成了，
 

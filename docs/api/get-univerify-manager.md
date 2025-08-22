@@ -289,8 +289,8 @@ uvue页面放置好上述5个UniElement后，在页面的登录按钮点击事�
 登录成功后通过`uni.navigateBack()`或`uni.closeDialogPage()`等方式关闭授权页。
 
 hello uni-app x里有完整的自定义登录的示例代码，该示例中：
-1. 首先在[预登录页面](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/get-univerify-manager/get-univerify-manager.uvue)获取运营商返回的4项内容。点击自定义一键登录后弹出[dialogPage](./dialog-page.md)，并通过页面地址传参方式，将4项内容传给自定义登录页面。实际开发中，你可以使用dialogPage，也可以使用一个普通页面。
-2. 在[自定义一键登录页面](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/alpha/pages/API/get-univerify-manager/univerify-custom-page.uvue)，按规范放置合适的UniElement，点击登录后调用`customLogin`方法。登录成功后调用`uni.closeDialogPage()`关闭。
+1. 首先在[预登录页面](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/API/get-univerify-manager/get-univerify-manager.uvue)获取运营商返回的4项内容。点击自定义一键登录后弹出[dialogPage](./dialog-page.md)，并通过页面地址传参方式，将4项内容传给自定义登录页面。实际开发中，你可以使用dialogPage，也可以使用一个普通页面。
+2. 在[自定义一键登录页面](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/API/get-univerify-manager/univerify-custom-page.uvue)，按规范放置合适的UniElement，点击登录后调用`customLogin`方法。登录成功后调用`uni.closeDialogPage()`关闭。
 
 ## Tips
 - 一键登录并非100%成功，手机没有sim卡、蜂窝网络未开启、当时手机没有蜂窝网信号是最常见的原因，更多错误见上方的错误码列表。在一键登录无法使用时，可转为短信验证码登录。在[uni-id-pages](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)里已经集成了相关逻辑，无需自己开发。[详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)

@@ -41,15 +41,15 @@ export default {
 			items: [
 				{
 					name: 'hello uni-app x',
-					url: 'https://gitcode.net/dcloud/hello-uni-app-x',
+					url: 'https://gitcode.com/dcloud/hello-uni-app-x',
 				},
 				{
 					name: 'uni-api',
-					url: 'https://gitcode.net/dcloud/uni-api',
+					url: 'https://gitcode.com/dcloud/uni-api',
 				},
 				{
 					name: 'uni-component',
-					url: 'https://gitcode.net/dcloud/uni-component',
+					url: 'https://gitcode.com/dcloud/uni-component',
 				},
 			],
 		},

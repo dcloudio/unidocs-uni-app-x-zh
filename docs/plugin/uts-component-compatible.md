@@ -1914,7 +1914,7 @@ UTS容器组件的使用与Vue等常见的前端容器组件一致。唯一要�
 
 ## 快速体验
 
-开发者可以使用[Hello UTS](https://gitcode.net/dcloud/hello-uts) 快速体验UTS 组件开发
+开发者可以使用[Hello UTS](https://gitcode.com/dcloud/hello-uts) 快速体验UTS 组件开发
 
 Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 

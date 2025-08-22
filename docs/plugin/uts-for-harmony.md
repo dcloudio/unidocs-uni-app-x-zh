@@ -151,7 +151,7 @@ uts插件编译到鸿蒙时会将整个插件编译为一个鸿蒙的module。�
 utssdk/app-harmony/module.json5  -->  src/main/module.json5
 utssdk/app-harmony/resources  -->  src/main/resources
 utssdk/app-harmony/*.ets  -->  utssdk/app-harmony/*.ets
-utssdk/app-harmony/*.har  -->  utssdk/app-harmony/*.har
+utssdk/app-harmony/libs/*.har  -->  utssdk/app-harmony/libs/*.har
 ```
 
 ## 使用ets文件
@@ -175,3 +175,9 @@ settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, (err, valu
   console.log(`SCREEN_BRIGHTNESS_STATUS: ${JSON.stringify(value)}`)
 });
 ```
+
+
+### 配置 overrides
+在一些插件中，需要配置 overrides ，但是鸿蒙工程中，配置 overrides 只能在 根目录下的 oh-package 中生效，而 UTS 插件，打包之后由配置 config,json 之后的依赖是非根目录下的，因此不会生效
+
+因此需要修改 harmony-configs/oh-package （oh-package 源文件可以在 unpackage/dist/dev/app-harmony 中找到源文件，把这个文件复制到harmony-configs 中）,在这个文件中，配置 overrides 才能够生效

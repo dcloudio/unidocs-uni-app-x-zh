@@ -190,7 +190,7 @@ export default {
 
 #### 使用 [全局变量与状态管理](../tutorial/store.md) @global-store
 
-> store/index.uts [文件详情](https://gitcode.net/dcloud/hello-uvue/-/blob/alpha/store/index.uts)
+> store/index.uts [文件详情](https://gitcode.com/dcloud/hello-uvue/blob/alpha/store/index.uts)
 
 示例 [详情](<!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-options.gitUrl -->)
 

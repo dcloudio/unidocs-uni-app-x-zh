@@ -47,5 +47,5 @@ complete: () => {
 
 ## tips
 
-- 下载后的文件，如需分享或使用三方应用打开，在Android7上需要使用FileProvider。详见 [分享](https://gitcode.net/dcloud/hello-uni-app-x/-/blob/dev/pages/template/share/share.uvue)、[使用三方应用打开](https://gitcode.net/dcloud/hello-uts/-/blob/dev/uni_modules/uts-nativepage/utssdk/app-android/index.uts)
+- 下载后的文件，如需分享或使用三方应用打开，在Android7上需要使用FileProvider。
 - web端并不会将文件下载到文件系统内，而是保存在js的File对象内，以供其他接口（如canvas、uploadFile）使用
