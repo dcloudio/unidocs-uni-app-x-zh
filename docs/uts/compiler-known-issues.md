@@ -158,7 +158,7 @@ console.log(msg.type);
 ## 组件同名前缀 + ComponentPublicInstance 类型别名
 
 - 发生版本：HBuilderX-4.75
-- 问题描述：当类型别名名称以 `ComponentPublicInstance` 结尾且前缀与组件名相同，导致编译失败。
+- 问题描述：这个类型是easycom组件规范的，不能自行定义，类似的可能还有很多内置类型，如果开发者自己去定义这些类型，都可能产生非预期的问题。
 - 修复状态：修复中
 
 复现代码：
@@ -283,7 +283,7 @@ export default {
 ## RequestOptions.header 声明为 object 且默认值 {} 时编译失败
 
 - 发生版本：HBuilderX-4.75
-- 问题描述：当 `RequestOptions.header?: object` 且函数参数使用解构默认值 `header = {}` 时，编译阶段可能失败。
+- 问题描述：当 `RequestOptions.header?: object` 且函数参数使用解构默认值 `header = {}` 时，编译阶段可能失败。(object本身就不是一个跨端类型)
 - 修复状态：修复中
 
 复现代码：
@@ -431,7 +431,7 @@ const props = defineProps({
 ## props 使用 UTSArray 类型且默认值为 [] 导致问题
 
 - 发生版本：待补充
-- 问题描述：当 `props` 中字段声明为 `type: UTSArray` 且 `default: []` 时，可能引发编译或运行问题；建议改为使用标准 `Array` 类型。
+- 问题描述：UTSArray是部分平台的内部实现，不是一个跨端类型，应该用Array类型。
 - 修复状态：修复中
 
 复现代码：
