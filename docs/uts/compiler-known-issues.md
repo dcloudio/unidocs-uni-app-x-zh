@@ -1,6 +1,6 @@
 # UTS 编译器已知问题
 
-本文档用于记录与追踪 UTS 编译器的已知问题，便于定位、规避与修复。请在每条问题中明确标注：发生（受影响）的版本、问题现象与影响范围，并尽可能提供临时规避方案与当前修复状态。
+本文档用于记录与追踪 UTS 编译器的已知问题，便于定位、规避与修复。
 
 ## withDefaults 与可选 Props 推断异常
 
@@ -150,16 +150,12 @@ console.log(msg.type);
 </script>
 ```
 
-修改建议：
-```vue
-
-```
+修改建议：部分平台目前不支持onTabItemTap[兼容性](https://doc.dcloud.net.cn/uni-app-x/page.html#ontabitemtap)
 
 ## 组件同名前缀 + ComponentPublicInstance 类型别名
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：这个类型是easycom组件规范的，不能自行定义，类似的可能还有很多内置类型，如果开发者自己去定义这些类型，都可能产生非预期的问题。
-- 修复状态：修复中
 
 复现代码：
 
