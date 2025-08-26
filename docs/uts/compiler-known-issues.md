@@ -51,7 +51,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 ## data 中对象未显式类型，模板访问属性导致编译问题
 
-- 发生版本：待补充
+- 发生版本：HBuilderX-4.75
 - 问题描述：`data()` 中返回的对象字段未显式类型时，模板访问其子属性可能触发编译/类型检查问题。
 - 修复状态：修复中
 
@@ -378,7 +378,7 @@ export default {
 
 ## defineProps 默认值返回空数组需要显式数组类型
 
-- 发生版本：待补充
+- 发生版本：HBuilderX-4.75
 - 影响范围：`<script setup lang="uts">` 中使用 `defineProps`，默认值为 `[]`
 - 问题描述：为 props 提供默认值 `[]` 且缺少明确的数组元素类型断言时，可能导致编译或类型推断异常。
 - 修复状态：修复中
@@ -426,7 +426,7 @@ const props = defineProps({
 
 ## props 使用 UTSArray 类型且默认值为 [] 导致问题
 
-- 发生版本：待补充
+- 发生版本：HBuilderX-4.75
 - 问题描述：UTSArray是部分平台的内部实现，不是一个跨端类型，应该用Array类型。
 - 修复状态：修复中
 
