@@ -1928,6 +1928,10 @@ Lottie动画示例,对应的源码实现：~/uni_modules/uts-animation-view
 
 uts兼容模式组件 不支持touch click tap等事件
 
+### 兼容模式不支持nvue的同步返回值
+
+nvue因weex引擎限制，不支持同步方法返回值，需要修改为callback形式返回结果给nvue环境
+
 ### 使用者需要指定 组件宽高
 
 ```
