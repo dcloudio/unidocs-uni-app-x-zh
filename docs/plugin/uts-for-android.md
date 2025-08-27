@@ -4,6 +4,7 @@
 
 需要阅读者具备Android原生应用开发经验。
 
+>HBuilder X 4.81 统一升级为 Kotlin 2.2.0 版本 [注意事项](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-for-android.html#kotlin2-%E5%8D%87%E7%BA%A7%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
 
 ## 1 了解UTS插件是什么
 
