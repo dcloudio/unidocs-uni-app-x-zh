@@ -16,6 +16,8 @@ title : waterflow
 
 > waterflow 只支持竖向滚动，暂时不支持横向滚动
 
+> 鸿蒙平台api 20及以上版本支持滚动相关事件，api 18及以上版本支持load-more插槽
+
 <!-- UTSCOMJSON.waterflow.attribute -->
 
 <!-- UTSCOMJSON.waterflow.event -->
