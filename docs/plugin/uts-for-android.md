@@ -1079,3 +1079,89 @@ import GetObjectRequest from "com.tencent.cos.xml.model.`object`.GetObjectReques
 UTS插件本地调试尚不支持直接使用so文件，需要将so文件和调用代码封装为AAR 或者分别集成 so和jar文件
 
 AAR调用示例参考：[hello uts](https://gitcode.com/dcloud/hello-uts/tree/master/uni_modules/uts-toast)
+
+
+
+## kotlin2 升级注意事项
+
+### 背景
+
+在 4.81 版本之前，UTS 使用 Kotlin 1.8.10/1.9.20 版本。
+HBuilder X 4.81 统一升级为 Kotlin 2.2.0 版本，主要带来以下优化：
+
++ 支持使用基于 Kotlin 2.0 及以上版本编译的第三方库
++ 得益于 Kotlin K2 编译器的优化，UTS插件/uvue页面 编译速度普遍提升 25%–40%
+
+
+### 影响范围
+
+本次升级对 UTS 开发者的影响主要体现在以下三个方面：
+
+#### 1 UTS语言开发者
+
+包括 UTS 插件使用者与 uvue 开发者：
+
+理论上本次升级对这类开发者无感知差异，UTS 编译器已屏蔽底层 Kotlin 升级带来的语法细节。若发现升级后出现编译错误，请及时反馈。
+
+#### 2 混编代码
+
+若项目中包含 Kotlin 或 Java 编写的原生代码（如通过 source 引入的代码或本地依赖），需注意以下语法兼容性变化（[参考 HBuidlerX 4.25 混编说明](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin-hybrid.html#uts%E5%8E%9F%E7%94%9F%E6%B7%B7%E7%BC%96%E4%BB%8B%E7%BB%8D)）：
+
+以下列举常见的语法更新，完整内容参考 [K2编译器更新说明](https://kotlinlang.org/docs/k2-compiler-migration-guide.html)以及[kotlin语法更新说明](https://kotlinlang.org/docs/whatsnew22.html)
+
++ 含字段的 open 属性必须立即初始化：
+
+```kotlin
+open class Base {
+    open val a: Int = 1 // 必须初始化（val/var 均适用）
+    open var b: Int = 2
+	// 开发者确保代码可控的情况下，也可以使用lateinit进行标记，这样可以不立即初始化
+	open lateinit var c: Int
+}
+```
+
+
++ 废弃大小写转换旧方法，使用新标准：
+
+
+```kotlin
+// 废弃：
+str.toLowerCase() 
+str.toUpperCase()
+
+// 改用：
+str.lowercase()
+str.uppercase()
+```
+
++ 当 when 表达式中使用 if 条件时，必须提供 else 分支：
+
+```kotlin
+when (value) {
+    is String -> if (value.isEmpty()) 0 else 1
+    else -> -1 // ⚠️ 必须明确写出 else
+}
+```
+
++平台类型（如 Java 的 String!）空检测更严格：
+
+```kotlin
+// Java 声明: @Nullable int[] data;
+val nullableArray: IntArray? = javaObj.data // ✅ 正确识别可空性
+nullableArray[0] // ⚠️ 编译报错：需空安全检查
+```
+
+
+#### 3 离线sdk开发者
+
+对应离线打包的开发者来说，除了需要关注上文中提到的kotlin语法变化之外，还需要同步升级 kotlin/gradle 相关配置：
+
++ Android studio 2025.1.2 以上
++ gradle 版本 8.14.3
++ org.jetbrains.kotlin.android 版本 2.2.0
++ com.android.application / com.android.library 版本 8.11.1
++ 重要：uts-kotlin-gradle-plugin-0.0.1.jar/uts-kotlin-compiler-plugin-0.0.1.jar 有升级，需要手动更新
+
+更完整的升级后所需要的依赖配置 参考  [离线打包SDK](https://doc.dcloud.net.cn/uni-app-x/native/use/android.html)
+
+
