@@ -48,6 +48,24 @@ title : uni.createInnerAudioContext()
 
 <!-- UTSAPIJSON.createInnerAudioContext.example -->
 
+
+<!-- ## uni.setInnerAudioOption() @setinneraudiooption -->
+
+<!-- UTSAPIJSON.setInnerAudioOption.name -->
+
+<!-- UTSAPIJSON.setInnerAudioOption.description -->
+
+<!-- UTSAPIJSON.setInnerAudioOption.compatibility -->
+
+<!-- UTSAPIJSON.setInnerAudioOption.param -->
+
+<!-- UTSAPIJSON.setInnerAudioOption.returnValue -->
+
+<!-- UTSAPIJSON.setInnerAudioOption.tutorial -->
+
+<!-- UTSAPIJSON.setInnerAudioOption.example -->
+
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
