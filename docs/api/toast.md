@@ -39,12 +39,19 @@ title : uni.showToast(options)
 <!-- UTSAPIJSON.general_type.param -->
 
 ## Bug & Tips@tips
-
-- toast 行为描述
-  - 在 Android 端并且 position 字段生效时，页面打开关闭行为不会影响 toast 的显示
-  - 在 HarmonyOS 端，是系统 toast 和 App window 绑定，页面打开关闭行为不会影响 toast 的显示
-  - 当打开新页面（包括 dialogPage）
-    - 在 Android、iOS 端，toast 行为与页面绑定，原页面弹出的 toast 会被遮挡 (Android 端 position 字段生效时除外)
-  - 关闭页面时
-    - 在除 HarmonyOS 端和 Android 端 position 字段生效外，弹出的 toast 都会被自动取消
-  - Android 11 及以上版本，应用进入后台后，调用系统 toast (position 字段生效时) 不弹出。 [文档地址](https://developer.android.google.cn/about/versions/11/behavior-changes-11?hl=nb#toasts)
+- 在 iOS、微信小程序、Web 平台，showToast 是和页面（包括 dialogPage）绑定的
+- 在 Android 平台
+	* position 设为 bottom 时，为系统toast，此时与 App 绑定，而不是与页面绑定
+	* 系统toast 不支持 icon 图标，仅支持文字
+	* 部分 Android ROM，如 MIUI，调用系统 toast 时，会在 toast 行首自动加上 App 图标。此为 ROM 行为，目的是帮助用户区分该 toast 是哪个 App 弹出的
+- 在 HarmonyOS 平台，目前只有系统 toast ，和 App window 绑定
+- 当 Toast 和页面绑定时：
+  + 当showToast执行时，会寻找当前页面栈顶的窗体（包括 dialogPage），找到后进行绑定，然后弹出 Toast。
+	+ 在弹出 Toast 后，再次打开新页面，新页面会覆盖原页面弹出的 Toast。
+		+ 如需在新页面（包括 dialogPage）弹出 Toast，需要再次调用 showToast
+  + 关闭页面时，Toast 会跟随页面一起消失
+		+ 如需在dialogPage关闭后，仍然弹出 Toast，需要在关闭dialogPage后再次调用 showToast
+- 当 Toast 和应用绑定时，也即系统 toast：
+	弹出和关闭页面，系统 toast 都不会跟随页面被遮挡或消失。
+- Android 11 及以上版本，应用进入后台后，调用系统 toast 不弹出。 [文档地址](https://developer.android.google.cn/about/versions/11/behavior-changes-11?hl=nb#toasts)
+- showToast 里的 Loading，和 showLoading 的区别是，showLoading 需要手动调用 HideLoading 才会关闭。而 showToast 里的 Loading 显示指定时间后会自动关闭。一般情况都需要精准控制关闭时机，所以大多使用 showLoading 和 hideLoading
