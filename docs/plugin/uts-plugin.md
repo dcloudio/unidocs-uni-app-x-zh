@@ -1652,7 +1652,7 @@ import {QMapView, QMapServices} from 'QMapKit';
 - 1 集成三方sdk
 - 2 新增资源(包括res/asset 等)
 
-总结来说，就是所有 涉及新增依赖/gralde配置/androidManifest.xml/资源 等标准基座不具备的能力时，需要自定义基座
+总结来说，就是所有 涉及新增依赖/gradle配置/androidManifest.xml/资源 等标准基座不具备的能力时，需要自定义基座
 
 #### iOS平台
 uts插件编译需要XCode环境，因此在mac电脑安装了XCode工具时支持直接使用标准基座真机运行。
