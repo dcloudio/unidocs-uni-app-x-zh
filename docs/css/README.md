@@ -25,7 +25,11 @@ App端与web常见的区别是：
 
 uni-app x 使用flex布局，即弹性盒布局。
 
-flex是一种清晰易用、全平台支持的布局。不管web、Android、iOS、微信skyline、快应用，均支持flex布局。
+flex是一种清晰易用、高性能、全平台支持的布局。不管web、Android、iOS、微信skyline、快应用，均支持flex布局。
+
+web浏览器默认排版是block。block更适合布局文档，比如论文、新闻、blog文章。而web app，使用flex布局会性能更好。
+
+为了跨平台一致性和性能，uni-app x编译到web时，默认的布局也重置为了flex。
 
 如果不了解flex可以参考：[MDN的flex教程](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
 

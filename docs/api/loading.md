@@ -50,4 +50,4 @@ title : uni.showLoading(options)
 	+ 未来 harmonyOS 平台也会提供与页面绑定的 showLoading
 * 在所有平台，当前页面（包括 dialogPage）关闭时，弹出的 loading 都会被自动取消
 	+ 如需在dialogPage关闭后，仍然弹出 Loading，需要在关闭dialogPage后再次调用 showLoading
-	
++ 注意在支持 dialogPage 的平台（Web和App），[uni.showModal](./modal.md)、[uni.showActionSheet](./action-sheet.md) 也是 dialogPage 实现的，此时 showLoading 会绑定到这些 dialogPage 上
