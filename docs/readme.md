@@ -246,6 +246,8 @@ uts插件是一个大一统的插件模型，其中在不同的子平台可以�
 - [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：免费、轻量UI库
 - [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceUI作者的免费开源组件库
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
+- [RiceUI](https://ext.dcloud.net.cn/plugin?id=24907)：全端支持的组合式UI库。
+- [CoolUI](https://ext.dcloud.net.cn/plugin?id=24497)：全端支持的组合式UI库，内置 Tailwind CSS、支持多主题切换与国际化
 
 
 如果想复用web生态的内容，可以使用
