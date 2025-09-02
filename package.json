@@ -33,10 +33,6 @@
   "dependencies": {
     "@dcloudio/docs-utils": "^1.0.8",
     "vuepress": "1.9.9",
-    "vuepress-theme-uniapp-official": "1.4.39"
-  },
-  "resolutions": {
-    "terser-webpack-plugin": "1.4.6",
-    "markdown-it": "< 14"
+    "vuepress-theme-uniapp-official": "1.4.40"
   }
 }
