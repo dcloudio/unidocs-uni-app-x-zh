@@ -30,7 +30,7 @@ title : image
 	* [x] webp
 	* [x] heic（iOS支持，Android10+支持）
 	* [x] tif (iOS端支持，Android端不支持)
-    * [x] svg（HBuilder 4.81+支持、iOS 13.0+支持、 iOS和Android不支持svg动画)
+    * [x] svg（HBuilderX4.81+支持、iOS 13.0+支持、 iOS和Android不支持svg动画)
 
 如需其他图片格式，可自行开发uts组件插件或搜索插件市场，如
 - [svg插件](https://ext.dcloud.net.cn/search?q=svg&orderBy=Relevance&cat1=8&cat2=82)
