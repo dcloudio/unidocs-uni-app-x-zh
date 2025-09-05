@@ -148,7 +148,7 @@ HBuilderX4.75及以上版本，如果没有配置启动图，配置启动界面�
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_logo.png)
 
 - 带有图标背景的Logo图标  
-  Logo图标尺寸必须为 240×240 dp，并且位于直径 160 dp 的圆圈内  
+  Logo图标尺寸必须为 240×240 dp，并且位于直径 160 dp 的圆圈内，圆圈以外的所有内容将不可见（被遮盖）。  
   ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_logo_dim.png)  
   对应以下密度屏幕的分辨率：
   + xhdpi（320dpi）  
@@ -159,7 +159,7 @@ HBuilderX4.75及以上版本，如果没有配置启动图，配置启动界面�
     Logo图标分辨率为 960x960 px，并且位于直径 640 px 的圆圈内  
 
 - 无图标背景的Logo图标  
-  Logo图标尺寸必须为 288×288 dp，并且位于直径 192 dp 的圆圈内  
+  Logo图标尺寸必须为 288×288 dp，并且位于直径 192 dp 的圆圈内，圆圈以外的所有内容将不可见（被遮盖）。  
   ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_logo_trandim.png)  
   对应以下密度屏幕的分辨率：
   + xhdpi（320dpi）  
