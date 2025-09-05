@@ -177,6 +177,14 @@ HBuilderX4.75及以上版本，如果没有配置启动图，配置启动界面�
 
 ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/splashscreen_android_brand.png)
 
+底部品牌图标尺寸必须为 200x80 dp，对应以下密度屏幕的分辨率：
+  + xhdpi（320dpi）  
+    品牌图标分辨率为 400x160 px  
+  + xxhdpi（480dpi）  
+    品牌图标分辨率为 600x240 px  
+  + xxxhdpi（640dpi）  
+    品牌图标分辨率为 800x320 px  
+
 > 如需适配其它分辨率设备，可在项目 nativeResources -> android -> res 目录下添加对应 drawable 目录，放置名称为 `uniappx_splashscreen_brand.png` 的品牌图标  
 
 
