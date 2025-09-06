@@ -225,6 +225,7 @@ getStorageSync的返回值类型为any。因为set的时候任意类型都可以
 - 微信小程序支持类型：String、Number、Boolean、Object(任意对象，包括UTSJSONObject)、Array、null、Date（取出时会反序列化为Date实例）。
 - 鸿蒙app端支持类型：String、Number、Boolean、Object(任意对象，包括UTSJSONObject)、Array、null。
 - Android app端支持类型：String、Number、Boolean、Object(UTSJSONObject/Type)、Array。
+- iOS app端支持类型：String、Number、Boolean、Object(UTSJSONObject/Type)、Array。
 
 #### UTSJSONObject
 
