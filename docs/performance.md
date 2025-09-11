@@ -88,16 +88,27 @@ uni-app x中，[list-view组件](./component/list-view.md)和[waterflow组件](.
 
 使用这2个组件，无论多长的列表，系统也会自动回收和复用渲染资源，和原生应用一样的体验，但开发更简单。
 
-
-### 分批加载
+### uni-recycle-view组件
 
 一般联网加载的分页式列表，常规使用list-view组件或waterflow组件即可。
 
 但如果需要一次性加载非常多的列表项，比如从本地一次性读取数千条记录，都想显示到界面上，那会非常卡。虽然在渲染层有复用，没有创建太多，但vue的VNode和UniElement超级多的话，创建也很慢。
 
-一些开发者只是简单的把数千条数据赋值给vue的响应式变量，然后就会触发整体更新。这并不合理。
+一些开发者只是简单的把数千条数据赋值给vue的响应式变量，然后就会触发大量DOM、原生view创建或更新，这极大的降低了长列表的性能。
 
-这种场景，应该使用分批加载。
+uni-recycle-view组件内部通过计算决定哪些数据需要在界面展示。只创建有限的VNode，进而实现DOM和原生View数量的整体控制。
+
+插件下载地址：[uni-recycle-view组件](https://ext.dcloud.net.cn/plugin?id=17385)
+
+同时它也有一些限制和注意事项：
+1. uni-recycle-view 组件适用于仅使用一个for循环创建所有列表项的场景。
+2. 由于该组件使用了scroll-view而不是list-view，滚动过程中自行计算哪些数据需要渲染和复用，并直接用原生recycle-View的效率要低，因此滚动流畅度低于list-view组件。
+3. 该组件无法支持瀑布流
+4. 该组件2.0版本起限制所有item高度一致
+
+如果由于上述限制无法使用此组件，也可以尝试使用下文的分批加载方案。
+
+### 分批加载
 
 分批加载没有封装具体的组件，hello uni-app-x内提供了一个示例[详见](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/long-list-batch/long-list-batch.uvue)
 
@@ -106,23 +117,9 @@ uni-app x中，[list-view组件](./component/list-view.md)和[waterflow组件](.
 分批加载时需注意，用户在操作已经渲染的部分数据时，如果后台在持续加载数据，会导致卡住用户操作。
 所以还需要做到闲时加载，避免卡UI。上述示例在用户滚动、下拉刷新期间会暂停分批加载。
 
-如果数据太多，分批逐步加载完后，在低端机上出现爆内存现象，那可以使用下面的uni-recycle-view组件。
+分批加载相比uni-recycle-view 组件，内存占用多一些。由于滚动期间不涉及额外计算，分批加载在低端机上滚动流畅度高一些。
 
-### uni-recycle-view组件
-
-初始化大量列表项目，除了分批加载，还有一种方案是对VNode虚拟化，即只创建有限的VNode，进而实现DOM和原生View数量的整体控制。
-
-插件市场已经封装了一个组件：[uni-recycle-view组件](https://ext.dcloud.net.cn/plugin?id=17385)
-
-uni-recycle-view组件内部通过计算决定哪些数据需要在界面展示，默认展示当前滚动位置的所在屏及上下各5屏的数据。
-
-同时它也有一些限制和注意事项：
-1. uni-recycle-view 组件适用于仅使用一个for循环创建所有列表项的场景。
-2. 由于该组件使用了scroll-view而不是list-view，滚动过程中自行计算哪些数据需要渲染和复用，并直接用原生recycle-View的效率要低，因此滚动流畅度低于list-view组件。
-3. 该组件无法支持瀑布流
-
-uni-recycle-view 组件相比分批加载，内存占用低一些。但在低端机上滚动流畅度低一些。可酌情使用。
-
+### 长列表性能的关键点
 
 无论如何，**注意列表项目里的组件数量**，它是dom元素的放大器。每个list-item里的dom数量多一点，乘以item数量，就会产生非常多dom，页面性能就很容易被拖垮。
 
