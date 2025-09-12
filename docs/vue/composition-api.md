@@ -666,6 +666,33 @@ defineExpose({
 
 :::
 
+### withDefaults()
+
+在组合式 API 中使用响应式 Props 解构时，需要使用 `withDefaults` 编译器宏。
+
+```ts
+interface Props {
+  msg: string
+  labels : string[]
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  msg: 'hello',
+  labels: ():string[] => ['a', 'b'],
+})
+```
+
+上面代码会被编译为等价的运行时 props 的 default 选项。此外，`withDefaults` 辅助函数提供了对默认值的类型检查。\
+请注意，在使用 `withDefaults` 时，默认值为可变引用类型 (如数组或对象) 应该封装在函数中，以避免意外修改和外部副作用。
+
+#### withDefaults() 示例 @withdefaults-example
+
+[详情](<!-- VUEJSON.E_component-instance.props_props-with-defaults.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_component-instance.props_props-with-defaults.webUrl -->
+<!-- VUEJSON.E_component-instance.props_props-with-defaults.code -->
+:::
+
 ### 与渲染函数一起使用
 
 
