@@ -112,7 +112,7 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 
 项目的manifest.json文件中，在“App启动界面配置”中的“Google SplashScreen配置”项下，可以配置背景颜色及各设备分辨率的居中logo图标、底部品牌图标。
 
-#### 配置启动界面背景颜色：  
+#### 配置启动界面背景颜色  
 
 可选配置，默认白色。系统设置为暗色模式时默认为黑色。
 
@@ -141,7 +141,7 @@ Android 12（API 31）开始强制开启 [SplashScreen](https://developer.androi
 HBuilderX4.75及以上版本，如果没有配置启动图，配置启动界面背景颜色在Android12以下设备生效；如果配置启动图则背景颜色仅在Android12及以上设备生效。  
 :::
 
-#### 配置启动界面中部Logo图标：  
+#### 配置启动界面中部Logo图标  
 
 可选配置，默认为应用启动图标。
 
@@ -171,7 +171,7 @@ HBuilderX4.75及以上版本，如果没有配置启动图，配置启动界面�
 
 > 如需适配其它分辨率设备，可在项目 nativeResources -> android -> res 目录下添加对应 drawable 目录，放置名称为 `uniappx_splashscreen_icon.png` 的Logo图标  
 
-#### 配置启动界面底部品牌图标：  
+#### 配置启动界面底部品牌图标  
 
 可选配置，默认底部不显示品牌图标。
 
