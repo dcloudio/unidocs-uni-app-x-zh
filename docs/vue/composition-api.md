@@ -689,7 +689,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 [详情](<!-- VUEJSON.E_component-instance.props_props-with-defaults.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_component-instance.props_props-with-defaults.webUrl -->
+::: preview
 <!-- VUEJSON.E_component-instance.props_props-with-defaults.code -->
 :::
 
