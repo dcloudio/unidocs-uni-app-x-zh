@@ -1165,4 +1165,53 @@ nullableArray[0] // ⚠️ 编译报错：需空安全检查
 
 更完整的升级后所需要的依赖配置 参考  [离线打包SDK](https://doc.dcloud.net.cn/uni-app-x/native/use/android.html)
 
+## 16KB适配注意事项
 
+## 背景
+
+自 2025 年 11 月 1 日起，提交到 Google Play 且以 Android 15 及更高版本为目标平台的所有新应用和现有应用更新都必须在 64 位设备上支持 16 KB 的页面大小
+
+uni-app 和 uni-app x 自 4.81 版本内置模块完全适配 16KB
+
+## 适配说明
+
+虽然uni-app和uni-app x保证了主体功能模块已适配16KB ，但是截至 4.81版本，仍有以下三方模块尚未适配，
+
+开发者需要避免在16kb设备上使用以下模块
+
+#### uni-app 适配情况说明
+
+| 模块名称                      | SO文件名                     |
+| :---------------------------- | :--------------------------- |
+| 阿里云服务                    | libaliyunaf.so               |
+| 高德地图                      | libAMapSDK_MAP_v10_0_700.so  |
+| 友盟崩溃收集                  | libcrashsdk.so               |
+| 人脸识别                      	| libfacedevice.so             |
+| 广告(快手)                    | libplt-base.so               |
+|                               | libsgcore.so                 |
+|                               | libti-monitor.so             |
+|个推（卓信）						| libzxprotect.so              |
+
+#### uni-app x 适配情况说明
+
+|模块名称						| SO文件名 			|
+| :---------------------------- | :--------------------------- |
+|阿里云实名认证					| libaliyunaf.so 				|
+|阿里云实名认证					| libfacedevice.so 				|
+|扫码(MLKIT)						| libbarhopper_v3.so 			|
+|腾讯定位						| libtencentloc.so             |
+|腾讯地图						| libtxmapengine.so            |
+|腾讯地图						| libtxmapvis.so               |
+|个推（卓信）      				| libzxprotect.so              |
+|七牛云                        	| libavcodec.so                |
+|                               | libavformat.so               |
+|                               | libavutil.so                 |
+|                               | libcrypto.1.1.so             |
+|                               | libcurl.so                   |
+|                               | libqplayer2-core.so          |
+|                               | libsoundtouch.so             |
+|                               | libsrt.so                    |
+|                               | libssl.1.1.so                |
+|                               | libswresample.so             |
+|                               | libyuv.so                    |
+|								| libpldroid_streaming_srt.so |
