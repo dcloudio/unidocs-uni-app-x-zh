@@ -1,7 +1,3 @@
----
-title : long-press-gesture-handler
----
-
 <!-- ## long-press-gesture-handler -->
 
 <!-- UTSCOMJSON.long-press-gesture-handler.name -->

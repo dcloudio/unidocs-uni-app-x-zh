@@ -1,7 +1,3 @@
----
-title : flow-item
----
-
 <!-- ## flow-item -->
 
 <!-- UTSCOMJSON.flow-item.name -->

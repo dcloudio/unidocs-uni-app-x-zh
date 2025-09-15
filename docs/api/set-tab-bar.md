@@ -1,7 +1,3 @@
----
-title : uni.showTabBar(options?)
----
-
 <!-- ## uni.showTabBar(options?) @showtabbar -->
 
 <!-- UTSAPIJSON.showTabBar.name -->

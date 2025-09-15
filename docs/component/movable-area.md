@@ -1,7 +1,3 @@
----
-title : movable-area
----
-
 <!-- ## movable-area -->
 
 <!-- UTSCOMJSON.movable-area.name -->

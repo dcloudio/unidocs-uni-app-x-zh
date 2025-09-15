@@ -1,7 +1,3 @@
----
-title : switch
----
-
 <!-- ## switch -->
 
 <!-- UTSCOMJSON.switch.name -->

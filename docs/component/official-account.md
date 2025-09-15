@@ -1,7 +1,3 @@
----
-title : official-account
----
-
 <!-- ## official-account -->
 
 <!-- UTSCOMJSON.official-account.name -->

@@ -4,10 +4,6 @@
 
 `live-pusher` 组件是[uni直播](https://doc.dcloud.net.cn/uniCloud/uni-live/intro.html)服务中的推流组件，在 Android/iOS 平台使用需要申请绑定包名/Bundle ID(AppID)，详情[咨询](https://im.dcloud.net.cn/#/?joinGroup=68622a2ba99ae56f95028db1)
 
----
-title : live-pusher
----
-
 <!-- ## live-pusher -->
 
 <!-- UTSCOMJSON.live-pusher.name -->

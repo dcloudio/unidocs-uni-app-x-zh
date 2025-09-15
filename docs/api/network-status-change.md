@@ -1,7 +1,3 @@
----
-title : uni.onNetworkStatusChange(callback)
----
-
 <!-- ## uni.onNetworkStatusChange(callback) @onnetworkstatuschange -->
 
 <!-- UTSAPIJSON.onNetworkStatusChange.name -->

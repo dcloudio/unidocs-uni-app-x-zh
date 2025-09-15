@@ -1,7 +1,3 @@
----
-title : uni.createCanvasContextAsync(options)
----
-
 <!-- ## uni.createCanvasContextAsync(options) @createcanvascontextasync -->
 
 <!-- UTSAPIJSON.createCanvasContextAsync.name -->

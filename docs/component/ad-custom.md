@@ -1,7 +1,3 @@
----
-title : ad-custom
----
-
 <!-- ## ad-custom -->
 
 <!-- UTSCOMJSON.ad-custom.name -->

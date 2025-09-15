@@ -1,7 +1,3 @@
----
-title : aria-component
----
-
 <!-- ## aria-component -->
 
 <!-- UTSCOMJSON.aria-component.name -->

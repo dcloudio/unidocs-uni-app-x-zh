@@ -1,7 +1,3 @@
----
-title : grid-view
----
-
 <!-- ## grid-view -->
 
 <!-- UTSCOMJSON.grid-view.name -->

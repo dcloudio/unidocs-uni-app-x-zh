@@ -1,7 +1,3 @@
----
-title : uni.createVideoContext(videoId, component?)
----
-
 <!-- ## uni.createVideoContext(videoId, component?) @createvideocontext -->
 
 <!-- UTSAPIJSON.createVideoContext.name -->

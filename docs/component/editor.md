@@ -1,7 +1,3 @@
----
-title : editor
----
-
 <!-- ## editor -->
 
 <!-- UTSCOMJSON.editor.name -->

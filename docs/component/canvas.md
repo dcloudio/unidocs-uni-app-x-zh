@@ -1,7 +1,3 @@
----
-title : canvas
----
-
 <!-- ## canvas -->
 
 <!-- UTSCOMJSON.canvas.name -->

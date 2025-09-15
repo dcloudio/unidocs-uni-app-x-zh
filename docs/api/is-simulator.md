@@ -1,7 +1,3 @@
----
-title : uni.isSimulator()
----
-
 <!-- ## uni.isSimulator() @issimulator -->
 
 <!-- UTSAPIJSON.isSimulator.name -->

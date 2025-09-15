@@ -1,7 +1,3 @@
----
-title : uni.openAppAuthorizeSetting(options)
----
-
 <!-- ## uni.openAppAuthorizeSetting(options) @openappauthorizesetting -->
 
 <!-- UTSAPIJSON.openAppAuthorizeSetting.name -->

@@ -1,7 +1,3 @@
----
-title : uni.chooseImage(options)
----
-
 <!-- ## uni.chooseImage(options) @chooseimage -->
 
 <!-- UTSAPIJSON.chooseImage.name -->

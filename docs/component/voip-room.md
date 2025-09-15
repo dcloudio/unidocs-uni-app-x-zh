@@ -1,7 +1,3 @@
----
-title : voip-room
----
-
 <!-- ## voip-room -->
 
 <!-- UTSCOMJSON.voip-room.name -->

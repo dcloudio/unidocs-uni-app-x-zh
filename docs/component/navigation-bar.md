@@ -1,7 +1,3 @@
----
-title : navigation-bar
----
-
 <!-- ## navigation-bar -->
 
 <!-- UTSCOMJSON.navigation-bar.name -->

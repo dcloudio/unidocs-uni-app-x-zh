@@ -1,7 +1,3 @@
----
-title : scroll-view
----
-
 <!-- ## scroll-view -->
 
 <!-- UTSCOMJSON.scroll-view.name -->
@@ -22,7 +18,7 @@ title : scroll-view
 2. 自定义下拉刷新元素必须要声明为 slot="refresher"，需要设置刷新元素宽高信息否则可能无法正常显示！
 3. 通过组件提供的refresherpulling、refresherrefresh、refresherrestore、refresherabort下拉刷新事件调整自定义下拉刷新元素！实现预期效果
 
-**注意：** 
+**注意：**
 - 安卓、iOS平台目前自定义下拉刷新元素不支持放在scroll-view的首个子元素位置上。可能无法正常显示
 - 鸿蒙平台自定义下拉刷新元素要放在最后一个子元素的位置，否则顶部可能出现空白区域
 

@@ -1,7 +1,3 @@
----
-title : picker-view
----
-
 <!-- ## picker-view -->
 
 <!-- UTSCOMJSON.picker-view.name -->

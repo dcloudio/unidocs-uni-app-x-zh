@@ -1,7 +1,3 @@
----
-title : match-media
----
-
 <!-- ## match-media -->
 
 <!-- UTSCOMJSON.match-media.name -->

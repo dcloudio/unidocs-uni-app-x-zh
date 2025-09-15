@@ -1,7 +1,3 @@
----
-title : radio-group
----
-
 <!-- ## radio-group -->
 
 <!-- UTSCOMJSON.radio-group.name -->

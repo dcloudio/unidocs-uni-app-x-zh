@@ -1,7 +1,3 @@
----
-title : uni.createLivePusherContext()
----
-
 <!-- ## uni.createLivePusherContext() @createlivepushercontext -->
 
 <!-- UTSAPIJSON.createLivePusherContext.name -->

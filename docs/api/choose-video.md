@@ -1,7 +1,3 @@
----
-title : uni.chooseVideo(options)
----
-
 <!-- ## uni.chooseVideo(options) @choosevideo -->
 
 <!-- UTSAPIJSON.chooseVideo.name -->

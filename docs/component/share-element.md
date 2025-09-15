@@ -1,7 +1,3 @@
----
-title : share-element
----
-
 <!-- ## share-element -->
 
 <!-- UTSCOMJSON.share-element.name -->

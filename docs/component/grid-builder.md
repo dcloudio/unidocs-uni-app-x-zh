@@ -1,7 +1,3 @@
----
-title : grid-builder
----
-
 <!-- ## grid-builder -->
 
 <!-- UTSCOMJSON.grid-builder.name -->

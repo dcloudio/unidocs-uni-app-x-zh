@@ -1,7 +1,3 @@
----
-title : input
----
-
 <!-- ## input -->
 
 <!-- UTSCOMJSON.input.name -->

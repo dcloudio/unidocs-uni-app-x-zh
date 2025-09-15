@@ -1,7 +1,3 @@
----
-title : uni.getAppAuthorizeSetting()
----
-
 <!-- ## uni.getAppAuthorizeSetting() @getappauthorizesetting -->
 
 <!-- UTSAPIJSON.getAppAuthorizeSetting.name -->

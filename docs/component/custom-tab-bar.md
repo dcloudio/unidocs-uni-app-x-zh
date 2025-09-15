@@ -1,7 +1,3 @@
----
-title : custom-tab-bar
----
-
 <!-- ## custom-tab-bar -->
 
 <!-- UTSCOMJSON.custom-tab-bar.name -->

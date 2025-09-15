@@ -1,7 +1,3 @@
----
-title : animation-view
----
-
 <!-- ## animation-view -->
 
 <!-- UTSCOMJSON.animation-view.name -->

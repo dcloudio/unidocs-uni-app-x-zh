@@ -1,7 +1,3 @@
----
-title : scale-gesture-handler
----
-
 <!-- ## scale-gesture-handler -->
 
 <!-- UTSCOMJSON.scale-gesture-handler.name -->

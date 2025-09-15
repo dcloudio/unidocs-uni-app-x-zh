@@ -1,7 +1,3 @@
----
-title : ad
----
-
 <!-- ## ad -->
 
 <!-- UTSCOMJSON.ad.name -->

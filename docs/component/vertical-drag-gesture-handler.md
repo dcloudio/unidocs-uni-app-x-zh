@@ -1,7 +1,3 @@
----
-title : vertical-drag-gesture-handler
----
-
 <!-- ## vertical-drag-gesture-handler -->
 
 <!-- UTSCOMJSON.vertical-drag-gesture-handler.name -->

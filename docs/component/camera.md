@@ -1,7 +1,3 @@
----
-title : camera
----
-
 <!-- ## camera -->
 
 <!-- UTSCOMJSON.camera.name -->

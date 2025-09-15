@@ -1,7 +1,3 @@
----
-title : uni.previewImage(options)
----
-
 <!-- ## uni.previewImage(options) @previewimage -->
 
 <!-- UTSAPIJSON.previewImage.name -->

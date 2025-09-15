@@ -1,7 +1,3 @@
----
-title : uni.$on(eventName, callback)
----
-
 <!-- ## uni.$on(eventName, callback) @$on -->
 
 <!-- UTSAPIJSON.$on.name -->

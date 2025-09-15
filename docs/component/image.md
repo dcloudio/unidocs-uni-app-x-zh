@@ -1,7 +1,3 @@
----
-title : image
----
-
 <!-- ## image -->
 
 <!-- UTSCOMJSON.image.name -->

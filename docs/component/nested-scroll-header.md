@@ -1,7 +1,3 @@
----
-title : nested-scroll-header
----
-
 <!-- ## nested-scroll-header -->
 
 <!-- UTSCOMJSON.nested-scroll-header.name -->

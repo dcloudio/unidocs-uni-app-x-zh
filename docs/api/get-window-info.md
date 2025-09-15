@@ -1,7 +1,3 @@
----
-title : uni.getWindowInfo()
----
-
 <!-- ## uni.getWindowInfo() @getwindowinfo -->
 
 <!-- UTSAPIJSON.getWindowInfo.name -->

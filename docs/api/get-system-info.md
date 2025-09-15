@@ -1,7 +1,3 @@
----
-title : uni.getSystemInfo(options)
----
-
 <!-- ## uni.getSystemInfo(options) @getsysteminfo -->
 
 <!-- UTSAPIJSON.getSystemInfo.name -->

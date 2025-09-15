@@ -1,7 +1,3 @@
----
-title : uni.shareWithSystem(options)
----
-
 <!-- ## uni.shareWithSystem(options) @sharewithsystem -->
 
 <!-- UTSAPIJSON.shareWithSystem.name -->

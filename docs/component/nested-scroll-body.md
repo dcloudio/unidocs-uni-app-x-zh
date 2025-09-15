@@ -1,7 +1,3 @@
----
-title : nested-scroll-body
----
-
 <!-- ## nested-scroll-body -->
 
 <!-- UTSCOMJSON.nested-scroll-body.name -->

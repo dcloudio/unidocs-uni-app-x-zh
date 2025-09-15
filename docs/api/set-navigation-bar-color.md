@@ -1,7 +1,3 @@
----
-title : uni.setNavigationBarColor(options)
----
-
 <!-- ## uni.setNavigationBarColor(options) @setnavigationbarcolor -->
 
 <!-- UTSAPIJSON.setNavigationBarColor.name -->

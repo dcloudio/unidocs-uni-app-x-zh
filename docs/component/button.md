@@ -1,7 +1,3 @@
----
-title : button
----
-
 <!-- ## button -->
 
 <!-- UTSCOMJSON.button.name -->

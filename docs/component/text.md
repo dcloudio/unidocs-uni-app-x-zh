@@ -1,7 +1,3 @@
----
-title : text
----
-
 <!-- ## text -->
 
 <!-- UTSCOMJSON.text.name -->

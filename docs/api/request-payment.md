@@ -1,7 +1,3 @@
----
-title : uni.requestPayment(options)
----
-
 <!-- ## uni.requestPayment(options) @requestpayment -->
 
 <!-- UTSAPIJSON.requestPayment.name -->

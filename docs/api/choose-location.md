@@ -1,7 +1,3 @@
----
-title : uni.chooseLocation(options)
----
-
 <!-- ## uni.chooseLocation(options) @chooselocation -->
 
 <!-- UTSAPIJSON.chooseLocation.name -->

@@ -1,7 +1,3 @@
----
-title : uni.installApk(options)
----
-
 <!-- ## uni.installApk(options) @installapk -->
 
 <!-- UTSAPIJSON.installApk.name -->

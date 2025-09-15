@@ -1,7 +1,3 @@
----
-title : force-press-gesture-handler
----
-
 <!-- ## force-press-gesture-handler -->
 
 <!-- UTSCOMJSON.force-press-gesture-handler.name -->

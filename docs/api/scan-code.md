@@ -1,7 +1,3 @@
----
-title : uni.scanCode(options?)
----
-
 <!-- ## uni.scanCode(options?) @scancode -->
 
 <!-- UTSAPIJSON.scanCode.name -->

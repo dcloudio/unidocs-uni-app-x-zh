@@ -1,7 +1,3 @@
----
-title : uni.hideKeyboard(options)
----
-
 <!-- ## uni.hideKeyboard(options) @hidekeyboard -->
 
 <!-- UTSAPIJSON.hideKeyboard.name -->

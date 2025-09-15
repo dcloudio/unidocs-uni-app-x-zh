@@ -1,7 +1,3 @@
----
-title : uni.onTabBarMidButtonTap(options)
----
-
 <!-- ## uni.onTabBarMidButtonTap(options) @ontabbarmidbuttontap -->
 
 <!-- UTSAPIJSON.onTabBarMidButtonTap.name -->

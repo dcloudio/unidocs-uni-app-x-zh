@@ -1,7 +1,3 @@
----
-title : uni.getLocation(options)
----
-
 <!-- ## uni.getLocation(options) @getlocation -->
 
 <!-- UTSAPIJSON.getLocation.name -->

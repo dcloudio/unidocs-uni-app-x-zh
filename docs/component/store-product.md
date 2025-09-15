@@ -1,7 +1,3 @@
----
-title : store-product
----
-
 <!-- ## store-product -->
 
 <!-- UTSCOMJSON.store-product.name -->

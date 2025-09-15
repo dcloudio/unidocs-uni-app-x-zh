@@ -1,7 +1,3 @@
----
-title: uni.share(options)
----
-
 <!-- ## uni.share(options) @share -->
 
 <!-- UTSAPIJSON.share.name -->

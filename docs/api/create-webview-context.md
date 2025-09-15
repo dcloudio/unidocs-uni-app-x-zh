@@ -1,7 +1,3 @@
----
-title : uni.createWebviewContext(webviewId, component?)
----
-
 <!-- ## uni.createWebviewContext(webviewId, component?) @createwebviewcontext -->
 
 <!-- UTSAPIJSON.createWebviewContext.name -->

@@ -1,7 +1,3 @@
----
-title : uni.createLivePlayerContext()
----
-
 <!-- ## uni.createLivePlayerContext() @createliveplayercontext -->
 
 <!-- UTSAPIJSON.createLivePlayerContext.name -->

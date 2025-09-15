@@ -1,7 +1,3 @@
----
-title : snapshot
----
-
 <!-- ## snapshot -->
 
 <!-- UTSCOMJSON.snapshot.name -->

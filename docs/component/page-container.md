@@ -1,7 +1,3 @@
----
-title : page-container
----
-
 <!-- ## page-container -->
 
 <!-- UTSCOMJSON.page-container.name -->

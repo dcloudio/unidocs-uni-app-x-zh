@@ -1,7 +1,3 @@
----
-title : page-meta
----
-
 <!-- ## page-meta -->
 
 <!-- UTSCOMJSON.page-meta.name -->

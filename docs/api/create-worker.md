@@ -6,10 +6,6 @@ Worker 就是为了解决这个问题而诞生的。简单来说，它是一种�
 
 Worker 与主线程之间的数据传输，在主线中使用 [Worker.postMessage](#postmessage) 来发送数据，[Worker.onMessage](#onmessage) 来接收数据，详情参考[Worker 使用流程](#tutorial)。
 
----
-title: uni.createWorker(url)
----
-
 <!-- ## uni.createWorker(url) @createworker -->
 
 <!-- UTSAPIJSON.createWorker.name -->
@@ -33,11 +29,11 @@ title: uni.createWorker(url)
 <!-- UTSAPIJSON.general_type.param -->
 
 
-## Worker 使用流程 @tutorial  
+## Worker 使用流程 @tutorial
 
-1. 配置 Worker 信息  
+1. 配置 Worker 信息
 
-在项目的 `manifest.json` 中可配置 Worker 文件放置的目录：  
+在项目的 `manifest.json` 中可配置 Worker 文件放置的目录：
 ```json
 {
   //...
@@ -48,7 +44,7 @@ title: uni.createWorker(url)
 }
 ```
 
-如果不使用微信小程序的分包配置，也可以使用简写配置：  
+如果不使用微信小程序的分包配置，也可以使用简写配置：
 ```json
 {
   //...
@@ -57,9 +53,9 @@ title: uni.createWorker(url)
 ```
 
 
-2. 添加 Worker 代码文件  
+2. 添加 Worker 代码文件
 
-Worker 代码文件必需是一个单独的 `uts` 文件，根据前面步骤的配置，在项目根目录下创建 `workers` 目录，并创建 `HelloWorkerTask.uts` 文件如下：  
+Worker 代码文件必需是一个单独的 `uts` 文件，根据前面步骤的配置，在项目根目录下创建 `workers` 目录，并创建 `HelloWorkerTask.uts` 文件如下：
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
@@ -74,7 +70,7 @@ Worker 代码文件必需是一个单独的 `uts` 文件，根据前面步骤的
 </pre>
 
 
-3. 编写 Worker 代码  
+3. 编写 Worker 代码
 
 Worker 代码文件需定义一个类并继承自基类 `WorkerTaskImpl`，重写 `onMessage` 方法接收主线程发送的数据。
 
@@ -206,12 +202,10 @@ worker.postMessage({
 ```
 
 
-## Worker 注意事项  
-- `uni.createWorkder` 仅支持在主线程中使用，在 Worker 中使用会返回错误  
-- 各平台在 Worker 中使用全局变量或静态变量在内存管理中存在差异，为了避免这些差异带来的影响建议不要使用全局变量和静态变量  
-- Worker 线程间暂不支持直接通讯，如要通讯可通过主线程中转发送消息来实现  
-- Android/iOS平台主线程与 Worker 线程传输的引用类型数据是直接共享使用（其它平台是复制），需避免并发访问，暂未提供线程间安全访问机制，需通过业务逻辑控制避免并发访问这些共享的数据  
-- iOS平台 Worker 仅支持在[uts插件](../plugin/uts-plugin.md)中使用，不能直接在 `uvue` 页面中调用 `uni.createWorkder`  
-- Worker 中仅支持调用界面无关的API（如 uni.request、uni.getLocation 等），这下 API 触发的回调运行在 Workder 线程中  
-
-
+## Worker 注意事项
+- `uni.createWorkder` 仅支持在主线程中使用，在 Worker 中使用会返回错误
+- 各平台在 Worker 中使用全局变量或静态变量在内存管理中存在差异，为了避免这些差异带来的影响建议不要使用全局变量和静态变量
+- Worker 线程间暂不支持直接通讯，如要通讯可通过主线程中转发送消息来实现
+- Android/iOS平台主线程与 Worker 线程传输的引用类型数据是直接共享使用（其它平台是复制），需避免并发访问，暂未提供线程间安全访问机制，需通过业务逻辑控制避免并发访问这些共享的数据
+- iOS平台 Worker 仅支持在[uts插件](../plugin/uts-plugin.md)中使用，不能直接在 `uvue` 页面中调用 `uni.createWorkder`
+- Worker 中仅支持调用界面无关的API（如 uni.request、uni.getLocation 等），这下 API 触发的回调运行在 Workder 线程中

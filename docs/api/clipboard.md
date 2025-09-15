@@ -1,7 +1,3 @@
----
-title : uni.getClipboardData(options)
----
-
 <!-- ## uni.getClipboardData(options) @getclipboarddata -->
 
 <!-- UTSAPIJSON.getClipboardData.name -->

@@ -1,7 +1,3 @@
----
-title : list-builder
----
-
 <!-- ## list-builder -->
 
 <!-- UTSCOMJSON.list-builder.name -->

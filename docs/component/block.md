@@ -1,7 +1,3 @@
----
-title : block
----
-
 <!-- ## block -->
 
 <!-- UTSCOMJSON.block.name -->

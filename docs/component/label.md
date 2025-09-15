@@ -1,7 +1,3 @@
----
-title : label
----
-
 <!-- ## label -->
 
 <!-- UTSCOMJSON.label.name -->

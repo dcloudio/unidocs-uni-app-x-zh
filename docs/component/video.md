@@ -1,7 +1,3 @@
----
-title : video
----
-
 <!-- ## video -->
 
 <!-- UTSCOMJSON.video.name -->

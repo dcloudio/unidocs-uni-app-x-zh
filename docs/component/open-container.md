@@ -1,7 +1,3 @@
----
-title : open-container
----
-
 <!-- ## open-container -->
 
 <!-- UTSCOMJSON.open-container.name -->

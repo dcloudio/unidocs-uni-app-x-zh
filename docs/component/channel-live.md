@@ -1,7 +1,3 @@
----
-title : channel-live
----
-
 <!-- ## channel-live -->
 
 <!-- UTSCOMJSON.channel-live.name -->

@@ -1,7 +1,3 @@
----
-title : uni.showModal(options)
----
-
 <!-- ## uni.showModal(options) @showmodal -->
 
 <!-- UTSAPIJSON.showModal.name -->

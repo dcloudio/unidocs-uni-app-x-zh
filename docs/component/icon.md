@@ -1,7 +1,3 @@
----
-title : icon
----
-
 <!-- ## icon -->
 
 <!-- UTSCOMJSON.icon.name -->

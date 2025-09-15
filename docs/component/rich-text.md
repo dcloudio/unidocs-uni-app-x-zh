@@ -1,7 +1,3 @@
----
-title : rich-text
----
-
 <!-- ## rich-text -->
 
 <!-- UTSCOMJSON.rich-text.name -->

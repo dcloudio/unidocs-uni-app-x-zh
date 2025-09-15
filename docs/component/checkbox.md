@@ -1,7 +1,3 @@
----
-title : checkbox
----
-
 <!-- ## checkbox -->
 
 <!-- UTSCOMJSON.checkbox.name -->

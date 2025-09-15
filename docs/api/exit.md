@@ -1,7 +1,3 @@
----
-title : uni.exit(options?)
----
-
 <!-- ## uni.exit(options?) @exit -->
 
 <!-- UTSAPIJSON.exit.name -->

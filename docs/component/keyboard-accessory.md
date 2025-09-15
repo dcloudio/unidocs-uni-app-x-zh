@@ -1,7 +1,3 @@
----
-title : keyboard-accessory
----
-
 <!-- ## keyboard-accessory -->
 
 <!-- UTSCOMJSON.keyboard-accessory.name -->

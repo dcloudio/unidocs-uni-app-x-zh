@@ -1,7 +1,3 @@
----
-title : span
----
-
 <!-- ## span -->
 
 <!-- UTSCOMJSON.span.name -->

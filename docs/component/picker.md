@@ -1,7 +1,3 @@
----
-title : picker
----
-
 <!-- ## picker -->
 
 <!-- UTSCOMJSON.picker.name -->

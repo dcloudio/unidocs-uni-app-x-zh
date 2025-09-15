@@ -1,7 +1,3 @@
----
-title : native-component
----
-
 <!-- ## native-component -->
 
 <!-- UTSCOMJSON.native-component.name -->

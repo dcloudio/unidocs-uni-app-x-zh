@@ -1,7 +1,3 @@
----
-title : uni.getAppBaseInfo(options?)
----
-
 <!-- ## uni.getAppBaseInfo(options?) @getappbaseinfo -->
 
 <!-- UTSAPIJSON.getAppBaseInfo.name -->

@@ -1,7 +1,3 @@
----
-title : map
----
-
 <!-- ## map -->
 
 <!-- UTSCOMJSON.map.name -->

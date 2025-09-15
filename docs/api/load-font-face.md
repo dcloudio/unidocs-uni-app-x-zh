@@ -1,7 +1,3 @@
----
-title : uni.loadFontFace(options)
----
-
 <!-- ## uni.loadFontFace(options) @loadfontface -->
 
 <!-- UTSAPIJSON.loadFontFace.name -->

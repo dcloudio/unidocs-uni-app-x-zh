@@ -1,7 +1,3 @@
----
-title : uni.report(options)
----
-
 <!-- ## uni.report(options) @report -->
 
 <!-- UTSAPIJSON.report.name -->

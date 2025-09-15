@@ -1,7 +1,3 @@
----
-title : textarea
----
-
 <!-- ## textarea -->
 
 <!-- UTSCOMJSON.textarea.name -->

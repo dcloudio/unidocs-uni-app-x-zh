@@ -1,7 +1,3 @@
----
-title : uni.showToast(options)
----
-
 <!-- ## uni.showToast(options) @showtoast -->
 
 <!-- UTSAPIJSON.showToast.name -->
