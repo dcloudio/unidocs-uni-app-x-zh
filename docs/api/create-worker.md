@@ -173,7 +173,7 @@ export type WorkerPostMessageOptions = {
 
 ```uts
 // 创建 Worker 实例
-const worker = uni.createWorker('/workers/HelloWorkerTask.uts');
+const worker = uni.createWorker('workers/HelloWorkerTask.uts');
 
 // 监听 Worker 消息
 worker.onMessage((message: any) => {
@@ -183,7 +183,7 @@ worker.onMessage((message: any) => {
 });
 
 // 监听 Worker 错误
-worker.onError((error: UniWorkerError) => {
+worker.onError((error: WorkerOnErrorCallbackResult) => {
   console.error('Worker子线程发生错误:', error);
 });
 ```
@@ -199,6 +199,17 @@ worker.onError((error: UniWorkerError) => {
 worker.postMessage({
   msg: 'message send by main!'
 });
+```
+
+
+6. 结束 Worker  
+
+Worker 线程不再使用需主动结束释放相关资源，调用 Worker 对象的 `terminate` 方法结束子线程。
+
+参考以下示例代码：
+```uts
+// 结束 Worker 子线程
+worker.terminate();
 ```
 
 
