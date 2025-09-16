@@ -10,7 +10,7 @@
 - Android 编译 SDK（compileSdk）： 35  
 - Android 构建工具（buildToolsVersion）：35.0.0  
 - Gradle：8.14.3  
-- Android Gradle 插件（com.android.tools.build:gradle）：8.11.1  
+- Android Gradle 插件（com.android.tools.build:gradle）：8.12.0  
 - Kotlin Android 插件（org.jetbrains.kotlin.android）：2.2.0  
 - JDK：17 （[Amazon corretto 17.0.12.7.1](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html)）  
 
