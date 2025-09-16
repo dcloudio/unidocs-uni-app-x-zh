@@ -1165,7 +1165,10 @@ nullableArray[0] // ⚠️ 编译报错：需空安全检查
 
 更完整的升级后所需要的依赖配置 参考  [离线打包SDK](https://doc.dcloud.net.cn/uni-app-x/native/use/android.html)
 
+
 ## 16KB适配注意事项
 
-uni-app：https://uniapp.dcloud.net.cn/tutorial/android-16kb.html
-uni-app x：https://doc.dcloud.net.cn/uni-app-x/tutorial/android-16kb.html
+> HBuilderX4.81版本已适配支持 16KB 内存页面大小
+
+uni-app 项目：[https://uniapp.dcloud.net.cn/tutorial/android-16kb.html](https://uniapp.dcloud.net.cn/tutorial/android-16kb.html)  
+uni-app x 项目：[https://doc.dcloud.net.cn/uni-app-x/tutorial/android-16kb.html](https://doc.dcloud.net.cn/uni-app-x/tutorial/android-16kb.html)  
