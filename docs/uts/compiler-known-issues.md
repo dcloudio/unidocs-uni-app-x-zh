@@ -5,7 +5,7 @@
 ## withDefaults 与可选 Props 推断异常
 
 - 发生版本：HBuilderX-4.75
-- 问题描述：在 `<script setup lang="ts">` 中，将 `Props.text` 声明为可选（`text?: string`），并通过 `withDefaults` 以函数形式提供默认值时，编译器未正确处理，可能导致渲染或类型推断异常。
+- 问题描述：在 `<script setup lang="uts">` 中，将 `Props.text` 声明为可选（`text?: string`），并通过 `withDefaults` 以函数形式提供默认值时，编译器未正确处理，可能导致渲染或类型推断异常。
 - 修复状态：修复中
 
 复现代码：
@@ -17,7 +17,7 @@
 	</view>
 </template>
 
-<script setup lang="ts">
+<script setup lang="uts">
 interface Props {
 	text?: string;
 }
@@ -37,7 +37,7 @@ const props = withDefaults(defineProps<Props>(), {
 	</view>
 </template>
 
-<script setup lang="ts">
+<script setup lang="uts">
 interface Props {
 	text: string;
 }
@@ -64,7 +64,7 @@ const props = withDefaults(defineProps<Props>(), {
 	</view>
 </template>
 
-<script lang="ts">
+<script lang="uts">
 export default {
 	data() {
 		return {
@@ -84,7 +84,7 @@ export default {
 	</view>
 </template>
 
-<script lang="ts">
+<script lang="uts">
 type Key = {
 	name: string
 }
@@ -166,7 +166,7 @@ console.log(msg.type);
 	</view>
 	</template>
 
-<script setup lang="ts">
+<script setup lang="uts">
 import { ref } from 'vue'
 
 type MyTestComponentPublicInstance = {}
@@ -235,7 +235,7 @@ export function createApp() {
 	</view>
 </template>
 
-<script lang="ts">
+<script lang="uts">
 export default {
 	props: {
 		aa: {
@@ -260,7 +260,7 @@ export default {
 	</view>
 </template>
 
-<script lang="ts">
+<script lang="uts">
 export default {
 	props: {
 		aa: {
@@ -439,7 +439,7 @@ const props = defineProps({
 	</view>
 </template>
 
-<script lang="ts">
+<script lang="uts">
 export default {
 	props: {
 		modelValue: {
@@ -460,7 +460,7 @@ export default {
 	</view>
 </template>
 
-<script lang="ts">
+<script lang="uts">
 export default {
 	props: {
 		modelValue: {
@@ -542,7 +542,7 @@ export default {
 	</view>
 </template>
 
-<script setup lang="ts">
+<script setup lang="uts">
     test();
     function test(){
         console.log('test')
@@ -559,7 +559,7 @@ export default {
 	</view>
 </template>
 
-<script setup lang="ts">
+<script setup lang="uts">
     function test(){
         console.log('test')
     }
