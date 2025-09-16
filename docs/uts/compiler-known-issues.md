@@ -471,3 +471,220 @@ export default {
 }
 </script>
 ```
+
+## props和data大小写问题
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：data和props存在相同名称，但大小写不一样的字段时编译器报错
+- 修复状态：修复中
+
+复现代码：
+
+```vue
+<template>
+	<view>
+		123
+	</view>
+</template>
+
+<script lang="uts">
+    export default {
+        props: {
+            aa: {
+                type: Boolean
+            }
+        },
+        data() {
+            return {
+                Aa: null as boolean | null,
+            }
+        }
+    }
+</script>
+```
+
+修复代码：避免出现同名属性
+
+```vue
+<template>
+	<view>
+		123
+	</view>
+</template>
+
+<script lang="uts">
+    export default {
+        props: {
+            aa: {
+                type: Boolean
+            }
+        },
+        data() {
+            return {
+                bb: null as boolean | null,
+            }
+        }
+    }
+</script>
+```
+
+## setup模式下, 函数定义语句位于该函数调用语句之前时报错
+- 发生版本：HBuilderX-4.75
+- 问题描述：编译器在处理时有特殊处理，导致存在问题
+- 修复状态：修复中
+
+复现代码：
+
+```vue
+<template>
+	<view>
+		123
+	</view>
+</template>
+
+<script setup lang="ts">
+    test();
+    function test(){
+        console.log('test')
+    }
+</script>
+```
+
+修复代码：将函数调用放在函数定义之后
+
+```vue
+<template>
+	<view>
+		123
+	</view>
+</template>
+
+<script setup lang="ts">
+    function test(){
+        console.log('test')
+    }
+	test();
+</script>
+```
+
+## 在 `computed` 中的函数返回数组类型但没有声明返回值类型时报错
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：在`computed` 中函数返回为数组，但没有声明返回值类型
+- 修复状态：修复中
+
+复现代码：
+
+```vue
+<template>
+	<view>
+		123
+	</view>
+</template>
+
+<script>
+    export default{
+        computed:{
+            test4(){
+                return [{id: 1, orderNo: '11'}]
+            }
+        }
+    }
+</script>
+```
+
+修复代码：明确返回值类型
+
+```vue
+<template>
+	<view>
+		123
+	</view>
+</template>
+
+<script>
+	type Ma = {
+		id: number,
+		orderNo: string
+	}
+    export default{
+        computed:{
+            test4() : Ma[] {
+                return [{id: 1, orderNo: '11'}]
+            }
+        }
+    }
+</script>
+```
+
+
+## `import * as xx from 'xx'` 时报错
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：使用export导出函数或者类，然后`import * as xx from ''`时报错
+- 修复状态：修复中
+
+复现代码：
+
+```vue
+<template>
+	<view>
+		123
+	</view>
+</template>
+
+<script>
+	import * as xxx from './foo.uts'
+	console.log(xxx);
+    export default{
+    }
+</script>
+```
+
+```ts
+export function myFunction() {
+   console.log("Hello");
+}
+```
+
+修复代码：使用`import { xx } from './xx'`
+
+```vue
+<template>
+	<view>
+		123
+	</view>
+</template>
+
+<script>
+	import { myFunction }from './foo.uts'
+	myFunction()
+    export default{
+    }
+</script>
+```
+
+## 解构时报错
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：解构UTSJSONObject时报错
+- 修复状态：修复中
+
+复现代码：
+
+```ts
+const someObject = {
+    a: 1
+}
+let { a } = someObject;
+console.log(a)
+```
+
+修复代码：使用xxx.a来获取属性值
+
+```ts
+const someObject = {
+    a: 1
+}
+console.log(someObject.a)
+```
