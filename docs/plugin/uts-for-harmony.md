@@ -162,6 +162,9 @@ uts插件内的ets文件会原样拷贝到产物内，如果需要开发arkui声
 
 ### context的获取
 
+#### getContext
+> getContext  该接口从API version 9开始支持，从API version 18开始废弃，建议使用UIContext中的getHostContext替代。
+
 很多harmonyOS原生接口需要传入context作为参数。多数情况下可以直接调用harmonyOS全局方法`getContext()`获取。例如：
 
 ```ts
@@ -174,6 +177,34 @@ settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, (err, valu
   }
   console.log(`SCREEN_BRIGHTNESS_STATUS: ${JSON.stringify(value)}`)
 });
+```
+
+#### getHostContext
+在uniapp中适配鸿蒙的修改，可以使用如下的方式：
+```ts
+import settings from '@ohos.settings';
+import window from '@ohos.window';
+
+let _window : window.Window;
+
+UTSHarmony.onAppAbilityWindowStageCreate((windowStage : window.WindowStage) => {
+	_window = windowStage.getMainWindowSync()
+})
+
+export const settingGetValue = () => {
+	// const context : Context = getContext();
+	const context : Context | undefined = _window.getUIContext().getHostContext();
+
+	if (context) {
+		settings.getValue(context, settings.display.SCREEN_BRIGHTNESS_STATUS, (err, value) => {
+			if (err) {
+				console.error(`Failed to get the setting. ${err.message} `);
+				return;
+			}
+			console.log(`SCREEN_BRIGHTNESS_STATUS getUIContext: ${JSON.stringify(value)}`)
+		});
+	}
+}
 ```
 
 
