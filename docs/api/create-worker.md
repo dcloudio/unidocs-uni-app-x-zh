@@ -1,10 +1,24 @@
 # Worker
 
-在应用开发中，通常会遇到一些耗时且计算量大的任务，比如处理大量数据、执行密集型算法。如果直接在主线程（也叫 UI 线程）上执行这些任务，会导致应用卡顿，甚至无响应，给用户带来糟糕的体验。
+现代CPU都是多核的。主线程的代码是运行在CPU的主核上的。可以通过 worker api来利用其他核并行计算，加快运算速度。
 
-Worker 就是为了解决这个问题而诞生的。简单来说，它是一种让代码在后台线程运行的机制，将一些异步处理的任务放置于 Worker 中运行，待运行结束后，再把结果返回到主线程。
+uni-app x的代码，默认都是在主线程执行的，主线程也称为UI线程。
 
-Worker 与主线程之间的数据传输，在主线中使用 [Worker.postMessage](#postmessage) 来发送数据，[Worker.onMessage](#onmessage) 来接收数据，详情参考[Worker 使用流程](#tutorial)。
+当需要使用子线程能力时，可以通过本API操作。
+
+当然本API只是一种跨端封装，并且为了跨端还约束了一些写法。开发者也可以在uts插件中自行使用纯原生代码来操作线程。
+
+注意：
+- 所有UI操作、界面绘制，都必须在主线程进行。也就是子线程不能操作DOM API、不能操作绑定在界面上的响应式变量。
+- Android上通过surface渲染的界面组件，可以在子线程操作。
+- 线程之间通信，可以post消息，也可以共享变量。web和小程序仅支持shareArrayBuffer数据类型的共享。App平台没有限制，引用类型都可以共享变量。但共享变量时，需要开发者注意线程安全问题，避免多线程同时写同一个变量，或一个线程读、同时另一个线程在写同一个变量，这可能引发崩溃。
+- 线程和Android的协程是不同的。Android上request api内部已经使用了协程。
+- CPU的核数有限，不要同时开太多线程。
+
+常见场景：
+- 当你的界面掉帧时，应该检查是什么耗时任务导致不能及时渲染，是否可以剥离一些计算任务到子线程来做。
+- 多份大数据需要尽快处理，比如多个json文件需要压缩，可以启动多线程。
+
 
 <!-- ## uni.createWorker(url) @createworker -->
 
@@ -33,12 +47,12 @@ Worker 与主线程之间的数据传输，在主线中使用 [Worker.postMessag
 
 1. 配置 Worker 信息
 
-在项目的 `manifest.json` 中可配置 Worker 文件放置的目录：
+worker 代码，是独立的 `uts` 文件，所有worker代码文件需要放置在专门的目录。在项目的 `manifest.json` 中可配置 Worker 文件放置的目录：
 ```json
 {
   //...
   "workers": {
-    "path": "workers",        // 相对于项目根目录
+    "path": "workers",        // 相对于项目根目录。此配置的意思是在项目根目录下的workers目录下存放worker代码。
     "isSubpackage": true      // 是否分包，默认为 false（仅微信小程序有效）
   }
 }
@@ -55,7 +69,7 @@ Worker 与主线程之间的数据传输，在主线中使用 [Worker.postMessag
 
 2. 添加 Worker 代码文件
 
-Worker 代码文件必需是一个单独的 `uts` 文件，根据前面步骤的配置，在项目根目录下创建 `workers` 目录，并创建 `HelloWorkerTask.uts` 文件如下：
+参考上一步的配置，在项目根目录下创建 `workers` 目录，并创建示例 `HelloWorkerTask.uts` 文件如下：
 
 <pre v-pre="" data-lang="">
 	<code class="lang-" style="padding:0">
@@ -72,7 +86,7 @@ Worker 代码文件必需是一个单独的 `uts` 文件，根据前面步骤的
 
 3. 编写 Worker 代码
 
-Worker 代码文件需定义一个类并继承自基类 `WorkerTaskImpl`，重写 `onMessage` 方法接收主线程发送的数据。
+Worker 代码中需定义一个类并继承自基类 `WorkerTaskImpl`，重写 `onMessage` 方法接收主线程发送的数据。
 
 以下是 `HelloWorkerTask.uts` 示例代码：
 ```uts
@@ -167,7 +181,7 @@ export type WorkerPostMessageOptions = {
 
 4. 主线程中创建 Worker
 
-在主线程中调用 `uni.createWorker` 创建并返回 Worker 对象，可通过其 `onMessage` 方法监听 Worker 子线程发送的数据，通过其 `onError` 方法监听 Worker 子线程的错误。
+在主线程的代码中调用 `uni.createWorker` 创建并返回 Worker 对象，可通过其 `onMessage` 方法监听 Worker 子线程发送的数据，通过其 `onError` 方法监听 Worker 子线程的错误。
 
 参考以下示例代码：
 
@@ -214,9 +228,9 @@ worker.terminate();
 
 
 ## Worker 注意事项
-- `uni.createWorkder` 仅支持在主线程中使用，在 Worker 中使用会返回错误
+- `uni.createWorkder` 仅支持在主线程中使用，在 Worker 子线程中使用会返回错误
 - 各平台在 Worker 中使用全局变量或静态属性在内存管理中存在差异，Android/iOS平台可以共享内存，其它平台不能共享，为了避免这些差异带来的影响建议不要使用全局变量和静态属性
-- Worker 线程间暂不支持直接通讯，如要通讯可通过主线程中转发送消息来实现
+- Worker 子线程间暂不支持直接互相通讯，如要通讯可通过主线程中转发送消息来实现
 - Android/iOS平台主线程与 Worker 线程传输的引用类型数据是直接共享使用（其它平台是复制），需避免并发访问，暂未提供线程间安全访问机制，需通过业务逻辑控制避免并发访问这些共享的数据
 - iOS平台 Worker 仅支持在[uts插件](../plugin/uts-plugin.md)中使用，不能直接在 `uvue` 页面中调用 `uni.createWorkder`
 - Worker 中仅支持调用界面无关的API（如 uni.request、uni.getLocation 等），这些 API 触发的回调运行在 Workder 线程中

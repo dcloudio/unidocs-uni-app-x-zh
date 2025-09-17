@@ -23,10 +23,11 @@
 	* [x] ico
 	* [x] jpg
 	* [x] png
-	* [x] webp
-	* [x] heic（iOS支持，Android10+支持）
-	* [x] tif (iOS端支持，Android端不支持)
-    * [x] svg（HBuilderX4.81+支持、iOS 13.0+支持、 iOS和Android不支持svg动画、Android暂不支持mode属性)
+	* [x] webp (iOS14起是硬解码，之前是软解码，软解码性能略低。Android支持)
+	* [x] heic (iOS支持，Android10+支持)
+	* [x] avif (iOS16+支持，Android不支持)
+	* [x] tif (iOS支持，Android不支持)
+	* [x] svg (iOS13+支持，Android支持。不支持svg动画。Android暂不支持mode属性。需HBuilderX4.81+)
 
 如需其他图片格式，可自行开发uts组件插件或搜索插件市场，如
 - [svg插件](https://ext.dcloud.net.cn/search?q=svg&orderBy=Relevance&cat1=8&cat2=82)

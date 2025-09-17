@@ -26,3 +26,4 @@ Android端返回的路径是content协议。
 - android端由于系统或ROM的限制，拍照的`maxDuration`和`camera`属性在部分手机上不生效。
 - 从HBuilderX4.61版起，ChooseMediaSuccess中的duration、size精度统一调整为小数点后3位数
 - iOS端拍照和相册选择会在应用沙盒目录的cache目录产生临时文件，位置[详见](file-system-spec.md#cache)。如需主动删除临时文件，使用[uni.getFileSystemManager](get-file-system-manager.md)。
+- App平台通过chooseMedia选择媒体文件后，默认没有压缩，需自行调用 [uni.compressImage](./compress-image.md) 或 [uni.compressVideo](./compress-video.md) 来压缩。
