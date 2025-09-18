@@ -56,12 +56,12 @@
 然后切换到 HBuilderX 点击运行按钮->运行到iOS App基座，勾选`使用自定义基座运行`->`原生工程基座`，在`基座位置`处输入Xcode编译产物(UniAppX.app)的路径后，点击运行。
 
 
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_debug_choose_ipa.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_debug_choose_ipa.png)
 
 ### 如何获取基座位置
-编译成功后，最快捷的方式是在 Xcode 左侧的 ​​项目导航器 (Navigator)​​ 中，切换到 ​​`Products`​​ 目录。找到你的项目名称对应的 .app文件。右键点击​​它，选择 `​​Show in Finder` 或 将其拖入到终端中获取路径。
+编译成功后，在 Xcode 左侧的 ​​项目导航器 (Navigator)​​ 中，切换到 ​​`Products`​​ 目录。找到你的项目名称对应的 .app文件。右键点击​​它，选择 `​​Show in Finder` 或 将其拖入到终端中获取路径。
 
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_debug_xcode_find_app_path.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_debug_xcode_find_app_path.png)
  
 
 ### 调试原生工程中的uvue页面
@@ -75,12 +75,12 @@
 
 在HBuilder X完成运行基座后，将Xcode中的原生工程根目录拖入到HBuilderX的项目管理器中，通过 HBuilder X 控制台右上角的红色虫子按钮点击`开启uts调试(swift)`后通过双击或右键在原生代码中添加断点。断点调试详情参考[uni-app x iOS uts 调试](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html) 中的 `uni-app x swift调试` 部分。
 
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_debug_hx_native.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_debug_hx_native.png)
 
 
 调试UTS插件必须将插件原生工程通过 ​​`Workspace` 或 `引用工程`的方式​​ 引入您的主工程。不可仅引用导出的`xcframework`或`framework`产物文件，否则无法进行源码调试。具体可参考SDK中的示例`UniAppXDemo`。
 
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_debug_xcode_uniappxdemo_workspace.jpg)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_debug_xcode_uniappxdemo_workspace.png)
 
 
 调试UTS插件流程同上，在HBuilder X完成运行基座后，将插件原生工程拖入到HBuilderX的项目管理器中，`开启uts调试(swift)`打断点调试即可。
