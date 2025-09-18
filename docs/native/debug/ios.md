@@ -68,7 +68,7 @@
 
 在HBuilder X完成运行基座后，通过 HBuilder X 控制台右上角的红色虫子按钮点击`开启uts调试(jscore)`后通过双击或右键在uvue页面中添加断点调试。断点调试详情参考 [uni-app x iOS uts 调试](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-ios.html) 中的 `uni-app x jscore调试` 部分。
 
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_start_debug.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_hx_start_debug.png)
 
 
 ### 调试原生主工程或UTS插件
