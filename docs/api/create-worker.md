@@ -45,7 +45,7 @@ uni-app x的代码，默认都是在主线程执行的，主线程也称为UI线
 
 ## Worker 使用流程 @tutorial
 
-1. 配置 Worker 信息
+### 1. 配置 Worker 信息
 
 worker 代码，是独立的 `uts` 文件，所有worker代码文件需要放置在专门的目录。在项目的 `manifest.json` 中可配置 Worker 文件放置的目录：
 ```json
@@ -67,7 +67,7 @@ worker 代码，是独立的 `uts` 文件，所有worker代码文件需要放置
 ```
 
 
-2. 添加 Worker 代码文件
+### 2. 添加 Worker 代码文件
 
 参考上一步的配置，在项目根目录下创建 `workers` 目录，并创建示例 `HelloWorkerTask.uts` 文件如下：
 
@@ -84,7 +84,7 @@ worker 代码，是独立的 `uts` 文件，所有worker代码文件需要放置
 </pre>
 
 
-3. 编写 Worker 代码
+### 3. 编写 Worker 代码
 
 Worker 代码中需定义一个类并继承自基类 `WorkerTaskImpl`，重写 `onMessage` 方法接收主线程发送的数据。
 
@@ -179,7 +179,7 @@ export type WorkerPostMessageOptions = {
 ```
 
 
-4. 主线程中创建 Worker
+### 4. 主线程中创建 Worker
 
 在主线程的代码中调用 `uni.createWorker` 创建并返回 Worker 对象，可通过其 `onMessage` 方法监听 Worker 子线程发送的数据，通过其 `onError` 方法监听 Worker 子线程的错误。
 
@@ -203,7 +203,7 @@ worker.onError((error: WorkerOnErrorCallbackResult) => {
 ```
 
 
-5. 主线程向 Worker 发送消息
+### 5. 主线程向 Worker 发送消息
 
 调用 `uni.createWorker` 创建并返回 Worker 对象的 `postMessage` 方法向 Worker 子线程发送数据。
 
@@ -215,8 +215,51 @@ worker.postMessage({
 });
 ```
 
+### 6. harmonySendable 和 transfer 的使用
 
-6. 结束 Worker  
+仅 `HarmonyOS` 和 `Web` 支持 示例：[worker Sendable Transfer](https://gitcode.com/dcloud/hello-uni-app-x/blob/1f8ad2f89a765e49c447c66802999f89e81bd9d6/pages/API/create-worker/worker-sendable-transfer.uvue)
+
+#### harmonySendable
+
+> 仅 HarmonyOS 支持。示例：[uts-worker-sendable-transfer](https://gitcode.com/dcloud/hello-uni-app-x/blob/1f8ad2f89a765e49c447c66802999f89e81bd9d6/uni_modules/uts-worker-sendable-transfer/utssdk/index.uts)
+
+- 在 uts 插件的同级建立 ets 文件，导出 `Sendable` 对象 [示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/1f8ad2f89a765e49c447c66802999f89e81bd9d6/uni_modules/uts-worker-sendable-transfer/utssdk/sendable.ets)
+  ```ts
+  @Sendable
+  export class SendableObject {
+    a: number = 45;
+  }
+  ```
+
+- 在 uts 插件中引入 **注意引入时要有 `.ets` 后缀** [示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/1f8ad2f89a765e49c447c66802999f89e81bd9d6/uni_modules/uts-worker-sendable-transfer/utssdk/index.uts#L3)
+  ```ts
+  // #ifdef APP-HARMONY
+  import { SendableObject } from './sendable.ets';
+  // #endif
+  ```
+
+- 在 uts 插件中使用，向子线程发送 Sendable 对象 [示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/1f8ad2f89a765e49c447c66802999f89e81bd9d6/uni_modules/uts-worker-sendable-transfer/utssdk/index.uts#L41)
+  ```ts
+  workerImp.postMessage(new SendableObject())
+  ```
+
+- 在 worker 中接收到该对象后的修改会直接体现到宿主线程中
+  -  [Sendable 的修改](https://gitcode.com/dcloud/hello-uni-app-x/blob/1f8ad2f89a765e49c447c66802999f89e81bd9d6/workers/sendableTransferWorker.uts#L20)
+  -   [Sendable 修改后在宿主线程的体现](https://gitcode.com/dcloud/hello-uni-app-x/blob/898db493f689b96ea6c53ab44b56e109edbe76af/pages/API/create-worker/worker-sendable-transfer.uvue#L88)
+
+#### transfer
+
+> 一个可转移对象数组。示例：[worker Sendable Transfer](https://gitcode.com/dcloud/hello-uni-app-x/blob/1f8ad2f89a765e49c447c66802999f89e81bd9d6/pages/API/create-worker/worker-sendable-transfer.uvue#L101)
+
+- Web 支持 `ArrayBuffer[]、MessagePort[]、ImageBitmap[]` 等。 [可转移对象](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API/Transferable_objects)
+- HarmonyOS 仅支持 `ArrayBuffer[]`
+
+::: warning 注意事项
+- HarmonyOS 平台上使用 `transfer` 后，转移的 ArrayBuffer 长度不会改变，数组本身变为在宿主线程不可用。[鸿蒙文档](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-worker#postmessagewithsharedsendable12)
+- Web 平台使用 `transfer` 后，转移的数组长度会变为 0。[MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Worker/postMessage#%E8%BD%AC%E7%A7%BB%E7%A4%BA%E4%BE%8B)
+:::
+
+### 7. 结束 Worker
 
 Worker 线程不再使用需主动结束释放相关资源，调用 Worker 对象的 `terminate` 方法结束子线程。
 
@@ -232,6 +275,6 @@ worker.terminate();
 - 各平台在 Worker 中使用全局变量或静态属性在内存管理中存在差异，Android/iOS平台可以共享内存，其它平台不能共享，为了避免这些差异带来的影响建议不要使用全局变量和静态属性
 - Worker 子线程间暂不支持直接互相通讯，如要通讯可通过主线程中转发送消息来实现
 - Android/iOS平台主线程与 Worker 线程传输的引用类型数据是直接共享使用（其它平台是默认为复制），需避免并发访问，暂未提供线程间安全访问机制，需通过业务逻辑控制避免并发访问这些共享的数据
-- 鸿蒙平台主线程与 Worker 线程传输的数据默认为复制，如需传出共享对象，可在[uts插件](../plugin/uts-plugin.md)中混编开发定义[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)，调用 `Worker.postMessage` 发送这些共享对象时设置 harmonySendable 参数为 true  
+- 鸿蒙平台主线程与 Worker 线程传输的数据默认为复制，如需传出共享对象，可在[uts插件](../plugin/uts-plugin.md)中混编开发定义[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)，调用 `Worker.postMessage` 发送这些共享对象时设置 harmonySendable 参数为 true
 - iOS平台 Worker 仅支持在[uts插件](../plugin/uts-plugin.md)中使用，不能直接在 `uvue` 页面中调用 `uni.createWorkder`
 - Worker 中仅支持调用界面无关的API（如 uni.request、uni.getLocation 等），这些 API 触发的回调运行在 Workder 线程中
