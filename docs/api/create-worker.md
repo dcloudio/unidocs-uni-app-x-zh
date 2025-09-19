@@ -232,14 +232,14 @@ worker.postMessage({
   ```
 
 - 在 uts 插件中引入 **注意引入时要有 `.ets` 后缀** [示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/1f8ad2f89a765e49c447c66802999f89e81bd9d6/uni_modules/uts-worker-sendable-transfer/utssdk/index.uts#L3)
-  ```ts
+  ```uts
   // #ifdef APP-HARMONY
   import { SendableObject } from './sendable.ets';
   // #endif
   ```
 
 - 在 uts 插件中使用，向子线程发送 Sendable 对象 [示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/1f8ad2f89a765e49c447c66802999f89e81bd9d6/uni_modules/uts-worker-sendable-transfer/utssdk/index.uts#L41)
-  ```ts
+  ```uts
   workerImp.postMessage(new SendableObject())
   ```
 
@@ -269,12 +269,12 @@ Worker 线程不再使用需主动结束释放相关资源，调用 Worker 对�
 worker.terminate();
 ```
 
-
-## Worker 注意事项
+## Tips
 - `uni.createWorkder` 仅支持在主线程中使用，在 Worker 子线程中使用会返回错误
 - 各平台在 Worker 中使用全局变量或静态属性在内存管理中存在差异，Android/iOS平台可以共享内存，其它平台不能共享，为了避免这些差异带来的影响建议不要使用全局变量和静态属性
 - Worker 子线程间暂不支持直接互相通讯，如要通讯可通过主线程中转发送消息来实现
 - Android/iOS平台主线程与 Worker 线程传输的引用类型数据是直接共享使用（其它平台是默认为复制），需避免并发访问，暂未提供线程间安全访问机制，需通过业务逻辑控制避免并发访问这些共享的数据
-- 鸿蒙平台主线程与 Worker 线程传输的数据默认为复制，如需传出共享对象，可在[uts插件](../plugin/uts-plugin.md)中混编开发定义[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)，调用 `Worker.postMessage` 发送这些共享对象时设置 harmonySendable 参数为 true
+- 鸿蒙平台主线程与 Worker 线程传输的数据默认为浅拷贝，如需传出共享对象，可在[uts插件](../plugin/uts-plugin.md)中混编开发定义[Sendable对象](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendable)，调用 `Worker.postMessage` 发送这些共享对象时设置 `harmonySendable` 参数为 true
 - iOS平台 Worker 仅支持在[uts插件](../plugin/uts-plugin.md)中使用，不能直接在 `uvue` 页面中调用 `uni.createWorkder`
 - Worker 中仅支持调用界面无关的API（如 uni.request、uni.getLocation 等），这些 API 触发的回调运行在 Workder 线程中
+- Web 平台不支持在 worker 中调用 uni 上的 API
