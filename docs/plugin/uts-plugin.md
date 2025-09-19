@@ -1334,6 +1334,7 @@ HelloUTS nativepage 插件增加了UTSAndroidHookProxy [源码示例](https://gi
 注意：
 
 + 由于UTSAndroidHookProxy初始化要早于uni所以不支持调用uni api
++ 由于UTSAndroidHookProxy初始化要早于UTSAndroid 所以不支持调用UTSAndroid中的组件上下文api:getAppContext/getAppActivity
 + 一个插件只允许实现一个UTSAndroidHookProxy接口class！
 + onCreate回调后应尽可能的判断隐私合规是否同意再初始化，否则影响app上架
 + Android平台添加或修改UTSAndroidHookProxy实现代码需要重新提交云端打包才能生效
