@@ -51,6 +51,18 @@
 
 <!-- UTSJSON.UniActivityCallback.onUserInteraction.tutorial -->
 
+#### onPictureInPictureModeChanged(params)
+
+<!-- UTSJSON.UniActivityCallback.onPictureInPictureModeChanged.description -->
+
+<!-- UTSJSON.UniActivityCallback.onPictureInPictureModeChanged.param -->
+
+<!-- UTSJSON.UniActivityCallback.onPictureInPictureModeChanged.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onPictureInPictureModeChanged.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onPictureInPictureModeChanged.tutorial -->
+
 #### onUserLeaveHint(params)
 
 <!-- UTSJSON.UniActivityCallback.onUserLeaveHint.description -->
