@@ -59,6 +59,8 @@
     * [video | 视频](video.md)
     * [animation-view | Lottie动画](animation-view.md)
     * [camera | 相机](camera.md)
+    * [live-player | 拉流](live-player.md)
+    * [live-pusher | 推流](live-pusher.md)
   * 地图
     * [map | 地图](map.md)
   * 画布
