@@ -66,6 +66,8 @@
 | uni-keyboard(4.71+) | uni-keyboard-index.swift | | |
 | uni-rich-text(4.71+) | uni-rich-text-index.swift | | |
 | uni-openDocument(4.71+)(依赖uni-fileSystemManager) | uni-openDocument-index.swift | | |
+| uni-live-pusher(4.81+) | uni-live-pusher-index.swift | HappyDNS.framework <br> PLMediaStreamingKit.xcframework | |
+| uni-live-player(4.81+) | uni-live-player-index.swift | qplayer2_core.xcframework | AVFoundation <br> AudioToolbox <br> QuartzCore<br> OpenGLES <br> CoreVideo<br> CoreMedia <br> VideoToolbox <br> c++ <br> bz2 <br> iconv <br> z <br> |
 
 ### 配置uts-config.json(可选)
 
@@ -542,6 +544,37 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 </dict>
 ```
 
+## uni-live-pusher
+### 添加依赖库以及资源文件
+| 依赖库 |
+|---|
+| DCloudPermissionCamera.xcframework <br> DCloudPermissionMicrophone.xcframework |
+### Info.plist
+添加`相机权限描述(NSCameraUsageDescription)`、`麦克风权限描述(NSMicrophoneUsageDescription)`
+```  
+<dict>
+	<key>NSCameraUsageDescription</key>
+	<string>需要您的同意，才能使用摄像头，以便于相机拍摄</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>需要您的同意，才能使用麦克风，以便于录制音频</string>
+</dict>
+```
+
+## uni-live-player
+### 添加依赖库以及资源文件
+| 依赖库 |
+|---|
+| DCloudPermissionCamera.xcframework <br> DCloudPermissionMicrophone.xcframework |
+### Info.plist
+添加`相机权限描述(NSCameraUsageDescription)`、`麦克风权限描述(NSMicrophoneUsageDescription)`
+```  
+<dict>
+	<key>NSCameraUsageDescription</key>
+	<string>需要您的同意，才能使用摄像头，以便于相机拍摄</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>需要您的同意，才能使用麦克风，以便于录制音频</string>
+</dict>
+```
 
 ## uni-ad
 ### 基础广告(必须)
