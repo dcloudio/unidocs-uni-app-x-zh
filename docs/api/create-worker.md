@@ -36,8 +36,6 @@ uni-app x的代码，默认都是在主线程执行的，主线程也称为UI线
 
 <!-- UTSAPIJSON.createWorker.tutorial -->
 
-<!-- UTSAPIJSON.createWorker.example -->
-
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
