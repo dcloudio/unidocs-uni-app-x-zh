@@ -21,6 +21,7 @@
 	dependencies {
 		implementation "com.squareup.okhttp3:okhttp:3.12.12"
 		implementation "net.lingala.zip4j:zip4j:2.11.5"
+		implementation "com.squareup.leakcanary:leakcanary-android:2.14"
 	}
 ```
 3. 修改AndroidManifest.xml

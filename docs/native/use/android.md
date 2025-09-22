@@ -7,7 +7,11 @@
 - android studio
 
 ***
-说明：当前文档基于android studio 2023.2.1 Patch 2。gradle版本为8.4。gradle插件版本为8.2.2。kotlin插件版本为1.9.10。
+说明：
+
+当前文档正式版基于android studio 2023.2.1 Patch 2。gradle版本为8.4。gradle插件版本为8.2.2。kotlin插件版本为1.9.10。
+
+当前文档alpha版基于Android Studio Narwhal 3 Feature Drop | 2025.1.3。gradle版本为8.14.3。gradle插件版本为8.12.0。kotlin插件版本为2.2.0。
 ***
 
 ## 新建uni-app x模块
@@ -65,16 +69,17 @@ uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar�
 		implementation "com.google.android.material:material:1.4.0"
 		implementation "androidx.viewpager2:viewpager2:1.1.0-beta02"
 		implementation "com.alibaba:fastjson:1.2.83"
-		implementation "com.facebook.fresco:fresco:3.1.3"
-		implementation "com.facebook.fresco:middleware:3.1.3"
-		implementation "com.facebook.fresco:animated-gif:3.1.3"
-		implementation "com.facebook.fresco:webpsupport:3.1.3"
-		implementation "com.facebook.fresco:animated-webp:3.1.3"
+		implementation "com.facebook.fresco:fresco:3.4.0"
+		implementation "com.facebook.fresco:middleware:3.4.0"
+		implementation "com.facebook.fresco:animated-gif:3.4.0"
+		implementation "com.facebook.fresco:webpsupport:3.4.0"
+		implementation "com.facebook.fresco:animated-webp:3.4.0"
+		implementation "com.caverock:androidsvg:1.4"
 		implementation "com.github.bumptech.glide:glide:4.9.0"
 		implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
 		implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
-		implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.10"
-		implementation "org.jetbrains.kotlin:kotlin-reflect:1.8.10"
+		implementation "org.jetbrains.kotlin:kotlin-stdlib:2.2.0"
+		implementation "org.jetbrains.kotlin:kotlin-reflect:2.2.0"
 		implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
 		implementation "com.squareup.okhttp3:okhttp:3.12.12"
 		implementation "com.github.getActivity:XXPermissions:18.63"
@@ -97,16 +102,17 @@ uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar�
 	    implementation("com.google.android.material:material:1.4.0")
 	    implementation("androidx.viewpager2:viewpager2:1.1.0-beta02")
 	    implementation("com.alibaba:fastjson:1.2.83")
-	    implementation("com.facebook.fresco:fresco:3.1.3")
-	    implementation("com.facebook.fresco:middleware:3.1.3")
-	    implementation("com.facebook.fresco:animated-gif:3.1.3")
-	    implementation("com.facebook.fresco:webpsupport:3.1.3")
-	    implementation("com.facebook.fresco:animated-webp:3.1.3")
+	    implementation("com.facebook.fresco:fresco:3.4.0")
+	    implementation("com.facebook.fresco:middleware:3.4.0")
+	    implementation("com.facebook.fresco:animated-gif:3.4.0")
+	    implementation("com.facebook.fresco:webpsupport:3.4.0")
+	    implementation("com.facebook.fresco:animated-webp:3.4.0")
+		implementation("com.caverock:androidsvg:1.4")
 	    implementation("com.github.bumptech.glide:glide:4.9.0")
 	    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 	    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-	    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.10")
-	    implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.10")
+	    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.0")
+	    implementation("org.jetbrains.kotlin:kotlin-reflect:2.2.0")
 	    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
 	    implementation("com.squareup.okhttp3:okhttp:3.12.12")
 	    implementation("com.github.getActivity:XXPermissions:18.63")
@@ -144,7 +150,7 @@ uni-getSystemInfo-release.aar，uni-rpx2px-release.aar，uni-theme-release.aar�
 	
 	***注意：上面的配置需要同时设置到主模块中。***
 	
-### 配置gradle插件
+### 配置gradle插件 @gradleplugin
 
 在项目根目录的build.gradle的顶部添加gradle插件的依赖。参考：
 
