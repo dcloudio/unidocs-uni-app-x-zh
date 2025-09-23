@@ -6,14 +6,14 @@
 
 有两种方案：
 1. 在HBuilderX 4.81以前，支持把宿主原生应用变成HBuilderX的自定义基座。
-这种方式需要把宿主应用先打包为带有uni-app x调试模块的apk，再运行uni-app x项目，无法动态修改宿主应用的原生代码。
+这种方式需要把宿主应用先打包为带有uni-app x调试模块的基座(.ipa文件)，再运行uni-app x项目，无法动态修改宿主应用的原生代码。
 2. 从HBuilderX 4.81+，支持宿主原生工程直接拖入HBuilderX中，和uni-app x项目进行源码级联编联调。
 
 无论哪种方案1还是方案2，首先要对宿主原生应用进行一些配置
 
 ## Xcode 配置项目
 对宿主原生项目配置，目的是为了加入uni-app x的调试模块，并对uni-app x调试模块所需的依赖进行配置。
-1. 下载uni-app x原生SDK后，将DCloudDebugServe.xcframework添加到原生工程中。
+1. 下载[uni-app x原生SDK](https://doc.dcloud.net.cn/uni-app-x/native/download/ios.html)后，将DCloudDebugServe.xcframework添加到原生工程中。
 2. 将原生工程中`Target`的名称改为`UniAppX`。如图：
    ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/x_native_sdk_update_target_name.jpg)
          
