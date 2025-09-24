@@ -17,8 +17,8 @@ const base = '/uni-app-x/'
 const config = {
   base,
   theme: 'vuepress-theme-uniapp-official',
-  title: 'uni-app-x',
-  description: 'uni-app-x Document',
+  title: 'uni-app x',
+  description: 'uni-app x Document',
   evergreen: process.env.NODE_ENV === 'development',
   head: [
     ['link', {
