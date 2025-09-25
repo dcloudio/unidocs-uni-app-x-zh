@@ -1,11 +1,14 @@
 # 源码和示例
 
-官方有5个开源项目比较重要
+官方有6个开源项目比较重要
 - [hello uts](https://gitcode.com/dcloud/hello-uts)：uts的语法和内置对象的使用示例
 - [hello uvue](https://gitcode.com/dcloud/hello-uvue)：vue语法的使用示例
 - [hello uni-app x](https://gitcode.com/dcloud/hello-uni-app-x)：uni内置组件和API的使用示例，也包括一些常见但复杂的模板示例
 - [uni-api](https://gitcode.com/dcloud/uni-api)：uni api的实现源码。大量uts API插件源码，适合uts插件作者学习
 - [uni-component](https://gitcode.com/dcloud/uni-component)：内置组件的实现源码。uts组件插件源码，适合uts插件作者学习
+- [uni-ai-x](https://ext.dcloud.net.cn/plugin?name=uni-ai-x)：用于快速搭建 AI 聊天类应用的开源插件，适合开发者学习 AI 功能与 uni-app x 结合的开发方案
+
+
 
 这些开源项目的master分支对应着HBuilderX最新正式版，alpha分支对应着最新alpha版。
 
