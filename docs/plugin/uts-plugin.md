@@ -672,7 +672,7 @@ Uni错误规范的更多信息[详见](https://uniapp.dcloud.net.cn/tutorial/err
 
 /**
  * 引用 Android 系统库，示例如下：
- * import { Context } from "android.content.Context";
+ * import Context  from "android.content.Context";
  * [可选实现，按需引入]
  */
 
