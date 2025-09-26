@@ -3,8 +3,9 @@
 - **SDK 4.81+**：使用新的 UniAppXSDK API（推荐）
 - **SDK 4.81 之前**：使用旧的 UniSDKEngine API
 
-# SDK 4.81+ 新 API（推荐）
-## 初始化 SDK
+## SDK 4.81+ 新 API（推荐）
+
+### 初始化 SDK
 
 ```swift
 import DCloudUniappRuntime
@@ -12,7 +13,7 @@ import DCloudUniappRuntime
 // 初始化 SDK
 UniAppXSDK.initSDK()
 ```
-## 打开 SDK 页面
+### 打开 SDK 页面
 
 ```swift
 let options = UniAppXSDKStartOptions.init()
@@ -24,7 +25,7 @@ options.animationType = .auto
 UniAppXSDK.start(options: options)
 ```
 
-### UniAppXSDKStartOptions 参数说明
+#### UniAppXSDKStartOptions 参数说明
 
 配置启动选项的类。
 
@@ -38,7 +39,7 @@ UniAppXSDK.start(options: options)
 | `customAnimationDelegate` | `UniAppXSDKCustomAnimationDelegate?` | `nil` | 自定义动画代理 |
 | `viewController` | `UIViewController?` | `nil` | 指定的视图控制器 |
 
-#### 动画类型 (UniAppXSDKStartOptionsAnimationType)
+##### 动画类型 (UniAppXSDKStartOptionsAnimationType)
 - `.auto` - 使用系统默认动画
 - `.none` - 无动画
 - `.slideInRight` - 从右侧滑入
@@ -51,7 +52,7 @@ UniAppXSDK.start(options: options)
 - `.popIn` - 弹出效果
 - `.custom` - 使用自定义动画代理
 
-#### 自定义动画代理 (UniAppXSDKCustomAnimationDelegate)
+##### 自定义动画代理 (UniAppXSDKCustomAnimationDelegate)
 
 实现自定义动画效果，示例如下：
 ```swift
@@ -113,12 +114,12 @@ options.animationType = .custom
 ```
 
 
-## 退出 SDK 页面
+### 退出 SDK 页面
 根据您的需求，选择以下方式调用退出SDK
 * 原生项目中退出调用`UniAppXSDK.exit()`
 * uni-app x项目中退出调用[uni.exit()](https://doc.dcloud.net.cn/uni-app-x/api/exit.html)
 
-## 生命周期集成
+### 生命周期集成
 ```swift
 import UIKit
 import DCloudUniappRuntime
@@ -172,8 +173,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-# SDK 4.81 之前旧 API
-## 初始化 SDK
+## SDK 4.81 之前旧 API
+
+### 初始化 SDK
 
 ```swift
 import DCloudUniappRuntime
@@ -182,7 +184,7 @@ import DCloudUniappRuntime
 UniSDKEngine.shared.create()
 ```
 
-## 打开 SDK 页面
+### 打开 SDK 页面
 
 ```swift
 // 检查并创建应用实例
@@ -194,11 +196,11 @@ let viewController = UniAppRootViewController()
 self.navigationController?.pushViewController(viewController, animated: true)
 ```
 
-## 退出 SDK 页面
+### 退出 SDK 页面
 
 仅支持在 uni-app x 中调用[uni.exit()](https://doc.dcloud.net.cn/uni-app-x/api/exit.html)退出
 
-## 生命周期集成
+### 生命周期集成
 
 ```swift
 import UIKit
@@ -267,10 +269,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 
-# 通信
+## 通信
 iOS平台目前不支持直接在uvue页面调用原生API，开发者可通过UTS插件`发送/接收 通知消息`实现与原生App通信，具体实现代码如下：
 
-## 原生APP向SDK发消息
+### 原生APP向SDK发消息
 UTS插件添加监听：
 ``` ts
 const name = "com.ios.notification.name1"; //通知消息标识
@@ -299,7 +301,7 @@ NotificationCenter.default.post(name: Notification.Name(name), object: nil, user
 ```    
 
 
-## SDK向原生APP发消息
+### SDK向原生APP发消息
 原生添加通知监听：
 ``` swift
 const name = "com.ios.notification.name2"; //通知消息标识
@@ -327,5 +329,5 @@ NotificationCenter.default.post(name = notificationName, object = null, userInfo
 
 > 注意：消息接收方必须在发送通知前添加监听事件，否则收不到消息 
 
-## 运行示例
+### 运行示例
 `UniAppXDemo`工程中，`__UNI__00DC103`为通信示例资源文件，将`Info.plist`中`uniapp-x`节点下的`appid`改为`__UNI__00DC103`，并添加`unimoduleTestIosNotification.xcframework`依赖，即可体验通信示例
