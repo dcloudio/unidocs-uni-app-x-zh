@@ -3,7 +3,7 @@
 - **SDK 4.81+**：使用新的 UniAppXSDK API（推荐）
 - **SDK 4.81 之前**：使用旧的 UniSDKEngine API
 
-## SDK 4.81+ 新 API（推荐）
+# SDK 4.81+ 新 API（推荐）
 ## 初始化 SDK
 
 ```swift
@@ -114,10 +114,9 @@ options.animationType = .custom
 
 
 ## 退出 SDK 页面
-
-```swift
-UniAppXSDK.exit()
-```
+根据您的需求，选择以下方式调用退出SDK
+* 原生项目中退出调用`UniAppXSDK.exit()`
+* uni-app x项目中退出调用[uni.exit()](https://doc.dcloud.net.cn/uni-app-x/api/exit.html)
 
 ## 生命周期集成
 ```swift
@@ -173,7 +172,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-## SDK 4.81 之前旧 API
+# SDK 4.81 之前旧 API
 ## 初始化 SDK
 
 ```swift
@@ -197,7 +196,7 @@ self.navigationController?.pushViewController(viewController, animated: true)
 
 ## 退出 SDK 页面
 
-通过 `uni.exit()` 退出，在 uni-app x 内部调用 `uni.exit()` API
+仅支持在 uni-app x 中调用[uni.exit()](https://doc.dcloud.net.cn/uni-app-x/api/exit.html)退出
 
 ## 生命周期集成
 
