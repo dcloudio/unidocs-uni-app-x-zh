@@ -330,7 +330,7 @@ class Rectangle extends Shape {
     constructor() {
         super()
     }
-    override vertexCount = 4
+    override vertexCount : Int = 4
 }
 ```
 
