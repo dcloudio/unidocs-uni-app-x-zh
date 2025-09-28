@@ -1104,6 +1104,10 @@ HBuilder X 4.81 统一升级为 Kotlin 2.2.0 版本，主要带来以下优化�
 
 理论上本次升级对这类开发者无感知差异，UTS 编译器已屏蔽底层 Kotlin 升级带来的语法细节。若发现升级后出现编译错误，请及时反馈。
 
+已知问题：
+
++ kotlin2的泛型校验更加严格，不规范的泛型代码在升级后会编译报错  [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21917)
+
 #### 2 混编代码
 
 若项目中包含 Kotlin 或 Java 编写的原生代码（如通过 source 引入的代码或本地依赖），需注意以下语法兼容性变化（[参考 HBuidlerX 4.25 混编说明](https://doc.dcloud.net.cn/uni-app-x/plugin/uts-plugin-hybrid.html#uts%E5%8E%9F%E7%94%9F%E6%B7%B7%E7%BC%96%E4%BB%8B%E7%BB%8D)）：
