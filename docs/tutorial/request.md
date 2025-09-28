@@ -23,7 +23,7 @@ uni.request({
 
 其实在原生或标准的ts里，都是type（ts也有用interface的）。强类型里不能存在json对象这种可以用`.操作符`操作但又不提前定义属性的行为。
 
-UTSJSONObject是uni-app x为了照顾js开发者、兼容部分js生态代码而提供的一个兼容方案，但达不到js中json对象的灵活度。在kt和Swift环境中，它通过反射技术实现了部分未提前定义就可以。所以在代码提示上、运行性能上，也弱于type方式。但对于初学者，UTSJSONObject更容易入门。
+UTSJSONObject是uni-app x为了照顾js开发者、兼容部分js生态代码而提供的一个兼容方案，但达不到js中json对象的灵活度。在kt和Swift环境中，它通过反射技术实现了未提前定义就可以访问属性。所以在代码提示上、运行性能上，也弱于type方式。但对于初学者，UTSJSONObject更容易入门。
 
 type方式就麻烦在于需要提前定义数据类型上，但由于HBuilderX自带根据json生成type的工具，所以整体使用体验，比UTSJSONObject方式好一点。
 
