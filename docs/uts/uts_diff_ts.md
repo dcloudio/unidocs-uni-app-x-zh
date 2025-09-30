@@ -39,7 +39,7 @@ ts 虽然有类型，但类型要求不严格。而 uts 为了编译为原生语
 
 <!-- UTSDIFFTSJSON.UTS110111119.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // TypeScript 可以使用 undefined
@@ -55,7 +55,7 @@ function test(param?: string) {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // UTS 使用 null 替代 undefined
@@ -81,7 +81,7 @@ function test(param: string | null) {
 
 <!-- UTSDIFFTSJSON.UTS110111120.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // 允许非布尔值在条件语句中使用
@@ -93,7 +93,7 @@ for (let i = 0; i; i++) {} // 作为条件的数值类型
 const value = arr || []; // truthy/falsy 值判断
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 必须使用布尔类型或返回布尔值的表达式
@@ -112,7 +112,7 @@ const value = arr != null ? arr : []; // 显式的布尔判断
 在 UTS 中，所有没有明确类型标注或上下文推断不出具体类型的对象字面量都会被推导为 UTSJSONObject 类型。
 这与 ts 中对象字面量会根据属性推导出具体结构类型的行为不同。
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // 类型推导为 { name: string, age: number }
@@ -125,7 +125,7 @@ const person = {
 console.log(person.name);
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 类型推导为 UTSJSONObject
@@ -164,7 +164,7 @@ TS 开发者一般都熟悉使用 interface 来声明类型，UTS 中改为 type
 
 <!-- UTSDIFFTSJSON.UTS110111163.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 interface Person {
@@ -178,7 +178,7 @@ const person: Person = {
 };
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 只有 type 定义的对象类型，才可以用对象字面量赋值
@@ -209,7 +209,7 @@ const person2 = {
 
 <!-- UTSDIFFTSJSON.UTS110111150.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // 变量提升
@@ -229,7 +229,7 @@ const factorial = (n: number): number => {
 };
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 变量必须先声明后使用
@@ -271,7 +271,7 @@ factorial = (n: number): number => {
 
 <!-- UTSDIFFTSJSON.UTS110111101.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 let o: { x: number; y: number } = {
@@ -282,7 +282,7 @@ let o: { x: number; y: number } = {
 type S = Set<{ x: number; y: number }>;
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 type O = {
@@ -305,7 +305,7 @@ type S = Set<O>;
 
 <!-- UTSDIFFTSJSON.UTS110111162.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 type News = {
@@ -317,7 +317,7 @@ type News = {
 };
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 需要将嵌套的对象提取出来定义新的 type
@@ -342,7 +342,7 @@ type News = {
 
 <!-- UTSDIFFTSJSON.UTS110111122.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 let value1: unknown;
@@ -350,7 +350,7 @@ value1 = true;
 value1 = 42;
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 let value1: any = true;
@@ -373,7 +373,7 @@ console.log(a instanceof A<unknown>);
 
 <!-- UTSDIFFTSJSON.UTS110111123.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 type X<T> = T extends number ? T : never;
@@ -391,7 +391,7 @@ type Y<T> = T extends Array<infer Item> ? Item : never;
 
 <!-- UTSDIFFTSJSON.UTS110111124.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 type OptionsFlags<Type> = {
@@ -399,7 +399,7 @@ type OptionsFlags<Type> = {
 };
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class C {
@@ -423,7 +423,7 @@ class CFlags {
 
 <!-- UTSDIFFTSJSON.UTS110111125.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 interface User {
@@ -441,7 +441,7 @@ type ReadUser = Readonly<User>;
 let user: ReadUser = { id: 1, name: "John", email: "j@example.com" };
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 使用 type 定义对象类型，而非 interface
@@ -478,7 +478,7 @@ let user: ReadUser = { id: 1, name: "John", email: "j@example.com" };
 
 <!-- UTSDIFFTSJSON.UTS110111126.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // 'hello'类型
@@ -491,7 +491,7 @@ let y = [10, 20] as const;
 let z = { text: "hello" } as const;
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 'string'类型
@@ -520,7 +520,7 @@ let z: Label = {
 
 <!-- UTSDIFFTSJSON.UTS110111127.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 let x!: number; // 提示：在使用前将x初始化
@@ -534,7 +534,7 @@ function initialize() {
 console.log("x = " + x);
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 function initialize(): number {
@@ -556,7 +556,7 @@ console.log("x = " + x);
 
 <!-- UTSDIFFTSJSON.UTS100006.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 function main() {
@@ -564,7 +564,7 @@ function main() {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 type MyError = Error
@@ -584,7 +584,7 @@ function main() {
 
 <!-- UTSDIFFTSJSON.UTS110111128.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class C {
@@ -592,7 +592,7 @@ class C {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class C {
@@ -610,7 +610,7 @@ class C {
 
 <!-- UTSDIFFTSJSON.UTS110111129.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class Point {
@@ -634,7 +634,7 @@ let person: Person = {
 };
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class Point {
@@ -673,7 +673,7 @@ console.log(person.unknownProperty); // 编译时错误
 
 <!-- UTSDIFFTSJSON.UTS110111130.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class MyClass {
@@ -687,7 +687,7 @@ class MyClass {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class MyClass {
@@ -713,7 +713,7 @@ class MyClass {
 
 <!-- UTSDIFFTSJSON.UTS110111151.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class Person {
@@ -728,7 +728,7 @@ let PersonClass: typeof Person = Person;
 let p: Person = new PersonClass();
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class Person {
@@ -757,7 +757,7 @@ function createPerson(): Person {
 
 <!-- UTSDIFFTSJSON.UTS110111131.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class Parent {
@@ -769,7 +769,7 @@ class Child extends Parent {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class Parent {
@@ -794,7 +794,7 @@ class Child extends Parent {
 
 <!-- UTSDIFFTSJSON.UTS110111132.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class C {
@@ -806,7 +806,7 @@ class C1 implements C {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 interface C {
@@ -828,7 +828,7 @@ class C1 implements C {
 
 <!-- UTSDIFFTSJSON.UTS110111133.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class Control {
@@ -840,7 +840,7 @@ interface SelectableControl extends Control {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 interface Control {
@@ -862,7 +862,7 @@ interface SelectableControl extends Control {
 
 <!-- UTSDIFFTSJSON.UTS110111134.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class C {
@@ -883,7 +883,7 @@ c1.foo(); // foo
 c2.foo(); // bar
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class C {
@@ -922,7 +922,7 @@ c3.foo(); // Extra foo
 
 <!-- UTSDIFFTSJSON.UTS110111161.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 type ApiService = {
@@ -938,7 +938,7 @@ class DataProcessor {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // type
@@ -992,7 +992,7 @@ class DataProcessor {
 
 <!-- UTSDIFFTSJSON.UTS110111164.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 type Msg = {
@@ -1010,7 +1010,7 @@ test.obj = Abc;
 console.log(test);
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 type Msg = {
@@ -1041,7 +1041,7 @@ console.log(test);
 
 <!-- UTSDIFFTSJSON.UTS110111135.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 type DescribableFunction = {
@@ -1054,7 +1054,7 @@ function doSomething(fn: DescribableFunction): void {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class DescribableFunction {
@@ -1085,7 +1085,7 @@ doSomething(new DescribableFunction());
 
 <!-- UTSDIFFTSJSON.UTS110111136.compatibility -->
 
-TypeScript：
+TypeScript写法:
 
 ```ts
 class SomeObject {}
@@ -1099,7 +1099,7 @@ function fn(ctor: SomeConstructor) {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class SomeObject {
@@ -1124,7 +1124,7 @@ function fn(s: string): SomeObject {
 
 <!-- UTSDIFFTSJSON.UTS110111137.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class Person {
@@ -1139,7 +1139,7 @@ function createPerson(Ctor: PersonCtor, name: string, age: number): Person {
 const person = createPerson(Person, "John", 30);
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class Person {
@@ -1168,7 +1168,7 @@ const person = createPerson(Impersonizer, "John", 30);
 
 <!-- UTSDIFFTSJSON.UTS110111152.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // 允许将函数声明作为值使用
@@ -1179,7 +1179,7 @@ function foo() {
 setTimeout(foo, 1000); // 将函数作为参数传递
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 使用函数表达式或箭头函数
@@ -1201,7 +1201,7 @@ setTimeout(foo, 1000);
 
 <!-- UTSDIFFTSJSON.UTS110111138.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 function greet(name: string): void {
@@ -1219,7 +1219,7 @@ greet.increment();
 console.log(greet.count); // 1
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 在 UTS 中使用类替代函数属性
@@ -1251,7 +1251,7 @@ console.log(g.count); // 1
 
 <!-- UTSDIFFTSJSON.UTS110111139.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 function greet(greeting: string): void {
@@ -1271,7 +1271,7 @@ greet.call(person, "Hello");
 greet.apply(person, ["Hi"]);
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 在 UTS 中使用类和方法
@@ -1301,7 +1301,7 @@ person.greet("Hello");
 
 <!-- UTSDIFFTSJSON.UTS110111139_1.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class Counter {
@@ -1321,7 +1321,7 @@ inc(); // 1
 inc(); // 2
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class Counter {
@@ -1359,7 +1359,7 @@ inc(); // 2
 
 <!-- UTSDIFFTSJSON.UTS110111140.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 namespace MyNamespace {
@@ -1367,7 +1367,7 @@ namespace MyNamespace {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // UTS 不支持命名空间，使用模块替代
@@ -1389,13 +1389,13 @@ console.log(x);
 
 <!-- UTSDIFFTSJSON.UTS110111141.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 import m = require("mod");
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 import * as m from "mod";
@@ -1411,7 +1411,7 @@ import * as m from "mod";
 
 <!-- UTSDIFFTSJSON.UTS110111142.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // module1
@@ -1428,7 +1428,7 @@ import Pt = require("module1");
 let p = Pt.Point.origin;
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // module1
@@ -1455,7 +1455,7 @@ let p = Pt.Point.origin;
 
 <!-- UTSDIFFTSJSON.UTS110111143.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class Foo {
@@ -1486,7 +1486,7 @@ doStuff({ foo: 123, common: "123" });
 doStuff({ bar: 123, common: "123" });
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class Foo {
@@ -1531,7 +1531,7 @@ function main(): void {
 
 <!-- UTSDIFFTSJSON.UTS110111153.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 class Shape {}
@@ -1561,7 +1561,7 @@ let e1 = (5.0 as Number) instanceof Number; // false
 let e2 = new Number(5.0) instanceof Number; // true
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class Shape {}
@@ -1600,7 +1600,7 @@ let c3 = createShape() as Square;
 
 <!-- UTSDIFFTSJSON.UTS110111154.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // Symbol 用于创建唯一标识符
@@ -1614,7 +1614,7 @@ obj[sym1] = "value1";
 console.log(obj[sym1]); // "value1"
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // 使用具体的唯一字符串字面量定义类型
@@ -1640,7 +1640,7 @@ console.log(obj.key1); // "value1"
 
 <!-- UTSDIFFTSJSON.UTS110111144.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // 带index signature的接口：
@@ -1656,7 +1656,7 @@ const myArray: StringArray = getStringArray();
 const secondItem = myArray[1];
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class X {
@@ -1677,7 +1677,7 @@ const secondItem = myArray.f[1];
 
 <!-- UTSDIFFTSJSON.UTS110111145.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 interface Document {
@@ -1695,7 +1695,7 @@ interface Document {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 interface Document {
@@ -1717,7 +1717,7 @@ interface Document {
 
 <!-- UTSDIFFTSJSON.UTS110111146.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 function* counter(start: number, end: number) {
@@ -1731,7 +1731,7 @@ for (let num of counter(1, 5)) {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 async function complexNumberProcessing(num: number): Promise<number> {
@@ -1758,7 +1758,7 @@ foo();
 
 <!-- UTSDIFFTSJSON.UTS110111155.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // React TSX 示例
@@ -1767,7 +1767,7 @@ function Welcome(props: { name: string }) {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```vue
 <template>
@@ -1793,7 +1793,7 @@ defineProps({
 
 <!-- UTSDIFFTSJSON.UTS110111156.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 with (Math) {
@@ -1803,7 +1803,7 @@ with (Math) {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 let r: number = 42;
@@ -1820,7 +1820,7 @@ let area: number = Math.PI * r * r;
 
 <!-- UTSDIFFTSJSON.UTS110111147.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 // 全局文件中
@@ -1830,7 +1830,7 @@ var abc = 100;
 let x = globalThis.abc;
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 // file1
@@ -1854,7 +1854,7 @@ let x = M.abc;
 
 <!-- UTSDIFFTSJSON.UTS110111148.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 let a = +5; // 5（number类型）
@@ -1877,7 +1877,7 @@ let x = +returnTen(); // -10（number类型）
 let y = +returnString(); // NaN
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 let a = +5; // 5（number类型）
@@ -1910,7 +1910,7 @@ let y = +returnString(); // 编译时错误
 
 <!-- UTSDIFFTSJSON.UTS110111160.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 let x, y;
@@ -1932,7 +1932,7 @@ while ((match = regex.exec(text))) {
 }
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 let x = 5;
@@ -1966,7 +1966,7 @@ while (match != null) {
 
 <!-- UTSDIFFTSJSON.UTS110111149.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 interface Person {
@@ -1986,7 +1986,7 @@ delete obj.x;
 console.log(obj.x); // undefined
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 type Person = {
@@ -2018,7 +2018,7 @@ console.log(newObj.y); // 2
 
 <!-- UTSDIFFTSJSON.UTS110111157.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 for (let i = 0, j = 0; i < 10; ++i, j += 2) {
@@ -2029,7 +2029,7 @@ let x = 0;
 x = (++x, x++); // 1
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 for (let i = 0, j = 0; i < 10; ++i, j += 2) {
@@ -2051,7 +2051,7 @@ x = x++;
 
 <!-- UTSDIFFTSJSON.UTS110111158.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 throw 4;
@@ -2059,7 +2059,7 @@ throw "";
 throw new Error();
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 throw new Error();
@@ -2075,7 +2075,7 @@ throw new Error();
 
 <!-- UTSDIFFTSJSON.UTS210111100.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 let arr: number[] = [1, 2, 3];
@@ -2085,7 +2085,7 @@ console.log(arr[5]); // undefined
 console.log(arr[-1]); // undefined
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 const arr: number[] = [1, 2, 3];
@@ -2115,7 +2115,7 @@ if (index >= 0 && index < arr.length) {
 
 <!-- UTSDIFFTSJSON.UTS110111159.compatibility -->
 
-TypeScript:
+TypeScript写法:
 
 ```ts
 let C = function (p) {
@@ -2133,7 +2133,7 @@ C.prototype.q = function (r: string) {
 };
 ```
 
-UTS:
+UTS正确写法：
 
 ```ts
 class C {
