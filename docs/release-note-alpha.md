@@ -1,3 +1,13 @@
+#### 4.82.2025093004-alpha
+##### uni-app x
+* Android平台 修复 4.81版本引发的 组件 image svg 格式图片不会跟随组件尺寸变化 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21790)
+* Android平台 修复 4.81版本引发的 组件 canvas 在 Android5 设备运行报错 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=22008)
+* Android平台 修复 4.81版本引发的 CSS line-height 属性不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21819)
+* iOS平台 更新 uni-ad 优量汇SDK 为 4.15.60 版 [文档](https://doc.dcloud.net.cn/uni-app-x/component/ad.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=21887>
+* iOS平台 修复 4.81版本引发的 发行 提交 AppStore 审核报"二进制文件无效"，提示`ITMS-91065: Missing signature - Your app includes “Frameworks/SDWebImage.framework/SDWebImage”` [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21949)
+* iOS平台 修复 组件 input 在 scrollView 中获取焦点弹起键盘遮挡输入框时，点击 webview 自动收起键盘后界面异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21902)
+* iOS平台 修复 组件 video 在 iOS15 及以上系统播放时静音，开始播放后无法通过音量键调大音量 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2860)
+
 #### 4.81.2025091909-alpha
 ##### uni-app x
 * 【重要】新增 API uni.createWorker 支持 Worker 线程 [文档](https://doc.dcloud.net.cn/uni-app-x/api/create-worker.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=19898>
