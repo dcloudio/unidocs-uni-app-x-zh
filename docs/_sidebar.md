@@ -18,30 +18,31 @@
   * 云端打包
     * [概述](tutorial/app-package.md)
     * [云端打包环境](tutorial/app-env.md)
-  * uni-app x 原生SDK
-    * [概述](native/README.md)* Android平台
-      * [原生工程配置](native/use/android.md)
-      * 模块配置
-        * [内置模块](native/modules/android/others.md)
-        * [uni-ad](native/modules/android/uni-ad.md)
-        * [uni-facialRecognitionVerify](native/modules/android/uni-facialRecognitionVerify.md)
-        * [uni-payment](native/modules/android/uni-payment.md)
-        * [uni-push](native/modules/android/uni-push.md)
-        * [uni-video](native/modules/android/uni-video.md)
-        * [uni-verify](native/modules/android/uni-verify.md)
-        * [uni-getLocation](native/modules/android/uni-getLocation.md)
-        * [uni-map-tencent](native/modules/android/uni-map-tencent.md)
-      * [uts插件配置](native/use/androiduts.md)
-      * [启动与通信](native/use/androidcomm.md)
-      * [原生联调](native/debug/android.md)
-      * [SDK下载](native/download/android.md)
-    * iOS平台
-       * [原生工程配置](native/use/ios.md)
-       * [内置模块](native/modules/ios/modules.md)
-       * [UTS插件](native/use/iosuts.md)
-       * [启动与通信](native/use/iosapi.md)
-      * [原生联调](native/debug/ios.md)
-      * [SDK下载](native/download/ios.md)
+	* uni-app x 原生SDK
+		* [概述](native/README.md)
+		* Android平台
+			* [原生工程配置](native/use/android.md)
+			* 模块配置
+				* [内置模块](native/modules/android/others.md)
+				* [uni-ad](native/modules/android/uni-ad.md)
+				* [uni-facialRecognitionVerify](native/modules/android/uni-facialRecognitionVerify.md)
+				* [uni-payment](native/modules/android/uni-payment.md)
+				* [uni-push](native/modules/android/uni-push.md)
+				* [uni-video](native/modules/android/uni-video.md)
+				* [uni-verify](native/modules/android/uni-verify.md)
+				* [uni-getLocation](native/modules/android/uni-getLocation.md)
+				* [uni-map-tencent](native/modules/android/uni-map-tencent.md)
+			* [uts插件配置](native/use/androiduts.md)
+			* [启动与通信](native/use/androidcomm.md)
+			* [原生联调](native/debug/android.md)
+			* [SDK下载](native/download/android.md)
+		* iOS平台
+		   * [原生工程配置](native/use/ios.md)
+		   * [内置模块](native/modules/ios/modules.md)
+		   * [UTS插件](native/use/iosuts.md)
+		   * [启动与通信](native/use/iosapi.md)
+			* [原生联调](native/debug/ios.md)
+			* [SDK下载](native/download/ios.md)
   * 应用市场上架
     * [概述](tutorial/app-market.md)
     * [应用合规指南](tutorial/compliance.md)
