@@ -1031,6 +1031,14 @@ console.log(test);
 
 #### Enum成员初始化器仅支持数字或字符串 @uts120000003
 
+<!-- UTSDIFFTSJSON.UTS120000003.type -->
+
+<!-- UTSDIFFTSJSON.UTS120000003.code -->
+
+<!-- UTSDIFFTSJSON.UTS120000003.description -->
+
+<!-- UTSDIFFTSJSON.UTS120000003.compatibility -->
+
 TypeScript写法:
 
 ```ts
@@ -1048,6 +1056,14 @@ enum Test {
 ```
 
 #### Enum声明必须是顶级声明 @uts120000004
+
+<!-- UTSDIFFTSJSON.UTS120000004.type -->
+
+<!-- UTSDIFFTSJSON.UTS120000004.code -->
+
+<!-- UTSDIFFTSJSON.UTS120000004.description -->
+
+<!-- UTSDIFFTSJSON.UTS120000004.compatibility -->
 
 TypeScript写法:
 
@@ -1328,26 +1344,6 @@ let person: Person = new Person("John");
 person.greet("Hello");
 ```
 
-
-#### 不支持函数分配给接口 @uts120000000
-
-
-TypeScript写法:
-
-```ts
-interface MyFunction {
-}
-const myFunction1: MyFunction = () => { };
-```
-
-UTS正确写法：
-
-```ts
-
-const MyFunction = () => { };
-```
-
-
 #### 不支持 Function.bind @uts110111139
 
 <!-- UTSDIFFTSJSON.UTS110111139_1.type -->
@@ -1403,6 +1399,32 @@ let inc: () => void = counter.getIncrement();
 inc(); // 1
 inc(); // 2
 ```
+
+#### 不支持函数分配给接口 @uts120000000
+
+<!-- UTSDIFFTSJSON.UTS120000000.type -->
+
+<!-- UTSDIFFTSJSON.UTS120000000.code -->
+
+<!-- UTSDIFFTSJSON.UTS120000000.description -->
+
+<!-- UTSDIFFTSJSON.UTS120000000.compatibility -->
+
+TypeScript写法:
+
+```ts
+interface MyFunction {
+}
+const myFunction1: MyFunction = () => { };
+```
+
+UTS正确写法：
+
+```ts
+
+const MyFunction = () => { };
+```
+
 
 ### 5. 模块和命名空间
 
