@@ -1029,6 +1029,43 @@ test.obj = new Abc();
 console.log(test);
 ```
 
+#### Enum成员初始化器仅支持数字或字符串 @uts120000003
+
+TypeScript写法:
+
+```ts
+enum Test {
+	A = 3 * 2
+}
+```
+
+UTS正确写法：
+
+```ts
+enum Test {
+	A = 6
+}
+```
+
+#### Enum声明必须是顶级声明 @uts120000004
+
+TypeScript写法:
+
+```ts
+function test() {
+    enum Test {}
+}
+```
+
+UTS正确写法：
+
+```ts
+enum Test {}
+function test() {
+}
+```
+
+
 ### 4. 函数相关
 
 #### 使用 class 而非具有 call signature 的类型 @uts110111135
@@ -1290,6 +1327,26 @@ class Person {
 let person: Person = new Person("John");
 person.greet("Hello");
 ```
+
+
+#### 不支持函数分配给接口 @uts120000000
+
+
+TypeScript写法:
+
+```ts
+interface MyFunction {
+}
+const myFunction1: MyFunction = () => { };
+```
+
+UTS正确写法：
+
+```ts
+
+const MyFunction = () => { };
+```
+
 
 #### 不支持 Function.bind @uts110111139
 
