@@ -100,7 +100,7 @@ const dialogPages = page.getDialogPages()
 const dialogPage = this.$page
 // 组合式 API
 const currentInstance = getCurrentInstance()
-const dialogPage = instance?.proxy?.$page
+const dialogPage = currentInstance?.proxy?.$page
 ```
 * tabBar 页面中的 `dialogPage`，在 App 端不会随 tabBar 页面切换而隐藏，在 Web 端会随 tabBar 页面切换而隐藏。\
 即：在 tabA 页面打开 dialogPage 后 switchTab 到 tabB 页面
