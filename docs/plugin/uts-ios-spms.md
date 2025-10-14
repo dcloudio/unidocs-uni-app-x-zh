@@ -121,6 +121,26 @@ let package = Package(
 }
 ```
 
+
+
+## kind 类型详细说明
+
+| kind 类型 | 必需参数 | 说明 | 版本范围示例 |
+|-----------|----------|------|-------------|
+| **exactVersion** | version | 精确版本匹配 | 固定版本 5.7.1 |
+| **upToNextMajorVersion** | minimumVersion | 默认最常用，主版本兼容 | [5.7.1, 6.x) 左闭右开 |
+| **upToNextMinorVersion** | minimumVersion | 小版本兼容 | [5.7.1, 5.8.x) 左闭右开 |
+| **versionRange** | minimumVersion, maximumVersion | 版本区间设置 | [5.7.1, 5.7.8) 左闭右开 |
+| **branch** | branch | 分支跟踪 | 跟踪指定分支（如 main） |
+| **revision** | revision | 提交锁定 | 锁定具体 commit hash |
+
+### 版本范围说明
+
+- **upToNextMajorVersion**: 自动升级兼容未来主版本，如 "5.7.1" 会升级到 5.x 版本，但不会升级到 6.x
+- **upToNextMinorVersion**: 自动升级兼容未来小版本，如 "5.7.1" 会升级到 5.7.x 版本，但不会升级到 5.8.x
+- **versionRange**: 在指定版本区间内自动升级，如 [5.7.1, 5.7.8) 表示从 5.7.1 到 5.7.8（不包含）
+
+
 ## 实际项目示例
 
 ### 示例 1：Alamofire
@@ -192,24 +212,6 @@ let package = Package(
     "minimumVersion": "1.3.0"
 }
 ```
-
-## kind 类型详细说明
-
-| kind 类型 | 必需参数 | 说明 | 版本范围示例 |
-|-----------|----------|------|-------------|
-| **exactVersion** | version | 精确版本匹配 | 固定版本 5.7.1 |
-| **upToNextMajorVersion** | minimumVersion | 默认最常用，主版本兼容 | [5.7.1, 6.x) 左闭右开 |
-| **upToNextMinorVersion** | minimumVersion | 小版本兼容 | [5.7.1, 5.8.x) 左闭右开 |
-| **versionRange** | minimumVersion, maximumVersion | 版本区间设置 | [5.7.1, 5.7.8) 左闭右开 |
-| **branch** | branch | 分支跟踪 | 跟踪指定分支（如 main） |
-| **revision** | revision | 提交锁定 | 锁定具体 commit hash |
-
-### 版本范围说明
-
-- **upToNextMajorVersion**: 自动升级兼容未来主版本，如 "5.7.1" 会升级到 5.x 版本，但不会升级到 6.x
-- **upToNextMinorVersion**: 自动升级兼容未来小版本，如 "5.7.1" 会升级到 5.7.x 版本，但不会升级到 5.8.x
-- **versionRange**: 在指定版本区间内自动升级，如 [5.7.1, 5.7.8) 表示从 5.7.1 到 5.7.8（不包含）
-
 
 ## SPM 依赖库版本要求读取
 
