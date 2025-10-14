@@ -13,5 +13,5 @@
   * [iOS平台uts开发指南](uts-for-ios.md)
   * [harmonyOS平台uts开发指南](uts-for-harmony.md)
   * [使用CocoaPods依赖](uts-ios-cocoapods.md)
-  * [使用Swift Package Manager依赖](uts-ios-spms.md)
+  * [iOS平台使用Swift Package Manager依赖](uts-ios-spms.md)
 * [插件作者专区](https://uniapp.dcloud.net.cn/plugin/publish.html)
