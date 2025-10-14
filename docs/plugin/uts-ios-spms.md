@@ -69,18 +69,173 @@
 
 
 **配置说明：**
-- deploymentTarget：插件支持的最低 iOS 版本号，此节点为可选项，默认设置为 12.0.
-	+ 插件支持的最低版本号应该设置为所有依赖的三方库（包含 framework .a pod ）中最低支持版本号中的最高的一个。
-- dependencies-spms：插件需要依赖的 Swift Package Manager 库, HBuilderX 4.8.3+ 版本新增支持
-	+ 把需要依赖的 spm 库相关信息配置在 dependencies-spms 节点下，需要明确指定每个 spm 库的名字 (name)、链接（url）、类型（kind）；
-	+ name、url、kind 是必须的，不可以为nil，应该根据sdk的官方spm支持情况正确配置，避免下载出错；
-	+ kind类型：Swift Package Manager 支持添加依赖时按需设置不同的类型，支持有效值：exactVersion、upToNextMajorVersion、upToNextMinorVersion、versionRange、branch、revision
-		+ exactVersion：精确版本匹配，必须对应设置version
-		+ upToNextMajorVersion：默认最常用，必须对应设置minimumVersion
-			+ 比如"minimumVersion": "5.7.1"：自动升级兼容未来 5.x 版本，不会升级6.x版本；[5.7.1, 6.x) 左闭右开
-		+ upToNextMinorVersion：小版本兼容，必须对应设置minimumVersion
-			+ 比如"minimumVersion": "5.7.1"：自动升级兼容未来 5.7.x 版本，不会升级5.8.x版本；[5.7.1, 5.7.x) 左闭右开
-		+ versionRange: 版本区间设置，必须对应设置minimumVersion、maximumVersion
-			+ 比如"minimumVersion": "5.7.1"，"minimumVersion": "5.7.8": 自动升级兼容未来 5.7.x 版本，不会升级5.7.8版本；[5.7.1, 5.7.8) 左闭右开
-		+ branch：分支跟踪，必须对应设置branch
-		+ revision：提交锁定某个具体的commit，必须对应设置revision（指定该 spm 库仓库的某次commit）
+
+## 基本配置参数
+
+| 参数 | 类型 | 必需 | 说明 |
+|------|------|------|------|
+| deploymentTarget | String | 否 | 插件支持的最低 iOS 版本号，默认设置为 12.0。需要满足所有依赖库（CocoaPods + SPM）的最低版本要求 |
+| dependencies-spms | Array | 否 | 需要依赖的 Swift Package Manager 库，HBuilderX 4.8.3+ 版本支持 |
+
+> **注意：** 
+> - **CocoaPods 依赖**：插件支持的最低版本号应该设置为所有依赖的三方库（包含 framework .a pod ）中最低支持版本号中的最高的一个
+> - **SPM 依赖**：SPM 依赖库的最低 iOS 版本要求定义在各自的 `Package.swift` 文件的 `platforms` 字段中，需要读取并计算所有 SPM 依赖的最低版本要求
+> - **最终计算**：`deploymentTarget` 应该设置为所有依赖库（CocoaPods + SPM）中最低支持版本号中的最高值
+
+## dependencies-spms 配置参数
+
+| 参数 | 类型 | 必需 | 说明 |
+|------|------|------|------|
+| name | String | 是 | SPM 库的产品名称，对应 Package.swift 中 products 数组里的 library name，不可为 nil， 注意包名和产品名不一定相同 |
+| url | String | 是 | SPM 库的 Git 仓库地址，不可为 nil |
+| kind | String | 是 | 依赖类型，不可为 nil, 有效值：exactVersion、upToNextMajorVersion、upToNextMinorVersion、versionRange、branch、revision|
+
+> **⚠️ 重要提醒**：`name` 字段配置错误会导致 UTS 插件编译失败！必须使用 Package.swift 中 `products` 数组里定义的 `library name`，而不是包名。
+
+
+## kind 类型详细说明
+
+| kind 类型 | 必需参数 | 说明 | 版本范围示例 |
+|-----------|----------|------|-------------|
+| **exactVersion** | version | 精确版本匹配 | 固定版本 5.7.1 |
+| **upToNextMajorVersion** | minimumVersion | 默认最常用，主版本兼容 | [5.7.1, 6.x) 左闭右开 |
+| **upToNextMinorVersion** | minimumVersion | 小版本兼容 | [5.7.1, 5.8.x) 左闭右开 |
+| **versionRange** | minimumVersion, maximumVersion | 版本区间设置 | [5.7.1, 5.7.8) 左闭右开 |
+| **branch** | branch | 分支跟踪 | 跟踪指定分支（如 main） |
+| **revision** | revision | 提交锁定 | 锁定具体 commit hash |
+
+## name 字段详细说明
+
+`name` 字段需要配置为 Swift Package 中定义的产品名称，具体对应关系如下：
+
+### 1. Package.swift 中的定义
+```swift
+// Package.swift
+let package = Package(
+    name: "SwiftProtobuf",  // 这是包名，不是我们要的
+    products: [
+        .library(
+            name: "SwiftProtobuf",  // 这是产品名，对应 config.json 中的 name
+            targets: ["SwiftProtobuf"]
+        ),
+    ],
+    // ... 其他配置
+)
+```
+
+### 2. config.json 中的配置
+```json
+{
+    "name": "SwiftProtobuf",  // 对应上面的 .library(name: "Protobuf")
+    "url": "https://github.com/apple/swift-protobuf.git",
+    "kind": "upToNextMajorVersion",
+    "minimumVersion": "1.20.0"
+}
+```
+
+## 实际项目示例
+
+### 示例 1：Alamofire
+
+**Package.swift 中的定义**：
+```swift
+// https://github.com/Alamofire/Alamofire/blob/master/Package.swift
+let package = Package(
+    name: "Alamofire",  // 包名
+    products: [
+        .library(
+            name: "Alamofire",  // 产品名，与包名相同
+            targets: ["Alamofire"]
+        ),
+    ],
+    // ... 其他配置
+)
+```
+
+**config.json 中的正确配置**：
+```json
+{
+    "name": "Alamofire",  // 正确：使用 products 中的 name
+    "url": "https://github.com/Alamofire/Alamofire.git",
+    "kind": "upToNextMajorVersion",
+    "minimumVersion": "5.7.1"
+}
+```
+
+### 示例 2：Swift Collections
+
+**Package.swift 中的定义**：
+```swift
+// https://github.com/apple/swift-collections/blob/main/Package.swift
+let package = Package(
+    name: "swift-collections",  // 包名
+    products: [
+        .library(
+            name: "Collections",  // 产品名，与包名不同
+            targets: ["Collections"]
+        ),
+        .library(
+            name: "DequeModule",  // 另一个产品名
+            targets: ["DequeModule"]
+        ),
+    ],
+    // ... 其他配置
+)
+```
+
+### 常见错误示例
+
+❌ **错误配置**：
+```json
+{
+    "name": "swift-collections",  // 错误：这是包名，不是产品名
+    "url": "https://github.com/apple/swift-collections.git",
+    "kind": "upToNextMajorVersion",
+    "minimumVersion": "1.3.0"
+}
+```
+
+✅ **正确配置**：
+```json
+{
+    "name": "Collections",  // 正确：这是 Package.swift 中 products 的 name
+    "url": "https://github.com/apple/swift-collections.git",
+    "kind": "upToNextMajorVersion",
+    "minimumVersion": "1.3.0"
+}
+```
+
+
+
+## SPM 依赖库版本要求读取
+
+### 1. 核心定义位置：Package.swift 的 platforms 字段
+
+每个 Swift 包在根目录下有一个 `Package.swift`，其中包含平台支持声明：
+
+```swift
+let package = Package(
+    name: "SomeLibrary",
+    platforms: [
+        .iOS(.v12),        // 最低支持 iOS 12
+        .macOS(.v10_14),   // 最低支持 macOS 10.14
+        .tvOS(.v13)        // 最低支持 tvOS 13
+    ],
+    products: [
+        .library(name: "SomeLibrary", targets: ["SomeLibrary"])
+    ],
+    // ... 其他配置
+)
+```
+
+### 2. 版本声明说明
+
+- **`.iOS(.v12)`** 表示：该包最低支持 iOS 12 及以上版本
+- **默认行为**：如果没有声明 `platforms`，表示默认兼容 iOS 8 及以上（SwiftPM 默认最低 iOS 8）
+- **现代包特点**：大多数现代包都会显式声明最低版本要求
+
+## 版本范围说明
+
+- **upToNextMajorVersion**: 自动升级兼容未来主版本，如 "5.7.1" 会升级到 5.x 版本，但不会升级到 6.x
+- **upToNextMinorVersion**: 自动升级兼容未来小版本，如 "5.7.1" 会升级到 5.7.x 版本，但不会升级到 5.8.x
+- **versionRange**: 在指定版本区间内自动升级，如 [5.7.1, 5.7.8) 表示从 5.7.1 到 5.7.8（不包含）
