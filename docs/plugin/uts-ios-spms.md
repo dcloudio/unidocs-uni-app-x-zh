@@ -92,21 +92,9 @@
 
 > **⚠️ 重要提醒**：`name` 字段配置错误会导致 UTS 插件编译失败！必须使用 Package.swift 中 `products` 数组里定义的 `library name`，而不是包名。
 
-
-## kind 类型详细说明
-
-| kind 类型 | 必需参数 | 说明 | 版本范围示例 |
-|-----------|----------|------|-------------|
-| **exactVersion** | version | 精确版本匹配 | 固定版本 5.7.1 |
-| **upToNextMajorVersion** | minimumVersion | 默认最常用，主版本兼容 | [5.7.1, 6.x) 左闭右开 |
-| **upToNextMinorVersion** | minimumVersion | 小版本兼容 | [5.7.1, 5.8.x) 左闭右开 |
-| **versionRange** | minimumVersion, maximumVersion | 版本区间设置 | [5.7.1, 5.7.8) 左闭右开 |
-| **branch** | branch | 分支跟踪 | 跟踪指定分支（如 main） |
-| **revision** | revision | 提交锁定 | 锁定具体 commit hash |
-
 ## name 字段详细说明
 
-`name` 字段需要配置为 Swift Package 中定义的产品名称，具体对应关系如下：
+`name` 字段需要配置为 Swift Package 中定义的产品名称，请查看三方库git地址根目录中Package.swift文件（如果三方库支持spm），具体对应关系如下：
 
 ### 1. Package.swift 中的定义
 ```swift
@@ -205,6 +193,22 @@ let package = Package(
 }
 ```
 
+## kind 类型详细说明
+
+| kind 类型 | 必需参数 | 说明 | 版本范围示例 |
+|-----------|----------|------|-------------|
+| **exactVersion** | version | 精确版本匹配 | 固定版本 5.7.1 |
+| **upToNextMajorVersion** | minimumVersion | 默认最常用，主版本兼容 | [5.7.1, 6.x) 左闭右开 |
+| **upToNextMinorVersion** | minimumVersion | 小版本兼容 | [5.7.1, 5.8.x) 左闭右开 |
+| **versionRange** | minimumVersion, maximumVersion | 版本区间设置 | [5.7.1, 5.7.8) 左闭右开 |
+| **branch** | branch | 分支跟踪 | 跟踪指定分支（如 main） |
+| **revision** | revision | 提交锁定 | 锁定具体 commit hash |
+
+### 版本范围说明
+
+- **upToNextMajorVersion**: 自动升级兼容未来主版本，如 "5.7.1" 会升级到 5.x 版本，但不会升级到 6.x
+- **upToNextMinorVersion**: 自动升级兼容未来小版本，如 "5.7.1" 会升级到 5.7.x 版本，但不会升级到 5.8.x
+- **versionRange**: 在指定版本区间内自动升级，如 [5.7.1, 5.7.8) 表示从 5.7.1 到 5.7.8（不包含）
 
 
 ## SPM 依赖库版本要求读取
@@ -234,8 +238,3 @@ let package = Package(
 - **默认行为**：如果没有声明 `platforms`，表示默认兼容 iOS 8 及以上（SwiftPM 默认最低 iOS 8）
 - **现代包特点**：大多数现代包都会显式声明最低版本要求
 
-## 版本范围说明
-
-- **upToNextMajorVersion**: 自动升级兼容未来主版本，如 "5.7.1" 会升级到 5.x 版本，但不会升级到 6.x
-- **upToNextMinorVersion**: 自动升级兼容未来小版本，如 "5.7.1" 会升级到 5.7.x 版本，但不会升级到 5.8.x
-- **versionRange**: 在指定版本区间内自动升级，如 [5.7.1, 5.7.8) 表示从 5.7.1 到 5.7.8（不包含）
