@@ -16,6 +16,7 @@
 <!-- CSSJSON.text-overflow.example -->
 
 #### App平台差异
-text-overflow 样式不支持继承
+- text-overflow 样式不支持继承
+- app 平台无法截断单个字符，即不会出现某个字符只显示一部分的情况
 
 <!-- CSSJSON.text-overflow.reference -->
