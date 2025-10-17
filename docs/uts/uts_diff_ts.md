@@ -1402,13 +1402,13 @@ inc(); // 2
 
 #### 在函数表达式中不可以访问未声明的变量或函数（包括自身）@uts110111165
 
-<!-- UTSDIFFTSJSON.UTS110111165_1.type -->
+<!-- UTSDIFFTSJSON.UTS110111165.type -->
 
-<!-- UTSDIFFTSJSON.UTS110111165_1.code -->
+<!-- UTSDIFFTSJSON.UTS110111165.code -->
 
-<!-- UTSDIFFTSJSON.UTS110111165_1.description -->
+<!-- UTSDIFFTSJSON.UTS110111165.description -->
 
-<!-- UTSDIFFTSJSON.UTS110111165_1.compatibility -->
+<!-- UTSDIFFTSJSON.UTS110111165.compatibility -->
 
 TypeScript写法:
 
