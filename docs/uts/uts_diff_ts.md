@@ -1400,6 +1400,36 @@ inc(); // 1
 inc(); // 2
 ```
 
+#### 在函数表达式中不可以访问未声明的变量或函数（包括自身）@uts110111165
+
+<!-- UTSDIFFTSJSON.UTS110111165_1.type -->
+
+<!-- UTSDIFFTSJSON.UTS110111165_1.code -->
+
+<!-- UTSDIFFTSJSON.UTS110111165_1.description -->
+
+<!-- UTSDIFFTSJSON.UTS110111165_1.compatibility -->
+
+TypeScript写法:
+
+```ts
+const fn = function () {
+    console.log(fn)
+}
+fn()
+```
+
+UTS正确写法：
+
+```ts
+let fn: (() => void) | null = null
+fn = function () {
+    console.log(fn) // 此时 fn 可以正常访问
+    fn!() // 如果需要调用就必须要加`!`
+}
+fn()
+```
+
 #### 不支持函数分配给接口 @uts120000000
 
 <!-- UTSDIFFTSJSON.UTS120000000.type -->
