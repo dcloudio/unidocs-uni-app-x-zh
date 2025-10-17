@@ -353,6 +353,7 @@ fn()
 let fn: (() => void) | null = null
 fn = function () {
     console.log(fn) // 此时 fn 可以正常访问
+    fn!() // 如果需要调用就必须要加`!`
 }
 fn()
 ```
