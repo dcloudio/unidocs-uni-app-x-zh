@@ -65,3 +65,4 @@
 - app-android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸
 - app-android平台不支持CMYK色彩的图片，[详见](https://github.com/facebook/fresco/issues/1404)
 - app-ios平台 iOS14 版本开始系统原生支持 WebP 图片格式，iOS14以下的版本使用三方解码器软解码实现对 WebP 的支持，性能存在一定损耗。如果在iOS14以下同一页面中大量使用WebP图片，会增加性能损耗
+- app-ios平台不支持padding style（padding-top、padding-left、padding-right、padding-bottom）
