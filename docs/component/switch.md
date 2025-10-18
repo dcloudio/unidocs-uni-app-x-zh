@@ -16,6 +16,8 @@ type为checkbox只有微信小程序和Web平台支持。一般建议使用标�
 
 <!-- UTSCOMJSON.switch.children -->
 
+### 注意事项：
+- app-ios平台不支持padding style（padding-top、padding-left、padding-right、padding-bottom）
 <!-- UTSCOMJSON.switch.example -->
 
 <!-- UTSCOMJSON.switch.reference -->
