@@ -13,6 +13,9 @@
 
 <!-- CSSJSON.padding-bottom.compatibility -->
 
+### 注意
+- app-ios平台不支持不支持slider、switch、web-view、image 组件
+
 <!-- CSSJSON.padding-bottom.example -->
 
 <!-- CSSJSON.padding-bottom.reference -->
