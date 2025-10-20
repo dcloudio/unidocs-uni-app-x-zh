@@ -356,15 +356,19 @@ Uni`组件名(驼峰)`Element
 
 ### 组件监听应用、页面生命周期 @component-page-lifecycle
 
-> 选项式 API 和 组件式 API 在监听页面生命周期时有所不同
+> 选项式 API 和 组合式 API 在监听页面生命周期时有所不同
 >
 > 比如选项式 API 中的 `onShow`、`onHide` 监听页面生命周期在组合式 API 中分别对应 `onPageShow`、`onPageHide`（在组合式 API 时会和 App 的生命周期冲突）
 >
 > 具体请查看 [页面生命周期](../page.md#lifecycle)
 
+|组件中监听应用生命周期 |Android |HarmonyOS |iOS |Web |微信小程序 |
+|:-:			          |:-:		 |:-:		    |:-: |:-:	 |:-:		  |
+|onAppHide          |4.11    |x         |x   |4.11 |x        |
+|onAppShow          |4.11    |x         |x   |4.11 |x        |
+
 ::: warning 注意
-1. onAppHide、onAppShow 目前只有 Android 支持
-2. onPageHide、onPageShow 需要写在选项式的 setup 函数 或者 组合式 `<script setup>` 中才能生效
+ `onPageHide`、`onPageShow` 需要写在选项式的 setup 函数或者组合式 `<script setup>` 中才能生效
 :::
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.gitUrl -->)
