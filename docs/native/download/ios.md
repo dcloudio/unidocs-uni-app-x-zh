@@ -23,14 +23,12 @@
 
 ## alpha版
 
-### 4.82.2025093004-alpha
+### 4.83.2025101705-alpha
 
-**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/iOS/UniAppX-iOS%404.82.zip)**
+**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/iOS/UniAppX-iOS%404.83.zip)**
 
-* 更新 uni-ad 优量汇SDK 为 4.15.60 版 [文档](https://doc.dcloud.net.cn/uni-app-x/component/ad.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=21887>
-* 修复 4.81版本引发的 发行 提交 AppStore 审核报"二进制文件无效"，提示`ITMS-91065: Missing signature - Your app includes “Frameworks/SDWebImage.framework/SDWebImage”` [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21949)
-* 修复 组件 input 在 scrollView 中获取焦点弹起键盘遮挡输入框时，点击 webview 自动收起键盘后界面异常 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21902)
-* 修复 组件 video 在 iOS15 及以上系统播放时静音，开始播放后无法通过音量键调大音量 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=2860)
+* 新增 API uni.getDeviceInfo 返回的 deviceModel 支持 iPhone 17、iPhone 17 Pro、iPhone17ProMax、iPhoneAir 等设备型号 [文档](https://doc.dcloud.net.cn/uni-app-x/api/get-device-info.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=22381>
+* 更新 uni-ad 快手广告和快手内容联盟SDK 为 4.9.20.1 版；穿山甲&GroMore SDK 为 7.2.0.0 版；Sigmob广告联盟SDK 为 4.20.3 版；百度百青藤广告SDK 为 10.02 版；章鱼广告SDK 为 2.5.10.10 版；泛连广告SDK 为 2.8.8.0.0 版；华夏乐游SDK 为 2.16.0 版；A支持双十一预算 [文档](https://doc.dcloud.net.cn/uni-app-x/api/create-rewarded-video-ad.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=22382>
 
 **[历史版本](https://pan.baidu.com/s/130Rvlh2jdsp3aJ4YtigoJQ?pwd=xy7s)**
  
