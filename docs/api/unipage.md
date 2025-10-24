@@ -23,6 +23,8 @@ UniPage在App和Web平台较完善，在小程序端受小程序未开放，很�
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.getPageStyle.description -->
 
+pages.json里的页面配置，即page下的style节点的内容，可以通过本API获取。但注意这里获取的是UniPage上的最终生效值，不是pages.json里的原始配置。
+
 <!-- CUSTOMTYPEJSON.UniPage.methods.getPageStyle.compatibility -->
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.getPageStyle.param -->
@@ -34,6 +36,8 @@ UniPage在App和Web平台较完善，在小程序端受小程序未开放，很�
 <!-- CUSTOMTYPEJSON.UniPage.methods.setPageStyle.name -->
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.setPageStyle.description -->
+
+pages.json里的内容是静态的，通过本API可以动态设置UniPage的Style，但并非所有页面样式都支持动态配置，具体见下PageStyle。
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.setPageStyle.compatibility -->
 
