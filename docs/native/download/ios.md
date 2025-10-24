@@ -23,12 +23,11 @@
 
 ## alpha版
 
-### 4.83.2025101705-alpha
+### 4.84.2025102304-alpha
 
-**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/iOS/UniAppX-iOS%404.83.zip)**
+**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/iOS/UniAppX-iOS%404.84.zip)**
 
-* 新增 API uni.getDeviceInfo 返回的 deviceModel 支持 iPhone 17、iPhone 17 Pro、iPhone17ProMax、iPhoneAir 等设备型号 [文档](https://doc.dcloud.net.cn/uni-app-x/api/get-device-info.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=22381>
-* 更新 uni-ad 快手广告和快手内容联盟SDK 为 4.9.20.1 版；穿山甲&GroMore SDK 为 7.2.0.0 版；Sigmob广告联盟SDK 为 4.20.3 版；百度百青藤广告SDK 为 10.02 版；章鱼广告SDK 为 2.5.10.10 版；泛连广告SDK 为 2.8.8.0.0 版；华夏乐游SDK 为 2.16.0 版；A支持双十一预算 [文档](https://doc.dcloud.net.cn/uni-app-x/api/create-rewarded-video-ad.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=22382>
+* 新增 组件 web-view 支持 disable-user-select-menu 设置是否禁用文本选择时弹出系统菜单 [文档](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=21728>
 
 **[历史版本](https://pan.baidu.com/s/130Rvlh2jdsp3aJ4YtigoJQ?pwd=xy7s)**
  
