@@ -639,8 +639,38 @@ NVRecycler() {
 
 **注意**
 
-`UTSAndroid.getUniActivity()/UTSAndroid.getAppContext()` 在组件内不建议使用，请使用`$androidContext`来替代
+- `UTSAndroid.getUniActivity()/UTSAndroid.getAppContext()` 在组件内不建议使用，请使用`$androidContext`来替代
 
+- uniapp-x 中 ios 端事件参数类型需要使用 UniEvent 接收
+	
+    发送事件
+    
+    ```JavaScript
+    var map = new Map<string,any>()
+	map.set("name","xx")
+	map.set("age", 10)
+    // 发送事件
+    this.component.$emit("buttonclick",map);
+    ```
+	
+    接收事件
+	
+	```html
+	// uniapp-x 两端接收自定义事件参数的差异
+	// #ifdef APP-IOS
+	const buttonclick=(e:UniEvent)=>{
+		console.log('回传参数===',e.name)
+		console.log('回传参数===',e.age)
+	}
+	// #endif
+	
+	// #ifdef APP-ANDROID
+	const buttonclick=(e:Map<string,any>)=>{
+		console.log('回传参数=====',e.get('name'))
+		console.log('回传参数=====',e.get('age'))
+	}
+	// #endif
+	```
 
 ### 通用事件
 
