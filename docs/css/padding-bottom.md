@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.padding-bottom.syntax -->
 
+<!-- CSSJSON.padding-bottom.restrictions -->
+
 <!-- CSSJSON.padding-bottom.values -->
 
 <!-- CSSJSON.padding-bottom.defaultValue -->

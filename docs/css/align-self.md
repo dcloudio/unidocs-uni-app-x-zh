@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.align-self.syntax -->
 
+<!-- CSSJSON.align-self.restrictions -->
+
 <!-- CSSJSON.align-self.values -->
 
 <!-- CSSJSON.align-self.defaultValue -->

@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.flex-basis.syntax -->
 
+<!-- CSSJSON.flex-basis.restrictions -->
+
 <!-- CSSJSON.flex-basis.values -->
 
 <!-- CSSJSON.flex-basis.defaultValue -->

@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.visibility.syntax -->
 
+<!-- CSSJSON.visibility.restrictions -->
+
 <!-- CSSJSON.visibility.values -->
 
 **注意**

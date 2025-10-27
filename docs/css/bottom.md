@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.bottom.syntax -->
 
+<!-- CSSJSON.bottom.restrictions -->
+
 <!-- CSSJSON.bottom.values -->
 
 <!-- CSSJSON.bottom.defaultValue -->

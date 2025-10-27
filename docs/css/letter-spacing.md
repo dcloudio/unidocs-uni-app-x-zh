@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.letter-spacing.syntax -->
 
+<!-- CSSJSON.letter-spacing.restrictions -->
+
 <!-- CSSJSON.letter-spacing.values -->
 
 <!-- CSSJSON.letter-spacing.defaultValue -->

@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.background-clip.syntax -->
 
+<!-- CSSJSON.background-clip.restrictions -->
+
 <!-- CSSJSON.background-clip.values -->
 
 <!-- CSSJSON.background-clip.defaultValue -->

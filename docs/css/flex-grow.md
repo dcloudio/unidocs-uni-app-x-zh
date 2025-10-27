@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.flex-grow.syntax -->
 
+<!-- CSSJSON.flex-grow.restrictions -->
+
 <!-- CSSJSON.flex-grow.values -->
 
 <!-- CSSJSON.flex-grow.defaultValue -->

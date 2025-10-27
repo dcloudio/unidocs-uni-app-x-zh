@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.font-style.syntax -->
 
+<!-- CSSJSON.font-style.restrictions -->
+
 <!-- CSSJSON.font-style.values -->
 
 <!-- CSSJSON.font-style.defaultValue -->

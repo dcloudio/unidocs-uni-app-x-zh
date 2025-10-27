@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.min-width.syntax -->
 
+<!-- CSSJSON.min-width.restrictions -->
+
 <!-- CSSJSON.min-width.values -->
 
 <!-- CSSJSON.min-width.defaultValue -->

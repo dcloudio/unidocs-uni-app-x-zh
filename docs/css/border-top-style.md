@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.border-top-style.syntax -->
 
+<!-- CSSJSON.border-top-style.restrictions -->
+
 <!-- CSSJSON.border-top-style.values -->
 
 <!-- CSSJSON.border-top-style.defaultValue -->

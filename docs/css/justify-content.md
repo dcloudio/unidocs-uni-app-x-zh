@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.justify-content.syntax -->
 
+<!-- CSSJSON.justify-content.restrictions -->
+
 <!-- CSSJSON.justify-content.values -->
 
 <!-- CSSJSON.justify-content.defaultValue -->

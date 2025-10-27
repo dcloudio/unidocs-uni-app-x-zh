@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.text-align.syntax -->
 
+<!-- CSSJSON.text-align.restrictions -->
+
 <!-- CSSJSON.text-align.values -->
 
 <!-- CSSJSON.text-align.defaultValue -->

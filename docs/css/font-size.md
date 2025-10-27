@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.font-size.syntax -->
 
+<!-- CSSJSON.font-size.restrictions -->
+
 <!-- CSSJSON.font-size.values -->
 
 <!-- CSSJSON.font-size.defaultValue -->

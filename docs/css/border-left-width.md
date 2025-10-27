@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.border-left-width.syntax -->
 
+<!-- CSSJSON.border-left-width.restrictions -->
+
 <!-- CSSJSON.border-left-width.values -->
 
 <!-- CSSJSON.border-left-width.defaultValue -->

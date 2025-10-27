@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.border-right-style.syntax -->
 
+<!-- CSSJSON.border-right-style.restrictions -->
+
 <!-- CSSJSON.border-right-style.values -->
 
 <!-- CSSJSON.border-right-style.defaultValue -->

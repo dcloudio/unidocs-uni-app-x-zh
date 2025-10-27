@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.transition-duration.syntax -->
 
+<!-- CSSJSON.transition-duration.restrictions -->
+
 <!-- CSSJSON.transition-duration.values -->
 
 <!-- CSSJSON.transition-duration.defaultValue -->

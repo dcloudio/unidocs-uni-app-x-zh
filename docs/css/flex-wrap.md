@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.flex-wrap.syntax -->
 
+<!-- CSSJSON.flex-wrap.restrictions -->
+
 <!-- CSSJSON.flex-wrap.values -->
 
 <!-- CSSJSON.flex-wrap.defaultValue -->

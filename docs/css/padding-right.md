@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.padding-right.syntax -->
 
+<!-- CSSJSON.padding-right.restrictions -->
+
 <!-- CSSJSON.padding-right.values -->
 
 <!-- CSSJSON.padding-right.defaultValue -->

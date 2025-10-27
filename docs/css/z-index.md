@@ -28,6 +28,8 @@ root
 
 <!-- CSSJSON.z-index.syntax -->
 
+<!-- CSSJSON.z-index.restrictions -->
+
 <!-- CSSJSON.z-index.values -->
 
 <!-- CSSJSON.z-index.defaultValue -->

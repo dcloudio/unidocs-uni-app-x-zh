@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.opacity.syntax -->
 
+<!-- CSSJSON.opacity.restrictions -->
+
 <!-- CSSJSON.opacity.values -->
 
 <!-- CSSJSON.opacity.defaultValue -->

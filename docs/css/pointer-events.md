@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.pointer-events.syntax -->
 
+<!-- CSSJSON.pointer-events.restrictions -->
+
 <!-- CSSJSON.pointer-events.values -->
 
 <!-- CSSJSON.pointer-events.defaultValue -->

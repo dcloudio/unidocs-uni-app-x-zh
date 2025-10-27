@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.box-sizing.syntax -->
 
+<!-- CSSJSON.box-sizing.restrictions -->
+
 <!-- CSSJSON.box-sizing.values -->
 
 <!-- CSSJSON.box-sizing.defaultValue -->

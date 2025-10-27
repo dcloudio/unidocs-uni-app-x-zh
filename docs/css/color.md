@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.color.syntax -->
 
+<!-- CSSJSON.color.restrictions -->
+
 <!-- CSSJSON.color.values -->
 
 <!-- CSSJSON.color.defaultValue -->

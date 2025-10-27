@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.transform.syntax -->
 
+<!-- CSSJSON.transform.restrictions -->
+
 <!-- CSSJSON.transform.values -->
 
 <!-- CSSJSON.transform.defaultValue -->

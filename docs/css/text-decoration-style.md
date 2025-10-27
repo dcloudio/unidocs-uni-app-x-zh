@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.text-decoration-style.syntax -->
 
+<!-- CSSJSON.text-decoration-style.restrictions -->
+
 <!-- CSSJSON.text-decoration-style.values -->
 
 <!-- CSSJSON.text-decoration-style.defaultValue -->

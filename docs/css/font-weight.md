@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.font-weight.syntax -->
 
+<!-- CSSJSON.font-weight.restrictions -->
+
 <!-- CSSJSON.font-weight.values -->
 
 <!-- CSSJSON.font-weight.defaultValue -->

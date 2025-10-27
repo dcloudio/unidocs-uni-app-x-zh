@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.height.syntax -->
 
+<!-- CSSJSON.height.restrictions -->
+
 <!-- CSSJSON.height.values -->
 
 **注意**

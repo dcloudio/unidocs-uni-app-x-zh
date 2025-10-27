@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.box-shadow.syntax -->
 
+<!-- CSSJSON.box-shadow.restrictions -->
+
 <!-- CSSJSON.box-shadow.values -->
 
 <!-- CSSJSON.box-shadow.defaultValue -->

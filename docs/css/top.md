@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.top.syntax -->
 
+<!-- CSSJSON.top.restrictions -->
+
 <!-- CSSJSON.top.values -->
 
 <!-- CSSJSON.top.defaultValue -->

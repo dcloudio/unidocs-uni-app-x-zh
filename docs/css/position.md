@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.position.syntax -->
 
+<!-- CSSJSON.position.restrictions -->
+
 <!-- CSSJSON.position.values -->
 
 <!-- CSSJSON.position.defaultValue -->

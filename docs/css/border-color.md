@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.border-color.syntax -->
 
+<!-- CSSJSON.border-color.restrictions -->
+
 <!-- CSSJSON.border-color.values -->
 
 <!-- CSSJSON.border-color.defaultValue -->

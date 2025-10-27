@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.max-height.syntax -->
 
+<!-- CSSJSON.max-height.restrictions -->
+
 <!-- CSSJSON.max-height.values -->
 
 <!-- CSSJSON.max-height.defaultValue -->

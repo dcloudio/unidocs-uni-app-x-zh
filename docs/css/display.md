@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.display.syntax -->
 
+<!-- CSSJSON.display.restrictions -->
+
 <!-- CSSJSON.display.values -->
 
 **注意**

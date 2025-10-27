@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.flex-direction.syntax -->
 
+<!-- CSSJSON.flex-direction.restrictions -->
+
 <!-- CSSJSON.flex-direction.values -->
 
 <!-- CSSJSON.flex-direction.defaultValue -->

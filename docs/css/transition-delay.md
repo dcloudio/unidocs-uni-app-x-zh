@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.transition-delay.syntax -->
 
+<!-- CSSJSON.transition-delay.restrictions -->
+
 <!-- CSSJSON.transition-delay.values -->
 
 #### App平台

@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.text-overflow.syntax -->
 
+<!-- CSSJSON.text-overflow.restrictions -->
+
 <!-- CSSJSON.text-overflow.values -->
 
 <!-- CSSJSON.text-overflow.defaultValue -->

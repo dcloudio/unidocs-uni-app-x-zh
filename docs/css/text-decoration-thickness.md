@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.text-decoration-thickness.syntax -->
 
+<!-- CSSJSON.text-decoration-thickness.restrictions -->
+
 <!-- CSSJSON.text-decoration-thickness.values -->
 
 <!-- CSSJSON.text-decoration-thickness.defaultValue -->

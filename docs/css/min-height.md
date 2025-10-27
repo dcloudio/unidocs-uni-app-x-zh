@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.min-height.syntax -->
 
+<!-- CSSJSON.min-height.restrictions -->
+
 <!-- CSSJSON.min-height.values -->
 
 <!-- CSSJSON.min-height.defaultValue -->

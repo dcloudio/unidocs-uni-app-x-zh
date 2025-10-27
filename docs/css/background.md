@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.background.syntax -->
 
+<!-- CSSJSON.background.restrictions -->
+
 <!-- CSSJSON.background.values -->
 
 <!-- CSSJSON.background.defaultValue -->

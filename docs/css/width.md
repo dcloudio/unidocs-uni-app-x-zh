@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.width.syntax -->
 
+<!-- CSSJSON.width.restrictions -->
+
 <!-- CSSJSON.width.values -->
 
 **注意**

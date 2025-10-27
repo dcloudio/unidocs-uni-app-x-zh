@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.transform-origin.syntax -->
 
+<!-- CSSJSON.transform-origin.restrictions -->
+
 <!-- CSSJSON.transform-origin.values -->
 
 <!-- CSSJSON.transform-origin.defaultValue -->

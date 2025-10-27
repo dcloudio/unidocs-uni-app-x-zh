@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.white-space.syntax -->
 
+<!-- CSSJSON.white-space.restrictions -->
+
 <!-- CSSJSON.white-space.values -->
 
 <!-- CSSJSON.white-space.defaultValue -->

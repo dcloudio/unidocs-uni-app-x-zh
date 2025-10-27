@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.border-bottom-right-radius.syntax -->
 
+<!-- CSSJSON.border-bottom-right-radius.restrictions -->
+
 <!-- CSSJSON.border-bottom-right-radius.values -->
 
 <!-- CSSJSON.border-bottom-right-radius.defaultValue -->

@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.max-width.syntax -->
 
+<!-- CSSJSON.max-width.restrictions -->
+
 <!-- CSSJSON.max-width.values -->
 
 <!-- CSSJSON.max-width.defaultValue -->

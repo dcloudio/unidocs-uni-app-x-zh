@@ -7,6 +7,8 @@
 
 <!-- CSSJSON.text-shadow.syntax -->
 
+<!-- CSSJSON.text-shadow.restrictions -->
+
 <!-- CSSJSON.text-shadow.values -->
 
 <!-- CSSJSON.text-shadow.defaultValue -->

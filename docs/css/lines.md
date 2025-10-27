@@ -5,6 +5,8 @@
 
 <!-- CSSJSON.lines.syntax -->
 
+<!-- CSSJSON.lines.restrictions -->
+
 <!-- CSSJSON.lines.values -->
 
 <!-- CSSJSON.lines.defaultValue -->
