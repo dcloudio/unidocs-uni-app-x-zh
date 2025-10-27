@@ -1,11 +1,30 @@
-# 长度单位 @length
+## 长度单位 @length
 
-- 长度 `<length>` 用于表示距离尺寸的 CSS 数据类型。许多 CSS 属性会用到长度，比如 width、margin、padding。
-- 长度 `<percentage>` 表述一个百分比值。许多 CSS 属性 可以取百分比值，用以根据父对象来确定大小。百分比值由一个`<number>`具体数值后跟着%符号构成。就像其他在 css 里的单位一样，在%和数值之间是不允许有空格的。
+长度单位用于定义元素在页面中的尺寸、间距、位置和大小等视觉表现。
 
+### 类型  
+
+#### <length> @lengthvalue
+CSS 长度数据类型 `<length>` 表述一个表示距离值，由一个 `<number>` 和一个长度单位构成，在单位的字面值与数字之间没有空格。  
+许多 CSS 属性会用到长度，比如 [width](../width.md)、[height](../height.md)、[margin](../margin.md)、[padding](../padding.md)、[border-width](../border-width.md) 等。
+
+**注意**  
+- App平台长度 `<length>` 可以不设置单位，不设置单位时当做 px 处理
+- Web平台长度 `<length>` 必须设置单位，不设置单位时当做无效值处理
+
+#### <percentage> @lengthpercentage
+CSS 长度数据类型 `<percentage>` 表述一个百分比值。许多 CSS 属性 可以取百分比值，用以根据父元素来确定大小。百分比值由一个`<number>`具体数值后跟着%符号构成，在%和数值之间是不允许有空格。  
+许多 CSS 属性支持使用百分比，如 [width](../width.md)、[height](../height.md)、[margin](../margin.md)、[padding](../padding.md) 等。
+
+#### <length-function> @lengthfunction
+CSS 长度数据类型 `<length-function>` 表述一个 css 函数长度值，支持以下 css 函数：  
+- [env](./function.md#env)  
+
+
+### 兼容性
 <!-- CSSJSON.length_values.compatibility -->
 
-## rpx
+### rpx
 `rpx` 是一个以设备750px为基准的单位，`750rpx`即为屏幕宽度，相当于100%；`375rpx`即为屏幕一半宽度，相当于50%。
 
 因为很多设计稿是以750px为基准出图的，所以使用rpx可以比较好的在不同屏幕宽度下还原设计稿。
@@ -36,7 +55,7 @@ rpx需要根据屏幕宽度做一次计算转换；而百分比需要根据父�
 有些开发者，在font-size，height、padding、margin、边框、阴影，都在使用rpx。这是非常不推荐的行为，性能差且屏幕适配能力差。\
 rpx比较适合的场景是view的宽度width设置。
 
-## 不同单位的差异
+### 不同单位的差异
 - 长度默认值差异
 	* App平台长度 `<length>` 可以不设置单位，不设置单位时当做 px 处理
 	* Web平台长度 `<length>` 必须设置单位，不设置单位时当做无效值处理 \
@@ -51,7 +70,7 @@ rpx比较适合的场景是view的宽度width设置。
 - 性能差异
    * 性能 px > rpx > 百分比。rpx需要根据屏幕宽度换算为px，而百分比需要根据父容器的高或宽换算为px，计算复杂度高于rpx。
 
-:::
+
 
 ## 字体大小单位
 
