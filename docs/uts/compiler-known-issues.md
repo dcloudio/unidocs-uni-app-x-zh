@@ -688,3 +688,30 @@ const someObject = {
 }
 console.log(someObject.a)
 ```
+
+## 要求非null,但传递了可能为null的值导致编译报错
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：函数参数要求非空值，但传递了一个可能为空的数值。
+
+复现代码：
+
+```ts
+let targetUrl = ""
+let url = decodeURI(targetUrl as string)
+uni.redirectTo({
+	url: url
+})
+```
+
+修复代码：判断url是否为null
+
+```ts
+let targetUrl = ""
+let url = decodeURI(targetUrl as string)
+if (url != null) {
+	uni.redirectTo({
+		url: url
+	})
+}
+```
