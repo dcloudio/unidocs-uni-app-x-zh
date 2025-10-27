@@ -261,9 +261,15 @@ App仅对`同层的兄弟节点`之间支持`z-index`来调节层级。不支持
 
 目前支持url()、rgb()、rgba()、var()、env()。[详见](./common/function.md)
 
-<!-- CSSJSON.readmeTable.name -->
+<!-- CSSJSON.style_list.name -->
 
-<!-- CSSJSON.readmeTable.compatibility -->
+<!-- CSSJSON.style_list.compatibility -->
+
+<!-- CSSJSON.style_reset_list.name -->
+
+<!-- CSSJSON.style_reset_list.description -->
+
+<!-- CSSJSON.style_reset_list.compatibility -->
 
 ## Bug
 
