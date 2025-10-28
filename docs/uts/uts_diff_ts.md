@@ -852,6 +852,37 @@ interface SelectableControl extends Control {
 }
 ```
 
+#### 接口不能出现在局部作用域中 @uts110111166
+
+<!-- UTSDIFFTSJSON.UTS110111166.type -->
+
+<!-- UTSDIFFTSJSON.UTS110111166.code -->
+
+<!-- UTSDIFFTSJSON.UTS110111166.description -->
+
+<!-- UTSDIFFTSJSON.UTS110111166.compatibility -->
+
+TypeScript写法:
+
+```ts
+function test() {
+	interface Test {
+		
+	}
+}
+```
+
+UTS正确写法：
+
+```ts
+interface Test {
+		
+}
+function test() {
+
+}
+```
+
 #### 不支持修改对象的方法 @uts110111134
 
 <!-- UTSDIFFTSJSON.UTS110111134.type -->
