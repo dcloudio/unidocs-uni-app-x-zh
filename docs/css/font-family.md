@@ -39,7 +39,8 @@
 
 
 ### App平台差异
-- font-family 样式不支持继承，每层组件都需要设样式
+- app平台 font-family 样式不支持继承，每层组件都需要设样式
+- app平台 font-family 属性值不支持使用分隔符（,）多个字体名称设置字体回退列表，仅支持设置一个字体
 
 <!-- CSSJSON.font-family.reference -->
 
