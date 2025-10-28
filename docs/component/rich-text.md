@@ -25,8 +25,38 @@
 |img    |src    |       |
 
 > text-decoration仅支持line-through
+> 仅在 app-android 平台配置 mode=native 时受上述表格限制
 
 <!-- UTSCOMJSON.rich-text.attribute -->
+
+### 节点列表数据结构
+``` json
+{
+    name: "p", // 标签名
+    attrs: {
+        style: "color: red;" // 样式
+    },
+    children: [ // 子节点
+        {
+            text: "hello uni-app x" // 文本节点
+        },
+        {
+            name: "img", // img 标签
+            attrs: {
+                src: "https://web-ext-storage.dcloud.net.cn/uni-app-x/logo.ico",
+                width: "100",
+                height: "100"
+            }
+        },
+        {
+            name: "a", // a 标签
+            attrs: {
+                href: "https://www.dcloud.io"
+            }
+        }
+    ]
+}
+```
 
 <!-- UTSCOMJSON.rich-text.event -->
 
