@@ -18,6 +18,6 @@
 <!-- CSSJSON.text-decoration.example -->
 
 #### App平台差异
-text-decoration 样式不支持继承
+App平台不支持 text-decoration 简写样式，仅支持 [text-decoration-line](./text-decoration-line.md) 设置修饰线类型。  
 
 <!-- CSSJSON.text-decoration.reference -->
