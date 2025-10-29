@@ -689,7 +689,7 @@ const someObject = {
 console.log(someObject.a)
 ```
 
-## 要求非null,但传递了可能为null的值导致编译报错 @error17
+## 类型不匹配 @error17
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：函数参数要求非空值，但传递了一个可能为空的数值。
@@ -715,3 +715,35 @@ if (url != null) {
 	})
 }
 ```
+
+## Unresolved reference 'xxx'. @error18
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：变量为定义
+
+复现代码：
+
+```ts
+function test() {
+	xxx()
+}
+```
+
+修复代码：
+
+```ts
+function xxx() {
+
+}
+function test() {
+	xxx()
+}
+```
+
+::: tip Tips  
+该问题出现的原因有很多，常见的场景有:
+
+- 拼写错误
+- 未遵守“先定义后使用”的规定，使用代码在定义代码之前。
+- 如果对于需要自定义基座的uni api或三方插件，请注意打包自定义基座后运行自定义基座使用。尤其要注意“先使用后打包”原则，避免打包时[摇树机制](../collocation/manifest-modules.md#treeshaking)导致没有把相关api或插件打包进去。
+:::
