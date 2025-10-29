@@ -4,7 +4,7 @@
 
 ### 类型  
 
-#### <length> @lengthvalue
+#### length @lengthvalue
 CSS 长度数据类型 `<length>` 表述一个表示距离值，由一个 `<number>` 和一个长度单位构成，在单位的字面值与数字之间没有空格。  
 许多 CSS 属性会用到长度，比如 [width](../width.md)、[height](../height.md)、[margin](../margin.md)、[padding](../padding.md)、[border-width](../border-width.md) 等。
 
@@ -12,13 +12,9 @@ CSS 长度数据类型 `<length>` 表述一个表示距离值，由一个 `<numb
 - App平台长度 `<length>` 可以不设置单位，不设置单位时当做 px 处理
 - Web平台长度 `<length>` 必须设置单位，不设置单位时当做无效值处理
 
-#### <percentage> @lengthpercentage
+#### percentage @lengthpercentage
 CSS 长度数据类型 `<percentage>` 表述一个百分比值。许多 CSS 属性 可以取百分比值，用以根据父元素来确定大小。百分比值由一个`<number>`具体数值后跟着%符号构成，在%和数值之间是不允许有空格。  
 许多 CSS 属性支持使用百分比，如 [width](../width.md)、[height](../height.md)、[margin](../margin.md)、[padding](../padding.md) 等。
-
-#### <length-function> @lengthfunction
-CSS 长度数据类型 `<length-function>` 表述一个 css 函数长度值，支持以下 css 函数：  
-- [env](./function.md#env)  
 
 
 ### 兼容性
