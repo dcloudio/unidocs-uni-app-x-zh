@@ -2,7 +2,7 @@
 
 本文档用于记录与追踪 UTS 编译器的已知问题，便于定位、规避与修复。
 
-## withDefaults 与可选 Props 推断异常
+## withDefaults 与可选 Props 推断异常 @error1
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：在 `<script setup lang="uts">` 中，将 `Props.text` 声明为可选（`text?: string`），并通过 `withDefaults` 以函数形式提供默认值时，编译器未正确处理，可能导致渲染或类型推断异常。
@@ -49,7 +49,7 @@ const props = withDefaults(defineProps<Props>(), {
 ```
 
 
-## data 中对象未显式类型，模板访问属性导致编译问题
+## data 中对象未显式类型，模板访问属性导致编译问题 @error2
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：`data()` 中返回的对象字段未显式类型时，模板访问其子属性可能触发编译/类型检查问题。
@@ -99,7 +99,7 @@ export default {
 </script>
 ```
 
-## 仅在uni_modules插件下interface.uts定义的类型在页面中引用导致编译失败
+## 仅在uni_modules插件下interface.uts定义的类型在页面中引用导致编译失败 @error3
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：若类型仅存在于 `interface.uts` 且未在对应平台目录下的 uts 源文件中参与编译，编译器不会将该类型打包到最终产物，页面引用时将导致编译失败。
@@ -131,7 +131,7 @@ console.log(msg.type);
 修复状态：设计约束/使用限制，按上述建议调整工程结构。
 
 
-## 页面 onTabItemTap 生命周期（编译失败）
+## 页面 onTabItemTap 生命周期（编译失败） @error4
 
 
 复现代码：
@@ -152,7 +152,7 @@ console.log(msg.type);
 
 修改建议：部分平台目前不支持onTabItemTap[兼容性](https://doc.dcloud.net.cn/uni-app-x/page.html#ontabitemtap)
 
-## 组件同名前缀 + ComponentPublicInstance 类型别名
+## 组件同名前缀 + ComponentPublicInstance 类型别名 @error5
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：这个类型是easycom组件规范的，不能自行定义，类似的可能还有很多内置类型，如果开发者自己去定义这些类型，都可能产生非预期的问题。
@@ -182,7 +182,7 @@ console.log(myTestRef)
 - 或避免类型别名前缀与现有组件名完全一致；
 
 
-## 在 createApp 中向 globalProperties 挂载对象导致异常/编译失败
+## 在 createApp 中向 globalProperties 挂载对象导致异常/编译失败 @error6
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：将对象直接赋值给 `app.config.globalProperties.mydata` 在部分场景会导致编译或运行异常。
@@ -220,7 +220,7 @@ export function createApp() {
 ```
 
 
-## props 与 data 字段仅大小写差异导致编译/冲突问题
+## props 与 data 字段仅大小写差异导致编译/冲突问题 @error7
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：当 `props` 字段名与 `data` 中的字段名仅大小写不同，可能触发编译冲突或运行时行为异常。
@@ -276,7 +276,7 @@ export default {
 </script>
 ```
 
-## RequestOptions.header 声明为 object 且默认值 {} 时编译失败
+## RequestOptions.header 声明为 object 且默认值 {} 时编译失败 @error8
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：当 `RequestOptions.header?: object` 且函数参数使用解构默认值 `header = {}` 时，编译阶段可能失败。(object本身就不是一个跨端类型)
@@ -336,7 +336,7 @@ export default {
 </script>
 ```
 
-## defineComponent + Class 类型 Prop 默认值（函数）导致编译失败
+## defineComponent + Class 类型 Prop 默认值（函数）导致编译失败 @error9
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：当 props 的 `type` 为自定义 Class，且 `default` 使用工厂函数返回 `new Abc()` 时，编译阶段会报错。
@@ -376,7 +376,7 @@ export default {
 }
 ```
 
-## defineProps 默认值返回空数组需要显式数组类型
+## defineProps 默认值返回空数组需要显式数组类型 @error10
 
 - 发生版本：HBuilderX-4.75
 - 影响范围：`<script setup lang="uts">` 中使用 `defineProps`，默认值为 `[]`
@@ -424,7 +424,7 @@ const props = defineProps({
 ```
 
 
-## props 使用 UTSArray 类型且默认值为 [] 导致问题
+## props 使用 UTSArray 类型且默认值为 [] 导致问题 @error11
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：UTSArray是部分平台的内部实现，不是一个跨端类型，应该用Array类型。
@@ -472,7 +472,7 @@ export default {
 </script>
 ```
 
-## props和data大小写问题
+## props和data大小写问题 @error12
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：data和props存在相同名称，但大小写不一样的字段时编译器报错
@@ -528,7 +528,7 @@ export default {
 </script>
 ```
 
-## setup模式下, 函数定义语句位于该函数调用语句之前时报错
+## setup模式下, 函数定义语句位于该函数调用语句之前时报错 @error13
 - 发生版本：HBuilderX-4.75
 - 问题描述：编译器在处理时有特殊处理，导致存在问题
 - 修复状态：修复中
@@ -567,7 +567,7 @@ export default {
 </script>
 ```
 
-## 在 `computed` 中的函数返回数组类型但没有声明返回值类型时报错
+## 在 `computed` 中的函数返回数组类型但没有声明返回值类型时报错 @error14
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：在`computed` 中函数返回为数组，但没有声明返回值类型
@@ -618,7 +618,7 @@ export default {
 ```
 
 
-## `import * as xx from 'xx'` 时报错
+## `import * as xx from 'xx'` 时报错 @error15
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：使用export导出函数或者类，然后`import * as xx from ''`时报错
@@ -664,7 +664,7 @@ export function myFunction() {
 </script>
 ```
 
-## 解构时报错
+## 解构时报错 @error16
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：解构UTSJSONObject时报错
@@ -689,7 +689,7 @@ const someObject = {
 console.log(someObject.a)
 ```
 
-## 要求非null,但传递了可能为null的值导致编译报错
+## 要求非null,但传递了可能为null的值导致编译报错 @error17
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：函数参数要求非空值，但传递了一个可能为空的数值。
