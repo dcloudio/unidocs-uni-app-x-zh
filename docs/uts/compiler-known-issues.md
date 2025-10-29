@@ -719,7 +719,7 @@ if (url != null) {
 ## Unresolved reference 'xxx'. @error18
 
 - 发生版本：HBuilderX-4.75
-- 问题描述：变量为定义
+- 问题描述：变量未定义
 
 复现代码：
 
