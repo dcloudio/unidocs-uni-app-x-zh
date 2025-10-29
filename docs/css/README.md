@@ -253,6 +253,7 @@ app中，设置样式只有内联样式即style属性和class属性这两种方�
 * web平台页面和组件间样式隔离。需要使用v-deep或deep穿透。
 * app平台、微信小程序平台页面的样式作用于当前页面及其子组件。
 * 组件的样式仅作用于当前组件。
+
 目前暂时有平台差异，未来会统一策略。
 
 ## 层级
@@ -267,13 +268,14 @@ App仅对`同层的兄弟节点`之间支持`z-index`来调节层级。不支持
 
 标准浏览器中，有一些样式，在uni-app x中被重置了默认值，即 css reset。
 - 有的重置是因为使用习惯和便利性
-	例如flex方向，flex-direction，在W3C规范中默认是横排。在uni-app x中都是竖排。
-	例如box-sizing，在W3C规范中默认是content-box。在uni-app x中是border-box。（很多css框架都会重置浏览器这个css）
+	* 例如flex方向，flex-direction，在W3C规范中默认是横排。在uni-app x中都是竖排。
+	* 例如box-sizing，在W3C规范中默认是content-box。在uni-app x中是border-box。（很多css框架都会重置浏览器这个css）
 - 有的是因为浏览器的默认值比较复杂
+	
 	比如auto、normal、medium，这些值内部逻辑很复杂，在不同情况有不同表现。很多是历史兼容造成的包袱。
 	在uni-app x中，倾向于让值明确。
 
-这些重置需要开发者注意。具体见下：
+如下是uni-app x的css重置清单，需要开发者注意。
 
 <!-- CSSJSON.style_reset_list.compatibility -->
 
