@@ -7,3 +7,5 @@ uni-app x 支持的工程化支持，主要包括：
 - 自动化测试
 
 uni-app x不支持cli创建项目，但HBuilderX创建的项目，可以调用HBuilderX的cli来通过命令行打包。[详见](https://hx.dcloud.net.cn/cli/README)
+
+uni-app x上还不支持 eslint 相关的插件
