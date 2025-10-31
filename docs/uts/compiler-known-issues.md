@@ -721,6 +721,30 @@ if (url != null) {
 - 发生版本：HBuilderX-4.75
 - 问题描述：变量未定义/拼写错误/摇树机制
 
+#### 插件打包失败
+
+```ts
+import { xx } from '@/uni_modules/xxx';
+console.log(xx())
+```
+
+编译时日志中提示:
+
+```bash
+uni_module [xxx] (Android) 存在三方依赖或资源引用，请到HBuilderX【设置-运行配置】配置运行环境或者提交云端打自定义基座。详情参考: https://uniapp.dcloud.net.cn/tutorial/run/uts-development-android.html
+
+找不到名称“xx”
+
+```
+
+> 报错原因其实就是因为插件依赖了第三方库，导致编译前需要在HBuilderX中设置运行配置。
+
+如何修复:
+
+根据报错日志来设置运行配置就行。
+
+
+
 #### 变量未定义
 复现代码：
 
