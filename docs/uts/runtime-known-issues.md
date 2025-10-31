@@ -72,9 +72,9 @@ io.dcloud.uniapp.vue.IndexKt.mountElement(index.kt:7054)
 + 递归深度过大，超出栈容量。
 
 ```
-function  factorial(int n):number {
-    if (n == 1) return 1;
-    return n * factorial(n - 1); // 深度为 n 的递归
+function  factorial(n: number):number {
+	if (n == 1) return 1;
+	return n * factorial(n - 1); // 深度为 n 的递归
 }
 // 调用 factorial(100000) 可能导致栈溢出
 ```
