@@ -716,16 +716,17 @@ if (url != null) {
 }
 ```
 
-## Unresolved reference 'xxx'. @error18
+## Unresolved reference 'xxx' @error18
 
 - 发生版本：HBuilderX-4.75
-- 问题描述：变量未定义
+- 问题描述：变量未定义/拼写错误/摇树机制
 
+#### 变量未定义
 复现代码：
 
 ```ts
 function test() {
-	xxx()
+	xxx() // 这里xxx函数没有定义会导致报错
 }
 ```
 
@@ -740,10 +741,57 @@ function test() {
 }
 ```
 
+#### 未遵守“先定义后使用”的规定，使用代码在定义代码之前。
+
+复现代码：
+```vue
+<template>
+    <view></view>
+</template>
+
+<script setup lang="uts">
+	function test() {
+		demo() // 这里会报错
+	}
+	
+	function demo() {
+		console.log('===')
+	}
+</script>
+```
+
+修复代码：
+
+```vue
+<template>
+    <view></view>
+</template>
+
+<script setup lang="uts">
+	function demo() {
+		console.log('===')
+	}
+	function test() {
+		demo()
+	}
+</script>
+
+```
+
+#### 摇树机制(自定义基座、三方插件)
+
+复现代码：
+
+```ts
+	uni.request({
+		url: ''
+	})
+```
+
+如何修复：在打包自定义基座时，需确保包含 uni.request 相关代码。这是因为，若项目中未实际使用该接口，打包过程中因为[摇树机制](../collocation/manifest-modules.md#treeshaking)将不会自动把 uni.request 对应的 api或者插件 纳入自定义基座。这种情况下，当用户使用该自定义基座运行包含 uni.request 调用的代码时，会出现接口找不到的错误提示。
+
 ::: tip Tips  
-该问题出现的原因有很多，常见的场景有:
+其他场景有:
 
 - 拼写错误
-- 未遵守“先定义后使用”的规定，使用代码在定义代码之前。
-- 如果对于需要自定义基座的uni api或三方插件，请注意打包自定义基座后运行自定义基座使用。尤其要注意“先使用后打包”原则，避免打包时[摇树机制](../collocation/manifest-modules.md#treeshaking)导致没有把相关api或插件打包进去。
 :::
