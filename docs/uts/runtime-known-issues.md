@@ -72,7 +72,7 @@ io.dcloud.uniapp.vue.IndexKt.mountElement(index.kt:7054)
 + 递归深度过大，超出栈容量。
 
 ```
-int factorial(int n) {
+function  factorial(int n):number {
     if (n == 1) return 1;
     return n * factorial(n - 1); // 深度为 n 的递归
 }
@@ -82,8 +82,8 @@ int factorial(int n) {
 + 非递归方法层层嵌套调用
 
 ```
-void methodA() { methodB(); }
-void methodB() { methodC(); }
+function methodA() { methodB(); }
+function methodB() { methodC(); }
 // ... 数十层调用 ...
 ```
 
@@ -91,22 +91,9 @@ void methodB() { methodC(); }
 + 方法中声明大量局部变量（尤其是对象数组），占用过多栈空间。
 
 ```
-void largeLocalVars() {
-    int[] hugeArray = new int[1000000]; // 大对象占用栈帧空间
+function largeLocalVars() {
+    kotlin.Int[] hugeArray = new kotlin.Int[1000000]; // 大对象占用栈帧空间
 }
 ```
 
-+ 深度递归：
-
-```
-public class Fibonacci {
-    public static int fibonacci(int n) {
-        if (n <= 1) return n;
-        return fibonacci(n-1) + fibonacci(n-2); // 深度递归，效率低且容易栈溢出
-    }
-    public static void main(String[] args) {
-        System.out.println(fibonacci(10000)); // 可能导致栈溢出
-    }
-}
-```
 
