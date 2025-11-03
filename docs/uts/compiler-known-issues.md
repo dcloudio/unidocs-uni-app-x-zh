@@ -708,7 +708,7 @@ uni.redirectTo({
 
 ```ts
 let targetUrl = ""
-let url = decodeURI(targetUrl as string)
+const url = decodeURI(targetUrl as string)
 if (url != null) {
 	uni.redirectTo({
 		url: url
