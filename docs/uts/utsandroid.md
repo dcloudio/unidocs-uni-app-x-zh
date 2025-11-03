@@ -377,6 +377,8 @@ console.log(UTSAndroid.getResourcePath('/storage/emulated/0/Android/data/io.dclo
 
 ### getDispatcher
 
+> 已废弃,请使用 [uni.createWorker](https://doc.dcloud.net.cn/uni-app-x/api/create-worker.html#createworker) 替代
+
 <!-- UTSJSON.UTSAndroid.getDispatcher.description -->
 
 <!-- UTSJSON.UTSAndroid.getDispatcher.param -->
