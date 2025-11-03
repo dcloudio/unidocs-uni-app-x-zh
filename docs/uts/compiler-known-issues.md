@@ -738,6 +738,7 @@ uni_module [xxx] (Android) 存在三方依赖或资源引用，请到HBuilderX�
 ```
 
 > 报错原因其实就是因为插件依赖了第三方库，导致编译前需要在HBuilderX中设置运行配置。
+> 其他原因导致插件编译失败也会出现`Unresolved reference 'xxx'`的情况，注意查看编译日志中的信息。
 
 如何修复:
 
