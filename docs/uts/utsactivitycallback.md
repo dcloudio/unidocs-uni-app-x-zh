@@ -1,5 +1,7 @@
 # UTSActivityCallback
   
+  > UniActivityCallback 仅支持uniapp-x，不支持uni-app
+  
  为了更好的对外暴露activity的方法，我们把activity里面包含的方法按照继承关系进行了分类，下面是分类标准
 
 第一类：activity生命周期相关方法[UniActivityLifeCycleCallback](https://doc.dcloud.net.cn/uni-app-x/uts/utsactivitycallback.html#UniActivityLifeCycleCallback)\
