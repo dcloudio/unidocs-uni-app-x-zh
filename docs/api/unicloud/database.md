@@ -10,7 +10,7 @@ uniCloud.databaseForJQL()是客户端访问云数据库的API，即[clientDB](ht
 **和uni-app项目的差异**
 
 - uni-app x项目内不再支持uniCloud.database()方法，仅支持uniCloud.databaseForJQL()。
-- 不再支持action云函数，因为安全问题已经不再推荐使用。开发者应改用[数据库触发器](https://doc.dcloud.net.cn/uniCloud/jql-schema-ext.html)来实现相关功能。
+- 不再支持action云函数，因为安全问题已经不再推荐使用action云函数。开发者应改用[数据库触发器](https://doc.dcloud.net.cn/uniCloud/jql-schema-ext.html)来实现相关功能。
 
 <!-- UTSUNICLOUDAPIJSON.databaseForJQL.description -->
 
