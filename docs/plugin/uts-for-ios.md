@@ -990,7 +990,7 @@ export class Test {
 
 ### 6.5 如何支持Apple的shortcuts功能
 
-详见具体链接[iOS 16.0+ 支持在Apple Shortcuts App 快捷指令功能]()
+详见具体链接[iOS 16.0+ 支持Apple Shortcuts App 快捷指令功能]()
 
 > 特别注意：
 
