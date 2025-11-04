@@ -991,12 +991,149 @@ export class Test {
 ### 6.6 如何支持Apple的shortcuts功能
 
 详见具体链接[iOS 16.0+ 支持Apple Shortcuts App 快捷指令功能]()
+#### 6.6.1 实现原生swift逻辑，添加到配置好的离线打包工程中
+
+```swift
+@available(iOS 16.0, macOS 13.0, watchOS 9.0, *)
+struct ShortcutsAppShortcutsProvider: AppShortcutsProvider {
+    static var appShortcuts: [AppShortcut] {
+        // 定义在 Shortcuts 应用中显示的快捷指令
+        AppShortcut(
+            intent: OpenAppIntent(),
+            phrases: [
+                "打开 \(.applicationName)",
+                "启动 \(.applicationName)",
+                "Open \(.applicationName)"
+            ],
+            shortTitle: "打开应用页面path",
+            systemImageName: "app.badge"
+        )
+    }
+}
+
+@available(iOS 16.0, macOS 13.0, watchOS 9.0, *)
+struct OpenAppIntent: AppIntent {
+    static var title: LocalizedStringResource = "打开应用某个页面"
+    static var description = IntentDescription("打开并启动应用程序,跳转到某个具体页面")
+    
+    static var openAppWhenRun: Bool = true
+    
+    @MainActor
+    func perform() async throws -> some IntentResult & OpensIntent {
+    
+    	//在原生中加入想要跳转到某个页面的具体path
+        notifyAppToOpenPage("yourApp:xxx/xx/path")
+        return .result()
+        
+    }
+    
+    private func notifyAppToOpenPage(_ page: String) {
+        NotificationCenter.default.post(name: Notification.Name("openShortcutPage"), object: nil, userInfo: ["routePath": page])
+    }
+}
+#### 6.6.1 自定义uts插件实现hook applicationDidFinishLaunchingWithOptions 生命周期的逻辑，保证能捕获到原生通知的具体跳转path；
+
+```uts
+// 定义通知名称，与原生 Swift 代码中的通知名称对应
+const openShortcutPageNotification = new Notification.Name("openShortcutPage")
+
+/**
+ * App 生命周期 Hook 代理
+ * 用于监听应用启动和接收快捷指令通知
+ */
+export class OnShortcutsHookProxy implements UTSiOSHookProxy {
+	/**
+	 * 应用正常启动时的回调函数（不包括已在后台转到前台的情况）
+	 * 在此方法中注册通知监听器，接收来自快捷指令的通知
+	 */
+	applicationDidFinishLaunchingWithOptions(application : UIApplication | null, launchOptions : Map<UIApplication.LaunchOptionsKey, any> | null = null) : boolean {
+		
+		// 添加通知监听器，监听快捷指令打开页面的通知
+		NotificationCenter.default.addObserver(
+			forName = openShortcutPageNotification,
+			object = null,
+			queue = OperationQueue.main,
+			using = (notification: Notification): void => {
+				const userInfo : Map<AnyHashable, any> | null = notification.userInfo
+				if (userInfo != null) {
+					let routePath =  userInfo?.get('routePath') 
+					if (routePath != null) {
+						let path  =  routePath! as string
+						console.log(`[uni-shortcuts] 收到快捷指令通知，页面路径: ${path}`)
+						DispatchQueue.main.asyncAfter(deadline = DispatchTime.now() + 0.1, execute = () : void => {
+							//需要延时触发您app具体的跳转逻辑，防止直接通过shortcuts硬启动app导致crash
+						})
+					}
+				}
+			}
+		)
+		return false
+	}
+
+	/**
+	 * 当应用程序接收到与用户活动相关的数据时调用此方法
+	 */
+	applicationContinueUserActivityRestorationHandler(application : UIApplication | null, userActivity : NSUserActivity | null, restorationHandler : ((res : [any] | null) => void) | null = null) : boolean {
+		// 可以在这里处理 NSUserActivity 相关的快捷指令
+        // 请通过uts和swift混编的形式，或者使用uts实现下属app内捐赠NSUserActivity逻辑，就可以在该声明周期中捕获自定义的shortcuts活动
+		return true
+	}
+}
+```
+
+```swfit
+//也可以通过NSUserActivity捐赠activity，实现app内快捷指令的自定义添加
+    func createUserActivity(
+        type: String,
+        title: String,
+        userInfo: [String: Any]? = nil,
+        isEligibleForSearch: Bool = true,
+        isEligibleForPrediction: Bool = true
+    ) -> NSUserActivity {
+        let activity = NSUserActivity(activityType: type)
+        activity.title = title
+        activity.isEligibleForSearch = isEligibleForSearch
+        activity.isEligibleForPrediction = isEligibleForPrediction
+        
+        if let userInfo = userInfo {
+            activity.addUserInfoEntries(from: userInfo)
+        }
+        
+        if #available(iOS 12.0, *) {
+            activity.suggestedInvocationPhrase = title
+        }
+        
+        return activity
+    }
+    
+    func donateUserActivity(activityType: String, title: String, userInfo: [String: Any]? = nil) {
+        let activity = NSUserActivity(activityType: activityType)
+        activity.title = title
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        
+        if let userInfo = userInfo {
+            activity.addUserInfoEntries(from: userInfo)
+        }
+        
+        // 设置建议的调用短语
+        if #available(iOS 12.0, *) {
+            activity.suggestedInvocationPhrase = title
+        }
+        
+        
+        activity.becomeCurrent()
+        print("成功捐赠用户活动: \(title)")
+    }
+```
 
 > 特别注意：
 
-> 1. 仅支持 iOS16.0 版本以上  
-> 2. 需要使用离线打包的形式支持该功能  
-> 3. 适用场景：通过系统shortcuts App找到您的app，点击出现的快捷指令，跳转到您app的具体某个页面
+> 1.  集成AppShortcutsProvider仅支持 iOS16.0 版本以上, 可以在系统shortcuts App下找到入口
+![image.png](https://raw.gitcode.com/user-images/assets/7265295/076fce5b-fcc2-406f-baf3-449de808670f/image.png 'image.png')
+> 2. 自定捐赠用户活动的shortcuts支持iOS 12.0以上，需要通过自定义添加快捷指令->选择您的app->选择通过捐赠的用户活动->然后运行自定义快捷指令->会进入applicationContinueUserActivityRestorationHandler 代理方法
+> 3. 需要使用离线打包的形式支持该功能，[iOS平台离线打包](https://doc.dcloud.net.cn/uni-app-x/native/use/ios.html)、[制作uts插件](https://doc.dcloud.net.cn/uni-app-x/native/use/iosuts.html)
+> 4. 适用场景：通过系统shortcuts App找到您的app，点击出现的快捷指令，跳转到您app的具体某个页面
 
 ## 7  已知待解决问题(持续更新)
 
