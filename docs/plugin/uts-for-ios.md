@@ -988,6 +988,15 @@ export class Test {
 
 > 判断是否需要加 `"[weak self]"` 标记的标准是：callback 是否被 this 持有，闭包内是否访问了 this，如果满足这两条就需要加。
 
+### 6.5 如何支持Apple的shortcuts功能
+
+详见具体链接[iOS 16.0+ 支持在Apple Shortcuts App 快捷指令功能]()
+
+> 特别注意：
+
+> 1. 仅支持 iOS16.0 版本以上  
+> 2. 需要使用离线打包的形式支持该功能  
+> 3. 适用场景：通过系统shortcuts App找到您的app，点击出现的快捷指令，跳转到您app的具体某个页面
 
 ## 7  已知待解决问题(持续更新)
 
