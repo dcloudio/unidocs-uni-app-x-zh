@@ -10,8 +10,8 @@
 
 ## 如何安装插件@install
 插件目前在两个平台发布，vscode官方市场和open-vsx市场。
-* 打开扩展界面搜索`uni-app x语言服务`，找到插件进行安装。
-* 通过第三方网站下载VSIX进行安装 [open vsx插件下载](https://open-vsx.org/extension/dcloud-ide/hbuilderx-language-services)。
+* [vscode官方市场插件下载](https://marketplace.visualstudio.com/items?itemName=dcloud-ide.hbuilderx-language-services)。
+* [open-vsx市场插件下载](https://open-vsx.org/extension/dcloud-ide/hbuilderx-language-services)。
 
 注意: `插件安装完成后，会提示重启编辑器，如果没有提示，需要手动重启编辑器`
 
