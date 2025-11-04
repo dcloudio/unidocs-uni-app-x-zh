@@ -989,9 +989,7 @@ export class Test {
 > 判断是否需要加 `"[weak self]"` 标记的标准是：callback 是否被 this 持有，闭包内是否访问了 this，如果满足这两条就需要加。
 
 ### 6.6 如何支持Apple的shortcuts功能
-参考Apple文档：
-*  [快捷指令使用手册](https://support.apple.com/zh-cn/guide/shortcuts/welcome/ios)
-* [面向开发者的快捷指令](https://developer.apple.com/cn/shortcuts/)
+ 在iOS 16.0及以上，Shortcuts需要集成AppIntents.framework, 实现AppShortcutsProvider子类YourAppShortcutsProvider，App Intents 会在app编译阶段通过自动分析YourAppShortcutsProvider中的appShortcuts值，自动将其 “抽取成元数据（representation）并嵌入到 App 包里”，系统在运行时读取这份元数据来知道你的意图与快捷方式，而不是运行时去反射源代码，所以目前仅仅通过uts插件无法实现shortcuts功能，需要通过离线打包的形式（原生工程实现AppShortcutsProvider源码）+uts插件（hook声明周期）配合实现该功能
 
 #### 6.6.1 实现原生swift逻辑，添加到配置好的离线打包工程中
 
@@ -1139,6 +1137,10 @@ export class OnShortcutsHookProxy implements UTSiOSHookProxy {
 > 2. 自定捐赠用户活动的shortcuts支持iOS 12.0以上，需要通过自定义添加快捷指令->选择您的app->选择通过捐赠的用户活动->然后运行自定义快捷指令->会进入applicationContinueUserActivityRestorationHandler 代理方法
 > 3. 需要使用离线打包的形式支持该功能，[iOS平台离线打包](https://doc.dcloud.net.cn/uni-app-x/native/use/ios.html)、[制作uts插件](https://doc.dcloud.net.cn/uni-app-x/native/use/iosuts.html)
 > 4. 适用场景：通过系统shortcuts App找到您的app，点击出现的快捷指令，跳转到您app的具体某个页面
+
+#### 6.6.3 相关 Apple Shortcuts  的参考文档：
+*  [快捷指令使用手册](https://support.apple.com/zh-cn/guide/shortcuts/welcome/ios)
+* [面向开发者的快捷指令](https://developer.apple.com/cn/shortcuts/)
 
 ## 7  已知待解决问题(持续更新)
 
