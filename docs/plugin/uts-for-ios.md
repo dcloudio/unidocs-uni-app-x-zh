@@ -989,8 +989,10 @@ export class Test {
 > 判断是否需要加 `"[weak self]"` 标记的标准是：callback 是否被 this 持有，闭包内是否访问了 this，如果满足这两条就需要加。
 
 ### 6.6 如何支持Apple的shortcuts功能
+参考Apple文档：
+*  [快捷指令使用手册](https://support.apple.com/zh-cn/guide/shortcuts/welcome/ios)
+* [面向开发者的快捷指令](https://developer.apple.com/cn/shortcuts/)
 
-详见具体链接[iOS 16.0+ 支持Apple Shortcuts App 快捷指令功能]()
 #### 6.6.1 实现原生swift逻辑，添加到配置好的离线打包工程中
 
 ```swift
@@ -1031,7 +1033,8 @@ struct OpenAppIntent: AppIntent {
         NotificationCenter.default.post(name: Notification.Name("openShortcutPage"), object: nil, userInfo: ["routePath": page])
     }
 }
-#### 6.6.1 自定义uts插件实现hook applicationDidFinishLaunchingWithOptions 生命周期的逻辑，保证能捕获到原生通知的具体跳转path；
+```
+#### 6.6.2 自定义uts插件实现hook applicationDidFinishLaunchingWithOptions 生命周期的逻辑，保证能捕获到原生通知的具体跳转path；
 
 ```uts
 // 定义通知名称，与原生 Swift 代码中的通知名称对应
@@ -1081,6 +1084,7 @@ export class OnShortcutsHookProxy implements UTSiOSHookProxy {
 }
 ```
 
+ 请通过uts和swift混编的形式，或者使用uts实现下属app内捐赠NSUserActivity逻辑，就可以在该声明周期中捕获自定义的shortcuts活动
 ```swfit
 //也可以通过NSUserActivity捐赠activity，实现app内快捷指令的自定义添加
     func createUserActivity(
