@@ -1085,7 +1085,8 @@ export class OnShortcutsHookProxy implements UTSiOSHookProxy {
 ```
 
  请通过uts和swift混编的形式，或者使用uts实现下属app内捐赠NSUserActivity逻辑，就可以在该声明周期中捕获自定义的shortcuts活动
-```swfit
+```swift
+
 //也可以通过NSUserActivity捐赠activity，实现app内快捷指令的自定义添加
     func createUserActivity(
         type: String,
