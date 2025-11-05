@@ -989,13 +989,13 @@ export class Test {
 > 判断是否需要加 `"[weak self]"` 标记的标准是：callback 是否被 this 持有，闭包内是否访问了 this，如果满足这两条就需要加。
 
 ### 6.6 如何支持Apple的shortcuts功能
- 在iOS 16.0及以上，Shortcuts需要集成AppIntents.framework, 实现AppShortcutsProvider子类YourAppShortcutsProvider，App Intents 会在app编译阶段通过自动分析YourAppShortcutsProvider中的appShortcuts值，自动将其 “抽取成元数据（representation）并嵌入到 App 包里”，系统在运行时读取这份元数据来知道你的意图与快捷方式，而不是运行时去反射源代码，所以目前仅仅通过uts插件无法实现shortcuts功能，需要通过离线打包的形式（原生工程实现AppShortcutsProvider源码）+uts插件（hook声明周期）配合实现该功能
+ 在iOS 16.0及以上，Shortcuts需要集成Apple AppIntents.framework, 实现AppShortcutsProvider子类YourAppShortcutsProvider，App Intents 会在app编译阶段通过自动分析YourAppShortcutsProvider中的appShortcuts值，自动将其 “抽取成元数据（representation）并嵌入到 App 包里”，系统在运行时读取这份元数据来知道你的意图与快捷方式，而不是运行时去反射源代码，所以目前仅仅通过uts插件无法实现shortcuts功能，需要通过离线打包的形式（原生工程实现AppShortcutsProvider源码）+uts插件（hook声明周期）配合实现该功能
 
 #### 6.6.1 实现原生swift逻辑，添加到配置好的离线打包工程中
 
 ```swift
 @available(iOS 16.0, macOS 13.0, watchOS 9.0, *)
-struct ShortcutsAppShortcutsProvider: AppShortcutsProvider {
+struct YourAppShortcutsProvider: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         // 定义在 Shortcuts 应用中显示的快捷指令
         AppShortcut(
@@ -1076,13 +1076,13 @@ export class OnShortcutsHookProxy implements UTSiOSHookProxy {
 	 */
 	applicationContinueUserActivityRestorationHandler(application : UIApplication | null, userActivity : NSUserActivity | null, restorationHandler : ((res : [any] | null) => void) | null = null) : boolean {
 		// 可以在这里处理 NSUserActivity 相关的快捷指令
-        // 请通过uts和swift混编的形式，或者使用uts实现下属app内捐赠NSUserActivity逻辑，就可以在该声明周期中捕获自定义的shortcuts活动
+        // 请通过uts和swift混编的形式，或者使用uts实现下属app内捐赠NSUserActivity逻辑，就可以在该hook app生命周期代理方法中捕获自定义的shortcuts活动
 		return true
 	}
 }
 ```
 
- 请通过uts和swift混编的形式，或者使用uts实现下属app内捐赠NSUserActivity逻辑，就可以在该声明周期中捕获自定义的shortcuts活动
+ 请通过uts和swift混编的形式，或者使用uts实现下属app内捐赠NSUserActivity逻辑，就可以在该hook app生命周期代理方法中捕获自定义的shortcuts活动
 ```swift
 
 //也可以通过NSUserActivity捐赠activity，实现app内快捷指令的自定义添加
