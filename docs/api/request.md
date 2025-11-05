@@ -50,6 +50,7 @@ const options: RequestOptions<Person> = ...
 uni.request<Person>(options)
 ```
 * app-android、app-ios平台 uni.request()暂未支持Promise，返回值是RequestTask。
+* app-ios平台的 RequestTask.onChunkReceived 基于原生 URLSession 实现，需要服务端必须采用「流式响应」方式——即使用 Transfer-Encoding: chunked，或以 Content-Type: text/event-stream 形式持续输出数据
 * web平台 request接口目前不支持创建传入的泛型的实例
 * web平台 request接口在 4.01版本之前返回数据是一个普通对象，4.01起调整为UTSJSONObject类型
 * 在4.25版本iOS平台增加了Task原生对象自动销毁的逻辑，即网络请求完成后自动释放原生的Task对象，建议开发者在`complete`回调中置空Task对象，例
