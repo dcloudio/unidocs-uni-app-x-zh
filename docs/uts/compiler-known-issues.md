@@ -744,7 +744,48 @@ uni_module [xxx] (Android) 存在三方依赖或资源引用，请到HBuilderX�
 
 根据报错日志来设置运行配置就行。
 
+#### template使用xx.x来访问属性
+复现代码：
+```vue
+<template>
+	<view>
+		{{ user.name }}
+	</view>
+</template>
 
+<script>
+	export default {
+		data() {
+			return {
+				user: {
+					name: 'xxx'
+				}
+			}
+		},
+	}
+</script>
+```
+
+修复代码：
+```vue
+<template>
+	<view>
+		{{ user['name'] }}
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				user: {
+					name: 'xxx'
+				}
+			}
+		},
+	}
+</script>
+```
 
 #### 变量未定义
 复现代码：
