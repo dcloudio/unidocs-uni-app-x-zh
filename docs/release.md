@@ -1,3 +1,7 @@
+#### 4.85.2025110510
+##### uni-app x
+* iOS平台 修复 4.84版本引发的 组件 list-view 频繁拖动加载更多数据可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=22861)
+
 #### 4.84.2025110307
 ##### uni-app x
 * 【重要】新增 API uni.createWorker 支持 Worker 线程 [文档](https://doc.dcloud.net.cn/uni-app-x/api/create-worker.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=19898>
