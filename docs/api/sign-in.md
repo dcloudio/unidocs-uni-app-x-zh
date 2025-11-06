@@ -10,6 +10,12 @@ Android、iOS还未提供此功能，请在插件市场搜索替代方案。[详
 
 <!-- UTSAPIJSON.login.returnValue -->
 
+::: 注意
+- HarmonyOS 平台需要额外的配置，详见[HarmonyOS平台接入微信登录](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/ohos.html)
+  - 配置 queryScheme： `"queryScheme": ["weixin", "wxopensdk"]`
+  - 配置 actions: `"actions": [ "action.system.home", "wxentity.action.open" ]`
+:::
+
 <!-- UTSAPIJSON.login.example -->
 
 <!-- UTSAPIJSON.login.tutorial -->
