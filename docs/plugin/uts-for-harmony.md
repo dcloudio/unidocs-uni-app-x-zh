@@ -1,4 +1,4 @@
-## uts for harmonyOS
+## uts for HarmonyOS
 
 鸿蒙系统有很多原生API，这些API通过ArkTS来调用。
 
@@ -28,7 +28,7 @@ uts插件在编译到harmonyOS端时会被编译成ArkTS代码。因此编写代
 - [uts语法](https://doc.dcloud.net.cn/uni-app-x/uts/)
 - [ArkTs约束](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typescript-to-arkts-migration-guide-0000001820879565?ha_source=Dcloud&ha_sourceId=89000448)
 
-## harmonyOS 原生环境配置
+## HarmonyOS 原生环境配置
 
 - 参考：[uni-app 开发鸿蒙应用](https://uniapp.dcloud.net.cn/tutorial/harmony/dev.html)
 
