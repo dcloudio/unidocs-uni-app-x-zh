@@ -45,7 +45,7 @@ c1组件的代码如下：
 
 父层通过`uni.createSelectorQuery().in(this.$page).select('#c1parent')`拿不到NodesRef。
 
-但createSelectorQuery是支持设定查找范围的，上面的代码是在页面里查找，如果在父层代码里通过in方法指定查找组件，例如：`uni.createSelectorQuery().in(this.$refs['c1ref'] as ComponentPublicInstance).select('#c1parent') `，可以拿到c1组件的NodesRef 
+但createSelectorQuery是支持设定查找范围的，上面的代码是在页面里查找，如果在父层代码里通过in方法指定查找组件，例如：`uni.createSelectorQuery().in(this.$refs['c1ref'] as ComponentPublicInstance).select('#c1parent') `，可以拿到c1组件的NodesRef
 
 父层通过`uni.getElementById("c1parent")`也可以拿到UniElement。
 
@@ -61,7 +61,7 @@ vue组件的方法调用不受影响，ref取到组件后，可以直接调用�
 
 ### UniElement
 
-小程序端逻辑层与是图层分离，导致大多数同步的dom api都不可用。
+小程序端逻辑层与视图层分离，导致大多数同步的dom api都不可用。
 
 UniElement在小程序端仅支持如下属性/方法：
 
