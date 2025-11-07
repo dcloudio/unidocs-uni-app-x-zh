@@ -87,7 +87,7 @@ flutter看起来很完美。但为什么也没有成为主流呢？很多大厂�
 
 操作系统和三方SDK的API是原生的，让dart调用需要做一层封装，又落到了跨语言通信的坑里。
 
-[https://gitcode.com/dcloud/test_flutter_message_channel](https://gitcode.com/dcloud/test_flutter_message_channel)这是一个开源测试项目，来测试原生的claas数据与dart的通信耗时。
+[https://gitcode.com/dcloud/test_flutter_message_channel](https://gitcode.com/dcloud/test_flutter_message_channel)这是一个开源测试项目，来测试原生的class数据与dart的通信耗时。
 
 项目里面有源码，大家可自行编译；根目录有打包好的apk，可直接安装体验。
 
