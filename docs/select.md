@@ -148,7 +148,7 @@ flutter开发者都知道的一个常见坑是输入法，因为输入法是典�
 
 混合渲染，还有信息流广告、map、图表、动画等很多三方sdk涉及。这个时候内存占用高、渲染帧率下降、不同渲染方式字体不一致、暗黑主题不一致、国际化、无障碍、UI自动化测试，各种不一致。。。
 
-这里没有提供开源示例，因为flutter官方是承认这个问题的，它提供了2种方式：混合集成模式和虚拟显示模式模式。
+这里没有提供开源示例，因为flutter官方是承认这个问题的，它提供了2种方式：混合集成模式和虚拟显示模式。
 
 但在渲染速度、内存占用、版本兼容、键盘交互上都各自有各自的问题。
 详见flutter官网：[https://docs.flutter.dev/platform-integration/android/platform-views#performance](https://docs.flutter.dev/platform-integration/android/platform-views#performance)。
