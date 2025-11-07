@@ -837,9 +837,9 @@ const a1: string[] = ['a', 'b', 'c']; //表示数组内容都是string
 
 ```ts
 let a1 = new Array(1,2,3);//支持
-let a2 = new Array(1,'2',3);//安卓平台支持, iOS 平台不支持，在 iOS 中创建 Any[] 数组请直接使用数组字面量，如 let a2 = [1. '2', 3]
+let a2 = new Array(1,'2',3);//安卓平台支持, iOS 平台不支持，在 iOS 中创建 Any[] 数组请直接使用数组字面量，如 let a2 = [1, '2', 3];
 let a3 = Array(1,2,3);//支持
-let a4 = Array(1,'2','3');//安卓平台支持, iOS 平台不支持，在 iOS 中创建 Any[] 数组请直接使用数组字面量，如 let a4 = [1,'2','3']
+let a4 = Array(1,'2','3');//安卓平台支持, iOS 平台不支持，在 iOS 中创建 Any[] 数组请直接使用数组字面量，如 let a4 = [1,'2','3'];
 ```
 
 5. uvue的data定义数组
