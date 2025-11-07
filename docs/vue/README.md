@@ -106,13 +106,13 @@ template中文名为`模板`，它类似html的标签。但有2个区别：
 	const buttonClick_changeText = () => {
 		title.value = "新文字内容" //对响应式变量title的.value属性赋值，界面上文字会自动同步修改
 	}
-	
+
 	let titleShow = ref(true) //决定标题文字是否显示
 	const buttonClick_showHide = () => {
 		titleShow.value = !titleShow.value //对响应式变量的.value属性赋值，界面上文字组件的v-if指令绑定了titleShow，所以会动态显示消失
 	}
-	
-	let titleColor = ref("black") 
+
+	let titleColor = ref("black")
 	const buttonClick_changeColor = () => {
 		titleColor.value = "red" //对响应式变量的.value属性赋值，界面上文字组件的style属性绑定了titleColor，所以会变色
 	}
@@ -476,7 +476,7 @@ const theme = {
 </template>
 
 <style scoped>
-.text {
+.view {
   color: v-bind('theme.color');
 }
 </style>
