@@ -31,7 +31,9 @@ app平台的内置组件和API用到了一些字体，同时共享出来给开�
   <scroll-view style="flex: 1;">
   <!-- #endif -->
 
+  <text style="font-family: uni-icon;font-size: 64px;">{{'\uEA08'}}</text>
   <text style="font-family: uni-icon;font-size: 64px;">{{uniIcon}}</text>
+  
 
   <!-- #ifdef APP -->
   </scroll-view>
@@ -42,7 +44,7 @@ app平台的内置组件和API用到了一些字体，同时共享出来给开�
   export default {
     data() {
       return {
-        uniIcon: '\ue605'
+        uniIcon: '\ue601'
       }
     }
   }
