@@ -16,11 +16,12 @@
 
 ## alpha版
 
-### 4.84.2025102304-alpha
+### 4.86.2025110715-alpha
 
-**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/iOS/UniAppX-iOS%404.84.zip)**
+**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/iOS/UniAppX-iOS%404.86.zip)**
 
-* 新增 组件 web-view 支持 disable-user-select-menu 设置是否禁用文本选择时弹出系统菜单 [文档](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=21728>
+* 修复 4.84版本引发的 组件 list-view 频繁拖动加载更多数据可能引起崩溃[详情](https://issues.dcloud.net.cn/pages/issues/detail?id=22861)
+* 修复 API uni.request 访问某些 url 地址可能引起崩溃[详情](https://issues.dcloud.net.cn/pages/issues/detail?id=21823)
 
 **[历史版本](https://pan.baidu.com/s/130Rvlh2jdsp3aJ4YtigoJQ?pwd=xy7s)**
  
