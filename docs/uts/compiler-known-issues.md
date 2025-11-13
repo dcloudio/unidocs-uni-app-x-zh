@@ -861,3 +861,86 @@ function test() {
 
 - 拼写错误
 :::
+
+
+## 类型不匹配导致编译器报错 @error19
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：类型不匹配导致编译器报错
+
+> 一般错误有: 
+> 1、参数类型不匹配
+> 2、Cannot infer type for this parameter. Specify it explicitly
+> 3、Not enough information to infer type argument for 'E'.‌
+
+复现代码:
+
+```vue
+<template>
+	<view class="page-container">
+		<view class="miniprogram-list">
+			<view class="item" v-for="(item,index) in list" :key="index" @click="onItemClick(item, index)">
+				<view class="item-content">
+					<view class="icon-wrapper">
+						<image class="item-icon" :src="item.icon"></image>
+					</view>
+					<text class="item-title">{{item.title}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				list: []
+			}
+		},
+		methods: {
+			onItemClick(item, index) {
+			}
+		}
+	}
+</script>
+```
+
+修复代码：
+```vue
+<template>
+	<view class="page-container">
+		<view class="miniprogram-list">
+			<view class="item" v-for="(item,index) in list" :key="index" @click="onItemClick(item, index)">
+				<view class="item-content">
+					<view class="icon-wrapper">
+						<image class="item-icon" :src="item.icon"></image>
+					</view>
+					<text class="item-title">{{item.title}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	type ListType = {
+		icon: string,
+		title: string
+	}
+	export default {
+		data() {
+			return {
+				list: [] as ListType[]
+			}
+		},
+		methods: {
+			onItemClick(item: ListType, index: number) {
+			}
+		}
+	}
+</script>
+
+<style>
+</style>
+```
