@@ -944,3 +944,52 @@ function test() {
 <style>
 </style>
 ```
+
+## 使用defineProps定义的属性时提示: Condition type mismatch: inferred type @error20
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：使用defineProps定义的属性时编译报错
+
+复现代码:
+
+```vue
+<template>
+	<view @click="onClick">
+		<slot></slot>
+	</view>
+</template>
+
+<script setup>
+	const props = defineProps({
+		isLogin: Boolean
+	})
+	function onClick() {
+		if (props.isLogin) {
+		} else {
+		}
+	}
+</script>
+```
+
+修复代码：
+```vue
+<template>
+	<view @click="onClick">
+		<slot></slot>
+	</view>
+</template>
+
+<script setup>
+	const props = defineProps({
+		isLogin: {
+			type: Boolean,
+			required: true
+		}
+	})
+	function onClick() {
+		if (props.isLogin) {
+		} else {
+		}
+	}
+</script>
+```
