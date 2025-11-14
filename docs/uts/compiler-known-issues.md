@@ -945,6 +945,44 @@ function test() {
 </style>
 ```
 
+
+复现代码:
+```ts
+	type ResponseType = {
+	  data: string | UTSJSONObject;
+	  statusCode: number;
+	}
+	uni.request({
+		url: 'xxx',
+		success: (response: ResponseType) => {
+			
+		},
+		fail: () => {
+			
+		}
+	})
+```
+
+修复代码:
+```ts
+	type ResponseType = {
+	  data: string | UTSJSONObject;
+	  statusCode: number;
+	}
+	
+	uni.request<ResponseType>({
+		url: 'xxx',
+		success: (response: RequestSuccess<ResponseType>) => {
+			
+		},
+		fail: () => {
+			
+		}
+	})
+```
+
+
+
 ## 使用defineProps定义的属性时提示: Condition type mismatch: inferred type @error20
 
 - 发生版本：HBuilderX-4.75
@@ -993,3 +1031,20 @@ function test() {
 	}
 </script>
 ```
+
+## Cannot find module @error21
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：import时没有找到实际文件
+
+复现代码:
+
+```ts
+import { myApi } from '@/uni_modules/xx-yy/utssdk/app-android'
+```
+
+修复代码：
+```ts
+import { myApi } from '@/uni_modules/xx-yy'
+```
+
