@@ -44,4 +44,10 @@ export default {
     },
   },
   extraFacetFilters: ['category:uni-ad广告', 'tag:插件', 'tag:工程化'],
+  aiPlatforms: [
+    'uni-app',
+    'uni-app x',
+    'uniCloud'
+  ],
+  aiChatForDocSearch: 'https://ai-assist-api.dcloud.net.cn/tbox/chatForDocSearch'
 }

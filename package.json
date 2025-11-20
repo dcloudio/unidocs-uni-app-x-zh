@@ -33,6 +33,6 @@
   "dependencies": {
     "@dcloudio/docs-utils": "^1.0.8",
     "vuepress": "1.9.9",
-    "vuepress-theme-uniapp-official": "1.5.3"
+    "vuepress-theme-uniapp-official": "1.6.1"
   }
 }
