@@ -844,6 +844,27 @@ function test() {
 
 ```
 
+#### 使用方式有不对
+
+复现代码:
+
+```ts
+defineProps({
+	imgStr: {
+		type: string
+	}
+})
+```
+
+修复代码:
+```ts
+defineProps({
+	imgStr: {
+		type: String
+	}
+})
+```
+
 #### 摇树机制(自定义基座、三方插件)
 
 复现代码：
