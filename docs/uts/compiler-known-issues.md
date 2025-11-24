@@ -1048,3 +1048,64 @@ import { myApi } from '@/uni_modules/xx-yy/utssdk/app-android'
 import { myApi } from '@/uni_modules/xx-yy'
 ```
 
+## ‌‌⁠error: Unresolved reference. None of the following candidates is applicable because of a receiver type mismatch @error22
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：期望的类型和实际类型不匹配
+
+复现代码:
+
+```vue
+<template>
+	<view class="container">
+		<web-view src="http://127.0.0.1:9000" @message="handleMessage"></web-view>
+	</view>
+</template>
+
+<script lang="uts">
+	export default {
+		methods: {
+			handleMessage(e : any) {
+				console.log(e['detail'])
+			}
+		}
+	}
+</script>
+```
+
+修复代码：
+```vue
+<template>
+	<view class="container">
+		<web-view src="http://127.0.0.1:9000" @message="handleMessage"></web-view>
+	</view>
+</template>
+
+<script lang="uts">
+	export default {
+		methods: {
+			handleMessage(e : UniWebViewMessageEvent) {
+				console.log(e.detail)
+			}
+		}
+	}
+</script>
+```
+
+## Cannot infer type for this parameter. Specify it explicitly.‌ @error23
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：无法推断参数的类型
+
+复现代码:
+
+```ts
+const activeNav = ref('yinlv')
+watch(activeNav, val => uni.setStorageSync('lastActiveNav', val))
+```
+
+修复代码：
+```ts
+const activeNav = ref('yinlv')
+watch(activeNav, (val: string) => uni.setStorageSync('lastActiveNav', val))
+```
