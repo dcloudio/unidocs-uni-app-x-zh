@@ -865,6 +865,25 @@ defineProps({
 })
 ```
 
+#### 使用不支持的特性
+
+复现代码
+```ts
+	export default {
+		onThemeChange: function () {
+		}
+	}
+```
+
+修复代码
+```ts
+	export default {
+		onThemeChange: function () {
+		}
+	}
+```
+目前只有微信小程序支持`onThemeChange`，其他端还未支持。
+
 #### 摇树机制(自定义基座、三方插件)
 
 复现代码：
