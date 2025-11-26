@@ -75,7 +75,7 @@ inputmode 兼容性：Chrome >= 66、Edge >= 79、Firefox >= 95、Chrome Android
 ## placeholder-style和placeholder-class说明
 - uni-app x 4.41前，App平台仅支持`color`、`font-size`、`font-weight`。
 - uni-app x 4.41后，App平台新增支持`font-family`、`font-style`、`text-align`，其中`text-align`仅App-Android平台支持，App-iOS平台的placeholder位置取决于textarea的`text-align`。
-- App-HarmonyOS placeholder-class 暂不支持 css 变量。
+- App-HarmonyOS `placeholder-class` 暂不支持 css 变量。
 
 ## Tips
 
