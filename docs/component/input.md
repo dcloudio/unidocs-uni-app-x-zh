@@ -103,6 +103,7 @@ web平台的inputmode的浏览器兼容性如下： Chrome >= 66、Edge >= 79、
 - uni-app x 4.41前，App平台仅支持`color`、`font-size`、`font-weight`。
 - uni-app x 4.41后，App平台新增支持`font-family`、`font-style`、`text-align`，其中`text-align`仅App-Android平台支持，App-iOS平台的placeholder位置取决于input的`text-align`。
 - placeholder-style的`font-size`样式不支持rpx单位。
+- App-HarmonyOS placeholder-class 暂不支持 css 变量。
 
 
 ## Tips
