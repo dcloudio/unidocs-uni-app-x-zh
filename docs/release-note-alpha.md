@@ -1,3 +1,7 @@
+#### 4.87.2025112602-alpha
+##### uni-app x
+* iOS平台 修复 4.76版本引发的 CSS 某些情况下部分属性可能不生效 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=23230)
+
 #### 4.86.2025110715-alpha
 ##### uni-app x
 * Web平台 修复 4.81版本引发的 API dialogPage 中使用 mapContext 异常的 Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=23233)
