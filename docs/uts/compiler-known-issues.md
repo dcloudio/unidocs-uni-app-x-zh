@@ -1149,3 +1149,21 @@ watch(activeNav, val => uni.setStorageSync('lastActiveNav', val))
 const activeNav = ref('yinlv')
 watch(activeNav, (val: string) => uni.setStorageSync('lastActiveNav', val))
 ```
+
+## Assignment type mismatch: actual type is 'xxx', but 'Nothing?' was expected.‌ @24
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：如果变量已经定义了明确的类型时无法赋值给其他类型
+
+```ts
+let abc = null
+abc = "123"
+console.log(abc)
+```
+
+修复代码：
+```ts
+let abc = ""
+abc = "123"
+console.log(abc)
+```
