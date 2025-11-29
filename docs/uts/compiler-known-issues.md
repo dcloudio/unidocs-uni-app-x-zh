@@ -692,9 +692,9 @@ console.log(someObject.a)
 ## 类型不匹配 @error17
 
 - 发生版本：HBuilderX-4.75
-- 问题描述：函数参数要求非空值，但传递了一个可能为空的数值。
+- 问题描述：要求A类型，但传递了B类型
 
-复现代码：
+复现代码(函数参数要求非空值，但传递了一个可能为空的数值。)：
 
 ```ts
 let targetUrl = ""
@@ -713,6 +713,30 @@ if (url != null) {
 	uni.redirectTo({
 		url: url
 	})
+}
+```
+
+复现代码(要求非空值，但传递了可能为空的变量)：
+
+```ts
+function jump(url: string, type: number) {
+	console.log(url, type)
+}
+	
+function toUrl(url: string, type?: number) {
+	jump(url, type)
+}
+```
+
+修复代码：
+
+```ts
+function jump(url: string, type: number) {
+	console.log(url, type)
+}
+	
+function toUrl(url: string, type: number) {
+	jump(url, type)
 }
 ```
 
