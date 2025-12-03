@@ -1191,3 +1191,17 @@ let abc = ""
 abc = "123"
 console.log(abc)
 ```
+
+## None of the following candidates is applicable. @25
+
+- 发生版本：HBuilderX-4.75
+- 问题描述：在kotlin中不允许这样，如需使用的话需要是`any | null`
+
+```ts
+const desc = ref<any>(null)
+```
+
+修复代码：
+```ts
+const desc = ref<any | null>(null)
+```
