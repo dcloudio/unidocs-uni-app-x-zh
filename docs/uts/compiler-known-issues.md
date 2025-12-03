@@ -1174,10 +1174,12 @@ const activeNav = ref('yinlv')
 watch(activeNav, (val: string) => uni.setStorageSync('lastActiveNav', val))
 ```
 
-## Assignment type mismatch: actual type is 'xxx', but 'Nothing?' was expected.‌ @24
+## Assignment type mismatch: actual type is 'xxx', but 'Nothing?' was expected.‌ @error24
 
 - 发生版本：HBuilderX-4.75
 - 问题描述：如果变量已经定义了明确的类型时无法赋值给其他类型
+
+复现代码:
 
 ```ts
 let abc = null
@@ -1192,10 +1194,12 @@ abc = "123"
 console.log(abc)
 ```
 
-## None of the following candidates is applicable. @25
+## None of the following candidates is applicable. @error25
 
 - 发生版本：HBuilderX-4.75
-- 问题描述：在kotlin中不允许这样，如需使用的话需要是`any | null`
+- 问题描述：重载匹配失败、参数类型/数量不匹配等导致
+
+复现代码:
 
 ```ts
 const desc = ref<any>(null)
