@@ -17,6 +17,9 @@ uni-app x使用的uts语言、ucsss样式，和ts、css有差异。我们已经�
 ## Trae
 复制[.trae](https://gitcode.com/dcloud/uni-app-x-ai-rules)目录到uni-app-x项目根目录下
 
+## Google Antigravity
+复制[.agent](https://gitcode.com/dcloud/uni-app-x-ai-rules)目录到uni-app-x项目根目录下
+
 ## 使用mcp
 
 > uni-app-x-mcp兼容uni-app项目，在uni-app项目中同样可以使用
@@ -27,7 +30,7 @@ uni-app-x-mcp可以让你和AI交互的过程中自动把项目中的组件信�
 
 #### 1、下载mcp包
 ```bash
-$ npm i uni-app-x-mcp -g
+$ npm i @dcloudio/uni-app-x-mcp -g
 ```
 
 #### 2、使用MCP
@@ -41,7 +44,7 @@ $ npm i uni-app-x-mcp -g
         "uni-app-x": {
             "command": "npx",
             "args": [
-                "uni-app-x-mcp"
+                "@dcloudio/uni-app-x-mcp"
             ]
         }
     }
@@ -66,7 +69,7 @@ $ npm i uni-app-x-mcp -g
         "uni-app-x": {
             "command": "npx",
             "args": [
-                "uni-app-x-mcp"
+                "@dcloudio/uni-app-x-mcp"
             ]
         }
     }
