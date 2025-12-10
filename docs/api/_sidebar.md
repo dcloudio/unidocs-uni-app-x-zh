@@ -130,6 +130,7 @@
   * [创建 camera 组件上下文对象](create-camera-context.md)
 * Worker
   * [创建 worker 对象](create-worker.md)
+* [DOM](../dom/README.md)
 * uniCloud客户端API
   * [概述](unicloud/README.md)
   * [云函数](unicloud/function.md)

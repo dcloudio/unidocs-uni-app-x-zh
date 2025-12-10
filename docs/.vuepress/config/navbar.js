@@ -59,11 +59,11 @@ export const navbar = [
         type: 'link',
         link: '/css/'
       },
-      {
+      /* {
         text: 'DOM',
         type: 'link',
         link: '/dom/'
-      },
+      }, */
       {
         text: '插件',
         type: 'link',
