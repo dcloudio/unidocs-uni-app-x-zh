@@ -84,7 +84,7 @@ export const navbar = [
     needOutbound: false
   },
   {
-    text: 'HBuilder',
+    text: 'HBuilder X',
     link: 'https://hx.dcloud.net.cn/',
     type: "link",
     target: '_blank',
@@ -97,6 +97,20 @@ export const navbar = [
     target: '_blank',
     needOutbound: false
   },
+  {
+    text: 'uni-ad广告',
+    link: 'https://uniapp.dcloud.net.cn/uni-ad/',
+    type: "link",
+    target: '_blank',
+    needOutbound: false
+  },
+  {
+    text: '开发者服务',
+    link: 'https://uniapp.dcloud.net.cn/dev/',
+    type: "link",
+    target: '_blank',
+    needOutbound: false
+  }
   /* {
     text: '问答社区',
     link: 'https://ask.dcloud.net.cn/explore/',
