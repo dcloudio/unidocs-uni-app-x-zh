@@ -17,6 +17,9 @@
 
 <!-- CSSJSON.border-radius.example -->
 
-App平台目前不支持设置百分比。如需要裁剪正圆图片，暂无法使用100%。请使用与图片宽高相同的像素来裁剪。比如图片长宽250px，则设置 border-radius: 250px 可得一个正圆。
+#### App平台差异  
+- App平台暂不支持设置百分比。  
+  如需要裁剪正圆图片，暂无法使用50%，可以请使用与图片宽高相同的像素来裁剪。比如图片长宽250px，则设置 `border-radius: 125px` 可得一个正圆。  
+  如果无法确定元素的宽高值（如 `width: auto` ），可以设置一个非常大的圆角半径值（如 `border-radius: 10000px` ）使得显示为正圆。  
 
 <!-- CSSJSON.border-radius.reference -->
