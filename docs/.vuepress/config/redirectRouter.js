@@ -14,6 +14,7 @@ const routerMap = {
   '/api/set-tabbar.html': `${PREFIX}/api/set-tab-bar.html`,
   '/api/theme.html': `${PREFIX}/api/theme-change.html`,
   '/api/websocket-global.html': `${PREFIX}/api/websocket.html`,
+  '/dom/': `${PREFIX}/api/dom/`,
 }
 
 export default ({ fullPath, path, hash }) => {
