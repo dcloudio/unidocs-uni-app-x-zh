@@ -1174,6 +1174,18 @@ const activeNav = ref('yinlv')
 watch(activeNav, (val: string) => uni.setStorageSync('lastActiveNav', val))
 ```
 
+复现代码:
+```ts
+	const departmentList = ref([])
+	console.log(departmentList)
+```
+
+修复代码：
+```ts
+	const departmentList = ref<string[]>([])
+	console.log(departmentList)
+```
+
 ## Assignment type mismatch: actual type is 'xxx', but 'Nothing?' was expected.‌ @error24
 
 - 发生版本：HBuilderX-4.75
