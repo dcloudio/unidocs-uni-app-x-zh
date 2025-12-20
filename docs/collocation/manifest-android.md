@@ -554,9 +554,6 @@ uni-app x 项目中使用 [map](../component/map.md) 组件，[uni.chooseLocatio
   }
   ```
 
-**注意**
-- 配置或修改可选模块配置后需提交云端打包才能生效
-
 
 ### uni-barcode-scanning（相机组件扫码）@modulesscan  
 [camera相机](../component/camera.md)组件的`mode`属性，支持配置扫码模式（scanCode），需勾选此扫码模块。  
@@ -578,6 +575,9 @@ uni-app x 项目中使用 [map](../component/map.md) 组件，[uni.chooseLocatio
   }
 }
 ```
+
+**注意**
+- 配置或修改可选模块配置后需提交云端打包才能生效
 
 
 ## 权限配置 @permissions  
