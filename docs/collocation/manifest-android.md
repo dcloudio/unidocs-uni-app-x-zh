@@ -558,6 +558,28 @@ uni-app x 项目中使用 [map](../component/map.md) 组件，[uni.chooseLocatio
 - 配置或修改可选模块配置后需提交云端打包才能生效
 
 
+### uni-barcode-scanning（相机组件扫码）@modulesscan  
+[camera相机](../component/camera.md)组件的`mode`属性，支持配置扫码模式（scanCode），需勾选此扫码模块。  
+
+在uni-app x项目中使用此模块，需在manifest.json中配置。  
+
+可视化界面操作在 “安卓App配置” 的 “可选模块配置” 勾选 “uni-barcode-scanning（相机组件扫码）”模块：  
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/android_barcodescan.png)
+
+也可通过`源码视图`在 "app-android" -> "distribute" -> "modules" 下添加 "uni-barcode-scanning" 节点，如下示例：
+```json
+{
+  "app-android": {
+    "distribute": {
+      "modules": {
+        "uni-barcode-scanning":{}
+      }
+    }
+  }
+}
+```
+
+
 ## 权限配置 @permissions  
 
 uni-app x项目使用[uni内置模块](./manifest-modules.md#utsmodules)时，云端打包会自动添加模块、插件声明需要的Android权限，也可以额外添加或强制移除某些权限。
