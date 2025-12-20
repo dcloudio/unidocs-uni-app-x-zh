@@ -556,6 +556,8 @@ uni-app x 项目中使用 [map](../component/map.md) 组件，[uni.chooseLocatio
 
 
 ### uni-barcode-scanning（相机组件扫码）@modulesscan  
+> HBuilderX 4.71 及以上版本新增支持  
+
 [camera相机](../component/camera.md)组件的`mode`属性，支持配置扫码模式（scanCode），需勾选此扫码模块。  
 
 在uni-app x项目中使用此模块，需在manifest.json中配置。  
@@ -576,8 +578,42 @@ uni-app x 项目中使用 [map](../component/map.md) 组件，[uni.chooseLocatio
 }
 ```
 
+### uni-push（消息推送） @modulespush  
+> HBuilderX 4.71 及以上版本新增支持配置厂商推送SDK  
+
+uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。  
+包括在线推送、离线推送，离线推送聚合了Apple、华为、小米、OPPO、VIVO、魅族、荣耀(3.99+)、Google等多个手机厂商的推送通道。  
+如果在 manifest.json 中不勾选`uni-push（消息推送）`模块，云端打包会根据摇树结果决定是否包含此模块，若摇树结果需要使用此模块，会根据uni-push后台配置的离线推送厂商通道自动添加对应的厂商推送SDK。  
+如果在manifest.json 中勾选`uni-push（消息推送）`模块，云端打包则根据 manifest.json 中的配置添加厂商推送SDK。  
+
+可视化界面操作在 “安卓App配置” 的 “可选模块配置” 勾选 “uni-push（消息推送）”模块，根据需求勾选厂商推送SDK：  
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/collocation/android_unipush.png)
+
+也可通过`源码视图`在 "app-android" -> "distribute" -> "modules" 下添加 "uni-barcode-scanning" 节点，如下示例：
+```json
+{
+  "app-android": {
+    "distribute": {
+      "modules": {
+				"uni-push": {
+          "hms": {},    //华为厂商推送SDK
+          "oppo": {},   //OPPO厂商推送SDK
+          "vivo": {},   //VIVO厂商推送SDK
+          "xiaomi": {}, //小米厂商推送SDK
+          "meizu": {},  //魅族厂商推送SDK
+          "honor": {},  //荣耀厂商推送SDK
+          "fcm": {}     //Google FCM推送SDK
+        }
+      }
+    }
+  }
+}
+```
+
+
 **注意**
 - 配置或修改可选模块配置后需提交云端打包才能生效
+
 
 
 ## 权限配置 @permissions  

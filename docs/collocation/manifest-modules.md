@@ -156,13 +156,52 @@ HBuilderX3.93版本起，编译器支持扫描代码，摇树treeShaking，自�
 
 **注意**
 
-uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需在使用此uts插件的 uni-app x 项目 manifest.json 文件的 app -> distribute -> modules 下手动添加对应节点：
-```json
-	//以下示例手动添加  uni-media  模块
-	modules:{
-		"uni-media":{}
-	}
-```
+uts插件中暂不支持摇树，如果uts插件中使用了以上模块，需在使用此uts插件的 uni-app x 项目 manifest.json 文件中手动添加：  
+
+- HBuilderX 4.71 及以上版本  
+  + Android平台  
+    需通过 manifest.json 的`源码视图`在 "app-android" -> "distribute" -> "modules" 下手动添加对应节点：  
+    ```json
+    {
+      "app-android": {
+        "distribute": {
+          //以下示例手动添加  uni-media  模块
+          modules:{
+            "uni-media":{}
+          }
+        }
+      }
+    }
+    ```
+  + iOS平台  
+    需通过 manifest.json 的`源码视图`在 "app-ios" -> "distribute" -> "modules" 下手动添加对应节点：  
+    ```json
+    {
+      "app-ios": {
+        "distribute": {
+          //以下示例手动添加  uni-media  模块
+          modules:{
+            "uni-media":{}
+          }
+        }
+      }
+    }
+    ```
+
+- HBuilderX 4.71 以下版本  
+  需通过 manifest.json 的`源码视图`在 "app" -> "distribute" -> "modules" 下手动添加对应节点：  
+  ```json
+  {
+    "app": {
+      "distribute": {
+        //以下示例手动添加  uni-media  模块
+        modules:{
+          "uni-media":{}
+        }
+      }
+    }
+  }
+  ```
 
 ## uni-ad@uni-ad
 
@@ -199,7 +238,7 @@ UTSAndroid.setPrivacyAgree(true)
 HBuilderX4.31 支持打包界面直接勾选广告渠道，参考[App打包配置](../tutorial/app-package.md#uniad)。
 :::
 
-在 app -> distribute -> modules 下添加 uni-ad 节点：
+也可通过 manfiest.json 的 `源码视图` 在 app -> distribute -> modules 下添加 uni-ad 节点：
 ```json
 	modules:{
 		"uni-ad":{
@@ -415,3 +454,12 @@ app平台默认`启动界面`为白色（暗黑模式下为黑色），为了避
 }
 ```
 
+
+## uni-push @uni-push  
+uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。  
+包括在线推送、离线推送，离线推送聚合了Apple、华为、小米、OPPO、VIVO、魅族、荣耀(3.99+)、Google等多个手机厂商的推送通道。可在[DCloud开发者中心](https://dev.dcloud.net.cn/)申请开通及配置离线推送相关的厂商设置，详情参考文档[uni-push介绍](https://uniapp.dcloud.net.cn/unipush-v2.html)。  
+
+- Android平台  
+  可在manifest.json中配置离线推送使用的厂商推送SDK，详情参考[Android平台配置uni-push厂商推送SDK](./manifest-android.md#modulespush)。  
+- iOS平台  
+  根据摇树结果决定是否包含此模块，由于苹果厂商推送无需额外配置，包含uni-push模块就支持苹果厂商推送。  
