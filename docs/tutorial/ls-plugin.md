@@ -13,6 +13,8 @@
 * [vscode官方市场插件下载](https://marketplace.visualstudio.com/items?itemName=dcloud-ide.hbuilderx-language-services)。
 * [open-vsx市场插件下载](https://open-vsx.org/extension/dcloud-ide/hbuilderx-language-services)。
 
+你可以在vscode/cursor/Antigravity等IDE的插件搜索界面直接搜索“uni-app x语言服务”，找到圆形绿色U图标，且发布方为DCloud，直接按照。
+
 注意: `插件安装完成后，会提示重启编辑器，如果没有提示，需要手动重启编辑器`
 
 ## 插件功能范围@ability
