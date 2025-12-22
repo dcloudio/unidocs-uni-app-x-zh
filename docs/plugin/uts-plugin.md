@@ -457,11 +457,12 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 	"frameworks": [
 		"可选，依赖的系统库(系统库有.framework和.tbd和.dylib类型)"
 	],
-	"deploymentTarget": "12.0",   // 可选，插件支持的最低 iOS 版本  默认：12.0"
-	"validArchitectures": [    // 可选，支持的 CPU 架构类型 默认：arm64
+	"deploymentTarget": "12.0",     // 可选，插件支持的最低 iOS 版本  默认：12.0"
+  "identifier": "com.my.custom",  // 可选，仅在需要指定插件 Bundle Identifier 时使用
+	"validArchitectures": [         // 可选，支持的 CPU 架构类型 默认：arm64
 		"arm64"
 	],
-	"dependencies-pods": [ // 可选, 需要依赖的pod库, HBuilderX 3.8.5+ 版本支持
+	"dependencies-pods": [          // 可选, 需要依赖的pod库, HBuilderX 3.8.5+ 版本支持
 	{
 		"name": "WechatOpenSDK",
 		"version": "2.0.2"
@@ -474,6 +475,7 @@ uts插件在iOS平台的其它原生配置文件，可以在其中配置依赖�
 - deploymentTarget：插件支持的最低 iOS 版本号，此节点为可选项，默认设置为 12.0.
 	+ 插件支持的最低版本号应该设置为所有依赖的三方库（包含 framework .a pod ）中最低支持版本号中的最高的一个。
 	+ pod 库的最低支持系统版本号可在 pod 库的 spec 文件或者 readme 中查看。
+- identifier：插件单独编译为动态库的Bundle Identifier。HBuilderX5.0及以上版本支持，如果uts插件无法修改则可在项目中配置[ios-uts.json](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html#@uts)。  
 - validArchitectures：插件支持的 CPU 架构类型，此节点为可选项，默认值为：arm64。
 - dependencies-pods：插件需要依赖的 pod 库,  HBuilderX3.8.5+ 版本新增支持
 	+ 有关 dependencies-pods 配置和 CocoaPods 使用的更多细节[详见](https://uniapp.dcloud.net.cn/plugin/uts-ios-cocoapods.html)
