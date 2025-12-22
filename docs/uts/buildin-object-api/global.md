@@ -158,6 +158,9 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 
 <!-- UTSJSON.Global.atob.tutorial -->
 
+**注意：**
+
+- 鸿蒙平台暂不支持该方法，如需使用鸿蒙原生支持的buffer功能，参考： [@ohos.buffer@ohos.buffer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-buffer)。
 
 ### btoa(stringToEncode:string):string
 
@@ -172,3 +175,7 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 <!-- UTSJSON.Global.btoa.compatibility -->
 
 <!-- UTSJSON.Global.btoa.tutorial -->
+
+**注意：**
+
+- 鸿蒙平台暂不支持该方法，如需使用鸿蒙原生支持的buffer功能，参考： [@ohos.buffer@ohos.buffer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-buffer)。
