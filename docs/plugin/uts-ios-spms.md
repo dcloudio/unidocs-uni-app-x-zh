@@ -1,6 +1,6 @@
 本文旨在帮助 uts 插件开发者和使用者，快速了解 uts 插件中配置使用 Swift Package Manager 依赖的问题。
 
-> 此功能 HBuilder X 4.8.4+ 版本支持
+> 此功能 HBuilder X 5.0+ 版本支持
 
 ## 在 uts 插件中使用 Swift Package Manager 依赖
 
@@ -9,7 +9,7 @@
 ```json
 {
 	"deploymentTarget": "12.0",   // 可选，插件支持的最低 iOS 版本  默认：12.0
-	"dependencies-spms": [ // 可选, 需要依赖的 Swift Package Manager 库, HBuilderX 4.8.4+ 版本支持
+	"dependencies-spms": [ // 可选, 需要依赖的 Swift Package Manager 库, HBuilderX 5.0+ 版本支持
 	// 1. exactVersion - 精确版本匹配：
 	{
 		"name": "Alamofire",
@@ -75,7 +75,7 @@
 | 参数 | 类型 | 必需 | 说明 |
 |------|------|------|------|
 | deploymentTarget | String | 否 | 插件支持的最低 iOS 版本号，默认设置为 12.0。需要满足所有依赖库（CocoaPods + SPM）的最低版本要求 |
-| dependencies-spms | Array | 否 | 需要依赖的 Swift Package Manager 库，HBuilderX 4.8.4+ 版本支持 |
+| dependencies-spms | Array | 否 | 需要依赖的 Swift Package Manager 库，HBuilderX 5.0+ 版本支持 |
 
 > **注意：** 
 > - **CocoaPods 依赖**：插件支持的最低版本号应该设置为所有依赖的三方库（包含 framework .a pod ）中最低支持版本号中的最高的一个
