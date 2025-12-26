@@ -10,7 +10,7 @@ DOM 是页面元素内容的结构数据。DOM 模型用一个逻辑树来表示
 
 为了减少冲突，目前不支持通过 DOM API 创建和删除 DOM 树中的元素。只支持获取元素UniElement。
 
-DOM在Web、Android、iOS、微信小程序均存在。微信小程序受微信限制，只实现了部分DOM API，请注意兼容性表格。
+DOM在Web、Android、iOS、鸿蒙、微信小程序均存在。微信小程序受微信限制，只实现了部分DOM API，请注意兼容性表格。
 
 > HBuilderX4.0 开始DOM元素的类型统一调整为 UniElement 对象。废弃之前 HBuilderX 3.91 的 Element对象 和 HBuilderX 3.91以前的 INode 对象。
 
