@@ -1538,7 +1538,7 @@
 * 修复 使用 v-if 显示组件的 background 样式设置为线性渐变可能引起崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=164)
 * 调整 各项目模板的 index.html （web平台专有文件）中引入入口文件从 main.js 改为 main（即main.uts，后缀可省略）
 * 新增 模板 App升级中心兼容uni-app x [详见](https://ext.dcloud.net.cn/plugin?id=4542)
-* 新增 模板 uni-id-pages-x [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/app-x.html)
+* 新增 模板 uni-id-pages-x [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
 ##### uts插件
 * 优化 异步函数在 uni-app x 中使用时默认与框架运行在同一线程
 * 修复 部分位运算组合使用时优先级不正确的Bug

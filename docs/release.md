@@ -1438,7 +1438,7 @@
 * 补充 css position 属性设置为 absolute 时，margin 支持取值 auto
 * 补充 真机运行标准基座内置所有常用权限。减少因权限造成的打包自定义基座的频率
 * 新增 模板 App升级中心兼容uni-app x [详见](https://ext.dcloud.net.cn/plugin?id=4542)
-* 新增 模板 uni-id-pages-x 方便开发账户系统 [详情](https://uniapp.dcloud.net.cn/uniCloud/uni-id/app-x.html)
+* 新增 模板 uni-id-pages-x 方便开发账户系统 [详情](https://doc.dcloud.net.cn/uniCloud/uni-id/app-x.html)
 * 修复 部分情况下真机运行 appid 为空导致应用异常崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=162)
 * 修复 使用 v-if 显示组件的 background 样式设置为线性渐变可能引起崩溃的Bug [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=164)
 ##### uts插件
