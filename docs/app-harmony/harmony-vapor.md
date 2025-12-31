@@ -58,6 +58,7 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 这不是几句话能说清楚了，里面涉及数千项工程优化，但可以提供一些关键说明：
 1. Android的compose ui也是基于原生渲染管线的，但没有使用Android自带的view、textview，而是实现了自己的组件系统。
+	
 	这条路完全可行，只不过compose ui做的不太好，实际渲染速度比view体系更慢。
 	
 	uni-app x 蒸汽模式，也几乎没有使用系统自带的组件，不管是textview、recycleview、viewpage...，或者是鸿蒙的arkUI相关组件，基本都没用，重写了。
@@ -69,6 +70,7 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 有。包括2个：
 1. 最大的副作用是编译更慢了
+
 App平台因为要编译C代码，所以真机运行的编译速度变慢不少。尤其是iOS和鸿蒙。
 
 如果你做过c++开发的话，会感觉到回到了那个编译速度的时代。
@@ -76,6 +78,7 @@ App平台因为要编译C代码，所以真机运行的编译速度变慢不少�
 后续DCloud也会持续研究改进该问题，提供开发期间的热更新方案。
 
 2. 运行时包体积变化。
+
 template和style编译成C后，发行包以机器码方式存在，几乎无法再压缩。比编译成js压缩成hap包的体积大一些。
 
 hello uni-app x有300多个页面，蒸汽模式的发行hap体积56M，之前非蒸汽模式的体积是46M。
@@ -97,13 +100,15 @@ hello uni-app x有300多个页面，蒸汽模式的发行hap体积56M，之前�
 
 ### vue蒸汽模式自身变更
 - **仅支持组合式，不支持选项式**
+
 	选项式转组合式，AI可以帮忙。hello uni-app x里大量的选项式页面都是用AI转成了组合式，以适配蒸汽模式。[详见](../ai/README.md)
 - 不再支持mixin
 
 ## css
 - 变更：不支持关系选择器，只支持简单的class选择器
 - 变更：css样式隔离策略有较大调整，尤其是组件默认不受外部css影响。 [详见](../DOM2规范/样式隔离管理规范.md)
-- 新增和变更：组件样式支持external-class，废弃在属性上修改css的做法
+- 新增和变更：组件样式支持external-class，废弃在属性上修改css的做法。
+
 	内置组件里过去有些样式定制放在属性上了，比如checkbox过去有color属性，以后就没有了。后续都通过class来修改样式。
 	
 	同时推荐组件作者也都使用class和external-class。减少属性和动态style设置样式。把样式设置放在组件属性上有诸多坏处：
@@ -136,9 +141,13 @@ pages.json
 	* list-view不支持横向滚动
 	* list-item宽度固定为100%。从css中获取position属性的值固定为absolute。
 - 新增：view、text、image这3个组件的flatten拍平属性
+
 	拍平即不创建独立元素，而是绘制在父上。在审查元素边界时无法看到红框。
+	
 	`<view flatten></view>`
+	
 	该属性为初始化属性，不支持动态修改。
+	
 	被拍平的元素存在一些限制，具体如下，可根据需要设置flatten属性。
 	* 拍平的元素无法支持事件（如click、touch）
 	* 拍平时如下css不支持：
@@ -172,10 +181,11 @@ pages.json
 - 没有页面滚动api。需要使用scroll-view相关api
 - 没有页面下拉刷新及相关生命周期。需要使用scroll-view相关api
 
-Element API
+### Element API
 - 缺少animate
 - 缺少create-Selector-query
 - 缺少Drawable。dom2的view、text创建足够快且支持拍平，故优先级不高
+
 	在蒸汽模式之前，为了高性能绘制，经常不能使用view和text组件，而是需要通过Drawable对象来绘制线条和文字，这种写法无法跨平台且复杂。\
 	在蒸汽模式后，开发者可以正常使用view和text跨平台的开发，比如hello uni-app x的模板中的日历示例，之前是Drawable绘制，现在都是拍平的text组件。
 
