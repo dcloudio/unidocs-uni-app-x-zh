@@ -134,7 +134,7 @@ uvue在App端支持的css语法，是web的子集，类似于但优于nvue的css
 * 所以在`skyline`渲染时，增加了worklet技术
 
 但这些补丁技术都不治根。过去只有flutter解决了dart和ui层的通信问题。可是这套方案又带来2个问题：
-1. dart和原生层通信也还是有延时，对象传递需要序列化，造成性能问题；
+1. dart和原生层（java、Swift、arkts）通信也还是有延时，对象传递需要序列化，造成性能问题；
 2. 自渲染而不是原生渲染，无可避免会引发混合渲染，比如原生的信息流广告内嵌、原生输入法适配，造成内存高、滚动不同步和输入障碍。
 
 [详见评测](select.md)
@@ -168,7 +168,7 @@ uni-app x支持的API包括：
 2. 全局API，前面不需要加`uni.`。如[getApp](./api/get-app.md)、[getCurrentPages](./api/get-current-pages.md)
 3. uni.xxx的内置API。数量较多，[详见](./api/README.md)
 4. uniCloud.xxx的内置API。[详见](./api/unicloud/README.md)
-5. dom的API [详见](./dom/README.md)
+5. dom的API [详见](./api/dom/README.md)
 6. 原生API
 
 uni-app x不会限制任何原生API的调用，在每个平台都可以调用其平台所有原生能力：
@@ -217,7 +217,7 @@ uni-app x不使用插件，也可以直接调用各平台原生API。但把各�
 
 uni-app x的插件生态，基于[uts插件](./plugin/uts-plugin.md)。这是一种面向全端的、统一的插件管理方案。
 
-目前已经有上千款uts插件，它们发布在[uni插件市场](https://ext.dcloud.net.cn/?uni-appx=1)
+目前已经有数千款uts插件，它们发布在[uni插件市场](https://ext.dcloud.net.cn/?uni-appx=1)
 
 uts插件通过统一的interface，约束了所有平台的API的输入输出，甚至错误码，保障了跨平台调用的一致性。
 
@@ -239,15 +239,15 @@ uts插件是一个大一统的插件模型，其中在不同的子平台可以�
 如果你想开发uts插件，[参考插件开发教程](./plugin/uts-plugin.md)
 
 除了uts插件封装原生能力，也支持基于uni-app x的纯前端组件，比如ui库，这里推荐一些：
-- [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：高品质UI库，插件大赛一等奖。
-- [lime-UI](https://ext.dcloud.net.cn/plugin?id=22372)：即兼容uni-app又兼容uni-app x，高频维护的优秀插件。
-- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：setup组合式UI库，插件大赛一等奖。
+- [TMUI4.0](https://ext.dcloud.net.cn/plugin?id=16369)：高品质UI库，2023插件大赛一等奖。
+- [lime-UI](https://ext.dcloud.net.cn/plugin?id=22372)：即兼容uni-app又兼容uni-app x，高频维护的优秀插件。2025插件大赛一等奖。
 - [TuiPlus ](https://ext.dcloud.net.cn/plugin?id=21111)：简洁高效的组件库，买即赠[xCharts原生图表库](https://ext.dcloud.net.cn/plugin?id=21107)
+- [CoolUI](https://ext.dcloud.net.cn/plugin?id=24497)：全端支持的组合式UI库，内置 Tailwind CSS、支持多主题切换与国际化
+- [UxFrame](https://ext.dcloud.net.cn/plugin?id=16148)：setup组合式UI库，2023插件大赛一等奖。
 - [firstUI](https://ext.dcloud.net.cn/plugin?id=16294)：免费、轻量UI库
 - [uXui](https://ext.dcloud.net.cn/plugin?id=15726)：graceUI作者的免费开源组件库
 - [easyX电商组件库](https://ext.dcloud.net.cn/plugin?id=15602)：电商业务常见的各种组件库
 - [RiceUI](https://ext.dcloud.net.cn/plugin?id=24907)：全端支持的组合式UI库。
-- [CoolUI](https://ext.dcloud.net.cn/plugin?id=24497)：全端支持的组合式UI库，内置 Tailwind CSS、支持多主题切换与国际化
 
 
 如果想复用web生态的内容，可以使用
@@ -279,9 +279,11 @@ uni-app x引擎仅在引擎崩溃时有数据收集以用于产品改进，且�
 
 ## 路线图
 
-2025年将推出：
+HBuilderX 5.0先推出了鸿蒙版的蒸汽模式（[详见](./app-harmony/harmony-vapor.md)）：
 - vue蒸气模式（Vapor），免除vnode的创建耗时，渲染速度更快
-- App平台推出新版渲染系统，依然是基于原生渲染管线，但渲染速度会超过普通原生写法
+- 新版App渲染系统，依然是基于原生渲染管线，但渲染速度超过原生写法
+
+2026年会陆续补齐Android版和iOS版。
 
 其他计划，将根据社区的反馈意见来排优先级。
 

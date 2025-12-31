@@ -62,12 +62,7 @@ ArkTS的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可�
 	鸿蒙整体处于发展初期，能用，有坑，大部分坑有规避方案。但开发者应建议其领导、客户、质量部门降低期望，不能严格比照Android和iOS的验收标准要求鸿蒙。
 	
 - 鸿蒙编译工具会在编译本地库时给编译产物的目录加上一串hash值，但windows上最长的文件路径不能超过255个字符。如果开发者的项目路径字符串较长、uni_modules的目录名称较长，再加上鸿蒙deveco编译器加上的hash，就会触发windows文件路径长度限制，导致编译失败。所以windows上的uni-app x项目路径尽量要短，比如`c:\dev\app1`，`uni_modules`的目录名称也要短一些。
-- 鸿蒙平台从4.63起支持摇树，可以根据代码使用情况来决定打包的模块。但仍然部分sdk需要在manifest的可视化界面配置sdk信息。模块列表详见[manifest文档](../collocation/manifest-harmony.md#modules)
 - 暂未发布小程序SDK
-- 鸿蒙平台目前不支持横屏、不支持 rpx 根据窗口尺寸变化自动变化
-- 鸿蒙自身的Bug还有不少，开发时需注意相关的组件、API文档说明。比如：
-	* rich-text的无法自动根据内容撑开高度、内部会自滚动且滚动条位置不对，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250224172323045/comment?ha_source=Dcloud&ha_sourceId=89000448)，导致加载联网内容时滚动表现难以控制。[详见rich-text注意事项](../component/rich-text.md#tips)
-	* animateTo 设置 transform rotate 有较多问题，[华为issues地址](https://issuereporter.developer.huawei.com/detail/250317210619077/comment?ha_source=Dcloud&ha_sourceId=89000448)
 - 使用 uni.loadFontFace 后需要更新设置字体内容才能使字体生效
 - 鸿蒙原生应用的单位有逻辑像素和物理像素之分，分别是vp和px。这里的px是物理像素，而web的px是逻辑像素。同名但不同义。不过在uni-app x的css样式中，仍然使用习惯的px即可，它是逻辑像素，css里写的px编译到鸿蒙会自动变成vp（鸿蒙里的逻辑像素）。鸿蒙开发默认也是vp逻辑像素。鸿蒙原生单位文档[详见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units?ha_source=Dcloud&ha_sourceId=89000448)
 - 鸿蒙平台 uts 插件内暂不支持使用uniCloud
