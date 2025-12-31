@@ -164,6 +164,8 @@ pages.json
 - 混合情况  
   只要存在至少两个相邻节点（父子或兄弟）同时拍平，即可获得性能优化。  
 
+### 组件事件
+- TOOD：暂未支持手势协商，目前表现是swiper中嵌套list、slider等，会出现滑动冲突。
 
 ## API
 - 没有tabbar相关api。需使用uni-tab-bar组件相关属性设置。
@@ -176,3 +178,5 @@ Element API
 - 缺少Drawable。dom2的view、text创建足够快且支持拍平，故优先级不高
 	在蒸汽模式之前，为了高性能绘制，经常不能使用view和text组件，而是需要通过Drawable对象来绘制线条和文字，这种写法无法跨平台且复杂。\
 	在蒸汽模式后，开发者可以正常使用view和text跨平台的开发，比如hello uni-app x的模板中的日历示例，之前是Drawable绘制，现在都是拍平的text组件。
+
+其他还有一些差异，见文档的兼容性说明。兼容性表格已经新增了`HarmonyOS(Vapor)`一列。
