@@ -42,7 +42,7 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 而原生arkui，同设备上创建相同数量的元素并渲染，需要耗时900ms左右。渲染速度快3倍。
 
-原生arkui的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译体验。
+原生arkui的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译体验测试。
 
 另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的arkui要慢的多。
 
@@ -52,11 +52,13 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 而uni-app x 蒸汽模式极快的渲染速度，支撑开发者构造非常复杂的列表，也可以丝般顺滑。
 
-- 如果你问 uni-app x 的App平台到底是自渲染还是原生渲染，那么答案是原生渲染。uni-app x 选择原生渲染是为了更好的和原生生态无缝融合、以及降低内存占用。
+关于uni-app x的蒸汽模式为什么这么快，很多人可能有疑问，比如
 
-- 如果你问为什么都是原生渲染，uni-app x的蒸汽模式比原生渲染更快？
+- uni-app x 的App平台到底是自渲染还是原生渲染，那么答案是原生渲染。uni-app x 选择原生渲染是为了更好的和原生生态无缝融合、以及降低内存占用。
 
-这不是几句话能说清楚了，里面涉及数千项工程优化，但可以提供一些关键说明：
+- 为什么都是原生渲染，uni-app x的蒸汽模式比原生渲染更快？
+
+这里面涉及数千项工程优化，几句话无法解释清楚，但可以提供一些关键说明：
 1. Android的compose ui也是基于原生渲染管线的，但没有使用Android自带的view、textview，而是实现了自己的组件系统。
 	
 	这条路完全可行，只不过compose ui做的不太好，实际渲染速度比view体系更慢。
@@ -66,7 +68,7 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 	这些全新的组件做到了比OS自带组件性能更高。
 2. vue里template和style里的代码，被直接编译为优化度非常高的C代码。它的运行速度远快于arkts、kotlin及k/n。
 
-这些优化有没有副作用？
+- 这些优化有没有副作用？
 
 有。包括2个：
 1. 最大的副作用是编译更慢了
@@ -132,14 +134,14 @@ pages.json
 - 变更：list-view的变化和限制
 	* list-view支持vue实例、dom的全面复用。不再需要之前模板示例中的复用长列表、分批加载长列表。
 	* list-item的v-for必须要有:key。否则无法复用。
-	* list-view下仅第一个在list-item上的v-for支持复用。如果一个list-view下多组list-item各自有v-for，第2个起的v-for并不复用
+	* list-view下仅第一个在list-item上的v-for且有:key属性，才支持复用。如果一个list-view下多组list-item各自有v-for，第2个起的v-for并不复用
 	* 符合条件能复用的list-item会当做真正的list-item，其他不符合复用条件的list-item都会被编译为view。
 	* list-item和list-view需要有编译器能识别的父子关系，否则list-item会被编译成view，包括但不限于以下限制：
 		+ list-item、list-view不能分别包装在不同的组件内。同时处于性能考虑，最好不要包装这2个组件。
 		+ list-item不能通过slot插入到list-view内
-	* 不支持scroll-into-view
 	* list-view不支持横向滚动
 	* list-item宽度固定为100%。从css中获取position属性的值固定为absolute。
+- 已知bug：swiper中嵌套list、slider等，会出现滑动冲突。
 - 新增：view、text、image这3个组件的flatten拍平属性
 
 	拍平即不创建独立元素，而是绘制在父上。在审查元素边界时无法看到红框。
@@ -172,9 +174,6 @@ pages.json
   + 若仅对 P 和 G 拍平（中间隔了 C），则无法优化。  
 - 混合情况  
   只要存在至少两个相邻节点（父子或兄弟）同时拍平，即可获得性能优化。  
-
-### 组件事件
-- TOOD：暂未支持手势协商，目前表现是swiper中嵌套list、slider等，会出现滑动冲突。
 
 ## API
 - 没有tabbar相关api。需使用uni-tab-bar组件相关属性设置。
