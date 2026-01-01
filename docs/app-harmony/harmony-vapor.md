@@ -87,6 +87,10 @@ hello uni-app x有300多个页面，蒸汽模式的发行hap体积56M，之前�
 
 如果你的应用页面少的话，体积变化不明显。
 
+- 基于原生渲染，是否涉及跨平台的不一致问题？
+
+uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使用各平台的组件。可以很好的保持跨平台UI一致性。
+
 ## 体验方式
 下载HBuilderX 5.0+ 群测版，运行hello uni-app x的dev分支。
 
@@ -108,7 +112,24 @@ hello uni-app x有300多个页面，蒸汽模式的发行hap体积56M，之前�
 
 ## css
 - 变更：不支持关系选择器，只支持简单的class选择器
-- 变更：css样式隔离策略有较大调整，尤其是组件默认不受外部css影响。 [详见](../DOM2规范/样式隔离管理规范.md)
+- 变更：css样式隔离策略有较大调整
+	
+	**组件默认不受外部css影响，不管是页面还是全局css，默认都不能影响组件样式。**
+	
+	如需受外部影响，组件可以在 `<script setup>` 中 defineOptions 中定义 styleIsolation，默认值为：isolated。可以改为  app-shared。
+	
+	styleIsolation: isolated | app-shared
+	* isolated: 全隔离，只受自身样式影响（除externalClasses、组件根节点以外）
+	* app-shared: 受全局样式影响，优先级：全局样式 < 自身样式
+
+	也就是组件的使用方，不管是页面还是父组件，在组件使用时设置的class，仍然会作用到组件内的根节点上。
+	
+	而如果想影响组件内部的子元素的样式，组件应该提供external-Class方案，供外部定制。
+
+	页面默认受全局样式影响，但可以在 pages.json style 中配置 styleIsolation，默认值为：app-shared。如果页面不想受全局css影响，可以如下：
+	* 页面在`<script setup>`中使用 defineOptions 定义 styleIsolation，优先级高于 pages.json 中的配置
+	* 页面作为自定义组件渲染时，如果没有主动配置，默认值为：isolated
+
 - 新增和变更：组件样式支持external-class，废弃在属性上修改css的做法。
 
 	内置组件里过去有些样式定制放在属性上了，比如checkbox过去有color属性，以后就没有了。后续都通过class来修改样式。
@@ -116,6 +137,9 @@ hello uni-app x有300多个页面，蒸汽模式的发行hap体积56M，之前�
 	同时推荐组件作者也都使用class和external-class。减少属性和动态style设置样式。把样式设置放在组件属性上有诸多坏处：
 	1. 抽象不佳。所有样式都变成属性是封装不完的，尤其是组件的子元素，external-class是更好的抽象。即让组件作者省事，又满足组件使用者灵活的样式定制需求。
 	2. vue属性和动态style都要经过arkts层运算。而静态style、class、external-class是c层直接计算的，性能更高。
+
+	external-class示例：hello uni-app x的uni_modules/uni-badge-view/components/uni-badge-view/uni-badge-view.uvue
+	
 - TODO：还未实现css自定义变量
 - TODO：css动画不支持排版相关动画（left、top、width、height、margin、padding），请改用translateX/Y、scale等方式进行动画
 
@@ -176,13 +200,13 @@ pages.json
   只要存在至少两个相邻节点（父子或兄弟）同时拍平，即可获得性能优化。  
 
 ## API
-- 没有tabbar相关api。需使用uni-tab-bar组件相关属性设置。
+- TODO：没有tabbar相关api。需使用uni-tab-bar组件相关属性设置。
 - 没有页面滚动api。需要使用scroll-view相关api
 - 没有页面下拉刷新及相关生命周期。需要使用scroll-view相关api
 
 ### Element API
-- 缺少animate
-- 缺少create-Selector-query
+- TODO：缺少animate
+- TODO：缺少create-Selector-query
 - 缺少Drawable。dom2的view、text创建足够快且支持拍平，故优先级不高
 
 	在蒸汽模式之前，为了高性能绘制，经常不能使用view和text组件，而是需要通过Drawable对象来绘制线条和文字，这种写法无法跨平台且复杂。\
