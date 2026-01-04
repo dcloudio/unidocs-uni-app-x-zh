@@ -121,7 +121,7 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
   ```html
   <script setup lang="uts">
     defineOptions({
-      styleIsolation: 'app-shared'
+      styleIsolation: 'app-shared' // 可选值：isolated | app-shared
     })
   </script>
   ```
