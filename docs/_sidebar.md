@@ -45,6 +45,9 @@
 * 鸿蒙next平台专题指南
   * uni-app x 原生SDK
     * [原生联调](native/debug/harmony.md)
+* 小程序平台专题指南
+  * [微信小程序](mp/weixin.md)
+  * [支付宝小程序](mp/alipay.md)
 * 运行和调试
   * [真机运行](https://uniapp.dcloud.net.cn/tutorial/run/run-app.html)
   * [Android审查元素](debug/android-inspector.md)
