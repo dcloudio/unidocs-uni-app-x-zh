@@ -117,8 +117,16 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
 	**组件默认不受外部css影响，不管是页面还是全局css，默认都不能影响组件样式。**
 	
 	如需受外部影响，组件可以在 `<script setup>` 中 defineOptions 中定义 styleIsolation，默认值为：isolated。可以改为  app-shared。
-	
-	styleIsolation: isolated | app-shared
+    
+```html
+<script setup lang="uts">
+  defineOptions({
+    styleIsolation: 'app-shared'
+  })
+</script>
+```
+
+  styleIsolation: isolated | app-shared
 	* isolated: 全隔离，只受自身样式影响（除externalClasses、组件根节点以外）
 	* app-shared: 受全局样式影响，优先级：全局样式 < 自身样式
 
