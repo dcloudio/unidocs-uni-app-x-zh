@@ -18,8 +18,6 @@ uni-app x 项目在编译到支付宝小程序平台时，将部分特性对齐�
 
 支付宝小程序由于 click、tap 事件无法获取 touches 参数，因此不能通过 event 获取如下参数
 
-- pageX
-- pageY
 - screenX
 - screenY
 
