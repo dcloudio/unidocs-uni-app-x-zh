@@ -10,11 +10,17 @@ uni-app x 项目在编译到支付宝小程序平台时，将部分特性对齐�
 
 非 uni-app x 项目使用 refs 取内置组件引用时会获取到undefined，而 uni-app x 项目会获取到对应的 UniElement。
 
-**Tips**  
+**注意**  
 
 全局配置不能设置 `component2` 为 false，否则会影响 refs 相关功能的正常使用。
 
 ## dom
+
+### UniElement
+
+支付宝小程序大多数方法注意事项和微信小程序一致，[参考](weixin.md#unielement)，不同点如下：
+
+- ref 绑定在 scroll-view 组件上时，由于没有 `ScrollViewContext`，因此与之相关的 API，如：scrollTo、scrollIntoView 均不能使用
 
 ### 事件
 
