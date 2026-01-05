@@ -180,7 +180,7 @@ easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取�
 
 如果不是内置组件，也不是easycom组件，那么无法使用`.`操作符了。
 
-此时需使用 `this.$refs` 获取组件实例，然后通过 `$callMethod` 调用组件的方法。也就是把组件的方法名、参数，当做callMethod的参数来传递。此时也就没有`.`操作符那样的代码提示和校验了。[详情](../vue/component.md#call-component-method)
+此时需使用 `this.$refs` 获取组件实例，然后通过 `$callMethod` 调用组件的方法。也就是把组件的方法名、参数，当做callMethod的参数来传递。此时也就没有`.`操作符那样的代码提示和校验了。[详情](../vue/component.md#call-component-method)。注意：`$callMethod` 调用性能低于easycom组件的强类型调用，如果遇到高频调用场景，建议使用easycom组件的强类型调用方法。
 
 ## 如何开发同时兼容 uni-app x 和 uni-app 的组件
 
