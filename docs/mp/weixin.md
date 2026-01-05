@@ -70,6 +70,5 @@ worklet函数暂不支持写在uvue、uts文件内，推荐从js文件内引用�
 
 ## 其他差异
 
-### 实体字符
-
-uni-app x项目在编译到小程序端时，如果页面内静态的使用了实体字符`&gt;、&lt;、&thinsp;、&nbsp;、&ensp;、&emsp;`则会在最终输出的小程序页面文件中保留这些实体字符，例如`&nbsp;`在微信小程序的wxml文件中仍为`&nbsp;`不会被转为空格， 而非uni-app-x项目`&nbsp;`会转为空格。
+- uni-app x项目在编译到小程序端时，如果页面内静态的使用了实体字符`&gt;、&lt;、&thinsp;、&nbsp;、&ensp;、&emsp;`则会在最终输出的小程序页面文件中保留这些实体字符，例如`&nbsp;`在微信小程序的wxml文件中仍为`&nbsp;`不会被转为空格， 而非uni-app-x项目`&nbsp;`会转为空格。
+- 自 5.0 版本起，微信小程序将支持父组件设置子组件的class样式，[详见](https://issues.dcloud.net.cn/pages/issues/detail?id=22706)。
