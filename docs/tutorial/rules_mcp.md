@@ -20,6 +20,10 @@ uni-app x使用的uts语言、ucsss样式，和ts、css有差异。我们已经�
 ## Google Antigravity
 复制[.agent](https://gitcode.com/dcloud/uni-app-x-ai-rules)目录到uni-app-x项目根目录下
 
+## Claude Code
+复制[.claude](https://gitcode.com/dcloud/uni-app-x-ai-rules)目录到uni-app-x项目根目录下
+复制[.mcp.json](https://gitcode.com/dcloud/uni-app-x-ai-rules)文件到uni-app-x项目根目录下
+
 ## 使用mcp
 
 > uni-app-x-mcp兼容uni-app项目，在uni-app项目中同样可以使用
@@ -79,6 +83,12 @@ $ npm i @dcloudio/uni-app-x-mcp -g
 - 在Trae中使用
 
 目前trae官方并没有支持在.trae目录中配置mcp.json，官方提供了手动配置方式，是配置在全局的， 但[mcp.json](https://gitcode.com/dcloud/uni-app-x-ai-rules/blob/main/.trae/mcp.json)的内容是一样的，可以直接使用。[trae中如何使用mcp](https://docs.trae.com.cn/ide/model-context-protocol)
+
+- 在Claude Code中使用
+
+```sh
+claude mcp add --transport stdio uni-app-x-mcp --scope project  -- npx -y @dcloudio/uni-app-x-mcp
+```
 
 
 #### 3、Cursor默认启动MCP服务
