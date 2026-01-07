@@ -98,7 +98,7 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
 
 如果要在自己的项目下打开蒸汽模式，需要在manifest.json的可视化界面首页中勾选蒸汽模式。
 
-运行默认是debug模式，性能较差。如果要测试性能，可以选择以release方式运行，选项在manifest可视化界面的鸿蒙App下。
+运行默认是debug模式，性能较差。如果要测试性能，可以选择以release方式运行，选项在manifest可视化界面的鸿蒙App下。release方式运行接近正式打包后的性能，但仍然略微低于正式包。
 
 ## 开发注意
 
@@ -111,7 +111,7 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
 - 不再支持mixin
 
 ## css
-- 变更：不支持关系选择器，只支持简单的class选择器
+- 变更：不支持复杂关系选择器，只支持简单的class选择器 [详见](../css/common/selector.md)
 - 变更：css样式隔离策略有较大调整
 	
 	**组件默认不受外部css影响，不管是页面还是全局css，默认都不能影响组件样式。**
@@ -149,7 +149,7 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
 	external-class示例：hello uni-app x的uni_modules/uni-badge-view/components/uni-badge-view/uni-badge-view.uvue
 	
 - TODO：还未实现css自定义变量
-- TODO：css动画不支持排版相关动画（left、top、width、height、margin、padding），请改用translateX/Y、scale等方式进行动画
+- css动画不支持排版相关动画（left、top、width、height、margin、padding），请改用translateX/Y、scale等方式进行动画
 
 
 ## 全局文件
@@ -168,7 +168,7 @@ pages.json
 	* list-item的v-for必须要有:key。否则无法复用。
 	* list-view下仅第一个在list-item上的v-for且有:key属性，才支持复用。如果一个list-view下多组list-item各自有v-for，第2个起的v-for并不复用
 	* 符合条件能复用的list-item会当做真正的list-item，其他不符合复用条件的list-item都会被编译为view。
-	* list-item和list-view需要有编译器能识别的父子关系，否则list-item会被编译成view，包括但不限于以下限制：
+	* list-item和list-view需要有编译器能识别的父子关系，即不能分别封装到组件中，否则list-item会被编译成view，包括但不限于以下限制：
 		+ list-item、list-view不能分别包装在不同的组件内。同时处于性能考虑，最好不要包装这2个组件。
 		+ list-item不能通过slot插入到list-view内
 	* list-view不支持横向滚动
@@ -191,7 +191,6 @@ pages.json
 		4.不支持 Background-image
 		5.Box-shadow不支持设置inset
 		6.不支持 Pointer-events
-	* image拍平后无法播放动画，gif、webp动画仅显示第一帧
 
 ### 拍平（flatten）在鸿蒙平台注意事项  
 支持 flatten属性的组件（如 View、Text、Image）在逻辑上均可设置为 true 以进行“拍平”，但实际性能优化效果需满足以下条件：  
