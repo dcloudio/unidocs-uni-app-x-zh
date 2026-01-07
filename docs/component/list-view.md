@@ -83,6 +83,6 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 
 ### Bug & Tips@tips
 
-- 如需im那样的倒序列表，App端可给组件style配置 `transform: rotate(180deg)` 来实现。注意与下拉刷新有冲突，此时应避免启用下拉刷新。
+- 如需im那样的倒序列表，App端可给组件style配置 `transform: rotate(180deg)` 来实现。注意与下拉刷新有冲突，此时应避免启用下拉刷新。可参考[uni-ai x源码](https://ext.dcloud.net.cn/plugin?id=23902)
 - list-view组件的overflow属性不支持配置visible
 - list-view组件不适合做瀑布流，多列瀑布流另见 [waterflow组件](./waterflow.md)
