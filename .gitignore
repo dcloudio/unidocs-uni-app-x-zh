@@ -4,3 +4,4 @@ docs/.vuepress/dist
 **/sitemap.xml
 **/llms.txt
 docs-lite
+.docs-sync-cache
