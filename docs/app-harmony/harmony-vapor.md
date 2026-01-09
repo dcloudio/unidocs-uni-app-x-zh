@@ -169,10 +169,11 @@ pages.json
 	* list-view下仅第一个在list-item上的v-for且有:key属性，才支持复用。如果一个list-view下多组list-item各自有v-for，第2个起的v-for并不复用
 	* 符合条件能复用的list-item会当做真正的list-item，其他不符合复用条件的list-item都会被编译为view。
 	* list-item和list-view需要有编译器能识别的父子关系，即不能分别封装到组件中，否则list-item会被编译成view，包括但不限于以下限制：
-		+ list-item、list-view不能分别包装在不同的组件内。同时处于性能考虑，最好不要包装这2个组件。
-		+ list-item不能通过slot插入到list-view内
+		+ list-item、list-view不能分别包装在不同的组件内。同时出于性能考虑，最好不要包装这2个组件。
 	* list-view不支持横向滚动
 	* list-item宽度固定为100%。从css中获取position属性的值固定为absolute。
+	* list-item不支持直接以文字节点作为子节点，必须有一个view/text等作为包裹节点
+	* list-item不支持设置margin
 - 已知bug：swiper中嵌套list、slider等，会出现滑动冲突。
 - 新增：view、text、image这3个组件的flatten拍平属性
 
