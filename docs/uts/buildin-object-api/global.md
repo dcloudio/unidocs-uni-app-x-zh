@@ -3,6 +3,19 @@
 
 ## 全局方法
 
+### eval(x)
+
+<!-- UTSJSON.Global.eval.description -->
+
+<!-- UTSJSON.Global.eval.param -->
+
+<!-- UTSJSON.Global.eval.returnValue -->
+
+<!-- UTSJSON.Global.eval.test -->
+
+<!-- UTSJSON.Global.eval.compatibility -->
+
+<!-- UTSJSON.Global.eval.tutorial -->
 
 ### parseInt(string, radix?)
 
@@ -179,3 +192,31 @@ const c = parseInt("546", 2) // 结果为 NAN (原因：除了“0、1”外，�
 **注意：**
 
 - 鸿蒙平台暂不支持该方法，如需使用鸿蒙原生支持的buffer功能，参考： [@ohos.buffer@ohos.buffer](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-buffer)。
+
+### requestAnimationFrame(callback)
+
+<!-- UTSJSON.Global.requestAnimationFrame.description -->
+
+<!-- UTSJSON.Global.requestAnimationFrame.param -->
+
+<!-- UTSJSON.Global.requestAnimationFrame.returnValue -->
+
+<!-- UTSJSON.Global.requestAnimationFrame.test -->
+
+<!-- UTSJSON.Global.requestAnimationFrame.compatibility -->
+
+<!-- UTSJSON.Global.requestAnimationFrame.tutorial -->
+
+### cancelAnimationFrame(taskId)
+
+<!-- UTSJSON.Global.cancelAnimationFrame.description -->
+
+<!-- UTSJSON.Global.cancelAnimationFrame.param -->
+
+<!-- UTSJSON.Global.cancelAnimationFrame.returnValue -->
+
+<!-- UTSJSON.Global.cancelAnimationFrame.test -->
+
+<!-- UTSJSON.Global.cancelAnimationFrame.compatibility -->
+
+<!-- UTSJSON.Global.cancelAnimationFrame.tutorial -->
