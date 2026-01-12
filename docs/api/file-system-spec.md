@@ -172,8 +172,8 @@ uni-app x的部分内置API，在App平台会产生临时文件会放置在本ca
 - uni-snapshot // element takeSnapShot截图APi存储的路径
 - uni-audio //存放网络缓存音频文件
 - uni-recorder //存放录音文件
-- uni-crash //存放崩溃日志
 - uni-store // uni.getFileSystemManager().saveFile/saveFileSync 默认保存路径
+- uni-crash //存放崩溃日志
 	* java //java、kotlin层崩溃日志
 	* c //c、so库崩溃日志
 
