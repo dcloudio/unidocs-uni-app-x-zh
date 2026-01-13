@@ -10,7 +10,7 @@
 
 组件还可以封装方法、事件、插槽，提供了[组件的生命周期](#component-lifecycle)，提供了组件和页面的[互通信机制](#use-and-communication)，满足了各种高级需求。
 
-如果您还不了解这些概念，请务必先阅读 [组件概述文档](../compiler/README.md)
+如果您还不了解这些概念，请务必先阅读 [组件概述文档](../component/README.md)
 
 ## 组件内容构成 @component-structure
 
