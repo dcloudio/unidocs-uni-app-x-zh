@@ -116,26 +116,27 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
 	
 	**组件默认不受外部css影响，不管是页面还是全局css，默认都不能影响组件样式。**
 	
-	如需受外部影响，组件可以在 `<script setup>` 中 defineOptions 中定义 styleIsolation，默认值为：isolated。可以改为  app-shared。
+	如需受外部影响，组件可以在 `<script setup>` 中 defineOptions 中定义 styleIsolation，默认值为：isolated。可以改为  app 或 app-and-page。
     
   ```html
   <script setup lang="uts">
     defineOptions({
-      styleIsolation: 'app-shared' // 可选值：isolated | app-shared
+      styleIsolation: 'app' // 可选值：isolated | app | app-and-page
     })
   </script>
   ```
 
-  	styleIsolation: isolated | app-shared
+  	styleIsolation: isolated | app
 	* isolated: 全隔离，只受自身样式影响（除externalClasses、组件根节点以外）
-	* app-shared: 受全局样式影响，优先级：全局样式 < 自身样式
+	* app: 受全局样式影响，优先级：全局样式 < 自身样式
+    * app-and-page: 受全局、页面样式影响, 全局样式 < 页面样式 < 自身样式
 
 	也就是组件的使用方，不管是页面还是父组件，在组件使用时设置的class，仍然会作用到组件内的根节点上。
 	
 	而如果想影响组件内部的子元素的样式，组件应该提供external-Class方案，供外部定制。
 
-	页面默认受全局样式影响，但可以在 pages.json style 中配置 styleIsolation，默认值为：app-shared。如果页面不想受全局css影响，可以如下：
-	* 页面在`<script setup>`中使用 defineOptions 定义 styleIsolation，优先级高于 pages.json 中的配置
+	页面默认受全局样式影响，如果页面不想受全局css影响，可以如下：
+	* 页面在`<script setup>`中使用 defineOptions 定义 styleIsolation
 	* 页面作为自定义组件渲染时，如果没有主动配置，默认值为：isolated
 
 - 新增和变更：组件样式支持external-class，废弃在属性上修改css的做法。
