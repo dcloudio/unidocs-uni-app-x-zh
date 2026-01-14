@@ -142,6 +142,7 @@ export default {
 ::: warning 注意
 - 选项式 API：`this.$props` 是 `Map` 类型，需要使用 `this.$props["propName"]` 来访问
 - 组合式 API：可以使用 `.` 点操作符来访问
+- 默认情况下，父组件传递的，但没有被子组件解析为 props 的 attributes 绑定会被“透传”。这意味着当我们有一个单根节点的子组件时，这些绑定会被作为一个常规的 attribute 应用在子组件的根节点元素上，可以通过 `inheritAttrs` 选项来关闭该行为，[详见](./options-api.md#inheritattrs)
 :::
 
 ::: preview <!-- VUEJSON.E_component-instance.props_props-options.webUrl -->
