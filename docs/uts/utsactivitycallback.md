@@ -1277,6 +1277,7 @@ export class UTSAcvitiyKeyEventCallback extends UniActivityKeyEventCallback {
     callback('onKeyDown')
   }
   override onPreKeyDown(params : UniActivityParams, keyCode : Int, event : KeyEvent | null) {
+    params.returnResult = true //设置returnResult为true，表示需要拦截事件，终止事件传递
     console.log('UTSAcvitiyKeyEvent', 'onPreKeyDown', params, keyCode, '' + event)
     callback('onPreKeyDown')
   }
