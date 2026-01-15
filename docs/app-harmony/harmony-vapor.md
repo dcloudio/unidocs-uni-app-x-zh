@@ -44,9 +44,9 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 原生arkui的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译体验测试。
 
-另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的arkui要慢的多。
+另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的arkui要慢的多，更无法与uni-app x蒸汽模式相比。
 
-在复杂长列表中，uni-app x 蒸汽模式的丢帧率也优于于原生arkui。
+在复杂长列表中，uni-app x 蒸汽模式的丢帧率也优于原生arkui。
 
 在120Hz高刷屏上，8.3ms内无法完成新列表项的加载，就会掉帧。列表越复杂，越难以在8.3ms内完成渲染。
 
@@ -58,7 +58,7 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 - 为什么都是原生渲染，uni-app x的蒸汽模式比原生渲染更快？
 
-这里面涉及数千项工程优化，几句话无法解释清楚，但可以提供一些关键说明：
+这里面涉及数千项工程优化，无法通过几句话解释清楚，但可以提供一些关键说明：
 1. Android的compose ui也是基于原生渲染管线的，但没有使用Android自带的view、textview，而是实现了自己的组件系统。
 	
 	这条路完全可行，只不过compose ui做的不太好，实际渲染速度比view体系更慢。
@@ -92,7 +92,7 @@ hello uni-app x有300多个页面，蒸汽模式的发行hap体积56M，之前�
 uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使用各平台的组件。可以很好的保持跨平台UI一致性。
 
 ## 体验方式
-下载HBuilderX 5.0+ 群测版，运行hello uni-app x的dev分支。
+下载HBuilderX 5.0+ 群测版，运行hello uni-app x的[alpha分支](https://gitcode.com/dcloud/hello-uni-app-x)。
 
 该分支项目默认打开了蒸汽模式。
 
@@ -101,6 +101,8 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
 运行默认是debug模式，性能较差。如果要测试性能，可以选择以release方式运行，选项在manifest可视化界面的鸿蒙App下。release方式运行接近正式打包后的性能，但仍然略微低于正式包。
 
 ## 开发注意
+
+蒸汽模式目前仅支持鸿蒙。Android、iOS、web会陆续上线。
 
 对比非蒸汽，蒸汽模式有一些变更调整，有一些待完成TODO，说明如下：
 
@@ -111,10 +113,10 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
 - 不再支持mixin
 
 ## css
-- 变更：不支持复杂关系选择器，只支持简单的class选择器 [详见](../css/common/selector.md)
-- 变更：css样式隔离策略有较大调整
+- 变更：因为性能原因，不支持复杂关系选择器，只支持简单的class选择器 [详见](../css/common/selector.md)
+- 变更：css的样式隔离策略有较大调整
 	
-	**组件默认不受外部css影响，不管是页面还是全局css，默认都不能影响组件样式。**
+	**组件默认不受外部css同名影响，不管是页面还是全局css，外部的同名class默认都不能影响组件样式。**
 	
 	如需受外部影响，组件可以在 `<script setup>` 中 defineOptions 中定义 styleIsolation，默认值为：isolated。可以改为  app 或 app-and-page。
     
@@ -126,38 +128,39 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
   </script>
   ```
 
-  	styleIsolation: isolated | app | app-and-page
+	styleIsolation: isolated | app | app-and-page
 	* isolated: 全隔离，只受自身样式影响（除externalClasses、组件根节点以外）
-	* app: 受全局样式影响，优先级：全局样式 < 自身样式
-    * app-and-page: 受全局、页面样式影响, 全局样式 < 页面样式 < 自身样式
+	* app: 受app.uvue中引入的全局样式影响。优先级：全局样式 < 自身样式
+	* app-and-page: 受全局、页面样式影响, 全局样式 < 页面样式 < 自身样式
 
-	也就是组件的使用方，不管是页面还是父组件，在组件使用时设置的class，仍然会作用到组件内的根节点上。
+	组件的使用方，不管是页面还是父组件，在组件使用时设置的class，仍然会作用到组件内的根节点上（需组件是单根节点）。
 	
 	而如果想影响组件内部的子元素的样式，组件应该提供external-Class方案，供外部定制。
 
-	页面默认受全局样式影响，如果页面不想受全局css影响，可以如下：
-	* 页面在`<script setup>`中使用 defineOptions 定义 styleIsolation
-	* 页面作为自定义组件渲染时，如果没有主动配置，默认值为：isolated
-
-- 新增和变更：组件样式支持external-class，废弃在属性上修改css的做法。
-
-	内置组件里过去有些样式定制放在属性上了，比如checkbox过去有color属性，以后就没有了。后续都通过class来修改样式。
-	
-	同时推荐组件作者也都使用class和external-class。减少属性和动态style设置样式。把样式设置放在组件属性上有诸多坏处：
-	1. 抽象不佳。所有样式都变成属性是封装不完的，尤其是组件的子元素，external-class是更好的抽象。即让组件作者省事，又满足组件使用者灵活的样式定制需求。
-	2. vue属性和动态style都要经过arkts层运算。而静态style、class、external-class是c层直接计算的，性能更高。
-
-	external-class示例：hello uni-app x的uni_modules/uni-badge-view/components/uni-badge-view/uni-badge-view.uvue
-	
-- TODO：还未实现css自定义变量
-- css动画不支持排版相关动画（left、top、width、height、margin、padding），请改用translateX/Y、scale等方式进行动画
-- 目前上述css隔离策略仅在鸿蒙平台(蒸汽模式)下生效，其他平台暂未支持蒸汽模式，如果您想在其他平台非蒸汽模式下也启用该隔离策略，可以在manifest.json中手动配置`styleIsolationVersion`，注意：目前仅web平台支持该配置，其他平台暂未支持。
+	目前上述css隔离策略仅在鸿蒙平台(蒸汽模式)下生效，其他平台暂未支持蒸汽模式。
+	如果您想在其他平台非蒸汽模式下也启用该隔离策略，可以在manifest.json中手动配置`styleIsolationVersion`，注意：目前仅web平台支持该配置，其他平台暂未支持。
+	另外注意web平台使用external-class，也需要开启该隔离策略。
 ```json
 "uni-app-x": {
 		"vapor": true,
 		"styleIsolationVersion": "2"
 	}
 ```
+
+- 新增和变更：组件样式支持external-class，废弃在属性上修改子元素css的做法。
+
+	内置组件里过去有些样式定制放在属性上了，比如checkbox过去有color属性，以后就没有了。后续都通过class来修改样式。
+	
+	同时推荐组件作者也都使用class和external-class。减少属性和动态style设置子元素样式。
+	
+	把样式设置放在组件属性上有诸多坏处：
+	1. 抽象不佳。所有样式都变成属性是封装不完的，尤其是组件的子元素，external-class是更好的抽象。即让组件作者省事，又满足组件使用者灵活的样式定制需求。
+	2. 性能。vue属性和动态style都要经过arkts层运算。而静态style、class、external-class是c层直接计算的，性能更高。
+
+	external-class示例：hello uni-app x的uni_modules/uni-badge-view/components/uni-badge-view/uni-badge-view.uvue
+	
+- TODO：还未实现css自定义变量
+- css动画不支持排版相关动画（left、top、width、height、margin、padding），请改用translateX/Y、scale等方式进行动画
 
 
 ## 全局文件
@@ -170,19 +173,22 @@ pages.json
 - TODO：缺少组件waterflow
 - 变更：布尔属性规范化。scroll-view等部分组件布尔属性默认值从true改为false。
 - 新增和变更：swiper和表单组件中涉及样式的属性，从属性改为了external-class，支持更丰富的样式控制
-- 新增：button多了loading属性
+- 新增：button多了loading属性和loading-class属性
 - 变更：list-view的变化和限制
-	* list-view支持vue实例、dom的全面复用。不再需要之前模板示例中的复用长列表、分批加载长列表。
+	* list-view支持vue实例、dom的全面复用，进一步降低内存占用。不再需要之前模板示例中的复用长列表、分批加载长列表。
 	* list-item的v-for必须要有:key。否则无法复用。
 	* list-view下仅第一个在list-item上的v-for且有:key属性，才支持复用。如果一个list-view下多组list-item各自有v-for，第2个起的v-for并不复用
 	* 符合条件能复用的list-item会当做真正的list-item，其他不符合复用条件的list-item都会被编译为view。
-	* list-item和list-view需要有编译器能识别的父子关系，即不能分别封装到组件中，否则list-item会被编译成view，包括但不限于以下限制：
-		+ list-item、list-view不能分别包装在不同的组件内。同时出于性能考虑，最好不要包装这2个组件。
+	* list-item和list-view需要有编译器能识别的父子关系，否则list-item会被编译成view。即，list-item、list-view不能分别包装在不同的组件内。同时出于性能考虑，最好不要包装这2个组件。
 	* list-view不支持横向滚动
 	* list-item宽度固定为100%。从css中获取position属性的值固定为absolute。
-	* list-item不支持直接以文字节点作为子节点，必须有一个view/text等作为包裹节点
+	* list-item不支持直接以文字节点作为子节点，必须使用text包裹文字内容。
 	* list-item不支持设置margin
-- 已知bug：swiper中嵌套list、slider等，会出现滑动冲突。
+- 变更：swiper组件的变化
+	* 可以通过indicator-class、indicator-active-class自定义默认指示器的样式
+	* 可通过<template v-slot:indicator>，传入自定义的指示器
+	* swiper-item的position属性的值固定为absolute
+	* swiper默认高度为150px。如需根据内容高度撑开，可使用auto-height属性。
 - 新增：view、text、image这3个组件的flatten拍平属性
 
 	拍平即不创建独立元素，而是绘制在父上。在审查元素边界时无法看到红框。
@@ -217,13 +223,12 @@ pages.json
 
 ## API
 - TODO：没有tabbar相关api。需使用uni-tab-bar组件相关属性设置。
-- 没有页面滚动api。需要使用scroll-view相关api
 - 没有页面下拉刷新及相关生命周期。需要使用scroll-view相关api
 
 ### Element API
-- TODO：缺少animate
+- TODO：缺少animate api
 - TODO：缺少create-Selector-query
-- 缺少Drawable。dom2的view、text创建足够快且支持拍平，故优先级不高
+- TODO：缺少Drawable。dom2的view、text创建足够快且支持拍平，故优先级不高
 
 	在蒸汽模式之前，为了高性能绘制，经常不能使用view和text组件，而是需要通过Drawable对象来绘制线条和文字，这种写法无法跨平台且复杂。\
 	在蒸汽模式后，开发者可以正常使用view和text跨平台的开发，比如hello uni-app x的模板中的日历示例，之前是Drawable绘制，现在都是拍平的text组件。

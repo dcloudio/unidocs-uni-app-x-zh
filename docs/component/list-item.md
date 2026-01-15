@@ -12,8 +12,9 @@
 
 > 仅App平台支持复用 (iOS 4.25+版本支持)。Web平台仅渲染当前屏幕及上下一定高度内的元素，没有对list-item进行复用。
 
++ 良好的复用，需要在list-item上使用v-for且配置:key。
 + type属性定义list-item组件类型。不赋值type属性默认值为0，每一个type类型都会有对应的list-item组件缓存池。
-+ 鸿蒙平台不支持type属性，鸿蒙应用会将一个list-view下所有list-item放在一个缓存池进行复用
++ 鸿蒙平台在非蒸汽模式不支持type属性，会将一个list-view下所有list-item放在一个缓存池进行复用。蒸汽模式支持type分类复用。
 + list-view组件加载list-item组件时，会优先查询对应type缓存池是否存在可复用的list-item组件。有则复用没有则创建新的list-item组件。
 + list-item组件被滑动出屏幕则会优先添加到对应类型的list-item缓存池，每个类型缓存最大5~8个（不同平台缓存最大值不固定），如果缓存池已满则进行组件销毁！
 + 部分list-item组件存在子元素个数差异时。请尽可能的配置不同的type，可以规避获取相同type类型的list-item组件因子元素个数差异导致重新创建，增加性能消耗。
