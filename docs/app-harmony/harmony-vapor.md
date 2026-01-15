@@ -151,6 +151,13 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
 	
 - TODO：还未实现css自定义变量
 - css动画不支持排版相关动画（left、top、width、height、margin、padding），请改用translateX/Y、scale等方式进行动画
+- 目前上述css隔离策略仅在鸿蒙平台(蒸汽模式)下生效，其他平台暂未支持蒸汽模式，如果您想在其他平台非蒸汽模式下也启用该隔离策略，可以在manifest.json中手动配置`styleIsolationVersion`，注意：目前仅web平台支持该配置，其他平台暂未支持。
+```json
+"uni-app-x": {
+		"vapor": true,
+		"styleIsolationVersion": "2"
+	}
+```
 
 
 ## 全局文件
