@@ -22,3 +22,8 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+### Bug&Tips @bug_tips
+
+- 鸿蒙平台，HBuilderX 4.87 及以下版本，分享时有图片大于 20 KB 会出现分享失败的问题
+  - 下载 [har包](https://web-ext-storage.dcloud.net.cn/temp/uni_modules__uni_share_weixin_x.har)并改名为 `uni_modules__uni_share_weixin.har`，放到 `项目根目录/harmony-configs/libs/` 目录下重新编译运行到手机
