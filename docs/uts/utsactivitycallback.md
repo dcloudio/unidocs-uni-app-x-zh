@@ -29,6 +29,18 @@
 ### 实例方法
 
 
+#### onPreAttachFragment(params, fragment)
+
+<!-- UTSJSON.UniActivityCallback.onPreAttachFragment.description -->
+
+<!-- UTSJSON.UniActivityCallback.onPreAttachFragment.param -->
+
+<!-- UTSJSON.UniActivityCallback.onPreAttachFragment.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onPreAttachFragment.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onPreAttachFragment.tutorial -->
+
 #### onAttachFragment(params, fragment)
 
 <!-- UTSJSON.UniActivityCallback.onAttachFragment.description -->
@@ -40,6 +52,18 @@
 <!-- UTSJSON.UniActivityCallback.onAttachFragment.compatibility -->
 
 <!-- UTSJSON.UniActivityCallback.onAttachFragment.tutorial -->
+
+#### onPreUserInteraction(params)
+
+<!-- UTSJSON.UniActivityCallback.onPreUserInteraction.description -->
+
+<!-- UTSJSON.UniActivityCallback.onPreUserInteraction.param -->
+
+<!-- UTSJSON.UniActivityCallback.onPreUserInteraction.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onPreUserInteraction.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onPreUserInteraction.tutorial -->
 
 #### onUserInteraction(params)
 
@@ -65,186 +89,6 @@
 
 <!-- UTSJSON.UniActivityCallback.onPictureInPictureModeChanged.tutorial -->
 
-#### onUserLeaveHint(params)
-
-<!-- UTSJSON.UniActivityCallback.onUserLeaveHint.description -->
-
-<!-- UTSJSON.UniActivityCallback.onUserLeaveHint.param -->
-
-<!-- UTSJSON.UniActivityCallback.onUserLeaveHint.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onUserLeaveHint.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onUserLeaveHint.tutorial -->
-
-#### onActivityResult(params, requestCode, resultCode, data)
-
-<!-- UTSJSON.UniActivityCallback.onActivityResult.description -->
-
-<!-- UTSJSON.UniActivityCallback.onActivityResult.param -->
-
-<!-- UTSJSON.UniActivityCallback.onActivityResult.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onActivityResult.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onActivityResult.tutorial -->
-
-#### onRequestPermissionsResult(params, requestCode, permissions, grantResults)
-
-<!-- UTSJSON.UniActivityCallback.onRequestPermissionsResult.description -->
-
-<!-- UTSJSON.UniActivityCallback.onRequestPermissionsResult.param -->
-
-<!-- UTSJSON.UniActivityCallback.onRequestPermissionsResult.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onRequestPermissionsResult.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onRequestPermissionsResult.tutorial -->
-
-#### onApplyThemeResource(params, theme, resid, first)
-
-<!-- UTSJSON.UniActivityCallback.onApplyThemeResource.description -->
-
-<!-- UTSJSON.UniActivityCallback.onApplyThemeResource.param -->
-
-<!-- UTSJSON.UniActivityCallback.onApplyThemeResource.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onApplyThemeResource.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onApplyThemeResource.tutorial -->
-
-#### onCreateView(params, parent, name, context, attrs)
-
-<!-- UTSJSON.UniActivityCallback.onCreateView.description -->
-
-<!-- UTSJSON.UniActivityCallback.onCreateView.param -->
-
-<!-- UTSJSON.UniActivityCallback.onCreateView.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onCreateView.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onCreateView.tutorial -->
-
-#### onTitleChanged(params, title, color)
-
-<!-- UTSJSON.UniActivityCallback.onTitleChanged.description -->
-
-<!-- UTSJSON.UniActivityCallback.onTitleChanged.param -->
-
-<!-- UTSJSON.UniActivityCallback.onTitleChanged.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onTitleChanged.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onTitleChanged.tutorial -->
-
-#### onChildTitleChanged(params, childActivity, title)
-
-<!-- UTSJSON.UniActivityCallback.onChildTitleChanged.description -->
-
-<!-- UTSJSON.UniActivityCallback.onChildTitleChanged.param -->
-
-<!-- UTSJSON.UniActivityCallback.onChildTitleChanged.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onChildTitleChanged.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onChildTitleChanged.tutorial -->
-
-#### onContextMenuClosed(params, menu)
-
-<!-- UTSJSON.UniActivityCallback.onContextMenuClosed.description -->
-
-<!-- UTSJSON.UniActivityCallback.onContextMenuClosed.param -->
-
-<!-- UTSJSON.UniActivityCallback.onContextMenuClosed.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onContextMenuClosed.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onContextMenuClosed.tutorial -->
-
-#### onCreateContextMenu(params, menu, v, menuInfo)
-
-<!-- UTSJSON.UniActivityCallback.onCreateContextMenu.description -->
-
-<!-- UTSJSON.UniActivityCallback.onCreateContextMenu.param -->
-
-<!-- UTSJSON.UniActivityCallback.onCreateContextMenu.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onCreateContextMenu.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onCreateContextMenu.tutorial -->
-
-#### onOptionsMenuClosed(params, menu)
-
-<!-- UTSJSON.UniActivityCallback.onOptionsMenuClosed.description -->
-
-<!-- UTSJSON.UniActivityCallback.onOptionsMenuClosed.param -->
-
-<!-- UTSJSON.UniActivityCallback.onOptionsMenuClosed.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onOptionsMenuClosed.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onOptionsMenuClosed.tutorial -->
-
-#### onPrepareNavigateUpTaskStack(params, builder)
-
-<!-- UTSJSON.UniActivityCallback.onPrepareNavigateUpTaskStack.description -->
-
-<!-- UTSJSON.UniActivityCallback.onPrepareNavigateUpTaskStack.param -->
-
-<!-- UTSJSON.UniActivityCallback.onPrepareNavigateUpTaskStack.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onPrepareNavigateUpTaskStack.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onPrepareNavigateUpTaskStack.tutorial -->
-
-#### onProvideAssistData(params, data)
-
-<!-- UTSJSON.UniActivityCallback.onProvideAssistData.description -->
-
-<!-- UTSJSON.UniActivityCallback.onProvideAssistData.param -->
-
-<!-- UTSJSON.UniActivityCallback.onProvideAssistData.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onProvideAssistData.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onProvideAssistData.tutorial -->
-
-#### onProvideAssistContent(params, outContent)
-
-<!-- UTSJSON.UniActivityCallback.onProvideAssistContent.description -->
-
-<!-- UTSJSON.UniActivityCallback.onProvideAssistContent.param -->
-
-<!-- UTSJSON.UniActivityCallback.onProvideAssistContent.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onProvideAssistContent.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onProvideAssistContent.tutorial -->
-
-#### onPreAttachFragment(params, fragment)
-
-<!-- UTSJSON.UniActivityCallback.onPreAttachFragment.description -->
-
-<!-- UTSJSON.UniActivityCallback.onPreAttachFragment.param -->
-
-<!-- UTSJSON.UniActivityCallback.onPreAttachFragment.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onPreAttachFragment.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onPreAttachFragment.tutorial -->
-
-#### onPreUserInteraction(params)
-
-<!-- UTSJSON.UniActivityCallback.onPreUserInteraction.description -->
-
-<!-- UTSJSON.UniActivityCallback.onPreUserInteraction.param -->
-
-<!-- UTSJSON.UniActivityCallback.onPreUserInteraction.returnValue -->
-
-<!-- UTSJSON.UniActivityCallback.onPreUserInteraction.compatibility -->
-
-<!-- UTSJSON.UniActivityCallback.onPreUserInteraction.tutorial -->
-
 #### onPreUserLeaveHint(params)
 
 <!-- UTSJSON.UniActivityCallback.onPreUserLeaveHint.description -->
@@ -256,6 +100,18 @@
 <!-- UTSJSON.UniActivityCallback.onPreUserLeaveHint.compatibility -->
 
 <!-- UTSJSON.UniActivityCallback.onPreUserLeaveHint.tutorial -->
+
+#### onUserLeaveHint(params)
+
+<!-- UTSJSON.UniActivityCallback.onUserLeaveHint.description -->
+
+<!-- UTSJSON.UniActivityCallback.onUserLeaveHint.param -->
+
+<!-- UTSJSON.UniActivityCallback.onUserLeaveHint.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onUserLeaveHint.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onUserLeaveHint.tutorial -->
 
 #### onPreActivityResult(params, requestCode, resultCode, data)
 
@@ -269,6 +125,18 @@
 
 <!-- UTSJSON.UniActivityCallback.onPreActivityResult.tutorial -->
 
+#### onActivityResult(params, requestCode, resultCode, data)
+
+<!-- UTSJSON.UniActivityCallback.onActivityResult.description -->
+
+<!-- UTSJSON.UniActivityCallback.onActivityResult.param -->
+
+<!-- UTSJSON.UniActivityCallback.onActivityResult.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onActivityResult.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onActivityResult.tutorial -->
+
 #### onPreRequestPermissionsResult(params, requestCode, permissions, grantResults)
 
 <!-- UTSJSON.UniActivityCallback.onPreRequestPermissionsResult.description -->
@@ -280,6 +148,18 @@
 <!-- UTSJSON.UniActivityCallback.onPreRequestPermissionsResult.compatibility -->
 
 <!-- UTSJSON.UniActivityCallback.onPreRequestPermissionsResult.tutorial -->
+
+#### onRequestPermissionsResult(params, requestCode, permissions, grantResults)
+
+<!-- UTSJSON.UniActivityCallback.onRequestPermissionsResult.description -->
+
+<!-- UTSJSON.UniActivityCallback.onRequestPermissionsResult.param -->
+
+<!-- UTSJSON.UniActivityCallback.onRequestPermissionsResult.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onRequestPermissionsResult.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onRequestPermissionsResult.tutorial -->
 
 #### onPreApplyThemeResource(params, theme, resid, first)
 
@@ -293,6 +173,18 @@
 
 <!-- UTSJSON.UniActivityCallback.onPreApplyThemeResource.tutorial -->
 
+#### onApplyThemeResource(params, theme, resid, first)
+
+<!-- UTSJSON.UniActivityCallback.onApplyThemeResource.description -->
+
+<!-- UTSJSON.UniActivityCallback.onApplyThemeResource.param -->
+
+<!-- UTSJSON.UniActivityCallback.onApplyThemeResource.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onApplyThemeResource.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onApplyThemeResource.tutorial -->
+
 #### onPreCreateView(params, parent, name, context, attrs)
 
 <!-- UTSJSON.UniActivityCallback.onPreCreateView.description -->
@@ -304,6 +196,18 @@
 <!-- UTSJSON.UniActivityCallback.onPreCreateView.compatibility -->
 
 <!-- UTSJSON.UniActivityCallback.onPreCreateView.tutorial -->
+
+#### onCreateView(params, parent, name, context, attrs)
+
+<!-- UTSJSON.UniActivityCallback.onCreateView.description -->
+
+<!-- UTSJSON.UniActivityCallback.onCreateView.param -->
+
+<!-- UTSJSON.UniActivityCallback.onCreateView.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onCreateView.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onCreateView.tutorial -->
 
 #### onPreTitleChanged(params, title, color)
 
@@ -317,6 +221,18 @@
 
 <!-- UTSJSON.UniActivityCallback.onPreTitleChanged.tutorial -->
 
+#### onTitleChanged(params, title, color)
+
+<!-- UTSJSON.UniActivityCallback.onTitleChanged.description -->
+
+<!-- UTSJSON.UniActivityCallback.onTitleChanged.param -->
+
+<!-- UTSJSON.UniActivityCallback.onTitleChanged.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onTitleChanged.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onTitleChanged.tutorial -->
+
 #### onPreChildTitleChanged(params, childActivity, title)
 
 <!-- UTSJSON.UniActivityCallback.onPreChildTitleChanged.description -->
@@ -328,6 +244,18 @@
 <!-- UTSJSON.UniActivityCallback.onPreChildTitleChanged.compatibility -->
 
 <!-- UTSJSON.UniActivityCallback.onPreChildTitleChanged.tutorial -->
+
+#### onChildTitleChanged(params, childActivity, title)
+
+<!-- UTSJSON.UniActivityCallback.onChildTitleChanged.description -->
+
+<!-- UTSJSON.UniActivityCallback.onChildTitleChanged.param -->
+
+<!-- UTSJSON.UniActivityCallback.onChildTitleChanged.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onChildTitleChanged.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onChildTitleChanged.tutorial -->
 
 #### onPreContextMenuClosed(params, menu)
 
@@ -341,6 +269,18 @@
 
 <!-- UTSJSON.UniActivityCallback.onPreContextMenuClosed.tutorial -->
 
+#### onContextMenuClosed(params, menu)
+
+<!-- UTSJSON.UniActivityCallback.onContextMenuClosed.description -->
+
+<!-- UTSJSON.UniActivityCallback.onContextMenuClosed.param -->
+
+<!-- UTSJSON.UniActivityCallback.onContextMenuClosed.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onContextMenuClosed.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onContextMenuClosed.tutorial -->
+
 #### onPreCreateContextMenu(params, menu, v, menuInfo)
 
 <!-- UTSJSON.UniActivityCallback.onPreCreateContextMenu.description -->
@@ -352,6 +292,18 @@
 <!-- UTSJSON.UniActivityCallback.onPreCreateContextMenu.compatibility -->
 
 <!-- UTSJSON.UniActivityCallback.onPreCreateContextMenu.tutorial -->
+
+#### onCreateContextMenu(params, menu, v, menuInfo)
+
+<!-- UTSJSON.UniActivityCallback.onCreateContextMenu.description -->
+
+<!-- UTSJSON.UniActivityCallback.onCreateContextMenu.param -->
+
+<!-- UTSJSON.UniActivityCallback.onCreateContextMenu.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onCreateContextMenu.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onCreateContextMenu.tutorial -->
 
 #### onPreOptionsMenuClosed(params, menu)
 
@@ -365,6 +317,18 @@
 
 <!-- UTSJSON.UniActivityCallback.onPreOptionsMenuClosed.tutorial -->
 
+#### onOptionsMenuClosed(params, menu)
+
+<!-- UTSJSON.UniActivityCallback.onOptionsMenuClosed.description -->
+
+<!-- UTSJSON.UniActivityCallback.onOptionsMenuClosed.param -->
+
+<!-- UTSJSON.UniActivityCallback.onOptionsMenuClosed.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onOptionsMenuClosed.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onOptionsMenuClosed.tutorial -->
+
 #### onPrePrepareNavigateUpTaskStack(params, builder)
 
 <!-- UTSJSON.UniActivityCallback.onPrePrepareNavigateUpTaskStack.description -->
@@ -376,6 +340,18 @@
 <!-- UTSJSON.UniActivityCallback.onPrePrepareNavigateUpTaskStack.compatibility -->
 
 <!-- UTSJSON.UniActivityCallback.onPrePrepareNavigateUpTaskStack.tutorial -->
+
+#### onPrepareNavigateUpTaskStack(params, builder)
+
+<!-- UTSJSON.UniActivityCallback.onPrepareNavigateUpTaskStack.description -->
+
+<!-- UTSJSON.UniActivityCallback.onPrepareNavigateUpTaskStack.param -->
+
+<!-- UTSJSON.UniActivityCallback.onPrepareNavigateUpTaskStack.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onPrepareNavigateUpTaskStack.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onPrepareNavigateUpTaskStack.tutorial -->
 
 #### onPreProvideAssistData(params, data)
 
@@ -389,6 +365,18 @@
 
 <!-- UTSJSON.UniActivityCallback.onPreProvideAssistData.tutorial -->
 
+#### onProvideAssistData(params, data)
+
+<!-- UTSJSON.UniActivityCallback.onProvideAssistData.description -->
+
+<!-- UTSJSON.UniActivityCallback.onProvideAssistData.param -->
+
+<!-- UTSJSON.UniActivityCallback.onProvideAssistData.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onProvideAssistData.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onProvideAssistData.tutorial -->
+
 #### onPreProvideAssistContent(params, outContent)
 
 <!-- UTSJSON.UniActivityCallback.onPreProvideAssistContent.description -->
@@ -401,47 +389,23 @@
 
 <!-- UTSJSON.UniActivityCallback.onPreProvideAssistContent.tutorial -->
 
+#### onProvideAssistContent(params, outContent)
+
+<!-- UTSJSON.UniActivityCallback.onProvideAssistContent.description -->
+
+<!-- UTSJSON.UniActivityCallback.onProvideAssistContent.param -->
+
+<!-- UTSJSON.UniActivityCallback.onProvideAssistContent.returnValue -->
+
+<!-- UTSJSON.UniActivityCallback.onProvideAssistContent.compatibility -->
+
+<!-- UTSJSON.UniActivityCallback.onProvideAssistContent.tutorial -->
+
 ## UniActivityComponentCallback
 
 
 ### 实例方法
 
-
-#### onConfigurationChanged(params, newConfig)
-
-<!-- UTSJSON.UniActivityComponentCallback.onConfigurationChanged.description -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onConfigurationChanged.param -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onConfigurationChanged.returnValue -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onConfigurationChanged.compatibility -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onConfigurationChanged.tutorial -->
-
-#### onLowMemory(params)
-
-<!-- UTSJSON.UniActivityComponentCallback.onLowMemory.description -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onLowMemory.param -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onLowMemory.returnValue -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onLowMemory.compatibility -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onLowMemory.tutorial -->
-
-#### onTrimMemory(params, level)
-
-<!-- UTSJSON.UniActivityComponentCallback.onTrimMemory.description -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onTrimMemory.param -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onTrimMemory.returnValue -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onTrimMemory.compatibility -->
-
-<!-- UTSJSON.UniActivityComponentCallback.onTrimMemory.tutorial -->
 
 #### onPreConfigurationChanged(params, newConfig)
 
@@ -455,6 +419,18 @@
 
 <!-- UTSJSON.UniActivityComponentCallback.onPreConfigurationChanged.tutorial -->
 
+#### onConfigurationChanged(params, newConfig)
+
+<!-- UTSJSON.UniActivityComponentCallback.onConfigurationChanged.description -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onConfigurationChanged.param -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onConfigurationChanged.returnValue -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onConfigurationChanged.compatibility -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onConfigurationChanged.tutorial -->
+
 #### onPreLowMemory(params)
 
 <!-- UTSJSON.UniActivityComponentCallback.onPreLowMemory.description -->
@@ -466,6 +442,18 @@
 <!-- UTSJSON.UniActivityComponentCallback.onPreLowMemory.compatibility -->
 
 <!-- UTSJSON.UniActivityComponentCallback.onPreLowMemory.tutorial -->
+
+#### onLowMemory(params)
+
+<!-- UTSJSON.UniActivityComponentCallback.onLowMemory.description -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onLowMemory.param -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onLowMemory.returnValue -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onLowMemory.compatibility -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onLowMemory.tutorial -->
 
 #### onPreTrimMemory(params, level)
 
@@ -479,59 +467,23 @@
 
 <!-- UTSJSON.UniActivityComponentCallback.onPreTrimMemory.tutorial -->
 
+#### onTrimMemory(params, level)
+
+<!-- UTSJSON.UniActivityComponentCallback.onTrimMemory.description -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onTrimMemory.param -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onTrimMemory.returnValue -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onTrimMemory.compatibility -->
+
+<!-- UTSJSON.UniActivityComponentCallback.onTrimMemory.tutorial -->
+
 ## UniActivityKeyEventCallback
 
 
 ### 实例方法
 
-
-#### onKeyDown(params, keyCode, event)
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyDown.description -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyDown.param -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyDown.returnValue -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyDown.compatibility -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyDown.tutorial -->
-
-#### onKeyLongPress(params, keyCode, event)
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyLongPress.description -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyLongPress.param -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyLongPress.returnValue -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyLongPress.compatibility -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyLongPress.tutorial -->
-
-#### onKeyUp(params, keyCode, event)
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyUp.description -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyUp.param -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyUp.returnValue -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyUp.compatibility -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyUp.tutorial -->
-
-#### onKeyMultiple(params, keyCode, repeatCount, event)
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyMultiple.description -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyMultiple.param -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyMultiple.returnValue -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyMultiple.compatibility -->
-
-<!-- UTSJSON.UniActivityKeyEventCallback.onKeyMultiple.tutorial -->
 
 #### onPreKeyDown(params, keyCode, event)
 
@@ -545,6 +497,18 @@
 
 <!-- UTSJSON.UniActivityKeyEventCallback.onPreKeyDown.tutorial -->
 
+#### onKeyDown(params, keyCode, event)
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyDown.description -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyDown.param -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyDown.returnValue -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyDown.compatibility -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyDown.tutorial -->
+
 #### onPreKeyLongPress(params, keyCode, event)
 
 <!-- UTSJSON.UniActivityKeyEventCallback.onPreKeyLongPress.description -->
@@ -556,6 +520,18 @@
 <!-- UTSJSON.UniActivityKeyEventCallback.onPreKeyLongPress.compatibility -->
 
 <!-- UTSJSON.UniActivityKeyEventCallback.onPreKeyLongPress.tutorial -->
+
+#### onKeyLongPress(params, keyCode, event)
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyLongPress.description -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyLongPress.param -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyLongPress.returnValue -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyLongPress.compatibility -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyLongPress.tutorial -->
 
 #### onPreKeyUp(params, keyCode, event)
 
@@ -569,6 +545,18 @@
 
 <!-- UTSJSON.UniActivityKeyEventCallback.onPreKeyUp.tutorial -->
 
+#### onKeyUp(params, keyCode, event)
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyUp.description -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyUp.param -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyUp.returnValue -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyUp.compatibility -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyUp.tutorial -->
+
 #### onPreKeyMultiple(params, keyCode, repeatCount, event)
 
 <!-- UTSJSON.UniActivityKeyEventCallback.onPreKeyMultiple.description -->
@@ -581,23 +569,23 @@
 
 <!-- UTSJSON.UniActivityKeyEventCallback.onPreKeyMultiple.tutorial -->
 
+#### onKeyMultiple(params, keyCode, repeatCount, event)
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyMultiple.description -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyMultiple.param -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyMultiple.returnValue -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyMultiple.compatibility -->
+
+<!-- UTSJSON.UniActivityKeyEventCallback.onKeyMultiple.tutorial -->
+
 ## UniActivityLifeCycleCallback
 
 
 ### 实例方法
 
-
-#### onCreate(params, savedInstanceState)
-
-<!-- UTSJSON.UniActivityLifeCycleCallback.onCreate.description -->
-
-<!-- UTSJSON.UniActivityLifeCycleCallback.onCreate.param -->
-
-<!-- UTSJSON.UniActivityLifeCycleCallback.onCreate.returnValue -->
-
-<!-- UTSJSON.UniActivityLifeCycleCallback.onCreate.compatibility -->
-
-<!-- UTSJSON.UniActivityLifeCycleCallback.onCreate.tutorial -->
 
 #### onPreCreate(params, savedInstanceState)
 
@@ -611,17 +599,17 @@
 
 <!-- UTSJSON.UniActivityLifeCycleCallback.onPreCreate.tutorial -->
 
-#### onStart(params)
+#### onCreate(params, savedInstanceState)
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onStart.description -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onCreate.description -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onStart.param -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onCreate.param -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onStart.returnValue -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onCreate.returnValue -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onStart.compatibility -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onCreate.compatibility -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onStart.tutorial -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onCreate.tutorial -->
 
 #### onPreStart(params)
 
@@ -635,17 +623,17 @@
 
 <!-- UTSJSON.UniActivityLifeCycleCallback.onPreStart.tutorial -->
 
-#### onRestart(params)
+#### onStart(params)
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onRestart.description -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onStart.description -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onRestart.param -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onStart.param -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onRestart.returnValue -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onStart.returnValue -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onRestart.compatibility -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onStart.compatibility -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onRestart.tutorial -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onStart.tutorial -->
 
 #### onPreRestart(params)
 
@@ -659,17 +647,17 @@
 
 <!-- UTSJSON.UniActivityLifeCycleCallback.onPreRestart.tutorial -->
 
-#### onResume(params)
+#### onRestart(params)
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onResume.description -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onRestart.description -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onResume.param -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onRestart.param -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onResume.returnValue -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onRestart.returnValue -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onResume.compatibility -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onRestart.compatibility -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onResume.tutorial -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onRestart.tutorial -->
 
 #### onPreResume(params)
 
@@ -683,17 +671,17 @@
 
 <!-- UTSJSON.UniActivityLifeCycleCallback.onPreResume.tutorial -->
 
-#### onPause(params)
+#### onResume(params)
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onPause.description -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onResume.description -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onPause.param -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onResume.param -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onPause.returnValue -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onResume.returnValue -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onPause.compatibility -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onResume.compatibility -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onPause.tutorial -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onResume.tutorial -->
 
 #### onPrePause(params)
 
@@ -707,17 +695,17 @@
 
 <!-- UTSJSON.UniActivityLifeCycleCallback.onPrePause.tutorial -->
 
-#### onStop(params)
+#### onPause(params)
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onStop.description -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onPause.description -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onStop.param -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onPause.param -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onStop.returnValue -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onPause.returnValue -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onStop.compatibility -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onPause.compatibility -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onStop.tutorial -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onPause.tutorial -->
 
 #### onPreStop(params)
 
@@ -731,17 +719,17 @@
 
 <!-- UTSJSON.UniActivityLifeCycleCallback.onPreStop.tutorial -->
 
-#### onDestroy(params)
+#### onStop(params)
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onDestroy.description -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onStop.description -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onDestroy.param -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onStop.param -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onDestroy.returnValue -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onStop.returnValue -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onDestroy.compatibility -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onStop.compatibility -->
 
-<!-- UTSJSON.UniActivityLifeCycleCallback.onDestroy.tutorial -->
+<!-- UTSJSON.UniActivityLifeCycleCallback.onStop.tutorial -->
 
 #### onPreDestroy(params)
 
@@ -755,167 +743,23 @@
 
 <!-- UTSJSON.UniActivityLifeCycleCallback.onPreDestroy.tutorial -->
 
+#### onDestroy(params)
+
+<!-- UTSJSON.UniActivityLifeCycleCallback.onDestroy.description -->
+
+<!-- UTSJSON.UniActivityLifeCycleCallback.onDestroy.param -->
+
+<!-- UTSJSON.UniActivityLifeCycleCallback.onDestroy.returnValue -->
+
+<!-- UTSJSON.UniActivityLifeCycleCallback.onDestroy.compatibility -->
+
+<!-- UTSJSON.UniActivityLifeCycleCallback.onDestroy.tutorial -->
+
 ## UniActivityWindowCallback
 
 
 ### 实例方法
 
-
-#### onDetachedFromWindow(params)
-
-<!-- UTSJSON.UniActivityWindowCallback.onDetachedFromWindow.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onDetachedFromWindow.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onDetachedFromWindow.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onDetachedFromWindow.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onDetachedFromWindow.tutorial -->
-
-#### onContentChanged(params)
-
-<!-- UTSJSON.UniActivityWindowCallback.onContentChanged.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onContentChanged.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onContentChanged.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onContentChanged.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onContentChanged.tutorial -->
-
-#### onWindowAttributesChanged(params, attrs)
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowAttributesChanged.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowAttributesChanged.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowAttributesChanged.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowAttributesChanged.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowAttributesChanged.tutorial -->
-
-#### onWindowFocusChanged(params, hasFocus)
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowFocusChanged.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowFocusChanged.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowFocusChanged.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowFocusChanged.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowFocusChanged.tutorial -->
-
-#### onAttachedToWindow(params)
-
-<!-- UTSJSON.UniActivityWindowCallback.onAttachedToWindow.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onAttachedToWindow.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onAttachedToWindow.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onAttachedToWindow.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onAttachedToWindow.tutorial -->
-
-#### onPanelClosed(params, featureId, menu)
-
-<!-- UTSJSON.UniActivityWindowCallback.onPanelClosed.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onPanelClosed.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onPanelClosed.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onPanelClosed.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onPanelClosed.tutorial -->
-
-#### onSearchRequested(params)
-
-<!-- UTSJSON.UniActivityWindowCallback.onSearchRequested.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onSearchRequested.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onSearchRequested.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onSearchRequested.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onSearchRequested.tutorial -->
-
-#### onWindowStartingActionMode(params, callback)
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode.tutorial -->
-
-#### onWindowStartingActionMode(params, callback, type)_1
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode_1.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode_1.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode_1.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode_1.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode_1.tutorial -->
-
-#### onActionModeFinished(params, mode)
-
-<!-- UTSJSON.UniActivityWindowCallback.onActionModeFinished.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onActionModeFinished.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onActionModeFinished.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onActionModeFinished.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onActionModeFinished.tutorial -->
-
-#### onActionModeStarted(params, mode)
-
-<!-- UTSJSON.UniActivityWindowCallback.onActionModeStarted.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onActionModeStarted.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onActionModeStarted.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onActionModeStarted.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onActionModeStarted.tutorial -->
-
-#### onProvideKeyboardShortcuts(params, data, menu, deviceId)
-
-<!-- UTSJSON.UniActivityWindowCallback.onProvideKeyboardShortcuts.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onProvideKeyboardShortcuts.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onProvideKeyboardShortcuts.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onProvideKeyboardShortcuts.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onProvideKeyboardShortcuts.tutorial -->
-
-#### onPointerCaptureChanged(params, hasCapture)
-
-<!-- UTSJSON.UniActivityWindowCallback.onPointerCaptureChanged.description -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onPointerCaptureChanged.param -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onPointerCaptureChanged.returnValue -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onPointerCaptureChanged.compatibility -->
-
-<!-- UTSJSON.UniActivityWindowCallback.onPointerCaptureChanged.tutorial -->
 
 #### onPreDetachedFromWindow(params)
 
@@ -929,6 +773,18 @@
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreDetachedFromWindow.tutorial -->
 
+#### onDetachedFromWindow(params)
+
+<!-- UTSJSON.UniActivityWindowCallback.onDetachedFromWindow.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onDetachedFromWindow.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onDetachedFromWindow.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onDetachedFromWindow.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onDetachedFromWindow.tutorial -->
+
 #### onPreContentChanged(params)
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreContentChanged.description -->
@@ -940,6 +796,18 @@
 <!-- UTSJSON.UniActivityWindowCallback.onPreContentChanged.compatibility -->
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreContentChanged.tutorial -->
+
+#### onContentChanged(params)
+
+<!-- UTSJSON.UniActivityWindowCallback.onContentChanged.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onContentChanged.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onContentChanged.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onContentChanged.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onContentChanged.tutorial -->
 
 #### onPreWindowAttributesChanged(params, attrs)
 
@@ -953,6 +821,18 @@
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreWindowAttributesChanged.tutorial -->
 
+#### onWindowAttributesChanged(params, attrs)
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowAttributesChanged.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowAttributesChanged.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowAttributesChanged.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowAttributesChanged.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowAttributesChanged.tutorial -->
+
 #### onPreWindowFocusChanged(params, hasFocus)
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreWindowFocusChanged.description -->
@@ -964,6 +844,18 @@
 <!-- UTSJSON.UniActivityWindowCallback.onPreWindowFocusChanged.compatibility -->
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreWindowFocusChanged.tutorial -->
+
+#### onWindowFocusChanged(params, hasFocus)
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowFocusChanged.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowFocusChanged.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowFocusChanged.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowFocusChanged.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowFocusChanged.tutorial -->
 
 #### onPreAttachedToWindow(params)
 
@@ -977,6 +869,18 @@
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreAttachedToWindow.tutorial -->
 
+#### onAttachedToWindow(params)
+
+<!-- UTSJSON.UniActivityWindowCallback.onAttachedToWindow.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onAttachedToWindow.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onAttachedToWindow.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onAttachedToWindow.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onAttachedToWindow.tutorial -->
+
 #### onPrePanelClosed(params, featureId, menu)
 
 <!-- UTSJSON.UniActivityWindowCallback.onPrePanelClosed.description -->
@@ -988,6 +892,18 @@
 <!-- UTSJSON.UniActivityWindowCallback.onPrePanelClosed.compatibility -->
 
 <!-- UTSJSON.UniActivityWindowCallback.onPrePanelClosed.tutorial -->
+
+#### onPanelClosed(params, featureId, menu)
+
+<!-- UTSJSON.UniActivityWindowCallback.onPanelClosed.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onPanelClosed.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onPanelClosed.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onPanelClosed.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onPanelClosed.tutorial -->
 
 #### onPreSearchRequested(params)
 
@@ -1001,6 +917,18 @@
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreSearchRequested.tutorial -->
 
+#### onSearchRequested(params)
+
+<!-- UTSJSON.UniActivityWindowCallback.onSearchRequested.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onSearchRequested.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onSearchRequested.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onSearchRequested.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onSearchRequested.tutorial -->
+
 #### onPreWindowStartingActionMode(params, callback)
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreWindowStartingActionMode.description -->
@@ -1012,6 +940,18 @@
 <!-- UTSJSON.UniActivityWindowCallback.onPreWindowStartingActionMode.compatibility -->
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreWindowStartingActionMode.tutorial -->
+
+#### onWindowStartingActionMode(params, callback)
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode.tutorial -->
 
 #### onPreWindowStartingActionMode(params, callback, type)_1
 
@@ -1025,6 +965,18 @@
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreWindowStartingActionMode_1.tutorial -->
 
+#### onWindowStartingActionMode(params, callback, type)_1
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode_1.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode_1.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode_1.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode_1.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onWindowStartingActionMode_1.tutorial -->
+
 #### onPreActionModeFinished(params, mode)
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreActionModeFinished.description -->
@@ -1036,6 +988,18 @@
 <!-- UTSJSON.UniActivityWindowCallback.onPreActionModeFinished.compatibility -->
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreActionModeFinished.tutorial -->
+
+#### onActionModeFinished(params, mode)
+
+<!-- UTSJSON.UniActivityWindowCallback.onActionModeFinished.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onActionModeFinished.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onActionModeFinished.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onActionModeFinished.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onActionModeFinished.tutorial -->
 
 #### onPreActionModeStarted(params, mode)
 
@@ -1049,6 +1013,18 @@
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreActionModeStarted.tutorial -->
 
+#### onActionModeStarted(params, mode)
+
+<!-- UTSJSON.UniActivityWindowCallback.onActionModeStarted.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onActionModeStarted.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onActionModeStarted.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onActionModeStarted.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onActionModeStarted.tutorial -->
+
 #### onPreProvideKeyboardShortcuts(params, data, menu, deviceId)
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreProvideKeyboardShortcuts.description -->
@@ -1060,6 +1036,18 @@
 <!-- UTSJSON.UniActivityWindowCallback.onPreProvideKeyboardShortcuts.compatibility -->
 
 <!-- UTSJSON.UniActivityWindowCallback.onPreProvideKeyboardShortcuts.tutorial -->
+
+#### onProvideKeyboardShortcuts(params, data, menu, deviceId)
+
+<!-- UTSJSON.UniActivityWindowCallback.onProvideKeyboardShortcuts.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onProvideKeyboardShortcuts.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onProvideKeyboardShortcuts.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onProvideKeyboardShortcuts.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.onProvideKeyboardShortcuts.tutorial -->
 
 #### onPrePointerCaptureChanged(params, hasCapture)
 
@@ -1073,17 +1061,17 @@
 
 <!-- UTSJSON.UniActivityWindowCallback.onPrePointerCaptureChanged.tutorial -->
 
-#### dispatchKeyEvent(params, event)
+#### onPointerCaptureChanged(params, hasCapture)
 
-<!-- UTSJSON.UniActivityWindowCallback.dispatchKeyEvent.description -->
+<!-- UTSJSON.UniActivityWindowCallback.onPointerCaptureChanged.description -->
 
-<!-- UTSJSON.UniActivityWindowCallback.dispatchKeyEvent.param -->
+<!-- UTSJSON.UniActivityWindowCallback.onPointerCaptureChanged.param -->
 
-<!-- UTSJSON.UniActivityWindowCallback.dispatchKeyEvent.returnValue -->
+<!-- UTSJSON.UniActivityWindowCallback.onPointerCaptureChanged.returnValue -->
 
-<!-- UTSJSON.UniActivityWindowCallback.dispatchKeyEvent.compatibility -->
+<!-- UTSJSON.UniActivityWindowCallback.onPointerCaptureChanged.compatibility -->
 
-<!-- UTSJSON.UniActivityWindowCallback.dispatchKeyEvent.tutorial -->
+<!-- UTSJSON.UniActivityWindowCallback.onPointerCaptureChanged.tutorial -->
 
 #### dispatchPreKeyEvent(params, event)
 
@@ -1096,6 +1084,18 @@
 <!-- UTSJSON.UniActivityWindowCallback.dispatchPreKeyEvent.compatibility -->
 
 <!-- UTSJSON.UniActivityWindowCallback.dispatchPreKeyEvent.tutorial -->
+
+#### dispatchKeyEvent(params, event)
+
+<!-- UTSJSON.UniActivityWindowCallback.dispatchKeyEvent.description -->
+
+<!-- UTSJSON.UniActivityWindowCallback.dispatchKeyEvent.param -->
+
+<!-- UTSJSON.UniActivityWindowCallback.dispatchKeyEvent.returnValue -->
+
+<!-- UTSJSON.UniActivityWindowCallback.dispatchKeyEvent.compatibility -->
+
+<!-- UTSJSON.UniActivityWindowCallback.dispatchKeyEvent.tutorial -->
 
 ## 示例
 
