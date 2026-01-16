@@ -98,13 +98,23 @@ uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使�
 
 如果要在自己的项目下打开蒸汽模式，需要在manifest.json的可视化界面首页中勾选蒸汽模式。
 
-运行默认是debug模式，性能较差。如果要测试性能，可以选择以release方式运行，选项在manifest可视化界面的鸿蒙App下。release方式运行接近正式打包后的性能，但仍然略微低于正式包。
+### 运行注意
+- 蒸汽模式要求鸿蒙的最新版本为API 20，即鸿蒙6.0。可在manifest可视化界面鸿蒙配置中设置最低版本。低于目标版本会编译报错。
+比如
+```
+The project's compatibleSdkVersion: 17 cannot be lower than the minimum compatible version 20 required by the dependencies: @dcloudio/uni-app-x-runtime.
+```
+- 反复差量编译，会打断鸿蒙deveco的Build流程，会出现偶发错误。
+	即在deveco制作hap时，有新的差量编译任务进来后，有时候deveco可以正常重编；有时候会报如下错：
+```
+ninja: error: failed recompaction: Permission denied。
+```
+	此时需要重新运行一次。（ninja是deveco自带的c++编译器）
+- 运行默认是debug模式，性能较差。如果要测试性能，可以选择以release方式运行，选项在manifest可视化界面的鸿蒙App下。release方式运行接近正式打包后的性能，但仍然略微低于正式包。
 
 ## 开发注意
 
 蒸汽模式目前仅支持鸿蒙。Android、iOS、web会陆续上线。
-
-蒸汽模式要求鸿蒙的最新版本为API 20，即鸿蒙6.0。可在manifest可视化界面鸿蒙配置中设置最低版本。低于目标版本会编译报错。
 
 对比非蒸汽，蒸汽模式有一些变更调整，有一些待完成TODO，说明如下：
 
