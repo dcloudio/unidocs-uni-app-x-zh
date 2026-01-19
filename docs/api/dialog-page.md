@@ -21,7 +21,7 @@ dialogPage和主page的区别：
 - dialogPage的背景固定为透明、大小为铺满应用。蒙层由页面内部实现，蒙层颜色、是否响应点击，均由页面内部处理。如果是模态，蒙层不应该允许点击；非模态，则点击蒙层应关闭dialogPage
 - dialogPage不使用uni.navigatorTo等路由API，而是单独提供了`openDialogPage`和`closeDialogPage`
 - dialogPage不影响页面栈和路由地址，在getCurrentPages里不能直接得到dialogPage（需在UniPage对象通过getDialogPages获取）
-- 因为dialogPage不进入主页面栈，那么`uni.getElementById`是无法获取到dialogPage内的元素的。因为uni这个全局API是获取栈顶元素。如果想获取指定页面的元素，需获取到指定页面的UniPage对象，在这个对象上使用.getElementById方法。如果想获取当前dialogPage页面的元素，应该使用`this.$page.getElementById()`。
+- 因为dialogPage不进入主页面栈，那么`uni.getElementById`是无法获取到dialogPage内的元素的。因为uni这个全局API是获取栈顶元素。如果想获取指定页面的元素，需获取到指定页面的UniPage对象，在这个对象上使用.getElementById方法。如果想获取当前dialogPage页面的元素，应该使用 `this.$page.getElementById()(Options API)` | `getCurrentInstance()?.proxy?.$page.getElementById()(Composition API)`。
 - dialogPage在Android上并不是一个activity，而是一个全屏view，它和主page所属同一个activity。
 - dialogPage默认不响应iOS侧滑返回，即disableSwipeBack默认值为true，可以在pages.json中进行配置。响应Android和Harmony的back键和back手势，可通过dialogPage onBackPress生命周期控制是否阻止Android的back键和back手势关闭dialogPage。
 - dialogPage默认不影响调用页面或其parentPage的show、hide生命周期。如需影响，比如弹出全屏界面时，需手动设置triggerParentHide
@@ -37,7 +37,8 @@ dialogPage的绑定：
 多dialogPage注意事项：
 - dialogPage可以有多个，通过UniPage对象的getDialogPages()可以获取主页面挂载的所有dialogPage。
 - 多个dialogPage层叠时，可以通过close api任意关闭某个dialogPage。
-- 当前 dialogPage 关闭会触发前一个 dialogPage onShow 生命周期
+- 当前 dialogPage 打开时会触发前一个 dialogPage onHide 生命周期，关闭时会触发前一个 dialogPage onShow 生命周期。
+- `uni.showActionSheet`、`uni.showModal`、`uni.showLoading` 打开的弹框也是由 dialogPage 实现，所以调用这些 API 时，会触发前一个 dialogPage 的 onHide 生命周期，关闭对应弹框时，会触发前一个 dialogPage 的 onShow 生命周期。
 
 调用时机注意事项：
 - 最早的调用时机是在app的onLaunch里调用openDialogPage，不支持在main.uts中调用openDialogPage。
