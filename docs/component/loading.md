@@ -8,6 +8,7 @@
 	* width：组件的宽度，默认值为 16px
 	* height：组件的高度，默认值为 16px
 	* border-color：加载框线条的颜色，默认值为 #000000
+	* color: 仅 ios-snow = true 时，color的优先级大于border-color； ios-snow = false 时， color无效；
 3. loading组件默认是旋转的，不使用时应v-if删除或设置paused。请注意勿在隐藏或被遮挡的区域让loading持续旋转。
 4. [uni.showLoading API](https://doc.dcloud.net.cn/uni-app-x/api/loading.html#showloading) 从HBuilderX 5.0+ ，在非小程序上通过本内置loading组件实现,
 
