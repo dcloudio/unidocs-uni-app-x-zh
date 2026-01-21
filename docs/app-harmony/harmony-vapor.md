@@ -219,6 +219,8 @@ pages.json
 		5.Box-shadow不支持设置inset
 		6.不支持 Pointer-events
 
+    注意：当自定义组件的单根节点是（view、text、image）时，该自定义组件会自动支持flatten属性，并将其传递给它的单根节点，如果在不符合要求的自定义组件上使用flatten属性，则会被自动忽略。
+  
 ### 拍平（flatten）在鸿蒙平台注意事项  
 支持 flatten属性的组件（如 View、Text、Image）在逻辑上均可设置为 true 以进行“拍平”，但实际性能优化效果需满足以下条件：  
 `仅当存在至少两个相邻元素同时设置为拍平时，才能提升性能，否则可能导致性能下降。`  
