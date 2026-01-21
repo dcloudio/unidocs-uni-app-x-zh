@@ -32,7 +32,7 @@
     * [text | 文本](text.md)
     * [rich-text | 富文本](rich-text.md)
     * [progress | 进度条](progress.md)
-	* [loading | 加载组件](loading.md)
+    * [loading | 加载组件](loading.md)
     * [native-view](native-view.md)
   * 表单组件
     * [button | 按钮](button.md)
