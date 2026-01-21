@@ -69,7 +69,7 @@
     }
   })
   stateText.value(1)
-  ```  
+  ```
 :::
 
 示例 [详情](<!-- VUEJSON.E_reactivity.core_computed_computed-composition.gitUrl -->)
@@ -665,6 +665,10 @@ defineExpose({
 <!-- VUEJSON.E_component-instance.attrs_child-composition.code -->
 
 :::
+
+### useRecycleState()
+
+组件回收复用时状态存储工具方法
 
 ### withDefaults()
 
