@@ -183,6 +183,7 @@ pages.json
 ## 组件
 - TODO：缺少组件sticky（目前可以用嵌套滚动来替代实现吸顶）
 - TODO：缺少组件waterflow
+- TODO：全局属性data-暂未实现
 - 变更：布尔属性规范化。scroll-view等部分组件布尔属性默认值从true改为false。
 - 新增和变更：swiper和表单组件中涉及样式的属性，从属性改为了external-class，支持更丰富的样式控制
 - 新增：button多了loading属性和loading-class属性
@@ -240,8 +241,8 @@ pages.json
 - 没有页面下拉刷新及相关生命周期。需要使用scroll-view相关api
 
 ### Element API
+- uni.createSelectorQuery 不支持多根节点组件的获取
 - TODO：缺少animate api
-- TODO：缺少create-Selector-query
 - TODO：缺少Drawable。dom2的view、text创建足够快且支持拍平，故优先级不高
 
 	在蒸汽模式之前，为了高性能绘制，经常不能使用view和text组件，而是需要通过Drawable对象来绘制线条和文字，这种写法无法跨平台且复杂。\
