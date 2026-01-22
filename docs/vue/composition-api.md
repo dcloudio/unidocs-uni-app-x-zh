@@ -666,7 +666,34 @@ defineExpose({
 
 :::
 
-### useRecycleState()
+### useComputedStyle() @use-computed-style
+
+获取组件根节点的计算样式。useComputedStyle返回一个响应式的map，开发者可以通过map的get方法获取对应的样式值。[详情](<!-- VUEJSON.E_helpers.useComputedStyle_CompUseComputedStyle.gitUrl -->)
+
+类型定义：
+
+```ts
+type UseComputedStyleOptions = {
+    /**
+     * 需要监听的样式属性列表
+     */
+    properties?: string[] | null;
+    /**
+     * 是否从原根节点过滤 properties 中的属性，默认过滤
+     * @default true
+     */
+    filterProperties?: boolean | null;
+};
+declare function useComputedStyle(options: UseComputedStyleOptions | null): Map<string, string>;
+```
+
+::: preview
+
+<!-- VUEJSON.E_helpers.useComputedStyle_CompUseComputedStyle.code -->
+
+:::
+
+### useRecycleState() @use-recycle-state
 
 组件回收复用时状态存储工具方法
 
