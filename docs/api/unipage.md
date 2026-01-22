@@ -16,8 +16,6 @@ UniPage在App和Web平台较完善，在小程序端受小程序未开放，很�
 
 <!-- CUSTOMTYPEJSON.UniPage.compatibility -->
 
-<!-- CUSTOMTYPEJSON.UniPage.example -->
-
 ### UniPage 的方法 @unipage-methods
 <!-- CUSTOMTYPEJSON.UniPage.methods.getPageStyle.name -->
 
@@ -178,6 +176,159 @@ pages.json里的内容是静态的，通过本API可以动态设置UniPage的Sty
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniPage.methods.createElement.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.createElement.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.createElement.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.createElement.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.createElement.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.createElement.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.createElement.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onLayoutChange.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onLayoutChange.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onLayoutChange.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onLayoutChange.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onLayoutChange.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onLayoutChange.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onLayoutChange.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offLayoutChange.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offLayoutChange.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offLayoutChange.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offLayoutChange.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offLayoutChange.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offLayoutChange.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offLayoutChange.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onRenderChange.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onRenderChange.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onRenderChange.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onRenderChange.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onRenderChange.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onRenderChange.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onRenderChange.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offRenderChange.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offRenderChange.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offRenderChange.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offRenderChange.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offRenderChange.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offRenderChange.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offRenderChange.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchStart.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchStart.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchStart.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchStart.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchStart.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchStart.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchStart.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchStart.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchStart.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchStart.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchStart.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchStart.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchStart.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchStart.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchEnd.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchEnd.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchEnd.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchEnd.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchEnd.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchEnd.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.onTouchEnd.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchEnd.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchEnd.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchEnd.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchEnd.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchEnd.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchEnd.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.offTouchEnd.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelector.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelector.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelector.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelector.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelector.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelector.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelector.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelectorAll.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelectorAll.originName -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelectorAll.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelectorAll.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelectorAll.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelectorAll.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.querySelectorAll.tutorial -->
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.$setPageStyle.name -->
 
@@ -202,5 +353,7 @@ pages.json里的内容是静态的，通过本API可以动态设置UniPage的Sty
 <!-- CUSTOMTYPEJSON.UniPage.methods.$getPageStyle.returnValue -->
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.$getPageStyle.tutorial -->
+
+<!-- CUSTOMTYPEJSON.UniPage.example -->
 
 <!-- UTSAPIJSON.getCurrentPages.example -->
