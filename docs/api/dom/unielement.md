@@ -425,6 +425,10 @@ if (view != null && view instanceof WKWebView) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.querySelectorAll.tutorial -->
 
+**注意：**
+
++ Android平台 从HBuilderX 5.0起，调整 querySelectorAll 返回值，不再返回null，如果查询失败则返回空数组。
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.focus.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.focus.description -->
