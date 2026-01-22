@@ -1546,6 +1546,8 @@ UTSJSONObject对象还有很多API，[详见](buildin-object-api/utsjsonobject.m
 
 ## type自定义类型@type
 
+> HBuilderX 5.0起，目标语言为js时为对象字面量指定类型时不再进行字段值类型校验，详情参考：[type值类型校验变更说明](#js-type-no-field-type-check)
+
 `type`是关键字，用于给一个类型起别名，方便在其他地方使用。
 
 下面是一个简单的示例，给number类型起个别名`tn`，在定义变量i时，可以用`:tn`。
@@ -1895,6 +1897,44 @@ console.log(person["id"])  //1
 obj["age"] = 25
 console.log(obj["age"]) //25
 console.log(obj.age) //25
+```
+
+### type值类型校验变更说明@js-type-no-field-type-check
+
+> 自HBuilderX 5.0版本起，对象字面量转为type类型时不再进行字段值类型校验。本次调整仅针对目标语言为js的场景。
+
+以如下代码为例
+
+```ts
+type Item = {
+  id: number
+  subItems?: SubItem[]
+}
+type SubItem = {
+  name: string
+}
+const item1: Item = { 
+  id: 1, 
+  subItems: [{
+    name: 'subItem1'
+  }] ,
+}
+const item2 = {
+  id: 2,
+} as Item
+```
+
+item1、item2、item1内的subItems在创建对应的type实例时均不会在运行时校验字段类型，编译器校验仍然存在。
+
+针对编译器无法校验的场景运行时也不会再报错，如下例子目标语言为js时，编译器不会报错，运行时也不会报错。目标语言为kotlin/swift时，编译器会报错。在本次调整前，目标语言为js时，运行时会报错。
+
+```ts
+type Item = {
+  id: number
+}
+const item: Item = {
+  id: "" as any
+}
 ```
 
 ## 开发时类型@devtype
