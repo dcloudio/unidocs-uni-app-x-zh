@@ -16,7 +16,75 @@
 
 <!-- UTSCOMJSON.text.component_type-->
 
-- App-Android平台文本换行规则（表现在文本断行位置等）可能和浏览器有差异。
+### 空白字符处理  
+`空白字符`并不只是指空格键敲出来的那个`空格`字符，它是一个字符集合。
+包括以下字符：  
+- 普通空格 (Space): (ASCII 32)
+- 制表符 (Tab): \t (ASCII 9)
+- 换行符 (Line Feed): \n (ASCII 10)
+- 回车符 (Carriage Return): \r (ASCII 13)
+- 换页符 (Form Feed): (ASCII 12)
+
+空白字符的处理分为 编译期处理 和  运行期处理 两个阶段。  
+
+#### 编译期处理  
+编译期间仅处理template中直接写在text节点中的静态文本，如下示例1：  
+```uvue
+<template>
+  <text id="t1"> a   bc def	g
+hi </text>
+</template>
+```
+编译期间会将所有空白字符转换为空格，并将多个连续空格合并为一个空格，首尾空格保留。  
+如上示例1编译后text组件中的文本内容为“ a bc def g hi ”。  
+
+注意：编译期间不会处理变量中的空白字符。  
+
+#### 运行期处理  
+由 `space` 属性 和 [white-space](../css/white-space.md) 样式共同决定。  
+- `space` 属性：仅处理空格字符  
+- [white-space](../css/white-space.md)样式： 处理所有空白字符  
+
+如下示例2，演示text组件使用变量中的文本：
+```uvue
+<template>
+  <text>{{text}}</text>
+</template>
+<script lang="uts">
+  export default {
+    data() {
+      return {
+        text: ' a   bc def\tg\nhi '
+      }
+    }
+  }
+</script>
+```
+>上面代码中的 \t 和 \n 是 `转义字符`，\t 表示 制表符 (Tab)，\n 表示 换行符 (Line Feed)
+
+编译期间不会对变量中的空白字符做处理，而是由各平台运行环境根据 [white-space](../css/white-space.md) 样式处理并渲染。  
+
+**space属性**  
+如果text组件配置了space属性值，会先根据space属性值处理文本中的空格，再根据 [white-space](../css/white-space.md) 样式处理。  
+蒸汽模式（Vapor）将废弃space属性。  
+
+**App-Android、App-iOS平台**
+HBuilderX5.0版本开始 app-andorid/app-ios平台调整 [white-space](../css/white-space.md) 样式控制空白字符处理逻辑与 W3C 规范一致，
+默认值为 `keep`。  
+如上示例2中将保留所有空格（连续空格不会合并）、制表符、换行符进行渲染，a和b之间有3个空格。  
+
+app-andorid/app-ios平台避免使用 `space` 属性处理空格，存在以下平台差异：  
+- app-android平台配置了 `space` 属性将只处理空格转换，忽略 white-space 样式值，即按 white-space: keep 处理。  
+- app-ios平台配置了 `space` 属性将先处理空格转换，再根据 white-space 属性值处理空白字符。  
+
+**App-Harmony平台**  
+蒸汽模式（Vapor） [white-space](../css/white-space.md) 样式控制空白字符处理逻辑与 W3C 规范一致，默认值为 `keep`。  
+
+**Web平台**  
+HBuilderX5.0版本开始 web平台调整 [white-space](../css/white-space.md) 样式控制空白字符处理逻辑与 W3C 规范一致，
+默认值为 `pre-line`。  
+如上示例2中将合并空格（连续空格合并为1个空格），制表符转换为空格，保留换行符进行渲染，a和b之间只有1个空格。
+
 
 <!-- UTSCOMJSON.text.children -->
 
