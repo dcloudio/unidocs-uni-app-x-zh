@@ -63,16 +63,51 @@ video组件的源码[详见](https://gitcode.com/dcloud/uni-component/tree/maste
 
 子组件，可自定义视频全屏时的UI表现。开发者可以通过子组件替换默认的控件样式以及进一步扩展组件能力。hello uni-app x中给出了如何通过子组件实现自定义快进、快退控件的示例。
 
-
 ### 上下文对象API
 
 video的操作api为[uni.createVideoContext()](../api/create-video-context.md)。
 
 给video组件设一个id属性，将id的值传入uni.createVideoContext()，即可得到video组件的上下文对象，进一步可使用`.play()`、`.stop()`等方法。
 
+### 在 list-view 中复用 @video-reuse <Badge text="HBuilderX 5.0+"/> <Badge text="HarmonyOS Vapor"/>
+
+在使用 list-view 进行列表渲染时，如果列表项中包含 video 组件，video 组件会被复用，可以使用 `recycle`、`reuse` 来控制 video 组件的复用行为。复用示例参考：[list-view-multiplex-video](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/component/list-view/list-view-multiplex-video.uvue)，伪代码如下：
+
+```vue
+<list-view class="list" @scrolltolower="onScrollTolower">
+	<list-item v-for="(_,index) in data.item_count" :key="index">
+		<text>第{{index + 1}}个视频</text>
+		<video class="video" :src="data.src" :controls="true" @recycle="e => _onRecycle(e, index)" @reuse="e => _onReuse(e, index)"/>
+	</list-item>
+</list-view>
+
+<script setup lang="uts">
+//... 其他代码
+function _onRecycle(e: UniVideoRecycleEvent, index: number) {
+  console.log(`onRecycle ${index}`, JSON.stringify(e.detail));
+}
+
+function _onReuse(e: UniVideoReuseEvent, index: number) {
+  console.log(`onReuse ${index}`, JSON.stringify(e.detail));
+  const element = e.target as UniVideoElement | null;
+  if (element && (element instanceof UniVideoElement)) {
+    nextTick(() => {
+      element.seek(e.detail.currentTime)
+    })
+  }
+}
+//... 其他代码
+</script>
+```
+
 <!-- UTSCOMJSON.video.example -->
 
 <!-- UTSCOMJSON.video.reference -->
+
+#### 本地文件播放
+本地视频文件，有2种方式：
+- static目录下（项目下或uni_modules下都支持static目录）
+- 使用绝对路径。相对路径转绝对路径[详见](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#convert2absfullpath)
 
 ### Bug & Tips@tips
 - 标准运行基座默认不包含intel x86 cpu的兼容so库，所以video组件在标准基座运行时无法在x86 cpu的设备上运行（常见于模拟器）。如需支持x86 cpu，请在manifest里配置`abiFilters`，打包或自定义基座后生效 [详见](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest.html#android)
@@ -80,8 +115,3 @@ video的操作api为[uni.createVideoContext()](../api/create-video-context.md)�
 - video 默认宽度为300px，高度为225px。（App平台从 uni-app x 4.0起支持该默认宽高）
 - `HarmonyOS` 平台适配小窗需要在 `modules.json5` 中配置 `"preferMultiWindowOrientation": "landscape_auto"` [详情](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V13/module-configuration-file-V13#abilities%E6%A0%87%E7%AD%BE?ha_source=Dcloud&ha_sourceId=89000448)
 - app-android、app-iOS平台暂不支持在dialogPage中调用createVideoContext。
-
-#### 本地文件播放
-本地视频文件，有2种方式：
-- static目录下（项目下或uni_modules下都支持static目录）
-- 使用绝对路径。相对路径转绝对路径[详见](https://doc.dcloud.net.cn/uni-app-x/uts/utsandroid.html#convert2absfullpath)
