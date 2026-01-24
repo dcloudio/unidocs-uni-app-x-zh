@@ -73,7 +73,7 @@ HBuilderX 5+，提供了 `样式隔离策略2.0`
 	* 配置为app的页面，可以引用全局class，页面中出现与全局class中同名的class，会和全局class合并，优先级：页面 > 全局。
 	* 配置为app的组件，可以引用全局class，组件中出现与全局class中同名的class，会和全局class合并，优先级：组件 > 全局。
 - app-and-page：表示组件允许全局和页面的class影响。此配置对页面无效。
-	* 配置为app-and-page的组件，可以引用全局和页面的class，组件中出现与全局和页面class中同名的class，会和全局、页面class合并，优先级：组件 > 页面 > 全局。
+	* 配置为app-and-page的组件，可以引用全局和页面的class，组件中出现与全局和页面class中同名的class，会和全局、页面class合并，优先级：页面 > 组件 > 全局。
 	* 配置为app-and-page的组件，不受所在页面的配置影响（不管页面配置的是isolated还是app），均会按上一条规则合并。
 	
 - 组合式示例
@@ -181,30 +181,10 @@ defineOptions中配置externalClasses，从HBuilderX5.0起支持。
 
 从HBuilderX 5.0起，组件样式默认隔离，如果组件不配置`app`或`app-and-page`，就只能通过注册externalClasses来实现外部样式的影响。
 
-##### web和小程序的external-class优先级
-external-class，只是保证外部样式会穿透到组件中。
+**注意事项：**
 
-但这个external-class是否真的能在子组件上生效，还取决于样式优先级。
+- 如果传递给组件externalClasses的class是在全局App.uvue中定义的，且期望覆盖组件内部自身class的部分样式，需要给指定的css属性增加`!important;`。
 
-在app平台，没有复杂的样式优先级，后设的class一定覆盖前面的。但在web和小程序上，因为web有很多选择器，各种复杂的写法会让class是否真正生效，存在变数。
-
-一般来讲，如果组件作者提供了external-class方案，那么内部不能使用浏览器css的高优先级选择器（应该统一使用单class选择器），避免外部传入的external-class不生效。
-
-同时组件使用者需要在class名称外面套一层`:external()`，不然在web和小程序上无法保证生效。
-
-仍然以Switch组件的使用为例：
-```vue
-<template>
-	<switch thumb-class="red-thumb-class"></switch>
-</template>
-<style>
-:external(.red-thumb-class){
-	background-color:red
-}
-</style>
-```
-
-`:external()`的写法，在app平台也可使用。虽然app平台暂无意义。但这个写法也无需条件编译。
 
 ##### 组件避免外部过度干扰样式
 
