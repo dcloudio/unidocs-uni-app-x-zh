@@ -142,8 +142,8 @@ ninja: error: failed recompaction: Permission denied。
 
 	styleIsolation: isolated | app | app-and-page
 	* isolated: 全隔离，只受自身样式影响（除externalClasses、组件根节点以外）
-	* app: 受app.uvue中引入的全局样式影响。优先级：全局样式 < 自身样式
-	* app-and-page: 受全局、页面样式影响, 全局样式 < 页面样式 < 自身样式
+	* app: 受app.uvue中引入的全局样式影响。优先级：自身样式 > 全局样式
+	* app-and-page: 受全局、页面样式影响, 页面样式 > 自身样式 > 全局样式
 
 	组件的使用方，不管是页面还是父组件，在组件使用时设置的class，仍然会作用到组件内的根节点上（需组件是单根节点）。
 	
