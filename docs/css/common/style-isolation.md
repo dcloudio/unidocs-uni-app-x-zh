@@ -75,7 +75,8 @@ HBuilderX 5+，提供了 `样式隔离策略2.0`
 - app-and-page：表示组件允许全局和页面的class影响。此配置对页面无效。
 	* 配置为app-and-page的组件，可以引用全局和页面的class，组件中出现与全局和页面class中同名的class，会和全局、页面class合并，优先级：页面 > 组件 > 全局。
 	* 配置为app-and-page的组件，不受所在页面的配置影响（不管页面配置的是isolated还是app），均会按上一条规则合并。
-	
+
+使用示例：
 - 组合式示例
 ```vue
 <script setup lang="uts">
