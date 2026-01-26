@@ -110,7 +110,7 @@ The project's compatibleSdkVersion: 17 cannot be lower than the minimum compatib
 ninja: error: failed recompaction: Permission denied。
 ```
 	此时需要重新运行一次。（ninja是deveco自带的c++编译器）
-- 运行默认是debug模式，性能较差。如果要测试性能，可以选择以release方式运行，选项在manifest可视化界面的鸿蒙App下。release方式运行接近正式打包后的性能，但仍然略微低于正式包。
+- 运行默认是debug模式，性能较差。如果要测试性能，可以选择以release方式运行。release方式运行接近正式打包后的性能，但仍然略微低于正式包。
 
 ## 开发注意
 
@@ -125,8 +125,8 @@ ninja: error: failed recompaction: Permission denied。
 - 不再支持mixin
 
 ## css
-- 变更：因为性能原因，不支持复杂关系选择器，只支持简单的class选择器 [详见](../css/common/selector.md)
-- 变更：css的样式隔离策略有较大调整
+- 变更：因为性能原因，不支持复杂关系选择器，只支持简单的class选择器和分组选择器 [详见](../css/common/selector.md)
+- 变更：css的样式隔离策略有较大调整 [详见](../css/common/style-isolation.md)
 	
 	**组件默认不受外部css同名影响，不管是页面还是全局css，外部的同名class默认都不能影响组件样式。**
 	
