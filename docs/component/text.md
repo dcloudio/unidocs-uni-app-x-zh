@@ -16,6 +16,14 @@
 
 <!-- UTSCOMJSON.text.component_type-->
 
+### hover-class  
+App平台蒸汽模式（Vapor） `text` 组件新增支持 `hover-class` 实现点击态效果。  
+
+**注意**  
+- 蒸汽模式（Vapor）子 `text` 组件不支持 hover 相关功能  
+- 非蒸汽模式（Vapor) `text` 组件不支持 hover 相关功能  
+
+
 ### 空白字符  
 `空白字符`并不只是指空格键敲出来的那个`空格`字符，它是一个字符集合。
 包括以下字符：  
