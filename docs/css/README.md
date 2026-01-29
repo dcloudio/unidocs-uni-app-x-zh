@@ -254,7 +254,7 @@ app中，设置样式只有内联样式即style属性和class属性这两种方�
 * app平台、微信小程序平台页面的样式作用于当前页面及其子组件。
 * 组件的样式仅作用于当前组件。
 
-目前暂时有平台差异，未来会统一策略。 [HBuilderX 5+ 隔离策略文档](./common/style-isolation.md)
+目前暂时有平台差异，未来会统一策略。 [HBuilderX 5+ 已统一策略，隔离策略文档](./common/style-isolation.md)
 
 ## 层级
 
