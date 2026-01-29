@@ -4,7 +4,7 @@
 - 暂不支持 `<script setup>` 和 `<script>` 同时使用，如果需要配置 `options` 内容，比如 `name`，可以使用 `defineOptions`。
 - 暂不支持顶层 `await`。
 - 暂不支持 `<script setup>` 配置 `generic` 泛型类型参数。
-- `App.uvue` 暂不支持组合式 API。
+- `App.uvue` 暂不支持组合式 API。(从HBuilderX 5.0起App.uvue支持组合式 API。)
 :::
 
 ## 响应式: 核心
