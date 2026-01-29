@@ -423,7 +423,7 @@ onReady(() => {
   mapContext.value = uni.createMapContext("map1", getCurrentInstance()!.proxy!)
 })
 </script>
-
+```
 
 ## 生命周期钩子 @lifecycle-composition
 
