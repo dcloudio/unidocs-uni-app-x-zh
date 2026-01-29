@@ -375,6 +375,7 @@ style通过lang属性，可以支持less、scss、stylus等css预处理语言。
 ```
 
 在 uni-app x 项目中，页面默认可以影响组件样式，组件之间样式彼此隔离。深度选择器 `:deep()` / `::v-deep` 只在 Web 平台有实际含义。
+> [HBuilderX 5+ 隔离策略文档](../css/common/style-isolation.md)
 
 - 在 Web 平台，uni-app x 中 style 会自动添加 `scoped`（因为web端最终是编译成单页应用SPA，需要隔离不同页面间的样式），因此需要使用深度选择器，来影响子组件样式。
 - 微信小程序、App 平台页面可直接影响子组件，添加 scoped、使用深度选择器无意义
