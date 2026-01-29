@@ -19,10 +19,10 @@
 <!-- UTSCOMJSON.swiper.reference -->
 
 :::warning 注意
-- 使用 `auto-height` 属性时，`swiper-item` 组件外层容器和 slot 内容之间会增加一层 `view`，促使设置在 `swiper-item` 上的布局样式无法直接影响插槽内的元素（比如 `align-items: center`），请注意避免影响布局。
+- 使用 `auto-height` 属性时，`swiper-item` 组件外层容器和 slot 内容之间会增加一层 `view`，这会导致设置在 `swiper-item` 上的布局样式无法直接影响插槽内的元素（比如 `align-items: center`），请注意避免影响布局。
 - 蒸汽模式不再支持 `rebound` 属性，如需控制是否回弹效果，请使用 `disable-bounce` 属性。
 - 蒸汽模式不再支持 `indicator-color` 和 `indicator-active-color` 属性，如需自定义指示点颜色及其他样式，请使用 `indicator-style`、`indicator-class` 和 `indicator-active-style`、`indicator-active-class` 属性。
-- 蒸汽模式新增通过 `indicator` 具名插槽自定义指示点。
+- 蒸汽模式新增通过 `indicator` 具名插槽自定义指示点，示例代码如下：
 ```vue
 <template>
 	<swiper :current="current" @change="handleSwiperChange">
