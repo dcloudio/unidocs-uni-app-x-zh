@@ -125,7 +125,8 @@ ninja: error: failed recompaction: Permission denied。
 - 不再支持mixin
 
 ## css
-- 变更：因为性能原因，不支持复杂关系选择器，只支持简单的class选择器和分组选择器 [详见](../css/common/selector.md)
+- 变更：因为性能原因，运行时不支持复杂关系选择器，只支持简单的class选择器和分组选择器 [详见](../css/common/selector.md)
+	替代方案：使用 BEM 命名规范, 通过类名表达层级关系, 例如：`.parent .child` 替换为 `.parent__child`。scss是编译时方案，不影响运行时性能，仍可使用。
 - 变更：css的样式隔离策略有较大调整 [详见](../css/common/style-isolation.md)
 	
 	**组件默认不受外部css同名影响，不管是页面还是全局css，外部的同名class默认都不能影响组件样式。**
