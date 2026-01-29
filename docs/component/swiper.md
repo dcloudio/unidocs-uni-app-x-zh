@@ -27,6 +27,7 @@
 - 蒸汽模式不再支持 `rebound` 属性，如需控制是否回弹效果，请使用 `disable-bounce` 属性。
 - 蒸汽模式不再支持 `indicator-color` 和 `indicator-active-color` 属性，如需自定义指示点颜色及其他样式，请使用 `indicator-style`、`indicator-class` 和 `indicator-active-style`、`indicator-active-class` 属性。
 - 蒸汽模式新增通过 `indicator` 具名插槽自定义指示点，示例代码如下：
+:::
 ```vue
 <template>
 	<swiper :current="current" @change="handleSwiperChange">
@@ -71,7 +72,7 @@
 	}
 </style>
 ```
-:::
+
 
 ## swiper-item
 
