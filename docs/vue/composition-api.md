@@ -400,6 +400,30 @@
 
 :::
 
+## 通用
+
+### getCurrentInstance
+
+访问内部组件实例。
+
+::: warning 注意
+- `getCurrentInstance` 只能在 setup 或生命周期钩子中调用。
+- 在 `app` 端 `proxy` 属性可能为空，需使用 `!` 非空断言操作符。
+:::
+
+```uts
+<script setup lang="uts">
+// 通过 getCurrentInstance 获取当前 UniPage 对象
+const instance = getCurrentInstance()!.proxy!
+const currentPage = instance.$page
+
+// 通过 getCurrentInstance 获取组件实例
+const mapContext = ref(null as MapContext | null);
+onReady(() => {
+  mapContext.value = uni.createMapContext("map1", getCurrentInstance()!.proxy!)
+})
+</script>
+
 
 ## 生命周期钩子 @lifecycle-composition
 
