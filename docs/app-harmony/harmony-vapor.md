@@ -205,23 +205,25 @@ pages.json
 	* swiper默认高度为150px。如需根据内容高度撑开，可使用auto-height属性。
 - 新增：view、text、image这3个组件的flatten拍平属性
 
-	拍平即不创建独立元素，而是绘制在父上。在审查元素边界时无法看到红框。
-	
-	`<view flatten></view>`
-	
-	该属性为初始化属性，不支持动态修改。
-	
-	被拍平的元素存在一些限制，具体如下，可根据需要设置flatten属性。
-	* 拍平的元素无法支持事件（如click、touch）
-	* 拍平时如下css不支持：
-		1.不支持 Visibility
-		2.不支持 Display
-		3.不支持 ZIndex
-		4.不支持 Background-image
-		5.Box-shadow不支持设置inset
-		6.不支持 Pointer-events
+  拍平即不创建独立元素，而是绘制在父上。在审查元素边界时无法看到红框。
 
-    注意：当自定义组件的单根节点是（view、text、image）时，该自定义组件会自动支持flatten属性，并将其传递给它的单根节点，如果在不符合要求的自定义组件上使用flatten属性，则会被自动忽略。
+  `<view flatten></view>`
+
+  该属性为初始化属性，不支持动态修改。
+
+  被拍平的元素存在一些限制，具体如下，可根据需要设置flatten属性。  
+  * 拍平的元素无法支持事件（如click、touch）  
+  * 拍平的元素不支持截图API：takeSnapshot  
+  * 拍平时如下css不支持：  
+    + 不支持 [visibility](../css/visibility.md)  
+    + 不支持 [z-index](../css/z-index.md)  
+    + 不支持 [background-image](../css/background-image.md)  
+    + 不支持 [pointer-events](../css/pointer-events.md)  
+    + [box-shadow](../css/box-shadow.md) 不支持设置 inset 及 spreadRadius  
+  * image组件拍平后无法播放动画，gif、webp动画仅显示第一帧  
+  * view组件拍平后css属性transform、overflow、display、opacity存在缺陷，如果veiw存在子元素，这些样式不会对非拍平的子元素产生效果  
+
+  注意：当自定义组件的单根节点是（view、text、image）时，该自定义组件会自动支持flatten属性，并将其传递给它的单根节点，如果在不符合要求的自定义组件上使用flatten属性，则会被自动忽略。
   
 ### 拍平（flatten）在鸿蒙平台注意事项  
 支持 flatten属性的组件（如 View、Text、Image）在逻辑上均可设置为 true 以进行“拍平”，但实际性能优化效果需满足以下条件：  
