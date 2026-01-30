@@ -65,7 +65,9 @@ scroll-view开启嵌套模式后，list-view 可作为内层滚动视图与外�
 
 ### 蒸汽模式list-view调整 <Badge text="App Vapor"/>
 
-蒸汽模式下app端list-view调整为使用vue组件实现，list-view在滚动期间会复用出屏幕的list-item组件用于渲染新的列表数据，从而提升长列表的渲染性能，减少内存占用。由于复用了vue实例，所以在使用过程中需要注意以下几点：
+蒸汽模式下app端list-view调整为使用vue组件实现，list-view在滚动期间会复用出屏幕的list-item组件用于渲染新的列表数据，从而提升长列表的渲染性能，减少内存占用。
+
+在蒸汽模式使用list-view需要注意以下几点：
 
 - list-item内部组件如果有内部状态不受绑定数据影响则需要依赖onReuse、onRecycle等生命周期函数进行状态重置，否则会出现状态错乱的问题，参考：[组件生命周期文档](../vue/component.md#component-lifecycle)
 - 蒸汽模式list-view内暂不支持sticky-header、sticky-section组件
