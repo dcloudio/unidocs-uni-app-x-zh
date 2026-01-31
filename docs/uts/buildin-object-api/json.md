@@ -6,18 +6,15 @@
 
 JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的对象。可能返回值是： UTSJSONObject/Array/number/boolean/string 等基本数据类型
 
-
-> 特别说明：
-> HBuilderX3.9.0统一为以上规范，在HBuilderX3.9.0之前版本 返回值只可能是 UTSJSONObject， 基本数据类型会转换失败
-> JSON.parse 目前仅支持第一个参数
+> JSON.parse 在App平台仅支持第一个参数
 
 <!-- UTSJSON.JSON.parse_tip.test -->
 
 **注意**
 
-- JSON.parse 解析出来的对象，目前仅支持使用方括号[]访问
+- JSON.parse 解析出来的对象（不是数组），在App平台使用方括号[]访问，即数组下标方式。并且支持第一层对象属性通过`.`运算符访问（推荐使用HBuilderX 5.0+）
 - 如果输入的字符串不是合法的json格式，则会返回 null
-- JSON.parse 接口内部通过[特殊方式读取了范型类型](../generics.md#使用限制)，不支持传入动态的范型：比如将外层方法的普通范型参数传入 JSON.parse。
+- JSON.parse 接口内部通过[特殊方式读取了范型类型](../generics.md#使用限制)，不支持传入动态的泛型：比如将外层方法的普通泛型参数传入 JSON.parse。
 
 ### parse(text, reviver?)
 
@@ -43,11 +40,12 @@ JSON.parse() 方法用来解析 JSON 字符串，构造由字符串描述的对�
 
 <!-- UTSJSON.JSON.parse_1.test -->
 
-HBuilderX 3.9+，支持JSON.parse传入[泛型](../generics.md)。
+JSON.parse支持传入[泛型](../generics.md)，parse结果可以直接返回类型化数据，而不是UTSJSONObject。
 
 与不带泛型的JSON.parse 相比，多了一个`<Persion>` 尖括号 用来指定返回类型。
 
-相比不带泛型的`parse`函数，带泛型的 `parse`函数，会提高反序列数据的开发效率，明确的结构数据可以提升工程健壮度
+在HBuilderX 5.0以前，带泛型的 `parse`函数，访问性能高于不带泛型的。
+但HBuilderX 5.0起大幅改进了底层实现，不带泛型、直接解析成UTSJSONObject，性能会远高于带泛型解析的type。
 
 <!-- UTSJSON.JSON.parse_1.compatibility -->
 

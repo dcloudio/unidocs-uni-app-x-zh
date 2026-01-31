@@ -33,6 +33,11 @@ web浏览器默认排版是block。block更适合布局文档，比如论文、�
 
 如果不了解flex可以参考：[MDN的flex教程](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox)
 
+虽然uni-app x的页面布局默认为Flex，但一些组件的内部也有其他布局。
+- text组件内部为inline
+- rich-text组件内部为block，适于文档、图文显示
+- waterflow组件内部为grid
+
 uni-app x中页面布局有2个注意事项，[flex方向](#flex-direction) 和 [页面级滚动](#pagescroll)。
 
 ### flex方向 @flex-direction
@@ -166,7 +171,7 @@ uni-app x中页面布局有2个注意事项，[flex方向](#flex-direction) 和 
 
 `uni-app-x` App端无页面滚动，且其根节点高度为从导航栏底部到tabBar顶部。如果在页面根节点的子元素使用`position: absolute;`，页面内部scroll-view滚动时不会改变此元素位置。其他端有页面滚动，如果在页面根节点的子元素使用`position: absolute;`页面滚动会改变此元素的位置。如果有不随页面滚动变化位置的需求建议使用`position: fixed`。
 
-注意：web端需要使用[css变量](common/function.md)使元素不覆盖在navigationBar和tabBar上。
+注意：web端需要使用[css安全区变量](common/function.md)使元素不覆盖在navigationBar和tabBar上。
 
 ## 样式不继承@stylenoextends
 
@@ -174,7 +179,7 @@ web的样式继承，主要是文字样式继承。web的css属性众多，规�
 
 在原生等严谨的应用开发方案中，均是组件搭配该组件的专有属性。容器组件和文本组件分离，属性各自隔离，不可能在容器组件里写文本组件的样式。
 
-在uni-app x中也是，文本必须使用`<text>`组件，`<view>`组件就是容器组件，它的style里不应用使用与文本修饰相关的样式，比如文字颜色、大小等。
+在uni-app x中也是，文本必须使用`<text>`组件，`<view>`组件就是容器组件，它的style里不应使用与文本修饰相关的样式，比如文字颜色、大小等。
 
 如下代码，在web浏览器渲染时，父view的style会影响子text，所以123是红色。
 
@@ -223,7 +228,7 @@ uvue中文字都是要使用text组件的。
 </template>
 ```
 
-app-uvue的css的“样式不继承”规则，虽然与web有差异，其实只是更严谨。
+app-uvue的css的“样式不继承”规则，虽然与web有差异，其实只是更严谨。而且排错也更容易，继承样式方案经常出现子非预期的被某个父干扰样式。
 
 一般情况下，开发者遵循仅在text组件下写文字有关的样式，就可以编译到全端而保持界面正常。
 
@@ -247,14 +252,13 @@ app中，设置样式只有内联样式即style属性和class属性这两种方�
 
 ## 样式作用范围 @scoped
 
-在 `uni-app x` 中，不支持 `css scoped`，样式的作用范围遵循以下规则：
+在 `uni-app x` 中，非web平台不支持 `css scoped`。
 
-* `App.uvue` 中的样式作用于全局。
-* web平台页面和组件间样式隔离。需要使用v-deep或deep穿透。
-* app平台、微信小程序平台页面的样式作用于当前页面及其子组件。
-* 组件的样式仅作用于当前组件。
+在HBuilderX 5.0以前，不同平台的样式隔离策略有差异。
 
-目前暂时有平台差异，未来会统一策略。 [HBuilderX 5+ 已统一策略，隔离策略文档](./common/style-isolation.md)
+HBuilderX 5+ 已统一策略，页面是否被全局样式影响、组件是否被全局和页面样式影响，均可配置。
+
+详见[样式隔离策略2.0](./common/style-isolation.md)
 
 ## 层级
 

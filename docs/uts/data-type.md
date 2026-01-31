@@ -1175,15 +1175,18 @@ json 在 js 中用起来很自由，但在强类型语言中，不管kotlin、sw
 
 一般其他强类型语言中使用json，是把json数据内容，转为class、interface或type。然后就可以使用`.`来访问了。
 
-在 uts 中使用 JSON，有3种方式：
+在 uts 中使用 JSON数据，有3种方式：
 
 1. 把 json数据转 type，变成一个自定义类型。这不是本章节的内容，详见 [type](#type)
 2. uts 新增了 UTSJSONObject 对象，可以把 json数据通过字面量赋值 或 JSON.parse()方式，赋值给 uts 内置的 UTSJSONObject 对象。
 3. 由于 UTSJSONObject有toMap()方法，所以也可以转为Map后使用json数据。
 
-UTSJSONObject比较适合初学者入门，也方便兼容js生态的代码。但代码提示和运行性能不及type。
-
 UTSJSONObject，是一个类型，可以在变量的冒号后面使用，本节的重点就是介绍UTSJSONObject。
+
+UTSJSONObject很贴近js，也方便兼容js生态的代码。但在编码时代码提示无法提示属性。
+
+UTSJSONObject的运行性能曾经不及type。但从uni-app x 5.0+，UTSJSONObject的性能反超、远超type。当然在小数据量场景，使用者难以感觉到差异。
+
 
 ### 对象和数组
 
@@ -1304,7 +1307,7 @@ let jr = JSON.parseArray(s)
 
 ### 对象字面量在js平台推导的特殊之处@jsutsjsonobjectautotype
 
-js平台同时存在object和UTSJSONObject，且UTSJSONObject继承自object。而kotlin和swift没有object。
+uts2js平台，同时存在object和UTSJSONObject，且UTSJSONObject继承自object。而kotlin和swift没有object。
 
 在编译为kotlin和swift时，未指定type的对象字面量必然会被推导为UTSJSONObject。
 
@@ -1401,7 +1404,10 @@ let rect = {
 
 这种写法比较简单，和js习惯一致，但在 UTS 存在以下限制：
 - web可以正常使用
-- HBuilderX 4.41+ iOS/Android 也支持`.`操作符，但返回的数据，类型是any | null，想继续使用需要`as`为具体类型，比如：`(rect.size as UTSJSONObject).width`。
+- HBuilderX 4.41+ iOS/Android 也支持`.`操作符，但
+	* 返回的数据，类型是any | null，想继续使用需要`as`为具体类型，比如：`(rect.size as UTSJSONObject).width`。
+	* 不支持直接连续`.`操作符，每层数据都需要 as UTSJSONObject。可以理解为只能直接访问第一层属性。
+	* HBuilderX 5.0+ Android平台修复响应式UTSJSONObject无法通过`.`操作符访问第一层属性的bug。
 ```
 
 #### 2. `[""]` 下标
@@ -1449,8 +1455,6 @@ console.log(((rect["border"] as UTSJSONObject[])[0] as UTSJSONObject)["color"]);
 `HBuilderX` 3.9+，UTSJSONObject 提供了另外一种属性访问方式: keyPath。如果你了解 XPath、JSONPath 的话，这个概念类似。
 
 keypath是把`.`操作符作为一个字符串传入了UTSJSONObject的一个方法中，比如`utsObj.getString("address.detailInfo.street")`
-
-相对于受限制`.`和需要经常as的下标，更推荐使用keyPath方式来操作UTSJSONObject。
 
 以下面的 UTSJSONObject 为例
 
@@ -1557,11 +1561,11 @@ type tn = number
 let i:tn = 0  // 等同于 let i:number = 0
 ```
 
-注意：基本类型的type重命名，在uvue中只支持写在script的`export default {}`外。
+注意：基本类型的type重命名，在uvue中选项式写法下只支持写在script的`export default {}`外。
 
 上述简单的例子在实际开发中没有意义。
 
-在 ts 中常见的用途是给联合类型命名，方便后续简化使用。在 uts 中用的比较多的场景是：
+type 在 ts 中常见的用途是给联合类型命名，方便后续简化使用。在 uts 中用的比较多的场景是：
 
 1. 给[函数类型](./function.md#%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B)定义别名，以便在共享给其他模块使用。
 2. 用于json对象的定义，在编译为kotlin和swift时，会编译为class。
@@ -1591,7 +1595,7 @@ console.log(person.name) //返回zhangsan
 
 可以看到，变量person，和js里使用json没有任何区别了。支持`.`操作符，无需下标，可跨平台。
 
-与UTSJSONObject相比，虽然多了一个type定义的过程，但使用体验更流畅，也可以在ide中自由的`.`，并且得到良好的提示。
+与UTSJSONObject相比，虽然多了一个type定义的过程，但可以在ide中自由的`.`，并且得到良好的提示。
 
 所以在ts开发中，很多开发者就会把缺少类型的json数据变成一个type或interface，继续像js里那样使用这个json数据。
 
@@ -1703,7 +1707,7 @@ let person = {
 console.log(person.address.city) //beijing
 ```
 
-注意，在HBuilderX 3.9以前，有子对象的对象字面量或UTSJSONObject，无法直接被 as 为有嵌套的type，也需要对子对象进行 as 。
+<!-- 注意，在HBuilderX 3.9以前，有子对象的对象字面量或UTSJSONObject，无法直接被 as 为有嵌套的type，也需要对子对象进行 as 。
 
 ```ts
 let person = {
@@ -1715,7 +1719,7 @@ let person = {
 		street: "dazhongsi road"
 	} as PersonAddressType // HBuilderX 3.9前需对子对象单独 as
 } as PersonType
-```
+``` -->
 
 ### 通过JSON.parse转type
 
@@ -1836,7 +1840,7 @@ HBuilderX 3.9起内置了一个json转type工具，在`json编辑器`中选择�
 
 注意json数据的属性名称需要引号包围。
 
-如果找不到这个右键菜单，检查是否是右下角是否显示JSON编辑器；检查是否安装了uts/uni-app x相关插件，一般真机运行时会自动安装相关插件。
+如果找不到这个右键菜单，检查是否是右下角是否显示JSON编辑器；检查是否安装了 uts/uni-app x 相关插件，一般真机运行时会自动安装相关插件。
 
 ### 为vue的data中的json定义类型
 

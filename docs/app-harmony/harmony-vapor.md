@@ -14,7 +14,7 @@ vue中去掉虚拟DOM的版本即为蒸汽模式。
 1. 创建1000个虚拟DOM，构造VNode Tree
 2. 在每个VNode创建的内部逻辑中，创建对应的真实DOM，构造DOM Tree。
 
-本来创建1000个真实DOM的树已经不快了，再加上还要花时间创建1000个虚拟DOM树，造成页面加载更慢。
+本来创建1000个真实DOM的树已经比较耗时了，再加上还要花时间创建1000个虚拟DOM树，造成页面加载更慢。
 
 过去的虚拟DOM，包含了DOM操作的最佳实践，使得普通开发者写出的代码也能较高性能运行。
 
@@ -24,7 +24,7 @@ vue中去掉虚拟DOM的版本即为蒸汽模式。
 
 选项式的问题在于很多写法框的比较死，灵活度相比其他框架要弱。
 
-从DCloud的角度看，蒸汽模式的vue框架，综合性能、生态、易用性、灵活性，已超过了react等其他框架。
+从DCloud的角度看，去掉虚拟DOM的蒸汽模式vue框架，综合性能、生态、易用性、灵活性，已超过了react等其他框架。
 
 ## 全新的渲染系统
 
@@ -36,36 +36,58 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 这个无名的渲染系统，实现了跨平台App框架的历史突破，即：**基于原生渲染管线，但超越了原生的渲染速度**。
 
-在hello uni-app x的模板下，有一个4050页面，同屏渲染2050个view，里面套了2000个text，一共4050个元素。
+### 性能说明
 
-在鸿蒙nova12(apiLevel 21)上，创建和渲染这4050个元素仅耗时300ms左右。
+在hello uni-app x的模板下，有一批性能测试示例：
 
-而原生arkui，同设备上创建相同数量的元素并渲染，需要耗时900ms左右。渲染速度快3倍。
+1. 4050页面
+
+同屏渲染2050个view，里面套了2000个text，一共4050个元素。没有懒加载、没有复用，是view和text创建速度的硬性考验。
+
+在鸿蒙nova12(apiLevel 21，鸿蒙最低端手机)上，创建和渲染这4050个元素仅耗时300ms左右。
+
+而原生arkui，同设备上创建相同数量的元素并渲染，需要耗时800ms左右。渲染速度快近3倍。
 
 原生arkui的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译体验测试。
 
-另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的arkui要慢的多，更无法与uni-app x蒸汽模式相比。
+另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的arkui要慢的多，更无法与uni-app x蒸汽模式相比。包括纯c操作nativeNode，也需要670ms左右，比uni-app x慢1倍。
 
-在复杂长列表中，uni-app x 蒸汽模式的丢帧率也优于原生arkui。
+2. 死亡复杂长列表页面
+
+4000行数据，共2万个元素，占据普通手机1333屏左右。
+
+每行超过40+元素，包括文字、图片、视频、vue组件；每行嵌套10+层。
+
+列表中还有大量的阴影、圆角、边框。
+
+在鸿蒙nova12(apiLevel 21，鸿蒙最低端手机)上，瞬间进入页面。上下快滑列表，在120帧满帧运行，不会出现白块灰块。（在手机设置搜索“刷新率”，打开强制120Hz体验）
 
 在120Hz高刷屏上，8.3ms内无法完成新列表项的加载，就会掉帧。列表越复杂，越难以在8.3ms内完成渲染。
 
 而uni-app x 蒸汽模式极快的渲染速度，支撑开发者构造非常复杂的列表，也可以丝般顺滑。
 
+3. rich-text 5万字长文多图页面
+
+5万字长文、59张图片。瞬间进入页面。上下快滑列表，不会出现白块灰块。人手滑不出掉帧。
+
+hello uni-app x中有很多性能相关的测试，欢迎体验。（运行时切记选择release模式运行来测试性能）
+
+### 释疑
 关于uni-app x的蒸汽模式为什么这么快，很多人可能有疑问，比如
 
 - uni-app x 的App平台到底是自渲染还是原生渲染，那么答案是原生渲染。uni-app x 选择原生渲染是为了更好的和原生生态无缝融合、以及降低内存占用。
 
 - 为什么都是原生渲染，uni-app x的蒸汽模式比原生渲染更快？
 
-这里面涉及数千项工程优化，无法通过几句话解释清楚，但可以提供一些关键说明：
+这里面涉及数千项工程优化，难以通过几句话解释清楚，但可以提供一些关键说明：
 1. Android的compose ui也是基于原生渲染管线的，但没有使用Android自带的view、textview，而是实现了自己的组件系统。
 	
-	这条路完全可行，只不过compose ui做的不太好，实际渲染速度比view体系更慢。
+	这条路完全可行，只不过compose ui做的不太好，实际渲染速度比view体系更慢。（在上述4050示例对比中，有原生view和compose ui的测试例，[详见](https://gitcode.com/dcloud/test4050-android)）
 	
-	uni-app x 蒸汽模式，也几乎没有使用系统自带的组件，不管是textview、recycleview、viewpage...，或者是鸿蒙的arkUI相关组件，基本都没用，重写了。
+	uni-app x 蒸汽模式，也几乎没有使用系统自带的组件，不管是textView、recycleView、viewPage...，或者是鸿蒙的arkUI相关组件，基本都没用。
 	
-	这些全新的组件做到了比OS自带组件性能更高。
+	全新研发的组件做到了比OS自带组件性能更高。
+	
 2. vue里template和style里的代码，被直接编译为优化度非常高的C代码。它的运行速度远快于arkts、kotlin及k/n。
 
 - 这些优化有没有副作用？
@@ -77,13 +99,13 @@ App平台因为要编译C代码，所以真机运行的编译速度变慢不少�
 
 如果你做过c++开发的话，会感觉到回到了那个编译速度的时代。
 
-后续DCloud也会持续研究改进该问题，提供开发期间的热更新方案。
+后续DCloud也会持续改进，提供开发期间的热更新方案。
 
 2. 运行时包体积变化。
 
 template和style编译成C后，发行包以机器码方式存在，几乎无法再压缩。比编译成js压缩成hap包的体积大一些。
 
-hello uni-app x有300多个页面，蒸汽模式的发行hap体积56M，之前非蒸汽模式的体积是46M。
+hello uni-app x有350+页面，蒸汽模式的发行hap体积56M，之前非蒸汽模式的体积是46M。
 
 如果你的应用页面少的话，体积变化不明显。
 
@@ -91,8 +113,10 @@ hello uni-app x有300多个页面，蒸汽模式的发行hap体积56M，之前�
 
 uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使用各平台的组件。可以很好的保持跨平台UI一致性。
 
+之前uni-app x非蒸汽模式时，不同平台的组件差异还较多，这个问题在蒸汽模式后会大幅减少。
+
 ## 体验方式
-下载HBuilderX 5.0+ 群测版，运行hello uni-app x的[alpha分支](https://gitcode.com/dcloud/hello-uni-app-x)。
+下载HBuilderX 5.0+，运行hello uni-app x的[alpha分支](https://gitcode.com/dcloud/hello-uni-app-x)。
 
 该分支项目默认打开了蒸汽模式。
 
@@ -124,64 +148,35 @@ ninja: error: failed recompaction: Permission denied。
 	选项式转组合式，AI可以帮忙。hello uni-app x里大量的选项式页面都是用AI转成了组合式，以适配蒸汽模式。[详见](../ai/README.md)
 - 不再支持mixin
 
-## css
+### css
 - 变更：因为性能原因，运行时不支持复杂关系选择器，只支持简单的class选择器和分组选择器 [详见](../css/common/selector.md)
+
 	替代方案：使用 BEM 命名规范, 通过类名表达层级关系, 例如：`.parent .child` 替换为 `.parent__child`。scss是编译时方案，不影响运行时性能，仍可使用。
+	
 - 变更：css的样式隔离策略有较大调整 [详见](../css/common/style-isolation.md)
 	
 	**组件默认不受外部css同名影响，不管是页面还是全局css，外部的同名class默认都不能影响组件样式。**
 	
 	如需受外部影响，组件可以在 `<script setup>` 中 defineOptions 中定义 styleIsolation，默认值为：isolated。可以改为  app 或 app-and-page。
-    
-  ```html
-  <script setup lang="uts">
-    defineOptions({
-      styleIsolation: 'app' // 可选值：isolated | app | app-and-page
-    })
-  </script>
-  ```
 
-	styleIsolation: isolated | app | app-and-page
-	* isolated: 全隔离，只受自身样式影响（除externalClasses、组件根节点以外）
-	* app: 受app.uvue中引入的全局样式影响。优先级：自身样式 > 全局样式
-	* app-and-page: 受全局、页面样式影响, 页面样式 > 自身样式 > 全局样式
+- 新增和变更：组件样式支持external-class。
 
-	组件的使用方，不管是页面还是父组件，在组件使用时设置的class，仍然会作用到组件内的根节点上（需组件是单根节点）。
-	
-	而如果想影响组件内部的子元素的样式，组件应该提供external-Class方案，供外部定制。
-
-	目前上述css隔离策略仅在鸿蒙平台(蒸汽模式)下生效，其他平台暂未支持蒸汽模式。
-	如果您想在其他平台非蒸汽模式下也启用该隔离策略，可以在manifest.json中手动配置`styleIsolationVersion`，注意：目前仅web平台支持该配置，其他平台暂未支持。
-	另外注意web平台使用external-class，也需要开启该隔离策略。
-```json
-"uni-app-x": {
-		"vapor": true,
-		"styleIsolationVersion": "2"
-	}
-```
-
-- 新增和变更：组件样式支持external-class，废弃在属性上修改子元素css的做法。
-
-	内置组件里过去有些样式定制放在属性上了，比如checkbox过去有color属性，以后就没有了。后续都通过class来修改样式。
+	内置组件里过去有些样式定制放在属性上了，比如slider、checkbox、radio过去有color属性，以后就没有了。后续都通过class来修改样式。
 	
 	同时推荐组件作者也都使用class和external-class。减少属性和动态style设置子元素样式。
 	
-	把样式设置放在组件属性上有诸多坏处：
-	1. 抽象不佳。所有样式都变成属性是封装不完的，尤其是组件的子元素，external-class是更好的抽象。即让组件作者省事，又满足组件使用者灵活的样式定制需求。
-	2. 性能。vue属性和动态style都要经过arkts层运算。而静态style、class、external-class是c层直接计算的，性能更高。
-
 	external-class示例：hello uni-app x的uni_modules/uni-badge-view/components/uni-badge-view/uni-badge-view.uvue
 	
 - TODO：还未实现css自定义变量
 - css动画不支持排版相关动画（left、top、width、height、margin、padding），请改用translateX/Y、scale等方式进行动画
 
 
-## 全局文件
+### 全局文件
 pages.json
 - TODO：没有tabbar，但有独立的tab-bar组件。见hello uni-app x蒸汽模式首页的uni-tab-bar使用示例。
 - TODO：没有页面下拉刷新。有scroll-view和list-view的下拉刷新
 
-## 组件
+### 组件
 - TODO：缺少组件sticky（目前可以用嵌套滚动来替代实现吸顶）
 - TODO：缺少组件waterflow
 - TODO：全局属性data-暂未实现
@@ -201,6 +196,7 @@ pages.json
 - 变更：swiper组件的变化
 	* 可以通过indicator-class、indicator-active-class自定义默认指示器的样式
 	* 可通过<template v-slot:indicator>，传入自定义的指示器
+	* 支持3D轮播
 	* swiper-item的position属性的值固定为absolute
 	* swiper默认高度为150px。如需根据内容高度撑开，可使用auto-height属性。
 - 新增：view、text、image这3个组件的flatten拍平属性

@@ -51,6 +51,7 @@
   * [iOS逻辑层使用注意](native/iosReadme.md)
 * 鸿蒙next平台专题指南
   * [概述](app-harmony/README.md)
+	* [蒸汽模式](app-harmony/harmony-vapor.md)
   * [应用合规指南](tutorial/compliance.md)
   * uni-app x 原生SDK
     * [概述](native/README.md)

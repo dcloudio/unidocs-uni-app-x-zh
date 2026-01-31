@@ -38,26 +38,39 @@ uni-app x中，有3种class样式
 
 ## HBuilderX 5+ 全平台统一样式隔离策略2.0
 
-HBuilderX 5+，提供了 `样式隔离策略2.0`
+uni-app x 5.0起，提供了 `样式隔离策略2.0`
 
 蒸汽模式仅支持`样式隔离策略2.0`
 
-非蒸汽模式，可在manifest.json源码视图中设置：manifest.json->uni-app-x->styleIsolationVersion: "2"
+非蒸汽模式，考虑到向下兼容问题，目前没有废弃老版样式隔离策略，暂时默认是老策略。需要显式开启2.0策略。
 
-考虑到向下兼容问题，目前为开发者和插件作者提供了过渡期，非蒸汽模式暂时默认是老策略，即styleIsolationVersion: "1"。需要显式开启2.0策略。
+### 非蒸汽模式的开启方式
+在manifest.json源码视图中设置：`manifest.json -> uni-app-x -> styleIsolationVersion: "2"`，可以开启`样式隔离策略2.0`
+```json
+{
+	"name": "Hello uni-app x",
+	"appid": "__UNI__HelloUniAppX",
+	"versionName": "2.0.0",
+	"versionCode": 20000,
+	"uni-app-x": {
+		"styleIsolationVersion":"2"
+	}
+}
+```
 
-主流插件作者陆续改造完毕后，将彻底废弃老版样式隔离策略。
+推荐插件作者在自己的项目下打开样式隔离策略2.0，尽快完成插件适配。主流插件作者陆续改造完毕后，HBuilderX将再次升级，调整为非蒸汽模式也默认使用样式隔离策略2.0，并逐步废弃老版样式隔离策略。
 
 样式隔离策略2.0的详细介绍如下：
 
 ### 默认策略
 - 全局影响页面
 	* 页面可以引用全局class，如果有同名class则合并，优先级页面>全局。
-    * 组件不可以引用全局class。
+	* 组件不可以引用全局class。
 - 页面、组件、父子组件之间隔离，互不影响。
 - 组件根样式传递依然生效，不受样式隔离策略影响
 	* 如果组件是单根节点，组件父层使用时给组件上设置class和style，会作用到组件的根节点。
 	* 如果组件是多根节点，父层使用时设置的class和style如何分配，需要组件内部写代码分配这些样式传递给哪些元素。
+
 ### 自定义方式
 #### isolated配置是否隔离
 虽然有默认策略，但页面和组件，均支持通过配置样式隔离策略，单独声明自己是否允许被外部影响。
@@ -110,10 +123,6 @@ export default {
 
 当组件隔离后，不受外部class影响，那么组件的样式定制，就需要一套新的完善方案。
 
-在web component中，默认也是样式隔离，但设计了一套::part伪元素方案来影响组件的子组件样式。
-
-uni-app x也需要一套完善的方案。
-
 组件的根样式，可以通过父层使用组件时传入style或class来影响。
 
 但很多组件有嵌套子组件，这些子组件也有开放给外部使用者来自定义样式的需求。
@@ -123,18 +132,30 @@ uni-app x也需要一套完善的方案。
 2. 属性太多导致组件性能不佳，初始化速度慢
 3. 属性无法使用css变量，很多主题样式依赖css变量
 
+在其他平台，有各自的解决方案：
+- 在web component中，默认也是样式隔离，但设计了一套::part伪元素方案来影响组件的子组件样式。
+- 微信小程序提供的方案是external-class，通过组件属性名称修改组件内部子组件样式。
+
+不过这2套方案无法跨到对方的平台。
+
+uni-app x提供了一套跨平台的新方案。它的写法类似微信小程序的external-class，也是通过组件属性修改组件内部子组件样式。但为了跨平台，逻辑又与微信的实现有差异。
+
+在过去的uni-app中，一直有一个用法，比如input组件的placeholder-class属性，传入一个class名称，可以修改input组件内部的placeholder的样式。
+
+现在这套机制开放出来，所有组件作者都可以使用。
+
 ##### external-class：外部影响组件子元素的方案
 
 HBuilderX 5.0+，提供了可跨全平台的external-class，即组件把必要的子组件的样式暴露出去，外部可以传入一个class进行覆盖。相比属性封装，这样更优雅且高性能。
 
-举个例子，假使有一个组件switch，它内部有2层结构，根view和圆球view。
+举个例子，假使有一个组件switch开关，它内部有2层结构，根view和圆球view。
 
 根view的样式可以被父层直接设置的class和style影响，那么圆球view可以暴露一个 thumb-class 的扩展class被外部影响。
 
 Switch组件示例源码：
 ```vue
 <template>
-  <view class="uni-switch"> <!-- 这里是外层view -->
+  <view class="uni-switch"> <!-- 这里是组件根view -->
     <view class="uni-switch-thumb" :class="thumbClass"></view> <!-- 这里是圆球view -->
   </view>
 </template>
@@ -149,13 +170,13 @@ defineOptions({
 </script>
 ```
 
-Switch组件的使用示例：
+有了这样的组件，那么使用时在组件上写一个thumb-class属性，就可以定义组件的子组件样式：
 ```vue
 <template>
 	<switch thumb-class="red-thumb-class"></switch>
 </template>
 <style>
-.red-thumb-class{  /* 此处示例限app平台，web和小程序更为复杂，具体见下*/
+.red-thumb-class{
 	background-color:red
 }
 </style>
@@ -184,7 +205,7 @@ defineOptions中配置externalClasses，从HBuilderX5.0起支持。
 
 **注意事项：**
 
-- 如果传递给组件externalClasses的class是在全局App.uvue中定义的，且期望覆盖组件内部自身class的部分样式，需要给指定的css属性增加`!important;`。
+- 由于全局样式是最低优先级，如果传递给组件externalClasses的class是在全局App.uvue中定义的，且期望覆盖组件内部自身class的部分样式，需要给指定的css属性增加`!important;`。
 
 
 ##### 组件避免外部过度干扰样式

@@ -18,17 +18,18 @@ uni.request({
 但在uts等强类型语言中无法这样，会报resData[0]无法安全访问、没有plugin_name属性，因为resData是个可为空的any类型，你确实没有为它定义过任何属性。
 
 在uts中，提供了2种方案：
-1. 使用[UTSJSONObject](../uts/data-type.md#utsjsonobject)，不需要提前为json数据定义类型，在使用中通过下标访问并动态转换类型
+1. 使用[UTSJSONObject](../uts/data-type.md#utsjsonobject)，不需要提前为json数据定义类型，运行时动态as转换类型
 2. 使用[type](../uts/data-type.md#type)，提前定义json数据类型，在request时通过泛型传入类型，拿到的就是一个有类型的对象，之后的用法和js一样
 
 其实在原生或标准的ts里，都是type（ts也有用interface的）。强类型里不能存在json对象这种可以用`.操作符`操作但又不提前定义属性的行为。
 
-UTSJSONObject是uni-app x为了照顾js开发者、兼容部分js生态代码而提供的一个兼容方案，但达不到js中json对象的灵活度。在kt和Swift环境中，它通过反射技术实现了未提前定义就可以访问属性。所以在代码提示上、运行性能上，也弱于type方式。但对于初学者，UTSJSONObject更容易入门。
-
-type方式就麻烦在于需要提前定义数据类型上，但由于HBuilderX自带根据json生成type的工具，所以整体使用体验，比UTSJSONObject方式好一点。
+UTSJSONObject 是 uni-app x 给原生生态引入了 js生态的一种 json数据处理方案。
 
 ## 方式1：UTSJSONObject
-UTSJSONObject是uts的内置对象，可以用下标和keypath来访问json数据。uni-app x 4.41起也支持`.操作符`，其实是把`.操作符`转成了下标。返回值类型为any。再次使用时需 as 为具体的类型。
+UTSJSONObject是uts的内置对象，可以用`.操作符`、下标和keypath来访问json数据。
+
+由于未提前定义类型，使用.或下标，都需要通过as来声明具体的类型，才能进一步使用。
+uni-app x 4.41起也支持`.操作符`，其实是把`.操作符`转成了下标。返回值类型为any。再次使用时需 as 为具体的类型。
 ### UTSJSONObject下标方式
 ```ts
 // uts写法
@@ -105,7 +106,7 @@ type IRootType = {
 
 因type不可嵌套，生成了2个type。注意顺序，Data这个type需写在前面，因为后面要引用它。引用代码执行时如未定义该类型，会报错。
 
-- 第二步：把这段类型定义，放在`<script>`根下，也就是export default{}之前。然后给uni.request传入泛型参数`<IRootType>`，返回的res.data自动转换好了类型，可以直接`.`属性了。
+- 第二步：把这段类型定义，放在`<script>`根下，如果是选项式要放在export default{}之前。然后给uni.request传入泛型参数`<IRootType>`，返回的res.data自动转换好了类型，可以直接`.`属性了。
 
 **注意：** 因为`res.data`是对象，所以泛型那里直接使用`<IRootType>`。有的服务器接口返回的`res.data`是数组，就需要在泛型那里写成`<IRootType[]>`
 
@@ -139,7 +140,7 @@ type IRootType = {
 </script>
 ```
 
-与UTSJSONObject方式相比，type方式在使用数据时可以使用`.操作符`，有代码提示。虽然需要定义type，但由于有工具可以自动生成type，所以整体使用体验，比UTSJSONObject方式方便一点。
+与UTSJSONObject方式相比，type方式在使用数据时可以使用`.操作符`，有代码提示。虽然需要定义type，但也有工具可以自动生成type。
 
 type+泛型这个方式，也是ts开发者惯用的方式。
 
@@ -201,7 +202,7 @@ type DataType = {
 
 比如`{"a:b":"123","a-b":"456"}`，这些键名对于type来讲都是非法的。转换type就会失败。
 
-hx的json转type工具，会对一些敏感符合和关键字自动转义。但也有无法转移的符号和词，详见：[type](../uts/data-type.md#json-field)
+HBuilderX的json转type工具，会对一些敏感符合和关键字自动转义。但也有无法转移的符号和词，详见：[type](../uts/data-type.md#json-field)
 
 如果你的服务器数据涉及这类问题且数据格式不可改，那只能改用UTSJSONObject方式。
 
