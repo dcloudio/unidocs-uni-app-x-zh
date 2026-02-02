@@ -84,7 +84,7 @@ uni-app x 5.0起，提供了 `样式隔离策略2.0`
 	* 配置为isolated的组件，不能引用全局class、不能引用父页面或父组件的class。全局、页面或父组件的class中出现与组件同名的class，也不会合并。
 - app：表示允许全局class影响
 	* 配置为app的页面，可以引用全局class，页面中出现与全局class中同名的class，会和全局class合并，优先级：页面 > 全局。
-	* 配置为app的组件，可以引用全局class，组件中出现与全局class中同名的class，会和全局class合并，优先级：组件 > 全局。
+	* 配置为app的组件，可以引用全局class，不受所在页面的配置影响（不管页面配置的是isolated还是app），组件中出现与全局class中同名的class，会和全局class合并，优先级：组件 > 全局。
 - app-and-page：表示组件允许全局和页面的class影响。此配置对页面无效。
 	* 配置为app-and-page的组件，可以引用全局和页面的class，组件中出现与全局和页面class中同名的class，会和全局、页面class合并，优先级：页面 > 组件 > 全局。
 	* 配置为app-and-page的组件，不受所在页面的配置影响（不管页面配置的是isolated还是app），均会按上一条规则合并。
