@@ -44,21 +44,22 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 同屏渲染2050个view，里面套了2000个text，一共4050个元素。没有懒加载、没有复用，是view和text创建速度的硬性考验。
 
-在鸿蒙nova12(apiLevel 21，鸿蒙最低端手机)上，创建和渲染这4050个元素仅耗时280ms左右。
+在鸿蒙nova12(apiLevel 21，鸿蒙最低端手机)上，创建和渲染这4050个元素仅耗时`280ms`左右。
 
-而原生arkui，同设备上创建相同数量的元素并渲染，需要耗时850ms左右。渲染速度快近3倍。
+而原生ArkUI，同设备上创建相同数量的元素并渲染，需要耗时`850ms`左右。渲染速度快近3倍。
 
-原生arkui的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译体验测试。
+原生ArkUI的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译体验测试。
 
-另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的arkui要慢的多，更无法与uni-app x蒸汽模式相比，包括纯c操作nativeNode，也需要670ms左右，比uni-app x慢1倍多另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的arkui要慢的多，更无法与uni-app x蒸汽模式相比。包括纯c操作nativeNode，也需要670ms左右，比uni-app x慢1倍多。
+另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的ArkUI要慢的多，更无法与uni-app x蒸汽模式相比，
+包括纯c操作nativeNode，也需要`670ms`左右，比uni-app x慢1倍多。
 
 2. 死亡复杂长列表页面
 
-4000行数据，共2万个元素，占据普通手机1333屏左右。
+4000行数据，7.4M的JSON，渲染2万个元素，占据普通手机1333屏左右。
 
 每行超过40+元素，包括文字、图片、视频、vue组件；每行嵌套10+层。
 
-列表中还有大量的阴影、圆角、边框。
+列表中还有大量的阴影、圆角、边框等复杂渲染样式。
 
 在鸿蒙nova12(apiLevel 21，鸿蒙最低端手机)上，瞬间进入页面。上下快滑列表，在120帧满帧运行，不会出现白块灰块。（在手机设置搜索“刷新率”，打开强制120Hz体验）
 
@@ -78,7 +79,9 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 ### 释疑
 关于uni-app x的蒸汽模式为什么这么快，很多人可能有疑问，比如
 
-- uni-app x 的App平台到底是自渲染还是原生渲染，那么答案是原生渲染。uni-app x 选择原生渲染是为了更好的和原生生态无缝融合、以及降低内存占用。
+- uni-app x 的App平台到底是自渲染还是原生渲染？
+
+答案是原生渲染。uni-app x 选择原生渲染是为了更好的和原生生态无缝融合、以及降低内存占用。
 
 - 为什么都是原生渲染，uni-app x的蒸汽模式比原生渲染更快？
 
@@ -117,6 +120,10 @@ hello uni-app x有350+页面，蒸汽模式的发行hap体积56M，之前非蒸�
 uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使用各平台的组件。可以很好的保持跨平台UI一致性。
 
 之前uni-app x非蒸汽模式时，不同平台的组件差异还较多，这个问题在全平台完成蒸汽模式后会大幅减少。
+
+- 蒸汽模式的鸿蒙渲染非常快，那后续的Android和iOS推出后也会比原生渲染快吗？
+
+是的。目前DCloud的内部版本，都已经做到了比原生UI渲染快2~3倍，包括Android的view、Android的compose ui、iOS的view、iOS的Swift ui。
 
 ## 体验方式
 下载HBuilderX 5.0+，运行hello uni-app x的[alpha分支](https://gitcode.com/dcloud/hello-uni-app-x)。
