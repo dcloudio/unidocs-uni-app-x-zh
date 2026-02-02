@@ -44,13 +44,13 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 同屏渲染2050个view，里面套了2000个text，一共4050个元素。没有懒加载、没有复用，是view和text创建速度的硬性考验。
 
-在鸿蒙nova12(apiLevel 21，鸿蒙最低端手机)上，创建和渲染这4050个元素仅耗时300ms左右。
+在鸿蒙nova12(apiLevel 21，鸿蒙最低端手机)上，创建和渲染这4050个元素仅耗时280ms左右。
 
-而原生arkui，同设备上创建相同数量的元素并渲染，需要耗时800ms左右。渲染速度快近3倍。
+而原生arkui，同设备上创建相同数量的元素并渲染，需要耗时850ms左右。渲染速度快近3倍。
 
 原生arkui的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译体验测试。
 
-另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的arkui要慢的多，更无法与uni-app x蒸汽模式相比。包括纯c操作nativeNode，也需要670ms左右，比uni-app x慢1倍。
+另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的arkui要慢的多，更无法与uni-app x蒸汽模式相比，包括纯c操作nativeNode，也需要670ms左右，比uni-app x慢1倍多另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的arkui要慢的多，更无法与uni-app x蒸汽模式相比。包括纯c操作nativeNode，也需要670ms左右，比uni-app x慢1倍多。
 
 2. 死亡复杂长列表页面
 
@@ -70,7 +70,10 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 5万字长文、59张图片。瞬间进入页面。上下快滑列表，不会出现白块灰块。人手滑不出掉帧。
 
-hello uni-app x中有很多性能相关的测试，欢迎体验。（运行时切记选择release模式运行来测试性能）
+这些内容，都可以手机上直观的亲身体验：
+1. 使用鸿蒙next手机的应用商店，搜索“DCloud开发者中心系统”，或扫描下方二维码
+![](https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png)
+2. 在HBuilderX 5.0中新建 hello uni-app x项目，manifest中开启蒸汽模式，运行到鸿蒙设备，切记选择release模式运行来测试性能
 
 ### 释疑
 关于uni-app x的蒸汽模式为什么这么快，很多人可能有疑问，比如
@@ -113,7 +116,7 @@ hello uni-app x有350+页面，蒸汽模式的发行hap体积56M，之前非蒸�
 
 uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使用各平台的组件。可以很好的保持跨平台UI一致性。
 
-之前uni-app x非蒸汽模式时，不同平台的组件差异还较多，这个问题在蒸汽模式后会大幅减少。
+之前uni-app x非蒸汽模式时，不同平台的组件差异还较多，这个问题在全平台完成蒸汽模式后会大幅减少。
 
 ## 体验方式
 下载HBuilderX 5.0+，运行hello uni-app x的[alpha分支](https://gitcode.com/dcloud/hello-uni-app-x)。
@@ -134,7 +137,7 @@ The project's compatibleSdkVersion: 17 cannot be lower than the minimum compatib
 ninja: error: failed recompaction: Permission denied。
 ```
 	此时需要重新运行一次。（ninja是deveco自带的c++编译器）
-- 运行默认是debug模式，性能较差。如果要测试性能，可以选择以release方式运行。release方式运行接近正式打包后的性能，但仍然略微低于正式包。
+- 运行默认是debug模式，性能较差。如果要测试性能，可以选择以release方式运行（在运行弹出的界面可以选择）。release方式运行接近正式打包后的性能，但仍然略微低于正式包。
 
 ## 开发注意
 
