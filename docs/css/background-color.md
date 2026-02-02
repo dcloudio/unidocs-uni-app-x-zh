@@ -15,10 +15,11 @@
 
 <!-- CSSJSON.background-color.compatibility -->
 
+### tips@tips  
+- App-Harmony 平台，背景仅延伸到内边距（padding）区域，不会绘制到边框区域，效果与 background-clip 为 padding-box 一致。
+
+
 <!-- CSSJSON.background-color.example -->
 
 <!-- CSSJSON.background-color.reference -->
 
-### Bug & Tips@tips
-
-- App-Harmony 平台，背景不支持绘制到 border 区域。
