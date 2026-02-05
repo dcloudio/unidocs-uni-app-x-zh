@@ -242,7 +242,29 @@ app-uvue的css的“样式不继承”规则，虽然与web有差异，其实只
 
 实际上web的样式优先级规则非常非常复杂，可参考[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity)
 
-app中，设置样式只有内联样式即style属性和class属性这两种方式。它们只遵循1个简单规则：`内联样式(即style属性)优先级高于class选择器、class选择器之间的优先级遵循web规范`
+app中，设置样式只有内联样式即style属性和class属性这两种方式。它们遵循以下简单规则：
+
+- 内联样式(即style属性)优先级高于class选择器 
+
+- 单class选择器以组件class属性中的书写顺序确定优先级，后边的优先级高（与web有差异，web是按class定义顺序确定优先级）
+```vue
+<template>
+    <!-- 在app端：b的权重高于a（显示蓝色），而web端：a的权重高于b（显示红色） -->
+    <!-- 因存在以上优先级差异，故不建议使用上述机制来实现权重覆盖 -->
+    <text class="a b">hello world</text>
+</template>
+<style>
+    .b {
+        color: blue
+    }
+
+    .a {
+        color: red
+    }
+</style>
+```
+
+- class关系选择器之间的优先级遵循web规范
 
 在web中，还存在`!important`例外规则，可参考[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity#!important_%E4%BE%8B%E5%A4%96%E8%A7%84%E5%88%99)
 
