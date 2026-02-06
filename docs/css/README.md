@@ -242,7 +242,7 @@ app-uvue的css的“样式不继承”规则，虽然与web有差异，其实只
 
 实际上web的样式优先级规则非常非常复杂，可参考[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity)
 
-app中，设置样式只有内联样式即style属性和class属性这两种方式。它们遵循以下简单规则：
+app中，设置样式只有内联样式即style属性和class属性这两种方式。它们遵循以下规则：
 
 
 - 内联样式(即style属性)优先级高于class选择器 
