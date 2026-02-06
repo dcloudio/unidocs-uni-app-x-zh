@@ -1185,7 +1185,7 @@ UTSJSONObject，是一个类型，可以在变量的冒号后面使用，本节�
 
 UTSJSONObject很贴近js，也方便兼容js生态的代码。但在编码时代码提示无法提示属性。
 
-UTSJSONObject的运行性能曾经不及type。但从uni-app x 5.0+，UTSJSONObject的性能反超、远超type。当然在小数据量场景，使用者难以感觉到差异。
+UTSJSONObject的运行性能目前不及type。
 
 
 ### 对象和数组

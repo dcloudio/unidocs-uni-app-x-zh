@@ -16,9 +16,7 @@ uni-app x 从4.61+起支持纯血鸿蒙，即Harmony next。
 在[uni.getDeviceInfo](../api/get-device-info.md)中也可以通过属性`osHarmonySDKAPIVersion`获取API版本。
 
 ## 运行和发行注意
-uni-app x编译到鸿蒙运行在ArkTS引擎上，ArkTS在鸿蒙的ide deveco中没有热刷新。**每次改动代码，需要重新build包、签名、安装新包到手机**。
-
-这与uni-app不同，uni-app基于js，可以热刷新。
+uni-app x编译到鸿蒙运行在ArkTS引擎上，ArkTS在老版鸿蒙的ide deveco中没有热刷新。每次改动代码，需要重新build包、签名、安装新包到手机。但从2025年末起arkts自身支持了开发期间热刷新。
 
 所以uts的运行，需要在本地安装鸿蒙deveco，本地直接编译出包。既然本地可以出包，那么鸿蒙就没有做云打包。这也是和Android和iOS的云打包的区别。
 
@@ -65,9 +63,8 @@ ArkTS的内存垃圾回收和V8等不同，比较容易造成内存泄漏。可�
 - 暂未发布小程序SDK
 - 使用 uni.loadFontFace 后需要更新设置字体内容才能使字体生效
 - 鸿蒙原生应用的单位有逻辑像素和物理像素之分，分别是vp和px。这里的px是物理像素，而web的px是逻辑像素。同名但不同义。不过在uni-app x的css样式中，仍然使用习惯的px即可，它是逻辑像素，css里写的px编译到鸿蒙会自动变成vp（鸿蒙里的逻辑像素）。鸿蒙开发默认也是vp逻辑像素。鸿蒙原生单位文档[详见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-pixel-units?ha_source=Dcloud&ha_sourceId=89000448)
-- 鸿蒙平台 uts 插件内暂不支持使用uniCloud
+- 鸿蒙平台 uts 插件内暂不支持使用uniCloud。页面中可以正常使用uniCloud。
 - 在运行 HBuilderX 内置的 hello uni-app x 项目运行报错 `运行所需的权限没有签名授权`，是因为演示项目使用到了需要审批的 ACL 权限。解决方案：搜索 `ohos.permission.READ_PASTEBOARD` 将其注释掉，此时项目可以正常运行，同时剪切板的 api 测试页面将不生效。
-- 虽然uni-app编译为js，uni-app x编译为arkts，但不代表uni-app x的性能高于uni-app。uni-app使用的js引擎是jsvm（即v8），arkts引擎还在进步中，目前部分密集运算的性能还不如v8。
 
 ## 插件扩展
 

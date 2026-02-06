@@ -44,8 +44,7 @@ JSON.parse支持传入[泛型](../generics.md)，parse结果可以直接返回�
 
 与不带泛型的JSON.parse 相比，多了一个`<Persion>` 尖括号 用来指定返回类型。
 
-在HBuilderX 5.0以前，带泛型的 `parse`函数，访问性能高于不带泛型的。
-但HBuilderX 5.0起大幅改进了底层实现，不带泛型、直接解析成UTSJSONObject，性能会远高于带泛型解析的type。
+目前带泛型的 `parse`函数，访问性能高于不带泛型的。
 
 <!-- UTSJSON.JSON.parse_1.compatibility -->
 

@@ -57,14 +57,8 @@ hi </text>
 <template>
   <text>{{text}}</text>
 </template>
-<script lang="uts">
-  export default {
-    data() {
-      return {
-        text: ' a   bc def\tg\nhi '
-      }
-    }
-  }
+<script lang="uts" setup>
+  let text = ' a   bc def\tg\nhi '
 </script>
 ```
 >上面代码中的 \t 和 \n 是 `转义字符`，\t 表示 制表符 (Tab)，\n 表示 换行符 (Line Feed)
@@ -73,7 +67,7 @@ hi </text>
 
 **space属性**  
 如果text组件配置了space属性值，会先根据space属性值处理文本中的空格，再根据 [white-space](../css/white-space.md) 样式处理。  
-蒸汽模式（Vapor）将废弃space属性。  
+蒸汽模式（Vapor）废弃了space属性。推荐统一改用css white-space来处理空白字符。
 
 **App-Android、App-iOS平台**  
 HBuilderX5.0版本开始 app-andorid/app-ios平台调整 [white-space](../css/white-space.md) 样式控制空白字符处理逻辑与 W3C 规范一致，
@@ -82,7 +76,8 @@ HBuilderX5.0版本开始 app-andorid/app-ios平台调整 [white-space](../css/wh
 
 app-andorid/app-ios平台避免使用 `space` 属性处理空格，存在以下平台差异：  
 - app-android平台配置了 `space` 属性将只处理空格转换，忽略 white-space 样式值，即按 white-space: keep 处理。  
-- app-ios平台配置了 `space` 属性将先处理空格转换，再根据 white-space 属性值处理空白字符。  
+- app-ios平台配置了 `space` 属性将先处理空格转换，再根据 white-space 属性值处理空白字符。 
+后续统一会废弃 	`space` 属性，推荐统一改用css white-space 来处理空白字符。
 
 **App-Harmony平台**  
 蒸汽模式（Vapor） [white-space](../css/white-space.md) 样式控制空白字符处理逻辑与 W3C 规范一致，默认值为 `keep`。  
@@ -91,6 +86,12 @@ app-andorid/app-ios平台避免使用 `space` 属性处理空格，存在以下�
 HBuilderX5.0版本开始 web平台调整 [white-space](../css/white-space.md) 样式控制空白字符处理逻辑与 W3C 规范一致，
 默认值为 `pre-line`。  
 如上示例2中将合并空格（连续空格合并为1个空格），制表符转换为空格，保留换行符进行渲染，a和b之间只有1个空格。
+
+uni-app x中有text组件，这是一个web没有的组件。且uni-app x在非web平台，包括小程序平台，都不支持<br>换行，所以uni-app x设计为text组件中的`\n`默认不会忽略，而是换行。
+
+不管app平台默认值keep，还是web平台默认值pre-line，都是这个表现。
+
+web的默认值preline，虽然支持\n换行，同时会合并\n以外的其他多个连续空白字符为1个。这是web与app的不同。app为了提升性能，默认值为keep，即默认不会合并连续的空白字符。
 
 
 ### 实体字符  
@@ -127,14 +128,8 @@ HBuilderX5.0版本开始 web平台调整 [white-space](../css/white-space.md) �
 <template>
   <text decode="false">{{text}}</text>
 </template>
-<script lang="uts">
-  export default {
-    data() {
-      return {
-        text: '5 &lt; 10'
-      }
-    }
-  }
+<script lang="uts" setup>
+  let text = '5 &lt; 10'
 </script>
 ```
 
