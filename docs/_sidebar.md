@@ -47,6 +47,7 @@
     * [概述](tutorial/app-market.md)
     * [应用合规指南](tutorial/compliance.md)
     * [Android 16KB页面大小适配](tutorial/android-16kb.md)
+		* [iOS Appstore上架](https://uniapp.dcloud.net.cn/tutorial/ios-app-store.html)
     * [iOS平台隐私清单](https://uniapp.dcloud.net.cn/tutorial/app-ios-privacyinfo.html)
   * [iOS逻辑层使用注意](native/iosReadme.md)
 * 鸿蒙next平台专题指南
