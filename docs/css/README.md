@@ -244,14 +244,14 @@ app-uvue的css的“样式不继承”规则，虽然与web有差异，其实只
 
 app中，设置样式只有内联样式即style属性和class属性这两种方式。它们遵循以下简单规则：
 
+
 - 内联样式(即style属性)优先级高于class选择器 
 
 - 单class选择器以组件class属性中的书写顺序确定优先级，后边的优先级高（与web有差异，web是按class定义顺序确定优先级）
 ```vue
 <template>
-    <!-- 在app端：b的权重高于a（显示蓝色），而web端：a的权重高于b（显示红色） -->
-    <!-- 因存在以上优先级差异，故不建议使用上述机制来实现权重覆盖 -->
-    <text class="a b">hello world</text>
+	<!--如果希望a的优先级高于b,为了各端一致，需要确保在<style>中a的定义顺序在b的后边，且组件class属性中也保证a在b的后边-->
+    <text class="b a">hello world</text>
 </template>
 <style>
     .b {
@@ -264,7 +264,27 @@ app中，设置样式只有内联样式即style属性和class属性这两种方�
 </style>
 ```
 
+- class复合选择器之间的优先级遵循web规范，但需要规范写法
+
+```vue
+<template>
+    <!--如果希望.a.c的优先级高于.a.b，需要确保在<style>中.a.c的定义顺序在.a.b的后边，且确保复合选择器写的时候，统一使用同一个前缀.a，如果换成.c.a在App端优先级会有差异-->
+    <text class="c b a">hello world</text>
+</template>
+<style>
+    .a.b {
+        color: blue
+    }
+
+    /* 重要：需要确保也是用.a开头做复合，.c.a 在App端的优先级并不等同于 .a.c  */
+    .a.c {
+        color: red
+    }
+</style>
+```
+
 - class关系选择器之间的优先级遵循web规范
+> 注意：目前App端蒸汽模式不支持关系选择器
 
 在web中，还存在`!important`例外规则，可参考[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity#!important_%E4%BE%8B%E5%A4%96%E8%A7%84%E5%88%99)
 
