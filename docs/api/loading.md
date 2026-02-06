@@ -38,7 +38,10 @@
 
 ## Tips@tips
 
-* 从HBuilderX 5.0+，在App和Web平台，showLoading统一成一套代码，使用dialogPage的页面中显示一个loading组件来实现。dialogPage是模态的，不支持点击空白消失。需要非模态的使用场景时，请在页面中直接使用loading组件。
+* 关于uni.showLoading和[loading组件](../component/loading.md)的区别：
+	+ showLoading是一个简易的API，使用简单。因为它悬浮在页面上方、让页面整体失去响应。主流的App较少使用这种方式。
+	+ loading组件是内置组件，无需在页面显式引入，可以嵌入页面中、按钮中。
+* 从HBuilderX 5.0+，在App和Web平台，showLoading统一成一套代码，使用dialogPage的页面中显示一个loading组件来实现。dialogPage是模态的，不支持点击空白消失，但支持back关闭。需要非模态的使用场景时，请在页面中直接使用[loading组件](../component/loading.md)。
 * showLoading 是和页面（包括 dialogPage）绑定的。
 	+ 当showLoading执行时，会寻找当前页面栈顶的窗体（包括 dialogPage），找到后进行绑定，然后弹出loading。
 	+ 在弹出loading后，再次打开新页面，新页面会覆盖原页面弹出的 loading。
