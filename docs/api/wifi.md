@@ -34,6 +34,18 @@
 
 <!-- UTSAPIJSON.connectWifi.tutorial -->
 
+## uni.setWifiList(option) @setwifilist
+
+<!-- UTSAPIJSON.setWifiList.description -->
+
+<!-- UTSAPIJSON.setWifiList.compatibility -->
+
+<!-- UTSAPIJSON.setWifiList.param -->
+
+<!-- UTSAPIJSON.setWifiList.returnValue -->
+
+<!-- UTSAPIJSON.setWifiList.tutorial -->
+
 ## uni.getWifiList(option) @getwifilist
 
 <!-- UTSAPIJSON.getWifiList.description -->
