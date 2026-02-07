@@ -41,11 +41,11 @@ export function createApp() {
 
 ::: preview <!-- VUEJSON.E_app-instance.use_use-options.webUrl -->
 
-> 选项式 API
-<!-- VUEJSON.E_app-instance.use_use-options.code -->
-
 > 组合式 API
 <!-- VUEJSON.E_app-instance.use_use-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_app-instance.use_use-options.code -->
 :::
 
 ### app.mixin
@@ -80,11 +80,11 @@ export function createApp() {
 
 ::: preview <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.webUrl -->
 
-> 选项式 API
-<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.code -->
-
 > 组合式 API
 <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.code -->
 :::
 
 ## 应用生命周期 @app-lifecycle

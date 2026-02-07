@@ -113,11 +113,11 @@ data中的响应式变量，如需在script中使用，需通过 `this.xx` 的�
 
 ::: preview <!-- VUEJSON.E_built-in.special-elements_template_template-options.webUrl -->
 
-> 选项式 API
-<!-- VUEJSON.E_built-in.special-elements_template_template-options.code -->
-
 > 组合式 API
 <!-- VUEJSON.E_built-in.special-elements_template_template-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_built-in.special-elements_template_template-options.code -->
 :::
 
 ### 在样式里绑定 @v-bind-css-data
@@ -136,11 +136,11 @@ data中的响应式变量，如需在script中使用，需通过 `this.xx` 的�
 
 ::: preview <!-- VUEJSON.E_directive.v-bind_v-bind-options.webUrl -->
 
-> 选项式 API
-<!-- VUEJSON.E_directive.v-bind_v-bind-options.code -->
-
 > 组合式 API
 <!-- VUEJSON.E_directive.v-bind_v-bind-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_directive.v-bind_v-bind-options.code -->
 :::
 
 ## 定义方法 @methods

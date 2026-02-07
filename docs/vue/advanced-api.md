@@ -22,11 +22,11 @@
 
 ::: preview <!-- VUEJSON.E_render-function.render_render-options.webUrl -->
 
-> 选项式 API
-<!-- VUEJSON.E_render-function.render_render-options.code -->
-
 > 组合式 API
 <!-- VUEJSON.E_render-function.render_render-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.render_render-options.code -->
 :::
 
 #### mergeProps()
@@ -46,11 +46,11 @@
 
 ::: preview <!-- VUEJSON.E_render-function.mergeProps_mergeProps-options.webUrl -->
 
-> 选项式 API
-<!-- VUEJSON.E_render-function.mergeProps_mergeProps-options.code -->
-
 > 组合式 API
 <!-- VUEJSON.E_render-function.mergeProps_mergeProps-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.mergeProps_mergeProps-options.code -->
 :::
 
 #### cloneVNode()
@@ -69,11 +69,11 @@
 
 ::: preview <!-- VUEJSON.E_render-function.cloneVNode_cloneVNode-options.webUrl -->
 
-> 选项式 API
-<!-- VUEJSON.E_render-function.cloneVNode_cloneVNode-options.code -->
-
 > 组合式 API
 <!-- VUEJSON.E_render-function.cloneVNode_cloneVNode-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.cloneVNode_cloneVNode-options.code -->
 :::
 
 #### isVNode()
@@ -84,11 +84,11 @@
 
 ::: preview <!-- VUEJSON.E_render-function.isVNode_isVNode-options.webUrl -->
 
-> 选项式 API
-<!-- VUEJSON.E_render-function.isVNode_isVNode-options.code -->
-
 > 组合式 API
 <!-- VUEJSON.E_render-function.isVNode_isVNode-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.isVNode_isVNode-options.code -->
 :::
 
 #### resolveComponent()
@@ -107,11 +107,11 @@
 
 ::: preview <!-- VUEJSON.E_render-function.resolveComponent_resolveComponent-options.webUrl -->
 
-> 选项式 API
-<!-- VUEJSON.E_render-function.resolveComponent_resolveComponent-options.code -->
-
 > 组合式 API
 <!-- VUEJSON.E_render-function.resolveComponent_resolveComponent-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.resolveComponent_resolveComponent-options.code -->
 :::
 
 #### withDirectives()
@@ -126,11 +126,11 @@
 
 ::: preview <!-- VUEJSON.E_render-function.withDirectives_withDirectives-options.webUrl -->
 
-> 选项式 API
-<!-- VUEJSON.E_render-function.withDirectives_withDirectives-options.code -->
-
 > 组合式 API
 <!-- VUEJSON.E_render-function.withDirectives_withDirectives-composition.code -->
+
+> 选项式 API
+<!-- VUEJSON.E_render-function.withDirectives_withDirectives-options.code -->
 :::
 
 #### withModifiers()

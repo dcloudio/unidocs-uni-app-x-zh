@@ -147,13 +147,13 @@ export default {
 
 ::: preview <!-- VUEJSON.E_component-instance.props_props-options.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.props_props-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.props_props-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.props_props-options.code -->
 
 :::
 
@@ -163,13 +163,13 @@ export default {
 
 ::: preview <!-- VUEJSON.E_component-instance.emit-function_emit-function-options.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.emit-function_emit-function-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.emit-function_emit-function-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.emit-function_emit-function-options.code -->
 
 :::
 
@@ -179,13 +179,13 @@ export default {
 
 ::: preview <!-- VUEJSON.E_component-instance.provide_provide-options-1.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.provide_provide-options-1.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.provide_provide-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.provide_provide-options-1.code -->
 
 :::
 
@@ -197,13 +197,13 @@ export default {
 
 ::: preview <!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-options.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_examples.nested-component-communication_nested-component-communication-options.code -->
 
 :::
 
@@ -222,13 +222,13 @@ app.config.globalProperties.globalPropertiesReactiveObj = reactive({
 
 ::: preview <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_app-instance.globalProperties_globalProperties-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_app-instance.globalProperties_globalProperties-options.code -->
 
 :::
 
@@ -253,13 +253,13 @@ easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取�
 
 ::: preview <!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.methods_call-method-easycom-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.methods_call-method-easycom-options.code -->
 
 :::
 
@@ -273,13 +273,13 @@ easycom组件，用法和内置组件一样。也是使用 `this.$refs` 获取�
 
 ::: preview <!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.methods_call-method-easycom-uni-modules-options.code -->
 
 :::
 
@@ -303,13 +303,13 @@ ComponentPublicInstance
 
 ::: preview <!-- VUEJSON.E_component-instance.parent_parent-options.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.parent_parent-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.parent_parent-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.parent_parent-options.code -->
 
 :::
 
@@ -342,13 +342,13 @@ Uni`组件名(驼峰)`Element
 
 ::: preview <!-- VUEJSON.E_component-instance.methods_call-method-uni-element-options.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.methods_call-method-uni-element-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.methods_call-method-uni-element-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.methods_call-method-uni-element-options.code -->
 
 :::
 
@@ -377,13 +377,13 @@ Uni`组件名(驼峰)`Element
 
 ::: preview <!-- VUEJSON.E_lifecycle.page_page-options.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.code -->
 
 :::
 
@@ -401,13 +401,13 @@ Uni`组件名(驼峰)`Element
 
 ::: preview <!-- VUEJSON.E_lifecycle.component_component-options.webUrl -->
 
-> 选项式 API
-
-<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_lifecycle.component_ChildComponentComposition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_lifecycle.component_ChildComponentOptions.code -->
 
 :::
 
@@ -425,13 +425,13 @@ Uni`组件名(驼峰)`Element
 示例 [详情](<!-- VUEJSON.E_component-instance.props_props-options.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_component-instance.props_props-options.webUrl -->
-> 选项式 API
-
-<!-- VUEJSON.E_component-instance.props_props-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_component-instance.props_props-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_component-instance.props_props-options.code -->
 
 :::
 
@@ -590,27 +590,7 @@ defineOptions({
 自定义组件 `v-model` 绑定复杂表达式时，需要通过 `as` 指定类型(仅App-Android 平台)。
 
 ::: preview
-> 选项式 API
-```ts
-<template>
-  <input v-model="obj.str as string" />
-</template>
 
-<script lang="uts">
-	type Obj = {
-		str : string
-	}
-	export default {
-		data() {
-			return {
-				obj: {
-					str: "str"
-				} as Obj
-			}
-		}
-	}
-</script>
-```
 > 组合式 API
 ```ts
 <template>
@@ -626,6 +606,28 @@ defineOptions({
     } as Obj)
 </script>
 ```
+
+> 选项式 API
+```ts
+<template>
+  <input v-model="obj.str as string" />
+</template>
+
+<script lang="uts">
+  type Obj = {
+    str : string
+  }
+  export default {
+    data() {
+      return {
+        obj: {
+          str: "str"
+        } as Obj
+      }
+    }
+  }
+</script>
+```
 :::
 
 
@@ -635,13 +637,13 @@ defineOptions({
 
 作用域插槽需在组件中指定插槽数据类型
 ::: preview <!-- VUEJSON.E_built-in.special-elements_slots_child-options.webUrl -->
-> 选项式 API
-
-<!-- VUEJSON.E_built-in.special-elements_slots_child-options.code -->
-
 > 组合式 API
 
 <!-- VUEJSON.E_built-in.special-elements_slots_child-composition.code -->
+
+> 选项式 API
+
+<!-- VUEJSON.E_built-in.special-elements_slots_child-options.code -->
 
 :::
 
