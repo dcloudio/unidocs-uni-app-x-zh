@@ -41,6 +41,12 @@ data中的响应式变量，如需在script中使用，需通过 `this.xx` 的�
 
 建议把 `ref` 定义都写在开头，否则到处都写也不好找。
 
+示例 [详情](<!-- VUEJSON.E_component-instance.data_data-composition.gitUrl -->)
+
+::: preview <!-- VUEJSON.E_component-instance.data_data-composition.webUrl -->
+<!-- VUEJSON.E_component-instance.data_data-composition.code -->
+:::
+
 #### ref
 
 使用 `ref()` 函数来定义一个响应式变量。
