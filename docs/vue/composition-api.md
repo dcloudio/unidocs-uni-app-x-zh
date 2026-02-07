@@ -402,6 +402,23 @@
 
 :::
 
+## 组合选项 @options-composition
+
+<!-- VUEJSON.options_composition.compatibility -->
+
+### inject
+
+当使用 `inject` 声明从上层提供方注入的属性时，支持两种写法：字符串数组和对象。推荐使用对象写法，因为当使用数组方法时，类型会被推导为 `any | null` 类型。\
+使用对象写法时，额外增加 `type` 属性用于标记类型。如果注入的属性类型不是基础数据类型，需要通过 `PropType` 来标记类型：
+
+示例 [详情](<!-- VUEJSON.E_component-instance.inject_inject-composition.gitUrl -->)
+
+::: preview
+
+<!-- VUEJSON.E_component-instance.inject_inject-composition.code -->
+
+:::
+
 ## 通用
 
 ### getCurrentInstance
