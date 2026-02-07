@@ -210,6 +210,8 @@ handleClick (event : UniPointerEvent) {
 
 ## UniEvent
 
+> 在小程序端各种Event事件名称只能作为类型是用，不能作为值使用。比如：`let xx: UniTouchEvent = e`是支持的，`xx instanceof UniTouchEvent`是不支持的
+
 <!-- CUSTOMTYPEJSON.UniEvent.description -->
 
 <!-- CUSTOMTYPEJSON.UniEvent.extends -->
