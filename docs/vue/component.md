@@ -105,19 +105,11 @@ uni_module有详细的专项文档，请另行查阅[uni_module规范](https://u
     <child ref="component1"></child>
   </view>
 </template>
-<script>
+<script setup lang="uts">
 // 引入 child 组件
 import child from './child.vue'
-export default {
-  components: {
-    child
-  },
-  data() {
-    return {
-      component1: null as ComponentPublicInstance | null // 手动引入组件时的类型
-    }
-  }
-}
+
+const component1 = ref<ComponentPublicInstance | null>(null) // 手动引入组件时的类型
 </script>
 ```
 
@@ -554,13 +546,13 @@ defineOptions({
 示例 [详情](<!-- VUEJSON.E_component-instance.refs_refs-options.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_component-instance.refs_refs-options.webUrl -->
-> uni-app x（选项式）
-
-<!-- VUEJSON.E_component-instance.refs_refs-options.code -->
-
 > uni-app x（组合式）
 
 <!-- VUEJSON.E_component-instance.refs_refs-composition.code -->
+
+> uni-app x（选项式）
+
+<!-- VUEJSON.E_component-instance.refs_refs-options.code -->
 
 > uni-app js 引擎版
 
@@ -652,7 +644,7 @@ defineOptions({
 实现递归组件时不要使用组件 import 自身的写法，直接在模板内使用组件名即可。
 
 ```vue
-// component-a.uvue
+<!-- component-a.uvue -->
 <template>
   <view>
     <text>component-a::{{text}}</text>
@@ -660,25 +652,23 @@ defineOptions({
   </view>
 </template>
 
-<script>
+<script setup lang="uts">
   // import componentA from './component-a' // 错误用法
-  export default {
-    name: "component-a",
-    props: {
-      text: {
-        type: String,
-        default: ''
-      },
-      limit: {
-        type: Number,
-        default: 2
-      }
+  defineOptions({
+    name: "component-a"
+  })
+  const props = defineProps({
+    text: {
+      type: String,
+      default: ''
     },
-    computed: {
-      end() : boolean {
-        return this.limit <= 0
-      }
+    limit: {
+      type: Number,
+      default: 2
     }
-  }
+  })
+  const end = computed(() : boolean => {
+    return props.limit <= 0
+  })
 </script>
 ```
