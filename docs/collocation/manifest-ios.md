@@ -112,7 +112,7 @@ HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求�
   ```
 
 - iPad  
-  默认值为横竖屏自适应，对应原生工程的Info.plist值如下
+  默认值为横竖屏自适应（支持4个方向），对应原生工程的Info.plist值如下
   ```xml
   <?xml version="1.0" encoding="UTF-8"?>
   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -128,6 +128,19 @@ HBuilderX需要的自定义storyboard文件格式为zip压缩包，里面要求�
     </dict>
   </plist>
   ```
+
+**注意**  
+iOS平台在iPad设备默认是支持`多任务处理`的，即支持悬浮窗口和拆分视图，这时要求`UISupportedInterfaceOrientations~ipad`的值为同时支持4个方向。云端打包会自动检测应用是否配置关闭支持`多任务处理`，没有关闭则自动补齐iPad设置为横竖屏自适应（支持4个方向），如过需要在iPad设备固定某个方向，需在项目根目录下的[Info.plist]()文件中添加`UIRequiresFullScreen`配置值为`true`，如下：  
+```json
+  <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+  <plist version="1.0">
+    <dict>
+      <key>UIRequiresFullScreen</key>
+      <true/>
+    </dict>
+  </plist>
+```
 
 
 
