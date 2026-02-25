@@ -10,6 +10,7 @@ cover-image 在uni-app x的app、web、微信小程序上，已废弃，使用 i
 
 ::: warning 注意
 app 端并不是在运行时实现了 cover-image 组件，仅仅是编译器把 cover-image 编译为了 image。运行时获取到的Dom仍然是UniImageElement。
+:::
 
 <!-- UTSCOMJSON.cover-image.attribute -->
 
