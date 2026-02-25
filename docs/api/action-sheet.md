@@ -33,7 +33,7 @@
 
 <!-- UTSAPIJSON.hideActionSheet.tutorial -->
 
-<!-- UTSAPIJSON.showActionSheet.example -->
+<!-- UTSAPIJSON.actionSheet.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

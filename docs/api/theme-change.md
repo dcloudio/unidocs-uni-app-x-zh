@@ -240,6 +240,8 @@ uni.offOsThemeChange(callbackId)
 
 <!-- UTSAPIJSON.offThemeChange.example -->
 
+<!-- UTSAPIJSON.themeChange.example -->
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

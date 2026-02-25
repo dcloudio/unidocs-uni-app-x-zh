@@ -34,7 +34,7 @@ Android、iOS还未提供此功能，请在插件市场搜索替代方案。[详
 
 <!-- UTSAPIJSON.getUserInfo.tutorial -->
 
-<!-- UTSAPIJSON.signIn.example -->
+<!-- UTSAPIJSON.oauth.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 

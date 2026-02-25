@@ -48,6 +48,8 @@
 
 <!-- UTSAPIJSON.offKeyboardHeightChange.tutorial -->
 
+<!-- UTSAPIJSON.keyboard.example -->
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

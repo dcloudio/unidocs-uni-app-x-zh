@@ -10,6 +10,8 @@
 
 <!-- UTSAPIJSON.share.returnValue -->
 
+<!-- UTSAPIJSON.share.example -->
+
 <!-- UTSAPIJSON.share.tutorial -->
 
 <!-- UTSAPIJSON.general_type.name -->

@@ -32,6 +32,8 @@
 
 <!-- UTSAPIJSON.hideLoading.tutorial -->
 
+<!-- UTSAPIJSON.loading.example -->
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

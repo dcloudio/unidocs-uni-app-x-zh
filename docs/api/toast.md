@@ -30,6 +30,8 @@
 
 <!-- UTSAPIJSON.hideToast.tutorial -->
 
+<!-- UTSAPIJSON.toast.example -->
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
