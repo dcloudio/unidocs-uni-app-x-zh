@@ -544,6 +544,8 @@ if (view != null && view instanceof WKWebView) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.animate.returnValue -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.animate.example -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.animate.tutorial -->
 
 
