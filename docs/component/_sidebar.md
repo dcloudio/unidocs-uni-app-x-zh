@@ -8,6 +8,7 @@
       * [swiper | 滑块视图容器](swiper.md)
       * [swiper-item | 滑块视图容器子项](swiper-item.md)
     * [match-media | 匹配检测节点](match-media.md)
+    * [page-container | 页面容器](page-container.md)
     * movable | 可拖动组件
       * [movable-area | 可拖动区域](movable-area.md)
       * [movable-view | 可拖动视图容器](movable-view.md)
@@ -102,6 +103,5 @@
   * [channel-video](channel-video.md)
   * [voip-room](voip-room.md)
   * [keyboard-accessory](keyboard-accessory.md)
-  * [page-container](page-container.md)
   * [root-portal](root-portal.md)
   * [block](block.md)
