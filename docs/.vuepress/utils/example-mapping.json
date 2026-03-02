@@ -1,0 +1,27 @@
+{
+  "_readme": "映射 key → hello-uni-app-x 中的示例文件路径（相对于项目根目录）。在 md 中使用 <!-- EXAMPLEJSON.key.key2 --> 引用。",
+  "_projects": {
+    "hello-uni-app-x": {
+      "path": "HELLO_UNI_APP_X_PATH",
+      "webPath": "HELLO_UNIAPP_X_WEB_PATH",
+      "gitCodePath": "HELLO_UNIAPP_X_GITCODE_PATH"
+    },
+    "hello-uvue": {
+      "path": "HELLO_UVUE_PATH",
+      "webPath": "HELLO_UVUE_WEB_PATH",
+      "gitCodePath": "HELLO_UVUE_GITCODE_PATH"
+    }
+  },
+  "text": {
+    "text-writer": {
+      "project": "hello-uni-app-x",
+      "title": "### 示例：打字机效果",
+      "path": "pages/component/text/text-writer.uvue"
+    },
+    "text-props": {
+      "project": "hello-uni-app-x",
+      "title": "### 示例：text相关属性示例",
+      "path": "pages/component/text/text-props.uvue"
+    }
+  }
+}

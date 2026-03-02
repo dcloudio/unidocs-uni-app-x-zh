@@ -107,6 +107,36 @@
       ```
       ![](https://web-ext-storage.dcloud.net.cn/doc/table-expandable-row.png)
 
+
+## 配置
+
+在 `.env` 文件中设置环境变量（参考 `.env.example`）：
+
+```dotenv
+# [必填] 示例项目路径（用于 EXAMPLEJSON 示例代码注入）
+# hello-uni-app-x 项目
+HELLO_UNI_APP_X_PATH=/path/to/hello-uni-app-x # 这里换成本地的路径
+HELLO_UNIAPP_X_WEB_PATH=https://hellouniappx.dcloud.net.cn/web
+HELLO_UNIAPP_X_GITCODE_PATH=https://gitcode.net/niceFeng/hello-uni-app-x/-/blob/alpha
+
+# hello-uvue 项目
+HELLO_UVUE_PATH=/path/to/hello-uvue # 这里换成本地的路径
+HELLO_UVUE_WEB_PATH=https://hellouniappx.dcloud.net.cn/hello-uvue
+HELLO_UVUE_GITCODE_PATH=https://gitcode.net/niceFeng/hello-uvue/-/blob/alpha
+```
+
+| 变量 | 必填 | 说明 |
+|------|------|------|
+| `UNIDOCS_UNI_APP_X_ZH_PATH` | 是 | uni-app x 中文文档仓库本地路径 |
+| `HELLO_UNI_APP_X_PATH` | 否 | hello-uni-app-x 项目本地路径，用于读取示例源码 |
+| `HELLO_UNIAPP_X_WEB_PATH` | 否 | hello-uni-app-x Web 预览地址 |
+| `HELLO_UNIAPP_X_GITCODE_PATH` | 否 | hello-uni-app-x 代码仓库地址（生成源码链接） |
+| `HELLO_UVUE_PATH` | 否 | hello-uvue 项目本地路径 |
+| `HELLO_UVUE_WEB_PATH` | 否 | hello-uvue Web 预览地址 |
+| `HELLO_UVUE_GITCODE_PATH` | 否 | hello-uvue 代码仓库地址 |
+
+> 示例项目的环境变量名定义在 `example-mapping.json` 的 `_projects` 中。如果不设置，`<!-- EXAMPLEJSON.xxx -->` 注释将保留不替换。
+
 ## 文档 Algolia 使用限额
 Included Quota:
 - Records: 1,000,000
