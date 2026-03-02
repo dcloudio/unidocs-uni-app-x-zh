@@ -8,6 +8,8 @@ ts 虽然有类型，但类型要求不严格。而 uts 为了编译为原生语
 
 > uni-app x下uts编译器目前[已知的一些问题](./compiler-known-issues.md)
 
+> uni-app x下uts常见错误修复建议见[UTS 常见错误修复建议](./uts-optimize.md)
+
 > uni-app x下部分[运行错误的说明](./runtime-known-issues.md)
 
 ### 概述
