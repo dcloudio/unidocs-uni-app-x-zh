@@ -7,26 +7,27 @@
     * swiper | 滑块视图组件
       * [swiper | 滑块视图容器](swiper.md)
       * [swiper-item | 滑块视图容器子项](swiper-item.md)
-    * [match-media | 匹配检测节点](match-media.md)
-    * movable | 可拖动组件
-      * [movable-area | 可拖动区域](movable-area.md)
-      * [movable-view | 可拖动视图容器](movable-view.md)
-    * cover
-      * [~~cover-view~~](cover-view.md)
-      * [~~cover-image~~](cover-image.md)
     * list-view | 列表布局组件
       * [list-view | 列表容器](list-view.md)
       * [list-item | 列表容器子项](list-item.md)
     * waterflow | 瀑布流布局组件
       * [waterflow | 瀑布流容器](waterflow.md)
       * [flow-item | 瀑布流容器子项](flow-item.md)
-    * sticky | 粘性布局组件
-      * [sticky-header | 吸顶布局容器](sticky-header.md)
-      * [sticky-section | 吸顶布局容器](sticky-section.md)
     * nested-scroll | 嵌套滚动
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
+    * sticky | 粘性布局组件
+      * [sticky-header | 吸顶布局容器](sticky-header.md)
+      * [sticky-section | 吸顶布局容器](sticky-section.md)
+		* [page-container | 弹层容器](page-container.md)
+		* [match-media | 匹配检测节点](match-media.md)
     * [share-element | 共享元素视图容器](share-element.md)
+    * movable | 可拖动组件
+      * [movable-area | 可拖动区域](movable-area.md)
+      * [movable-view | 可拖动视图容器](movable-view.md)
+    * cover
+      * [~~cover-view~~](cover-view.md)
+      * [~~cover-image~~](cover-image.md)
   * 基础内容
     * [icon | 图标](icon.md)
     * [text | 文本](text.md)
@@ -58,10 +59,10 @@
   * 媒体组件
     * [image | 图片](image.md)
     * [video | 视频](video.md)
-    * [animation-view | Lottie动画](animation-view.md)
     * [camera | 相机](camera.md)
     * [live-player | 拉流](live-player.md)
     * [live-pusher | 推流](live-pusher.md)
+    * [animation-view | Lottie动画](animation-view.md)
   * 地图
     * [map | 地图](map.md)
   * 画布
@@ -105,6 +106,5 @@
     * [channel-video](channel-video.md)
     * [voip-room](voip-room.md)
     * [keyboard-accessory](keyboard-accessory.md)
-    * [page-container](page-container.md)
     * [root-portal](root-portal.md)
     * [functional-page-navigator](functional-page-navigator.md)
