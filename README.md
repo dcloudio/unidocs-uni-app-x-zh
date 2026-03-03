@@ -110,7 +110,7 @@
 
 ## 配置
 
-在 `.env` 文件中设置环境变量（参考 `.env.example`）：
+在 [`.env`](./.env) 文件中设置环境变量：
 
 ```dotenv
 # [必填] 示例项目路径（用于 EXAMPLEJSON 示例代码注入）
@@ -135,7 +135,17 @@ HELLO_UVUE_GITCODE_PATH=https://gitcode.net/niceFeng/hello-uvue/-/blob/alpha
 | `HELLO_UVUE_WEB_PATH` | 否 | hello-uvue Web 预览地址 |
 | `HELLO_UVUE_GITCODE_PATH` | 否 | hello-uvue 代码仓库地址 |
 
-> 示例项目的环境变量名定义在 `example-mapping.json` 的 `_projects` 中。如果不设置，`<!-- EXAMPLEJSON.xxx -->` 注释将保留不替换。
+> 示例项目的环境变量名定义在 [`example-mapping.json`](./docs/.vuepress/utils/example-mapping.json) 的 `_projects` 中。如果不设置，`<!-- EXAMPLEJSON.xxx -->` 注释将保留不替换。
+
+## 在文档中插入示例：`EXAMPLEJSON.xxx.xxx` 的使用
+
+> 为了满足文档中示例代码的展示和维护需求，文档中使用了 `<!-- EXAMPLEJSON.xxx -->` 注释占位符来标记示例代码插入位置。编译时会将占位符替换为对应的示例代码内容。
+
+示例代码内容来源于 [`example-mapping.json`](./docs/.vuepress/utils/example-mapping.json) 中的配置，配置项包括示例代码所在项目、文件路径等信息。编译时会根据配置读取示例代码文件内容，并将其插入到文档中对应位置。
+
+可以参考 [text](./docs/component/text.md) 组件文档中 `<!-- EXAMPLEJSON.text.text-props -->`、`<!-- EXAMPLEJSON.text.text-layout -->` 占位符的使用示例。
+
+**注意：** 需要先正确的配置 `.env` 配置（[如何配置](#配置)），并且示例代码文件存在，才能成功插入示例代码内容。
 
 ## 文档 Algolia 使用限额
 Included Quota:
