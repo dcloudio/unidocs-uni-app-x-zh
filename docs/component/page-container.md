@@ -1,13 +1,13 @@
 <!-- ## page-container -->
 
+<!-- UTSCOMJSON.page-container.name -->
+
+<!-- UTSCOMJSON.page-container.description -->
+
 `page-container` 是跨平台弹层容器组件，具备以下特点：
 
 - 该组件支持多种弹出位置，可自定义层级、弹出层样式和遮罩层样式，支持进入前/中/后与离开前/中/后等生命周期事件，同时可覆盖底部导航栏（tabBar）
 - 普通弹层组件和 `dialogPage` 在用户进行返回操作时，往往会关闭弹层并执行页面返回；而 `page-container` 组件会拦截右滑手势、安卓物理返回键、和调用 `navigateBack` 接口三种返回情形，只关闭容器本身，不离开当前页面。
-
-<!-- UTSCOMJSON.page-container.name -->
-
-<!-- UTSCOMJSON.page-container.description -->
 
 <!-- UTSCOMJSON.page-container.compatibility -->
 
