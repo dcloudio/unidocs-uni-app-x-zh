@@ -464,7 +464,8 @@ App平台获取样式值与Web平台存在部分差异：
   </style>
   ```
   注意：与排版无关的CSS样式（如 background-color、color、font-size等）可通过 `getPropertyValue` 同步获取设置的样式值  
-  
+
+- 蒸汽模式（Vapor）通过 `getPropertyValue` 暂不支持获取[自定义css变量](../../css/common/function.md)
 
 <!-- CUSTOMTYPEJSON.CSSStyleDeclaration.methods.getPropertyValue.tutorial -->
 
