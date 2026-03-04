@@ -73,7 +73,9 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 这些内容，都可以手机上直观的亲身体验：
 1. 使用鸿蒙next手机的应用商店，搜索“DCloud开发者中心系统”，或扫描下方二维码
-![](https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png)
+
+	![](https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png)#{width=200px height=200px}
+
 2. 在HBuilderX 5.0中新建 hello uni-app x项目，manifest中开启蒸汽模式，运行到鸿蒙设备，切记选择release模式运行来测试性能
 
 ### 释疑
@@ -87,13 +89,13 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 这里面涉及数千项工程优化，难以通过几句话解释清楚，但可以提供一些关键说明：
 1. Android的compose ui也是基于原生渲染管线的，但没有使用Android自带的view、textview，而是实现了自己的组件系统。
-	
+
 	这条路完全可行，只不过compose ui做的不太好，实际渲染速度比view体系更慢。（在上述4050示例对比中，有原生view和compose ui的测试例，[详见](https://gitcode.com/dcloud/test4050-android)）
-	
+
 	uni-app x 蒸汽模式，也几乎没有使用系统自带的组件，不管是textView、recycleView、viewPage...，或者是鸿蒙的arkUI相关组件，基本都没用。
-	
+
 	全新研发的组件做到了比OS自带组件性能更高。
-	
+
 2. vue里template和style里的代码，被直接编译为优化度非常高的C代码。它的运行速度远快于arkts、kotlin及k/n。
 
 - 这些优化有没有副作用？
@@ -162,21 +164,21 @@ ninja: error: failed recompaction: Permission denied。
 - 变更：因为性能原因，运行时不支持复杂关系选择器，只支持简单的class选择器和分组选择器 [详见](../css/common/selector.md)
 
 	替代方案：使用 BEM 命名规范, 通过类名表达层级关系, 例如：`.parent .child` 替换为 `.parent__child`。scss是编译时方案，不影响运行时性能，仍可使用。
-	
+
 - 变更：css的样式隔离策略有较大调整 [详见](../css/common/style-isolation.md)
-	
+
 	**组件默认不受外部css同名影响，不管是页面还是全局css，外部的同名class默认都不能影响组件样式。**
-	
+
 	如需受外部影响，组件可以在 `<script setup>` 中 defineOptions 中定义 styleIsolation，默认值为：isolated。可以改为  app 或 app-and-page。
 
 - 新增和变更：组件样式支持external-class。
 
 	内置组件里过去有些样式定制放在属性上了，比如slider、checkbox、radio过去有color属性，以后就没有了。后续都通过class来修改样式。
-	
+
 	同时推荐组件作者也都使用class和external-class。减少属性和动态style设置子元素样式。
-	
+
 	external-class示例：hello uni-app x的uni_modules/uni-badge-view/components/uni-badge-view/uni-badge-view.uvue
-	
+
 - css动画不支持排版相关动画（left、top、width、height、margin、padding），请改用translateX/Y、scale等方式进行动画
 
 
@@ -204,7 +206,7 @@ pages.json
 	* list-item不支持设置margin
 - 变更：swiper组件的变化
 	* 可以通过indicator-class、indicator-active-class自定义默认指示器的样式
-	* 可通过<template v-slot:indicator>，传入自定义的指示器
+	* 可通过 `<template v-slot:indicator>` ，传入自定义的指示器
 	* 支持3D轮播
 	* swiper-item的position属性的值固定为absolute
 	* swiper默认高度为150px。如需根据内容高度撑开，可使用auto-height属性。
@@ -216,33 +218,33 @@ pages.json
 
   该属性为初始化属性，不支持动态修改。
 
-  被拍平的元素存在一些限制，具体如下，可根据需要设置flatten属性。  
-  * 拍平的元素无法支持事件（如click、touch）  
-  * 拍平的元素不支持截图API：takeSnapshot  
-  * 拍平时如下css不支持：  
-    + 不支持 [visibility](../css/visibility.md)  
-    + 不支持 [z-index](../css/z-index.md)  
-    + 不支持 [background-image](../css/background-image.md)  
-    + 不支持 [pointer-events](../css/pointer-events.md)  
-    + [box-shadow](../css/box-shadow.md) 不支持设置 inset 及 spreadRadius  
-  * image组件拍平后无法播放动画，gif、webp动画仅显示第一帧  
-  * view组件拍平后css属性transform、overflow、display、opacity存在缺陷，如果veiw存在子元素，这些样式不会对非拍平的子元素产生效果  
+  被拍平的元素存在一些限制，具体如下，可根据需要设置flatten属性。
+  * 拍平的元素无法支持事件（如click、touch）
+  * 拍平的元素不支持截图API：takeSnapshot
+  * 拍平时如下css不支持：
+    + 不支持 [visibility](../css/visibility.md)
+    + 不支持 [z-index](../css/z-index.md)
+    + 不支持 [background-image](../css/background-image.md)
+    + 不支持 [pointer-events](../css/pointer-events.md)
+    + [box-shadow](../css/box-shadow.md) 不支持设置 inset 及 spreadRadius
+  * image组件拍平后无法播放动画，gif、webp动画仅显示第一帧
+  * view组件拍平后css属性transform、overflow、display、opacity存在缺陷，如果veiw存在子元素，这些样式不会对非拍平的子元素产生效果
 
   注意：当自定义组件的单根节点是（view、text、image）时，该自定义组件会自动支持flatten属性，并将其传递给它的单根节点，如果在不符合要求的自定义组件上使用flatten属性，则会被自动忽略。
-  
-### 拍平（flatten）在鸿蒙平台注意事项  
-支持 flatten属性的组件（如 View、Text、Image）在逻辑上均可设置为 true 以进行“拍平”，但实际性能优化效果需满足以下条件：  
-`仅当存在至少两个相邻元素同时设置为拍平时，才能提升性能，否则可能导致性能下降。`  
 
-相邻元素包括：  
-- 兄弟节点  
-  不要求直接紧挨，例如父元素 P 下有 C1、C2、C3 三个子元素，只要其中任意两个或以上设置为拍平，即可带来性能提升。  
-- 父子节点  
+### 拍平（flatten）在鸿蒙平台注意事项
+支持 flatten属性的组件（如 View、Text、Image）在逻辑上均可设置为 true 以进行“拍平”，但实际性能优化效果需满足以下条件：
+`仅当存在至少两个相邻元素同时设置为拍平时，才能提升性能，否则可能导致性能下降。`
+
+相邻元素包括：
+- 兄弟节点
+  不要求直接紧挨，例如父元素 P 下有 C1、C2、C3 三个子元素，只要其中任意两个或以上设置为拍平，即可带来性能提升。
+- 父子节点
   要求直接紧邻，例如 P → C → G 三层结构中：
-  + 对 P 和 C、C 和 G，或 P、C、G 同时拍平，可优化性能。  
-  + 若仅对 P 和 G 拍平（中间隔了 C），则无法优化。  
-- 混合情况  
-  只要存在至少两个相邻节点（父子或兄弟）同时拍平，即可获得性能优化。  
+  + 对 P 和 C、C 和 G，或 P、C、G 同时拍平，可优化性能。
+  + 若仅对 P 和 G 拍平（中间隔了 C），则无法优化。
+- 混合情况
+  只要存在至少两个相邻节点（父子或兄弟）同时拍平，即可获得性能优化。
 
 ## API
 - TODO：没有tabbar相关api。需使用uni-tab-bar组件相关属性设置。
