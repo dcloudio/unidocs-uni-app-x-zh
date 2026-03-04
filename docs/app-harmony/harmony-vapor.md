@@ -177,7 +177,6 @@ ninja: error: failed recompaction: Permission denied。
 	
 	external-class示例：hello uni-app x的uni_modules/uni-badge-view/components/uni-badge-view/uni-badge-view.uvue
 	
-- TODO：还未实现css自定义变量
 - css动画不支持排版相关动画（left、top、width、height、margin、padding），请改用translateX/Y、scale等方式进行动画
 
 
