@@ -17,7 +17,7 @@
 
 <!-- UTSCOMJSON.page-container.component_type -->
 
-## 注意事项
+### 注意事项
 
 - 组件支持拦截用户的返回操作，包括右滑手势、安卓物理返回键和调用 navigateBack API
 - Web 设置 `overlay: true` 时，组件会禁止背景页面滚动，避免滚动穿透
