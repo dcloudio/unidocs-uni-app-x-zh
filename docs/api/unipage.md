@@ -354,6 +354,18 @@ pages.json里的内容是静态的，通过本API可以动态设置UniPage的Sty
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.$getPageStyle.tutorial -->
 
+<!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.name -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.description -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.compatibility -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.param -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.returnValue -->
+
+<!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.tutorial -->
+
 <!-- CUSTOMTYPEJSON.UniPage.example -->
 
 <!-- UTSAPIJSON.getCurrentPages.example -->
