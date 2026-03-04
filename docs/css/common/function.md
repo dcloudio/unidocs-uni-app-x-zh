@@ -30,11 +30,11 @@
 CSS自定义变量规范参考[MDN Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/--*)
 
 **注意：**
-App平台和web有以下差异:
+App平台相比web平台，有以下差异：
 - 定义变量时不支持值为var(--*) ex: --color: var(--color)
 - 回退值不支持var(--*) ex: --height: var(--height1 , var(--height2))
 - transtion暂不支持使用var
-- 部分组件的属性不支持CSS变量：input、textarea 的 placeholder-style、placeholder-class
+- 非蒸汽模式的部分组件的属性样式不支持CSS变量：input、textarea 的 placeholder-style、placeholder-class
 - 由于App平台不支持:root伪类，需要自行在页面根元素或合适的父级元素的class中定义css变量，以便在子元素生效
 
 <!-- CSSJSON.variables_values.example -->
