@@ -151,7 +151,7 @@ canvas相关的API较多，参考如下：
 
 canvas有很多应用场景，插件市场有很多封装好的插件：
 
-* 图表需求：[xCharts 基于原生canvas的图表方案](https://ext.dcloud.net.cn/plugin?id=21099)。插件市场还有基于webview的图表插件：[echart](https://ext.dcloud.net.cn/search?q=chart&orderBy=Relevance&uni-appx=1)、[F2](https://ext.dcloud.net.cn/search?q=f2&orderBy=Relevance&uni-appx=1)
+* 图表需求：[echart](https://ext.dcloud.net.cn/search?q=chart&orderBy=Relevance&uni-appx=1)、[F2](https://ext.dcloud.net.cn/search?q=f2&orderBy=Relevance&uni-appx=1)
 * 二维码展示：[见插件市场](https://ext.dcloud.net.cn/search?q=%E4%BA%8C%E7%BB%B4%E7%A0%81&uni-appx=1)
 * 手写签名：[见插件市场](https://ext.dcloud.net.cn/search?q=%E7%AD%BE%E5%90%8D&orderBy=Relevance&uni-appx=1)
 * 抽奖转盘：[见插件市场](https://ext.dcloud.net.cn/search?q=%E8%BD%AC%E7%9B%98&orderBy=Relevance&uni-appx=1)
