@@ -13,20 +13,24 @@
 <!-- UTSCOMJSON.image.component_type-->
 
 ### 图片格式
-- web平台支持的图片格式，不同浏览器有差异，可查询caniuse
-- 小程序平台支持的图片格式与浏览器类似。但由于不同小程序平台的webview版本不一样，需要具体查阅小程序平台的图片组件介绍。
+- web平台支持的图片格式，不同浏览器有差异，可查询caniuse。
+- 小程序平台支持的图片格式与浏览器类似。但由于不同小程序平台的webview版本不一样，需要具体查阅小程序平台的图片组件介绍。\
 	注意：webp在不同小程序平台策略不同，有的需要打开 webp 属性，有的仅支持来自服务器的webp。
-- Android、iOS和鸿蒙平台支持的图片格式如下：
-	* [x] bmp
-	* [x] gif
-	* [x] ico
-	* [x] jpg
-	* [x] png
-	* [x] webp (iOS14起是硬解码，之前是软解码，软解码性能略低。)
-	* [x] heic (Android10+支持。)
-	* [x] avif (iOS16+支持，Android不支持，鸿蒙平台不支持。)
-	* [x] tif (Android不支持，鸿蒙平台不支持。)
-	* [x] svg (iOS13+支持；需HBuilderX4.81+。app平台都不支持svg动画。对mode属性支持的细节差异请参考 [关于svg格式的矢量能力](#svg-support)。)
+- App平台支持的图片格式如下：
+
+| 图片格式| Android							| iOS												| HarmonyOS	| 备注																					|
+| ---			| ---									| ---												| ---				| ---																					|
+| BMP			| √										| √													| √					|																							|
+| GIF			| √										| √													| √					|																							|
+| ICO			| √										| √													| √					|																							|
+| JPG			| √										| √													| √					|																							|
+| PNG			| √										| √													| √					|																							|
+| WebP		| √										| √													| √					|iOS 14+ 为硬解码，低版本为软解码（性能较低）	|
+| HEIC		| √ (Android10+)			| √													| √					|																							|
+| AVIF		| x										| √ (iOS16+)								| x					|系统支持硬解才有优势，使用三方软解还不如其他格式	|
+| TIF			| x										| √													| x					|																							|
+| SVG			| √ (HBuilderX4.81+)	| √ (iOS13+ HBuilderX4.81+)	| ️√				|	不支持svg动画。某些场景会解成位图渲染，[详见](#svg-support)		|
+
 
 如需其他图片格式，可自行开发uts组件插件或搜索插件市场，如
 - [apng插件](https://ext.dcloud.net.cn/search?q=apng&orderBy=Relevance&cat1=8&cat2=82)
@@ -48,17 +52,16 @@
 	* 支持http、https。
 	* 安卓端image组件内部使用facebook的[fresco](https://github.com/facebook/fresco)库(2.5.0)，自带缓存策略，也会自动清理缓存。
 	* iOS端image组件内部使用[SDWebImage](https://github.com/SDWebImage/SDWebImage)库(5.10.0)，自带缓存策略，默认7天缓存，缓存过期后会自动清理。
-	* 鸿蒙平台image组件使用arkUI的image组件，缓存策略[另见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image?ha_source=Dcloud&ha_sourceId=89000448)
-	* 鸿蒙平台蒸汽模式image组件内部使用[imageknifepro](https://gitcode.com/openharmony-sig/imageknifepro)库(1.0.12)，自带缓存策略，内存缓存256张128MB，磁盘缓存512张128MB，超限采用LRU淘汰。
+	* 鸿蒙平台非蒸汽模式image组件使用arkUI的image组件，缓存策略[另见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image?ha_source=Dcloud&ha_sourceId=89000448)
+	* 鸿蒙平台蒸汽模式image组件使用[imageknifepro](https://gitcode.com/openharmony-sig/imageknifepro)库(1.0.12)，自带缓存策略，内存缓存256张128MB，磁盘缓存512张128MB，超限采用LRU淘汰。
 
 ### 关于svg格式的矢量能力@svg-support
 
-svg 是矢量格式图片，但由于各平台 image 组件的实现方案不同，在某些场景下会因为位图化而损失掉矢量能力，虽然在给定尺寸下显示效果是正常的，
-但如果使用类似 `transform:scale(3)` 的方式进行放大显示的时候图片细节会变得模糊。具体的问题表现跟使用方式有关。
+svg 是矢量图片，可以无极缩放而不失真。但在以下情况，会把svg转成位图渲染，此时将丢失矢量能力。
 
 - 鸿蒙平台蒸汽模式
-	* 如果启用了 `flatten` 模式，则上述损失矢量能力的问题总是存在的。
-	* 如果未启用 `flatten` 模式，根据设置的 `mode` 属性会有不同表现，设置为 `scaleToFill/aspectFit/aspectFill` 可以保持矢量能力，设置为其它值会有损失。
+	* 如果启用了 `flatten` 拍平，则会转为位图。
+	* 设置部分 `mode` 属性进行图像裁剪，会转为位图进行裁剪。`mode` 设置为 `scaleToFill/aspectFit/aspectFill` 可以保持矢量能力，设置为其它值会转位图裁剪。
 
 <!-- UTSCOMJSON.image.children -->
 
@@ -73,4 +76,4 @@ svg 是矢量格式图片，但由于各平台 image 组件的实现方案不同
 - app-android平台由于默认启用了图片缩放（即根据组件实际宽高加载图片，以节省内存），所以可能导致load事件返回的图片尺寸并非图片原始尺寸
 - app-android平台不支持CMYK色彩的图片，[详见](https://github.com/facebook/fresco/issues/1404)
 - app-ios平台 iOS14 版本开始系统原生支持 WebP 图片格式，iOS14以下的版本使用三方解码器软解码实现对 WebP 的支持，性能存在一定损耗。如果在iOS14以下同一页面中大量使用WebP图片，会增加性能损耗
-- app-ios平台不支持padding style（padding-top、padding-left、padding-right、padding-bottom）
+- app-ios平台非蒸汽模式不支持padding style（padding-top、padding-left、padding-right、padding-bottom）
