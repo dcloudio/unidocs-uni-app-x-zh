@@ -16,18 +16,17 @@
 - web平台支持的图片格式，不同浏览器有差异，可查询caniuse
 - 小程序平台支持的图片格式与浏览器类似。但由于不同小程序平台的webview版本不一样，需要具体查阅小程序平台的图片组件介绍。
 	注意：webp在不同小程序平台策略不同，有的需要打开 webp 属性，有的仅支持来自服务器的webp。
-- 鸿蒙next平台的图片格式[参考](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image?ha_source=Dcloud&ha_sourceId=89000448)
-- Android和iOS平台支持的图片格式如下：
+- Android、iOS和鸿蒙平台支持的图片格式如下：
 	* [x] bmp
 	* [x] gif
 	* [x] ico
 	* [x] jpg
 	* [x] png
-	* [x] webp (iOS14起是硬解码，之前是软解码，软解码性能略低。Android支持)
-	* [x] heic (iOS支持，Android10+支持)
-	* [x] avif (iOS16+支持，Android不支持)
-	* [x] tif (iOS支持，Android不支持)
-	* [x] svg (iOS13+支持，Android支持。不支持svg动画。Android暂不支持mode属性。需HBuilderX4.81+)
+	* [x] webp (iOS14起是硬解码，之前是软解码，软解码性能略低。)
+	* [x] heic (Android10+支持。)
+	* [x] avif (iOS16+支持，Android不支持，鸿蒙平台不支持。)
+	* [x] tif (Android不支持，鸿蒙平台不支持。)
+	* [x] svg (iOS13+支持；需HBuilderX4.81+。app平台都不支持svg动画。对mode属性支持的细节差异请参考 [关于svg格式的矢量能力](#svg-support)。)
 
 如需其他图片格式，可自行开发uts组件插件或搜索插件市场，如
 - [apng插件](https://ext.dcloud.net.cn/search?q=apng&orderBy=Relevance&cat1=8&cat2=82)
@@ -50,6 +49,16 @@
 	* 安卓端image组件内部使用facebook的[fresco](https://github.com/facebook/fresco)库(2.5.0)，自带缓存策略，也会自动清理缓存。
 	* iOS端image组件内部使用[SDWebImage](https://github.com/SDWebImage/SDWebImage)库(5.10.0)，自带缓存策略，默认7天缓存，缓存过期后会自动清理。
 	* 鸿蒙平台image组件使用arkUI的image组件，缓存策略[另见](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-components-image?ha_source=Dcloud&ha_sourceId=89000448)
+	* 鸿蒙平台蒸汽模式image组件内部使用[imageknifepro](https://gitcode.com/openharmony-sig/imageknifepro)库(1.0.12)，自带缓存策略，内存缓存256张128MB，磁盘缓存512张128MB，超限采用LRU淘汰。
+
+### 关于svg格式的矢量能力@svg-support
+
+svg 是矢量格式图片，但由于各平台 image 组件的实现方案不同，在某些场景下会因为位图化而损失掉矢量能力，虽然在给定尺寸下显示效果是正常的，
+但如果使用类似 `transform:scale(3)` 的方式进行放大显示的时候图片细节会变得模糊。具体的问题表现跟使用方式有关。
+
+- 鸿蒙平台蒸汽模式
+	* 如果启用了 `flatten` 模式，则上述损失矢量能力的问题总是存在的。
+	* 如果未启用 `flatten` 模式，根据设置的 `mode` 属性会有不同表现，设置为 `scaleToFill/aspectFit/aspectFill` 可以保持矢量能力，设置为其它值会有损失。
 
 <!-- UTSCOMJSON.image.children -->
 
