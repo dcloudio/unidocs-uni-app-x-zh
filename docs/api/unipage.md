@@ -371,8 +371,6 @@ pages.json里的内容是静态的，通过本API可以动态设置UniPage的Sty
 
 > ① 截图高度等于内容实际高度（内容多高截图就多高）  
 > ② 截图高度固定为屏幕高度（不管内容多少都是一屏高）
-:::
-
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.compatibility -->
 
