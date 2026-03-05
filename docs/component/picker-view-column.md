@@ -17,3 +17,7 @@
 <!-- UTSCOMJSON.picker-view-column.example -->
 
 <!-- UTSCOMJSON.picker-view-column.reference -->
+
+Tips
+
+- 注意 `<picker-view-column>` 仅可放置于 `<picker-view />`
