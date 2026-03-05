@@ -358,6 +358,22 @@ pages.json里的内容是静态的，通过本API可以动态设置UniPage的Sty
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.description -->
 
+该截图 API 只针对页面内容进行截图，不包含状态栏、导航栏、软键盘等系统 UI 元素。
+
+截图行为说明：
+
+| 页面内容 | 根节点类型 | app-android | app-ios | app-harmonyOS | app-harmonyOS(Vapor) |
+|---------|-----------|-------------|---------|---------------|---------------------|
+| 超过一屏 | scroll-view 滚动容器 | 长图（完整内容） | 长图（完整内容） | 长图（完整内容） | 长图（完整内容） |
+| 超过一屏 | 非 scroll-view 容器 | 长图（完整内容）  |屏幕高度<sup>②</sup> | 长图（完整内容） | 长图（完整内容） |
+| 不超过一屏 | scroll-view 滚动容器 | 内容高度<sup>①</sup> | 内容高度<sup>①</sup> | 内容高度<sup>①</sup> | 内容高度<sup>①</sup> |
+| 不超过一屏 | 非 scroll-view 容器 | 屏幕高度<sup>②</sup> | 屏幕高度<sup>②</sup> | 屏幕高度<sup>②</sup> | 屏幕高度<sup>②</sup> |
+
+> ① 截图高度等于内容实际高度（内容多高截图就多高）  
+> ② 截图高度固定为屏幕高度（不管内容多少都是一屏高）
+:::
+
+
 <!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.compatibility -->
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.param -->
