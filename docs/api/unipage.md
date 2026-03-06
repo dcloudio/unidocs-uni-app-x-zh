@@ -358,7 +358,7 @@ pages.json里的内容是静态的，通过本API可以动态设置UniPage的Sty
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.description -->
 
-该截图 API 只针对页面内容进行截图，不包含状态栏、导航栏、软键盘等系统 UI 元素，也不包含 tabBar。\
+该截图 API 只针对页面内容进行截图，不包含状态栏、软键盘等系统 UI 元素，也不包含pages.json中定义的导航栏、tabBar。\
 截图行为会根据页面内容大小、根节点类型和平台不同而有所差异，具体如下表所示：
 
 | 页面内容 | 根节点类型 | app-android | app-ios | app-harmonyOS | app-harmonyOS(Vapor) |
