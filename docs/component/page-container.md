@@ -25,7 +25,6 @@ page-container 的特点：
 - 微信小程序 `enter` 和 `leave` 相关事件的回调函数有参数 `event`，App 和 Web 平台没有
 - 开启 `closeOnSlideDown` 后，微信小程序需要快速下滑才生效，App 和 Web 会跟着手指拖动滑动
 - 小程序页面最多只有1个page-container，若已存在page-container的情况下，无法新弹出page-container。App 和 Web 支持弹出多个page-container组件，后弹覆盖先弹。
-- App 和 Web 端如果页面中存在多个 page-container 组件，需要在组件上添加 v-if，避免影响拦截用户的返回操作
 
 <!-- UTSCOMJSON.page-container.children -->
 
