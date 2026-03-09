@@ -12,6 +12,10 @@
 
 <!-- UTSCOMJSON.textarea.component_type-->
 
+::: warning 注意
+- 鸿蒙平台蒸汽模式样式设置暂不支持 css 变量
+:::
+
 #### 获取原生view对象
 
 为增强uni-app x组件的开放性，从 `HBuilderX 4.25` 起，UniElement对象提供了 [getAndroidView](../dom/unielement.md#getandroidview) 和 [getIOSView](../dom/unielement.md#getiosview) 方法。
