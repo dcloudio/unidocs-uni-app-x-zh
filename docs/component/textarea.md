@@ -12,9 +12,6 @@
 
 <!-- UTSCOMJSON.textarea.component_type-->
 
-::: warning 注意
-- 鸿蒙平台蒸汽模式样式设置暂不支持 css 变量
-:::
 
 #### 获取原生view对象
 
@@ -89,3 +86,4 @@ inputmode 兼容性：Chrome >= 66、Edge >= 79、Firefox >= 95、Chrome Android
 * 由于Android系统限制，textarea的键盘右下角按钮只能是`换行`，所以暂时不提供`confirm-type`属性。
 * 当软键盘右下角为 换行 时，confirm-hold 恒为 true，设置为false也不生效，即按下 换行 时，软键盘不会消失。
 * 在Android 9以下的系统版本，样式`line-height`点击键盘换行时行间距设置无效，此问题是Android系统的bug，后续解决。
+* App平台蒸汽模式样式设置暂不支持 css 变量。

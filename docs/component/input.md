@@ -12,10 +12,6 @@
 
 <!-- UTSCOMJSON.input.component_type-->
 
-::: warning 注意
-- 鸿蒙平台蒸汽模式样式设置暂不支持 css 变量
-:::
-
 #### 获取原生view对象
 
 为增强uni-app x组件的开放性，从 `HBuilderX 4.25` 起，UniElement对象提供了 [getAndroidView](../dom/unielement.md#getandroidview) 和 [getIOSView](../dom/unielement.md#getiosview) 方法。
@@ -122,3 +118,4 @@ web平台的inputmode的浏览器兼容性如下： Chrome >= 66、Edge >= 79、
 - 如需模拟输入框，比如一些验证码输入框、连续扫码，在插件市场搜索[模拟输入框](https://ext.dcloud.net.cn/search?q=%E6%A8%A1%E6%8B%9F%E8%BE%93%E5%85%A5%E6%A1%86&orderBy=Relevance&uni-appx=1)
 - 如需自定义软键盘，比如车牌键盘，在插件市场搜索[自定义键盘](https://ext.dcloud.net.cn/search?q=%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%AE%E7%9B%98&orderBy=Relevance&uni-appx=1)
 - 如需hideKeyBoard隐藏软键盘，在插件市场搜索[hideKeyBoard](https://ext.dcloud.net.cn/search?q=hideKeyBoard&orderBy=Relevance&uni-appx=1)
+- App平台蒸汽模式样式设置暂不支持 css 变量。
