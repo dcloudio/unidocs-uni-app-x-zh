@@ -227,6 +227,7 @@ pages.json
     + 不支持 [background-image](../css/background-image.md)
     + 不支持 [pointer-events](../css/pointer-events.md)
     + [box-shadow](../css/box-shadow.md) 不支持设置 inset 及 spreadRadius
+    + [display](../css/display.md) 为 fixed 时显示存在缺陷，无法覆盖其它非 fixed 的元素
   * image组件拍平后无法播放动画，gif、webp动画仅显示第一帧
   * view组件拍平后css属性transform、overflow、display、opacity存在缺陷，如果veiw存在子元素，这些样式不会对非拍平的子元素产生效果
 
