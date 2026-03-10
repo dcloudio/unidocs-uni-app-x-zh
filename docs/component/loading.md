@@ -22,7 +22,9 @@
 3. loading组件默认是旋转的，不使用时应v-if删除或设置paused。请注意勿在隐藏或被遮挡的区域让loading持续旋转。
 4. 当 ios-spinner = true 时，由于iOS系统雪花非矢量概念，该组件随着 CSS width、height 动态调整大小时会模糊，建议 CSS width、height 不超过 37px；
 5. [uni.showLoading API](https://doc.dcloud.net.cn/uni-app-x/api/loading.html#showloading) 从HBuilderX 5.0+ ，在非小程序上通过本内置loading组件实现,
-
+6. 不支持以下css 变量：
+	* border-color：加载框线条的颜色，默认值为 #000000；
+    * color：仅 ios-spinner = true 时，color的优先级大于border-color； ios-spinner = false 时， color无效；
 <!-- UTSCOMJSON.loading.example -->
 
 <!-- UTSCOMJSON.loading.reference -->
