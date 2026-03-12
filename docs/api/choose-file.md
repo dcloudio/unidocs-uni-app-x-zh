@@ -10,9 +10,7 @@
 
 <!-- UTSAPIJSON.chooseFile.returnValue -->
 
-### Tips
-- Android端返回的路径是content协议。
-- 微信小程序端调用的是 [wx.chooseMessageFile](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseMessageFile.html)，从客户端会话选择文件
+Android端返回的路径是content协议。
 
 <!-- UTSAPIJSON.chooseFile.example -->
 
@@ -22,6 +20,7 @@
 ## tips
 - chooseFile是系统UI，其风格不同rom可能有差异。多选时有的是长按、有的是checkbox。系统UI的暗黑模式、国际化跟随系统，而不跟随App。
 - chooseFile不仅仅是选择现有文件，有的手机也可以新拍照、拍摄、录音。但不同系统的实现存在差异。
+- 微信小程序端调用的是 [wx.chooseMessageFile](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseMessageFile.html)，从客户端会话选择文件
 
 <!-- UTSAPIJSON.general_type.name -->
 
