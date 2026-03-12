@@ -10,7 +10,9 @@
 
 <!-- UTSAPIJSON.chooseFile.returnValue -->
 
-Android端返回的路径是content协议。
+### Tips
+- Android端返回的路径是content协议。
+- 微信小程序端调用的是 [wx.chooseMessageFile](https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseMessageFile.html)，从客户端会话选择文件
 
 <!-- UTSAPIJSON.chooseFile.example -->
 
