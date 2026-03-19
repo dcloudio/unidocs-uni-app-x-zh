@@ -28,4 +28,4 @@
 
 **[历史版本](https://pan.baidu.com/s/1OXvFjfGW6zDAyzTZGpY7hQ?pwd=aa2c)**
  
-**[历史版本更新日志](https://download1.dcloud.net.cn/hbuilderx/changelog/5.04.2026031906-alpha .html)**
+**[历史版本更新日志](https://download1.dcloud.net.cn/hbuilderx/changelog/5.04.2026031906-alpha.html)**
