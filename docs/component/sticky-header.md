@@ -38,7 +38,8 @@
 + `sticky-header` 组件，不支持设置css样式，不要通过 class 和 style 设置样式  
 + 鸿蒙平台暂不支持 `padding` 属性，可通过设置子元素样式来实现类似效果  
 + 鸿蒙平台 `sticky-header` 组件只能作为 `sticky-section` 的子元素使用  
-+ 鸿蒙平台API版本低于17的设备不支持 `sticky-header` 组件，可在滚动容器里自行监听滚动，设置某个区域的top为固定值来实现吸顶效果，参考hello uni-app x的模板->[scroll-view自定义滚动吸顶示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/scroll-sticky/scroll-sticky.uvue)  
++ 鸿蒙平台API版本低于17的设备不支持 `sticky-header` 组件，可在滚动容器里自行监听滚动，设置某个区域的top为固定值来实现吸顶效果，参考hello uni-app x的模板->[scroll-view自定义滚动吸顶示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/scroll-sticky/scroll-sticky.uvue)
++ 蒸汽模式 sticky-header必须是sticky-section内首个元素
 
 
 <!-- UTSCOMJSON.sticky-header.children -->

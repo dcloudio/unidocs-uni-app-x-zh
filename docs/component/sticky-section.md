@@ -39,6 +39,7 @@
 + `sticky-section` 组件，不支持设置css样式，不要通过 class 和 style 设置样式  
 + Android平台 `sticky-section` 组件作为 list-view 的子元素时需要注意，sticky-section子元素仅支持sticky-header、list-item，其他元素无法正常显示
 + 鸿蒙平台暂不支持 `padding` 属性，可通过设置子元素样式来实现类似效果  
++ 蒸汽模式 sticky-section内的list-item必须使用v-for、不能使用v-if，且此v-for必须有key
 
 <!-- UTSCOMJSON.sticky-section.children -->
 
