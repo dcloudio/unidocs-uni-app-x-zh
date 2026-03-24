@@ -5,7 +5,7 @@
 <!-- UTSAPIJSON.createInnerAudioContext.description -->
 
 :::warning 注意
-使用完后，必须调用destory方法将资源进行释放
+使用完后，必须调用 destroy 方法将资源进行释放
 :::
 
 **支持格式**
