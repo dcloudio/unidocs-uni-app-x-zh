@@ -73,7 +73,7 @@ const config = {
   },
   markdown: {
     // toc: { includeLevel: [1, 2, 3, 4] },
-    slugify (str) {
+    slugify(str) {
       if (typeof str !== 'string') return ''
 
       let slug = str
@@ -86,7 +86,7 @@ const config = {
       return slugify(slug)
     },
     extractHeaders: ['h1', 'h2', 'h3', 'h4'],
-    chainMarkdown (config) {
+    chainMarkdown(config) {
       const extensionMap = {
         uts: 'ts',
         ets: 'ts',
@@ -107,14 +107,14 @@ const config = {
         .plugin('normalize-link')
         .use(normalizeLink, [{ base }])
         .end()
-				.plugin('enhance-md')
-				.use(enhanceMd)
+        .plugin('enhance-md')
+        .use(enhanceMd)
         .end()
         .plugin('inject-json-to-md')
         .use(require('./markdown/inject-json-to-md'))
     }
   },
-  chainWebpack (config, isServer) {
+  chainWebpack(config, isServer) {
     config.resolve.alias.set(
       '@theme-config',
       path.resolve(process.cwd(), 'docs/.vuepress/config')
@@ -122,7 +122,7 @@ const config = {
   },
   plugins: [
     ["vuepress-plugin-juejin-style-copy", copyOptions],
-    [createLLMSText]
+    [createLLMSText, { domain: 'https://github.com/dcloudio/uni-app/tree/uni-app-x/docs' }]
   ]
 }
 
