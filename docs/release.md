@@ -1,3 +1,7 @@
+#### 5.05.2026032417
+##### uni-app x
+* App-iOS平台 更新 云端打包环境 XCode 为 16.1 版、iOS SDK 为 18.1 版，支持iOS13及以上系统 [详情](https://doc.dcloud.net.cn/uni-app-x/tutorial/app-env.html)
+
 #### 5.04.2026031801
 ##### uni-app x
 * iOS平台 修复 组件 native-view 动态创建并销毁时可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27240)
