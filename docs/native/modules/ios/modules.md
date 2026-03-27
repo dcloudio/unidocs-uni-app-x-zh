@@ -68,10 +68,34 @@
 | uni-openDocument(4.71+)(依赖uni-fileSystemManager) | uni-openDocument-index.swift | | |
 | uni-live-pusher(4.81+) | uni-live-pusher-index.swift | HappyDNS.framework <br> PLMediaStreamingKit.xcframework | |
 | uni-live-player(4.81+) | uni-live-player-index.swift | qplayer2_core.xcframework | AVFoundation <br> AudioToolbox <br> QuartzCore<br> OpenGLES <br> CoreVideo<br> CoreMedia <br> VideoToolbox <br> c++ <br> bz2 <br> iconv <br> z <br> |
+| uni-loading(5.0+) | uni-loading-index.swift <br> uni-loading-SpinnerView.swift <br> uni-loading-UniLoadingComponentRegister.swift | | |
+| uni-showLoading(5.0+) | uni-showLoading-index.swift | | |
+| uni-web-view(5.0+) | uni-web-view-index.swift <br> uni-web-view-InnerWebView.swift <br> uni-web-view-Snapshot.swift <br> uni-web-view-UniBaseWebView.swift <br> uni-web-view-UniViewLifecycle.swift <br> uni-web-view-UniWebComponentRegister.swift| | |
 
 ### 配置uts-config.json(可选)
 
 在`DCloudUTSExtAPI`工程中新建 `uts-config.json` 文件，
+`uni-loading`模块需要添加如下配置
+```
+{
+	"components": [{
+	"name": "loading",
+	"class": "UTSSDKModulesDCloudUniLoadingLoadingComponent",
+	"delegateClass": "UniLoadingComponentRegister"
+	}]
+}
+```
+`uni-web-view`模块需要添加如下配置
+```
+{
+	"components": [{
+		"name": "webview",
+		"class": "UTSSDKModulesDCloudUniWebWebComponent",
+		"delegateClass": "UniWebComponentRegister"
+	}]
+}
+```
+
 `uni-video`模块需要添加如下配置
 ```
 {
