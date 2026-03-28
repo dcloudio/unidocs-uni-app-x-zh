@@ -64,7 +64,7 @@
 | uni-scanCode(4.71+)(依赖uni-barcode-scanning) | uni-scanCode-index.swift| | |
 | uni-clipboard(4.71+) | uni-clipboard-index.swift | | |
 | uni-keyboard(4.71+) | uni-keyboard-index.swift | | |
-| (5.0后废弃) ~~uni-rich-text(4.71+)~~ | (5.0后废弃) ~~uni-rich-text-index.swift~~ | | |
+| uni-rich-text(4.71+) | (5.0后废弃，不需要添加文件) ~~uni-rich-text-index.swift~~ | | |
 | uni-openDocument(4.71+)(依赖uni-fileSystemManager) | uni-openDocument-index.swift | | |
 | uni-live-pusher(4.81+) | uni-live-pusher-index.swift | HappyDNS.framework <br> PLMediaStreamingKit.xcframework | |
 | uni-live-player(4.81+) | uni-live-player-index.swift | qplayer2_core.xcframework | AVFoundation <br> AudioToolbox <br> QuartzCore<br> OpenGLES <br> CoreVideo<br> CoreMedia <br> VideoToolbox <br> c++ <br> bz2 <br> iconv <br> z <br> |
@@ -209,6 +209,7 @@
 
 `uni-rich-text`模块需要添加如下配置（4.71～5.0使用，5.0后不需要配置）
   ```
+	// 4.71～5.0使用，5.0后不需要配置）
 {
     "components": [{
       "type": "customElement",
