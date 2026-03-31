@@ -245,7 +245,7 @@ app-uvue的css的“样式不继承”规则，虽然与web有差异，其实只
 app中，设置样式只有内联样式即style属性和class属性这两种方式。它们遵循以下规则：
 
 
-- 内联样式(即style属性)优先级高于class选择器 
+- 内联样式(即style属性)优先级高于class选择器
 
 - 单class选择器以组件class属性中的书写顺序确定优先级，后边的优先级高（与web有差异，web是按class定义顺序确定优先级）
 ```vue
@@ -317,7 +317,7 @@ App仅对`同层的兄弟节点`之间支持`z-index`来调节层级。不支持
 	* 例如flex方向，flex-direction，在W3C规范中默认是横排。在uni-app x中都是竖排。
 	* 例如box-sizing，在W3C规范中默认是content-box。在uni-app x中是border-box。（很多css框架都会重置浏览器这个css）
 - 有的是因为浏览器的默认值比较复杂
-	
+
 	比如auto、normal、medium，这些值内部逻辑很复杂，在不同情况有不同表现。很多是历史兼容造成的包袱。
 	在uni-app x中，倾向于让值明确。
 
@@ -329,6 +329,11 @@ App仅对`同层的兄弟节点`之间支持`z-index`来调节层级。不支持
 <!-- CSSJSON.style_list.name -->
 
 <!-- CSSJSON.style_list.compatibility -->
+
+
+<!-- CSSJSON.css_no_flatten_list.name -->
+
+<!-- CSSJSON.css_no_flatten_list.compatibility -->
 
 
 ## Bug
