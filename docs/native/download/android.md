@@ -6,15 +6,15 @@
 
 ## 正式版
 
-### 5.05.2026032417
+### 5.06.2026033105
 
-**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android/Android-uni-app-x-SDK@14642-5.05.zip)**
+**[下载地址](https://web-ext-storage.dcloud.net.cn/uni-app-x/sdk/Android/Android-uni-app-x-SDK@14660-5.06.zip)**
 
-* 更新uni-app离线打包支持，需使用HBuilderX（5.05.2026032417）版本生成本地打包App资源。
+* 更新uni-app离线打包支持，需使用HBuilderX（5.06.2026033105）版本生成本地打包App资源。
 
 **[历史版本](https://pan.baidu.com/s/1M6XHzokpQYJqfICTzjuQ_g?pwd=93yh)**
  
-**[历史版本更新日志](https://download1.dcloud.net.cn/hbuilderx/changelog/5.05.2026032417)**
+**[历史版本更新日志](https://download1.dcloud.net.cn/hbuilderx/changelog/5.06.2026033105.html)**
 
 ## alpha版
 
