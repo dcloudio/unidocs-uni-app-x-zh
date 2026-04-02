@@ -115,12 +115,6 @@ export const navbar = [
     type: "link",
     target: '_blank',
     needOutbound: false
-  },
-  {
-    link: "https://github.com/dcloudio/uni-app",
-    target: "_blank",
-    text: "GitHub",
-    type: "link"
   }
   /* {
     text: '问答社区',
