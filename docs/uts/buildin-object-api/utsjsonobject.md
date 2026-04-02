@@ -8,6 +8,8 @@ js 中操作 json 使用的是 object对象，但 object对象非常灵活，不
 
 uni-app x 5.0+ 起，Android平台 UTSJSONObject 的性能大幅提升，超过了 type 的性能。
 
+HBuilderX 5.07+ 全平台下访问UTSJSONObject下的属性时支持`.`访问。
+
 ## 创建实例
 
 UTSJSONObject 对象的实例目前主要通过两种方式来创建：
