@@ -54,7 +54,7 @@ const config = {
     sidebarDepth: 0,
     nextLinks: false,
     prevLinks: false,
-    repo: 'dcloudio/uni-app',
+    repo: 'https://github.com/dcloudio/uni-app/tree/uni-app-x',
     docsRepo: 'https://gitcode.com/dcloud/unidocs-uni-app-x-zh',
     docsBranch: 'master',
     docsDir: 'docs',
