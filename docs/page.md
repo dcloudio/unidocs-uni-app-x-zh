@@ -197,7 +197,7 @@ onShow和onHide是成对出现的。
 
 ### onReachBottom
 
-可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](/collocation/pagesjson#pages-globalstyle)，
+可在pages.json里定义具体页面底部的触发距离[onReachBottomDistance](./collocation/pagesjson#pages-globalstyle)，
 比如设为50，那么滚动页面到距离底部50px时，就会触发onReachBottom事件。
 
 ### 页面 onPageScroll 生命周期 @onpagescroll
