@@ -1,3 +1,7 @@
+#### 5.07.2026041006
+##### uni-app x
+* Android平台 修复 5.0版本引发的 API uni.showLoading 未显示时调用 hideLoading 隐藏可能引起应用崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27821)
+
 #### 5.05.2026032417
 ##### uni-app x
 * App-iOS平台 更新 云端打包环境 XCode 为 16.1 版、iOS SDK 为 18.1 版，支持iOS13及以上系统 [详情](https://doc.dcloud.net.cn/uni-app-x/tutorial/app-env.html)
