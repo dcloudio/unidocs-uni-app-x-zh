@@ -38,3 +38,13 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+## Tips@tips
+
+* 在 Web 平台，如果希望通过 `const modalPage = uni.showModal(...)` 获取 `modalPage` 对象，需要至少传入一个回调函数，例如：
+```ts
+uni.showModal({
+	success: function (showRet : ShowModalSuccess) {
+	}
+})
+```
