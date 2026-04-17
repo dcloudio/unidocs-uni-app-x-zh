@@ -1,3 +1,7 @@
+#### 5.07.2026041610-alpha
+##### uni-app x
+* Android平台 修复 5.0版本引发的 API uni.showLoading 未显示时调用 hideLoading 隐藏可能引起应用崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27821)
+
 #### 5.04.2026031906-alpha
 ##### uni-app x
 * iOS平台 修复 组件 native-view 动态创建并销毁时可能引起崩溃 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=27240)
