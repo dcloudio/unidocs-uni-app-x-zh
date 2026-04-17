@@ -116,6 +116,10 @@
 
 <!-- UTSJSON.UTSHarmony.getUIAbilityContext.tutorial -->
 
+**关联文档**
+
+- 鸿蒙官方文档：[UIAbilityContext](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-inner-application-uiabilitycontext)
+
 ### offAppThemeChange(id)
 
 <!-- UTSJSON.UTSHarmony.offAppThemeChange.description -->
