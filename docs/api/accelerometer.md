@@ -6,6 +6,8 @@
 
 App平台请搜索[插件市场](https://ext.dcloud.net.cn/search?q=%E9%99%80%E8%9E%BA%E4%BB%AA&orderBy=Relevance&uni-appx=1&uni-app-platforms=&uni-app-x-platforms=)
 
+或访问 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dcloud/utsPlugIn/)
+
 <!-- UTSAPIJSON.onAccelerometerChange.param -->
 
 <!-- UTSAPIJSON.onAccelerometerChange.returnValue -->
