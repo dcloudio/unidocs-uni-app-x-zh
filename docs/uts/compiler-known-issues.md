@@ -920,29 +920,7 @@ function onChange(e: UniPickerChangeEvent) {
 
 修复代码:
 
-```vue
-<template>
-	<view>
-		<picker-view :value="[index]" @change="onChange">
-			<picker-view-column>
-				<view v-for="(item, i) in list" :key="i" class="picker-item">{{ item }}</view>
-			</picker-view-column>
-		</picker-view>
-		<view class="picker-text">当前选择：{{ currentText }}</view>
-	</view>
-</template>
-
-<script setup lang="uts">
-const list = ref(['苹果', '香蕉', '橙子', '葡萄', '西瓜'])
-const index = ref(0)
-const currentText = ref(list.value[0])
-
-function onChange(e: UniPickerViewChangeEvent) {
-	index.value = e.detail.value[0]
-	currentText.value = list.value[index.value]
-}
-</script>
-```
+- 使用条件编译或升级最新版HBuilderX
 
 #### 使用不支持的特性
 
