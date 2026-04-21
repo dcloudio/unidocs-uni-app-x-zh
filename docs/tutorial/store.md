@@ -1,6 +1,13 @@
 # 全局变量与状态管理
 
-`uni-app x` 在app平台暂不支持 `pinia` 和 `vuex`。可通过 [globalData](../collocation/app.md#globaldata) 或一个专用模块组织和管理全局变量与状态。
+`vuex` 已被淘汰，`pinia`官方版并不支持uts。
+
+uni-app x下可选方案有：
+
+1. 通过 [globalData](../collocation/app.md#globaldata) 或一个专用模块组织和管理全局变量与状态。
+2. 使用三方插件 [Pinia by uts](https://ext.dcloud.net.cn/plugin?name=x-pinia-s)
+
+使用globalData的话，详细方案如下：
 
 ## 专用模块
 定义一个模块，编写一个单独的uts文件，比如 /store/index.uts，在里面设一个全局变量，比如globalNum。
