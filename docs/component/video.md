@@ -23,14 +23,21 @@
 	* [x] 3gp
 	* [x] flv
 	* [x] m3u8 (本地 m3u8 文件不支持)
-- Android和iOS平台支持的视频格式如下：
+- Android平台支持的视频格式如下：
 	* [x] mp4
 	* [x] m4v
 	* [x] mov
 	* [x] 3gp
-	* [x] flv
-	* [x] webm (安卓端支持，iOS端不支持)
-	* [x] m3u8 (本地m3u8文件安卓端需3.99+，iOS端需4.11+)
+	* [x] webm 
+	* [x] m3u8 (HBuilderX3.99+支持)
+	* [x] avi（HBuilderX5.08+支持）
+- iOS平台支持的视频格式如下：
+	* [x] mp4
+	* [x] m4v
+	* [x] mov
+	* [x] 3gp
+	* [x] m3u8 (HBuilderX4.11+支持)
+
 
 如需其他视频格式，可自行开发uts组件插件或搜索插件市场。
 
@@ -45,6 +52,16 @@
 	* 流媒体 rtmp/hls/rtsp 协议
 
 ### app平台组件实现
+
+#### HBuilderX5.08及以上版本  
+App-Android平台使用 ExoPlayer 库实现，不再支持 codec、play-strategy 属性  
+App-iOS平台使用系统 AVPlayer 实现，不再支持 codec、play-strategy 属性  
+
+> 不再支持流媒体 rtmp/hls/rtsp
+> 不再支持flv视频格式
+
+
+#### HBuilderX5.08以下版本  
 App-Android/iOS平台video组件使用ijkplayer库实现：[https://github.com/bilibili/ijkplayer](https://github.com/bilibili/ijkplayer)；
 
 弹幕功能使用DanmakuFlameMaster库实现：[https://github.com/bilibili/DanmakuFlameMaster](https://github.com/bilibili/DanmakuFlameMaster)
