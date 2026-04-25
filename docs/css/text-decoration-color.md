@@ -18,6 +18,8 @@
 <!-- CSSJSON.text-decoration-color.example -->
 
 #### App平台差异
-+ App平台默认颜色为文字颜色，暂不支持设置
++ App平台默认颜色为文字颜色  
++ App-Android平台不支持设置修饰线颜色，修饰性颜色与文字颜色一致  
++ App-iOS平台非蒸汽模式不支持设置修饰线颜色，修饰性颜色与文字颜色一致，蒸汽模式支持设置修饰线颜色  
 
 <!-- CSSJSON.text-decoration-color.reference -->

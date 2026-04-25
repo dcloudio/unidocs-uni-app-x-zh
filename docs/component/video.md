@@ -49,7 +49,7 @@
 
 - iOS/Android支持的网络路径
 	* 网络媒体 http、https协议
-	* 流媒体 rtmp/hls/rtsp 协议
+	* HBuilderX5.08及以上版本仅支持hls协议，HBuilderX5.08以下版本iOS平台支持 rtmp/hls/rtsp 协议、Android平台支持hls协议  
 
 ### app平台组件实现
 
@@ -57,8 +57,8 @@
 App-Android平台使用 ExoPlayer 库实现，不再支持 codec、play-strategy 属性  
 App-iOS平台使用系统 AVPlayer 实现，不再支持 codec、play-strategy 属性  
 
-> 不再支持流媒体 rtmp/hls/rtsp
-> 不再支持flv视频格式
+> 不再支持流媒体 rtmp/rtsp，仅支持hls协议  
+> 不再支持flv视频格式  
 
 
 #### HBuilderX5.08以下版本  
