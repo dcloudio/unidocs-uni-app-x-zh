@@ -14,6 +14,9 @@
 获取应用的主题配置信息，仅app平台支持。
 appTheme返回值为`auto`，代表跟随系统。此时需通过[getSystemInfo](./get-system-info.md)或[getDeviceInfo](./get-device-info.md)查询osTheme获取当前到底是light还是dark。
 
+#### hostTheme
+在浏览器中，hostTheme可能是os的Theme而不是浏览器的外观。这取决于浏览器的实现。
+
 #### channel @channel
 获取应用的渠道信息，仅app-android平台支持渠道包。
 - 云打包时需在“App打包”界面中配置，详情参考[配置渠道包](../tutorial/app-package.md#channel)。
