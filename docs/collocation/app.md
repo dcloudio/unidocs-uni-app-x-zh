@@ -169,6 +169,8 @@
 
 **以下是 App.uvue 中定义globalData的相关配置：**
 
+### 选项式 API 示例：
+
 ```ts
 <script lang="uts">
   export default {
@@ -198,7 +200,42 @@
 </script>
 ```
 
-**注意：** `uni-app x` 中 `globalData` 的数据结构与类型通过 `App.uvue` 中的 `globalData` 初始值定义，后续只能读取或修改，不能新增或删除。
+### 组合式 API 示例：
+
+```ts
+<script setup lang="uts">
+  defineOptions({
+    globalData: {
+      str: 'global data str',
+      num: 123,
+      bool: true
+    }
+  })
+</script>
+```
+
+
+页面或组件中通过 `getApp().globalData` 访问。
+
+```ts
+<script setup lang="uts">
+  const globalDataStr = ref('')
+  const globalDataNum = ref(0)
+  const globalDataBool = ref(false)
+
+  const getGlobalData = () => {
+    const app = getApp()
+    globalDataStr.value = app.globalData.str
+    globalDataNum.value = app.globalData.num
+    globalDataBool.value = app.globalData.bool
+  }
+</script>
+```
+
+::: warning 注意
+- `uni-app x` 中 `globalData` 的数据结构与类型通过 `App.uvue` 中的 `globalData` 初始值定义，后续只能读取或修改，不能新增或删除。
+- 在组合式 API App.uvue 中使用 `globalData` 时，无法像选项式 API 那样通过 `this.globalData` 访问，而是需要通过 `getApp().globalData` 访问。但部分生命周期中 App 实例还未初始化，需要注意时机问题。
+:::
 
 globalData是简单的全局变量，其他状态管理方式，可参考文档[全局变量和状态管理](../tutorial/store.md)。
 
