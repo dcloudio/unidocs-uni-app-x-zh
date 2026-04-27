@@ -30,7 +30,7 @@
   "devDependencies": {
     "@dcloudio/uni-preprocess": "^3.0.0-alpha-4000020240117006",
     "cross-env": "^7.0.3",
-    "docs-sync-cli": "^1.0.3",
+    "docs-sync-cli": "^1.0.4",
     "dom-serializer": "^2.0.0",
     "dotenv": "^17.3.1",
     "fs-extra": "^10.0.0",
@@ -41,6 +41,6 @@
   "dependencies": {
     "@dcloudio/docs-utils": "^1.0.8",
     "vuepress": "1.9.9",
-    "vuepress-theme-uniapp-official": "1.6.23"
+    "vuepress-theme-uniapp-official": "1.6.24"
   }
 }
