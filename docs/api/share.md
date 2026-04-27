@@ -14,7 +14,7 @@
 
 <!-- UTSAPIJSON.share.tutorial -->
 
-### 支付provider对象描述 @providerdes
+### 分享provider对象描述 @providerdes
 
 UniShareWeixinProvider(微信分享)继承自 [UniProvider](./provider.md#uniprovider)
 
