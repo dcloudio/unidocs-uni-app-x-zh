@@ -40,3 +40,6 @@
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->
+
+## Tips
+- 本API默认处理栈顶页面，而不是代码所在页面。[详见](./README.md#toppage)

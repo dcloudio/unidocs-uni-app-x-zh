@@ -24,3 +24,4 @@
 
 ## Bug & Tips @tips
 - app-android平台，受系统限制，通过frontColor修改状态栏前景色仅在Android6.0及以上版本生效。
+- 本API默认处理栈顶页面，而不是代码所在页面。[详见](./README.md#toppage)
