@@ -2,7 +2,7 @@
 
 <!-- UTSAPIJSON.onMemoryWarning.description -->
 
-> 本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[uni-wifi](https://ext.dcloud.net.cn/plugin?name=uni-memorywarning)
+> 本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[uni-memorywarning](https://ext.dcloud.net.cn/plugin?name=uni-memorywarning)
 
 <!-- UTSAPIJSON.onMemoryWarning.compatibility -->
 
@@ -16,7 +16,7 @@
 
 <!-- UTSAPIJSON.offMemoryWarning.description -->
 
-> 本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[uni-wifi](https://ext.dcloud.net.cn/plugin?name=uni-memorywarning)
+> 本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[uni-memorywarning](https://ext.dcloud.net.cn/plugin?name=uni-memorywarning)
 
 <!-- UTSAPIJSON.offMemoryWarning.compatibility -->
 
