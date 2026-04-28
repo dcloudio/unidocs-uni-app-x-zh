@@ -76,29 +76,23 @@
   * unicloud
     * [unicloud-db](unicloud-db.md)
 * [uni-ui-x 扩展组件](./uni-ui-x/README.md)
-  * 基础内容
-    * [uni-badge-view | 数字角标](./uni-ui-x/uni-badge-view.md)
-    * [uni-fab-button | 悬浮按钮](./uni-ui-x/uni-fab-button.md)
-    * [uni-link | 链接](./uni-ui-x/uni-link.md)
-    * [uni-rate | 评分](./uni-ui-x/uni-rate.md)
-    * [uni-time-format | 时间格式化](./uni-ui-x/uni-time-format.md)
-  * 导航
-    * [uni-nav-bar | 自定义导航栏](./uni-ui-x/uni-nav-bar.md)
-    * uni-tab-bar | 底部选项卡组件集
-      * [uni-tab | 选项卡容器](./uni-ui-x/uni-tab.md)
-      * [uni-tab-item | 选项卡子项](./uni-ui-x/uni-tab-item.md)
-      * [uni-tab-bar | 底部选项卡栏](./uni-ui-x/uni-tab-bar.md)
-      * [uni-tab-midbutton | 中间按钮](./uni-ui-x/uni-tab-midbutton.md)
-      * [uni-tab-content | 选项卡内容区](./uni-ui-x/uni-tab-content.md)
-  * 视图容器
-    * [uni-drag-cell | 可拖拽排序](./uni-ui-x/uni-drag-cell.md)
-    * [uni-refresh-box | 自定义下拉刷新](./uni-ui-x/uni-refresh-box.md)
-    * [uni-index-bar | 索引条](./uni-ui-x/uni-index-bar.md)
-    * uni-collapse | 折叠面板
-      * [uni-collapse | 折叠面板容器](./uni-ui-x/uni-collapse.md)
-      * [uni-collapse-item | 折叠面板子项](./uni-ui-x/uni-collapse-item.md)
-  * 表单组件
-    * [uni-number-box | 数字输入框](./uni-ui-x/uni-number-box.md)
+  * [uni-badge-view | 数字角标](./uni-ui-x/uni-badge-view.md)
+  * [uni-collapse | 折叠面板容器](./uni-ui-x/uni-collapse.md)
+  * [uni-collapse-item | 折叠面板子项](./uni-ui-x/uni-collapse-item.md)
+  * [uni-drag-cell | 可拖拽排序](./uni-ui-x/uni-drag-cell.md)
+  * [uni-fab-button | 悬浮按钮](./uni-ui-x/uni-fab-button.md)
+  * [uni-index-bar | 索引条](./uni-ui-x/uni-index-bar.md)
+  * [uni-link | 链接](./uni-ui-x/uni-link.md)
+  * [uni-number-box | 数字输入框](./uni-ui-x/uni-number-box.md)
+  * [uni-nav-bar | 自定义导航栏](./uni-ui-x/uni-nav-bar.md)
+  * [uni-rate | 评分](./uni-ui-x/uni-rate.md)
+  * [uni-time-format | 时间格式化](./uni-ui-x/uni-time-format.md)
+  * [uni-tab | 选项卡容器](./uni-ui-x/uni-tab.md)
+  * [uni-tab-item | 选项卡子项](./uni-ui-x/uni-tab-item.md)
+  * [uni-tab-bar | 底部选项卡栏](./uni-ui-x/uni-tab-bar.md)
+  * [uni-tab-midbutton | 中间按钮](./uni-ui-x/uni-tab-midbutton.md)
+  * [uni-tab-content | 选项卡内容区](./uni-ui-x/uni-tab-content.md)
+  * [uni-refresh-box | 自定义下拉刷新](./uni-ui-x/uni-refresh-box.md)
 * 微信专用组件
   * Skyline
     * 手势系统
