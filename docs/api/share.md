@@ -35,7 +35,7 @@ UniShareWeixinProvider(微信分享)继承自 [UniProvider](./provider.md#unipro
 
 uni-app x从4.25起，开放了provider自接入机制，让三方SDK可以以[provider](./provider.md)方式被开发者集成。
 
-开发一个UTS插件，对接uni规范化的API、错误信息描述等实现自己的支付插件，这样插件使用者就可以通过uni的标准API使用三方SDK。
+开发一个UTS插件，对接uni规范化的API、错误信息描述等实现自己的分享插件，这样插件使用者就可以通过uni的标准API使用三方SDK。
 
 举个例子，开发者想使用uni.share()的方式调用XX分享，但是内置分享api不支持，
 
