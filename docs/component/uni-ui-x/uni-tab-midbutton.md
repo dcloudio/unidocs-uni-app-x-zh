@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.uni-tab-midbutton.description -->
 
+<!-- UTSCOMJSON.uni-tab-midbutton.readme -->
+
 <!-- UTSCOMJSON.uni-tab-midbutton.compatibility -->
 
 <!-- UTSCOMJSON.uni-tab-midbutton.attribute -->

@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.uni-rate.description -->
 
+<!-- UTSCOMJSON.uni-rate.readme -->
+
 <!-- UTSCOMJSON.uni-rate.compatibility -->
 
 <!-- UTSCOMJSON.uni-rate.attribute -->

@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.uni-badge-view.description -->
 
+<!-- UTSCOMJSON.uni-badge-view.readme -->
+
 <!-- UTSCOMJSON.uni-badge-view.compatibility -->
 
 <!-- UTSCOMJSON.uni-badge-view.attribute -->

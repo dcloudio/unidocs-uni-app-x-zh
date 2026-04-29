@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.UniCollapseItem.description -->
 
+<!-- UTSCOMJSON.UniCollapseItem.readme -->
+
 <!-- UTSCOMJSON.UniCollapseItem.compatibility -->
 
 <!-- UTSCOMJSON.UniCollapseItem.attribute -->

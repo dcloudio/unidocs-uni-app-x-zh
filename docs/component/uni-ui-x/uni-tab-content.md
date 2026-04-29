@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.uni-tab-content.description -->
 
+<!-- UTSCOMJSON.uni-tab-content.readme -->
+
 <!-- UTSCOMJSON.uni-tab-content.compatibility -->
 
 <!-- UTSCOMJSON.uni-tab-content.attribute -->

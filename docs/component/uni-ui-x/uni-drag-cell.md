@@ -2,6 +2,8 @@
 
 <!-- UTSCOMJSON.uni-drag-cell.description -->
 
+<!-- UTSCOMJSON.uni-drag-cell.readme -->
+
 <!-- UTSCOMJSON.uni-drag-cell.compatibility -->
 
 <!-- UTSCOMJSON.uni-drag-cell.attribute -->
