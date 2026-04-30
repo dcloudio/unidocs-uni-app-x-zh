@@ -2,10 +2,11 @@
 
 <!-- UTSAPIJSON.getApp.description -->
 
-- HBuilderX 4.31以前，getApp返回的是vue实例。并且在uts插件中无法使用。
-- HBuilderX 4.31+，新增了UniApp对象，用于管理app，getApp返回的是UniApp对象。而vue实例，则是UniApp对象的一个vm属性。
+- HBuilderX 4.31 以前，`getApp()` 返回的是 Vue 实例，且无法在 uts 插件中使用。
+- 从 HBuilderX 4.31+ 起，新增 `UniApp` 对象用于管理 app，`getApp()` 返回 `UniApp` 对象；Vue 实例则作为 `UniApp` 对象的 `vm` 属性提供。
+- `getApp()` 只能在 `script` 中调用，不能直接在模板中使用。
 
-UniApp对象可以在uts插件和uvue页面中同时使用，但vm属性以及相关的globalData仍然只能在uvue页面中才能使用。
+`UniApp` 对象可同时在 uts 插件和 uvue 页面中使用，但 `vm` 属性及其相关的 `globalData` 仍然只能在 uvue 页面中使用。
 
 <!-- UTSAPIJSON.getApp.compatibility -->
 
