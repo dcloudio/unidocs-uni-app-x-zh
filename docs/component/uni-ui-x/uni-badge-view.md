@@ -14,6 +14,9 @@
 
 <!-- UTSCOMJSON.uni-badge-view.component_type -->
 
+### Tips
+- 该组件在微信小程序端从 hx `5.08` 起开始支持
+
 <!-- UTSCOMJSON.uni-badge-view.children -->
 
 <!-- UTSCOMJSON.uni-badge-view.example -->
