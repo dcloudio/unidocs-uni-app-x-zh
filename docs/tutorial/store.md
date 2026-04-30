@@ -37,8 +37,10 @@ export const setGlobalNum = (num: number) => {
 	<text @click="plus">{{ globalNum }}</text>
 </template>
 
+// 选项式 API
 <script lang="uts">
-	import { state, setGlobalNum } from '@/store/index.uts' //导出state和修改其属性值的方法，如不需要修改值，则不需要导出修改方法
+	import { state, setGlobalNum } from '@/store/index.uts'
+
 	export default {
 		computed: {
 			globalNum(): number { //定义可绑定在界面上的globalNum
@@ -50,6 +52,17 @@ export const setGlobalNum = (num: number) => {
 				setGlobalNum(state.globalNum + 1)
 			}
 		}
+	}
+</script>
+
+// 组合式 API
+<script setup lang="uts">
+	import { state, setGlobalNum } from '@/store/index.uts'
+
+	const globalNum = computed(() => state.globalNum)
+
+	const plus = () => {
+		setGlobalNum(state.globalNum + 1)
 	}
 </script>
 ```
