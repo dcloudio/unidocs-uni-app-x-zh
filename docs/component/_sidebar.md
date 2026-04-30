@@ -89,8 +89,8 @@
   * [uni-rate | 评分](./uni-ui-x/uni-rate.md)
   * [uni-time-format | 时间格式化](./uni-ui-x/uni-time-format.md)
   * 底部选项卡
-    * [uni-tab-bar | 底部选项卡](./uni-ui-x/uni-tab-bar.md)
     * [uni-tab | 选项卡容器](./uni-ui-x/uni-tab.md)
+    * [uni-tab-bar | 底部选项卡](./uni-ui-x/uni-tab-bar.md)
     * [uni-tab-item | 选项卡子项](./uni-ui-x/uni-tab-item.md)
     * [uni-tab-content | 选项卡内容区](./uni-ui-x/uni-tab-content.md)
     * [uni-tab-midbutton | 中间按钮](./uni-ui-x/uni-tab-midbutton.md)
