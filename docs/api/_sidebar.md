@@ -132,6 +132,7 @@
   * [创建 map 组件上下文对象](create-map-context.md)
   * [创建 canvas 组件上下文对象](create-canvas-context-async.md)
   * [创建 camera 组件上下文对象](create-camera-context.md)
+  * [创建 editor 组件上下文对象](create-editor-context-async.md)
 * Worker
   * [创建 worker 对象](create-worker.md)
 * [DOM](dom/README.md)
