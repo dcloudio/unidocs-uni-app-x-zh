@@ -38,6 +38,10 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 
 - [自定义定位provider](get-location.md#customprovider)
 
+- [自定义分享provider](share.md#customprovider)
+
+- [自定义登录provider](login.md#customprovider)
+
 **注意**
 
 - 标准基座android需要在manifest.json中配置才能获取到对应的provider，ios不需要。自定义基座都需要配置
@@ -63,6 +67,10 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 - 支付Provider：[UniPaymentAlipayProvider](./request-payment.md#providerdes),[UniPaymentWxpayProvider](./request-payment.md#providerdes)
 
 - 定位Provider：[UniLocationSystemProvider](./get-location.md#providerdes),[UniLocationTencentProvider](./get-location.md#providerdes)
+
+- 分享Provider：[UniShareWeixinProvider](./share.md#providerdes)
+
+- 登录Provider：[UniOAuthWeixinProvider](./login.md#providerdes)
 
 ## UniProvider
 
@@ -97,6 +105,8 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 1. 目前标准基座中注册的 provider 返回顺序如下：
     支付： 微信支付、支付宝；
     定位： 系统定位、腾讯定位
+    分享： 微信分享
+    登录： 微信登录
 
 2. 相同 service 下，其他的自注册 provider，返回顺序在官方预置的 provider 之后
 
