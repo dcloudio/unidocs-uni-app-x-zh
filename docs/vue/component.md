@@ -434,13 +434,13 @@ Uni`组件名(驼峰)`Element
 
 当一个组件以单个元素为根作渲染时，透传的 attribute 会自动被添加到根元素上。举例来说，假如我们有一个 `<MyButton>` 组件，它的模板长这样：
 
-```template
+```vue
 <!-- <MyButton> 的模板 -->
 <button>Click Me</button>
 ```
 一个父组件使用了这个组件，并且传入了 `class`：
 
-```template
+```vue
 <MyButton class="large" />
 ```
 最后渲染出的 DOM 结果是：
@@ -453,7 +453,7 @@ Uni`组件名(驼峰)`Element
 #### 对 class 和 style 的合并​
 如果一个子组件的根元素已经有了 `class` 或 `style` attribute，它会和从父组件上继承的值合并。如果我们将之前的 `<MyButton>` 组件的模板改成这样：
 
-```template
+```vue
 <!-- <MyButton> 的模板 -->
 <button class="btn">Click Me</button>
 ```
@@ -465,7 +465,7 @@ Uni`组件名(驼峰)`Element
 #### v-on 监听器继承​
 同样的规则也适用于 v-on 事件监听器：
 
-```template
+```vue
 <MyButton @click="onClick" />
 ```
 `click` 监听器会被添加到 `<MyButton>` 的根元素，即那个原生的 `<button>` 元素之上。当原生的 `<button>` 被点击，会触发父组件的 `onClick` 方法。同样的，如果原生 `button` 元素自身也通过 `v-on` 绑定了一个事件监听器，则这个监听器和从父组件继承的监听器都会被触发。
@@ -473,7 +473,7 @@ Uni`组件名(驼峰)`Element
 #### 深层组件继承​
 有些情况下一个组件会在根节点上渲染另一个组件。例如，我们重构一下 `<MyButton>`，让它在根节点上渲染 `<BaseButton>`：
 
-```template
+```vue
 <!-- <MyButton/> 的模板，只是渲染另一个组件 -->
 <BaseButton />
 ```
@@ -501,7 +501,7 @@ defineOptions({
 
 这些透传进来的 attribute 可以在模板的表达式中直接用 `$attrs` 访问到。
 
-```template
+```vue
 <span>Fallthrough attribute: {{ $attrs }}</span>
 ```
 这个 `$attrs` 对象包含了除组件所声明的 `props` 和 `emits` 之外的所有其他 attribute，例如 `class`，`style`，`v-on` 监听器等等。
@@ -515,19 +515,19 @@ defineOptions({
 ### 多根节点的 Attributes 继承​
 和单根节点组件有所不同，有着多个根节点的组件没有自动 attribute 透传行为。如果 `$attrs` 没有被显式绑定，将会抛出一个运行时警告。
 
-```template
+```vue
 <CustomLayout id="custom-layout" @click="changeValue" />
 ```
 如果 `<CustomLayout>` 有下面这样的多根节点模板，由于 Vue 不知道要将 attribute 透传到哪里，所以会抛出一个警告。
 
-```template
+```vue
 <header>...</header>
 <main>...</main>
 <footer>...</footer>
 ```
 如果 $attrs 被显式绑定，则不会有警告：
 
-```template
+```vue
 <header>...</header>
 <main v-bind="$attrs">...</main>
 <footer>...</footer>
