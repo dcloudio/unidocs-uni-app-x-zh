@@ -1,44 +1,44 @@
-<!-- UTSCOMJSON.UniCollapse.name -->
+<!-- UTSCOMJSON.uni-collapse.name -->
 
-<!-- UTSCOMJSON.UniCollapse.description -->
+<!-- UTSCOMJSON.uni-collapse.description -->
 
-<!-- UTSCOMJSON.UniCollapse.readme -->
+<!-- UTSCOMJSON.uni-collapse.readme -->
 
-<!-- UTSCOMJSON.UniCollapse.compatibility -->
+<!-- UTSCOMJSON.uni-collapse.compatibility -->
 
-<!-- UTSCOMJSON.UniCollapse.attribute -->
+<!-- UTSCOMJSON.uni-collapse.attribute -->
 
-<!-- UTSCOMJSON.UniCollapse.fileFormates -->
+<!-- UTSCOMJSON.uni-collapse.fileFormates -->
 
-<!-- UTSCOMJSON.UniCollapse.event -->
+<!-- UTSCOMJSON.uni-collapse.event -->
 
-<!-- UTSCOMJSON.UniCollapse.component_type -->
+<!-- UTSCOMJSON.uni-collapse.component_type -->
 
-<!-- UTSCOMJSON.UniCollapse.children -->
+<!-- UTSCOMJSON.uni-collapse.children -->
 
-<!-- UTSCOMJSON.UniCollapse.example -->
+<!-- UTSCOMJSON.uni-collapse.example -->
 
-<!-- UTSCOMJSON.UniCollapse.reference -->
+<!-- UTSCOMJSON.uni-collapse.reference -->
 
 
-<!-- UTSCOMJSON.UniCollapseItem.name -->
+<!-- UTSCOMJSON.uni-collapse-item.name -->
 
-<!-- UTSCOMJSON.UniCollapseItem.description -->
+<!-- UTSCOMJSON.uni-collapse-item.description -->
 
-<!-- UTSCOMJSON.UniCollapseItem.readme -->
+<!-- UTSCOMJSON.uni-collapse-item.readme -->
 
-<!-- UTSCOMJSON.UniCollapseItem.compatibility -->
+<!-- UTSCOMJSON.uni-collapse-item.compatibility -->
 
-<!-- UTSCOMJSON.UniCollapseItem.attribute -->
+<!-- UTSCOMJSON.uni-collapse-item.attribute -->
 
-<!-- UTSCOMJSON.UniCollapseItem.fileFormates -->
+<!-- UTSCOMJSON.uni-collapse-item.fileFormates -->
 
-<!-- UTSCOMJSON.UniCollapseItem.event -->
+<!-- UTSCOMJSON.uni-collapse-item.event -->
 
-<!-- UTSCOMJSON.UniCollapseItem.component_type -->
+<!-- UTSCOMJSON.uni-collapse-item.component_type -->
 
-<!-- UTSCOMJSON.UniCollapseItem.children -->
+<!-- UTSCOMJSON.uni-collapse-item.children -->
 
-<!-- UTSCOMJSON.UniCollapseItem.example -->
+<!-- UTSCOMJSON.uni-collapse-item.example -->
 
-<!-- UTSCOMJSON.UniCollapseItem.reference -->
+<!-- UTSCOMJSON.uni-collapse-item.reference -->

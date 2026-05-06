@@ -1,22 +1,21 @@
-<!-- UTSCOMJSON.UniLink.name -->
+<!-- UTSCOMJSON.uni-link.name -->
 
-<!-- UTSCOMJSON.UniLink.description -->
+<!-- UTSCOMJSON.uni-link.description -->
 
-<!-- UTSCOMJSON.UniLink.readme -->
+<!-- UTSCOMJSON.uni-link.readme -->
 
-<!-- UTSCOMJSON.UniLink.compatibility -->
+<!-- UTSCOMJSON.uni-link.compatibility -->
 
-<!-- UTSCOMJSON.UniLink.attribute -->
+<!-- UTSCOMJSON.uni-link.attribute -->
 
-<!-- UTSCOMJSON.UniLink.fileFormates -->
+<!-- UTSCOMJSON.uni-link.fileFormates -->
 
-<!-- UTSCOMJSON.UniLink.event -->
+<!-- UTSCOMJSON.uni-link.event -->
 
-<!-- UTSCOMJSON.UniLink.component_type -->
+<!-- UTSCOMJSON.uni-link.component_type -->
 
-<!-- UTSCOMJSON.UniLink.children -->
+<!-- UTSCOMJSON.uni-link.children -->
 
-<!-- UTSCOMJSON.UniLink.example -->
+<!-- UTSCOMJSON.uni-link.example -->
 
-<!-- UTSCOMJSON.UniLink.reference -->
-
+<!-- UTSCOMJSON.uni-link.reference -->
