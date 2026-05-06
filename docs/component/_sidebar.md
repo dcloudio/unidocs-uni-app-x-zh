@@ -4,15 +4,9 @@
   * 视图容器
     * [view | 基本视图容器](view.md)
     * [scroll-view | 可滚动视图容器](scroll-view.md)
-    * swiper | 滑块视图组件
-      * [swiper | 滑块视图容器](swiper.md)
-      * [swiper-item | 滑块视图容器子项](swiper-item.md)
-    * list-view | 列表布局组件
-      * [list-view | 列表容器](list-view.md)
-      * [list-item | 列表容器子项](list-item.md)
-    * waterflow | 瀑布流布局组件
-      * [waterflow | 瀑布流容器](waterflow.md)
-      * [flow-item | 瀑布流容器子项](flow-item.md)
+    * [swiper | 滑块视图容器](swiper.md)
+    * [list-view | 列表容器](list-view.md)
+    * [waterflow | 瀑布流容器](waterflow.md)
     * nested-scroll | 嵌套滚动
       * [nested-scroll-header](nested-scroll-header.md)
       * [nested-scroll-body](nested-scroll-body.md)
@@ -38,19 +32,17 @@
   * 表单组件
     * [button | 按钮](button.md)
     * checkbox | 多选框
-      * [checkbox-group | 多选框组](checkbox-group.md)
       * [checkbox | 多选框](checkbox.md)
+      * [checkbox-group | 多选框组](checkbox-group.md)
     * [form | 表单](form.md)
     * [input | 输入框](input.md)
     * [editor | 富文本编辑器](editor.md)
     * [label](label.md)
     * [picker | 底部弹出滚动选择器](picker.md)
-    * picker-view | 滚动选择器组件
-      * [picker-view | 嵌入页面的滚动选择器](picker-view.md)
-      * [picker-view-column | 滚动选择器子项](picker-view-column.md)
+    * [picker-view | 嵌入页面的滚动选择器](picker-view.md)
     * radio | 单选框
-      * [radio-group | 单选框组](radio-group.md)
       * [radio | 单选框](radio.md)
+      * [radio-group | 单选框组](radio-group.md)
     * [slider | 滑动选择器](slider.md)
     * [switch | 开关选择器](switch.md)
     * [textarea | 多行输入框](textarea.md)
@@ -77,9 +69,7 @@
     * [unicloud-db](unicloud-db.md)
 * [uni-ui x 扩展组件](./uni-ui-x/README.md)
   * [uni-badge-view | 数字角标](./uni-ui-x/uni-badge-view.md)
-  * 折叠面板容器
-    * [uni-collapse | 折叠面板容器](./uni-ui-x/uni-collapse.md)
-    * [uni-collapse-item | 折叠面板子项](./uni-ui-x/uni-collapse-item.md)
+  * [uni-collapse | 折叠面板容器](./uni-ui-x/uni-collapse.md)
   * [uni-drag-cell | 可拖拽排序](./uni-ui-x/uni-drag-cell.md)
   * [uni-fab-button | 悬浮按钮](./uni-ui-x/uni-fab-button.md)
   * [uni-index-bar | 索引条](./uni-ui-x/uni-index-bar.md)
@@ -88,12 +78,7 @@
   * [uni-nav-bar | 自定义导航栏](./uni-ui-x/uni-nav-bar.md)
   * [uni-rate | 评分](./uni-ui-x/uni-rate.md)
   * [uni-time-format | 时间格式化](./uni-ui-x/uni-time-format.md)
-  * 底部选项卡
-    * [uni-tab | 选项卡容器](./uni-ui-x/uni-tab.md)
-    * [uni-tab-bar | 底部选项卡](./uni-ui-x/uni-tab-bar.md)
-    * [uni-tab-item | 选项卡子项](./uni-ui-x/uni-tab-item.md)
-    * [uni-tab-content | 选项卡内容区](./uni-ui-x/uni-tab-content.md)
-    * [uni-tab-midbutton | 中间按钮](./uni-ui-x/uni-tab-midbutton.md)
+  * [uni-tab | 选项卡容器](./uni-ui-x/uni-tab.md)
   * [uni-refresh-box | 自定义下拉刷新](./uni-ui-x/uni-refresh-box.md)
 * 微信专用组件
   * Skyline
