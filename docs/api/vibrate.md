@@ -4,6 +4,10 @@
 
 <!-- UTSAPIJSON.vibrateShort.compatibility -->
 
+App平台请搜索[插件市场](https://ext.dcloud.net.cn/search?q=%E9%9C%87%E5%8A%A8&orderBy=Relevance&uni-appx=1&uni-app-platforms=&uni-app-x-platforms=&uni-appx=1)
+
+或访问 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dcloud/utsPlugIn/)
+
 <!-- UTSAPIJSON.vibrateShort.param -->
 
 <!-- UTSAPIJSON.vibrateShort.fileFormats -->
