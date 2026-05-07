@@ -78,7 +78,7 @@
   * [uni-nav-bar | 自定义导航栏](./uni-ui-x/uni-nav-bar.md)
   * [uni-rate | 评分](./uni-ui-x/uni-rate.md)
   * [uni-time-format | 时间格式化](./uni-ui-x/uni-time-format.md)
-  * [uni-tab-bar | 选项卡容器](./uni-ui-x/uni-tab-bar.md)
+  * [uni-tab | 选项卡容器](./uni-ui-x/uni-tab.md)
   * [uni-refresh-box | 自定义下拉刷新](./uni-ui-x/uni-refresh-box.md)
 * 微信专用组件
   * Skyline
