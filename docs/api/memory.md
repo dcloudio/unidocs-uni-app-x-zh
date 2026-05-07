@@ -3,6 +3,8 @@
 <!-- UTSAPIJSON.onMemoryWarning.description -->
 
 > 本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[uni-memorywarning](https://ext.dcloud.net.cn/plugin?name=uni-memorywarning)
+>
+> 或可访问 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dcloud/utsPlugIn/)
 
 <!-- UTSAPIJSON.onMemoryWarning.compatibility -->
 
@@ -17,6 +19,8 @@
 <!-- UTSAPIJSON.offMemoryWarning.description -->
 
 > 本 API 是 [uni ext api](https://uniapp.dcloud.net.cn/api/extapi.html)，需下载插件：[uni-memorywarning](https://ext.dcloud.net.cn/plugin?name=uni-memorywarning)
+>
+> 或可访问 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dcloud/utsPlugIn/)
 
 <!-- UTSAPIJSON.offMemoryWarning.compatibility -->
 
