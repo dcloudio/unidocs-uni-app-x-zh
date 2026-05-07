@@ -106,6 +106,14 @@
       |@|第二行		|[HBuilderX](https://www.dcloud.io/hbuilderx.html)|右对齐|
       ```
       ![](https://web-ext-storage.dcloud.net.cn/doc/table-expandable-row.png)
+14. 自定义文档页面下方 `改善页面`链接
+
+    在 md 文件的最顶端添加如：
+    ```md
+    ---
+    source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-collapse
+    ---
+    ```
 
 
 ## 配置
