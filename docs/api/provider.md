@@ -40,7 +40,7 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 
 - [自定义分享provider](share.md#customprovider)
 
-- [自定义登录provider](login.md#customprovider)
+- [自定义登录provider](sign-in.md#customprovider)
 
 **注意**
 
@@ -70,7 +70,7 @@ uni-app 通过 provider 机制来统一不同的SDK，屏蔽他们的差异。
 
 - 分享Provider：[UniShareWeixinProvider](./share.md#providerdes)
 
-- 登录Provider：[UniOAuthWeixinProvider](./login.md#providerdes)
+- 登录Provider：[UniOAuthWeixinProvider](./sign-in.md#providerdes)
 
 ## UniProvider
 
