@@ -1,3 +1,7 @@
+---
+source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-badge-view
+---
+
 <!-- UTSCOMJSON.uni-badge-view.name -->
 
 <!-- UTSCOMJSON.uni-badge-view.description -->
@@ -19,4 +23,3 @@
 <!-- UTSCOMJSON.uni-badge-view.example -->
 
 <!-- UTSCOMJSON.uni-badge-view.reference -->
-

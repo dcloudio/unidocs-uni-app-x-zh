@@ -1,3 +1,7 @@
+---
+source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-time-format
+---
+
 <!-- UTSCOMJSON.uni-time-format.name -->
 
 <!-- UTSCOMJSON.uni-time-format.description -->
@@ -19,4 +23,3 @@
 <!-- UTSCOMJSON.uni-time-format.example -->
 
 <!-- UTSCOMJSON.uni-time-format.reference -->
-

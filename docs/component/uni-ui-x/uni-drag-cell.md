@@ -1,3 +1,7 @@
+---
+source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-drag-cell
+---
+
 <!-- UTSCOMJSON.uni-drag-cell.name -->
 
 <!-- UTSCOMJSON.uni-drag-cell.description -->
@@ -19,4 +23,3 @@
 <!-- UTSCOMJSON.uni-drag-cell.example -->
 
 <!-- UTSCOMJSON.uni-drag-cell.reference -->
-

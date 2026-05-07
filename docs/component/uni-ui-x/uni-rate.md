@@ -1,3 +1,7 @@
+---
+source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-rate
+---
+
 <!-- UTSCOMJSON.uni-rate.name -->
 
 <!-- UTSCOMJSON.uni-rate.description -->
@@ -19,4 +23,3 @@
 <!-- UTSCOMJSON.uni-rate.example -->
 
 <!-- UTSCOMJSON.uni-rate.reference -->
-

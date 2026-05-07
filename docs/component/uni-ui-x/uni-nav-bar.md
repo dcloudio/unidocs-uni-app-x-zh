@@ -1,3 +1,7 @@
+---
+source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-nav-bar
+---
+
 <!-- UTSCOMJSON.uni-nav-bar.name -->
 
 <!-- UTSCOMJSON.uni-nav-bar.description -->
@@ -19,4 +23,3 @@
 <!-- UTSCOMJSON.uni-nav-bar.example -->
 
 <!-- UTSCOMJSON.uni-nav-bar.reference -->
-

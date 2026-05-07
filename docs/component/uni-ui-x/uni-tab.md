@@ -1,3 +1,7 @@
+---
+source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-tab-bar
+---
+
 <!-- UTSCOMJSON.uni-tab.name -->
 
 <!-- UTSCOMJSON.uni-tab.description -->

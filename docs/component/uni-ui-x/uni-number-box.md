@@ -1,3 +1,7 @@
+---
+source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-number-box
+---
+
 <!-- UTSCOMJSON.uni-number-box.name -->
 
 <!-- UTSCOMJSON.uni-number-box.description -->
@@ -19,4 +23,3 @@
 <!-- UTSCOMJSON.uni-number-box.example -->
 
 <!-- UTSCOMJSON.uni-number-box.reference -->
-

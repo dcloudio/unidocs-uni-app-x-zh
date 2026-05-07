@@ -1,3 +1,7 @@
+---
+source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-collapse
+---
+
 <!-- UTSCOMJSON.uni-collapse.name -->
 
 <!-- UTSCOMJSON.uni-collapse.description -->
