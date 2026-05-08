@@ -80,3 +80,7 @@ uni-ui x 目前没有引入字体文件。这处于性能考虑，也出于AI友
 |uni-transition				|过渡动画								|无																									|
 
 标记为`无`的，大多比较简单，对于AI而言直接写相关UI比下载学习一个组件更合适。
+
+# 交流群
+
+有关 uni-ui-x 组件的任何意见或建议，欢迎通过 [uni-ui-x im 交流群](https://ext.dcloud.net.cn/publisher/start-session?pluginId=27852) 沟通交流。
