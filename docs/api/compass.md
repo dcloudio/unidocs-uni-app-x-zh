@@ -4,8 +4,6 @@
 
 <!-- UTSAPIJSON.onCompassChange.compatibility -->
 
-App平台另见 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dcloud/utsPlugIn/)
-
 <!-- UTSAPIJSON.onCompassChange.param -->
 
 <!-- UTSAPIJSON.onCompassChange.returnValue -->
@@ -17,8 +15,6 @@ App平台另见 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dclo
 <!-- UTSAPIJSON.offCompassChange.description -->
 
 <!-- UTSAPIJSON.offCompassChange.compatibility -->
-
-App平台另见 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dcloud/utsPlugIn/)
 
 <!-- UTSAPIJSON.offCompassChange.param -->
 
@@ -32,8 +28,6 @@ App平台另见 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dclo
 
 <!-- UTSAPIJSON.startCompass.compatibility -->
 
-App平台另见 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dcloud/utsPlugIn/)
-
 <!-- UTSAPIJSON.startCompass.param -->
 
 <!-- UTSAPIJSON.startCompass.returnValue -->
@@ -45,8 +39,6 @@ App平台另见 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dclo
 <!-- UTSAPIJSON.stopCompass.description -->
 
 <!-- UTSAPIJSON.stopCompass.compatibility -->
-
-App平台另见 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dcloud/utsPlugIn/)
 
 <!-- UTSAPIJSON.stopCompass.param -->
 

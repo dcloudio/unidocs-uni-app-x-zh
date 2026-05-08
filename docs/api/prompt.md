@@ -104,4 +104,3 @@ itemList，即actionsheet的列表项，在app和小程序上最多6项，超出
 <!-- UTSAPIJSON.general_type.param -->
 
 ## Bug & Tips@tips
-- 目前web和App的弹窗UI风格不统一，后续会修复

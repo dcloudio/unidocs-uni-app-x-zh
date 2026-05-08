@@ -6,8 +6,6 @@
 
 <!-- UTSAPIJSON.addPhoneContact.compatibility -->
 
-Android和iOS可访问 [https://gitcode.com/dcloud/utsPlugIn/](https://gitcode.com/dcloud/utsPlugIn/)
-
 <!-- UTSAPIJSON.addPhoneContact.param -->
 
 <!-- UTSAPIJSON.addPhoneContact.returnValue -->
