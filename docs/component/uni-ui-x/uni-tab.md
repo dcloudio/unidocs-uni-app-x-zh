@@ -2,6 +2,8 @@
 source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-tab-bar
 ---
 
+> 本 Component 是 uni ext component，需下载插件：[uni-tab-bar](https://ext.dcloud.net.cn/plugin?id=27849)
+
 <!-- UTSCOMJSON.uni-tab-bar.readme -->
 
 <!-- UTSCOMJSON.uni-tab.name -->
