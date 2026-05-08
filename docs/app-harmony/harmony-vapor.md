@@ -186,12 +186,10 @@ ninja: error: failed recompaction: Permission denied。
 
 ### 全局文件
 pages.json
-- TODO：没有tabbar，但有独立的tab-bar组件。见hello uni-app x蒸汽模式首页的uni-tab-bar使用示例。
+- TODO：没有tabbar，但有独立的[uni-tab组件](../component/uni-ui-x/uni-tab.md)
 - TODO：没有页面下拉刷新。有scroll-view和list-view的下拉刷新
 
 ### 组件
-- TODO：缺少组件sticky（目前可以用嵌套滚动来替代实现吸顶）
-- TODO：缺少组件waterflow
 - TODO：全局属性data-暂未实现
 - 变更：布尔属性规范化。scroll-view等部分组件布尔属性默认值从true改为false。
 - 新增和变更：swiper和表单组件中涉及样式的属性，从属性改为了external-class，支持更丰富的样式控制
@@ -255,7 +253,6 @@ pages.json
 
 ### Element API
 - uni.createSelectorQuery 不支持多根节点组件的获取
-- TODO：缺少animate api
 - TODO：缺少Drawable。dom2的view、text创建足够快且支持拍平，故优先级不高
 
 	在蒸汽模式之前，为了高性能绘制，经常不能使用view和text组件，而是需要通过Drawable对象来绘制线条和文字，这种写法无法跨平台且复杂。\
