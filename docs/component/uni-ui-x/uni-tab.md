@@ -2,6 +2,8 @@
 source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-tab-bar
 ---
 
+<!-- UTSCOMJSON.uni-tab-bar.readme -->
+
 <!-- UTSCOMJSON.uni-tab.name -->
 
 <!-- UTSCOMJSON.uni-tab.description -->
@@ -28,8 +30,6 @@ source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-tab-bar
 <!-- UTSCOMJSON.uni-tab-bar.name -->
 
 <!-- UTSCOMJSON.uni-tab-bar.description -->
-
-<!-- UTSCOMJSON.uni-tab-bar.readme -->
 
 <!-- UTSCOMJSON.uni-tab-bar.compatibility -->
 
