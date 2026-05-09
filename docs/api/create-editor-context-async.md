@@ -2,6 +2,8 @@
 
 <!-- UTSAPIJSON.createEditorContextAsync.description -->
 
+本API是 [editor组件](../component/editor.md) 的上下文对象。
+
 <!-- UTSAPIJSON.createEditorContextAsync.compatibility -->
 
 <!-- UTSAPIJSON.createEditorContextAsync.param -->

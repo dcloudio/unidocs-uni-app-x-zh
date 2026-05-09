@@ -14,6 +14,13 @@
 
 <!-- UTSCOMJSON.editor.children -->
 
+### 上下文对象API
+
+editor组件有上下文对象，api为[uni.createEditorContextAsync()](../api/create-editor-context-async.md)。
+
+给editor组件设一个id属性，将id的值传入uni.createEditorContextAsync()，即可得到editor组件的上下文对象，进一步可使用对象上的方法。
+
+
 <!-- UTSCOMJSON.editor.example -->
 
 <!-- UTSCOMJSON.editor.reference -->
