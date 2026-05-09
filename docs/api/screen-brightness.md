@@ -46,7 +46,7 @@
 
 <!-- UTSAPIJSON.setKeepScreenOn.tutorial -->
 
-<!-- UTSAPIJSON.brightness.example -->
+<!-- UTSAPIJSON.screenBrightness.example -->
 
 <!-- UTSAPIJSON.general_type.name -->
 
