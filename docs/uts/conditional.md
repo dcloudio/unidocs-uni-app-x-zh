@@ -23,7 +23,7 @@ if (condition_1) {
 在 `app-android` 和 `app-ios` 平台，UTS 最终会编译为 Kotlin / Swift，原生条件判断只接受 `boolean`。  
 也就是说，从语言规则上说，`if`、`while`、`do...while`、`for` 的条件部分，以及三元表达式的 `condition`，都应该是布尔表达式。
 
-为了降低从 js / ts 迁移到 UTS 的成本，编译器目前对一部分常见的“truthy / falsy”写法做了优化：当表达式可以被安全地改写为布尔判断时，会在编译阶段自动补全显式判断。因此下面这些写法在 `app-android` / `app-ios` 平台也可以正常编译：
+HBuilderX 5.07+开始, 为了降低从 js / ts 迁移到 UTS 的成本，编译器目前对一部分常见的“truthy / falsy”写法做了优化：当表达式可以被安全地改写为布尔判断时，会在编译阶段自动补全显式判断。因此下面这些写法在 `app-android` / `app-ios` 平台也可以正常编译：
 
 ```ts
 const str: string = 'hello'
