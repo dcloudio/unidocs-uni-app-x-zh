@@ -4,7 +4,7 @@
 
 <!-- UTSAPIJSON.shareWithSystem.description -->
 
-系统分享不同于SDK分享。不需要配置三方SDK的key信息。手机上安装的、可接受分享的应用都会出现在列表中。如需三方SDK分享请见[插件市场](https://ext.dcloud.net.cn/search?q=%E5%88%86%E4%BA%AB&orderBy=Relevance&uni-appx=1)
+系统分享不同于SDK分享。不需要配置三方SDK的key信息。手机上安装的、可接受分享的应用都会出现在列表中。
 
 <!-- UTSAPIJSON.shareWithSystem.compatibility -->
 
