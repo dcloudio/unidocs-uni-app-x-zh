@@ -491,6 +491,10 @@ if (view != null && view instanceof WKWebView) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.animate.description -->
 
+::: warning 注意
+- 鸿蒙平台暂不支持返回动画实例。
+:::
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.animate.compatibility -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.animate.param -->
