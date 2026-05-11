@@ -294,7 +294,7 @@ onReady触发时机要比onShow晚一些。
 
 > HBuilderX 5.08 及以上版本支持
 
-支持以下支付 provider ：
+支持以下登录 provider ：
 
 #### 微信登录 @oauthweixin  
 使用 “微信 Open SDK for Android” 实现，使用前需到[微信开放平台](https://open.weixin.qq.com/)创建移动应用并在开发配置中正确配置`Android应用`的包名和签名。
@@ -653,7 +653,7 @@ uni-push是DCloud与合作伙伴个推共同推出的统一推送服务。
 
 > HBuilderX 5.08 及以上版本支持
 
-支持以下支付 provider ：
+支持以下分享 provider ：
 
 #### 微信分享 @shareweixin  
 使用 “微信 Open SDK for Android” 实现，使用前需到[微信开放平台](https://open.weixin.qq.com/)创建移动应用并在开发配置中正确配置`Android应用`的包名和签名。
