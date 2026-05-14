@@ -14,6 +14,10 @@
 
 <!-- UTSAPIJSON.getNetworkType.tutorial -->
 
+### 注意
+
+<md-hperm permissions="ohos.permission.GET_NETWORK_INFO" />
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

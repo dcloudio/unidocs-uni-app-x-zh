@@ -12,6 +12,8 @@
 
 ### 注意
 
+<md-hperm :permissions="['ohos.permission.APPROXIMATELY_LOCATION', {name:'ohos.permission.LOCATION', desc:'仅当 isHighAccuracy 为 true 时申请该权限。'}]" />
+
 ### 坐标系、系统定位、三方定位等概念
 
 wgs84坐标是国际GPS坐标系，gcj02是中国国内坐标系。同一个位置，2种坐标系数值不同。

@@ -42,6 +42,10 @@ web平台可通过插件拉齐，[详见](https://ext.dcloud.net.cn/search?q=get
 
 <!-- UTSAPIJSON.getRecorderManager.tutorial -->
 
+### 注意
+
+<md-hperm permissions="ohos.permission.MICROPHONE" />
+
 <!-- UTSAPIJSON.general_type.name -->
 
 <!-- UTSAPIJSON.general_type.param -->

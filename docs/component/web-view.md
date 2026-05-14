@@ -156,3 +156,5 @@ webviewController?.setPathAllowingUniversalAccess([
 - app-ios平台不支持padding style（padding-top、padding-left、padding-right、padding-bottom）
 - 页面中的web-view组件数量不宜太多，每个web-view都会占用不少内存。
 - uni.postMessage已不推荐使用（将废弃），功能与uni.webView.postMessage一致，推荐使用uni.webView.postMessage。
+
+<md-hperm :permissions="[{ name: 'ohos.permission.APPROXIMATELY_LOCATION', desc: '网页触发地理位置授权时请求该权限。' }, { name: 'ohos.permission.LOCATION', desc: '网页触发地理位置授权时请求该权限。' }, { name: 'ohos.permission.CAMERA', desc: 'Web 内容请求相关受保护资源时涉及该权限。' }, { name: 'ohos.permission.MICROPHONE', desc: 'Web 内容请求 ProtectedResourceType.AUDIO_CAPTURE 时，会请求该权限。' }]" />

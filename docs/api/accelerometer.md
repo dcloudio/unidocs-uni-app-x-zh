@@ -12,6 +12,10 @@
 
 <!-- UTSAPIJSON.onAccelerometerChange.tutorial -->
 
+### 注意
+
+<md-hperm :permissions="[{ name: 'ohos.permission.ACCELEROMETER', desc: '注册监听时如果当前未启动，会自动调用 startAccelerometer()，因此间接触发权限申请。' }]" />
+
 ## uni.offAccelerometerChange(callback) @offaccelerometerchange
 
 <!-- UTSAPIJSON.offAccelerometerChange.description -->
@@ -39,6 +43,10 @@
 <!-- UTSAPIJSON.startAccelerometer.example -->
 
 <!-- UTSAPIJSON.startAccelerometer.tutorial -->
+
+### 注意
+
+<md-hperm permissions="ohos.permission.ACCELEROMETER" />
 
 ## uni.stopAccelerometer(options) @stopaccelerometer
 

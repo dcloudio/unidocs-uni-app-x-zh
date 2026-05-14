@@ -68,6 +68,10 @@
 
 <!-- UTSAPIJSON.startLocationUpdate.tutorial -->
 
+### 注意
+
+<md-hperm :permissions="['ohos.permission.APPROXIMATELY_LOCATION', 'ohos.permission.LOCATION', { name: 'ohos.permission.LOCATION_IN_BACKGROUND', desc: '自身只启动前台持续定位；但如果后续调用 uni.startLocationUpdateBackground 且已有 watchId，会额外检查后台定位权限。' }]" />
+
 ## uni.stopLocationUpdate(options) @stoplocationupdate
 
 <!-- UTSAPIJSON.stopLocationUpdate.description -->
@@ -97,6 +101,8 @@
 	</dict>
 </plist>
 ```
+
+<md-hperm :permissions="['ohos.permission.APPROXIMATELY_LOCATION', 'ohos.permission.LOCATION', 'ohos.permission.LOCATION_IN_BACKGROUND']" />
 
 <!-- UTSAPIJSON.startLocationUpdateBackground.description -->
 

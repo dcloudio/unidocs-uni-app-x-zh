@@ -14,6 +14,10 @@
 
 <!-- UTSAPIJSON.startGyroscope.tutorial -->
 
+### 注意
+
+<md-hperm permissions="ohos.permission.GYROSCOPE" />
+
 <!-- UTSAPIJSON.stopGyroscope.name -->
 
 <!-- UTSAPIJSON.stopGyroscope.description -->
@@ -45,6 +49,10 @@
 <!-- UTSAPIJSON.onGyroscopeChange.example -->
 
 <!-- UTSAPIJSON.onGyroscopeChange.tutorial -->
+
+### 注意
+
+<md-hperm :permissions="[{ name: 'ohos.permission.GYROSCOPE', desc: '注册监听时如果当前未启动，会自动调用 startGyroscope()，因此间接触发权限申请和传感器启动。' }]" />
 
 <!-- UTSAPIJSON.offGyroscopeChange.name -->
 

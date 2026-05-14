@@ -14,6 +14,10 @@
 
 <!-- UTSAPIJSON.onNetworkStatusChange.tutorial -->
 
+### 注意
+
+<md-hperm permissions="ohos.permission.GET_NETWORK_INFO" />
+
 <!-- ## uni.offNetworkStatusChange(callback) @offnetworkstatuschange -->
 
 <!-- UTSAPIJSON.offNetworkStatusChange.name -->

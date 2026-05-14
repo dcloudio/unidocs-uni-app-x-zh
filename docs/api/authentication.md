@@ -14,6 +14,9 @@
 
 <!-- UTSAPIJSON.startSoterAuthentication.tutorial -->
 
+### 注意
+<md-hperm permissions="ohos.permission.ACCESS_BIOMETRIC" />
+
 <!-- UTSAPIJSON.checkIsSupportSoterAuthentication.name -->
 
 <!-- UTSAPIJSON.checkIsSupportSoterAuthentication.description -->
@@ -30,6 +33,9 @@
 
 <!-- UTSAPIJSON.checkIsSupportSoterAuthentication.tutorial -->
 
+### 注意
+<md-hperm permissions="ohos.permission.ACCESS_BIOMETRIC" />
+
 <!-- UTSAPIJSON.checkIsSoterEnrolledInDevice.name -->
 
 <!-- UTSAPIJSON.checkIsSoterEnrolledInDevice.description -->
@@ -45,6 +51,9 @@
 <!-- UTSAPIJSON.checkIsSoterEnrolledInDevice.example -->
 
 <!-- UTSAPIJSON.checkIsSoterEnrolledInDevice.tutorial -->
+
+### 注意
+<md-hperm permissions="ohos.permission.ACCESS_BIOMETRIC" />
 
 <!-- UTSAPIJSON.authentication.example -->
 
