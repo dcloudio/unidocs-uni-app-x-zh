@@ -253,3 +253,5 @@ defineOptions({
 
 ## 注意
 再次提醒，以上介绍的styleIsolation、external-class等内容，均属于样式隔离策略2.0的内容。非蒸汽模式的应用未开启 `manifest.json->uni-app-x->styleIsolationVersion: "2"` 是不会生效的。
+
+默认策略下，父组件的样式不会影响子组件。但在web下子组件的根节点依然可能会受父组件的影响，所以需要尽可能避免在子组件的根节点加父组件的样式。
