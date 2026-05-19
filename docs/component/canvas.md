@@ -6,7 +6,6 @@
 
 <!-- UTSCOMJSON.canvas.compatibility -->
 
-App平台4.25之前没有完整的canvas组件，但提供了`DrawableContext`。
 * 截图或海报需求，无需像webview那样通过canvas中转，app平台view直接提供截图API，[takesnapshot](../dom/unielement.html#takesnapshot)。
 
 在绘制形状、文字、图片方面，uni-app x有2种解决方案：`canvas组件`和 [DOM的DrawableContext API](../dom/drawablecontext.md)
