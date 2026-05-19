@@ -76,9 +76,10 @@
 | uni-calendar(5.0.8+) | uni-calendar-index.swift <br> UniCalendarNative.swift | | |
 | uni-compass(5.0.8+) | uni-compass-index.swift <br> CompassNative.swift | | |
 | uni-gyroscope(5.0.8+) | uni-gyroscope-index.swift <br> UniGyroscopeNative.swift | | |
-
-
-
+| uni-memory(5.0.8+) | uni-memory-index.swift | | |
+| uni-phoneContact(5.0.8+) | uni-phoneContact-index.swift <br> AddPhoneContactNative.swift | | |
+| uni-screenBrightness(5.0.8+) | uni-screenBrightness-index.swift | | |
+| uni-vibrate(5.0.8+) | uni-screenBrightness-index.swift <br> VibrateNative.swift | | |
 
 
 ### 配置uts-config.json(可选)
@@ -262,6 +263,18 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ## 主工程配置
 根据资源文件中的`manifest.json`文件包含的模块名称，根据下述相关模块文档向`主工程`添加依赖以及工程配置
 
+## uni-phoneContact
+
+### Info.plist
+添加`通讯录访问验证权限描述(NSContactsUsageDescription)`
+```  
+<dict>
+	<key>NSContactsUsageDescription</key>
+	<string>需要访问通讯录以选择或保存联系人信息</string>
+</dict>
+```
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uni_phoneContact_permission.png)
+
 ## uni-gyroscope
 
 ### Info.plist
@@ -314,7 +327,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 	<string>应用需要使用 Face ID 进行身份验证</string>
 </dict>
 ```
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uni-authentication_permission.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uni_authentication_permission.png)
 
 ## uni-accelerometer
 
@@ -326,7 +339,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 	<string>需要访问运动传感器以获取加速度数据</string>
 </dict>
 ```
-![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uni-accelerometer_permission.png)
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uni_accelerometer_permission.png)
 
 ## uni-prompt
 ### 添加依赖库以及资源文件
