@@ -72,6 +72,7 @@
 | uni-showLoading(5.0+) | uni-showLoading-index.swift | | |
 | uni-web-view(5.0+) | uni-web-view-index.swift <br> uni-web-view-InnerWebView.swift <br> uni-web-view-Snapshot.swift <br> uni-web-view-UniBaseWebView.swift <br> uni-web-view-UniViewLifecycle.swift <br> uni-web-view-UniWebComponentRegister.swift | | |
 | uni-accelerometer(5.0.8+) | uni-accelerometer-index.swift <br> AccelerometerNative.swift | | |
+| uni-authentication(5.0.8+) | uni-authentication-index.swift | | |
 
 ### 配置uts-config.json(可选)
 
@@ -253,6 +254,18 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 
 ## 主工程配置
 根据资源文件中的`manifest.json`文件包含的模块名称，根据下述相关模块文档向`主工程`添加依赖以及工程配置
+
+## uni-authentication
+
+### Info.plist
+添加`Face ID身份验证权限描述(NSFaceIDUsageDescription)`
+```  
+<dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>应用需要使用 Face ID 进行身份验证</string>
+</dict>
+```
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uni-authentication_permission.png)
 
 ## uni-accelerometer
 
