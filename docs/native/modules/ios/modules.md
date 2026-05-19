@@ -74,6 +74,12 @@
 | uni-accelerometer(5.0.8+) | uni-accelerometer-index.swift <br> AccelerometerNative.swift | | |
 | uni-authentication(5.0.8+) | uni-authentication-index.swift | | |
 | uni-calendar(5.0.8+) | uni-calendar-index.swift <br> UniCalendarNative.swift | | |
+| uni-compass(5.0.8+) | uni-compass-index.swift <br> CompassNative.swift | | |
+| uni-gyroscope(5.0.8+) | uni-gyroscope-index.swift <br> UniGyroscopeNative.swift | | |
+
+
+
+
 
 ### 配置uts-config.json(可选)
 
@@ -255,6 +261,30 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 
 ## 主工程配置
 根据资源文件中的`manifest.json`文件包含的模块名称，根据下述相关模块文档向`主工程`添加依赖以及工程配置
+
+## uni-gyroscope
+
+### Info.plist
+添加`需要访问运动传感器以获取陀螺仪数据验证权限描述(NSMotionUsageDescription)`
+```  
+<dict>
+	<key>NSMotionUsageDescription</key>
+	<string>需要访问运动传感器以获取陀螺仪数据</string>
+</dict>
+```
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uni_gyroscope_permission.png)
+
+## uni-compass
+
+### Info.plist
+添加`需要访问位置信息以获取指南针数据验证权限描述(NSLocationWhenInUseUsageDescription)`
+```  
+<dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>应用需要访问位置信息以获取指南针数据</string>
+</dict>
+```
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uni_compass_permission.png)
 
 ## uni-calendar
 
