@@ -73,6 +73,7 @@
 | uni-web-view(5.0+) | uni-web-view-index.swift <br> uni-web-view-InnerWebView.swift <br> uni-web-view-Snapshot.swift <br> uni-web-view-UniBaseWebView.swift <br> uni-web-view-UniViewLifecycle.swift <br> uni-web-view-UniWebComponentRegister.swift | | |
 | uni-accelerometer(5.0.8+) | uni-accelerometer-index.swift <br> AccelerometerNative.swift | | |
 | uni-authentication(5.0.8+) | uni-authentication-index.swift | | |
+| uni-calendar(5.0.8+) | uni-calendar-index.swift <br> UniCalendarNative.swift | | |
 
 ### 配置uts-config.json(可选)
 
@@ -254,6 +255,24 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 
 ## 主工程配置
 根据资源文件中的`manifest.json`文件包含的模块名称，根据下述相关模块文档向`主工程`添加依赖以及工程配置
+
+## uni-calendar
+
+### Info.plist
+添加`运行期间访问用户的日历数据验证权限描述(NSCalendarsUsageDescription)`
+添加`项目真机运行期间需要完全访问用户的日历数据验证权限描述(NSCalendarsFullAccessUsageDescription)`
+添加`运行期间向日历中添加事件验证权限描述(NSCalendarsWriteOnlyAccessUsageDescription)`
+```  
+<dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>项目真机运行期间访问用户的日历数据</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>项目真机运行期间需要完全访问用户的日历数据（读取、修改、删除和添加）</string>
+	<key>NSCalendarsWriteOnlyAccessUsageDescription</key>
+	<string>项目真机运行期间向日历中添加事件</string>
+</dict>
+```
+![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uni_calendar_permission.png)
 
 ## uni-authentication
 
