@@ -90,7 +90,6 @@ export class UniOAuthWeixinProviderImpl implements UniOAuthWeixinProvider {
 ### 注意
 - App平台开发微信登录，无需自定义基座，真机运行可直接开发
 - App平台判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#getprovider)
-- 在4.25版本前使用微信支付，Android需要在隐私协议弹框后调用微信sdk
 
 ```ts
    uni.getProvider({
