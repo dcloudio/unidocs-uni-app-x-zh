@@ -37,7 +37,7 @@
 | uni-canvas |  | DCloudUniCanvas.xcframework | |
 | uni-media | uni-media-index.swift <br>uni-media-utils-UniChooseFileManager.swift(4.61+)| DCloudMediaPicker.xcframework |  AssetsLibrary <br> Photos <br> AVFoundation <br> CoreServices <br> CoreFoundation <br> CoreGraphics <br> CoreImage <br> GLKit <br> MetalKit <br> MobileCoreServices <br> QuartzCore <br> ImageIO <br> MediaPlayer <br> CoreText  |
 | uni-payment-alipay | uni-payment-alipay-index.swift <br> uni-payment-index.swift | AlipaySDK.xcframework |c++ <br> z <br> SystemConfiguration <br> CoreTelephony <br> QuartzCore <br> CoreText <br> CoreGraphics <br> CFNetwork <br> CoreMotion |
-| uni-payment-wxpay | uni-payment-wxpay-index.swift <br> uni-payment-index.swift | libWeChatSDK.a | CoreGraphics <br> WebKit <br> Security |
+| uni-payment-wxpay | uni-payment-wxpay-index.swift <br> uni-payment-index.swift | libWeChatSDK.a | CoreGraphics.framework <br> WebKit.framework <br> Security.framework |
 | uni-virtualPayment | uni-virtualPayment-index.swift <br> uni-virtualPayment-ProductService.swift <br> uni-virtualPayment-PurchaseService.swift <br> uni-virtualPayment-Types.swift <br> uni-virtualPayment-UniProduct.swift <br> uni-virtualPayment-UniPurchase.swift <br> uni-virtualPayment-UniStoreKit+Closure.swift <br> uni-virtualPayment-UniStoreKit.swift | | StoreKit |
 | uni-getLocation-system | ~~uni-getLocation-system-index.swift~~ <br> ~~uni-getLocation-index.swift~~ <br>(4.61+使用) <br> uni-location-index.swift <br> uni-location-system-index <br> | | |
 | uni-getLocation-tencent | ~~uni-getLocation-tencent-index.swift~~ <br> ~~uni-getLocation-index.swift~~ <br> (4.61+使用) <br> uni-location-tencent-index.swift <br> uni-location-index.swift | TencentLBS.framework | libz.1.2.5.tbd |
@@ -81,11 +81,39 @@
 | uni-phoneContact(5.0.8+) | uni-phoneContact-index.swift <br> AddPhoneContactNative.swift | | |
 | uni-screenBrightness(5.0.8+) | uni-screenBrightness-index.swift | | |
 | uni-vibrate(5.0.8+) | uni-screenBrightness-index.swift <br> VibrateNative.swift | | |
+| uni-oauth-weixin(5.0.8+) | uni-oauth-weixin-index.swift <br> uni-oauth-index.swift| libWeChatSDK | CoreGraphics.framework <br> WebKit.framework <br> Security.framework |
+| uni-share-weixin(5.0.8+) | uni-share-weixin-index.swift <br> uni-share-index.swift | libWeChatSDK.a | CoreGraphics.framework <br> WebKit.framework <br> Security.framework |
 
 
 ### 配置uts-config.json(可选)
 
 在`DCloudUTSExtAPI`工程中新建 `uts-config.json` 文件，
+`uni-oauth-weixin`模块需要添加如下配置
+```
+{
+	"hooksClasses": [
+		"UTSSDKModulesDCloudUniOauthWeixinWxloginHookProxy"
+	],
+	"providers": [{
+		"name": "weixin",
+		"service": "oauth", 
+		"class": "UTSSDKModulesDCloudUniOauthWeixinUniOAuthWeixinProviderImpl"
+	}]
+}
+```  
+`uni-share-weixin`模块需要添加如下配置
+```
+{
+	"hooksClasses": [
+		"UTSSDKModulesDCloudUniShareWeixinWxShareHookProxy"
+	],
+	"providers": [{
+		"name": "wxpay",
+		"service": "share",
+		"class": "UTSSDKModulesDCloudUniShareWeixinUniShareWeixinProviderImpl"
+	}]
+}
+```  
 `uni-loading`模块需要添加如下配置
 ```
 {
@@ -254,7 +282,7 @@
 集成`uni-media`模块需要填写如下隐私清单
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/unimedia_privacyinfo.png)
 
-集成`uni-payment-wxpay`模块需要填写如下隐私清单
+集成`uni-payment-wxpay`、`uni-oauth-weixin`、`uni-share-weixin`模块需要填写如下隐私清单
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/uniwxpay_privacyinfo.png)
 
 
@@ -529,7 +557,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ![](https://web-ext-storage.dcloud.net.cn/native/doc/iOS/associated_domains.png)
 
 
-## uni-payment-wxpay
+## uni-payment-wxpay、uni-oauth-weixin、uni-share-weixin
 
 ### Info.plist
 1. 添加 `白名单(LSApplicationQueriesSchemes)`
