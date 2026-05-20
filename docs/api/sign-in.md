@@ -87,6 +87,41 @@ export class UniOAuthWeixinProviderImpl implements UniOAuthWeixinProvider {
 <!-- UTSAPIJSON.getUserInfo.description -->
 
 <!-- UTSAPIJSON.getUserInfo.compatibility -->
+### 注意
+- App平台开发微信登录，无需自定义基座，真机运行可直接开发
+- App平台判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#getprovider)
+- 在4.25版本前使用微信支付，Android需要在隐私协议弹框后调用微信sdk
+
+```ts
+   uni.getProvider({
+      service: "payment",
+      success: (e) => {
+         const provider = e.providers.find((item): boolean => {
+            return item.id == 'wxpay'
+         })
+
+          // #ifdef APP-ANDROID
+          if (provider != null && provider instanceof UniPaymentWxpayProvider && !((provider as UniPaymentWxpayProvider).isWeChatInstalled)) {
+            console.log('WeChat 没有安装')
+          } else {
+             console.log('WeChat 已安装')
+          }
+          // #endif
+          // #ifdef APP-IOS
+          if (provider != null && ((provider as UniPaymentWxpayProvider).isWeChatInstalled == undefined || ((provider as UniPaymentWxpayProvider).isWeChatInstalled != null && (provider as UniPaymentWxpayProvider).isWeChatInstalled == false))) {
+            console.log('WeChat 没有安装')
+          } else {
+            console.log('WeChat 已安装')
+          }
+          // #endif
+      },
+      fail: (e) => {
+         console.log("获取支付通道失败：", e);
+      }
+   })
+```
+- **app需要在根目录manifest.json文件中配置`uni-oauth`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-oauth模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-oauth)**
+
 
 <!-- UTSAPIJSON.getUserInfo.param -->
 
