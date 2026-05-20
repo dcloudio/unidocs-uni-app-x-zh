@@ -90,3 +90,37 @@ export class UniShareWeixinProviderImpl implements UniShareWeixinProvider {
   - title 不支持超过 512 个字节
   - summary 不支持超过 1024 个字节
 - 鸿蒙平台，HBuilderX 4.87 及以下版本，分享时有图片大于 20 KB 会出现分享失败的问题。临时方案是下载 [har包](https://web-ext-storage.dcloud.net.cn/temp/uni_modules__uni_share_weixin_x.har)并改名为 `uni_modules__uni_share_weixin.har`，放到 `项目根目录/harmony-configs/libs/` 目录下重新编译运行到手机。高版本不存在此问题
+
+### 注意
+- App平台开发微信分享，无需自定义基座，真机运行可直接开发
+- App平台判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#getprovider)
+
+```ts
+   uni.getProvider({
+      service: "payment",
+      success: (e) => {
+         const provider = e.providers.find((item): boolean => {
+            return item.id == 'wxpay'
+         })
+
+          // #ifdef APP-ANDROID
+          if (provider != null && provider instanceof UniPaymentWxpayProvider && !((provider as UniPaymentWxpayProvider).isWeChatInstalled)) {
+            console.log('WeChat 没有安装')
+          } else {
+             console.log('WeChat 已安装')
+          }
+          // #endif
+          // #ifdef APP-IOS
+          if (provider != null && ((provider as UniPaymentWxpayProvider).isWeChatInstalled == undefined || ((provider as UniPaymentWxpayProvider).isWeChatInstalled != null && (provider as UniPaymentWxpayProvider).isWeChatInstalled == false))) {
+            console.log('WeChat 没有安装')
+          } else {
+            console.log('WeChat 已安装')
+          }
+          // #endif
+      },
+      fail: (e) => {
+         console.log("获取支付通道失败：", e);
+      }
+   })
+```
+- **app需要在根目录manifest.json文件中配置`uni-share`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-share模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-share)**
