@@ -208,6 +208,10 @@ onShow和onHide是成对出现的。
 
 <!-- PAGEINSTANCE.onPageScroll.returnValue -->
 
+::: warning 注意
+- iOS 平台蒸汽模式开启下拉刷新会触发页面 `onPageScroll` 生命周期，此时 `scrollTop` 为负值。
+:::
+
 ### 页面 onBackPress 生命周期 @onbackpress
 
 <!-- PAGEINSTANCE.onBackPress.compatibility -->
@@ -218,7 +222,7 @@ onShow和onHide是成对出现的。
 
 ::: warning 注意
 - `onBackPress`上不可使用`async`，会导致无法阻止默认返回
-- - iOS 端侧滑返回不会触发 `onBackPress`
+- iOS 端侧滑返回不会触发 `onBackPress`
 :::
 
 #### 示例
