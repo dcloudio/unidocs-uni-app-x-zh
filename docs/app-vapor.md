@@ -5,9 +5,9 @@
 
 uni-app x 的蒸汽模式，包含了去掉虚拟DOM的vue框架，以及App平台的一套基于原生渲染管线的、超过原生渲染速度的全新渲染引擎。
 
-- HBuilderX 5.01+，鸿蒙支持蒸汽模式
-- HBuilderX 5.11+，iOS支持蒸汽模式
-- Android待发版
+- HBuilderX 5.0+，鸿蒙支持蒸汽模式
+- HBuilderX 5.1+，iOS支持蒸汽模式
+- Android的蒸汽模式 计划于5.2发布
 
 ## 虚拟DOM的问题
 近年新兴的前端框架，掀起了新一轮的性能革命，纷纷去掉了虚拟DOM。通过更复杂的编译器，生成更高效的直接操作DOM的代码。
@@ -50,16 +50,29 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 1. 4050页面
 
-同屏渲染2050个view，里面套了2000个text，一共4050个元素。没有懒加载、没有复用，是view和text创建速度的硬性考验。
+同屏渲染2050个view，里面又套了2000个text，一共4050个元素。没有懒加载、没有复用，是view和text创建速度的硬性考验。
 
-在鸿蒙nova12(apiLevel 21，鸿蒙最低端手机)上，创建和渲染这4050个元素仅耗时`280ms`左右。
+- 鸿蒙平台
+测试设备：鸿蒙nova12(apiLevel 21，鸿蒙最低端手机)
+|						|渲染耗时ms	|
+|--					|--					|
+|arkui			|798				|
+|NativeNode	|672				|
+|uni-app x蒸汽模式	|280				|
 
-而原生ArkUI，同设备上创建相同数量的元素并渲染，需要耗时`850ms`左右。渲染速度快近3倍。
-
-原生ArkUI的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译体验测试。
+原生ArkUI的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译测试数据，重现实验。
 
 另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的ArkUI要慢的多，更无法与uni-app x蒸汽模式相比，
-包括纯c操作nativeNode，也需要`670ms`左右，比uni-app x慢1倍多。
+
+- iOS平台
+测试设备：iPhoneXR(iOS18.5)
+|					|渲染耗时ms	|
+|--				|--					|
+|原生UIKit|388				|
+|SwiftUI	|1619				|
+|uni-app x蒸汽模式|181				|
+
+iOS原生自身的优化做的很好，都通过AOT编译为了机器码，但uni-app x蒸汽模式仍然做到了比原生更快。
 
 2. 死亡复杂长列表页面
 
@@ -69,7 +82,7 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 列表中还有大量的阴影、圆角、边框等复杂渲染样式。
 
-在鸿蒙nova12(apiLevel 21，鸿蒙最低端手机)上，瞬间进入页面。上下快滑列表，在120帧满帧运行，不会出现白块灰块。（在手机设置搜索“刷新率”，打开强制120Hz体验）
+在鸿蒙nova12(鸿蒙最低端手机)、iPhoneXR(2018年上市)上，瞬间进入页面。上下快滑列表，在120帧满帧运行，不会出现白块灰块。（在手机设置搜索“刷新率”，打开强制120Hz体验）
 
 在120Hz高刷屏上，8.3ms内无法完成新列表项的加载，就会掉帧。列表越复杂，越难以在8.3ms内完成渲染。
 
@@ -84,7 +97,9 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
     ![](https://web-ext-storage.dcloud.net.cn/uni-app-x/hello-uniappx-qrcode.png)#{width=200px height=200px}
 
-2. 在HBuilderX 5.0中新建 hello uni-app x项目，manifest中开启蒸汽模式，运行到鸿蒙设备，切记选择release模式运行来测试性能
+2. 在HBuilderX 5.0+新建 hello uni-app x项目，manifest中开启蒸汽模式，运行到鸿蒙设备，切记选择release模式运行来测试性能。iOS则需要5.11+，iOS不涉及release模式。
+
+更详细专业的benchmark报告，[详见](./vapor-benchmark.md)
 
 ### 释疑
 关于uni-app x的蒸汽模式为什么这么快，很多人可能有疑问，比如
@@ -95,27 +110,24 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 - 为什么都是原生渲染，uni-app x的蒸汽模式比原生渲染更快？
 
-这里面涉及数千项工程优化，难以通过几句话解释清楚，但可以提供一些关键说明：
+这里面涉及数千项工程优化，举例一些：
+
 1. Android的compose ui也是基于原生渲染管线的，但没有使用Android自带的view、textview，而是实现了自己的组件系统。
-
-    这条路完全可行，只不过compose ui做的不太好，实际渲染速度比view体系更慢。（在上述4050示例对比中，有原生view和compose ui的测试例，[详见](https://gitcode.com/dcloud/test4050-android)）
-
-    uni-app x 蒸汽模式，也几乎没有使用系统自带的组件，不管是textView、recycleView、viewPage...，或者是鸿蒙的arkUI相关组件，基本都没用。
-
-    全新研发的组件做到了比OS自带组件性能更高。
-
-2. vue里template和style里的代码，被直接编译为优化度非常高的C代码。它的运行速度远快于arkts、kotlin及k/n。
-
+	
+	这条路可行，只不过compose ui没有成为一个好标杆，它实际渲染速度比view体系更慢。（在上述4050示例对比中，有原生view和compose ui的测试例，[详见](https://gitcode.com/dcloud/test4050-android)）
+	
+	`uni-app x 蒸汽模式`，也几乎没有使用系统自带的组件，不管是textView、recycleView、viewPage...，或者是鸿蒙的arkUI相关组件，基本都没用。全新研发的组件做到了性能更高。
+	
+2. 视图层代码，即vue里template和style里的代码，被直接编译为优化度非常高的C代码。它的运行速度远快于arkts、kotlin及k/n。
+	
 - 这些优化有没有副作用？
 
 有。包括2个：
-1. 最大的副作用是编译更慢了
+1. 编译速度
 
-App平台因为要编译C代码，所以真机运行的编译速度变慢不少。尤其是iOS和鸿蒙。
+App平台因为要编译C代码，所以真机运行的编译速度变慢不少。
 
-如果你做过c++开发的话，会感觉到回到了那个编译速度的时代。
-
-从5.11起，新增了字节码编译模式，大幅改善编译速度。
+但从5.11起，新推出了字节码，来替代机器码模式。字节码模式大幅改善编译速度，且性能下降微乎其微。
 
 2. 运行时包体积变化。
 
@@ -127,13 +139,9 @@ hello uni-app x有350+页面，蒸汽模式的发行hap体积56M，之前VDOM模
 
 - 基于原生渲染，是否涉及跨平台的不一致问题？
 
-uni-app x 蒸汽模式，是基于原生渲染的自绘组件，几乎没有使用各平台的组件。可以很好的保持跨平台UI一致性。
+uni-app x 蒸汽模式中的组件，基本都是使用跨平台的C++和uts编写的，几乎没有各平台的原生组件。因为是一套代码，所以可以很好的保持跨平台一致性。
 
 之前uni-app x VDOM模式时，不同平台的组件差异还较多，这个问题在全平台完成蒸汽模式后会大幅减少。
-
-- 蒸汽模式的鸿蒙、iOS渲染非常快，那后续的Android推出后也会比原生渲染快吗？
-
-是的。都比原生UI渲染快2~3倍。
 
 ## 体验方式
 下载HBuilderX 5.0+，运行hello uni-app x的[alpha分支](https://gitcode.com/dcloud/hello-uni-app-x)。
@@ -177,8 +185,7 @@ ninja: error: failed recompaction: Permission denied。
 
 ### 全局文件
 pages.json
-- TODO：iOS暂无tabbar，但有独立的[uni-tab组件](component/uni-ui-x/uni-tab.md)
-- TODO：暂无页面下拉刷新。有scroll-view和list-view的下拉刷新
+- TODO：iOS暂无tabbar，但有独立的[uni-tab组件](./component/uni-ui-x/uni-tab.md)
 
 ### 组件
 - TODO：全局属性data-暂未实现
@@ -237,7 +244,7 @@ pages.json
   只要存在至少两个相邻节点（父子或兄弟）同时拍平，即可获得性能优化。
 
 ### API
-- TODO：没有tabbar相关api。需使用uni-tab-bar组件相关属性设置。
+- TODO：iOS暂无tabbar相关api。需使用uni-tab-bar组件相关属性设置。
 - 没有页面下拉刷新及相关生命周期。需要使用scroll-view相关api
 
 #### Element API
@@ -266,16 +273,16 @@ VDOM模式的视图层是编译为uts/js代码，然后驱动原生渲染。
 机器码模式，是把`template`和`style`编译为优化度非常高的C代码，再经平台编译器编译为机器码运行。
 
 优点：
-- 运行性能达到极致。
+- 渲染性能高一点点。
 
 缺点：
-- 编译速度比字节码模式慢很多，因为需要编译C代码。
+- 编译速度比字节码模式慢非常多，因为需要编译C代码。大型工程的c++编译是非常非常慢的。
 - 开发阶段的差量编译体验差。
 - iOS只能在mac电脑上开发。
 
 ### 字节码
 
-为了平衡机器码的性能和开发易用性。从5.11起补充了字节码编译模式。
+为了平衡机器码的性能和开发易用性。从5.11起新增了字节码编译模式。字节码也是二进制格式。
 
 优点：
 - 编译速度更快。
@@ -283,8 +290,10 @@ VDOM模式的视图层是编译为uts/js代码，然后驱动原生渲染。
 - 发行后支持 wgt 热更新。（暂未上线）
 
 缺点：
-- 运行性能低于机器码10%左右。由于蒸汽模式比原生快了数倍，所以字节码虽比机器码慢了10%，但仍快过原生数倍。
+- 渲染性能低于机器码3%左右。由于蒸汽模式比原生快了数倍，所以字节码虽比机器码慢了一点点，但仍快过原生数倍。
 
-字节码可满足大多数场景需求。对于追求运行性能极致的开发者，可在发行时选择机器码。
+正常情况下，使用字节码即可。
 
-选择机器码时，云打包iOS会非常慢，免费用户会被限流。
+因为最初在5.0版上线鸿蒙蒸汽模式时只有机器码，所以目前在鸿蒙上是提供了字节码或机器码2个选项。
+
+而在5.11上线iOS蒸汽模式时，只提供了字节码选项。实测机器码会造成云打包iOS非常非常慢，暂不计划开放。

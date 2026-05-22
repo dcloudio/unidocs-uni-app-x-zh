@@ -1,6 +1,7 @@
 * [概述](README.md)
 * [项目](project.md)
 * [页面](page.md)
+* [蒸汽模式](app-vapor.md)
 * 教程
   * [与js开发的差别](tutorial/codegap.md)
   * [request联网教程](tutorial/request.md)
@@ -52,7 +53,6 @@
   * [iOS逻辑层使用注意](native/iosReadme.md)
 * 鸿蒙next平台专题指南
   * [概述](app-harmony/README.md)
-	* [蒸汽模式](app-harmony/harmony-vapor.md)
   * [应用合规指南](tutorial/compliance.md)
   * uni-app x 原生SDK
     * [概述](native/README.md)
@@ -80,6 +80,7 @@
 * [宽屏适配](adapt.md)
 * [国际化](i18n.md)
 * [源码和示例](sample.md)
+* [benchmark](vapor-benchmark.md)
 * [跨平台框架及原生对比](select.md)
 * cursor/vscode插件
   * [语言服务插件](tutorial/ls-plugin.md)
