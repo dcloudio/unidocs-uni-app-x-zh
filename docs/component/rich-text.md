@@ -86,7 +86,7 @@ rich-text组件是一个比较重的组件，需要注意适用场景。
 
 从uni-app x4.7+，3个App平台统一使用web-view实现。鸿蒙平台直接替换了之前的实现，而Android平台则新增了mode属性配置，默认是web-view实现，但也可以通过mode=native继续使用之前的原生方式。
 
-从5.0版本开始，鸿蒙平台新增支持原生实现的 rich-text。鸿蒙平台新增支持了 mode 属性配置，默认是 `web-view` 实现，可以通过设置 `mode=native` 使用原生方式。
+从5.0版本开始，鸿蒙平台蒸汽模式新增支持c语言实现的 rich-text。鸿蒙平台新增支持了 mode 属性配置，默认是 `web-view` 实现，可以通过设置 `mode=native` 使用原生方式。
 
 ## Bug & Tips@tips
 
