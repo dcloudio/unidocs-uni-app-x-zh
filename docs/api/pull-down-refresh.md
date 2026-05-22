@@ -43,3 +43,4 @@
 
 ## Tips
 - 本API默认处理栈顶页面，而不是代码所在页面。[详见](./README.md#toppage)
+- iOS 平台蒸汽模式开启下拉刷新会触发页面 `onPageScroll` 生命周期，此时 `scrollTop` 为负值。
