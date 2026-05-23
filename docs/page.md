@@ -210,6 +210,14 @@ onShow和onHide是成对出现的。
 
 ::: warning 注意
 - iOS 平台蒸汽模式开启下拉刷新会触发页面 `onPageScroll` 生命周期，此时 `scrollTop` 为负值。
+
+- 从HBuilderX 5.11开始蒸汽模式下编译器会自动给页面包裹一个scroll-view标签，包裹规则如下：
+
+1、当enablePullDownRefresh为true时，编译器会强制在页面根部包裹一层 scroll-view。该规则优先级最高，会忽略 disableScroll 和页面根下是否已存在滚动容器。
+
+2、当未开启下拉刷新且未禁用页面滚动时，编译器默认会尝试为页面插入根 scroll-view；但如果根下只有一个子节点，且该子节点本身就是根滚动容器，则不会重复插入，而是复用该节点并补齐必要属性。
+
+3、当未开启下拉刷新且未禁用页面滚动时，如果根下存在多个直接子节点，但其中任一直接子节点已经是滚动容器，则不会自动包裹根 scroll-view，以保持开发者原有的页面结构。
 :::
 
 ### 页面 onBackPress 生命周期 @onbackpress
