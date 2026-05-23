@@ -135,27 +135,6 @@ uni-app x中页面布局有2个注意事项，[flex方向](#flex-direction) 和 
 
 当然，如果页面的pages.json里配置使用了原生导航栏，那么页面区整体是在原生导航栏下面。
 
-#### 自定义导航栏
-
-如果开发者想要自定义导航栏，首先在pages.json里对应页面的style里设置`"navigationStyle": "custom"`，关闭原生导航栏。\
-然后编写自定义的导航栏组件[\<uni-navbar-lite>](https://ext.dcloud.net.cn/plugin?id=14618)，那么推荐的页面代码结构为：
-
-```html
-<template>
-	<uni-navbar-lite title="自定义导航栏标题">
-	</uni-navbar-lite>
-	<!-- #ifdef APP -->
-	<scroll-view style="flex:1">
-	<!-- #endif -->
-
-	<!-- #ifdef APP -->
-	</scroll-view>
-	<!-- #endif -->
-</template>
-```
-
-> 注：这里的“原生导航栏”是一个历史沿袭叫法，指配置在pages.json里的导航栏，不属于页面代码区。事实上在uni-app x的app平台里所有界面都是原生的。
-
 #### 页面滚动相关的生命周期、api
 
 在uni-app的规范中，页面滚动有一批相关的生命周期、api，比如：`onPageScroll`、`onReachBottom`、`uni.pageScrollTo()`
@@ -169,7 +148,9 @@ uni-app x中页面布局有2个注意事项，[flex方向](#flex-direction) 和 
 
 #### 页面滚动引起的差异
 
-`uni-app-x` App端无页面滚动，且其根节点高度为从导航栏底部到tabBar顶部。如果在页面根节点的子元素使用`position: absolute;`，页面内部scroll-view滚动时不会改变此元素位置。其他端有页面滚动，如果在页面根节点的子元素使用`position: absolute;`页面滚动会改变此元素的位置。如果有不随页面滚动变化位置的需求建议使用`position: fixed`。
+`uni-app-x` App端无页面滚动，且其根节点高度为从导航栏底部到tabBar顶部。如果在页面根节点的子元素使用`position: absolute;`，页面内部scroll-view滚动时不会改变此元素位置。
+
+其他端有页面滚动，如果在页面根节点的子元素使用`position: absolute;`页面滚动会改变此元素的位置。如果有不随页面滚动变化位置的需求建议使用`position: fixed`。
 
 注意：web端需要使用[css安全区变量](common/function.md)使元素不覆盖在navigationBar和tabBar上。
 

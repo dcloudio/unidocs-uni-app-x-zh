@@ -58,9 +58,11 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 |--					|--					|
 |arkui			|798				|
 |NativeNode	|672				|
-|uni-app x蒸汽模式	|280				|
+|uni-app x蒸汽模式	|280	|
 
 原生ArkUI的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译测试数据，重现实验。
+
+点击链接：[4050对比视频](https://www.bilibili.com/video/BV1RpPQzAEDS/?vd_source=eef2a939bbe2563836b506d2f2098835)。左边为`arkUI原生`，右边为`uni-app x 蒸汽模式`。
 
 另外我们也测试了其他跨平台框架在鸿蒙的表现，包括基于k/n方案的跨平台框架，实际运行速度比原生的ArkUI要慢的多，更无法与uni-app x蒸汽模式相比，
 
@@ -70,7 +72,7 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 |--				|--					|
 |原生UIKit|388				|
 |SwiftUI	|1619				|
-|uni-app x蒸汽模式|181				|
+|uni-app x蒸汽模式|181	|
 
 iOS原生自身的优化做的很好，都通过AOT编译为了机器码，但uni-app x蒸汽模式仍然做到了比原生更快。
 
@@ -88,9 +90,14 @@ iOS原生自身的优化做的很好，都通过AOT编译为了机器码，但un
 
 而uni-app x 蒸汽模式极快的渲染速度，支撑开发者构造非常复杂的列表，也可以丝般顺滑。
 
+点击链接：[长列表对比视频](https://www.bilibili.com/video/BV1dpPQzAEYN/?vd_source=eef2a939bbe2563836b506d2f2098835)。左边是原生arkui，右边是uni-app x蒸汽模式。
+
 3. rich-text 5万字长文多图页面
 
 5万字长文、59张图片。瞬间进入页面。上下快滑列表，不会出现白块灰块。人手滑不出掉帧。
+
+[视频链接](https://www.bilibili.com/video/BV1RWPQzaE7o/?vd_source=9e6b69fd9d38ab4e16ec7e61541f2294)
+**注：录屏时帧率只能为60Hz，实际使用时是完整的120Hz**
 
 这些内容，都可以手机上直观的亲身体验：
 1. 使用鸿蒙next手机的应用商店，搜索“DCloud开发者中心系统”，或扫描下方二维码
@@ -122,20 +129,11 @@ iOS原生自身的优化做的很好，都通过AOT编译为了机器码，但un
 	
 - 这些优化有没有副作用？
 
-有。包括2个：
-1. 编译速度
-
 App平台因为要编译C代码，所以真机运行的编译速度变慢不少。
 
 但从5.11起，新推出了字节码，来替代机器码模式。字节码模式大幅改善编译速度，且性能下降微乎其微。
 
-2. 运行时包体积变化。
-
-template和style编译成C后，发行包以机器码方式存在，几乎无法再压缩。比编译成js压缩成hap包的体积大一些。
-
-hello uni-app x有350+页面，蒸汽模式的发行hap体积56M，之前VDOM模式的体积是46M。
-
-如果你的应用页面少的话，体积变化不明显。
+所以从5.11起，可以理解为没有副作用了
 
 - 基于原生渲染，是否涉及跨平台的不一致问题？
 
@@ -252,9 +250,9 @@ pages.json
 - TODO：缺少Drawable。dom2的view、text创建足够快且支持拍平，故优先级不高
 
     在蒸汽模式之前，为了高性能绘制，经常不能使用view和text组件，而是需要通过Drawable对象来绘制线条和文字，这种写法无法跨平台且复杂。\
-    在蒸汽模式后，开发者可以正常使用view和text跨平台的开发，比如hello uni-app x的模板中的日历示例，之前是Drawable绘制，现在都是拍平的text组件。
+    在蒸汽模式后，开发者可以正常使用view和text跨平台的开发，比如hello uni-app x的模板中的[日历示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/master/pages/template/calendar-vapor/calendar-vapor.uvue)，之前是Drawable绘制，现在都是拍平的text组件。
 
-其他还有一些差异，见文档的兼容性说明。兼容性表格已经新增了`HarmonyOS/iOS(Vapor)`一列。
+其他还有一些差异，见文档的兼容性说明。
 
 ## 视图层编译目标 @vapor-render-target
 
