@@ -474,7 +474,7 @@ if (view != null && view instanceof WKWebView) {
 * app端list-view、web-view组件性能优化仅渲染屏幕显示的内容，所以截图仅能截取到当前屏幕展示的内容。
 * app端scroll-view组件设置padding后，截图内容不会包含padding区域。
 * 截图默认为png格式，包含透明度。如果view等元素未设置背景，截图后会表现为相关区域透明。另需注意png如果压缩成jpg会丢失透明度，一般会填充成黑色背景。开发者也可以主动给view设背景色来规避截图的png含有透明度。
-* app端由于组件背景默认透明，所以截图图片默认没有背景色。
+
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getPage.name -->
 
