@@ -76,6 +76,8 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 iOS原生自身的优化做的很好，都通过AOT编译为了机器码，但uni-app x蒸汽模式仍然做到了比原生更快。
 
+原生iOS的开源工程见[https://gitcode.com/dcloud/test4050-ios](https://gitcode.com/dcloud/test4050-ios)，开发者可以自行编译测试数据，重现实验。
+
 2. 死亡复杂长列表页面
 
 4000行数据，7.4M的JSON，渲染2万个元素，占据普通手机1333屏左右。
@@ -167,7 +169,7 @@ ninja: error: failed recompaction: Permission denied。
 ### vue蒸汽模式自身变更
 - **仅支持组合式，不支持选项式**
 
-    选项式转组合式，AI可以帮忙。hello uni-app x里大量的选项式页面都是用AI转成了组合式，以适配蒸汽模式。[详见](ai/README.md)
+    选项式转组合式，AI可以帮忙。hello uni-app x里大量的选项式页面都是用uni-agent转成了组合式，以适配蒸汽模式。详见[uni-agent](https://doc.dcloud.net.cn/uni-app-x/ai/)
 - 不再支持mixin
 
 ### css
@@ -187,7 +189,7 @@ pages.json
 
 ### 组件
 - TODO：全局属性data-暂未实现
-- 不再支持uts兼容模式组件，仅支持uts标准模式组件，即使用native-view的开发方式。
+- 变更：不再支持uts兼容模式组件，仅支持uts标准模式组件，即使用native-view的开发方式。
 - 变更：布尔属性规范化。scroll-view等部分组件布尔属性默认值从true改为false。
 - 变更：list-view的变化和限制
     * list-view支持vue实例、dom的全面复用，进一步降低内存占用。不再需要之前模板示例中的复用长列表、分批加载长列表。
