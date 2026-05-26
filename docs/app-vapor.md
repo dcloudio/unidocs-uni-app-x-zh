@@ -187,6 +187,7 @@ pages.json
 
 ### 组件
 - TODO：全局属性data-暂未实现
+- 不再支持uts兼容模式组件，仅支持uts标准模式组件，即使用native-view的开发方式。
 - 变更：布尔属性规范化。scroll-view等部分组件布尔属性默认值从true改为false。
 - 变更：list-view的变化和限制
     * list-view支持vue实例、dom的全面复用，进一步降低内存占用。不再需要之前模板示例中的复用长列表、分批加载长列表。
