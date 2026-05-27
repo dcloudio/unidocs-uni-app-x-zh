@@ -23,8 +23,7 @@
 * 【重要】新增 iOS平台 蒸汽模式，大幅提升渲染性能 [详情](https://doc.dcloud.net.cn/uni-app-x/app-vapor.html)
 * 调整 API uni.openLocation 调整为内置 API [文档](https://uniapp.dcloud.net.cn/api/location/open-location.html) <https://issues.dcloud.net.cn/pages/issues/detail?id=28556>
 * 修复 组件 editor 内存泄露 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29527)
-### uni-app
-* 修复 生物认证模块无法使用的Bug [详情](https://ask.dcloud.net.cn/question/219834)
+
 ### uts插件
 * 修复 函数入参为type对象类型且包含UTSJSONObject数组时运行闪退 [详情](https://issues.dcloud.net.cn/pages/issues/detail?id=29085)
 
