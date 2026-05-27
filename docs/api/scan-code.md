@@ -21,7 +21,8 @@
 ### 平台实现说明
 - uni-app x的Android/iOS平台的扫码基于Google的机器学习库，对各种一维、二维码都有较好的识别效果。超过了uni-app的扫码。
 	扫码API，其实是一个开源的uvue页面，页面中内嵌了[camera组件](../component/camera.md)，camera组件提供扫码模式。源码在文档上方点击右侧gitcode或github。\
-	如需连续扫码，推荐使用[camera组件](../component/camera.md)
+	如需连续扫码，推荐使用[camera组件](../component/camera.md)\
+	扫码需要摄像头权限，扫码界面的相册图标点击后需要相册读取权限。部分Android应用商店要求权限申请前要声明，可以使用[uni-registerRequestPermissionTips插件](https://ext.dcloud.net.cn/plugin?name=uni-registerRequestPermissionTips)
 - 鸿蒙、小程序直接调用了其平台提供的扫码API，UI不可自定义。但各种一维、二维码均可识别。
 
 ### 依赖库版本
