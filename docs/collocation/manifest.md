@@ -8,6 +8,8 @@ uni-app x 目前不提供内置模块选择，而是提供了摇树机制自动�
 
 ## 配置项列表
 
+<!-- MANIFESTJSON.manifest.compatibility -->
+
 <!-- MANIFESTJSON.manifest.table -->
 
 **注意**
@@ -20,12 +22,15 @@ uni-app x 目前不提供内置模块选择，而是提供了摇树机制自动�
 
 <!-- MANIFESTJSON.uni-app-x.description -->
 
-<!-- MANIFESTJSON.uni-app-x.table -->
+<!-- MANIFESTJSON.uni-app-x.compatibility -->
 
+<!-- MANIFESTJSON.uni-app-x.table -->
 
 ### APP配置 @manifest-app
 
 <!-- MANIFESTJSON.app.description -->
+
+<!-- MANIFESTJSON.app.compatibility -->
 
 <!-- MANIFESTJSON.app.table -->
 
@@ -45,12 +50,15 @@ hello uni-app x中提供了基于dialogPage的隐私政策弹框示例代码，�
 
 <!-- MANIFESTJSON.app_distribute.description -->
 
-<!-- MANIFESTJSON.app_distribute.table -->
+<!-- MANIFESTJSON.app_distribute.compatibility -->
 
+<!-- MANIFESTJSON.app_distribute.table -->
 
 ##### App端图标配置 @distribute-icons
 
 <!-- MANIFESTJSON.app_distribute_icons.description -->
+
+<!-- MANIFESTJSON.app_distribute_icons.compatibility -->
 
 <!-- MANIFESTJSON.app_distribute_icons.table -->
 
@@ -62,6 +70,8 @@ hello uni-app x中提供了基于dialogPage的隐私政策弹框示例代码，�
 
 <!-- MANIFESTJSON.app_distribute_icons_android.description -->
 
+<!-- MANIFESTJSON.app_distribute_icons_android.compatibility -->
+
 <!-- MANIFESTJSON.app_distribute_icons_android.table -->
 
 > 必须使用 `png` 格式图标
@@ -70,11 +80,11 @@ hello uni-app x中提供了基于dialogPage的隐私政策弹框示例代码，�
 
 <!-- MANIFESTJSON.app_distribute_icons_ios.description -->
 
-<!-- MANIFESTJSON.app_distribute_icons_ios.table -->
+<!-- MANIFESTJSON.app_distribute_icons_ios.compatibility -->
 
 > 必须使用 `png` 格式图标，图片中不能存在透明区域
 
-<!-- MANIFESTJSON.app_distribute_icons_ios.compatibility -->
+<!-- MANIFESTJSON.app_distribute_icons_ios.table -->
 
 ##### App端启动界面配置 @distribute-splashScreens
 
@@ -85,12 +95,16 @@ hello uni-app x中提供了基于dialogPage的隐私政策弹框示例代码，�
 
 <!-- MANIFESTJSON.app_distribute_splashScreens_android.description -->
 
+<!-- MANIFESTJSON.app_distribute_splashScreens_android.compatibility -->
+
 <!-- MANIFESTJSON.app_distribute_splashScreens_android.table -->
 
 
 ###### Android12启动界面配置 @splashScreen-_android12
 
 <!-- MANIFESTJSON.app_distribute_splashScreens_android12.description -->
+
+<!-- MANIFESTJSON.app_distribute_splashScreens_android12.compatibility -->
 
 <!-- MANIFESTJSON.app_distribute_splashScreens_android12.table -->
 
@@ -99,19 +113,23 @@ hello uni-app x中提供了基于dialogPage的隐私政策弹框示例代码，�
 
 <!-- MANIFESTJSON.app_distribute_splashScreens_android12_icon.description -->
 
+<!-- MANIFESTJSON.app_distribute_splashScreens_android12_icon.compatibility -->
+
 <!-- MANIFESTJSON.app_distribute_splashScreens_android12_icon.table -->
 
 ###### Android12启动界面底部品牌图标 @android12-brand
 
 <!-- MANIFESTJSON.app_distribute_splashScreens_android12_brand.description -->
 
-<!-- MANIFESTJSON.app_distribute_splashScreens_android12_brand.table -->
-
 <!-- MANIFESTJSON.app_distribute_splashScreens_android12_brand.compatibility -->
+
+<!-- MANIFESTJSON.app_distribute_splashScreens_android12_brand.table -->
 
 ##### ANDROID配置 @distribute-android
 
 <!-- MANIFESTJSON.app_distribute_android.description -->
+
+<!-- MANIFESTJSON.app_distribute_android.compatibility -->
 
 <!-- MANIFESTJSON.app_distribute_android.table -->
 
@@ -124,63 +142,63 @@ manifest.json中不提供配置 `manifestPlaceholders` 数据，如果应用使�
 
 <!-- MANIFESTJSON.app_distribute_ios.description -->
 
-<!-- MANIFESTJSON.app_distribute_ios.table -->
-
 <!-- MANIFESTJSON.app_distribute_ios.compatibility -->
+
+<!-- MANIFESTJSON.app_distribute_ios.table -->
 
 
 ##### distribute modules 配置项列表 @distribute-modules
 
 <!-- MANIFESTJSON.app_distribute_modules.description -->
 
-<!-- MANIFESTJSON.app_distribute_modules.table -->
-
 <!-- MANIFESTJSON.app_distribute_modules.compatibility -->
+
+<!-- MANIFESTJSON.app_distribute_modules.table -->
 
 
 ###### uni-ad 配置项列表 @modules-uni-ad
 
 <!-- MANIFESTJSON.app_distribute_modules_uni-ad.description -->
 
-<!-- MANIFESTJSON.app_distribute_modules_uni-ad.table -->
-
 <!-- MANIFESTJSON.app_distribute_modules_uni-ad.compatibility -->
+
+<!-- MANIFESTJSON.app_distribute_modules_uni-ad.table -->
 
 
 ###### uni-location 配置项列表 @modules-uni-location
 
 <!-- MANIFESTJSON.app_distribute_modules_uni-location.description -->
 
-<!-- MANIFESTJSON.app_distribute_modules_uni-location.table -->
-
 <!-- MANIFESTJSON.app_distribute_modules_uni-location.compatibility -->
+
+<!-- MANIFESTJSON.app_distribute_modules_uni-location.table -->
 
 
 ###### uni-payment 配置项列表 @modules-uni-payment
 
 <!-- MANIFESTJSON.app_distribute_modules_uni-payment.description -->
 
-<!-- MANIFESTJSON.app_distribute_modules_uni-payment.table -->
-
 <!-- MANIFESTJSON.app_distribute_modules_uni-payment.compatibility -->
+
+<!-- MANIFESTJSON.app_distribute_modules_uni-payment.table -->
 
 
 ###### uni-payment-wxpay 配置项列表 @uni-payment-wxpay
 
 <!-- MANIFESTJSON.app_distribute_modules_uni-payment_wxpay.description -->
 
-<!-- MANIFESTJSON.app_distribute_modules_uni-payment_wxpay.table -->
-
 <!-- MANIFESTJSON.app_distribute_modules_uni-payment_wxpay.compatibility -->
+
+<!-- MANIFESTJSON.app_distribute_modules_uni-payment_wxpay.table -->
 
 
 ###### wxpay ios 配置项列表 @wxpay-ios
 
 <!-- MANIFESTJSON.app_distribute_modules_uni-payment_wxpay_ios.description -->
 
-<!-- MANIFESTJSON.app_distribute_modules_uni-payment_wxpay_ios.table -->
-
 <!-- MANIFESTJSON.app_distribute_modules_uni-payment_wxpay_ios.compatibility -->
+
+<!-- MANIFESTJSON.app_distribute_modules_uni-payment_wxpay_ios.table -->
 
 
 
@@ -188,385 +206,385 @@ manifest.json中不提供配置 `manifestPlaceholders` 数据，如果应用使�
 
 <!-- MANIFESTJSON.app-android.description -->
 
-<!-- MANIFESTJSON.app-android.table -->
-
 <!-- MANIFESTJSON.app-android.compatibility -->
+
+<!-- MANIFESTJSON.app-android.table -->
 
 
 #### DISTRIBUTE配置 @app-android-distribute
 
 <!-- MANIFESTJSON.app-android_distribute.description -->
 
-<!-- MANIFESTJSON.app-android_distribute.table -->
-
 <!-- MANIFESTJSON.app-android_distribute.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute.table -->
 
 
 ##### Android平台图标配置 @distribute-icons
 
 <!-- MANIFESTJSON.app-android_distribute_icons.description -->
 
-<!-- MANIFESTJSON.app-android_distribute_icons.table -->
-
 <!-- MANIFESTJSON.app-android_distribute_icons.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute_icons.table -->
 
 
 ##### Android平台启动界面配置 @distribute-splashscreens
 
 <!-- MANIFESTJSON.app-android_distribute_splashScreens.description -->
 
-<!-- MANIFESTJSON.app-android_distribute_splashScreens.table -->
-
 <!-- MANIFESTJSON.app-android_distribute_splashScreens.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute_splashScreens.table -->
 
 
 ###### Android平台启动图配置 @splashscreens-default
 
 <!-- MANIFESTJSON.app-android_distribute_splashScreens_default.description -->
 
-<!-- MANIFESTJSON.app-android_distribute_splashScreens_default.table -->
-
 <!-- MANIFESTJSON.app-android_distribute_splashScreens_default.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute_splashScreens_default.table -->
 
 
 ###### Android12启动界面中部Logo图标 @splashscreens-icon
 
 <!-- MANIFESTJSON.app-android_distribute_splashScreens_icon.description -->
 
-<!-- MANIFESTJSON.app-android_distribute_splashScreens_icon.table -->
-
 <!-- MANIFESTJSON.app-android_distribute_splashScreens_icon.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute_splashScreens_icon.table -->
 
 
 ###### Android12启动界面底部品牌图标 @splashscreens-brand
 
 <!-- MANIFESTJSON.app-android_distribute_splashScreens_brand.description -->
 
-<!-- MANIFESTJSON.app-android_distribute_splashScreens_brand.table -->
-
 <!-- MANIFESTJSON.app-android_distribute_splashScreens_brand.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute_splashScreens_brand.table -->
 
 
 ###### modulesuni-location 配置项列表 @modules-uni-location
 
 <!-- MANIFESTJSON.app-android_distribute_modules_uni-location.description -->
 
-<!-- MANIFESTJSON.app-android_distribute_modules_uni-location.table -->
-
 <!-- MANIFESTJSON.app-android_distribute_modules_uni-location.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute_modules_uni-location.table -->
 
 
 ###### uni-locationtencent 配置项列表 @uni-location-tencent
 
 <!-- MANIFESTJSON.app-android_distribute_modules_uni-location_tencent.description -->
 
-<!-- MANIFESTJSON.app-android_distribute_modules_uni-location_tencent.table -->
-
 <!-- MANIFESTJSON.app-android_distribute_modules_uni-location_tencent.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute_modules_uni-location_tencent.table -->
 
 
 ###### modulesuni-map 配置项列表 @modules-uni-map
 
 <!-- MANIFESTJSON.app-android_distribute_modules_uni-map.description -->
 
-<!-- MANIFESTJSON.app-android_distribute_modules_uni-map.table -->
-
 <!-- MANIFESTJSON.app-android_distribute_modules_uni-map.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute_modules_uni-map.table -->
 
 
 ###### uni-maptencent 配置项列表 @uni-map-tencent
 
 <!-- MANIFESTJSON.app-android_distribute_modules_uni-map_tencent.description -->
 
-<!-- MANIFESTJSON.app-android_distribute_modules_uni-map_tencent.table -->
-
 <!-- MANIFESTJSON.app-android_distribute_modules_uni-map_tencent.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute_modules_uni-map_tencent.table -->
 
 
 ###### modulesuni-payment 配置项列表 @modules-uni-payment
 
 <!-- MANIFESTJSON.app-android_distribute_modules_uni-payment.description -->
 
-<!-- MANIFESTJSON.app-android_distribute_modules_uni-payment.table -->
-
 <!-- MANIFESTJSON.app-android_distribute_modules_uni-payment.compatibility -->
+
+<!-- MANIFESTJSON.app-android_distribute_modules_uni-payment.table -->
 
 
 ### iOS App配置 @manifest-app-ios
 
 <!-- MANIFESTJSON.app-ios.description -->
 
-<!-- MANIFESTJSON.app-ios.table -->
-
 <!-- MANIFESTJSON.app-ios.compatibility -->
+
+<!-- MANIFESTJSON.app-ios.table -->
 
 
 #### DISTRIBUTE配置 @app-ios-distribute
 
 <!-- MANIFESTJSON.app-ios_distribute.description -->
 
-<!-- MANIFESTJSON.app-ios_distribute.table -->
-
 <!-- MANIFESTJSON.app-ios_distribute.compatibility -->
+
+<!-- MANIFESTJSON.app-ios_distribute.table -->
 
 
 ##### iOS平台图标配置 @distribute-icons
 
 <!-- MANIFESTJSON.app-ios_distribute_icons.description -->
 
-<!-- MANIFESTJSON.app-ios_distribute_icons.table -->
-
 <!-- MANIFESTJSON.app-ios_distribute_icons.compatibility -->
+
+<!-- MANIFESTJSON.app-ios_distribute_icons.table -->
 
 
 ##### iOS平台启动界面配置 @distribute-splashscreens
 
 <!-- MANIFESTJSON.app-ios_distribute_splashScreens.description -->
 
-<!-- MANIFESTJSON.app-ios_distribute_splashScreens.table -->
-
 <!-- MANIFESTJSON.app-ios_distribute_splashScreens.compatibility -->
 
+<!-- MANIFESTJSON.app-ios_distribute_splashScreens.table -->
 
-##### distributemodules 配置项列表 @distribute-modules
+
+##### distribute modules 配置项列表 @distribute-modules
 
 <!-- MANIFESTJSON.app-ios_distribute_modules.description -->
 
-<!-- MANIFESTJSON.app-ios_distribute_modules.table -->
-
 <!-- MANIFESTJSON.app-ios_distribute_modules.compatibility -->
+
+<!-- MANIFESTJSON.app-ios_distribute_modules.table -->
 
 
 ###### modulesuni-location 配置项列表 @modules-uni-location
 
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-location.description -->
 
-<!-- MANIFESTJSON.app-ios_distribute_modules_uni-location.table -->
-
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-location.compatibility -->
+
+<!-- MANIFESTJSON.app-ios_distribute_modules_uni-location.table -->
 
 
 ###### uni-locationtencent 配置项列表 @uni-location-tencent
 
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-location_tencent.description -->
 
-<!-- MANIFESTJSON.app-ios_distribute_modules_uni-location_tencent.table -->
-
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-location_tencent.compatibility -->
+
+<!-- MANIFESTJSON.app-ios_distribute_modules_uni-location_tencent.table -->
 
 
 ###### modulesuni-map 配置项列表 @modules-uni-map
 
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-map.description -->
 
-<!-- MANIFESTJSON.app-ios_distribute_modules_uni-map.table -->
-
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-map.compatibility -->
+
+<!-- MANIFESTJSON.app-ios_distribute_modules_uni-map.table -->
 
 
 ###### uni-maptencent 配置项列表 @uni-map-tencent
 
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-map_tencent.description -->
 
-<!-- MANIFESTJSON.app-ios_distribute_modules_uni-map_tencent.table -->
-
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-map_tencent.compatibility -->
+
+<!-- MANIFESTJSON.app-ios_distribute_modules_uni-map_tencent.table -->
 
 
 ###### modulesuni-payment 配置项列表 @modules-uni-payment
 
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-payment.description -->
 
-<!-- MANIFESTJSON.app-ios_distribute_modules_uni-payment.table -->
-
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-payment.compatibility -->
+
+<!-- MANIFESTJSON.app-ios_distribute_modules_uni-payment.table -->
 
 
 ###### uni-paymentwxpay 配置项列表 @uni-payment-wxpay
 
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-payment_wxpay.description -->
 
-<!-- MANIFESTJSON.app-ios_distribute_modules_uni-payment_wxpay.table -->
-
 <!-- MANIFESTJSON.app-ios_distribute_modules_uni-payment_wxpay.compatibility -->
+
+<!-- MANIFESTJSON.app-ios_distribute_modules_uni-payment_wxpay.table -->
 
 
 ### HarmonyOS配置 @manifest-app-harmony
 
 <!-- MANIFESTJSON.app-harmony.description -->
 
-<!-- MANIFESTJSON.app-harmony.table -->
-
 <!-- MANIFESTJSON.app-harmony.compatibility -->
+
+<!-- MANIFESTJSON.app-harmony.table -->
 
 
 #### app-harmonydistribute 配置项列表 @app-harmony-distribute
 
 <!-- MANIFESTJSON.app-harmony_distribute.description -->
 
-<!-- MANIFESTJSON.app-harmony_distribute.table -->
-
 <!-- MANIFESTJSON.app-harmony_distribute.compatibility -->
 
+<!-- MANIFESTJSON.app-harmony_distribute.table -->
 
-##### distributemodules 配置项列表 @distribute-modules
+
+##### distribute modules 配置项列表 @distribute-modules
 
 <!-- MANIFESTJSON.app-harmony_distribute_modules.description -->
 
-<!-- MANIFESTJSON.app-harmony_distribute_modules.table -->
-
 <!-- MANIFESTJSON.app-harmony_distribute_modules.compatibility -->
+
+<!-- MANIFESTJSON.app-harmony_distribute_modules.table -->
 
 
 ###### modulesuni-oauth 配置项列表 @modules-uni-oauth
 
 <!-- MANIFESTJSON.app-harmony_distribute_modules_uni-oauth.description -->
 
-<!-- MANIFESTJSON.app-harmony_distribute_modules_uni-oauth.table -->
-
 <!-- MANIFESTJSON.app-harmony_distribute_modules_uni-oauth.compatibility -->
+
+<!-- MANIFESTJSON.app-harmony_distribute_modules_uni-oauth.table -->
 
 
 ###### uni-oauthweixin 配置项列表 @uni-oauth-weixin
 
 <!-- MANIFESTJSON.app-harmony_distribute_modules_uni-oauth_weixin.description -->
 
-<!-- MANIFESTJSON.app-harmony_distribute_modules_uni-oauth_weixin.table -->
-
 <!-- MANIFESTJSON.app-harmony_distribute_modules_uni-oauth_weixin.compatibility -->
+
+<!-- MANIFESTJSON.app-harmony_distribute_modules_uni-oauth_weixin.table -->
 
 
 ###### modulesuni-share 配置项列表 @modules-uni-share
 
 <!-- MANIFESTJSON.app-harmony_distribute_modules_uni-share.description -->
 
-<!-- MANIFESTJSON.app-harmony_distribute_modules_uni-share.table -->
-
 <!-- MANIFESTJSON.app-harmony_distribute_modules_uni-share.compatibility -->
+
+<!-- MANIFESTJSON.app-harmony_distribute_modules_uni-share.table -->
 
 
 ###### uni-shareweixin 配置项列表 @uni-share-weixin
 
 <!-- MANIFESTJSON.app-harmony_distribute_modules_uni-share_weixin.description -->
 
-<!-- MANIFESTJSON.app-harmony_distribute_modules_uni-share_weixin.table -->
-
 <!-- MANIFESTJSON.app-harmony_distribute_modules_uni-share_weixin.compatibility -->
+
+<!-- MANIFESTJSON.app-harmony_distribute_modules_uni-share_weixin.table -->
 
 
 ### Web配置 @manifest-web
 
 <!-- MANIFESTJSON.web.description -->
 
-<!-- MANIFESTJSON.web.table -->
-
 <!-- MANIFESTJSON.web.compatibility -->
+
+<!-- MANIFESTJSON.web.table -->
 
 
 #### web router 配置项列表 @web-router
 
 <!-- MANIFESTJSON.web_router.description -->
 
-<!-- MANIFESTJSON.web_router.table -->
-
 <!-- MANIFESTJSON.web_router.compatibility -->
+
+<!-- MANIFESTJSON.web_router.table -->
 
 
 #### web devServer 配置项列表 @web-devserver
 
 <!-- MANIFESTJSON.web_devServer.description -->
 
-<!-- MANIFESTJSON.web_devServer.table -->
-
 <!-- MANIFESTJSON.web_devServer.compatibility -->
+
+<!-- MANIFESTJSON.web_devServer.table -->
 
 
 #### web optimization 配置项列表 @web-optimization
 
 <!-- MANIFESTJSON.web_optimization.description -->
 
-<!-- MANIFESTJSON.web_optimization.table -->
-
 <!-- MANIFESTJSON.web_optimization.compatibility -->
+
+<!-- MANIFESTJSON.web_optimization.table -->
 
 
 ##### treeShaking 配置项列表 @optimization-treeshaking
 
 <!-- MANIFESTJSON.web_optimization_treeShaking.description -->
 
-<!-- MANIFESTJSON.web_optimization_treeShaking.table -->
-
 <!-- MANIFESTJSON.web_optimization_treeShaking.compatibility -->
+
+<!-- MANIFESTJSON.web_optimization_treeShaking.table -->
 
 
 #### web unipush 配置项列表 @web-unipush
 
 <!-- MANIFESTJSON.web_unipush.description -->
 
-<!-- MANIFESTJSON.web_unipush.table -->
-
 <!-- MANIFESTJSON.web_unipush.compatibility -->
+
+<!-- MANIFESTJSON.web_unipush.table -->
 
 
 #### web sdkConfigs 配置项列表 @web-sdkconfigs
 
 <!-- MANIFESTJSON.web_sdkConfigs.description -->
 
-<!-- MANIFESTJSON.web_sdkConfigs.table -->
-
 <!-- MANIFESTJSON.web_sdkConfigs.compatibility -->
+
+<!-- MANIFESTJSON.web_sdkConfigs.table -->
 
 
 ##### 定位和地图（只能选一个） @sdkconfigs-maps
 
 <!-- MANIFESTJSON.web_sdkConfigs_maps.description -->
 
-<!-- MANIFESTJSON.web_sdkConfigs_maps.table -->
-
 <!-- MANIFESTJSON.web_sdkConfigs_maps.compatibility -->
+
+<!-- MANIFESTJSON.web_sdkConfigs_maps.table -->
 
 
 ###### 腾讯地图，旧配置项为qqmap @maps-tencent
 
 <!-- MANIFESTJSON.web_sdkConfigs_maps_tencent.description -->
 
-<!-- MANIFESTJSON.web_sdkConfigs_maps_tencent.table -->
-
 <!-- MANIFESTJSON.web_sdkConfigs_maps_tencent.compatibility -->
+
+<!-- MANIFESTJSON.web_sdkConfigs_maps_tencent.table -->
 
 
 ###### 谷歌地图 @maps-google
 
 <!-- MANIFESTJSON.web_sdkConfigs_maps_google.description -->
 
-<!-- MANIFESTJSON.web_sdkConfigs_maps_google.table -->
-
 <!-- MANIFESTJSON.web_sdkConfigs_maps_google.compatibility -->
+
+<!-- MANIFESTJSON.web_sdkConfigs_maps_google.table -->
 
 
 ###### samap 配置项列表 @maps-amap
 
 <!-- MANIFESTJSON.web_sdkConfigs_maps_amap.description -->
 
-<!-- MANIFESTJSON.web_sdkConfigs_maps_amap.table -->
-
 <!-- MANIFESTJSON.web_sdkConfigs_maps_amap.compatibility -->
+
+<!-- MANIFESTJSON.web_sdkConfigs_maps_amap.table -->
 
 ### mp-weixin 配置项列表 @manifest-mp-weixin
 
 <!-- MANIFESTJSON.mp-weixin.description -->
 
-<!-- MANIFESTJSON.mp-weixin.table -->
-
 <!-- MANIFESTJSON.mp-weixin.compatibility -->
+
+<!-- MANIFESTJSON.mp-weixin.table -->
 
 ### HBuilderX配置 @manifest-__hbuilderx
 
 <!-- MANIFESTJSON.__hbuilderx.description -->
 
-<!-- MANIFESTJSON.__hbuilderx.table -->
-
 <!-- MANIFESTJSON.__hbuilderx.compatibility -->
+
+<!-- MANIFESTJSON.__hbuilderx.table -->
 
 
 <!-- MANIFESTJSON.tutorial -->
