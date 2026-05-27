@@ -57,9 +57,13 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 
 |						|渲染耗时ms	|
 |--					|--					|
-|arkui			|798				|
+|ArkUI			|798				|
 |NativeNode	|672				|
-|uni-app x蒸汽模式	|280	|
+|uni-app x 蒸汽模式	|280	|
+
+NativeNode指跳过ArkUI声明式框架，纯写c代码创建这些ui元素。
+
+uni-app x 作为一个数据驱动的响应式框架，渲染速度比裸写c代码还快数倍。
 
 原生ArkUI的开源工程见[https://gitcode.com/dcloud/test4050-harmony-arkui](https://gitcode.com/dcloud/test4050-harmony-arkui)，开发者可以自行编译测试数据，重现实验。
 
@@ -74,11 +78,13 @@ uni-app x 引入蒸汽模式，不仅是去掉了虚拟DOM，更重要的是 uni
 |--				|--					|
 |原生UIKit|388				|
 |SwiftUI	|1619				|
-|uni-app x蒸汽模式|181	|
+|uni-app x 蒸汽模式|181	|
 
-iOS原生自身的优化做的很好，都通过AOT编译为了机器码，但uni-app x蒸汽模式仍然做到了比原生更快。
+iOS原生自身的优化做的很好，都通过AOT编译为了机器码。SwiftUI是数据驱动的声明式框架，比UIKit慢是正常的。但uni-app x 作为数据驱动的响应式框架，做到了比原生UIKit更数倍。
 
 原生iOS的开源工程见[https://gitcode.com/dcloud/test4050-ios](https://gitcode.com/dcloud/test4050-ios)，开发者可以自行编译测试数据，重现实验。
+
+另外，不管是哪个App平台，即便uni-app x不使用拍平，仍然比原生渲染更快。
 
 2. 死亡复杂长列表页面
 
@@ -88,7 +94,9 @@ iOS原生自身的优化做的很好，都通过AOT编译为了机器码，但un
 
 列表中还有大量的阴影、圆角、边框等复杂渲染样式。
 
-在鸿蒙nova12(鸿蒙最低端手机)、iPhoneXR(2018年上市)上，瞬间进入页面。上下快滑列表，在120帧满帧运行，不会出现白块灰块。（在手机设置搜索“刷新率”，打开强制120Hz体验）
+在鸿蒙nova12(鸿蒙最低端手机)、iPhoneXR(2018年上市)上，瞬间进入页面。
+
+上下手滑列表，满帧运行；拖着滚动条极快滑动，平均帧率90以上，不会出现白块灰块。（在手机设置搜索“刷新率”，打开强制120Hz体验）
 
 在120Hz高刷屏上，8.3ms内无法完成新列表项的加载，就会掉帧。列表越复杂，越难以在8.3ms内完成渲染。
 
