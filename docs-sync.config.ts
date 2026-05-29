@@ -106,6 +106,34 @@ export default defineConfig({
       {
         from: 'tutorial/page-static-assets.md',
         to: 'compiler/page-static-assets.md',
+      },
+      {
+        from: 'tutorial/run/run-app.md',
+        to: 'tutorial/run-app.md',
+      },
+      {
+        from: 'tutorial/run/uts-development-android.md',
+        to: 'tutorial/uts-development-android.md',
+      },
+      {
+        from: 'tutorial/debug/uni-uts-debug.md',
+        to: 'tutorial/uni-uts-debug.md',
+      },
+      {
+        from: 'tutorial/run/uts-development-ios.md',
+        to: 'tutorial/uts-development-ios.md',
+      },
+      {
+        from: 'tutorial/debug/uni-uts-debug-ios.md',
+        to: 'tutorial/uni-uts-debug-ios.md',
+      },
+      {
+        from: 'tutorial/harmony/runbuild.md',
+        to: 'tutorial/runbuild.md',
+      },
+      {
+        from: 'tutorial/debug/uni-uts-debug-harmony.md',
+        to: 'tutorial/uni-uts-debug-harmony.md',
       }
     ])
   ],
