@@ -43,7 +43,7 @@ export default {
       askNoResultsText: '以下为${categoryText}相关内容',
     },
   },
-  extraFacetFilters: ['category:uni-ad广告', 'tag:插件', 'tag:工程化'],
+  extraFacetFilters: ['category:uni-ad广告'],
   aiPlatforms: [
     'uni-app',
     'uni-app x',
