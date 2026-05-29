@@ -107,6 +107,8 @@ export default defineConfig({
         from: 'tutorial/page-static-assets.md',
         to: 'compiler/page-static-assets.md',
       },
+      'tutorial/CORS.md',
+      'tutorial/adapt.md',
       {
         from: 'tutorial/run/run-app.md',
         to: 'tutorial/run-app.md',
