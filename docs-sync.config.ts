@@ -2,11 +2,25 @@ import { defineConfig } from 'docs-sync-cli';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-function createSyncMapping(files: string[]) {
-  return files.map(file => ({
-    from: `common:${file}`,
-    to: `docs/${file}`,
-  }));
+interface FileMapping {
+  from: string;
+  to: string;
+}
+
+function createSyncMapping(files: (string | FileMapping)[]) {
+  return files.map(file => {
+    if (typeof file === 'string') {
+      return {
+        from: `common:${file}`,
+        to: `docs/${file}`,
+      }
+    } else {
+      return {
+        from: `common:${file.from}`,
+        to: `docs/${file.to}`,
+      }
+    }
+  });
 }
 
 export default defineConfig({
@@ -33,7 +47,7 @@ export default defineConfig({
       'ai/vibe-partner.md',
       'ai/use-ui-mcp.md',
       'ai/personal-subscription.md',
-	  'ai/enterprise-subscription.md',
+      'ai/enterprise-subscription.md',
 
     ]),
     // worktile
@@ -71,6 +85,28 @@ export default defineConfig({
       'plugin/uts-plugin.md',
       'plugin/uts-uni-api.md',
       'plugin/faq/faq.md'
+    ]),
+    // tutorial
+    ...createSyncMapping([
+      {
+        from: 'tutorial/err-spec.md',
+        to: 'err-spec.md',
+      }
+    ]),
+    // tutorial
+    ...createSyncMapping([
+      {
+        from: 'tutorial/platform.md',
+        to: 'compiler/platform.md',
+      },
+      {
+        from: 'tutorial/env.md',
+        to: 'compiler/env.md',
+      },
+      {
+        from: 'tutorial/page-static-assets.md',
+        to: 'compiler/page-static-assets.md',
+      }
     ])
   ],
 });

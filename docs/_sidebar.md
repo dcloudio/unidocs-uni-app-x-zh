@@ -75,7 +75,7 @@
   * [鸿蒙Debug断点](https://uniapp.dcloud.net.cn/tutorial/debug/uni-uts-debug-harmony.html)
   * [AI纠错](tutorial/bug_repair.md)
 * [性能优化](performance.md)
-* [uni错误规范](https://uniapp.dcloud.net.cn/tutorial/err-spec.html)
+* [uni错误规范](err-spec.md)
 * [暗黑模式](api/theme-change.md)
 * [宽屏适配](adapt.md)
 * [国际化](i18n.md)
