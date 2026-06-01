@@ -15,6 +15,7 @@ const routerMap = {
   '/api/theme.html': `${PREFIX}/api/theme-change.html`,
   '/api/websocket-global.html': `${PREFIX}/api/websocket.html`,
   '/dom/': `${PREFIX}/api/dom/`,
+  '/app-harmony/harmony-vapor.html': `${PREFIX}/app-vapor.html`,
 }
 
 export default ({ fullPath, path, hash }) => {
