@@ -236,7 +236,7 @@ pages.json
     + [box-shadow](css/box-shadow.md) 不支持设置 inset 及 spreadRadius
     + [display](css/display.md) 为 fixed 时显示存在缺陷，无法覆盖其它非 fixed 的元素
   * image组件拍平后无法播放动画，gif、webp动画仅显示第一帧
-  * view组件拍平后css属性transform、overflow、display、opacity存在缺陷，如果veiw存在子元素，这些样式不会对非拍平的子元素产生效果
+  * view组件拍平后css属性transform、overflow、display、opacity存在缺陷，如果view存在子元素，这些样式不会对非拍平的子元素产生效果
 
   注意：当自定义组件的单根节点是（view、text、image）时，该自定义组件会自动支持flatten属性，并将其传递给它的单根节点，如果在不符合要求的自定义组件上使用flatten属性，则会被自动忽略。
 
