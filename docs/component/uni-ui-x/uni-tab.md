@@ -10,8 +10,6 @@ source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-tab-bar
 
 <!-- UTSCOMJSON.uni-tab.description -->
 
-<!-- UTSCOMJSON.uni-tab.readme -->
-
 <!-- UTSCOMJSON.uni-tab.compatibility -->
 
 <!-- UTSCOMJSON.uni-tab.attribute -->
@@ -54,8 +52,6 @@ source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-tab-bar
 
 <!-- UTSCOMJSON.uni-tab-item.description -->
 
-<!-- UTSCOMJSON.uni-tab-item.readme -->
-
 <!-- UTSCOMJSON.uni-tab-item.compatibility -->
 
 <!-- UTSCOMJSON.uni-tab-item.attribute -->
@@ -77,8 +73,6 @@ source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-tab-bar
 
 <!-- UTSCOMJSON.uni-tab-content.description -->
 
-<!-- UTSCOMJSON.uni-tab-content.readme -->
-
 <!-- UTSCOMJSON.uni-tab-content.compatibility -->
 
 <!-- UTSCOMJSON.uni-tab-content.attribute -->
@@ -99,8 +93,6 @@ source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-tab-bar
 <!-- UTSCOMJSON.uni-tab-midbutton.name -->
 
 <!-- UTSCOMJSON.uni-tab-midbutton.description -->
-
-<!-- UTSCOMJSON.uni-tab-midbutton.readme -->
 
 <!-- UTSCOMJSON.uni-tab-midbutton.compatibility -->
 
