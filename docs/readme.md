@@ -289,7 +289,7 @@ uni-app (x) 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/workt
 2. 对于css，如果你之前使用nvue的css，那么迁移到uni-app x在样式上改动很小。如果之前是vue的css，那么需要改为flex布局，以及仅使用uvue支持的css来布局界面。
 3. 对于script，如果你之前使用ts，那么改造成本会很低。如果使用js，那需要改造成uts，差别最大的就是补类型，没法再使用弱类型了。2026年uni-app x的Android版也会补充js驱动，届时可实现语言免迁移。
 4. 组件的写法基本没有差别，但注意组件的事件返回值也是强类型
-5. 通过uni-agent，先改造成web、微信小程序、iOS、鸿蒙这几个平台，先不迁移Android（因Android暂无js驱动），先把项目结构和css迁移过来。跑通这一步后，再开始迁移Android的us驱动或等待官方即将推出的Android js驱动版。
+5. 通过uni-agent，先改造成web、微信小程序、iOS、鸿蒙这几个平台，先不迁移Android（因Android暂无js驱动），先把项目结构和css迁移过来。跑通这一步后，再开始迁移Android的uts驱动或等待官方即将推出的Android js驱动版。
 
 在Android上，你还可以把uni-app js版老项目作为uni-app x新项目的一个小程序来使用。在uni-app x里内嵌uni小程序sdk，详见：[uni-unimp](https://ext.dcloud.net.cn/plugin?id=17638)。
 
