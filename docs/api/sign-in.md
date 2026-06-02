@@ -110,7 +110,7 @@ export class UniOAuthWeixinProviderImpl implements UniOAuthWeixinProvider {
           // #endif
       },
       fail: (e) => {
-         console.log("获取支付通道失败：", e);
+         console.log("获取微信登录通道失败：", e);
       }
    })
 ```
