@@ -65,6 +65,7 @@
     * [web-view](web-view.md)
   * 页面属性配置节点
     * [custom-tab-bar](custom-tab-bar.md)
+    * [page-meta](page-meta.md)
   * unicloud
     * [unicloud-db](unicloud-db.md)
 * [uni-ui x 扩展组件](./uni-ui-x/README.md)
