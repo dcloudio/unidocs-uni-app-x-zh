@@ -51,7 +51,7 @@ web 端、小程序需要配置 [manifest.json](../collocation/manifest.md) 中 
 #### 2. pages.json和theme.json
 
 [pages.json](../collocation/pagesjson.md)的亮黑设置，需要通过[theme.json](../collocation/themejson.md)处理。
-	
+
 要特别注意，**适配暗黑模式，在项目根目录下放置theme.json文件是必不可少的环节**。
 
 该文件除了处理tabbar和导航栏之外，非常重要的是globalStyle里的页面style的backgroundColorContent属性。
@@ -216,7 +216,7 @@ onLaunch(() => {
 在根节点的class中，根据`state.isDark`设置class，让全局样式的`theme-dark`或`theme-light`生效。
 
 这2个class又影响了2个css变量 `--background-color` 和 `--text-color` 的值。
- 
+
 ```vue
 <template>
 	<view :class="state.isDark ? 'theme-dark' : 'theme-light'"> <!--根view不需要设背景色，因为页面已经设置过背景色了-->
@@ -256,10 +256,10 @@ onLaunch(() => {
 
 <script setup lang="uts">
 	import { state } from '@/store/index.uts'
-	
+
 	const current = ref(0)
 	const appThemeitems = ref(["light","dark","auto"] as string[])
-	
+
 	function radioChange(e : UniRadioGroupChangeEvent) {
 	  const theme = e.detail.value
 	  uni.setAppTheme({
@@ -276,11 +276,11 @@ onLaunch(() => {
 	    icon: 'none'
 	  })
 	}
-	
+
 	onReady(() => {
 	  current.value = appThemeitems.value.indexOf(uni.getAppBaseInfo().appTheme)
 	})
-	
+
 </script>
 
 <style>
@@ -353,6 +353,9 @@ uni.setAppTheme({
 **版本历史调整**
 - HBuilderX 4.18版本的逻辑是：[uni.setAppTheme](#setapptheme) 设置的 theme 值变化时触发本监听回调，回调参数中的 appTheme 值可能是"light" | "dark" | "auto"。在 app 平台设置应用的 theme 值为 auto 后，需再次查询osTheme来判断当前的真实主题。如果应用主题是auto，那么需要同时监听osTheme的变化。
 - HBuilderX 4.19版本调整为：应用的light/dark主题真正发生变化时触发监听回调。无论是手动设置setAppTheme还是跟随osTheme变化，只要真正变化了就会触发本监听。回调参数中的 appTheme 值只能是"light" | "dark"。
+
+**注意**
+- 在 App 上需要先调用 `plus.nativeUI.setUIStyle('auto')` 开启跟随系统主题切换的功能，才能监听到主题切换事件
 
 <!-- UTSAPIJSON.onAppThemeChange.compatibility -->
 
