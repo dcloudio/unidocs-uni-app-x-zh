@@ -97,10 +97,10 @@ export class UniShareWeixinProviderImpl implements UniShareWeixinProvider {
 
 ```ts
    uni.getProvider({
-      service: "payment",
+      service: "share",
       success: (e) => {
          const provider = e.providers.find((item): boolean => {
-            return item.id == 'wxpay'
+            return item.id == 'weixin'
          })
 
           // #ifdef APP-ANDROID
@@ -119,7 +119,7 @@ export class UniShareWeixinProviderImpl implements UniShareWeixinProvider {
           // #endif
       },
       fail: (e) => {
-         console.log("获取支付通道失败：", e);
+         console.log("获取分享通道失败：", e);
       }
    })
 ```
