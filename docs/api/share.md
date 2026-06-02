@@ -4,6 +4,8 @@
 
 <!-- UTSAPIJSON.share.description -->
 
+> Android、iOS平台从 HBuilderX5.08 版本开始支持微信分享  
+
 <!-- UTSAPIJSON.share.compatibility -->
 
 <!-- UTSAPIJSON.share.param -->
