@@ -354,9 +354,6 @@ uni.setAppTheme({
 - HBuilderX 4.18版本的逻辑是：[uni.setAppTheme](#setapptheme) 设置的 theme 值变化时触发本监听回调，回调参数中的 appTheme 值可能是"light" | "dark" | "auto"。在 app 平台设置应用的 theme 值为 auto 后，需再次查询osTheme来判断当前的真实主题。如果应用主题是auto，那么需要同时监听osTheme的变化。
 - HBuilderX 4.19版本调整为：应用的light/dark主题真正发生变化时触发监听回调。无论是手动设置setAppTheme还是跟随osTheme变化，只要真正变化了就会触发本监听。回调参数中的 appTheme 值只能是"light" | "dark"。
 
-**注意**
-- 在 App 上需要先调用 `plus.nativeUI.setUIStyle('auto')` 开启跟随系统主题切换的功能，才能监听到主题切换事件
-
 <!-- UTSAPIJSON.onAppThemeChange.compatibility -->
 
 <!-- UTSAPIJSON.onAppThemeChange.param -->
