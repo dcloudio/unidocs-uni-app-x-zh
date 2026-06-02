@@ -88,10 +88,10 @@ export class UniOAuthWeixinProviderImpl implements UniOAuthWeixinProvider {
 
 ```ts
    uni.getProvider({
-      service: "payment",
+      service: "oauth",
       success: (e) => {
          const provider = e.providers.find((item): boolean => {
-            return item.id == 'wxpay'
+            return item.id == 'weixin'
          })
 
           // #ifdef APP-ANDROID
