@@ -82,11 +82,6 @@ export class UniOAuthWeixinProviderImpl implements UniOAuthWeixinProvider {
 
 第四步，打包自定义基座然后运行
 
-## uni.getUserInfo(options) @getuserinfo
-
-<!-- UTSAPIJSON.getUserInfo.description -->
-
-<!-- UTSAPIJSON.getUserInfo.compatibility -->
 ### 注意
 - App平台开发微信登录，无需自定义基座，真机运行可直接开发
 - App平台判断微信是否安装可以通过`uni.getProvider`的方式，详见[uni.getProvider](https://doc.dcloud.net.cn/uni-app-x/api/provider.html#getprovider)
@@ -121,6 +116,11 @@ export class UniOAuthWeixinProviderImpl implements UniOAuthWeixinProvider {
 ```
 - **app需要在根目录manifest.json文件中配置`uni-oauth`节点，详见 [https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-oauth模块配置](https://doc.dcloud.net.cn/uni-app-x/collocation/manifest-modules.html#uni-oauth)**
 
+## uni.getUserInfo(options) @getuserinfo
+
+<!-- UTSAPIJSON.getUserInfo.description -->
+
+<!-- UTSAPIJSON.getUserInfo.compatibility -->
 
 <!-- UTSAPIJSON.getUserInfo.param -->
 
