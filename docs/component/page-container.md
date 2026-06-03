@@ -22,8 +22,8 @@ page-container 的特点：
 - Web 设置 `overlay: true` 时，组件会禁止背景页面滚动，避免滚动穿透
 - 小程序 `uni.navigateBack` 无法在页面栈顶调用，此时没有上一级页面
 - 小程序不支持 `左侧弹出`，App 和 Web 支持
-- 微信小程序 `enter` 和 `leave` 相关事件的回调函数有参数 `event`，App 和 Web 平台没有
-- 开启 `closeOnSlideDown` 后，微信小程序需要快速下滑才生效，App 和 Web 会跟着手指拖动滑动
+- 小程序 `enter` 和 `leave` 相关事件的回调函数有参数 `event`，App 和 Web 平台没有
+- 开启 `closeOnSlideDown` 后，小程序需要快速下滑才生效，而 App 和 Web 会跟着手指拖动滑动
 - 小程序页面最多只有1个page-container，若已存在page-container的情况下，无法新弹出page-container。App 和 Web 支持弹出多个page-container组件，后弹覆盖先弹。
 - Web 暂不支持拦截侧滑返回和浏览器的后退按钮
 - `overlay-style` 设置 `pointer-events: none` 可以实现点击遮罩层不关闭弹窗
