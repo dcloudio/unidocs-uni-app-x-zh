@@ -119,3 +119,4 @@ web平台的inputmode的浏览器兼容性如下： Chrome >= 66、Edge >= 79、
 - 如需自定义软键盘，比如车牌键盘，在插件市场搜索[自定义键盘](https://ext.dcloud.net.cn/search?q=%E8%87%AA%E5%AE%9A%E4%B9%89%E9%94%AE%E7%9B%98&orderBy=Relevance&uni-appx=1)
 - 如需hideKeyBoard隐藏软键盘，在插件市场搜索[hideKeyBoard](https://ext.dcloud.net.cn/search?q=hideKeyBoard&orderBy=Relevance&uni-appx=1)
 - App平台蒸汽模式样式设置暂不支持 css 变量。
+- 所有 boolean 类型的属性，只有设置为布尔类型的 false 才会关闭该属性，其他任何值（包括字符串 "false"）都会被当做 true 处理（微信小程序中空字符串会被视为 false）。

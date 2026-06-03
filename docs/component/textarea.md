@@ -87,3 +87,4 @@ inputmode 兼容性：Chrome >= 66、Edge >= 79、Firefox >= 95、Chrome Android
 * 当软键盘右下角为 换行 时，confirm-hold 恒为 true，设置为false也不生效，即按下 换行 时，软键盘不会消失。
 * 在Android 9以下的系统版本，样式`line-height`点击键盘换行时行间距设置无效，此问题是Android系统的bug，后续解决。
 * App平台蒸汽模式样式设置暂不支持 css 变量。
+* 所有 boolean 类型的属性，只有设置为布尔类型的 false 才会关闭该属性，其他任何值（包括字符串 "false"）都会被当做 true 处理（微信小程序中空字符串会被视为 false）。
