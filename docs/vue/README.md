@@ -304,13 +304,13 @@ style通过lang属性，可以支持less、scss、stylus等css预处理语言。
 
 <!-- VUEJSON.style.description -->
 
+<!-- VUEJSON.style.compatibility -->
+
 <!-- VUEJSON.style.attribute -->
 
 <!-- VUEJSON.style.event -->
 
 <!-- VUEJSON.style.example -->
-
-<!-- VUEJSON.style.compatibility -->
 
 <!-- VUEJSON.style.children -->
 
