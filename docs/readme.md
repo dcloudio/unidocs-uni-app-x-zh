@@ -290,24 +290,7 @@ uni-app (x) 的自动化测试教程详见：[https://uniapp.dcloud.net.cn/workt
 
 ### uni-app js版老项目迁移指南
 
-项目迁移需要利用AI工具，即[uni-agent](https://doc.dcloud.net.cn/uni-app-x/ai/)。
-
-1. 通过uni-agent的plan模式，对项目迁移进行规划。
-	* 检查你的老项目里使用的uni组件、api、三方插件、三方库，在uni-app x上是否支持。
-	* 如果UI库不支持uni-app x，推荐通过uni-agent改成[uni-ui x](./component/uni-ui-x/README.md)。
-	* 如果你使用了uts原生插件（API插件），那么这些插件可以直接在uni-app x下使用。如果使用了uts兼容模式组件，注意无法在蒸汽模式下运行。
-	* 大多数js库，在插件市场都有uts的对应版本，比如
-	[pinia](https://ext.dcloud.net.cn/search?q=pinia&uni-appx=1)、
-	[加密](https://ext.dcloud.net.cn/search?q=%E5%8A%A0%E5%AF%86&uni-appx=1)、
-	[dayjs](https://ext.dcloud.net.cn/search?q=dayjs&uni-appx=1)、
-	[图表](https://ext.dcloud.net.cn/search?q=%E5%9B%BE%E8%A1%A8&uni-appx=1)
-	* 对于其他三方库，如果找不到uni-app x的适配版本，那么通过uni-agent写替代版本也可以。很多简单的库，用ai转写可能比去插件市场找新库更省事。
-2. 对于css，如果你之前使用nvue的css，那么迁移到uni-app x在样式上改动很小。如果之前是vue的css，那么需要改为flex布局，以及仅使用uvue支持的css来布局界面。
-3. 对于script，如果你之前使用ts，那么改造成本会很低。如果使用js，那需要改造成uts，差别最大的就是补类型，没法再使用弱类型了。2026年uni-app x的Android版也会补充js驱动，届时可实现语言免迁移。
-4. 组件的写法基本没有差别，但注意组件的事件返回值也是强类型
-5. 通过uni-agent，先改造成web、微信小程序、iOS、鸿蒙这几个平台，先不迁移Android（因Android暂无js驱动），先把项目结构和css迁移过来。跑通这一步后，再开始迁移Android的uts驱动或等待官方即将推出的Android js驱动版。
-
-在Android上，你还可以把uni-app js版老项目作为uni-app x新项目的一个小程序来使用。在uni-app x里内嵌uni小程序sdk，详见：[uni-unimp](https://ext.dcloud.net.cn/plugin?id=17638)。
+详见：[uni-app 升级 uni-app x](./uniapptox.md)
 
 ### 原生/rn/flutter页面兼容指南
 
