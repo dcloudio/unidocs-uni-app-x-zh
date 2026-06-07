@@ -22,6 +22,9 @@ scroll-view 嵌套场景中。外层 scroll-view 滚动时无法与内层 scroll
 + `nested-scroll-header` 组件应该放在 `nested-scroll-body` 组件前面（上面）  
 + `nested-scroll-header` 组件不支持多个子节点，渲染时只会取第一个子节点来渲染  
 
+> 蒸汽模式下此组件已无实际意义，仅为向下兼容而支持。  
+
+
 <!-- UTSCOMJSON.nested-scroll-header.children -->
 
 <!-- UTSCOMJSON.nested-scroll-header.example -->

@@ -529,13 +529,13 @@ onReady(() => {
   ```
 <!-- VUEJSON.script.description -->
 
+<!-- VUEJSON.script.compatibility -->
+
 <!-- VUEJSON.script.attribute -->
 
 <!-- VUEJSON.script.event -->
 
 <!-- VUEJSON.script.example -->
-
-<!-- VUEJSON.script.compatibility -->
 
 <!-- VUEJSON.script.children -->
 

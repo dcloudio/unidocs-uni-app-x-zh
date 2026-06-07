@@ -353,13 +353,13 @@
 
 <!-- VUEJSON.keep-alive.description -->
 
+<!-- VUEJSON.keep-alive.compatibility -->
+
 <!-- VUEJSON.keep-alive.attribute -->
 
 <!-- VUEJSON.keep-alive.event -->
 
 <!-- VUEJSON.keep-alive.example -->
-
-<!-- VUEJSON.keep-alive.compatibility -->
 
 <!-- VUEJSON.keep-alive.children -->
 
@@ -369,13 +369,13 @@
 
 <!-- VUEJSON.transition.description -->
 
+<!-- VUEJSON.transition.compatibility -->
+
 <!-- VUEJSON.transition.attribute -->
 
 <!-- VUEJSON.transition.event -->
 
 <!-- VUEJSON.transition.example -->
-
-<!-- VUEJSON.transition.compatibility -->
 
 <!-- VUEJSON.transition.children -->
 
@@ -386,13 +386,13 @@
 
 <!-- VUEJSON.transition-group.description -->
 
+<!-- VUEJSON.transition-group.compatibility -->
+
 <!-- VUEJSON.transition-group.attribute -->
 
 <!-- VUEJSON.transition-group.event -->
 
 <!-- VUEJSON.transition-group.example -->
-
-<!-- VUEJSON.transition-group.compatibility -->
 
 <!-- VUEJSON.transition-group.children -->
 
@@ -403,6 +403,8 @@
 
 <!-- VUEJSON.teleport.description -->
 
+<!-- VUEJSON.teleport.compatibility -->
+
 <!-- VUEJSON.teleport.attribute -->
 
 **注意：**
@@ -411,8 +413,6 @@
 <!-- VUEJSON.teleport.event -->
 
 <!-- VUEJSON.teleport.example -->
-
-<!-- VUEJSON.teleport.compatibility -->
 
 <!-- VUEJSON.teleport.children -->
 
@@ -423,6 +423,8 @@
 ### \<template> @template
 
 <!-- VUEJSON.template.description -->
+
+<!-- VUEJSON.template.compatibility -->
 
 `<template>` 有2个用途：
 1. 作为单文件组件规范的模板根节点。在 `<template>` 下面放置页面模板真正的组件内容。
@@ -464,8 +466,6 @@
 
 <!-- VUEJSON.template.example -->
 
-<!-- VUEJSON.template.compatibility -->
-
 <!-- VUEJSON.template.children -->
 
 <!-- VUEJSON.template.reference -->
@@ -475,13 +475,13 @@
 
 <!-- VUEJSON.slot.description -->
 
+<!-- VUEJSON.slot.compatibility -->
+
 <!-- VUEJSON.slot.attribute -->
 
 <!-- VUEJSON.slot.event -->
 
 <!-- VUEJSON.slot.example -->
-
-<!-- VUEJSON.slot.compatibility -->
 
 <!-- VUEJSON.slot.children -->
 
@@ -491,13 +491,13 @@
 
 <!-- VUEJSON.component.description -->
 
+<!-- VUEJSON.component.compatibility -->
+
 <!-- VUEJSON.component.attribute -->
 
 <!-- VUEJSON.component.event -->
 
 <!-- VUEJSON.component.example -->
-
-<!-- VUEJSON.component.compatibility -->
 
 <!-- VUEJSON.component.children -->
 

@@ -23,7 +23,9 @@
 
 | 源文件 | 依赖库 | 资源文件 |
 | ---   | ---| ---|
-| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift <br> uni-crash-index.swift <br> uni-crash-UniCrashManager.swift <br> uni-privacy-index.swift <br> uni-dialogPage-index.swift <br> uni-dialogPage-native.swift <br> uni-event-index.swift <br> uni-event-native.swift <br> uni-exit-index.swift <br> uni-actionSheet-index.swift <br> uni-modal-index(4.61+)  <br> uni-prompt-UniAlert-DCActionSheetActionCell.swift(4.61+) <br> uni-prompt-UniAlert-DCActionSheetController.swift(4.61+) <br> uni-prompt-UniAlert-DCActionSheetHeader.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertContentView.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertControllerUtil.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertView.Blocks.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertViewController.swift(4.61+) <br> uni-prompt-UniAlert-DCBottomMenuController.swift(4.61+) <br> uni-prompt-UniAlert-DCloudAlertControllerComponents.swift(4.61+) <br> uni-prompt-UniAlert-DCloudTextView.swift(4.61+) <br> uni-prompt-UniAlert-DCRIButtonItem.swift(4.61+) <br> uni-prompt-UniAlert-UIView.Layout.swift(4.61+) <br> uni-prompt-UniToast-MCToast.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Loading.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Remove.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Status.swift(4.61+) <br> uni-prompt-UniToast-MCToast+StatusBar.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Text.swift(4.61+) <br> uni-prompt-UniToast-MCToastConfig.swift(4.61+) <br> uni-prompt-UniToast-MCToastHelper.swift(4.61+) <br>| DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> KSCrash.xcframework <br> storage.framework| uts-config.json |
+| UTSOC.h <br> UTSOC.mm <br> uni-getAppAuthorizeSetting-index.swift <br> uni-getAppBaseInfo-index.swift <br> uni-getDeviceInfo-index.swift <br> uni-getSystemInfo-index.swift <br> uni-getSystemSetting-index.swift <br> uni-openAppAuthorizeSetting-index.swift <br> uni-prompt-index.swift <br> uni-rpx2px-index.swift <br> uni-storage-index.swift <br> uni-theme-index.swift <br> uni-getElementById-DCUniGetElementById.swift <br> uni-getElementById-index.swift <br> uni-crash-index.swift <br> uni-crash-UniCrashManager.swift <br> uni-privacy-index.swift <br> uni-dialogPage-index.swift <br> uni-dialogPage-native.swift <br> uni-event-index.swift <br> uni-event-native.swift <br> uni-exit-index.swift <br> uni-actionSheet-index.swift <br> uni-modal-index(4.61+)  <br> uni-prompt-UniAlert-DCActionSheetActionCell.swift(4.61+) <br> uni-prompt-UniAlert-DCActionSheetController.swift(4.61+) <br> uni-prompt-UniAlert-DCActionSheetHeader.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertContentView.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertControllerUtil.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertView.Blocks.swift(4.61+) <br> uni-prompt-UniAlert-DCAlertViewController.swift(4.61+) <br> uni-prompt-UniAlert-DCBottomMenuController.swift(4.61+) <br> uni-prompt-UniAlert-DCloudAlertControllerComponents.swift(4.61+) <br> uni-prompt-UniAlert-DCloudTextView.swift(4.61+) <br> uni-prompt-UniAlert-DCRIButtonItem.swift(4.61+) <br> uni-prompt-UniAlert-UIView.Layout.swift(4.61+) <br> uni-prompt-UniToast-MCToast.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Loading.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Remove.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Status.swift(4.61+) <br> uni-prompt-UniToast-MCToast+StatusBar.swift(4.61+) <br> uni-prompt-UniToast-MCToast+Text.swift(4.61+) <br> uni-prompt-UniToast-MCToastConfig.swift(4.61+) <br> uni-prompt-UniToast-MCToastHelper.swift(4.61+) <br> uni-form-index.swift <br>| DCloudUniappRuntime.xcframework <br> DCloudUTSFoundation.xcframework <br> DCUniToast.xcframework <br> DCloudAlertController.xcframework <br> KSCrash.xcframework <br> storage.framework| uts-config.json |
+
+* 注意： checkbox-group、form、picker-view、radio、textarea、checkbox、input、picker、picker-view-column、radio-group、switch 组件均依赖 uni-form-index.swift 
 
 ### 配置其他模块(可选)
 根据资源文件中的`manifest.json`文件包含的模块名称，选择以下源文件(`SDK/ExtApiSrc 目录下`)、依赖库(`SDK/Libs 目录下`)添加到DCloudUTSExtAPI工程中，依赖库均设置为`Do Not Embed`
@@ -72,17 +74,17 @@
 | uni-loading(5.0+) | uni-loading-index.swift <br> uni-loading-SpinnerView.swift <br> uni-loading-UniLoadingComponentRegister.swift | | |
 | uni-showLoading(5.0+) | uni-showLoading-index.swift | | |
 | uni-web-view(5.0+) | uni-web-view-index.swift <br> uni-web-view-InnerWebView.swift <br> uni-web-view-Snapshot.swift <br> uni-web-view-UniBaseWebView.swift <br> uni-web-view-UniViewLifecycle.swift <br> uni-web-view-UniWebComponentRegister.swift | | |
-| uni-accelerometer(5.0.8+) | uni-accelerometer-index.swift <br> AccelerometerNative.swift | | |
-| uni-authentication(5.0.8+) | uni-authentication-index.swift | | |
-| uni-calendar(5.0.8+) | uni-calendar-index.swift <br> UniCalendarNative.swift | | |
-| uni-compass(5.0.8+) | uni-compass-index.swift <br> CompassNative.swift | | |
-| uni-gyroscope(5.0.8+) | uni-gyroscope-index.swift <br> UniGyroscopeNative.swift | | |
-| uni-memory(5.0.8+) | uni-memory-index.swift | | |
-| uni-phoneContact(5.0.8+) | uni-phoneContact-index.swift <br> AddPhoneContactNative.swift | | |
-| uni-screenBrightness(5.0.8+) | uni-screenBrightness-index.swift | | |
-| uni-vibrate(5.0.8+) | uni-screenBrightness-index.swift <br> VibrateNative.swift | | |
-| uni-oauth-weixin(5.0.8+) | uni-oauth-weixin-index.swift <br> uni-oauth-index.swift| libWeChatSDK | CoreGraphics.framework <br> WebKit.framework <br> Security.framework |
-| uni-share-weixin(5.0.8+) | uni-share-weixin-index.swift <br> uni-share-index.swift | libWeChatSDK.a | CoreGraphics.framework <br> WebKit.framework <br> Security.framework |
+| uni-accelerometer(5.08+) | uni-accelerometer-index.swift <br> AccelerometerNative.swift | | |
+| uni-authentication(5.08+) | uni-authentication-index.swift | | |
+| uni-calendar(5.08+) | uni-calendar-index.swift <br> UniCalendarNative.swift | | |
+| uni-compass(5.08+) | uni-compass-index.swift <br> CompassNative.swift | | |
+| uni-gyroscope(5.08+) | uni-gyroscope-index.swift <br> UniGyroscopeNative.swift | | |
+| uni-memory(5.08+) | uni-memory-index.swift | | |
+| uni-phoneContact(5.08+) | uni-phoneContact-index.swift <br> AddPhoneContactNative.swift | | |
+| uni-screenBrightness(5.08+) | uni-screenBrightness-index.swift | | |
+| uni-vibrate(5.08+) | uni-screenBrightness-index.swift <br> VibrateNative.swift | | |
+| uni-oauth-weixin(5.08+) | uni-oauth-weixin-index.swift <br> uni-oauth-index.swift| libWeChatSDK | CoreGraphics.framework <br> WebKit.framework <br> Security.framework |
+| uni-share-weixin(5.08+) | uni-share-weixin-index.swift <br> uni-share-index.swift | libWeChatSDK.a | CoreGraphics.framework <br> WebKit.framework <br> Security.framework |
 
 
 ### 配置uts-config.json(可选)
