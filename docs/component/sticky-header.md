@@ -40,6 +40,7 @@
 + 鸿蒙平台 `sticky-header` 组件只能作为 `sticky-section` 的子元素使用  
 + 鸿蒙平台API版本低于17的设备不支持 `sticky-header` 组件，可在滚动容器里自行监听滚动，设置某个区域的top为固定值来实现吸顶效果，参考hello uni-app x的模板->[scroll-view自定义滚动吸顶示例](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/pages/template/scroll-sticky/scroll-sticky.uvue)
 + 蒸汽模式 sticky-header必须是sticky-section内首个元素
++ 蒸汽模式 每个sticky-section下仅支持一个sticky-header
 
 
 <!-- UTSCOMJSON.sticky-header.children -->
