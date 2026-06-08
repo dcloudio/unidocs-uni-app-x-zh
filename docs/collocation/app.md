@@ -12,7 +12,7 @@
 
 应用生命周期仅可在`App.uvue`中监听，在页面监听无效。
 
-`App.uvue`仅支持选项式，暂不支持组合式写法。
+`App.uvue`从HBuilderX 5.0起支持组合式。以前的版本仅支持选项式。
 
 ## 应用生命周期@applifecycle
 
