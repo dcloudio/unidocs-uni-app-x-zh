@@ -8,6 +8,6 @@
   * [安卓App配置](manifest-android.md)
   * [iOS App配置](manifest-ios.md)
 	* [鸿蒙模块配置](manifest-harmony.md)
-* [AndroidManifest.xml](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html)
+* [AndroidManifest.xml](app-nativeresource-android.md)
 * [Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html)
 * [uni.scss](https://uniapp.dcloud.net.cn/collocation/uni-scss.html)
