@@ -1,6 +1,6 @@
 * [pages.json](pagesjson.md)
 * [theme.json](themejson.md)
-* [main.uts](https://uniapp.dcloud.net.cn/collocation/main.html)
+* [main.uts](main.md)
 * [app.uvue](app.md)
 * manifest.json
   * [概述](manifest.md)

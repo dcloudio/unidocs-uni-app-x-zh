@@ -141,6 +141,10 @@ export default defineConfig({
         from: 'tutorial/app-nativeresource-android.md',
         to: 'collocation/app-nativeresource-android.md',
       }
+    ]),
+    // collocation
+    ...createSyncMapping([
+      'collocation/main.md',
     ])
   ],
 });
