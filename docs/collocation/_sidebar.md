@@ -9,5 +9,5 @@
   * [iOS App配置](manifest-ios.md)
 	* [鸿蒙模块配置](manifest-harmony.md)
 * [AndroidManifest.xml](app-nativeresource-android.md)
-* [Info.plist](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-ios.html)
+* [Info.plist](app-nativeresource-ios.md)
 * [uni.scss](uni-scss.md)

@@ -140,6 +140,10 @@ export default defineConfig({
       {
         from: 'tutorial/app-nativeresource-android.md',
         to: 'collocation/app-nativeresource-android.md',
+      },
+      {
+        from: 'tutorial/app-nativeresource-ios.md',
+        to: 'collocation/app-nativeresource-ios.md',
       }
     ]),
     // collocation
