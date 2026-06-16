@@ -136,7 +136,20 @@ export default defineConfig({
       {
         from: 'tutorial/debug/uni-uts-debug-harmony.md',
         to: 'tutorial/uni-uts-debug-harmony.md',
+      },
+      {
+        from: 'tutorial/app-nativeresource-android.md',
+        to: 'collocation/app-nativeresource-android.md',
+      },
+      {
+        from: 'tutorial/app-nativeresource-ios.md',
+        to: 'collocation/app-nativeresource-ios.md',
       }
+    ]),
+    // collocation
+    ...createSyncMapping([
+      'collocation/main.md',
+      'collocation/uni-scss.md',
     ])
   ],
 });

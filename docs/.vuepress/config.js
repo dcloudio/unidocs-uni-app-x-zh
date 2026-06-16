@@ -90,7 +90,8 @@ const config = {
       const extensionMap = {
         uts: 'ts',
         ets: 'ts',
-        uvue: 'vue'
+        uvue: 'vue',
+        jsonc: 'json'
       }
       config.options.highlight((str, lang) => {
         const extension = extensionMap[lang]
