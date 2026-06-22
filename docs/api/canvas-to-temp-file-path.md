@@ -4,7 +4,7 @@
 
 <!-- UTSAPIJSON.canvasToTempFilePath.compatibility -->
 
-* 截图或海报需求，app平台view直接提供截图API，[takesnapshot](../dom/unielement.html#takesnapshot)。
+* 截图或海报需求，app平台view直接提供截图API，[takesnapshot](./dom/unielement.md#takesnapshot)。
 
 <!-- UTSAPIJSON.canvasToTempFilePath.param -->
 

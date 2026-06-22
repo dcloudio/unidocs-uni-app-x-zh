@@ -166,7 +166,7 @@ pages.json里的内容是静态的，通过本API可以动态设置UniPage的Sty
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.description -->
 
-用于逆转先前调用 [UniElement.requestFullscreen](/dom/unielement.md#requestfullscreen) 的效果。
+用于逆转先前调用 [UniElement.requestFullscreen](./dom/unielement.md#requestfullscreen) 的效果。
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.exitFullscreen.compatibility -->
 
@@ -368,7 +368,7 @@ pages.json里的内容是静态的，通过本API可以动态设置UniPage的Sty
 | 不超过一屏 | scroll-view 滚动容器 | 内容高度<sup>①</sup> | 内容高度<sup>①</sup> | 内容高度<sup>①</sup> | 内容高度<sup>①</sup> |
 | 不超过一屏 | 非 scroll-view 容器 | 屏幕高度<sup>②</sup> | 屏幕高度<sup>②</sup> | 屏幕高度<sup>②</sup> | 屏幕高度<sup>②</sup> |
 
-> ① 截图高度等于内容实际高度（内容多高截图就多高）  
+> ① 截图高度等于内容实际高度（内容多高截图就多高）
 > ② 截图高度固定为屏幕高度（不管内容多少都是一屏高）
 
 <!-- CUSTOMTYPEJSON.UniPage.methods.takeSnapshot.compatibility -->

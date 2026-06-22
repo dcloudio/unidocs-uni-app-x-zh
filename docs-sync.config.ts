@@ -99,14 +99,6 @@ export default defineConfig({
         from: 'tutorial/platform.md',
         to: 'compiler/platform.md',
       },
-      {
-        from: 'tutorial/env.md',
-        to: 'compiler/env.md',
-      },
-      {
-        from: 'tutorial/page-static-assets.md',
-        to: 'compiler/page-static-assets.md',
-      },
       'tutorial/CORS.md',
       'tutorial/adapt.md',
       {

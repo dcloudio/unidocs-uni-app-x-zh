@@ -281,7 +281,7 @@ console.log("packageName",packageName)
 
 <!-- UTSJSON.UTSAndroid.getUniActivity.description -->
 
-> 在uvue页面中也可先通过 [uni.getElementById](../api/get-element-by-id.md) 获取节点元素对象 [UniElement](../dom/unielement.md)，在调用其 [getAndroidActivity](../dom/unielement.md#getandroidactivity) 获取android原生 [Activity](https://developer.android.google.cn/reference/android/app/Activity)。
+> 在uvue页面中也可先通过 [uni.getElementById](../api/get-element-by-id.md) 获取节点元素对象 [UniElement](../api/dom/unielement.md)，在调用其 [getAndroidActivity](../api/dom/unielement.md#getandroidactivity) 获取android原生 [Activity](https://developer.android.google.cn/reference/android/app/Activity)。
 
 <!-- UTSJSON.UTSAndroid.getUniActivity.param -->
 
