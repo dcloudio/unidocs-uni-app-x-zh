@@ -5,3 +5,4 @@ docs/.vuepress/dist
 **/llms.txt
 docs-lite
 .docs-sync-cache
+inject-json-missing-placeholders.log

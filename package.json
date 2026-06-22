@@ -16,7 +16,9 @@
     "sync:dev": "cross-env NODE_ENV=development docs-sync sync",
     "sync:dry-run": "docs-sync sync --dry-run",
     "sync:dev:dry-run": "cross-env NODE_ENV=development docs-sync sync --dry-run",
-    "sync:debug": "docs-sync sync --debug"
+    "sync:debug": "docs-sync sync --debug",
+    "check:md-placeholders": "node scripts/check-md-placeholders.js",
+    "check:md-placeholders:strict": "node scripts/check-md-placeholders.js --strict"
   },
   "repository": {
     "type": "git",
