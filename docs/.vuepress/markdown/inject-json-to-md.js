@@ -28,6 +28,7 @@ const JSON_PLACEHOLDER_REGEXP = new RegExp(
   'g'
 )
 const EXAMPLE_REGEXP = /<!--\s*EXAMPLEJSON\.([A-Za-z0-9_$.-]+)\s*-->/g
+const SHOULD_RELOAD_JSON = process.env.NODE_ENV === 'development'
 const jsonCache = new Map()
 const reportedLoadErrors = new Set()
 const reportedMissingPlaceholders = new Set()
@@ -43,8 +44,12 @@ function warnOnce(cache, key, message) {
 function loadJson(fileName) {
   const filePath = path.join(UTILS_DIR, fileName)
   try {
-    const stat = fs.statSync(filePath)
     const cached = jsonCache.get(fileName)
+    if (cached && !SHOULD_RELOAD_JSON) {
+      return cached.value
+    }
+
+    const stat = fs.statSync(filePath)
     if (cached && cached.mtimeMs === stat.mtimeMs) {
       return cached.value
     }
