@@ -106,6 +106,10 @@ export default defineConfig({
         to: 'tutorial/run-app.md',
       },
       {
+        from: 'tutorial/page-static-assets.md',
+        to: 'compiler/page-static-assets.md',
+      },
+      {
         from: 'tutorial/run/uts-development-android.md',
         to: 'tutorial/uts-development-android.md',
       },
