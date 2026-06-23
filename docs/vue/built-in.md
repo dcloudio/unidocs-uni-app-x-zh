@@ -409,6 +409,7 @@
 
 **注意：**
 - App-Android 平台暂不支持动态修改 `to` 属性。
+- 小程序 平台不支持 `to` 属性。
 
 <!-- VUEJSON.teleport.event -->
 
