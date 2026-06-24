@@ -163,6 +163,8 @@ watch(
 
 [watchEffect()](#watcheffect) 使用 `flush: 'post'` 选项时的别名。
 
+**注意：** App平台下 watchPostEffect 的回调中不能立即访问到更新后的DOM，如果需要访问，需要放到 nextTick 中
+
 示例 [详情](<!-- VUEJSON.E_reactivity.core_watch-post-effect_watch-post-effect.gitUrl -->)
 
 ::: preview <!-- VUEJSON.E_reactivity.core_watch-post-effect_watch-post-effect.webUrl -->
