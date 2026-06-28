@@ -36,7 +36,7 @@ App平台相比web平台，有以下差异：
 - transtion暂不支持使用var
 - VDOM模式的部分组件的样式不支持CSS变量：input、textarea 的 placeholder-style、placeholder-class
 - 蒸汽模式的部分组件的样式暂不支持CSS变量：input、textarea、loading的class。
-- 由于App平台不支持:root伪类，需要自行在页面根元素或合适的父级元素的class中定义css变量，以便在子元素生效
+- App平台不支持:root伪类。蒸汽模式可以使用page选择器替代。vdom模式需要自行在页面根元素或合适的父级元素的class中定义css变量，以便在子元素生效。
 
 <!-- CSSJSON.variables_values.example -->
 
