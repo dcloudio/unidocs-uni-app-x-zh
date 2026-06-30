@@ -17,4 +17,7 @@
 
 <!-- CSSJSON.border-bottom-left-radius.example -->
 
+### tips
+- App平台蒸汽模式不支持相对像素值（rpx）。  
+
 <!-- CSSJSON.border-bottom-left-radius.reference -->
