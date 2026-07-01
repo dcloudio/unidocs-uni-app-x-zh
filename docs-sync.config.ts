@@ -88,13 +88,19 @@ export default defineConfig({
     ]),
     // tutorial
     ...createSyncMapping([
+      'tutorial/CORS.md',
+      'tutorial/adapt.md',
+      'tutorial/app-privacy-detect.md',
+      'tutorial/app-sec-android.md',
+      'tutorial/app-sec-api.md',
+      'tutorial/app-sec-confusion.md',
+      'tutorial/app-security.md',
+      'tutorial/djbh.md',
+      'tutorial/safe.md',
       {
         from: 'tutorial/err-spec.md',
         to: 'err-spec.md',
-      }
-    ]),
-    // tutorial
-    ...createSyncMapping([
+      },
       {
         from: 'tutorial/platform.md',
         to: 'compiler/platform.md',
@@ -107,8 +113,6 @@ export default defineConfig({
         from: 'tutorial/page-static-assets.md',
         to: 'compiler/page-static-assets.md',
       },
-      'tutorial/CORS.md',
-      'tutorial/adapt.md',
       {
         from: 'tutorial/run/run-app.md',
         to: 'tutorial/run-app.md',
