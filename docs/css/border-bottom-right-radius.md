@@ -18,6 +18,6 @@
 <!-- CSSJSON.border-bottom-right-radius.example -->
 
 ### tips
-- App平台蒸汽模式不支持相对像素值（rpx）。  
+- App平台蒸汽模式不支持 rpx 单位。    
 
 <!-- CSSJSON.border-bottom-right-radius.reference -->
