@@ -5,10 +5,6 @@
 uni-app x在App端还有一批组件未与uni-app js引擎版拉齐。有的在排期中，有的提供了替代方案，有的需开发者自行开发插件。
 
 - movable-view：没有ui层和逻辑层的通信阻塞，开发者可自己写代码拖动view。hello uni-app x中有[示例代码](https://gitcode.com/dcloud/hello-uni-app-x/blob/dev/pages/component/general-event/touch-event.uvue)
-- picker：可改用[picker-view](picker-view.md)。在主流的uni-app x三方ui库中，基本都有封装好的弹出组件。uni ui的[uni-data-picker](https://ext.dcloud.net.cn/plugin?id=3796)
-- waterfall/grid-view：会补充
-- editor：使用web-view来加载
-- label：用view加事件来替代
 
 ## Web平台
 
