@@ -97,6 +97,7 @@ export default defineConfig({
       'tutorial/app-security.md',
       'tutorial/djbh.md',
       'tutorial/safe.md',
+      'tutorial/harmony/runbuild.md',
       {
         from: 'tutorial/err-spec.md',
         to: 'err-spec.md',
@@ -134,10 +135,6 @@ export default defineConfig({
         to: 'tutorial/uni-uts-debug-ios.md',
       },
       {
-        from: 'tutorial/harmony/runbuild.md',
-        to: 'tutorial/runbuild.md',
-      },
-      {
         from: 'tutorial/debug/uni-uts-debug-harmony.md',
         to: 'tutorial/uni-uts-debug-harmony.md',
       },
@@ -154,6 +151,22 @@ export default defineConfig({
     ...createSyncMapping([
       'collocation/main.md',
       'collocation/uni-scss.md',
+    ]),
+    // uni-publish
+    ...createSyncMapping([
+      'uni-publish/faq.md',
+      'uni-publish/first.md',
+      'uni-publish/intro.md',
+      'uni-publish/update.md',
+      'uni-publish/config.md',
+    ]),
+    // uni-push
+    ...createSyncMapping([
+      'uni-push/vendor_config.md',
+      'uni-push/v2.md',
+      'uni-push/intro.md',
+      'uni-push/open.md',
+      'uni-push/google-fcm.md',
     ])
   ],
 });
