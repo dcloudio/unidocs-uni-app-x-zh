@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "local:dev": "cross-env NODE_ENV=development npm run dev --no-cache",
-    "dev": "npm run sync && vuepress dev docs",
+    "local:dev": "npm run sync:dev && cross-env NODE_ENV=development vuepress dev docs --no-cache",
+    "dev": "npm run sync && cross-env NODE_ENV=development vuepress dev docs",
     "build": "npm run sync && node --max_old_space_size=6000 ./node_modules/vuepress/cli.js build docs --no-cache",
     "build-lite": "cross-env DOCS_LITE=true node --max_old_space_size=6000 ./node_modules/vuepress/cli.js build docs-lite --no-cache",
     "check-md": "vuepress check-md2 docs",
@@ -16,7 +16,9 @@
     "sync:dev": "cross-env NODE_ENV=development docs-sync sync",
     "sync:dry-run": "docs-sync sync --dry-run",
     "sync:dev:dry-run": "cross-env NODE_ENV=development docs-sync sync --dry-run",
-    "sync:debug": "docs-sync sync --debug"
+    "sync:debug": "docs-sync sync --debug",
+    "check:md-placeholders": "node scripts/check-md-placeholders.js",
+    "check:md-placeholders:strict": "node scripts/check-md-placeholders.js --strict"
   },
   "repository": {
     "type": "git",
