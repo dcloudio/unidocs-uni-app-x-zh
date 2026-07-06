@@ -186,10 +186,11 @@ if(element != null) {
 }
 ```
 
-更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-ios/index.uts)
+更多示例请参考 uts 插件 [uts-get-native-view](https://gitcode.com/dcloud/hello-uni-app-x/blob/alpha/uni_modules/uts-get-native-view/utssdk/app-android/index.uts)
 
 **注意事项：**
 
++ 安卓蒸汽模式目前页面运行在js环境中，无法直接获取原生view类型，需要在uts插件中执行getAndroidView。
 + 安卓平台页面渲染时元素才会构建View，所以元素刚创建就获取View大概率是null，推荐页面onReady时获取。
 + 安卓平台获取的原生View尽可能的避免设置View的background属性，会导致元素background、border、boxshadow css效果失效或设置的background不生效，与设置background时机有关。
 
@@ -233,11 +234,6 @@ if(webViewElement != null) {
 | [input](https://doc.dcloud.net.cn/uni-app-x/component/input.html) | [AppCompatEditText](https://developer.android.google.cn/reference/kotlin/androidx/appcompat/widget/AppCompatEditText) |
 | [textarea](https://doc.dcloud.net.cn/uni-app-x/component/textarea.html) | [AppCompatEditText](https://developer.android.google.cn/reference/kotlin/androidx/appcompat/widget/AppCompatEditText) |
 | [web-view](https://doc.dcloud.net.cn/uni-app-x/component/web-view.html) | [WebView](https://developer.android.google.cn/reference/android/webkit/WebView) |
-
-**注意事项：**
-
-+ 安卓平台页面渲染时元素才会构建View，所以元素刚创建就获取View大概率是null，推荐页面onReady时获取。
-+ 安卓平台获取的原生View尽可能的避免设置View的background属性，会导致元素background、border、boxshadow 失效或设置的background不生效，与设置background时机有关。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getAndroidActivity.name -->
 
@@ -490,7 +486,7 @@ if (view != null && view instanceof WKWebView) {
 
 * 截图会在应用沙盒目录的cache目录产生临时文件，位置[详见](../api/file-system-spec.md#cache)。
 * app端如需主动删除临时文件，使用[uni.getFileSystemManager](../api/get-file-system-manager.md)。
-* app端list-view、web-view组件性能优化仅渲染屏幕显示的内容，所以截图仅能截取到当前屏幕展示的内容。
+* app端list-view、waterflow、rich-text、web-view组件涉及复用，仅渲染屏幕显示的内容，所以截图仅能截取到当前屏幕展示的内容。
 * app端scroll-view组件设置padding后，截图内容不会包含padding区域。
 * 截图默认为png格式，包含透明度。如果view等元素未设置背景，截图后会表现为相关区域透明。另需注意png如果压缩成jpg会丢失透明度，一般会填充成黑色背景。开发者也可以主动给view设背景色来规避截图的png含有透明度。
 
@@ -576,6 +572,8 @@ if (view != null && view instanceof WKWebView) {
 <!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController.name -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController.description -->
+
+注意：getHarmonyController限于ets环境。只能获取在ets环境中创建的原生对象。鸿蒙蒸汽模式中，view、text、image等大部分内置组件都不是ets组件，无法get到其Controller。
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.getHarmonyController.compatibility -->
 
