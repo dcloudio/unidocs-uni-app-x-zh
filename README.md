@@ -114,6 +114,7 @@
     source: https://gitcode.com/dcloud/uni-ui-x/tree/alpha/uni_modules/uni-collapse
     ---
     ```
+15. 在 `compatibility` 占位下方编写建议，几级标题不重要，但要以 `# tips@suggestion` 结尾；内容是不支持时的描述和建议。
 
 
 ## 配置
