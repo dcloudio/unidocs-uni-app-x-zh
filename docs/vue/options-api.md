@@ -2,6 +2,8 @@
 
 选项式 API，要求在script里编写`export default {}`，在其中定义data、methods、生命周期等选项。
 
+**vue蒸汽模式不支持选项式，仅支持组合式。**
+
 ## 状态选项
 
 <!-- VUEJSON.options_state.compatibility -->
