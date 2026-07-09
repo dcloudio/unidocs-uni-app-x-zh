@@ -58,3 +58,6 @@ let wv = uni.getElementById("wv1") as UniWebViewElement
 <!-- UTSAPIJSON.general_type.param -->
 
 示例代码另见[web-view组件](../component/web-view.md)
+
+## 注意
+- app-android 平台在蒸汽模式下不再支持 uni.createWebviewContext，返回的组件上下文对象无法调用相关方法。
