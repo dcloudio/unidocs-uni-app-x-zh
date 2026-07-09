@@ -388,6 +388,8 @@ if (view != null && view instanceof WKWebView) {
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.dispatchEvent.param -->
 
+<!-- CUSTOMTYPEJSON.UniElement.methods.dispatchEvent.fileFormats -->
+
 <!-- CUSTOMTYPEJSON.UniElement.methods.dispatchEvent.returnValue -->
 
 <!-- CUSTOMTYPEJSON.UniElement.methods.dispatchEvent.tutorial -->
