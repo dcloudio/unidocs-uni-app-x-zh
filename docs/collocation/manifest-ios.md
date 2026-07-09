@@ -531,7 +531,7 @@ uni-app x 项目中使用 [map](../component/map.md) 组件，[uni.chooseLocatio
 
 支持以下分享 provider ：
 
-#### 微信登录 @shareweixin  
+#### 微信分享 @shareweixin  
 使用 “微信 Open SDK for iOS” 实现，使用前需到[微信开放平台](https://open.weixin.qq.com/)创建移动应用并在开发配置中正确配置`iOS应用`的 Bundle ID 和 Universal Links。
 
 在uni-app x项目中使用此模块，需在manifest.json中配置：  
