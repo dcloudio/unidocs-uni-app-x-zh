@@ -145,6 +145,14 @@ export default defineConfig({
       {
         from: 'tutorial/app-nativeresource-ios.md',
         to: 'collocation/app-nativeresource-ios.md',
+      },
+      {
+        from: 'tutorial/mp-weixin-ai-develop.md',
+        to: 'mp/mp-weixin-ai-develop.md',
+      },
+      {
+        from: 'tutorial/independent-subpackage.md',
+        to: 'mp/independent-subpackage.md',
       }
     ]),
     // collocation
