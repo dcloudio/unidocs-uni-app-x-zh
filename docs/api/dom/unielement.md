@@ -8,7 +8,7 @@
 
 <!-- CUSTOMTYPEJSON.UniElement.param -->
 
-####dataset@dataset
+#### dataset@dataset
 
 从 5.21 起全平台 dataset 调整为 UniDOMStringMap 类型。[详情](https://doc.dcloud.net.cn/uni-app-x/component/common.html#dataset)
 
