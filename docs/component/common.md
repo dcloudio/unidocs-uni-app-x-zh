@@ -6,7 +6,7 @@
 
 <!-- CUSTOMTYPEJSON.general-attribute.attribute -->
 
-####data-*@dataset
+#### data-*@dataset
 
 从 5.21 起全平台 dataset 调整为 UniDOMStringMap 类型。
 
