@@ -1,3 +1,3 @@
 export default {
-  compatibilityHelpHref: '/tutorial/compatibility.md',
+  compatibilityHelpHref: '/tutorial/compatibility.html',
 }
