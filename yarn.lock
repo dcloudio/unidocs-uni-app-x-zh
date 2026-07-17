@@ -1132,13 +1132,15 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@dcloudio/docs-utils@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.npmmirror.com/@dcloudio/docs-utils/-/docs-utils-1.0.8.tgz#69e2ce6a68ead2a8092508133473c76ca6bc5247"
-  integrity sha512-4uPhoX9SlbjsuM/xLXahJkCt5vVEdzh2hV+/l8bi7rSQlbQ2o9pCzsiik5p1/lxjs/4ZeCP1cc3FuG+9HU41nw==
+"@dcloudio/docs-utils@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.npmmirror.com/@dcloudio/docs-utils/-/docs-utils-1.0.9.tgz#327d9e57050740bde4a493a8ea6e99169113cd93"
+  integrity sha512-yTq/e4hPO/f8e9prW1Wei/LHnipzj0czikg1nzITABNodTiliYQM0tP1fg2voa81aof8qikq+uVaBs1Y+LXAOQ==
   dependencies:
+    dom-serializer "^2.0.0"
     glob "10.4.5"
     gray-matter "^4.0.3"
+    htmlparser2 "^9.0.0"
     picocolors "^1.1.1"
 
 "@dcloudio/uni-preprocess@^3.0.0-alpha-4000020240117006":

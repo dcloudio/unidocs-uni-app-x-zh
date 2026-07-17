@@ -43,7 +43,7 @@
     "jsonc-parser": "^3.3.1"
   },
   "dependencies": {
-    "@dcloudio/docs-utils": "^1.0.8",
+    "@dcloudio/docs-utils": "^1.0.9",
     "vuepress": "1.9.9",
     "vuepress-theme-uniapp-official": "1.6.38"
   }
