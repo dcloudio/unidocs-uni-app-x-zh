@@ -360,7 +360,7 @@ Uni`组件名(驼峰)`Element
 
 示例 [详情](<!-- VUEJSON.E_lifecycle.app_monitor-app-lifecycle-options.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_lifecycle.app_app-options.webUrl -->
+::: preview <!-- VUEJSON.E_lifecycle.page_page-options.webUrl -->
 
 > 组合式 API
 
