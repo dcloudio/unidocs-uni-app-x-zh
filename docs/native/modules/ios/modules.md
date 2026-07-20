@@ -54,7 +54,7 @@
 | uni-chooseLocation | uni-chooseLocation-index.swift| | |
 | uni-shareWithSystem | uni-shareWithSystem-index.swift| | |
 | uni-createInnerAudioContext | uni-createInnerAudioContext-index.swift <br> uni-createInnerAudioContext-UniAudioPlayer.swift| KTVHTTPCache.xcframework | MediaPlayer |
-| uni-getBackgroundAudioManager | uni-getBackgroundAudioManager-index.swift <br> uni-getBackgroundAudioManager-UniBackgroundAudioManager.swift|  CocoaAsyncSocket.xcframework <br> KTVHTTPCache.xcframework | MediaPlayer |
+| uni-getBackgroundAudioManager | uni-getBackgroundAudioManager-index.swift <br> uni-getBackgroundAudioManager-UniBackgroundAudioManager.swift|   KTVHTTPCache.xcframework | MediaPlayer |
 | uni-previewImage | uni-previewImage-index.swift | | |
 | uni-chooseMedia | uni-chooseMedia-index.swift | | |
 | uni-requestMerchantTransfer(4.61+) | uni-requestMerchantTransfer-index.swift | libWeChatSDK.a | CoreGraphics <br> WebKit <br> Security <br> |
@@ -713,7 +713,7 @@ xcodebuild -create-xcframework -framework 真机路径/DCloudUTSExtAPI.framework
 ### 添加依赖库以及资源文件
 | 依赖库 |
 |---|
-| CocoaAsyncSocket.xcframework`（Embed & Sign）` <br> KTVHTTPCache.xcframework`（Embed & Sign）` |
+|  KTVHTTPCache.xcframework`（Embed & Sign）` |
 
 ### Capability
 `Target -> Signing & Capabilities` 点击 左上角`+ Capability `，
