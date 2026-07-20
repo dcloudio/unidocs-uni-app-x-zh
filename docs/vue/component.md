@@ -358,17 +358,17 @@ Uni`组件名(驼峰)`Element
 |onAppHide          |4.11    |5.21            |4.11 |5.21        |4.61     |5.21             |4.11 |4.41     |
 |onError            |4.11    |5.21            |5.21 |5.21        |5.21     |5.21             |4.11 |4.41     |
 
-示例 [详情](<!-- VUEJSON.E_lifecycle.app_monitor-app-lifecycle-options.gitUrl -->)
+示例 [详情](<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-composition.gitUrl -->)
 
-::: preview <!-- VUEJSON.E_lifecycle.page_page-options.webUrl -->
+::: preview <!-- VUEJSON.E_lifecycle.page_monitor-app-lifecycle-composition.webUrl -->
 
 > 组合式 API
 
-<!-- VUEJSON.E_lifecycle.app_monitor-app-lifecycle-composition.code -->
+<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-composition.code -->
 
 > 选项式 API
 
-<!-- VUEJSON.E_lifecycle.app_monitor-app-lifecycle-options.code -->
+<!-- VUEJSON.E_lifecycle.page_monitor-page-lifecycle-options.code -->
 
 :::
 
