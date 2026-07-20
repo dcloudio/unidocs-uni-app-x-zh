@@ -260,7 +260,7 @@ App仅对`同层的兄弟节点`之间支持`z-index`来调节层级。不支持
 <!-- CSSJSON.style_list.compatibility -->
 
 
-<!-- CSSJSON.css_no_flatten_list.name -->
+## 不支持拍平的 CSS 属性@css_no_flatten_list
 
 <!-- CSSJSON.css_no_flatten_list.compatibility -->
 
