@@ -12,7 +12,7 @@
 
 ## 注意事项
 
-- 如果出现 `bluetoothError`、`wifiError` 出现的情况就说明权限配置错误，需要根据 [文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions) 正确配置权限。
+- 如果出现 `bluetoothError`、`wifiError` 非空的情况就说明权限配置错误，需要根据 [文档](https://uniapp.dcloud.net.cn/tutorial/app-nativeresource-android.html#permissions) 正确配置权限。
 
 <!-- UTSAPIJSON.getSystemSetting.example -->
 
