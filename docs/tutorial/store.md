@@ -9,6 +9,8 @@ uni-app x下可选方案有：
 1. 在独立的uts文件中定义一个全局的reactive变量，各处引用它。
 2. 引入pinia。蒸汽模式下可直接使用pinia官方库。Android vdom模式下需使用三方插件 [Pinia by uts](https://ext.dcloud.net.cn/plugin?name=x-pinia-s)
 
+从 HBuilderX 5.23 起，uni-app x 项目内置 `pinia@3.0.4`。如希望使用其他版本，可在项目根目录自行安装指定版本。
+
 使用全局的reactive变量，详细方案如下：
 
 ## 专用模块
