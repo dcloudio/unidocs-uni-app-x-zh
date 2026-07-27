@@ -14,6 +14,10 @@
 
 <!-- UTSCOMJSON.picker-view.children -->
 
+### 支付宝小程序注意事项
+
+支付宝小程序动态设置 `picker-view` 指示器样式时可能出现偏移，建议使用静态配置，避免运行时修改指示器样式。
+
 <!-- UTSCOMJSON.picker-view.example -->
 
 <!-- UTSCOMJSON.picker-view.reference -->
