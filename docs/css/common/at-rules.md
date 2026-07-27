@@ -12,6 +12,7 @@
 @font-face 这个at-rule用于自定义字体。
 
 以下示例为加载一个字体文件，加载成功后，在text组件上设置相应的字体名称就可以按该字体渲染文字内容：
+
 ```html
 <style>
 @font-face {
@@ -33,7 +34,7 @@ web中加载字体图标，有 `unicode直显` 和 `伪元素+content` 2种方�
 
 unicode直显方式的性能优于伪元素方式，但源码阅读的直观性略差。
 
-注意text组件直显unicode，需要用 {{'\u'}} 的方式包裹。
+注意text组件直显unicode，需要用 <code v-pre>{{'\u'}}</code> 的方式包裹。
 另外注意实体字符和unicode的区别。
 
 <!-- 缺少实体字符直显的测试和示例 -->
