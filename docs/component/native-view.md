@@ -57,7 +57,6 @@
 + android平台`native-view`组件有以下限制
   - android平台VDOM模式不支持[list-item复用机制](list-item.md#list-item复用机制)，list-item其他子组件不受影响正常启动复用业务  
   - android平台verflow样式不支持visible，仅支持hidden
-+ 支付宝小程序不支持 `native-view` 组件，使用时需通过条件编译排除支付宝小程序
 
 <!-- UTSCOMJSON.native-view.children -->
 
